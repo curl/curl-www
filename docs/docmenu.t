@@ -35,7 +35,7 @@ DOCREF(copyright.html, Copyright)
 #ifdef DOCS_FAQ
 HERE(x, FAQ)
 #else
-DOCREF(faq.shtml, FAQ)
+DOCREF(faq.html, FAQ)
 #endif
 
 #ifdef DOCS_FEATURES
