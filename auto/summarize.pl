@@ -353,7 +353,7 @@ sub singlefile {
             elsif($_ =~ /^\* (libcurl\/.*)/) {
                 $libcurl = $1;
             }
-            elsif(($_ =~ /([.\/a-zA-Z0-9]*)\.[ch]:([0-9:]*): /) ||
+            elsif(($_ =~ /([.\/a-zA-Z0-9]*)\.[chy]:([0-9:]*): /) ||
                   ($_ =~ /\"([_.\/a-zA-Z0-9]+)\", line/) ||
                   ($_ =~ /^cc: Warning: ([.\/a-zA-Z0-9]*)/) ||
                   ($_ =~ /cc: (REMARK|WARNING) File/) ||

@@ -53,7 +53,7 @@ while(<FILE>) {
                 chomp;
                 if(
                    # gcc warning:
-                   ($_ =~ /([.\/a-zA-Z0-9]*)\.[ch]:([0-9:]*): /) ||
+                   ($_ =~ /([.\/a-zA-Z0-9]*)\.[chy]:([0-9:]*): /) ||
                    # test case failure
                    ($_ =~ /FAILED/) ||
                    # the line below is adjusted for AIX xlc warnings:
