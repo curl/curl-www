@@ -20,6 +20,21 @@ TITLE(Recent Changes -- The Nice and Clean Version)
    future versions in the <a href="/docs/todo.html">TODO</a> or read the fully
    detailed <a href="/docs/changes.shtml">changelog</a>.</small>
 
+<p> Fixed since (available in CVS)
+<ul>
+<li> fixed portability issue in the SSL code
+<li> -G improvements, now works with -I and on URLs including question mark.
+<li> various windows compile, build and makefile fixes
+<li> multiple curl_easy_perform() invokes when a previous invoke followed a
+   Location: could lead to a crash
+<li> curl_formadd() is a new function to replace the now deprecated
+   curl_formparse() one, for building rfc1867 form posts.
+<li> rfc1867-posts are now done including the Expect: 100-continue header.
+<li> release archive now includes all docs as HTML pages too
+<li> flushes the progress meter stream to improve look on windows 
+<li> fixed the configure script --with-ssl problem
+</ul>
+
 <p> Fixed in 7.8.1
 <ul>
 <li> the configure script now sets up socklen_t properly
