@@ -45,3 +45,7 @@ BODY {
   font-size: 9pt;
   background-color: #ff8080;
 }
+
+.latest {
+  background-color: #ffff44;
+}
