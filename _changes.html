@@ -35,14 +35,20 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 </ul>
 #endif
 
-SUBTITLE(Fixed since -- available in CVS and pre-releases)
+SUBTITLE(Fixed in 7.10.5)
 <p> Changes:
 <ul>
  <li> support for Content-Encoding: gzip was added
  <li> test cases modified to include server requirement in each test case file
+ <li> CURLOPT_FTP_USE_EPRT was added, --disable-eprt with the tool
+ <li> setting CURLOPT_ENCODING to "" automaticly enables all supported encodings
 </ul>
 <p> Bugs:
 <ul>
+ <li> libcurl now calls the progress meter during slow ftp responses as well
+ <li> a write loop resulting in badly updated progress meter was fixed
+ <li> non-blocking sockets fix for PORT ftp downloads
+ <li> CURLOPT_INTERFACE performance fix on Linux
  <li> EAGAIN-fix improves HPUX (at least) functionality
  <li> configure script fix for the writable argv check and cross-compiles
  <li> features more verbose error message when some OpenSSL read errors occur
