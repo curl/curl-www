@@ -62,7 +62,7 @@ for(@sfiles) {
 
     $size = sprintf("%.1f", $size/1024);
 
-    print "<tr class=\"$col\"><td><a href=\"http://curl.haxx.se/rfc/$filename\">$showname</a></td>",
+    print "<tr class=\"$col\"><td><a href=\"/rfc/$filename\">$showname</a></td>",
     "<td>$size&nbsp;Kb</td>",
     "<td>".$desc{$filename}."</td>\n",
     "</tr>\n";
