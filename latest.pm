@@ -149,24 +149,28 @@ sub gettype {
                "Solaris 2.6 SPARC, SSL-enabled.");
     }
     # curl-7.8.1-vms.zip (old style)
-    elsif($file =~ /^curl-([0-9.]*)-vms\.zip$/) {
-        return($1, "vms-zip",
-               "OpenVMS, zip.");
-    }
+#    elsif($file =~ /^curl-([0-9.]*)-vms\.zip$/) {
+#        return($1, "vms-zip",
+#               "OpenVMS, zip.");
+#    }
     # curl-7.8.1-vms-vax.zip
     elsif($file =~ /^curl-([0-9.]*)-vms-vax\.zip$/) {
         return($1, "vms-vax-zip",
-               "OpenVMS for VAX, zip.");
+               "OpenVMS VAX, zip.");
     }
     # curl-7.8.1-vms-ia64.zip
     elsif($file =~ /^curl-([0-9.]*)-vms-ia64\.zip$/) {
         return($1, "vms-ia64-zip",
-               "OpenVMS for ia64, zip.");
+               "OpenVMS ia64, zip.");
     }
     # curl-7.8.1-vms-axp.zip
     elsif($file =~ /^curl-([0-9.]*)-vms-axp\.zip$/) {
         return($1, "vms-axp-zip",
-               "OpenVMS for Alpha, zip.");
+               "OpenVMS Alpha, zip.");
+    }
+    elsif($file =~ /^curl-([0-9.]*)-arm\.tar\.gz$/) {
+        return($1, "linux-arm-nossl",
+               "Linux ARM, SSL disabled, tar+gz.");
     }
 
     # Kevin's new formats starting with curl 7.10:
