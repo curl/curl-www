@@ -34,6 +34,37 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 </ul>
 #endif
 
+SUBTITLE(Fixed since -- available in CVS and pre-releases)
+<p> Changes:
+<ul>
+ <li> CURLOPT_PROXYAUTH was added to allow different authentication methods on
+   proxies (--proxy-ntlm was added to the curl tool).
+ <li> --ftp-create-dirs and CURLOPT_FTP_CREATE_MISSING_DIRS were added
+ <li> optional and still experimetal asynch name resolve support
+ <li> getting headers-only and no-body from FTP can now reply "Accept-Ranges"
+   if the server seems to suppport REST.
+</ul>
+<p> Bugs:
+<ul>
+ <li> fixed a memory leak on re-used connections with proxy-authentication
+ <li> cookies with no contents are sent off too now
+ <li> 64bit-related bugfix for uploads
+ <li> file:// URLs with drive letters now work on windows and OS/2
+ <li> The output numbering (#[num]) on url globbing didn't work due to a bug
+   in curl_msprintf()
+ <li> FTP persitent download directory re-use problem fixed
+ <li> cookie parser now only requires two dots in cookie domain
+ <li> FOLLOWLOCATION (or -L) did not always ignore the redirect page properly
+ <li> information leak fixed.  When proxy authentication is used in a CONNECT
+   request (as used for all SSL connects and otherwise enforced
+   tunnel-thru-proxy requests), the same authentication header was also
+   wrongly sent to the remote host.
+ <li> the VC++ Makefiles were updated
+ <li> builds better on VMS
+ <li> src/hugehelp.c is now distributed uncompressed in the source package
+ <li> the mkhelp script now compresses properly on DOS/Windows
+</ul>
+
 SUBTITLE(Fixed in 7.10.6)
 <p> Changes:
 <ul>
