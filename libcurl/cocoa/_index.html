@@ -1,0 +1,44 @@
+#include "_doctype.html"
+<html>
+<head> <title>CURLHandle -- libcurl with Cocoa</title>
+</head>
+
+#define LIBCURL_COCOA
+
+#include "_menu.html"
+#include "setup.t"
+#include "download.t"
+
+WHERE2(libcurl, "/libcurl/", CURLHandle Cocoa Interface)
+
+<a name=top>
+TITLE(accessing libcurl from Cocoa)
+<p>
+ CURLHandle is a Cocoa subclass of NSURLHandle that wraps an object-oriented
+ shell around libcurl's C interface.
+
+<p><b>How to Install</b></br>
+ Include CURLHandle.[hm], and (optionally) CURLHandle+extras.[hm] in your
+ project
+
+<p><b>Examples</b><br> 
+ CURLHandleTester is an example that comes with the distribution.
+
+<p><b>Interface documentation</b><br>
+ None available right now.
+
+<p><b>Download</b><br> Get it from the <a
+ href="http://curlhandle.sourceforge.net/">CURLHandle web site</a> 
+
+<p><b>Credits</b><br>
+ CURLHandle was written by Dan Wood &lt;dwood_at_karelia.com&gt;
+
+<p><b>What is Cocoa?</b><br>
+
+ You'll find more info on Apple's Cocoa Web site
+ <a href="http://developer.apple.com/cocoa/">developer.apple.com/cocoa/</a>.
+
+#include "_footer.html"
+
+</body>
+</html>
