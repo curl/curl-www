@@ -225,7 +225,7 @@ THIS(curl_share_cleanup)
 DOC(curl_share_cleanup, curl_share_cleanup.html)
 #endif
 
-#ifdef DOCS_SHARE_CLEANUP
+#ifdef DOCS_SHARE_INIT
 THIS(curl_share_init)
 #else
 DOC(curl_share_init, curl_share_init.html)
