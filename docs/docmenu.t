@@ -103,7 +103,7 @@ DOCREF(osdistribs.html, OSes)
 #ifdef DOCS_PRESS
 HERE(x, Press)
 #else
-DOCREF(/press.html, Press)
+DOCREF(press.html, Press)
 #endif
 
 #ifdef DOCS_RELATED_TOOLS
