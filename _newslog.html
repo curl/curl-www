@@ -33,6 +33,39 @@ TITLE(News in curl and libcurl land)
  NCOLE
 #endif
 
+ NSUBJ(Help out autobuilding curl on multiple platforms!)
+ NDATE(21 Jan 2003)
+ NCOLS
+<p>
+I've spent some time on putting together a shell script that I would like
+people to run on various operating systems. The script testcurl does:
+<ol>
+ <li> updates curl source from CVS
+ <li> generates the build environment (using buildconf)
+ <li> runs configure (optionally using your custom arguments)
+ <li> builds curl (in a separate build-dir)
+ <li> runs the tests (make test)
+ <li> removes the build dir
+</ol>
+<p>
+The output from all this should be mailed to the automatic receiver I've
+setup for this purpose.
+<p>
+Personally, I'll setup and run this script on a Solaris 2.7 host and at least
+one Linux i386. I'll make sure that these run regularly.
+<p>
+So, if you have some CPU cycles to spare and some time to set things up,
+please get in touch and help us out.
+<p>
+The collected status of all distributed tests that are collected will of
+course be viewable on the curl web site, and I'm smoothing out the scripts
+for it right now.
+<p>
+The script is currently available here:
+ <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/curl/curl/testcurl.sh">http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/curl/curl/testcurl.sh</a>.
+
+ NCOLE
+
  NSUBJ(7.10.3 is out)
  NDATE(14 Jan 2003)
  NCOLS
