@@ -29,7 +29,7 @@ all: index.html feedback.html mirrors.html cvs.html libs.html help.html	  \
  download.html changes.html bugreport.html about.html support.html	  \
  newslog.html news.html head.html foot.html oldnews.html \
  info web-editing.html	  \
- donation.html devel.html competition.html search.html
+ donation.html devel.html competition.html search.html index2.html
 	cd docs; make
 	cd libcurl; make
 	cd mail; make
@@ -61,6 +61,13 @@ main.html: _main.html $(MAINPARTS) $(STAT) $(RELEASE)
 	$(ACTION)
 
 index.html: main.html newslog.html
+	rm -f $@
+	./filter.pl < $< > $@
+
+main2.html: _main2.html $(MAINPARTS) $(STAT) $(RELEASE)
+	$(ACTION)
+
+index2.html: main2.html newslog.html
 	rm -f $@
 	./filter.pl < $< > $@
 
