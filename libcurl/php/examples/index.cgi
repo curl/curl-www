@@ -25,6 +25,7 @@ MOO
     print "<p><table border=0 cellpadding=1 cellspacing=0><tr bgcolor=\"#0000ff\">",
     "<td>$neat Example $neatend</td>",
     "<td>$neat Size $neatend</td>",
+    "<td>$neat Description $neatend</td>",
     "</tr>\n";
 
     for(@ex) {
@@ -37,19 +38,26 @@ MOO
             $col="";
         }
         
-        print "<tr$col><td>";
+        print "<tr valign=top$col><td>";
         my ($dev,$ino,$mode,$nlink,$uid,$gid,$rdev,$size,
             $atime,$mtime,$ctime,$blksize,$blocks)
             = stat($filename);
         
-        print "<a href=\"./?ex=$filename\">$filename</a></td><td>$size bytes</td></tr>\n";
+        print "<a href=\"./?ex=$filename\">$filename</a></td><td>$size bytes</td><td>\n";
+        if( -r "$filename.html") {
+            &catfile("$filename.html");
+        }
+        else {
+            print "&nbsp;";
+        }
+        print "</td></tr>\n";
     }
     print "</table>\n";   
 }
 
 print "Content-Type: text/html\n\n";
 
-&catfile("examples.html");
+&catfile("../examples.html");
 
 where("libcurl", "/libcurl/", "PHP", "/libcurl/PHP/", "PHP Examples");
 
