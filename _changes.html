@@ -22,6 +22,18 @@ TITLE(Recent Changes -- The Nice and Clean Version)
 
 <p> Fixed since (available in CVS and 7.8.1 pre-releases)
 <ul>
+<li> bugfixed the redirected stderr feature
+<li> more test cases added
+<li> libcurl now verifies the CN name of server certificates when SSLing
+<li> curl -E supports file names with driver letters now on windows
+<li> curl-config --libs now includes the path to the installed libcurl
+<li> file:// with "relative" paths now work like other tools/libs
+<li> curl builds under RISC OS and OpenVMS now
+<li> libcurl groks the NCSA httpd 1.5.x weirdo (non-standard) replies
+<li> curl_escape() no longer tries to skip already encoded data
+<li> progress callback minor bugfix
+<li> bugfixed the main transfer select() loop!
+<li> added CURLOPT_HTTPGET
 <li> corrected FTP range downloads
 <li> better treatment of cut off FTP transfers
 <li> corrected the libcurl shared library version number
