@@ -68,6 +68,7 @@ TREVEN
   NEWCOL Gautam Mani ENDCOL
 TREND
 
+
 TRODD
   NEWCOL US ENDCOL
   NEWCOL HTTP ENDCOL
@@ -101,6 +102,13 @@ TRODD
   NEWCOL FTP ENDCOL
   NEWCOL <a href="ftp://ftp.sunet.se/pub/www/utilities/curl/">ftp.sunet.se</a> ENDCOL
   NEWCOL &nbsp; ENDCOL
+TREND
+
+TREVEN
+  NEWCOL RU ENDCOL
+  NEWCOL HTTP ENDCOL
+  NEWCOL <a href="http://curl.tsuren.net/download/">curl.tsuren.net</a> ENDCOL
+  NEWCOL Gautam Mani ENDCOL
 TREND
 
 </table>
