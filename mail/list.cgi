@@ -29,24 +29,44 @@ sub showarchs {
 
     @syears = sort { $b <=> $a } keys %years;
     
-    for(@syears) {
-        $thisyear=$_;
-        my $pr=0;
+    print "<table cellspacing=\"3\">\n";
+    if(0) {
+        my @he =('Year', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',
+                 'Aug', 'Sep', 'Oct', 'Nov', 'Dec');
+    
+        print "<tr> ";
+        for(@he) {
+            print "<th>$_</th> ";
+        }
+        print "</tr>\n";
+    }
 
-        for(@dirs) {
-            if($_ =~ /(\d\d\d\d)-(\d\d)/) {
-                $year=$1;
-                $mon=$2;
-                
-                if($thisyear == $year) {
-                    if(!$pr++) {
-                        print "<p><b>Year $thisyear</b><br>\n";
-                    }
-                    print "<a href=\"$_/\">".&MonthNameEng($2)."</a> \n";
+    for(@syears) {
+        my $year=$_;
+        my $pr=0;
+        my $mon;
+
+        print "<tr><td><b>$year</b></td>\n";
+
+        foreach $m (01 .. 12) {
+            my $mon = sprintf("%02d", $m);
+            my $f;
+            foreach $d (@dirs) {
+                if($d =~ /$year-$mon$/) {
+                    $f=$d;
+                    last;
                 }
             }
+            if($f) {
+                print "<td><a href=\"$f/\">".substr(&MonthNameEng($mon), 0, 3)."</a></td>\n";
+            }
+            else {
+                print "<td>&nbsp;</td>";
+            }
         }
+        print "</tr>\n";
     }
+    print "</table>\n";
 
 }
 
