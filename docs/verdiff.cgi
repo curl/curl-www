@@ -96,3 +96,4 @@ if($r1 && $r2) {
     close(CH);  
 }
 
+&catfile("../foot.html");
