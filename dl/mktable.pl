@@ -203,6 +203,9 @@ for $per (@sall) {
     if($fi !~ /^(http|ftp):/) {
         $fi = "/download/$fi";
     }
+    else {
+        $fi =~ s/\&/\&amp;/g;
+    }
     printf("<td class=\"col2\"><a href=\"%s\">%s</a></td>\n",
            $fi, $$per{'curl'});
     printf("<td class=\"col3\">%s</td>\n", $$per{'type'}eq"bin"?
