@@ -11,10 +11,8 @@ WHERE2(Download, "/download.html", CVS)
 
 TITLE(<b>Browse</b> the Sources)
 <p>
-  Browse the curl <a
-  href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/curl/">CVS
-  Repository</a> or the <a href="http://curl.haxx.se/lxr/">LXR-indexed
-  sources</a>.
+  Browse the curl <a href="http://cvs.php.net/cvs.php/curl">CVS Repository</a>
+  or the <a href="http://curl.haxx.se/lxr/">LXR-indexed sources</a>.
 
 TITLE(<b>Get</b> the Sources)
 <p>
@@ -33,16 +31,16 @@ TITLE(<b>Get</b> the Sources)
 <p>
   If you want to use the CVS server, login:
 <pre>
-  cvs -d :pserver:anonymous@cvs.curl.sourceforge.net:/cvsroot/curl login
+  cvs -d :pserver:cvsread@cvs.php.net:/repository login
 </pre>
 <p>
-  You will be prompted for the password, just press enter. When logged in,
-  checkout all the files in the curl respository:
+  You will be prompted for the password, then you enter <b>phpfi</b>. When
+  logged in, checkout all the files in the curl respository:
 <pre>
-  cvs -d :pserver:anonymous@cvs.curl.sourceforge.net:/cvsroot/curl checkout curl
+  cvs -d :pserver:cvsread@cvs.php.net:/repository checkout curl
 </pre>
 <p>
-  <b>Note</b> that this will create a curl directory.
+  <b>Note</b> that this will create a curl subdirectory.
 <p>
   If you at a later time want to get the updated set of files, just cd into
   this directory and run this command (there's no need for the -d then):
@@ -52,9 +50,8 @@ TITLE(<b>Get</b> the Sources)
 
 TITLE(<b>Compile and Build</b> the Sources)
 <p>
- When you checkout the sources, you get a file named '<a
- href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/curl/curl/CVS-INFO?rev=HEAD&content-type=text/vnd.viewcvs-markup">CVS-INFO</a>'
- in the source root that describes how to proceed to compile and build them.
+ When you checkout the sources, you get a file named CVS-INFO in the source
+ root that describes how to proceed to compile and build them.
 
 TITLE(<b>Change</b> the Sources)
 <p>
