@@ -131,7 +131,7 @@ sub gettype {
     # curl-ssl-7.8.1-sparc-8-pkg.tar.gz
     elsif($file =~ /^curl-ssl-([0-9.]*)-sparc-8.pkg.tar.gz/) {
         return($1, "solaris8-sparc-ssl",
-               "Solaris 8 SPARC, SSL-enabled.");
+               "Solaris 8 SPARC, gzip, SSL-enabled.");
     }
     # curl-ssl-7.8.1-sparc-8-pkg.tar.gz
     elsif($file =~ /^curl-ssl-([0-9.]*)-sparc-8.pkg.tar.bz2/) {
