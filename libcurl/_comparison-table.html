@@ -2,6 +2,7 @@
 <html>
 <head> <title>libcurl - Comparison Table</title>
 #include "css.t"
+<link rel="stylesheet" type="text/css" href="/docs/comparison.css">
 </head>
 
 #define LIBCURL_COMPARISONTABLE
@@ -12,10 +13,9 @@
 
 WHERE2(libcurl, "/libcurl/", libcurl Alternatives Comparison)
 
-#define FEATURE <td bgcolor="#ffff00" align=center>yes</td>
-#define MISSING <td align=center>no</td>
-#define UNKNOWN <td align=center><font color="#ff0000">???</font></td>
-#define NA <td align=center>N/A</td>
+#define FEATURE <td class="yes">yes</td>
+#define MISSING <td class="no">no</td>
+#define UNKNOWN <td class="unknown">?</td>
 
 #define FEAT <td>
 #define ENDFEAT </td>
@@ -23,12 +23,30 @@ WHERE2(libcurl, "/libcurl/", libcurl Alternatives Comparison)
 #define NEWLINE <tr valign=top>
 #define ENDLINE </tr>
 
-#define NICETD <td bgcolor="#0000ff"><font color="#ffffff" size=+1 face="ariel,helvetica">
-#define NICETDEND </font></td>
+#define NICETD <th>
+#define NICETDEND </th>
+
+TITLE(Transfer Library Comparison Chart)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="competitors.html">libcurl alternatives</a>
+<br><a href="relatedlibs.html">Related Libs</a>
+<br><a href="../docs/relatedtools.html">Related Tools</a>
+<br><a href="../docs/comparison-table.html">FTP+HTTP Tools comparion</a>
+</div>
+<p>
+ This comparison table is meant to show how libcurl compares with other
+ available FTP/HTTP libraries.
+<p>
+ There are likely to be errors in this, since the comparison involves many
+ libraries and many compared features. Please mail curl-web with updates if
+ you notice any flaws!
 
 <p>
-<table cellspacing=2 cellpadding=0 border=0>
- NEWLINE
+<table cellspacing="2" cellpadding="2" border="0">
+ <tr class="tabletop">
+
+#if 0
   NICETD Feature NICETDEND
   NICETD libcurl NICETDEND
   NICETD libghttp NICETDEND
@@ -46,7 +64,25 @@ WHERE2(libcurl, "/libcurl/", libcurl Alternatives Comparison)
   NICETD XMLHTTP Object NICETDEND
   NICETD QHttp NICETDEND
   NICETD ftplib NICETDEND
-
+#else
+  NICETD Feature NICETDEND
+  NICETD <a href="#1">1</a> NICETDEND
+  NICETD <a href="#2">2</a> NICETDEND
+  NICETD <a href="#3">3</a> NICETDEND
+  NICETD <a href="#4">4</a> NICETDEND
+  NICETD <a href="#5">5</a> NICETDEND
+  NICETD <a href="#6">6</a> NICETDEND
+  NICETD <a href="#7">7</a> NICETDEND
+  NICETD <a href="#8">8</a> NICETDEND
+  NICETD <a href="#9">9</a> NICETDEND
+  NICETD <a href="#10">10</a> NICETDEND
+  NICETD <a href="#11">11</a> NICETDEND
+  NICETD <a href="#12">12</a> NICETDEND
+  NICETD <a href="#13">13</a> NICETDEND
+  NICETD <a href="#14">14</a> NICETDEND
+  NICETD <a href="#15">15</a> NICETDEND
+  NICETD <a href="#16">16</a> NICETDEND
+#endif
  ENDLINE
 
  NEWLINE 
@@ -79,18 +115,767 @@ WHERE2(libcurl, "/libcurl/", libcurl Alternatives Comparison)
   MISSING
   FEATURE
   FEATURE
-  FEATURE
-  FEATURE
   MISSING
   FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
   MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  FEATURE
  ENDLINE
 
-<table>
+ NEWLINE 
+  FEAT HTTP Digest ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  FEATURE
+  FEATURE
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
 
+ NEWLINE 
+  FEAT HTTP NTLM ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  FEATURE
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT HTTP Negotiate ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT HTTP SPNEGO ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT HTTP POST ENDFEAT
+  FEATURE
+  FEATURE
+  FEATURE
+  MISSING
+  FEATURE
+  FEATURE
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT HTTP multipart POST ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT HTTP 1.1 ENDFEAT
+  FEATURE
+  FEATURE
+  FEATURE
+  MISSING
+  FEATURE
+  FEATURE
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT HTTP chunked encoding POSTs ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT HTTP Resume ENDFEAT
+  FEATURE
+  UNKNOWN
+  FEATURE
+  FEATURE
+  FEATURE
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT HTTP Ranges ENDFEAT
+  FEATURE
+  FEATURE
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT HTTP Follow Redirects ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  FEATURE
+  FEATURE
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT HTTP Proxy ENDFEAT
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT HTTP persistent connections ENDFEAT
+  FEATURE
+  UNKNOWN
+  FEATURE
+  MISSING
+  FEATURE
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT Cookie Support ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT HTTP deflate/gzip ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT FTP Upload ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT FTP SSL ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT FTP Upload Resume ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT FTP Download Resume ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT FTP Ranges ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT FTP Over HTTP Proxy ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  FEATURE
+  MISSING
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT FTP Kerberos ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT FTP Persistent Connections ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT IPv6 ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  FEATURE
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT SOCKS ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  FEATURE
+  FEATURE
+  FEATURE
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT .netrc support ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT Large File Support ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  FEATURE
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT Offers Non-blocking API ENDFEAT
+  FEATURE
+  FEATURE
+  FEATURE
+  MISSING
+  UNKNOWN
+  FEATURE
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT HTTPS ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  FEATURE
+  FEATURE
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT SSL Client Certificates ENDFEAT
+  FEATURE
+  MISSING
+  UNKNOWN
+  MISSING
+  FEATURE
+  FEATURE
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT SSL CA Certs ENDFEAT
+  FEATURE
+  MISSING
+  UNKNOWN
+  MISSING
+  FEATURE
+  FEATURE
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT SSL Session-ID Caching ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT WebDav ENDFEAT
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  FEATURE
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT HTML Parser ENDFEAT
+  MISSING
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT Very Portable <a href="#footnote1">[1]</a> ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE 
+  FEAT License ENDFEAT
+  FEAT MIT ENDFEAT
+  FEAT LGPL ENDFEAT
+  FEAT <a href="http://www.w3.org/Consortium/Legal/copyright-software.html">W3C</a> ENDFEAT
+  FEAT GPL ENDFEAT
+  FEAT LGPL ENDFEAT
+  FEAT LGPL ENDFEAT
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+</table>
+
+SUBTITLE(The Compared Libraries)
+<p>
+<ol>
+<a name="1"></a><li> <a href="http://curl.haxx.se/libcurl/">libcurl</a> 7.11.1
+<a name="2"></a><li> <a href="http://ftp.gnome.org/pub/gnome/sources/libghttp/">libghttp</a> 1.0.9
+<a name="3"></a> <li> <a href="http://www.w3.org/Library/">libwww</a> 5.4.0
+<a name="4"></a> <li> <a href="http://www.westga.edu/~stu7440/projects/ferit.html">libferit</a> 0.0.8
+<a name="5"></a> <li> <a href="http://www.webdav.org/neon/">neon</a> 0.24.4
+<a name="6"></a> <li> <a href="ftp://ftp.gnome.org/pub/gnome/sources/libsoup/2.1/">libsoup</a> 2.1
+<a name="7"></a> <li> mozilla netlib 
+<a name="8"></a> <li> mozilla libxpnet 
+<a name="9"></a> <li> libhttpr 
+<a name="10"></a> <li> libfetch 
+<a name="11"></a> <li> libfxp 
+<a name="12"></a> <li> HTTP Fetcher 
+<a name="13"></a> <li> http-tiny 
+<a name="14"></a> <li> XMLHTTP Object 
+<a name="15"></a> <li> QHttp 
+<a name="16"></a> <li> ftplib 
+</ol>
+
+SUBTITLE(Footnotes)
+
+<p>
+ <a name="footnote1"></a>
+ [1] = "Very Portable" means that it works at least on all major unix flavours
+ and Windows.
+
+#include "_footer.html"
 </body>
 </html>
 
