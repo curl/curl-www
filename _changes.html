@@ -42,6 +42,57 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 </ul>
 
 <p>
+SUBTITLE(Fixed in 7.12.1)
+<p>Changes:
+<ul>
+ <li> the version string now only contains info about (sub) package versions,
+   while for example krb4 and ipv6 now only are available as 'features'
+ <li> added curl_easy_reset()
+ <li> socks proxy support even when libcurl is built ipv6-enabled
+ <li> read callbacks can stop the transfer by returning CURL_READFUNC_ABORT
+ <li> libcurl-tutorial.3 is the new man page formerly known as libcurl-the-guide
+ <li> additional SSL trace data might be sent to the debug callback using two new
+   types: CURLINFO_SSL_DATA_IN and CURLINFO_SSL_DATA_OUT
+ <li> multipart formposts can upload files larger than system memory
+ <li> the curl tool continues with the next URL even if one transfer fails
+ <li> FTP 3rd party transfer support - seven new setopt() options
+</ul>
+
+<p> Bugfixes:
+<ul>
+ <li> UTF-8 encoded certificate names can now be verified properly
+ <li> krb4 link problem
+ <li> HTTP Negotiate service name now provided in uppercase
+ <li> no longer accepts any cookies with domain set to just a TLD
+ <li> HTTP Digest properties without quotes in the header
+ <li> bad Host: header case on re-used connections over proxy
+ <li> duplicate Host: header case on re-used connections
+ <li> curl -o name#[num] now works when no globbing for [num] exists
+ <li> test suite runs fine with valgrind 2.1.x
+ <li> negative Content-Length is ignored
+ <li> test 505 runs fine on windows
+ <li> curl_share_cleanup() crash
+ <li> --trace files now get the final info lines too
+ <li> multi interface connects fine to multi-IP resolving hosts
+ <li> --limit-rate works on Mac OS X (and other systems with bad poll()s)
+ <li> cookies can now hold 4999 bytes of content
+ <li> HTTP POST/PUT with NTLM/Digest/Negotiate to a URL returning 3XX
+ <li> HTTPS POST/PUT over a proxy requiring NTLM/Digest/Negotiate
+ <li> less restrictive libidn requirements, 0.4.1 or later is fine
+ <li> HTTP POST or PUT with Digest/Negotiate/NTLM selected but the server
+   didn't require any authentication
+ <li> win32 file:// transfer free memory bug
+ <li> configure --disable-http builds a libcurl without HTTP support
+ <li> CURLOPT_FILETIME had wrong type in curl.h, it expects a long argument
+ <li> builds fine with Borland on Windows
+ <li> the msvc curllib.dsp now builds the libcurl.lib file
+ <li> builds fine on VMS
+ <li> builds fine on NetWare
+ <li> HTTP Digest authentication with proxies uses correct user name + password
+ <li> builds fine with lcc-win32
+</ul>
+
+<p>
 SUBTITLE(Fixed in 7.12.0)
 <p>Changes:
 <ul>
