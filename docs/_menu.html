@@ -154,6 +154,12 @@ HERE(x, Related Tools)
 DOCREF(/docs/relatedtools.html, Related Tools)
 #endif
 
+#ifdef DOCS_RUNTESTS
+HERE(x, Run Tests)
+#else
+DOCREF(/docs/runtests.html, Run Tests)
+#endif
+
 #ifdef DOCS_SECURITY
 HERE(x, Security)
 #else
@@ -170,6 +176,12 @@ DOCREF(/rfc/, Specs)
 HERE(x, SSL Certs)
 #else
 DOCREF(/docs/sslcerts.html, SSL Certs)
+#endif
+
+#ifdef DOCS_TESTCURL
+HERE(x, Test curl)
+#else
+DOCREF(/docs/testcurl.html, Test curl)
 #endif
 
 #ifdef DOCS_THANKS
