@@ -3,6 +3,7 @@ CURL= ../..
 
 SRCROOT=$(CURL)/cvssource
 DOCROOT=$(SRCROOT)/docs
+MANROOT=$(DOCROOT)/libcurl
 
 MAINPARTS= $(CURL)/_doctype.html _menu.html ../../_footer.html ../setup.t ../pic.t doclinks.t $(CURL)/where.t ../download.t $(CURL)/ad.t Makefile
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
@@ -33,105 +34,105 @@ example.shtml: _example.html $(MAINPARTS) tinytest.html tinytest2.html curlgtk.h
 curl_easy_init.html: _curl_easy_init.html $(MAINPARTS) curl_easy_init.t
 	$(ACTION)
 
-curl_easy_init.t: $(DOCROOT)/curl_easy_init.3
-	gnroff -man $(DOCROOT)/curl_easy_init.3 | $(MAN2HTML) >curl_easy_init.t
+curl_easy_init.t: $(MANROOT)/curl_easy_init.3
+	gnroff -man $(MANROOT)/curl_easy_init.3 | $(MAN2HTML) >curl_easy_init.t
 
 curl_easy_perform.html: _curl_easy_perform.html $(MAINPARTS) curl_easy_perform.t
 	$(ACTION)
 
-curl_easy_perform.t: $(DOCROOT)/curl_easy_perform.3
-	gnroff -man $(DOCROOT)/curl_easy_perform.3 | $(MAN2HTML) >curl_easy_perform.t
+curl_easy_perform.t: $(MANROOT)/curl_easy_perform.3
+	gnroff -man $(MANROOT)/curl_easy_perform.3 | $(MAN2HTML) >curl_easy_perform.t
 
 
 curl_easy_cleanup.html: _curl_easy_cleanup.html $(MAINPARTS) curl_easy_cleanup.t
 	$(ACTION)
 
-curl_easy_cleanup.t: $(DOCROOT)/curl_easy_cleanup.3
-	gnroff -man $(DOCROOT)/curl_easy_cleanup.3 | $(MAN2HTML) >curl_easy_cleanup.t
+curl_easy_cleanup.t: $(MANROOT)/curl_easy_cleanup.3
+	gnroff -man $(MANROOT)/curl_easy_cleanup.3 | $(MAN2HTML) >curl_easy_cleanup.t
 
 
 curl_easy_setopt.html: _curl_easy_setopt.html $(MAINPARTS) curl_easy_setopt.t
 	$(ACTION)
 
-curl_easy_setopt.t: $(DOCROOT)/curl_easy_setopt.3
+curl_easy_setopt.t: $(MANROOT)/curl_easy_setopt.3
 	gnroff -man $< | $(MAN2HTML) >$@
 
 
 curl_easy_getinfo.html: _curl_easy_getinfo.html $(MAINPARTS) curl_easy_getinfo.t
 	$(ACTION)
 
-curl_easy_getinfo.t: $(DOCROOT)/curl_easy_getinfo.3
+curl_easy_getinfo.t: $(MANROOT)/curl_easy_getinfo.3
 	gnroff -man $< | $(MAN2HTML) >$@
 
 
 curl_version.html: _curl_version.html $(MAINPARTS) curl_version.t
 	$(ACTION)
-curl_version.t: $(DOCROOT)/curl_version.3
+curl_version.t: $(MANROOT)/curl_version.3
 	gnroff -man $< | $(MAN2HTML) >$@
 
 curl_escape.html: _curl_escape.html $(MAINPARTS) curl_escape.t
 	$(ACTION)
-curl_escape.t: $(DOCROOT)/curl_escape.3
+curl_escape.t: $(MANROOT)/curl_escape.3
 	gnroff -man $< | $(MAN2HTML) >$@
 
 curl_unescape.html: _curl_unescape.html $(MAINPARTS) curl_unescape.t
 	$(ACTION)
-curl_unescape.t: $(DOCROOT)/curl_unescape.3
+curl_unescape.t: $(MANROOT)/curl_unescape.3
 	gnroff -man $< | $(MAN2HTML) >$@
 
 curl_getenv.html: _curl_getenv.html $(MAINPARTS) curl_getenv.t
 	$(ACTION)
-curl_getenv.t: $(DOCROOT)/curl_getenv.3
+curl_getenv.t: $(MANROOT)/curl_getenv.3
 	gnroff -man $< | $(MAN2HTML) >$@
 
 curl_getdate.html: _curl_getdate.html $(MAINPARTS) curl_getdate.t
 	$(ACTION)
-curl_getdate.t: $(DOCROOT)/curl_getdate.3
+curl_getdate.t: $(MANROOT)/curl_getdate.3
 	gnroff -man $< | $(MAN2HTML) >$@
 
 curl_strequal.html: _curl_strequal.html $(MAINPARTS) curl_strequal.t
 	$(ACTION)
-curl_strequal.t: $(DOCROOT)/curl_strequal.3
+curl_strequal.t: $(MANROOT)/curl_strequal.3
 	gnroff -man $< | $(MAN2HTML) >$@
 
 curl_mprintf.html: _curl_mprintf.html $(MAINPARTS) curl_mprintf.t
 	$(ACTION)
-curl_mprintf.t: $(DOCROOT)/curl_mprintf.3
+curl_mprintf.t: $(MANROOT)/curl_mprintf.3
 	gnroff -man $< | $(MAN2HTML) >$@
 
 curl_formadd.html: _curl_formadd.html $(MAINPARTS) curl_formadd.t
 	$(ACTION)
-curl_formadd.t: $(DOCROOT)/curl_formadd.3
+curl_formadd.t: $(MANROOT)/curl_formadd.3
 	gnroff -man $< | $(MAN2HTML) >$@
 
 curl_formfree.html: _curl_formfree.html $(MAINPARTS) curl_formfree.t
 	$(ACTION)
-curl_formfree.t: $(DOCROOT)/curl_formfree.3
+curl_formfree.t: $(MANROOT)/curl_formfree.3
 	gnroff -man $< | $(MAN2HTML) >$@
 
 curl_global_init.html: _curl_global_init.html $(MAINPARTS) curl_global_init.t
 	$(ACTION)
-curl_global_init.t: $(DOCROOT)/curl_global_init.3
+curl_global_init.t: $(MANROOT)/curl_global_init.3
 	gnroff -man $< | $(MAN2HTML) >$@
 
 curl_global_cleanup.html: _curl_global_cleanup.html $(MAINPARTS) curl_global_cleanup.t
 	$(ACTION)
-curl_global_cleanup.t: $(DOCROOT)/curl_global_cleanup.3
+curl_global_cleanup.t: $(MANROOT)/curl_global_cleanup.3
 	gnroff -man $< | $(MAN2HTML) >$@
 
 libcurl.html: _libcurl.html $(MAINPARTS) libcurl.t
 	$(ACTION)
-libcurl.t: $(DOCROOT)/libcurl.3
+libcurl.t: $(MANROOT)/libcurl.3
 	gnroff -man $< | $(MAN2HTML) >$@
 
 curl_slist_append.html: _curl_slist_append.html $(MAINPARTS) curl_slist_append.t
 	$(ACTION)
-curl_slist_append.t: $(DOCROOT)/curl_slist_append.3
+curl_slist_append.t: $(MANROOT)/curl_slist_append.3
 	gnroff -man $< | $(MAN2HTML) >$@
 
 curl_slist_free_all.html: _curl_slist_free_all.html $(MAINPARTS) curl_slist_free_all.t
 	$(ACTION)
-curl_slist_free_all.t: $(DOCROOT)/curl_slist_free_all.3
+curl_slist_free_all.t: $(MANROOT)/curl_slist_free_all.3
 	gnroff -man $< | $(MAN2HTML) >$@
 
 tinytest.html: tinytest.c
