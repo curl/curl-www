@@ -37,6 +37,8 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 SUBTITLE(Fixed since -- available in CVS and pre-releases)
 <p> Changes:
 <ul>
+ <li> CURLOPT_SSL_CTX_FUNCTION allows a custom callback for SSL connections
+ <li> multiple patches lets curl build and run on DOS
  <li> libcurl now deals with spaces in Location: redirects and URLifies them
  <li> curl --version shows more detailed info
  <li> curl_version_info() now returns info on NTLM, GSS-Negotiate and Debug
@@ -52,6 +54,10 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 </ul>
 <p> Bugs:
 <ul>
+ <li> multiple FTP connections to the same host with different user names
+      didn't work properly
+ <li> no more CWD commands without arguments for ftp connections
+ <li> curl no longer uses setvbuf() due to portability problems
  <li> VMS build fixes
  <li> the curl tool has the -M manual compressed internally if built with libz
  <li> url globbing syntax error could cause segfault 
