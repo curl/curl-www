@@ -4,6 +4,10 @@ BODY {
 }
 
 .pagetitle {
+        border-style: solid;
+        border-width: thin;
+        border-color: black;
+
         background-color: #e0e0ff; 
         font-family: arial, helvetica, ariel, sans-serif;
         color: #0000ff;
