@@ -32,6 +32,33 @@ TITLE(News in curl and libcurl land)
  NCOLE
 #endif
 
+ NSUBJ(Regarding the recent flow of SSL security flaws)
+ NDATE(20 Aug 2002)
+ NCOLS
+ 
+   On August 5th, Mike Benham posted his initial <a
+   href="http://online.securityfocus.com/archive/1/286290/2002-07-31/2002-08-06/0">IE
+   securiy advisory</a> regarding how IE doesn't properly verify SSL
+   certificates.
+ <p>
+   This has been discussed in curl mailing lists regarding how curl behaves on
+   similar situations and to make this clear here and now: <b>curl does no
+   peer certificate checks <i>at all</i> unless specifily told to</b>.
+ <p>
+   This means that man-in-the-middle attacks can easily be performed on
+   servers that you curl to, unless you tell curl to verify the certificate
+   with a CA.
+ <p>
+   This is how the SSL and certificates have been implemented in curl, on
+   purpose. This is not a flaw. We might have reasons to reconsider how the
+   documention on this matter should be spelled out and properly displayed,
+   and we might do change the future behavior somewhat.
+ <p>
+   Of course we need your input on what to do and what not to do.
+
+ NCOLE
+
+
  NSUBJ(7.9.9 pre-release 1)
  NDATE(12 Aug 2002)
  NCOLS
