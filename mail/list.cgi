@@ -146,6 +146,10 @@ if($list) {
     &title("The $list Mailing List Archives");
 
 print <<MOO
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/mail/etiquette.html">Mailing List Etiquette</a>
+</div>
 <p>
 This is the complete web archive of all stored mails ever posted to the $list
 mailing list.
@@ -196,31 +200,5 @@ MOO
 
 
 &catfile("mail.html");
-&title("Mailing List Archives");
-
-print <<MOO
-Links to the last couple of months\' archives are here, press the "full
-archive" links to see the whole archives.
-MOO
-    ;
-
-print "<p><table cellspacing=3 cellpadding=10 border=3><tr valign=top><td width=33%>\n";
-
-print "<p><b>curl-users mailing list:</b>\n";
-&curlmain(4);
-print "<p><a href=\"list.cgi?list=curl-users\">full curl-users archive</a></td><td bgcolor=\"#e0e0e0\" width=33%>\n";
-
-print "<p><b>curl-library mailing list:</b>\n";
-&libcurl(4);
-print "<p><a href=\"list.cgi?list=curl-library\">full curl-library archive</a></td><td width=33%>\n";
-
-print "<p><b>curl-and-php mailing list:</b>\n";
-&curlphp(4);
-print "<p><a href=\"list.cgi?list=curl-and-php\">full curl-and-php archive</a></td></tr></table>\n";
-
-print "<p><b>curl-and-python mailing list:</b>\n";
-&curlpython(4);
-print "<p><a href=\"list.cgi?list=curl-and-python\">full curl-and-python archive</a></td></tr></table>\n";
-
 &catfile("../foot.html");
 print "</body></html>\n";
