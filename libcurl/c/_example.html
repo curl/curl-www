@@ -29,6 +29,12 @@ href="http://curl.haxx.se/lxr/source/docs/examples/simple.c">simple.c</a>
 shows how to get a remote web page in only five libcurl function calls.
 
 <p>
+<b>simple HTTPS</b><br> <a
+href="http://curl.haxx.se/lxr/source/docs/examples/simplessl.c">simplessl.c</a>
+shows how to get a remote https page and a set of various SSL-controlling
+options.
+
+<p>
 <b>get HTTP with headers separate</b><br> <a
 href="http://curl.haxx.se/lxr/source/docs/examples/sepheaders.c">sepheader.c</a>
 gets a web page and stores the response-headers in a separate file.
@@ -78,6 +84,18 @@ a working thread library.
 href="http://curl.haxx.se/lxr/source/docs/examples/curlgtk.c">curlgtk.c</a>
 uses GTK and the libcurl progress callback to show a GUI progress bar while
 downloading.
+
+<p>
+<b>fopen() URL</b><br> <a
+href="http://curl.haxx.se/lxr/source/docs/examples/fopen.c">fopen.c</a> shows
+how you could write an fopen()-style emulation layer to easily make your
+program read URLs instead of local files.
+
+<p>
+<b>nonblocking multipart formpost</b><br> <a
+href="http://curl.haxx.se/lxr/source/docs/examples/multi-post.c">multi-post.c</a>
+makes a multipart formpost using the multi interface, which makes it a
+non-blocking operation.
 
 <p>
  You'll also find these examples in the distribution archive, in the <a
