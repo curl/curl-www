@@ -161,7 +161,7 @@ sub gettype {
                "Source archive for cygwin, bzip2, SSL-enabled");
     }
     # ^^curl-devel-([0-9.]*)-(d*)-cygwin.tar.bz2
-    elsif($file =~ /^curl-([0-9.]*)-(\d*)-cygwin.tar.bz2/) {
+    elsif($file =~ /^curl-devel-([0-9.]*)-(\d*)-cygwin.tar.bz2/) {
         return($1, "cygwin-devel",
                " Windows cygwin devel tar archive, bzip2");
     }
