@@ -7,7 +7,8 @@
 #define FEATURE <td bgcolor="#ffff00" align=center>yes</td>
 #define MISSING <td align=center>no</td>
 #define UNKNOWN <td align=center><font color="#ff0000">???</font></td>
-#define NEWLINE <tr valign=center>
+#define NEWEVEN <tr valign=center>
+#define NEWODD  <tr valign=center bgcolor="#e0e0e0">
 #define ENDLINE </tr>
 
 #define CURL_SUPPORT
@@ -64,9 +65,9 @@ SUBTITLE(Companies Offering cURL Support)
  and programs using curl/libcurl.
 
 <p>
-<table>
+<table cellspacing=0 cellpadding=3 border=0>
 
-NEWLINE
+NEWEVEN
 <td><b>Name</b></td>
 <td><b>Located</b></td>
 <td><b>install</b></td>
@@ -74,10 +75,9 @@ NEWLINE
 <td><b>customize</b></td>
 <td><b>curl contributors</b></td>
 <td><b>web hosts<br>with curl</b></td>
-<td><b>comment</b></td>
 ENDLINE
 
-NEWLINE
+NEWODD
 <td><a href="http://www.haxx.se/">Haxx</a></td>
 <td> Stockholm, Sweden</td>
 FEATURE
@@ -85,12 +85,15 @@ FEATURE
 FEATURE
 FEATURE
 MISSING
-<td>
+ENDLINE
+NEWODD
+<td>&nbsp;</td>
+<td colspan=6>
  Originators and massive contributors to curl and libcurl since day 1.
 </td>
 ENDLINE
 
-NEWLINE
+NEWEVEN
 <td><a href="http://www.webengr.com/">Web Engineering</a></td>
 <td> Florida, USA</td>
 FEATURE
@@ -98,13 +101,16 @@ FEATURE
 FEATURE
 MISSING
 FEATURE
-<td>
+ENDLINE
+NEWEVEN
+<td>&nbsp;</td>
+<td colspan=6>
  We provide cURL and php support and we can also host you on our virtual web
  servers or your own dedicated server.
 </td>
 ENDLINE
 
-NEWLINE
+NEWODD
 <td><a href="http://www.webair.com/">Webair Internet Development</a></td>
 <td> USA</td>
 FEATURE
@@ -112,9 +118,29 @@ FEATURE
 FEATURE
 MISSING
 FEATURE
-<td>
+ENDLINE
+NEWODD
+<td>&nbsp;</td>
+<td colspan=6>
  Specializing in custom programs (c/c++/sql/php/xml), design, and virtual web
  hosting. We provide a wide range of virtual and dedicated hosting solutions.
+</td>
+ENDLINE
+
+NEWEVEN
+<td><a href="http://www.unknowndesigns.com/">Unknown Designs Inc.</a></td>
+<td> Kansas City, Missouri, USA</td>
+FEATURE
+FEATURE
+FEATURE
+MISSING
+FEATURE
+ENDLINE
+NEWEVEN
+<td>&nbsp;</td>
+<td colspan=6>
+Unknown Designs developed one of the most popular e-Commerce transaction
+processing programs PHPAUTHNET and PHPCOMODO with CURL.
 </td>
 ENDLINE
 
