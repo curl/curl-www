@@ -52,7 +52,7 @@ SUBTITLE(Fixed in 7.13.1)
 <p> Bugfixes:
 <ul>
  <li> -# crash when more data than expected was retrieved
- <li> NTLM/krb4 buffer overflow fixed (CAN-2005-0490)
+ <li> <a href="/docs/security.html#BID12615">NTLM</a>/<a href="/docs/security.html#BID12616">krb4</a> buffer overflow fixed
  <li> proxy auth bug when following redirects to another host
  <li> socket leak when local bind failed
  <li> HTTP POST with --anyauth picking NTLM
@@ -553,7 +553,7 @@ SUBTITLE(Fixed in 7.10.7)
  <li> FTP persitent download directory re-use problem fixed
  <li> cookie parser now only requires two dots in cookie domain
  <li> FOLLOWLOCATION (or -L) did not always ignore the redirect page properly
- <li> information leak fixed.  When proxy authentication is used in a CONNECT
+ <li> <a href="/docs/security.html#BID8432">information leak</a> fixed.  When proxy authentication is used in a CONNECT
    request (as used for all SSL connects and otherwise enforced
    tunnel-thru-proxy requests), the same authentication header was also
    wrongly sent to the remote host.
