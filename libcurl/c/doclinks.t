@@ -62,12 +62,6 @@ THIS(curl_formadd)
 DOC(curl_formadd, curl_formadd.html)
 #endif
 
-#ifdef DOCS_FORMPARSE
-THIS(curl_formparse)
-#else
-DOC(curl_formparse, curl_formparse.html)
-#endif
-
 #ifdef DOCS_FORMFREE
 THIS(curl_formfree)
 #else
