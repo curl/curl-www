@@ -27,8 +27,8 @@ ACTION=@echo preprocessing $@; \
 
 all: index.html feedback.html mirrors.html cvs.html libs.html help.html	  \
  download.html changes.html bugreport.html about.html support.html	  \
- newslog.html news.html head.html foot.html oldnews.html indexheader.html \
- indexfooter.html mailheader.html mailfooter.html info web-editing.html	  \
+ newslog.html news.html head.html foot.html oldnews.html \
+ info web-editing.html	  \
  donation.html devel.html competition.html search.html
 	cd docs; make
 	cd libcurl; make
