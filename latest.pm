@@ -151,7 +151,7 @@ sub gettype {
     # curl-7.9.3-sparc-whatever-linux.tar.gz
     elsif($file =~ /^curl-([0-9.]*)-sparc-whatever-linux.tar.gz/) {
         return($1, "linux-sparc",
-               "Binary archive for linux on sparc, gzipped");
+               "Linux SPARC, gzipped");
     }
 }
 
