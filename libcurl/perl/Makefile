@@ -6,7 +6,10 @@ MAINPARTS= $(ROOT)/_doctype.html ../_menu.html ../_links.html ../setup.t ../pic.
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 ACTION=@echo preprocessing $@; rm -f $@; cpp -I.. -I$(ROOT) -WWW -Uunix -H -C -V -LL "$(NOW)" $< $@; chmod a-w+r $@
 
-all: index.html
+all: index.html easy.pm.html
 
 index.html: _index.html $(MAINPARTS)
+	$(ACTION)
+
+easy.pm.html: _easy.pm.html $(MAINPARTS)
 	$(ACTION)
