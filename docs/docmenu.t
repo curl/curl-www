@@ -82,7 +82,7 @@ HERE(x, Man Page)
 DOCREF(manpage.html, Man Page)
 #endif
 
-#ifdef DOCS_README_CURL
+#ifdef DOCS_MANUAL
 HERE(x, Manual)
 #else
 DOCREF(manual.html, Manual)
