@@ -108,7 +108,7 @@ for(reverse sort { $log{$a} cmp $log{$b} } keys %log) {
             $subj = substr($subj, 0, 50)."...";
         }
 
-        my $subjectline=sprintf("<tr class=\"%s\"><td<a href=\"%s\">%s</a></td>\n",
+        my $subjectline=sprintf("<tr class=\"%s\"><td><a href=\"%s\">%s</a></td>\n",
                                 $line,
                                 file2url($_),
                                 $subj?$subj:"(no subject)");
