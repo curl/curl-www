@@ -68,7 +68,7 @@ sub curlmain {
         "\n";
     }
 
-    return "http://lists.sourceforge.net/lists/listinfo/curl-users";
+    return "http://cool.haxx.se/mailman/listinfo/curl-users";
 }
 
 
@@ -83,7 +83,7 @@ sub libcurl {
     &showarchs($num, @dirs);
 
     # return subscription URL
-    return "http://lists.sourceforge.net/mailman/listinfo/curl-library";
+    return "http://cool.haxx.se/mailman/listinfo/curl-library";
 }
 
 sub curlphp {
@@ -98,7 +98,7 @@ sub curlphp {
     &showarchs($num, @dirs);
 
     # return subscription URL
-    return "http://lists.sourceforge.net/mailman/listinfo/curl-and-php";
+    return "http://cool.haxx.se/mailman/listinfo/curl-and-php";
 }
 
 if($list) {
