@@ -1,0 +1,27 @@
+BODY {
+        background-color: white; 
+        color: black;
+}
+
+.pagetitle {
+        background-color: #e0e0ff; 
+        font-family: arial, helvetica, ariel, sans-serif;
+        color: #0000ff;
+        font-size: 150%;
+        font-weight: bold;
+}
+
+.title {
+        background-color: #f0f0ff; 
+        font-family: arial, helvetica, ariel, sans-serif;
+        font-size: 120%;
+}
+
+.subtitle {
+        font-weight: bold;
+}
+
+
+P {
+       font-family: sans-serif;
+}
