@@ -254,9 +254,11 @@ sub singlefile {
                 $libcurl = $1;
             }
             elsif(($_ =~ /([.\/a-zA-Z0-9]*)\.[ch]:([0-9:]*): /) ||
-                  ($_ =~ /\"([_.\/a-zA-Z0-9]+)\", line/)) {
+                  ($_ =~ /\"([_.\/a-zA-Z0-9]+)\", line/) ||
+                  ($_ =~ /^cc: Warning: ([.\/a-zA-Z0-9]*)/)) {
                 # first one, gcc
                 # second one, xlc (on AIX)
+                # third one, cc on Tru64
                 $warning++;
             }
             elsif($_ =~ /^testcurl: failed to update from CVS/) {

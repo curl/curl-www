@@ -38,10 +38,16 @@ while(<FILE>) {
             print "<div class=\"mini\">\n";
             for(@present) {
                 chomp;
-                if(($_ =~ /([.\/a-zA-Z0-9]*)\.[ch]:([0-9:]*): /) ||
+                if(
+                   # gcc warning:
+                   ($_ =~ /([.\/a-zA-Z0-9]*)\.[ch]:([0-9:]*): /) ||
+                   # test case failure
                    ($_ =~ /FAILED/) ||
-                   # the line below is adjusted for AIX xlc warnings
-                   ($_ =~ /\"([_.\/a-zA-Z0-9]+)\", line/)) {
+                   # the line below is adjusted for AIX xlc warnings:
+                   ($_ =~ /\"([_.\/a-zA-Z0-9]+)\", line/) ||
+                   # Tru64 cc warning:
+                   ($_ =~ /^cc: Warning: ([.\/a-zA-Z0-9]*)/)
+                   ) {
                        print "<div class=\"warning\">$_</div>\n";
                 }
                 else {
