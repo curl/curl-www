@@ -13,14 +13,14 @@
 WHERE2(libcurl, "/libcurl/", Perl Binding)
 
 <a name=top>
-TITLE(WWW::Curl::easy -- accessing libcurl from perl)
+TITLE(WWW::Curl -- accessing libcurl from perl)
 <p>
  libcurl is a solid and reliable multi-protocol file transfer library for URL
  syntax defined files. We can take advantage of libcurl straight from within
  our Perl programs.
 
 <p>
- All you need to do is to install the Curl::easy package and then you'll be
+ All you need to do is to install the WWW::Curl package and then you'll be
  able to use the Perl binding.
 
 <p><b>How to Install</b></br>
@@ -39,7 +39,7 @@ TITLE(WWW::Curl::easy -- accessing libcurl from perl)
    make install
 </pre>
 <p>The Makefile.PL uses <tt>curl-config</tt> and internal guesses to find curl.h, and 
-to then create a version of WWW::Curl::easy which matches your installed libcurl version.</p>
+to then create a version of WWW::Curl which matches your installed libcurl version.</p>
 <p>Read and edit Makefile.PL if your curl.h file cannot be found.</p>
 <p><b>Binding documentation</b><br> The binding closely resembles the C
  one, so it should be OK to study the regular <a href="/libcurl/c/">libcurl
@@ -55,7 +55,7 @@ callbacks and ssl, so are a useful starting point.
 </p>
 
 <p><b>Download</b><br>
-<a href="WWW-Curl-2.0.tar.gz">WWW::Curl 2.0</a> (22kb) was release on Apr 22 2003.
+<a href="WWW-Curl-2.0.tar.gz">WWW::Curl 2.0</a> (22kb) was released on Apr 22 2003.
 <p>The 'Curl::easy' module has been renamed to 'WWW::Curl' to follow CPAN naming
 guidelines for perl modules, in preparation for making this module also available
 via CPAN.</p>
