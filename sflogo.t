@@ -1,6 +1,6 @@
 <a href="/donation.html"><img border="0" src="/pix/donate.png" alt="donate!" width="88" height="31"></a>
 <p>
-#ifdef AD_GOOGLELEFT
+#if defined(AD_GOOGLELEFT) && !defined(AD_BIGGOOGLELEFT)
 <script type="text/javascript"><!--
 google_ad_client = "pub-9313125053076989";
 google_ad_width = 120;
