@@ -161,7 +161,7 @@ if( $changecount) {
     for(@c) {
         my $date = $_;
 
-        if($i++ >= 15) {
+        if($i++ >= 20) {
             # show only the XX most recent
             last;
         }

@@ -46,7 +46,9 @@ while(<FILE>) {
                    # the line below is adjusted for AIX xlc warnings:
                    ($_ =~ /\"([_.\/a-zA-Z0-9]+)\", line/) ||
                    # Tru64 cc warning:
-                   ($_ =~ /^cc: Warning: ([.\/a-zA-Z0-9]*)/)
+                   ($_ =~ /^cc: Warning: ([.\/a-zA-Z0-9]*)/) ||
+                   # MIPSPro C 7.3:
+                   ($_ =~ /cc: WARNING File/)
                    ) {
                        print "<div class=\"warning\">$_</div>\n";
                 }
