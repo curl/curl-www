@@ -1,7 +1,7 @@
 #include "_doctype.html"
 <HTML>
     <HEAD>
-	<TITLE>Curl::easy - Perl extension for libcurl</TITLE>
+	<TITLE>WWW::Curl::easy - Perl extension for libcurl</TITLE>
     </HEAD>
 
     #define LIBCURL_PERL
@@ -13,7 +13,7 @@
     WHERE2(libcurl, "/libcurl/", Perl Interface)
 
 <a name=top></a>
-TITLE(Curl::easy -- accessing libcurl from perl)
+TITLE(WWW::Curl::easy -- accessing libcurl from perl)
 
 
 <A NAME="__index__"></A>
@@ -47,16 +47,16 @@ TITLE(Curl::easy -- accessing libcurl from perl)
 <P>
 <HR>
 <H1><A NAME="name">NAME</A></H1>
-<P>Curl::easy - Perl extension interface for libcurl</P>
+<P>WWW::Curl::easy - Perl extension interface for libcurl</P>
 <P>
 <HR>
 <H1><A NAME="synopsis">SYNOPSIS</A></H1>
 <PRE>
-        use Curl::easy;
+        use WWW::Curl::easy;
 </PRE>
 <PRE>
 
-        my $curl = Curl::easy::new(); # an alias for Curl::easy::init
+        my $curl = WWW::Curl::easy::new(); # an alias for WWW::Curl::easy::init
         my $code = $curl-&gt;setopt(CURLOPT_option, ....);
            $code = $curl-&gt;perform($curl);
         my $err = $curl-&gt;errbuf; # report any error message
@@ -64,14 +64,14 @@ TITLE(Curl::easy -- accessing libcurl from perl)
 <PRE>
         $curl-&gt;cleanup(); # optional</PRE>
 <PRE>
-        Curl::easy::global_cleanup(); # optional cleanup at exit</PRE>
+        WWW::Curl::easy::global_cleanup(); # optional cleanup at exit</PRE>
 <P>Read the curl man pages, <CODE>curl_easy_setopt(3)</CODE> and <CODE>curl_easy_getinfo(3)</CODE> for details of CURLOPT_option and CURLINFO_option values.</P>
 <P>
 <HR>
 <H1><A NAME="description">DESCRIPTION</A></H1>
 <PRE>
 
-B&lt;Curl::easy&gt; provides an interface to the libcurl C library. See
+B&lt;WWW::Curl::easy&gt; provides an interface to the libcurl C library. See
 <A HREF="http://curl.haxx.se/">http://curl.haxx.se/</A> for more information on cURL and libcurl.</PRE>
 <P>From v1.30, this interface supports the perl OO style of creating
 $curl handles, and calling methods to get and set curl parameters. Previous
@@ -81,7 +81,7 @@ COMPATABILITY, below), but this documentation and the test scripts have been
 updated to the OO style.</P>
 <P>
 <H2><A NAME="files and callbacks">FILES and CALLBACKS</A></H2>
-<P>Curl::easy supports the various options of curl_easy_setopt which require either a FILE * or
+<P>WWW::Curl::easy supports the various options of curl_easy_setopt which require either a FILE * or
 a callback (subroutine) reference.</P>
 <P>Callback to perl subroutines are handled by this XS interface through a wrapper which takes
 care of converting from C to perl variables and back again. This wrapper also simplifies some
@@ -119,12 +119,12 @@ the transfer will abort. A transfer can be aborted by returning a value of 0, fo
 CURLOPT_WRITEFUNCTION for header values. This lets you collect the headers and body separately, as
 shown in the example below:</P>
 <PRE>
-    use Curl::easy;
+    use WWW::Curl::easy;
     my $headers=&quot;&quot;;
     my $body=&quot;&quot;;
     sub chunk { my ($data,$pointer)=@_; ${$pointer}.=$data; return length($data) }</PRE>
 <PRE>
-    my $curl=Curl::easy-&gt;new
+    my $curl=WWW::Curl::easy-&gt;new
     my $code = $curl-&gt;setopt(CURLOPT_WRITEFUNCTION, \&amp;chunk );
        $code = $curl-&gt;setopt(CURLOPT_WRITEHEADER, \$headers );
        $code = $curl-&gt;setopt(CURLOPT_FILE, \$body );
@@ -134,7 +134,7 @@ shown in the example below:</P>
 callback, and have the header collected that way.</P>
 <P>
 <H2><A NAME="read callback">READ callback</A></H2>
-<P>Curl::easy supports <CODE>CURLOPT_READFUNCTION</CODE>. This function should follow this prototype:</P>
+<P>WWW::Curl::easy supports <CODE>CURLOPT_READFUNCTION</CODE>. This function should follow this prototype:</P>
 <PRE>
         sub read_callback {
             my ($maxlength,$pointer)=@_;
@@ -148,7 +148,7 @@ function only returns (in total) as much data as the 'Content-Length' header spe
 a an empty (0 length) buffer.</P>
 <P>
 <H2><A NAME="progress callback">PROGRESS callback</A></H2>
-<P>Curl::easy supports <CODE>CURLOPT_PROGRESSFUNCTION</CODE>. This function should follow this prototype:</P>
+<P>WWW::Curl::easy supports <CODE>CURLOPT_PROGRESSFUNCTION</CODE>. This function should follow this prototype:</P>
 <PRE>
         sub progress_callback {
             my ($clientp,$dltotal,$dlnow,$ultotal,$ulnow)=@_;
@@ -159,7 +159,7 @@ a an empty (0 length) buffer.</P>
 transfer. <CODE>$clientp</CODE> is whatever is set using the <CODE>CURLOPT_PROGRESSDATA</CODE> option.</P>
 <P>
 <H2><A NAME="passwd callback">PASSWD callback</A></H2>
-<P>Curl::easy supports <CODE>CURLOPT_PASSWDFUNCTION</CODE>. This function should look something like this:
+<P>WWW::Curl::easy supports <CODE>CURLOPT_PASSWDFUNCTION</CODE>. This function should look something like this:
 </P>
 <PRE>
 
@@ -212,12 +212,12 @@ It is still supported, but instead, you can get the information as the return va
 getinfo. Instead of:
 <PRE>
         my $bytes;
-        Curl::easy::getinfo($curl, CURLINFO_SIZE_DOWNLOAD, $bytes);</PRE>
+        WWW::Curl::easy::getinfo($curl, CURLINFO_SIZE_DOWNLOAD, $bytes);</PRE>
 <P><TABLE CELLSPACING=0 CELLPADDING=0><TR><TD>use:
 <TR><TD><TD>my $bytes=$curl-&gt;getinfo(CURLINFO_SIZE_DOWNLOAD);</TABLE></P>
 <P></P>
 <LI>
-<CODE>$curl-&gt;cleanup</CODE> ( Curl::easy::cleanup($curl) ) no longer actually does anything. Curl
+<CODE>$curl-&gt;cleanup</CODE> ( WWW::Curl::easy::cleanup($curl) ) no longer actually does anything. Curl
 handles will be automatically cleaned up by perl when they are no longer used.
 <P></P>
 <LI>
@@ -228,13 +228,13 @@ creating two handles simultaneously. (E.g. using perl ithreads).
 <LI>
 curl_global_cleanup is not called automatically when perl or the module shuts down, as there
 doesn't seem an easy way to arrange this in perl-XS (suggestions welcome). You can call curl 
-global cleanup explicitly (if you care) by calling the class method Curl::easy::global_cleanup .
+global cleanup explicitly (if you care) by calling the class method WWW::Curl::easy::global_cleanup .
 Don't call any other curl functions afterwards!
 <P></P></UL>
 <P>
 <HR>
 <H1><A NAME="known bugs">KNOWN BUGS</A></H1>
-<P>There is a slow leak of a few bytes each time a Curl::easy handle is created and
+<P>There is a slow leak of a few bytes each time a WWW::Curl::easy handle is created and
 destroyed (despite careful cleanup efforts) at least when testing with libcurl-7.9.8.
 Hopefully this will be fixed in the next release.</P>
 <P>Also note the above problems with the USE_INTERNAL_VARS interface.</P>
@@ -242,7 +242,7 @@ Hopefully this will be fixed in the next release.</P>
 <HR>
 <H1><A NAME="author">AUTHOR</A></H1>
 <P>Versions 1.30, a (hopefully) threadable, object-oriented, multiple-callback compatible
-version of Curl::easy was substantially reworked from the previous Curl::easy
+version of WWW::Curl::easy was substantially reworked from the previous WWW::Curl::easy
 release (1.21) by Cris Bailiff.</P>
 <P>Original Author Georg Horn &lt;<A HREF="mailto:horn@koblenz-net.de">horn@koblenz-net.de</A>&gt;, with additional callback, pod
 and test work by Cris Bailiff &lt;<A HREF="mailto:c.bailiff+curl@devsecure.com">c.bailiff+curl@devsecure.com</A>&gt; and Forrest Cahoon

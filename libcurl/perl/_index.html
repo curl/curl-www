@@ -13,7 +13,7 @@
 WHERE2(libcurl, "/libcurl/", Perl Binding)
 
 <a name=top>
-TITLE(Curl::easy -- accessing libcurl from perl)
+TITLE(WWW::Curl::easy -- accessing libcurl from perl)
 <p>
  libcurl is a solid and reliable multi-protocol file transfer library for URL
  syntax defined files. We can take advantage of libcurl straight from within
@@ -32,20 +32,20 @@ TITLE(Curl::easy -- accessing libcurl from perl)
 <p>
  Run these commands:
  <pre>
-   cd [curl::easy-directory]
+   cd [WWW::Curl-directory]
    perl Makefile.PL
    make
    make test # optional, needs a test server
    make install
 </pre>
 <p>The Makefile.PL uses <tt>curl-config</tt> and internal guesses to find curl.h, and 
-to then create a version of Curl::easy which matches your installed libcurl version.</p>
+to then create a version of WWW::Curl::easy which matches your installed libcurl version.</p>
 <p>Read and edit Makefile.PL if your curl.h file cannot be found.</p>
 <p><b>Binding documentation</b><br> The binding closely resembles the C
  one, so it should be OK to study the regular <a href="/libcurl/c/">libcurl
  C/C++ API docs</a> for most options.
 <p>
-Perl specific features are described in the <a href="easy.pm.html">Curl::easy POD documentation</a>.
+Perl specific features are described in the <a href="easy.pm.html">WWW::Curl::easy POD documentation</a>.
 <p><b>Examples</b><br> Here's a first <a
  href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/curl/perl/examples/basicfirst.pl?rev=HEAD&content-type=text/vnd.viewcvs-markup">basic example</a>, please post your contributions!
 
@@ -55,7 +55,16 @@ callbacks and ssl, so are a useful starting point.
 </p>
 
 <p><b>Download</b><br>
-<a href="Curl-easy-1.35.tar.gz">Curl::easy 1.35</a> (18Kb) was released on Sep 22, 2002. This fixes the prototype used by the progress callback function, which was previously returning garbage results for the upload and download statistics.
+<a href="WWW-Curl-2.0.tar.gz">WWW::Curl 2.0</a> (22kb) was release on Apr 22 2003.
+<p>The 'Curl::easy' module has been renamed to 'WWW::Curl' to follow CPAN naming
+guidelines for perl modules, in preparation for making this module also available
+via CPAN.</p>
+<p>All new scripts should use the 'WWW::Curl::easy' functions provided by this module.  
+This module replaces Curl-easy-1.35, but should fully support existing scripts
+through an included 'Curl::easy' compatability module.
+</p>
+
+<a href="Curl-easy-1.35.tar.gz">Curl::easy 1.35</a> (18Kb) was released on Sep 22, 2002. This fixed the prototype used by the progress callback function, which was previously returning garbage results for the upload and download statistics.
 <p>1.3x is an 'all-new' release series of Curl::easy, with substantially re-factored internal code.
 This release supports the 'Object Oriented' style of perl coding, which provides a simpler,
 less cluttered syntax, and fixes a number of limitations and bugs in earlier versions (such
