@@ -84,12 +84,6 @@ td.newsdate {
   background-color: #ff8080;
 }
 
-/* download page */
-.latest {
-  color: #000000;
-  background-color: #ffff44;
-}
-
 /* the one in the download database */
 td.desc {
   color: #000000;
@@ -139,6 +133,7 @@ td.ostitle {
   border-left: 1px solid black;
   border-right: 1px solid black;
   margin: 0px 0px 0px 0px;
+  padding: 1px 0px 1px 0px;
 }
 /* download page */
 .older2 {
@@ -147,6 +142,7 @@ td.ostitle {
   border-left: 1px solid black;
   border-right: 1px solid black;
   margin: 0px 0px 0px 0px;
+  padding: 1px 0px 1px 0px;
 }
 
 .col1 {
