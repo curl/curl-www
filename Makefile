@@ -29,7 +29,7 @@ all: index.html \
 	newslog.html news.html head.html foot.html press.html \
 	oldnews.html indexheader.html indexfooter.html \
 	mailheader.html mailfooter.html info web-editing.html \
-	donation.html
+	donation.html devel.html
 	cd docs; make
 	cd libcurl; make
 	cd mail; make
@@ -103,6 +103,9 @@ download.html: _download.html $(MAINPARTS) packstat.t
 	$(ACTION)
 
 changes.html: _changes.html $(MAINPARTS)
+	$(ACTION)
+
+devel.html: _devel.html $(MAINPARTS)
 	$(ACTION)
 
 cvs.html: _cvs.html $(MAINPARTS)

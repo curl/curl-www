@@ -54,10 +54,10 @@ LINK("/changes.html", Changes)
 #else
 VLINK("/changes.html", Changes)
 #endif
-#ifdef CURL_HELP
-LINK("/help.html", Contribute!)
+#ifdef CURL_DEVEL
+LINK("/devel.html", Devel!)
 #else
-VLINK("/help.html", Contribute!)
+VLINK("/devel.html", Devel)
 #endif
 #ifdef CURL_FEEDBACK
 LINK("http://curl.haxx.se/feedback/", Feedback)
