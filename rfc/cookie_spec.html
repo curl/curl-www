@@ -1,0 +1,272 @@
+<HTML>
+<HEAD>
+<TITLE>Client Side State - HTTP Cookies</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#ffffff" LINK="#0000ff" VLINK="#ff0000" ALINK="#ff0000" TEXT="#000000" >
+
+
+<CENTER>
+
+<H2>
+<FONT SIZE=+3>P</FONT>ERSISTENT
+<FONT SIZE=+3>C</FONT>LIENT
+<FONT SIZE=+3>S</FONT>TATE<BR>
+<FONT SIZE=+3>HTTP C</FONT>OOKIES
+</H2>
+
+<H3>Preliminary Specification - Use with caution</H3>
+</CENTER>
+
+<HR SIZE=4>
+
+<CENTER>
+<H3>
+<FONT SIZE=+2>I</FONT>NTRODUCTION
+</H3>
+</CENTER>
+
+Cookies are a general mechanism which server side connections (such as
+CGI scripts) can use to both store and retrieve information on the
+client side of the connection. The addition of a simple, persistent,
+client-side state significantly extends the capabilities of Web-based
+client/server applications.<P>
+
+<CENTER>
+<H3>
+<FONT SIZE=+2>O</FONT>VERVIEW
+</H3>
+</CENTER>
+
+A server, when returning an HTTP object to a client, may also send a
+piece of state information which the client will store.  Included in that
+state object is a description of the range of URLs for which that state is
+valid.  Any future HTTP requests made by the client which fall in that
+range will include a transmittal of the current value of the state
+object from the client back to the server.  The state object is called
+a <B>cookie</B>, for no compelling reason. <P>
+This simple mechanism provides a powerful new tool which enables a host
+of new types of applications to be written for web-based environments.
+Shopping applications can now store information about the currently
+selected items, for fee services can send back registration information
+and free the client from retyping a user-id on next connection,
+sites can store per-user preferences on the client, and have the client supply
+those preferences every time that site is connected to.
+
+<CENTER>
+<H3>
+<FONT SIZE=+2>S</FONT>PECIFICATION
+</H3>
+</CENTER>
+
+A cookie is introduced to the client by including a <B>Set-Cookie</B>
+header as part of an HTTP response, typically this will be generated
+by a CGI script.
+
+<H3>Syntax of the Set-Cookie HTTP Response Header</H3>
+
+This is the format a CGI script would use to add to the HTTP headers
+a new piece of data which is to be stored by the client for later retrieval.
+
+<PRE>
+Set-Cookie: <I>NAME</I>=<I>VALUE</I>; expires=<I>DATE</I>;
+path=<I>PATH</I>; domain=<I>DOMAIN_NAME</I>; secure
+</PRE>
+<DL>
+<DT> <I>NAME</I>=<I>VALUE</I><DD>
+This string is a sequence of characters excluding semi-colon, comma and white
+space.  If there is a need to place such data in the name or value, some
+encoding method such as URL style %XX encoding is recommended, though no
+encoding is defined or required. <P>  This is the only required attribute
+on the <B>Set-Cookie</B> header. <P>
+<DT><B>expires</B>=<I>DATE</I>
+<DD>
+The <B>expires</B> attribute specifies a date string that
+defines the valid life time of that cookie.  Once the expiration
+date has been reached, the cookie will no longer be stored or
+given out. <P>
+The date string is formatted as:
+<BLOCKQUOTE> <TT>Wdy, DD-Mon-YYYY HH:MM:SS GMT</TT></BLOCKQUOTE>
+This is based on
+<A TARGET="_top" HREF="http://ds.internic.net/rfc/rfc822.txt">RFC 822</A>,
+<A TARGET="_top" HREF="http://ds.internic.net/rfc/rfc850.txt">RFC 850</A>,
+<A TARGET="_top" HREF="http://www.w3.org/hypertext/WWW/Protocols/rfc1036/rfc1036.html#z6">
+RFC 1036</A>, and
+<A TARGET="_top" HREF="http://ds1.internic.net/rfc/rfc1123.txt">
+RFC 1123</A>,
+with the variations that the only legal time zone is <B>GMT</B> and
+the separators between the elements of the date must be dashes.
+<P>
+<B>expires</B> is an optional attribute.  If not specified, the cookie will
+expire when the user's session ends. <P>
+<B>Note:</B> There is a bug in Netscape Navigator version 1.1 and earlier.
+Only cookies whose <B>path</B> attribute is set explicitly to "/" will
+be properly saved between sessions if they have an <B>expires</B>
+attribute.<P>
+
+<DT> <B>domain</B>=<I>DOMAIN_NAME</I>
+<DD>
+When searching the cookie list for valid cookies, a comparison of the
+<B>domain</B>
+attributes of the cookie is made with the Internet domain name of the
+host from which the URL will be fetched.  If there is a tail match,
+then the cookie will go through <B>path</B> matching to see if it
+should be sent.  "Tail matching" means that <B>domain</B> attribute
+is matched against the tail of the fully qualified domain name of
+the host.  A <B>domain</B> attribute of "acme.com" would match
+host names "anvil.acme.com" as well as "shipping.crate.acme.com". <P>
+
+Only hosts within the specified domain
+can set a cookie for a domain and domains must have at least two (2)
+or three (3) periods in them to prevent domains of the form: 
+".com", ".edu", and "va.us".  Any domain that fails within
+one of the seven special top level domains listed below only require
+two periods.  Any other domain requires at least three.  The
+seven special top level domains are: "COM", "EDU", "NET", "ORG", 
+"GOV", "MIL", and "INT".
+
+ <P>
+The default value of <B>domain</B> is the host name of the server
+which generated the cookie response. <P>
+<DT> <B>path</B>=<I>PATH</I>
+<DD>
+The <B>path</B> attribute is used to specify the subset of URLs in a
+domain for
+which the cookie is valid.  If a cookie has already passed <B>domain</B>
+matching, then the pathname component
+of the URL is compared with the path attribute, and if there is
+a match, the cookie is considered valid and is sent along with
+the URL request. The path "/foo"
+would match "/foobar" and "/foo/bar.html".  The path "/" is the most
+general path. <P>
+If the <B>path</B> is not specified, it as assumed to be the same path
+as the document being described by the header which contains the cookie.
+<P>
+<DT> <B>secure</B>
+<DD>
+If a cookie is marked <B>secure</B>, it will only be transmitted if the
+communications channel with the host is a secure one.  Currently
+this means that secure cookies will only be sent to HTTPS (HTTP over SSL)
+servers. <P>
+If <B>secure</B> is not specified, a cookie is considered safe to be sent
+in the clear over unsecured channels.
+</DL>
+
+<H3>Syntax of the Cookie HTTP Request Header</H3>
+
+When requesting a URL from an HTTP server, the browser will match
+the URL against all cookies and if any of them match, a line
+containing the name/value pairs of all matching cookies will
+be included in the HTTP request.  Here is the format of that line:
+<PRE>
+Cookie: <I>NAME1=OPAQUE_STRING1</I>; <I>NAME2=OPAQUE_STRING2 ...</I>
+</PRE>
+
+<H3>Additional Notes</H3>
+
+<UL>
+<LI>Multiple <B>Set-Cookie</B> headers can be issued in a single server
+response.
+<p>
+<LI>Instances of the same path and name will overwrite each other, with the
+latest instance taking precedence.  Instances of the same path but
+different names will add additional mappings.
+<p>
+<LI>Setting the path to a higher-level value does not override other more
+specific path mappings.  If there are multiple matches for a given cookie
+name, but with separate paths, all the matching cookies will be sent.
+(See examples below.)
+<p>
+<LI>The
+expires header lets the client know when it is safe to purge the mapping
+but the client is not required to do so.  A client may also delete a
+cookie before it's expiration date arrives if the number of cookies
+exceeds its internal limits.
+<p>
+<LI>When sending cookies to a server, all cookies with a more specific
+path mapping should be sent before cookies with less specific path
+mappings.  For example, a cookie "name1=foo" with a path mapping
+of "/" should be sent after a cookie "name1=foo2" with
+a path mapping of "/bar" if they are both to be sent.
+<p>
+<LI>There are limitations on the number of cookies that a client
+can store at any one time.  This is a specification of the minimum
+number of cookies that a client should be prepared to receive and
+store.
+
+<UL>
+        <LI>300 total cookies
+        <LI>4 kilobytes per cookie, where the name and the OPAQUE_STRING
+                combine to form the 4 kilobyte limit.
+        <LI>20 cookies per server or domain.  (note that completely
+                specified hosts and domains are treated as separate entities
+                and have a 20 cookie limitation for each, not combined)
+</UL>
+Servers should not expect clients to be able to exceed these limits.
+When the 300 cookie limit or the 20 cookie per server limit
+is exceeded, clients should delete the least recently used cookie.
+When a cookie larger than 4 kilobytes is encountered the cookie
+should be trimmed to fit, but the name should remain intact
+as long as it is less than 4 kilobytes.
+ <P>
+<LI>If a CGI script wishes to delete a cookie, it can do so by
+returning a cookie with the same name, and an <B>expires</B> time
+which is in the past.  The path and name must match exactly
+in order for the expiring cookie to replace the valid cookie.
+This requirement makes it difficult for anyone but the originator
+of a cookie to delete a cookie.
+<P><LI>When caching HTTP, as a proxy server might do, the <B>Set-cookie</B>
+response header should never be cached.
+<P><LI>If a proxy server receives a response which
+contains a <B>Set-cookie</B> header, it should propagate the <B>Set-cookie</B>
+header to the client, regardless of whether the response was 304
+(Not Modified) or 200 (OK).
+<P>Similarly, if a client request contains a Cookie: header, it
+should be forwarded through a proxy, even if the conditional
+If-modified-since request is being made.
+</UL>
+
+<CENTER>
+<H3>
+<FONT SIZE=+2>E</FONT>XAMPLES
+</H3>
+</CENTER>
+
+Here are some sample exchanges which are designed to illustrate the use
+of cookies.
+<H3>First Example transaction sequence:</H3>
+<DL>
+<dt>Client requests a document, and receives in the response:<dd>
+<PRE>
+Set-Cookie: CUSTOMER=WILE_E_COYOTE; path=/; expires=Wednesday, 09-Nov-99 23:12:40 GMT</PRE>
+<dt>When client requests a URL in path "/" on this server, it sends:<DD>
+<PRE>Cookie: CUSTOMER=WILE_E_COYOTE</PRE>
+<dt>Client requests a document, and receives in the response:<dd>
+<PRE>Set-Cookie: PART_NUMBER=ROCKET_LAUNCHER_0001; path=/</PRE>
+<dt>When client requests a URL in path "/" on this server, it sends:<dd>
+<PRE>Cookie: CUSTOMER=WILE_E_COYOTE; PART_NUMBER=ROCKET_LAUNCHER_0001</PRE>
+<dt>Client receives:<dd>
+<PRE>Set-Cookie: SHIPPING=FEDEX; path=/foo</PRE>
+<dt>When client requests a URL in path "/" on this server, it sends:<dd>
+<PRE>Cookie: CUSTOMER=WILE_E_COYOTE; PART_NUMBER=ROCKET_LAUNCHER_0001</PRE>
+<dt>When client requests a URL in path "/foo" on this server, it sends:<dd>
+<PRE>Cookie: CUSTOMER=WILE_E_COYOTE; PART_NUMBER=ROCKET_LAUNCHER_0001; SHIPPING=FEDEX</PRE>
+</DL>
+<H3>Second Example transaction sequence:</H3>
+<DL>
+<dt>Assume all mappings from above have been cleared.<p>
+<dt>Client receives:<dd>
+<PRE>Set-Cookie: PART_NUMBER=ROCKET_LAUNCHER_0001; path=/</PRE>
+<dt>When client requests a URL in path "/" on this server, it sends:<dd>
+<PRE>Cookie: PART_NUMBER=ROCKET_LAUNCHER_0001</PRE>
+<dt>Client receives:<dd>
+<PRE>Set-Cookie: PART_NUMBER=RIDING_ROCKET_0023; path=/ammo</PRE>
+<dt>When client requests a URL in path "/ammo" on this server, it sends:<dd>
+<PRE>Cookie: PART_NUMBER=RIDING_ROCKET_0023; PART_NUMBER=ROCKET_LAUNCHER_0001</PRE>
+<dd>NOTE: There are two name/value pairs named "PART_NUMBER" due to the
+inheritance
+of the "/" mapping in addition to the "/ammo" mapping.
+</DL>
+
+</BODY>
+</HTML>

@@ -48,7 +48,5 @@ rfc1884.txt IP Version 6 Addressing Architecture (obsolete)
 rfc2373.txt IP Version 6 Addressing Architecture (obsolete)
 rfc3513.txt IP Version 6 Addressing Architecture
 draft-murray-auth-ftp-ssl-13.txt Securing FTP with TLS
-draft-murray-auth-ftp-ssl-12.txt Securing FTP with TLS (obsolete version)
-draft-murray-auth-ftp-ssl-11.txt Securing FTP with TLS (obsolete version)
 ntlm.html Eric Glass' NTLM Authentication Protocol specification
 draft-brezak-spnego-http-04.txt SPNEGO Access Authentication
