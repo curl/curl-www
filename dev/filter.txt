@@ -1,0 +1,68 @@
+Data going through libcurl needs to be "filtered" by different filters on
+different conditions. "filter thinking" will make it easier to apply different
+combinations of convertions.
+
+READ from network, WRITE to client
+
+ read from network / SSL
+  => dechunk
+    => uncompress
+      => send actual data to client
+
+
+READ from client, WRITE to network
+
+  get data from client
+  => compress
+    => chunk
+      => pass data to network / SSL
+
+Each filter should be independent and unknowing of the previous or next
+filters.
+
+ /* [EXAMPLE A]
+
+    -- HTTP chunked-encoding decoder filter --
+
+   */
+
+ dechunk_filter(filter *context, char *data, size_t length)
+ {
+    char tempbuffer[ very big ]; /* not nice big local buffer */
+    size_t templen;
+    size_t nextdid;
+
+    /* dechunk into the buffer, return new length */
+    templen = do_dechunk(tempbuffer, data, length);
+
+    /* pass the new buffer to the next filter */
+    nextdid = GONEXT(context, tempbuffer, templen);
+
+    /* The next filter returns the amount of bytes it took care of.
+       If it didn't take care of as many as we passed to it, it means
+       an error has occurred. */
+    if(nextdid != templen) {
+      /* since the next layer didn't take care of it all, we fail miserably */
+      return -1;
+    }
+
+    /* done, return the number of bytes we "took care of" */
+    return length;
+ }
+
+Where GONEXT() could be something like:
+
+#define GONEXT(context,buf,len) (context)->nextf((context)->nextc,buf,len)
+
+
+The 'filter' struct could look like:
+
+ filter {
+   /* pointer to following filter */
+   int (*nextf)(filter *, char *, int);
+
+   /* pointer to the next filter's context */
+   filter *nextc;
+
+   char *name; /* for debugging, name of this filter */
+ }
