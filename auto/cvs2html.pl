@@ -72,7 +72,8 @@ my $maxnumshown = 30; # only show this many
 
 # CVS user names
 my %shortnames=('bagder' => 'Daniel',
-                'gknauf' => 'Günter Knauf');
+                'gknauf' => 'Günter',
+                'giva'   => 'Gisle');
 
 # URL root to prepend file names with
 my $root="http://cool.haxx.se/cvs.cgi/curl";
