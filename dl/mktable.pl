@@ -59,7 +59,7 @@ sub top {
         print "$img$aname$os</td></tr>\n";
     }
     else {
-        "$aname$os</td></tr>\n";
+        print "$aname$os</td></tr>\n";
     }
     $shownprev = 1;
 
