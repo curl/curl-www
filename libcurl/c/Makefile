@@ -148,7 +148,7 @@ tinytest2.html: tinytest2.c
 curlgtk.html: curlgtk.c
 	$(TXT2PLAIN) < $< > $@
 
-the-guide.html: _the-guide.html the-guide.t 
+the-guide.html: _the-guide.html the-guide.t $(MAINPARTS)
 	$(ACTION)
 
 the-guide.t: $(DOCROOT)/libcurl-the-guide
