@@ -144,11 +144,6 @@ sub scanstatus {
             storemax($_, $1, $size, "cygwin-ssl",
                      "Windows archive for cygwin, bzip2, SSL-enabled");
         }
-        # curl-7.8.1-3-src-cygwin.tar.bz2
-        elsif($_ =~ /^curl-([0-9.]*)-(\d*)-src-cygwin.tar.bz2/) {
-            storemax($_, $1, $size, "cygwin-src",
-                     "Source archive for cygwin, bzip2, SSL-enabled");
-        }
     }
 }
 
