@@ -42,7 +42,8 @@ PAGES = index.html example.html curl_easy_init.html			\
 all: $(PAGES)
 
 clean:
-	 rm -f $(PAGES) curl_*.t
+	rm -f $(PAGES) curl_*.t libcurl.t libcurl-easy.t libcurl-multi.t \
+	libcurl-share.t
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
