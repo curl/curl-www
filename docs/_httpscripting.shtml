@@ -1,0 +1,25 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Tutorial</TITLE>
+</HEAD>
+
+#define CURL_DOCS
+#define DOCS_HTTPSCRIPT
+
+#include "_menu.html"
+#include "setup.t"
+#include "pic.t"
+
+WHERE2(Docs, "/docs/", Tutorial)
+
+TITLE(Using cURL to automate HTTP jobs)
+
+<pre>
+<!--#include virtual="/docs/httpscript.t" -->
+</pre>
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
+

@@ -1,0 +1,25 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - THANKS</TITLE>
+</HEAD>
+
+#define CURL_DOCS
+#define DOCS_THANKS
+
+#include "_menu.html"
+#include "setup.t"
+#include "pic.t"
+
+WHERE2(Docs, "/docs/", Thanks)
+
+TITLE(Thanks go to these people for their contributions to the curl project)
+
+<pre>
+#include "thanks.t"
+</pre>
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
+

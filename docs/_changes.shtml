@@ -1,0 +1,25 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - CHANGES</TITLE>
+</HEAD>
+
+#define CURL_DOCS
+#define DOCS_CHANGES
+
+#include "_menu.html"
+#include "setup.t"
+#include "pic.t"
+
+WHERE2(Docs, "/docs/", Changes)
+
+TITLE(CHANGES -- track all changes)
+
+<pre>
+<!--#include virtual="/docs/changes.t" -->
+</pre>
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
+

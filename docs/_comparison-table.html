@@ -1,0 +1,347 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Comparison Table</TITLE>
+</HEAD>
+
+#define CURL_DOCS
+#define DOCS_COMPARISON
+
+#include "_menu.html"
+#include "setup.t"
+#include "pic.t"
+WHERE2(Docs, "/docs/", Comparison Table)
+
+TITLE(Compare cURL Features with Other FTP+HTTP Tools)
+<p>
+ See also the <a href="features.html">list of features</a>, or <a
+ href="/libcurl/competitors.html">compare http libraries</a>.
+
+#define FEATURE <td bgcolor="#ffff00" align=center>yes</td>
+#define MISSING <td align=center>no</td>
+#define UNKNOWN <td align=center><font color="#ff0000">???</font></td>
+#define NA <td align=center>N/A</td>
+
+
+#define NEWCOL <td>
+#define ENDCOL </td>
+
+#define FEAT <td>
+#define ENDFEAT </td>
+
+#define NEWLINE <tr valign=top>
+#define ENDLINE </tr>
+
+#define NICETD <td bgcolor="#0000ff"><font color="#ffffff" size=+1 face="ariel,helvetica">
+#define NICETDSLUT </font></td>
+
+<p>
+<table cellspacing=2 cellpadding=0 border=0>
+ NEWLINE
+  NICETD  NICETDSLUT
+  NICETD curl NICETDSLUT
+  NICETD snarf NICETDSLUT
+  NICETD wget NICETDSLUT
+  NICETD greed NICETDSLUT
+  NICETD pavuk NICETDSLUT
+  NICETD fget NICETDSLUT
+  NICETD fetch NICETDSLUT
+ ENDLINE
+ NEWLINE 
+  FEAT ftp resume ENDFEAT
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  MISSING
+  FEATURE
+ ENDLINE
+ NEWLINE
+  FEAT http resume ENDFEAT
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  MISSING
+  FEATURE
+ ENDLINE
+ NEWLINE
+  FEAT follow http redirects ENDFEAT
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  MISSING
+  FEATURE
+ ENDLINE
+ NEWLINE
+  FEAT multiple URLs ENDFEAT
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  MISSING
+  FEATURE
+ ENDLINE
+ NEWLINE
+  FEAT proxy ENDFEAT
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+ ENDLINE
+ NEWLINE
+  FEAT ftp active mode ENDFEAT
+  FEATURE
+  FEATURE
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  FEATURE
+ ENDLINE
+ NEWLINE
+  FEAT understands ftp://koobera.math.uic.edu ENDFEAT
+  FEATURE
+  FEATURE
+  FEATURE
+  MISSING
+  MISSING
+  UNKNOWN
+  FEATURE
+ ENDLINE
+ NEWLINE
+  FEAT understands ftp://ftp.microsoft.com ENDFEAT
+  FEATURE
+  FEATURE
+  FEATURE
+  MISSING
+  FEATURE
+  UNKNOWN
+  FEATURE
+ ENDLINE
+ NEWLINE
+  FEAT SOCKS ENDFEAT
+  MISSING
+  FEATURE
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+ ENDLINE
+ NEWLINE
+  FEAT username/password ENDFEAT
+  FEATURE
+  FEATURE
+  FEATURE
+  MISSING
+  FEATURE
+  FEATURE
+  FEATURE
+ ENDLINE
+ NEWLINE
+  FEAT ./configure ENDFEAT
+  FEATURE
+  FEATURE
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  NA
+ ENDLINE
+ NEWLINE
+  FEAT ftp upload ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+ ENDLINE
+ NEWLINE
+  FEAT uses .netrc ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+ ENDLINE
+ NEWLINE
+  FEAT recursive download ENDFEAT
+  MISSING
+  MISSING
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+ ENDLINE
+ NEWLINE
+  FEAT submit forms ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+ ENDLINE
+ NEWLINE
+  FEAT SSL ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT FTP Kerberos ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT FTP SSL ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT win32-port ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT HTTP ranges ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT HTTP persistant connections ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT cookie support ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT tiny executable ENDFEAT
+  MISSING
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  FEATURE
+  FEATURE
+ ENDLINE
+
+ NEWLINE
+  FEAT IPv6 support ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  FEATURE
+  FEATURE
+ ENDLINE
+
+ NEWLINE
+  FEAT HTTP 1.1 ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  FEATURE
+  MISSING
+  FEATURE
+ ENDLINE
+
+ NEWLINE
+  FEAT License ENDFEAT
+  NEWCOL MIT ENDCOL
+  NEWCOL GPL ENDCOL
+  NEWCOL GPL ENDCOL
+  NEWCOL GPL ENDCOL
+  NEWCOL GPL ENDCOL
+  UNKNOWN
+  NEWCOL BSD ENDCOL  
+ ENDLINE
+</table>
+
+<p>
+ Quick links to the above mentioned tools: <a
+ href="http://www.xach.com/snarf/">snarf</a>, <a
+ href="http://sunsite.dk/wget/">wget</a>, <a
+ href="http://www.public.asu.edu/~arturner/greed/">greed</a>, <a
+ href="http://www.idata.sk/~ondrej/pavuk/">pavuk</a>, <a
+ href="http://www.fefe.de/fget/">fget</a>.
+
+<p>
+ 'Fetch' is an integral part of the <a
+ href="http://www.freebsd.org/">FreeBSD</a> operating system.
+
+
+<p>
+ This comparison table is a rip-off from the <a
+ href="http://www.xach.com/snarf/comparison-table.php3">snarf comparison
+ table</a> which clearly isn't being maintained anymore. Please mail me
+ corrections if this table is incorrect, or tell me other features I should
+ compare! This list has been extended since I stole it, but some features are
+ left here since they were in the "original". Some items were removed from the
+ original.
+<p> 
+ This comparison only involves entirely free and open source software.
+
+#include "_footer.html"
+</BODY>
+</HTML>

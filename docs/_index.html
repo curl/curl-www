@@ -1,0 +1,109 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Index of online documentation</TITLE>
+</HEAD>
+
+#define CURL_DOCS
+#define DOCS_INDEX
+
+#include "_menu.html"
+#include "setup.t"
+#include "pic.t"
+
+WHERE1(Documentation Index)
+
+TITLE(Documentation - Stuff for you to read)
+
+SUBTITLE(Using the Curl Tool)
+<ul>
+ <li>
+  The full unix-style <a href="manpage.html">man page</a> describes all
+  options and all tiny quirks about how to use curl on the command line.
+ <li>
+  <a href="bugs.html">Bug Report</a> is a document about how to report bugs
+  that you find in curl.
+ <li>
+  <a href="faq.shtml">FAQ</a> is short for Frequently Asked Questions and these
+  ones surely are...
+ <li>
+  A plain list with all curl's <a href="features.html">features</a> can be
+  found here, they're just listed on top of each other.
+ <li>
+  <a href="httpscripting.shtml">Scripting HTTP Requests Using Curl</a> gives
+  you a good initial grip on how you use curl to emulate a browser.
+ <li>
+  <a href="install.html">Install</a> clearly describes how to go ahead when
+  you want to compile and install curl on your system.
+ <li>
+  The <a href="readme.curl.html">manual</a> contains a lot of examples and
+  explanations about the concepts behind the command line options etc. A kind
+  of tutorial.
+ <li>
+  <a href="y2k.html">Y2K</a> just informs you about the fact that curl has no
+  Y2K problems built-in.
+ <li> The <a href="comparison-table.html">comparison table</a> shows you how
+ curl's features compare against similar available tools.
+</ul>
+
+SUBTITLE(Hacking On Curl)
+<ul>
+ <li>
+  <a href="contribute.html">Contribute</a> explains about a few things
+  to consider when you contribute with patches and source code to the curl
+  project.
+ <li>
+  <a href="copyright.html">Copyright</a> details
+  what the licensing for curl actually defines and allows you to do with curl
+  and libcurl.
+ <li>
+  <a href="internals.html">Internals</a> describes
+  how things work internally in curl, for code hackers, bug fixers and
+  generally interested parties.
+ <li>
+  <a href="resources.html">Resources</a> contains a list of all the relevant
+  standards curl uses, as well as pointers to software and related stuff to
+  curl hackers.
+ <li>
+  <a href="todo.html">TODO</a> is the document in which I gather
+  some of the ideas I get or receive from others to add to curl in future
+  versions.
+ <li>
+  <a href="changes.shtml">Changes</a> is the complete and <b>huge</b> file
+  from the distribution archives and contains all changes done to curl after
+  1999.
+ <li>
+  <a href="thanks.html">Thanks to these people</a>, curl exists as it is today!
+</ul>
+
+SUBTITLE(Related Documentation)
+<ul>
+<li>
+ All <a href="/libcurl/">libcurl</a> related stuff is in its own section.
+<li>
+ You'll find answers to many questions regarding <b>SSL and OpenSSL</b> in the
+ <a href="http://www.openssl.org/support/faq.html">OpenSSL FAQ</a>.
+<li>
+ You'll also find a selected set of <a href="/rfc/">RFCs that concerns
+ curl</a>.
+</ul>
+
+<p>
+ <I>Please</i>, if you find errors, bad wording or just miss items in these
+ documents, correct them and mail me the updated version! You find the ASCII
+ versions of all of them in the release tarballs. I am always interested in
+ more and better documents. I need you to help me.
+
+<p>
+ Some of these documents are converted to HTML using a txt2html tool, why some
+ of the formatting gets a little odd. I still consider them to be useful and
+ the conversion saves me from a lot of extra work trying to maintain the same
+ info at several places...
+
+<p>
+ You find the absolutely most updated documentation when browsing the <a
+ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/curl/docs/">curl CVS
+ docs repository</a>.
+
+#include "_footer.html"
+</BODY>
+</HTML>

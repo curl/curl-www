@@ -1,0 +1,25 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Internal Design</TITLE>
+</HEAD>
+
+#define CURL_DOCS
+#define DOCS_INTERNALS
+
+#include "_menu.html"
+#include "setup.t"
+#include "pic.t"
+
+WHERE2(Docs, "/docs/", Internals)
+
+TITLE(INTERNALS -- how things work inside)
+
+<pre>
+<!--#include virtual="/docs/internals.t" -->
+</pre>
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
+
