@@ -13,10 +13,8 @@ WHERE3(libcurl, "/libcurl/", C API index, "/libcurl/c/", Example Source Codes)
 
 TITLE(libcurl - small example snippets)
 <p>
- I'm trying to gather example source codes here, that show how to write
- programs using the libcurl interface. You'll also find a few in the
- distribution archive, in the <a
- href="/lxr/source/docs/examples/">docs/examples directory</a>.
+ We're trying to gather example source codes here, that show how to write
+ programs using the libcurl interface. Feel encouraged to submit yours!
 
 <p><i> <b>PLEASE</b> do not use the curl.haxx.se site as a test target for
   your libcurl applications/experiments. Even if the examples sometimes use
@@ -26,45 +24,66 @@ TITLE(libcurl - small example snippets)
 </i>
 
 <p>
-<i>To compile on Windows, you need to add winsock init calls, like <a
-href="http://curl.haxx.se/lxr/source/docs/examples/win32sockets.c">this
-example shows</a></i>.
+<b>simple HTTP</b><br> <a
+href="http://curl.haxx.se/lxr/source/docs/examples/simple.c">simple.c</a>
+shows how to get a remote web page in only five libcurl function calls.
 
-
-<ul>
- <li> "easiest possible"
- <li> "use the write callback"
- <li> "with gtk for the progress meter"
-</ul>
-
-
-<h2>easiest possible</h2>
 <p>
- This particular example stores the headers in a separate file named
- 'dumpit'. This source code compiles and runs on all supported platforms.
+<b>get HTTP with headers separate</b><br> <a
+href="http://curl.haxx.se/lxr/source/docs/examples/sepheaders.c">sepheader.c</a>
+gets a web page and stores the response-headers in a separate file.
 
-<pre>
-<!--#include virtual="/libcurl/tinytest.html" -->
-</pre>
-
-<h2>use the write callback</h2>
 <p>
- This only slightly more advaned example uses the write callback option to
- redirect the output to two different files. 'head.out' for the headers and
- 'body.out' for the body part.
+<b>simple FTP</b><br> <a
+href="http://curl.haxx.se/lxr/source/docs/examples/ftpget.c">ftpget.c</a>
+proves that getting a FTP file is just as simple.
 
-<pre>
-<!--#include virtual="/libcurl/tinytest2.html" -->
-</pre>
-
-<h2>with GTK</h2>
 <p>
- David Odin supplied this example that shows libcurl and GTK cooperating.
+<b>FTP upload</b><br> <a
+href="http://curl.haxx.se/lxr/source/docs/examples/ftpupload.c">ftpupload.c</a>
+uploads a local file to a remote FTP server. It also renames the file after
+succcessful transfer.
 
-<pre>
-<!--#include virtual="/libcurl/curlgtk.html" -->
-</pre>
+<p>
+<b>get a remote file in memory only</b><br> <a
+href="http://curl.haxx.se/lxr/source/docs/examples/getinmemory.c">getinmemory.c</a>
+describes how you can use the callback system to fetch documents into a ram
+buffer with no file writing necessary.
 
+<p>
+<b>HTTP PUT</b><br> <a
+href="http://curl.haxx.se/lxr/source/docs/examples/httpput.c">httpput.c</a>
+makes PUTs a local file to a HTTP server.
+
+<p>
+<b>HTTP form POST</b><br> <a
+href="http://curl.haxx.se/lxr/source/docs/examples/postit2.c">postit2.c</a>
+shows how to build a RFC1867-style form post and send it to a HTTP
+server. This is a compliment to the <a
+href="http://curl.haxx.se/lxr/source/docs/examples/postit.c">postit.c</a>
+example that uses a deprecated libcurl function call.
+
+<p>
+<b>persistant transfers</b><br><a
+href="http://curl.haxx.se/lxr/source/docs/examples/persistant.c">persistant.c</a>
+shows that just getting files in a sequential manner will make it use
+persistant connections if the remote server supports it.
+
+<p>
+<b>mulithreaded URL fetches</b><br> <a
+href="http://curl.haxx.se/lxr/source/docs/examples/multithread.c">multithread.c</a>
+starts a number of threads and retrieves one URL in each thread. This requires
+a working thread library.
+
+<p>
+<b>URL fetch with GTK progress bar</b><br> <a
+href="http://curl.haxx.se/lxr/source/docs/examples/curlgtk.c">curlgtk.c</a>
+uses GTK and the libcurl progress callback to show a GUI progress bar while
+downloading.
+
+<p>
+ You'll also find these examples in the distribution archive, in the <a
+ href="http://curl.haxx.se/lxr/source/docs/examples/">docs/examples directory</a>.
 
 #include "_footer.html"
 
