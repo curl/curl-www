@@ -5,6 +5,11 @@
 #  2: proxy url if required
 #  3: proxy userid if required
 
+# Run $CURLDIR/tests/testcurl.pl once manually to generate a file called
+# 'setup' in the build directory.
+
+# $Id$
+
 if [ $1 ]; then
   NOTIFY=$1
 fi
@@ -21,9 +26,9 @@ mail="mail -s autobuild curl-autocompile@haxx.se"
 # Where to find the latest source
 URL="http://cool.haxx.se/curl-daily/"
 # Where to find a curl binary
-CURL=/usr/local/curl-7.10.8/bin/curl
+CURL=/usr/local/bin/curl
 # Where to run the auto-build
-BUILD=/root/curl-auto
+BUILD="`dirname $0`"
 # A bunch of standard options, to start with...
 CURLOPTS="-s -S -L -b cookies -c cookies"
 
@@ -42,17 +47,19 @@ notify () {
   fi
 }
 
-TODAY=`date +%Y%m%d`
+TODAY=`env TZ=Etc/GMT+2 date +%Y%m%d`
 
 cd $BUILD
 
-NEWCURL=`$CURL $CURLOPTS $URL | grep $TODAY.tar.bz2 | sed -e 's/^.*HREF="//' -e 's/".*//'`
-
-$CURL $CURLOPTS -o $NEWCURL $URL/$NEWCURL
+NEWCURLURL=`$CURL $CURLOPTS $URL | grep "href=.*$TODAY.tar.bz2" | sed -e 's/^.*href="//' -e 's/".*//'`
+NEWCURL=`basename $NEWCURLURL`
+if [ ! -e "$NEWCURL" ] ; then
+  $CURL $CURLOPTS -o $NEWCURL $NEWCURLURL
+fi
 ret=$?
 
 if [ "$ret" -eq "0" ]; then
-  LIST=`tar xjvf $NEWCURL | wc -l`
+  LIST=`tar xjvf $NEWCURL | wc -c`
   ret=$?
   if [ $LIST -eq 0 -o $ret -gt 0 ]; then
     notify "Empty tar file?"
@@ -61,9 +68,11 @@ if [ "$ret" -eq "0" ]; then
 
   CURLDIR=`echo $NEWCURL | sed -e 's/.tar.bz2//'`
 
-  ./testcurl.sh $CURLDIR | $mail
+  $CURLDIR/tests/testcurl.pl $CURLDIR | $mail
 
-  notify "built OK: $NEWCURL"
+  notify "build OK: $NEWCURL"
+  rm -r "$CURLDIR"
+  rm -f "$NEWCURL"
 else
-  notify "built failed: $NEWCURL"
+  notify "build failed: $NEWCURL"
 fi
