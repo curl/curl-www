@@ -28,6 +28,10 @@ TITLE(Recent Changes -- The Nice and Clean Version)
 #endif
 <p> Fixed since (available in CVS and pre-releases)
 <ul>
+<li> --fail now only returns error if HTTP code is >= 400
+<li> a possible memory leak when a transfer failed was removed
+<li> builds better in cygwin
+<li> "current speed" meter more accurate
 <li> -c without -b saves the cookies now
 <li> -0/--http1.0 can now be used to set HTTP 1.0 operations
 <li> bugfixed libcurl for "thread-hopping" on Windows
