@@ -61,5 +61,6 @@ td.ostitle {
   background-color: #f0f0ff; 
   font-family: arial, helvetica, ariel, sans-serif;
   font-size: 120%;
+  font-weight: bold;
   padding: 4px 4px 4px 4px;
 }
