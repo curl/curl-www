@@ -101,7 +101,7 @@ tr.odd {
   color: #ffffff;
   background-color: #4040ff;
   white-space: nowrap;
-  padding: 0px 4px 0px 4px;
+  padding: 0px 0px 0px 0px;
   font-family: sans-serif;
 }
 
@@ -111,7 +111,7 @@ tr.odd {
   color: #ffffff;
   background-color: #202080;
   white-space: nowrap;
-  padding: 0px 4px 0px 4px;
+  padding: 0px 0px 0px 0px;
   font-family: sans-serif;
 }
 
