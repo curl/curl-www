@@ -39,6 +39,7 @@ all: index.html \
 	cd mirror; make
 	cd legal; make
 	cd auto; make
+	cd lxr; make
 	@echo done 
 #archive/index.html
 
