@@ -69,8 +69,7 @@ thanks.html: _thanks.html $(MAINPARTS) thanks.t
 	$(ACTION)
 
 thanks.t: $(DOCROOT)/THANKS
-	$(TXT2PLAIN) < $< | sed -e 's/@/ at /g' -e 's/\./ dot /g' > $@
-
+	$(TXT2PLAIN) < $< | sed -e 's/@/ at /g' -e 's/\([a-z]\)\.\([a-z]\)/\1 dot \2/g' -e 's/\&lt;/<span class=\"addy\">\&lt;/' -e 's/\&gt;/\&gt;<\/span>/' |awk '/^[A-Z]/ { printf("<br>%s", $$0) }' > $@
 
 faq.html: _faq.shtml $(MAINPARTS) faq.t
 	$(ACTION)
