@@ -14,6 +14,10 @@
 WHERE2(Docs, "/docs/", LOC)
 
 TITLE(Lines of Code in curl and libcurl)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="history.html">History of cURL</a>
+</div>
 <p>
  By counting every line of all .c and .h files in the curl release archives
 (including generated code and example code), starting with curl 4.8 (dated
