@@ -83,6 +83,12 @@ LINK("", Euphoria)
 VLINK(/libcurl/euphoria/, Euphoria)
 #endif
 
+#ifdef LIBCURL_FERITE
+LINK("", Ferite)
+#else
+VLINK(/libcurl/ferite/, Ferite)
+#endif
+
 #ifdef LIBCURL_JAVA
 LINK("", Java)
 #else

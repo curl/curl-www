@@ -33,6 +33,7 @@ all: index.html mail.html competitors.html future.html threadsafe.html \
 	cd euphoria; make
 	cd ocaml; make
 	cd ada95; make
+	cd ferite; make
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
