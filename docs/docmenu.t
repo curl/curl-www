@@ -44,6 +44,12 @@ HERE(x, Features)
 DOCREF(features.html, Features)
 #endif
 
+#ifdef DOCS_HISTORY
+HERE(x, History)
+#else
+DOCREF(history.html, History)
+#endif
+
 #ifdef DOCS_INSTALL
 HERE(x, Install)
 #else

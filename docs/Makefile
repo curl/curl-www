@@ -16,7 +16,7 @@ all: index.html manpage.html faq.shtml faq.html changes.shtml		\
 	resources.html copyright.html thanks.html			\
 	y2k.html todo.html httpscripting.shtml httpscripting.html	\
         comparison-table.html relatedtools.html osdistribs.html		\
-	versions.html
+	versions.html history.html
 	@echo done 
 #archive/index.html
 
@@ -39,6 +39,13 @@ bugs.html: _bugs.html $(MAINPARTS) bugs.t
 
 bugs.t: $(DOCROOT)/BUGS
 	$(TXT2HTML) < $(DOCROOT)/BUGS > bugs.t
+
+
+history.html: _history.html $(MAINPARTS) history.t
+	$(ACTION)
+
+history.t: $(DOCROOT)/HISTORY
+	$(TXT2HTML) < $(DOCROOT)/HISTORY > history.t
 
 
 changes.shtml: _changes.shtml $(MAINPARTS) changes.t
