@@ -1,5 +1,7 @@
 #define AD_PRICERUNNER
+#ifndef AD_BIGGOOGLELEFT
 #define AD_GOOGLELEFT
+#endif
 <table width="100%"><tr align="top"><td> <a href="/"><img border="0" src="/ds-curlicon.png"
 width="99" height="37" alt="cURL"></a></td>
 <td align="center">
