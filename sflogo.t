@@ -1,6 +1,6 @@
 <a href="/donation.html"><img border="0" src="/pix/donate.png" alt="donate!" width="88" height="31"></a>
 <p>
-#if defined(AD_GOOGLELEFT) && !defined(AD_BIGGOOGLELEFT)
+#if 1 /* was: if defined(AD_GOOGLELEFT) && !defined(AD_BIGGOOGLELEFT) */
 <script type="text/javascript"><!--
 google_ad_client = "pub-9313125053076989";
 google_ad_width = 120;
@@ -18,7 +18,7 @@ google_color_text = "000000";
   src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 #endif
-#ifdef AD_BIGGOOGLELEFT
+#if 0 /* was: #ifdef AD_BIGGOOGLELEFT */
 <script type="text/javascript"><!--
 google_ad_client = "pub-9313125053076989";
 google_ad_width = 120;
