@@ -36,6 +36,7 @@ all: index.html feedback.html mirrors.html cvs.html libs.html help.html	  \
 	cd mirror; make
 	cd legal; make
 	cd lxr; make
+	cd rfc; make
 	@echo done 
 #archive/index.html
 
