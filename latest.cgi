@@ -3,7 +3,7 @@
 require "CGI.pm";
 
 use strict;
-use latest2;
+use latest;
 
 my $script="latest.cgi";
 
@@ -125,7 +125,7 @@ if($latest::version{$what}) {
     print "<b>What:</b> $desc\n",
             
     "<br><b>MD5:</b> <tt>".$md5."</tt>\n",
-    "<br><b>Size:</b> ".$size{$what}." bytes\n",
+    "<br><b>Size:</b> ".$latest::size{$what}." bytes\n",
     "<br><b>Version:</b> ".$latest::version{$what}."\n";
     
     if($latest::headver ne $latest::version{$what}) {
