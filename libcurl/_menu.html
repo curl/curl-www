@@ -183,6 +183,12 @@ LINK("", Python)
 VLINK(/libcurl/python/, Python)
 #endif
 
+#ifdef LIBCURL_R
+LINK("", R)
+#else
+VLINK(/libcurl/r/, R)
+#endif
+
 #ifdef LIBCURL_REXX
 LINK("", Rexx)
 #else
