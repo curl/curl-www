@@ -74,7 +74,7 @@ press.html: _press.html $(MAINPARTS)
 news2.html: _news2.html $(MAINPARTS)
 	$(ACTION)
 
-news.html: news2.html
+news.html: news2.html newslog.html
 	rm -f $@
 	./filter.pl < $< > $@
 
