@@ -197,7 +197,7 @@ sub gettype {
     }
     elsif($file =~ /^curl-ssl-devel-([0-9.]*)-(\d*).ia64.rpm/) {
         return($1, "ssl-devel-linux-ia64",
-               "Linux IA64, RPM, SSL-enabled");
+               "Linux devel IA64, RPM, SSL-enabled");
     }
     
 }
