@@ -35,6 +35,39 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 </ul>
 #endif
 
+SUBTITLE(Fixed since -- available in CVS and pre-releases)
+<p> Changes:
+<ul>
+ <li> support for Content-Encoding: gzip was added
+ <li> test cases modified to include server requirement in each test case file
+</ul>
+<p> Bugs:
+<ul>
+ <li> EAGAIN-fix improves HPUX (at least) functionality
+ <li> configure script fix for the writable argv check and cross-compiles
+ <li> features more verbose error message when some OpenSSL read errors occur
+ <li> improved ftp compliance with RFC1738, now performs individual CWD commands
+   for each path part in the URL
+ <li> cookie overhaul: fixed jarsaving, improved path treatment and stricter
+   cookie receiving, adjusts to Hosts: headers
+ <li> CURLINFO_CONNECT_TIME works with the multi interface too
+ <li> curl_easy_setopt() now returns correct error codes
+ <li> formposting .html files set Content-Type text/html now
+ <li> curl reports a new huge and verbose error message on CA cert problems
+ <li> libcurl now returns CURLE_SSL_CACERT on CA cert problems
+ <li> chunked-transfer deflate downloads work
+ <li> FTP-server responses to CWD are now more liberally treated
+ <li> fixed url parsing when '?' is used after the host name without '/'.
+ <li> curl -I on ftp files outputs the date with correct time zone (GMT)
+ <li> curl -z now works for FTP files (CURLOPT_TIMECONDITION)
+ <li> the default DEBUGFUNCTION outputs incoming headers as well
+ <li> Content-Type extraction did wrong if there was no space after the colon
+ <li> the MSVC project file was fixed
+ <li> no longer installs the ca bundle when built --without-ssl
+ <li> the boundary strings in formposts now look very similar to the ones IE uses
+ <li> test suite runs on cygwin
+</ul>
+
 SUBTITLE(Fixed in 7.10.4)
 <p> Changes:
 <ul>
