@@ -16,8 +16,9 @@ if($max < 5) {
 }
 
 while (<NEWS>) {
+    my $l = $_;
     if(!$inside) {
-        if($_ =~ /<!-- start !-->/) {
+        if($l =~ s/<!-- start !-->//) {
             $startcount++;
             $inside = 1;
             if($startcount >= $start) {
@@ -26,22 +27,19 @@ while (<NEWS>) {
         }
     }
     else {
-        if($_ =~ /<!-- stop !-->/) {
+        if($l =~ s/<!-- stop !-->//) {
             $inside=0;
             if($display) {
                 $count++; # we count shown items only
-                print $_;
+                print $l;
             }
             if($count>=$max) {
                 last;
             }
         }
     }
-    if($inside && $display && $short) {
-        $_ =~ s/colspan=1/colspan=2/g;
-    }
-    if($inside && $display) {    
-        print $_;
+    if($inside && $display) {
+        print $l;
     }
 }
 close(NEWS);
