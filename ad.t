@@ -81,11 +81,14 @@ google_color_text = "333333";
   </tr>
 </table>
 #else
+<a href="http://www.haxx.se/curl.html"><img border="0" width="250" height="60"
+src="/ad/haxx-curl-ad.png" alt="Haxx ad"></a>
 #endif
 </td>
 <td>
 <a href="http://www.schrenk.com/2004/bots_spiders_curl.php"><img border="0"
-width="230" height="60" src="/ad/schrenk.png" align="right"></a>
+width="230" height="60" src="/ad/schrenk.png" align="right" alt="Schrenk
+ad"></a>
 </tr></table>
 #endif
 </td>
