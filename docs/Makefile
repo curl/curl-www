@@ -14,7 +14,7 @@ all: index.html manpage.html faq.shtml changes.shtml \
 	install.html readme.html readme.curl.html \
 	resources.html copyright.html thanks.html \
 	y2k.html todo.html httpscripting.shtml comparison-table.html \
-	relatedtools.html
+	relatedtools.html osdistribs.html
 	@echo done 
 #archive/index.html
 
@@ -133,6 +133,9 @@ comparison-table.html: _comparison-table.html $(MAINPARTS)
 	$(ACTION)
 
 relatedtools.html: _relatedtools.html $(MAINPARTS)
+	$(ACTION)
+
+osdistribs.html: _osdistribs.html $(MAINPARTS)
 	$(ACTION)
 
 y2k.html: _y2k.html $(MAINPARTS)

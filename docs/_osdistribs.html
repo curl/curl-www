@@ -1,0 +1,70 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Shipped With Your OS</TITLE>
+</HEAD>
+
+#define CURL_DOCS
+#define DOCS_OS_DISTRIBUTIOINS
+
+#include "_menu.html"
+#include "setup.t"
+#include "pic.t"
+#include "table.t"
+
+WHERE2(Docs, "/docs/", Included With These Fine Operating Systems)
+
+TITLE(curl in operating sytems)
+<p>
+  Curl comes bundled with your favourite OS if you happen to get one of these
+  fine distributions:
+
+<p>
+<table cellspacing=0 cellpadding=3 border=0>
+<tr>
+   NICETD OS/Distributor NICETDEND
+   NICETD OS version NICETDEND
+</tr>
+
+TREVEN
+ NEWCOL Mandrake Linux </td>
+ NEWCOL 7.2, 8.0 </td>
+TREND
+TREVEN
+ NEWCOL Suse Linux </td>
+ NEWCOL 7.1, 7.2 </td>
+TREND
+TREVEN
+ NEWCOL  Redhat Linux Powertools </td>
+ NEWCOL 6.1, 6.2, 7.0, 7.1</td>
+TREND
+TREVEN
+ NEWCOL  Debian Linux</td>
+ NEWCOL 2.2 (alias potato)</td>
+TREND
+TREVEN
+ NEWCOL  Mac OS X</td>
+ NEWCOL 10.1</td>
+TREND
+TREVEN
+ NEWCOL  FreeBSD </td>
+ NEWCOL 4.0 </td>
+TREND
+TREVEN
+ NEWCOL OpenBSD </td>
+ NEWCOL 2.7, 2.8, 2.9</td>
+TREND
+TREVEN
+ NEWCOL  Connectiva Linux</td>
+ NEWCOL 5.1, 6.0, 7.0</td>
+TREND
+
+</table>
+
+<p>
+ Lots of other Linux distributions are based on either the Debian or the
+ Redhat distributions, so therefore you're likely to find curl packages in a
+ lot of other environments as well.
+
+#include "_footer.html"
+</BODY>
+</HTML>
