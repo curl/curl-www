@@ -37,6 +37,10 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 SUBTITLE(Fixed since -- available in CVS and pre-releases)
 <p> Changes:
 <ul>
+ <li> CURLOPT_IPRESOLVE lets you select pure IPv6 or IPv4 resolved addresses
+ <li> GSS-Negotiate works fine with the MIT kerberos library
+ <li> SPNEGO support added, if libcurl is built with the FBopenssl libraries
+ <li> easy handles added to a multi handle now share DNS cache automaticly
  <li> CURLINFO_HTTPAUTH_AVAIL and CURLINFO_PROXYAUTH_AVAIL were added
  <li> CURLOPT_FTP_RESPONSE_TIMEOUT was added
  <li> NTLM, Digest and GSS-Negotiate authentications should work even for HTTPS
@@ -47,6 +51,15 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 </ul>
 <p> Bugs:
 <ul>
+ <li> PUT with --digest works now 
+ <li> --anyauth that picks NTLM and then follows a redirect (and does NTLM again)
+   works now
+ <li> asynch resolves now work on NT4 too
+ <li> a DNS cache trash (possible segfault) was fixed
+ <li> runtests.pl clears all proxy environment variables before the test is run
+ <li> Microsoft's "Negotiate" authentication is now supported by the existing
+   GSSNEGOTIATE option.
+ <li> A set zero-length proxy name confused libcurl
  <li> Digest authentication works again without OpenSSL on 64bit architectures
  <li> configure --enable-thread works now
  <li> buffer problems in the test suite's web server were fixed
