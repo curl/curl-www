@@ -48,9 +48,15 @@ VLINK("/libcurl/using/", Using libcurl )
  <tr><td><font color="#705050">Languages:</font></td></tr>
 
 #ifdef LIBCURL_DOCS
-LINK("/libcurl/c/", C/C++ API )
+LINK("", C/C++ API )
 #else
-VLINK("/libcurl/c/", C/C++ API )
+VLINK(/libcurl/c/, C/C++ API )
+#endif
+
+#ifdef LIBCURL_COCOA
+LINK("", Cocoa API )
+#else
+VLINK(/libcurl/cocoa/, Cocoa API )
 #endif
 
 #ifdef LIBCURL_DYLAN
