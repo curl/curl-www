@@ -30,6 +30,7 @@ all: index.html mail.html competitors.html future.html threadsafe.html \
 	cd basic; make
 	cd lua; make
 	cd pascal2; make
+	cd euphoria; make
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
