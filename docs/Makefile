@@ -79,7 +79,7 @@ thanks.t: $(DOCROOT)/THANKS
 faq.html: _faq.shtml $(MAINPARTS) faq.t
 	$(ACTION)
 
-faq.t: $(DOCROOT)/FAQ
+faq.t: $(DOCROOT)/FAQ faqparse.pl
 	./faqparse.pl < $< > $@
 
 knownbugs.html: _knownbugs.html $(MAINPARTS) knownbugs.t
