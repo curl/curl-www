@@ -28,7 +28,10 @@ while(<STDIN>) {
                 $s = $_;
                 $s =~ s/^([0-9]).*/$1/g;
                 if($s != $o) {
-                    subtitle(sprintf "%s", $section[$s]);
+                    my $ti = $section[$s];
+                    chomp $ti;
+                    $ti =~ s/^ *(.*) */$1/;
+                    subtitle($ti);
                     print "\n<p>\n";
                     $o = $s;
                 }
@@ -56,7 +59,11 @@ while(<STDIN>) {
 
         if($secs[$sec] && ($_ =~ /^\s*[0-9]\. $secs[$sec]/i)) {
             # a new section
-            subtitle($l);
+            my $ti = $l;
+            chomp $ti;
+            $ti =~ s/^ *(.*) */$1/;
+            subtitle($ti);
+
             $sec++;
         }
 
