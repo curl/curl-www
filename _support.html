@@ -1,0 +1,112 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Commercial Support</TITLE>
+</HEAD>
+
+#define FEATURE <td bgcolor="#ffff00" align=center>yes</td>
+#define MISSING <td align=center>no</td>
+#define UNKNOWN <td align=center><font color="#ff0000">???</font></td>
+#define NEWLINE <tr valign=center>
+
+#define CURL_SUPPORT
+
+#include "_menu.html"
+#include "setup.t"
+#include "pic.t"
+WHERE1(Support)
+
+TITLE(Companies and Persons Offering Commercial Support)
+<p>
+ There are tons of ways to get free support. Try the <a href="/mail/">mailing
+ lists</a> and the <a href="/docs/">online docs</a> to start with. Sometimes,
+ you may need an option that only commercial companies give you.
+<p>
+ If your company is making money from curl or curl support, please consider
+ sponsoring the project.
+
+#if 0
+SUBTITLE(Webhosting Sites With cURL Support)
+<p>
+ These are web hosting companies that offer curl support on command line, in
+ PHP or/and the perl module.
+
+<p>
+<table>
+<tr>
+<td><b>Name</b></td>
+<td><b>cURL</b></td>
+<td><b>php-cURL</b></td>
+<td><b>perl-cURL</b></td>
+</tr>
+
+<tr valign=top>
+<td><a href="http://www.webengr.com/">Web Engineering</a></td>
+FEATURE
+FEATURE
+FEATURE
+<td>
+ We provide cURL and php support and we can also host you on our virtual web
+ servers or your own dedicated server.
+</td>
+
+</tr>
+</table>
+
+#endif
+
+SUBTITLE(Companies Offering cURL Support)
+<p>
+ These are companies that offer curl support doing installation, costomizing
+ or even extending it to your every need or simply writing/improving scripts
+ and programs using curl/libcurl.
+
+<p>
+<table>
+
+NEWLINE
+<td><b>Name</b></td>
+<td><b>Located</b></td>
+<td><b>install</b></td>
+<td><b>write scripts/apps</b></td>
+<td><b>customize</b></td>
+<td><b>curl contributors</b></td>
+<td><b>comment</b></td>
+</tr>
+
+NEWLINE
+<td><a href="http://www.haxx.se/">Haxx</a></td>
+<td> Stockholm, Sweden</td>
+FEATURE
+FEATURE
+FEATURE
+FEATURE
+<td>
+ Originators and massive contributors to curl and libcurl since day 1.
+</td>
+</tr>
+
+NEWLINE
+<td><a href="http://www.webengr.com/">Web Engineering</a></td>
+<td> Florida, USA</td>
+FEATURE
+FEATURE
+FEATURE
+MISSING
+<td>
+ We provide cURL and php support and we can also host you on our virtual web
+ servers or your own dedicated server.
+</td>
+</tr>
+</table>
+
+<p>
+ Is <b>your</b> curl-supporting company missing in this list? Mail <a
+ href="mailto:curl-web_at_haxx.se">curl-web</a>, include all necessary details
+ and get yourself listed!
+<p>
+ Do you have any comments about a company listed here? Don't hesitate to mail
+ <a href="mailto:curl-web_at_haxx.se">curl-web</a> and share your experiences!
+
+#include "_footer.html"
+</BODY>
+</HTML>

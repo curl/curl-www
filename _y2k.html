@@ -1,0 +1,27 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - year 2000 compliance</TITLE>
+</HEAD>
+
+#define CURL_Y2K
+
+#include "_menu.html"
+#include "pic.t"
+#include "setup.t"
+
+TITLE(Curl and the Year 2000)
+<p>
+ Curl, like other well-designed Unix software, does not suffer from a Year
+ 2000 issue. Unix dates are based around a 32-bit field centered around
+ January 1 00:00:00 1970, with a range from Dec 13, 1901 to January 19,
+ 2038. We therefore anticipate no impact on any of our Unix or win32
+ implementations because of this new millenium.
+<p>
+ You can safely trust curl to continue to work (at least date-wise) unmodified
+ until early the year 2038.
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
+

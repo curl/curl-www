@@ -1,0 +1,100 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL and libcurl</TITLE>
+<META name="keywords" content="HTTP, HTTPS, FTP, user agent, TELNET, GOPHER, LDAP, URL, download, upload, automatic, HTML FORM, proxy, authentication, cookies">
+</HEAD>
+
+#define CURL_MAIN
+
+#include "_menu.html"
+#include "setup.t"
+
+#include "packstat.t"
+
+<center><img src="http://curl.haxx.se/big-curl.jpg" width=420 height=115
+alt="Curl">
+<p>
+#include "pic.t"
+</center>
+
+<a name=top>
+TITLE(cURL - a client that groks URLs)
+
+<table border=0 width="80%" align=center><tr><td>
+<font face="helvetica,arial" size="+1"><i>
+  Curl is a tool for transferring files with URL syntax, supporting FTP, HTTP,
+  HTTPS, GOPHER, TELNET, DICT, FILE and LDAP.  Curl supports HTTPS
+  certificates, HTTP POST, HTTP PUT, FTP uploading, kerberos, HTTP form based
+  upload, proxies, cookies, user+password authentication, file transfer
+  resume, http proxy tunneling and a busload of other <a
+  href="docs/features.html">useful tricks</a>.
+
+</i></font>
+</td></tr></table>
+<p>
+  Curl is free and <a href="docs/copyright.html">open software</a> that
+  compiles under a wide variety of operating systems. Curl exists thanks to
+  efforts from many authors, with <a href="mailto:daniel_at_haxx.se">Daniel
+  Stenberg</a> being main author and project maintainer. Curl is the result of
+  many spare time hours of programming. Voluntary contributions are vital.
+  We greatly appriciate <a href="help.html">your help</a>!
+<p>
+  <b>The most recent stable version of curl is version __STABLE</b>, released
+  on __RELDATE.  There are currently __CURR binary archives of the latest curl
+  package (and __NCURR older ones), available from the <a
+  href="download.html">download page</a>.
+
+<p>
+  Use cURL as a <a href="/docs/">command line tool</a> or use libcurl from
+  within your own programs using <a href="/libcurl/java/">Java</a>, <a
+  href="/libcurl/php/">PHP</a>, <a href="/libcurl/perl/">Perl</a>, <a
+  href="/libcurl/python/">Python</a>, <a href="/libcurl/ruby/">Ruby</a>, <a
+  href="/libcurl/tcl">Tcl</a> or <a href="/libcurl/">C/C++</a>!
+
+<p>
+  Please report bugs using the <a
+  href="http://sourceforge.net/bugs/?group_id=976">curl bug tracker</a>, or
+  access the entire <a href="http://sourceforge.net/projects/curl/">curl
+  project space</a>.
+
+<p>
+  Before posting questions to any individual or the <a href="mail/">mailing
+  list</a>, have a look at the <a href="docs/">documentation section</a> and
+  the <a href="docs/faq.shtml">Frequently Asked Questions</a> document.
+
+<center>
+ <b>Latest news:</b>
+<table width="70%" bgcolor="#000000" cellspacing=2 cellpadding=2 border=0><tr><td>
+<table width="100%" bgcolor="#ffffff" cellspacing=0 cellpadding=0 border=0><tr><td>
+
+<!--#exec cmd="./shownews.cgi 2" -->
+
+</td></tr></table>
+</td></tr></table>
+
+</center>
+<p align=right>
+ <small><a href="news.shtml">more news</a></small>
+
+<p>
+  The cURL logo was drawn by <a href="mailto:mayday_at_vvv.tf">Henrik
+  Hellerstedt</a>, the favicon.ico was drawn by Thomas Deliduka.
+
+<p>
+  You can "syndicate" information about the latest curl release archive by
+  fetching the <a href="/info"><tt>/info</tt></a> file that always contains
+  the latest available release-archive-information.
+
+<p>
+  This site is kindly hosted by <a
+href="http://www.contactor.se/">www.contactor.se</a>.
+
+#if 1
+ Last week, we got
+<!--#exec cmd="./showstats.cgi hits" --> hits, and <!--#exec
+cmd="./showstats.cgi packs" --> curl packages were downloaded from here...
+#endif
+
+#include "_footer.html"
+</BODY>
+</HTML>

@@ -1,0 +1,56 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Libraries to use</TITLE>
+</HEAD>
+
+#define CURL_LIBS
+
+#include "_menu.html"
+#include "setup.t"
+#include "pic.t"
+WHERE1(Libraries)
+
+TITLE(External Libraries)
+<p>
+ Curl depends on external libraries for some features (and <a
+ href="/libcurl/">libcurl</a> for all features). You can build curl without
+ them, but curl get a lot better if you have these libraries:
+<p>
+<table><tr>
+<td align=center>
+  <a href="http://www.openssl.org">
+  <img src="openssl.png" width=102 height=47 alt="OpenSSL" border=0><br>
+  <small>www.openssl.org</small></a>
+</td>
+<td>
+  SSL (https) support. Use <a href="http://www.openssl.org">OpenSSL</a>. Curl
+  compiles, builds and runs perfectly with it.
+</td>
+</tr>
+<tr>
+<td align=center>
+  <a href="http://www.openldap.org">
+  <img src="openldap2.png" width=150 height=42 alt="OpenLDAP" border=0><br>
+  <small>www.openldap.org</small></a>
+</td>
+<td>
+  The LDAP support depends on <a href="http://www.openldap.org">OpenLDAP</a>.
+</td>
+</tr>
+<tr>
+<td align=center>
+  <small>kerberos4</small></a>
+</td>
+<td>
+  The kerberos4 support depends on a kerberos4 package! :-) More information
+  can be found on <a
+  href="http://www.contrib.andrew.cmu.edu/~shadow/kerberos.html">http://www.contrib.andrew.cmu.edu/~shadow/kerberos.html</a>
+  and by asking <a href="http://www.google.com/search?q=kerberos">google</a>.
+</td>
+</tr>
+
+</table>
+
+#include "_footer.html"
+</BODY>
+</HTML>

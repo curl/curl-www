@@ -1,0 +1,69 @@
+#include "_doctype.html"
+<HEAD> <TITLE>cURL - have a look at the source</TITLE>
+</HEAD>
+
+#define CURL_CVS
+#include "_menu.html"
+#include "setup.t"
+#include "pic.t"
+
+WHERE2(Download, "/download.html", CVS)
+
+TITLE(<b>Browse</b> the Sources)
+<p>
+  Browse the curl <a
+  href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/curl/">CVS
+  Repository</a> or the <a href="/lxr/">LXR-indexed sources</a>.
+
+TITLE(<b>Get</b> the Sources)
+<p>
+  The curl sources are kept in a CVS repository. You can get the most recent
+  curl source files from there at any time. CVS is the version control system
+  we use for the curl project. All files in the release archive that aren't
+  generated from other files are kept there, to allow full backtracking of
+  older versions. To use CVS you need a CVS client, get yours from <a
+  href="ftp://ftp.cvshome.org/pub">ftp.cvshome.org</a>.  Windows users might
+  fancy <a href="http://www.wincvs.org/">WinCvs</a>.
+<p>
+  This is mostly a feature for you who really want to have a peek in how the
+  current development version looks like, and not if you just want to download
+  a version to run. If you just want to download a tar or binary archive, <a
+  href="download.html">go here</a>.
+<p>
+  If you want to use the CVS server, login:
+<pre>
+  cvs -d :pserver:anonymous@cvs.curl.sourceforge.net:/cvsroot/curl login
+</pre>
+<p>
+  You will be prompted for the password, just press enter. When logged in,
+  checkout all the files in the curl respository:
+<pre>
+  cvs -d :pserver:anonymous@cvs.curl.sourceforge.net:/cvsroot/curl checkout curl
+</pre>
+<p>
+  <b>Note</b> that this will create a curl directory.
+<p>
+  If you at a later time want to get the updated set of files, just cd into
+  this directory and run this command (there's no need for the -d then):
+<pre>
+  cvs update
+</pre>
+
+TITLE(<b>Change</b> the Sources)
+<p>
+ If you are about to do a lot of modifications, discuss it with me in advance
+ and I might get you write permission straight into the CVS. At present time,
+ we're only two persons with CVS write access.
+
+
+<p>
+ The CVS repository is hosted by<br>
+
+<A href="http://sourceforge.net"> <IMG
+ src="http://sourceforge.net/sflogo.php?group_id=976" width="88" height="31"
+ border="0" alt="SourceForge Logo"></A>
+
+#include "_footer.html"
+
+</BODY>
+</HTML>

@@ -1,0 +1,71 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Report Bugs</TITLE>
+</HEAD>
+
+#define CURL_BUGREPORT
+
+#include "_menu.html"
+#include "setup.t"
+
+#include "pic.t"
+
+WHERE2(Feedback, "/feedback/", Bug Report)
+
+TITLE(How Why And Where To Report Bugs)
+<p>
+ Of course there are bugs in curl. Some are known, but most of them remain
+ unknown to us until you let us know. We depend on bug reports from the users
+ that find the problems. We are not likely to be able to fix bugs if we don't
+ get to know about their existance first. Bugs tend to get fixed within a
+ short while after we've been notified (at least when we agree about it being
+ a bug and not a feature)!
+
+<ul>
+<p><b> If you can't fix a bug yourself and submit a fix for it, file an <i>as
+ detailed report as possible</i> in the <a
+ href="http://sourceforge.net/bugs/?group_id=976">curl's bug tracking
+ system</a></b> or possibly mail it to curl-bug_at_haxx.se.
+</ul>
+<p>
+ If you have an idea of what to add to curl or what to change in curl that
+ isn't actually a bug, post that to the <a href="/feedback/">feedback
+ forum</a>.
+
+<P>
+ When reporting a bug, try to include information that will help us understand
+ what's wrong, what's expected to happen and how to repeat it. You therefore
+ need to supply:
+ <ul>
+ <li> your operating system's name and version number (uname -a
+ under a unix is fine)
+ <li> what version of curl you're using (curl -V is fine)
+ <li> what URL you were working with
+ <li> anything else you think matters.
+ </ul>
+
+<p>
+ Learn more about what to include in a bug report and how to get a stack trace
+ by reading the <a href="/docs/bugs.html">Bugs</a> document.
+
+<p>
+ The curl bug tracker is hosted by<br>
+
+<A href="http://sourceforge.net"> <IMG
+ src="http://sourceforge.net/sflogo.php?group_id=976" width="88" height="31"
+ border="0" alt="SourceForge Logo"></A>
+
+
+TITLE(cURL Module Bugs in PHP)
+<p>
+ If you experience problems with the curl module in PHP, that doesn't seem to
+ happen with libcurl or curl in other situations, file the report in the <a
+ href="http://bugs.php.net/">PHP bug tracker</a>. Make it of type 'cURL
+ related'.
+<p>
+ We do have a cooperation with the PHP development team to make sure no
+ problems 'fall through'.
+
+#include "_footer.html"
+</BODY>
+</HTML>

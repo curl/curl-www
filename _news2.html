@@ -1,0 +1,34 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - News!</TITLE>
+</HEAD>
+
+#define CURL_NEWS
+
+#include "_menu.html"
+#include "setup.t"
+#include "pic.t"
+
+WHERE1(News)
+
+#undef DATE
+#define NSUBJ(x) <!-- start !--><tr><td><table width=100% border=0 cellspacing=0 cellpadding=3><tr bgcolor="#ccccff"><td><font face=helvetica,arial size=+1>x</font></td>
+#define NDATE(x) <td nowrap align=right valign=top>x</td></tr>
+
+#define NCOLS <tr><td valign=top>
+#define NCOLE </td></tr></table></td></tr><!-- stop !-->
+
+<a name=news>
+TITLE(News - things that happened lately in the project and the web site)
+<table cellspacing=5 cellpadding=1 border=0>
+
+<!--#exec cmd="./shownews.cgi 25" -->
+
+</table>
+
+<p>
+  You'll find some of the older news <a href="oldnews.shtml">here</a>.
+
+#include "_footer.html"
+</BODY>
+</HTML>

@@ -1,0 +1,915 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Old news!</TITLE>
+</HEAD>
+
+#define CURL_OLDNEWS
+
+#include "_menu.html"
+#include "setup.t"
+#include "pic.t"
+
+#undef DATE
+#define DATE(x) <tr><td nowrap valign=top><table width=100% cellpadding=2><tr><td bgcolor="#444488" align=center><font color=#ffffff> x </font></td></tr></table></td>
+
+#define COLS <td valign=top>
+#define COLE </td></tr>
+
+#define NSUBJ(x) <tr><td colspan=2><table width=100% border=0 cellspacing=0 cellpadding=3><tr bgcolor="#ccccff"><td><font face=helvetica,arial size=+1>x</font></td>
+#define NDATE(x) <td nowrap align=right valign=top>x</td></tr>
+
+#define NCOLS <tr><td valign=top>
+#define NCOLE </td></tr></table>   </td></tr>
+
+TITLE(Older events - things that happened earlier in the project)
+<p>
+ Since I move stuff in here from the <a href="news.html">real news page</a>,
+ some of the links on this page are more likely than other to not work
+ anymore. I still think this page may be of value and I just want you to be
+ aware of this fact. Use the <a href="/htdig/">search</a> field to find
+ working pages with similar info.
+
+<a name=news>
+<table cellspacing=3>
+
+ NSUBJ(More betas)
+ NDATE(14 June 2000 afternoon)
+ NCOLS 
+
+  I uploaded the 7.0.5beta about the same time I added a search field in the
+  footer of every web page on the site. Studying how people end up on this
+  site, it shows that an awful lot of people pop in on an odd page using a
+  search engine, and since that page isn't always 100% on focus with what the
+  person was after I think I can decrease some amount of problems by offering
+  a site search field straight away! Hopefully this is the last beta before I
+  release version 7 for real!
+  <br>
+ <font color="#ff0000">I uploaded a 7.0.6beta as well since too many errors
+ had slipped into the 7.0.5 package...</font>
+  <p>
+ <a href="/beta/">I want to get myself a good beta</a>
+
+ NCOLE
+
+ NSUBJ(This and that)
+ NDATE(14 June 2000 morning)
+ NCOLS 
+
+  Tiny edits, updated docs and just minor fiddling. I think I can feel a
+  release very near now.
+
+ NCOLE
+
+ NSUBJ(Non-beta seven soon?)
+ NDATE(8 June 2000)
+ NCOLS 
+
+  If you have any reports on the version seven beta-series, please bring them
+  in! I'm planning to get a non-beta released within a week or something. I
+  will be gone for four weeks, starting at June 24th, and I really would like
+  to get the version seven out well before that so I get some time to smoothen
+  out any possible problems and update the web pages with up-to-date ports etc
+
+ NCOLE
+
+ NSUBJ(We have a team!)
+ NDATE(8 June 2000)
+ NCOLS 
+
+  As of today, Jörn Hartroth is now a trusted CVS write access team member!
+  Jörn has patiently been working with the win32 ports of curl as well as the
+  multiple-URL stuff for a long time now. His write access will mean less work
+  for me to incorporate his fixes and he'll be able to quicker solve problems.
+  Welcome!
+
+ NCOLE
+
+ NSUBJ(TLD hopping)
+ NDATE(6 June 2000)
+ NCOLS 
+
+  <a href="http://curl.haxx.se">curl.haxx.se</a> is the new curl site since <a
+  href="http://www.haxx.se">Haxx</a> changed TLD just now. The old haxx.nu
+  domain will probably hang around another year or so. I'll add a redirect as
+  well so that the transfer will probably hardly be noticable for most people.
+
+ NCOLE
+
+ NSUBJ(Debian joins the growing list)
+ NDATE(5 June 2000)
+ NCOLS 
+
+  With the recent addition of the updated Debian curl 6.5.2 archive, we have
+  21 different up-to-date binary archives from the <a
+  href="download.html">download page</a>.
+
+ NCOLE
+
+ NSUBJ(more libcurl docs appearing)
+ NDATE(2 June 2000)
+ NCOLS 
+  
+  The <a href="/libcurl/docs/">libcurl docs</a> page has been updated with
+  detailed descriptions of six more libcurl functions. Now, all the functions
+  used by the curl application are documented (hm, ok, curl_formparse() isn't
+  yet as of this writing). It would be cool if anyone who uses these could
+  have a look and just point out my biggest mistakes.
+
+ NCOLE
+
+ NSUBJ(Beta-Mania Season)
+ NDATE(31 May 2000)
+ NCOLS 
+  
+  <a href="/beta/">Version 7.0.3beta</a> arrived just a bunch of hours after
+  the 7.0.2 just because I discovered the 7.0.2 doesn't compile on Linux
+  systems due to incompatible gethostbyname_r() calls in Solaris (and others,
+  like IRIX) and Linux (any other?). Only some 6 or 7 people downloaded the
+  previous version.
+
+ NCOLE
+
+ NSUBJ(Another Beta Version is Out)
+ NDATE(30 May 2000)
+ NCOLS 
+  
+  <a href="/beta/">Version 7.0.2beta</a> is yet more internal fixes and even
+  some noticable corrections from the previous betas. I still need
+  feedback. Especially comments on the new library interface.
+
+ NCOLE
+
+ NSUBJ(This site is now indexed)
+ NDATE(30 May 2000)
+ NCOLS 
+
+  So, a nightly index allows for a cool search ability in order to better
+  allow people to dig trough all the information that start to pile up
+  here. Especially the mailing <a href="mail.cgi">list archives</a> are
+  otherwise a bit hard to deal with. Go and try a <a
+  href="htdig/">search</a>. Search engine in use: <a
+  href="http://htdig.org">htdig</a>.
+
+ NCOLE
+
+ NSUBJ(email addresses slightly remodeled)
+ NDATE(25 May 2000)
+ NCOLS 
+
+  On request from several people, I hacked in an option to hypermail that now
+  allows it to mangle email addresses slightly in ordere to make them less
+  attractive to those spammers' email-collecting robots. The mailing list <a
+  href="archive-2000-05/">archive from May</a> and onwards will no longer show
+  any email addresses with any actual @-letters in them.
+
+ NCOLE
+
+ NSUBJ(libcurl docs in the pipe)
+ NDATE(25 May 2000)
+ NCOLS 
+
+  I've started to produce some documentation around the new libcurl
+  interface. They're gonna be man pages and on this web site, they appear over
+  on the <a href="/libcurl/docs/">libcurl docs pages</a>. Have an early
+  peek. It really isn't much yet.
+
+ NCOLE
+
+ NSUBJ(win32 openssl binaries here)
+ NDATE(24 May 2000)
+ NCOLS 
+
+  I get so many questions about where to find the win32 versions of the
+  precompiled openssl libraries so I asked Jörn Hartroth to bring them to me
+  and now I have a link to them from the <a href="download.html">download
+  page</a>.
+
+ NCOLE
+
+ NSUBJ(freshmeat speeds things up)
+ NDATE(23 May 2000)
+ NCOLS 
+
+  So I posted the news about curl 7 beta on <a
+  href="http://freshmeat.net">freshmeat.net</a> and suddenly a large amount of
+  people have downloaded beta archives! :-)
+
+ NCOLE
+
+ NSUBJ(Extensive renaming of libcurl symbols)
+ NDATE(22 May 2000)
+ NCOLS
+  
+  To give you a taste of the new names in libcurl, I felt I should upload a <a
+  href="/beta/">new beta</a>. I'll try to keep them coming pretty frequently
+  now, why I won't always bother to make noise about every single new release.
+ <p>
+  Jörn Hartroth brought me a win32-binary of that beta that I also put on the
+  beta download page. Have fun.
+ NCOLE
+
+ NSUBJ(Version seven is now head CVS branch)
+ NDATE(22 May 2000)
+ NCOLS
+
+  I have now applied all the changes to the main branch in <a
+  href="cvs.html">CVS</a> and I'll try not to look back too much in the
+  mirror. All new development will be made on the v7-line of sources, and
+  they'll be a bit easier to get off the CVS server now. No need to specify
+  any extra labels.
+
+ NCOLE
+
+ NSUBJ(Slow beta feedback)
+ NDATE(22 May 2000)
+ NCOLS
+
+  It's been four days since I uploaded the 7.0 beta release here, and so far
+  exactly nobody has told me if it works, or if it isn't. Very few persons
+  have actually downloaded it. I need your help friends, please get it and try
+  it!
+
+ NCOLE
+
+ NSUBJ(First version seven beta)
+ NDATE(18 May 2000)
+ NCOLS
+
+  Get your copy of the <a href="/beta/">Curl 7 beta</a>. Read the CHANGES
+  file, study the <a href="version7.html">version 7 page</a>. Post bug reports
+  and feel free to comment the changes.
+
+ NCOLE
+
+ NSUBJ(Version seven)
+ NDATE(18 May 2000)
+ NCOLS
+
+  <a href="version7.html">Curl version 7 explained</a>. We're not quite there
+  yet, but things are moving in the right direction...
+
+ NCOLE
+
+ NSUBJ(Other ports)
+ NDATE(16 May 2000)
+ NCOLS
+
+  I discovered a chinese site that features what seems to be a mirror of a HP
+  freeware site and they have up-to-date <a href="download.html#hpux">curl
+  packages</a>. If you know of other sites that do this kind of work, please
+  let me know.
+
+ NCOLE
+
+ NSUBJ(Download stats)
+ NDATE(16 May 2000)
+ NCOLS
+
+  Around 1000 copies a week are downloaded from this site, all different
+  archives combined. I think it is pretty interesting since it was a while
+  since the latest release.
+
+ NCOLE
+
+
+ NSUBJ(Planning for libcurl 7)
+ NDATE(12 May 2000)
+ NCOLS
+
+  I've made a lot of work on the internals of the lib now, and <a
+  href="http://www.geocrawler.com/lists/3/SourceForge/1594/0/3729648/">this is
+  what to expect</a> for the nearest future. Bring me your feedback, ideas and
+  opinions!
+
+ NCOLE
+
+ NSUBJ(Library design philosophy)
+ NDATE(12 May 2000)
+ NCOLS
+
+  I posted a <a
+  href="http://curl.haxx.se/archive-2000-05/0037.html">discussion material</a>
+  to the mailing list regarding how to deal with portable functions the lib
+  features internally, that has nothing to do with URL transfers, but that the
+  application might want to feature as well. Subscribe, join in, take part!
+
+ NCOLE
+
+ NSUBJ(FTP)
+ NDATE(10 May 2000)
+ NCOLS
+
+  FTP style URLs. The directory part of FTP URLs were not treated
+  properly. Now I make sure to URL-decode <i>after</i> I've separated the path
+  into directory and file name. I've also changed the way curl performs now,
+  in that it will now make a CWD to the specified directory and there it will
+  make the operation on the file. This also has the benefit that ftp upload
+  will work better on the funet FTP server (I mean the actual software, not
+  that particular site).
+
+ NCOLE
+
+ NSUBJ(porting)
+ NDATE(10 May 2000)
+ NCOLS
+
+  A system turned up that curl didn't compile very well on. strcasecmp(), ldap
+  defines and it requires <b>two</b> libs for gethostbyname() to link got me
+  busy for a while.
+ 
+ NCOLE
+
+ NSUBJ(libcurl 7 moves)
+ NDATE(2 May 2000)
+ NCOLS
+
+  I've actually fetched both FTP and HTTP documents using the new to-become
+  library. It isn't really there yet, but it crawls in the right direction...
+ 
+ NCOLE
+
+ NSUBJ(let it become libcurl 7!)
+ NDATE(27 Apr 2000)
+ NCOLS
+
+  I didn't come up with any ideas nor did anyone else present any that made my
+  hair rise. So, as some pointed out, instead we go with the somewhat familiar
+  name 'libcurl' and just call the new design version 7. There has been some
+  discussions about it and you can now see parts of it in the CVS.
+ 
+ NCOLE
+
+ NSUBJ(CVS branch newlib)
+ NDATE(26 Apr 2000)
+ NCOLS
+
+  I created a branch in the CVS for the new lib experiments. 'newlib' is the
+  new tag. To checkout this, checkout as normal and after the checkout
+  command, you issue <tt>cvs update -rnewlib</tt>. Volia, you'll then get my
+  very early stuff.  <b>Warning</b> it is not working, if it even compiles for
+  you...
+ 
+ NCOLE
+
+ NSUBJ(Decrease amount of spam)
+ NDATE(26 Apr 2000)
+ NCOLS
+
+  To make the email addresses posted on these web pages a little less likely
+  to be extracted by robots and used for spam, I've replaced all @-signs in
+  the email addresses with '_at_'.
+
+ NCOLE
+
+ NSUBJ(SunOS 6.5.2 binary)
+ NDATE(26 Apr 2000)
+ NCOLS
+
+   Ron Zapp once again updated his "collection", you find the link on the <a
+   href="download.html">download page</a> of course.
+
+ NCOLE
+
+ NSUBJ(libcurl v2 being developed)
+ NDATE(24 Apr 2000)
+ NCOLS
+  
+   I got to spend a couple of nice days in Paris so the work is still a bit
+   from being possible to try. Give me a few weeks more and we'll see how this
+   new creation will do.
+
+ NCOLE
+
+ NSUBJ(What to call this new libcurl?)
+ NDATE(12 Apr 2000)
+ NCOLS
+
+   To avoid name problems and confusions I would like to have a new name for
+   the new library that is about to get developed. libcurl should stop here
+   and, yes, what is the name of the new to become library?
+
+ NCOLE
+
+ NSUBJ(Project new libcurl lives!)
+ NDATE(11 Apr 2000)
+ NCOLS
+
+   Exactly. It is time to redesign the lib that was formerly known as <a
+   href="libcurl/">libcurl</a>.
+
+ NCOLE
+
+ NSUBJ(New News look)
+ NDATE(11 Apr 2000)
+ NCOLS
+  I tweaked my macros a little and ended up with this new look on this news
+  page.
+ NCOLE
+
+ NSUBJ(Windows)
+ NDATE(11 Apr 2000)
+ NCOLS
+
+   For Windows OpenSSL 0.9.5 DLLs, read <a href="http://curl.haxx.se/archive-2000-04/0014.html">Jörn Hartroth's post</a>
+ NCOLE
+
+ NSUBJ(SunOS download)
+ NDATE(11 Apr 2000)
+ NCOLS
+   The SunOS download link was updated and should work again now. Thanks to
+   Ron Zapp!
+ NCOLE
+
+ NSUBJ(Darwin support)
+ NDATE(10 Apr 2000)
+ NCOLS
+   Ryan Nelson reported successful compile and build under Apple's OS Darwin
+   1.0. You can get it from the <a href="download.html">download page</a>.
+ NCOLE
+
+ NSUBJ(Getting popular...)
+ NDATE(8 Apr 2000)
+ NCOLS
+   An average week in the beginning of April 2000, various curl packages were
+   downloaded more than <b>1100 times</b> from this site alone!
+ NCOLE
+
+ NSUBJ(Docs improvements)
+ NDATE(2 Apr 2000)
+ NCOLS
+    
+   <a href="docs/internals.html">Internals</a> is a new document I just
+   added to the archive and to this site. It is meant to describe a little
+   about how things work inside curl, to help fellow pokers to know where to
+   check for errors or where to patch for new functionality.
+ NCOLE
+
+ NSUBJ(Location works more)
+ NDATE(2 Apr 2000)
+ NCOLS
+   A bunch of <a href="changes.html">changes</a> has been applied, two of
+   them dealing with following location: headers.
+
+ NCOLE
+
+ NSUBJ(Win32 and OS/2 binaries)
+ NDATE(23 Mar 2000)
+ NCOLS
+
+   Win32 and OS/2 binary packages are <a href="download.html">available</a>
+   for 6.5.2.
+
+ NCOLE
+
+ NSUBJ(GotMail)
+ NDATE(22 Mar 2000)
+ NCOLS
+
+    I noticed Peter Hawkins' <i>GotMail</i> among the Freshmeat news and put a
+    link to it from the <a href="curlprograms.html">programs page</a>.
+
+ NCOLE
+
+ NSUBJ(New release: 6.5.2)
+ NDATE(21 Mar 2000)
+ NCOLS
+  <a href="download.html">Curl version 6.5.2</a> is now available. This
+  should fix the buffer overflow _and_ the 6.5.1 crash.<br>
+ NCOLE
+
+ NSUBJ(Silly release: 6.5.1)
+ NDATE(21 Mar 2000)
+ NCOLS
+  Curl version 6.5.1 was available. A rather terrible buffer overrun could
+  prevent ftp downloading from working why I felt a quick patch-release
+  necessary. Although <b>I screwed up</b> and made the 6.5.1 crash really
+  hard, why it was replaced by 6.5.2 almost immediately! :-/
+ NCOLE
+
+ NSUBJ(Web updates)
+ NDATE(20 Mar 2000)
+ NCOLS
+  Rather big changes on the web front. I stripped the left-side menu of all
+  the documentation stuff and put them all in the brand new <a
+  href="docs/">docs section</a> instead. Now, most of those pages are
+  generated from the plain text files found in the curl release archive.<br>
+ NCOLE
+
+ NSUBJ(OS/2 Port)
+ NDATE(20 Mar 2000)
+ NCOLS
+  Marco G. Salvagno &lt;mgs@whiz.cjb.net&gt; brought a series of fixes that
+  now allows curl to compile on OS/2.
+ NCOLE
+
+ NSUBJ(Bug Tracking)
+ NDATE(17 Mar 2000)
+ NCOLS
+  - Welcome to the new <a
+    href="http://sourceforge.net/bugs/?group_id=976">bug tracking</a> web
+    page. Using this, we might get a bit more organised fixes and awareness of
+    problems still remaining! <br>
+  - I added <a
+    href="http://cvs.sourceforge.net/cgi-bin/cvsweb.cgi/BUGS?rev=1.1&content-type=text/x-cvsweb-markup&cvsroot=curl">BUGS</a>
+    to the archive, as a better ground for people to file more informative bug
+    reports.<br>
+  - I also made <a href="http://curl.sourceforge.net">curl.sourceforge.net</a>
+    a good entry point to the sourceforge hosted curl project management pages.
+ NCOLE
+
+ NSUBJ(New release: 6.5)
+ NDATE(14 Mar 2000)
+ NCOLS
+
+   - <b>Curl version 6.5 is released!</b> <a href="download.html">get it</a><br>
+   - Marcos Bedinelli's 'hotmacux' program for getting your mails from a
+   hotmail account is in the <a href="curlprograms.html">programs</a> section.
+ NCOLE
+
+ NSUBJ(No more vacation)
+ NDATE(13 Mar 2000)
+ NCOLS
+  I'm back again.
+ NCOLE
+
+ NSUBJ(Vacation)
+ NDATE(3 Mar 2000)
+ NCOLS
+  - Now I'm off for a one-week vacation, skiing in the french alps<br>
+  - Finally made the <a href="manual.html">docs-page</a> simply get generated
+    with 'man2html' from the curl man page. I actually made my makefile update
+    it automatically when I've updated the nroff file...! ;-)<br>
+  - Now, there is a <b>development</b> version named 6.5pre2 uploaded over at
+    the <a href="beta/">experimental uploads</a> department. Same as before,
+    read the CHANGES file.
+ NCOLE
+
+ NSUBJ(Curl OpenSSL fix)
+ NDATE(2 Mar 2000)
+ NCOLS
+  - Curl 6.4 and earlier won't compile well with OpenSSL 0.9.5 on all
+    systems. Fix this using <a
+    href="http://curl.haxx.se/archive-2000-03/0001.html">this patch</a>. This
+    patch does not work with earlier versions of OpenSSL!
+ NCOLE
+
+ NSUBJ(Feeling adventurous?)
+ NDATE(22 Feb 2000)
+ NCOLS
+
+  - There is a <b>development</b> version of 6.5pre1 uploaded over at the <a
+  href="beta/">experimental uploads</a> department. Get it and try it, be
+  generous with your feedback, especially on the new stuff. Read the CHANGES
+  file for info.<br>
+
+  - I moved a lot of older news items to the new <a href="oldnews.html">"old
+  news"</a> page. <br>
+
+  - I added info about the four perl program that usually come with the curl
+  archive at <a href="curlprograms.html">the curl script page</a> as I plan to
+  remove them from the standard distribution.
+
+ NCOLE
+
+ NSUBJ(SunOS!)
+ NDATE(10 Feb 2000)
+ NCOLS
+  Ron Zapp now offers his <a href="download.html#sunos4">SunOS 4 binaries</a>
+  of curl 6.4 at his site.
+ NCOLE
+
+ NSUBJ(Mailing lists)
+ NDATE(3 Feb 2000)
+ NCOLS
+  
+  - <b>New</b> mailing list just setup that handles curl announcements. This
+  is a very low-traffic list for information about new releases only. <a
+  href="http://lists.sourceforge.net/mailman/listinfo/curl-announce">Subscribe
+  to curl-announce here</a>.<br>
+
+  - <b>New</b> mailing list for libcurl development discussions. The previous
+  libcurl list is dead. I still want libcurl to develop into a more usable
+  library to 3rd party application developers. <a
+  href="http://lists.sourceforge.net/mailman/listinfo/curl-library">Subscribe
+  to curl-library here</a>.
+
+ NCOLE
+
+ NSUBJ(Y2K info posted)
+ NDATE(1 Feb 2000)
+ NCOLS
+  
+  The new <a href="docs/y2k.html">Y2k page</a> was added here. It seems some
+  people will more or less need that to point at in order to be allowed to
+  continue to use curl in their daily work.<br>
+ NCOLE
+
+ NSUBJ(New mailing lists soon)
+ NDATE(1 Feb 2000)
+ NCOLS
+  
+  Expect two new mailing lists to appear soon. One is a very low-traffic one
+  for announcing new versions only, the other is the replacement for the
+  previously existing libcurl list to discuss the development of the new
+  libcurl.
+ NCOLE
+
+ DATE(31 Jan 2000)
+ COLS
+
+  Bugs are being fixed, new features are being worked on. Check out the CVS
+  for details!
+ COLE
+
+ DATE(17 Jan 2000)
+ COLS
+
+   Curl 6.4 Redhat Linux and win32 packages <a href="download.html">available</a>!
+ COLE
+
+ DATE(16 Jan 2000)
+ COLS
+
+  - <b>Version 6.4 is released</b>. <a href="download.html">download from here</a>.<br>
+  - The <a href="cvs.html">CVS respository</a> is now correct.
+ COLE
+
+ DATE(10 Jan 2000)
+ COLS
+
+  - Lots of binaries for 6.3.1 now <a href="download.html">available</a> thanks
+  to thewrittenword.com. <br>
+
+  - I got the CVS repository to work at sourceforge.net, have an early look <a
+    href="http://cvs.sourceforge.net/cgi-bin/cvsweb.cgi/?cvsroot=curl">here</a>.
+ COLE
+
+ DATE(9 Jan 2000)
+ COLS
+  The mailing list <a href="mail.html">archive</a> is once again working.
+ COLE
+
+ DATE(4 Jan 2000)
+ COLS
+  The site was down a few days for a planned down-period, but it is now up
+  and running again.
+ COLE
+
+ DATE(29 Dec 1999)
+ COLS
+
+  I'll try to get the curl project maintaining up on the services supplied by
+  sourceforge.net. Check out my first attempts <a
+  href="http://sourceforge.net/project/?form_grp=976">over here</a>.
+ COLE
+
+ DATE(28 Dec 1999)
+ COLS
+  Removed the statistics link from the left menu, the stats aren't working
+  on this new site yet. <br>
+ COLE
+
+ DATE(27 Dec 1999)
+ COLS
+
+  - Edited the DNS entry today to make curl.haxx.nu point to this host instead
+  of the previous one. Now, there shouldn't be many obstacles in the way for a
+  release very soon!  <br>
+
+  - The <a href="mail.html">mailing list</a> is moved as well, check out the
+  deatils in the mailing list page.  <br>
+
+  - The <a href="cvs.html">CVS server</a> is now disabled.<br>
+
+  - The libcurl mailing list will remain on the frontec.se address for a while
+  more. That list is not that highly trafficed nor very important, so if that
+  list server dies we can move that to another address when needed.<br>
+
+  - The packages supplied by thewrittenword.com seems to have dissapeared
+  since the ftp.thewrittenword.com name no longer exists! :-(
+
+ COLE
+
+ DATE(13 Dec 1999)
+ COLS
+  Kjell Ericson's <a href="curlprograms.html">curlmirror</a> is once again
+  updated.
+ COLE
+
+ DATE(8 Dec 1999)
+ COLS
+  Put Kjell Ericson's upgraded mirror script on the <a
+  href="curlprograms.html">curl programs</a> page.
+ COLE
+
+ DATE(3 Dec 1999)
+ COLS
+  I've got some bug reports and suggestions. The work continues!
+ COLE
+
+ DATE(30 Nov 1999)
+ COLS
+  Believe it or not, but so far I haven't seen a single bug report since I
+  released 6.3.1! ;-)
+ COLE
+
+ DATE(25 Nov 1999)
+ COLS
+   - The 6.3.1 win32 binaries are <a href="download.html#win32">available</a>.
+   <br>
+   - Added Kjell Ericson's mirror script to the <a href="curlprograms.html">curl programs</a> page.
+ COLE
+
+ DATE(24 Nov 1999)
+ COLS
+  - <a href="mailto:larsa@sim.no">Lars J. Aas</a> brought the patches needed to get curl to compile under BeOS!
+  <br>
+  - <b>Version 6.3.1</b> is released, <a href="download.html">get it!</a>
+ COLE
+
+ DATE(23 Nov 1999)
+ COLS
+  Two more bug fixes. It is soon time for a new release. I've got into some
+  minor problems here though since my disk where I used to have all my sources
+  died the previous week-end. The daily uploads are halted until I have this
+  sorted out a little.
+ COLE
+
+ DATE(17 Nov 1999)
+ COLS
+  The win32 SSL link is now corrected and the win32 binaries should be
+  mirrored properly now.
+ COLE
+
+ DATE(15 Nov 1999)
+ COLS
+  We have two bugs reported that still have no solution:<br>
+
+  1. The Amiga version is said to "start writing millions of null bytes to a
+  file if the connection dies" (Thomas Hurst reported). This is believed to be
+  a system-specific problem.<br>
+
+  2. Solaris 2.5, with OpenSSL 0.9.4, curl builds 6.2 and now 6.3 always core
+  dump when doing <tt>curl -v https://trading.etrade.com/</tt> (Tarang Patel
+  reported). We need someone with this setup to help us trace this problem,
+  this works on other system setups that have been tested!
+
+ COLE
+
+ DATE(12 Nov 1999)
+ COLS
+  - The Redhat Linux RPMs are <a href="download.html#redhat">here</a>. <br>
+  - A lethal cookie bug was introduced in 6.3. 
+  - The win32 precompiled archives are <a href="download.html#win32">here</a>.
+ COLE
+
+ DATE(11 Nov 1999)
+ COLS
+  - Curl version 6.3 is released. <a href="download.html">download!</a>
+  <br>- <a href="mailto:anti@pshowing.com">Michael Anti</a> runs the new
+  official curl download mirror over at <a
+  href="http://www.pshowing.com/curl/">http://www.pshowing.com/curl/</a>,
+  which is located in China!
+ COLE
+
+ DATE(5 Nov 1999)
+ COLS
+  <I>The Written Word</i> now has all those unix binaries up-to-date as well,
+  over at the <a href="download.html">download page</a>. They added HPUX 11 to
+  the collection too.
+ COLE
+
+ DATE(1 Nov 1999)
+ COLS
+  The Debian Linux 6.2 version is also <a href="download.html">here</a> now.
+ COLE
+
+ DATE(31 Oct 1999)
+ COLS
+  - <a href="mailto:tom.hurst@clara.net">Thomas Hurst</a> mailed me to inform
+  that he has compiled curl for the <b>Amiga</b> without problems. I've added
+  that to the <a href="download.html">download</a> page. <br>
+
+  - Just for fun I grepped the last month's log files. It seems curl packages
+  have been downloaded 6765 times from this web server the last month only. It
+  also showed that hardly anyone uses the ftp-download opportunity from this
+  site...
+ COLE
+
+ DATE(27 Oct 1999)
+ COLS
+  <a href="mailto:tengel@sonic.net">Troy Engel</a> passed the Redhat RPMs as
+  usual. You find them <a href="download.html#redhat">here</a>.
+ COLE
+
+ DATE(26 Oct 1999)
+ COLS
+  Jörn Hartroth supplied the 6.2 <a href="download.html#win32">win32
+  binaries</a>.
+ COLE
+
+ DATE(25 Oct 1999)
+ COLS
+  - Curl <a href="download.html">Version 6.2 is uploaded</a>. Read about the
+  <a href="changes.html">changes</a> here.
+ <br>
+  - In the spirit of the free, I've erased all the gifs I had here. I'm gonna
+  convert the CVS-browser icons too soon. <a
+  href="http://burnallgifs.org">http://burnallgifs.org</a>.
+ COLE
+
+ DATE(22 Oct 1999)
+ COLS
+  Several improvements and a few rather serious bugs have been corrected, as
+  described in the <a href="changes.html">changes</a> page. Prepare for a new
+  release within short.
+ COLE
+
+ DATE(19 Oct 1999)
+ COLS
+  Added the Install page here too. It is just the packaged INSTALL file
+  converted to HTML. I get a lot of questions regarding these matters, so
+  maybe, just maybe, it'll be a bit more accessible if I put the info here
+  too! ;-)
+ COLE
+
+ DATE(18 Oct 1999)
+ COLS
+  Lots of 6.1-packages available now. Troy and The Written Word were really
+  fast with these!
+ COLE
+
+ DATE(17 Oct 1999)
+ COLS
+  <a href="download.html">Curl 6.1 is here</a>. There's not that many <a
+  href="changes.html">changes</a> from the 6.1beta, but this is less
+  experimental.
+ COLE
+
+ DATE(15 Oct 1999)
+ COLS
+  - Starting some minutes ago, I now upload the curl development archive here
+  automatically on daily basis. It is a sort-of poor-man's CVS. They're
+  strictly development material, ask your parents before you <a
+  href="beta/">try them!</a><br>
+
+  - The zlib stuff proved to be a hard nut to crack. So hard I'm currently
+  halting that branch of the project and thus I believe I can release a new
+  stable version really soon.<br>
+
+  - I added the <a href="docs/copyright.html">copyright</a> page as well as
+  improved the navigation menu to the left of here to not have a link to the
+  currently shown pages.
+ COLE
+
+ DATE(14 Oct 1999)
+ COLS
+  And the win32 openssl DDLs were moved again, thanks Zhibiao Wu and Douglas
+  E. Wegscheid for the new URL.
+ COLE
+
+ DATE(14 Oct 1999)
+ COLS
+  We still haven't got <i>any</i> reports from anyone that has tried curl on a
+  site supporting compressed HTTP documents. This is one of the reasons
+  6.1beta was uploaded...!
+ COLE
+
+ DATE(12 Oct 1999)
+ COLS
+  - Kevin P Roth &lt;KPRoth@MarathonOil.com&gt; pointed out a better <a
+  href="ftp://ftp.nl.monster.org/pub/crypto/crypto/openssl-0.9.4-win32-bin.zip">URL</a>
+  for win32 openssl DLLs.<br>
+
+  - Albert Chin-A-Young &lt;china@thewrittenword.com&gt; pointed me to the
+  site hosted by The Written Word that holds a wide selection of pre-compiled
+  curl binaries. The <a href="download.html">download page</a> is updated!
+ COLE
+
+ DATE(11 Oct 1999)
+ COLS
+  Yet another one of those "free software sites" has popped up, on this you
+  can <a href="http://www.icewalkers.com/app_vote.php3?id=523">rate curl</a>
+  or the other applications...
+ COLE
+
+ DATE(8 Oct 1999)
+ COLS
+  Uploaded the <a href="stuff/curl-6.1beta.tar.gz">version 6.1 beta</a>.
+ COLE
+
+ DATE(4 Oct 1999)
+ COLS
+  The visible changes to the web pages should be pretty
+  obvious. As more and more info is stuffed into these pages, I felt I had to
+  rearrange them a bit and this is the result. It doesn't look very beautiful,
+  I know, but I'm not a web designer or anything. At least there's a lot of
+  relevant information here.
+ COLE
+
+</table>
+
+
+#include "_footer.html"
+</BODY>
+</HTML>

@@ -1,0 +1,433 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Changes</TITLE>
+</HEAD>
+
+#define CURL_CHANGES
+
+#include "_menu.html"
+#include "setup.t"
+#include "pic.t"
+
+WHERE1(Changes)
+
+<a name=changes>
+TITLE(Recent Changes -- The Nice and Clean Version)
+
+<p> <small>Between the releases, you can of course download all the mentioned
+   fixes from the curl <a href="cvs.html">CVS</a> repository or the <a
+   href="/beta/">beta page</a>. See what is planned to get introduced in
+   future versions in the <a href="/docs/todo.html">TODO</a> or read the fully
+   detailed <a href="/docs/changes.shtml">changelog</a>.</small>
+
+<p> Fixed in upcoming 7.8 (available in pre-releases or CVS)
+<ul>
+<li> 'curl-config --vernum' shows version number as a hexadecimal number
+<li> libcurl's got two new functions (for global init/cleanup)
+<li> SSL memory leak fixed
+<li> new file format for the tests in the test suite
+<li> netscape/mozilla cookie file parser bugfix
+<li> everything is now built with autoconf 2.50, libtool 1.4 and automake
+     1.4-p1
+<li> libcurl's own version of 'strlcat' no longer pollutes the name space
+<li> libcurl now treats an already completed resumed download as a successful operation, and not as an error like before
+<li> https and ftps test cases added to the test suite (depend on stunnel)
+<li> better white space awareness when parsing HTTP headers
+<li> curl -I now plays ball even if the ftp server doesn't grok SIZE
+<li> corrected resumed transfers on re-used persistent connections
+<li> FTP PORT works again when libcurl is IPv6-enabled
+<li> corrected path usage when doing multiple FTP transfers
+<li> several Location: header related bugs corrected
+</ul>
+
+
+<p> Fixed in 7.7.3
+<ul>
+<li> we've discovered that TELNET does not work under win32
+<li> HTTP Content-Length: 0 works better
+<li> HTTP 304-replies are better treated
+<li> persistent connections with mixed chunked and non-chunked transfers
+     work now
+<li> connection re-use for non-proxy connections on non-default ports work
+<li> corrected the OpenSSL version string output
+</ul>
+
+<p> Fixed in 7.7.2
+<ul>
+<li> 'curl-config' was added to help applications use libcurl
+<li> The <a href="/libcurl/perl/">Perl interface</a> is improved a lot
+<li> Fixed download resumes on persistent connections
+<li> A <a href="/libcurl/tcl/">Tcl interface</a> has been written
+<li> A <a href="/libcurl/java/">Java interface</a> has been written
+<li> A <a href="/libcurl/ruby/">Ruby interface</a> was announced
+<li> connection timeouts work in windows
+<li> HTTP_PROXY in uppercase is no longer used
+<li> curl_escape() with a 0 length argument works now
+<li> the MSVC projects files were updated
+<li> the Borland makefiles were updated
+<li> displays OpenSSL 0.9.6a properly in the version string
+<li> The Host: headers could get wrong on persistent connections
+</ul>
+
+<p> Fixed in 7.7.1
+<ul>
+<li> location:-fix
+<li> two crash reasons removed
+<li> ftps:// support added
+<li> the perl interface corrected to work with 7.7
+<li> bugfixed the HTTP/1.0 persistent connection support
+<li> Passing a read-only URL to libcurl could make it crash on http redirects
+<li> HEAD responses are now always headers-only
+<li> curl could re-use connections a little too much
+<li> different treatment of HTTP error 302
+<li> following http redirects on persistent connections could reach the maxredirs amount accidentally
+<li> curl_escape() don't re-encode already encoded letters anymore
+</ul>
+
+<p> Fixed in 7.7
+<ul> 
+<li> curl_escape and curl_unescape are now part of the official libcurl interface
+<li> supports HTTP proxy with IPv6
+<li> the .netrc parser finds the home directory better
+<li> fixed a crash that could happen with redirects and authentication
+<li> libcurl speaks HTTP/1.1 lingo now
+<li> improved random seeding for SSL connections
+<li> improved TELNET functionality
+<li> persistent connection support
+</ul>
+
+<p> Fixed in 7.6.1
+<ul>
+<li> partial IPv6 support (HTTP without proxy and only "active" FTP so far)
+<li> two new options to curl_easy_getinfo() for file sizes were added
+<li> following Location: when using Range: requests work
+<li> telnet works again (7.6 crashed)
+<li> Corrected the HTTP PUT resume
+<li> Better Location: and HTTP return code (3xx) treatment
+<li> Resumed transfer status is displayed in progress meter (though simple)
+<li> HTTP download resume again complains if Range isn't supported
+</ul>
+
+<p> Fixed in 7.6
+<ul>
+<li> fixed 'total time' counter to be more accurate
+<li> possible SSL-read problem fixed (which could make curl return empty HTML)
+<li> initial but still basic IPv6 adjustments
+<li> no length restrictions on URLs anywhere in the libcurl code
+<li> supports building outside the source-tree
+<li> -g/--globoff was added to disable the URL globbing
+<li> command line options can be written "merged" -ofile equals -o file
+<li> includes make-target for 'automatic' RPM package creation
+<li> added multiple URL support on the command line
+<li> krb4-ftp fixed
+<li> massive symbol renaming of libcurl internals to decrease name pollution
+</ul>
+
+<p> Fixed in 7.5.2
+<ul>
+<li> new licensing, MPL or MIT/X
+<li> updated man page
+<li> FTP commands are now sent in single write()s
+<li> removed a file descriptor leak when doing PORT ftp
+<li> improved quote command error checks (FTP)
+<li> misaligned free() crash removed (<a href="http://curl.haxx.se/mail/archive-2000-12/0053.html">patch</a>)
+</ul>
+
+<p> Fixed in 7.5.1
+<ul>
+<li> added Borland makefiles
+<li> portability fixes for SCO and HPUX
+<li> using an -o file name that is longer than the URL works (<a href="http://curl.haxx.se/mail/archive-2000-12/0030.html">patch</a>)
+<li> multiple URLs and -o or -O works better! (<a href="http://curl.haxx.se/mail/archive-2000-12/0031.html">patch</a>)
+</ul>
+
+<p> Fixed in 7.5
+<ul>
+<li> the shared libcurl library gets a proper version number now
+<li> the MSVC++ makefiles are updated to work
+<li> new --max-redirs option and corrresponding CURLOPT_MAXREDIRS libcurl option.
+<li> the test suite is much extened and enhanced
+<li> supports any URL lengths
+<li> --head on a ftp file shows the modification time if available
+<li> libcurl now supports getting the time of a remote file
+<li> --cacert lets you specify a CA certificate to verify peer certificates
+ against when doing HTTPS connections
+<li> ftp CWD could use wrong directory name (with trailing slash)
+<li> ftp transfer failure could leak memory
+<li> curl_unescape() could return a too long string
+<li> deals with lowercase environment variables for proxy settings
+<li> corrected spelling in a few error messages
+<li> curl_formfree() added to libcurl
+<li> memory leaks removed
+<li> added --url to allow URLs to be specified easier in the config file
+<li> improved config file parser
+<li> config file parser crash fixed
+<li> § in HTTP usernames or passwords made bad authorization headers.
+</ul>
+
+<p> Fixed in 7.4.2
+<ul>
+<li> configure now attempts to find openssl libs better
+<li> an initial attempt to make a test suite is included
+<li> binary/custom package information is added
+<li> the Host: port number could be wrong on HTTPS requests
+<li> -T and -o can be used on the same command line (bugfix)
+<li> file:// bugfix (free() twice)
+<li> ftp --head now sets type first, as some servers report different sizes for different types
+<li> ftp upload resume could hang if the whole file was already uploaded
+<li> another cookie parser fix
+<li> added possibilty to replace the internal 'enter password' function (libcurl)
+<li> encoded username/password in URL is now supported
+<li> username in http-URL bugfix
+<li> fixed the timers when location: headers were followed
+<li> possibility to verify the peer's certificate for HTTPS connections (libcurl)
+<li> timeouts are now working as supposed (under unix)!
+<li> the interactive password input on win32 no longer echoes the password
+<li> config file parser bugfix
+<li> multiple -d options are now concatenated
+<li> the memory debug system compiles on more systems
+<li> passwords specified with -u can now properly contain @!
+<li> The Host: header no longer sets port number for default ports (HTTP) (<a href="http://curl.haxx.se/feedback/display.cgi?id=9719807264522&support=yes">as suggested</a>)
+<li> -Y/-y bug fix (<a href="http://curl.haxx.se/archive-2000-10/0040.html">bug report</a>)
+<li> more informative error message when https has not been built-in
+</ul>
+
+<p> Fixed in 7.4.1
+<ul>
+<li> Corrected the makefiles in the release archive!
+</ul>
+
+<p> Fixed in 7.4
+<ul>
+<li> possible buffer overflow by an evil ftp server fixed
+<li> removed typedef bool from the public include file
+<li> more PHP-friendly multi-part posts (no more Content-Transfer-Encoding header)
+<li> FTP forced ASCII transfers fixed
+<li> memory leaks removed
+<li> the --longoption parser was corrected
+<li> HTTP download resume bugfix
+<li> more information available with -w and curl_easy_getinfo()
+<li> the HTTP request is now sent in one shot (single write())
+<li> -w stuff moved out from the libcurl, the information is now served with the new library function curl_easy_getinfo()
+<li> uploading with curl uses a smaller buffer to start with, to make a better progress meter
+</ul>
+
+<p> Fixed in 7.3
+<ul>
+<li> file:// was fixed
+<li> --proxytunnel, non-HTTP tunneled through a http proxy is added
+<li> --interface allows you to specify outgoing interface
+<li> --krb4 enables kerberos for ftp transfers
+<li> cookie parser bugfixed
+<li> OpenSSL 0.9.6 usage fixed
+<li> multiple downloaded files bugfix
+<li> more resolver fixes
+</ul>
+
+<p> Fixed in 7.2.1
+<ul>
+<li> Linux name resolve check in the configure script is fixed
+<li> -I on ftp was fixed
+<li> ftp files with + in the file name was corrected.
+</ul>
+
+<p> Fixed in 7.2
+<ul>
+<li> Name resolving problems fixed for AIX, HPUX, Digital Unix/Tru64...
+<li> --data-binary was added to allow fully binary -d style posts.
+<li> Updated the VC++ makefile
+</ul>
+
+<p> Fixed in 7.1.1
+<ul>
+<li> No user but password in a URL is now working properly
+<li> curl now allows replacing of the Content-Type: and Content-Length: headers when doing -d posts
+<li> fixed a name resolving problem that appeared at times
+<li> rearranged the gethostbyname_r() configure test
+<li> -w did not do well when used with multiple URLs
+</ul>
+
+<p> Fixed in 7.1 since 6.5.2
+<p>
+   A full-size <a href="version7.html">version seven rant</a> is also
+   available.
+<ul>
+<li> builds libcurl as a shared library with libtool
+<li> JavaWebServer's incorrect Content-Range headers are supported
+<li> localtime_r() is now used if available instead of localtime()
+<li> 'make install' installs the include files properly
+<li> Replacing an internal HTTP header with one that has no content removes the header
+<li> user+password is now restricted and sent only to the first host when
+  Location: is followed to another host
+<li> FTP command response reading now times out properly, even on win32
+<li> rfc1867 form-posting was extended for use with large text posts
+<li> FTP transfering (converted) ASCII could make curl wrongly believe the
+  transfer was only partial, there is no way can tell the expected size of
+  a file downloaded in FTP ASCII
+<li> CURLOPT_PROXYPORT added to curl_easy_setopt() in the lib
+<li> various manual corrections
+<li> FTP transfers now accept 250 as well as 226 as a positive end-of-transfer
+  result
+<li> The configure check for requiring the nsl and socket lib at once was
+  re-added
+<li> Host: was not displaying the port number as supposed on non-standard ports
+<li> HTTPS connection failures could slip through and make curl attempt reading
+  at a dead socket
+<li> Using -F, -I or -d in any weird mix now causes the curl client to alert
+<li> FTP PORT command bug fixed
+<li> HTTP POST and then following Location: now causes all except the first
+     requests to become GET.
+<li> Now features an 'auto referer' so that curl can set the "correct" referer
+     when following location:
+<li> removed CURLOPT_PROGRESSMODE from the lib
+<li> win32 now sends data binary to stdout unless -B / --use-ascii is specified
+<li> added a README.win32 file
+<li> libcurl offers a progress meter callback
+<li> Custom headers when doing location: works again
+<li> libcurl is much more threadsafe
+<li> Many portability issues have been smoothened out
+<li> Lots of symbol renamings in the libcurl public stuff.
+<li> The FTP range support were buggy and is now corrected
+<li> <b>Major</b> re-organisation of all library internals to allow for a new
+     library interface.
+<li> A buffer overflow (with URLs larger than 4096 characters) was fixed
+<li> The FTP sessions are slightly modified and now they're using CWD to
+     change to the directory where the operation is requested.
+<li> FTP URLs are now treated more like the RFC specifies (minor change)
+<li> now sends user agent string when talking ftp through a http proxy
+<li> made the progress meter nicer for sizes between 10 and 100 megabytes
+<li> no longer checks for install twice in the configure script
+<li> improved win32 headers for VC++ compiling
+<li> minor fix when using libcurl in a multi-threaded program
+<li> the OS/2 port was slightly adjusted
+<li> location following through a http proxy on a specified non-default port didn't work
+<li> location following to an absolute URL on a different port didn't work
+</ul>
+
+#if 0
+<p> Fixed in 6.5.2
+<ul>
+<li> corrected the -D mockup that caused 6.5.1 to crash
+</ul>
+
+<p> Fixed in 6.5.1
+<ul>
+ <li> curl_unescape() buffer overrun removed
+ <li> -w 'http_code' works!
+ <li> OS/2 port
+ <li> adjusted to compile smoothly with MS VC++ 
+ <li> -D/--dump-header now only writes the file when needed, and not before
+</ul>
+
+<p> Fixed in 6.5
+<ul>
+ <li> now sends cookies space separated
+ <li> Corrected OpenSSL 0.9.5 compliance problems
+ <li> the perl scripts are moved out from the distribution
+ <li> Ultrix port
+ <li> -N now disables output buffering
+ <li> the new -w/--write-out allows for script writers to specify what curl should output after a successful request
+ <li> -K config files no longer have a max line length
+ <li> new progress meter to better show both upload and download
+ <li> MacOS X port
+ <li> upload and download now performs simultaneously in case of need. This will make posting of big forms that are "echoed back" to finally work.
+ <li> the cookie parser shouldn't crash on empty cookie names, nor should it send empty cookies to the server anymore.
+ <li> -b now supports both @[filename] and @- for stdin
+ <li> unlimited line lengths in the config file
+ <li> Compiles on sunos4 again
+ <li> Corrected the removed possibility to chose the progress bar
+ <li> Made the max display width with progress bar 79 when the COLUMNS variable
+      isn't set.
+</ul>
+
+<p> Fixed in 6.4
+<ul>
+ <li> Improved progress meter
+ <li> Ability to run --quote commands <i>after</i> ftp transfers now, as well as before
+ <li> Getting files with URL syntax codes (%-stuff) from a ftp server was not dealt with nicely
+ <li> -b corrupted the cookie header lines when they were read off a server
+ <li> Cleaned up the interface between the lib and the curl tool.
+ <li> Made the -X's long option change name to --request and now you can specify full request command for ftp listings (like "LIST -l").
+ <li> Improved the --stderr workings for win32.
+ <li> BeOS port by Lars J. Aas!
+</ul>
+
+<p> Fixed in 6.3.1
+<ul>
+ <li> posting an empty variable with -F, like "name=" did cause curl to hang
+ <li> when the download from a http server gets cut off curl now warns about it
+ <li> better error checks when fwrite()ing the output
+ <li> minor fix that may correct the amiga-port problem
+ <li> A <b>lethal</b> cookie bug was fixed.
+
+</ul>
+
+<p> Fixed in 6.3
+<ul>
+ <li> -z (date-dependent HTTP fetches) now works better since we're doing a
+   date comparison in the client as well.
+ <li> -b/--cookie is now capable of parsing and understanding the cookies saved
+   in a netscape cookie file. This is useful when you want your script to
+   better inherit the properties of your previous browser session.
+ <li>
+   -H/--header now is capable of replacing internal headers. If you add
+   a header that would've been used internally, the added will be used instead.
+ <li> Corrected several mistakes in the man page.
+ <li> -I now works for ftp-files too. It merely shows the file size now.
+ <li> Simple range support added for ftp downloads.
+ <li>
+  Following location: in a https:// header could lead to a crash. Jongki
+  Suwandi found this for us!
+</ul>
+
+<p> Fixed in 6.2
+<ul>
+ <li> another bug in loction: following with proxies when the protocol part
+  isn't specified was fixed
+ <li> fixed the lib Makefile to not include getpass twice when linking
+ <li> removed core-dump due to bad free after download was complete in src/main.c
+ <li> removed double text output when ftp-downloading
+ <li> config.guess recognizes Mac OS X
+ <li> HTTP headers are now parsed case insensitive!
+ <li> --stderr now supports redirecting the stderr stream to stdout or a file
+   now. This is mainly for victims of Windows.
+ <li> the configure script understands --without-ssl now!
+</ul>
+
+<p> Fixed in 6.1
+<ul>
+ <li> zlib proved not to be as easy to add as I had anticipated. I'll keep
+      it on hold for now.
+ <li> moved the libcurl include files into a subdir named curl
+ <li> #include zlib.h fixes 
+ <li> adjusted the maketgz script to reduce reruns of the configure when
+      building
+</ul>
+
+<p> Fixed in 6.1 beta
+<ul>
+ <li> -d now can get data from a file or stdin
+ <li> HTTP: "Accept-Encoding: gzip,compress,deflate" - experiments
+ <li> Misc: Multiple URL download capacity
+ <li> HTTP: Made the -F form posting accept files from stdin as well.
+</ul>
+
+<p> Fixed in 6.0
+<ul>
+ <li> <b>ldap://</b> with <a href="http://www.openldap.org">openldap</a>
+ <li> <b>file://</b> works, for unix and win32
+ <li> cookie matching when using HTTP proxy
+ <li> better cookie sending (single line)
+ <li> QUOT fix for ftp
+ <li> ftp upload through http proxy is now allowed using HTTP PUT
+ <li> improved configure openssl path specifier
+ <li> enabled "custom" http requests (like DELETE or TRACE)
+</ul>
+
+#endif
+
+<p> Earlier changes elsewhere
+
+#include "_footer.html"
+</BODY>
+</HTML>

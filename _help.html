@@ -1,0 +1,61 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Help Us!</TITLE>
+</HEAD>
+
+#define CURL_HELP
+
+#include "_menu.html"
+#include "setup.t"
+#include "pic.t"
+
+WHERE1(Contribute)
+
+TITLE(We Need Your Help)
+<p>
+ The curl project depend on volountary work by skilled persons. We depend on
+ work by many different people for this to develop. Time and resources are
+ scarce for everyone of us, so if we share the burdens we can reach further
+ and create a better product. This list contains some of the stuff we need
+ help with right now.
+<p>
+ Also, have a look at the <a
+ href="http://sourceforge.net/pm/?group_id=976">task list</a> and the <a
+ href="http://curl.haxx.se/docs/todo.html">TODO list</a> I try to maintain!
+
+<p>
+<b>test suite</b><br>
+<ul>
+ <li> Fix the perl HTTP server to work with persistant connections
+ <li> Fix the perl FTP server to work with persistant connections.
+ <li> more test cases (especially that excersise the persistant connections.
+      We might need to improve the whole test suite for this.)
+</ul>
+
+<b>various persistant connections updates</b><br>
+<ul>
+ <li> Add more example source codes that use persistant connections
+</ul>
+
+<b>misc improvements</b><br>
+<ul>
+ <li> IPv6 support (passive FTP support is still left)
+ <li> SSL session ID caching
+ <li> asynch name resolving (to allow full win32 timeout support)
+ <li> zlib support. It should be buffer-based decompression and it should work
+  with the three main compression types HTTP documents can be compressed with.
+ <li> C++ wrappers for the interface
+ <li> python/other-languages interface to libcurl
+</ul>
+
+<p>
+ Of course, if you're willing to help and have other ideas of what to improve,
+ fix or add, get in touch and we'll discuss it!
+<p>
+ Before posting changes and patches, have a look at the <a
+ href="/docs/contribute.html">Contribute</a> document.
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
