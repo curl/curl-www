@@ -10,6 +10,11 @@ o 'txt2plain'  Daniel's very simple perl script to convert < and > etc to HTML
 
 Run 'make' in the www-root to build the full site.
 
+Add a symbolic link named 'cvssource' in the web site's root dir to point to
+the root of a curl source tree (have that automatically updated from CVS to be
+really good). Many docs pages are generated from the docs files of that source
+tree.
+
 You must have .shtml running on your server, you must have perl in
 /usr/bin/perl.
 
