@@ -92,6 +92,8 @@ tr.odd {
   text-decoration: none;
   color: #ffffff;
   white-space: nowrap;
+  padding: 0px 4px 0px 4px;
+  font-family: sans-serif;
 }
 
 /* a non-selected item in the main menu, with the mouse hovering */
@@ -100,23 +102,25 @@ tr.odd {
   color: #ffffff;
   background-color: #202080;
   white-space: nowrap;
-  font-weight: bold;
+  padding: 0px 4px 0px 4px;
+  font-family: sans-serif;
 }
 
 /* a selected item in the main menu */
 .itemselect, .libselect {
+  font-family: sans-serif;
   text-decoration: none;
   background-color: white;
   font-weight: bold;
   color: black;
   white-space: nowrap;
-  width: 100%;
+  padding: 0px 2px 0px 2px;
 }
 
 /* the main curl site left-side menu box */
 .mainmenu, .libmenu {
   background-color: #4040ff;
-  padding: 4px 4px 4px 4px;
+  padding: 8px 4px 8px 2px;
 }
 
 /* the about infobox in the right-bottom */
@@ -127,7 +131,8 @@ tr.odd {
   background-color: #e0e0ff;
   font-size: 80%;
   float: right;
-  width: 20%;
+  text-align: left;
+  width: 15em;
   padding: 2px 2px 2px 2px;
 }
 
