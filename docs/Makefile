@@ -13,7 +13,7 @@ MAN2HTML = roffit --bare
 
 PAGES = index.html manpage.html faq.html changes.html contribute.html	\
  internals.html sslcerts.html companies.html press.html features.html	\
- resources.html bugs.html install.html readme.html readme.curl.html	\
+ bugs.html install.html readme.html readme.curl.html	\
  resources.html copyright.html thanks.html y2k.html todo.html		\
  httpscripting.html comparison-table.html relatedtools.html		\
  osdistribs.html versions.html history.html loc.html knownbugs.html	\
@@ -103,13 +103,6 @@ features.html: _features.html $(MAINPARTS) features.t
 
 features.t: $(DOCROOT)/FEATURES
 	$(TXT2PLAIN) < $<  > $@
-
-resources.html: _resources.html $(MAINPARTS) resources.t
-	$(ACTION)
-
-resources.t: $(DOCROOT)/RESOURCES
-	$(TXT2HTML) < $(DOCROOT)/RESOURCES > resources.t
-
 
 install.html: _install.html $(MAINPARTS) install.t
 	$(ACTION)

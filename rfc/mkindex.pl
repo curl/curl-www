@@ -18,12 +18,8 @@ my @files = grep { /\.(txt|html)/ && -f "$some_dir/$_" } readdir(DIR);
 closedir DIR;
 
 
-print "<table>";
+print "<ul>";
 
-print "<tr class=\"tabletop\"><th>File name</th>",
-    "<th>Size</th>",
-    "<th>Description</th>",
-    "</tr>";
 for(sort @files) {
     $filename = $_;
 
@@ -51,12 +47,10 @@ for(sort @files) {
         $col="even";
     }
 
-    $size = sprintf("%.1f", $size/1024);
+    $size = sprintf("%d", int($size/1024));
 
-    print "<tr class=\"$col\"><td><a href=\"/rfc/$filename\">$showname</a></td>",
-    "<td>$size&nbsp;Kb</td>",
-    "<td>".$desc{$filename}."</td>\n",
-    "</tr>\n";
+    printf("<li class=\"$col\"><a href=\"/rfc/$filename\">$showname</a> - %s\n",
+           $desc{$filename});
 }
-print "</table>";
+print "</ul>";
 
