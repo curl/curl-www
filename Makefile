@@ -4,11 +4,11 @@ MAINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t libcurl/_
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 
 # the latest stable version is:
-STABLE= 7.9.6
-RELDATE = "15th of April 2002"
-RELSIZE = "706370 bytes"
-BZ2SIZE = "530320 bytes"
-ZIPSIZE = "922392 bytes"
+STABLE= 7.9.7
+RELDATE = "13th of May 2002"
+RELSIZE = "717489 bytes"
+BZ2SIZE = "540544 bytes"
+ZIPSIZE = "935985 bytes"
 
 # name of the dir to tempoary unpack and build zip files in:
 TEMPDIR=tempzip
@@ -21,7 +21,8 @@ ACTION=@echo preprocessing $@; \
        cpp -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
        chmod a-w+r $@
 
-all: index.shtml feedback.html mirrors.html cvs.html libs.html icons.html \
+all: index.shtml index2.shtml \
+	feedback.html mirrors.html cvs.html libs.html icons.html \
 	help.html curlprograms.html download.html changes.html \
 	version7.html bugreport.html about.html support.html \
 	news.html news.shtml head.html foot.html press.html \
@@ -53,6 +54,9 @@ foot.html: _foot.html $(MAINPARTS)
 	$(ACTION)
 
 index.shtml: _main.html $(MAINPARTS) $(STAT)
+	$(ACTION)
+
+index2.shtml: _main2.html $(MAINPARTS) $(STAT)
 	$(ACTION)
 
 news.html: _news.html $(MAINPARTS)
