@@ -43,9 +43,29 @@ SUBTITLE(Get a Fresh Check-out from CVS)
  $ ./curl/tests/testcurl.pl | mail -s "autobuild" curl-autocompile@haxx.se
 </pre>
 <p>
- If mailing the info is not suitable for you, try using this <a
- href="http://curl.haxx.se/auto/upload.cgi">upload form</a>.
 
+<b>Note:</b> It is important that you do include the word 'autobuild' in the
+ subject of the mail, as mails to this receiver without it will be sent to
+ /dev/null with no questions asked.
+
+<p>
+ If mailing the info is not suitable for you, but you have a working curl
+ version installed, you can upload the file with curl self:
+<pre>
+ $ ./curl/tests/testcurl.pl | curl -s -F file=@- http://curl.haxx.se/auto/upload.cgi
+</pre>
+<p>
+ You can also use this
+ <a href="http://curl.haxx.se/auto/upload.cgi">upload form</a> "manually".
+
+SUBTITLE(Other platforms than Unix)
+
+ On Unix/Linux testcurl.pl assumes a GNU-like build with configure; on Win32
+ the MSVC build is default. The testcurl.pl can now take an option
+ '<tt>--target=[your_os]</tt>' so you can specify to build targets for other
+ platforms.  With this option it should now be very easy to add other
+ autobuilds for platforms not able to use GNU-like build systems.
+  
 SUBTITLE(Build from daily tarballs)
 <p>
  If you can't checkout or update the sources from CVS easily, another approach
