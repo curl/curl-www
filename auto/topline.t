@@ -6,5 +6,6 @@
 
 [<a href="./">build table</a>]
 [<a href="summary.html">stats</a>]
+[<a href="missing.html">missing</a>]
 [<a href="cvshistory.html">CVS history</a>]
 [<a href="howto.html">autobuild HOWTO</a>]

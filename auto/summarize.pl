@@ -87,11 +87,12 @@ sub summary {
                 $totalwarn/$buildnum, $totalfine/($buildnum-$totallink),
                 $warnfree, $warnfree*100/$buildnum);
 
-    printf SUM ("<p> %d builds (%d%%) failed to link and %d builds (%d%%) failed one or more tests",
+    printf SUM ("<p> %d builds (%d%%) failed to link, %d builds (%d%%) failed one or more tests, %d builds ran no tests",
                 $totallink,
                 $totallink*100/$buildnum,
                 $totalfail,
-                $totalfail*100/$buildnum,);
+                $totalfail*100/$buildnum,
+                $untestedtotal);
 
     printf SUM ("<p><table><tr valign=\"top\"><td><b>%d option combos</b><br>\n",
                 scalar(keys %combo));
@@ -104,16 +105,15 @@ sub summary {
     }
     printf SUM "<td><td><b>%d host combos</b>\n", scalar(keys %oses);
     foreach $os (sort {$oses{$b} <=> $oses{$a}} keys %oses) {
-        printf SUM ("<p>%s<span class=\"mini\">%s</span></a> %d times<ul>\n",
+        printf SUM ("<p>%s<span class=\"mini\">%s</span></a> %d times\n",
                     $oslink{$os}?$oslink{$os}:"<a>",
                     $os,
                     $oses{$os});
         my $cb = $oscombo{$os};
         foreach $s (sort {$oscombo{$os}{$b} <=> $oscombo{$os}{$a}} keys %$cb) {
-            printf SUM ("<li><span class=\"mini\">$s</span> %d times",
+            printf SUM ("<br><span class=\"mini\">$s</span> %d times\n",
                         $oscombo{$os}{$s});
         }
-        print SUM "</ul>\n";
     }
 
     print SUM "</td></tr></table>\n";
@@ -183,6 +183,7 @@ sub endofsingle {
     my $krb4="-";
     my $zlib="-";
     my $gss="-";
+    my $idn="-";
 
     if($libcurl =~ /libcurl\/([^ ]*)/) {
         $libver = $1;
@@ -202,6 +203,9 @@ sub endofsingle {
     }
     if($gssapi) {
         $gss = "G";
+    }
+    if($libidn) {
+        $idn = "I";
     }
 
     $showdate = $date;
@@ -256,8 +260,11 @@ sub endofsingle {
         $res .= "</a></td>\n";
     }
     else {
-        $totalfine += $fine;
-        $res .= "<td class=\"buildfine\">$a $fine";
+        $totalfine += $testfine;
+        if(0 == $testfine) {
+            $untestedtotal++;
+        }
+        $res .= "<td class=\"buildfine\">$a $testfine";
 
         if($skipped) {
             #$res .= "+$skipped";
@@ -280,7 +287,7 @@ sub endofsingle {
 
     my $uniq = $uname.$libver.$sslver.$krb4.$ipv6.$memory.$https;
 
-    my $o = "$krb4$ipv6$memory$https$asynch$zlib$gss";
+    my $o = "$krb4$ipv6$memory$https$asynch$zlib$gss$idn";
 
     $res .= "<td class=\"mini\">$o</td>\n<td>$desc</td>\n<td>$name</td></tr>\n";
 
@@ -306,6 +313,7 @@ sub endofsingle {
 
     $fail=$name=$email=$desc=$date=$libcurl=$uname="";
     $fine=0;
+    $testfine=0;
     $linkfine=0;
     $warning=0;
     $skipped=0;
@@ -319,6 +327,7 @@ sub endofsingle {
     $ipv6enabled=0;
     $gssapi=0;
     $os="";
+    $libidn=0;
 
     return $res;
 }
@@ -376,8 +385,20 @@ sub singlefile {
                 $fail = $1;
             }
             elsif($_ =~ /^TESTDONE: (\d*) tests out of (\d*)/) {
-                $fine = $1;
-                $failamount = ($2 - $1);
+                $testfine = $1;
+                my $numtests= $2;
+                if($numtests <= 0) {
+                    # no tests performed, but we are fine with it
+                    $testfine = 0;
+                    $fine = 1;
+                }
+                elsif($numtests > $testfine) {
+                    $failamount = ($numtests - $testfine);
+                }
+                else {
+                    # no failures, we are coool
+                    $fine = 1;
+                }
             }
             elsif($_ =~ /^TESTINFO: (\d*) tests were skipped/) {
                 $skipped = $1;
@@ -438,6 +459,9 @@ sub singlefile {
             }
             elsif($_ =~ /^\#define HAVE_GSSAPI 1/) {
                 $gssapi=1;
+            }
+            elsif($_ =~ /^\#define HAVE_LIBIDN 1/) {
+                $libidn=1;
             }
             elsif($_ =~ /^\#define OS \"([^\"]*)\"/) {
                 $os=$1;
