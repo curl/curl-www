@@ -43,6 +43,21 @@ BODY {
   border: outset 2px #ffffff;
 }
 
+.news {
+  border: outset 2px #ffffff;
+}
+
+.newstitle {
+  font-size: 120%;
+  white-space: nowrap;
+  background-color: #e0e0ff;
+}
+
+td.newsdate {
+  text-align: right;
+}
+
+
 .mini {
   font-size: 7pt;
 }
