@@ -6,7 +6,7 @@ require "../curl.pm";
 
 $databasefilename = "data/databas.db";
 
-sub header {
+sub lheader {
     my ($title)=@_;
 
     if ($title eq "") {
@@ -39,7 +39,7 @@ MOO
     "<div class=\"pagetitle\">$title</div>";
 }
 
-sub footer {
+sub lfooter {
     print <<FOOT
 </td></tr></table>
 </body></html>
@@ -70,7 +70,7 @@ sub inputstuff::save_input
         } else {
             my $newid=$db->add(%data);
             if ($db->save() == -1) {
-                $warning_message="Faield while saving database!";
+                $warning_message="Failed saving database!";
             } else {
                 $result_message="Added entry";
             }

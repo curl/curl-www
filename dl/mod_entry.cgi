@@ -41,7 +41,7 @@ else {
     $title="Add Entry";
 }
 # Skriv ut huvudet
-header($title);
+lheader($title);
 
 if (CGI::param("action")) {
     # get the pre- values if they're set instead of the "original" ones
@@ -65,7 +65,7 @@ if (CGI::param("action")) {
 &inputstuff::form_footer();
 
 # Skriv ut sidfoten
-footer();
+lfooter();
 
 sub alternative {
     my ($desc, $short, $explain)=@_;
@@ -162,13 +162,13 @@ sub my_show_form()
     alternative("Packager Name", "name",
                 "Full name");
 
-    alternative("Packager Email", "email",
-                "name\@somwhere.come");
+    alternative("Packager Email/URL", "email",
+                "name\@somwhere.come or URL");
 
     alternative("Regex-name", "re",
                 "name of the package regex, see latest.cgi");
 
-    alternative("Responsible", "resp",
+    alternative("Uploader", "resp",
                 "username of the person responsible for this package");
 
     alternative("Hide from download page", "hide",

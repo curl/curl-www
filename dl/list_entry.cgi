@@ -11,7 +11,7 @@ $db=new pbase;
 $db->load($databasefilename);
 
 # Skriv ut huvudet
-header("List Entries");
+lheader("List Entries");
 
 my $per;
 
@@ -95,10 +95,10 @@ for $per (@sall) {
            $$per{'ssl'}eq"Yes"?"<b>SSL</b>":
            $$per{'ssl'}eq"No"?"&nbsp;":$$per{'ssl'});
     printf("<td>%s</td>", show($$per{'date'}));
-    my $em = show($$per{'email'});
-    printf("<td><a href=\"%s\">%s</a></td>",
-           $em?"mailto:".$em:"",
-           show($$per{'name'}));
+
+    printf("<td>%s %s</a></td>",
+           ($$per{'name'} && $$per{'name'} ne "-")?show($$per{'name'}):"[no name]",
+           $$per{'email'}?"[email]":"[no email]");
     printf("<td>%s</td>", show($$per{'size'}));
     printf("<td>%s</td>",
            $$per{'img'}?"<img src=\"/pix/".$$per{'img'}."\">":"&nbsp;");
@@ -109,5 +109,5 @@ print "</table>",
     "<p> $i entries, $utd is up-to-date\n";
 
 # Skriv ut sidfoten
-footer();
+lfooter();
 

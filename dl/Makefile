@@ -4,7 +4,7 @@ TARGE2 = files2.html
 
 all: $(TARGET) $(TARGE2)
 
-$(TARGET): data/databas.db ../Makefile
+$(TARGET): data/databas.db ../Makefile mktable.pl
 	perl mktable.pl > $(TARGET)
 
 $(TARGE2): data/databas.db ../Makefile

@@ -38,7 +38,7 @@ sub sortent {
         $r = $$a{'curl'} cmp $$b{'curl'};
     }
     if(!$r) {
-        # type (bin/devel/source)
+        # type (bin/devel/source/lib)
         $r = $$a{'type'} cmp $$b{'type'};
     }
     if(!$r) {
@@ -54,15 +54,11 @@ my $shownprev;
 sub top {
     my ($os, $aname, $img)=@_;
 
-    print "<tr class=\"os\">";
+    print "<tr class=\"os\"><td class=\"ostitle\" colspan=\"6\">";
     if($img) {
-        print "<td class=\"ostitleleft\" colspan=\"4\">",
-        "$aname$os</td>",
-        "<td class=\"ostitleright\" colspan=\"3\">\n",
-        "$img</td></tr>\n";
+        print "$img$aname$os</td></tr>\n";
     }
     else {
-        print "<td class=\"ostitle2\" colspan=\"7\">",
         "$aname$os</td></tr>\n";
     }
     $shownprev = 1;
@@ -105,7 +101,7 @@ print "\n<p><table class=\"download2\" cellpadding=\"0\" cellspacing=\"0\">\n";
              'Version',
              'Type',
              'SSL',
-             'Date',
+#             'Date',
              'Provider',
              'Size')) {
         print "<th>$h</th>\n";
@@ -117,6 +113,11 @@ my $i=0;
 my $utd=0; # up to date
 
 my %shown;
+
+my %typelong=('bin' => '<b>binary</b>',
+              'devel' => 'devel',
+              'source' => 'source',
+              'lib', => 'libcurl');
 
 my $numcpu; # for this particular OS
 my $numpack; # for this particular OS
@@ -171,7 +172,7 @@ for $per (@sall) {
             my $alt = "$os";
             $alt =~ s/-//g;
             $alt =~ s/  / /g;
-            $img="<img width=\"200\" height=\"30\" alt=\"$alt\" src=\"/pix/".$$per{'img'}."\" border=\"0\">";
+            $img="<img width=\"200\" height=\"30\" alt=\"$alt\" src=\"/pix/".$$per{'img'}."\" border=\"0\" align=\"right\">";
         }
         if($numflav>1) {
             my $show = $os;
@@ -227,22 +228,29 @@ for $per (@sall) {
     }
     printf("<td class=\"col2\"><a href=\"%s\">%s</a></td>\n",
            $fi, $$per{'curl'});
-    printf("<td class=\"col3\">%s</td>\n", $$per{'type'}eq"bin"?
-           "<b>bin</b>":show($$per{'type'}));
+    printf("<td class=\"col3\">%s</td>\n",
+           show($typelong{$$per{'type'}}));
     printf("<td class=\"col4\">%s</td>\n",
            $$per{'ssl'}eq"Yes"?"<img width=\"27\" height=\"12\" alt=\"SSL enabled\" src=\"/ssl.png\">":
            $$per{'ssl'}eq"No"?"<img width=\"27\" height=\"12\" alt=\"SSL disabled\" src=\"/nossl.png\">":$$per{'ssl'});
-    printf("<td class=\"col5\">%s</td>\n", show($$per{'date'}));
+#    printf("<td class=\"col5\">%s</td>\n", show($$per{'date'}));
     my $em = show($$per{'email'});
-    $em =~ s/\@/ at /g;
-    $em =~ s/\./ dot /g;
+    if($em =~ /:\/\//) {
+        # email is a plain URL
+    }
+    elsif($em =~ /@/) { 
+        $em =~ s/\@/ at /g;
+        $em =~ s/\./ dot /g;
+        $em = "mailto:$em";
+    }
 
     printf("<td class=\"col6\">%s%s%s</td>\n",
-           $em?"<a href=\"mailto:$em\">":"",
+           $em?"<a href=\"$em\">":"",
            show($$per{'name'}),
            $em?"</a>":"");
     my $size = show($$per{'size'});
-    printf("<td class=\"col7\">%s</td>\n", $size?$size:"&nbsp;");
+    $size = int($size/1024);
+    printf("<td class=\"col7\">%s</td>\n", $size?"$size KB":"&nbsp;");
     print "</tr>\n";
     $i++;
 }
