@@ -4,7 +4,7 @@
 package latest;
 
 our $dir="/home/dast/curl_html/download";
-our $curl="/usr/local/bin/curl";
+our $curl="curl";
 
 # they're all hashed on 'type'
 our %high;
