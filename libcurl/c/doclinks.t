@@ -60,6 +60,18 @@ THIS(curl_easy_duphandle)
 DOC(curl_easy_duphandle, curl_easy_duphandle.html)
 #endif
 
+#ifdef DOCS_EASY_GETINFO
+THIS(curl_easy_getinfo)
+#else
+DOC(curl_easy_getinfo, curl_easy_getinfo.html)
+#endif
+
+#ifdef DOCS_EASY_PERFORM
+THIS(curl_easy_perform)
+#else
+DOC(curl_easy_perform, curl_easy_perform.html)
+#endif
+
 #ifdef DOCS_EASY_RESET
 THIS(curl_easy_reset)
 #else
@@ -76,18 +88,6 @@ DOC(curl_easy_setopt, curl_easy_setopt.html)
 THIS(curl_easy_strerror)
 #else
 DOC(curl_easy_strerror, curl_easy_strerror.html)
-#endif
-
-#ifdef DOCS_EASY_PERFORM
-THIS(curl_easy_perform)
-#else
-DOC(curl_easy_perform, curl_easy_perform.html)
-#endif
-
-#ifdef DOCS_EASY_GETINFO
-THIS(curl_easy_getinfo)
-#else
-DOC(curl_easy_getinfo, curl_easy_getinfo.html)
 #endif
 
 #ifdef DOCS_ESCAPE
