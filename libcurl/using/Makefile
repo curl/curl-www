@@ -4,6 +4,7 @@ TXT2PLAIN= $(ROOT)/docs/txt2plain.pl
 SRCROOT=$(ROOT)/cvssource
 DOCROOT=$(SRCROOT)/docs
 CURL= $(ROOT)
+MAN2HTML= man2html | sed -e 's/^$$/\&nbsp;/g' -e 's/\#/\&\#35\;/g' | uniq
 
 MAINPARTS= $(ROOT)/_doctype.html _menu.html ../_links.html ../setup.t ../pic.t  $(ROOT)/where.t ../download.t $(ROOT)/ad.t
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
@@ -20,4 +21,4 @@ apps.html: _apps.html $(MAINPARTS)
 curl-config.html: _curl-config.html $(MAINPARTS) curl-config.t
 	$(ACTION)
 curl-config.t: $(DOCROOT)/curl-config.1
-	gnroff -man $< | man2html >$@
+	gnroff -man $< | $(MAN2HTML) >$@
