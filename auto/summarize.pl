@@ -11,7 +11,7 @@ cat("head.html");
 
 print <<OPTS
  <p>
-   Options = (K)krb4, IPv(6), (M)emory debug, (S)SL enabled, (A)synch, (Z)lib
+   Options = (<b>K</b>)rb4, IPv(<b>6</b>), (<b>M</b>)emory debug, (<b>S</b>)SL enabled, (<b>A</b>)synch, (<b>Z</b>)lib
 
 OPTS
     ;
@@ -300,12 +300,14 @@ sub singlefile {
             elsif(($_ =~ /([.\/a-zA-Z0-9]*)\.[ch]:([0-9:]*): /) ||
                   ($_ =~ /\"([_.\/a-zA-Z0-9]+)\", line/) ||
                   ($_ =~ /^cc: Warning: ([.\/a-zA-Z0-9]*)/) ||
-                  ($_ =~ /cc: WARNING File/)
+                  ($_ =~ /cc: WARNING File/) ||
+                  ($_ =~ /: remark \#/)
                   ) {
                 # first one, gcc
                 # second one, xlc (on AIX)
                 # third one, cc on Tru64
                 # forth one, MIPSPro C 7.3 on IRIX
+                # fifth one, icc 8.0 Intel compiler on Linux
                 $warning++;
             }
             elsif($_ =~ /^testcurl: failed to update from CVS/) {

@@ -61,7 +61,9 @@ while(<FILE>) {
                    # Tru64 cc warning:
                    ($_ =~ /^cc: Warning: ([.\/a-zA-Z0-9]*)/) ||
                    # MIPSPro C 7.3:
-                   ($_ =~ /cc: WARNING File/)
+                   ($_ =~ /cc: WARNING File/) ||
+                   # Intel icc 8.0:
+                   ($_ =~ /: remark \#/)
                    ) {
                        print "<div class=\"warning\">$_</div>\n";
                 }
