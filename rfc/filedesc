@@ -1,7 +1,7 @@
-ntlm.html The NTLM Authentication Protocol
 cookie_spec.html Netscape's cookie specification
 rfc0959.txt FILE TRANSFER PROTOCOL (FTP)
 rfc1635.txt How to Use Anonymous FTP
+rfc1639.txt FTP Operation Over Big Address Records (FOOBAR)
 rfc1738.txt Uniform Resource Locators (obsoleted by RFC 2396)
 rfc1777.txt Lightweight Directory Access Protocol
 rfc1808.txt Relative Uniform Resource Locators
@@ -20,20 +20,35 @@ rfc2068.txt HTTP 1.1 (obsoleted by RFC 2616)
 rfc2109.txt HTTP State Management Mechanism (obsoleted by RFC 2964)
 rfc2183.txt The Content-Disposition Header Field
 rfc2184.txt MIME Parameter Value and Encoded Word Extensions
+rfc2228.txt FTP Security Extensions
 rfc2229.txt A Dictionary Server Protocol
+rfc2246.txt The TLS Protocol
 rfc2255.txt Newer LDAP URL syntax document.
 rfc2231.txt MIME Parameter Value and Encoded Word Extensions:  Character Sets, Languages, and Continuations
 rfc2326.txt Real Time Streaming Protocol (RTSP)
 rfc2388.txt Returning Values from Forms: multipart/form-data
+rfc2389.txt Feature negotiation mechanism for FTP
 rfc2396.txt Uniform Resource Identifiers: Generic Syntax and Semantics
 rfc2428.txt FTP Extensions for IPv6 and NATs
+rfc2459.txt Internet X.509 Public Key Infrastructure Certificate and CRL Profile
 rfc2518.txt HTTP Extensions for Distributed Authoring -- WEBDAV
 rfc2577.txt FTP Security Considerations
 rfc2616.txt HTTP 1.1, the latest
 rfc2617.txt HTTP Authentication
+rfc2640.txt Internationalization of FTP
 rfc2718.txt Guidelines for new URL Schemes
 rfc2732.txt Format for Literal IPv6 Addresses in URL's
+rfc2817.txt Upgrading to TLS Within HTTP/1.1
 rfc2818.txt HTTP Over TLS (TLS is the successor to SSL)
 rfc2936.txt HTTP MIME Type Handler Detection
 rfc2964.txt Use of HTTP State Management
 rfc2965.txt HTTP State Management Mechanism. Cookies. (Obsoletes RFC2109)
+rfc3280.txt Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile
+rfc1884.txt IP Version 6 Addressing Architecture (obsolete)
+rfc2373.txt IP Version 6 Addressing Architecture (obsolete)
+rfc3513.txt IP Version 6 Addressing Architecture
+draft-murray-auth-ftp-ssl-13.txt Securing FTP with TLS
+draft-murray-auth-ftp-ssl-12.txt Securing FTP with TLS (obsolete version)
+draft-murray-auth-ftp-ssl-11.txt Securing FTP with TLS (obsolete version)
+ntlm.html Eric Glass' NTLM Authentication Protocol specification
+draft-brezak-spnego-http-04.txt SPNEGO Access Authentication

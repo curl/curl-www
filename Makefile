@@ -1,5 +1,5 @@
 MAINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t	\
-libcurl/_links.html ad.t mirrorlinks.t searchform.t css.t sflogo.t
+libcurl/_links.html ad.t mirrorlinks.t css.t sflogo.t
 
 # today's date
 NOW=$(shell gnudate +'-D__TODAY__=%B %e, %Y')
@@ -41,10 +41,6 @@ all: index.html \
 	cd lxr; make
 	@echo done 
 #archive/index.html
-
-check:
-	cd htdig; make
-	cd /home/dast/htdig/common; make
 
 head.html: _head.html $(MAINPARTS)
 	$(ACTION)

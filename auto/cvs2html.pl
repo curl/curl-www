@@ -69,7 +69,7 @@ my %shortnames=('bagder' => 'Daniel Stenberg',
                 );
 
 # URL root to prepend file names with
-my $root="http://cvs.php.net/cvs.php/curl";
+my $root="http://cool.haxx.se/cvs.cgi/curl/";
 
 my @mname = ('January',
              'February',

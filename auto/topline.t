@@ -1,6 +1,6 @@
 <div class="relatedbox">
 <b>Related:</b>
-<br><a href="http://cvs.php.net/cvs.php/curl">Browse CVS</a>
+<br><a href="http://cool.haxx.se/cvs.cgi/curl/">Browse CVS</a>
 <br><a href="http://cool.haxx.se/curl-daily/">Daily Snapshot</a>
 </div>
 

@@ -13,10 +13,17 @@ my $buildnum;
 
 my $showntop=0;
 my $prevtable = -1;
-my $tablesperpage = 7;
+my $tablesperpage = 4;
 
 for ( 0 .. 3 ) {
     open(CLEAR, ">table$_.t");
+    
+    my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday) =
+        gmtime(time);
+
+    printf CLEAR ("<p><small>Page generated at %02d:%02d %04d-%02d-%02d (GMT)</small>",
+                  $hour, $min, $year+1900, $mon+1, $mday);
+
     close(CLEAR);
 }
 
@@ -243,7 +250,7 @@ sub endofsingle {
                 $res .= "CVS";
             }
             elsif(!$configure) {
-                $res .= "build env";
+                $res .= "build";
             }
             else {
                 $totallink++;

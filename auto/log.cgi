@@ -18,6 +18,7 @@ my $inname=$req->param('name');
 my $indate=$req->param('date');
 
 my $id=$req->param('id');
+my @out;
 
 if($id =~ /^(\d\d\d\d)(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)-(\d+)/) {
     my ($bhour, $bmin, $bsec, $bpid);
@@ -45,6 +46,8 @@ else {
 }
 
 open(FILE, "<$build");
+my $num;
+
 while(<FILE>) {
     if($_ =~ /^INPIPE: startsingle here ([0-9-]*)/) {
         $thisid=$1;
@@ -56,7 +59,7 @@ while(<FILE>) {
     elsif($_ =~ /^(INPIPE: endsingle here|testcurl: ENDING HERE)/) {
         if(($id eq $thisid) ||
            (($name eq $inname) && ($indate eq $date)) ) {
-            print "<div class=\"mini\">\n";
+            push @out, "<div class=\"mini\">\n";
             for(@present) {
                 chomp;
                 if(
@@ -77,13 +80,14 @@ while(<FILE>) {
                    # MSVC
                    ($_ =~ /^[\.\\]*([.\\\/a-zA-Z0-9-]*)\.[chy]\(([0-9:]*)/)
                    ) {
-                       print "<div class=\"warning\">$_</div>\n";
+                    $num++;
+                    push @out, "<a name=\"prob$num\"></a><div class=\"warning\">$_</div>\n";
                 }
                 else {
-                    print "$_<br>\n";
+                    push @out, "$_<br>\n";
                 }
             }
-            print "</div>\n"; # end of mini-div
+            push @out, "</div>\n"; # end of mini-div
             $show=1;
             @present="";
             last;
@@ -104,6 +108,17 @@ if(!$show) {
     " been removed. Sorry!";
 }
 close(FILE);
+
+if($out[0]) {
+    if($num) {
+        print "jump down to ";
+        print "<a href=\"#prob1\">problem 1</a>\n";
+        if($num>1) {
+            print "<a href=\"#prob$num\">problem $num (last)</a>\n";
+        }
+    }
+    print @out;
+}
 
 
 &catfile("foot.html");
