@@ -32,19 +32,9 @@ sub reltime {
                         $mday, $ord[ $mday % 20 ], $mname[$mon],
                         $hour, $min);
     }
-    elsif ($mday != $now[3]) {
-        if ( $mday == $yday[3] ) {
-            # yesterday
-            $str = sprintf( "yday %02d:%02d", $hour, $min );
-        }
-        else {
-            # last week
-            $str = sprintf( "%s %02d:%02d", $dname[$wday], $hour, $min );
-        }
-    }
     else {
-        # same day
-        $str = strftime( "%H:%M", @then );
+        # last week
+        $str = sprintf( "%s %02d:%02d", $dname[$wday], $hour, $min );
     }
     
     return $str;
