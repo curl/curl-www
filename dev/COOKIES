@@ -1,0 +1,112 @@
+/****************************************************************************
+   libcurl cookie interface suggestion draft
+   Date: 2003-06-25 */
+
+/* This is the cookie struct used for all communication in/out of libcurl.  It
+ * will not be used internally, but only for representing a cookie that is
+ * known and stored differently within libcurl.
+ */
+
+struct curl_cookie {
+  struct curl_cookie *next; /* if non-NULL, points to the next cookie */
+  unsigned char *name;
+  unsigned char *value;
+  unsigned char *domain; /* or NULL */
+  unsigned char *path;   /* or NULL */
+  bool secure;
+  time_t expires;        /* 0 means "session-cookie" */
+  void *hidden;          /* refers to the corresponding cookie information
+                            held by libcurl in the curl handle memory */
+};
+
+/* ------------------------------------------------------------------------
+
+curl_easy_cookie(CURL *handle,
+                 CURLCOOKIE option,
+                 ...);
+
+Options include:
+
+ SAVE - write down all cookies to the specified cookie jar now.
+
+ LOAD - load new cookies from the specified file. This appends all the new
+        ones to the list of already existing.
+
+ ADD  - pass a pointer to a curl_cookie struct, of the cookie to add. All info
+        will be copied from the struct.
+
+ DEL  - given a libcurl cookie 'hidden' pointer (see the cookie struct), the
+        corresponding cookie is removed. If NULL is given, ALL known cookies
+        are removed.
+
+ GET  - TWO ARGUMENTS required!
+
+        First argument: Pass in a pointer to a curl_cookie struct. The
+        cookie(s) matching the given information is returned in a linked list
+        of curl_cookie structs, stored in the pointer the second argument
+        points to. Example:
+
+          struct curl_cookie mystruct;  [fill in]
+          struct curl_cookie *results;  [get results here]
+
+          curl_easy_cookie(curl, CURLCOOKIE_GET, &mystruct, &results);
+
+        If the first argument is NULL, all known cookies will be returned.
+
+        The data pointers returned in this struct are separately allocated,
+        and they will remain usable and allocated until FREECHAIN is called.
+        See below.
+
+ FREECHAIN - free a set of curl_cookie structs previously returned by GET.
+        This function must be called after GET has been used, to free the
+        memory used for the previous cookie data allocation.
+
+        NOTE: if you get a whole chain returned by a single GET function, you
+        must pass that same pointer to the whole chain in when you use
+        FREECHAIN.
+
+ RECVFUNC - set a function pointer that is called each time a cookie is
+        received from the network by libcurl, the function should match this
+        prototype:
+
+        int recvfunc(CURL *handle, struct curl_cookie *cookie, void *recvdata)
+
+        By returning 1, libcurl will not store the cookie. Returning 0 will
+        make libcurl receive, parse and keep the cookie in its internal cookie
+        database. (Other return-codes are considered reserved for future use.)
+
+ RECVDATA - set whatever pointer you want the RECVFUNC callback to receive in
+        its recvdata argument.
+
+ SENDFUNC - set a function pointer that is called by libcurl each time a HTTP
+        request (that can return a set of cookies for libcurl to use in this
+        request) is about to be sent over the network by libcurl, the function
+        should match this prototype:
+
+        struct curl_cookie_request {
+          char *host;
+          char *path;
+          bool secure;
+        };
+
+        int sendfunc(CURL *handle,
+                     struct curl_cookie_request *request,
+                     struct curl_slist **list,
+                     void *senddata);
+
+        The callback function shall create a curl_slist of cookies in the
+        format "name=value" and then make the '*list' pointer points to the
+        first element, or make it point to NULL if no cookies are to be sent.
+
+        (libcurl will then use curl_slist_free_all() on the list, so it must
+        be constructed sensibly.)
+
+        By returning 1 from the callback, libcurl will not attempt to use any
+        of its own internal set of cookies. Returning 0 will make libcurl
+        proceed as normal. (Other return-codes are considered reserved for
+        future use.)
+
+ SENDDATA - set whatever pointer you want the SENDFUNC callback to receive in
+        its senddata argument.
+
+ ****************************************************************************/
