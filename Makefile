@@ -2,7 +2,7 @@ MAINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t	\
 libcurl/_links.html ad.t mirrorlinks.t searchform.t css.t sflogo.t
 
 # today's date
-NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
+NOW=$(shell gnudate +'-D__TODAY__=%B %e, %Y')
 
 # the latest stable version is:
 STABLE= 7.10.8
@@ -38,6 +38,7 @@ all: index.html \
 	cd mail; make
 	cd mirror; make
 	cd legal; make
+	cd auto; make
 	@echo done 
 #archive/index.html
 
@@ -102,6 +103,9 @@ $(STAT): download.html Makefile
 
 download.html: _download.html $(MAINPARTS) $(RELEASE) dl/files.html
 	$(ACTION)
+
+dl/files.html: dl/data/databas.db
+	cd dl; make
 
 changes.html: _changes.html $(MAINPARTS)
 	$(ACTION)
