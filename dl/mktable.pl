@@ -19,21 +19,31 @@ close(FILE);
 @all = $db->find_all("typ"=>"^entry\$");
 
 sub sortent {
+    # OS name
     my $r = $$a{'os'} cmp $$b{'os'};
-#    if(!$r) {
-#        $r = $$a{'osver'} cmp $$b{'osver'};
-#    }
     if(!$r) {
+        # OS flavour
         $r = $$a{'flav'} cmp $$b{'flav'};
     }
     if(!$r) {
+        # architecture
         $r = $$a{'cpu'} cmp $$b{'cpu'};
     }
     if(!$r) {
+        # OS version
+        $r = $$a{'osver'} cmp $$b{'osver'};
+    }
+    if(!$r) {
+        # curl version
+        $r = $$a{'curl'} cmp $$b{'curl'};
+    }
+    if(!$r) {
+        # type (bin/devel/source)
         $r = $$a{'type'} cmp $$b{'type'};
     }
     if(!$r) {
-        $r = $$a{'file'} cmp $$b{'file'};
+        # SSL (yes/no)
+        $r = $$a{'ssl'} cmp $$b{'ssl'};
     }
     return $r;
 }
