@@ -150,7 +150,15 @@ sub endofsingle {
     my $res = join("",
                    "<!-- $lyear$lmonth$lday $showdate --><tr>\n",
                    "<td>$showdate</td>\n");
-    my $a = "<a href=\"./showlog.cgi?year=$year&month=$month&day=$day&name=$escname&date=$escdate\">";
+    my $a;
+    if($buildid =~ /^(\d\d\d\d)(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)-(\d+)/) {
+        my ($byear, $bmon, $bday, $bhour, $bmin, $bsec, $bpid)=
+            ($1, $2, $3, $4, $5, $6, $7);
+        $a = "<a href=\"log.cgi?id=$buildid\">";
+    }
+    else {
+        $a = "<a href=\"./showlog.cgi?year=$year&month=$month&day=$day&name=$escname&date=$escdate\">";
+    }
 
     if($fail || !$linkfine || !$fine) {
         $res .= "<td class=\"buildfail\">$a";
@@ -224,6 +232,7 @@ sub endofsingle {
     $httpstest=0;
     $cvsfail=0;
     $ares=0;
+    $buildid="";
 
     return $res;
 }
@@ -244,10 +253,12 @@ sub singlefile {
         my $line = $_;
 
  #       print "L: $state - $line\n";
-        
+        if($_ =~ /^INPIPE: startsingle here ([0-9-]*)/) {
+            $buildid = $1;
+        }
         # we don't check for state here to allow this to abort all
         # states
-        if($_ =~ /^testcurl: STARTING HERE/) {
+        elsif($_ =~ /^testcurl: STARTING HERE/) {
             # mail headers here
             if($state) {
                 push @data, endofsingle();
