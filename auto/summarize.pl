@@ -77,24 +77,43 @@ sub tablebot() {
 sub summary {
     open(SUM, ">summary.t");
 
+    printf SUM ("<p>%d builds during %d days provided by %d persons with %d different OS+option combinations\n",
+                $buildnum,
+                scalar(@logs),
+                scalar(keys %who),
+                scalar(keys %oscombocount));
 
-    printf SUM "<p>%d builds during %d days provided by %d persons with %d different machine descriptions\n",
-    $buildnum, scalar(@logs), scalar(keys %who), scalar(keys %desc);
+    printf SUM ("<p> The average build gave %d warnings and ran %d tests. %d builds (%d%%) built warning-free.\n",
+                $totalwarn/$buildnum, $totalfine/($buildnum-$totallink),
+                $warnfree, $warnfree*100/$buildnum);
 
-    printf SUM "<p> The average build gave %d warnings and run %d tests. %d builds (%d%%) built warning-free.\n",
-    $totalwarn/$buildnum, $totalfine/($buildnum-$totallink),
-    $warnfree, $warnfree*100/$buildnum;
+    printf SUM ("<p> %d builds (%d%%) failed to link and %d builds (%d%%) failed one or more tests",
+                $totallink,
+                $totallink*100/$buildnum,
+                $totalfail,
+                $totalfail*100/$buildnum,);
 
-    printf SUM "<p> %d builds failed to link and %d builds failed one or more tests",
-    $totallink, $totalfail;
+    printf SUM ("<p><table><tr valign=\"top\"><td><b>%d option combos</b><br>\n",
+                scalar(keys %combo));
 
-    printf SUM "<p><table><tr valign=\"top\"><td nowrap><b>%d used option combos</b><br>\n", scalar(keys %combo);
-    for(sort {$combo{$b} <=> $combo{$a}} keys %combo) {
-        printf SUM "<span class=\"mini\">%s</span> %d times<br>\n", $_, $combo{$_};
+    foreach $cb (sort {$combo{$b} <=> $combo{$a}} keys %combo) {
+        printf SUM ("%s<span class=\"mini\">%s</span></a> %d times<br>\n",
+                    $combolink{$cb}?$combolink{$cb}:"<a>",
+                    $cb,
+                    $combo{$cb});
     }
-    printf SUM "<td><td nowrap><b>%d used OSes</b><br>\n", scalar(keys %oses);
-    for(sort {$oses{$b} <=> $oses{$a}} keys %oses) {
-        printf SUM "<span class=\"mini\">%s</span> %d times<br>\n", $_, $oses{$_};
+    printf SUM "<td><td><b>%d host combos</b>\n", scalar(keys %oses);
+    foreach $os (sort {$oses{$b} <=> $oses{$a}} keys %oses) {
+        printf SUM ("<p>%s<span class=\"mini\">%s</span></a> %d times<ul>\n",
+                    $oslink{$os}?$oslink{$os}:"<a>",
+                    $os,
+                    $oses{$os});
+        my $cb = $oscombo{$os};
+        foreach $s (sort {$oscombo{$os}{$b} <=> $oscombo{$os}{$a}} keys %$cb) {
+            printf SUM ("<li><span class=\"mini\">$s</span> %d times",
+                        $oscombo{$os}{$s});
+        }
+        print SUM "</ul>\n";
     }
 
     print SUM "</td></tr></table>\n";
@@ -210,7 +229,7 @@ sub endofsingle {
         $a = "<a href=\"log.cgi?id=$buildid\">";
     }
     else {
-        $a = "<a href=\"./showlog.cgi?year=$year&month=$month&day=$day&name=$escname&date=$escdate\">";
+        $a = "<a href=\"#internal-error\">";
     }
 
     if($fail || !$linkfine || !$fine) {
@@ -257,20 +276,31 @@ sub endofsingle {
 
     $memory=($memorydebug)?"D":"-";
     $https=($httpstest)?"S":"-";
-    $a=$ares?"A":"-";
+    $asynch=$ares?"A":"-";
 
     my $uniq = $uname.$libver.$sslver.$krb4.$ipv6.$memory.$https;
 
-    my $o = "$krb4$ipv6$memory$https$a$zlib$gss";
+    my $o = "$krb4$ipv6$memory$https$asynch$zlib$gss";
 
     $res .= "<td class=\"mini\">$o</td>\n<td>$desc</td>\n<td>$name</td></tr>\n";
 
     $combo{$o}++;
     $desc{$desc}++;
     $who{$name}++;
-    if($os) {
-        $oses{$os}++;
+    if(!$os) {
+        $os="unknown";
     }
+    if(!$oslink{$os}) {
+        # the first one we found for this OS, preserve link
+        $oslink{$os}=$a;
+    }
+    if(!$combolink{$o}) {
+        # the first one we found for this optioncombo, preserve link
+        $combolink{$o}=$a;
+    }
+    $oses{$os}++;
+    $oscombo{$os}{$o}++;
+    $oscombocount{$os.$o}++;
 
     $buildnum++;
 
