@@ -13,7 +13,7 @@ MAINPARTS= $(ROOT)/_doctype.html _menu.html ../_links.html ../setup.t \
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 ACTION=@echo preprocessing $@; rm -f $@; cpp -I.. -I$(ROOT) -I../c -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; chmod a-w+r $@
 
-all: index.html apps.html curl-config.html autoconf.html
+all: index.html apps.html curl-config.html autoconf.html icons.html
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
@@ -28,3 +28,7 @@ curl-config.html: _curl-config.html $(MAINPARTS) curl-config.t
 	$(ACTION)
 curl-config.t: $(DOCROOT)/curl-config.1
 	$(MAN2HTML) < $< >$@
+
+icons.html: _icons.html $(MAINPARTS)
+	$(ACTION)
+
