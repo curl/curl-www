@@ -96,23 +96,24 @@ sub gettype {
                "Linux source RPM.");
     }
     # curl-ssl-7.4.1-1.i386.rpm
-    elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*)(.*).i386.rpm$/) {
-        my $pkg="ssl-i386.rpm";
-        my $desc="Linux i386 RPM, SSL-enabled.";
-        return($1, $pkg, $desc);
-    }
+    #elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*)(.*).i386.rpm$/) {
+    #    my $pkg="ssl-i386.rpm";
+    #    my $desc="Linux i386 RPM, SSL-enabled.";
+    #    return($1, $pkg, $desc);
+    #}
     # curl-ssl-devel-7.9.1-1rh72.i386.rpm
-    elsif($file =~ /^curl-ssl-devel-([0-9.]*)-(\d*)(.*).i386.rpm$/) {
-        my $pkg="ssl-devel-i386.rpm";
-        my $desc="Linux i386 devel RPM, SSL-enabled.";
-        return($1, $pkg, $desc);
-    }
+    #elsif($file =~ /^curl-ssl-devel-([0-9.]*)-(\d*)(.*).i386.rpm$/) {
+    #    my $pkg="ssl-devel-i386.rpm";
+    #    my $desc="Linux i386 devel RPM, SSL-enabled.";
+    #    return($1, $pkg, $desc);
+    #}
     # curl-devel-7.9.1-1rh72.i386.rpm
-    elsif($file =~ /^curl-devel-([0-9.]*)-(\d*)(.*).i386.rpm$/) {
-        my $pkg="devel-i386.rpm";
-        my $desc="Linux i386 devel RPM";
-        return($1, $pkg, $desc);
-    }
+    #elsif($file =~ /^curl-devel-([0-9.]*)-(\d*)(.*).i386.rpm$/) {
+    #    my $pkg="devel-i386.rpm";
+    #    my $desc="Linux i386 devel RPM";
+    #    return($1, $pkg, $desc);
+    #}
+
     # curl-ssl-7.4.1-1.ppc.rpm
     elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*).ppc.rpm$/) {
         return($1, "ssl-ppc.rpm",
@@ -124,10 +125,10 @@ sub gettype {
                "Linux PPC devel RPM, SSL-enabled.");
     }
     # curl-ssl-7.4.1-1.src.rpm
-    elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*).src.rpm$/) {
-        return($1, "ssl-src.rpm",
-               "Linux source RPM, SSL-enabled.");
-    }
+    #elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*).src.rpm$/) {
+    #    return($1, "ssl-src.rpm",
+    #           "Linux source RPM, SSL-enabled.");
+    #}
     # curl-ssl-7.8.1-sparc-8-pkg.tar.gz
     elsif($file =~ /^curl-ssl-([0-9.]*)-sparc-8.pkg.tar.gz/) {
         return($1, "solaris8-sparc-ssl",
@@ -220,14 +221,23 @@ sub gettype {
         return($1, "devel-linux-ia64",
                "Linux IA64 devel, RPM");
     }
-
+    # libcurl3-7.12.2-1.i386.rpm
+    elsif($file =~ /^libcurl3-([0-9.]*)-(\d*).i386.rpm$/) {
+        return($1, "i386-libcurl-rpm",
+               "Linux libcurl i386, RPM");
+    }
+    # libcurl3-devel-7.12.2-1.i386.rpm
+    elsif($file =~ /^libcurl3-devel-([0-9.]*)-(\d*).i386.rpm$/) {
+        return($1, "devel-i386-libcurl-rpm",
+               "Linux libcurl devel i386, RPM");
+    }
     
 }
 
 sub scanstatus {
 
     opendir(DIR, $dir) || die "can't opendir $dir: $!";
-    my @curls = grep { /^curl/ && -f "$dir/$_" } readdir(DIR);
+    my @curls = grep { /^(lib|)curl/ && -f "$dir/$_" } readdir(DIR);
     closedir DIR;
 
     for(@curls) {
