@@ -8,7 +8,4 @@ title \
 
 #define SUBTITLE(x) <h2>x</h2>
 
-#define DATE(date) <b>date</b>
-#define SIZE(size) <i><small>size</small></i>
-
 #include "../where.t"
