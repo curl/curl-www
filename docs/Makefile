@@ -18,7 +18,7 @@ all: index.html manpage.html faq.html changes.html contribute.html	\
 	resources.html copyright.html thanks.html			\
 	y2k.html todo.html httpscripting.html	\
         comparison-table.html relatedtools.html osdistribs.html		\
-	versions.html history.html
+	versions.html history.html loc.html
 	@echo done 
 #archive/index.html
 
@@ -164,6 +164,9 @@ osdistribs.html: _osdistribs.html $(MAINPARTS)
 	$(ACTION)
 
 y2k.html: _y2k.html $(MAINPARTS)
+	$(ACTION)
+
+loc.html: loc.t $(MAINPARTS)
 	$(ACTION)
 
 #archive/index.html: mail
