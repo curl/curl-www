@@ -14,15 +14,16 @@ WHERE2(libcurl, "/libcurl/", Tcl Binding)
 
 <a name=top>
 TITLE(accessing libcurl from Tcl)
+<p>
+ We can take advantage of libcurl straight from within our Tcl programs. All
+ you need to do is to install the TclCurl package and then you'll be able to
+ use it.
 
 <p>
- libcurl is a solid and reliable multi-protocol file transfer library for URL
- syntax defined files. We can take advantage of libcurl straight from within
- our Tcl programs.
-
-<p>
- All you need to do is to install the TclCurl package and then you'll be able
- to use it.
+<i>"once you get past the badly written configure/make for the package
+[TclCurl], it's so darn sweet it'll give you toothache." </i> (<a
+href="http://groups.google.com/groups?selm=a0dnf4%244nm%40gap.cco.caltech.edu">Phil
+Ehrens</a>)
 
 <p>
  Visit the <a
@@ -51,29 +52,10 @@ simple cases you can do:<br>
 <pre>
     curl::transfer -file index.html -url http://curl.haxx.se
 </pre>
-<p>In more complex cases in which you may want to use persistant
-connections or get information about the transfer:
 
-<pre>
-    set curlHandle [curl::init]
-
-    $curlHandle configure -url "http://curl.haxx.se/" -file index.html
-    $curlHandle perform
-
-    $curlHandle configure -url "http://curl.haxx.se/libcurl/" \
-            -file lib.html -filetime 1
-    $curlHandle perform
-
-    puts "Effective url: [$curlHandle getinfo effectiveurl]"
-    puts "Http code: [$curlHandle getinfo httpcode]"
-    set fileTime [$curlHandle getinfo filetime]
-    puts "Filetime: $fileTime - [clock format $fileTime]"
-
-    $curlHandle cleanup
-</pre>
-<p>There are more
-<a href="http://personal1.iddeo.es/andresgarci/tclcurl/english/examples.html">
-examples on the TclCurl site</a>
+<p>There are more <a
+href="http://personal1.iddeo.es/andresgarci/tclcurl/english/examples.html">
+examples</a> on the TclCurl site.
 
 <p><b>Binding documentation</b><br>
  Available at 
