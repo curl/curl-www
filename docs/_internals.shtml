@@ -6,6 +6,8 @@
 #define CURL_DOCS
 #define DOCS_INTERNALS
 
+#define CURL_URL docs/insternals.shtml
+
 #include "_menu.html"
 #include "setup.t"
 #include "pic.t"

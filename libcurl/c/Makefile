@@ -5,9 +5,12 @@ SRCROOT=$(CURL)/cvssource
 DOCROOT=$(SRCROOT)/docs
 MANROOT=$(DOCROOT)/libcurl
 
-MAINPARTS= $(CURL)/_doctype.html _menu.html ../../_footer.html ../setup.t ../pic.t doclinks.t $(CURL)/where.t ../download.t $(CURL)/ad.t Makefile
+MAINPARTS= $(CURL)/_doctype.html _menu.html $(CURL)/_footer.html ../setup.t ../pic.t doclinks.t $(CURL)/where.t ../download.t $(CURL)/ad.t Makefile $(CURL)/mirrorlinks.t
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
-ACTION=@echo preprocessing $@; rm -f $@; cpp -I.. -I. -I$(CURL) -WWW -Uunix -H -C -V -LL "$(NOW)" $< $@; chmod a-w+r $@
+ACTION=@echo preprocessing $@; \
+       rm -f $@; \
+       cpp -I.. -I. -I$(CURL) -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
+       chmod a-w+r $@
 
 TXT2HTML= txt2html --extract --hrule 10
 MAN2HTML= man2html | sed -e 's/^$$/\&nbsp;/g' -e 's/\#/\&\#35\;/g' | uniq

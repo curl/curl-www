@@ -5,6 +5,7 @@
 
 #define CURL_DOCS
 #define DOCS_HTTPSCRIPT
+#define CURL_URL httpscripting.html
 
 #include "_menu.html"
 #include "setup.t"

@@ -17,23 +17,8 @@
 #define NOW(text) <b>text</b>
 #define REF(link,text) <a href=link>text</a>
 
-<table width=100%><tr>
-<td>
-<a href="/"><img border=0 src="/small-curl.png" width=90 height=36 alt="cURL"></a>
-</td>
 #include "ad.t"
-</tr></table>
-
-<small>
-Mirror:
-#ifndef CURL_URL
-<a href="http://curl.haxx.se/">SE</a>,
-<a href="http://curl.sourceforge.net/">US</a>
-#else
-<a href="http://curl.haxx.se/CURL_URL">SE</a>,
-<a href="http://curl.sourceforge.net/CURL_URL">US</a>
-#endif
-</small>
+#include "mirrorlinks.t"
 
 <table cellspacing=0 cellpadding=5><tr><td valign=top align=left>
 #define LINK(l,t) <tr><td align=center><font size="+2" color="#0000ff" ><b>t</b></font></td></tr>
