@@ -1,0 +1,96 @@
+#include "_doctype.html"
+<html>
+<head> <title>libcurl - Comparison Table</title>
+#include "css.t"
+</head>
+
+#define LIBCURL_COMPARISONTABLE
+#define CURL_URL libcurl/comparison-table.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(libcurl, "/libcurl/", libcurl Alternatives Comparison)
+
+#define FEATURE <td bgcolor="#ffff00" align=center>yes</td>
+#define MISSING <td align=center>no</td>
+#define UNKNOWN <td align=center><font color="#ff0000">???</font></td>
+#define NA <td align=center>N/A</td>
+
+#define FEAT <td>
+#define ENDFEAT </td>
+
+#define NEWLINE <tr valign=top>
+#define ENDLINE </tr>
+
+#define NICETD <td bgcolor="#0000ff"><font color="#ffffff" size=+1 face="ariel,helvetica">
+#define NICETDEND </font></td>
+
+<p>
+<table cellspacing=2 cellpadding=0 border=0>
+ NEWLINE
+  NICETD Feature NICETDEND
+  NICETD libcurl NICETDEND
+  NICETD libghttp NICETDEND
+  NICETD libwww NICETDEND
+  NICETD libferit NICETDEND
+  NICETD neon NICETDEND
+  NICETD libsoup NICETDEND
+  NICETD mozilla netlib NICETDEND
+  NICETD mozilla libxpnet NICETDEND
+  NICETD libhttpr NICETDEND
+  NICETD libfetch NICETDEND
+  NICETD libfxp NICETDEND
+  NICETD HTTP Fetcher NICETDEND
+  NICETD http-tiny NICETDEND
+  NICETD XMLHTTP Object NICETDEND
+  NICETD QHttp NICETDEND
+  NICETD ftplib NICETDEND
+
+ ENDLINE
+
+ NEWLINE 
+  FEAT HTTP ENDFEAT
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  MISSING
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  MISSING
+ ENDLINE
+
+ NEWLINE 
+  FEAT FTP ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  FEATURE
+  MISSING
+  MISSING
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  MISSING
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  MISSING
+ ENDLINE
+
+<table>
+
+</body>
+</html>
+
