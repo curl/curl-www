@@ -14,11 +14,17 @@
 
 WHERE2(Docs, "/docs/", Changes)
 
-TITLE(CHANGES -- track all changes)
-
-<pre>
-#include "changes.t"
-</pre>
+TITLE(Changelog -- track all changes)
+<p>
+ This page has recently been modified to become friendlier to users.
+<p>
+ To read about all changes in a summarized and somewhat more digested version,
+ see the <a href="../changes.html">changes</a> document.
+<p>
+ Or get a nice view of exactly what <a href="verdiff.cgi">changes that were
+ done between two specific curl versions</a>.
+<p>
+ The full CHANGES file is also included in every curl release package.a
 
 #include "_footer.html"
 
