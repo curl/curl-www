@@ -29,11 +29,11 @@ index2.html: _index2.html $(MAINPARTS)
 	$(ACTION)
 
 
-manpage.html: _manpage.html $(MAINPARTS) manpage.t
+manpage.html: _manpage.html $(MAINPARTS) mandump.t
 	$(ACTION)
 
-manpage.t: $(DOCROOT)/curl.1
-	 $(MAN2HTML) < $(DOCROOT)/curl.1 > manpage.t
+mandump.t: $(DOCROOT)/curl.1
+	 $(MAN2HTML) < $(DOCROOT)/curl.1 > mandump.t
 
 
 bugs.html: _bugs.html $(MAINPARTS) bugs.t
