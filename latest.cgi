@@ -16,7 +16,7 @@ my %proto;
 my %host;
 my %archtype;
 
-my $md5sum="/home/dast/solaris/bin/md5sum";
+my $md5sum="md5sum";#/home/dast/solaris/bin/md5sum";
 
 print "Content-Type: text/html\n\n";
 
