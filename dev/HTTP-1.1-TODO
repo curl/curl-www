@@ -1,0 +1,11 @@
+19.6.2 Compatibility with HTTP/1.0 Persistent Connections
+
+We need to study this to improve our persistent connection support when
+talking to HTTP/1.0-servers.
+
+Check out return code 101 and the Upgrade: header (RFC2616 14.42)
+
+14.39 TE
+ The TE request-header field indicates what extension transfer-codings it is
+ willing to accept in the response and whether or not it is willing to accept
+ trailer fields in a chunked transfer-coding.

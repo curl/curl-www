@@ -1,0 +1,166 @@
+HTTP protocol considerations for multiple connections
+
+[RFC 2616]
+
+8.1.1
+
+  HTTP implementations SHOULD implement persistent connections.
+
+8.1.2 Overall Operation
+
+   A significant difference between HTTP/1.1 and earlier versions of
+   HTTP is that persistent connections are the default behavior of any
+   HTTP connection. That is, unless otherwise indicated, the client
+   SHOULD assume that the server will maintain a persistent connection,
+   even after error responses from the server.
+
+   Persistent connections provide a mechanism by which a client and a
+   server can signal the close of a TCP connection. This signaling takes
+   place using the Connection header field (section 14.10). Once a close
+   has been signaled, the client MUST NOT send any more requests on that
+   connection.
+
+8.1.2.1 Negotiation
+
+   An HTTP/1.1 server MAY assume that a HTTP/1.1 client intends to
+   maintain a persistent connection unless a Connection header including
+   the connection-token "close" was sent in the request. If the server
+   chooses to close the connection immediately after sending the
+   response, it SHOULD send a Connection header including the
+   connection-token close.
+
+   An HTTP/1.1 client MAY expect a connection to remain open, but would
+   decide to keep it open based on whether the response from a server
+   contains a Connection header with the connection-token close. In case
+   the client does not want to maintain a connection for more than that
+   request, it SHOULD send a Connection header including the
+   connection-token close.
+
+   If either the client or the server sends the close token in the
+   Connection header, that request becomes the last one for the
+   connection.
+
+   Clients and servers SHOULD NOT assume that a persistent connection is
+   maintained for HTTP versions less than 1.1 unless it is explicitly
+   signaled. See section 19.6.2 for more information on backward
+   compatibility with HTTP/1.0 clients.
+
+   In order to remain persistent, all messages on the connection MUST
+   have a self-defined message length (i.e., one not defined by closure
+   of the connection), as described in section 4.4.
+
+
+
+
+3.6 Transfer Codings
+
+   Transfer-coding values are used to indicate an encoding
+   transformation that has been, can be, or may need to be applied to an
+   entity-body in order to ensure "safe transport" through the network.
+   This differs from a content coding in that the transfer-coding is a
+   property of the message, not of the original entity.
+
+       transfer-coding         = "chunked" | transfer-extension
+       transfer-extension      = token *( ";" parameter )
+
+   Parameters are in  the form of attribute/value pairs.
+
+       parameter               = attribute "=" value
+       attribute               = token
+       value                   = token | quoted-string
+
+   All transfer-coding values are case-insensitive. HTTP/1.1 uses
+   transfer-coding values in the TE header field (section 14.39) and in
+   the Transfer-Encoding header field (section 14.41).
+
+   Whenever a transfer-coding is applied to a message-body, the set of
+   transfer-codings MUST include "chunked", unless the message is
+   terminated by closing the connection. When the "chunked" transfer-
+   coding is used, it MUST be the last transfer-coding applied to the
+   message-body. The "chunked" transfer-coding MUST NOT be applied more
+   than once to a message-body. These rules allow the recipient to
+   determine the transfer-length of the message (section 4.4).
+
+   Transfer-codings are analogous to the Content-Transfer-Encoding
+   values of MIME [7], which were designed to enable safe transport of
+   binary data over a 7-bit transport service. However, safe transport
+   has a different focus for an 8bit-clean transfer protocol. In HTTP,
+   the only unsafe characteristic of message-bodies is the difficulty in
+   determining the exact body length (section 7.2.2), or the desire to
+   encrypt data over a shared transport.
+
+   The Internet Assigned Numbers Authority (IANA) acts as a registry for
+   transfer-coding value tokens. Initially, the registry contains the
+   following tokens: "chunked" (section 3.6.1), "identity" (section
+   3.6.2), "gzip" (section 3.5), "compress" (section 3.5), and "deflate"
+   (section 3.5).
+
+   New transfer-coding value tokens SHOULD be registered in the same way
+   as new content-coding value tokens (section 3.5).
+
+   A server which receives an entity-body with a transfer-coding it does
+   not understand SHOULD return 501 (Unimplemented), and close the
+   connection. A server MUST NOT send transfer-codings to an HTTP/1.0
+   client.
+
+3.6.1 Chunked Transfer Coding
+
+   The chunked encoding modifies the body of a message in order to
+   transfer it as a series of chunks, each with its own size indicator,
+   followed by an OPTIONAL trailer containing entity-header fields. This
+   allows dynamically produced content to be transferred along with the
+   information necessary for the recipient to verify that it has
+   received the full message.
+
+       Chunked-Body   = *chunk
+                        last-chunk
+                        trailer
+                        CRLF
+
+       chunk          = chunk-size [ chunk-extension ] CRLF
+                        chunk-data CRLF
+       chunk-size     = 1*HEX
+       last-chunk     = 1*("0") [ chunk-extension ] CRLF
+
+       chunk-extension= *( ";" chunk-ext-name [ "=" chunk-ext-val ] )
+       chunk-ext-name = token
+       chunk-ext-val  = token | quoted-string
+       chunk-data     = chunk-size(OCTET)
+       trailer        = *(entity-header CRLF)
+
+   The chunk-size field is a string of hex digits indicating the size of
+   the chunk. The chunked encoding is ended by any chunk whose size is
+   zero, followed by the trailer, which is terminated by an empty line.
+
+   The trailer allows the sender to include additional HTTP header
+   fields at the end of the message. The Trailer header field can be
+   used to indicate which header fields are included in a trailer (see
+   section 14.40).
+
+   A server using chunked transfer-coding in a response MUST NOT use the
+   trailer for any header fields unless at least one of the following is
+   true:
+
+   a)the request included a TE header field that indicates "trailers" is
+     acceptable in the transfer-coding of the  response, as described in
+     section 14.39; or,
+
+   b)the server is the origin server for the response, the trailer
+     fields consist entirely of optional metadata, and the recipient
+     could use the message (in a manner acceptable to the origin server)
+     without receiving this metadata.  In other words, the origin server
+     is willing to accept the possibility that the trailer fields might
+     be silently discarded along the path to the client.
+
+   This requirement prevents an interoperability failure when the
+   message is being received by an HTTP/1.1 (or later) proxy and
+   forwarded to an HTTP/1.0 recipient. It avoids a situation where
+   compliance with the protocol would have necessitated a possibly
+   infinite buffer on the proxy.
+
+   An example process for decoding a Chunked-Body is presented in
+   appendix 19.4.6.
+
+   All HTTP/1.1 applications MUST be able to receive and decode the
+   "chunked" transfer-coding, and MUST ignore chunk-extension extensions
+   they do not understand.

@@ -1,0 +1,4 @@
+
+We need to do HTTP PUT with chunked-encoding transfers when passing a file
+with no known size.
+
