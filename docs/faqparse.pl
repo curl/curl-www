@@ -53,13 +53,13 @@ while(<STDIN>) {
     elsif($state == 3) {
         my $l = $_;
 
-        if($secs[$sec] && ($_ =~ /[0-9]\. $secs[$sec]/i)) {
+        if($secs[$sec] && ($_ =~ /^\s*[0-9]\. $secs[$sec]/i)) {
             # a new section
             subtitle($l);
             $sec++;
         }
 
-        elsif($toc[$q] && ($_ =~ /$toc[$q]/i)) {
+        elsif($toc[$q] && ($_ =~ /^\s*$toc[$q]/i)) {
             # a question
             print "<a name=\"$toc[$q]\"></a><b>$_</b><br>";
             $q++;
