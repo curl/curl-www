@@ -12,7 +12,7 @@ TXT2PLAIN = txt2plain.pl
 MAN2HTML = roffit --bare
 
 PAGES = index.html manpage.html faq.html changes.html contribute.html	\
-        internals.html sslcerts.html companies.html			\
+        internals.html sslcerts.html companies.html press.html		\
 	features.html resources.html bugs.html				\
 	install.html readme.html readme.curl.html			\
 	resources.html copyright.html thanks.html			\
@@ -66,6 +66,9 @@ contribute.t: $(DOCROOT)/CONTRIBUTE
 	$(TXT2HTML) < $(DOCROOT)/CONTRIBUTE > contribute.t
 
 companies.html: _companies.html $(MAINPARTS)
+	$(ACTION)
+
+press.html: _press.html $(MAINPARTS)
 	$(ACTION)
 
 thanks.html: _thanks.html $(MAINPARTS) thanks.t
