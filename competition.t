@@ -8,8 +8,8 @@ How To Compete:
 
     curl-contest@haxx.se
 
-  The competition starts now, and we will accept submissions until 23:59
-  (central european time) Sunday December 14, 2003.
+  The competition starts now (October 21), and we will accept submissions
+  until 23:59 (central european time) Sunday December 14, 2003.
 
 Winner:
 
