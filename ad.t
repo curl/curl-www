@@ -28,6 +28,7 @@ google_color_text = "333333";
 #endif
 #ifdef AD_PRICERUNNER
 <table><tr><td>
+#if 0
 <table width="354" border="0" cellspacing="1" cellpadding="0" bgcolor="#ffffff" height="60" background="http://se.pricerunner.com/images/i/pricerunnerbanner/bg_040423.gif">
   <tr> 
     <td valign="bottom" align="center">
@@ -79,7 +80,10 @@ google_color_text = "333333";
     </td>
   </tr>
 </table>
-</td><td>
+#else
+#endif
+</td>
+<td>
 <a href="http://www.schrenk.com/2004/bots_spiders_curl.php"><img border="0"
 width="230" height="60" src="/ad/schrenk.png" align="right"></a>
 </tr></table>
