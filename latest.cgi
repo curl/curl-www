@@ -21,16 +21,17 @@ my $md5sum="md5sum";#/home/dast/solaris/bin/md5sum";
 
 print "Content-Type: text/html\n\n";
 
-&catfile("head.html");
-
 my $req = new CGI;
 
 my $what=$req->param('curl');
 
 if($what eq "") {
+    &header("Archives from Mirrors");
+
     &where("Download", "/download.html", "Latest Archives");
 }
 else {
+    &header("$what from Mirrors");
     &where("Download", "/download.html",
            "Latest Archives", "/$script",
            $what);
@@ -246,10 +247,11 @@ for(sort {$latest::desc{$a} cmp $latest::desc{$b}} keys %latest::desc) {
 }
 print "</select><input type=submit value=\"Gimme a List of Links\"</form>\n";
 
-print "<p> This service automaticly and frequently scans through known",
+print "<p> This service automatically and frequently scans through known",
     " <a href=\"mirrors.html\">mirrors</a> and builds links to the latest",
     " versions of many different curl archives. This page is fine",
     " to bookmark!\n";
 
-&catfile("foot.html");
+&footer();
+
 
