@@ -296,6 +296,10 @@ sub endofsingle {
 
     my $o = "$krb4$ipv6$memory$https$asynch$zlib$gss$idn";
 
+    if(!$desc) {
+        $desc = $os;
+    }
+
     $res .= "<td class=\"mini\">$o</td>\n<td>$desc</td>\n<td>$name</td></tr>\n";
 
     $combo{$o}++;
@@ -387,6 +391,10 @@ sub singlefile {
             }
             elsif($_ =~ /^testcurl: date = (.*)/) {
                 $date = $1;
+            }
+            elsif($_ =~ /^NOTICE:.*cross-compiling/) {
+                $fail = 0;
+                $fine = 1;
             }
             elsif($_ =~ /^TESTFAIL: These test cases failed: (.*)/) {
                 $fail = $1;
