@@ -11,7 +11,8 @@ ACTION=@echo preprocessing $@; \
 	chmod a-w+r $@
 
 all: index.html mail.html competitors.html future.html threadsafe.html \
-     fast.html ipv6.html comparison-table.html relatedlibs.html
+     fast.html ipv6.html comparison-table.html relatedlibs.html \
+     features.html support.html
 	cd c; make
 	cd perl; make
 	cd php; make
@@ -40,6 +41,12 @@ index.html: _index.html $(MAINPARTS)
 	$(ACTION)
 
 threadsafe.html: _threadsafe.html $(MAINPARTS)
+	$(ACTION)
+
+features.html: _features.html $(MAINPARTS)
+	$(ACTION)
+
+support.html: _support.html $(MAINPARTS)
 	$(ACTION)
 
 ipv6.html: _ipv6.html $(MAINPARTS)
