@@ -108,9 +108,9 @@ DOCREF(todo.html, TODO)
 #endif
 
 #ifdef DOCS_VERSIONS
-HERE(x, VERSIONS)
+HERE(x, Versions)
 #else
-DOCREF(versions.html, VERSIONS)
+DOCREF(versions.html, Versions)
 #endif
 
 #ifdef DOCS_Y2K
