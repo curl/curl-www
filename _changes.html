@@ -29,6 +29,14 @@ TITLE(Recent Changes -- The Nice and Clean Version)
 
 <p> Fixed since (available in CVS and pre-releases)
 <ul>
+ <li> The include file curl/curl.h compiles on pre-ISO compilers
+ <li> Bugfix: getting http headers-only could "hang" during 1 second extra
+ <li> Bugfix: verbose passive ftp transfers on AIX could crash
+ <li> Bugfix: improved re-use of dead proxy connections
+ <li> Bugfix: binary HTTP POSTs on Windows did not work (client-code problem)
+ <li> Bugfix: CRLF replacing in uploads was not working
+ <li> Added multi interface man pages, examples and public header files.
+ <li> Bugfix: -G and -d work together again
  <li> Bugfix: using verbose when doing ftp passive transfers could core dump
  <li> Bugfix: IPv6 name lookups work again
  <li> HTTP POST with data passed in with the read callback now works
