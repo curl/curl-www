@@ -45,7 +45,7 @@ while(<FILE>) {
         @present="";
         next;
     }
-    elsif($_ =~ /^testcurl: ENDING HERE/) {
+    elsif($_ =~ /^INPIPE: endsingle here/) {
         if(($id eq $thisid) ||
            (($name eq $inname) && ($indate eq $date)) ) {
             print "<div class=\"mini\">\n";

@@ -351,14 +351,15 @@ sub singlefile {
             }
             $state = 2;
         }
+        elsif($_ =~ /^INPIPE: endsingle here/) {
+            # detect end of test in all states
+            # mail headers here
+            push @data, endofsingle();
+            $state = 0;
+        }
         elsif((2 == $state)) {
             # this is testcurl output
-            if($_ =~ /^testcurl: ENDING HERE/) {
-                # mail headers here
-                push @data, endofsingle();
-                $state = 0;
-            }
-            elsif($_ =~ /^testcurl: NAME = (.*)/) {
+            if($_ =~ /^testcurl: NAME = (.*)/) {
                 $name = $1;
             }
             elsif($_ =~ /^testcurl: EMAIL = (.*)/) {

@@ -141,6 +141,7 @@ sub singlechange {
     }
 
     my $comm = join(" ", @comment);
+    my $qcomm = quotemeta($comm);
 
     # Time for some magic.  Check for the same comment and the same author
     # done to another file with a datestamp close in time. If we find one, we
@@ -158,7 +159,7 @@ sub singlechange {
             my $dstr = $mongdate{$datenum + $delta};
             if($dstr &&
                $changedates{$dstr} =~ /:::$author/ &&
-               $changecomment{$dstr}{$author} =~ /:::$comm/) {
+               $changecomment{$dstr}{$author} =~ /:::$qcomm/) {
                 # YES, this comment and author was already used for another
                 # file only $delta seconds away
                 $date = $dstr;
