@@ -24,7 +24,7 @@ TITLE(Extract CA Certs from Mozilla)
  useful for curl, by extracting information provided in the <a
  href="http://www.mozilla.org/">Mozilla</a> source tree. The Mozilla file
  needed for this job is named
- "/mozilla/security/nss/lib/ckfw/builtins/certdata.txt".
+ <a href="http://lxr.mozilla.org/seamonkey/source/security/nss/lib/ckfw/builtins/certdata.txt">/mozilla/security/nss/lib/ckfw/builtins/certdata.txt</a>.
 
 <p>
  <a href="parse-certs.txt">parse-certs.sh</a> is a shell script with an
@@ -42,6 +42,11 @@ SUBTITLE(We Did This For You)
  href="http://curl.haxx.se/ca/cacert.pem.gz">cacert.pem.gz</a> (~113 KB).
 <p>
  The output file contains the datestamp of the conversion.
+
+SUBTITLE(License)
+<p>
+ This new file is only a converted version of the original one and thus it is
+ licensed under the same licenses: MPL or GPL v2.
 
 #include "_footer.html"
 
