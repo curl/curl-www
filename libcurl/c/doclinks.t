@@ -50,6 +50,12 @@ THIS(curl_escape)
 DOC(curl_escape, curl_escape.html)
 #endif
 
+#ifdef DOCS_FORMADD
+THIS(curl_formadd)
+#else
+DOC(curl_formadd, curl_formadd.html)
+#endif
+
 #ifdef DOCS_FORMPARSE
 THIS(curl_formparse)
 #else

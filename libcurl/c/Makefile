@@ -14,6 +14,7 @@ all: index.shtml example.shtml curl_easy_init.html \
 	curl_easy_cleanup.html curl_easy_setopt.html \
 	curl_easy_perform.html curl_version.html curl_getenv.html \
 	curl_slist_append.html curl_slist_free_all.html \
+	curl_formadd.html \
 	curl_formparse.html curl_getdate.html curl_easy_getinfo.html \
 	curl_formfree.html curl_escape.html curl_unescape.html \
 	curl_strequal.html curl_mprintf.html libcurl.html \
@@ -98,6 +99,11 @@ curl_mprintf.t: $(DOCROOT)/curl_mprintf.3
 curl_formparse.html: _curl_formparse.html $(MAINPARTS) curl_formparse.t
 	$(ACTION)
 curl_formparse.t: $(DOCROOT)/curl_formparse.3
+	gnroff -man $< | man2html >$@
+
+curl_formadd.html: _curl_formadd.html $(MAINPARTS) curl_formadd.t
+	$(ACTION)
+curl_formadd.t: $(DOCROOT)/curl_formadd.3
 	gnroff -man $< | man2html >$@
 
 curl_formfree.html: _curl_formfree.html $(MAINPARTS) curl_formfree.t
