@@ -151,8 +151,8 @@ print <<MOO
 <br><a href="/mail/etiquette.html">Mailing List Etiquette</a>
 </div>
 <p>
-This is the complete web archive of all stored mails ever posted to the $list
-mailing list.
+This is the complete web archive of all stored mails ever posted to the
+<b>$list</b> mailing list.
 
 MOO
     ;
@@ -176,7 +176,7 @@ MOO
 
     if($subscr) {
         &title("Subscribe to $list");
-        print "<p> To subscribe on $list, use the web form on this page: <a href=\"$subscr\">subcribe to $list</a>";
+        print "<p> <a href=\"$subscr\">subcribe to $list</a>";
     }
 
     &title("Other Mail Archives");
@@ -201,4 +201,4 @@ MOO
 
 &catfile("mail.html");
 &catfile("../foot.html");
-print "</body></html>\n";
+
