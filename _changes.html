@@ -31,14 +31,29 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 #endif
 
 SUBTITLE(Fixed since -- available in CVS and pre-releases)
+<p> Changes:
 <ul>
-<li> enable to enforce chunked transfer-encoding
-<li> fixed configure script for --without-zlib
-<li> CURLOPT_USERPWD-imposed memory leak removed
-<li> verbose connect message crash removed
-<li> CURLOPT_PRIVATE and CURLINFO_PRIVATE added
-<li> curl-config --cflags corrected
+ <li> Added CURLOPT_PRIVATE and CURLINFO_PRIVATE
+ <li> Added --create-dirs 
+ <li> libcurl test cases have been added
 </ul>
+
+<p> Bugs:
+<ul>
+ <li> Transfer-Encoding: chunked for uploads works
+ <li> Test cases 306 and 402 now run fine
+ <li> configure script bug related to CONTENT_ENCODING fixed
+ <li> Borland Makefiles up-to-date
+ <li> Name resolve fix to correct the 7.10.2-fix!
+ <li> curl/curl.h now has a more proper extern "C" for C++
+ <li> CURL_MAX_WRITE_SIZE lowered to 16KB: improves performance on Windows
+ <li> configure --enable-debug now cuts off -O* options to the compiler
+ <li> Using multi interface and proxy to non-listening port caused a hang
+ <li> CURLOPT_USERPWD-imposed memory leak removed
+ <li> Verbose connect message crash removed
+ <li> curl-config --cflags
+</ul>
+
 
 SUBTITLE(Fixed in 7.10.2)
 <p> Changes:
