@@ -100,8 +100,8 @@ if($list) {
 
 print <<MOO
 <p>
-This is the complete web archive of all stored mailed posted to this mailing
-list.
+This is the complete web archive of all stored mails ever posted to this
+mailing list.
 
 MOO
     ;
