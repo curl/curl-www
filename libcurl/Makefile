@@ -19,6 +19,7 @@ all: index.html mail.html competitors.html future.html
 	cd using; make
 	cd cplusplus; make
 	cd postgres; make
+	cd pascal; make
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
