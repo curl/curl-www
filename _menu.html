@@ -104,9 +104,9 @@ VLINK("/icons.html", Icons)
 #endif
 
 #ifdef CURL_SEARCH
-LINK("http://curl.haxx.se/htdig/", Search)
+LINK("http://curl.haxx.se/search/", Search)
 #else
-VLINK("http://curl.haxx.se/htdig/", Search)
+VLINK("http://curl.haxx.se/search/", Search)
 #endif
 
 </table>
@@ -126,11 +126,10 @@ VLINK("http://curl.haxx.se/htdig/", Search)
 #endif
 
 <p>
-<form method="GET" action="http://curl.haxx.se/htdig/htsearch.cgi">
+<form method="GET" action="http://curl.haxx.se/search/search.cgi">
 <input type=hidden value=and name="method">
 <input name="format" type=hidden value="builtin-long">
 <input type=hidden name="sort" value="score">
-<input type="hidden" name="config" value="htdig">
 <input type="text" size="10" name="words" value="">
 <br><input type="submit" value="Search">
 </form>
