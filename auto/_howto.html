@@ -35,8 +35,13 @@ SUBTITLE(Get a Fresh Check-out from CVS)
  Then, in a cron job do:
 <pre>
  $ cd someplacenice
- $ ./curl/testcurl.sh | mail -s "autobuild" curl-autocompile@haxx.se
+ $ ./curl/tests/testcurl.pl | mail -s "autobuild" curl-autocompile@haxx.se
 </pre>
+<p>
+ The first time to run testcurl.pl, it'll prompt you for some info. That info
+ is then stored in the file named 'setup' in the current directory and will be
+ used when this script is unsequently run. The format is easily manually
+ edited using a text editor.
 <p>
  If mailing the info is not suitable for you, try using this <a
  href="http://curl.haxx.se/auto/upload.cgi">upload form</a>.
