@@ -202,7 +202,6 @@ sub endofsingle {
     }
     if($libcurl =~ /zlib\/([^ ]*)/i) {
         $zlibver = $1;
-        $zlib = "Z";
     }
     if($libcurl =~ /krb4/) {
         $krb4 = "K";
@@ -215,6 +214,9 @@ sub endofsingle {
     }
     if($libidn) {
         $idn = "I";
+    }
+    if($zlibver || $libz) {
+        $zlib = "Z";
     }
 
     $showdate = $date;
@@ -341,6 +343,7 @@ sub endofsingle {
     $gssapi=0;
     $os="";
     $libidn=0;
+    $libz=0;
 
     return $res;
 }
@@ -465,6 +468,9 @@ sub singlefile {
             }
             elsif($_ =~ /^\#define HAVE_LIBIDN 1/) {
                 $libidn=1;
+            }
+            elsif($_ =~ /^\#define HAVE_LIBZ 1/) {
+                $libz=1;
             }
             elsif($_ =~ /^\#define OS \"([^\"]*)\"/) {
                 $os=$1;
