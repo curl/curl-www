@@ -34,6 +34,7 @@
 my $input;
 my $css;
 my $html;
+my $head=0; # don't output HEAD
 
 if($ARGV[0] eq "-s") {
     shift @ARGV;
@@ -264,12 +265,14 @@ if($html) {
     close(HTML);
 }
 
-print <<HEAD
+# set $head to true if this should output <HEAD>
+if($head) {
+    print <<HEAD
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
 <html>
 <head>
-<title>Recent CVS Changes in Orion</title>
+<title>Recent CVS Changes</title>
 <meta http-equiv="refresh" content="1800">
 <style type="text/css">
 @css
@@ -279,6 +282,7 @@ print <<HEAD
 @html
 HEAD
     ;
+}
 
 if( $changecount) {
 
