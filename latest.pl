@@ -39,7 +39,7 @@ for(keys %latest::file) {
     printf("ARCHIVE: %s: %s %d\n",
            $_, $archive, $latest::size{$_});
 
-    printf("DOWNLOAD: %s %s SE\n", $archive,
+    printf("DOWNLOAD: %s %s Sweden\n", $archive,
            "http://curl.haxx.se/download/$archive");
 
     for(keys %mirrors) {
