@@ -22,6 +22,7 @@ all: index.html mail.html competitors.html future.html threadsafe.html \
 	cd postgres; make
 	cd pascal; make
 	cd basic; make
+	cd lua; make
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
