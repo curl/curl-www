@@ -82,10 +82,9 @@ for(sort keys %os) {
         if($p) {
             print ",\n";
         }
-        $n = $_;
-        $n =~ s/ /%20/g;
-        $n =~ s/\//%2f/g;
-        print "<a href=\"#$n\">$_</a>";
+        my $anch=$_;
+        $anch =~ s/[^a-zA-Z0-9]//g;
+        print "<a href=\"#$anch\">$_</a>";
         $p++;
     }
 }
@@ -97,7 +96,7 @@ print "\n<p><table class=\"download2\" cellpadding=\"0\" cellspacing=\"0\">\n";
              'Type',
              'SSL',
              'Date',
-             'Submitter',
+             'Provider',
              'Size')) {
         print "<th>$h</th>\n";
     }
@@ -152,12 +151,17 @@ for $per (@sall) {
         $numflav = scalar(keys %fla);
 
         if(!$shown{$s}) {
-            $aname= "<a name=\"$s\"></a>";
-            $shown{$s}=1;
+            my $anch=$s;
+            $anch =~ s/[^a-zA-Z0-9]//g;
+            $aname= "<a name=\"$anch\"></a>";
+            $shown{$s}=$anch;
         }
         my $img;
         if($$per{'img'}) {
-            $img="<img width=\"200\" height=\"30\" alt=\"$os logo\" src=\"/pix/".$$per{'img'}."\" border=\"0\">";
+            my $alt = "$os";
+            $alt =~ s/-//g;
+            $alt =~ s/  / /g;
+            $img="<img width=\"200\" height=\"30\" alt=\"$alt\" src=\"/pix/".$$per{'img'}."\" border=\"0\">";
         }
         if($numflav>1) {
             my $show = $os;
