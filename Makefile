@@ -18,7 +18,7 @@ STAT = packstat.t
 
 ACTION=@echo preprocessing $@; \
        rm -f $@; \
-       cpp -I.. -I$$HOME/web -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
+       cpp -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
        chmod a-w+r $@
 
 all: index.shtml feedback.html mirrors.html cvs.html libs.html icons.html \
