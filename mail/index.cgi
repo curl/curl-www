@@ -96,6 +96,9 @@ sub curlphp {
 
 if($list) {
     &catfile("../head.html");
+
+    &where("cURL", "/", "Mailing Lists", "http://curl.haxx.se/mail/", $list);
+
     &title("$list Archives");
 
 print <<MOO
