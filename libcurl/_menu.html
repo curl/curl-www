@@ -38,6 +38,12 @@ LINK("/libcurl/using/", Using libcurl )
 VLINK("/libcurl/using/", Using libcurl )
 #endif
 
+#ifdef LIBCURL_RELATED
+LINK("/libcurl/relatedlibs.html", Related Libs )
+#else
+VLINK("/libcurl/relatedlibs.html", Related Libs )
+#endif
+
 <hr>
 <font color="#ffffff">Bindings:</font>
 
