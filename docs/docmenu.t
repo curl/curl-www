@@ -82,18 +82,10 @@ HERE(x, Man Page)
 DOCREF(manpage.html, Man Page)
 #endif
 
-#if 0
-#ifdef DOCS_README
-HERE(x, README)
-#else
-DOCREF(readme.html, README)
-#endif
-#endif
-
 #ifdef DOCS_README_CURL
 HERE(x, Manual)
 #else
-DOCREF(readme.curl.html, Manual)
+DOCREF(manual.html, Manual)
 #endif
 
 #ifdef CURL_PRESS
