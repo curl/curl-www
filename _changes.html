@@ -28,6 +28,13 @@ TITLE(Recent Changes -- The Nice and Clean Version)
 #endif
 <p> Fixed since (available in CVS and pre-releases)
 <ul>
+ <li> always return proper error code on failed connects
+ <li> bugfixed FTP response reader
+ <li> bugfixed verbose telnet
+ <li> added CURLINFO_STARTTRANSFER_TIME
+ <li> bugfixed conditional HTTP fetches based on time
+ <li> multiple calls to curl_global_init() is now treated better
+ <li> bugfixed multiple ftp requests
  <li> made -p/--proxytunnel work for plain HTTP as well
  <li> "current speed" progress meter bugfix
  <li> improved the name resolver configure check
