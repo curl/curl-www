@@ -7,7 +7,7 @@ DOCREF(/, Front Page)
 #ifdef DOCS_INDEX
 HERE(x, Docs Index)
 #else
-DOCREF(./, Index)
+DOCREF(./, Docs Index)
 #endif
 
 #ifdef DOCS_BUGS
