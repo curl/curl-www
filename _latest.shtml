@@ -1,6 +1,7 @@
 #include "_doctype.html"
 <HTML>
 <HEAD> <TITLE>cURL - the latest packages!</TITLE>
+#include "css.t"
 </HEAD>
 
 #define CURL_LATEST
