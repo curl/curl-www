@@ -1,4 +1,4 @@
-MAINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t libcurl/_links.html
+MAINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t libcurl/_links.html ad.t mirrorlinks.t
 
 # today's date
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
