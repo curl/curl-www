@@ -13,21 +13,17 @@ curl_setopt($ch, CURLOPT_URL,"http://www.myterminal.com/checkpwd.asp");
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, "UserID=username&password=passwd");
 
-ob_start();		// prevent any output
-         curl_exec ($ch);	// execute the curl command
-ob_end_clean();	// stop preventing output
+ob_start();      // prevent any output
+curl_exec ($ch); // execute the curl command
+ob_end_clean();  // stop preventing output
 
 curl_close ($ch);
 unset($ch);
-}
-
-setcookies();
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
 curl_setopt($ch, CURLOPT_COOKIEFILE, "/tmp/cookieFileName");
 curl_setopt($ch, CURLOPT_URL,"http://www.myterminal.com/list.asp");
-
 
 $buf2 = curl_exec ($ch);
 
