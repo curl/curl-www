@@ -159,17 +159,20 @@ else {
     "your requested package \"$what\"! :-(\n";
 }
 
-print "<p> Select type below to get a link set for other archives:<br>\n";
-print "<ul><table cellspacing=0 cellpadding=1 border=0>\n";
-for(keys %latest::desc) {
-    if(($_ ne $what)) {
-        printf("<tr><td><a href=\"$script?curl=%s\">%s</a></td><td>%s</td></tr>\n",
-               $_,
-               $_,
-               $latest::desc{$_});
+print "<p> Select below to see links for other archives:<br>\n";
+print "<form method=\"GET\" action=\"latest.cgi\">\n";
+print "<select name=\"curl\">\n";
+for(sort {$latest::desc{$a} cmp $latest::desc{$b}} keys %latest::desc) {
+    my $def;
+    if($_ eq $what) {
+        $def=" SELECTED";
     }
+    else {
+        $def="";
+    }
+    printf("<option value=\"%s\"%s>%s</option>\n", $_, $def, $latest::desc{$_});
 }
-print "</table></ul>\n";
+print "</select><input type=submit value=\"Show My a List of Links\"</form>\n";
 
 print "<p> This service automaticly scans through the known <a href=\"mirrors.html\">mirrors</a> on a daily basis and builds links to the latest versions of all the most popular curl archives. This page is fine to bookmark!\n";
 
