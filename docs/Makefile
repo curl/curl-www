@@ -12,7 +12,7 @@ TXT2PLAIN = txt2plain.pl
 MAN2HTML = man2html | sed 's/^$$/\&nbsp;/g' | uniq
 
 all: index.html manpage.html faq.html changes.html contribute.html	\
-        internals.html					\
+        internals.html sslcerts.html					\
 	features.html resources.html bugs.html				\
 	install.html readme.html readme.curl.html			\
 	resources.html copyright.html thanks.html			\
@@ -143,6 +143,12 @@ internals.html: _internals.shtml $(MAINPARTS) internals.t
 	$(ACTION)
 
 internals.t: $(DOCROOT)/INTERNALS
+	$(TXT2PLAIN) < $< > $@
+
+sslcerts.html: _sslcerts.html $(MAINPARTS) sslcerts.t
+	$(ACTION)
+
+sslcerts.t: $(SRCROOT)/SSLCERTS
 	$(TXT2PLAIN) < $< > $@
 
 copyright.html: _copyright.html $(MAINPARTS)
