@@ -85,6 +85,11 @@ sub gettype {
         return($1, "ppc.rpm",
                "Linux PPC RPM package.");
     }
+    # curl-devel-7.4.1-1.ppc.rpm
+    elsif($file =~ /^curl-devel-([0-9.]*)-(\d*).ppc.rpm/) {
+        return($1, "devel-ppc.rpm",
+               "Linux devel PPC RPM package.");
+    }
     # curl-7.4.1-1.src.rpm
     elsif($file =~ /^curl-([0-9.]*)-(\d*).src.rpm/) {
         return($1, "src.rpm",
@@ -112,6 +117,11 @@ sub gettype {
     elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*).ppc.rpm/) {
         return($1, "ssl-ppc.rpm",
                "Linux PPC RPM archive, SSL-enabled.");
+    }
+    # curl-ssl-devel-7.4.1-1.ppc.rpm
+    elsif($file =~ /^curl-ssl-devel-([0-9.]*)-(\d*).ppc.rpm/) {
+        return($1, "ssl-devel-ppc.rpm",
+               "Linux devel PPC RPM archive, SSL-enabled.");
     }
     # curl-ssl-7.4.1-1.src.rpm
     elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*).src.rpm/) {
