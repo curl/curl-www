@@ -4,3 +4,5 @@ lib/mprintf.c:950: warning: format not a string literal, argument types not chec
 include/bits/confname.h:565: warning: comma at end of enumerator list
 # gcc 2.95.3 cross-compiling for uClibc on ARM
 /usr/arm-linux-uclibc/include/bits/uClibc_ctype.h:62: warning: comma at end of enumerator list
+# gcc 2.95.3 corss-compiling for ARM SA1110 uClibc
+curl/src/main.c:2964: the 'setlocale' function supports only
