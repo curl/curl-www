@@ -12,64 +12,66 @@
 <BODY bgcolor=BACKGROUND text=TEXTCOLOR LINK="#0000ff" VLINK="#808080" ALINK="red">
 #endif
 
-#define SEP <br>
-
-#define NOW(text) <b>text</b>
-#define REF(link,text) <a href=link>text</a>
-
 #include "ad.t"
 #include "mirrorlinks.t"
 
-<table cellspacing=0 cellpadding=5><tr><td valign=top align=left>
-#define LINK(l,t) <tr><td align=center><font size="+2" color="#0000ff" ><b>t</b></font></td></tr>
-#define VLINK(l,t) <tr><td><a href=l><font color="#0000ff" >t</font></a></tr>
+<table cellspacing="0" cellpadding="5"><tr><td valign="top" align="left">
+#define LINK(l,t) <div class="itemselect">t</div>
+#define VLINK(l,t) <div><a href="l" class="menuitem">t</a></div>
 
-<table width="100%" bgcolor=BLACK cellspacing=0 cellpadding=2 border=0><tr><td>
-<table width="100%" border=0 cellspacing=0 cellpadding=2 bgcolor=MENUCOLOR>
+<div class="mainmenu">
 
-#if 0
 #ifdef CURL_MAIN
-LINK("/", Main)
+LINK("/", Front Page)
 #else
-VLINK("/", Main)
+VLINK("/", Front Page)
 #endif
-#endif
+
 #ifdef CURL_NEWS
 LINK("/news.html", News)
 #else
 VLINK("/news.html", News)
 #endif
+
 #ifdef CURL_DOWNLOAD
 LINK("/download.html", Download)
 #else
 VLINK("/download.html", Download)
 #endif
+
 #ifdef CURL_MAIL
 LINK("http://curl.haxx.se/mail/", Mailing Lists)
 #else
 VLINK("http://curl.haxx.se/mail/", Mailing Lists)
 #endif
+
 #ifdef CURL_CHANGES
 LINK("/changes.html", Changes)
 #else
 VLINK("/changes.html", Changes)
 #endif
+
 #ifdef CURL_DEVEL
 LINK("/devel.html", Devel!)
 #else
 VLINK("/devel.html", Devel)
 #endif
+
 #ifdef CURL_FEEDBACK
 LINK("http://curl.haxx.se/feedback/", Feedback)
 #else
 VLINK("http://curl.haxx.se/feedback/", Feedback)
 #endif
+
 #ifdef CURL_DOCS
 LINK("/docs/", Docs)
 #include "docmenu.t"
 #else
 VLINK("/docs/", Docs)
 #endif
+
+VLINK("/libcurl/", libcurl)
+
 #ifdef CURL_PROGRAMS
 LINK("/curlprograms.html", Programs)
 #else
@@ -100,27 +102,13 @@ LINK("http://curl.haxx.se/search/", Search)
 VLINK("http://curl.haxx.se/search/", Search)
 #endif
 
-</table>
-</td></tr></table>
-#if 1
-<p>
-
-<a href="/libcurl/"><img border=0 src="/libcurl/small.png" alt="libcurl" width=90 height=25></a><br>
-
-#undef MENUCOLOR
-#define MENUCOLOR "#e0c0c0"
-<table width="100%" cellspacing=0 cellpadding=2 border=0 bgcolor="#000000"><tr><td>
-<table width="100%" border=0 cellspacing=0 cellpadding=2 bgcolor=MENUCOLOR>
-#include "libcurl/_links.html"
-</table></td></tr></table>
-
-#endif
+</div>
 
 <p>
 #include "searchform.t"
 <p>
 #include "sflogo.t"
 
-</td><td valign=top align=left width=100%>
+</td><td valign="top" align="left" width="100%">
 
 #endif

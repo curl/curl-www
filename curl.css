@@ -3,6 +3,7 @@ BODY {
   color: black;
 }
 
+/* the curl-style blue main page titles */
 .pagetitle {
   border-style: solid;
   border-width: thin;
@@ -82,4 +83,113 @@ span.whodate {
 
 tr.odd {
   background-color: #e0e0e0;
+}
+
+/* a non-selected item in the main menu */
+.menuitem {
+  text-decoration: none;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+/* a non-selected item in the main menu, with the mouse hovering */
+.menuitem:hover {
+  text-decoration: none;
+  color: #ffffff;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+/* a selected item in the main menu */
+.itemselect {
+  text-decoration: none;
+  background-color: white;
+  font-weight: bold;
+  color: black;
+  white-space: nowrap;
+  width: 100%;
+}
+
+/* the main curl site left-side menu box */
+.mainmenu {
+/*
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+*/
+  background-color: #4040ff;
+  padding: 4px 4px 4px 4px;
+}
+
+/* the libcurl menu */
+.libmenu {
+/*
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+*/
+  background-color: #9f7171;
+  padding: 4px 4px 4px 4px;
+}
+
+/* an unselected item in the libcurl menu */
+.libitem {
+  text-decoration: none;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+/* an unselected item in the libcurl menu, with the mouse hovering */
+.libitem:hover {
+  text-decoration: none;
+  color: #ffffff;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+/* a selected item in the libcurl menu */
+.libselect {
+  text-decoration: none;
+  background-color: white;
+  font-weight: bold;
+  color: #000000;
+  white-space: nowrap;
+  width: 100%;
+}
+
+/* the libcurl-style white-on-brown main page titles */
+h1.libtitle {
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+
+  background-color: #9f7171; 
+  font-family: arial, helvetica, ariel, sans-serif;
+  color: #ffffff;
+  font-size: 150%;
+  font-weight: bold;
+}
+
+/* the about infobox in the right-bottom */
+.aboutbox {
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+  background-color: #e0e0ff;
+  font-size: 80%;
+  float: right;
+  width: 20%;
+  padding: 2px 2px 2px 2px;
+}
+
+/* the toplevel centered links */
+.ad a {
+  border-color: #c0c0c0;
+  border-style: outset;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #606060;
+  margin: 0px 8px 0px 8px;
+  padding: 0px 3px 0px 3px;
 }

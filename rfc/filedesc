@@ -1,3 +1,4 @@
+ntlm.html The NTLM Authentication Protocol
 cookie_spec.html Netscape's cookie specification
 rfc0959.txt FILE TRANSFER PROTOCOL (FTP)
 rfc1635.txt How to Use Anonymous FTP
@@ -18,6 +19,7 @@ rfc2049.txt (MIME) Part Five: Conformance Criteria and Examples
 rfc2068.txt HTTP 1.1 (obsoleted by RFC 2616)
 rfc2109.txt HTTP State Management Mechanism (obsoleted by RFC 2964)
 rfc2183.txt The Content-Disposition Header Field
+rfc2184.txt MIME Parameter Value and Encoded Word Extensions
 rfc2229.txt A Dictionary Server Protocol
 rfc2255.txt Newer LDAP URL syntax document.
 rfc2231.txt MIME Parameter Value and Encoded Word Extensions:  Character Sets, Languages, and Continuations

@@ -1,6 +1,7 @@
 #include "_doctype.html"
 <HTML>
 <HEAD> <TITLE>cURL - News!</TITLE>
+#include "css.t"
 </HEAD>
 
 #define CURL_NEWS
@@ -8,20 +9,18 @@
 
 #include "_menu.html"
 #include "setup.t"
-#include "pic.t"
 
 WHERE1(News)
 
 #undef DATE
-#define NSUBJ(x) <!-- start !--><tr><td><table width=100% border=0 cellspacing=0 cellpadding=3><tr bgcolor="#ccccff"><td><font face=helvetica,arial size=+1>x</font></td>
-#define NDATE(x) <td nowrap align=right valign=top>x</td></tr>
+#define NSUBJ(x) <!-- start !--><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3"><tr bgcolor="#ccccff"><td><font face="helvetica,arial" size="+1">x</font></td>
+#define NDATE(x) <td nowrap align="right" valign="top">x</td></tr>
 
-#define NCOLS <tr><td valign=top>
+#define NCOLS <tr><td valign="top">
 #define NCOLE </td></tr></table></td></tr><!-- stop !-->
 
-<a name=news>
 TITLE(News)
-<table cellspacing=5 cellpadding=1 border=0>
+<table cellspacing="5" cellpadding="1" border="0">
 
 <!--#exec cmd="./shownews.cgi 25" -->
 

@@ -1,11 +1,6 @@
 sub title {
     my $title=$_[0];
-    print "<p>",
-    "<table width=100% cellspacing=0 cellpadding=1 bgcolor=\"#000000\"><tr><td>",
-
-    "<table width=100% cellspacing=0><tr><td bgcolor=\"#e0e0ff\">\n",
-    "<font color=\"#0000ff\" size=+2>",
-    "$title</font></td></tr></table></td></tr></table>";
+    print "<h1 class=\"pagetitle\">$title</h1>";
 }
 
 # WHERE2(Feedback, "/feedback/", Bug Report)

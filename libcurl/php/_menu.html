@@ -12,21 +12,20 @@
 #define SEP <br>
 
 #undef LINK
-#define LINK(l,t) <tr><td><font size=+1 color="#705050">t</font></td></tr>
+#define LINK(l,t) <div class="libselect">t</div>
 
 #undef VLINK
-#define VLINK(l,t) <tr><td><a href=l><font color="#705050">t</font></a></td></tr>
+#define VLINK(l,t) <div><a href=l class="libitem">t</a></div>
 
 #include "ad.t"
 #include "mirrorlinks.t"
 
 <table cellspacing=0 cellpadding=5><tr><td valign=top align=left>
 
-<a href="/libcurl/"><img border=0 src="/libcurl/small.png" alt="libcurl" width=90 height=25></a><br>
+<a href="/libcurl/"><img border=0 src="/libcurl/small.png" alt="libcurl"
+width=90 height=25></a><br>
 
-
-<table width="100%" cellspacing=0 cellpadding=2 border=0 bgcolor="#000000"><tr><td>
-<table width="100%" border=0 cellspacing=0 cellpadding=2 bgcolor=MENUCOLOR>
+<div class="libmenu">
 
 #ifdef PHP_INDEX
 LINK("/libcurl/php/", PHP/CURL Overview )
@@ -52,9 +51,8 @@ LINK("/libcurl/php/examples/", PHP/CURL Examples )
 VLINK("/libcurl/php/examples/", PHP/CURL Examples)
 #endif
 
+</div>
 
-</table>
-</td></tr></table>
 <p>
 #include "searchform.t"
 

@@ -9,7 +9,6 @@
 
 #include "_menu.html"
 #include "setup.t"
-#include "pic.t"
 
 WHERE1(Changes)
 
@@ -34,6 +33,44 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 <li>
 </ul>
 #endif
+
+SUBTITLE(Fixed since -- available in CVS and pre-releases)
+<p> Changes:
+<ul>
+ <li> libcurl now deals with spaces in Location: redirects and URLifies them
+ <li> curl --version shows more detailed info
+ <li> curl_version_info() now returns info on NTLM, GSS-Negotiate and Debug
+ <li> curl_version() includes "GSS" in the string if built with GSSAPI available
+ <li> Pick-best-authentication option added (--anyauth, using the
+   CURLOPT_HTTPAUTH set to CURLAUTH_ANY)
+ <li> NTLM authentication support (--ntlm and CURLAUTH_NTLM)
+ <li> GSS-Negotiate authentication support (--negotiate and CURLAUTH_GSSNEGOTIATE)
+ <li> Digest authentication support added (--digest and CURLAUTH_DIGEST)
+ <li> Allow curl to switch (back to) to Basic authentication (--basic)
+ <li> libcurl supports name and password in proxy environment variables
+
+</ul>
+<p> Bugs:
+<ul>
+ <li> VMS build fixes
+ <li> the curl tool has the -M manual compressed internally if built with libz
+ <li> url globbing syntax error could cause segfault 
+ <li> Huge (>40-60KB) GET requests over HTTPS failed.
+ <li> Content-Length now overrides socket-closed as a means of knowing when the
+   response body is complete.
+ <li> --progress-bar takes the initial size into account when doing resumed
+   downloads
+ <li> work around SSL bugs better
+ <li> libcurl typically issues POST requests with less send() calls
+ <li> better main makefile
+ <li> external headers improved portability
+ <li> Listing FTP directories without contents could leak a socket
+ <li> Getting HTTP contents in one line without headers failed
+ <li> bugfixed the socks5-proxy usage (twice)
+ <li> h_aliases name-lookup rare crash fixed
+ <li> improved curl -M output
+ <li> curl_unescape() now only unescapes valid %HH codes
+</ul>
 
 SUBTITLE(Fixed in 7.10.5)
 <p> Changes:

@@ -1,6 +1,14 @@
 
-#define HERE(l,t) <tr><td align=right><font color="#0000ff"><b>t</b></font></td></tr>
-#define DOCREF(l,t) <tr><td align=right><a href=l><font color="#0000ff">t</font></a></tr>
+#define HERE LINK
+#define DOCREF VLINK
+
+DOCREF(/, Front Page)
+
+#ifdef DOCS_INDEX
+HERE(x, Docs Index)
+#else
+DOCREF(./, Index)
+#endif
 
 #ifdef DOCS_BUGS
 HERE(x, Bugs)
@@ -55,13 +63,6 @@ HERE(x, Install)
 #else
 DOCREF(install.html, Install)
 #endif
-
-#ifdef DOCS_INDEX
-HERE(x, Index)
-#else
-DOCREF(./, Index)
-#endif
-
 
 #ifdef DOCS_INTERNALS
 HERE(x, Internals)

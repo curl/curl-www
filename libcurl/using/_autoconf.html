@@ -10,14 +10,14 @@
 
 #include "_menu.html"
 #include "setup.t"
-#include "download.t"
 
 WHERE3(libcurl, "/libcurl/", Using, "/libcurl/using/", autoconf macro)
 
 TITLE(autoconf macro for detecting libcurl)
 <p>
  On unix-like systems, configure scripts are used to detect and check system
- informations. These scripts are built with autoconf.
+ informations. These scripts are generally built with <a
+ href="http://www.gnu.org/software/autoconf/">Autoconf</a>.
 <p>
  If you write a program that depends on a certain version of libcurl, you
  might find this macro useful to detect if your prefered libcurl version is

@@ -10,17 +10,15 @@
 
 #include "_menu.html"
 #include "setup.t"
-#include "download.t"
 
 WHERE3(libcurl, "/libcurl/", Using, "/libcurl/using/", Programs)
 
 TITLE(Programs Using libcurl)
 <p>
- A list of applications that use libcurl. I know there are many more out
- there. I'm interested in getting to know, even if you don't have any web
- pages about your stuff or don't want your email address being publicized...
- (Some companies develop applications based on libcurl, but don't give me
- permission to "brag" about it here! ;-()
+ An incomplete list of applications that use libcurl. I know there are many
+ more out there. Many more applications are also built on top of various
+ libcurl bindings, and they are not included here. Mail <a
+ href="mailto:curl-web at haxx.se">curl-web</a> to get added to this list.
 
 #define NEWCOL <td valign=top>
 
@@ -39,6 +37,13 @@ TITLE(Programs Using libcurl)
   NICETD Description NICETDSLUT
   NICETD Author NICETDSLUT
  TREND
+
+  TRODD
+   NEWCOL <a href="http://www.codeworker.org/">CodeWorker</a></td>
+   NEWCOL a parsing tool and a source code generator, available in Open Source
+          devoted to cover many aspects of the generative programming.  </td>
+   NEWCOL Cedric Lemaire </td>
+  TREND
 
   TREVEN
    NEWCOL <a href="http://www.tribeworks.com/products/ishell/index.asp">iShell</a></td>

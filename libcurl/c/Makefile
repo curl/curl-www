@@ -18,7 +18,7 @@ TXT2HTML= txt2html --extract --hrule 10
 MAN2HTML= man2html -bare | sed -e 's/^$$/\&nbsp;/g' -e 's/\#/\&\#35\;/g' | uniq
 TXT2PLAIN = txt2plain.pl
 
-all: index.shtml example.shtml curl_easy_init.html			\
+all: index.html example.html curl_easy_init.html			\
 	curl_easy_cleanup.html curl_easy_setopt.html			\
 	curl_easy_perform.html curl_version.html curl_version_info.html	\
         curl_getenv.html curl_free.html					\
@@ -33,12 +33,11 @@ all: index.shtml example.shtml curl_easy_init.html			\
 	curl_multi_cleanup.html        curl_multi_perform.html		\
 	curl_multi_fdset.html          curl_multi_remove_handle.html	\
 	curl_multi_info_read.html      libcurl-multi.html
-	cd html; make
 
-index.shtml: _index.html $(MAINPARTS)
+index.html: _index.html $(MAINPARTS)
 	$(ACTION)
 
-example.shtml: _example.html $(MAINPARTS) tinytest.html tinytest2.html curlgtk.html
+example.html: _example.html $(MAINPARTS) tinytest.html tinytest2.html curlgtk.html
 	$(ACTION)
 
 curl_easy_init.html: _curl_easy_init.html $(MAINPARTS) curl_easy_init.t

@@ -10,7 +10,6 @@
 
 #include "_menu.html"
 #include "setup.t"
-#include "download.t"
 
 WHERE2(libcurl, "/libcurl/", C Interface Overview)
 
@@ -28,21 +27,16 @@ TITLE(Using The libcurl C Interface)
  Salmanzadeh's excellent <a href="visual_studio.pdf">Using libcurl in Visual
  Studio</a> [PDF] guide.
 
-TITLE(Going Easy or Going Multi)
+TITLE(Easy or Multi)
 <p>
- libcurl has offered the "easy" interface for file transfers since libcurl
- version 7 was released the first time, during spring year 2000. The easy
- interface is a synchronous, efficient, quickly used and... yes, easy
+ The easy interface is a synchronous, efficient, quickly used and... yes, easy
  interface for file transfers. Numerous applications have been built using
  this.
 <p>
- As of recent releases, we have started to put focus more and more on the new
- interface, the so called "multi" interface. The multi interface is the
- asynchronous brother in the family and it also offers multiple transfers
- using a single thread and more. The multi interface's documentation is still
- not available on the web site, but the man pages are included in the curl
- release archives starting with 7.9.6. You can also read <a
- href="libcurl-multi.html">the multi interface overview</a>.
+ The multi interface is the asynchronous brother in the family and it also
+ offers multiple transfers using a single thread and more. Get a grip of how
+ to work with it in <a href="libcurl-multi.html">the multi interface
+ overview</a>.
 
 TITLE(The Easy interface)
 <p>
@@ -144,17 +138,9 @@ TITLE(The Easy interface)
   portable *printf() functions
   </td></tr>
 </table>
-
 <p>
- For your pleasure, all the libcurl man pages for the C API are available as
-
-<a href="
-<!--#exec cmd="./htmllink.cgi" -->
-">HTML pages</a>. Note that this package is rebuilt whenever these pages are
-updated. (Hence the date-stamp in the file name)
-<p>
- All man pages are included in every release archive, both man page formatted
- and HTML formatted.
+ All man pages are included in every release archive, in three different
+ formats: man page, HTML and pdf.
 
 #include "_footer.html"
 

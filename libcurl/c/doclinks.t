@@ -1,17 +1,9 @@
-#if 0
-#define THIS(x) <td><font color="#9f7171" size=+1><b>x</b></font></td>
-#define DOC(x,y) <td><a href="y"><font color="#9f7171" size=-1>x</font></a></td>
-#else
-#undef THIS
-#undef DOC
-#define THIS(t) <tr><td align=right><font color="#705050"><b>t</b></font></td></tr>
-#define DOC(t,l) <tr><td align=right><a href=l><font color="#705050">t</font></a></tr>
-#endif
+DOC(libcurl front page, /libcurl/)
 
 #ifdef DOCS_INDEX
-THIS(index)
+THIS(C API Overview)
 #else
-DOC(index, .)
+DOC(C API Overview, .)
 #endif
 
 #ifdef DOCS_ERRORS
@@ -25,6 +17,8 @@ THIS(tutorial)
 #else
 DOC(tutorial, the-guide.html)
 #endif
+
+<hr>
 
 #ifdef DOCS_EASY_INIT
 THIS(curl_easy_init)
@@ -147,7 +141,7 @@ THIS(curl_version_info)
 DOC(curl_version_info, curl_version_info.html)
 #endif
 
-THIS(<hr>)
+<hr>
 
 #ifdef DOCS_OVERVIEW_MULTI
 THIS(multi overview)

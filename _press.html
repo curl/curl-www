@@ -8,7 +8,6 @@
 
 #include "_menu.html"
 #include "setup.t"
-#include "pic.t"
 
 WHERE1(In the Press)
 TITLE(A Collecton of Links to Articles About cURL)
@@ -17,17 +16,17 @@ TITLE(A Collecton of Links to Articles About cURL)
  about curl on other sites. Enjoy!
 <p>
 
-#define ARTICLE <tr bgcolor="#ccccff" valign=top>
+#define ARTICLE <tr bgcolor="#ccccff" valign="top">
 #define NARTICLE </tr>
 #define WHEN(x) <td>x</td>
 #define WHO(x)  <td>x</td>
-#define SITE(x) <td>x</td></tr><tr valign=top><td>&nbsp;</td>
+#define SITE(x) <td>x</td></tr><tr valign="top"><td>&nbsp;</td>
 #undef LINK
-#define LINK(name,link) <td><a href=link>name</a></td>
+#define LINK(name,link) <td><a href="link">name</a></td>
 #define DESC    <td>
 #define NDESC   </td>
 
-<table cellspacing=0>
+<table cellspacing="0">
 ARTICLE
  WHEN(23-jan-2002)
  WHO(Cameron Laird and Kathryn Soraiz)

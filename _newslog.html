@@ -8,18 +8,16 @@
 
 #include "_menu.html"
 #include "setup.t"
-#include "pic.t"
 
 #undef DATE
-#define NSUBJ(x) <!-- start !--><tr><td><table width=100% border=0 cellspacing=0 cellpadding=3><tr bgcolor="#ccccff"><td><font face=helvetica,arial size=+1>x</font></td>
-#define NDATE(x) <td nowrap align=right valign=top>x</td></tr>
+#define NSUBJ(x) <!-- start !--><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="3"><tr bgcolor="#ccccff"><td><font face="helvetica,arial" size="+1">x</font></td>
+#define NDATE(x) <td nowrap align="right" valign="top">x</td></tr>
 
-#define NCOLS <tr><td valign=top colspan=1>
+#define NCOLS <tr><td valign="top" colspan="1">
 #define NCOLE </td></tr></table></td></tr><!-- stop !-->
 
-<a name=news>
 TITLE(News in curl and libcurl land)
-<table cellspacing=5 cellpadding=1 border=0>
+<table cellspacing="5" cellpadding="1" border="0">
 
 #if 0
  template:
@@ -32,6 +30,17 @@ TITLE(News in curl and libcurl land)
 
  NCOLE
 #endif
+
+ NSUBJ(a libcurl cookie interface)
+ NDATE(18 June 2003)
+ NCOLS
+
+  At times people have expressed a need for better cookie control in libcurl,
+  so I posted a <a
+  href="http://curl.haxx.se/mail/lib-2003-06/0102.html">suggested
+  interface</a> to the libcurl list. Share your opinions aobut it.
+
+ NCOLE
 
  NSUBJ(NTLM works!)
  NDATE(12 June 2003)
@@ -3114,7 +3123,7 @@ NCOLE
  NDATE(28 September 2000)
  NCOLS
 
-  <a href="download.html"><font size=+1>Go get it</font></a>!
+  <a href="download.html"><font size="+1">Go get it</font></a>!
 
  NCOLE
 
@@ -3499,7 +3508,7 @@ NCOLE
  <p>
   PS. As a further proof of download.com being seriously confused and
   ill-managed, the mail that arrived in my inbox started with <i><font
-  size=+1>Hi lim_cnet@hotmail.com</font></i>... As far as I know, that is not
+  size="+1">Hi lim_cnet@hotmail.com</font></i>... As far as I know, that is not
   me.
 
  NCOLE
@@ -3614,7 +3623,7 @@ NCOLE
  NDATE(7 August 2000)
  NCOLS
 
-  <font size=+1 color="#ff0000"><b>Version seven is released</b></font>
+  <font size="+1" color="#ff0000"><b>Version seven is released</b></font>
   <p>
   What's more suitable than to release version seven on the seventh? :-) Ok,
   so run off and <a href="download.html">download</a> this now. There are a

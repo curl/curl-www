@@ -9,36 +9,17 @@
 <BODY bgcolor=BACKGROUND text=TEXTCOLOR LINK="#0000ff" VLINK="#808080" ALINK="red">
 #endif
 
-#define SEP <br>
-
-#undef LINK
-#define LINK(l,t) <tr><td><font size=+1 color="#705050">t</font></td></tr>
-
-#undef VLINK
-#define VLINK(l,t) <tr><td><a href=l><font color="#705050">t</font></a></td></tr>
+#define THIS(t) <div class="libselect">t</div>
+#define DOC(t,l) <div><a href="l" class="libitem">t</a></div>
 
 #include "ad.t"
 #include "mirrorlinks.t"
 
 <table cellspacing=0 cellpadding=5><tr><td valign=top align=left>
 
-<a href="/libcurl/"><img border=0 src="/libcurl/small.png" alt="libcurl" width=90 height=25></a><br>
-
-
-<table width="100%" cellspacing=0 cellpadding=2 border=0 bgcolor="#000000"><tr><td>
-<table width="100%" border=0 cellspacing=0 cellpadding=2 bgcolor=MENUCOLOR>
-
-#undef LINK
-#define LINK(l,t) <tr><td><font size=+1 color="#705050">t</font></td></tr>
-
-#undef VLINK
-#define VLINK(l,t) <tr><td><a href=l><font color="#705050">t</font></a></td></tr>
-
-LINK("/libcurl/c/", C API )
+<div class="libmenu">
 #include "doclinks.t"
-
-</table>
-</td></tr></table>
+</div>
 <p>
 #include "searchform.t"
 <p>

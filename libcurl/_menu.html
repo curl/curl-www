@@ -1,32 +1,30 @@
 
 #define BACKGROUND "#ffffff"
 #define TEXTCOLOR "#000000"
-#define MENUTEXT "#ffffff"
-#define MENUCOLOR "#e0c0c0"
 
 #ifndef NOBODY
 
 <BODY bgcolor=BACKGROUND text=TEXTCOLOR LINK="#0000ff" VLINK="#808080" ALINK="red">
 #endif
 
-#define SEP <br>
-
 #undef LINK
-#define LINK(l,t) <tr><td><font size=+1 color="#705050">t</font></td></tr>
+#define LINK(l,t) <div class="libselect">t</div>
 
 #undef VLINK
-#define VLINK(l,t) <tr><td><a href=l><font color="#705050">t</font></a></td></tr>
+#define VLINK(l,t) <div><a href="l" class="libitem">t</a></div>
 
 #include "ad.t"
 #include "mirrorlinks.t"
 
-<table cellspacing=0 cellpadding=5><tr><td valign=top align=left>
+<table cellspacing="0" cellpadding="5"><tr><td valign="top" align="left">
 
-<a href="/libcurl/"><img border=0 src="/libcurl/small.png" alt="libcurl" width=90 height=25></a><br>
+<div class="libmenu">
 
-
-<table width="100%" cellspacing=0 cellpadding=2 border=0 bgcolor="#000000"><tr><td>
-<table width="100%" border=0 cellspacing=0 cellpadding=2 bgcolor=MENUCOLOR>
+#ifdef LIBCURL_MAIN
+LINK("/libcurl/", libcurl index )
+#else
+VLINK("/libcurl/", libcurl index )
+#endif
 
 #ifdef LIBCURL_MAIL
 LINK("/libcurl/mail.html", Mailing List )
@@ -40,7 +38,8 @@ LINK("/libcurl/using/", Using libcurl )
 VLINK("/libcurl/using/", Using libcurl )
 #endif
 
- <tr><td><font color="#705050">Bindings:</font></td></tr>
+<hr>
+<font color="#ffffff">Bindings:</font>
 
 #ifdef LIBCURL_BASIC
 LINK("", Basic)
@@ -156,11 +155,11 @@ LINK("", Tcl)
 VLINK(/libcurl/tcl/, Tcl)
 #endif
 
-</table>
-</td></tr></table>
+</div>
+
 <p>
 #include "searchform.t"
 <p>
 #include "sflogo.t"
 
-</td><td valign=top align=left>
+</td><td valign="top" align="left">
