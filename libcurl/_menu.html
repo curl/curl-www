@@ -83,6 +83,12 @@ LINK("", Python API)
 VLINK(/libcurl/python/, Python API)
 #endif
 
+#ifdef LIBCURL_REXX
+LINK("", Rexx API)
+#else
+VLINK(/libcurl/rexx/, Rexx API)
+#endif
+
 #ifdef LIBCURL_RUBY
 LINK("", Ruby API)
 #else

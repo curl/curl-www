@@ -13,6 +13,7 @@ all: index.html example.shtml mail.html competitors.html
 	cd tcl; make
 	cd python; make
 	cd dylan; make
+	cd rexx; make
 	cd using; make
 
 index.html: _index.html $(MAINPARTS)
