@@ -7,9 +7,6 @@ NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 # the latest stable version is:
 STABLE= 7.10.4
 RELDATE = "2nd of April 2003"
-RELSIZE = "1066195 bytes"
-BZ2SIZE = "874255 bytes"
-ZIPSIZE = "1332858 bytes"
 
 # name of the dir to tempoary unpack and build zip files in:
 TEMPDIR=tempzip
@@ -90,14 +87,10 @@ info: _info packstat.t
 
 packstat.t: _download.html Makefile
 	@echo "fixing $(STAT)"
-	@echo "#define __CURR `grep -c \"^TRCURRENT\" $<`" >$(STAT)
-	@echo "#define __NCURR `grep -c \"^TRNCURRENT\" $<`" >>$(STAT)
-	@echo "#define __PACKS `egrep -c \"^TR(N|)CURRENT\" $<`" >>$(STAT)
+	@echo "#define __CURR `grep -c class=.latest $<`" >$(STAT)
+	@echo "#define __PACKS `grep -c \"^<tr c\" $<`" >>$(STAT)
 	@echo "#define __STABLE $(STABLE)" >>$(STAT)
 	@echo "#define __RELDATE $(RELDATE)" >>$(STAT)
-	@echo "#define __RELSIZE $(RELSIZE)" >>$(STAT)
-	@echo "#define __BZ2SIZE $(BZ2SIZE)" >>$(STAT)
-	@echo "#define __ZIPSIZE $(ZIPSIZE)" >>$(STAT)
 
 download.html: _download.html $(MAINPARTS) packstat.t dl/files.html
 	$(ACTION)
