@@ -40,7 +40,7 @@ all: index.html feedback.html mirrors.html cvs.html libs.html help.html	  \
 	@echo done 
 #archive/index.html
 
-head.html: _head.html $(MAINPARTS)
+head.html: _head.html $(MAINPARTS) css.t
 	$(ACTION)
 
 donation.html: _donation.html $(MAINPARTS)
