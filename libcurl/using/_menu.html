@@ -29,21 +29,27 @@
 <table width="100%" border=0 cellspacing=0 cellpadding=2 bgcolor=MENUCOLOR>
 
 #ifdef USING_INDEX
-LINK("http://curl.haxx.se/libcurl/using/", Using libcurl )
+LINK("/libcurl/using/", Using libcurl )
 #else
-VLINK("http://curl.haxx.se/libcurl/using/", Using libcurl )
+VLINK("/libcurl/using/", Using libcurl )
+#endif
+
+#ifdef USING_AUTOCONF
+LINK("/libcurl/using/autoconf.html", autoconf)
+#else
+VLINK("/libcurl/using/autoconf.html", autoconf)
 #endif
 
 #ifdef USING_CURL_CONFIG
-LINK("http://curl.haxx.se/libcurl/using/curl-config.html", curl-config)
+LINK("/libcurl/using/curl-config.html", curl-config)
 #else
-VLINK("http://curl.haxx.se/libcurl/using/curl-config.html", curl-config)
+VLINK("/libcurl/using/curl-config.html", curl-config)
 #endif
 
 #ifdef USING_APPS
-LINK("http://curl.haxx.se/libcurl/using/apps.html", Programs)
+LINK("/libcurl/using/apps.html", Programs)
 #else
-VLINK("http://curl.haxx.se/libcurl/using/apps.html", Programs)
+VLINK("/libcurl/using/apps.html", Programs)
 #endif
 
 </table>
