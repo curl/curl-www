@@ -27,6 +27,19 @@ TITLE(Recent Changes -- The Nice and Clean Version)
 </ul>
 #endif
 
+<p> Fixed since (available in CVS and pre-releases)
+<ul>
+ <li> Bugfix: no_proxy didn't work when URL contained port numbers
+ <li> Bugfix: --interface didn't work for IPv6 enabled libcurls
+ <li> Bugfix: the TIMECOND defines are now using CURL_ prefixes
+ <li> Now uses less memory for name resolves on most operating systems
+ <li> Bugfix: pack_hostent works with 64 bit pointers
+ <li> Prunes old DNS cache entries
+ <li> Bugfix: HTTP 301 response after a POST now treated differently
+ <li> Added CURLINFO_REDIRECT_TIME and CURLINFO_REDIRECT_COUNT
+ <li> Bugfix: rfc1867-formposting a non-existent file now causes a failure
+</ul>
+
 <p> Fixed since 7.9.6
 <ul>
  <li> libcurl skips preceeding white spaces in cookie contents
