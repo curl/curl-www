@@ -3,17 +3,17 @@ use strict;
 
 package latest;
 
-our $dir="/home/dast/curl_html/download";
-our $curl="/usr/local/bin/curl";
+my $dir="/home/dast/curl_html/download";
+my $curl="/usr/local/bin/curl";
 
 # they're all hashed on 'type'
-our %high;
-our %file;
-our %size;
-our %version;
-our %desc;
+my %high;
+my %file;
+my %size;
+my %version;
+my %desc;
 
-our $headver;
+my $headver;
 my $headnum;
 
 sub storemax {
@@ -148,21 +148,42 @@ sub gettype {
         return($1, "vms-zip",
                "OpenVMS archive, zip compressed.");
     }
+
+    # Kevin's new formats starting with curl 7.10:
+    # curl-([0-9.]*)-(d*)-cygwin-nossl.tar.bz2
+    elsif($file =~ /^curl-([0-9.]*)-(\d*)-cygwin-nossl.tar.bz2/) {
+        return($1, "cygwin-nossl",
+               "Windows archive for cygwin, bzip2");
+    }
+    # ^curl-([0-9.]*)-(d*)-cygwin-src.tar.bz2
+    elsif($file =~ /^curl-([0-9.]*)-(\d*)-cygwin-src.tar.bz2/) {
+        return($1, "cygwin-src",
+               "Source archive for cygwin, bzip2, SSL-enabled");
+    }
+    # ^^curl-devel-([0-9.]*)-(d*)-cygwin.tar.bz2
+    elsif($file =~ /^curl-([0-9.]*)-(\d*)-cygwin.tar.bz2/) {
+        return($1, "cygwin-devel",
+               " Windows cygwin devel tar archive, bzip2");
+    }
+
+
     # curl-7.8.1-2-cygwin.tar.bz2
     elsif($file =~ /^curl-([0-9.]*)-(\d*)-cygwin.tar.bz2/) {
         return($1, "cygwin-ssl",
                "Windows archive for cygwin, bzip2, SSL-enabled");
     }
-    # curl-7.8.1-2-nossl-cygwin.tar.bz2
+    # OLD: curl-7.8.1-2-nossl-cygwin.tar.bz2
     elsif($file =~ /^curl-([0-9.]*)-(\d*)-nossl-cygwin.tar.bz2/) {
         return($1, "cygwin-nossl",
                "Windows archive for cygwin, bzip2");
     }
-    # curl-7.8.1-2-src-cygwin.tar.bz2
+    # OLD: curl-7.8.1-2-src-cygwin.tar.bz2
     elsif($file =~ /^curl-([0-9.]*)-(\d*)-src-cygwin.tar.bz2/) {
         return($1, "cygwin-src",
                "Source archive for cygwin, bzip2, SSL-enabled");
     }
+
+
     # curl-7.9.3-sparc-whatever-linux.tar.gz
     elsif($file =~ /^curl-([0-9.]*)-sparc-whatever-linux.tar.gz/) {
         return($1, "linux-sparc",
