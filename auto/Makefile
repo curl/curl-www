@@ -10,7 +10,7 @@ MAINPARTS= $(ROOT)/_doctype.html $(CURL)/_menu.html $(CURL)/_footer.html \
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 ACTION=@echo preprocessing $@; rm -f $@; fcpp -I.. -I. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@;
 
-all: foot.html head.html loghead.html howto.html summary.html index.html \
+all: foot.html head.html loghead.html howto.html summary.html \
 	cvshistory.html table0.html table1.html table2.html table3.html
 
 foot.html: _foot.html $(MAINPARTS)
@@ -23,9 +23,6 @@ summary.html: _summary.html $(MAINPARTS) summary.t
 	$(ACTION)
 
 cvshistory.html: _cvshistory.html $(MAINPARTS) cvs.t
-	$(ACTION)
-
-index.html: _index.html $(MAINPARTS) table.t
 	$(ACTION)
 
 howto.html: _howto.html $(MAINPARTS) _head.html

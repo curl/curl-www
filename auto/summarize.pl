@@ -7,7 +7,6 @@ opendir(DIR, "inbox");
 my @logs = grep { /^inbox/ } readdir(DIR);
 closedir(DIR);
 
-system("rm -f table[0-9].t");
 
 my %combo;
 my $buildnum;
@@ -15,6 +14,11 @@ my $buildnum;
 my $showntop=0;
 my $prevtable = -1;
 my $tablesperpage = 7;
+
+for ( 0 .. 3 ) {
+    open(CLEAR, ">table$_.t");
+    close(CLEAR);
+}
 
 sub tabletop {
     my @res;
@@ -74,7 +78,17 @@ sub summary {
     open(SUM, ">summary.t");
 
 
-    printf SUM "<table><tr valign=\"top\"><td nowrap><b>%d used option combos</b><br>\n", scalar(keys %combo);
+    printf SUM "<p>%d builds during %d days provided by %d persons with %d different machine descriptions\n",
+    $buildnum, scalar(@logs), scalar(keys %who), scalar(keys %desc);
+
+    printf SUM "<p> The average build gave %d warnings and run %d tests. %d builds (%d%%) built warning-free.\n",
+    $totalwarn/$buildnum, $totalfine/($buildnum-$totallink),
+    $warnfree, $warnfree*100/$buildnum;
+
+    printf SUM "<p> %d builds failed to link and %d builds failed one or more tests",
+    $totallink, $totalfail;
+
+    printf SUM "<p><table><tr valign=\"top\"><td nowrap><b>%d used option combos</b><br>\n", scalar(keys %combo);
     for(sort {$combo{$b} <=> $combo{$a}} keys %combo) {
         printf SUM "<span class=\"mini\">%s</span> %d times<br>\n", $_, $combo{$_};
     }
@@ -83,15 +97,6 @@ sub summary {
         printf SUM "<span class=\"mini\">%s</span> %d times<br>\n", $_, $oses{$_};
     }
 
-    printf SUM "</td><td>%d builds<br> during %d days<br> provided by %d persons<br> with %d different machine descriptions\n",
-    $buildnum, scalar(@logs), scalar(keys %who), scalar(keys %desc);
-
-    printf SUM "<p> The average build gave %d warnings, but %d builds (%d%%) built warning-free.\n", $totalwarn/$buildnum, $warnfree, $warnfree*100/$buildnum;
-
-
-    printf SUM "<p> %d builds failed to link and %d builds failed at least one test case",
-    $totallink, $totalfail;
-    printf SUM "<p> The average number of test cases run was %d", $totalfine/($buildnum-$totallink);
     print SUM "</td></tr></table>\n";
     close(SUM);
 }
