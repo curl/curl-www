@@ -18,7 +18,7 @@ TITLE(External Libraries)
  href="/libcurl/">libcurl</a> for all features). You can build curl without
  them, but curl gets a lot better if you have these libraries:
 <p>
-<table><tr>
+<table cellspacing="10"><tr>
 <td align=center>
   <a href="http://www.openssl.org">
   <img src="openssl.png" width=102 height=47 alt="OpenSSL" border=0><br>
@@ -61,8 +61,20 @@ TITLE(External Libraries)
 <td>
   The kerberos4 support depends on a kerberos4 package! :-) More information
   can be found at <a
-  href="http://www.contrib.andrew.cmu.edu/~shadow/kerberos.html">http://www.contrib.andrew.cmu.edu/~shadow/kerberos.html</a>
-  or by asking <a href="http://www.google.com/search?q=kerberos">google</a>.
+  href="http://www.contrib.andrew.cmu.edu/~shadow/kerberos.html">http://www.contrib.andrew.cmu.edu/~shadow/kerberos.html</a>,
+  by asking <a href="http://www.google.com/search?q=kerberos">google</a> or at
+  the <a href="http://web.mit.edu/kerberos/www/">MIT kerberos package
+  page</a>.
+</td>
+</tr>
+
+<tr>
+<td align=center>
+  <a href="http://www.pdc.kth.se/heimdal/">heimdal</a>
+</td>
+<td>
+  The GSSAPI support can be provided by the heimdal package. GSSAPI is used for
+  the GSS-Negotiate support in libcurl.
 </td>
 </tr>
 
