@@ -15,6 +15,7 @@ my $ua = $ENV{'HTTP_USER_AGENT'};
 my $onlyone;
 my $sel_os;
 my $sel_cpu;
+my $sel_flav;
 
 my %typedesc=(
               'devel' => <<MOO
@@ -247,7 +248,7 @@ if(!$pick_type) {
 
 if($pick_type && !$pick_os) {
 
-    if($ua =~ /(windows|win32|Win98|Win95)/i) {
+    if($ua =~ /(windows|win32|Win98|Win95|WinNT)/i) {
         $sel_os = "Win32";
     }
     elsif($ua =~ /Linux/i) {
@@ -286,7 +287,28 @@ if($pick_type && !$pick_os) {
     elsif($ua =~ /Mac/i) {
         $sel_os = "Mac OS X";
     }
-    elsif($ua =~ /(Lynx|w3m|Dillo|MMM|Grail|Mosaic|amaya)/i) {
+    elsif($ua =~ /RISC OS/i) {
+        $sel_os = "RISC OS";
+    }
+    elsif($ua =~ /SymbianOS|Symbian OS/i) {
+        $sel_os = "Symbian OS";
+    }
+    elsif($ua =~ /OSF1/i) {
+        $sel_os = "Tru64";
+    }
+    elsif($ua =~ /VMS/i) {
+        $sel_os = "VMS";
+    }
+    elsif($ua =~ /DOS/i) {
+        $sel_os = "DOS";
+    }
+    elsif($ua =~ /OS\/2/i) {
+        $sel_os = "OS/2";
+    }
+    elsif($ua =~ /Indy Library/i) {     # Windows-only client library
+        $sel_os = "Win32";
+    }
+    elsif($ua =~ /(Lynx|w3m|Dillo|MMM|Grail|Mosaic|amaya|Konqueror|Links)/i) {
         $sel_os = "Linux"; # we don't know these are Linux, we just guess
     }
     elsif($ua =~ /(Python-urllib|Wget|lwp)/i) {
@@ -385,6 +407,17 @@ if(!$pick_flav && $pick_os && $pick_type) {
         $onlyone .= "flav ";
     }
     else {
+        $sel_flav = "";
+        if($ua =~ /mdk/i) {
+            $sel_flav = "Mandrake";
+        }
+        elsif($ua=~ /Debian/i) {
+            $sel_flav = "Debian";
+        }
+        elsif($ua=~ /gentoo/i) {
+            $sel_flav = "Gentoo";
+        }
+
         showsteps();
 
         subtitle("Select for What Flavour");
@@ -399,10 +432,14 @@ if(!$pick_flav && $pick_os && $pick_type) {
         "Show package for: <select onChange=\"submit();\" name=\"flav\">\n";
         for(sort keys %flav) {
             my $show = $_;
+            my $s;
             if($_ eq "-") {
                 $show = "Generic";
             }
-            print "<option value=\"$_\">$show</option>";
+            if($sel_flav eq "$_") {
+                $s = " SELECTED";
+            }
+            print "<option$s value=\"$_\">$show</option>\n";
         }
         print "</select>",
         "<input type=\"submit\" value=\"Select!\">",
@@ -452,7 +489,7 @@ if($pick_os && $pick_flav && !$pick_ver) {
             if($_ eq "-") {
                 $show = "Unspecified";
             }
-            print "<option value=\"$_\">$show</option>";
+            print "<option value=\"$_\">$show</option>\n";
         }
         print "</select>",
         "<input type=\"submit\" value=\"Select!\">",
@@ -488,6 +525,15 @@ if($pick_os && $pick_flav && $pick_ver && !$pick_cpu) {
         if($ua =~ /(Mac|PPC)/i) {
             $sel_cpu = "PPC";
         }
+        elsif($ua =~ /sun4|sparc/i) {
+            $sel_cpu = "Sparc";
+        }
+        elsif($ua =~ /ia64/i) {
+            $sel_cpu = "ia64";
+        }
+        elsif($ua =~ /x86_64|athlon/i) {
+            $sel_cpu = "x86_64";
+        }
 
         my $ver=$pick_ver;
         if($ver eq "-") {
@@ -516,7 +562,7 @@ if($pick_os && $pick_flav && $pick_ver && !$pick_cpu) {
             if($sel_cpu eq "$_") {
                 $s = " SELECTED";
             }
-            print "<option$s value=\"$_\">$show</option>";
+            print "<option$s value=\"$_\">$show</option>\n";
         }
         print "</select>",
         "<input type=\"submit\" value=\"Select!\">",
