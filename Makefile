@@ -4,11 +4,11 @@ MAINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t libcurl/_
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 
 # the latest stable version is:
-STABLE= 7.9.5
-RELDATE = "7th of March 2002"
-RELSIZE = "677596 bytes"
-BZ2SIZE = "511432 bytes"
-ZIPSIZE = "873913 bytes"
+STABLE= 7.9.6
+RELDATE = "15th of April 2002"
+RELSIZE = "706370 bytes"
+BZ2SIZE = "530320 bytes"
+ZIPSIZE = "922392 bytes"
 
 # name of the dir to tempoary unpack and build zip files in:
 TEMPDIR=tempzip
