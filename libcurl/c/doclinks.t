@@ -5,7 +5,7 @@
 #undef THIS
 #undef DOC
 #define THIS(t) <tr><td align=right><font color="#705050"><b>t</b></font></td></tr>
-#define DOC(t,l) <tr><td align=right><a href=/libcurl/c/l><font color="#705050">t</font></a></tr>
+#define DOC(t,l) <tr><td align=right><a href=l><font color="#705050">t</font></a></tr>
 #endif
 
 #ifdef DOCS_INDEX
@@ -127,4 +127,54 @@ DOC(curl_unescape, curl_unescape.html)
 THIS(curl_version)
 #else
 DOC(curl_version, curl_version.html)
+#endif
+
+THIS(<hr>)
+
+#ifdef DOCS_OVERVIEW_MULTI
+THIS(multi overview)
+#else
+DOC(multi overview, libcurl-multi.html)
+#endif
+
+#ifdef DOCS_MULTI_ADD_HANDLE
+THIS(curl_multi_add_handle)
+#else
+DOC(curl_multi_add_handle, curl_multi_add_handle.html)
+#endif
+
+#ifdef DOCS_MULTI_CLEANUP
+THIS(curl_multi_cleanup)
+#else
+DOC(curl_multi_cleanup, curl_multi_cleanup.html)
+#endif
+
+#ifdef DOCS_MULTI_FDSET
+THIS(curl_multi_fdset)
+#else
+DOC(curl_multi_fdset, curl_multi_fdset.html)
+#endif
+
+#ifdef DOCS_MULTI_INFO_READ
+THIS(curl_multi_info_read)
+#else
+DOC(curl_multi_info_read, curl_multi_info_read.html)
+#endif
+
+#ifdef DOCS_MULTI_INIT
+THIS(curl_multi_init)
+#else
+DOC(curl_multi_init, curl_multi_init.html)
+#endif
+
+#ifdef DOCS_MULTI_PERFORM
+THIS(curl_multi_perform)
+#else
+DOC(curl_multi_perform, curl_multi_perform.html)
+#endif
+
+#ifdef DOCS_MULTI_REMOVE_HANDLE
+THIS(curl_multi_remove_handle)
+#else
+DOC(curl_multi_remove_handle, curl_multi_remove_handle.html)
 #endif
