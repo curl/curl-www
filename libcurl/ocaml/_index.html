@@ -10,31 +10,85 @@
 #include "setup.t"
 #include "download.t"
 
-WHERE2(libcurl, "/libcurl/", libcurl OCaml Binding)
+WHERE2(libcurl, "/libcurl/", libcurl O&acute;Caml Binding)
 
 <a name=top>
-TITLE(accessing libcurl from OCaml)
+TITLE(accessing libcurl from O&acute;Caml)
 <p>
-OCaml bindings to libcurl. The sources are available at <a href="http://sourceforge.net/projects/ocurl">http://sourceforge.net/projects/ocurl</a>
+
+O'Caml bindings to libcurl. The library provides an interface to
+the curl_easy functions (the multi functions are not supported at this
+point in time).<br>
+
+The sources are available at
+
+<a href="http://sourceforge.net/projects/ocurl">http://sourceforge.net/projects/ocurl</a>
 
 <p><b>How to Install</b></br>
-None here so far.
+
+The following steps will create a subdirectory, curl, in the standard O'Caml
+library directory and install the necessary files there.<br>
+
+<pre>
+  &gt; tar xfz ocurl-0.1.tar.gz
+  &gt; cd curl
+  &gt; ./configure
+  &gt; make
+  &gt; make install
+</pre>
+
+When compiling a code that makes use of the ocurl library &quot;-I
++curl&quot; should be given (see the sample compilation below).
 
 <p><b>Examples</b><br> 
-None here so far.
+
+Sample: simple.ml
+
+<pre>
+  let _ =
+    let connection = Curl.init () in
+      Curl.setopt connection (Curl.CURLOPT_URL Sys.argv.(1));
+      Curl.perform connection
+</pre>
+
+Compilation:
+
+<pre>
+  &gt; ocamlc -I +curl curl.cma simple.ml -o simple
+</pre>
+
+Execution:
+
+<pre>
+  ./simple http://slashdot.org
+</pre>
 
 <p><b>Binding documentation</b><br>
-Check out the O'Caml web pages.
+
+Currently there is no documentation. The Curl.setopt function follows the C
+API closely, so until proper documentation is available I recommend looking at
+curl.mli in combination with the manual/html page for <a
+href="../c/curl_easy_setopt.html">curl_easy_setopt()</a>.
 
 <p><b>Download</b><br>
-Check out the O'Caml web pages.
+
+The current version is 0.1. Since this is the very first release there
+may be bugs waiting to be discovered by YOU. Feedback is
+gratefully accepted. :)<br>
+
+SourceForge location: <a href="http://sourceforge.net/projects/ocurl/">http://sourceforge.net/projects/ocurl/</a>
 
 <p><b>Credits</b><br>
- Written by Lars Nilsson
+Written by Lars Nilsson<br>
+<a href="mailto:lars@quantumchamaeleon.com">lars@quantumchamaeleon.com</a><br>
+<a href="http://www.quantumchamaeleon.com">http://www.quantumchamaeleon.com</a>
 
 <p><b>What is O'Caml?</b><br>
- You'll find more info O'Caml here:
- <a href="http://www.ocaml.org/">http://www.ocaml.org/</a>.
+O'Caml is a strongly typed, functional programming language, and
+combines type-safety with speed.<p>
+You'll find more info O'Caml here:<br>
+<a href="http://caml.inria.fr/">http://caml.inria.fr/</a><br>
+<a href="http://www.ocaml.org/">http://www.ocaml.org/</a>
 
 #include "_footer.html"
 
