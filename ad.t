@@ -1,6 +1,6 @@
 <table width="100%"><tr align="top"><td> <a href="/"><img border="0" src="/ds-curlicon.png"
 width="99" height="37" alt="cURL"></a></td>
-<td align="left" class="ad">
+<td align="center" class="ad">
 #ifndef HIDEAD
 <script type="text/javascript"><!--
 google_ad_client = "pub-9313125053076989";
