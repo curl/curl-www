@@ -1,6 +1,18 @@
 Updated for March 4, 2002:
 
+ SHOWSTOPPERS
+
 * Running 'make test' on Mac OS X gives 4 errors. Why? Fix!
+  http://curl.haxx.se/mail/archive-2002-03/0000.html
 
 * curl_formadd() fails on OSF1. Why? Fix!
+  https://sourceforge.net/tracker/index.php?func=detail&aid=524433&group_id=976&atid=100976
 
+* formpost bug
+  https://sourceforge.net/tracker/index.php?func=detail&aid=524913&group_id=976&atid=100976
+
+Work In Progress
+
+* Kjetil Jacobsen might work on a new (simpler) data callback interface
+
+* Ozra at grub.org might work on making timeouts on name lookups work better
