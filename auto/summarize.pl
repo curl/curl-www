@@ -11,15 +11,17 @@ cat("head.html");
 
 my $showntop=0;
 sub tabletop {
-    my ($file)=@_;
+    my @res;
+    my ($date)=@_;
 
-    if($file =~ /(\d\d\d\d)-(\d\d)-(\d\d)/) {
+    if($date =~ /^(\d\d\d\d)(\d\d)(\d\d)/) {
         ($year, $month, $day) = ($1, $2, $3);
     }
 
     if(!$showntop) {
         title("$year-$month-$day");
-        print "<table cellspacing=\"0\" class=\"compile\" width=\"100%\"><tr>\n",
+        print join("",
+                         "<table cellspacing=\"0\" class=\"compile\" width=\"100%\"><tr>",
         "<th>time</th>",
         "<th>test</th>",
         "<th>warn</th>",
@@ -32,9 +34,10 @@ sub tabletop {
         "<th>asynch</th>",
         "<th>desc</th>",
         "<th>who</th>",
-        "</tr>\n";
+        "</tr>\n");
         $showntop=1;
     }
+    return @res;
 }
 
 sub tablebot() {
@@ -48,24 +51,43 @@ if(!@logs) {
     print "No build logs available at this time";
 }
 else {
+    @data = "";
     for(reverse sort @logs) {
-        @data = "";
         my $filename=$_;
 
         singlefile("inbox/$filename");
 
-        if(@data) {
-            my $i;
-            tabletop($filename);
-            for(reverse sort @data) {
-                my $class= $i&1?"even":"odd";
-                if(s/<tr>/<tr class=\"$class\">/) {
-                    $i++;
-                }
-                print $_;
+    }
+    my $prevdate;
+    if(@data) {
+        my $i;
+        for(reverse sort @data) {
+            my $lyear, $lmonth, $lday;
+            my $l = $_;
+            my $class= $i&1?"even":"odd";
+            if(s/<tr>/<tr class=\"$class\">/) {
+                $i++;
             }
-            tablebot();
+            if($l =~ /\<\!-- (\d\d\d\d)(\d\d)(\d\d)/) {
+                ($lyear, $lmonth, $lday) = ($1, $2, $3);
+            }
+            else {
+                last;
+            }
+            
+            if("$lyear$lmonth$lday" ne $prevdate) {
+                if($prevdate) {
+                    tablebot();
+                }
+                tabletop("$lyear$lmonth$lday");
+            }
+            
+            $prevdate ="$lyear$lmonth$lday";
+            
+
+            print $_;
         }
+        tablebot();
     }
 
 }
@@ -115,8 +137,18 @@ sub endofsingle {
    # $showdate =~ s/(GMT|UTC|Mon|Tue|Wed|Thu|Fri|Sat|Sun)//ig;
     $showdate =~ s/.*(\d\d):(\d\d):(\d\d).*/$1:$2/;
 
+    # prefer the date from the actual log file, it might have been from
+    # another day
+    $logdate=`date --utc --date "$date" "+%Y-%m-%d"`;
+    if($logdate =~ /^(\d\d\d\d)-(\d\d)-(\d\d)/) {
+        ($lyear, $lmonth, $lday) = ($1, $2, $3);
+    }
+    else {
+        ($lyear, $lmonth, $lday) = ($year, $month, $day);
+    }
+
     my $res = join("",
-                   "<!-- $showdate --><tr>\n",
+                   "<!-- $lyear$lmonth$lday $showdate --><tr>\n",
                    "<td>$showdate</td>\n");
     my $a = "<a href=\"./showlog.cgi?year=$year&month=$month&day=$day&name=$escname&date=$escdate\">";
 
