@@ -27,6 +27,7 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden',
              'http://curl.cofman.dk/download/' => 'Denmark',
              'http://curl.mirror.internet.tp/download/' => 'France',
              'http://curl.signal42.com/download/' => 'US (California)',
+             'http://curl.cs.pu.edu.tw/download/' => 'Taiwan',
              );
 
 sub present {

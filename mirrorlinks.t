@@ -13,7 +13,8 @@ Mirror:
 <a href="http://curl.siamu.ac.th/">TH</a>,
 <a href="http://curl.mirrors.redwire.net/">US1</a>,
 <a href="http://curl.signal42.com/">US2</a>,
-<a href="http://curl.109k.com/">US3</a>
+<a href="http://curl.109k.com/">US3</a>,
+<a href="http://curl.cs.pu.edu.tw/">TW</a>
 #else
 <a href="http://curl.gds.tuwien.ac.at/CURL_URL">AT</a>,
 <a href="http://curl.planetmirror.com/CURL_URL">AU</a>,
@@ -27,6 +28,7 @@ Mirror:
 <a href="http://curl.siamu.ac.th/CURL_URL">TH</a>,
 <a href="http://curl.mirrors.redwire.net/CURL_URL">US1</a>,
 <a href="http://curl.signal42.com/CURL_URL">US2</a>,
-<a href="http://curl.109k.com/CURL_URL">US3</a>
+<a href="http://curl.109k.com/CURL_URL">US3</a>,
+<a href="http://curl.cs.pu.edu.tw/CURL_URL">TW</a>
 #endif
 </small>
