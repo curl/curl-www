@@ -33,6 +33,9 @@ TITLE(libcurl - a thread safe transfer library)
  have previously received problem reports on *BSD. Some operating systems that
  are known to have solid and working thread support are Linux, Solaris and
  Windows.
+<p>
+ Further, if you use any SSL-based protocol you need to setup OpenSSL
+ callbacks for synch. See the libcurl-tutorial(3) man page for details.
 
 #include "_footer.html"
 
