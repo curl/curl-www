@@ -2,16 +2,21 @@ Updated for March 5, 2002:
 
  Known problems in recent source code:
 
-* Running 'make test' on Mac OS X gives 4 errors. Why? At least one of these
-  errors happen because the argument parsing fails! More digging from Mac OS X
-  owners is needed.  http://curl.haxx.se/mail/archive-2002-03/0000.html
-
 * curl_formadd() fails on OSF1. Why? Fix! Need help from OSF1 dudes.
   https://sourceforge.net/tracker/index.php?func=detail&aid=524433&group_id=976&atid=100976
 
 * formpost "bug". Is this truly a bug? Should we start using
   application/octet-stream for unknown file parts within formposts?
   https://sourceforge.net/tracker/index.php?func=detail&aid=524913&group_id=976&atid=100976
+
+* Running 'make test' on Mac OS X gives 4 errors. Why? At least one of these
+  errors happen because the argument parsing fails! This only happen if you
+  run the test suite with the curl in the source tree, if you install curl
+  first and modify tests/runtests.pl to use the installed curl, it seems to
+  work fine!
+  http://curl.haxx.se/mail/archive-2002-03/0000.html
+   and
+  http://curl.haxx.se/mail/archive-2002-03/0024.html
 
 Work In Progress
 
