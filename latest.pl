@@ -22,6 +22,7 @@ my @mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/',
              'http://www.planetmirror.com/pub/curl/',
              'ftp://ftp.planetmirror.com/pub/curl/',
              'http://www.execve.net/curl/',
+             'http://curl.tsuren.net/download/',
              );
 
 sub present {
