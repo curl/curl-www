@@ -46,6 +46,25 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 </ul>
 <p> Bugs:
 <ul>
+ <li> the CA cert bundle included a demo cert now removed
+ <li> changing some attributes between two transfers when re-using a connection
+   did not "take effect" properly
+ <li> the test suite runs faster and hopefully a bit more reliably
+ <li> improved configure check for presence of functions, needed for HPUX
+ <li> the curl tool now makes a correct URL escaping when appending to the URL
+   when using -T and the file name is appended to the URL.
+ <li> configure --enable-libgcc now explicitly add -lgcc to the linker
+ <li> better configure checks for headers (since some platforms got nasty
+   warnings output previously)
+ <li> configure --help looks nicer
+ <li> data transfer bug on HP-UX systems
+ <li> improved random seeding for systems without a reliable random source
+ <li> 64bit Sparc compiler warnings removed
+ <li> a case where a connect failure didn't return an error string
+ <li> DNS cache problem in AIX 4.3 and later was fixed
+ <li> a POST-then-GET problem when re-using the same handle in libcurl
+ <li> extra precaution added for FTP servers returning 0 bytes to SIZE commands
+ <li> looping issue in the receive function (i.e badly updated progress meter)
  <li> Fixed the 'Expect: 100-continue' behavior
  <li> CURLOPT_MAXCONNECTS segfault fixed
  <li> multi-interface connecting on Windows to non-listening ports fixed
