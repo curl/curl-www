@@ -66,7 +66,7 @@ if($r1 && $r2) {
 
     while(<CH>) {
         chomp;
-        if($_ =~ /Version ([^ ]*)/) {
+        if($_ =~ /^Version ([^ ]*)/) {
             my $ver=$1;
 
             if(($ver eq $r1) || ($ver eq $r2)) {
