@@ -117,9 +117,9 @@ sub scanstatus {
                      "Source Linux RPM archive, SSL-enabled.");
         }
         # curl-7.8.1-sparc-8-pkg.tar.gz
-        elsif($_ =~ /^curl-([0-9.]*)-sparc-(.*).pkg.tar.gz/) {
+        elsif($_ =~ /^curl-ssl-([0-9.]*)-sparc-(.*).pkg.tar.gz/) {
             storemax($_, $1, $size, "solaris-sparc-pkg",
-                     "Binary Solaris SPARC archive.");
+                     "Binary Solaris SPARC archive, SSL-enabled.");
         }
         # curl-7.8.1-vms.zip
         elsif($_ =~ /^curl-([0-9.]*)-vms\.zip/) {
