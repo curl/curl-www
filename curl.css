@@ -55,3 +55,11 @@ BODY {
 td.desc {
   background: #e0e0ff;
 }
+
+/* used in the download table for a single OS */
+.ostitle {
+  background-color: #f0f0ff; 
+  font-family: arial, helvetica, ariel, sans-serif;
+  font-size: 120%;
+  margin: 6px 6px 6px 6px;
+}
