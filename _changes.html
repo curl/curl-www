@@ -22,6 +22,11 @@ TITLE(Recent Changes -- The Nice and Clean Version)
 
 <p> Fixed since (available in CVS)
 <ul>
+<li> -c is a new option that makes all cookies get written to the specified
+  file (based on the new libcurl option CURLOPT_COOKIEJAR)
+<li> SSL session ID caching is being done for multiple requests to the same
+   hosts
+<li> CURLOPT_COOKIEFILE can now be specified any number of times
 <li> fixed portability issue in the SSL code
 <li> -G improvements, now works with -I and on URLs including question mark.
 <li> various windows compile, build and makefile fixes
