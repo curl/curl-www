@@ -171,7 +171,8 @@ if($latest::version{$what}) {
 }
 elsif($what) {
     print "<p> The <b>recent-version-off-a-mirror</b> system has no info about ",
-    "your requested package \"$what\"! :-(\n";
+    "your requested package \"$what\"! :-( This is most likely because there\n",
+    "is no up-to-date release for \"$what\".
 }
 
 print "<p> Select below to see links for other archives:<br>\n";
