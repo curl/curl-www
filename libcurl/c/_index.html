@@ -1,0 +1,123 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl - C/C++ API</TITLE>
+</HEAD>
+
+#define LIBCURL_DOCS
+#define DOCS_INDEX
+
+#include "_menu.html"
+#include "setup.t"
+#include "download.t"
+
+WHERE2(libcurl, "/libcurl/", C API Index)
+
+TITLE(use libcurl in your C or C++ application)
+<p>
+ There are some <a href="example.shtml">example C source codes</a> you can
+ check out.
+
+TITLE(The C interface)
+<p>
+ <b>Starting with libcurl 7.8, you should always call <a
+ href="curl_global_init.html">curl_global_init()</a> once to initialize
+ libcurl globally, and when you've used libcurl for the last time in your
+ application, you call <a
+ href="curl_global_cleanup.html">curl_global_cleanup()</a>. Failing to do so
+ may lead to memory leaks!
+ </b>
+<p>
+ When using libcurl you <a href="curl_easy_init.html">init</a> your
+ easy-session and get a handle, which you use as input to the following
+ interface functions you use.
+<p>
+ You continue by setting all the <a href="curl_easy_setopt.html">options</a>
+ you want in the upcoming transfer, most important among them is the URL
+ itself. You might want to set some callbacks as well that will be called from
+ the library when data is available etc.
+<p>
+ When all is setup, you tell libcurl to <a
+ href="curl_easy_perform.html">perform</a> the transfer. It will then do the
+ entire operation and won't return until it is done or failed.
+<p>
+ After the performance is made, you may <a href="curl_easy_getinfo.html">get
+ information</a> about the transfer and then you <a
+ href="curl_easy_cleanup.html">cleanup</a> the easy-session's handle and
+ libcurl is entire off the hook!
+<p>
+ <a href="curl_easy_init.html">curl_easy_init()</a>
+<br>
+ <a href="curl_easy_cleanup.html">curl_easy_cleanup()</a>
+<br>
+ <a href="curl_easy_setopt.html">curl_easy_setopt()</a>
+<br>
+ <a href="curl_easy_perform.html">curl_easy_perform()</a>
+<br>
+ <a href="curl_easy_getinfo.html">curl_easy_getinfo()</a>
+<p>
+ While the above functions are the main functions to use in the easy
+ interface, there is a series of other helpful functions too. They are:
+<p>
+<table>
+<tr><td>
+<a href="curl_version.html">curl_version()</a>
+</td><td>
+displays the libcurl version
+</td></tr><tr><td>
+<a href="curl_getdate.html">curl_getdate()</a>
+</td><td>
+converts a date string to time_t
+</td></tr><tr><td>
+<a href="curl_getenv.html">curl_getenv()</a>
+</td><td>
+portable environment variable reader
+</td></tr><tr><td>
+<a href="curl_formparse.html">curl_formparse()</a>
+</td><td>
+helps building a HTTP form POST
+</td></tr><tr><td>
+<a href="curl_formfree.html">curl_formfree()</a>
+</td><td>
+free a build form POST
+</td></tr><tr><td>
+<a href="curl_slist_append.html">curl_slist_append()</a>
+</td><td>
+builds a linked list
+</td></tr><tr><td>
+<a href="curl_slist_free_all.html">curl_slist_free_all()</a>
+</td><td>
+frees a whole curl_slist
+</td></tr><tr><td>
+<a href="curl_escape.html">curl_escape()</a>
+</td><td>
+URL encodes a string
+</td></tr><tr><td>
+<a href="curl_unescape.html">curl_unescape()</a>
+</td><td>
+URL decodes a string
+</td></tr><tr><td>
+<a href="curl_strequal.html">curl_strequal()</a>
+</td><td>
+compare strings case insensitive
+</td></tr><tr><td>
+<a href="curl_mprintf.html">curl_mprintf()</a>
+</td><td>
+portble *printf() functions
+</td></tr>
+</table>
+
+<p>
+ For your pleasure, all the libcurl man pages for the C/C++ API are available
+as
+
+<a href="
+<!--#exec cmd="./htmllink.cgi" -->
+">HTML pages</a>. Note that this package is rebuilt whenever these pages are
+updated. (Hence the date-stamp in the file name)
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
+
+

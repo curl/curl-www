@@ -1,0 +1,75 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl - programs using the lib</TITLE>
+</HEAD>
+
+#define LIBCURL_USING
+#define USING_APPS
+
+#include "_menu.html"
+#include "setup.t"
+#include "download.t"
+
+WHERE3(libcurl, "/libcurl/", Using, "/libcurl/using/", Programs)
+
+TITLE(Programs Using libcurl)
+<p>
+ A list of applications that use libcurl. I know there are many more out
+ there. I'm interested in getting to know, even if you don't have any web
+ pages about your stuff or don't want your email address being publicized...
+ (Some companies develop applications based on libcurl, but don't give me
+ permission to "brag" about it here! ;-()
+
+#define NEWCOL <td valign=top>
+
+#define NICETD <td bgcolor="#0000ff"><font color="#ffffff" size=+1 face="ariel,helvetica">
+#define NICETDSLUT </font></td>
+
+<p>
+<table cellspacing=2 cellpadding=0 border=0>
+ <tr>
+  NICETD Name NICETDSLUT
+  NICETD Description NICETDSLUT
+  NICETD Author NICETDSLUT
+ </tr>
+  <tr>
+   NEWCOL <a href="/">curl</a> </td>
+   NEWCOL Command line tool to transfer files using URL syntax </td>
+   NEWCOL Daniel Stenberg </td>
+  </tr>
+  <tr>
+   NEWCOL <a href="http://www.bellworldwide.net/previking/">PreViking</a> </td>
+   NEWCOL A telephony daemon </td>
+   NEWCOL Zaheer Merali </td>
+  </tr>
+  <tr>
+   NEWCOL <a href="http://www.cyest.org/drakupdatetxt/">MandrakeUpdateRobot
+</a> </td>
+   NEWCOL A console based MandrakeUpdate. This tool enables automatic retrieval of updates (including the dependencies too) </td>
+   NEWCOL prana at cyest.org </td>
+  </tr>
+  <tr>
+   NEWCOL <a href="http://amtrickey.net/wmget/index.html">wmget</a> </td>
+   NEWCOL  wmget (formerly wmcurl) is a dock app for the GNU Window Maker  window manager which makes it more convenient to perform long downloads in the background. </td>
+   NEWCOL Aaron Trickey </td>
+  </tr>
+  <tr>
+   NEWCOL <a href="http://ffts.sourceforge.net/Introduction.html">FFTS</a> </td>
+   NEWCOL  The Finicky Financial Trading System (FFTS) is an open-source front-office trading and risk management system </td>
+   NEWCOL Mark Higgins </td>
+  </tr>
+  <tr>
+   NEWCOL <a href="http://linuxbrit.co.uk/camE/">camE</a> </td>
+   NEWCOL camE is a Webcam grabber designed for video4linux devices  </td>
+   NEWCOL &nbsp; </td>
+  </tr>
+
+
+ </table>
+<p>
+ So, mail me and tell!
+
+#include "_footer.html"
+
+</BODY>
+</HTML>

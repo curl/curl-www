@@ -1,0 +1,71 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl - the Perl Interface</TITLE>
+</HEAD>
+
+#define LIBCURL_PERL
+
+#include "_menu.html"
+#include "setup.t"
+#include "download.t"
+
+WHERE2(libcurl, "/libcurl/", Perl Interface)
+
+<a name=top>
+TITLE(Curl::easy -- accessing libcurl from perl)
+<p>
+ libcurl is a solid and reliable multi-protocol file transfer library for URL
+ syntax defined files. We can take advantage of libcurl straight from within
+ our Perl programs.
+
+<p>
+ All you need to do is to install the Curl::easy package and then you'll be
+ able to use the Perl interface.
+
+<p><b>How to Install</b></br>
+ Install curl and libcurl first. Make sure you install the libcurl.so library
+ and curl's include files as well.
+
+<p>
+ Run these commands:
+ <pre>
+   cd [curl::easy-directory]
+   perl Makefile.PL
+   make
+   make test
+   make install
+</pre>
+<p><b>Examples</b><br> Please post any examples you've made, as I have none!
+
+<p><b>Interface documentation</b><br> The interface closely resembles the C
+ one, so it should be OK to study the regular <a href="/libcurl/c/">libcurl
+ C/C++ API docs</a>.
+
+<p><b>Download</b><br>
+
+ The Curl::easy interface is part of the full source code release archive from
+ version 7.7 and onwards. It is however also released separately and thus
+ there may be a newer perl interface. Check out <a
+ href="http://www.koblenz-net.de/~horn/export/">www.koblenz-net.de/~horn/export/</a>
+ for the latest packages.
+<p>
+ <a href="Curl-easy-1.1.5.tar.gz">curl::easy 1.1.5</a> (12Kb) was uploaded on
+ April 20, 2001.
+<p>
+ For curl versions before 7.7, download <a href="Curl_easy-1.0.2.tgz">Perl
+ interface version 1.0.2</a>
+<p>
+ Browse the <a href="/lxr/source/perl/Curl_easy/">/perl/Curl_easy/</a> files
+ that are presently in CVS.
+
+<p><b>Credits</b><br>
+ The Perl interface was written by Georg Horn with help from Cris Bailiff.
+
+<p><b>What is Perl?</b><br>
+ You'll find more info on the <a href="http://www.perl.com/">official
+ Perl web page</a>.
+
+#include "_footer.html"
+
+</BODY>
+</HTML>

@@ -1,0 +1,60 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl - the PHP Interface</TITLE>
+</HEAD>
+
+#define LIBCURL_PHP
+
+#include "_menu.html"
+#include "setup.t"
+#include "download.t"
+
+WHERE2(libcurl, "/libcurl/", PHP Interface)
+
+<a name=top>
+TITLE(CURL -- accessing libcurl from PHP)
+<p>
+ libcurl is a solid and reliable multi-protocol file transfer library for URL
+ syntax defined files. We can take advantage of libcurl straight from within
+ our PHP programs. Curl is supported built-in since PHP 4.0.2, no extra stuff
+ is needed but the PHP and curl packages.
+<p>
+ All you need to do is to configure PHP with curl awareness on build time, and
+ you'll get a set of extra functions to use.
+<p>
+ <b>How to Install?</b><br>
+ You need to enable the curl support when you build PHP: <a
+ href="install.html">install the curl-PHP interface</a>.
+
+<p>
+ <b>Examples</b><br> There are a few tiny example source codes in the <a
+ href="/lxr/source/php/examples/">/php/examples/</a> directory.
+<p>
+ Michael Reynolds wrote an article on <a
+ href="http://www.phpbuilder.com/columns/michael20010510.php3">phpbuilder.com</a>
+ how he used curl to communicate with a credit card payment site with PHP.
+<p>
+ <b>Interface documentation</b><br> The <a
+ href="http://www.php.net/manual/ref.curl.php">PHP/curl interface
+ description</a> is found on the PHP site.
+
+<p><b>Mailing List</b><br> We have this special-purpose mailing list for PHP
+ and curl related issues. (<a
+ href="http://lists.sourceforge.net/lists/listinfo/curl-and-php">subscribe
+ here</a>)
+
+<p><b>Books</b><br> Sterling Hughes' book <a
+ href="http://www.amazon.com/exec/obidos/tg/stores/detail/-/books/0672319241/103-9804937-2489406">The
+ PHP Programmer's Cookbook</a> contains some curl-using examples.
+
+<p><b>Credits</b><br>
+ The CURL module for PHP was written by Sterling Hughes.
+
+<p><b>What is PHP?</b><br>
+ You'll find more info on the <a href="http://www.php.net/">official
+ PHP web page</a>.
+
+#include "_footer.html"
+
+</BODY>
+</HTML>

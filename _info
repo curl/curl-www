@@ -1,0 +1,10 @@
+#include "packstat.t"
+Version: __STABLE
+Date: __RELDATE
+Size: __RELSIZE
+Download: http://curl.haxx.se/download/curl-__STABLE.tar.gz
+Packages: __PACKS
+Up-to-date: __CURR
+Author: Daniel Stenberg <daniel@haxx.se>
+License: MIT
+WWW: http://curl.haxx.se

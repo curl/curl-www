@@ -1,7 +1,4 @@
-
-DAST = ../public_html
-
-MAINPARTS= $(DAST)/_doctype.html _menu.html _footer.html setup.t pic.t $(DAST)/daniel.t where.t
+MAINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t
 
 # today's date
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
@@ -24,13 +21,13 @@ ACTION=@echo preprocessing $@; \
        cpp -I.. -I$$HOME/web -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
        chmod a-w+r $@
 
-all: main2.shtml feedback.html mirrors.html cvs.html libs.html icons.html \
+all: index.shtml feedback.html mirrors.html cvs.html libs.html icons.html \
 	help.html curlprograms.html download.html changes.html \
 	version7.html bugreport.html about.html support.html \
 	news.html news.shtml head.html foot.html \
 	oldnews.shtml indexheader.html indexfooter.html \
-	mailheader.html mailfooter.html info download/curl-$(STABLE).tar.bz2 \
-	download/curl-$(STABLE).zip latest.shtml
+	mailheader.html mailfooter.html info \
+	latest.shtml
 	cd docs; make
 	cd libcurl; make
 	cd htdig; make
@@ -38,6 +35,8 @@ all: main2.shtml feedback.html mirrors.html cvs.html libs.html icons.html \
 	cd mail; make
 	@echo done 
 #archive/index.html
+
+check: download/curl-$(STABLE).tar.bz2 download/curl-$(STABLE).zip 
 
 download/curl-$(STABLE).tar.bz2: download/curl-$(STABLE).tar.gz
 	gzip -dc $< | bzip2 - > $@
@@ -61,7 +60,7 @@ version7.html: _version7.html $(MAINPARTS)
 foot.html: _foot.html $(MAINPARTS)
 	$(ACTION)
 
-main2.shtml: _main.html $(MAINPARTS) $(STAT)
+index.shtml: _main.html $(MAINPARTS) $(STAT)
 	$(ACTION)
 
 news.html: _news.html $(MAINPARTS)
@@ -111,7 +110,7 @@ curlprograms.html: _curlprograms.html $(MAINPARTS)
 mirrors.html: _mirrors.html $(MAINPARTS) mirrors.t
 	$(ACTION)
 
-icons.html: _icons.html $(MAINPARTS) feat.t
+icons.html: _icons.html $(MAINPARTS)
 	$(ACTION)
 
 about.html: _about.html $(MAINPARTS)

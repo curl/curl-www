@@ -1,0 +1,72 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl - installing the PHP Interface</TITLE>
+</HEAD>
+
+#define PHP_INSTALL
+
+#include "_menu.html"
+#include "setup.t"
+#include "download.t"
+
+WHERE3(libcurl, "/libcurl/", PHP Interface, "/libcurl/php/", Install)
+
+TITLE(Installing the PHP interface)
+<p>
+ <I>Instruction contributed by <b>Lim Chung Keng</b>. Kudos!</I>
+
+<p>
+ These steps (in sequence) are for sharing:
+
+<p>
+ My purpose is to have : PHP code with curl functions (using curl_init etc.)
+ calling HTTPS server.
+<p>
+ Build OpenSSL (In openssl-0.9.x directory)
+<ol>
+ <li> ./config -t   To get correct configure option for step 2
+ <li> Configure by running the output from step 1
+ <li> make
+ <li> make test
+ <li> make install
+</ol>
+
+<p>
+Build CURL (In curl-7.x.x directory)
+<ol>
+ <li> ./configure --disable-ipv6 --with-ssl=/usr/local/ssl (if only ssl was
+built here)
+ <li> make
+ <li> make install (libcurl.so is now in /usr/local/lib)
+</ol>
+
+<p>
+Build PHP (In php-4.0.xpl1 directory)
+<ol>
+ <li> To make -lssl comes before -lcrypto (as advised), search for "-lcrypto"
+in ./configure and put "-lssl" before it.
+ <li>
+./configure --with-mysql --with-openssl=/usr/local/ssl --with-curl=/usr/loca
+l/lib --with-apache=../apache_1.3.x<br>
+    (In most cases of linking problem, it should complain here in debug.log)
+
+ <li> make
+ <li> make install (If --with-apache option is omitted, it should generate php
+executable in /usr/loca/bin)
+ <li> Library for modphp4 is now in apache_1.3.x/src/modules/php4
+</ol>
+
+<p>
+Build and install SSL-aware Apache (In mod_ssl-2.8.xxxx directory)
+<ol>
+ <li>
+./configure --with-apache=../apache1.3.x --with-ssl=/usr/local/ssl --prefix=
+/usr/loca/apache --activate-module=src/modules/php4/libphp4.a
+ <li> Follow remaining steps the output tells.
+ <li> Restart your apache... BINGO!
+</ol>
+
+#include "_footer.html"
+
+</BODY>
+</HTML>

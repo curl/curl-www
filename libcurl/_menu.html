@@ -1,0 +1,95 @@
+
+#define BACKGROUND "#ffffff"
+#define TEXTCOLOR "#000000"
+#define MENUTEXT "#ffffff"
+#define MENUCOLOR "#e0c0c0"
+
+#ifndef NOBODY
+
+<BODY bgcolor=BACKGROUND text=TEXTCOLOR LINK="#0000ff" VLINK="#808080" ALINK="red">
+#endif
+
+#define SEP <br>
+
+#undef LINK
+#define LINK(l,t) <tr><td><font size=+1 color="#705050">t</font></td></tr>
+
+#undef VLINK
+#define VLINK(l,t) <tr><td><a href=l><font color="#705050">t</font></a></td></tr>
+
+
+<table width=100%><tr>
+<td>
+<a href="http://curl.haxx.se"><img border=0 src="http://curl.haxx.se/small-curl.png" width=90 height=36 alt="Curl"></a>
+</td>
+#include "ad.t"
+</tr></table>
+
+<table cellspacing=0 cellpadding=5><tr><td valign=top align=left>
+
+<a href="http://curl.haxx.se/libcurl/"><img border=0 src="http://curl.haxx.se/libcurl/small.png" alt="libcurl" width=90 height=25></a><br>
+
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 bgcolor="#000000"><tr><td>
+<table width="100%" border=0 cellspacing=0 cellpadding=2 bgcolor=MENUCOLOR>
+
+#ifdef LIBCURL_MAIL
+LINK("http://curl.haxx.se/libcurl/mail.html", Mailing List )
+#else
+VLINK("http://curl.haxx.se/libcurl/mail.html", Mailing List )
+#endif
+
+#ifdef LIBCURL_USING
+LINK("http://curl.haxx.se/libcurl/using/", Using libcurl )
+#else
+VLINK("http://curl.haxx.se/libcurl/using/", Using libcurl )
+#endif
+
+ <tr><td><font color="#705050">Languages:</font></td></tr>
+
+#ifdef LIBCURL_DOCS
+LINK("http://curl.haxx.se/libcurl/c/", C/C++ API )
+#else
+VLINK("http://curl.haxx.se/libcurl/c/", C/C++ API )
+#endif
+
+#ifdef LIBCURL_JAVA
+LINK("", Java API)
+#else
+VLINK(/libcurl/java/, Java API)
+#endif
+
+#ifdef LIBCURL_PERL
+LINK("", Perl API)
+#else
+VLINK(/libcurl/perl/, Perl API)
+#endif
+
+#ifdef LIBCURL_PHP
+LINK("", PHP API)
+#else
+VLINK(/libcurl/php/, PHP API)
+#endif
+
+#ifdef LIBCURL_PYTHON
+LINK("", Python API)
+#else
+VLINK(/libcurl/python/, Python API)
+#endif
+
+#ifdef LIBCURL_RUBY
+LINK("", Ruby API)
+#else
+VLINK(/libcurl/ruby/, Ruby API)
+#endif
+
+#ifdef LIBCURL_TCL
+LINK("", Tcl API)
+#else
+VLINK(/libcurl/tcl/, Tcl API)
+#endif
+
+</table>
+</td></tr></table>
+
+</td><td valign=top align=left>

@@ -1,0 +1,76 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl - the Tcl Interface</TITLE>
+</HEAD>
+
+#define LIBCURL_TCL
+
+#include "_menu.html"
+#include "setup.t"
+#include "download.t"
+
+WHERE2(libcurl, "/libcurl/", Tcl Interface)
+
+<a name=top>
+TITLE(accessing libcurl from Tcl)
+
+<p>
+ libcurl is a solid and reliable multi-protocol file transfer library for URL
+ syntax defined files. We can take advantage of libcurl straight from within
+ our Tcl programs.
+
+<p>
+ All you need to do is to install the TclCurl package and then you'll be able
+ to use it.
+
+<p>
+ Visit the <a
+ href="http://personal1.iddeo.es/andresgarci/tclcurl/english/index.html">TclCurl
+ homepage</a>.
+
+<p><b>How to Install</b></br>
+ Install curl and libcurl first, then follow the usual sequence:
+<pre>
+  ./configure
+  make
+  make install
+</pre>
+
+ To test the installation do:
+<pre>
+ $tclsh
+    % package require TclCurl
+</pre>
+<p>
+  If Tcl returns TclCurl's version number, all went well.
+
+<p><b>Examples</b><br> One basic example:
+<pre>
+ package require TclCurl
+    set curlHandle [curl::init]
+    $curlHandle setopt CURLOPT_URL http://curl.haxx.se
+    $curlHandle setopt CURLOPT_FILE index.html
+    $curlHandle perform
+    $curlHandle cleanup
+</pre>
+
+ There are more <a
+ href="http://personal1.iddeo.es/andresgarci/tclcurl/english/examples.html">examples
+ on the TclCurl site</a>
+
+<p><b>Interface documentation</b><br>
+ Available at 
+ <a href="http://personal1.iddeo.es/andresgarci/tclcurl/english/docs.html">
+ TclCurl's home page.</a>
+
+<p><b>Credits</b><br>
+ The Tcl interface was written by Andrés García.
+
+<p><b>What is Tcl?</b><br>
+You can find more info on 
+<a href="http://tcl.activestate.com">the semiofficial Tcl web page</a>.
+
+#include "_footer.html"
+
+</BODY>
+</HTML>

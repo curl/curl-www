@@ -1,0 +1,65 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl - source code examples</TITLE>
+</HEAD>
+
+#define LIBCURL_EXAMPLE
+
+#include "_menu.html"
+#include "setup.t"
+#include "download.t"
+
+WHERE2(libcurl, "/libcurl/", Example Source Codes)
+
+TITLE(libcurl - small example snippets)
+<p>
+ I'm trying to gather example source codes here, that show how to write
+ programs using the libcurl interface. You'll also find a few in the
+ distribution archive, in the <a
+ href="/lxr/source/docs/examples/">docs/examples directory</a>.
+
+<p>
+<i>To compile on Windows, you need to add winsock init calls, like <a
+href="http://curl.haxx.se/lxr/source/docs/examples/win32sockets.c">this
+example shows</a></i>.
+
+
+<ul>
+ <li> "easiest possible"
+ <li> "use the write callback"
+ <li> "with gtk for the progress meter"
+</ul>
+
+
+<h2>easiest possible</h2>
+<p>
+ This particular example stores the headers in a separate file named
+ 'dumpit'. This source code compiles and runs on all supported platforms.
+
+<pre>
+<!--#include virtual="/libcurl/tinytest.html" -->
+</pre>
+
+<h2>use the write callback</h2>
+<p>
+ This only slightly more advaned example uses the write callback option to
+ redirect the output to two different files. 'head.out' for the headers and
+ 'body.out' for the body part.
+
+<pre>
+<!--#include virtual="/libcurl/tinytest2.html" -->
+</pre>
+
+<h2>with GTK</h2>
+<p>
+ David Odin supplied this example that shows libcurl and GTK cooperating.
+
+<pre>
+<!--#include virtual="/libcurl/curlgtk.html" -->
+</pre>
+
+
+#include "_footer.html"
+
+</BODY>
+</HTML>

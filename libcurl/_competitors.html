@@ -1,0 +1,103 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl - available free alternatives</TITLE>
+</HEAD>
+
+#define LIBCURL_COMPETITORS
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(libcurl, "/libcurl/", Free libcurl Alternatives)
+
+TITLE(Other Free HTTP/FTP client Libraries)
+<p>
+Free Software and Open Source projects have a long tradition of forks and
+duplicate efforts. We enjoy "doing it ourselves", no matter if someone else
+has done something very similar already.
+
+<p>
+In the land of the free, I've done some research and I've found a few
+libraries that cover parts of what libcurl features (some of them also do a
+lot more than libcurl). I've not bothered with checking for exactly which
+platforms these libs work under...
+
+<p>
+<b>libghttp</b> (LGPL)<br>
+<ul>
+  Having a glance at libghttp (a gnome http library), it looks as if it works
+  rather similar to libcurl (for http). There's no web page for this and the
+  person who's email is mentioned in the README of the latest release I found
+  claims he has passed the leadership of the project to "eazel". Popular
+  choice among GNOME projects.
+</ul>
+<b><a href="http://www.w3.org/Library/">libwww</a></b><br>
+<ul>
+  Much more complex, bloated and potent than libcurl is. Includes everything
+  from multi-threading to HTML parsing.
+</ul>
+
+<b><a href="http://sourceforge.net/projects/libhttp/">libhttp</a></b> (BSD)<br>
+<ul>
+  Seems to be an idling project as the CVS shows the last source code commit
+  was done 9 months ago. No documentation or web page available. "State:
+  planning" this page says.
+</ul>
+
+<b><a href="http://www.westga.edu/~stu7440/projects/ferit.html">libferit</a></b> (GPL)<br>
+<ul>
+  C++ library "for transferring files via http, ftp, gopher, proxy server".
+  Based on 'snarf' 2.0.9-code (formerly known as libsnarf).  Quote from
+  freshmeat: <i>"As the author of snarf, I have to say this frightens
+  me. Snarf's networking system is far from robust and complete. It's probably
+  full of bugs, and although it works for maybe 85% of all current situations,
+  I wouldn't base a library on it."</i>
+
+</ul>
+
+<b><a href="http://www.webdav.org/neon/">neon</a></b> (LGPL)<br>
+<ul>
+  An HTTP and WebDAV client library, with a C interface. I've mainly heard
+  and seen people use this with WebDAV as their main interest.
+</ul>
+
+<b><a href="http://www.mozilla.org/projects/netlib/">mozilla netlib</a></b> (MPL)<br>
+<ul>
+  Handles URLs, protocols, transports for the Mozilla browser. The very old
+  web document I link to here claims it "is in a sorry state".
+</ul>
+
+<b><a href="http://freshmeat.net/redir/librhttpr/5711/url_homepage/">libhttpr</a></b> (BSD)<br>
+<ul>
+  The rhttpr library provides a simple API for making HTTP GET, POST, and HEAD
+  requests. All docs I found is written in french...
+</ul>
+
+<b><a href="http://sunsite.dk/wget/">wget</a></b> (GPL)<br>
+<ul>
+  While not a library at all, I've been told that people sometimes extract the
+  network code from it and base their own hacks from there.
+</ul>
+
+<b><a href="http://www.freebsd.org/cgi/cvsweb.cgi/src/lib/libfetch/">libfetch</a></b> (BSD)<br>
+<ul>
+ Does HTTP and FTP transfers (both ways), supports file: URLs, and an API for
+ URL parsing. The utility <i>fetch</i> that is built on libfetch is an
+ integral part of the <a href="http://www.freebsd.org/">FreeBSD</a> operating
+ system.
+</ul>
+
+<b><a href="http://millweed.com/projects/libfxp/">libfxp</a></b> (GPL)<br>
+<ul>
+ An FTP library. Seems to provide a rather low level interface to most FTP
+ operations.
+</ul>
+
+ Is there any programmer(s) in the audience that have tried programming with
+the other libs and care share their experiences? I'd love to make this
+collecion more complete and feature lenghtier comments about each lib.
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
