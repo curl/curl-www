@@ -39,8 +39,10 @@ while(<FILE>) {
             for(@present) {
                 chomp;
                 if(($_ =~ /([.\/a-zA-Z0-9]*)\.[ch]:([0-9:]*): /) ||
-                   ($_ =~ /FAILED/) ) {
-                    print "<div class=\"warning\">$_</div>\n";
+                   ($_ =~ /FAILED/) ||
+                   # the line below is adjusted for AIX xlc warnings
+                   ($_ =~ /\"([.\/a-zA-Z0-9]+)\", line/)) {
+                       print "<div class=\"warning\">$_</div>\n";
                 }
                 else {
                     print "$_<br>\n";
