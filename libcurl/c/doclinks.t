@@ -66,6 +66,12 @@ THIS(curl_easy_setopt)
 DOC(curl_easy_setopt, curl_easy_setopt.html)
 #endif
 
+#ifdef DOCS_EASY_STRERROR
+THIS(curl_easy_strerror)
+#else
+DOC(curl_easy_strerror, curl_easy_strerror.html)
+#endif
+
 #ifdef DOCS_EASY_PERFORM
 THIS(curl_easy_perform)
 #else
@@ -215,6 +221,12 @@ THIS(curl_multi_remove_handle)
 DOC(curl_multi_remove_handle, curl_multi_remove_handle.html)
 #endif
 
+#ifdef DOCS_MULTI_STRERROR
+THIS(curl_multi_strerror)
+#else
+DOC(curl_multi_strerror, curl_multi_strerror.html)
+#endif
+
 #endif /* MENU_MULTI */
 
 #ifdef MENU_SHARE
@@ -235,6 +247,12 @@ DOC(curl_share_init, curl_share_init.html)
 THIS(curl_share_setopt)
 #else
 DOC(curl_share_setopt, curl_share_setopt.html)
+#endif
+
+#ifdef DOCS_SHARE_STRERROR
+THIS(curl_share_strerror)
+#else
+DOC(curl_share_strerror, curl_share_strerror.html)
 #endif
 
 
