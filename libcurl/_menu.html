@@ -53,6 +53,12 @@ LINK("http://curl.haxx.se/libcurl/c/", C/C++ API )
 VLINK("http://curl.haxx.se/libcurl/c/", C/C++ API )
 #endif
 
+#ifdef LIBCURL_DYLAN
+LINK("", Dylan API)
+#else
+VLINK(/libcurl/dylan/, Dylan API)
+#endif
+
 #ifdef LIBCURL_JAVA
 LINK("", Java API)
 #else
