@@ -46,6 +46,12 @@ BODY {
   background-color: #ff8080;
 }
 
+/* download page */
 .latest {
   background-color: #ffff44;
+}
+
+/* the one in the download database */
+td.desc {
+  background: #e0e0ff;
 }

@@ -14,6 +14,9 @@ TEMPDIR=tempzip
 # generated file with binary package stats
 STAT = packstat.t
 
+# generated file with release info (STABLE and RELDATE)
+RELEASE = release.t
+
 ACTION=@echo preprocessing $@; \
        rm -f $@; \
        cpp -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
@@ -85,14 +88,17 @@ oldnews.html: olddata.html
 info: _info packstat.t
 	$(ACTION)
 
-packstat.t: download.html Makefile
+$(RELEASE): Makefile
+	@echo "fixing $(RELEASE)"
+	@echo "#define __STABLE $(STABLE)" >>$(RELEASE)
+	@echo "#define __RELDATE $(RELDATE)" >>$(RELEASE)
+
+$(STAT): download.html Makefile
 	@echo "fixing $(STAT)"
 	@echo "#define __CURR `grep -c class=.latest $<`" >$(STAT)
 	@echo "#define __PACKS `grep -c \"^<tr c\" $<`" >>$(STAT)
-	@echo "#define __STABLE $(STABLE)" >>$(STAT)
-	@echo "#define __RELDATE $(RELDATE)" >>$(STAT)
 
-download.html: _download.html $(MAINPARTS) packstat.t dl/files.html
+download.html: _download.html $(MAINPARTS) $(RELEASE) dl/files.html
 	$(ACTION)
 
 changes.html: _changes.html $(MAINPARTS)
