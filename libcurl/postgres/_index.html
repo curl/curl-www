@@ -1,0 +1,40 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>pgCURL - PostgreSQL libcurl binding</TITLE>
+</HEAD>
+
+#define LIBCURL_POSTGRES
+
+#include "_menu.html"
+#include "setup.t"
+#include "download.t"
+
+WHERE2(libcurl, "/libcurl/", PostgreSQL Interface)
+
+TITLE(accessing libcurl from PostgreSQL)
+<p>
+ pgCURL is a SQL interface to libCURL (http client library). Using pgCURL, a
+ PgSQL user can perform web pages fetching during SQL transactions.
+<p>
+ This project is released under the GNU Library or 'Lesser' Public License
+ (LGPL).
+<p>
+ <a
+ href="http://gborg.postgresql.org/project/pgcurl/projdisplay.php">gborg.postgresql.org/project/pgcurl/projdisplay.php</a>
+
+<p><b>How to Install</b></br>
+ Install curl and libcurl first.
+
+<p><b>Examples</b><br> None so far.
+
+<p><b>Interface documentation</b><br> None available right now.
+
+<p><b>Download</b><br> ?
+
+<p><b>Credits</b><br>
+Gian Paolo Ciceri develops this.
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
