@@ -11,13 +11,14 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden',
              'http://curl.webmeta.com/' => '?',
              'ftp://gd.tuwien.ac.at/utils/archivers/curl/' => 'Austria',
              'http://gd.tuwien.ac.at/utils/archivers/curl/' => 'Austria',
-             'http://curl.sourceforge.net/download/' => 'US (California)',
+             'http://curl.mirror.redwire.net/download/' => 'US (California)',
              'http://www.planetmirror.com/pub/curl/' => 'Australia',
              'ftp://ftp.planetmirror.com/pub/curl/' => 'Australia',
              'http://www.execve.net/curl/' => 'Hong Kong',
              'http://curl.tsuren.net/download/' => 'Russia',
              'http://curl.cyberservers.net/download/' => 'US (Texas)',
              'http://curl.mirror.at.stealer.net/download/' => 'Germany',
+             'http://curl.siamu.ac.th/download/' => 'Thailand',
              );
 
 sub present {
