@@ -65,7 +65,7 @@ my $utd=0; # up to date
 for $per (@sall) {
     my $cl;
     if($stable eq $$per{'curl'}) {
-        $cl=" class=\"buildfine\"";
+        $cl=" class=\"latest2\"";
         $utd++;
     }
     print "<tr$cl><td><a href=\"mod_entry.cgi?__id=".$$per{'__id'}."\">edit</a></td>";
