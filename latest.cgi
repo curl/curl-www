@@ -16,7 +16,7 @@ my %proto;
 my %host;
 my %archtype;
 
-my $md5sum="/home/dast/bin/md5sum";
+my $md5sum="/home/dast/solaris/bin/md5sum";
 
 print "Content-Type: text/html\n\n";
 
@@ -170,7 +170,8 @@ for(sort {$latest::desc{$a} cmp $latest::desc{$b}} keys %latest::desc) {
     else {
         $def="";
     }
-    printf("<option value=\"%s\"%s>%s</option>\n", $_, $def, $latest::desc{$_});
+    printf("<option value=\"%s\"%s>%s (%s)</option>\n",
+           $_, $def, $latest::desc{$_}, $latest::version{$_});
 }
 print "</select><input type=submit value=\"Gimme a List of Links\"</form>\n";
 
