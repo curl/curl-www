@@ -7,7 +7,7 @@ ACTION=@echo preprocessing $@; rm -f $@; cpp -I.. -Idocs -WWW -Uunix -H -C -V -P
 
 TXT2HTML= txt2html --extract --hrule 10
 TXT2PLAIN = txt2plain.pl
-MAN2HTML = man2html | sed 's/^$/\&nbsp;/g'
+MAN2HTML = man2html | sed 's/^$$/\&nbsp;/g'
 
 all: index.html manpage.html faq.shtml changes.shtml \
 	contribute.html internals.shtml internals.t \
