@@ -75,6 +75,88 @@ td.ostitle {
   padding: 4px 4px 4px 4px;
 }
 
+/* used in the download table for a single OS */
+.ostitleleft {
+  color: #000000;
+  background-color: #ffffff; 
+  font-family: arial, helvetica, ariel, sans-serif;
+  font-size: 120%;
+  font-weight: bold;
+  padding: 4px 4px 4px 4px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: none;
+}
+.ostitleright {
+  color: #000000;
+  background-color: #ffffff; 
+  font-family: arial, helvetica, ariel, sans-serif;
+  font-size: 120%;
+  font-weight: bold;
+  padding: 4px 4px 4px 4px;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-left: none;
+}
+.ostitle2 {
+  color: #000000;
+  background-color: #ffffff; 
+  font-family: arial, helvetica, ariel, sans-serif;
+  font-size: 120%;
+  font-weight: bold;
+  padding: 4px 4px 4px 4px;
+  margin: 0px 0px 0px 0px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+/* download page */
+.latest2 {
+  color: #000000;
+  background-color: #ffff44;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  margin: 0px 0px 0px 0px;
+}
+/* download page */
+.older2 {
+  color: #000000;
+  background-color: #ffffff;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  margin: 0px 0px 0px 0px;
+}
+
+.col1 {
+  border-left: 1px solid black;
+  margin: 0px 0px 0px 0px;
+  border-bottom: none;
+  border-top: none;
+}
+
+.col7 {
+  margin: 0px 0px 0px 0px;
+  border-right: 1px solid black;
+  border-bottom: none;
+  border-top: none;
+}
+
+.col2, .col3, .col4, .col5, .col6 {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 4px 0px 4px;
+}
+
+.osend {
+  border-top: 1px solid black;
+  margin: 0px 0px 10px 0px;
+}
+
+.download2 {
+  background-color: #e0e0e0;
+  padding: 10px 10px 10px 10px;
+}
+
 /* used on the version number lines in the verdiff.cgi script */
 span.version {
   font-weight: bold;
