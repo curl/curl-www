@@ -18,7 +18,8 @@ Mirror:
 <a href="http://curl.islandofpoker.com/">US2</a>,
 <a href="http://curl.109k.com/">US3</a>,
 <a href="http://curl.mirrormonster.com/">US4</a>,
-<a href="http://curl.mirrors.cyberservers.net/">US5</a>
+<a href="http://curl.mirrors.cyberservers.net/">US5</a>,
+<a href="http://curl.signal42.com/">US6</a>
 #else
 <a href="http://curl.gds.tuwien.ac.at/CURL_URL">AT</a>,
 <a href="http://curl.planetmirror.com/CURL_URL">AU</a>,
@@ -37,6 +38,7 @@ Mirror:
 <a href="http://curl.islandofpoker.com/CURL_URL">US2</a>,
 <a href="http://curl.109k.com/CURL_URL">US3</a>,
 <a href="http://curl.mirrormonster.com/CURL_URL">US4</a>,
-<a href="http://curl.mirrors.cyberservers.net/CURL_URL">US5</a>
+<a href="http://curl.mirrors.cyberservers.net/CURL_URL">US5</a>,
+<a href="http://curl.signal42.com/CURL_URL">US6</a>
 #endif
 </span>
