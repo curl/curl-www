@@ -5,7 +5,7 @@ NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 
 # the latest stable version is:
 STABLE= 7.9.5
-RELDATE = "7th of February 2002"
+RELDATE = "7th of March 2002"
 RELSIZE = "677596 bytes"
 BZ2SIZE = "511432 bytes"
 ZIPSIZE = "873913 bytes"
