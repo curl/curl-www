@@ -21,6 +21,7 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
 #define UNKNOWN <td align=center><font color="#ff0000">???</font></td>
 #define NA <td align=center>N/A</td>
 
+#define MISSINGSOCKS <td align=center>no [1]</td>
 
 #define NEWCOL <td>
 #define ENDCOL </td>
@@ -128,7 +129,7 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
  ENDLINE
  NEWLINE
   FEAT SOCKS ENDFEAT
-  MISSING
+  MISSINGSOCKS
   FEATURE
   FEATURE
   MISSING
@@ -317,6 +318,9 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
   NEWCOL BSD ENDCOL  
  ENDLINE
 </table>
+
+<p>
+ [1] = cURL and runsocks works fine together though!
 
 <p>
  Quick links to the above mentioned tools: <a
