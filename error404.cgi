@@ -7,12 +7,11 @@ require "curl.pm";
 $file=$ENV{'REQUEST_URI'};
 $referer=$ENV{'HTTP_REFERER'};
 
-print "<html><head><title>Curl: Document doesn't exist</title></head><body bgcolor=\"#ffffff\">\n",
-    "<a href=\"http://curl.haxx.se/\"><img border=0 src=\"http://curl.haxx.se/small-curl.png\" width=90 height=36 alt=\"Curl\"></a>";
+&catfile("head.html");
 
-&title("Ooops! This document does not seem to exist!");
+&title("Oops! This document does not seem to exist!");
 
-print "<p>The document <b>$file</b> doesn't exist here.",
+print "<p>The document <b>$file</b> (that you requested) doesn't exist here.",
     " It may have existed here earlier and",
     " is now removed, or it may never have existed.\n";
 
@@ -32,9 +31,8 @@ print "<p> Sometimes search engines keep very old information that might have",
     " deprecated information.";
 
 print "<p> Continue to <a href=\"/\">curl.haxx.se</a> to find the information you",
-    " need, or step right into the <a href=\"/htdig/\">search page</a>.";
+    " need, or step right into the <a href=\"/search/\">search page</a>.";
 
-print "<p align=right><small> <a ",
-"href=\"mailto:curl-web_at_haxx.se\">webmaster</a></small>\n",
-    "</body></html>\n";
+&catfile("foot.html");
+print "</body></html>\n";
 
