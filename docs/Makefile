@@ -65,7 +65,7 @@ thanks.html: _thanks.html $(MAINPARTS) thanks.t
 	$(ACTION)
 
 thanks.t: $(DOCROOT)/THANKS
-	$(TXT2PLAIN) < $< > $@
+	$(TXT2PLAIN) < $< | sed -e 's/@/ at /g' -e 's/\./ dot /g' > $@
 
 
 faq.html: _faq.shtml $(MAINPARTS) faq.t
