@@ -58,11 +58,11 @@ sub scanstatus {
         if($_ =~ /^curl-([0-9.]*)-win32-nossl.zip/) {
             storemax($_, $1, $size,
                      "win32-nossl",
-                     "Binary windows archive, zip compressed.");
+                     "Windows archive, zip compressed.");
         }
         elsif($_ =~ /^curl-([0-9.]*)-win32-ssl.zip/) {
             storemax($_, $1, $size, "win32-ssl",
-                     "Binary windows archive, zip compressed, SSL-enabled.");
+                     "Windows archive, zip compressed, SSL-enabled.");
         }
         elsif($_ =~ /^curl-([0-9.]*).tar.gz/) {
             storemax($_, $1, $size, "tar.gz",
@@ -79,17 +79,17 @@ sub scanstatus {
         # curl-7.4.1-1.i386.rpm
         elsif($_ =~ /^curl-([0-9.]*)-(\d*)(.*).i386.rpm/) {
             my $pkg="i386.rpm";
-            my $desc="Binary Linux i386 RPM package. (redhat 6.2 style)";
+            my $desc="Linux i386 RPM package. (redhat 6.2 style)";
             if($3 eq "rh71") {
                 $pkg="rh71-".$pkg;
-                $desc="Binary Linux i386 RPM package. (redhat 7.1 style)";
+                $desc="Linux i386 RPM package. (redhat 7.1 style)";
             }
             storemax($_, $1, $size, $pkg, $desc);
         }
         # curl-7.4.1-1.ppc.rpm
         elsif($_ =~ /^curl-([0-9.]*)-(\d*).ppc.rpm/) {
             storemax($_, $1, $size, "ppc.rpm",
-                     "Binary Linux PPC RPM package.");
+                     "Linux PPC RPM package.");
         }
         # curl-7.4.1-1.src.rpm
         elsif($_ =~ /^curl-([0-9.]*)-(\d*).src.rpm/) {
@@ -99,10 +99,10 @@ sub scanstatus {
         # curl-ssl-7.4.1-1.i386.rpm
         elsif($_ =~ /^curl-ssl-([0-9.]*)-(\d*)(.*).i386.rpm/) {
             my $pkg="ssl-i386.rpm";
-            my $desc="Binary Linux i386 RPM package, SSL-enabled. (redhat 6.2 style)";
+            my $desc="Linux i386 RPM package, SSL-enabled. (redhat 6.2 style)";
             if($3 eq "rh71") {
                 $pkg="rh71-".$pkg;
-                $desc="Binary Linux i386 RPM package, SSL-enabled. (redhat 7.1 style)";
+                $desc="Linux i386 RPM package, SSL-enabled. (redhat 7.1 style)";
             }
             storemax($_, $1, $size, $pkg, $desc);
         }
@@ -119,17 +119,17 @@ sub scanstatus {
         # curl-7.8.1-sparc-8-pkg.tar.gz
         elsif($_ =~ /^curl-ssl-([0-9.]*)-sparc-(.*).pkg.tar.gz/) {
             storemax($_, $1, $size, "solaris-sparc-pkg",
-                     "Binary Solaris SPARC archive, SSL-enabled.");
+                     "Solaris SPARC archive, SSL-enabled.");
         }
         # curl-7.8.1-vms.zip
         elsif($_ =~ /^curl-([0-9.]*)-vms\.zip/) {
             storemax($_, $1, $size, "vms-zip",
-                     "Binary OpenVMS archive, zip compressed.");
+                     "OpenVMS archive, zip compressed.");
         }
         # curl-7.8.1-ssl-cygwin.tar.bz2
         elsif($_ =~ /^curl-([0-9.]*)-ssl-cygwin.tar.bz2/) {
             storemax($_, $1, $size, "cygwin-ssl",
-                     "Binary win32 tar archive for cygwin, bzip2 compressed.");
+                     "Windows archive for cygwin, bzip2, SSL-enabled");
         }
     }
 }
