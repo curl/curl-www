@@ -15,6 +15,12 @@ DOC(index, .)
 #endif
 
 #ifdef DOCS_GUIDE
+THIS(error codes)
+#else
+DOC(error codes, libcurl-errors.html)
+#endif
+
+#ifdef DOCS_GUIDE
 THIS(tutorial)
 #else
 DOC(tutorial, the-guide.html)

@@ -22,7 +22,7 @@ all: index.shtml example.shtml curl_easy_init.html \
 	curl_formfree.html curl_escape.html curl_unescape.html \
 	curl_strequal.html curl_mprintf.html libcurl.html \
 	curl_global_init.html curl_global_cleanup.html \
-	the-guide.html \
+	the-guide.html libcurl-errors.html \
 	curl_multi_add_handle.html     curl_multi_init.html \
 	curl_multi_cleanup.html        curl_multi_perform.html \
 	curl_multi_fdset.html          curl_multi_remove_handle.html \
@@ -157,6 +157,11 @@ the-guide.t: $(DOCROOT)/libcurl-the-guide
 libcurl-multi.html: _libcurl-multi.html $(MAINPARTS) libcurl-multi.t
 	$(ACTION)
 libcurl-multi.t: $(MANROOT)/libcurl-multi.3
+	gnroff -man $< | $(MAN2HTML) >$@
+
+libcurl-errors.html: _libcurl-errors.html $(MAINPARTS) libcurl-errors.t
+	$(ACTION)
+libcurl-errors.t: $(MANROOT)/libcurl-errors.3
 	gnroff -man $< | $(MAN2HTML) >$@
 
 curl_multi_add_handle.html: _curl_multi_add_handle.html $(MAINPARTS) curl_multi_add_handle.t

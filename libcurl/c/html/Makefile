@@ -27,7 +27,8 @@ CONTENTS = $(HTMLDIR)/curl_easy_cleanup.t \
 	   $(HTMLDIR)/curl_multi_fdset.t \
 	   $(HTMLDIR)/curl_multi_remove_handle.t \
 	   $(HTMLDIR)/curl_multi_info_read.t \
-	   $(HTMLDIR)/libcurl-multi.t
+	   $(HTMLDIR)/libcurl-multi.t \
+	   $(HTMLDIR)/libcurl-errors.t
 
 
 curl-html-docs.tar.gz: $(CONTENTS)
