@@ -4,9 +4,9 @@ MAINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t libcurl/_
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 
 # the latest stable version is:
-STABLE= 7.8.1
-RELDATE = "20th of August 2001"
-RELSIZE = "562980 bytes"
+STABLE= 7.9
+RELDATE = "25th of September 2001"
+RELSIZE = "614194 bytes"
 BZ2SIZE = "429624 bytes"
 ZIPSIZE = "709477 bytes"
 
