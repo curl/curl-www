@@ -36,24 +36,39 @@ google_color_text = "333333";
           <td width="18" valign="middle" align="center"><a href="http://de.pricerunner.com/" target="_blank"><img src="http://i.pricerunner.com/images/topborder/flagDE.gif" width="13" height="13" border="0"></a></td>
         </tr>
         <tr> 
-          <td height="28" colspan="6" rowspan="2" valign="top"><font face="Arial, Helvetica, sans-serif" size="1"><img src="kelkoo/a.gif" width="4" height="4" border="0"></font><font face="Arial, Helvetica, sans-serif" size="1"><a href="http://www.pricerunner.co.uk/computing/" target="_blank">Computing</a>: 
-            <a href="http://www.pricerunner.co.uk/computing/computers/laptops/" target="_blank">Laptops</a>, 
-            <a href="http://www.pricerunner.co.uk/computing/storage/cd-rw/" target="_blank">DVD 
-            burners</a>, <a href="http://www.pricerunner.co.uk/networking/" target="_blank">network</a>, 
-            <a href="http://www.pricerunner.co.uk/computing/peripherals/monitors/" target="_blank">monitors</a>, 
-            <a href="http://www.pricerunner.co.uk/computing/storage/harddrives/" target="_blank">hard 
-            drives </a>...<br>
-            <a href="http://www.pricerunner.co.uk/photography/" target="_blank"><img src="kelkoo/a.gif" width="4" height="4" border="0">Photography</a>: 
-            <a href="http://www.pricerunner.co.uk/photography/digital-cameras/" target="_blank">digital 
-            cameras</a>, <a href="http://www.pricerunner.co.uk/sound-and-vision/vision/camcorders/" target="_blank">camcorders</a>, 
-            <a href="http://www.pricerunner.co.uk/computing/peripherals/webcameras/" target="_blank">web 
-            cameras</a>, <a href="http://www.pricerunner.co.uk/photography/slr-cameras/" target="_blank">SLR 
-            cameras</a>... <br>
-            <a href="http://www.pricerunner.co.uk/phones/" target="_blank"><img src="kelkoo/a.gif" width="4" height="4" border="0">Phones</a>: 
-            <a href="http://www.pricerunner.co.uk/phones/pay-as-you-go/" target="_blank">Pay 
-            As You Go Mobiles</a>, <a href="http://www.pricerunner.co.uk/phones/mobile-phones/" target="_blank">Sim-free 
-            Mobiles</a>, <a href="http://www.pricerunner.co.uk/phones/cordless-phones/" target="_blank">cordless 
-            phones</a>...</font></td>
+          <TD vAlign=top colSpan=6 height=28 rowSpan=2><FONT 
+            face="Arial, Helvetica, sans-serif" style="font-size:10px"><A 
+            href="http://www.pricerunner.co.uk/computing/" 
+            target=_blank>Computing</A>: <A 
+            href="http://www.pricerunner.co.uk/computing/computers/laptops/" 
+            target=_blank>Laptops</A>, <A 
+            href="http://www.pricerunner.co.uk/computing/storage/cd-rw/" 
+            target=_blank>DVD burners</A>, <A 
+            href="http://www.pricerunner.co.uk/networking/" 
+            target=_blank>network</A>, <A 
+            href="http://www.pricerunner.co.uk/computing/peripherals/monitors/" 
+            target=_blank>monitors</A>, <A 
+            href="http://www.pricerunner.co.uk/computing/storage/harddrives/" 
+            target=_blank>hard drives </A>...<BR><A 
+            href="http://www.pricerunner.co.uk/photography/" 
+            target=_blank>Photography</A>: <A 
+            href="http://www.pricerunner.co.uk/photography/digital-cameras/" 
+            target=_blank>digital cameras</A>, <A 
+            href="http://www.pricerunner.co.uk/sound-and-vision/vision/camcorders/" 
+            target=_blank>camcorders</A>, <A 
+            href="http://www.pricerunner.co.uk/computing/peripherals/webcameras/" 
+            target=_blank>web cameras</A>, <A 
+            href="http://www.pricerunner.co.uk/photography/slr-cameras/" 
+            target=_blank>SLR cameras</A>... <BR><A 
+            href="http://www.pricerunner.co.uk/phones/" 
+            target=_blank>Phones</A>: <A 
+            href="http://www.pricerunner.co.uk/phones/pay-as-you-go/" 
+            target=_blank>Pay As You Go Mobiles</A>, <A 
+            href="http://www.pricerunner.co.uk/phones/mobile-phones/" 
+            target=_blank>Sim-free Mobiles</A>, <A 
+            href="http://www.pricerunner.co.uk/phones/cordless-phones/" 
+            target=_blank>cordless 
+  phones</A>...</FONT></TD>
         </tr>
       </table>
     </td>
