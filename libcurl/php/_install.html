@@ -17,10 +17,7 @@ TITLE(Installing the PHP interface)
   the <a href="http://www.apachetoolbox.com/">Apache Toolbox</a>.
 
 <p>
- <I>Instruction contributed by <b>Lim Chung Keng</b>. Kudos!</I>
-
-<p>
- These steps (in sequence) are for sharing:
+ Original instruction was contributed by <b>Lim Chung Keng</b>. Kudos!
 
 <p>
  My purpose is to have : PHP code with curl functions (using curl_init etc.)
@@ -47,7 +44,7 @@ built here)
 Build PHP (In php-4.0.xpl1 directory)
 <ol>
  <li> To make -lssl comes before -lcrypto (as advised), search for "-lcrypto"
-in ./configure and put "-lssl" before it.
+in ./configure and put "-lssl" before it (*).
  <li>
 ./configure --with-mysql --with-openssl=/usr/local/ssl --with-curl=/usr/local/lib --with-apache=../apache_1.3.x<br>
     (In most cases of linking problem, it should complain here in debug.log)
@@ -64,6 +61,15 @@ Build and install SSL-aware Apache (In mod_ssl-2.8.xxxx directory)
 ./configure --with-apache=../apache1.3.x --with-ssl=/usr/local/ssl --prefix=/usr/local/apache --activate-module=src/modules/php4/libphp4.a
  <li> Follow remaining steps the output tells.
  <li> Restart your apache... BINGO!
+</ol>
+
+<p>
+(*) = You can optionally do the replaceing with this set of commands:
+<ol>
+<li> sed 's/-lcrypto/-lssl -lcrypto/g' configure > c2
+<li> rm -f configure
+<li> cp c2 configure
+<li> chmod 755 configure
 </ol>
 
 #include "_footer.html"
