@@ -7,8 +7,8 @@ NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 STABLE= 7.9
 RELDATE = "25th of September 2001"
 RELSIZE = "614194 bytes"
-BZ2SIZE = "429624 bytes"
-ZIPSIZE = "709477 bytes"
+BZ2SIZE = "476765 bytes"
+ZIPSIZE = "779907 bytes"
 
 # name of the dir to tempoary unpack and build zip files in:
 TEMPDIR=tempzip
