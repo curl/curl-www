@@ -36,22 +36,9 @@ all: index.shtml feedback.html mirrors.html cvs.html libs.html icons.html \
 	@echo done 
 #archive/index.html
 
-check: download/curl-$(STABLE).tar.bz2 download/curl-$(STABLE).zip 
+check:
 	cd htdig; make
 	cd /home/dast/htdig/common; make
-
-download/curl-$(STABLE).tar.bz2: download/curl-$(STABLE).tar.gz
-	gzip -dc $< | bzip2 - > $@
-
-download/curl-$(STABLE).zip: download/curl-$(STABLE).tar.gz
-	(rm -rf $(TEMPDIR); \
-	mkdir $(TEMPDIR); \
-	cd $(TEMPDIR); \
-	gzip -dc ../$< | tar -xf -; \
-	find . | zip out -@; \
-	mv out.zip ../$@; \
-	cd ..; \
-	rm -rf $(TEMPDIR) )
 
 head.html: _head.html $(MAINPARTS)
 	$(ACTION)
