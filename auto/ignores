@@ -1,2 +1,11 @@
 # gcc 2.9 on AIX can't be made to ignore this:
 lib/mprintf.c:950: warning: format not a string literal, argument types not checked
+# MIPS n32 cc warnings on bison/getdate mess:
+share/bison.simple", line 376: remark\(1498\): no prototype
+share/bison.simple", line 379: remark\(1498\): no prototype
+"getdate.y", line 986: remark\(1498\): no prototype
+"getdate.y", line 986: warning\(1177\): argument is incompatible
+# MIPS o32 cc warnings on bison/getdate stuff:
+share/bison.simple, line 376: No prototype
+share/bison.simple, line 379: No prototype
+cfe: Warning 835: getdate.y, line 986: No prototype
