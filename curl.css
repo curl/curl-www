@@ -65,6 +65,7 @@ td.ostitle {
   padding: 4px 4px 4px 4px;
 }
 
+/* used on the version number lines in the verdiff.cgi script */
 span.version {
   font-weight: bold;
   font-size: 120%;
@@ -72,4 +73,9 @@ span.version {
   border-width: thin;
   border-color: black;
   padding: 4px 4px 4px 4px;
+}
+
+/* used on the who/date lines in the verdiff.cgi script */
+span.whodate {
+  font-weight: bold;
 }
