@@ -174,7 +174,10 @@ for(sort {$latest::desc{$a} cmp $latest::desc{$b}} keys %latest::desc) {
 }
 print "</select><input type=submit value=\"Gimme a List of Links\"</form>\n";
 
-print "<p> This service automaticly scans through the known <a href=\"mirrors.html\">mirrors</a> on a daily basis and builds links to the latest versions of all the most popular curl archives. This page is fine to bookmark!\n";
+print "<p> This service automaticly and frequently scans through known",
+    " <a href=\"mirrors.html\">mirrors</a> and builds links to the latest",
+    " versions of many different curl archives. This page is fine",
+    " to bookmark!\n";
 
 &catfile("foot.html");
 
