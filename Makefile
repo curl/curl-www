@@ -85,7 +85,7 @@ oldnews.html: olddata.html
 info: _info packstat.t
 	$(ACTION)
 
-packstat.t: _download.html Makefile
+packstat.t: download.html Makefile
 	@echo "fixing $(STAT)"
 	@echo "#define __CURR `grep -c class=.latest $<`" >$(STAT)
 	@echo "#define __PACKS `grep -c \"^<tr c\" $<`" >>$(STAT)
