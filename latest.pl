@@ -21,6 +21,7 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden',
              'http://curl.siamu.ac.th/download/' => 'Thailand',
              'ftp://ftp.ntua.gr/pub/linux/openpkg/sources/DST/curl/' => 'Greece',
              'http://curl.wildyou.net/download/' => 'Estonia',
+             'http://www.mirrorspace.org/curl/' => 'Germany',
              );
 
 sub present {
