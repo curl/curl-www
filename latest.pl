@@ -3,10 +3,10 @@
 use strict;
 use latest;
 
-my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden',
-             'http://cool.haxx.se/curl/' => 'Sweden',
-             'ftp://ftp.fu-berlin.de/pub/unix/network/curl/' => 'Germany',
-             'ftp://ftp.rge.com/pub/networking/curl/' => 'US',
+my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden (Uppsala)',
+             'http://cool.haxx.se/curl/' => 'Sweden (Kista)',
+             'ftp://ftp.fu-berlin.de/pub/unix/network/curl/' => 'Germany (Berlin)',
+             'ftp://ftp.rge.com/pub/networking/curl/' => 'US (New York)',
              'http://www.cubic.ch/mirror/curl/' => 'Switzerland',
              'http://curl.webmeta.com/' => 'US (Connecticut)',
              'ftp://gd.tuwien.ac.at/utils/archivers/curl/' => 'Austria',
@@ -16,7 +16,7 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden',
              'ftp://ftp.planetmirror.com/pub/curl/' => 'Australia',
              'http://www.execve.net/curl/' => 'Hong Kong',
              'http://curl.tsuren.net/download/' => 'Russia',
-#             'http://curl.cyberservers.net/download/' => 'US (Texas)',
+             'http://curl.mirrors.cyberservers.net/download/' => 'US (Texas)',
              'http://curl.mirror.at.stealer.net/download/' => 'Germany',
              'http://curl.siamu.ac.th/download/' => 'Thailand',
              'ftp://ftp.ntua.gr/pub/linux/openpkg/sources/DST/curl/' => 'Greece',
@@ -32,6 +32,7 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden',
              'ftp://ftp.kgt.org/pub/mirrors/curl/' => 'Germany',
              'http://www.mirrormonster.com/curl/download/' => 'US (California)',
              'http://curl.mons-new-media.de/download/' => 'Germany (Karlsruhe)',
+             'http://curl.islandofpoker.com/download/' => 'US (Phoenix)',
              );
 
 sub present {
@@ -54,7 +55,7 @@ for(keys %latest::file) {
     printf("ARCHIVE: %s: %s %d\n",
            $_, $archive, $latest::size{$_});
 
-    printf("DOWNLOAD: %s %s Sweden\n", $archive,
+    printf("DOWNLOAD: %s %s Sweden (Kista)\n", $archive,
            "http://curl.haxx.se/download/$archive");
 
     for(keys %mirrors) {
