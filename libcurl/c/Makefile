@@ -27,7 +27,7 @@ PAGES = index.html example.html curl_easy_init.html			\
  curl_formfree.html curl_escape.html curl_unescape.html			\
  curl_strequal.html curl_mprintf.html libcurl.html			\
  curl_global_init.html curl_global_init_mem.html			\
- curl_global_cleanup.html the-guide.html libcurl-errors.html		\
+ curl_global_cleanup.html libcurl-errors.html				\
  curl_multi_add_handle.html curl_multi_init.html			\
  curl_multi_cleanup.html curl_multi_perform.html curl_multi_fdset.html	\
  curl_multi_remove_handle.html curl_multi_info_read.html		\
@@ -177,12 +177,6 @@ tinytest2.html: tinytest2.c
 	$(TXT2PLAIN) < $< > $@
 
 curlgtk.html: curlgtk.c
-	$(TXT2PLAIN) < $< > $@
-
-the-guide.html: _the-guide.html the-guide.t $(MAINPARTS)
-	$(ACTION)
-
-the-guide.t: $(DOCROOT)/libcurl-the-guide
 	$(TXT2PLAIN) < $< > $@
 
 libcurl-multi.html: _libcurl-multi.html $(MAINPARTS) libcurl-multi.t
