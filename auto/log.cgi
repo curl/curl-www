@@ -67,7 +67,7 @@ while(<FILE>) {
                    # MIPS o32 compiler:
                    ($_ =~ /^cfe: Warning (\d*):/) ||
                    # MSVC
-                   ($_ =~ /^\.\\([.\/a-zA-Z0-9]*)\.[chy]\(([0-9:]*)/)
+                   ($_ =~ /^[\.\\]*([.\/a-zA-Z0-9]*)\.[chy]\(([0-9:]*)/)
                    ) {
                        print "<div class=\"warning\">$_</div>\n";
                 }
