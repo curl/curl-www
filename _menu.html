@@ -27,16 +27,23 @@ LINK("/", Front Page)
 VLINK("/", Front Page)
 #endif
 
-#ifdef CURL_NEWS
-LINK("/news.html", News)
-#else
-VLINK("/news.html", News)
-#endif
-
 #ifdef CURL_DOWNLOAD
 LINK("/download.html", Download)
 #else
 VLINK("/download.html", Download)
+#endif
+
+#ifdef CURL_DOCS
+LINK("/docs/", Docs)
+#include "docmenu.t"
+#else
+VLINK("/docs/", Docs)
+#endif
+
+#ifdef CURL_NEWS
+LINK("/news.html", News)
+#else
+VLINK("/news.html", News)
 #endif
 
 #ifdef CURL_MAIL
@@ -45,14 +52,8 @@ LINK("/mail/", Mailing Lists)
 VLINK("/mail/", Mailing Lists)
 #endif
 
-#ifdef CURL_CHANGES
-LINK("/changes.html", Changelog)
-#else
-VLINK("/changes.html", Changelog)
-#endif
-
 #ifdef CURL_DEVEL
-LINK("/devel.html", Devel!)
+LINK("/devel.html", Devel)
 #else
 VLINK("/devel.html", Devel)
 #endif
@@ -63,37 +64,12 @@ LINK("http://curl.haxx.se/feedback/", Feedback)
 VLINK("http://curl.haxx.se/feedback/", Feedback)
 #endif
 
-#ifdef CURL_DOCS
-LINK("/docs/", Docs)
-#include "docmenu.t"
-#else
-VLINK("/docs/", Docs)
-#endif
-
 VLINK("/libcurl/", libcurl)
-
-#ifdef CURL_PROGRAMS
-LINK("/curlprograms.html", Programs)
-#else
-VLINK("/curlprograms.html", Programs)
-#endif
 
 #ifdef CURL_SUPPORT
 LINK("/support.html", Support)
 #else
 VLINK("/support.html", Support)
-#endif
-
-#ifdef CURL_LIBS
-LINK("/libs.html", Libraries)
-#else
-VLINK("/libs.html", Libraries)
-#endif
-
-#ifdef CURL_ICONS
-LINK("/icons.html", Icons)
-#else
-VLINK("/icons.html", Icons)
 #endif
 
 #ifdef CURL_SEARCH

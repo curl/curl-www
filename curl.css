@@ -25,6 +25,10 @@ BODY {
   font-size: 120%;
 }
 
+h2 {
+  font-family: arial, helvetica, ariel, sans-serif;
+}
+
 .subtitle {
   font-weight: bold;
 }
