@@ -32,6 +32,28 @@ TITLE(News - things that have happened lately in the project and the web site)
  NCOLE
 #endif
 
+ NSUBJ(adding a more advanced API to libcurl)
+ NDATE(1 November 2001)
+ NCOLS
+
+  We've been talking about adding a new, more advanced API to libcurl on the
+  <a href="http://curl.haxx.se/mail/lib-2001-10/">libcurl mailing list during
+  October</a>.
+ <p>
+  While still supporting and using the existing easy interface, we discuss a
+  way that will enable both a "pull" interface and one that allows a large
+  number of simultaneous transfers without the use of threads!
+ <p>
+  The working name of this potentially new interface is the "multi" interface,
+  and some basic first thougths are gathered in this <a
+  href="http://curl.haxx.se/dev/multi.h">multi.h</a> header file.
+ <p>
+  We need as much input as possible on this. Feel welcome to join the libcurl
+  mailing list and share your visions with us! Are we on the right track? What
+  are we forgetting? What would <b>you</b> like to see in this?
+
+ NCOLE
+
  NSUBJ(final pre-release before a public 7.9.1?)
  NDATE(31 October 2001)
  NCOLS
