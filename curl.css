@@ -64,3 +64,12 @@ td.ostitle {
   font-weight: bold;
   padding: 4px 4px 4px 4px;
 }
+
+span.version {
+  font-weight: bold;
+  font-size: 120%;
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+  padding: 4px 4px 4px 4px;
+}
