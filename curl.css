@@ -79,3 +79,7 @@ span.version {
 span.whodate {
   font-weight: bold;
 }
+
+tr.odd {
+  background-color: #e0e0e0;
+}
