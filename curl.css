@@ -19,6 +19,7 @@ BODY {
 }
 
 .title {
+  color: #000000;
   background-color: #f0f0ff; 
   font-family: arial, helvetica, ariel, sans-serif;
   font-size: 120%;
@@ -29,10 +30,12 @@ BODY {
 }
 
 .buildfail {
+  color: #000000;
   background-color: #ff8080;
 }
 
 .buildfine {
+  color: #000000;
   background-color: #00ff00;
 }
 
@@ -46,21 +49,25 @@ BODY {
 
 .warning {
   font-size: 9pt;
+  color: #000000;
   background-color: #ff8080;
 }
 
 /* download page */
 .latest {
+  color: #000000;
   background-color: #ffff44;
 }
 
 /* the one in the download database */
 td.desc {
+  color: #000000;
   background: #e0e0ff;
 }
 
 /* used in the download table for a single OS */
 td.ostitle {
+  color: #000000;
   background-color: #f0f0ff; 
   font-family: arial, helvetica, ariel, sans-serif;
   font-size: 120%;
@@ -84,6 +91,7 @@ span.whodate {
 }
 
 tr.odd {
+  color: #000000;
   background-color: #e0e0e0;
 }
 
@@ -91,6 +99,7 @@ tr.odd {
 .menuitem, .libitem {
   text-decoration: none;
   color: #ffffff;
+  background-color: #4040ff;
   white-space: nowrap;
   padding: 0px 4px 0px 4px;
   font-family: sans-serif;
@@ -119,6 +128,7 @@ tr.odd {
 
 /* the main curl site left-side menu box */
 .mainmenu, .libmenu {
+  color: #ffffff;
   background-color: #4040ff;
   padding: 8px 4px 8px 2px;
 }
@@ -129,6 +139,7 @@ tr.odd {
   border-width: 2px;
   border-style: solid;
   background-color: #e0e0ff;
+  color: #000000;
   font-size: 80%;
   float: right;
   text-align: left;
