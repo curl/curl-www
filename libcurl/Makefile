@@ -1,8 +1,8 @@
 TXT2PLAIN= txt2plain.pl
 
-MAINPARTS= ..//_doctype.html _menu.html _links.html setup.t pic.t ../where.t download.t ../ad.t
+MAINPARTS= ../_doctype.html _menu.html _links.html setup.t pic.t ../where.t download.t ../ad.t
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
-ACTION=@echo preprocessing $@; rm -f $@; cpp -I.. -I../.. -I$(DAST) -WWW -Uunix -H -C -V -LL "$(NOW)" $< $@; chmod a-w+r $@
+ACTION=@echo preprocessing $@; rm -f $@; cpp -I..  -WWW -Uunix -H -C -V -LL "$(NOW)" $< $@; chmod a-w+r $@
 
 all: index.html example.shtml mail.html competitors.html
 	cd c; make

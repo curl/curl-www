@@ -1,13 +1,13 @@
-DAST = /home/dast/public_html
+ROOT = ../..
 
-TXT2PLAIN= ../../docs/txt2plain.pl
-SRCROOT=/home/dast/src/curl
+TXT2PLAIN= $(ROOT)/docs/txt2plain.pl
+SRCROOT=$(ROOT)/cvssource
 DOCROOT=$(SRCROOT)/docs
-CURL= /home/dast/curl_html
+CURL= $(ROOT)
 
-MAINPARTS= $(DAST)/_doctype.html _menu.html ../_links.html ../setup.t ../pic.t $(DAST)/daniel.t ../../where.t ../download.t ../../ad.t
+MAINPARTS= $(ROOT)/_doctype.html _menu.html ../_links.html ../setup.t ../pic.t  $(ROOT)/where.t ../download.t $(ROOT)/ad.t
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
-ACTION=@echo preprocessing $@; rm -f $@; cpp -I.. -I../.. -I$(DAST) -WWW -Uunix -H -C -V -LL "$(NOW)" $< $@; chmod a-w+r $@
+ACTION=@echo preprocessing $@; rm -f $@; cpp -I.. -I$(ROOT) -WWW -Uunix -H -C -V -LL "$(NOW)" $< $@; chmod a-w+r $@
 
 all: index.html apps.html curl-config.html
 

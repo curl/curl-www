@@ -1,12 +1,12 @@
-DAST = /home/dast/public_html
+ROOT = ..
 
-SRCROOT=/home/dast/src/curl
+SRCROOT=$(ROOT)/cvssource
 DOCROOT=$(SRCROOT)/docs
-CURL= /home/dast/curl_html
+CURL= $(ROOT)
 
-MAINPARTS= $(DAST)/_doctype.html $(CURL)/_menu.html $(CURL)/_footer.html $(CURL)/setup.t $(CURL)/pic.t $(DAST)/daniel.t $(CURL)/where.t
+MAINPARTS= $(ROOT)/_doctype.html $(CURL)/_menu.html $(CURL)/_footer.html $(CURL)/setup.t $(CURL)/pic.t $(CURL)/where.t
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
-ACTION=@echo preprocessing $@; rm -f $@; cpp -I.. -I../.. -I. -I$(DAST) -WWW -Uunix -H -C -V -LL "$(NOW)" $< $@; chmod a-w+r $@
+ACTION=@echo preprocessing $@; rm -f $@; cpp -I.. -I. -WWW -Uunix -H -C -V -LL "$(NOW)" $< $@; chmod a-w+r $@
 
 TXT2HTML= txt2html --extract --hrule 10
 
