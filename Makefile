@@ -24,7 +24,7 @@ ACTION=@echo preprocessing $@; \
 all: index.shtml feedback.html mirrors.html cvs.html libs.html icons.html \
 	help.html curlprograms.html download.html changes.html \
 	version7.html bugreport.html about.html support.html \
-	news.html news.shtml head.html foot.html \
+	news.html news.shtml head.html foot.html press.html \
 	oldnews.shtml indexheader.html indexfooter.html \
 	mailheader.html mailfooter.html info web-editing.html \
 	latest.shtml
@@ -56,6 +56,9 @@ index.shtml: _main.html $(MAINPARTS) $(STAT)
 	$(ACTION)
 
 news.html: _news.html $(MAINPARTS)
+	$(ACTION)
+
+press.html: _press.html $(MAINPARTS)
 	$(ACTION)
 
 news.shtml: _news2.html $(MAINPARTS)
