@@ -62,6 +62,10 @@ sub gettype {
         return($1, "win32-ssl-devel-mingw",
                  "Windows mingw devel, zip, SSL-enabled.");
     }
+    elsif($file =~ /^curl-([0-9.]*)(-([0-9]*)|)-win32-ssl-devel.zip$/) {
+        return($1, "win32-ssl-devel-msvc",
+                 "Windows MSVC devel, zip, SSL-enabled.");
+    }
     elsif($file =~ /^curl-([0-9.]*).tar.gz$/) {
         return($1, "tar.gz",
                "Generic source tar, gzip.");
