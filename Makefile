@@ -58,7 +58,7 @@ web-editing.html: _web-editing.html $(MAINPARTS)
 foot.html: _foot.html $(MAINPARTS)
 	$(ACTION)
 
-main.html: _main.html $(MAINPARTS) $(STAT)
+main.html: _main.html $(MAINPARTS) $(STAT) $(RELEASE)
 	$(ACTION)
 
 index.html: main.html newslog.html
