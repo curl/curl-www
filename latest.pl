@@ -16,7 +16,7 @@ my @mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/',
              'http://unc.dl.sourceforge.net/sourceforge/curl/',
              'http://belnet.dl.sourceforge.net/sourceforge/curl/',
              'http://west.dl.sourceforge.net/sourceforge/curl/',
-             #'http://prdownloads.sourceforge.net/curl/',
+             'http://curl.sourceforge.net/download/',
              'ftp://ftp.debian.org/mounts/u3/sourceforge/curl/',
              'ftp://ftp.falsehope.com/home/tengel/curl/'
              );
