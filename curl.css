@@ -50,8 +50,8 @@ tr.tabletop {
   border: outset 2px #ffffff;
 }
 
-.news {
-/*  border: outset 2px #ffffff;*/
+table.news {
+  border: outset 2px #8080ff;
 }
 
 .newstitle {
