@@ -1,3 +1,6 @@
+
+our $root="/userdir/dast/curl_html";
+
 sub stitle {
     my ($title)=@_;
     return "<h1 class=\"pagetitle\">$title</h1>";
@@ -18,7 +21,7 @@ sub where {
     my @args = @_;
     my $name;
     my $link;
-    my $pic="<img src=\"/arrow.png\">";
+    my $pic="<img alt=\">\" src=\"/arrow.png\">";
 
     print "<a href=\"/\">cURL</a> $pic";
     while(1) {
@@ -37,7 +40,6 @@ sub where {
             last; # get out of loop
         }
     }
-    print "</b>";
 }
 
 sub catfile {
@@ -61,5 +63,15 @@ sub precatfile {
     print "</pre>\n";
 }
 
+sub header {
+    my ($head)=@_;
+
+    open(HEAD, "<$root/head.html");
+    while(<HEAD>) {
+        $_ =~ s/\<title\>cURL\<\/title\>/<title>cURL: $head<\/title>/;
+        print $_;
+    }
+    close(HEAD);
+}
 
 1;
