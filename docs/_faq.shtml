@@ -18,7 +18,7 @@ TITLE(FAQ -- Frequently Asked Questions)
 <b>Related:</b>
 <br><a href="manpage.html">curl man page</a>
 <br><a href="manual.html">Manual</a>
-<br><a href="httpscripting.html">Tutorial</a>
+<br><a href="httpscripting.html">HTTP Scripting</a>
 </div>
 
 #include "faq.t"
