@@ -8,7 +8,7 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden',
              'ftp://ftp.fu-berlin.de/pub/unix/network/curl/' => 'Germany',
              'ftp://ftp.rge.com/pub/networking/curl/' => 'US',
              'http://www.cubic.ch/mirror/curl/' => 'Switzerland',
-             'http://curl.webmeta.com/' => '?',
+             'http://curl.webmeta.com/' => 'US (Connecticut)',
              'ftp://gd.tuwien.ac.at/utils/archivers/curl/' => 'Austria',
              'http://gd.tuwien.ac.at/utils/archivers/curl/' => 'Austria',
              'http://curl.mirrors.redwire.net/download/' => 'US (California)',
@@ -26,7 +26,7 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden',
              'http://curl.netmirror.org/download/' => 'Germany',
              'http://curl.cofman.dk/download/' => 'Denmark',
              'http://curl.mirror.internet.tp/download/' => 'France',
-             'http://curl.signal42.com/download/' => 'US',
+             'http://curl.signal42.com/download/' => 'US (California)',
              );
 
 sub present {
