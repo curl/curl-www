@@ -117,7 +117,7 @@ curl_global_cleanup.t: $(DOCROOT)/curl_global_cleanup.3
 
 libcurl.html: _libcurl.html $(MAINPARTS) libcurl.t
 	$(ACTION)
-libcurl.t: $(DOCROOT)/libcurl.5
+libcurl.t: $(DOCROOT)/libcurl.3
 	gnroff -man $< | man2html >$@
 
 curl_slist_append.html: _curl_slist_append.html $(MAINPARTS) curl_slist_append.t
