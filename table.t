@@ -4,7 +4,7 @@
 #define NICETDEND </font></td>
 
 #define TREVEN <tr>
-#define TRODD  <tr bgcolor="#e0e0e0">
+#define TRODD  <tr class="odd">
 
 #define TREND </tr>
 
