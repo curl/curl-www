@@ -210,6 +210,7 @@ sub getthreads {
         my $s= $subject;
 
         $s =~ s/^((Sv|Re): *)*//i;
+        $s =~ s/[ \t\n]+/ /g;
 
         $store{$s}++;
 
