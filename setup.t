@@ -1,10 +1,5 @@
-#define TITLEPRE  <p> \
-<table width="100%" cellspacing=0 cellpadding=1 bgcolor="#000000"><tr><td> \
-<table width="100%" cellspacing=0 bgcolor="#e0e0ff"><tr><td> \
-<font color="#0000ff" size="+2">
-
-#define TITLEPOST </font> \
-</td></tr></table></td></tr></table>
+#define TITLEPRE  <p class="pagetitle">
+#define TITLEPOST </p>
 
 #define TITLE(title) TITLEPRE \
 title \
