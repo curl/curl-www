@@ -1,0 +1,42 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl - Future Development</TITLE>
+</HEAD>
+
+#define LIBCURL_FUTURE
+
+#include "_menu.html"
+#include "setup.t"
+#include "pic.t"
+#include "download.t"
+
+WHERE2(libcurl, "/libcurl/", Future Development)
+
+TITLE(Future)
+
+<p>
+ We need to add a new interface to libcurl, an interface that allows the
+ calling application to "drive". We call that a "pull" interface.
+
+<p> This was once upon the time dicussed, calling it a "low level"
+ interface. It was brought up again during the autumn 2001 and we have now
+ refined the ideas and our thoughts are now gathered around the "multi"
+ interface.
+
+<p>
+ We have a simple, imaginary <a
+ href="http://curl.haxx.se/dev/multi.h">multi.h</a> header file, and an
+ associated similarly imaginary <a
+ href="http://curl.haxx.se/dev/multi-app.c">multi-app.c</a> application source
+ code, showing how this interface could be made to work.
+
+<p>
+ No code has yet been written to make this come real.
+
+<p>
+ Bring your ideas and energy to the libcurl mailing list!
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
