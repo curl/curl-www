@@ -17,7 +17,7 @@ sub updatethis {
     my @ref = $db->find_all("re"=>"^$name\$");
 
     if(!@ref) {
-        print "Not found: $name at $version\n";
+        print "No regex in the db found for: $name at $version\n";
         return;
     }
     for(@ref) {
