@@ -47,6 +47,6 @@ rfc3280.txt Internet X.509 Public Key Infrastructure Certificate and Certificate
 rfc1884.txt IP Version 6 Addressing Architecture (obsolete)
 rfc2373.txt IP Version 6 Addressing Architecture (obsolete)
 rfc3513.txt IP Version 6 Addressing Architecture
-draft-murray-auth-ftp-ssl-13.txt Securing FTP with TLS
+draft-murray-auth-ftp-ssl-15.txt Securing FTP with TLS
 ntlm.html Eric Glass' NTLM Authentication Protocol specification
 draft-brezak-spnego-http-04.txt SPNEGO Access Authentication

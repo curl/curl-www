@@ -1,22 +1,18 @@
 
 
-
-
-
-
                                                     Paul Ford-Hutchinson
-<draft-murray-auth-ftp-ssl-13.txt>                            IBM UK Ltd
-                                                        Martin Carpenter
-                                                            Verisign Inc
-                                                              Tim Hudson
-INTERNET-DRAFT (draft)                                 RSA Australia Ltd
-                                                             Eric Murray
-                                                        Wave Systems Inc
-                                                          Volker Wiegand
-                                                              SuSE Linux
+<draft-murray-auth-ftp-ssl-15.txt>                            IBM UK Ltd
 
-                                                         1st March, 2004
-This document expires on 1st September, 2004
+
+
+INTERNET-DRAFT (draft)
+
+
+
+
+
+                                                       13th August, 2004
+This document expires on 13th February, 2005
 
 
                          Securing FTP with TLS
@@ -55,39 +51,41 @@ Status of this Memo
 
 
 
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand    FORMFEED[Page 1]
+Ford-Hutchinson                                         FORMFEED[Page 1]
 
 
 
 
 
-Internet-Draft            Secure FTP using TLS           1st March, 2004
+Internet-Draft            Secure FTP using TLS         13th August, 2004
 
 
 Index
       1. .......... Abstract
       2. .......... Introduction
       3. .......... Audience
-      4. .......... Session negotiation on the control port
-      5. .......... Response to FEAT command
-      6. .......... Data Connection Behaviour
-      7. .......... Mechanisms for the AUTH Command
-      8. .......... Data Connection Security
-      9. .......... A discussion of negotiation behaviour
-      10. ......... Who negotiates what, where and how
-      11. ......... Timing Diagrams
-      12. ......... Discussion of the REIN command
-      13. ......... Discussion of the STAT and ABOR commands
-      14. ......... Security Considerations
-      15. ......... IANA Considerations
-      16. ......... Other Parameters
-      17. ......... Network Management
-      18. ......... Internationalization
-      19. ......... Scalability & Limits
-      20. ......... Applicability
-      21. ......... Acknowledgements
-      22. ......... References
-      23. ......... Authors' Contact Addresses
+      4. .......... Overview
+      5. .......... Session negotiation on the control port
+      6. .......... Clearing the control port
+      7. .......... Response to FEAT command
+      8. .......... Data Connection Behaviour
+      9. .......... Mechanisms for the AUTH Command
+      10. ......... Data Connection Security
+      11. ......... A discussion of negotiation behaviour
+      12. ......... Who negotiates what, where and how
+      13. ......... Timing Diagrams
+      14. ......... Discussion of the REIN command
+      15. ......... Discussion of the STAT and ABOR commands
+      16. ......... Security Considerations
+      17. ......... IANA Considerations
+      18. ......... Other Parameters
+      19. ......... Network Management
+      20. ......... Internationalization
+      21. ......... Scalability & Limits
+      22. ......... Applicability
+      23. ......... Acknowledgements
+      24. ......... References
+      25. ......... Authors' Contact Addresses
 
 
 
@@ -113,15 +111,13 @@ Index
 
 
 
-
-
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand    FORMFEED[Page 2]
+Ford-Hutchinson                                         FORMFEED[Page 2]
 
 
 
 
 
-Internet-Draft            Secure FTP using TLS           1st March, 2004
+Internet-Draft            Secure FTP using TLS         13th August, 2004
 
 
 1. Abstract
@@ -130,7 +126,7 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
    and servers to implement security and authentication using the TLS
    protocol defined by [RFC-2246] and the extensions to the FTP protocol
    defined by [RFC-2228].  It describes the subset of the extensions
-   that are required and the parameters to be used; discusses some of
+   which are required and the parameters to be used; discusses some of
    the policy issues that clients and servers will need to take;
    considers some of the implications of those policies and discusses
    some expected behaviours of implementations to allow interoperation.
@@ -150,7 +146,7 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
       users and not just client hosts.
 
       - Formalised public key management.  By use of well established
-      client identity mechnisms (supported by TLS) during the
+      client identity mechanisms (supported by TLS) during the
       authentication phase, certificate management may be built into a
       central function.  Whilst this may not be desirable for all uses
       of secured file transfer, it offers advantages in certain
@@ -175,13 +171,13 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
 
 
 
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand    FORMFEED[Page 3]
+Ford-Hutchinson                                         FORMFEED[Page 3]
 
 
 
 
 
-Internet-Draft            Secure FTP using TLS           1st March, 2004
+Internet-Draft            Secure FTP using TLS         13th August, 2004
 
 
 2.  Introduction
@@ -191,9 +187,9 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
    "OPTIONAL" that appear in this document are to be interpreted as
    described in [RFC-2119].
 
-   This document is an attempt to describe how three other documents
-   should combined to provide a useful, interoperable, secure file
-   transfer protocol.  Those documents are:-
+   This document describes how three other documents should be combined
+   to provide a useful, interoperable, secure file transfer protocol.
+   Those documents are:-
 
 
       RFC 959 [RFC-959]
@@ -230,45 +226,83 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
    servers to allow either party to impose their security requirements
    on the FTP session.
 
-
 3.  Audience
 
 
 
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand    FORMFEED[Page 4]
+
+Ford-Hutchinson                                         FORMFEED[Page 4]
 
 
 
 
 
-Internet-Draft            Secure FTP using TLS           1st March, 2004
+Internet-Draft            Secure FTP using TLS         13th August, 2004
 
 
    This document is aimed at developers who wish to implement TLS as a
    security mechanism to secure FTP clients and/or servers.
 
+   Systems administrators and architects should be fully aware of the
+   security implications discussed in [RFC-2228] which need to be
+   considered when choosing an implementation of this protocol and
+   configuring it to provide their required security.
 
-4.  Session negotiation on the control port
+4.  Overview
+
+   A full description of the FTP security protocol enhancements is
+   contained in [RFC-2228].  This document describes how the AUTH, PROT,
+   PBSZ and CCC commands, defined therein, should be implemented with
+   the TLS protocol.
+
+   In summary; an FTP session is established on the normal control port.
+   A client requests TLS with the AUTH command and then decides if it
+   wishes to secure the data connections by use of the PBSZ:PROT
+   commands.  Should a client wish to make the control connection revert
+   back into plaintext (once the authentication phase is completed, for
+   example) then the CCC command can be used.
+
+   Implementation of this protocol extension does not ensure that each
+   and every session and data transfer is secure, it merely provides the
+   tools to allow a client and/or server to negotiate an acceptable or
+   required level of security for that given session or data transfer.
+   However, it is possible to have a server implementation that is
+   capable of refusing to operate in an insecure fashion.
+
+
+5.  Session negotiation on the control port
 
    The server listens on the normal FTP control port {FTP-PORT} and the
    session initiation is not secured at all.  Once the client wishes to
    secure the session, the AUTH command is sent and the server MAY then
    allow TLS negotiation to take place.
 
-  4.1  Client wants a secured session
+  5.1  Client wants a secured session
 
      If a client wishes to attempt to secure a session then it SHOULD,
      in accordance with [RFC-2228] send the AUTH command with the
-     parameter requesting TLS {TLS-PARM}.
+     parameter requesting TLS {TLS-PARM} ('TLS').
 
 
      The client then needs to behave according to its policies depending
      on the response received from the server and also the result of the
      TLS negotiation.  i.e. A client which receives an AUTH rejection
      MAY choose to continue with the session unprotected if it so
+
+
+
+Ford-Hutchinson                                         FORMFEED[Page 5]
+
+
+
+
+
+Internet-Draft            Secure FTP using TLS         13th August, 2004
+
+
      desires.
 
-  4.2  Server wants a secured session
+  5.2  Server wants a secured session
 
      The FTP protocol does not allow a server to directly dictate client
      behaviour, however the same effect can be achieved by refusing to
@@ -290,19 +324,62 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
    what consistency checks to make between any client cert used and the
    parameter on the USER command.
 
-5.  Response to the FEAT command
+6.  Clearing the control port
+
+   There are circumstances where it may be desirable to protect the
+   control connection only during part of the session and then revert
+   back to a plaintext connection.  (This is often due to the
+   limitations of boundary devices such as NAT and firewalls which
+   expect to be able to examine the content of the control connection in
+   order to modify their behaviour.)
+
+   Typically the AUTH, USER, PASS, PBSZ and PROT commands would be
+   protected within the TLS protocol and then the CCC command would be
+   issued to return to a plaintext socket state.  This does have
+   important Security Issues (which are discussed in the Security
+   Considerations section) but this document does describe how the
+   command should be used, should the client and server, having
+   considered the issues, still wish to use it.
+
+   When a server receives the CCC command, it should behave as follows:
+
+      If the server does not accept CCC commands (or does not understand
+      them) then a 500 reply should be sent.
+
+      Otherwise, if the control connection is not protected with TLS,
+      then a 533 reply should be sent.
+
+
+
+Ford-Hutchinson                                         FORMFEED[Page 6]
 
 
 
 
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand    FORMFEED[Page 5]
+
+Internet-Draft            Secure FTP using TLS         13th August, 2004
 
 
+      Otherwise, if the server does not wish to allow the control
+      connection to be cleared at this time, then a 534 reply should be
+      sent.
+
+      Otherwise, the server is accepting the CCC command and should do
+      the following:
+
+         o send a 200 reply
+
+         o Shutdown the TLS session on the socket and leave it open
+
+         o Continue the control connection in plaintext, expecting the
+         next command from the client to be in plaintext.
+
+         o Not accept any more PBSZ or PROT commands.  All subsequent
+         data transfers must be protected with the current PROT
+         settings.
 
 
-
-Internet-Draft            Secure FTP using TLS           1st March, 2004
-
+7.  Response to the FEAT command
 
    The FEAT command (introduced in [RFC-2389]) allows servers with
    additional features to advertise these to a client by responding to
@@ -322,7 +399,7 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
       S> 211 END
 
 
-6. Data Connection Behaviour
+8. Data Connection Behaviour
 
    The Data Connection in the FTP model can be used in one of three
    ways.  (Note: these descriptions are not necessarily placed in exact
@@ -330,6 +407,18 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
    diagrams later for clarification.)
 
          i) Classic FTP client/server data exchange
+
+
+
+
+Ford-Hutchinson                                         FORMFEED[Page 7]
+
+
+
+
+
+Internet-Draft            Secure FTP using TLS         13th August, 2004
+
 
          - The client obtains a port; sends the port number to the
          server; the server connects to the client.  The client issues a
@@ -352,18 +441,6 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
 
          - The client requests that server A opens a port; server A
          obtains a port and returns it to the client; the client sends
-
-
-
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand    FORMFEED[Page 6]
-
-
-
-
-
-Internet-Draft            Secure FTP using TLS           1st March, 2004
-
-
          this port number to server B.  Server B connects to server A.
          The client sends a send or receive request to server A and the
          complement to server B and the data transfer commences.  In
@@ -386,11 +463,23 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
 
 
 
-7. Mechanisms for the AUTH Command
+9. Mechanisms for the AUTH Command
 
    The AUTH command takes a single parameter to define the security
    mechanism to be negotiated.  As the SSL/TLS protocols self-negotiate
    their levels there is no need to distinguish SSL vs TLS in the
+
+
+
+Ford-Hutchinson                                         FORMFEED[Page 8]
+
+
+
+
+
+Internet-Draft            Secure FTP using TLS         13th August, 2004
+
+
    application layer.  The proposed mechanism name for negotiating TLS
    will be the character string identified in {TLS-PARM}.  This will
    allow the client and server to negotiate TLS on the control
@@ -408,21 +497,9 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
       See also Section 15, "IANA Considerations".
 
 
-8. Data Connection Security
+10. Data Connection Security
 
    The Data Connection security level is determined by the PROT command
-
-
-
-
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand    FORMFEED[Page 7]
-
-
-
-
-
-Internet-Draft            Secure FTP using TLS           1st March, 2004
-
 
       The PROT command, as specified in [RFC-2228] allows client/server
       negotiation of the security level of the data connection.  Once a
@@ -451,6 +528,18 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
 
           'E' - Confidential - Privacy without Integrity
 
+
+
+
+Ford-Hutchinson                                         FORMFEED[Page 9]
+
+
+
+
+
+Internet-Draft            Secure FTP using TLS         13th August, 2004
+
+
           'P' - Private - Integrity and Privacy
 
       As TLS negotiation encompasses (and exceeds) the Safe /
@@ -472,18 +561,6 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
       If the data connection security level is 'Private' then a TLS
       negotiation must take place on the data connection, to the
       satisfaction of the Client and Server prior to any data being
-
-
-
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand    FORMFEED[Page 8]
-
-
-
-
-
-Internet-Draft            Secure FTP using TLS           1st March, 2004
-
-
       transmitted over the connection.  The TLS layers of the Client and
       Server will be responsible for negotiating the exact TLS Cipher
       Suites that will be used (and thus the eventual security of the
@@ -512,9 +589,30 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
       the behaviour as indicated by [RFC-2228].)
 
 
-9. A Discussion of Negotiation Behaviour
 
-   9.1. The server's view of the control connection
+
+Ford-Hutchinson                                        FORMFEED[Page 10]
+
+
+
+
+
+Internet-Draft            Secure FTP using TLS         13th August, 2004
+
+
+11. A Discussion of Negotiation Behaviour
+As [RFC-2228] allows security qualities to be negotiated, enabled and
+disabled dynamically, this can make implementations seem quite complex.
+However, in any given instance the behaviour should be quite
+straightforward.  Either the server will be enforcing the policy of the
+server host or it will be providing security capabilities requested by
+the client.   Either the client will be conforming to the server's
+policy or will be endeavouring to provide the capabilities which the
+user desires.
+
+
+
+   11.1. The server's view of the control connection
 
       A server MAY have a policy statement somewhere that might:
 
@@ -532,18 +630,6 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
          host/domain/...  basis)
          - Allow TLS authentication as a substitute for local
          authentication.
-
-
-
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand    FORMFEED[Page 9]
-
-
-
-
-
-Internet-Draft            Secure FTP using TLS           1st March, 2004
-
-
          - Define data connection policies (see next section)
 
          It is possible that the TLS negotiation may not be completed
@@ -562,6 +648,18 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
             permitted to use the server)
 
          In this case, the control connection should still be up in a
+
+
+
+Ford-Hutchinson                                        FORMFEED[Page 11]
+
+
+
+
+
+Internet-Draft            Secure FTP using TLS         13th August, 2004
+
+
          protected state, so the server MAY either continue to refuse to
          service commands or issue a protected '421' reply and close the
          connection.
@@ -574,9 +672,9 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
       Server code will be responsible for implementing the required
       policies and ensuring that the client is prevented from
       circumventing the chosen security by refusing to service those
-      commands that are against policy.
+      commands which are against policy.
 
-   9.2. The server's view of the data connection
+   11.2. The server's view of the data connection
 
       The server can take one of four basic views of the data connection
 
@@ -592,18 +690,6 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
       The server SHOULD only check the status of the data protection
       level (for options 3 and 4 above) on the actual command that will
       initiate the data transfer (and not on the PORT or PASV).  The
-
-
-
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand   FORMFEED[Page 10]
-
-
-
-
-
-Internet-Draft            Secure FTP using TLS           1st March, 2004
-
-
       following commands, defined in [RFC-959] cause data connections to
       be opened and thus may be rejected (before any 1xx) message due to
       an incorrect PROT setting.
@@ -622,6 +708,18 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
       If the protection level indicates that TLS is required, then it
       should be negotiated once the data connection is made.  Thus, the
       '150' reply only states that the command can be used given the
+
+
+
+Ford-Hutchinson                                        FORMFEED[Page 12]
+
+
+
+
+
+Internet-Draft            Secure FTP using TLS         13th August, 2004
+
+
       current PROT level.  Should the server not like the TLS
       negotiation then it will close the data port immediately and
       follow the '150' command with a '522' reply indicating that the
@@ -630,6 +728,10 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
       the TLS layer for negotiation and review the one negotiated for
       applicability in each instance).
 
+      Section 15.1.1 discusses the issue of cross-checking a certificate
+      used to authenticate the data connection with the one used to
+      authenticate the control connection.  This is an important
+      security step.
       It is quite reasonable for the server to insist that the data
       connection uses a TLS cached session.  This might be a cache of a
       previous data connection or of the control connection.  If this is
@@ -644,7 +746,7 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
       be authentication of the server host itself and not a user on the
       server host.
 
-   9.3. The client's view of the control connection
+   11.3. The client's view of the control connection
 
       In most cases it is likely that the client will be using TLS
       because the server would refuse to interact insecurely.  To allow
@@ -652,17 +754,6 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
       the securing of a session at the appropriate time and still allow
       the user/server policies to dictate exactly when in the session
       the security is negotiated.
-
-
-
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand   FORMFEED[Page 11]
-
-
-
-
-
-Internet-Draft            Secure FTP using TLS           1st March, 2004
-
 
       In the case where it is the client that is insisting on the
       securing of the session, it will need to ensure that the
@@ -677,6 +768,18 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
       that a SITE or quoted command might be needed by a server prior to
       the AUTH.  A client MUST allow a user to override the timing of
       these commands to suit a specific server.
+
+
+
+Ford-Hutchinson                                        FORMFEED[Page 13]
+
+
+
+
+
+Internet-Draft            Secure FTP using TLS         13th August, 2004
+
+
       For example, a client SHOULD NOT insist on sending the AUTH as the
       first command in a session, nor should it insist on issuing a
       PBSZ, PROT pair directly after the AUTH.  This may well be the
@@ -705,25 +808,13 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
             In this case, the control connection is in an unknown state
             and the client should simply drop the control connection.
 
-   9.4. The client's view of the data connection
+   11.4. The client's view of the data connection
 
    Client security policies
 
       Clients do not typically have 'policies' as such, instead they
       rely on the user defining their actions and, to a certain extent,
       are reactive to the server policy.  Thus a client will need to
-
-
-
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand   FORMFEED[Page 12]
-
-
-
-
-
-Internet-Draft            Secure FTP using TLS           1st March, 2004
-
-
       have commands that will allow the user to switch the protection
       level of the data connection dynamically, however, there may be a
       general 'policy' that attempts all LIST and NLST commands on a
@@ -737,6 +828,18 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
       has been requested.  Thus a refusal by the server to accept a
       particular data transfer should not be read by the client as a
       refusal to accept that data protection level in toto, as not only
+
+
+
+Ford-Hutchinson                                        FORMFEED[Page 14]
+
+
+
+
+
+Internet-Draft            Secure FTP using TLS         13th August, 2004
+
+
       may other data transfers be acceptable at that protection level,
       but it is entirely possible that the same transfer may be accepted
       at the same protection level at a later point in the session.
@@ -775,32 +878,45 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
 
 
 
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand   FORMFEED[Page 13]
 
 
 
 
 
-Internet-Draft            Secure FTP using TLS           1st March, 2004
 
 
-10. Who negotiates what, where and how
 
-   10.1. Do we protect at all ?
+
+
+
+
+
+Ford-Hutchinson                                        FORMFEED[Page 15]
+
+
+
+
+
+Internet-Draft            Secure FTP using TLS         13th August, 2004
+
+
+12. Who negotiates what, where and how
+
+   12.1. Do we protect at all ?
 
       Client issues 'AUTH TLS', server accepts or rejects.
       If server needs AUTH, then it refuses to accept certain commands
       until it gets a successfully protected session.
 
-   10.2. What level of protection do we use on the Control connection ?
+   12.2. What level of protection do we use on the Control connection ?
 
       Decided entirely by the TLS CipherSuite negotiation.
 
-   10.3. Do we protect data connections in general ?
+   12.3. Do we protect data connections in general ?
 
       Client issues PROT command, server accepts or rejects.
 
-   10.4. Is protection required for a particular data transfer ?
+   12.4. Is protection required for a particular data transfer ?
 
       A client would already have issued a PROT command if it required
       the connection to be protected.
@@ -809,15 +925,15 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
       that the current state of the data connection protection level is
       not sufficient for that data transfer at that time.
 
-   10.5. What level of protection is required for a particular data
+   12.5. What level of protection is required for a particular data
    transfer ?
 
       Decided entirely by the TLS CipherSuite negotiation.
 
    Thus it can be seen that, for flexibility, it is desirable for the
    FTP application to be able to interact with the TLS layer upon which
-   it sits to define and discover the exact TLS CipherSuites that are to
-   be/have been negotiated and make decisions accordingly.
+   it sits to define and discover the exact TLS CipherSuites which are
+   to be/have been negotiated and make decisions accordingly.
 
 
 
@@ -835,18 +951,24 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
 
 
 
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand   FORMFEED[Page 14]
+Ford-Hutchinson                                        FORMFEED[Page 16]
 
 
 
 
 
-Internet-Draft            Secure FTP using TLS           1st March, 2004
+Internet-Draft            Secure FTP using TLS         13th August, 2004
 
 
-11. Timing Diagrams
+13. Timing Diagrams
+These timing diagrams aim to help explain exactly how the TLS handshake
+and session protection fits into the existing logic of the FTP protocol.
+Of course, the FTP protocol itself is not well described with respect to
+timing of commands and responses in [RFC-959], so this is partly based
+on empirical observation of existing widespread client and server
+implementations.
 
-   11.1. Establishing a protected session
+   13.1. Establishing a protected session
 
            Client                                 Server
   control          data                   data               control
@@ -878,7 +1000,7 @@ Note 2: the PASS command might not be required at all (if the USER
 parameter and any client identity presented provide sufficient
 authentication).  The server would indicate this by issuing a '232'
 reply to the USER command instead of the '331' which requests a PASS
-from the client.
+from the client.  (see below)
 
 Note 3: the AUTH command might not be the first command after the
 receipt of the 220 welcome message.
@@ -889,22 +1011,136 @@ receipt of the 220 welcome message.
 
 
 
+Ford-Hutchinson                                        FORMFEED[Page 17]
+
+
+
+
+
+Internet-Draft            Secure FTP using TLS         13th August, 2004
+
+
+   13.2. Establishing a protected session without a password request
+   (the TLS authentication is sufficient)
+
+           Client                                 Server
+  control          data                   data               control
+====================================================================
+
+                                                             socket()
+                                                             bind()
+  socket()
+  connect()  ----------------------------------------------> accept()
+            <----------------------------------------------  220
+  AUTH TLS   ---------------------------------------------->
+            <----------------------------------------------  234
+  TLSneg()  <----------------------------------------------> TLSneg()
+  PBSZ 0     ---------------------------------------------->
+            <----------------------------------------------  200
+  PROT P     ---------------------------------------------->
+            <----------------------------------------------  200
+  USER fred  ---------------------------------------------->
+            <----------------------------------------------  232
 
 
 
 
 
 
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand   FORMFEED[Page 15]
 
 
 
 
 
-Internet-Draft            Secure FTP using TLS           1st March, 2004
 
 
-   11.2. A standard data transfer without protection.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ford-Hutchinson                                        FORMFEED[Page 18]
+
+
+
+
+
+Internet-Draft            Secure FTP using TLS         13th August, 2004
+
+
+   13.3. Establishing a protected session and then clearing with the CCC
+   command
+
+           Client                                 Server
+  control          data                   data               control
+====================================================================
+
+                                                             socket()
+                                                             bind()
+  socket()
+  connect()  ----------------------------------------------> accept()
+            <----------------------------------------------  220
+  AUTH TLS   ---------------------------------------------->
+            <----------------------------------------------  234
+  TLSneg()  <----------------------------------------------> TLSneg()
+  PBSZ 0     ---------------------------------------------->
+            <----------------------------------------------  200
+  PROT P     ---------------------------------------------->
+            <----------------------------------------------  200
+  USER fred  ---------------------------------------------->
+            <----------------------------------------------  232
+  CCC        ---------------------------------------------->
+            <----------------------------------------------  200
+  TLSshutdown()  <-------------------------------------> TLSshutdown()
+
+- rest of control session continues in plaintext with protected data
+transfers (due to PROT P)
+
+Note: this has serious security issues (see Security Considerations
+section) but may be useful in a firewall/NAT scenario.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ford-Hutchinson                                        FORMFEED[Page 19]
+
+
+
+
+
+Internet-Draft            Secure FTP using TLS         13th August, 2004
+
+
+   13.4. A standard data transfer without protection.
 
            Client                                 Server
   control          data                   data               control
@@ -955,16 +1191,16 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
 
 
 
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand   FORMFEED[Page 16]
+Ford-Hutchinson                                        FORMFEED[Page 20]
 
 
 
 
 
-Internet-Draft            Secure FTP using TLS           1st March, 2004
+Internet-Draft            Secure FTP using TLS         13th August, 2004
 
 
-   11.3. A firewall-friendly data transfer without protection
+   13.5. A firewall-friendly data transfer without protection
 
            Client                                 Server
   control          data                   data               control
@@ -1015,16 +1251,16 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
 
 
 
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand   FORMFEED[Page 17]
+Ford-Hutchinson                                        FORMFEED[Page 21]
 
 
 
 
 
-Internet-Draft            Secure FTP using TLS           1st March, 2004
+Internet-Draft            Secure FTP using TLS         13th August, 2004
 
 
-   11.4. A standard data transfer with protection
+   13.6. A standard data transfer with protection
 
            Client                                 Server
   control          data                   data               control
@@ -1075,16 +1311,16 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
 
 
 
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand   FORMFEED[Page 18]
+Ford-Hutchinson                                        FORMFEED[Page 22]
 
 
 
 
 
-Internet-Draft            Secure FTP using TLS           1st March, 2004
+Internet-Draft            Secure FTP using TLS         13th August, 2004
 
 
-   11.5. A firewall-friendly data transfer with protection
+   13.7. A firewall-friendly data transfer with protection
 
            Client                                 Server
   control          data                   data               control
@@ -1135,16 +1371,16 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
 
 
 
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand   FORMFEED[Page 19]
+Ford-Hutchinson                                        FORMFEED[Page 23]
 
 
 
 
 
-Internet-Draft            Secure FTP using TLS           1st March, 2004
+Internet-Draft            Secure FTP using TLS         13th August, 2004
 
 
-12. Discussion of the REIN command
+14. Discussion of the REIN command
 
    The REIN command, defined in [RFC-959], allows the user to reset the
    state of the FTP session.  From [RFC-959]:
@@ -1161,6 +1397,9 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
    unprotected, clear communications.  It MAY be acceptable to use
    cached TLS sessions for subsequent connections, however a server MUST
    NOT mandate this.
+   If the REIN command is being used to clear a TLS session then the
+   reply to the REIN command MUST be sent in a protected session prior
+   to the session(s) being cleared.
 
 
 
@@ -1192,19 +1431,16 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
 
 
 
-
-
-
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand   FORMFEED[Page 20]
+Ford-Hutchinson                                        FORMFEED[Page 24]
 
 
 
 
 
-Internet-Draft            Secure FTP using TLS           1st March, 2004
+Internet-Draft            Secure FTP using TLS         13th August, 2004
 
 
-13. Discussion of the STAT and ABOR commands
+15. Discussion of the STAT and ABOR commands
 
    The ABOR and STAT commands and the use of TCP Urgent Pointers
 
@@ -1255,23 +1491,25 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
 
 
 
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand   FORMFEED[Page 21]
+Ford-Hutchinson                                        FORMFEED[Page 25]
 
 
 
 
 
-Internet-Draft            Secure FTP using TLS           1st March, 2004
+Internet-Draft            Secure FTP using TLS         13th August, 2004
 
 
-14. Security Considerations
+16. Security Considerations
 
-   This entire document deals with security considerations related to
-   the File Transfer Protocol.
+   This document discusses how TLS may be used in conjunction with
+   [RFC-2228] to provide mechanisms for securing FTP sessions.
+   Discussions about security rationale and security properties are
+   contained within the [RFC-2228] document and are not repeated here.
 
-   14.1. Verification of Authentication tokens
+   16.1. Verification of Authentication tokens
 
-      14.1.1. Server Certificates
+      16.1.1. Server Certificates
 
          Although it is entirely an implementation decision, it is
          recommended that certificates used for server authentication of
@@ -1284,7 +1522,7 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
          certificate as that used for the corresponding Control
          connection.
 
-      14.1.2. Client Certificates
+      16.1.2. Client Certificates
 
          - Deciding which client certificates to allow and defining
          which fields define what authentication information is entirely
@@ -1294,9 +1532,9 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
          authentication token presented for the data connection must
          match the one used for the corresponding control connection.
 
-   14.2. Addressing FTP Security Considerations [RFC-2577]
+   16.2. Addressing FTP Security Considerations [RFC-2577]
 
-      14.2.1. Bounce Attack
+      16.2.1. Bounce Attack
 
          A bounce attack should be harder in a secured FTP environment
          because:
@@ -1310,19 +1548,19 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
             - The FTP server would detect that the authentication
             credentials for the data connection are not the same as
             those for the control connection, thus the server policies
+
+
+
+Ford-Hutchinson                                        FORMFEED[Page 26]
+
+
+
+
+
+Internet-Draft            Secure FTP using TLS         13th August, 2004
+
+
             COULD be set to drop the data connection.
-
-
-
-
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand   FORMFEED[Page 22]
-
-
-
-
-
-Internet-Draft            Secure FTP using TLS           1st March, 2004
-
 
             - Genuine users are less likely to initiate such attacks
             when the authentication is strong and malicious users are
@@ -1330,82 +1568,96 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
             authentication is not easily subverted (password guessing,
             network tracing, etc...)
 
-      14.2.2. Restricting Access
+      16.2.2. Restricting Access
 
          This document presents a strong mechanism for solving the issue
          raised in this section.
 
-      14.2.3. Protecting Passwords
+      16.2.3. Protecting Passwords
 
          The twin solutions of strong authentication and data
          confidentiality ensure that this is not an issue when TLS is
          used to protect the control session.
 
-      14.2.4. Privacy
+      16.2.4. Privacy
 
          The TLS protocol ensures data confidentiality by encryption.
          Privacy (e.g. access to download logs, user profile
          information, etc...) is outside the scope of this document (and
          [RFC-2577] presumably)
 
-      14.2.5. Protecting Usernames
+      16.2.5. Protecting Usernames
 
          This is not an issue when TLS is used as the primary
          authentication mechanism.
 
-      14.2.6. Port Stealing
+      16.2.6. Port Stealing
 
          This proposal will do little for the Denial of Service element
          of this section, however, strong authentication on the data
          connection will prevent unauthorised connections retrieving or
          submitting files.
 
-      14.2.7. Software-Base Security Problems
+      16.2.7. Software-Base Security Problems
 
          Nothing in this proposal will affect the discussion in this
          section.
 
 
-15. IANA Considerations
+   16.3. Issues with the CCC command
+
+      Using the CCC command can create security issues.  For a full
+      description, see the "CLEAR COMMAND CHANNEL (CCC)" section of
+
+
+
+Ford-Hutchinson                                        FORMFEED[Page 27]
+
+
+
+
+
+Internet-Draft            Secure FTP using TLS         13th August, 2004
+
+
+      [RFC-2228].  Clients should not assume that a server will allow
+      the CCC command to be processed.
+
+      Server implementations may wish to refuse to process the CCC
+      command on a session which has not passed through some form of
+      client authentication (e.g. TLS client auth or FTP USER/PASS).
+      This can prevent anonymous clients from repeatedly requesting AUTH
+      TLS followed by CCC to tie up resources on the servr.
+
+
+17. IANA Considerations
 
    {FTP-PORT} - The port assigned to the FTP control connection is 21.
 
-16. Other Parameters
-
-
-
-
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand   FORMFEED[Page 23]
-
-
-
-
-
-Internet-Draft            Secure FTP using TLS           1st March, 2004
-
+18. Other Parameters
 
    {TLS-PARM} - The parameter for the AUTH command to indicate that TLS
    is required.  To request the TLS protocol in accordance with this
    document, the client MUST use 'TLS'
 
-      To maintain backward compatability with older versions of this
+      To maintain backward compatibility with older versions of this
       document, the server SHOULD accept 'TLS-C' as a synonym for 'TLS'
 
          Note - [RFC-2228] states that these parameters are case-
          insensitive.
 
 
-17. Network Management
+19. Network Management
 
    NONE
 
 
-18. Internationalization
+20. Internationalization
 
    NONE
 
 
-19. Scalability & Limits
+21. Scalability & Limits
 
    There are no issues other than those concerned with the ability of
    the server to refuse to have a complete TLS negotiation for each and
@@ -1419,32 +1671,16 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
 
 
 
+Ford-Hutchinson                                        FORMFEED[Page 28]
 
 
 
 
 
+Internet-Draft            Secure FTP using TLS         13th August, 2004
 
 
-
-
-
-
-
-
-
-
-
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand   FORMFEED[Page 24]
-
-
-
-
-
-Internet-Draft            Secure FTP using TLS           1st March, 2004
-
-
-20. Applicability
+22. Applicability
 
    This mechanism is generally applicable as a mechanism for securing
    the FTP protocol.  It is unlikely that anonymous FTP clients or
@@ -1452,7 +1688,7 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
    authentication features without the confidentiality).
 
 
-21. Acknowledgements
+23. Acknowledgements
 
    o Netscape Communications Corporation for the original SSL protocol.
 
@@ -1470,6 +1706,9 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
 
    o Jeff Altman for the ABOR and STAT discussion.
 
+   o The various people who have help author this document throughout
+   its protracted draft stages, namely Martin Carpenter, Eric Murray,
+   Tim Hudson and Volker Wiegand.
 
 
 
@@ -1492,19 +1731,16 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
 
 
 
-
-
-
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand   FORMFEED[Page 25]
+Ford-Hutchinson                                        FORMFEED[Page 29]
 
 
 
 
 
-Internet-Draft            Secure FTP using TLS           1st March, 2004
+Internet-Draft            Secure FTP using TLS         13th August, 2004
 
 
-22. References
+24. References
 
    [RFC-959] J. Postel, "File Transfer Protocol"
       RFC 959, October 1985.
@@ -1555,16 +1791,16 @@ Internet-Draft            Secure FTP using TLS           1st March, 2004
 
 
 
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand   FORMFEED[Page 26]
+Ford-Hutchinson                                        FORMFEED[Page 30]
 
 
 
 
 
-Internet-Draft            Secure FTP using TLS           1st March, 2004
+Internet-Draft            Secure FTP using TLS         13th August, 2004
 
 
-23. Authors' Contact Addresses
+25. Author's Contact Address
 
 The FTP-TLS draft information site is at http://www.ford-
 hutchinson.com/~fh-1-pfh/ftps-ext.html
@@ -1572,23 +1808,28 @@ hutchinson.com/~fh-1-pfh/ftps-ext.html
 
 Please send comments to Paul Ford-Hutchinson at the address below
 
-        Tim Hudson                  Paul Ford-Hutchinson
-           RSA Data Security           IBM UK Ltd
-             Australia Pty Ltd         PO Box 31
-                                       Birmingham Road
-                                       Warwick
-                                       United Kingdom
-  tel -   +61 7 3227 4444             +44 1926 462005
-  fax -   +61 7 3227 4400             +44 1926 496482
-email - tjh@rsasecurity.com.au    paulfordh@uk.ibm.com
+        Paul Ford-Hutchinson
+           IBM UK Ltd
+           PO Box 31
+           Birmingham Road
+           Warwick
+           United Kingdom
+  tel -   +44 1926 462005
+email - paulfordh@uk.ibm.com
+
+26.1. Additional Authors' Contact Addresses
+
+
+        Tim Hudson                  Volker Wiegand
+           RSA Data Security           SuSE Linux
+             Australia Pty Ltd
+  tel -   +61 7 3227 4444
+email - tjh@rsasecurity.com.au    wiegand@suse.de
 
         Martin Carpenter            Eric Murray
            Verisign Ltd                Wave Systems Inc.
 email -  mcarpenter@verisign.com    ericm@lne.com
 
-        Volker Wiegand
-           SuSE Linux
-email -  wiegand@suse.de
 
 
 
@@ -1610,18 +1851,13 @@ email -  wiegand@suse.de
 
 
 
+Ford-Hutchinson                                        FORMFEED[Page 31]
 
 
 
 
 
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand   FORMFEED[Page 27]
-
-
-
-
-
-Internet-Draft            Secure FTP using TLS           1st March, 2004
+Internet-Draft            Secure FTP using TLS         13th August, 2004
 
 
    The IETF takes no position regarding the validity or scope of any
@@ -1670,11 +1906,10 @@ Copyright (C) The Internet Society (2002).  All Rights Reserved.
    HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF
    MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
 
-This document expires on 1st September, 2004
+This document expires on 13th February, 2005
 
 
 
 
-Ford-Hutchinson, Carpenter, Hudson, Murray & Wiegand   FORMFEED[Page 28]
-
+Ford-Hutchinson                                        FORMFEED[Page 32]
 
