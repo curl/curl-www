@@ -48,188 +48,274 @@ TITLE(Releases and Downloads)
 
 <h2>Binaries / Install-packages</h2>
 #define NICETD <td bgcolor="#0000ff"><font color="#ffffff" size=+1 face="ariel,helvetica">
-#define NICETDSLUT </font></td>
+#define NICETDEND </font></td>
 
 #define TD <td bgcolor="#ffff00" nowrap>
 #define TDN <td nowrap>
-#define TDSLUT </td>
+#define TDEND </td>
 
-#define TRCURRENT <tr bgcolor="#ffff00">
+#define TRCURRENT  <tr bgcolor="#ffff00">
 #define TRNCURRENT <tr>
+#define TREND      </tr>
+
+#define TYPEBIN    <td><b>bin</b></td>
+#define TYPESRC    <td>src</td>
+#define TYPEDEVEL  <td>devel</td>
+
+#define HASSSL     <td><b>SSL</b></td>
+#define NOSSL      <td>&nbsp;</td>
 
 <p>
  Out of all these __PACKS archives, __CURR is up-to-date with the latest and
  greatest. Click on the package name to get a list with links to all known
  mirrored versions.
 
-<table cellspacing=2 cellpadding=0 border=0 width=100%>
+<p>
+<table cellspacing=1 cellpadding=1 border=0 width=100%>
 <tr>
-NICETD Package NICETDSLUT
-NICETD Version NICETDSLUT
-NICETD SSL NICETDSLUT
-NICETD Date NICETDSLUT
-NICETD Submitter NICETDSLUT
-NICETD Size NICETDSLUT
-</tr>
+NICETD Package NICETDEND
+NICETD Version NICETDEND
+NICETD Type NICETDEND
+NICETD SSL NICETDEND
+NICETD Date NICETDEND
+NICETD Submitter NICETDEND
+NICETD Size NICETDEND
+TREND
 
-TRNCURRENT
+TRCURRENT
 <td> Linux Debian</td>
-<td> <a href="http://packages.debian.org/curl">7.9.5</a></td>
-<td>No</td>
+<td> <a href="http://packages.debian.org/curl">7.9.6</a></td>
+TYPEBIN
+NOSSL
 <td> &nbsp; </td>
 <td><a href="mailto:curl_at_packages.debian.org">Domenico Andreoli</a></td>
 <td>offsite</td>
-</tr>
+TREND
 
-TRNCURRENT
-<td> Linux Debian SSL </td>
-<td> <a href="http://packages.debian.org/curl-ssl">7.9.5</a></td>
-<td>Yes</td>
+TRCURRENT
+<td> Linux Debian</td>
+<td> <a href="http://packages.debian.org/curl-ssl">7.9.6</a></td>
+TYPEBIN
+HASSSL
 <td> &nbsp; </td>
 <td><a href="mailto:curl-ssl_at_packages.debian.org">Domenico Andreoli</a></td>
 <td>offsite</td>
-</tr>
+TREND
 
 TRCURRENT
 <td> <a href="http://curl.haxx.se/latest.cgi?curl=i386.rpm">Linux i386 RPM</a> <small>(1)</small></td>
-<td> <a href="http://curl.haxx.se/download/curl-7.9.6-1.i386.rpm">7.9.6</a> /<br>
-     <a href="http://curl.haxx.se/download/curl-7.9.6-1.src.rpm">7.9.6-src</a> /<br>
-     <a href="http://curl.haxx.se/download/curl-devel-7.9.6-1.i386.rpm">7.9.6-devel</a>
-  </td>
-<td>No</td>
+<td> <a href="http://curl.haxx.se/download/curl-7.9.6-1.i386.rpm">7.9.6</a> </td>
+TYPEBIN
+NOSSL
 <td>19-apr-2002</td>
 <td><a href="mailto:tengel_at_sonic.net">Troy Engel</a></td>
-<td> 258352 /<br>
-     533975 /<br>
-     144456 </td>
-</tr>
+<td> 258352 </td>
+TREND
 
 TRCURRENT
-<td> <a href="http://curl.haxx.se/latest.cgi?curl=ssl-i386.rpm">Linux i386 RPM SSL</a> <small>(1)</small></td>
-<td> <a href="http://curl.haxx.se/download/curl-ssl-7.9.6-1.i386.rpm">7.9.6</a> / <br>
-     <a href="http://curl.haxx.se/download/curl-ssl-7.9.6-1.src.rpm">7.9.6-src</a> / <br>
-     <a href="http://curl.haxx.se/download/curl-ssl-devel-7.9.6-1.i386.rpm">7.9.6-devel</a>
+<td> Linux RPM</td>
+<td> <a href="http://curl.haxx.se/download/curl-7.9.6-1.src.rpm">7.9.6</a>
   </td>
-<td>Yes</td>
+TYPESRC
+NOSSL
 <td>19-apr-2002</td>
 <td><a href="mailto:tengel_at_sonic.net">Troy Engel</a></td>
-<td> 265005 /<br>
-     533936 /<br>
-     150335 </td>
-</tr>
+<td> 533975 </td>
+TREND
+
+TRCURRENT
+<td> Linux i386 RPM</td>
+<td> <a href="http://curl.haxx.se/download/curl-devel-7.9.6-1.i386.rpm">7.9.6</a> </td>
+TYPEDEVEL
+NOSSL
+<td>19-apr-2002</td>
+<td><a href="mailto:tengel_at_sonic.net">Troy Engel</a></td>
+<td> 144456 </td>
+TREND
+
+TRCURRENT
+<td> <a href="http://curl.haxx.se/latest.cgi?curl=ssl-i386.rpm">Linux i386 RPM</a></td>
+<td> <a href="http://curl.haxx.se/download/curl-ssl-7.9.6-1.i386.rpm">7.9.6</a> </td>
+TYPEBIN
+HASSSL
+<td>19-apr-2002</td>
+<td><a href="mailto:tengel_at_sonic.net">Troy Engel</a></td>
+<td> 265005 </td>
+TREND
+
+TRCURRENT
+<td> Linux RPM</td>
+<td> <a href="http://curl.haxx.se/download/curl-ssl-7.9.6-1.src.rpm">7.9.6</a> </td>
+TYPESRC
+HASSSL
+<td>19-apr-2002</td>
+<td><a href="mailto:tengel_at_sonic.net">Troy Engel</a></td>
+<td> 533936  </td>
+TREND
+
+TRCURRENT
+<td> Linux i386 RPM</td>
+<td> <a href="http://curl.haxx.se/download/curl-ssl-devel-7.9.6-1.i386.rpm">7.9.6</a> </td>
+TYPEDEVEL
+HASSSL
+<td>19-apr-2002</td>
+<td><a href="mailto:tengel_at_sonic.net">Troy Engel</a></td>
+<td> 150335 </td>
+TREND
+
 
 TRCURRENT
 <td> <a href="http://curl.haxx.se/latest.cgi?curl=ppc.rpm">Linux PPC RPM</a> </td>
-<td> <a href="http://curl.haxx.se/download/curl-7.9.6-1.ppc.rpm">7.9.6</a> / <br>
-     <a href="http://curl.haxx.se/download/curl-devel-7.9.6-1.ppc.rpm">7.9.6-devel</a>
-</td>
-<td>No</td>
+<td> <a href="http://curl.haxx.se/download/curl-7.9.6-1.ppc.rpm">7.9.6</a> </td>
+TYPEBIN
+NOSSL
 <td> 19-apr-2001 </td>
 <td> <a href="mailto:jean_at_cc.mcgill.ca">Jean Robertson</a></td>
-<td> 260784 /<br>
-     151711 </td>
-</tr>
+<td> 260784 </td>
+TREND
 
 TRCURRENT
-<td> <a href="http://curl.haxx.se/latest.cgi?curl=ssl-ppc.rpm">Linux PPC RPM SSL</a> </td>
-<td> <a href="http://curl.haxx.se/download/curl-ssl-7.9.6-1.ppc.rpm">7.9.6</a> / <br>
-     <a href="http://curl.haxx.se/download/curl-ssl-devel-7.9.6-1.ppc.rpm">7.9.6-devel</a> </td>
-<td> Yes </td>
+<td> Linux PPC RPM </td>
+<td> <a href="http://curl.haxx.se/download/curl-devel-7.9.6-1.ppc.rpm">7.9.6</a> </td>
+TYPEDEVEL
+NOSSL
+<td> 19-apr-2001 </td>
+<td> <a href="mailto:jean_at_cc.mcgill.ca">Jean Robertson</a></td>
+<td> 151711 </td>
+TREND
+
+
+TRCURRENT
+<td> <a href="http://curl.haxx.se/latest.cgi?curl=ssl-ppc.rpm">Linux PPC RPM</a> </td>
+<td> <a href="http://curl.haxx.se/download/curl-ssl-7.9.6-1.ppc.rpm">7.9.6</a> 
+ </td>
+TYPEBIN
+HASSSL
 <td> 19-apr-2002 </td>
 <td> <a href="mailto:jean_at_cc.mcgill.ca">Jean Robertson</a></td>
-<td> 267496 /<br>
-     157876 </td>
-</tr>
+<td> 267496 </td>
+TREND
+
+TRCURRENT
+<td> Linux PPC RPM</td>
+<td> <a href="http://curl.haxx.se/download/curl-ssl-devel-7.9.6-1.ppc.rpm">7.9.6</a> </td>
+TYPEDEVEL
+HASSSL
+<td> 19-apr-2002 </td>
+<td> <a href="mailto:jean_at_cc.mcgill.ca">Jean Robertson</a></td>
+<td> 157876 </td>
+TREND
 
 TRCURRENT
 <td> <a href="http://curl.haxx.se/latest.cgi?curl=win32-nossl">Win32</a> <small>(2)</small> </td>
 <td> <a href="http://curl.haxx.se/download/curl-7.9.6-win32-nossl.zip">7.9.6</a> </td>
-<td>No</td>
+TYPEBIN
+NOSSL
 <td>22-apr-2002</td>
 <td><a href="mailto:Hartroth_at_computer.org">Jörn Hartroth</a> <br>
 <td> 123416 </td>
-</tr>
+TREND
 
- TRCURRENT
-<td> Win32 devel <small>(2)</small> </td>
-<td> <a href="http://www.soggytrousers.net/repository/curl-7.9.6-win32-nossl-devel-mingw32.zip">7.9.6-devel</a>
-</td>
-<td>No</td>
+TRCURRENT
+<td> <a href="http://curl.haxx.se/latest.cgi?curl=win32-ssl">Win32</a></td>
+<td> <a href="http://curl.haxx.se/download/curl-7.9.6-win32-ssl.zip">7.9.6</a>
+ </td>
+TYPEBIN
+HASSSL
+<td>22-apr-2002</td>
+<td><a href="mailto:Hartroth_at_computer.org">Jörn Hartroth</a></td>
+<td> 127170 </td>
+TREND
+
+TRCURRENT
+<td> Win32 Mingw32</td>
+<td> <a href="http://www.soggytrousers.net/repository/curl-7.9.6-win32-nossl-devel-mingw32.zip">7.9.6</a> </td>
+TYPEDEVEL
+NOSSL
 <td>28-apr-2002</td>
 <td> <a href="mailto:soggytrousers_At_yahoo.com">Elizabeth Barham</a> </td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRCURRENT
-<td> <a href="http://curl.haxx.se/latest.cgi?curl=win32-ssl">Win32 SSL</a> <small>(2)</small> </td>
-<td> <a href="http://curl.haxx.se/download/curl-7.9.6-win32-ssl.zip">7.9.6</a>
-     /<br> <a href="http://curl.haxx.se/download/curl-7.9.6-win32-ssl-devel-mingw32.zip">7.9.6-devel</a>
- </td>
-<td>Yes</td>
+<td> Win32 Mingw32 </td>
+<td> <a href="http://curl.haxx.se/download/curl-7.9.6-win32-ssl-devel-mingw32.zip">7.9.6</a> </td>
+TYPEDEVEL
+HASSSL
 <td>22-apr-2002</td>
 <td><a href="mailto:Hartroth_at_computer.org">Jörn Hartroth</a></td>
-<td> 127170 /<br>
-     349940
-</td>
-</tr>
+<td> 349940 </td>
+TREND
 
- TRNCURRENT
-<td> Win32 SSL devel kit MSVC++ <small>(2)</small> </td>
-<td> <a href="http://202.39.253.175/Jeff/curl/curl_7.9_devel.zip">7.9-devel</a> </td>
-<td>Yes</td>
+TRNCURRENT
+<td> Win32 MSVC++ </td>
+<td> <a href="http://202.39.253.175/Jeff/curl/curl_7.9_devel.zip">7.9</a> </td>
+TYPEDEVEL
+HASSSL
 <td>6-oct-2001</td>
 <td><a href="mailto:page588_at_mail2.intellect.com.tw">Jeff Page</a></td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRCURRENT
 <td> <a href="http://curl.haxx.se/latest.cgi?curl=cygwin-nossl">Win32 cygwin</a></td>
-<td> <a href="http://curl.haxx.se/download/curl-7.9.6-1-nossl-cygwin.tar.bz2">7.9.6</a>
- </td>
-<td>No</td>
+<td> <a href="http://curl.haxx.se/download/curl-7.9.6-1-nossl-cygwin.tar.bz2">7.9.6</a> </td>
+TYPEBIN
+NOSSL
 <td>15-apr-2002</td>
 <td><a href="mailto:kproth_at_bigfoot">Kevin Roth</a></td>
 <td> 342529 </td>
-</tr>
+TREND
 
 TRCURRENT
-<td> <a href="http://curl.haxx.se/latest.cgi?curl=cygwin-ssl">Win32 cygwin SSL</a></td>
-<td> <a href="http://curl.haxx.se/download/curl-7.9.6-1-cygwin.tar.bz2">7.9.6</a> / <br>
-     <a href="http://curl.haxx.se/download/curl-7.9.6-1-src-cygwin.tar.bz2">7.9.6-src</a>
- </td>
-<td>Yes</td>
+<td> <a href="http://curl.haxx.se/latest.cgi?curl=cygwin-ssl">Win32 cygwin</a></td>
+<td> <a href="http://curl.haxx.se/download/curl-7.9.6-1-cygwin.tar.bz2">7.9.6</a> </td>
+TYPEBIN
+HASSSL
 <td>15-apr-2002</td>
 <td><a href="mailto:kproth_at_bigfoot.com">Kevin Roth</a></td>
-<td> 463974 / <br>
-     532164 </td>
-</tr>
+<td> 463974 </td>
+TREND
+
+TRCURRENT
+<td> Win32 cygwin</td>
+<td> <a href="http://curl.haxx.se/download/curl-7.9.6-1-src-cygwin.tar.bz2">7.9.6</a> </td>
+TYPESRC
+HASSSL
+<td>15-apr-2002</td>
+<td><a href="mailto:kproth_at_bigfoot.com">Kevin Roth</a></td>
+<td> 532164 </td>
+TREND
 
 TRNCURRENT
 <td> Alpha Tru64 UNIX 4.0D </td>
 <td> <a href="ftp://ftp.thewrittenword.com/packages/free/by-name/curl-7.9.2/">7.9.2</a> </td>
-<td>Yes</td>
+TYPEBIN
+HASSSL
 <td>17-dec-2001</td>
 <td><a href="mailto:info_at_thewrittenword.com">The Written Word</a></td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRNCURRENT
 <td> Alpha Tru64 UNIX 5.0 </td>
 <td> <a href="ftp://ftp.thewrittenword.com/packages/free/by-name/curl-7.9.2/">7.9.2</a> </td>
-<td>Yes</td>
+TYPEBIN
+HASSSL
 <td>17-dec-2001</td>
 <td><a href="mailto:info_at_thewrittenword.com">The Written Word</a></td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRNCURRENT
 <td> Alpha Tru64 UNIX 5.1 </td>
 <td> <a href="ftp://ftp.thewrittenword.com/packages/free/by-name/curl-7.9.2/alpha-dec-osf5.1/">7.9.2</a> </td>
-<td>Yes</td>
+TYPEBIN
+HASSSL
 <td>17-dec-2001</td>
 <td><a href="mailto:info_at_thewrittenword.com">The Written Word</a></td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRCURRENT
 <td> HPUX 10 </td>
@@ -240,7 +326,8 @@ TRCURRENT
 <a href="http://hpux.ee.ualberta.ca/hppd/hpux/Networking/WWW/curl-7.9.6/">7.9.6</a>
 #endif
  </td>
-<td>Yes</td>
+TYPEBIN
+HASSSL
 <td>23-apr-2002</td>
 <td>
 #if 0
@@ -250,7 +337,7 @@ TRCURRENT
 #endif
 </td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRCURRENT
 <td> HPUX 11 </td>
@@ -261,7 +348,8 @@ TRCURRENT
 <a href="http://hpux.ee.ualberta.ca/hppd/hpux/Networking/WWW/curl-7.9.6/">7.9.6</a>
 #endif
 </td>
-<td>Yes</td>
+TYPEBIN
+HASSSL
 <td>23-apr-2002</td>
 <td>
 #if 0
@@ -271,216 +359,237 @@ TRCURRENT
 #endif
 </td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRNCURRENT
 <td> IRIX 6.2 </td>
 <td> <a href="ftp://ftp.thewrittenword.com/packages/free/by-name/curl-7.9.2/">7.9.2</a> </td>
-<td>Yes</td>
+TYPEBIN
+HASSSL
 <td>17-dec-2001</td>
 <td><a href="mailto:info_at_thewrittenword.com">The Written Word</a></td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRNCURRENT
 <td> IRIX 6.5 </td>
 <td> <a href="ftp://ftp.thewrittenword.com/packages/free/by-name/curl-7.9.2/">7.9.2</a> </td>
-<td>Yes</td>
+TYPEBIN
+HASSSL
 <td>17-dec-2001</td>
 <td><a href="mailto:info_at_thewrittenword.com">The Written Word</a></td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRNCURRENT
 <td>Solaris 2.5.1 Sparc</td>
 <td><a href="ftp://ftp.thewrittenword.com/packages/free/by-name/curl-7.9.2/">7.9.2</a> </td>
-<td>Yes</td>
+TYPEBIN
+HASSSL
 <td>17-dec-2001</td>
 <td><a href="mailto:info_at_thewrittenword.com">The Written Word</a></td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRNCURRENT
 <td> <a href="http://curl.haxx.se/latest.cgi?curl=solaris26-sparc-ssl">Solaris 2.6 Sparc</a> </td>
 <td> <a href="http://curl.haxx.se/download/curl-ssl-7.9-sparc-2.6.pkg.tar.gz">7.9</a> </td>
-<td>Yes</td>
+TYPEBIN
+HASSSL
 <td>16-oct-2001</td>
 <td><a href="mailto:jean_at_cc.mcgill.ca">Jean Robertson</a></td>
 <td> 1142691 </td>
-</tr>
+TREND
 
  TRNCURRENT
 <td> Solaris 2.6 Sparc </td>
 <td> <a href="ftp://ftp.thewrittenword.com/packages/free/by-name/curl-7.9.2/">7.9.2</a> </td>
-<td>Yes</td>
+TYPEBIN
+HASSSL
 <td>17-dec-2001</td>
 <td><a href="mailto:info_at_thewrittenword.com">The Written Word</a></td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRNCURRENT
 <td> Solaris 7 Sparc </td>
 <td> <a href="ftp://ftp.thewrittenword.com/packages/free/by-name/curl-7.9.2/">7.9.2</a> </td>
-<td>Yes</td>
+TYPEBIN
+HASSSL
 <td>17-dec-2001</td>
 <td><a href="mailto:info_at_thewrittenword.com">The Written Word</a></td>
 <td> offsite </td>
-</tr>
+TREND
 
  TRNCURRENT
 <td> Solaris 8 Sparc </td>
 <td> <a href="ftp://ftp.thewrittenword.com/packages/free/by-name/curl-7.9.2/">7.9.2</a> </td>
-<td> Yes </td>
+TYPEBIN
+HASSSL
 <td> 17-dec-2001 </td>
 <td><a href="mailto:info_at_thewrittenword.com">The Written Word</a></td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRCURRENT
 <td> <a href="http://curl.haxx.se/latest.cgi?curl=solaris8-sparc-ssl">Solaris 8 Sparc</a></td>
 <td> <a href="http://curl.haxx.se/download/curl-ssl-7.9.6-sparc-8-pkg.tar.gz">7.9.6</a> </td>
-<td> Yes </td>
+TYPEBIN
+HASSSL
 <td> 15-apr-2002 </td>
 <td> <a href="mailto:jean_at_cc.mcgill.ca">Jean Robertson</a></td>
 <td> 1571792 </td>
-</tr>
+TREND
 
 TRCURRENT
 <td> Amiga 68K </td>
 <td> <a href="http://prdownloads.sourceforge.net/amiga/curl-7.9.6.lha">7.9.6</a> </td>
-<td>Yes</td>
+TYPEBIN
+HASSSL
 <td>22-apr-2002</td>
 <td><a href="mailto:dcr8520_at_wanadoo.es">Diego Casorran</a></td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRNCURRENT
 <td> SunOS 4.1.4 Sparc</td>
 <td> <a href="http://www.geocities.com/rzapper/curl.html">6.5.2</a> </td>
-<td>No</td>
+TYPEBIN
+NOSSL
 <td>26-apr-2000</td>
 <td><a href="mailto:rzapper_at_yahoo.com">Ron Zapp</a></td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRCURRENT
 <td> OpenBSD i386 </td>
 <td> <a href="http://www.openbsd.org/cgi-bin/cvsweb/ports/net/curl/">7.9.6</a> </td>
-<td>Yes</td>
+TYPEBIN
+HASSSL
 <td> &nbsp; </td>
 <td> &nbsp; </td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRNCURRENT
 <td> OS/2 </td>
 <td> <a href="http://teamos2.ru/files/curl-7.6-emx.zip">7.6</a> </td>
-<td>No</td>
+TYPEBIN
+NOSSL
 <td>16-feb-2001</td>
 <td><a href="mailto:mail_at_teamos2.ru">Team OS/2 Russia</a></td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRNCURRENT
 <td> OS/2 </td>
 <td> <a href="http://teamos2.ru/files/curl-7.6-emx-ssl.zip">7.6</a> </td>
-<td>Yes</td>
+TYPEBIN
+HASSSL
 <td>16-feb-2001</td>
 <td><a href="mailto:mail_at_teamos2.ru">Team OS/2 Russia</a></td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRNCURRENT
 <td> FreeBSD </td>
 <td> <a href="http://www.freebsd.org/cgi/ports.cgi?query=curl&stype=all">7.9.2</a> </td>
-<td>No</td>
+TYPEBIN
+NOSSL
 <td> &nbsp; </td>
 <td> roam_at_freebsd.org </td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRNCURRENT
 <td> NetBSD </td>
 <td> <a href="http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/www/curl/">7.9.5</a> </td>
-<td>No</td>
+TYPEBIN
+NOSSL
 <td> &nbsp; </td>
 <td> &nbsp; </td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRNCURRENT
 <td> Darwin 1.0 </td>
 <td> <a href="http://www.ryan.net/curl652-powerpc-Darwin1.0.gz">6.5.2</a> </td>
-<td>Yes</td>
+TYPEBIN
+HASSSL
 <td> 9-apr-2000 </td>
 <td> <a href="mailto:ryan_at_inch.com">Ryan Nelson</a></td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRCURRENT
 <td> MacOS X </td>
-<td>
- <a href="http://fink.sourceforge.net/pdb/package.php/curl">7.9.6</a> </td>
-<td> No </td>
+<td> <a href="http://fink.sourceforge.net/pdb/package.php/curl">7.9.6</a> </td>
+TYPEBIN
+<td> - </td>
 <td> &nbsp; </td>
 <td> <a href="mailto:max_at_quendi.de">Max Horn</a> </td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRCURRENT
 <td> MacOS X </td>
-<td>
- <a href="http://fink.sourceforge.net/pdb/package.php/curl-ssl">7.9.6</a> </td>
-<td> Yes </td>
+<td> <a href="http://fink.sourceforge.net/pdb/package.php/curl-ssl">7.9.6</a> </td>
+TYPEBIN
+HASSSL
 <td> &nbsp; </td>
 <td> <a href="mailto:max_at_quendi.de">Max Horn</a> </td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRNCURRENT
 <td> <a href="http://curl.haxx.se/latest.cgi?curl=vms-zip">VMS</a> </td>
 <td> <a href="http://curl.haxx.se/download/curl-7.9.5-vms.zip">7.9.5</a> </td>
-<td> Yes </td>
+TYPEBIN
+HASSSL
 <td> 11-mar-2002 </td>
 <td> <a href="mailto:Nico.Baggus_at_mail.ing.nl">Nico Baggus</a></td>
 <td> 1037172 </td>
-</tr>
+TREND
 
 TRNCURRENT
 <td> RISC OS </td>
 <td> <a href="http://homepages.ihug.co.nz/~jamjars/michael/download/cURL.zip">7.8</a> </td>
-<td> No </td>
+TYPEBIN
+<td> - </td>
 <td> 3-aug-2001 </td>
 <td> <a href="mailto:mdc_at_ihug.co.nz">Michael Curtis</a></td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRCURRENT
 <td> <a href="http://curl.haxx.se/latest.cgi?curl=linux-sparc">Linux Sparc</a> </td>
 <td> <a href="http://curl.haxx.se/download/curl-7.9.6-sparc-whatever-linux.tar.gz">7.9.6</a> </td>
-<td> Yes </td>
+TYPEBIN
+HASSSL
 <td> 17-apr-2002 </td>
 <td> <a href="mailto:kala_at_pinerecords.com">Tomas Szepe</a></td>
 <td> 421375 </td>
-</tr>
+TREND
 
 TRNCURRENT
 <td> AIX 4.3 </td>
 <td> <a href="http://aixpdslib.seas.ucla.edu/packages/curl.html">7.9.5</a> </td>
-<td> ? </td>
+TYPEBIN
+NOSSL
 <td> 16-mar-2002 </td>
 <td> &nbsp; </td>
 <td> offsite </td>
-</tr>
+TREND
 
 TRNCURRENT
 <td> AIX 5.1 </td>
 <td> <a href="http://aixpdslib.seas.ucla.edu/packages/curl.html">7.9.5</a> </td>
-<td> ? </td>
+TYPEBIN
+NOSSL
 <td> 16-mar-2002 </td>
 <td> &nbsp; </td>
 <td> offsite </td>
-</tr>
+TREND
 
 </table>
 
@@ -508,9 +617,9 @@ TRNCURRENT
 <p>
 <table cellspacing=2 cellpadding=0 border=0>
 <tr>
-NICETD Platform NICETDSLUT
-NICETD Version NICETDSLUT
-NICETD link/site NICETDSLUT
+NICETD Platform NICETDEND
+NICETD Version NICETDEND
+NICETD link/site NICETDEND
 </tr>
 
 <tr valign=top>
