@@ -53,6 +53,12 @@ LINK("", C API )
 VLINK(/libcurl/c/, C API )
 #endif
 
+#ifdef LIBCURL_CPLUSPLUS
+LINK("", C++ API )
+#else
+VLINK(/libcurl/cplusplus/, C++ API )
+#endif
+
 #ifdef LIBCURL_COCOA
 LINK("", Cocoa API )
 #else
