@@ -11,7 +11,7 @@
 
 <p> True full download mirrors:
 
-<table cellspacing=2 cellpadding=0 border=0>
+<table cellspacing="2" cellpadding="0" border="0">
 <tr class="tabletop">
    NICETD Where NICETDEND
    NICETD How NICETDEND

@@ -41,6 +41,66 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
  document (it is work in progress).
 </ul>
 
+SUBTITLE(Fixed in 7.11.1)
+<p> Changes:
+<ul>
+ <li> CURLOPT_POSTFIELDSIZE_LARGE added to offer POSTs larger than 2GB
+ <li> CURL_VERSION_LARGEFILE is a feature bit returned by libcurls that feature
+   large file support
+ <li> libcurl only requires winsock 1.1 on windows now
+ <li> when doing FTP, curl now sends QUIT before disconnecting
+ <li> name resolves can now timeout on windows too
+ <li> $HOME is now recognized better when looking for .netrc files
+ <li> now re-uses the ares handle when re-using curl handles
+ <li> SO_BINDTODEVICE is used for network interface binding
+ <li> configure --disable-manual disables the built-in huge manual from the
+   command line tool
+ <li> the default Accept: header used in HTTP requests changed
+ <li> asynch dns lookups now require the c-ares library
+ <li> curl --socks can be used to set a SOCKS5 proxy to use
+ <li> response-headers received after a (proxy) CONNECT request are now passed
+   to the header callback just like other headers
+</ul>
+<p> Bugs:
+<ul>
+ <li> builds and runs on Novell NetWare
+ <li> Windows builds now report OS as "i386-pc-win32"
+ <li> received signals during SSL connect is handled better
+ <li> improved PUT/POST with NTLM/Digest authentication
+ <li> following redirects and doing NTLM/Digest (where the first connection gets
+   closed) with the multi interface work better now
+ <li> file: progress meter and getinfo variables work now
+ <li> CURLOPT_FRESH_CONNECT and CURLAUTH_NTLM now work when set together
+ <li> share interface usage without (un)lock functions segfaulted
+ <li> --limit-rate no longer cripples the --speed-limit feature
+ <li> fixed verbose output problem with ipv6-enabled re-used connections
+ <li> fixed the socks5 code to check version in the socks response properly
+ <li> dns cache bug - fixed the 'inuse' counter
+ <li> large file fix for Content-Length
+ <li> better docs for the share interface
+ <li> several configure fixes for mingw/msys
+ <li> setting a Host: header is no longer affecting the Host: header used when
+   libcurl follows a Location:
+ <li> fixed numerous compiler warnings on several operating systems and compilers
+ <li> PUTing from stdin couldn't disable chunked transfer-encoding
+ <li> corrected the mingw makefiles
+ <li> improved the configure libz detection
+ <li> fixed EPRT/PORT use when doing FTP on ipv6-enabled AIX hosts
+ <li> *nroff commands that only support -mandoc and not -man are now supported
+   (for the built-in manual text in the command line tool)
+ <li> fixed the unconditional #include of config.h in hugehelp.c
+ <li> builds fine on MPE/iX
+ <li> upload using chunked transfer-encoding now sends the last chunk properly
+   teriminated with an extra CRLF
+ <li> Fixed the progress meter display for files >2GB
+ <li> persistant connections over a proxy messed up the proxy name/password
+ <li> the socks5 code segfaulted if no username/password was set
+ <li> the *_LARGE options now take curl_off_t types as parameters and this will
+   make it possible to handle large files on windows too
+ <li> builds with large file support even on systems without strtoll()
+</ul>
+
+
 SUBTITLE(Fixed in 7.11.0)
 <p> Changes:
 <ul>
