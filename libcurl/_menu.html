@@ -179,6 +179,12 @@ LINK("", Tcl)
 VLINK(/libcurl/tcl/, Tcl)
 #endif
 
+#ifdef LIBCURL_Q
+LINK("", Q)
+#else
+VLINK(/libcurl/q/, Q)
+#endif
+
 </div>
 #if 0
 <p>
