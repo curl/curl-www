@@ -9,9 +9,9 @@ DOCREF(bugs.html, Bugs)
 #endif
 
 #ifdef DOCS_CHANGES
-HERE(x, Changes)
+HERE(x, Changelog)
 #else
-DOCREF(changes.html, Changes)
+DOCREF(changes.html, Changelog)
 #endif
 
 #ifdef DOCS_COMPARISON
