@@ -7,7 +7,9 @@ Mirror:
 <a href="http://curl.tsuren.net/">RU</a>,
 <a href="http://curl.haxx.se/">SE</a>,
 <a href="http://curl.siamu.ac.th/">TH</a>,
+#ifdef CYBERWORKS
 <a href="http://curl.cyberservers.net/">US1</a>,
+#endif
 <a href="http://curl.mirrors.redwire.net/">US2</a>
 #else
 <a href="http://curl.planetmirror.com/CURL_URL">AU</a>,
@@ -16,7 +18,9 @@ Mirror:
 <a href="http://curl.tsuren.net/CURL_URL">RU</a>,
 <a href="http://curl.haxx.se/CURL_URL">SE</a>,
 <a href="http://curl.siamu.ac.th/CURL_URL">TH</a>,
+#ifdef CYBERWORKS
 <a href="http://curl.cyberservers.net/CURL_URL">US1</a>,
+#endif
 <a href="http://curl.mirrors.redwire.net/CURL_URL">US2</a>
 #endif
 </small>
