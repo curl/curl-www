@@ -6,7 +6,7 @@ use latest;
 my @mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/',
              'http://cool.haxx.se/curl/',
              'ftp://ftp.fu-berlin.de/pub/unix/network/curl/',
-             'http://curl.linuxworx.com.au/',
+             #'http://curl.linuxworx.com.au/',
              'ftp://ftp.rge.com/pub/networking/curl/',
              'http://www.cubic.ch/mirror/curl/',
              'http://curl.webmeta.com/',
