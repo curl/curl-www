@@ -1,5 +1,6 @@
 SRCROOT=../cvssource
 DOCROOT=$(SRCROOT)/docs
+TESTROOT=$(SRCROOT)/tests
 
 MAINPARTS= ../_doctype.html _menu.html ../_footer.html ../setup.t ../pic.t \
    ../where.t ../ad.t ../libcurl/_links.html ../mirrorlinks.t		   \
@@ -17,7 +18,8 @@ PAGES = index.html manpage.html faq.html changes.html contribute.html	\
  resources.html copyright.html thanks.html y2k.html todo.html		\
  httpscripting.html comparison-table.html relatedtools.html		\
  osdistribs.html versions.html history.html loc.html knownbugs.html	\
- manual.html caextract.html programs.html security.html
+ manual.html caextract.html programs.html security.html testcurl.html \
+ runtests.html
 
 all: $(PAGES)
 	@echo done 
@@ -37,6 +39,16 @@ manpage.html: _manpage.html $(MAINPARTS) mandump.t
 
 mandump.t: $(DOCROOT)/curl.1
 	 $(MAN2HTML) < $(DOCROOT)/curl.1 > mandump.t
+
+testcurl.html: _testcurl.html $(MAINPARTS) testcurl.dump
+	$(ACTION)
+testcurl.dump: $(TESTROOT)/testcurl.1
+	 $(MAN2HTML) < $< > $@
+
+runtests.html: _runtests.html $(MAINPARTS) runtests.dump
+	$(ACTION)
+runtests.dump: $(TESTROOT)/runtests.1
+	 $(MAN2HTML) < $< > $@
 
 
 bugs.html: _bugs.html $(MAINPARTS) bugs.t

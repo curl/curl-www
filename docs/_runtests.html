@@ -1,0 +1,32 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Run curl tests</TITLE>
+#include "css.t"
+#include "manpage.t"
+</HEAD>
+
+#define CURL_DOCS
+#define DOCS_RUNTESTS
+#define CURL_URL docs/runtests.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Docs, "/docs/", runtests.pl)
+
+TITLE(runtests.1 the man page)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="manpage.html">man page</a>
+<br><a href="testcurl.html">testcurl.1</a>
+<br><a href="faq.html">FAQ</a>
+<br><a href="httpscripting.html">HTTP Scripting</a>
+</div>
+
+#include "runtests.dump"
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
+
