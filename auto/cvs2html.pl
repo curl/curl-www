@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-# Copyright (C) 2002, Daniel Stenberg, <daniel@haxx.se>
+# Copyright (C) 2002-2004, Daniel Stenberg, <daniel@haxx.se>
 #
 # This software is licensed as described in the file COPYING, which
 # you should have received as part of this distribution.
@@ -34,7 +34,6 @@
 my $input;
 my $css;
 my $html;
-my $head=0; # don't output HEAD
 
 if($ARGV[0] eq "-s") {
     shift @ARGV;
@@ -63,13 +62,24 @@ elsif(!$input) {
     help();
 }
 
+#############################################################################
+# Edit these variables:
+#
+
+my $head=0; # don't output HEAD
+
 my $maxnumshown = 30; # only show this many
 
-my %shortnames=('bagder' => 'Daniel Stenberg',
-                );
+# CVS user names
+my %shortnames=('bagder' => 'Daniel',
+                'gknauf' => 'Günter Knauf');
 
 # URL root to prepend file names with
-my $root="http://cool.haxx.se/cvs.cgi/curl/";
+my $root="http://cool.haxx.se/cvs.cgi/curl";
+
+#
+# You should not need to edit variables below this marker
+#############################################################################
 
 my @mname = ('January',
              'February',
@@ -120,8 +130,8 @@ while(<INPUT>) {
 }
 close(INPUT);
 
-# Store information about once specific change done in a single file. The same
-# comment (by the same author) may of course have been made from multiple
+# Store information about this one specific change done in a single file. The
+# same comment (by the same author) may of course have been made from multiple
 # files.
 
 sub singlechange {
@@ -153,7 +163,7 @@ sub singlechange {
     # check for already used dates from -5 seconds to +5 seconds from this
     # set date.
 
-    foreach $step (1 .. 10) {
+    foreach $step (1 .. 30) {
         foreach $mul ((-1, 1)) {
             my $delta = $step * $mul;
             my $dstr = $mongdate{$datenum + $delta};
@@ -170,6 +180,9 @@ sub singlechange {
     $changedates{$date}.= ":::$author";
     $changecomment{$date}{$author} .= ":::$comm";
     $changefiles{$date}{$author} .= ":::$file";
+
+    # at this time, this file reach this rev
+    $revs{$date}{$file}="$rev";
 
     $changecount++; # count total changes
 }
@@ -290,7 +303,7 @@ if( $changecount) {
     my @c = sort { $datemong{$b} <=> $datemong{$a} } keys %changedates;
     my $i=0;
 
-    print "<table class=\"changetable\"><tr><th>when (GMT)</th><th>who</th><th>where</th><th>what</th></tr>\n";
+    print "<table class=\"changetable\"><tr><th>when (GMT)</th><th>who</th><th>where / diff</th><th>what</th></tr>\n";
     for(@c) {
         my $date = $_;
 
@@ -347,9 +360,26 @@ if( $changecount) {
                 }
             }
         }
+        my $loop;
         for(sort keys %files) {
             my $file = $_;
-            printf("<a href=\"$root/%s\">%s</a><br>\n", $file, $file);
+            my $r = $revs{$date}{$file};
+            my $p; # attempted previous version
+
+            if($r =~ /^(\d+)\.(\d+)$/) {
+                # strict match for the simple cases!
+                my ($num, $dot)=($1, $2);
+                if($dot > 1) {
+                    $p = sprintf("%d.%d", $num, $dot-1);
+
+                    # viewcvs.cgi style diff URL:
+                    $r = "<a href=\"$root/$file.diff?r1=$p&r2=$r\">$r</a>";
+                }
+
+            }
+            printf("%s<a href=\"$root/%s\">%s</a> %s\n",
+                   $loop?"<br>":"", $file, $file, $r);
+            $loop++;
         }
         print "</td><td>";
 
@@ -376,11 +406,3 @@ if( $changecount) {
 else {
     print "No changes\n";
 }
-
-print <<FOOT
-<p>
- 'recentcvs' script by Daniel Stenberg.
-</body>
-</html>
-FOOT
-    ;
