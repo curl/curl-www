@@ -15,13 +15,11 @@ WHERE2(Docs, "/docs/", Changes)
 
 TITLE(Changelog -- track all changes)
 <p>
- This page has recently been modified to become friendlier to users.
+ Read about changes in a nice and somewhat digested version, on <a
+ href="../changes.html">changelog</a> page.
 <p>
- To read about all changes in a summarized and somewhat more digested version,
- see the <a href="../changes.html">changes</a> document.
-<p>
- Or get a nice view of exactly what <a href="verdiff.cgi">changes that were
- done between two specific curl versions</a>.
+ Get a view of exactly what <a href="verdiff.cgi">changes that were done
+ between two specific curl versions</a>.
 <p>
  The full <a href="http://curl.haxx.se/lxr/source/CHANGES">CHANGES</a> file is
  also included in every curl release package.
