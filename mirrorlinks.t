@@ -15,7 +15,7 @@ Mirror:
 <a href="http://curl.siamu.ac.th/">TH</a>,
 <a href="http://curl.cs.pu.edu.tw/">TW</a>,
 <a href="http://curl.mirrors.redwire.net/">US1</a>,
-<a href="http://curl.signal42.com/">US2</a>,
+<a href="http://curl.islandofpoker.com/">US2</a>,
 <a href="http://curl.109k.com/">US3</a>,
 <a href="http://curl.mirrormonster.com/">US4</a>
 #else
@@ -33,7 +33,7 @@ Mirror:
 <a href="http://curl.siamu.ac.th/CURL_URL">TH</a>,
 <a href="http://curl.cs.pu.edu.tw/CURL_URL">TW</a>,
 <a href="http://curl.mirrors.redwire.net/CURL_URL">US1</a>,
-<a href="http://curl.signal42.com/CURL_URL">US2</a>,
+<a href="http://curl.islandofpoker.com/CURL_URL">US2</a>,
 <a href="http://curl.109k.com/CURL_URL">US3</a>,
 <a href="http://curl.mirrormonster.com/CURL_URL">US4</a>
 #endif
