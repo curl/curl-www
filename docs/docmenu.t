@@ -83,6 +83,12 @@ HERE(x, Manual)
 DOCREF(readme.curl.html, Manual)
 #endif
 
+#ifdef CURL_PRESS
+HERE(x, Press)
+#else
+DOCREF(/press.html, Press)
+#endif
+
 #ifdef DOCS_RESOURCES
 HERE(x, Resources)
 #else
