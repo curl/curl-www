@@ -65,7 +65,7 @@ else {
     if(@data) {
         my $i;
         for(reverse sort @data) {
-            my $lyear, $lmonth, $lday;
+            my ($lyear, $lmonth, $lday);
             my $l = $_;
             my $class= $i&1?"even":"odd";
             if(s/<tr>/<tr class=\"$class\">/) {
@@ -197,7 +197,7 @@ sub endofsingle {
         $res .= "<td class=\"buildfine\">$a $fine";
 
         if($skipped) {
-            $res .= "+$skipped";
+            #$res .= "+$skipped";
         }
         $res .= "</a></td>\n";
     }
