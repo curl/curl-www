@@ -129,7 +129,7 @@ if($latest::version{$what}) {
     "<br><b>Version:</b> ".$latest::version{$what}."\n";
     
     if( -r "download/$archive.asc" ) {
-        print "<br><b>GPG signature:</b> <a href=\"download/$archive.asc\">link</a>";
+        print "<br><b>GPG signature:</b> <a href=\"download/$archive.asc\">$archive.asc</a>";
     }
     
     if($latest::headver ne $latest::version{$what}) {
