@@ -76,7 +76,7 @@ shows that just getting files in a sequential manner will make it use
 persistant connections if the remote server supports it.
 
 <p>
-<b>mulithreaded URL fetches</b><br> <a
+<b>multithreaded URL fetches</b><br> <a
 href="http://curl.haxx.se/lxr/source/docs/examples/multithread.c">multithread.c</a>
 starts a number of threads and retrieves one URL in each thread. This requires
 a working thread library.
@@ -98,6 +98,17 @@ program read URLs instead of local files.
 href="http://curl.haxx.se/lxr/source/docs/examples/multi-post.c">multi-post.c</a>
 makes a multipart formpost using the multi interface, which makes it a
 non-blocking operation.
+
+<p>
+<b>debug callback</b><br> <a
+href="http://curl.haxx.se/lxr/source/docs/examples/debug.c">debug.c</a> shows
+how you can use the debug callback to get a full trace of all protocol data
+being sent/received (and more).
+
+<p>
+<b>HTML parsing</b><br> <a
+href="http://curl.haxx.se/lxr/source/docs/examples/htmltitle.cc">htmltitle.c</a>
+shows how to use libxml to parse HTML retrieved with libcurl.
 
 <p>
 <b>Doing SOAP with libcurl</b><br>
