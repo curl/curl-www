@@ -71,7 +71,7 @@ if(!$ex) {
 else {
     where("libcurl", "/libcurl/",
           "PHP", "/libcurl/php/",
-          "Examples", "/libcurl/php/",
+          "Examples", "/libcurl/php/examples/",
           "An Example");
 }
 
