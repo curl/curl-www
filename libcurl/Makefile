@@ -1,6 +1,8 @@
+ROOT = ..
 TXT2PLAIN= txt2plain.pl
 
-MAINPARTS= ../_doctype.html _menu.html _links.html setup.t pic.t ../where.t download.t ../ad.t ../mirrorlinks.t
+MAINPARTS= $(ROOT)/_doctype.html _menu.html _links.html setup.t pic.t	\
+           $(ROOT)/where.t download.t $(ROOT)/mirrorlinks.t $(ROOT)/ad.t
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 ACTION=@echo preprocessing $@; \
 	rm -f $@; \
