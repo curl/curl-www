@@ -63,23 +63,15 @@ print "Content-Type: text/html\n\n";
 $req = new CGI;
 $ex = $req->param('ex');
 
-if(!$ex) {
-    where("libcurl", "/libcurl/",
-          "PHP", "/libcurl/php/",
-          "Examples");
-}
-else {
-    where("libcurl", "/libcurl/",
-          "PHP", "/libcurl/php/",
-          "Examples", "/libcurl/php/examples/",
-          "An Example");
-}
-
-&title("PHP/CURL Examples Collection");
-
 if($ex) {
     $ex =~ s/.*\/(.*)/$1/;
     
+    where("libcurl", "/libcurl/",
+          "PHP", "/libcurl/php/",
+          "Examples", "/libcurl/php/examples/",
+          $ex);
+    &title("The $ex Example");
+
     if( -r "$ex.html") {
         &catfile("$ex.html");
     }
@@ -87,9 +79,13 @@ if($ex) {
     precatfile($ex);
 }
 else {
+    where("libcurl", "/libcurl/",
+          "PHP", "/libcurl/php/",
+          "Examples");
+
+    &title("PHP/CURL Examples Collection");
     listexamples();
 }
 
 &catfile("../../../foot.html");
 
-print "</body></html>\n";
