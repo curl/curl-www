@@ -26,6 +26,21 @@ TITLE(Recent Changes -- The Nice and Clean Version)
 <li>
 </ul>
 #endif
+
+<p> Fixed since (available in CVS and pre-releases)
+<ul>
+ <li> Bugfixed SSL download (due to the non-blocking sockets)
+ <li> Only seed SSL once for a program's life time
+ <li> Introduced CURLINFO_CONTENT_TYPE
+ <li> IPv4-only Linux machines could crash on name resolves
+ <li> curl_getdate() is now fully reentrant
+ <li> CURLOPT_CUSTOMREQUEST can now be used with CURLOPT_POSTFIELDS
+ <li> The header length counter is now reset in each curl_easy_perform()
+ <li> Normal HTTP POSTs no longer append an extra set of CRLF
+ <li> Location: following on persistant connections work
+ <li> No longer installs the multi examples on make install.
+</ul>
+
 <p> Fixed in 7.9.3
 <ul>
  <li> bufixed multipart formposts with non-existing files
