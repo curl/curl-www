@@ -219,6 +219,12 @@ LINK("", Tcl)
 VLINK(/libcurl/tcl/, Tcl)
 #endif
 
+#ifdef LIBCURL_VB
+LINK("", VB)
+#else
+VLINK(/libcurl/vb/, VB)
+#endif
+
 #ifdef LIBCURL_Q
 LINK("", Q)
 #else
