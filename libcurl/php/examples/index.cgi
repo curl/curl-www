@@ -19,7 +19,7 @@ MOO
     my @ex = grep { /\.php$/ && -f "$some_dir/$_" } readdir(DIR);
     closedir DIR;
 
-    print "<p><table border=\"0\" cellpadding=\"1\" cellspacing=\"0\"><tr class\"tabletop\">",
+    print "<p><table border=\"0\" cellpadding=\"1\" cellspacing=\"0\"><tr class=\"tabletop\">",
     "<th>Example</th>",
     "<th>Description</th>",
     "</tr>\n";
