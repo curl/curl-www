@@ -19,7 +19,9 @@ TITLE(libcurl - a thread safe transfer library)
  as mentioned below:
 <p>
  <b>Never</b> share easy handles between multiple threads. You should only use
- one easy handle in one single thread at any given time.
+ one easy handle in one single thread at any given time. You can still share
+ certain data between multiple threads by using the <a
+ href="/libcurl/c/libcurl-share.html">share interface</a>.
 <p>
  libcurl uses certain system calls to obtain information. Some of the most
  crucial ones are the name resoluition calls (the <i>gethostby*</i>
