@@ -35,7 +35,7 @@ else {
            $what);
 }
 
-&title("The Most Recent Achives Off the Mirrors");
+&title("The Most Recent Archives Off the Mirrors");
 
 # check what's available right *now*
 &latest::scanstatus();
