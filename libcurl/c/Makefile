@@ -22,7 +22,11 @@ all: index.shtml example.shtml curl_easy_init.html \
 	curl_formfree.html curl_escape.html curl_unescape.html \
 	curl_strequal.html curl_mprintf.html libcurl.html \
 	curl_global_init.html curl_global_cleanup.html \
-	the-guide.html
+	the-guide.html \
+	curl_multi_add_handle.html     curl_multi_init.html \
+	curl_multi_cleanup.html        curl_multi_perform.html \
+	curl_multi_fdset.html          curl_multi_remove_handle.html \
+	curl_multi_info_read.html      libcurl-multi.html
 	cd html; make
 
 index.shtml: _index.html $(MAINPARTS)
@@ -149,6 +153,46 @@ the-guide.html: _the-guide.html the-guide.t $(MAINPARTS)
 
 the-guide.t: $(DOCROOT)/libcurl-the-guide
 	$(TXT2PLAIN) < $< > $@
+
+libcurl-multi.html: _libcurl-multi.html $(MAINPARTS) libcurl-multi.t
+	$(ACTION)
+libcurl-multi.t: $(MANROOT)/libcurl-multi.3
+	gnroff -man $< | $(MAN2HTML) >$@
+
+curl_multi_add_handle.html: _curl_multi_add_handle.html $(MAINPARTS) curl_multi_add_handle.t
+	$(ACTION)
+curl_multi_add_handle.t: $(MANROOT)/curl_multi_add_handle.3
+	gnroff -man $< | $(MAN2HTML) >$@
+
+curl_multi_cleanup.html: _curl_multi_cleanup.html $(MAINPARTS) curl_multi_cleanup.t
+	$(ACTION)
+curl_multi_cleanup.t: $(MANROOT)/curl_multi_cleanup.3
+	gnroff -man $< | $(MAN2HTML) >$@
+
+curl_multi_fdset.html: _curl_multi_fdset.html $(MAINPARTS) curl_multi_fdset.t
+	$(ACTION)
+curl_multi_fdset.t: $(MANROOT)/curl_multi_fdset.3
+	gnroff -man $< | $(MAN2HTML) >$@
+
+curl_multi_info_read.html: _curl_multi_info_read.html $(MAINPARTS) curl_multi_info_read.t
+	$(ACTION)
+curl_multi_info_read.t: $(MANROOT)/curl_multi_info_read.3
+	gnroff -man $< | $(MAN2HTML) >$@
+
+curl_multi_init.html: _curl_multi_init.html $(MAINPARTS) curl_multi_init.t
+	$(ACTION)
+curl_multi_init.t: $(MANROOT)/curl_multi_init.3
+	gnroff -man $< | $(MAN2HTML) >$@
+
+curl_multi_perform.html: _curl_multi_perform.html $(MAINPARTS) curl_multi_perform.t
+	$(ACTION)
+curl_multi_perform.t: $(MANROOT)/curl_multi_perform.3
+	gnroff -man $< | $(MAN2HTML) >$@
+
+curl_multi_remove_handle.html: _curl_multi_remove_handle.html $(MAINPARTS) curl_multi_remove_handle.t
+	$(ACTION)
+curl_multi_remove_handle.t: $(MANROOT)/curl_multi_remove_handle.3
+	gnroff -man $< | $(MAN2HTML) >$@
 
 
 full: all

@@ -19,7 +19,15 @@ CONTENTS = $(HTMLDIR)/curl_easy_cleanup.t \
 	   $(HTMLDIR)/curl_mprintf.t \
 	   $(HTMLDIR)/curl_global_init.t \
 	   $(HTMLDIR)/curl_global_cleanup.t \
-	   $(HTMLDIR)/libcurl.t
+	   $(HTMLDIR)/libcurl.t \
+	   $(HTMLDIR)/curl_multi_add_handle.t \
+	   $(HTMLDIR)/curl_multi_init.t \
+	   $(HTMLDIR)/curl_multi_cleanup.t \
+	   $(HTMLDIR)/curl_multi_perform.t \
+	   $(HTMLDIR)/curl_multi_fdset.t \
+	   $(HTMLDIR)/curl_multi_remove_handle.t \
+	   $(HTMLDIR)/curl_multi_info_read.t \
+	   $(HTMLDIR)/libcurl-multi.t
 
 
 curl-html-docs.tar.gz: $(CONTENTS)
