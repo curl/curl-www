@@ -94,7 +94,7 @@ $(RELEASE): Makefile
 
 $(STAT): download.html Makefile
 	@echo "fixing $(STAT)"
-	@echo "#define __CURR `grep -c class=.latest $<`" >$(STAT)
+	@echo "#define __CURR `grep -c ^.tr.class=.latest $<`" >$(STAT)
 	@echo "#define __PACKS `grep -c \"^<tr c\" $<`" >>$(STAT)
 
 download.html: _download.html $(MAINPARTS) $(RELEASE) dl/files.html
