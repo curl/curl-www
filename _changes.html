@@ -34,8 +34,10 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 <p> Changes:
 <ul>
  <li> Added CURLOPT_PRIVATE and CURLINFO_PRIVATE
+ <li> Added CURLOPT_HTTP200ALIASES
  <li> Added --create-dirs 
  <li> libcurl test cases have been added
+ <li> configure --enable-maintainer-mode was added
 </ul>
 
 <p> Bugs:
@@ -52,6 +54,12 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
  <li> CURLOPT_USERPWD-imposed memory leak removed
  <li> Verbose connect message crash removed
  <li> curl-config --cflags
+ <li> better SSL-reading with no CPU-eating loop left
+ <li> A base64 decoding bug was fixed (affected kerberos4)
+ <li> The MSVC++ Makefile for debug targets was improved
+ <li> Initing the global DNS cache is now done better
+ <li> "curl -I ftp://domain/non-existing-file" was flawed
+ <li> fixed wildcard name checks in server certificates
 </ul>
 
 
