@@ -54,7 +54,7 @@ while(<DATA>) {
 
         $archtype{$archive}=$type;
     }
-    elsif($_ =~ /^DOWNLOAD: ([^ ]*) ([^ ]*) ([^ ]*)/) {
+    elsif($_ =~ /^DOWNLOAD: ([^ ]*) ([^ ]*) (.*)/) {
         my ($archive, $curl, $where)=($1, $2, $3);
 
         my $proto = uc($curl);
@@ -154,9 +154,12 @@ if($latest::version{$what}) {
         }
         print "</tr>\n";
 
+        my $i=0;
         for(sort {$where{$a} cmp $where{$b}} @dl) {
             my $url=$_;
-            printf "<tr><td>%s</td><td>%s</td><td>%s</td><td><a href=\"%s\">%s</a></td></tr>\n",
+            $i++;
+            printf "<tr class=\"%s\"><td><b>%s</b></td><td>%s</td><td>%s</td><td><a href=\"%s\">%s</a></td></tr>\n",
+            $i&1?"odd":"even",
             $where{$url},
             $proto{$url},
             $host{$url},
