@@ -34,7 +34,7 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 </ul>
 #endif
 
-SUBTITLE(Fixed since -- available in CVS and pre-releases)
+SUBTITLE(Fixed in 7.10.6)
 <p> Changes:
 <ul>
  <li> CURLOPT_SSL_CTX_FUNCTION allows a custom callback for SSL connections
@@ -54,6 +54,8 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 </ul>
 <p> Bugs:
 <ul>
+ <li> double slash after the host name on a FTP URL again points out the root dir
+ <li> obscure and rare DNS cache problem was fixed
  <li> multiple FTP connections to the same host with different user names
       didn't work properly
  <li> no more CWD commands without arguments for ftp connections
