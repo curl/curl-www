@@ -13,7 +13,8 @@ all: index.html manpage.html faq.shtml changes.shtml \
 	features.html resources.html bugs.html \
 	install.html readme.html readme.curl.html \
 	resources.html copyright.html thanks.html \
-	y2k.html todo.html httpscripting.shtml comparison-table.html
+	y2k.html todo.html httpscripting.shtml comparison-table.html \
+	relatedtools.html
 	@echo done 
 #archive/index.html
 
@@ -129,6 +130,9 @@ copyright.html: _copyright.html $(MAINPARTS)
 	$(ACTION)
 
 comparison-table.html: _comparison-table.html $(MAINPARTS)
+	$(ACTION)
+
+relatedtools.html: _relatedtools.html $(MAINPARTS)
 	$(ACTION)
 
 y2k.html: _y2k.html $(MAINPARTS)

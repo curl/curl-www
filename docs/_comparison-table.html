@@ -13,8 +13,8 @@ WHERE2(Docs, "/docs/", Comparison Table)
 
 TITLE(Compare cURL Features with Other FTP+HTTP Tools)
 <p>
- See also the <a href="features.html">list of features</a>, or <a
- href="/libcurl/competitors.html">compare http libraries</a>.
+ See also the <a href="features.html">list of features</a>, <a href="relatedtools.html">related tools</a> or <a
+ href="../libcurl/competitors.html">compare http libraries</a>.
 
 #define FEATURE <td bgcolor="#ffff00" align=center>yes</td>
 #define MISSING <td align=center>no</td>
@@ -33,19 +33,19 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
 #define ENDLINE </tr>
 
 #define NICETD <td bgcolor="#0000ff"><font color="#ffffff" size=+1 face="ariel,helvetica">
-#define NICETDSLUT </font></td>
+#define NICETDEND </font></td>
 
 <p>
 <table cellspacing=2 cellpadding=0 border=0>
  NEWLINE
-  NICETD  NICETDSLUT
-  NICETD curl NICETDSLUT
-  NICETD snarf NICETDSLUT
-  NICETD wget NICETDSLUT
-  NICETD greed NICETDSLUT
-  NICETD pavuk NICETDSLUT
-  NICETD fget NICETDSLUT
-  NICETD fetch NICETDSLUT
+  NICETD  NICETDEND
+  NICETD curl NICETDEND
+  NICETD snarf NICETDEND
+  NICETD wget NICETDEND
+  NICETD greed NICETDEND
+  NICETD pavuk NICETDEND
+  NICETD fget NICETDEND
+  NICETD fetch NICETDEND
  ENDLINE
  NEWLINE 
   FEAT ftp resume ENDFEAT
@@ -107,6 +107,8 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
   MISSING
   FEATURE
  ENDLINE
+
+#if 0
  NEWLINE
   FEAT understands ftp://koobera.math.uic.edu ENDFEAT
   FEATURE
@@ -127,6 +129,8 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
   UNKNOWN
   FEATURE
  ENDLINE
+#endif
+
  NEWLINE
   FEAT SOCKS ENDFEAT
   MISSINGSOCKS
@@ -241,6 +245,19 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
   MISSING
  ENDLINE
 
+#if 0
+ NEWLINE
+  FEAT runs on unix ENDFEAT
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+ ENDLINE
+#endif
+
  NEWLINE
   FEAT HTTP ranges ENDFEAT
   FEATURE
@@ -315,7 +332,7 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
   NEWCOL GPL ENDCOL
   NEWCOL GPL ENDCOL
   UNKNOWN
-  NEWCOL BSD ENDCOL  
+  NEWCOL BSD ENDCOL
  ENDLINE
 </table>
 

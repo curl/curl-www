@@ -1,0 +1,70 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Related Tools</TITLE>
+</HEAD>
+
+#define CURL_DOCS
+#define DOCS_RELATED_TOOLS
+
+#include "_menu.html"
+#include "setup.t"
+#include "pic.t"
+#include "table.t"
+
+WHERE2(Docs, "/docs/", Related Tools)
+
+TITLE(List Of Related Tools)
+<p>
+ See also the comparison of <a href="comparison-table.html">cURL Features with
+ Other FTP+HTTP Tools</a>, or <a href="../libcurl/competitors.html">compare http
+ libraries</a>.
+
+<p>
+ We get lots of questions regarding different aspects of what curl do, and if
+ we know of other products/tools that would do it better. This is our first
+ attempts at collecting info about all sorts of related tools for web
+ stressing/testing and similar.
+
+<p>
+ If you have other tools we should add here or if there's a factual error
+ present, get in touch!
+
+<p>
+<table cellspacing=0 cellpadding=3 border=0>
+<tr>
+   NICETD Name NICETDEND
+   NICETD Description NICETDEND
+</tr>
+
+TREVEN
+  NEWCOL <a href="http://groups.yahoo.com/group/elza/">Elza</a> </td>
+  NEWCOL Tools for HTTP automation and building custom HTTP UserAgents.</a>
+TREND
+
+TRODD
+  NEWCOL <a href="http://grinder.sourceforge.net">Grinder</td>
+  NEWCOL a simple, pure Java load-testing framework </td>
+TREND
+
+TREVEN
+  NEWCOL <a href="http://msdn.microsoft.com/workshop/server/iis/usingWCAT.asp">Web Capacity Analysis Tool (WCAT)</a></td>
+  NEWCOL    Part of Windows 2000 Resource Kit
+   It loads a bunch of pre-sized files onto the web server, and then
+   uses a distributed collection of client machines to stress test 
+   the target.</td>
+TREND
+
+TRODD
+  NEWCOL <a href="http://homer.rte.microsoft.com/">Web Application Stress Tool</a> (used to be called homer)</td>
+  NEWCOL Can run from one computer. Can create custom scripts for
+   which pages to request, which users to login with, etc.
+   Collects Performance information from the servers if they
+   are running on Microsoft servers.</td>
+TREND
+
+</table>
+
+
+#include "_footer.html"
+</BODY>
+</HTML>
