@@ -129,6 +129,12 @@ LINK("", Java)
 VLINK(/libcurl/java/, Java)
 #endif
 
+#ifdef LIBCURL_LISP
+LINK("", Lisp)
+#else
+VLINK(/libcurl/lisp/, Lisp)
+#endif
+
 #ifdef LIBCURL_LUA
 LINK("", Lua)
 #else
