@@ -18,7 +18,7 @@ all: index.html manpage.html faq.html changes.html contribute.html	\
 	resources.html copyright.html thanks.html			\
 	y2k.html todo.html httpscripting.html	\
         comparison-table.html relatedtools.html osdistribs.html		\
-	versions.html history.html loc.html knownbugs.html
+	versions.html history.html loc.html knownbugs.html manual.html
 	@echo done 
 #archive/index.html
 
@@ -29,11 +29,11 @@ index2.html: _index2.html $(MAINPARTS)
 	$(ACTION)
 
 
-manpage.html: _manpage.html $(MAINPARTS) manual.t
+manpage.html: _manpage.html $(MAINPARTS) manpage.t
 	$(ACTION)
 
-manual.t: $(DOCROOT)/curl.1
-	 $(MAN2HTML) < $(DOCROOT)/curl.1 > manual.t
+manpage.t: $(DOCROOT)/curl.1
+	 $(MAN2HTML) < $(DOCROOT)/curl.1 > manpage.t
 
 
 bugs.html: _bugs.html $(MAINPARTS) bugs.t
@@ -118,19 +118,14 @@ readme.t: $(SRCROOT)/README
 	$(TXT2HTML) < $(SRCROOT)/README > readme.t
 
 
-readme.curl.html: _readme.curl.html $(MAINPARTS) readme.curl.t
+readme.curl.html: _readme.curl.html $(MAINPARTS) manual.t
 	$(ACTION)
 
-readme.curl.t: $(DOCROOT)/MANUAL
+manual.html: _readme.curl.html $(MAINPARTS) manual.t
+	$(ACTION)
+
+manual.t: $(DOCROOT)/MANUAL
 	$(TXT2HTML) < $< >$@
-
-
-#readme.libcurl.html: _readme.libcurl.html $(MAINPARTS) readme.libcurl.t
-#	$(ACTION)
-
-#readme.libcurl.t: $(DOCROOT)/LIBCURL
-#	$(TXT2HTML) < $< >$@
-
 
 todo.html: _todo.html $(MAINPARTS) todo.t
 	$(ACTION)
