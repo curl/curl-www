@@ -179,14 +179,7 @@ sub endofsingle {
             }
         }
         elsif($fail) {
-            my @errors = split(" ", $fail);
-            if(scalar(@errors) < 5) {
-                $res .= "$fail";
-            }
-            else {
-                $res .= join(" ", $errors[0], $errors[1], $errors[2],
-                             $errors[3], "and more");
-            }
+            $res .= $failamount;
         }
         else {
             $res .= "fail";
@@ -290,6 +283,7 @@ sub singlefile {
             }
             elsif($_ =~ /^TESTDONE: (\d*) tests out of (\d*)/) {
                 $fine = $1;
+                $failamount = ($2 - $1);
             }
             elsif($_ =~ /^TESTINFO: (\d*) tests were skipped/) {
                 $skipped = $1;
