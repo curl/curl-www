@@ -8,6 +8,11 @@ sub title {
     print stitle($title);
 }
 
+sub subtitle {
+    my $title=$_[0];
+    print "<h2>$title</h2>";
+}
+
 # WHERE2(Feedback, "/feedback/", Bug Report)
 sub where {
     my @args = @_;
