@@ -37,14 +37,14 @@ howto.html: _howto.html $(MAINPARTS) _head.html
 loghead.html: _loghead.html $(MAINPARTS)
 	$(ACTION)
 
-table0.html: _table0.html $(MAINPARTS) table0.t
+table0.html: _table0.html $(MAINPARTS) table0.t explainopts.t
 	$(ACTION)
 
-table1.html: _table1.html $(MAINPARTS) table1.t
+table1.html: _table1.html $(MAINPARTS) table1.t explainopts.t
 	$(ACTION)
-table2.html: _table2.html $(MAINPARTS) table2.t
+table2.html: _table2.html $(MAINPARTS) table2.t explainopts.t
 	$(ACTION)
-table3.html: _table3.html $(MAINPARTS) table3.t
+table3.html: _table3.html $(MAINPARTS) table3.t explainopts.t
 	$(ACTION)
 
 

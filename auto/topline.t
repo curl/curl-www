@@ -3,6 +3,7 @@
 <br><a href="http://cool.haxx.se/cvs.cgi/curl/">Browse CVS</a>
 <br><a href="http://cool.haxx.se/curl-daily/">Daily Snapshot</a>
 <br><a href="/changes.html">Changelog</a>
+<br><a href="http://cool.haxx.se/mailman/listinfo/curl-commits">CVS commit mails</a>
 </div>
 
 [<a href="./">Build Log</a>]
