@@ -89,7 +89,7 @@ info: _info packstat.t
 
 $(RELEASE): Makefile
 	@echo "fixing $(RELEASE)"
-	@echo "#define __STABLE $(STABLE)" >>$(RELEASE)
+	@echo "#define __STABLE $(STABLE)" >$(RELEASE)
 	@echo "#define __RELDATE $(RELDATE)" >>$(RELEASE)
 
 $(STAT): download.html Makefile
