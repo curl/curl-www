@@ -1,14 +1,16 @@
-Updated for March 4, 2002:
+Updated for March 5, 2002:
 
- SHOWSTOPPERS
+ Known problems in recent source code:
 
-* Running 'make test' on Mac OS X gives 4 errors. Why? Fix!
-  http://curl.haxx.se/mail/archive-2002-03/0000.html
+* Running 'make test' on Mac OS X gives 4 errors. Why? At least one of these
+  errors happen because the argument parsing fails! More digging from Mac OS X
+  owners is needed.  http://curl.haxx.se/mail/archive-2002-03/0000.html
 
-* curl_formadd() fails on OSF1. Why? Fix!
+* curl_formadd() fails on OSF1. Why? Fix! Need help from OSF1 dudes.
   https://sourceforge.net/tracker/index.php?func=detail&aid=524433&group_id=976&atid=100976
 
-* formpost bug
+* formpost "bug". Is this truly a bug? Should we start using
+  application/octet-stream for unknown file parts within formposts?
   https://sourceforge.net/tracker/index.php?func=detail&aid=524913&group_id=976&atid=100976
 
 Work In Progress
@@ -16,3 +18,5 @@ Work In Progress
 * Kjetil Jacobsen might work on a new (simpler) data callback interface
 
 * Ozra at grub.org might work on making timeouts on name lookups work better
+
+* Sterling Hughes might work on unifying internal linked list usage
