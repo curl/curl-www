@@ -6,7 +6,7 @@ CURL= $(ROOT)
 
 MAINPARTS= $(ROOT)/_doctype.html $(CURL)/_menu.html $(CURL)/_footer.html \
   $(CURL)/setup.t $(CURL)/pic.t $(CURL)/where.t $(CURL)/css.t \
-  $(ROOT)/mirrorlinks.t topline.t
+  $(ROOT)/mirrorlinks.t topline.t $(ROOT)/ad.t
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 ACTION=@echo preprocessing $@; rm -f $@; fcpp -I.. -I. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@;
 
