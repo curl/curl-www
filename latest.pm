@@ -111,7 +111,7 @@ sub gettype {
     # curl-ssl-7.4.1-1.ppc.rpm
     elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*).ppc.rpm/) {
         return($1, "ssl-ppc.rpm",
-               "Source Linux RPM archive, SSL-enabled.");
+               "Linux PPC RPM archive, SSL-enabled.");
     }
     # curl-ssl-7.4.1-1.src.rpm
     elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*).src.rpm/) {
