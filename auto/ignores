@@ -1,0 +1,2 @@
+# gcc 2.9 on AIX can't be made to ignore this:
+lib/mprintf.c:950: warning: format not a string literal, argument types not checked

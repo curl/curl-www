@@ -2,6 +2,7 @@
 
 require "CGI.pm";
 require "../curl.pm";
+require "ccwarn.pm";
 
 opendir(DIR, "inbox");
 my @logs = grep { /^inbox/ } readdir(DIR);
@@ -127,6 +128,7 @@ sub summary {
     close(SUM);
 }
 
+&initwarn();
 
 my @data;
 
@@ -421,21 +423,7 @@ sub singlefile {
             elsif($_ =~ /^\* (libcurl\/.*)/) {
                 $libcurl = $1;
             }
-            elsif(($_ =~ /([.\/a-zA-Z0-9]*)\.[chy]:([0-9:]*): /) ||
-                  ($_ =~ /\"([_.\/a-zA-Z0-9]+)\", line/) ||
-                  ($_ =~ /^cc: Warning: ([.\/a-zA-Z0-9]*)/) ||
-                  ($_ =~ /cc: (REMARK|WARNING) File/) ||
-                  ($_ =~ /: (remark|warning) \#/) ||
-                  # MIPS o32 compiler:
-                  ($_ =~ /^cfe: Warning (\d*):/) ||
-                  # MSVC
-                  ($_ =~ /^[\.\\]*([.\\\/a-zA-Z0-9-]*)\.[chy]\(([0-9:]*)/)
-                  ) {
-                # first one, gcc
-                # second one, xlc (on AIX)
-                # third one, cc on Tru64
-                # forth one, MIPSPro C 7.3 on IRIX
-                # fifth one, icc 8.0 Intel compiler on Linux
+            elsif(checkwarn($_)) {
                 $warning++;
             }
             elsif($_ =~ /^testcurl: failed to update from CVS/) {

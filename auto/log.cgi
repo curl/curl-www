@@ -4,6 +4,7 @@ require "CGI.pm";
 
 use strict;
 require "../curl.pm";
+require "ccwarn.pm";
 
 print "Content-Type: text/html\n\n";
 
@@ -48,6 +49,8 @@ else {
 open(FILE, "<$build");
 my $num;
 
+&initwarn();
+
 while(<FILE>) {
     if($_ =~ /^INPIPE: startsingle here ([0-9-]*)/) {
         $thisid=$1;
@@ -62,24 +65,7 @@ while(<FILE>) {
             push @out, "<div class=\"mini\">\n";
             for(@present) {
                 chomp;
-                if(
-                   # gcc warning:
-                   ($_ =~ /([.\/a-zA-Z0-9]*)\.[chy]:([0-9:]*): /) ||
-                   # test case failure
-                   ($_ =~ /FAILED/) ||
-                   # the line below is adjusted for AIX xlc warnings:
-                   ($_ =~ /\"([_.\/a-zA-Z0-9]+)\", line/) ||
-                   # Tru64 cc warning:
-                   ($_ =~ /^cc: Warning: ([.\/a-zA-Z0-9]*)/) ||
-                   # MIPSPro C 7.3:
-                   ($_ =~ /cc: (REMARK|WARNING) File/) ||
-                   # Intel icc 8.0:
-                   ($_ =~ /: (remark|warning) \#/) ||
-                   # MIPS o32 compiler:
-                   ($_ =~ /^cfe: Warning (\d*):/) ||
-                   # MSVC
-                   ($_ =~ /^[\.\\]*([.\\\/a-zA-Z0-9-]*)\.[chy]\(([0-9:]*)/)
-                   ) {
+                if(checkwarn($_) || ($_ =~ /FAILED/)) {
                     $num++;
                     push @out, "<a name=\"prob$num\"></a><div class=\"warning\">$_</div>\n";
                 }
