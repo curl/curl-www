@@ -107,6 +107,12 @@ HERE(x, TODO)
 DOCREF(todo.html, TODO)
 #endif
 
+#ifdef DOCS_VERSIONS
+HERE(x, VERSIONS)
+#else
+DOCREF(versions.html, VERSIONS)
+#endif
+
 #ifdef DOCS_Y2K
 HERE(x, Y2K)
 #else

@@ -14,7 +14,7 @@ all: index.html manpage.html faq.shtml changes.shtml \
 	install.html readme.html readme.curl.html \
 	resources.html copyright.html thanks.html \
 	y2k.html todo.html httpscripting.shtml comparison-table.html \
-	relatedtools.html osdistribs.html
+	relatedtools.html osdistribs.html versions.html
 	@echo done 
 #archive/index.html
 
@@ -118,6 +118,12 @@ todo.html: _todo.html $(MAINPARTS) todo.t
 
 todo.t: $(DOCROOT)/TODO
 	$(TXT2HTML) < $(DOCROOT)/TODO > todo.t
+
+versions.html: _versions.html $(MAINPARTS) versions.t
+	$(ACTION)
+
+versions.t: $(DOCROOT)/VERSIONS
+	$(TXT2HTML) < $(DOCROOT)/VERSIONS > versions.t
 
 
 internals.shtml: _internals.shtml $(MAINPARTS)
