@@ -6,6 +6,7 @@ rfc1738.txt Uniform Resource Locators (obsoleted by RFC 2396)
 rfc1777.txt Lightweight Directory Access Protocol
 rfc1808.txt Relative Uniform Resource Locators
 rfc1867.txt Form-based File Upload in HTML
+rfc1928.txt SOCKS Protocol Version 5
 rfc1945.txt Hypertext Transfer Protocol -- HTTP/1.0
 rfc1950.txt ZLIB Compressed Data Format Specification
 rfc1951.txt DEFLATE Compressed Data Format Specification
