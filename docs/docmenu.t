@@ -102,6 +102,12 @@ HERE(x, Press)
 DOCREF(/press.html, Press)
 #endif
 
+#ifdef DOCS_RELATED_TOOLS
+HERE(x, Related Tools)
+#else
+DOCREF(relatedtools.html, Related Tools)
+#endif
+
 #ifdef DOCS_RESOURCES
 HERE(x, Resources)
 #else
