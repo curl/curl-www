@@ -22,6 +22,12 @@ HERE(x, Changelog)
 DOCREF(changes.html, Changelog)
 #endif
 
+#ifdef DOCS_COMPANIES
+HERE(x, Companies)
+#else
+DOCREF(companies.html, Companies)
+#endif
+
 #ifdef DOCS_COMPARISON
 HERE(x, Comparison)
 #else
@@ -86,6 +92,12 @@ DOCREF(manpage.html, Man Page)
 HERE(x, Manual)
 #else
 DOCREF(manual.html, Manual)
+#endif
+
+#ifdef DOCS_OS_DISTRIBUTIONS
+HERE(x, OSes)
+#else
+DOCREF(osdistribs.html, OSes)
 #endif
 
 #ifdef CURL_PRESS
