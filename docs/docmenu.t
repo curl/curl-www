@@ -16,6 +16,12 @@ HERE(x, Bugs)
 DOCREF(bugs.html, Bugs)
 #endif
 
+#ifdef DOCS_CAEXTRACT
+HERE(x, CA Extract)
+#else
+DOCREF(caextract.html, CA Extract)
+#endif
+
 #ifdef DOCS_CHANGES
 HERE(x, Changelog)
 #else

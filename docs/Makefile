@@ -12,13 +12,12 @@ TXT2PLAIN = txt2plain.pl
 MAN2HTML = roffit --bare
 
 PAGES = index.html manpage.html faq.html changes.html contribute.html	\
-        internals.html sslcerts.html companies.html press.html		\
-	features.html resources.html bugs.html				\
-	install.html readme.html readme.curl.html			\
-	resources.html copyright.html thanks.html			\
-	y2k.html todo.html httpscripting.html	\
-        comparison-table.html relatedtools.html osdistribs.html		\
-	versions.html history.html loc.html knownbugs.html manual.html
+ internals.html sslcerts.html companies.html press.html features.html	\
+ resources.html bugs.html install.html readme.html readme.curl.html	\
+ resources.html copyright.html thanks.html y2k.html todo.html		\
+ httpscripting.html comparison-table.html relatedtools.html		\
+ osdistribs.html versions.html history.html loc.html knownbugs.html	\
+ manual.html caextract.html
 
 all: $(PAGES)
 	@echo done 
@@ -178,6 +177,9 @@ y2k.html: _y2k.html $(MAINPARTS)
 	$(ACTION)
 
 loc.html: loc.t $(MAINPARTS)
+	$(ACTION)
+
+caextract.html: _caextract.html $(MAINPARTS)
 	$(ACTION)
 
 #archive/index.html: mail

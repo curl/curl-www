@@ -1,0 +1,34 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Extract CA Certs from Mozilla</TITLE>
+#include "css.t"
+</HEAD>
+
+#define CURL_DOCS
+#define DOCS_CAEXTRACT
+
+#define CURL_URL docs/caextract.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Docs, "/docs/", CA Extract)
+
+TITLE(Extract CA Certs from Mozilla)
+<p>
+ Roland Krikava provided this very useful script that builds a CA cert bundle
+ useful for curl, by extracting information provided in the <a
+ href="http://www.mozilla.org/">Mozilla</a> source tree. The Mozilla file
+ needed for this job is named
+ "/mozilla/security/nss/lib/ckfw/builtins/certdata.txt".
+
+<p>
+ <a href="parse-certs.txt">parse-certs.sh</a> is a shell script within an
+ embedded Ruby script. You thus need to have Ruby installed to make this work.
+
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
+
