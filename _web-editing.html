@@ -7,7 +7,7 @@
 #include "setup.t"
 #include "pic.t"
 
-TITLE(Web Site Editing Guidlines)
+TITLE(Web Site Editing Guidelines)
 <p>
  <b>This document is intended for the curl web site editors only.</b>
 
@@ -15,7 +15,7 @@ TITLE(Web Site Editing Guidlines)
  You need an account on sourceforge.net and that account needs to be a member
  in project curl. You check out the entire curl web site with:
 <pre>
-cvs -d [user]@cvs.curl.sourceforge.net:/cvsroot/curl checkout www
+cvs -d:ext:[user]@cvs.curl.sourceforge.net:/cvsroot/curl checkout www
 </pre>
 
 <p>
@@ -30,8 +30,8 @@ cvs -d [user]@cvs.curl.sourceforge.net:/cvsroot/curl checkout www
       is a simple C-style one, but please take care so that #if and #ifdefs
       have an ending #endif and so on.
 
- <li> The web site is updated from CVS every 20 minutes. If you notice a
-      mistake, it will stay that way at least until next update.
+ <li> The web site is updated from CVS every 20 minutes. Even if you fix a
+      mistake, it will stay that way at least until next update.  Don't panic!
 
  <li> The same contents appear on several different hosts, with one main site.
       Include the host name 'curl.haxx.se' only when linking to pages/contents
