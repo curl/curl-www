@@ -301,7 +301,7 @@ sub singlefile {
                   ($_ =~ /\"([_.\/a-zA-Z0-9]+)\", line/) ||
                   ($_ =~ /^cc: Warning: ([.\/a-zA-Z0-9]*)/) ||
                   ($_ =~ /cc: WARNING File/) ||
-                  ($_ =~ /: remark \#/)
+                  ($_ =~ /: (remark|warning) \#/)
                   ) {
                 # first one, gcc
                 # second one, xlc (on AIX)
