@@ -10,12 +10,6 @@ HERE(x, Docs Index)
 DOCREF(./, Docs Index)
 #endif
 
-#ifdef DOCS_BUGS
-HERE(x, Bugs)
-#else
-DOCREF(bugs.html, Bugs)
-#endif
-
 #ifdef DOCS_CAEXTRACT
 HERE(x, CA Extract)
 #else
@@ -112,6 +106,12 @@ HERE(x, Press)
 DOCREF(press.html, Press)
 #endif
 
+#ifdef DOCS_PROGRAMS
+HERE(x, Programs)
+#else
+DOCREF(programs.html, Programs)
+#endif
+
 #ifdef DOCS_RELATED_TOOLS
 HERE(x, Related Tools)
 #else
@@ -153,11 +153,3 @@ HERE(x, Versions)
 #else
 DOCREF(versions.html, Versions)
 #endif
-
-#ifdef DOCS_Y2K
-HERE(x, Y2K)
-#else
-DOCREF(y2k.html, Y2K)
-#endif
-
-
