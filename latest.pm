@@ -1,19 +1,19 @@
 
-use strict;
+#use strict;
 
 package latest;
 
-my $dir="/home/dast/curl_html/download";
-my $curl="/usr/local/bin/curl";
+our $dir="/home/dast/curl_html/download";
+our $curl="/usr/local/bin/curl";
 
 # they're all hashed on 'type'
-my %high;
-my %file;
-my %size;
-my %version;
-my %desc;
+our %high;
+our %file;
+our %size;
+our %version;
+our %desc;
 
-my $headver;
+our $headver;
 my $headnum;
 
 sub storemax {
