@@ -55,16 +55,16 @@ callbacks and ssl, so are a useful starting point.
 </p>
 
 <p><b>Download</b><br>
-<a href="Curl-easy-1.31.tar.gz">Curl::easy 1.31</a> (18Kb) was released on July 16, 2002. This fixes minor build issues with 1.30 on some platforms with strict C compilers.</p>
+<a href="Curl-easy-1.32.tar.gz">Curl::easy 1.32</a> (18Kb) was released on Aug 1, 2002. This fixes a minor build issue with curl-7.8 (as distributed with Redhat 7.2)</p>
 <p>This is an 'all-new' release of Curl::easy, with substantially re-factored internal code.
 This release supports the 'Object Oriented' style of perl coding, which provides a simpler,
 less cluttered syntax, and fixes a number of limitations and bugs in earlier versions (such
 as the inability to reliably use more than one curl handle per process!).</p>
-<p>Version, 1.31, is backwards compatible with previous releases, so you
+<p>Version 1.32, is backwards compatible with previous releases, so you
 can keep using scripts with the older syntax, upgrading when you wish to benefit from
 a cleaner programming style.</p>
-<p>v1.31 should be considered the 'best' available version of Curl::easy, and should be used
-for all versions of curl from 7.8.1 onwards. This release is well tested, but the actual
+<p>v1.32 should be considered the 'best' available version of Curl::easy, and should be used
+for all versions of curl from 7.8 onwards. This release is well tested, but the actual
 code is subtantially different from v1.21, so please report any problems. Feel free to
 use 1.21 in the meantime if you discover any major showstopper.</p>
 <p>There are a few new functions in this release over v1.21:<p>
@@ -74,7 +74,8 @@ use 1.21 in the meantime if you discover any major showstopper.</p>
     <li>Curl::easy::global_cleanup() to allow you to call this low level curl function if you need it.
     <li>Now uses PerlIO for file input/output, so should be perl 5.8 ready.
 </ul>
-<p>Curl::easy 1.30 (18Kb) was released on July 15, 2002, but has been superceeded by v1.31.</p>
+<p>Curl::easy 1.31 (18Kb) was released on July 16, 2002. This fixed minor build issues with 1.30 on some platforms with strict C compilers.</p>
+<p>Curl::easy 1.30 (18Kb) was released on July 15, 2002.</p>
 <p>
 <a href="Curl-easy-1.21.tar.gz">Curl::easy 1.21</a> (15Kb) was released on
 July 11, 2002.</p>
@@ -82,7 +83,7 @@ July 11, 2002.</p>
 and should support versions from 7.8.1 onwards, including 7.9,7.9.2 thru 7.9.8</p>
 <p>Version 1.21 integrates some minor build changes to assist in building on Win32,
 after feedback from Shawn Poulson. There are no functional changes.</p>
-<p>You should probably use v1.31 for any new development, unless you hit specific problems. Future
+<p>You should probably use v1.32 for any new development, unless you hit specific problems. Future
 minor issues in 1.21 may be fixed by further 1.2x releases, but any new features will be developed
 starting from v1.30.</p>
 <p></p>
