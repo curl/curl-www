@@ -4,7 +4,7 @@ CURL= ../..
 SRCROOT=$(CURL)/cvssource
 DOCROOT=$(SRCROOT)/docs
 
-MAINPARTS= $(CURL)/_doctype.html _menu.html ../../_footer.html ../setup.t ../pic.t doclinks.t $(CURL)/where.t ../download.t $(CURL)/ad.t
+MAINPARTS= $(CURL)/_doctype.html _menu.html ../../_footer.html ../setup.t ../pic.t doclinks.t $(CURL)/where.t ../download.t $(CURL)/ad.t Makefile
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 ACTION=@echo preprocessing $@; rm -f $@; cpp -I.. -I. -I$(CURL) -WWW -Uunix -H -C -V -LL "$(NOW)" $< $@; chmod a-w+r $@
 
