@@ -71,6 +71,12 @@ LINK("", C++)
 VLINK(/libcurl/cplusplus/, C++)
 #endif
 
+#ifdef LIBCURL_CH
+LINK("", Ch)
+#else
+VLINK(/libcurl/ch/, Ch)
+#endif
+
 #ifdef LIBCURL_COCOA
 LINK("", Cocoa)
 #else
