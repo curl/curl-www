@@ -66,10 +66,18 @@ sub gettype {
         return($1, "win32-ssl-devel-msvc",
                  "Windows MSVC devel, zip, SSL-enabled");
     }
+    # old-style MSVC libcurl devel
     elsif($file =~ /^curl-([0-9.]*)(-([0-9]*)|)-win32-devel.zip$/) {
-        return($1, "win32-devel-msvc",
+        return($1, "win32-devel-msvc-old",
                  "Windows MSVC devel, zip");
     }
+    # new-style MSVC libcurl devel package: libcurl-7.13.1-win32-msvc.zip
+    elsif($file =~ /^libcurl-([0-9.]*)(-([0-9]*)|)-win32-msvc.zip$/) {
+        return($1, "win32-devel-msvc",
+               "Windows MSVC libcurl devel, zip");
+    }
+
+
     elsif($file =~ /^curl-([0-9.]*).tar.gz$/) {
         return($1, "tar.gz",
                "Generic source tar, gzip");
