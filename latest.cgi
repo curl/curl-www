@@ -191,14 +191,14 @@ if($latest::version{$what}) {
     }
 
     if($alert) {
-        print "<p>Available from here (verified now):<ul>",
+        print "<p>Available from here (<a href=\"#verified\">verified</a> now):<ul>",
         "<li> <b>HTTP</b> from <b>curl.haxx.se</b> => ",
         "<a href=\"download/$archive\">$archive</a></ul>\n";
     }
     else {
         
         print "<p>Available from these ".($#dl+1)." sites ",
-        "(verified ".&time_ago.")\n";
+        "(<a href=\"#verified\">verified</a> ".&time_ago.")\n";
         
         print "<table><tr>";
         for(('Flag', 'Where', 'Proto', 'Host', 'File')) {
@@ -245,12 +245,26 @@ for(sort {$latest::desc{$a} cmp $latest::desc{$b}} keys %latest::desc) {
     printf("<option value=\"%s\"%s>%s (%s)</option>\n",
            $_, $def, $latest::desc{$_}, $latest::version{$_});
 }
-print "</select><input type=submit value=\"Gimme a List of Links\"</form>\n";
+print <<MOO
 
-print "<p> This service automatically and frequently scans through known",
-    " <a href=\"mirrors.html\">mirrors</a> and builds links to the latest",
-    " versions of many different curl archives. This page is fine",
-    " to bookmark!\n";
+</select><input type=submit value="Gimme a List of Links"></form>
+
+<p> This service automatically and frequently scans through known <a
+href="mirrors.html">mirrors</a> and builds links to the latest versions of
+many different curl archives. This page is fine to bookmark!
+
+<h2>Verification of Mirrored Packages</h2>
+<a name="verified"></a>
+
+The script that "verifies" mirrored files only checks if they are present or
+not, to verify that you can download them.
+<p>
+
+To be really sure and safe that the contents of the files are correct, you
+should use the MD5 checksum and GPG signature to verify downloads yourself!
+
+MOO
+;
 
 &footer();
 
