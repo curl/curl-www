@@ -2,7 +2,7 @@
 SRCROOT=/home/dast/src/curl
 DOCROOT=$(SRCROOT)/docs
 
-CURL= /home/dast/curl-www
+CURL= ../..
 
 MAINPARTS= $(CURL)/_doctype.html _menu.html ../../_footer.html ../setup.t ../pic.t doclinks.t $(CURL)/where.t ../download.t $(CURL)/ad.t
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
