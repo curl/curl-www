@@ -1,18 +1,18 @@
 #define NEWCOL <td valign=top>
 #define ENDCOL </td>
 
-#define NICETD <td bgcolor="#0000ff"><font color="#ffffff" size=+1 face="ariel,helvetica">
-#define NICETDEND </font></td>
+#define NICETD <th>
+#define NICETDEND </th>
 
-#define TREVEN <tr>
-#define TRODD  <tr bgcolor="#e0e0e0">
+#define TREVEN <tr class="even">
+#define TRODD  <tr class="odd">
 
 #define TREND </tr>
 
 <p> True full download mirrors:
 
 <table cellspacing=2 cellpadding=0 border=0>
-<tr>
+<tr class="tabletop">
    NICETD Where NICETDEND
    NICETD How NICETDEND
    NICETD Site NICETDEND
@@ -83,12 +83,23 @@ TREVEN
   NEWCOL &nbsp; ENDCOL
 TREND
 
+#if 0
 TRODD
   NEWCOL US ENDCOL
   NEWCOL HTTP ENDCOL
   NEWCOL <a href="http://curl.cyberservers.net/download/">curl.cyberservers.net</a> ENDCOL
   NEWCOL Eric L ENDCOL
 TREND
+#else
+TRODD
+  NEWCOL &nbsp; ENDCOL
+  NEWCOL &nbsp; ENDCOL
+  NEWCOL &nbsp; ENDCOL
+  NEWCOL &nbsp; ENDCOL
+TREND
+
+#endif
+
 
 TREVEN
  NEWCOL SE ENDCOL
