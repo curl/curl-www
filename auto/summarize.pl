@@ -9,6 +9,13 @@ closedir(DIR);
 
 cat("head.html");
 
+print <<OPTS
+ <p>
+   Options = (K)krb4, IPv(6), (M)emory debug, (S)SL enabled, (A)synch, (Z)lib
+
+OPTS
+    ;
+
 my $showntop=0;
 sub tabletop {
     my @res;
@@ -25,13 +32,9 @@ sub tabletop {
         "<th>time</th>",
         "<th>test</th>",
         "<th>warn</th>",
-        "<th>ssl</th>",
-        "<th>zlib</th>",
-        "<th>krb4</th>",
-        "<th>ipv6</th>",
-        "<th>mem</th>",
-        "<th>https</th>",
-        "<th>asynch</th>",
+#        "<th>ssl</th>",
+#        "<th>zlib</th>",
+        "<th>options</th>",
         "<th>desc</th>",
         "<th>who</th>",
         "</tr>\n");
@@ -115,6 +118,7 @@ sub endofsingle {
     my $zlibver;
     my $ipv6;
     my $krb4;
+    my $zlib;
 
     if($libcurl =~ /libcurl\/([^ ]*)/) {
         $libver = $1;
@@ -124,12 +128,13 @@ sub endofsingle {
     }
     if($libcurl =~ /zlib\/([^ ]*)/i) {
         $zlibver = $1;
+        $zlib = "Z";
     }
     if($libcurl =~ /krb4/) {
-        $krb4 = "ON";
+        $krb4 = "K";
     }
     if($libcurl =~ /ipv6/) {
-        $ipv6 = "ON";
+        $ipv6 = "6";
     }
 
     $showdate = $date;
@@ -204,20 +209,16 @@ sub endofsingle {
         $res .= "<td>0</td>\n";
     }
 
-    $memory=($memorydebug)?"ON":"&nbsp;";
-    $https=($httpstest)?"ON":"&nbsp;";
-    $a=$ares?"ON":"&nbsp";
+    $memory=($memorydebug)?"M":"";
+    $https=($httpstest)?"S":"";
+    $a=$ares?"A":"";
 
     my $uniq = $uname.$libver.$sslver.$krb4.$ipv6.$memory.$https;
 
     $res .= join("", 
-                 "<td>$sslver</td>\n",
-                 "<td>$zlibver</td>\n",
-                 "<td>$krb4</td>\n",
-                 "<td>$ipv6</td>\n",
-                 "<td>$memory</td>\n",
-                 "<td>$https</td>\n",
-                 "<td>$a</td>\n");
+  #               "<td>$sslver</td>\n",
+  #               "<td>$zlibver</td>\n",
+                 "<td>$krb4 $ipv6 $memory $https $a $zlib</td>\n");
 
     $res .= "<td>$desc</td>\n<td>$name</td>\n";
     $res .= "</tr>\n";
