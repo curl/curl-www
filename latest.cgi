@@ -118,6 +118,9 @@ sub flag {
     elsif($country =~ /US/) {
         $tld="us";
     }
+    elsif($country =~ /Taiwan/) {
+        $tld="tw";
+    }
 
     if($tld) {
         return "<img src=\"/pix/flags/$tld.png\" alt=\"$tld\">";
