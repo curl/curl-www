@@ -21,7 +21,7 @@ ACTION=@echo preprocessing $@; \
        cpp -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
        chmod a-w+r $@
 
-all: index.shtml index2.shtml \
+all: index.shtml \
 	feedback.html mirrors.html cvs.html libs.html icons.html \
 	help.html curlprograms.html download.html changes.html \
 	version7.html bugreport.html about.html support.html \
