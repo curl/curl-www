@@ -35,7 +35,7 @@ PAGES = index.html example.html curl_easy_init.html			\
  curl_share_cleanup.html curl_share_init.html curl_share_setopt.html	\
  curl_easy_duphandle.html curl_easy_strerror.html			\
  curl_multi_strerror.html curl_share_strerror.html			\
- libcurl-tutorial.html
+ libcurl-tutorial.html curl_easy_reset.html
 
 all: $(PAGES)
 
@@ -269,6 +269,11 @@ curl_easy_strerror.t: $(MANROOT)/curl_easy_strerror.3
 curl_multi_strerror.html: _curl_multi_strerror.html $(MAINPARTS) curl_multi_strerror.t
 	$(ACTION)
 curl_multi_strerror.t: $(MANROOT)/curl_multi_strerror.3
+	$(MAN2HTML) < $< >$@
+
+curl_easy_reset.html: _curl_easy_reset.html $(MAINPARTS) curl_easy_reset.t
+	$(ACTION)
+curl_easy_reset.t: $(MANROOT)/curl_easy_reset.3
 	$(MAN2HTML) < $< >$@
 
 

@@ -60,6 +60,12 @@ THIS(curl_easy_duphandle)
 DOC(curl_easy_duphandle, curl_easy_duphandle.html)
 #endif
 
+#ifdef DOCS_EASY_RESET
+THIS(curl_easy_reset)
+#else
+DOC(curl_easy_reset, curl_easy_reset.html)
+#endif
+
 #ifdef DOCS_EASY_SETOPT
 THIS(curl_easy_setopt)
 #else
