@@ -1,0 +1,6 @@
+Updated for March 4, 2002:
+
+* Running 'make test' on Mac OS X gives 4 errors. Why? Fix!
+
+* curl_formadd() fails on OSF1. Why? Fix!
+
