@@ -4,7 +4,6 @@ use strict;
 use latest;
 
 my @mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/',
-             'ftp://cool.haxx.se/curl/',
              'http://cool.haxx.se/curl/',
              'ftp://ftp.fu-berlin.de/pub/unix/network/curl/',
              'http://curl.linuxworx.com.au/',

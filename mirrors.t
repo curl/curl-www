@@ -30,8 +30,7 @@
 href="ftp://ftp.debian.org/mounts/u3/sourceforge/curl/">ftp.debian.org</a>.
 
  <li> <big>Another Swedish server</big> at <a
-href="http://cool.haxx.se/curl/">http://cool.haxx.se</a> and <a
-href="ftp://cool.haxx.se/curl/">ftp://cool.haxx.se</a> admined by Daniel
+href="http://cool.haxx.se/curl/">http://cool.haxx.se</a> admined by Daniel
 Stenberg.
 
 #if 0
