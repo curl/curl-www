@@ -87,7 +87,13 @@ if($r1 && $r2) {
 
         }
         elsif($show) {
-            print "$_\n";
+            if($_ =~ /^[A-Z]/) {
+                # the who/date line
+                print "<span class=\"whodate\">$_</span>\n";
+            }
+            else {
+                print "$_\n";
+            }
         }
     }
     if($show) {
