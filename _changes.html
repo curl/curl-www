@@ -41,6 +41,42 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
  document (it is work in progress).
 </ul>
 
+SUBTITLE(Fixed since -- available in CVS and pre-releases)
+<p> Changes:
+<ul>
+ <li> added --ftp-account and CURLOPT_FTP_ACCOUNT
+ <li> added CURLOPT_SOURCE_URL and CURLOPT_SOURCE_QUOTE
+ <li> obsoleted CURLOPT_SOURCE_HOST, CURLOPT_SOURCE_PATH, CURLOPT_SOURCE_PORT
+   and CURLOPT_PASV_HOST
+ <li> added --3p-url, --3p-user and --3p-quote
+ <li> -Q "+[command]" was added
+ <li> src/getpass.c license issue sorted (code was rewritten)
+ <li> curl -w now supports 'http_connect' for the proxy's response to CONNECT
+ <li> introducing "curl-config --protocols"
+</ul>
+<p> Bugfixes:
+<ul>
+ <li> re-sending a request when retrying on a fresh connection with multi
+   interface
+ <li> improved valgrind report parser in the test suite
+ <li> several valgrind reports
+ <li> CURLOPT_FTPPORT and -P work when built ipv6-enabled
+ <li> FTP third party transfers was much improved
+ <li> proxy environment variables are now ignored when built HTTP-disabled
+ <li> CURLOPT_PROXY can now disable HTTP proxy even when built HTTP-disabled
+ <li> "curl dictionary.com" no longer assumes DICT protocol
+ <li> re-invoke some system calls on EINTR
+ <li> duplicate Host: when failed connection re-use
+ <li> SOCKS5 version check
+ <li> memory problem with cleaning up multi interface
+ <li> SSL certificate name memory leak
+ <li> -d with -G to multiple URLs crashed
+ <li> double va_list access crash fixed
+ <li> minor memory leak when "version" is set in a cookie header
+ <li> builds fine on BeOS and NetBSD
+ <li> builds and runs fine on FreeBSD
+</ul>
+
 <p>
 SUBTITLE(Fixed in 7.12.3)
 <p>Changes:

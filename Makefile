@@ -1,12 +1,12 @@
 MAINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t	\
-libcurl/_links.html ad.t mirrorlinks.t css.t sflogo.t
+libcurl/_links.html ad.t mirrorlinks.t css.t sflogo.t ad.t
 
 # today's date
 NOW=$(shell gnudate +'-D__TODAY__=%B %e, %Y')
 
 # the latest stable version is:
-STABLE= 7.12.3
-RELDATE = "20th of December 2004"
+STABLE= 7.13.0
+RELDATE = "1st of February 2005"
 
 # name of the dir to tempoary unpack and build zip files in:
 TEMPDIR=tempzip
@@ -58,14 +58,14 @@ web-editing.html: _web-editing.html $(MAINPARTS)
 foot.html: _foot.html $(MAINPARTS)
 	$(ACTION)
 
-main.html: _main.html $(MAINPARTS) $(STAT) $(RELEASE)
+main.html: _main.html $(MAINPARTS) $(STAT) $(RELEASE) poll.t recentmail.t
 	$(ACTION)
 
 index.html: main.html newslog.html
 	rm -f $@
 	./filter.pl < $< > $@
 
-main2.html: _main2.html $(MAINPARTS) $(STAT) $(RELEASE)
+main2.html: _main2.html $(MAINPARTS) $(STAT) $(RELEASE) poll2.t
 	$(ACTION)
 
 index2.html: main2.html newslog.html
