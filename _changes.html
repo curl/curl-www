@@ -29,6 +29,14 @@ TITLE(Recent Changes -- The Nice and Clean Version)
 
 <p> Fixed since (available in CVS and pre-releases)
 <ul>
+ <li> Bugfixed the total time counter that could end up blank at times
+ <li> Minor portability changes
+ <li> Tweaked name resolves with getaddrinfo() to run faster on Linux
+ <li> Bugfixed big HTTP requests (such as big POSTs)
+ <li> Bugfixed connection timeouts
+ <li> Bugfixed Host: lines on multiple requests over proxy
+ <li> Bugfixed 64bit archtitecture builds.
+ <li> Bugfixed Expect: header disabling
  <li> Improved the Windows makefiles and install documentation
  <li> Bugfixed multipart formposts
  <li> Bugfixed CURLINFO_CONTENT_TYPE
