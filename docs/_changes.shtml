@@ -1,6 +1,6 @@
 #include "_doctype.html"
 <HTML>
-<HEAD> <TITLE>cURL - CHANGES</TITLE>
+<HEAD> <TITLE>cURL - Changelog</TITLE>
 #include "css.t"
 </HEAD>
 
@@ -24,7 +24,8 @@ TITLE(Changelog -- track all changes)
  Or get a nice view of exactly what <a href="verdiff.cgi">changes that were
  done between two specific curl versions</a>.
 <p>
- The full CHANGES file is also included in every curl release package.a
+ The full <a href="http://curl.haxx.se/lxr/source/CHANGES">CHANGES</a> file is
+ also included in every curl release package.
 
 #include "_footer.html"
 
