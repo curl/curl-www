@@ -17,6 +17,7 @@ all: index.html mail.html competitors.html future.html
 	cd cocoa; make
 	cd scheme; make
 	cd using; make
+	cd cplusplus; make
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
