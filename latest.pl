@@ -33,6 +33,7 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden (Uppsala)',
              'http://www.mirrormonster.com/curl/download/' => 'US (California)',
              'http://curl.mons-new-media.de/download/' => 'Germany (Karlsruhe)',
              'http://curl.islandofpoker.com/download/' => 'US (Phoenix)',
+             'http://curl.tolix.org/download/' => 'US (California)',
              );
 
 sub present {
