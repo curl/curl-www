@@ -41,6 +41,30 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
  document (it is work in progress).
 </ul>
 
+SUBTITLE(Fixed in 7.13.1)
+<p> Changes:
+<ul>
+ <li> CURLOPT_COOKIEFILE set to "" is now activating the cookie engine
+ <li> FTP code overhaul => multi interface much less blocking
+ <li> Added CURLE_LOGIN_DENIED to be returned when curl is denied login to FTP
+   servers
+</ul>
+<p> Bugfixes:
+<ul>
+ <li> -# crash when more data than expected was retrieved
+ <li> NTLM/krb4 buffer overflow fixed (CAN-2005-0490)
+ <li> proxy auth bug when following redirects to another host
+ <li> socket leak when local bind failed
+ <li> HTTP POST with --anyauth picking NTLM
+ <li> SSL problems when downloading exactly 16KB data
+ <li> out of memory conditions preserve error codes better
+ <li> a few crashes at out of memory
+ <li> inflate buffer usage bugfix
+ <li> better DICT protocol adherence
+ <li> disable valgrind-checking while testing if libcurl is built shared
+ <li> locale names in some date strings
+</ul>
+
 SUBTITLE(Fixed in 7.13.0)
 <p> Changes:
 <ul>
