@@ -32,7 +32,8 @@ all: index.html example.html curl_easy_init.html			\
 	curl_multi_add_handle.html     curl_multi_init.html		\
 	curl_multi_cleanup.html        curl_multi_perform.html		\
 	curl_multi_fdset.html          curl_multi_remove_handle.html	\
-	curl_multi_info_read.html      libcurl-multi.html
+	curl_multi_info_read.html      libcurl-multi.html \
+	libcurl-easy.html libcurl-share.html
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
@@ -173,6 +174,16 @@ the-guide.t: $(DOCROOT)/libcurl-the-guide
 libcurl-multi.html: _libcurl-multi.html $(MAINPARTS) libcurl-multi.t
 	$(ACTION)
 libcurl-multi.t: $(MANROOT)/libcurl-multi.3
+	gnroff -man $< | $(MAN2HTML) >$@
+
+libcurl-easy.html: _libcurl-easy.html $(MAINPARTS) libcurl-easy.t
+	$(ACTION)
+libcurl-easy.t: $(MANROOT)/libcurl-easy.3
+	gnroff -man $< | $(MAN2HTML) >$@
+
+libcurl-share.html: _libcurl-share.html $(MAINPARTS) libcurl-share.t
+	$(ACTION)
+libcurl-share.t: $(MANROOT)/libcurl-share.3
 	gnroff -man $< | $(MAN2HTML) >$@
 
 libcurl-errors.html: _libcurl-errors.html $(MAINPARTS) libcurl-errors.t
