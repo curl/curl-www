@@ -1,4 +1,4 @@
-MAINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t	\
+AINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t	\
 libcurl/_links.html ad.t mirrorlinks.t searchform.t css.t sflogo.t
 
 # today's date
@@ -11,6 +11,9 @@ RELDATE = "15th of August 2003"
 # name of the dir to tempoary unpack and build zip files in:
 TEMPDIR=tempzip
 
+# how to convert txt to "plain" html
+TXT2PLAIN = txt2plain.pl
+
 # generated file with binary package stats
 STAT = packstat.t
 
@@ -22,14 +25,14 @@ ACTION=@echo preprocessing $@; \
        cpp -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
        chmod a-w+r $@
 
-all: index.html \
+all: index.html index2.html \
 	feedback.html mirrors.html cvs.html libs.html icons.html \
 	help.html curlprograms.html download.html changes.html \
 	version7.html bugreport.html about.html support.html \
 	newslog.html news.html head.html foot.html press.html \
 	oldnews.html indexheader.html indexfooter.html \
 	mailheader.html mailfooter.html info web-editing.html \
-	donation.html devel.html
+	donation.html devel.html competition.html
 	cd docs; make
 	cd libcurl; make
 	cd mail; make
@@ -60,7 +63,10 @@ foot.html: _foot.html $(MAINPARTS)
 main.html: _main.html $(MAINPARTS) $(STAT) $(RELEASE)
 	$(ACTION)
 
-index.html: main.html newslog.html
+index.html: _index.html
+	$(ACTION)
+
+index2.html: main.html newslog.html
 	rm -f $@
 	./filter.pl < $< > $@
 
@@ -105,6 +111,12 @@ changes.html: _changes.html $(MAINPARTS)
 
 devel.html: _devel.html $(MAINPARTS)
 	$(ACTION)
+
+competition.html: _competition.html $(MAINPARTS) competition.raw
+	$(ACTION)
+
+competition.raw: competition.t
+	$(TXT2PLAIN) < $< > $@
 
 cvs.html: _cvs.html $(MAINPARTS)
 	$(ACTION)
