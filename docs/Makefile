@@ -3,13 +3,13 @@ DOCROOT=$(SRCROOT)/docs
 
 MAINPARTS= ../_doctype.html _menu.html ../_footer.html ../setup.t ../pic.t docmenu.t ../where.t ../ad.t ../libcurl/_links.html ../mirrorlinks.t
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
-ACTION=@echo preprocessing $@; rm -f $@; cpp -I.. -Idocs -WWW -Uunix -H -C -V -P -LL "$(NOW)" _$@ $@; chmod a-w+r $@
+ACTION=@echo preprocessing $@; rm -f $@; cpp -I.. -Idocs -WWW -Uunix -H -C -V -P -LL "$(NOW)" $< $@; chmod a-w+r $@
 
 TXT2HTML= txt2html --extract --hrule 10
 TXT2PLAIN = txt2plain.pl
 MAN2HTML = man2html | sed 's/^$$/\&nbsp;/g' | uniq
 
-all: index.html manpage.html faq.shtml changes.shtml \
+all: index.html manpage.html faq.shtml faq.html changes.shtml \
 	contribute.html internals.shtml internals.t \
 	features.html resources.html bugs.html \
 	install.html readme.html readme.curl.html \
@@ -59,8 +59,14 @@ thanks.t: $(DOCROOT)/THANKS
 	$(TXT2PLAIN) < $< > $@
 
 
-faq.shtml: _faq.shtml $(MAINPARTS) $(DOCROOT)/FAQ
+faq.shtml: _faq.shtml $(MAINPARTS) faq.t
 	$(ACTION)
+
+faq.html: _faq.shtml $(MAINPARTS) faq.t
+	$(ACTION)
+
+faq.t: $(DOCROOT)/FAQ
+	$(TXT2PLAIN) < $< > $@
 
 httpscript.t: $(DOCROOT)/TheArtOfHttpScripting
 	$(TXT2PLAIN) < $< > $@

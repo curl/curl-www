@@ -16,7 +16,7 @@ WHERE2(Docs, "/docs/", FAQ)
 TITLE(FAQ -- Frequently Asked Questions)
 
 <pre>
-<!--#include virtual="/cvssource/docs/FAQ" -->
+#include "faq.t"
 </pre>
 
 #include "_footer.html"
