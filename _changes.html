@@ -20,10 +20,11 @@ TITLE(Recent Changes -- The Nice and Clean Version)
    future versions in the <a href="/docs/todo.html">TODO</a> or read the fully
    detailed <a href="/docs/changes.shtml">changelog</a>.</small>
 
-<p> Fixed since (available in CVS)
+<p> Fixed since (available in CVS and pre-releases)
 <ul>
-<li> -c is a new option that makes all cookies get written to the specified
-  file (based on the new libcurl option CURLOPT_COOKIEJAR)
+<li> -R sets the timestamp of a downloaded file to the same as the remote file
+<li> -c writes all cookies to a specified file (based on the new libcurl
+     option CURLOPT_COOKIEJAR)
 <li> SSL session ID caching is being done for multiple requests to the same
    hosts
 <li> CURLOPT_COOKIEFILE can now be specified any number of times
