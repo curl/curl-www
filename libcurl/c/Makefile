@@ -24,7 +24,7 @@ PAGES = index.html example.html curl_easy_init.html			\
  curl_easy_cleanup.html curl_easy_setopt.html curl_easy_perform.html	\
  curl_version.html curl_version_info.html curl_getenv.html		\
  curl_free.html curl_slist_append.html curl_slist_free_all.html		\
- curl_formadd.html curl_formparse.html curl_getdate.html		\
+ curl_formadd.html curl_getdate.html		\
  curl_easy_getinfo.html curl_formfree.html curl_escape.html		\
  curl_unescape.html curl_strequal.html curl_mprintf.html libcurl.html	\
  curl_global_init.html curl_global_cleanup.html the-guide.html		\
@@ -132,11 +132,6 @@ curl_mprintf.t: $(MANROOT)/curl_mprintf.3
 curl_formadd.html: _curl_formadd.html $(MAINPARTS) curl_formadd.t
 	$(ACTION)
 curl_formadd.t: $(MANROOT)/curl_formadd.3
-	$(MAN2HTML) < $< >$@
-
-curl_formparse.html: _curl_formparse.html $(MAINPARTS) curl_formparse.t
-	$(ACTION)
-curl_formparse.t: $(MANROOT)/curl_formparse.3
 	$(MAN2HTML) < $< >$@
 
 curl_formfree.html: _curl_formfree.html $(MAINPARTS) curl_formfree.t
