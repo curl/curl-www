@@ -47,6 +47,12 @@ VLINK("/libcurl/using/", Using libcurl )
 
  <tr><td><font color="#705050">Interfaces:</font></td></tr>
 
+#ifdef LIBCURL_BASIC
+LINK("", Basic)
+#else
+VLINK(/libcurl/basic/, Basic)
+#endif
+
 #ifdef LIBCURL_DOCS
 LINK("", C)
 #else
