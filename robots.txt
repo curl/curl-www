@@ -1,0 +1,8 @@
+# robots.txt for curl.haxx.se
+
+User-agent: *
+Disallow: /archive_pre_oct_99/ # this is just sooo old
+Disallow: /archive/
+Disallow: /stats/
+Disallow: /yaws/
+Disallow: /docs/changes.html # this is just too unorganized
