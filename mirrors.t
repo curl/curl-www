@@ -1,4 +1,4 @@
-<p> True full mirrors:
+<p> True full download mirrors:
 <ul>
  <li>
   <big>Swedish ftp</big> at <a
@@ -42,15 +42,11 @@ Stenberg.
 #endif
 </ul>
 
-<p> Partial mirrors:
+<p> Partial "mirrors":
 <ul>
  <li> <big>US http</big> with some of the lately released archives
   will be found at <a
   href="http://sourceforge.net/project/filelist.php?group_id=976">sourceforge.net</a>.
-
- <li> <big>US http</big> admined by Domenico Andreoli holds the
-   Debian Linux curl packages: <a
-  href="http://curl-deb.sourceforge.net">curl-deb.sourceforge.net</a>.
 
  <li> <big>US ftp</big> run by
   The Written Word keeps various binary unix packages available at: <a
