@@ -238,9 +238,6 @@ sub endofsingle {
         ($lyear, $lmonth, $lday) = ($year, $month, $day);
     }
 
-    my $res = join("",
-                   "<!-- $lyear$lmonth$lday $showdate --><tr>\n",
-                   "<td>$showdate</td>\n");
     my $a;
     if($buildid =~ /^(\d\d\d\d)(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)-(\d+)/) {
         my ($byear, $bmon, $bday, $bhour, $bmin, $bsec, $bpid)=
@@ -251,8 +248,11 @@ sub endofsingle {
         $a = "<a href=\"#internal-error\">";
     }
 
+    my $res = join("",
+                   "<!-- $lyear$lmonth$lday $showdate --><tr>\n",
+                   "<td>$a$showdate</a></td>\n");
     if($fail || !$linkfine || !$fine) {
-        $res .= "<td class=\"buildfail\">$a";
+        $res .= "<td class=\"buildfail\">";
         if(!$linkfine) {
             if($cvsfail) {
                 $res .= "CVS";
@@ -272,7 +272,7 @@ sub endofsingle {
         else {
             $res .= "fail";
         }
-        $res .= "</a></td>\n";
+        $res .= "</td>\n";
     }
     else {
         $totalfine += $testfine;
@@ -280,12 +280,12 @@ sub endofsingle {
             $untestedtotal++;
         }
         $testfine = 0 + $testfine; # to force it numeric
-        $res .= "<td class=\"buildfine\">$a $testfine";
+        $res .= "<td class=\"buildfine\">$testfine";
 
         if($skipped) {
             #$res .= "+$skipped";
         }
-        $res .= "</a></td>\n";
+        $res .= "</td>\n";
     }
 
     $totalwarn += $warning;
