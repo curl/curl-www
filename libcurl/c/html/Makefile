@@ -4,6 +4,8 @@ HTMLDIR=..
 CONTENTS = $(HTMLDIR)/curl_easy_cleanup.t \
 	   $(HTMLDIR)/curl_formfree.t \
 	   $(HTMLDIR)/curl_version.t \
+	   $(HTMLDIR)/curl_version_info.t \
+	   $(HTMLDIR)/curl_free.t \
 	   $(HTMLDIR)/curl_escape.t \
 	   $(HTMLDIR)/curl_unescape.t \
 	   $(HTMLDIR)/curl_easy_getinfo.t \
