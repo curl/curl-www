@@ -1,0 +1,95 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Security</TITLE>
+#include "css.t"
+#include "manpage.t"
+</HEAD>
+
+#define CURL_DOCS
+#define DOCS_SECURITY
+#define CURL_URL docs/security.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Docs, "/docs/", Security)
+
+TITLE(curl Security)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="manual.html">Manual</a>
+<br><a href="faq.html">FAQ</a>
+<br><a href="changes.html">Changelog</a>
+</div>
+
+<p>
+ We take security seriously. If you have found or simply suspect a security
+ problem in curl or libcurl, mail us at <a href="mailto:curl-security at
+ haxx.se">curl-security at haxx.se</a> (closed list of receivers, mails are
+ not disclosed) and tell.
+<p>
+ We appreciate getting notified in advance before you go public with security
+ advisories for the sake of our users.
+
+SUBTITLE(Previous Security Flaws and Advisories)
+
+<a name="BID12616"></a>
+<b>Kerberos Authentication Buffer Overflow</b>
+<br>
+  February 21, 2005 <a href="http://www.securityfocus.com/bid/12616">BID
+  12616</a> <a
+  href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0490">CAN-2005-0490</a> <br>
+  Affected versions: 7.3 to and including 7.13.0<br>
+  Not affected versions: 7.13.1 and later
+<p>
+  Due to bad usage of the base64 decode function to a
+  stack-based buffer without checking the data length, it was possible for a
+  malicious FTP server to overflow the client during krb4 negotiation. I don't
+  know of any single user that uses krb4-ftp and I'm not even sure it still
+  works 100%. The <a
+  href="http://www.idefense.com/application/poi/display?id=203">announcement</a>
+  was done without contacting us.
+
+<a name="BID12615"></a>
+<p> <b>NTLM Authentication Buffer Overflow</b><br>
+
+  February 21, 2005 <a href="http://www.securityfocus.com/bid/12615">BID
+  12615</a> <a
+  href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0490">CAN-2005-0490</a><br>
+  Affected versions: 7.10.6 to and including 7.13.0<br>
+  Not affected versions: 7.13.1 and later
+ <p>
+  Due to bad usage of the base64 decode function to a stack-based buffer
+  without checking the data length, it was possible for a malicious HTTP
+  server to overflow the client during NTLM negotiation. The <a
+  href="http://www.idefense.com/application/poi/display?id=202">announcement</a>
+  was done without contacting us.
+
+<a name="BID8432"></a>
+<p> <b>Proxy Authentication Header Information Leakage</b><br>
+
+  August 3, 2003 <a href="http://www.securityfocus.com/bid/8432">BID 8432</a><br>
+  Affected versions: 7.1 to and including 7.10.6<br>
+  Not affected versions: 7.10.7 and later
+<p>
+  When curl connected to a site via an HTTP proxy with the CONNECT request, the
+  user and password used for the proxy connection was also sent off to the
+  remote server.
+
+<a name="BID1804"></a>
+<p> <b>FTP Server Response Buffer Overflow</b><br>
+
+  October 13, 2000 <a href="http://www.securityfocus.com/bid/1804">BID
+  1804</a> <a
+  href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0973">CVE-2000-0973</a> <br>
+  Affected versions: 6.0 (and possibly earlier) to and including 7.4<br>
+  Not affected versions: 7.4.1 and later
+<p>
+  When storing an FTP server's error message on failure, there was no check
+  for input length and thus a malicious FTP server could overflow curl's stack
+  based buffer. <a
+  href="http://www.securityfocus.com/bid/1804/exploit/">securityfocus lists
+  two exploits</a>
+
+#include "_footer.html"
+</body> </html>

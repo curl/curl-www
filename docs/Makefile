@@ -17,7 +17,7 @@ PAGES = index.html manpage.html faq.html changes.html contribute.html	\
  resources.html copyright.html thanks.html y2k.html todo.html		\
  httpscripting.html comparison-table.html relatedtools.html		\
  osdistribs.html versions.html history.html loc.html knownbugs.html	\
- manual.html caextract.html programs.html
+ manual.html caextract.html programs.html security.html
 
 all: $(PAGES)
 	@echo done 
@@ -183,6 +183,9 @@ caextract.html: _caextract.html $(MAINPARTS)
 	$(ACTION)
 
 programs.html: _programs.html $(MAINPARTS)
+	$(ACTION)
+
+security.html: _security.html $(MAINPARTS)
 	$(ACTION)
 
 #archive/index.html: mail
