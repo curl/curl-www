@@ -229,9 +229,9 @@ sub endofsingle {
         }
         elsif($fail) {
             $res .= $failamount;
+            $totalfail++;
         }
         else {
-            $totalfail++;
             $res .= "fail";
         }
         $res .= "</a></td>\n";
