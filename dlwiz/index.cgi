@@ -668,7 +668,7 @@ MOO
         print " RPM is a file format and tools collection made to handle software installation for a range of different Linux systems. <a href=\"http://en.wikipedia.org/wiki/RPM_Package_Manager\">Wikipedia has more details on RPM</a>";
     }
     elsif($pack eq "deb") {
-        print " deb is a file format with accompanying tools collection made to handle software installation for Debian Linux derivates.";
+        print " deb is a file format with accompanying tools collection made to handle software installation for Debian Linux (and derivates). <a href=\"http://en.wikipedia.org/wiki/Deb_%28file_format%29\">Wikipedia has more details on deb</a>";
     }
 
     print "</div>";
@@ -788,9 +788,9 @@ if($pick_os && $pick_flav && $pick_ver && $pick_cpu) {
                 if($pick_os ne "-") {
                     my $c = $pick_cpu;
                     if($c eq "-") {
-                        $c = "CPU Independent";
+                        $c = "CPU Independent/unknown";
                     }
-                    print "<p> We know only one CPU ($pick_cpu) for ";
+                    print "<p> We know only one CPU ($c) for ";
                     selected("package ".$typelonger{$pick_type}." on $fl $pick_os version $v");
                 }
             }
