@@ -191,11 +191,11 @@ sub gettype {
     }
 
     # Itanium packages
-    elsif($file =~ /^curl-ssl-([0-9.]*).ia64.rpm/) {
+    elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*).ia64.rpm/) {
         return($1, "ssl-linux-ia64",
                "Linux IA64, RPM, SSL-enabled");
     }
-    elsif($file =~ /^curl-ssl-devel-([0-9.]*).ia64.rpm/) {
+    elsif($file =~ /^curl-ssl-devel-([0-9.]*)-(\d*).ia64.rpm/) {
         return($1, "ssl-devel-linux-ia64",
                "Linux IA64, RPM, SSL-enabled");
     }
