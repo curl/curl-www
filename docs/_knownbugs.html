@@ -1,0 +1,26 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Known Bugs</TITLE>
+#include "css.t"
+</HEAD>
+
+#define CURL_DOCS
+#define DOCS_KNOWNBUGS
+#define CURL_URL docs/knownbugs.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Docs, "/docs/", Known Bugs)
+
+TITLE(Known bugs in curl and libcurl)
+
+<pre>
+#include "knownbugs.t"
+</pre>
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
+

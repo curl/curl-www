@@ -70,6 +70,12 @@ HERE(x, Internals)
 DOCREF(internals.html, Internals)
 #endif
 
+#ifdef DOCS_KNOWNBUGS
+HERE(x, Known Bugs)
+#else
+DOCREF(knownbugs.html, Known Bugs)
+#endif
+
 #ifdef DOCS_MANPAGE
 HERE(x, Man Page)
 #else

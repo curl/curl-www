@@ -18,7 +18,7 @@ all: index.html manpage.html faq.html changes.html contribute.html	\
 	resources.html copyright.html thanks.html			\
 	y2k.html todo.html httpscripting.html	\
         comparison-table.html relatedtools.html osdistribs.html		\
-	versions.html history.html loc.html
+	versions.html history.html loc.html knownbugs.html
 	@echo done 
 #archive/index.html
 
@@ -72,6 +72,12 @@ faq.html: _faq.shtml $(MAINPARTS) faq.t
 	$(ACTION)
 
 faq.t: $(DOCROOT)/FAQ
+	$(TXT2PLAIN) < $< > $@
+
+knownbugs.html: _knownbugs.html $(MAINPARTS) knownbugs.t
+	$(ACTION)
+
+knownbugs.t: $(DOCROOT)/KNOWN_BUGS
 	$(TXT2PLAIN) < $< > $@
 
 httpscript.t: $(DOCROOT)/TheArtOfHttpScripting
