@@ -20,7 +20,8 @@ my @mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/',
              'ftp://ftp.debian.org/mounts/u3/sourceforge/curl/',
              'ftp://ftp.falsehope.com/home/tengel/curl/',
              'http://www.planetmirror.com/pub/curl/',
-             'ftp://ftp.planetmirror.com/pub/curl/'
+             'ftp://ftp.planetmirror.com/pub/curl/',
+             'http://www.execve.net/curl/',
              );
 
 sub present {

@@ -62,34 +62,41 @@ TRODD
 TREND
 
 TREVEN
+  NEWCOL HK ENDCOL
+  NEWCOL HTTP ENDCOL
+  NEWCOL <a href="http://www.execve.net/curl/">www.execve.net</a> ENDCOL
+  NEWCOL Gautam Mani ENDCOL
+TREND
+
+TRODD
   NEWCOL US ENDCOL
   NEWCOL HTTP ENDCOL
   NEWCOL <a href="http://curl.webmeta.com/">curl.webmeta.com</a> ENDCOL
   NEWCOL John Donagher ENDCOL
 TREND
 
-TRODD
+TREVEN
   NEWCOL US ENDCOL
   NEWCOL FTP ENDCOL
   NEWCOL <a href="ftp://ftp.rge.com/pub/networking/curl/">ftp.rge.com</a> ENDCOL
   NEWCOL &nbsp; ENDCOL
 TREND
 
-TREVEN
+TRODD
   NEWCOL US ENDCOL
   NEWCOL FTP ENDCOL
   NEWCOL <a href="ftp://ftp.debian.org/mounts/u3/sourceforge/curl/">ftp.debian.org</a> ENDCOL
   NEWCOL &nbsp; ENDCOL
 TREND
 
-TRODD
+TREVEN
  NEWCOL SE ENDCOL
  NEWCOL HTTP ENDCOL
  NEWCOL <a href="http://cool.haxx.se/curl/">http://cool.haxx.se</a> ENDCOL
  NEWCOL Daniel Stenberg ENDCOL
 TREND
 
-TREVEN
+TRODD
   NEWCOL SE ENDCOL
   NEWCOL FTP ENDCOL
   NEWCOL <a href="ftp://ftp.sunet.se/pub/www/utilities/curl/">ftp.sunet.se</a> ENDCOL
