@@ -1,0 +1,16 @@
+td.yes {
+  font-weight: bold;
+  text-align: center;
+ /* background-color: #ffff44; */
+  background-color: #00ff00;
+}
+
+td.no {
+  text-align: center;  
+  background-color: #ffe0e0;
+}
+
+td.unknown {
+  text-align: center;
+  color: #ff0000;
+}

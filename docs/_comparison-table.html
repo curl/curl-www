@@ -2,6 +2,7 @@
 <HTML>
 <HEAD> <TITLE>cURL - Comparison Table</TITLE>
 #include "css.t"
+<link rel="stylesheet" type="text/css" href="comparison.css">
 </HEAD>
 
 #define CURL_DOCS
@@ -21,12 +22,9 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
 <br><a href="../libcurl/competitors.html">Compare HTTP Libraries</a>.
 </div>
 
-#define FEATURE <td bgcolor="#ffff00" align=center>yes</td>
-#define MISSING <td align=center>no</td>
-#define UNKNOWN <td align=center><font color="#ff0000">???</font></td>
-#define NA <td align=center>N/A</td>
-
-#define MISSINGSOCKS <td align=center>no [1]</td>
+#define FEATURE <td class="yes">yes</td>
+#define MISSING <td class="no">no</td>
+#define UNKNOWN <td class="unknown">?</td>
 
 #define NEWCOL <td>
 #define ENDCOL </td>
@@ -37,12 +35,12 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
 #define NEWLINE <tr valign=top>
 #define ENDLINE </tr>
 
-#define NICETD <td bgcolor="#0000ff"><font color="#ffffff" size=+1 face="ariel,helvetica">
-#define NICETDEND </font></td>
+#define NICETD <th>
+#define NICETDEND </th>
 
 <p>
-<table cellspacing=2 cellpadding=0 border=0>
- NEWLINE
+<table cellspacing="2" cellpadding="2" border="0">
+ <tr class="tabletop">
   NICETD Feature NICETDEND
   NICETD curl NICETDEND
   NICETD snarf NICETDEND
@@ -156,7 +154,7 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
   MISSING
  ENDLINE
  NEWLINE
-  FEAT uses .netrc ENDFEAT
+  FEAT .netrc support ENDFEAT
   FEATURE
   MISSING
   FEATURE
@@ -253,18 +251,6 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
   MISSING
  ENDLINE
 
-#if 0
- NEWLINE
-  FEAT runs on unix ENDFEAT
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
- ENDLINE
-#endif
-
  NEWLINE
   FEAT HTTP ranges ENDFEAT
   FEATURE
@@ -286,7 +272,7 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
  ENDLINE
 
  NEWLINE
-  FEAT HTTP persistant connections ENDFEAT
+  FEAT HTTP persistent connections ENDFEAT
   FEATURE
   MISSING
   FEATURE
@@ -367,6 +353,16 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
 
  NEWLINE
   FEAT HTTP Negotiate auth ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT HTTP SPNEGO auth ENDFEAT
   FEATURE
   MISSING
   MISSING
