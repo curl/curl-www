@@ -1,6 +1,6 @@
 #include "_doctype.html"
 <HTML>
-<HEAD> <TITLE>libcurl - Future Development</TITLE>
+<HEAD> <TITLE>libcurl - Future</TITLE>
 </HEAD>
 
 #define LIBCURL_FUTURE
@@ -9,9 +9,38 @@
 #include "setup.t"
 #include "download.t"
 
-WHERE2(libcurl, "/libcurl/", Future Development)
+WHERE2(libcurl, "/libcurl/", Future)
 
 TITLE(Future)
+<p>
+ We're starting to talk and plan for a future curl and libcurl version 8.
+<p>
+ Everything in the crrent libcurl is now subject for discussions around what
+ to keep, what to improve, what to add and what to remove. If you object to
+ any of the points below, make your voice heard and tell us your view!
+<p>
+SUBTITLE(subject for removal in v8)
+<p>
+<ul>
+<li> DICT support
+</ul>
+<p>
+SUBTITLE(subject for improvement in v8)
+<p>
+<ul>
+<li> LDAP support.
+</ul>
+SUBTITLE(subject for addition in v8)
+<p>
+<ul>
+<li> the multi interface
+<li> NTLM support
+<li> shareable connection pool
+<li> DNS caching
+<li> asynch DNS lookups
+</ul>
+
+TITLE(multi API)
 <p>
  We intend to add a new interface to libcurl, an interface that allows the
  calling application to "drive". We call that a "pull" interface.
