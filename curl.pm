@@ -43,5 +43,18 @@ sub catfile {
     close(CAT);
 }
 
+# <pre>-print a file, convert <> to HTML
+sub precatfile {
+    open (CAT, $_[0]);
+    print "<pre>\n";
+    while(<CAT>) {
+        $_ =~ s/</&lt;/g;
+        $_ =~ s/>/&gt;/g;
+        print "$_";
+    }
+    close(CAT);
+    print "</pre>\n";
+}
+
 
 1;
