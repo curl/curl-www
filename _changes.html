@@ -28,18 +28,36 @@ TITLE(Recent Changes -- The Nice and Clean Version)
 </ul>
 #endif
 
-<p> Fixed since (available in CVS and pre-releases)
+SUBTITLE(Fixed since -- available in CVS and pre-releases)
+<p> Changes:
 <ul>
+ <li> libcurl can be built with specific protocols disabled
+ <li> should build nicely with modified OpenSSL 0.9.7 API
+ <li> win32 timers now use higher resolution
+ <li> CURLOPT_CAPATH was added (--capath on the command line)
  <li> CURLOPT_NETRC now supports optional or required netrc mode
- <li> Bugfix: re-using a connection over a proxy could do bad Host: headers
- <li> Bugfix: CURLOPT_POST with a "" string could lead to a crash.
  <li> curl_formadd() now returns a CURLFORMcode type, not a plain int.
- <li> Bugfix: better certificate loading
- <li> Bugfix: Name resolve crash on platforms without *_r() functions removed
- <li> Bugfix: minor compiler problems on FreeBSD fixed
+</ul>
+<p> Bugs fixed:
+<ul>
+ <li> name resolves can now time-out properly (on unix-like systems)
+ <li> an empty connect failure error message was filled in
+ <li> when curl_easy_perform() failed on an ftp transfer, it could leak a socket
+ <li> a curl_multi_remove_handle() crash was removed
+ <li> windows versions will no longer complain on "weak seeding"
+ <li> 64bit architectures could crash in the resolve code
+ <li> CURLINFO_REQUEST_SIZE now works as documented
+ <li> CURLINFO_REDIRECT_TIME returns a correct time now
+ <li> getting an empty FTP file does not cause an error anymore
+ <li> curl_multi_perform() works without curl_multi_fdset()
+ <li> re-using a connection over a proxy could do bad Host: headers
+ <li> CURLOPT_POST with a "" string could lead to a crash.
+ <li> better certificate loading
+ <li> Name resolve crash on platforms without *_r() functions removed
+ <li> minor compiler problems on FreeBSD fixed
 </ul>
 
-<p> Fixed in 7.9.7
+SUBTITLE(Fixed in 7.9.7)
 <ul>
  <li> CURLOPT_COOKIESESSION (-j with the client) starts a new cookie session
  <li> --trace or --trace-ascii dump a full network/debug dump to a given file
@@ -60,7 +78,7 @@ TITLE(Recent Changes -- The Nice and Clean Version)
  <li> Bugfix: rfc1867-formposting a non-existent file now causes a failure
 </ul>
 
-<p> Fixed in 7.9.6
+SUBTITLE(Fixed in 7.9.6)
 <ul>
  <li> libcurl skips preceeding white spaces in cookie contents
  <li> Bugfix: CURLINFO_CONNECT_TIME is now set even when connect fails
@@ -87,7 +105,7 @@ TITLE(Recent Changes -- The Nice and Clean Version)
  <li> Bugfixed a missing newline after --progress-bar output
 </ul>
 
-<p> Fixed in 7.9.5
+SUBTITLE(Fixed in 7.9.5)
 <ul>
  <li> Bugfixed the client-side backslash treatment in URLs
  <li> Mofied the file hierarchy in the archive somewhat
@@ -390,6 +408,7 @@ TITLE(Recent Changes -- The Nice and Clean Version)
 <li> § in HTTP usernames or passwords made bad authorization headers.
 </ul>
 
+#if 0
 <p> Fixed in 7.4.2
 <ul>
 <li> configure now attempts to find openssl libs better
@@ -529,7 +548,6 @@ TITLE(Recent Changes -- The Nice and Clean Version)
 <li> location following to an absolute URL on a different port didn't work
 </ul>
 
-#if 0
 <p> Fixed in 6.5.2
 <ul>
 <li> corrected the -D mockup that caused 6.5.1 to crash
