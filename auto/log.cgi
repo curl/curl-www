@@ -25,6 +25,7 @@ if($id =~ /^(\d\d\d\d)(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)-(\d+)/) {
         ($1, $2, $3, $4, $5, $6, $7);
 }
 
+title("One log from $year-$month-$day");
 
 #print "year $year month $month day $day name $inname date $indate";
 
@@ -61,7 +62,7 @@ while(<FILE>) {
                    # Tru64 cc warning:
                    ($_ =~ /^cc: Warning: ([.\/a-zA-Z0-9]*)/) ||
                    # MIPSPro C 7.3:
-                   ($_ =~ /cc: WARNING File/) ||
+                   ($_ =~ /cc: (REMARK|WARNING) File/) ||
                    # Intel icc 8.0:
                    ($_ =~ /: (remark|warning) \#/)
                    ) {

@@ -317,7 +317,7 @@ sub singlefile {
             elsif(($_ =~ /([.\/a-zA-Z0-9]*)\.[ch]:([0-9:]*): /) ||
                   ($_ =~ /\"([_.\/a-zA-Z0-9]+)\", line/) ||
                   ($_ =~ /^cc: Warning: ([.\/a-zA-Z0-9]*)/) ||
-                  ($_ =~ /cc: WARNING File/) ||
+                  ($_ =~ /cc: (REMARK|WARNING) File/) ||
                   ($_ =~ /: (remark|warning) \#/)
                   ) {
                 # first one, gcc
