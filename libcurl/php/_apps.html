@@ -1,0 +1,48 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl - Apps Using the CURL-PHP Interface</TITLE>
+</HEAD>
+
+#define LIBCURL_PHP_APPS
+
+#include "_menu.html"
+#include "setup.t"
+#include "download.t"
+
+WHERE3(libcurl, "/libcurl/", PHP Interface, "/libcurl/php/",
+       Apps Using the CURL PHP Interface)
+
+<p>
+ A lot of available PHP programs use the curl module. This is an incomplete
+ list with some of them:
+
+#define NEWCOL <td valign=top>
+#define NICETD <td bgcolor="#0000ff"><font color="#ffffff" size=+1 face="ariel,helvetica">
+#define NICETDEND </font></td>
+
+#define TREVEN <tr>
+#define TRODD  <tr bgcolor="#e0e0e0">
+#define TREND </tr>
+
+<p>
+<table cellspacing=2 cellpadding=0 border=0>
+<tr>
+   NICETD Name NICETDEND
+   NICETD Description NICETDEND
+   NICETD Author NICETDEND
+</tr>
+
+  TRODD
+   NEWCOL <a href="http://www.web4.hm/phpMySearch/installation/en.html">phpMySearch</a> <td>
+   NEWCOL The phpMySearch search engine system is a complete world wide web indexing and searching system for a small domain or intranet. </td>
+
+   NEWCOL &nbsp; </td>
+  TREND
+
+
+ </table>
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
