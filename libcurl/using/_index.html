@@ -30,15 +30,9 @@ TITLE(curl-config is our friend)
  release.)
 
 <p>
- <i>What is the path to the curl header files?</i>
+ <i>What compiler flags do I need to compile libcurl using source code?</i>
 <pre>
- echo `curl-config --prefix`/include
-</pre>
-
-<p>
- <i>What is the path to libcurl ?</i>
-<pre>
- echo `curl-config --prefix`/lib
+ curl-config --cflags
 </pre>
 
 <p>
@@ -46,8 +40,6 @@ TITLE(curl-config is our friend)
 <pre>
  curl-config --libs
 </pre>
-(you will also need -lcurl for libcurl itself and then possibly a -Llibpath to
-curl's library path)
 
 <p>
  <i>How do I know if libcurl was built with SSL support?</i>
