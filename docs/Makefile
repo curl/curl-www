@@ -80,7 +80,7 @@ faq.html: _faq.shtml $(MAINPARTS) faq.t
 	$(ACTION)
 
 faq.t: $(DOCROOT)/FAQ
-	$(TXT2PLAIN) < $< > $@
+	./faqparse.pl < $< > $@
 
 knownbugs.html: _knownbugs.html $(MAINPARTS) knownbugs.t
 	$(ACTION)

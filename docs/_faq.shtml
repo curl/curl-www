@@ -21,9 +21,7 @@ TITLE(FAQ -- Frequently Asked Questions)
 <br><a href="httpscripting.html">Tutorial</a>
 </div>
 
-<pre>
 #include "faq.t"
-</pre>
 
 #include "_footer.html"
 
