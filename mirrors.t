@@ -59,7 +59,7 @@ Stenberg.
 </ul>
 
 <p> Try the <a href="http://curl.haxx.se/latest.cgi">recent archives</a> page
-to pick your favourite curl archive from a mirror we know has it!
+to pick your favorite curl archive from a mirror we know has it!
 
 <p> There are also excellent external sites that keep updated information
  about all sorts of mirrors where you can find all sorts of different curl

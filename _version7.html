@@ -11,11 +11,11 @@
 
 TITLE(Curl version seven -- a look in the mirror)
 <p>
-  Let's start with having a little look in the mirror:
+  Let's start off with a little look in the mirror:
 <p>
   <b>Curl goes way back</b>, but it didn't take long until I realized that the
   more power I added to the command line tool, the more I wanted to be able to
-  use that functionality in other kinds of tools I or my friends write. I had
+  use that functionality in other kinds of tools my friends or I write. I had
   to make a kind of library out of it.
 <p>
   <b>I took the shortest path</b> and kind of added an entry point to a
@@ -24,19 +24,19 @@ TITLE(Curl version seven -- a look in the mirror)
 <p>
   <b>Quite some time later</b>, I got bothered by a fair amount of people that
   wanted better access to the lib and I divided the curl project into two
-  parts. The lib and the application. It did clear the mist a little and made
+  parts, the lib and the application. It did clear the mist a little and made
   the separation a bit better, but the interface was still crude and
   unfriendly.
 <p>
-  <b>During the summer 1999</b> I finally had enough. More and more people
+  <b>During the summer of 1999</b> I finally had enough. More and more people
   asked me about the lib, how to use it and what to expect from it. I felt a
   bit silly always making excuses for the way it was designed. It just had to
   be improved drastically to be really useful to other applications.
 <p>
   <b>Autumn 1999</b> was spent discussing back and forth with people. I did my
-  very best in getting other volountary people to join me in this rather big
+  very best in getting other voluntary people to join me in this rather big
   mission, but I failed miserably and I admit that I did whine a bit about
-  that fact for a few months until I...
+  that fact for a few months until...
 <p>
   <b>Spring 2000</b> In mid April I announced to the mailing list that I had
   now started to convert libcurl into a new internal design. Since I still
@@ -52,29 +52,29 @@ TITLE(Curl version seven -- a look in the mirror)
   code that didn't cause any major bug report storms. My whole month of
   vacation in Mexico did cause a minor delay in the release schedule.
 <p>
- <b>August 2000</b>. I release curl 7.1, the first non-beta version 7 release.
+ <b>August 2000</b>. I released curl 7.1, the first non-beta version 7 release.
 
 TITLE(What to and not to expect)
 <p>
   <b>Besides libcurl</b>, version 7 doesn't offer many <b>big</b> new
   features. I've received a series of bug reports since my last released
-  version 6 and all those fixes have been made in the version 7 branch (I
+  version 6, and all those fixes have been made in the version 7 branch (I
   don't really believe in keeping the version 6 branch alive for anything but
-  perhaps to allow me to make patches against it if I'd find dead serious
-  bugs). There's also a fair amount of minor changes and features added.
+  perhaps to allow me to make patches against it if I find really serious
+  bugs). There are also a fair number of minor changes and features added.
 
 <p>
  <b>What works at this point</b>. (Let me just first start with saying that
- this is what I <i>want</i> working now, there may of course be many bugs
- since major changes have been made all over the interals.)
+ this is what I <i>want</i> working now, there may of course be many bugs left,
+ since major changes have been made all over the internals.)
 <ul>
- <li> The command line tool 'curl' should work exactly like before, with all
- the known and reported bugs fixed.
+ <li> The command line tool 'curl' should work exactly as it did before, with all
+ known and reported bugs fixed.
  <li> curl's man page and docs should be up-to-date and correct
  <li> libcurl's "easy"-interface (the high-level interface) should work,
  <li> the lib's getenv() call is now threadsafe under win32
- <li> thredsafe name resolving calls are used if available
- <li> the easy-interface's docs is almost done
+ <li> threadsafe name resolving calls are used if available
+ <li> documentation for the easy-interface is almost done
  <li> --progress-bar (using the new progress callback of the lib)
  <li> Progress meter callback
  <li> libtool stuff
