@@ -15,7 +15,7 @@ ACTION=@echo preprocessing $@; \
        chmod a-w+r $@
 
 TXT2HTML= txt2html --extract --hrule 10
-MAN2HTML= man2html | sed -e 's/^$$/\&nbsp;/g' -e 's/\#/\&\#35\;/g' | uniq
+MAN2HTML= man2html -bare | sed -e 's/^$$/\&nbsp;/g' -e 's/\#/\&\#35\;/g' | uniq
 TXT2PLAIN = txt2plain.pl
 
 all: index.shtml example.shtml curl_easy_init.html \
