@@ -26,6 +26,22 @@ TITLE(Recent Changes -- The Nice and Clean Version)
 <li>
 </ul>
 #endif
+<p> Fixed since (available in CVS and pre-releases)
+<ul>
+ <li> bugfixed the cookie engine and parser
+ <li> HTTP code 204 is now treated properly
+ <li> libcurl now provides the FTP response lines to the header callback
+ <li> introduced a DNS lookup cache
+ <li> 64bit-architecture fixes
+ <li> bugfixed using proxy specified in an environment variable 
+ <li> made libcurl support FTP operations without any transfer
+ <li> OpenSSL ENGINE support (read CHANGES for full details)
+ <li> CURLFORM_CONTENTHEADER let's you add headers in form posts
+ <li> error messages are now stored without newlines
+ <li> -T file names get the path stripped before used remotely
+ <li> minor compiling problems fixed for some platforms
+</ul>
+
 <p> Fixed in 7.9.2
 <ul>
  <li> compiles and builds on the good old Mac OS (in addition to Mac OS X)
