@@ -25,25 +25,25 @@
 <hr>
 
 #ifdef LIBCURL_MAIN
-LINK("/libcurl/", libcurl index )
+LINK("", libcurl index )
 #else
 VLINK("/libcurl/", libcurl index )
 #endif
 
 #ifdef LIBCURL_MAIL
-LINK("/libcurl/mail.html", Mailing List )
+LINK("", Mailing List )
 #else
 VLINK("/libcurl/mail.html", Mailing List )
 #endif
 
 #ifdef LIBCURL_USING
-LINK("/libcurl/using/", Using libcurl )
+LINK("", Using libcurl )
 #else
-VLINK("/libcurl/using/", Using libcurl )
+VLINK("/libcurl/using/", Using libcurl &raquo;)
 #endif
 
 #ifdef LIBCURL_RELATEDLIBS
-LINK("/libcurl/relatedlibs.html", Related Libs )
+LINK("", Related Libs )
 #else
 VLINK("/libcurl/relatedlibs.html", Related Libs )
 #endif
@@ -66,7 +66,7 @@ VLINK(/libcurl/basic/, Basic)
 #ifdef LIBCURL_DOCS
 LINK("", C)
 #else
-VLINK(/libcurl/c/, C)
+VLINK(/libcurl/c/, C &raquo;)
 #endif
 
 #ifdef LIBCURL_CPLUSPLUS
@@ -162,7 +162,7 @@ VLINK(/libcurl/perl/, Perl)
 #ifdef LIBCURL_PHP
 LINK("", PHP)
 #else
-VLINK(/libcurl/php/, PHP)
+VLINK(/libcurl/php/, PHP &raquo;)
 #endif
 
 #ifdef LIBCURL_POSTGRES
