@@ -24,17 +24,18 @@ PAGES = index.html example.html curl_easy_init.html			\
  curl_easy_cleanup.html curl_easy_setopt.html curl_easy_perform.html	\
  curl_version.html curl_version_info.html curl_getenv.html		\
  curl_free.html curl_slist_append.html curl_slist_free_all.html		\
- curl_formadd.html curl_getdate.html		\
- curl_easy_getinfo.html curl_formfree.html curl_escape.html		\
- curl_unescape.html curl_strequal.html curl_mprintf.html libcurl.html	\
- curl_global_init.html curl_global_cleanup.html the-guide.html		\
- libcurl-errors.html curl_multi_add_handle.html curl_multi_init.html	\
+ curl_formadd.html curl_getdate.html curl_easy_getinfo.html		\
+ curl_formfree.html curl_escape.html curl_unescape.html			\
+ curl_strequal.html curl_mprintf.html libcurl.html			\
+ curl_global_init.html curl_global_init_mem.html			\
+ curl_global_cleanup.html the-guide.html libcurl-errors.html		\
+ curl_multi_add_handle.html curl_multi_init.html			\
  curl_multi_cleanup.html curl_multi_perform.html curl_multi_fdset.html	\
  curl_multi_remove_handle.html curl_multi_info_read.html		\
  libcurl-multi.html libcurl-easy.html libcurl-share.html allfuncs.html	\
  curl_share_cleanup.html curl_share_init.html curl_share_setopt.html	\
- curl_easy_duphandle.html curl_easy_strerror.html curl_multi_strerror.html \
- curl_share_strerror.html
+ curl_easy_duphandle.html curl_easy_strerror.html			\
+ curl_multi_strerror.html curl_share_strerror.html
 
 all: $(PAGES)
 
