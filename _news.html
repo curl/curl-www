@@ -38,12 +38,12 @@ TITLE(News in curl and libcurl land)
  
    On August 5th, Mike Benham posted his initial <a
    href="http://online.securityfocus.com/archive/1/286290/2002-07-31/2002-08-06/0">IE
-   securiy advisory</a> regarding how IE doesn't properly verify SSL
+   security advisory</a> regarding how IE doesn't properly verify SSL
    certificates.
  <p>
    This has been discussed in curl mailing lists regarding how curl behaves on
    similar situations and to make this clear here and now: <b>curl does no
-   peer certificate checks <i>at all</i> unless specifily told to</b>.
+   peer certificate checks <i>at all</i> unless specifically told to</b>.
  <p>
    This means that man-in-the-middle attacks can easily be performed on
    servers that you curl to, unless you tell curl to verify the certificate
