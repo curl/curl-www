@@ -28,6 +28,17 @@ TITLE(Recent Changes -- The Nice and Clean Version)
 </ul>
 #endif
 
+<p> Fixed since (available in CVS and pre-releases)
+<ul>
+ <li> CURLOPT_NETRC now supports optional or required netrc mode
+ <li> Bugfix: re-using a connection over a proxy could do bad Host: headers
+ <li> Bugfix: CURLOPT_POST with a "" string could lead to a crash.
+ <li> curl_formadd() now returns a CURLFORMcode type, not a plain int.
+ <li> Bugfix: better certificate loading
+ <li> Bugfix: Name resolve crash on platforms without *_r() functions removed
+ <li> Bugfix: minor compiler problems on FreeBSD fixed
+</ul>
+
 <p> Fixed in 7.9.7
 <ul>
  <li> CURLOPT_COOKIESESSION (-j with the client) starts a new cookie session
