@@ -14,7 +14,7 @@ cd curl
 cd ..
 
 if [ -s dump ]; then
-  ./cvslast5.pl < dump > ./cvs.t 2>/dev/null
+  ./cvs2html.pl dump > ./cvs.t 2>/dev/null
 fi
 
 make -k >/dev/null 2>&1

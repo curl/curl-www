@@ -31,11 +31,72 @@
 # Adapted to modified button_get() call
 # =============================================================================
 
+my $input;
+my $css;
+my $html;
+
+if($ARGV[0] eq "-s") {
+    shift @ARGV;
+    $css = shift @ARGV;
+}
+if($ARGV[0] eq "-h") {
+    shift @ARGV;
+    $html = shift @ARGV;
+}
+
+
+sub help {
+    print <<USAGE
+cvs2html.pl [-s style] [-h html]<cvs dumpfile>
+USAGE
+;
+    exit;
+}
+
+$input = $ARGV[0];
+
+if($input eq "-h") {
+    help();
+}
+elsif(!$input) {
+    help();
+}
+
+my $maxnumshown = 30; # only show this many
+
+my %shortnames=('bagder' => 'Daniel Stenberg',
+                );
+
+# URL root to prepend file names with
+my $root="http://cvs.php.net/cvs.php/curl";
+
+my @mname = ('January',
+             'February',
+             'March',
+             'April',
+             'May',
+             'June',
+             'July',
+             'August',
+             'September',
+             'October',
+             'November',
+             'December' );
+
+my %datemong; # date string to numerical lookup
+my %mongdate; # numerical to date string lookup
+
 my @out;
 
 my $file;
 my $change=0; # state
-while(<STDIN>) {
+open (INPUT, "<$input") ||
+    die "can't read file $input";
+
+# This loop parses the dump and splits up the changes into changes done to the
+# specific files.
+
+while(<INPUT>) {
     my $line = $_;
     if(!$change) {
         if($line =~ /^Working file: (.*)/) {
@@ -56,6 +117,11 @@ while(<STDIN>) {
     }
 
 }
+close(INPUT);
+
+# Store information about once specific change done in a single file. The same
+# comment (by the same author) may of course have been made from multiple
+# files.
 
 sub singlechange {
     my ($num, $file, $rev, $date, $author, $lines, @comment) = @_;
@@ -72,9 +138,38 @@ sub singlechange {
         push @out, "$_\n";
         $count++;
     }
+
+    my $comm = join(" ", @comment);
+
+    # Time for some magic.  Check for the same comment and the same author
+    # done to another file with a datestamp close in time. If we find one, we
+    # consider that to be the same actual commit as this and we thus use the
+    # same timestamp for all of them.
+
+    my $datenum = $datemong{$date}; # get the numerical version
+
+    # check for already used dates from -5 seconds to +5 seconds from this
+    # set date.
+
+    foreach $step (1 .. 10) {
+        foreach $mul ((-1, 1)) {
+            my $delta = $step * $mul;
+            my $dstr = $mongdate{$datenum + $delta};
+            if($dstr &&
+               $changedates{$dstr} =~ /:::$author/ &&
+               $changecomment{$dstr}{$author} =~ /:::$comm/) {
+                # YES, this comment and author was already used for another
+                # file only $delta seconds away
+                $date = $dstr;
+            }
+        }
+    }
+
     $changedates{$date}.= ":::$author";
-    $changecomment{$date}{$author} .= ":::".join(" ", @comment);
+    $changecomment{$date}{$author} .= ":::$comm";
     $changefiles{$date}{$author} .= ":::$file";
+
+    $changecount++; # count total changes
 }
 
 my $firsttime;
@@ -82,6 +177,11 @@ my $firstval;
 
 my $lasttime;
 my $lastval;
+
+
+# This function takes the full string date and converts it to a suitable
+# numerical version that can be used for comparisions between dates. No need
+# to be an exact science.
 sub datemonger {
     my ($date)=@_;
 
@@ -89,7 +189,7 @@ sub datemonger {
         my ($year, $month, $day, $hour, $min, $sec)=($1,$2,$3,$4,$5,$6);
 
         my $val = $sec + $min*60+$hour*3600+ $day*3600*24 +
-            $month*31*24*3600 + $year*366*24*3600;
+            $month*31*24*3600 + ($year-1980)*380*24*3600;
 
         if($val > $lastval) {
             $lastval = $val;
@@ -100,12 +200,19 @@ sub datemonger {
             $firsttime = $date;
         }
 
-        $datemong{$date}=$val;
+        $datemong{$date}=$val; # string to num
+        $mongdate{$val}=$date; # num to string
     }
 }
 
-sub showlog {
+#
+# Walk through all changes done to this single file
+#
+sub parselog {
     my ($file, $log) = @_;
+
+    $log =~ s/\r//g; # remove CRs
+
     my @log = split("\n", $log);
 
     my ($rev, $date, $author, $lines, @comment);
@@ -129,7 +236,6 @@ sub showlog {
             # multiple commit separator
             singlechange($num, $file, $rev, $date, $author, $lines, @comment);
             $num++; # count changes done to this single file
-            $changecount++; # count total changes
             undef $rev, $date, $author, $lines;
             undef @comment;
         }
@@ -138,30 +244,52 @@ sub showlog {
         }
     }
     singlechange($num, $file, $rev, $date, $author, $lines, @comment);
-    $changecount++; # count total changes
 }
 
 for(@files) {
-    if($_ =~ /^www/) {
-        # ignore changes to this module
-        next;
-    }
-    else {
-        $changefiles++;
-        showlog($_, $log{$_});
-    }
+    $changefiles++;
+    parselog($_, $log{$_});
 }
+
+my @css;
+if($css) {
+    open(CSS, "<$css");
+    @css = <CSS>;
+    close(CSS);
+}
+my @html;
+if($html) {
+    open(HTML, "<$html");
+    @html = <HTML>;
+    close(HTML);
+}
+
+print <<HEAD
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<title>Recent CVS Changes in Orion</title>
+<meta http-equiv="refresh" content="1800">
+<style type="text/css">
+@css
+</style>
+</head>
+<body>
+@html
+HEAD
+    ;
 
 if( $changecount) {
 
     my @c = sort { $datemong{$b} <=> $datemong{$a} } keys %changedates;
     my $i=0;
 
-    print "<table class=\"changetable\"><tr><th>when</th><th>who</th><th>where</th><th>what</th></tr>\n";
+    print "<table class=\"changetable\"><tr><th>when (GMT)</th><th>who</th><th>where</th><th>what</th></tr>\n";
     for(@c) {
         my $date = $_;
 
-        if($i++ >= 20) {
+        if($i++ >= $maxnumshown) {
             # show only the XX most recent
             last;
         }
@@ -179,13 +307,13 @@ if( $changecount) {
 
         $printdate = $date;
         $printdate =~ s|/|-|g;
-        if ( $printdate =~ /(\d+-\d+-\d+ \d+:\d+)/ ) {
-            $printdate = $1;
+        if ( $printdate =~ /(\d+)-(\d+)-(\d+) (\d+):(\d+)/ ) {
+            my ($year, $mon, $day, $hour, $min) = ($1, $2, $3, $4, $5);
+            $printdate = sprintf("%d %.3s %02d:%02d",
+                                 $day, $mname[$mon-1], $hour, $min);
         }
-        printf("<td nowrap>%s</td><td>\n",
+        printf("<td nowrap>%s</td><td nowrap>\n",
                $printdate);
-
-        my %shortnames=('bagder' => 'Daniel Stenberg');
 
         for(keys %hash) {
             if($_) {
@@ -196,41 +324,37 @@ if( $changecount) {
                 else {
                     print $_;
                 }
-                #print "<a href=\"http://sourceforge.net/users/$_\">$_</a>\n";
             }
         }
 
         print "</td><td nowrap>";
 
         my %files;
-        for(split(":::", $changedates{$date})) {
-            my $author = $_;
-            for(split(":::", $changefiles{$date}{$_})) {
-                my $file = $_;
+
+        # loop over all authors for this specific date
+        foreach $author (split(":::", $changedates{$date})) {
+
+            # loop over all files this particular author changed at this date
+            foreach $file (split(":::", $changefiles{$date}{$author})) {
                 $file =~ s/ +//g;
                 if($file) {
                     $files{$file}=$file;
                 }
             }
         }
-        for(keys %files) {
+        for(sort keys %files) {
             my $file = $_;
-            #my $root="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/curl/curl";
-            my $root="http://cvs.php.net/cvs.php/curl";
-            printf("<a href=\"$root/%s\">%s</a><br> \n",
-                           $file, $file);
+            printf("<a href=\"$root/%s\">%s</a><br>\n", $file, $file);
         }
         print "</td><td>";
 
         my %comm;
-        for(split(":::", $changedates{$date})) {
-            my $author = $_;
+        # loop over all athours
+        foreach $author (split(":::", $changedates{$date})) {
 
-            for(split(":::", $changecomment{$date}{$author})) {
-  #              $_ =~ s/\n/ /g;
-  #              $_ =~ s/\r//g;
-  #              $_ =~ s/  / /g;
-                $comm{$_}=$_;
+            # loop over all comments by this author at this date
+            foreach $cmt (split(":::", $changecomment{$date}{$author})) {
+                $comm{$cmt}=$cmt;
             }
         }
         my $comm = join(" ", keys %comm);
@@ -247,3 +371,11 @@ if( $changecount) {
 else {
     print "No changes\n";
 }
+
+print <<FOOT
+<p>
+ 'recentcvs' script by Daniel Stenberg.
+</body>
+</html>
+FOOT
+    ;
