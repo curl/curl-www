@@ -27,7 +27,7 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 <ul>
 <li>
 </ul>
-<p> Bugs:
+<p> Bugfixes:
 <ul>
 <li>
 </ul>
@@ -39,6 +39,55 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
  Check the current <a
  href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a>
  document (it is work in progress).
+</ul>
+
+<p>
+SUBTITLE(Fixed in 7.11.2)
+<p>Changes:
+<ul>
+ <li> removed maximum user+password+hostname size limit
+ <li> removed maximum dir depth limit for FTP
+ <li> the ares build now requires c-ares 1.2.0 or later
+ <li> --tcp-nodelay and CURLOPT_TCP_NODELAY were added
+ <li> curl/curlver.h contains the libcurl version info now
+</ul>
+
+<p> Bugfixes:
+<ul>
+ <li> configure --disable-manual works better
+ <li> removed a memory leak when doing a windows threaded resolve and it failed
+ <li> --proxy-ntlm now checks if libcurl supports NTLM before using it
+ <li> minor --fail with authentication bugfix
+ <li> CURLOPT_IPRESOLVE set to CURL_IPRESOLVE_V6 will now cause a returned error
+   if the host only can resolve ipv4 addresses
+ <li> curl -4/-6 now actually sets the requested option in libcurl
+ <li> multi interface on Windows without ares works again
+ <li> improved resolution for the CURLINFO_*_TIME info variables
+ <li> getting only a 100 Continue response and nothing else, when talking HTTP,
+   is now treated as an error by libcurl
+ <li> fixed minor memory leak in libcurl for Windows when statically linked
+ <li> POST/PUT using Digest/NTLM/Negotiate (including anyauth) now work better
+ <li> --limit-rate with high speed rates is a lot more accurate now, and supports
+   limiting to speeds >2GB/sec on systems with Large File support.
+ <li> curl_strnqual.3 "refer-to" man page fix
+ <li> fixed a minor very old progress meter final update bug
+ <li> added checks for a working NI_WITHSCOPEID before that is used
+ <li> fixed a flaw that prevented ares name resolve timeouts to occur
+ <li> getting user name from http_proxy env variable works now
+ <li> fixed too early name resolve timeouts with ares
+ <li> HTTP Digest "re-negotiation" works now
+ <li> CURLOPT_FAILONERROR (-f/--fail) works with all kinds of authentication
+ <li> better thread-safety thanks to the internal strerror() replacement
+ <li> better thread-safety on AIX thanks to better function detection
+ <li> minor ipv6 build fix for windows
+ <li> the test suite runs fine with mingw-built curl
+ <li> the postit2.c example works now
+ <li> better error message when --interface fails on windows
+ <li> the progress meter now displays very long times better
+ <li> CURLINFO_CONTENT_LENGTH_DOWNLOAD with CURLOPT_NOBODY set TRUE now works
+ <li> passwords longer than 14 letters work with NTLM
+ <li> 'make netware' in the root dir works now
+ <li> builds fine on VMS again and even nicer than before
 </ul>
 
 SUBTITLE(Fixed in 7.11.1)
@@ -61,7 +110,7 @@ SUBTITLE(Fixed in 7.11.1)
  <li> response-headers received after a (proxy) CONNECT request are now passed
    to the header callback just like other headers
 </ul>
-<p> Bugs:
+<p> Bugfixes:
 <ul>
  <li> builds and runs on Novell NetWare
  <li> Windows builds now report OS as "i386-pc-win32"
@@ -116,7 +165,7 @@ SUBTITLE(Fixed in 7.11.0)
  <li> Removed the TRUE and FALSE #defines from the public curl header file
  <li> Added CURLOPT_NETRC_FILE
 </ul>
-<p> Bugs:
+<p> Bugfixes:
 <ul>
  <li> improved config file parsing for options with required parameters
  <li> using --trace with a bad file name could crash
@@ -185,7 +234,7 @@ SUBTITLE(Fixed in 7.10.8)
    a single command line
  <li> CURLINFO_RESPONSE_CODE can return the last FTP response code
 </ul>
-<p> Bugs:
+<p> Bugfixes:
 <ul>
  <li> added work-around for a name resolve problem on some glibc versions
  <li> a rare ERRORBUFFER single-byte overflow was fixed
@@ -243,7 +292,7 @@ SUBTITLE(Fixed in 7.10.7)
  <li> getting headers-only and no-body from FTP can now reply "Accept-Ranges"
    if the server seems to suppport REST.
 </ul>
-<p> Bugs:
+<p> Bugfixes:
 <ul>
  <li> fixed a memory leak on re-used connections with proxy-authentication
  <li> cookies with no contents are sent off too now
@@ -282,7 +331,7 @@ SUBTITLE(Fixed in 7.10.6)
  <li> libcurl supports name and password in proxy environment variables
 
 </ul>
-<p> Bugs:
+<p> Bugfixes:
 <ul>
  <li> double slash after the host name on a FTP URL again points out the root dir
  <li> obscure and rare DNS cache problem was fixed
@@ -318,7 +367,7 @@ SUBTITLE(Fixed in 7.10.5)
  <li> CURLOPT_FTP_USE_EPRT was added, --disable-eprt with the tool
  <li> setting CURLOPT_ENCODING to "" automaticly enables all supported encodings
 </ul>
-<p> Bugs:
+<p> Bugfixes:
 <ul>
  <li> libcurl now calls the progress meter during slow ftp responses as well
  <li> a write loop resulting in badly updated progress meter was fixed
@@ -360,7 +409,7 @@ SUBTITLE(Fixed in 7.10.4)
  <li> removed the strequal and strnequal macros from curl/curl.h
  <li> added CURLOPT_UNRESTRICTED_AUTH / --location-trusted
 </ul>
-<p> Bugs:
+<p> Bugfixes:
 <ul>
  <li> "curl -O" only, now outputs an error message accordingly
  <li> builds fine on Redhat Linux 9 (configure fix)
@@ -412,7 +461,7 @@ SUBTITLE(Fixed in 7.10.3)
  <li> configure --enable-maintainer-mode was added
 </ul>
 
-<p> Bugs:
+<p> Bugfixes:
 <ul>
  <li> Transfer-Encoding: chunked for uploads works
  <li> Test cases 306 and 402 now run fine
@@ -772,6 +821,8 @@ SUBTITLE(Fixed in 7.9.5)
 <li> several Location: header related bugs corrected
 </ul>
 
+#if 0
+
 <p> Fixed in 7.7.3
 <ul>
 <li> we've discovered that TELNET does not work under win32
@@ -896,7 +947,6 @@ SUBTITLE(Fixed in 7.9.5)
 <li> § in HTTP usernames or passwords made bad authorization headers.
 </ul>
 
-#if 0
 <p> Fixed in 7.4.2
 <ul>
 <li> configure now attempts to find openssl libs better
