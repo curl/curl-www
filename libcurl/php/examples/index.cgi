@@ -27,6 +27,7 @@ MOO
     "<td>$neat Description $neatend</td>",
     "</tr>\n";
 
+    my $c;
     for(@ex) {
         $filename = $_;
         
@@ -59,12 +60,22 @@ print "Content-Type: text/html\n\n";
 
 &catfile("../examples.html");
 
-where("libcurl", "/libcurl/", "PHP", "/libcurl/PHP/", "Examples");
-
-&title("PHP/CURL Examples Collection");
-
 $req = new CGI;
 $ex = $req->param('ex');
+
+if(!$ex) {
+    where("libcurl", "/libcurl/",
+          "PHP", "/libcurl/php/",
+          "Examples");
+}
+else {
+    where("libcurl", "/libcurl/",
+          "PHP", "/libcurl/php/",
+          "Examples", "/libcurl/php/",
+          "An Example");
+}
+
+&title("PHP/CURL Examples Collection");
 
 if($ex) {
     $ex =~ s/.*\/(.*)/$1/;
