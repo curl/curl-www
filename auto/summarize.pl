@@ -7,14 +7,8 @@ opendir(DIR, "inbox");
 my @logs = grep { /^inbox/ } readdir(DIR);
 closedir(DIR);
 
-cat("head.html");
-
-print <<OPTS
- <p>
-   Options = (<b>K</b>)rb4, IPv(<b>6</b>), (<b>M</b>)emory debug, (<b>S</b>)SL enabled, (<b>A</b>)synch, (<b>Z</b>)lib
-
-OPTS
-    ;
+my %combo;
+my $buildnum;
 
 my $showntop=0;
 sub tabletop {
@@ -28,15 +22,13 @@ sub tabletop {
     if(!$showntop) {
         title("$year-$month-$day");
         print join("",
-                         "<table cellspacing=\"0\" class=\"compile\" width=\"100%\"><tr>",
-        "<th>time</th>",
-        "<th>test</th>",
-        "<th>warn</th>",
-#        "<th>ssl</th>",
-#        "<th>zlib</th>",
-        "<th>options</th>",
-        "<th>desc</th>",
-        "<th>who</th>",
+                   "<table cellspacing=\"0\" class=\"compile\" width=\"100%\"><tr>",
+        "<th>Time</th>",
+        "<th>Test</th>",
+        "<th>Warn</th>",
+        "<th>Options</th>",
+        "<th>Description</th>",
+        "<th>Name</th>",
         "</tr>\n");
         $showntop=1;
     }
@@ -47,6 +39,29 @@ sub tablebot() {
     print "</table>\n";
     $showntop=0;
 }
+
+sub summary {
+    open(SUM, ">summary.t");
+
+
+    printf SUM "<table><tr valign=\"top\"><td nowrap>%d used option combos:<br>\n", scalar(keys %combo);
+    for(sort {$combo{$b} <=> $combo{$a}} keys %combo) {
+        printf SUM "<span class=\"mini\">%s</span> %d times<br>\n", $_, $combo{$_};
+    }
+    printf SUM "<td><td nowrap>%d used OSes:<br>\n", scalar(keys %oses);
+    for(sort {$oses{$b} <=> $oses{$a}} keys %oses) {
+        printf SUM "<span class=\"mini\">%s</span> %d times<br>\n", $_, $oses{$_};
+    }
+
+    printf SUM "</td><td>More stats:<br> %d builds<br> during %d days<br> provided by %d persons<br> with %d different machine descriptions\n",
+    $buildnum, scalar(@logs), scalar(keys %who), scalar(keys %desc);
+
+    printf SUM "<p> The average build gave %d warnings, but %d builds (%d%%) were warning-free.\n", $totalwarn/$buildnum, $warnfree, $warnfree*100/$buildnum;
+
+    print SUM "</td></tr></table>\n";
+    close(SUM);
+}
+
 
 my @data;
 
@@ -61,6 +76,9 @@ else {
         singlefile("inbox/$filename");
 
     }
+
+    summary();
+
     my $prevdate;
     if(@data) {
         my $i;
@@ -94,18 +112,8 @@ else {
     }
 
 }
-cat("foot.html");
 
 exit;
-
-sub cat {
-    my ($file)=@_;
-    open(FILE, "<$file");
-    while(<FILE>) {
-        print $_;
-    }
-    close(FILE);
-}
 
 my $warning=0;
 
@@ -116,9 +124,10 @@ sub endofsingle {
     my $libver;
     my $sslver;
     my $zlibver;
-    my $ipv6;
-    my $krb4;
-    my $zlib;
+    my $ipv6="-";
+    my $krb4="-";
+    my $zlib="-";
+    my $gss="-";
 
     if($libcurl =~ /libcurl\/([^ ]*)/) {
         $libver = $1;
@@ -133,8 +142,11 @@ sub endofsingle {
     if($libcurl =~ /krb4/) {
         $krb4 = "K";
     }
-    if($libcurl =~ /ipv6/) {
+    if($ipv6enabled) {
         $ipv6 = "6";
+    }
+    if($gssapi) {
+        $gss = "G";
     }
 
     $showdate = $date;
@@ -195,26 +207,33 @@ sub endofsingle {
         $res .= "</a></td>\n";
     }
 
+    $totalwarn += $warning;
     if($warning>0) {
         $res .= "<td class=\"buildfail\">$warning</td>";
     }
     else {
+        $warnfree++;
         $res .= "<td>0</td>\n";
     }
 
-    $memory=($memorydebug)?"M":"";
-    $https=($httpstest)?"S":"";
-    $a=$ares?"A":"";
+    $memory=($memorydebug)?"D":"-";
+    $https=($httpstest)?"S":"-";
+    $a=$ares?"A":"-";
 
     my $uniq = $uname.$libver.$sslver.$krb4.$ipv6.$memory.$https;
 
-    $res .= join("", 
-  #               "<td>$sslver</td>\n",
-  #               "<td>$zlibver</td>\n",
-                 "<td>$krb4 $ipv6 $memory $https $a $zlib</td>\n");
+    my $o = "$krb4$ipv6$memory$https$a$zlib$gss";
 
-    $res .= "<td>$desc</td>\n<td>$name</td>\n";
-    $res .= "</tr>\n";
+    $res .= "<td class=\"mini\">$o</td>\n<td>$desc</td>\n<td>$name</td></tr>\n";
+
+    $combo{$o}++;
+    $desc{$desc}++;
+    $who{$name}++;
+    if($os) {
+        $oses{$os}++;
+    }
+
+    $buildnum++;
 
     $fail=$name=$email=$desc=$date=$libcurl=$uname="";
     $fine=0;
@@ -227,6 +246,10 @@ sub endofsingle {
     $cvsfail=0;
     $ares=0;
     $buildid="";
+    $failamount=0;
+    $ipv6enabled=0;
+    $gssapi=0;
+    $os="";
 
     return $res;
 }
@@ -334,6 +357,15 @@ sub singlefile {
             }
             elsif($_ =~ /^\#define USE_ARES 1/) {
                 $ares = 1;
+            }
+            elsif($_ =~ /^\#define ENABLE_IPV6 1/) {
+                $ipv6enabled = 1;
+            }
+            elsif($_ =~ /^\#define HAVE_GSSAPI 1/) {
+                $gssapi=1;
+            }
+            elsif($_ =~ /^\#define OS \"([^\"]*)\"/) {
+                $os=$1;
             }
 
         }

@@ -1,8 +1,21 @@
-#include "head.html"
+#include "_doctype.html"
+<html>
+<head> <title>cURL - Automatic Build HOWTO</title>
+#include "css.t"
+</head>
+
+#define CURL_AUTO
+
+#include "_menu.html"
 #include "setup.t"
 
-SUBTITLE(Build from CVS)
+WHERE2(Devel, "/devel.html", Automatic Build HOWTO)
+TITLE(Setup Your Machine to Autobuild from CVS)
 
+#include "topline.t"
+#include "setup.t"
+
+SUBTITLE(Get a Fresh Check-out from CVS)
 <p>
  First, run these commands:
 
@@ -53,4 +66,5 @@ SUBTITLE(Make more tests run)
  debugging) and to make sure that you have stunnel installed (which enables
  HTTPS tests to run).
 
-#include "foot.html"
+#include "_footer.html"
+</body> </html>
