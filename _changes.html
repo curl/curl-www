@@ -34,6 +34,36 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 </ul>
 #endif
 
+SUBTITLE(Fixed since -- available in CVS and pre-releases)
+<p> Changes:
+<ul>
+ <li> CURLINFO_HTTPAUTH_AVAIL and CURLINFO_PROXYAUTH_AVAIL were added
+ <li> CURLOPT_FTP_RESPONSE_TIMEOUT was added
+ <li> NTLM, Digest and GSS-Negotiate authentications should work even for HTTPS
+   over proxies
+ <li> curl supports multiple -T flags to allow serveral uploaded files using
+   a single command line
+ <li> CURLINFO_RESPONSE_CODE can return the last FTP response code
+</ul>
+<p> Bugs:
+<ul>
+ <li> Digest authentication works again without OpenSSL on 64bit architectures
+ <li> configure --enable-thread works now
+ <li> buffer problems in the test suite's web server were fixed
+ <li> improved proxy password handling
+ <li> LDAP is now again working nicely with the current OpenLDAP
+ <li> asynch name lookup for non-resolving hosts now return a proper error message
+ <li> CURLOPT_SSL_VERIFYHOST set to 1 no longer aborts if no CN field is
+   obtainable, it will merely warn about it.
+ <li> name resolve segfault with uClibc fixed
+ <li> multi interface and multi-part/formpost could end in segfault
+ <li> curl_multi_info_read() sets the msgs_in_queue to 0 when returning NULL
+ <li> multi interface, ares and non-resolving host caused a segfault
+ <li> minor single SSL memory leak fixed
+ <li> Setting CURLOPT_WRITEFUNCTION or CURLOPT_READFUNCTION to NULL resets them
+   to default.
+</ul>
+
 SUBTITLE(Fixed in 7.10.7)
 <p> Changes:
 <ul>
