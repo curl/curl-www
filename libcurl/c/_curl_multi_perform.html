@@ -4,12 +4,14 @@
 #include "css.t"
 </HEAD>
 
+#define MENU_MULTI
 #define LIBCURL_DOCS
 #define DOCS_MULTI_PERFORM
 #define CURL_URL libcurl/c/curl_multi_perform.html
 
 #include "_menu.html"
 #include "setup.t"
+#include "download.t"
 
 WHERE3(libcurl, "/libcurl/", Docs, "/libcurl/c/", libcurl)
 

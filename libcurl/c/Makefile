@@ -23,7 +23,7 @@ all: index.html example.html curl_easy_init.html			\
 	curl_easy_perform.html curl_version.html curl_version_info.html	\
         curl_getenv.html curl_free.html					\
 	curl_slist_append.html curl_slist_free_all.html			\
-	curl_formadd.html						\
+	curl_formadd.html curl_formparse.html  				\
 	curl_getdate.html curl_easy_getinfo.html			\
 	curl_formfree.html curl_escape.html curl_unescape.html		\
 	curl_strequal.html curl_mprintf.html libcurl.html		\
@@ -33,12 +33,17 @@ all: index.html example.html curl_easy_init.html			\
 	curl_multi_cleanup.html        curl_multi_perform.html		\
 	curl_multi_fdset.html          curl_multi_remove_handle.html	\
 	curl_multi_info_read.html      libcurl-multi.html \
-	libcurl-easy.html libcurl-share.html
+	libcurl-easy.html libcurl-share.html allfuncs.html \
+	curl_share_cleanup.html curl_share_init.html \
+	curl_share_setopt.html
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
 
 example.html: _example.html $(MAINPARTS) tinytest.html tinytest2.html curlgtk.html
+	$(ACTION)
+
+allfuncs.html: _allfuncs.html $(MAINPARTS)
 	$(ACTION)
 
 curl_easy_init.html: _curl_easy_init.html $(MAINPARTS) curl_easy_init.t
@@ -124,6 +129,11 @@ curl_mprintf.t: $(MANROOT)/curl_mprintf.3
 curl_formadd.html: _curl_formadd.html $(MAINPARTS) curl_formadd.t
 	$(ACTION)
 curl_formadd.t: $(MANROOT)/curl_formadd.3
+	gnroff -man $< | $(MAN2HTML) >$@
+
+curl_formparse.html: _curl_formparse.html $(MAINPARTS) curl_formparse.t
+	$(ACTION)
+curl_formparse.t: $(MANROOT)/curl_formparse.3
 	gnroff -man $< | $(MAN2HTML) >$@
 
 curl_formfree.html: _curl_formfree.html $(MAINPARTS) curl_formfree.t
@@ -226,6 +236,25 @@ curl_multi_remove_handle.html: _curl_multi_remove_handle.html $(MAINPARTS) curl_
 curl_multi_remove_handle.t: $(MANROOT)/curl_multi_remove_handle.3
 	gnroff -man $< | $(MAN2HTML) >$@
 
+
+curl_share_cleanup.html: _curl_share_cleanup.html $(MAINPARTS) curl_share_cleanup.t
+	$(ACTION)
+
+curl_share_cleanup.t: $(MANROOT)/curl_share_cleanup.3
+	gnroff -man $(MANROOT)/curl_share_cleanup.3 | $(MAN2HTML) >curl_share_cleanup.t
+
+curl_share_init.html: _curl_share_init.html $(MAINPARTS) curl_share_init.t
+	$(ACTION)
+
+curl_share_init.t: $(MANROOT)/curl_share_init.3
+	gnroff -man $(MANROOT)/curl_share_init.3 | $(MAN2HTML) >curl_share_init.t
+
+
+curl_share_setopt.html: _curl_share_setopt.html $(MAINPARTS) curl_share_setopt.t
+	$(ACTION)
+
+curl_share_setopt.t: $(MANROOT)/curl_share_setopt.3
+	gnroff -man $< | $(MAN2HTML) >$@
 
 full: all
 

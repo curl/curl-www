@@ -4,12 +4,13 @@
 #include "css.t"
 </HEAD>
 
+#define MENU_EASY
 #define LIBCURL_DOCS
 #define DOCS_FORMPARSE
 
 #include "_menu.html"
 #include "setup.t"
-WHERE3(libcurl, "/libcurl/", Docs, "/libcurl/c/", curl_formparse)
+WHERE3(libcurl, "/libcurl/", C API, "/libcurl/c/", curl_formparse)
 
 TITLE(curl_formparse.3 -- man page)
 

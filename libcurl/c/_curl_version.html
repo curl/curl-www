@@ -4,6 +4,7 @@
 #include "css.t"
 </HEAD>
 
+#define MENU_EASY
 #define LIBCURL_DOCS
 #define DOCS_VERSION
 #define CURL_URL libcurl/c/curl_version.html
@@ -11,7 +12,7 @@
 #include "_menu.html"
 #include "setup.t"
 
-WHERE3(libcurl, "/libcurl/", Docs, "/libcurl/c/", curl_version)
+WHERE3(libcurl, "/libcurl/", C API, "/libcurl/c/", curl_version)
 
 TITLE(curl_version.3 -- man page)
 

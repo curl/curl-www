@@ -1,25 +1,47 @@
-DOC(libcurl front page, /libcurl/)
-
 #ifdef DOCS_INDEX
-THIS(C API Overview)
+THIS(C API Front)
 #else
-DOC(C API Overview, .)
+DOC(C API Front, .)
 #endif
 
 #ifdef DOCS_ERRORS
-THIS(error codes)
+THIS(Error Codes)
 #else
-DOC(error codes, libcurl-errors.html)
+DOC(Error Codes, libcurl-errors.html)
 #endif
 
 #ifdef DOCS_GUIDE
-THIS(tutorial)
+THIS(Tutorial)
 #else
-DOC(tutorial, the-guide.html)
+DOC(Tutorial, the-guide.html)
 #endif
 
-<hr>
+#ifdef DOCS_ALLFUNCS
+THIS(All Functions)
+#else
+DOC(All Functions, allfuncs.html)
+#endif
 
+#ifdef DOCS_OVERVIEW_EASY
+THIS(easy Interface)
+#else
+DOC(easy Interface, libcurl-easy.html)
+#endif
+
+#ifdef DOCS_OVERVIEW_MULTI
+THIS(multi Overview)
+#else
+DOC(multi Interface, libcurl-multi.html)
+#endif
+
+#ifdef DOCS_OVERVIEW_SHARE
+THIS(share Interface)
+#else
+DOC(share Interface, libcurl-share.html)
+#endif
+
+#ifdef MENU_EASY
+<hr>
 #ifdef DOCS_EASY_INIT
 THIS(curl_easy_init)
 #else
@@ -141,14 +163,10 @@ THIS(curl_version_info)
 DOC(curl_version_info, curl_version_info.html)
 #endif
 
+#endif /* MENU_EASY */
+
+#ifdef MENU_MULTI
 <hr>
-
-#ifdef DOCS_OVERVIEW_MULTI
-THIS(multi overview)
-#else
-DOC(multi overview, libcurl-multi.html)
-#endif
-
 #ifdef DOCS_MULTI_ADD_HANDLE
 THIS(curl_multi_add_handle)
 #else
@@ -190,3 +208,28 @@ THIS(curl_multi_remove_handle)
 #else
 DOC(curl_multi_remove_handle, curl_multi_remove_handle.html)
 #endif
+
+#endif /* MENU_MULTI */
+
+#ifdef MENU_SHARE
+<hr>
+#ifdef DOCS_SHARE_CLEANUP
+THIS(curl_share_cleanup)
+#else
+DOC(curl_share_cleanup, curl_share_cleanup.html)
+#endif
+
+#ifdef DOCS_SHARE_CLEANUP
+THIS(curl_share_init)
+#else
+DOC(curl_share_init, curl_share_init.html)
+#endif
+
+#ifdef DOCS_SHARE_SETOPT
+THIS(curl_share_setopt)
+#else
+DOC(curl_share_setopt, curl_share_setopt.html)
+#endif
+
+
+#endif /* MENU_SHARE */

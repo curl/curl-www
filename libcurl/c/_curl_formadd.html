@@ -4,13 +4,14 @@
 #include "css.t"
 </HEAD>
 
+#define MENU_EASY
 #define LIBCURL_DOCS
 #define DOCS_FORMADD
 #define CURL_URL libcurl/c/curl_formadd.html
 
 #include "_menu.html"
 #include "setup.t"
-WHERE3(libcurl, "/libcurl/", Docs, "/libcurl/c/", curl_formadd)
+WHERE3(libcurl, "/libcurl/", C API, "/libcurl/c/", curl_formadd)
 
 TITLE(curl_formadd.3 -- man page)
 
