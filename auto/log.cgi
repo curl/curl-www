@@ -36,7 +36,15 @@ my @present;
 my $show=0;
 my $thisid;
 
-open(FILE, "<inbox/inbox$year-$month-$day.log");
+my $build;
+if(-r "inbox/build-$id.log") {
+    $build = "inbox/build-$id.log";
+}
+else {
+    $build = "inbox/inbox$year-$month-$day.log";
+}
+
+open(FILE, "<$build");
 while(<FILE>) {
     if($_ =~ /^INPIPE: startsingle here ([0-9-]*)/) {
         $thisid=$1;
@@ -45,7 +53,7 @@ while(<FILE>) {
         @present="";
         next;
     }
-    elsif($_ =~ /^INPIPE: endsingle here/) {
+    elsif($_ =~ /^(INPIPE: endsingle here|testcurl: ENDING HERE)/) {
         if(($id eq $thisid) ||
            (($name eq $inname) && ($indate eq $date)) ) {
             print "<div class=\"mini\">\n";
