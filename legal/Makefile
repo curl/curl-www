@@ -3,7 +3,9 @@ ROOT = ..
 SRCROOT=$(ROOT)/cvssource
 DOCROOT=$(SRCROOT)/docs
 
-MAINPARTS= $(ROOT)/_doctype.html ../_menu.html ../_footer.html ../setup.t ../pic.t ../where.t
+MAINPARTS= $(ROOT)/_doctype.html $(ROOT)/_menu.html $(ROOT)/_footer.html \
+$(ROOT)/setup.t $(ROOT)/pic.t $(ROOT)/where.t $(ROOT)/mirrorlinks.t	 \
+$(ROOT)/searchform.t $(ROOT)/css.t
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 ACTION=@echo preprocessing $@; rm -f $@; cpp -I$(ROOT) -Idocs -WWW -Uunix -H -C -V -LL "$(NOW)" _$@ $@; chmod a-w+r $@
 
