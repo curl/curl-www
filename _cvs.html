@@ -39,13 +39,13 @@ TITLE(<b>Get</b> the Sources)
 <p>
   If you want to use the CVS server, login:
 <pre>
-  cvs -d :pserver:cvsread@cvs.php.net:/repository login
+  cvs -d :pserver:anonymous@cool.haxx.se:/cvsroot/curl login
 </pre>
 <p>
-  You will be prompted for the password, then you enter <b>phpfi</b>. When
+  When prompted for a password, just press enter. When
   logged in, checkout all the files in the curl respository:
 <pre>
-  cvs -d :pserver:cvsread@cvs.php.net:/repository checkout curl
+  cvs -d :pserver:anonymous@cool.haxx.se:/cvsroot/curl co curl
 </pre>
 <p>
   <b>Note</b> that this will create a curl subdirectory.
@@ -70,9 +70,6 @@ TITLE(<b>Change</b> the Sources)
  If you are about to do a lot of modifications, discuss it on the curl or
  libcurl mailing list in advance and we might give you write permission
  straight into the CVS!
-
-<p>
- The CVS repository is hosted by <a href="http://www.php.net/">php.net</a>.
 
 #include "_footer.html"
 
