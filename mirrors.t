@@ -1,57 +1,102 @@
+#define NEWCOL <td valign=top>
+#define ENDCOL </td>
+
+#define NICETD <td bgcolor="#0000ff"><font color="#ffffff" size=+1 face="ariel,helvetica">
+#define NICETDEND </font></td>
+
+#define TREVEN <tr>
+#define TRODD  <tr bgcolor="#e0e0e0">
+
+#define TREND </tr>
+
 <p> True full download mirrors:
-<ul>
- <li>
-  <big>Swedish ftp</big> at <a
-  href="ftp://ftp.sunet.se/pub/www/utilities/curl/">ftp.sunet.se</a>.
 
- <li>
-  <big>German ftp</big> at <a
-  href="ftp://ftp.fu-berlin.de/pub/unix/network/curl/">ftp.fu-berlin.de</a>.
+<table cellspacing=2 cellpadding=0 border=0>
+<tr>
+   NICETD Where NICETDEND
+   NICETD How NICETDEND
+   NICETD Site NICETDEND
+   NICETD Admin NICETDEND
+</tr>
 
- <li>
-  <big>Australian http</big> at <a
-  href="http://curl.linuxworx.com.au/">curl.linuxworx.com.au</a>
-  admined by Matt Allen.
+TREVEN
+  NEWCOL AT ENDCOL
+  NEWCOL FTP ENDCOL
+  NEWCOL <a href="ftp://gd.tuwien.ac.at/utils/archivers/curl/">gd.tuwien.ac.at</a> ENDCOL
+  NEWCOL Antonin Sprinzl ENDCOL
+TREND
 
- <li> <big>US ftp</big> at
-  <a
-  href="ftp://ftp.rge.com/pub/networking/curl/">ftp.rge.com</a>
+TRODD
+  NEWCOL AT ENDCOL
+  NEWCOL HTTP ENDCOL
+  NEWCOL <a href="http://gd.tuwien.ac.at/utils/archivers/curl/">gd.tuwien.ac.at</a> ENDCOL
+  NEWCOL Antonin Sprinzl ENDCOL
+TREND
 
- <li> <big>Switzerland http</big> at <a
-  href="http://www.cubic.ch/mirror/curl/">www.cubic.ch</a> admined by Tim Tassonis
+TREVEN
+  NEWCOL AU ENDCOL
+  NEWCOL HTTP ENDCOL
+  NEWCOL <a href="http://curl.planetmirror.com/pub/curl/">curl.planetmirror.com</a> ENDCOL
+  NEWCOL Jason Andrade ENDCOL
+TREND
 
- <li> <big>Connecticut, US, http</big> at <a
-  href="http://curl.webmeta.com/">curl.webmeta.com</a> admined by John Donagher
+TRODD
+  NEWCOL AU ENDCOL
+  NEWCOL FTP ENDCOL
+  NEWCOL <a href="ftp://curl.planetmirror.com/pub/curl/">curl.planetmirror.com</a> ENDCOL
+  NEWCOL Jason Andrade ENDCOL
+TREND
 
- <li> <big>Vienna Univ. of technology, Austria</big> at <a
- href="ftp://gd.tuwien.ac.at/utils/archivers/curl/">ftp://gd.tuwien.ac.at</a> and <a href="http://gd.tuwien.ac.at/utils/archivers/curl/">http://gd.tuwien.ac.at</a> admined by Antonin Sprinzl.
+TREVEN
+  NEWCOL CH ENDCOL
+  NEWCOL HTTP ENDCOL
+  NEWCOL <a href="http://www.cubic.ch/mirror/curl/">www.cubic.ch</a> ENDCOL
+  NEWCOL Tim Tassonis ENDCOL
+TREND
 
- <li> <big>debian.org, ftp</big> at <a
-href="ftp://ftp.debian.org/mounts/u3/sourceforge/curl/">ftp.debian.org</a>.
+TRODD
+  NEWCOL DE ENDCOL
+  NEWCOL FTP ENDCOL
+  NEWCOL <a href="ftp://ftp.fu-berlin.de/pub/unix/network/curl/">ftp.fu-berlin.de</a> ENDCOL
+  NEWCOL &nbsp; ENDCOL
+TREND
 
- <li> <big>Another Swedish server</big> at <a
-href="http://cool.haxx.se/curl/">http://cool.haxx.se</a> admined by Daniel
-Stenberg.
+TREVEN
+  NEWCOL US ENDCOL
+  NEWCOL HTTP ENDCOL
+  NEWCOL <a href="http://curl.webmeta.com/">curl.webmeta.com</a> ENDCOL
+  NEWCOL John Donagher ENDCOL
+TREND
 
-#if 0
- <li>
-  A <big>Chinese http</big> mirror at <a
-  href="http://www.pshowing.com/curl/">http://www.pshowing.com/curl/</a>,
-  run by <a href="mailto:anti@pshowing.com">Michael Anti</a>.
-#endif
-</ul>
+TRODD
+  NEWCOL US ENDCOL
+  NEWCOL FTP ENDCOL
+  NEWCOL <a href="ftp://ftp.rge.com/pub/networking/curl/">ftp.rge.com</a> ENDCOL
+  NEWCOL &nbsp; ENDCOL
+TREND
 
-<p> Partial "mirrors":
-<ul>
- <li> <big>US http</big> with some of the lately released archives
-  will be found at <a
-  href="http://sourceforge.net/project/filelist.php?group_id=976">sourceforge.net</a>.
+TREVEN
+  NEWCOL US ENDCOL
+  NEWCOL FTP ENDCOL
+  NEWCOL <a href="ftp://ftp.debian.org/mounts/u3/sourceforge/curl/">ftp.debian.org</a> ENDCOL
+  NEWCOL &nbsp; ENDCOL
+TREND
 
- <li> <big>US ftp</big> run by
-  The Written Word keeps various binary unix packages available at: <a
-  href="ftp://ftp.thewrittenword.com/packages/free/by-name/">ftp.thewrittenword.com</a>.
+TRODD
+ NEWCOL SE ENDCOL
+ NEWCOL HTTP ENDCOL
+ NEWCOL <a href="http://cool.haxx.se/curl/">http://cool.haxx.se</a> ENDCOL
+ NEWCOL Daniel Stenberg ENDCOL
+TREND
 
-</ul>
+TREVEN
+  NEWCOL SE ENDCOL
+  NEWCOL FTP ENDCOL
+  NEWCOL <a href="ftp://ftp.sunet.se/pub/www/utilities/curl/">ftp.sunet.se</a> ENDCOL
+  NEWCOL &nbsp; ENDCOL
+TREND
+
+</table>
 
 <p> Special package systems/mirrors:
 <ul>
@@ -84,5 +129,5 @@ to pick your favorite curl archive from a mirror we know has it!
 
 <p>
   <b>If you run or plan to run a mirror not mentioned here, please let <a
-  href="mailto:daniel_at_haxx.se">me</a> know!</b>. Mirroring info and tools
+  href="mailto:curl-web_at_haxx.se">us</a> know!</b>. Mirroring info and tools
   are <a href="/mirror/">here</a>.
