@@ -26,8 +26,14 @@ TITLE(Recent Changes -- The Nice and Clean Version)
 <li>
 </ul>
 #endif
-<p> Fixed since (available in CVS and pre-releases)
+<p> Fixed in 7.9.2
 <ul>
+ <li> compiles and builds on the good old Mac OS (in addition to Mac OS X)
+ <li> bugfixed persistant connections over proxy with multiple protocols
+ <li> --disable-epsv is a new option to the curl command line tool
+ <li> bugfixed verbose ftp output on Tru64 unix
+ <li> added CURLOPT_FTP_USE_EPSV
+ <li> passive ftp download works with IPv6
  <li> always return proper error code on failed connects
  <li> bugfixed FTP response reader
  <li> bugfixed verbose telnet
