@@ -76,6 +76,12 @@ HERE(x, Copyright)
 DOCREF(copyright.html, Copyright)
 #endif
 
+#ifdef DOCS_MANPAGE
+HERE(x, curl Man Page)
+#else
+DOCREF(manpage.html, curl Man Page)
+#endif
+
 #ifdef DOCS_FAQ
 HERE(x, FAQ)
 #else
@@ -92,6 +98,12 @@ DOCREF(features.html, Features)
 HERE(x, History)
 #else
 DOCREF(history.html, History)
+#endif
+
+#ifdef DOCS_HTTPSCRIPT
+HERE(x, HTTP Scripting)
+#else
+DOCREF(httpscripting.html, HTTP Scripting)
 #endif
 
 #ifdef DOCS_INSTALL
@@ -112,12 +124,6 @@ HERE(x, Known Bugs)
 DOCREF(knownbugs.html, Known Bugs)
 #endif
 
-#ifdef DOCS_MANPAGE
-HERE(x, Man Page)
-#else
-DOCREF(manpage.html, Man Page)
-#endif
-
 #ifdef DOCS_MANUAL
 HERE(x, Manual)
 #else
@@ -125,9 +131,9 @@ DOCREF(manual.html, Manual)
 #endif
 
 #ifdef DOCS_OS_DISTRIBUTIONS
-HERE(x, OSes)
+HERE(x, OS Distribs)
 #else
-DOCREF(osdistribs.html, OSes)
+DOCREF(osdistribs.html, OS Distribs)
 #endif
 
 #ifdef DOCS_PRESS
@@ -166,12 +172,6 @@ HERE(x, Thanks)
 DOCREF(thanks.html, Thanks)
 #endif
 
-#ifdef DOCS_HTTPSCRIPT
-HERE(x, Tutorial)
-#else
-DOCREF(httpscripting.html, Tutorial)
-#endif
-
 #ifdef DOCS_TODO
 HERE(x, TODO)
 #else
@@ -179,9 +179,9 @@ DOCREF(todo.html, TODO)
 #endif
 
 #ifdef DOCS_VERSIONS
-HERE(x, Versions)
+HERE(x, Version Numbering)
 #else
-DOCREF(versions.html, Versions)
+DOCREF(versions.html, Version Numbering)
 #endif
 
 #ifdef CURL_SEARCH
