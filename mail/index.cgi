@@ -106,7 +106,8 @@ mailing list.
 MOO
     ;
 
-    if($list eq "curl-main") {
+    if(($list eq "curl-main") ||
+       ($list eq "curl-users")) {
         curlmain();
     }
     elsif($list eq "curl-library") {
@@ -121,7 +122,7 @@ MOO
 
     &title("Other Mail Archives");
 
-    my @archs=('curl-main',
+    my @archs=('curl-users',
                'curl-library',
                'curl-and-php');
 
@@ -152,11 +153,11 @@ MOO
 
 print "<p><table cellspacing=3 cellpadding=10 border=3><tr valign=top><td width=33%>\n";
 
-print "<p><b>Main mailing list:</b>\n";
+print "<p><b>curl-users mailing list:</b>\n";
 &curlmain(4);
-print "<p><a href=\"./?list=curl-main\">full curl-main archive</a></td><td bgcolor=\"#e0e0e0\" width=33%>\n";
+print "<p><a href=\"./?list=curl-users\">full curl-users archive</a></td><td bgcolor=\"#e0e0e0\" width=33%>\n";
 
-print "<p><b>Libcurl mailing list:</b>\n";
+print "<p><b>curl-library mailing list:</b>\n";
 &libcurl(4);
 print "<p><a href=\"./?list=curl-library\">full curl-library archive</a></td><td width=33%>\n";
 
