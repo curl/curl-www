@@ -101,6 +101,21 @@ sub curlphp {
     return "http://cool.haxx.se/mailman/listinfo/curl-and-php";
 }
 
+sub curlpython {
+
+    my ($num)=@_;
+
+    my $some_dir=".";
+    opendir(DIR, $some_dir) || die "can't opendir $some_dir: $!";
+    my @dirs = sort {$a cmp $b} grep { /^curlpython-/ && -d "$some_dir/$_" } readdir(DIR);
+    closedir DIR;
+
+    &showarchs($num, @dirs);
+
+    # return subscription URL
+    return "http://cool.haxx.se/mailman/listinfo/curl-and-python";
+}
+
 if($list) {
     my $subscr;
 
@@ -128,6 +143,9 @@ MOO
     elsif($list eq "curl-and-php") {
         $subscr = curlphp();
     }
+    elsif($list eq "curl-and-python") {
+        $subscr = curlpython();
+    }
     else {
         print "$list? Are you playing with me? There's no such list!";
     }
@@ -141,7 +159,8 @@ MOO
 
     my @archs=('curl-users',
                'curl-library',
-               'curl-and-php');
+               'curl-and-php',
+               'curl-and-python');
 
     for(@archs) {
         my $this=$_;
@@ -178,6 +197,10 @@ print "<p><a href=\"list.cgi?list=curl-library\">full curl-library archive</a></
 print "<p><b>curl-and-php mailing list:</b>\n";
 &curlphp(4);
 print "<p><a href=\"list.cgi?list=curl-and-php\">full curl-and-php archive</a></td></tr></table>\n";
+
+print "<p><b>curl-and-python mailing list:</b>\n";
+&curlpython(4);
+print "<p><a href=\"list.cgi?list=curl-and-python\">full curl-and-python archive</a></td></tr></table>\n";
 
 &catfile("../foot.html");
 print "</body></html>\n";
