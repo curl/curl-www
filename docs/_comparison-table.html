@@ -21,6 +21,8 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
 <br><a href="relatedtools.html">Related Tools</a>
 <br><a href="../libcurl/competitors.html">Compare HTTP Libraries</a>.
 </div>
+<p> 
+ This comparison only involves entirely free and open source software.
 
 #define FEATURE <td class="yes">yes</td>
 #define MISSING <td class="no">no</td>
@@ -50,7 +52,7 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
   NICETD fetch NICETDEND
  ENDLINE
  NEWLINE 
-  FEAT ftp resume ENDFEAT
+  FEAT FTP Resume ENDFEAT
   FEATURE
   FEATURE
   FEATURE
@@ -59,7 +61,7 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
   FEATURE
  ENDLINE
  NEWLINE
-  FEAT http resume ENDFEAT
+  FEAT HTTP Resume ENDFEAT
   FEATURE
   FEATURE
   FEATURE
@@ -68,7 +70,7 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
   FEATURE
  ENDLINE
  NEWLINE
-  FEAT follow http redirects ENDFEAT
+  FEAT Follow HTTP Redirects ENDFEAT
   FEATURE
   FEATURE
   FEATURE
@@ -77,7 +79,7 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
   FEATURE
  ENDLINE
  NEWLINE
-  FEAT multiple URLs ENDFEAT
+  FEAT Multiple URLs ENDFEAT
   FEATURE
   FEATURE
   FEATURE
@@ -86,7 +88,7 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
   FEATURE
  ENDLINE
  NEWLINE
-  FEAT HTTP proxy ENDFEAT
+  FEAT HTTP Proxy ENDFEAT
   FEATURE
   FEATURE
   FEATURE
@@ -95,7 +97,7 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
   FEATURE
  ENDLINE
  NEWLINE
-  FEAT ftp active mode ENDFEAT
+  FEAT FTP Active Mode ENDFEAT
   FEATURE
   FEATURE
   FEATURE
@@ -103,27 +105,6 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
   MISSING
   FEATURE
  ENDLINE
-
-#if 0
- NEWLINE
-  FEAT understands ftp://koobera.math.uic.edu ENDFEAT
-  FEATURE
-  FEATURE
-  FEATURE
-  MISSING
-  UNKNOWN
-  FEATURE
- ENDLINE
- NEWLINE
-  FEAT understands ftp://ftp.microsoft.com ENDFEAT
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  UNKNOWN
-  FEATURE
- ENDLINE
-#endif
 
  NEWLINE
   FEAT SOCKS ENDFEAT
@@ -135,7 +116,7 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
   MISSING
  ENDLINE
  NEWLINE
-  FEAT username/password ENDFEAT
+  FEAT Username/Password ENDFEAT
   FEATURE
   FEATURE
   FEATURE
@@ -145,38 +126,151 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
  ENDLINE
 
  NEWLINE
-  FEAT ftp upload ENDFEAT
-  FEATURE
-  MISSING
-  MISSING
-  MISSING
-  MISSING
-  MISSING
- ENDLINE
- NEWLINE
-  FEAT .netrc support ENDFEAT
-  FEATURE
-  MISSING
-  FEATURE
-  MISSING
-  MISSING
-  MISSING
- ENDLINE
- NEWLINE
-  FEAT recursive download ENDFEAT
-  MISSING
-  MISSING
-  FEATURE
-  FEATURE
-  MISSING
-  MISSING
- ENDLINE
- NEWLINE
   FEAT HTTP POST ENDFEAT
   FEATURE
   MISSING
   FEATURE
   FEATURE
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT HTTP Persistent Connections ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  FEATURE
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT Cookie Support ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  FEATURE
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT Tiny Executable ENDFEAT
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+  FEATURE
+  FEATURE
+ ENDLINE
+
+ NEWLINE
+  FEAT IPv6 Support ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  FEATURE
+  FEATURE
+ ENDLINE
+
+ NEWLINE
+  FEAT HTTP 1.1 ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  FEATURE
+  MISSING
+  FEATURE
+ ENDLINE
+
+ NEWLINE
+  FEAT .netrc Support ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT HTTPS ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  FEATURE
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT HTTP Digest Auth ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  FEATURE
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT Recursive Download ENDFEAT
+  MISSING
+  MISSING
+  FEATURE
+  FEATURE
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT FTP SSL ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT Native Win32 Port ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT HTTP NTLM Auth ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT Large File Support ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT FTP Upload ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
   MISSING
   MISSING
  ENDLINE
@@ -192,7 +286,7 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
  ENDLINE
 
  NEWLINE
-  FEAT multipart POST ENDFEAT
+  FEAT HTTP POST chunked ENDFEAT
   FEATURE
   MISSING
   MISSING
@@ -202,11 +296,11 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
  ENDLINE
 
  NEWLINE
-  FEAT HTTPS ENDFEAT
+  FEAT multipart POST ENDFEAT
   FEATURE
   MISSING
-  FEATURE
-  FEATURE
+  MISSING
+  MISSING
   MISSING
   MISSING
  ENDLINE
@@ -232,27 +326,7 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
  ENDLINE
 
  NEWLINE
-  FEAT FTP SSL ENDFEAT
-  FEATURE
-  MISSING
-  MISSING
-  FEATURE
-  MISSING
-  MISSING
- ENDLINE
-
- NEWLINE
-  FEAT native win32-port ENDFEAT
-  FEATURE
-  MISSING
-  FEATURE
-  MISSING
-  MISSING
-  MISSING
- ENDLINE
-
- NEWLINE
-  FEAT HTTP ranges ENDFEAT
+  FEAT HTTP Ranges ENDFEAT
   FEATURE
   MISSING
   MISSING
@@ -262,63 +336,13 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
  ENDLINE
 
  NEWLINE
-  FEAT FTP ranges ENDFEAT
+  FEAT FTP Ranges ENDFEAT
   FEATURE
   MISSING
   MISSING
   MISSING
   MISSING
   MISSING
- ENDLINE
-
- NEWLINE
-  FEAT HTTP persistent connections ENDFEAT
-  FEATURE
-  MISSING
-  FEATURE
-  FEATURE
-  MISSING
-  MISSING
- ENDLINE
-
- NEWLINE
-  FEAT cookie support ENDFEAT
-  FEATURE
-  MISSING
-  FEATURE
-  FEATURE
-  MISSING
-  MISSING
- ENDLINE
-
- NEWLINE
-  FEAT tiny executable ENDFEAT
-  MISSING
-  FEATURE
-  MISSING
-  MISSING
-  FEATURE
-  FEATURE
- ENDLINE
-
- NEWLINE
-  FEAT IPv6 support ENDFEAT
-  FEATURE
-  MISSING
-  MISSING
-  MISSING
-  FEATURE
-  FEATURE
- ENDLINE
-
- NEWLINE
-  FEAT HTTP 1.1 ENDFEAT
-  FEATURE
-  MISSING
-  MISSING
-  FEATURE
-  MISSING
-  FEATURE
  ENDLINE
 
  NEWLINE
@@ -332,27 +356,7 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
  ENDLINE
 
  NEWLINE
-  FEAT HTTP Digest auth ENDFEAT
-  FEATURE
-  MISSING
-  FEATURE
-  FEATURE
-  MISSING
-  MISSING
- ENDLINE
-
- NEWLINE
-  FEAT HTTP NTLM auth ENDFEAT
-  FEATURE
-  MISSING
-  MISSING
-  FEATURE
-  MISSING
-  MISSING
- ENDLINE
-
- NEWLINE
-  FEAT HTTP Negotiate auth ENDFEAT
+  FEAT HTTP Negotiate Auth ENDFEAT
   FEATURE
   MISSING
   MISSING
@@ -362,7 +366,7 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
  ENDLINE
 
  NEWLINE
-  FEAT HTTP SPNEGO auth ENDFEAT
+  FEAT HTTP SPNEGO Auth ENDFEAT
   FEATURE
   MISSING
   MISSING
@@ -372,7 +376,7 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
  ENDLINE
 
  NEWLINE
-  FEAT FTP connection re-use ENDFEAT
+  FEAT FTP Connection Re-use ENDFEAT
   FEATURE
   MISSING
   MISSING
@@ -392,10 +396,6 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
  ENDLINE
 </table>
 
-#if 0
-<p>
- [1] = cURL and runsocks works fine together though!
-#endif
 <p>
  Quick links to the above mentioned tools: <a
  href="http://www.xach.com/snarf/">snarf</a>, <a
@@ -417,8 +417,6 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
  other features I should compare! This list has been extended since I stole
  it, but some features are left here since they were in the "original". Some
  items were removed from the original.
-<p> 
- This comparison only involves entirely free and open source software.
 
 #include "_footer.html"
 </BODY>
