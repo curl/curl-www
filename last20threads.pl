@@ -59,8 +59,8 @@ my $c;
 my %shown;
 
 print <<MOO
-<table class=\"latestmail\" cellpadding=\"2\" cellspacing=\"0\" 
- summary=\"lists several recent curl mailing list postings\">
+<table align="center" class="latestmail" cellpadding="2" cellspacing="0" 
+ summary="lists several recent curl mailing list postings">
 <caption>Recent Mails on the Mailing Lists</caption>
 <tr class="tabletop">
 <th>Subject</th>
@@ -82,7 +82,7 @@ for(reverse sort { $log{$a} cmp $log{$b} } keys %log) {
 
     if($start{$s} eq $_) {
         if($numthr > 1) {
-            $thr="($numthr) först";
+            $thr="($numthr) first";
         }
         else {
             $thr="(1)";
@@ -111,7 +111,7 @@ for(reverse sort { $log{$a} cmp $log{$b} } keys %log) {
         my $subjectline=sprintf("<tr class=\"%s\"><td<a href=\"%s\">%s</a></td>\n",
                                 $line,
                                 file2url($_),
-                                $subj?$subj:"(tom)");
+                                $subj?$subj:"(no subject)");
 
         #20041105 11:05:25
         my $da = $log{$_};
