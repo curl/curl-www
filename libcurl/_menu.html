@@ -96,6 +96,12 @@ LINK("", Object-Pascal)
 VLINK(/libcurl/pascal2/, Object-Pascal)
 #endif
 
+#ifdef LIBCURL_OCAML
+LINK("", OCaml)
+#else
+VLINK(/libcurl/ocaml/, OCaml)
+#endif
+
 #ifdef LIBCURL_PASCAL
 LINK("", Pascal)
 #else
