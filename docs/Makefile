@@ -133,7 +133,7 @@ manual.html: _manual.html $(MAINPARTS) manual.t
 	$(ACTION)
 
 manual.t: $(DOCROOT)/MANUAL
-	$(TXT2HTML) < $< >$@
+	$(TXT2PLAIN) < $< >$@
 
 todo.html: _todo.html $(MAINPARTS) todo.t
 	$(ACTION)
