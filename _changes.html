@@ -25,10 +25,40 @@ TITLE(Recent Changes -- The Nice and Clean Version)
 
 #if 0
 SUBTITLE(Fixed since -- available in CVS and pre-releases)
+<p> Changes:
+<ul>
+<li>
+</ul>
+<p> Bugs:
 <ul>
 <li>
 </ul>
 #endif
+
+SUBTITLE(Fixed since -- available in CVS and pre-releases)
+<p> Changes:
+<ul>
+ <li> the curl tool now "clears" sensitive commands line args
+ <li> no more emacs local variables in the source files
+ <li> script for distributed, automatic, multi-platform testing added. Please
+   join up and help us test the bleeding edge curl on various platforms!
+ <li> the "scratch buffer" is now only allocated when actually needed
+</ul>
+<p> Bugs:
+<ul>
+ <li> zlib build fix in the mingw makefile
+ <li> don't check for ca cert env variable if --insecure is used
+ <li> always use strict cert name check unless --insecure is used
+ <li> content-type extracting fixed
+ <li> DEBUGFUNCTION could be called with wrong arguments in uploads
+ <li> ftp downloads could wrongly return CURLE_PARTIAL_FILE in some conditions
+ <li> the fopen.c example code didn't work
+ <li> content-type extracting memory leak fixed
+ <li> curl/multi.h was fixed for C++ compiles
+ <li> .netrc file scanning for names+passwored fixed
+ <li> curl-config --cflags works even when include dirs isn't /usr/include
+ <li> CURLINFO_PRIVATE can return NULL properly
+</ul>
 
 SUBTITLE(Fixed in 7.10.3)
 <p> Changes:
