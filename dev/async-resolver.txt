@@ -1,0 +1,14 @@
+Bjorn Reese has made the initial attempt to make an asynch name resolver. It
+is available in this dev-directory using the name:
+
+   resolver-0.2.tar.gz
+
+We want the name resolver to:
+
+ - work similarly with both IPv4 and IPv6 names
+
+ - gracefully deal with libcurl being used multi-threaded
+
+ - possible use the asynch name resolving API that the most recent versions of
+   GNU libc offers (and use those funtions if they're present).
+
