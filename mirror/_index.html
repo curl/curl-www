@@ -1,0 +1,44 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Useful Stuff when Mirroring the Curl Site</TITLE>
+</HEAD>
+
+#define CURL_MIRRORTOOLS
+
+#include "_menu.html"
+#include "setup.t"
+#include "pic.t"
+
+WHERE3(Download, "/download.html", Mirrors, "/mirrors.html", Mirror Tools)
+
+TITLE(Mirroring Tools and Scripts)
+<p>
+ If you wanna mirror the curl packages, I've setup this section to collect
+ information on how, as well as a few scripts and tools that'll do the job for
+ you.
+<p>
+ The file named <a
+ href="http://curl.haxx.se/download/curldist.txt">http://curl.haxx.se/download/curldist.txt</a>
+ contains all files that should be mirrored. The list contains nothing but
+ file names, and you should prepend 'http://curl.haxx.se/download/' to every
+ single file in order to fetch them.
+<p>
+ The 'curldist.txt' file changes as soon as I release a new package or remove
+ an old package. Thus, files get both added and removed from the list.
+
+<ul>
+<li> <a href="display.cgi?file=curlmirror.php">curlmirror.php</a> by Matt Allen
+<li> <a href="display.cgi?file=mirror.pl">mirror.pl</a> by Daniel Stenberg
+<li> <a href="display.cgi?file=mirror_curl.sh">mirror_curl.sh</a> by Tim Tassonis
+</ul>
+
+<p>
+ If you decide to mirror the curl packages, please let me know so that I can
+ properly advertise your mirror site.
+
+<p>
+ See the list of <a href="../mirrors.html">existing mirror sites</a>.
+
+#include "_footer.html"
+</BODY>
+</HTML>
