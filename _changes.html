@@ -34,6 +34,8 @@ SUBTITLE(Fixes in upcoming 7.10)
 <p> Changes:
 <ul>
  <li> The libcurl and thus the curl version string too are modified slightly
+ <li> added curl_version_info() for various runtime version info
+ <li> added curl_free() that allows freeing data libcurl malloced()
  <li> CURLOPT_ENCODING added, supports decompression of compressed downloaded data
    This is used with 'curl --compressed'. This feature uses the libz library,
    if present.
@@ -50,6 +52,11 @@ SUBTITLE(Fixes in upcoming 7.10)
 </ul>
 <p> Bugs fixed:
 <ul>
+ <li> headerless HTTP downloads
+ <li> "-C -" on multiple file downloads
+ <li> resume on file:// downloads
+ <li> memory leak in libcurl on repeated resume http downloads
+ <li> crashes on 64bit machines solved
  <li> IPv6 IP-address only URLs sent bad Host: headers
  <li> --silent is more silent when doing URL globbing fetches
  <li> *multi_perform() now returns control properly when waiting for connect
