@@ -248,7 +248,7 @@ sub singlefile {
             elsif($_ =~ /^\* (libcurl\/.*)/) {
                 $libcurl = $1;
             }
-            elsif($_ =~ /([.\/a-zA-Z0-9]*)\.[ch]:([0-9:]*): warning/) {
+            elsif($_ =~ /([.\/a-zA-Z0-9]*)\.[ch]:([0-9:]*): /) {
                 $warning++;
             }
             elsif($_ =~ /^testcurl: failed to update from CVS/) {
