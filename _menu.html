@@ -25,8 +25,14 @@
 </tr></table>
 
 <small>
-Mirror: <a href="http://curl.haxx.se/">SE</a>,
+Mirror:
+#ifndef CURL_URL
+<a href="http://curl.haxx.se/">SE</a>,
 <a href="http://curl.sourceforge.net/">US</a>
+#else
+<a href="http://curl.haxx.se/CURL_URL">SE</a>,
+<a href="http://curl.sourceforge.net/CURL_URL">US</a>
+#endif
 </small>
 
 <table cellspacing=0 cellpadding=5><tr><td valign=top align=left>
