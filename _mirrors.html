@@ -14,17 +14,106 @@ WHERE2(Download, "/download.html", Mirrors)
 TITLE(Curl Web Site Mirrors)
 <ul>
 <li> <b>Australian</b> at <a href="http://curl.planetmirror.com/">curl.planetmirror.com</a>
+<li> <b>Estonian</b> at <a href="http://curl.wildyou.net/">curl.wildyou.net</a>
 <li> <b>German</b> at <a href="http://curl.mirror.at.stealer.net/">curl.mirror.at.stealer.net</a>
 <li> <b>German</b> (Frankfurt) at <a href="http://curl.netmirror.org/">curl.netmirror.org</a>
 <li> <b>Russian</b> at <a href="http://curl.tsuren.net/">curl.tsuren.net</a>
 <li> <b>Swedish</b> at <a href="http://curl.haxx.se/">curl.haxx.se</a> 
 <li> <b>Thailand</b> at <a href="http://curl.siamu.ac.th/">curl.siamu.ac.th</a> 
 <li> <b>US</b> (CA) at <a href="http://curl.mirror.redwire.net/">curl.mirror.redwire.net</a>
+<li> <b>US</b> at <a href="http://curl.signal42.com/">curl.signal42.com</a>
 </ul>
 
-TITLE(Official Curl Download Mirrors)
+TITLE(Curl Download Mirrors)
 
-#include "mirrors.t"
+#define NEWCOL <td valign=top>
+#define ENDCOL </td>
+#define TRNEW <tr>
+#define TREND </tr>
+
+<p> Download mirrors:
+
+<table cellspacing="2" cellpadding="0" border="0">
+<tr class="tabletop">
+ <th>Where</th>
+ <th>Proto</th>
+ <th>Site</th>
+ <th>Admin</th>
+</tr>
+
+TRNEW
+  NEWCOL AT ENDCOL
+  NEWCOL FTP ENDCOL
+  NEWCOL <a href="ftp://gd.tuwien.ac.at/utils/archivers/curl/">gd.tuwien.ac.at</a> ENDCOL
+  NEWCOL Antonin Sprinzl ENDCOL
+TREND
+
+TRNEW
+  NEWCOL AT ENDCOL
+  NEWCOL HTTP ENDCOL
+  NEWCOL <a href="http://gd.tuwien.ac.at/utils/archivers/curl/">gd.tuwien.ac.at</a> ENDCOL
+  NEWCOL Antonin Sprinzl ENDCOL
+TREND
+
+TRNEW
+  NEWCOL CH ENDCOL
+  NEWCOL HTTP ENDCOL
+  NEWCOL <a href="http://www.cubic.ch/mirror/curl/">www.cubic.ch</a> ENDCOL
+  NEWCOL Tim Tassonis ENDCOL
+TREND
+
+TRNEW
+  NEWCOL DE ENDCOL
+  NEWCOL FTP ENDCOL
+  NEWCOL <a href="ftp://ftp.fu-berlin.de/pub/unix/network/curl/">ftp.fu-berlin.de</a> ENDCOL
+  NEWCOL &nbsp; ENDCOL
+TREND
+
+TRNEW
+  NEWCOL HK ENDCOL
+  NEWCOL HTTP ENDCOL
+  NEWCOL <a href="http://www.execve.net/curl/">www.execve.net</a> ENDCOL
+  NEWCOL Gautam Mani ENDCOL
+TREND
+
+TRNEW
+  NEWCOL US ENDCOL
+  NEWCOL HTTP ENDCOL
+  NEWCOL <a href="http://curl.webmeta.com/">curl.webmeta.com</a> ENDCOL
+  NEWCOL John Donagher ENDCOL
+TREND
+
+TRNEW
+  NEWCOL US ENDCOL
+  NEWCOL FTP ENDCOL
+  NEWCOL <a href="ftp://ftp.rge.com/pub/networking/curl/">ftp.rge.com</a> ENDCOL
+  NEWCOL &nbsp; ENDCOL
+TREND
+
+TRNEW
+ NEWCOL SE ENDCOL
+ NEWCOL HTTP ENDCOL
+ NEWCOL <a href="http://cool.haxx.se/curl/">cool.haxx.se</a> ENDCOL
+ NEWCOL Daniel Stenberg ENDCOL
+TREND
+
+TRNEW
+  NEWCOL SE ENDCOL
+  NEWCOL FTP ENDCOL
+  NEWCOL <a href="ftp://ftp.sunet.se/pub/www/utilities/curl/">ftp.sunet.se</a> ENDCOL
+  NEWCOL &nbsp; ENDCOL
+TREND
+
+</table>
+
+<p> Try the <a href="http://curl.haxx.se/latest.cgi">recent archives</a> page
+to pick your favorite curl archive from a mirror we know has it!
+
+<p>
+  <b>If you run or plan to run a mirror not mentioned here, please let <a
+  href="mailto:curl-web_at_haxx.se">us</a> know!</b>. Mirroring info and tools
+  are <a href="/mirror/">here</a>.
+
 
 #include "_footer.html"
 

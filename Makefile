@@ -135,7 +135,7 @@ bugreport.html: _bugreport.html $(MAINPARTS)
 curlprograms.html: _curlprograms.html $(MAINPARTS)
 	$(ACTION)
 
-mirrors.html: _mirrors.html $(MAINPARTS) mirrors.t
+mirrors.html: _mirrors.html $(MAINPARTS)
 	$(ACTION)
 
 icons.html: _icons.html $(MAINPARTS)
