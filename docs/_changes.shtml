@@ -5,6 +5,7 @@
 
 #define CURL_DOCS
 #define DOCS_CHANGES
+#define CURL_URL docs/changes.html
 
 #include "_menu.html"
 #include "setup.t"

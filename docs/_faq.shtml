@@ -5,7 +5,7 @@
 
 #define CURL_DOCS
 #define DOCS_FAQ
-#define CURL_URL docs/faq.shtml
+#define CURL_URL docs/faq.html
 
 #include "_menu.html"
 #include "setup.t"
