@@ -46,6 +46,11 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 </ul>
 <p> Bugs:
 <ul>
+ <li> Fixed the 'Expect: 100-continue' behavior
+ <li> CURLOPT_MAXCONNECTS segfault fixed
+ <li> multi-interface connecting on Windows to non-listening ports fixed
+ <li> Curl_base64_encode() now encodes zero-bytes too properly
+ <li> fixed the infamous SSL error:00000000 outputs
  <li> zlib build fix in the mingw makefile
  <li> don't check for ca cert env variable if --insecure is used
  <li> always use strict cert name check unless --insecure is used
