@@ -84,6 +84,12 @@ LINK("", Lua)
 VLINK(/libcurl/lua/, Lua)
 #endif
 
+#ifdef LIBCURL_PASCAL2
+LINK("", Object-Pascal)
+#else
+VLINK(/libcurl/pascal2/, Object-Pascal)
+#endif
+
 #ifdef LIBCURL_PASCAL
 LINK("", Pascal)
 #else
