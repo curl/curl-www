@@ -38,7 +38,6 @@ all: index.html \
 	cd mail; make
 	cd mirror; make
 	cd legal; make
-	cd auto; make
 	cd lxr; make
 	@echo done 
 #archive/index.html
