@@ -62,6 +62,11 @@ table.news {
   border: outset 2px #8080ff;
 }
 
+table.latestmail {
+  border: outset 2px #8080ff;
+  font-size: 100%;
+}
+
 .newstitle {
   font-size: 120%;
   white-space: nowrap;
