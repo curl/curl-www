@@ -54,6 +54,25 @@ Stenberg.
 
 </ul>
 
+<p> Special package systems/mirrors:
+<ul>
+ <li> Debian Linux. The <a href="http://packages.debian.org/curl">Debian curl
+  packages</a> are mirrored and available using the apt-get system. This
+  package is maintained by Domenico Andreoli.
+
+ <li> Cygwin. The <a href="http://www.cygwin.com/packages/curl/">cygwin curl
+  packages</a> are mirrored and available from any <a
+  href="http://cygwin.com/mirrors.html">cygwin download mirror</a>. This
+  package is maintained by Kevin Roth.
+
+ <li> Mac OS X. The <a
+  href="http://fink.sourceforge.net/pdb/package.php/curl">Mac OS X package</a>
+  is available using the <a
+  href="http://fink.sourceforge.net/index.php">fink</a> system. This package is
+  maintained by Max Horn.
+
+</ul>
+
 <p> Try the <a href="http://curl.haxx.se/latest.cgi">recent archives</a> page
 to pick your favorite curl archive from a mirror we know has it!
 
