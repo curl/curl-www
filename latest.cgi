@@ -154,7 +154,7 @@ if($latest::version{$what}) {
         print "</ul>\n";
     }
 }
-else {
+elsif($what) {
     print "<p> The <b>recent-version-off-a-mirror</b> system has no info about ",
     "your requested package \"$what\"! :-(\n";
 }
