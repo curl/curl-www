@@ -4,14 +4,14 @@
 #undef VLINK
 #define VLINK(l,t) <tr><td><a href=l><font color="#705050">t</font></a></td></tr>
 
-#ifdef LIBCURL_DOCS
-LINK("http://curl.haxx.se/libcurl/c/", C/C++ API )
+#ifdef LIBCURL_USING
+LINK("/libcurl/using/", Using libcurl )
 #else
-VLINK("http://curl.haxx.se/libcurl/c/", C/C++ API )
+VLINK("/libcurl/using/", Using libcurl )
 #endif
 
-#ifdef LIBCURL_MAIL
-LINK("http://curl.haxx.se/libcurl/mail.html", Mailing List )
+#ifdef LIBCURL_DOCS
+LINK("/libcurl/c/", C/C++ API )
 #else
-VLINK("http://curl.haxx.se/libcurl/mail.html", Mailing List )
+VLINK("/libcurl/c/", C/C++ API )
 #endif
