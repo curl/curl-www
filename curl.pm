@@ -1,5 +1,5 @@
 sub title {
-    $title=$_[0];
+    my $title=$_[0];
     print "<p>",
     "<table width=100% cellspacing=0 cellpadding=1 bgcolor=\"#000000\"><tr><td>",
 
