@@ -14,6 +14,7 @@ my @toc;
 
 my $q=0;
 my $sec = 0;
+my $blank=0;
 
 while(<STDIN>) {
     if($state == 1) {
@@ -61,7 +62,10 @@ while(<STDIN>) {
 
         elsif($toc[$q] && ($_ =~ /^\s*$toc[$q]/i)) {
             # a question
-            print "<a name=\"$toc[$q]\"></a><b>$_</b><br>";
+            my $s=$_;
+            chomp $s;
+            $s =~ s/^ *(.*) */$1/;
+            print "<a name=\"$toc[$q]\"></a><h3>$s</h3><p>\n";
             $q++;
         }
         else {
@@ -81,7 +85,16 @@ while(<STDIN>) {
                     undef @pre;
                 }
                 $l = s/((http|ftp):\/\/([a-z0-9.\/_%-?]*[a-z\/]))/<a href=\"$2:\/\/$3\">$1<\/a>/g;
-                print "$_<br>";
+                
+                # prevent many blanks
+                my $show = $_;
+                if($show =~ /^ *$/) {
+                    $blank++;
+                }
+                else {
+                    $blank=0;
+                }
+                print "$show<br>" if($blank < 2);
             }
         }
     }
