@@ -29,6 +29,13 @@ TITLE(Recent Changes -- The Nice and Clean Version)
 
 <p> Fixed since (available in CVS and pre-releases)
 <ul>
+ <li> Added: --trace dumps a full network/debug dump to a given file
+ <li> Bugfix: CURLOPT_DEBUGFUNCTION gets called as documented
+ <li> Bugfix: -D with multiple URLs will append all headers in the same file
+ <li> Bugfix: multi interface transfers work better
+ <li> Added: curl_multi_info_read() is now implemented as documented
+ <li> Bugfix: multiple transfers reset download counters better in between
+ <li> Bugfix: Pruning now prevents the DNS cache from growing out of proportions
  <li> Bugfix: no_proxy didn't work when URL contained port numbers
  <li> Bugfix: --interface didn't work for IPv6 enabled libcurls
  <li> Bugfix: the TIMECOND defines are now using CURL_ prefixes
@@ -40,7 +47,7 @@ TITLE(Recent Changes -- The Nice and Clean Version)
  <li> Bugfix: rfc1867-formposting a non-existent file now causes a failure
 </ul>
 
-<p> Fixed in 7.9.6
+<p> Fixed since 7.9.6
 <ul>
  <li> libcurl skips preceeding white spaces in cookie contents
  <li> Bugfix: CURLINFO_CONNECT_TIME is now set even when connect fails
