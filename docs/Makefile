@@ -5,14 +5,14 @@ MAINPARTS= ../_doctype.html _menu.html ../_footer.html ../setup.t ../pic.t \
    docmenu.t ../where.t ../ad.t ../libcurl/_links.html ../mirrorlinks.t	   \
    ../css.t ../searchform.t ../sflogo.t Makefile
 NOW=$(shell gnudate +'-D__TODAY__=%B %e, %Y')
-ACTION=@echo preprocessing $@; rm -f $@; cpp -I.. -Idocs -WWW -Uunix -H -C -V -P -LL "$(NOW)" $< $@; chmod a-w+r $@
+ACTION=@echo preprocessing $@; rm -f $@; fcpp -I.. -Idocs -WWW -Uunix -H -C -V -P -LL "$(NOW)" $< $@;
 
 TXT2HTML= txt2html --extract --hrule 10
 TXT2PLAIN = txt2plain.pl
 MAN2HTML = roffit --bare
 
 PAGES = index.html manpage.html faq.html changes.html contribute.html	\
-        internals.html sslcerts.html					\
+        internals.html sslcerts.html companies.html			\
 	features.html resources.html bugs.html				\
 	install.html readme.html readme.curl.html			\
 	resources.html copyright.html thanks.html			\
@@ -64,6 +64,9 @@ contribute.html: _contribute.html $(MAINPARTS) contribute.t
 
 contribute.t: $(DOCROOT)/CONTRIBUTE
 	$(TXT2HTML) < $(DOCROOT)/CONTRIBUTE > contribute.t
+
+companies.html: _companies.html $(MAINPARTS)
+	$(ACTION)
 
 thanks.html: _thanks.html $(MAINPARTS) thanks.t
 	$(ACTION)
