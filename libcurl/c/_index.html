@@ -59,51 +59,77 @@ TITLE(The C interface)
  interface, there is a series of other helpful functions too. They are:
 <p>
 <table>
-<tr><td>
-<a href="curl_version.html">curl_version()</a>
-</td><td>
-displays the libcurl version
-</td></tr><tr><td>
-<a href="curl_getdate.html">curl_getdate()</a>
-</td><td>
-converts a date string to time_t
-</td></tr><tr><td>
-<a href="curl_getenv.html">curl_getenv()</a>
-</td><td>
-portable environment variable reader
-</td></tr><tr><td>
-<a href="curl_formparse.html">curl_formparse()</a>
-</td><td>
-helps building a HTTP form POST
-</td></tr><tr><td>
-<a href="curl_formfree.html">curl_formfree()</a>
-</td><td>
-free a build form POST
-</td></tr><tr><td>
-<a href="curl_slist_append.html">curl_slist_append()</a>
-</td><td>
-builds a linked list
-</td></tr><tr><td>
-<a href="curl_slist_free_all.html">curl_slist_free_all()</a>
-</td><td>
-frees a whole curl_slist
-</td></tr><tr><td>
-<a href="curl_escape.html">curl_escape()</a>
-</td><td>
-URL encodes a string
-</td></tr><tr><td>
-<a href="curl_unescape.html">curl_unescape()</a>
-</td><td>
-URL decodes a string
-</td></tr><tr><td>
-<a href="curl_strequal.html">curl_strequal()</a>
-</td><td>
-compare strings case insensitive
-</td></tr><tr><td>
-<a href="curl_mprintf.html">curl_mprintf()</a>
-</td><td>
-portble *printf() functions
-</td></tr>
+  <tr><td>
+  <a href="curl_version.html">curl_version()</a>
+  </td><td>
+  returns a pointer to the libcurl version string
+  </td></tr>
+
+  <tr><td>
+  <a href="curl_getdate.html">curl_getdate()</a>
+  </td><td>
+  converts a date string to time_t
+  </td></tr>
+
+  <tr><td>
+  <a href="curl_getenv.html">curl_getenv()</a>
+  </td><td>
+  portable environment variable reader
+  </td></tr>
+
+  <tr><td>
+  <a href="curl_formadd.html">curl_formadd()</a>
+  </td><td>
+  build multipart form-data posts
+  </td></tr>
+
+  <tr><td>
+  <a href="curl_formparse.html">curl_formparse()</a>
+  </td><td>
+  <b>deprecated</b> helps building a HTTP form POST
+  </td></tr>
+
+  <tr><td>
+  <a href="curl_formfree.html">curl_formfree()</a>
+  </td><td>
+  free a previously built form POST
+  </td></tr>
+
+  <tr><td>
+  <a href="curl_slist_append.html">curl_slist_append()</a>
+  </td><td>
+  builds a linked list
+  </td></tr>
+
+  <tr><td>
+  <a href="curl_slist_free_all.html">curl_slist_free_all()</a>
+  </td><td>
+  frees a whole curl_slist as made with curl_slist_append()
+  </td></tr>
+
+  <tr><td>
+  <a href="curl_escape.html">curl_escape()</a>
+  </td><td>
+  URL encodes a string
+  </td></tr>
+
+  <tr><td>
+  <a href="curl_unescape.html">curl_unescape()</a>
+  </td><td>
+  URL decodes a string
+  </td></tr>
+
+  <tr><td>
+  <a href="curl_strequal.html">curl_strequal()</a>
+  </td><td>
+  compare strings case insensitive
+  </td></tr>
+
+  <tr><td>
+  <a href="curl_mprintf.html">curl_mprintf()</a>
+  </td><td>
+  portable *printf() functions
+  </td></tr>
 </table>
 
 <p>
@@ -114,6 +140,9 @@ as
 <!--#exec cmd="./htmllink.cgi" -->
 ">HTML pages</a>. Note that this package is rebuilt whenever these pages are
 updated. (Hence the date-stamp in the file name)
+<p>
+ All man pages are included in every release archive, both as original man
+ pages but also as HTML files.
 
 #include "_footer.html"
 
