@@ -40,8 +40,9 @@ my $thisid;
 
 my $build = "inbox/build-$id.log";
 
-open(FILE, "<$build");
 my $num;
+
+open(FILE, "<$build") || print "file not found!";
 
 &initwarn();
 
@@ -51,20 +52,6 @@ while(<FILE>) {
         next;
     }
     elsif($_ =~ /^(INPIPE: endsingle here|testcurl: ENDING HERE)/) {
-        push @out, "<div class=\"mini\">\n";
-        for(@present) {
-            chomp;
-            if(checkwarn($_) || ($_ =~ /FAILED/)) {
-                $num++;
-                push @out, "<a name=\"prob$num\"></a><div class=\"warning\">$_</div>\n";
-            }
-            else {
-                push @out, "$_<br>\n";
-            }
-        }
-        push @out, "</div>\n"; # end of mini-div
-        $show=1;
-        @present="";
         last;
     }
     if($_ =~ /^testcurl: NAME = (.*)/) {
@@ -76,11 +63,20 @@ while(<FILE>) {
 
     push @present, $_;
 }
-if(!$show) {
-    print "Something failed, no such build was found! This probably happened",
-    " because you're trying to view a log that is out of date and has ",
-    " been removed. Sorry!";
+
+push @out, "<div class=\"mini\">\n";
+for(@present) {
+    chomp;
+    if(checkwarn($_) || ($_ =~ /FAILED/)) {
+        $num++;
+        push @out, "<a name=\"prob$num\"></a><div class=\"warning\">$_</div>\n";
+    }
+    else {
+        push @out, "$_<br>\n";
+    }
 }
+push @out, "</div>\n"; # end of mini-div
+
 close(FILE);
 
 if($out[0]) {
