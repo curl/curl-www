@@ -19,7 +19,7 @@ sub tabletop {
 
     if(!$showntop) {
         title("$year-$month-$day");
-        print "<table class=\"compile\" width=\"100%\"><tr>\n",
+        print "<table cellspacing=\"0\" class=\"compile\" width=\"100%\"><tr>\n",
         "<th>time</th>",
         "<th>test</th>",
         "<th>warn</th>",
@@ -55,8 +55,13 @@ else {
         singlefile("inbox/$filename");
 
         if(@data) {
+            my $i;
             tabletop($filename);
             for(reverse sort @data) {
+                my $class= $i&1?"even":"odd";
+                if(s/<tr>/<tr class=\"$class\">/) {
+                    $i++;
+                }
                 print $_;
             }
             tablebot();
@@ -99,10 +104,10 @@ sub endofsingle {
         $zlibver = $1;
     }
     if($libcurl =~ /krb4/) {
-        $krb4 = "krb4";
+        $krb4 = "ON";
     }
     if($libcurl =~ /ipv6/) {
-        $ipv6 = "ipv6";
+        $ipv6 = "ON";
     }
 
     $showdate = $date;
@@ -135,7 +140,7 @@ sub endofsingle {
             }
             else {
                 $res .= join(" ", $errors[0], $errors[1], $errors[2],
-                             $errors[3], "and many more");
+                             $errors[3], "and more");
             }
         }
         else {
