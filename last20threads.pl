@@ -11,6 +11,11 @@ my %listnames = ('archive' => 'Users',
                  'curlphp' => 'PHP',
                  'curlpython' => 'Python');
 
+my %listrealname = ('archive' => 'curl-users',
+                    'lib' => 'curl-library',
+                    'curlphp' => 'curl-and-php',
+                    'curlpython' => 'curl-and-python');
+
 opendir(DIR, $tree) || die "can't opendir $tree: $!";
 my @archives = grep { /^(.*)-(\d\d\d\d)-(\d\d)$/ && -d "$tree/$_" } readdir(DIR);
 closedir DIR;
@@ -124,7 +129,7 @@ for(reverse sort { $log{$a} cmp $log{$b} } keys %log) {
 
         my $list=file2list($_);
         my $listdesc = listname2desc($list);
-        my $listurl="http://curl.haxx.se/mail/";
+        my $listurl="http://curl.haxx.se/mail/list.cgi?list=".$listrealname{$list};
 
         my $infoline=sprintf("<td>%s</td><td>%s</td><td>%s</td><td><a href=\"%s\">%s</a></td></tr>\n",
                              $stamp,
@@ -209,7 +214,7 @@ sub getthreads {
 
         my $s= $subject;
 
-        $s =~ s/^((Sv|Re): *)*//i;
+        $s =~ s/^((Sv|Réf[. ]*|Re|Re\[(\d+)\]): *)*//i;
         $s =~ s/[ \t\n]+/ /g;
 
         $store{$s}++;
