@@ -44,6 +44,7 @@ all: index.html mail.html competitors.html threadsafe.html \
 	cd dotnet; make
 	cd r; make
 	cd mono; make
+	cd vb; make
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
