@@ -1,0 +1,60 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl - Related Libraries</TITLE>
+#include "css.t"
+</HEAD>
+
+#define LIBCURL_RELATEDLIBS
+#define CURL_URL libcurl/relatedlibs.html
+
+#include "_menu.html"
+#include "setup.t"
+#include "table.t"
+
+WHERE2(libcurl, "/libcurl/", Related Libraries)
+
+TITLE(List Of Related Libraries)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/docs/features.html">List of Features</a>
+<br><a href="competitors.html">Compare HTTP Libraries</a>.
+</div>
+
+<p>
+Here is a list of libraries to help you chew up what you catch with libcurl.
+
+<table>
+<tr class="tabletop">
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr class="odd">
+   <td> <a href="http://www.nongnu.org/uri/">liburi</a> </td>
+   <td>library to analyze and transform URI's</td>
+</tr>
+<tr class="even">
+   <td> <a href="http://cr.yp.to/ftpparse.html">ftpparse</a> </td>
+   <td>library for parsing FTP LIST responses.</td>
+
+</tr>
+<tr class="odd">
+   <td> <a href="http://tidy.sourceforge.net/">libtidy</a> </td> 
+   <td>html parsing and formatting library, based on Dave Raggett's HTML-Tidy</td>
+</tr>
+<tr class="even">
+   <td> <a href="ftp://ftp.gw.com/mirrors/pub/unix/file/">libmagic</a> </td>
+   <td>library interface to the unix "file" command, to determine the filetype of a file or buffer</td>
+</tr>
+<tr class="odd">
+   <td> <a href="http://www.xmlsoft.org/">limxml</a> </td>
+   <td> extensive XML parsing library</td>
+</tr>
+
+</table>
+
+<p>
+<small>Thanks to Jeff Pohlmeyer for gathering info</small>
+
+#include "_footer.html"
+</BODY>
+</HTML>
