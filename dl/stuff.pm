@@ -53,12 +53,19 @@ sub inputstuff::save_input
     my %data=(@_);
     $data{"modify_time"}=time();       # stundens sekund
 
-    if (CGI::param("action") eq "Save") {
-        if ($id ne "") {
+    my $act = CGI::param("action");
+
+    if ($act eq "Save As New Entry") {
+        $id = "";
+        $act = "Save";
+    }
+
+    if ($act eq "Save") {
+        if ($id) {
             my $ref=$db->get("id"=>$id);
             if ($$ref{"modify_time"} != CGI::param("modify_time")) {
-                $warning_message="Dina ändringar är inte sparade. Någon har ".
-                    "ändrat innehållet före dig (se nya införda värden).";
+                $warning_message="Your changes aren't saved, someone else ".
+                    "changes the contents before you!";
             } else {
                 $db->change("id", $id, %data);
                 if ($db->save() == -1) {
@@ -67,7 +74,8 @@ sub inputstuff::save_input
                     $result_message="Added entry";
                 }
             }
-        } else {
+        }
+        else {
             my $newid=$db->add(%data);
             if ($db->save() == -1) {
                 $warning_message="Failed saving database!";
@@ -75,15 +83,14 @@ sub inputstuff::save_input
                 $result_message="Added entry";
             }
         }
-    } elsif (CGI::param("action") eq "Remove") {
+    } elsif ($act eq "Remove") {
         if (CGI::param("remove_check") != 1) {
-            $warning_message="Ej raderat! Av säkerhetsskäl måste du markera ".
-                "kryssboxen bredvid för att kunna radera.";
+            $warning_message="Not removed. Check the box to remove for real.";
         } elsif ($id ne "") {
             my $ref=$db->get("id"=>$id);
             if ($$ref{"modify_time"} != CGI::param("modify_time")) {
-                $warning_message="Radering ej genomförd. Någon har ".
-                    "ändrat innehållet under tiden (se nya införda värden).";
+                $warning_message="Your changes aren't saved, someone else ".
+                    "changes the contents before you!";
             } elsif (!$db->delete("id", $id)) {
                 if ($db->save() == -1) {
                     $warning_message="Failed to save database!";
@@ -98,7 +105,7 @@ sub inputstuff::save_input
         }
     }
     else {
-        $warning_message = "strange action received: ".CGI::param("action");
+        $warning_message = "Unsupported action received: $act";
     }
 }
 
@@ -119,20 +126,18 @@ sub inputstuff::show_extra_messages
 #### Formulärfot
 sub inputstuff::form_footer()
 {
-    print "<input type=submit name=\"action\" value=\"Save\"><br>\n";
+    print "<input type=\"submit\" name=\"action\" value=\"Save\"><br>\n";
         
-    if ($id ne "") {
-        print "<input type=submit name=\"action\" value=\"Remove\">";
-        print "&nbsp;confirm:<input type=checkbox ";
-        print "name=\"remove_check\" value=1><br>\n";
+    if ($id) {
+        print "<input type=\"submit\" name=\"action\" value=\"Save As New Entry\"><br>";
+
+        print "<input type=\"submit\" name=\"action\" value=\"Remove\">",
+        "&nbsp;confirm:<input type=checkbox ",
+        "name=\"remove_check\" value=\"1\">\n";
     }
     
     print "</form>\n";
-    if($id ne "") {
-        print "<form action=\"$cgi\" method=post>\n";
-        print "<input type=submit name=\"action\" value=\"Erase form\">";
-        print "</form><br>\n";
-    }
+
 ################Slut på formulär
 }
 
