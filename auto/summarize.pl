@@ -44,20 +44,24 @@ sub summary {
     open(SUM, ">summary.t");
 
 
-    printf SUM "<table><tr valign=\"top\"><td nowrap>%d used option combos:<br>\n", scalar(keys %combo);
+    printf SUM "<table><tr valign=\"top\"><td nowrap><b>%d used option combos</b><br>\n", scalar(keys %combo);
     for(sort {$combo{$b} <=> $combo{$a}} keys %combo) {
         printf SUM "<span class=\"mini\">%s</span> %d times<br>\n", $_, $combo{$_};
     }
-    printf SUM "<td><td nowrap>%d used OSes:<br>\n", scalar(keys %oses);
+    printf SUM "<td><td nowrap><b>%d used OSes</b><br>\n", scalar(keys %oses);
     for(sort {$oses{$b} <=> $oses{$a}} keys %oses) {
         printf SUM "<span class=\"mini\">%s</span> %d times<br>\n", $_, $oses{$_};
     }
 
-    printf SUM "</td><td>More stats:<br> %d builds<br> during %d days<br> provided by %d persons<br> with %d different machine descriptions\n",
+    printf SUM "</td><td>%d builds<br> during %d days<br> provided by %d persons<br> with %d different machine descriptions\n",
     $buildnum, scalar(@logs), scalar(keys %who), scalar(keys %desc);
 
-    printf SUM "<p> The average build gave %d warnings, but %d builds (%d%%) were warning-free.\n", $totalwarn/$buildnum, $warnfree, $warnfree*100/$buildnum;
+    printf SUM "<p> The average build gave %d warnings, but %d builds (%d%%) built warning-free.\n", $totalwarn/$buildnum, $warnfree, $warnfree*100/$buildnum;
 
+
+    printf SUM "<p> %d builds failed to link and %d builds failed at least one test case",
+    $totallink, $totalfail;
+    printf SUM "<p> The average number of test cases run was %d", $totalfine/($buildnum-$totallink);
     print SUM "</td></tr></table>\n";
     close(SUM);
 }
@@ -187,6 +191,7 @@ sub endofsingle {
                 $res .= "build env";
             }
             else {
+                $totallink++;
                 $res .= "link";
             }
         }
@@ -194,11 +199,13 @@ sub endofsingle {
             $res .= $failamount;
         }
         else {
+            $totalfail++;
             $res .= "fail";
         }
         $res .= "</a></td>\n";
     }
     else {
+        $totalfine += $fine;
         $res .= "<td class=\"buildfine\">$a $fine";
 
         if($skipped) {
