@@ -2,3 +2,12 @@
 We need to do HTTP PUT with chunked-encoding transfers when passing a file
 with no known size.
 
+1 - Add a header in the request: "Transfer-Encoding: chunked"
+
+2 - We need to do some checks if the server doesn't deal with this properly
+    (chunked is HTTP 1.1 stuff)
+
+3 - Make a special 'write()' command that writes a buffer with a particular
+    size according to the chunked spec section 3.6.1 in RFC 2616, the code
+    fits in http_chunks.c
+
