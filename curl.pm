@@ -20,7 +20,7 @@ sub where {
     my $link;
     my $pic="<img src=\"/arrow.png\">";
 
-    print "<br><a href=\"/\">cURL</a> $pic";
+    print "<a href=\"/\">cURL</a> $pic";
     while(1) {
         $name = shift @args;
         $link = shift @args;
