@@ -17,10 +17,10 @@ ACTION=@echo preprocessing $@; \
        chmod a-w+r $@
 
 TXT2HTML= txt2html --extract --hrule 10
-MAN2HTML= roffit --bare
+MAN2HTML= roffit --bare --mandir=$(MANROOT)
 TXT2PLAIN = txt2plain.pl
 
-all: index.html example.html curl_easy_init.html			\
+PAGES = index.html example.html curl_easy_init.html			\
 	curl_easy_cleanup.html curl_easy_setopt.html			\
 	curl_easy_perform.html curl_version.html curl_version_info.html	\
         curl_getenv.html curl_free.html					\
@@ -38,6 +38,11 @@ all: index.html example.html curl_easy_init.html			\
 	libcurl-easy.html libcurl-share.html allfuncs.html \
 	curl_share_cleanup.html curl_share_init.html \
 	curl_share_setopt.html curl_easy_duphandle.html
+
+all: $(PAGES)
+
+clean:
+	 rm -f $(PAGES) curl_*.t
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
