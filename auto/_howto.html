@@ -1,0 +1,55 @@
+#include "head.html"
+#include "setup.t"
+
+SUBTITLE(Build from CVS)
+
+<p>
+ First, run these commands:
+
+<pre>
+  $ mkdir someplacenice
+  $ cd someplacenice
+  $ cvs -d :pserver:cvsread@cvs.php.net:/repository login
+    [enter 'phpfi' (without quotes) as password ]
+  $ cvs -d :pserver:cvsread@cvs.php.net:/repository checkout curl
+  $ ./curl/testcurl.sh
+</pre>
+<p>
+  You'll now see a full compile, build and test perform. Make sure everything
+  works out fine.
+
+<p>
+ Then, in a cron job do:
+<pre>
+ $ cd someplacenice
+ $ ./curl/testcurl.sh | mail -s "autobuild" curl-autocompile@haxx.se
+</pre>
+<p>
+ If mailing the info is not suitable for you, try using this <a
+ href="http://curl.haxx.se/auto/upload.cgi">upload form</a>.
+
+<p>
+ Every once in a while, <a href="./">http://curl.haxx.se/auto/</a> gets
+ updated with the available logs. <a href="stat.cgi">Recent CVS changes</a>.
+
+SUBTITLE(Build from daily tarballs)
+<p>
+ If you can't checkout or update the sources from CVS easily, another approach
+ to automated testing of the latest sources is made by getting the latest
+ daily tarballs automaticly instead.
+<p>
+ This is easily done with the use of the <a href="autocurl.txt">autocurl</a>
+ shell script, written by Ralph Mitchell.
+
+SUBTITLE(Make more tests run)
+<p>
+ The number of tests run on some tests are not the maximum amount, but instead
+ numerous ones are "skipped".
+<p>
+ This is because some of the tests require specal conditions that are not
+ enabled everywhere. You can improve this situation by using the configure's
+ --enable-debug option (which enables much more thorough memory and netrc
+ debugging) and to make sure that you have stunnel installed (which enables
+ HTTPS tests to run).
+
+#include "foot.html"

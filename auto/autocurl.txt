@@ -1,0 +1,70 @@
+#!/bin/sh
+
+set -x
+# Auto-build the daily CVS extract of curl.  Parameters are: 
+#  1: the email address to notify when this script runs
+#  2: proxy url if required
+#  3: proxy userid if required
+
+if [ $1 ]; then
+  NOTIFY=$1
+fi
+if [ $2 ]; then
+  PROXY=$2
+fi
+if [ $3 ]; then
+  PROXYUSER=$3
+fi
+
+# A few configurable bits
+# How and where to send the results
+mail="mail -s autobuild curl-autocompile@haxx.se"
+# Where to find the latest source
+URL="http://cool.haxx.se/curl-daily/"
+# Where to find a curl binary
+CURL=/usr/local/curl-7.10.8/bin/curl
+# Where to run the auto-build
+BUILD=/root/curl-auto
+# A bunch of standard options, to start with...
+CURLOPTS="-s -S -L -b cookies -c cookies"
+
+# Got proxy?
+if [ $PROXY ]; then
+  CURLOPTS="$CURLOPTS -x $PROXY"
+fi
+# Need authentication?
+if [ $PROXYUSER ]; then
+  CURLOPTS="$CURLOPTS -U $PROXYUSER"
+fi
+
+notify () {
+  if [ $NOTIFY ]; then
+    echo "$1" | mail -s "curl autobuild" $NOTIFY
+  fi
+}
+
+TODAY=`date +%Y%m%d`
+
+cd $BUILD
+
+NEWCURL=`$CURL $CURLOPTS $URL | grep $TODAY.tar.bz2 | sed -e 's/^.*HREF="//' -e 's/".*//'`
+
+$CURL $CURLOPTS -o $NEWCURL $URL/$NEWCURL
+ret=$?
+
+if [ "$ret" -eq "0" ]; then
+  LIST=`tar xjvf $NEWCURL | wc -l`
+  ret=$?
+  if [ $LIST -eq 0 -o $ret -gt 0 ]; then
+    notify "Empty tar file?"
+    exit
+  fi
+
+  CURLDIR=`echo $NEWCURL | sed -e 's/.tar.bz2//'`
+
+  ./testcurl.sh $CURLDIR | $mail
+
+  notify "built OK: $NEWCURL"
+else
+  notify "built failed: $NEWCURL"
+fi
