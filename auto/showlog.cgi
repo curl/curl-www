@@ -41,7 +41,7 @@ while(<FILE>) {
                 if(($_ =~ /([.\/a-zA-Z0-9]*)\.[ch]:([0-9:]*): /) ||
                    ($_ =~ /FAILED/) ||
                    # the line below is adjusted for AIX xlc warnings
-                   ($_ =~ /\"([.\/a-zA-Z0-9]+)\", line/)) {
+                   ($_ =~ /\"([_.\/a-zA-Z0-9]+)\", line/)) {
                        print "<div class=\"warning\">$_</div>\n";
                 }
                 else {

@@ -254,7 +254,7 @@ sub singlefile {
                 $libcurl = $1;
             }
             elsif(($_ =~ /([.\/a-zA-Z0-9]*)\.[ch]:([0-9:]*): /) ||
-                  ($_ =~ /\"([.\/a-zA-Z0-9]+)\", line/)) {
+                  ($_ =~ /\"([_.\/a-zA-Z0-9]+)\", line/)) {
                 # first one, gcc
                 # second one, xlc (on AIX)
                 $warning++;
