@@ -33,7 +33,10 @@ BODY {
   background-color: #00ff00;
 }
 
-.compile
-{
+.compile {
   border: outset 2px #ffffff;
+}
+
+.mini {
+  font-size: 7pt;
 }
