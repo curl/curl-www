@@ -3,20 +3,20 @@
 use strict;
 use latest;
 
-my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'SE',
-             'http://cool.haxx.se/curl/' => 'SE',
-             'ftp://ftp.fu-berlin.de/pub/unix/network/curl/' => 'DE',
+my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden',
+             'http://cool.haxx.se/curl/' => 'Sweden',
+             'ftp://ftp.fu-berlin.de/pub/unix/network/curl/' => 'Germany',
              'ftp://ftp.rge.com/pub/networking/curl/' => 'US',
-             'http://www.cubic.ch/mirror/curl/' => 'CH',
+             'http://www.cubic.ch/mirror/curl/' => 'Switzerland',
              'http://curl.webmeta.com/' => '?',
-             'ftp://gd.tuwien.ac.at/utils/archivers/curl/' => 'AT',
-             'http://gd.tuwien.ac.at/utils/archivers/curl/' => 'AT',
-             'http://curl.sourceforge.net/download/' => 'US (CA)',
-             'http://www.planetmirror.com/pub/curl/' => 'AU',
-             'ftp://ftp.planetmirror.com/pub/curl/' => 'AU',
-             'http://www.execve.net/curl/' => 'HK',
-             'http://curl.tsuren.net/download/' => 'RU',
-             'http://curl.cyberservers.net/download/' => 'US (TX)',
+             'ftp://gd.tuwien.ac.at/utils/archivers/curl/' => 'Austria',
+             'http://gd.tuwien.ac.at/utils/archivers/curl/' => 'Austria',
+             'http://curl.sourceforge.net/download/' => 'US (California)',
+             'http://www.planetmirror.com/pub/curl/' => 'Australia',
+             'ftp://ftp.planetmirror.com/pub/curl/' => 'Australia',
+             'http://www.execve.net/curl/' => 'Hong Kong',
+             'http://curl.tsuren.net/download/' => 'Russia',
+             'http://curl.cyberservers.net/download/' => 'US (Texas)',
              );
 
 sub present {
