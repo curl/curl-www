@@ -4,7 +4,7 @@ BODY {
 }
 
 /* the curl-style blue main page titles */
-.pagetitle {
+.pagetitle, h1.libtitle {
   border-style: solid;
   border-width: thin;
   border-color: black;
@@ -12,8 +12,10 @@ BODY {
   background-color: #e0e0ff; 
   font-family: arial, helvetica, ariel, sans-serif;
   color: #0000ff;
+
   font-size: 150%;
   font-weight: bold;
+  padding: 0px 4px 0px 4px;
 }
 
 .title {
@@ -86,14 +88,14 @@ tr.odd {
 }
 
 /* a non-selected item in the main menu */
-.menuitem {
+.menuitem, .libitem {
   text-decoration: none;
   color: #ffffff;
   white-space: nowrap;
 }
 
 /* a non-selected item in the main menu, with the mouse hovering */
-.menuitem:hover {
+.menuitem:hover, libitem:hover {
   text-decoration: none;
   color: #ffffff;
   white-space: nowrap;
@@ -101,7 +103,7 @@ tr.odd {
 }
 
 /* a selected item in the main menu */
-.itemselect {
+.itemselect, .libselect {
   text-decoration: none;
   background-color: white;
   font-weight: bold;
@@ -111,7 +113,7 @@ tr.odd {
 }
 
 /* the main curl site left-side menu box */
-.mainmenu {
+.mainmenu, .libmenu {
 /*
   border-color: black;
   border-width: 1px;
@@ -119,55 +121,6 @@ tr.odd {
 */
   background-color: #4040ff;
   padding: 4px 4px 4px 4px;
-}
-
-/* the libcurl menu */
-.libmenu {
-/*
-  border-color: black;
-  border-width: 1px;
-  border-style: solid;
-*/
-  background-color: #9f7171;
-  padding: 4px 4px 4px 4px;
-}
-
-/* an unselected item in the libcurl menu */
-.libitem {
-  text-decoration: none;
-  color: #ffffff;
-  white-space: nowrap;
-}
-
-/* an unselected item in the libcurl menu, with the mouse hovering */
-.libitem:hover {
-  text-decoration: none;
-  color: #ffffff;
-  white-space: nowrap;
-  font-weight: bold;
-}
-
-/* a selected item in the libcurl menu */
-.libselect {
-  text-decoration: none;
-  background-color: white;
-  font-weight: bold;
-  color: #000000;
-  white-space: nowrap;
-  width: 100%;
-}
-
-/* the libcurl-style white-on-brown main page titles */
-h1.libtitle {
-  border-style: solid;
-  border-width: thin;
-  border-color: black;
-
-  background-color: #9f7171; 
-  font-family: arial, helvetica, ariel, sans-serif;
-  color: #ffffff;
-  font-size: 150%;
-  font-weight: bold;
 }
 
 /* the about infobox in the right-bottom */
@@ -184,12 +137,12 @@ h1.libtitle {
 
 /* the toplevel centered links */
 .ad a {
-  border-color: #c0c0c0;
+  border-color: #c0c0ff;
   border-style: outset;
   text-align: center;
   text-decoration: none;
   color: #ffffff;
-  background-color: #606060;
+  background-color: #4040ff;
   margin: 0px 8px 0px 8px;
   padding: 0px 3px 0px 3px;
 }
