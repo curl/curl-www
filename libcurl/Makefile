@@ -15,6 +15,7 @@ all: index.html mail.html competitors.html future.html
 	cd dylan; make
 	cd rexx; make
 	cd cocoa; make
+	cd scheme; make
 	cd using; make
 
 index.html: _index.html $(MAINPARTS)
