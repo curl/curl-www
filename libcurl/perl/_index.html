@@ -55,15 +55,15 @@ callbacks and ssl, so are a useful starting point.
 </p>
 
 <p><b>Download</b><br>
-<a href="Curl-easy-1.34.tar.gz">Curl::easy 1.34</a> (18Kb) was released on Aug 7, 2002. This fixes an off-by-one bug in creating curl slists from perl arrays (such as when using custom headers), which caused the last element to be dropped.
+<a href="Curl-easy-1.35.tar.gz">Curl::easy 1.35</a> (18Kb) was released on Sep 22, 2002. This fixes the prototype used by the progress callback function, which was previously returning garbage results for the upload and download statistics.
 <p>1.3x is an 'all-new' release series of Curl::easy, with substantially re-factored internal code.
 This release supports the 'Object Oriented' style of perl coding, which provides a simpler,
 less cluttered syntax, and fixes a number of limitations and bugs in earlier versions (such
 as the inability to reliably use more than one curl handle per process!).</p>
-<p>Version 1.34 is backwards compatible with previous releases, so you
+<p>Version 1.35 is backwards compatible with previous releases, so you
 can keep using scripts with the older syntax, upgrading when you wish to benefit from
 a cleaner programming style.</p>
-<p>v1.34 should be considered the 'best' available version of Curl::easy, and should be used
+<p>v1.35 should be considered the 'best' available version of Curl::easy, and should be used
 for all versions of curl from 7.8 onwards. This release is well tested, but the actual
 code is subtantially different from v1.21, so please report any problems. Feel free to
 use 1.21 in the meantime if you discover any major showstopper.</p>
@@ -74,7 +74,8 @@ use 1.21 in the meantime if you discover any major showstopper.</p>
     <li>Curl::easy::global_cleanup() to allow you to call this low level curl function if you need it.
     <li>Now uses PerlIO for file input/output, so should be perl 5.8 ready.
 </ul>
-<p>Curl::easy 1.33 (18Kb) was released on Aug 5, 2002. This fixed an important bug in read callbacks, introduced in 1.30, which resulted in junk data being sent if a perl read callback was used. <b>If you are using any 1.3x version of Curl::easy, it is recommended that you upgrade to at least this release (or preferrably v1.34).</b></p>
+<p>Curl::easy 1.34 (19Kb) was released on Aug 7, 2002. This fixed an off-by-one bug in creating curl slists from perl arrays. <b>If you are using any 1.3x version of Curl::easy, it is recommended that you upgrade to at least this release.</b></p>
+<p>Curl::easy 1.33 (18Kb) was released on Aug 5, 2002. This fixed an important bug in read callbacks, introduced in 1.30, which resulted in junk data being sent if a perl read callback was used.
 <p>Curl::easy 1.32 (18Kb) was released on Aug 1, 2002. This fixed a minor build issue with curl-7.8 (as distributed with Redhat 7.2)</p>
 <p>Curl::easy 1.31 (18Kb) was released on July 16, 2002. This fixed minor build issues with 1.30 on some platforms with strict C compilers.</p>
 <p>Curl::easy 1.30 (18Kb) was released on July 15, 2002.</p>
@@ -85,7 +86,7 @@ July 11, 2002.</p>
 and should support versions from 7.8.1 onwards, including 7.9,7.9.2 thru 7.9.8</p>
 <p>Version 1.21 integrates some minor build changes to assist in building on Win32,
 after feedback from Shawn Poulson. There are no functional changes.</p>
-<p>You should probably use v1.32 for any new development, unless you hit specific problems. Future
+<p>You should probably use v1.35 for any new development, unless you hit specific problems. Future
 minor issues in 1.21 may be fixed by further 1.2x releases, but any new features will be developed
 starting from v1.30.</p>
 <p></p>
