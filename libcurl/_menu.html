@@ -191,6 +191,12 @@ LINK("", Q)
 VLINK(/libcurl/q/, Q)
 #endif
 
+#ifdef LIBCURL_WX
+LINK("", wxWidgets)
+#else
+VLINK(/libcurl/wx/, wxWidgets)
+#endif
+
 </div>
 
 <p>

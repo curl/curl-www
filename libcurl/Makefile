@@ -38,6 +38,7 @@ all: index.html mail.html competitors.html threadsafe.html \
 	cd d; make
 	cd q; make
 	cd gambas; make
+	cd wx; make
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
