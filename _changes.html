@@ -29,10 +29,14 @@ TITLE(Recent Changes -- The Nice and Clean Version)
 
 <p> Fixed since (available in CVS and pre-releases)
 <ul>
-<li> Added: -F supports filename= (using the new CURLFORM_FILENAME)
-<li> Bugfixed "curl -O" segfault
-<li> Bugfixed --progress-bar
-<li> Bugfixed a missing newline after --progress-bar output
+ <li> Bugfix: using verbose when doing ftp passive transfers could core dump
+ <li> Bugfix: IPv6 name lookups work again
+ <li> HTTP POST with data passed in with the read callback now works
+ <li> All CURLFORM_* options can now be given in an array
+ <li> Added: -F supports filename= (using the new CURLFORM_FILENAME)
+ <li> Bugfixed "curl -O" segfault
+ <li> Bugfixed --progress-bar
+ <li> Bugfixed a missing newline after --progress-bar output
 </ul>
 
 <p> Fixed in 7.9.5
