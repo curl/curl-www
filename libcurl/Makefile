@@ -45,6 +45,7 @@ all: index.html mail.html competitors.html threadsafe.html \
 	cd r; make
 	cd mono; make
 	cd vb; make
+	cd lisp; make
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
