@@ -19,7 +19,7 @@
 
 <table width=100%><tr>
 <td>
-<a href="http://curl.haxx.se"><img border=0 src="http://curl.haxx.se/small-curl.png" width=90 height=36 alt="Curl"></a>
+<a href="/"><img border=0 src="/small-curl.png" width=90 height=36 alt="cURL"></a>
 </td>
 #include "ad.t"
 </tr></table>
@@ -33,69 +33,69 @@
 
 #if 0
 #ifdef CURL_MAIN
-LINK("http://curl.haxx.se/", Main)
+LINK("/", Main)
 #else
-VLINK("http://curl.haxx.se/", Main)
+VLINK("/", Main)
 #endif
 #endif
 #ifdef CURL_NEWS
-LINK("http://curl.haxx.se/news.shtml", News)
+LINK("/news.shtml", News)
 #else
-VLINK("http://curl.haxx.se/news.shtml", News)
+VLINK("/news.shtml", News)
 #endif
 #ifdef CURL_DOWNLOAD
-LINK("http://curl.haxx.se/download.html", Download)
+LINK("/download.html", Download)
 #else
-VLINK("http://curl.haxx.se/download.html", Download)
+VLINK("/download.html", Download)
 #endif
 #ifdef CURL_MAIL
-LINK("http://curl.haxx.se/mail/", Mailing List)
+LINK("/mail/", Mailing List)
 #else
-VLINK("http://curl.haxx.se/mail/", Mailing List)
+VLINK("/mail/", Mailing List)
 #endif
 #ifdef CURL_CHANGES
-LINK("http://curl.haxx.se/changes.html", Changes)
+LINK("/changes.html", Changes)
 #else
-VLINK("http://curl.haxx.se/changes.html", Changes)
+VLINK("/changes.html", Changes)
 #endif
 #ifdef CURL_HELP
-LINK("http://curl.haxx.se/help.html", Contribute!)
+LINK("/help.html", Contribute!)
 #else
-VLINK("http://curl.haxx.se/help.html", Contribute!)
+VLINK("/help.html", Contribute!)
 #endif
 #ifdef CURL_FEEDBACK
-LINK("http://curl.haxx.se/feedback/", Feedback)
+LINK("/feedback/", Feedback)
 #else
-VLINK("http://curl.haxx.se/feedback/", Feedback)
+VLINK("/feedback/", Feedback)
 #endif
 #ifdef CURL_DOCS
-LINK("http://curl.haxx.se/docs/", Docs)
+LINK("/docs/", Docs)
 #include "docmenu.t"
 #else
-VLINK("http://curl.haxx.se/docs/", Docs)
+VLINK("/docs/", Docs)
 #endif
 #ifdef CURL_PROGRAMS
-LINK("http://curl.haxx.se/curlprograms.html", Programs)
+LINK("/curlprograms.html", Programs)
 #else
-VLINK("http://curl.haxx.se/curlprograms.html", Programs)
+VLINK("/curlprograms.html", Programs)
 #endif
 
 #ifdef CURL_SUPPORT
-LINK("http://curl.haxx.se/support.html", Support)
+LINK("/support.html", Support)
 #else
-VLINK("http://curl.haxx.se/support.html", Support)
+VLINK("/support.html", Support)
 #endif
 
 #ifdef CURL_LIBS
-LINK("http://curl.haxx.se/libs.html", Libraries)
+LINK("/libs.html", Libraries)
 #else
-VLINK("http://curl.haxx.se/libs.html", Libraries)
+VLINK("/libs.html", Libraries)
 #endif
 
 #ifdef CURL_ICONS
-LINK("http://curl.haxx.se/icons.html", Icons)
+LINK("/icons.html", Icons)
 #else
-VLINK("http://curl.haxx.se/icons.html", Icons)
+VLINK("/icons.html", Icons)
 #endif
 
 #ifdef CURL_SEARCH
@@ -109,7 +109,7 @@ VLINK("http://curl.haxx.se/htdig/", Search)
 #if 1
 <p>
 
-<a href="http://curl.haxx.se/libcurl/"><img border=0 src="http://curl.haxx.se/libcurl/small.png" alt="libcurl" width=90 height=25></a><br>
+<a href="/libcurl/"><img border=0 src="/libcurl/small.png" alt="libcurl" width=90 height=25></a><br>
 
 #undef MENUCOLOR
 #define MENUCOLOR "#e0c0c0"
@@ -121,7 +121,7 @@ VLINK("http://curl.haxx.se/htdig/", Search)
 #endif
 
 <p>
-<form method="GET" action="/htdig/htsearch.cgi">
+<form method="GET" action="http://curl.haxx.se/htdig/htsearch.cgi">
 <input type=hidden value=and name="method">
 <input name="format" type=hidden value="builtin-long">
 <input type=hidden name="sort" value="score">
