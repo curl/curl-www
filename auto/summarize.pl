@@ -357,7 +357,9 @@ sub singlefile {
                   ($_ =~ /\"([_.\/a-zA-Z0-9]+)\", line/) ||
                   ($_ =~ /^cc: Warning: ([.\/a-zA-Z0-9]*)/) ||
                   ($_ =~ /cc: (REMARK|WARNING) File/) ||
-                  ($_ =~ /: (remark|warning) \#/)
+                  ($_ =~ /: (remark|warning) \#/) ||
+                   # MIPS o32 compiler:
+                  ($_ =~ /^cfe: Warning (\d*):/)
                   ) {
                 # first one, gcc
                 # second one, xlc (on AIX)

@@ -63,7 +63,9 @@ while(<FILE>) {
                    # MIPSPro C 7.3:
                    ($_ =~ /cc: (REMARK|WARNING) File/) ||
                    # Intel icc 8.0:
-                   ($_ =~ /: (remark|warning) \#/)
+                   ($_ =~ /: (remark|warning) \#/) ||
+                   # MIPS o32 compiler:
+                   ($_ =~ /^cfe: Warning (\d*):/)
                    ) {
                        print "<div class=\"warning\">$_</div>\n";
                 }
