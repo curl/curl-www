@@ -36,8 +36,7 @@ my @present;
 my $show=0;
 my $thisid;
 
-open(FILE, "<inbox/inbox$year-$month-$day.log") ||
-    print "file inbox$year-$month-$day.log not open";
+open(FILE, "<inbox/inbox$year-$month-$day.log");
 while(<FILE>) {
     if($_ =~ /^INPIPE: startsingle here ([0-9-]*)/) {
         $thisid=$1;
@@ -88,7 +87,9 @@ while(<FILE>) {
     push @present, $_;
 }
 if(!$show) {
-    print "Something failed, no such build was found!";
+    print "Something failed, no such build was found! This probably happened",
+    " because you're trying to view a log that is out of date and has ",
+    " been removed. Sorry!";
 }
 close(FILE);
 
