@@ -203,7 +203,7 @@ sub endofsingle {
     if($libcurl =~ /zlib\/([^ ]*)/i) {
         $zlibver = $1;
     }
-    if($libcurl =~ /krb4/) {
+    if($krb4enabled) {
         $krb4 = "K";
     }
     if($ipv6enabled) {
@@ -340,6 +340,7 @@ sub endofsingle {
     $buildid="";
     $failamount=0;
     $ipv6enabled=0;
+    $krb4enabled=0;
     $gssapi=0;
     $os="";
     $libidn=0;
@@ -462,6 +463,9 @@ sub singlefile {
             }
             elsif($_ =~ /^\#define ENABLE_IPV6 1/) {
                 $ipv6enabled = 1;
+            }
+            elsif($_ =~ /^\#define HAVE_KRB4 1/) {
+                $krb4enabled = 1;
             }
             elsif($_ =~ /^\#define HAVE_GSSAPI 1/) {
                 $gssapi=1;
