@@ -135,6 +135,12 @@ LINK("", Lua)
 VLINK(/libcurl/lua/, Lua)
 #endif
 
+#ifdef LIBCURL_MONO
+LINK("", Mono)
+#else
+VLINK(/libcurl/mono/, Mono)
+#endif
+
 #ifdef LIBCURL_DOTNET
 LINK("", .NET)
 #else
