@@ -59,7 +59,7 @@ print "Content-Type: text/html\n\n";
 
 &catfile("../examples.html");
 
-where("libcurl", "/libcurl/", "PHP", "/libcurl/PHP/", "PHP Examples");
+where("libcurl", "/libcurl/", "PHP", "/libcurl/PHP/", "Examples");
 
 &title("PHP/CURL Examples Collection");
 
