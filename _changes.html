@@ -42,6 +42,58 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 </ul>
 
 <p>
+SUBTITLE(Fixed in 7.12.2)
+<p>Changes:
+<ul>
+ <li> the IDN code now verifies that only TLD-legitmate letters are used in the
+   name or a warning is displayed (when verbose is enabled)
+ <li> provides error texts for IDN errors
+ <li> file upload parts in formposts now get their directory names cut off
+ <li> added CURLINFO_OS_ERRNO
+ <li> added CURLOPT_FTPSSLAUTH to allow ftp connects to attempt "AUTH TLS" instead
+   before "AUTH SSL"
+ <li> curl_getdate() completely rewritten: may affect rare curl -z use cases
+</ul>
+<p> Bugfixes:
+<ul>
+ <li> CURLOPT_FTP_CREATE_MISSING_DIRS works for third party transfers
+ <li> memory leak for cookies received with max-age set
+ <li> potential memory leaks in the window name resolver
+ <li> URLs with ?-letters in the user name or password fields
+ <li> libcurl error message is now provided when send() fails
+ <li> no more SIGPIPE on Mac OS X and other SO_NOSIGPIPE-supporting platforms
+ <li> HTTP resume was refused if redirected
+ <li> configure's gethostbyname check when both nsl and socket libs are required
+ <li> configure --with-libidn now checks the given path before defaults
+ <li> a race condition sometimes resulting in CURLE_COULDNT_RESOLVE_HOST in the
+   windows threaded name resolver code
+ <li> isspace() invokes with negative values in the cookie code
+ <li> a case of read-already-freed-data when CURLOPT_VERBOSE is used and a (very)
+   persistent connection
+ <li> now includes descriptive error messages for IDN errors
+ <li> more forgivning PASS response code check for better working with proftpd
+ <li> curl/multi.h works better included in winsock-using apps
+ <li> curl_easy_reset() no longer enables the progress meter
+ <li> build fix for SSL disabled curl with SSL Engine support present
+ <li> configure --with-ssl=PATH now ignores pkg-config path info
+ <li> CURLOPT_SSLENGINE can be set to NULL even if no engine support is available
+ <li> LDAP crash when more than one record was received
+ <li> connect failures properly stores an error message in the errorbuffer
+ <li> Rare Location:-following problem with bad original URL
+ <li> -F can now add Content-Type on non-file sections
+ <li> double Host: header when following Location: with replaced Host:
+ <li> curl_multi_add_handle() return code
+ <li> "Proxy-Connection: close" is now understood and properly dealt with
+ <li> curl_getdate() crash
+ <li> downloading empty files now calls the write callback properly
+ <li> no reverse DNS lookups for ip-only addresses with ipv6-enabled libcurl
+ <li> file handler leak when getting an empty file:// URL
+ <li> libcurl works better multi-threaded on AIX (when built with xlc)
+ <li> cookies over proxy didn't match the path properly
+ <li> MSVC makefile fixes to build better
+ <li> FTP response 530 on 'PASS' now sends back a better error message
+</ul>
+<p>
 SUBTITLE(Fixed in 7.12.1)
 <p>Changes:
 <ul>
