@@ -28,6 +28,12 @@ TITLE(Recent Changes -- The Nice and Clean Version)
 #endif
 <p> Fixed since (available in CVS and pre-releases)
 <ul>
+<li> much better connection re-use validity check
+<li> bugfixed connection re-use for FTP urls containing name and password
+<li> LDAP transfers no longer "hang"
+<li> a memory leak in the cookie engine was removed
+<li> CURLE_GOT_NOTHING is a new possible error code
+<li> curl_easy_duphandle() now duplicates cookie parser status too
 <li> --fail now only returns error if HTTP code is >= 400
 <li> a possible memory leak when a transfer failed was removed
 <li> builds better in cygwin
