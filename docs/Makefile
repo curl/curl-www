@@ -130,7 +130,7 @@ todo.html: _todo.html $(MAINPARTS) todo.t
 	$(ACTION)
 
 todo.t: $(DOCROOT)/TODO
-	$(TXT2HTML) < $(DOCROOT)/TODO > todo.t
+	$(TXT2PLAIN) < $< > $@
 
 versions.html: _versions.html $(MAINPARTS) versions.t
 	$(ACTION)
