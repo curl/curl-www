@@ -27,6 +27,7 @@ google_color_text = "333333";
 </script>
 #endif
 #ifdef AD_PRICERUNNER
+<table><tr><td>
 <table width="354" border="0" cellspacing="1" cellpadding="0" bgcolor="#ffffff" height="60" background="http://se.pricerunner.com/images/i/pricerunnerbanner/bg_040423.gif">
   <tr> 
     <td valign="bottom" align="center">
@@ -78,6 +79,9 @@ google_color_text = "333333";
     </td>
   </tr>
 </table>
+</td><td>
+<a href="http://curl.haxx.se/ad/goto.cgi?url=www.schrenk.com"><img border="0" width="230" height="60" src="http://curl.haxx.se/ad/" align="right"></a>
+</tr></table>
 #endif
 </td>
 <td align="right"><a
