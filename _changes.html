@@ -30,9 +30,16 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 </ul>
 #endif
 
-SUBTITLE(Fixed since -- available in CVS and pre-releases)
+SUBTITLE(Fixed in 7.10.2)
+<p> Changes:
+<ul>
+ <li> PFD versions of much documentation are included in the tarball
+ <li> Transfer-Encoding: chunked for uploads are now supported
+</ul>
 <p> Bugs fixed:
 <ul>
+ <li> builds fine on MSVC again
+ <li> CURLOPT_CONNECTTIMEOUT works better
  <li> name resolving failed with glibc 2.2.93
  <li> libtool build fix for -no-undefined
  <li> the follow location code could crash occasionally
