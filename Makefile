@@ -99,7 +99,7 @@ packstat.t: _download.html Makefile
 	@echo "#define __BZ2SIZE $(BZ2SIZE)" >>$(STAT)
 	@echo "#define __ZIPSIZE $(ZIPSIZE)" >>$(STAT)
 
-download.html: _download.html $(MAINPARTS) packstat.t
+download.html: _download.html $(MAINPARTS) packstat.t dl/files.html
 	$(ACTION)
 
 changes.html: _changes.html $(MAINPARTS)
