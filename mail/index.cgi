@@ -180,4 +180,4 @@ print "<p><b>curl-and-php mailing list:</b>\n";
 print "<p><a href=\"./?list=curl-and-php\">full curl-and-php archive</a></td></tr></table>\n";
 
 &catfile("../foot.html");
-print "</body></html>\n";
+

@@ -6,10 +6,6 @@ use strict;
 require "../curl.pm";
 require "ccwarn.pm";
 
-print "Content-Type: text/html\n\n";
-
-&catfile("loghead.html");
-
 my $req = new CGI;
 
 my $year=$req->param('year');
@@ -27,7 +23,11 @@ if($id =~ /^(\d\d\d\d)(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)-(\d+)/) {
         ($1, $2, $3, $4, $5, $6, $7);
 }
 
-title("One log from $year-$month-$day");
+print "Content-Type: text/html\n\n";
+
+header("Autobuilds - singe log");
+where("Autobuilds", "/auto", "Log From $year-$month-$day");
+title("Log from $year-$month-$day");
 
 #print "year $year month $month day $day name $inname date $indate";
 

@@ -119,7 +119,7 @@ sub curlpython {
 if($list) {
     my $subscr;
 
-    &catfile("../head.html");
+    &header("Mailing Lists");
 
     &where("Mailing Lists", "http://curl.haxx.se/mail/", "$list archive");
 
