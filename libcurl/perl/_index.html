@@ -35,7 +35,7 @@ TITLE(Curl::easy -- accessing libcurl from perl)
    cd [curl::easy-directory]
    perl Makefile.PL
    make
-   make test
+   make test # optional, needs a test server
    make install
 </pre>
 <p>The Makefile.PL uses <tt>curl-config</tt> and internal guesses to find curl.h, and 
@@ -50,41 +50,62 @@ Perl specific features are described in the <a href="easy.pm.html">Curl::easy PO
  href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/curl/perl/examples/basicfirst.pl?rev=HEAD&content-type=text/vnd.viewcvs-markup">basic example</a>, please post your contributions!
 
 <p>Additional examples can be found in the 't/' directory of the distribution - the perl
-regression test scripts. These excercise many of curls' functions, such as uploads,
+regression test scripts. These exercise many of curls' functions, such as uploads,
 callbacks and ssl, so are a useful starting point.
 </p>
 
 <p><b>Download</b><br>
+<a href="Curl-easy-1.30.tar.gz">Curl::easy 1.30</a> (18Kb) was released on
+July 15, 2002.</p>
+<p>This is an 'all-new' release of Curl::easy, with substantially re-factored internal code.
+This release supports the 'Object Oriented' style of perl coding, which provides a simpler,
+less cluttered syntax, and fixes a number of limitations and bugs in earlier versions (such
+as the inability to reliably use more than one curl handle per process!).</p>
+<p>This version, 1.30, is backwards compatible with previous releases, so you
+can keep using scripts with the older syntax, upgrading when you wish to benefit from
+a cleaner programming style.</p>
+<p>v1.30 should be considered the 'best' available version of Curl::easy, and should be used
+for all versions of curl from 7.8.1 onwards. This release is well tested, but the actual
+code is subtantially different from v1.21, so please report any problems. Feel free to
+use 1.21 in the meantime if you discover any major showstopper.</p>
+<p>There are a few new functions in this release:<p>
+<ul>
+    <li>$curl-&gt;errbuf to return the errbuf in a more convenient (and handle/thread safe) way.
+    <li>Curl::easy-&gt;new() as a (preferred) alias to Curl::easy::init.
+    <li>Curl::easy::global_cleanup() to allow you to call this low level curl function if you need it.
+    <li>Now uses PerlIO for file input/output, so should be perl 5.8 ready.
+</ul>
 <a href="Curl-easy-1.21.tar.gz">Curl::easy 1.21</a> (15Kb) was released on
 July 11, 2002.</p>
 <p>This release automatically adapts to the options in your libcurl version,
 and should support versions from 7.8.1 onwards, including 7.9,7.9.2 thru 7.9.8</p>
 <p>Version 1.21 integrates some minor build changes to assist in building on Win32,
-after feedback from Shawn Poulson. There are no functional changes</p>
-<p>This is the 'best' available version of Curl::easy, and should be used
-for all versions of curl from 7.8.1 onwards.</p>
-
+after feedback from Shawn Poulson. There are no functional changes.</p>
+<p>You should probably use v1.30 for any new development, unless you hit specific problems. Future
+minor issues in 1.21 may be fixed by further 1.2x releases, but any new features will be developed
+starting from v1.30.</p>
+<p></p>
 <p>Curl::easy 1.20 was released on February 16, 2002.</p>
 <p>Version 1.20 addressed some minor build issues reported with 1.1.9.
 The version numbering now follows the standard perl module numbering syntax,
 the same as CPAN modules (major.minor). Support for CURLOPT_STDERR was added.
 </p>
- <p>Curl::easy 1.1.9 was released on January 18, 2002.</p>
+<p>Curl::easy 1.1.9 was released on January 18, 2002.</p>
 <p>This release automatically adapts to the options in your libcurl version,
 and supports versions from 7.8.1 onwards.
 </p>
-See <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/curl/perl/Changes?rev=HEAD&content-type=text/vnd.viewcvs-markup">Changes</a> for complete
- change information.
+<p>See <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/curl/perl/Changes?rev=HEAD&content-type=text/vnd.viewcvs-markup">Changes</a> for complete
+change information.</p>
 <p>
  For curl versions before 7.7, download the Perl binding version 1.0.2 from
  <a
- href="http://www.koblenz-net.de/~horn/export/">www.koblenz-net.de/~horn/export/</a>
+     href="http://www.koblenz-net.de/~horn/export/">www.koblenz-net.de/~horn/export/</a></p>
 <p>
- Browse the files that are presently in <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/curl/perl/">CVS</a>.
+Browse the files that are presently in <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/curl/perl/">CVS</a>.</p>
 
 <p><b>Credits</b><br>
- The Perl binding was initially written by Georg Horn and is currently 
- maintained by Cris Bailiff.
+The current release of Curl::easy was re-written by and is currently maintained by Cris Bailiff.
+The original Curl::easy interface was written by Georg Horn.</p>
 
 <p><b>What is Perl?</b><br>
  You'll find more info on the <a href="http://www.perl.com/">official

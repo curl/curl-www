@@ -1,229 +1,269 @@
 #include "_doctype.html"
 <HTML>
-<HEAD>
-<TITLE>Curl::easy - Perl extension for libcurl</TITLE>
-</HEAD>
- 
-#define LIBCURL_PERL
- 
-#include "_menu.html"
-#include "setup.t"
-#include "download.t"
- 
-WHERE2(libcurl, "/libcurl/", Perl Interface)
- 
-<a name=top>
+    <HEAD>
+	<TITLE>Curl::easy - Perl extension for libcurl</TITLE>
+    </HEAD>
+
+    #define LIBCURL_PERL
+
+    #include "_menu.html"
+    #include "setup.t"
+    #include "download.t"
+
+    WHERE2(libcurl, "/libcurl/", Perl Interface)
+
+<a name=top></a>
 TITLE(Curl::easy -- accessing libcurl from perl)
+
+
+<A NAME="__index__"></A>
+<!-- INDEX BEGIN -->
+
 <UL>
 
-	<LI><A HREF="#NAME">NAME</A>
-	<LI><A HREF="#SYNOPSIS">SYNOPSIS</A>
-	<LI><A HREF="#DESCRIPTION">DESCRIPTION </A>
+	<LI><A HREF="#name">NAME</A></LI>
+	<LI><A HREF="#synopsis">SYNOPSIS</A></LI>
+	<LI><A HREF="#description">DESCRIPTION</A></LI>
 	<UL>
 
-		<LI><A HREF="#FILES_and_CALLBACKS">FILES and CALLBACKS</A>
-		<LI><A HREF="#FILE_handles_GLOBS_">FILE handles (GLOBS)</A>
-		<LI><A HREF="#WRITE_callback">WRITE callback</A>
-		<LI><A HREF="#READ_callback">READ callback</A>
-		<LI><A HREF="#PROGRESS_callback">PROGRESS callback</A>
-		<LI><A HREF="#PASSWD_callback">PASSWD callback</A>
+		<LI><A HREF="#files and callbacks">FILES and CALLBACKS</A></LI>
+		<LI><A HREF="#file * handles (globs)"><CODE>FILE *</CODE> handles (GLOBS)</A></LI>
+		<LI><A HREF="#write callback">WRITE callback</A></LI>
+		<LI><A HREF="#read callback">READ callback</A></LI>
+		<LI><A HREF="#progress callback">PROGRESS callback</A></LI>
+		<LI><A HREF="#passwd callback">PASSWD callback</A></LI>
+		<LI><A HREF="#stderr redirection">STDERR redirection</A></LI>
 	</UL>
 
-	<LI><A HREF="#AUTHOR">AUTHOR</A>
-	<LI><A HREF="#Copyright">Copyright</A>
-	<LI><A HREF="#SEE_ALSO">SEE ALSO</A>
+	<LI><A HREF="#compatability notes">COMPATABILITY NOTES</A></LI>
+	<LI><A HREF="#known bugs">KNOWN BUGS</A></LI>
+	<LI><A HREF="#author">AUTHOR</A></LI>
+	<LI><A HREF="#copyright">Copyright</A></LI>
+	<LI><A HREF="#see also">SEE ALSO</A></LI>
 </UL>
 <!-- INDEX END -->
 
 <HR>
 <P>
 <HR>
-<H1><A NAME="NAME">NAME</A></H1>
+<H1><A NAME="name">NAME</A></H1>
+<P>Curl::easy - Perl extension interface for libcurl</P>
 <P>
-Curl::easy - Perl extension for libcurl
+<HR>
+<H1><A NAME="synopsis">SYNOPSIS</A></H1>
+<PRE>
+        use Curl::easy;
+</PRE>
+<PRE>
 
+        my $curl = Curl::easy::new(); # an alias for Curl::easy::init
+        my $code = $curl-&gt;setopt(CURLOPT_option, ....);
+           $code = $curl-&gt;perform($curl);
+        my $err = $curl-&gt;errbuf; # report any error message
+        my $info = $curl-&gt;getinfo(CURLINFO_option);</PRE>
+<PRE>
+        $curl-&gt;cleanup(); # optional</PRE>
+<PRE>
+        Curl::easy::global_cleanup(); # optional cleanup at exit</PRE>
+<P>Read the curl man pages, <CODE>curl_easy_setopt(3)</CODE> and <CODE>curl_easy_getinfo(3)</CODE> for details of CURLOPT_option and CURLINFO_option values.</P>
 <P>
 <HR>
-<H1><A NAME="SYNOPSIS">SYNOPSIS</A></H1>
-<P>
-<PRE>        use Curl::easy;
- 
-        $curl = Curl::easy::init();
-        $CURLcode = Curl::easy::setopt($curl, CURLoption, Value);
-        $CURLcode = Curl::easy::perform($curl);
-        Curl::easy::cleanup($curl);
-</PRE>
-<P>
-<PRE>        Read curl_easy_setopt for details of most CURLoption values
-</PRE>
-<P>
-<HR>
-<H1><A NAME="DESCRIPTION">DESCRIPTION</A></H1>
-<P>
-<PRE> 
+<H1><A NAME="description">DESCRIPTION</A></H1>
+<PRE>
+
 B&lt;Curl::easy&gt; provides an interface to the libcurl C library. See
-<A HREF="http://curl.haxx.se/">http://curl.haxx.se/</A> for more information on cURL and libcurl.
-</PRE>
+<A HREF="http://curl.haxx.se/">http://curl.haxx.se/</A> for more information on cURL and libcurl.</PRE>
+<P>From v1.30, this interface supports the perl OO style of creating
+$curl handles, and calling methods to get and set curl parameters. Previous
+versions of this interface only supported the straight 'subroutine' call style
+of accessing curl. Scripts using the older style are still compatible (but see
+COMPATABILITY, below), but this documentation and the test scripts have been
+updated to the OO style.</P>
 <P>
-<HR>
-<H2><A NAME="FILES_and_CALLBACKS">FILES and CALLBACKS</A></H2>
+<H2><A NAME="files and callbacks">FILES and CALLBACKS</A></H2>
+<P>Curl::easy supports the various options of curl_easy_setopt which require either a FILE * or
+a callback (subroutine) reference.</P>
+<P>Callback to perl subroutines are handled by this XS interface through a wrapper which takes
+care of converting from C to perl variables and back again. This wrapper also simplifies some
+'C' style arguments to make them behave in a more 'perl' like manner. In particular, the
+read and write callbacks do not look just like the 'fread' and 'fwrite' C functions -
+perl variables do not need separate length parameters, and perl functions can return a list of
+variables, instead of needing a pointer to modify. The details are described below.</P>
 <P>
-Curl::easy supports the various options of curl_easy_setopt which require
-either a FILE * or a callback function.
+<H2><A NAME="file * handles (globs)"><CODE>FILE *</CODE> handles (GLOBS)</A></H2>
+<PRE>
 
-<P>
-The perl callback functions are handled through a C wrapper which takes
-care of converting from C to perl variables and back again. This wrapper
-simplifies some C arguments to make them behave in a more 'perl' like
-manner. In particular, the read and write callbacks do not look just like
-the 'fread' and 'fwrite' C functions - perl variables do not need separate
-length parameters, and perl functions can return a list of variables,
-instead of needing a pointer to modify. The details are described below.
+Curl options which take a C&lt;FILE *&gt;, such as C&lt;CURLOPT_FILE&gt;, C&lt;CURLOPT_WRITEHEADER&gt;,
+C&lt;CURLOPT_INFILE&gt;
+can be passed a perl file handle:</PRE>
+<PRE>
 
+        open BODY,&quot;&gt;body.out&quot;;
+        $code = $curl-&gt;setopt(CURLOPT_FILE, *BODY);</PRE>
 <P>
-<HR>
-<H2><A NAME="FILE_handles_GLOBS_Curl_option">FILE handles (GLOBS)
- 
-Curl options which take a FILE, such as CURLOPT_FILE, CURLOPT_WRITEHEADER, CURLOPT_INFILE
-can be passed a perl file handle:
- 
-  open BODY,&quot;&gt;body.out&quot;;
-  $CURLcode = Curl::easy::setopt($curl, CURLOPT_FILE, BODY);</A></H2>
+<H2><A NAME="write callback">WRITE callback</A></H2>
+<P>The <CODE>CUROPT_WRITEFUNCTION</CODE> option may be set which will cause libcurl to call back to
+the referenced perl subroutine:</P>
+<PRE>
+        sub chunk { my ($data,$pointer)=@_; ...do something...; return length($data) }</PRE>
+<PRE>
+        # call the above routine from curl:
+        $code = $curl-&gt;setopt(CURLOPT_WRITEFUNCTION, \&amp;chunk );
+        $code = $curl-&gt;setopt(CURLOPT_FILE, \$variable );
+        $curl-&gt;perform();</PRE>
+<P>The subroutine will be passed whatever is defined by <CODE>CURLOPT_FILE</CODE>. This can be
+a reference to a regular variable (as above), or a glob or anything else you like.</P>
+<P>The callback function must return the number of bytes 'handled' ( <CODE>length($data)</CODE> ) or
+the transfer will abort. A transfer can be aborted by returning a value of 0, for example.</P>
+<P>The option <CODE>CURLOPT_WRITEHEADER</CODE> can be set to pass a different <CODE>$pointer</CODE> into the
+CURLOPT_WRITEFUNCTION for header values. This lets you collect the headers and body separately, as
+shown in the example below:</P>
+<PRE>
+    use Curl::easy;
+    my $headers=&quot;&quot;;
+    my $body=&quot;&quot;;
+    sub chunk { my ($data,$pointer)=@_; ${$pointer}.=$data; return length($data) }</PRE>
+<PRE>
+    my $curl=Curl::easy-&gt;new
+    my $code = $curl-&gt;setopt(CURLOPT_WRITEFUNCTION, \&amp;chunk );
+       $code = $curl-&gt;setopt(CURLOPT_WRITEHEADER, \$headers );
+       $code = $curl-&gt;setopt(CURLOPT_FILE, \$body );
+    $curl-&gt;perform();
+    print $body;</PRE>
+<P>If you have libcurl &gt; 7.7.1, then you could instead set <CODE>CURLOPT_HEADERFUNCTION</CODE> to a different
+callback, and have the header collected that way.</P>
 <P>
-<HR>
-<H2><A NAME="WRITE_callback">WRITE callback</A></H2>
-<P>
-The CUROPT_WRITEFUNCTION option may be set which will cause libcurl to
-callback to the given subroutine:
-
-<P>
-<PRE>  sub chunk { my ($data,$pointer)=@_; ...; return length($data) }
-  $CURLcode = Curl::easy::setopt($curl, CURLOPT_WRITEFUNCTION, \&amp;chunk );
-  $CURLcode = Curl::easy::setopt($curl, CURLOPT_FILE, );
-</PRE>
-<P>
-In this case, the subroutine will be passed whatever is defined by
-CURLOPT_FILE. This can be a ref to a scalar, or a GLOB or anything else you
-like.
-
-<P>
-The callback function must return the number of bytes 'handled' (
-<CODE>length($data)</CODE> ) or the transfer will abort. A transfer can be
-aborted by returning a 'length' of '-1'.
-
-<P>
-The option CURLOPT_WRITEHEADER can be set to pass a different '$pointer'
-into the CURLOPT_WRITEFUNCTION for header values. This lets you collect the
-headers and body separately:
-
-<P>
-<PRE>  my $headers=&quot;&quot;;
-  my $body=&quot;&quot;;
-  sub chunk { my ($data,$pointer)=@_; ${$pointer}.=$data; return length($data) }
-</PRE>
-<P>
-<PRE>  $CURLcode = Curl::easy::setopt($curl, CURLOPT_WRITEFUNCTION, \&amp;chunk );
-  $CURLcode = Curl::easy::setopt($curl, CURLOPT_WRITEHEADER, \$header );
-  $CURLcode = Curl::easy::setopt($curl, CURLOPT_FILE, \$body );
-</PRE>
-<P>
-If you have libcurl &gt; 7.7.1, then you could instead set
-CURLOPT_HEADERFUNCTION to a different callback, and have the header
-collected that way.
-
-<P>
-<HR>
-<H2><A NAME="READ_callback">READ callback</A></H2>
-<P>
-Curl::easy supports CURLOPT_READFUNCTION. This function should look
-something like this:
-
-<P>
-<PRE>    sub read_callback {
-        my ($maxlength,$pointer)=@_;
-</PRE>
-<P>
-<PRE>                ....
-</PRE>
-<P>
-<PRE>        return $data;
-    }
-</PRE>
-<P>
-The subroutine must return an empty string ``'' at the end of the data.
-Note that this function isn't told how much data to provide -
-<CODE>$maxlength</CODE> is just the maximum size of the buffer provided by
-libcurl. If you are doing an HTTP POST or PUT for example, it is important
-that this function only returns as much data as the 'Content-Length' header
-specifies, followed by a an empty (0 length) buffer.
-
-<P>
-<HR>
-<H2><A NAME="PROGRESS_callback">PROGRESS callback</A></H2>
-<P>
-Curl::easy supports CURLOPT_PROGRESSFUNCTION. This function should look
-something like this:
-
-<P>
-<PRE>    sub prog_callb
-    {
-        my ($clientp,$dltotal,$dlnow,$ultotal,$ulnow)=@_;
+<H2><A NAME="read callback">READ callback</A></H2>
+<P>Curl::easy supports <CODE>CURLOPT_READFUNCTION</CODE>. This function should follow this prototype:</P>
+<PRE>
+        sub read_callback {
+            my ($maxlength,$pointer)=@_;
                 ....
-        return 0;
-    }                        
-</PRE>
+            return $data;
+        }</PRE>
+<P>The subroutine must return an empty string ``'' at the end of the data. Note that this function
+isn't told how much data to provide - $maxlength is just the maximum size of the buffer
+provided by libcurl. If you are doing an HTTP POST or PUT for example, it is important that this
+function only returns (in total) as much data as the 'Content-Length' header specifies, followed by
+a an empty (0 length) buffer.</P>
 <P>
-The function should return 0 normally, or -1 which will abort/cancel the
-transfer. <CODE>$clientp</CODE> is whatever value/scalar is set using the
-CURLOPT_PROGRESSDATA option.
+<H2><A NAME="progress callback">PROGRESS callback</A></H2>
+<P>Curl::easy supports <CODE>CURLOPT_PROGRESSFUNCTION</CODE>. This function should follow this prototype:</P>
+<PRE>
+        sub progress_callback {
+            my ($clientp,$dltotal,$dlnow,$ultotal,$ulnow)=@_;
+                ....
+            return 0;
+        }</PRE>
+<P>The function should return 0 normally, or -1 which will abort/cancel the
+transfer. <CODE>$clientp</CODE> is whatever is set using the <CODE>CURLOPT_PROGRESSDATA</CODE> option.</P>
+<P>
+<H2><A NAME="passwd callback">PASSWD callback</A></H2>
+<P>Curl::easy supports <CODE>CURLOPT_PASSWDFUNCTION</CODE>. This function should look something like this:
+</P>
+<PRE>
 
+        sub passwd_callback {
+            my ($clientp,$prompt,$buflen)=@_;
+                ...
+            return (0,$data);
+        }</PRE>
+<P><CODE>$clientp</CODE> is whatever scalar is set using the <CODE>CURLOPT_PASSWDDATA</CODE> option.
+<CODE>$prompt</CODE> is a text string which can be used to prompt for a password.
+<CODE>$buflen</CODE> is the maximum length of the accepted password reply.</P>
+<P>The function must return 0 (for 'OK') and the password data as a list.
+Return (-1,``'') to indicate an error.</P>
+<P>
+<H2><A NAME="stderr redirection">STDERR redirection</A></H2>
+<P>You can use set the option <CODE>CURLOPT_STDERR</CODE> to an alternate file handle glob
+to redirect stderr messages from libcurl, if your libcurl version has this option.</P>
+<PRE>
+        open(OTHERFILE,&quot;&gt;/dev/null&quot;) or die;
+        $curl-&gt;setopt(CURLOPT_STDERR,*OTHERFILE);</PRE>
 <P>
 <HR>
-<H2><A NAME="PASSWD_callback">PASSWD callback</A></H2>
-<P>
-Curl::easy supports CURLOPT_PASSWDFUNCTION. This function should look
-something like this: sub passwd_callb { my ($clientp,$prompt,$buflen)=@_;
-... return (0,$data); }                    
-
-<P>
-<CODE>$clientp</CODE> is whatever scalar is set using the
-CURLOPT_PASSWDDATA option. <CODE>$prompt</CODE> is a text string which can
-be used to prompt for a password. <CODE>$buflen</CODE> is the maximum
-accepted password reply.
-
-<P>
-The function must return 0 (for 'OK') and the password data as a list.
-Return (-1,``'') to indicate an error.
-
+<H1><A NAME="compatability notes">COMPATABILITY NOTES</A></H1>
+<P>Previous releases of this module didn't reliably deal with more than a single
+curl handle per process, because of the use of a number of global 'glue' variables
+in various places. This should now be fixed, but certain interface features could not
+be made reliably forward compatible if you intend to use multiple handles or threading:</P>
+<UL>
+<LI>
+The (largely undocumented) USE_INTERNAL_VARS feature, which previously collected data in a
+static global buffer, has been ported to use the new threadable structure, but
+the method by which it returns it's output (directly into specific global variables)
+cannot be made safe without destroying backwards compatibility. The interface is considered
+deprecated in this release - instead, use a perl subroutine callback to collect output into a
+string (as shown in the example above), which should be safe across multiple threads/handles.
+<P></P>
+<LI>
+You can build this module without the USE_INTERNAL_VARS interface by compiling with
+-UWITH_INTERNAL_VARS. This will become the default in a future release.
+<P></P></UL>
+<UL>
+<LI>
+Returning the error buffer by passing the name of a perl variable through <CODE>$curl-&gt;setopt</CODE>
+is ugly.  It is still supported, but instead, you can get the information by calling the new method
+<CODE>$curl-</CODE>errbuf&gt; directly.
+<P></P>
+<LI>
+Returning CURLINFO variables by passing the output variable to <CODE>$curl-&gt;getinfo</CODE> is ugly.
+It is still supported, but instead, you can get the information as the return value from
+getinfo. Instead of:
+<PRE>
+        my $bytes;
+        Curl::easy::getinfo($curl, CURLINFO_SIZE_DOWNLOAD, $bytes);</PRE>
+<P><TABLE CELLSPACING=0 CELLPADDING=0><TR><TD>use:
+<TR><TD><TD>my $bytes=$curl-&gt;getinfo(CURLINFO_SIZE_DOWNLOAD);</TABLE></P>
+<P></P>
+<LI>
+<CODE>$curl-&gt;cleanup</CODE> ( Curl::easy::cleanup($curl) ) no longer actually does anything. Curl
+handles will be automatically cleaned up by perl when they are no longer used.
+<P></P>
+<LI>
+curl_global_init is now explicitly called when the module is first loaded, rather than relying on
+it hapenning during the first call to curl_easy_init. This should eliminate the chance of a race if
+creating two handles simultaneously. (E.g. using perl ithreads).
+<P></P>
+<LI>
+curl_global_cleanup is not called automatically when perl or the module shuts down, as there
+doesn't seem an easy way to arrange this in perl-XS (suggestions welcome). You can call curl 
+global cleanup explicitly (if you care) by calling the class method Curl::easy::global_cleanup .
+Don't call any other curl functions afterwards!
+<P></P></UL>
 <P>
 <HR>
-<H1><A NAME="AUTHOR_Georg_Horn_horn_koblenz_">AUTHOR
- 
-Georg Horn &lt;horn@koblenz-net.de&gt;
- 
-Additional callback, pod and test work by Cris Bailiff &lt;c.bailiff@devsecure.com&gt;
-and Forrest Cahoon &lt;forrest.cahoon@merrillcorp.com&gt;</A></H1>
-<P>
-Currently maintained by Cris Bailiff &lt;<A
-HREF="mailto:c.bailiff@devsecure.com">c.bailiff@devsecure.com</A>&gt;
-
+<H1><A NAME="known bugs">KNOWN BUGS</A></H1>
+<P>There is a slow leak of a few bytes each time a Curl::easy handle is created and
+destroyed (despite careful cleanup efforts) at least when testing with libcurl-7.9.8.
+Hopefully this will be fixed in the next release.</P>
+<P>Also note the above problems with the USE_INTERNAL_VARS interface.</P>
 <P>
 <HR>
-<H1><A NAME="Copyright">Copyright</A></H1>
-<P>
-Copyright (C) 2000, Daniel Stenberg, , et al. You may opt to use, copy,
-modify, merge, publish, distribute and/or sell copies of the Software, and
-permit persons to whom the Software is furnished to do so, under the terms
-of the MPL or the MIT/X-derivate licenses. You may pick one of these
-licenses.
-
+<H1><A NAME="author">AUTHOR</A></H1>
+<P>Versions 1.30, a (hopefully) threadable, object-oriented, multiple-callback compatible
+version of Curl::easy was substantially reworked from the previous Curl::easy
+release (1.21) by Cris Bailiff.</P>
+<P>Original Author Georg Horn &lt;<A HREF="mailto:horn@koblenz-net.de">horn@koblenz-net.de</A>&gt;, with additional callback, pod
+and test work by Cris Bailiff &lt;<A HREF="mailto:c.bailiff+curl@devsecure.com">c.bailiff+curl@devsecure.com</A>&gt; and Forrest Cahoon
+&lt;<A HREF="mailto:forrest.cahoon@merrillcorp.com">forrest.cahoon@merrillcorp.com</A>&gt;</P>
+<P>Currently maintained by Cris Bailiff &lt;<A HREF="mailto:c.bailiff+curl@devsecure.com">c.bailiff+curl@devsecure.com</A>&gt;</P>
 <P>
 <HR>
-<H1><A NAME="SEE_ALSO">SEE ALSO</A></H1>
+<H1><A NAME="copyright">Copyright</A></H1>
+<P>Copyright (C) 2000,2001,2002 Daniel Stenberg, Cris Bailiff, et al.
+</P>
+<PRE>
+
+You may opt to use, copy, modify, merge, publish, distribute and/or sell
+copies of the Software, and permit persons to whom the Software is furnished
+to do so, under the terms of the MPL or the MIT/X-derivate licenses. You may
+pick one of these licenses.</PRE>
 <P>
-<A HREF="http://curl.haxx.se/">http://curl.haxx.se/</A>
- 
+<HR>
+<H1><A NAME="see also">SEE ALSO</A></H1>
+<P><A HREF="http://curl.haxx.se/">http://curl.haxx.se/</A></P>
 #include "_footer.html"
- 
+
 </BODY>
 </HTML>
