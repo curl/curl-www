@@ -41,6 +41,34 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
  document (it is work in progress).
 </ul>
 
+SUBTITLE(Fixed in 7.13.2)
+<p> Changes:
+<ul>
+ <li> Added --form-string
+ <li> libcurl can be built with SSPI support. curl_version_info() then returns
+   a new feature bit: CURL_VERSION_SSPI. configure --enable-sspi added
+ <li> Added --proxy-anyauth
+ <li> Added runtests.1 and testcurl.1 man pages
+</ul>
+<p> Bugfixes:
+<ul>
+ <li> the MSVC libcurl Makefile was fixed
+ <li> libcurl on Windows crash if resolver was active when easy handle was killed
+ <li> HTTP POST with auth and an initial 100 response before the 401/407
+ <li> configure's SSL-detection for msys/mingw
+ <li> better connection keep-alive when POSTing with HTTP Digest
+ <li> FTP-SSL
+ <li> reading FTP server response in multiple reads
+ <li> picking one out of multiple proxy auth methods
+ <li> inet_ntoa_r() when built with uClibc
+ <li> the so name issue for the LDAP library dynamic load
+ <li> crash when using SOCKS4 proxy
+ <li> a debug printf() was removed
+ <li> CURLOPT_FILETIME when downloading FTP corrupted data
+ <li> FTP upload resume now works even if no file is present on the site
+ <li> SSL seeding no longer attempts to read the whole random file
+</ul>
+
 SUBTITLE(Fixed in 7.13.1)
 <p> Changes:
 <ul>
