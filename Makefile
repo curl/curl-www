@@ -61,7 +61,7 @@ foot.html: _foot.html $(MAINPARTS)
 main.html: _main.html $(MAINPARTS) $(STAT)
 	$(ACTION)
 
-index.html: main.html
+index.html: main.html newslog.html
 	rm -f $@
 	./filter.pl < $< > $@
 
