@@ -113,6 +113,12 @@ LINK("", Gambas)
 VLINK(/libcurl/gambas/, Gambas)
 #endif
 
+#ifdef LIBCURL_GLIB
+LINK("", glib/GTK+)
+#else
+VLINK(/libcurl/glib/, glib/GTK+)
+#endif
+
 #ifdef LIBCURL_JAVA
 LINK("", Java)
 #else
