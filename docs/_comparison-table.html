@@ -135,7 +135,7 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
 
  NEWLINE
   FEAT SOCKS ENDFEAT
-  MISSINGSOCKS
+  FEATURE
   FEATURE
   FEATURE
   MISSING
@@ -339,6 +339,17 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
  ENDLINE
 
  NEWLINE
+  FEAT HTTP deflate ENDFEAT
+  FEATURE
+  MISSING
+  MISSING
+  UNKNOWN
+  UNKNOWN
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
   FEAT License ENDFEAT
   NEWCOL MIT ENDCOL
   NEWCOL GPL ENDCOL
@@ -350,9 +361,10 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
  ENDLINE
 </table>
 
+#if 0
 <p>
  [1] = cURL and runsocks works fine together though!
-
+#endif
 <p>
  Quick links to the above mentioned tools: <a
  href="http://www.xach.com/snarf/">snarf</a>, <a
