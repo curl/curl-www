@@ -7,8 +7,9 @@ o 'cpp'        Daniel's cpp preprocessor with web extensions
 o 'man2html'   A man page to HTML converter
 o 'txt2html'   A plain text to HTML converter
 o 'txt2plain'  Daniel's very simple perl script to convert < and > etc to HTML
+o 'gnudate'    The GNU date command
 
-Run 'make' in the www-root to build the full site.
+Run 'make' in the www-root to build the full site. Requires GNU make.
 
 Add a symbolic link named 'cvssource' in the web site's root dir to point to
 the root of a curl source tree (have that automatically updated from CVS to be
