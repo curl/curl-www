@@ -6,7 +6,7 @@ DOCROOT=$(SRCROOT)/docs
 CURL= $(ROOT)
 MAN2HTML= man2html | sed -e 's/^$$/\&nbsp;/g' -e 's/\#/\&\#35\;/g' | uniq
 
-MAINPARTS= $(ROOT)/_doctype.html _menu.html ../_links.html ../setup.t ../pic.t  $(ROOT)/where.t ../download.t $(ROOT)/ad.t
+MAINPARTS= $(ROOT)/_doctype.html _menu.html ../_links.html ../setup.t ../pic.t  $(ROOT)/where.t ../download.t $(ROOT)/ad.t $(ROOT)/css.t
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 ACTION=@echo preprocessing $@; rm -f $@; cpp -I.. -I$(ROOT) -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; chmod a-w+r $@
 

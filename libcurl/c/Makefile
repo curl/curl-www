@@ -7,7 +7,7 @@ MANROOT=$(DOCROOT)/libcurl
 
 MAINPARTS= $(CURL)/_doctype.html _menu.html $(CURL)/_footer.html ../setup.t \
 ../pic.t doclinks.t $(CURL)/where.t ../download.t $(CURL)/ad.t Makefile	    \
-$(CURL)/mirrorlinks.t $(CURL)/searchform.t
+$(CURL)/mirrorlinks.t $(CURL)/searchform.t $(CURL)/css.t
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 ACTION=@echo preprocessing $@; \
        rm -f $@; \
