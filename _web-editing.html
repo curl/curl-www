@@ -1,0 +1,60 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Web Site Editing Guidlines</TITLE>
+</HEAD>
+
+#include "_menu.html"
+#include "setup.t"
+#include "pic.t"
+
+TITLE(Web Site Editing Guidlines)
+<p>
+ <b>This document is intended for the curl web site editors only.</b>
+
+<p>
+ You need an account on sourceforge.net and that account needs to be a member
+ in project curl. You check out the entire curl web site with:
+<pre>
+cvs -d [user]@cvs.curl.sourceforge.net:/cvsroot/curl checkout www
+</pre>
+
+<p>
+ When you've checked out the web pages from CVS, there's a file named
+ 'CVS-README' present which contains some hard technical facts about
+ things. Read that first.
+
+
+<p>
+ To think of:
+<ul>
+ <li> The pages are preprocessed before they are finalized. The preprocessor
+      is a simple C-style one, but please take care so that #if and #ifdefs
+      have an ending #endif and so on.
+
+ <li> The web site is updated from CVS every 20 minutes. If you notice a
+      mistake, it will stay that way at least until next update.
+</ul>
+
+<p>
+ What to edit/update?
+<ul>
+ <li> Add news items whenever you have interesting "news" you think the curl
+      community might enjoy. The news section also serves a purpose of making
+      it apparent that the site is living. Try to follow the tradition and
+      style of previous news items. Note the use of the macros.
+
+ <li> Try to keep the download page up-to-date. If new versions of packages
+      mentioned on the site is available, try to make the page reflect that
+      fact. Do note the use of the 'TRCURRENT' and 'TRNCURRENT' (N is for NOT)
+      macros.
+
+ <li> Edit bad language use, bad spelling or confusing use of words.
+
+ <li> If the problem is in a page out of control from the web site, chances are
+      that the page is generated automatically from a file in the source code
+      archive and then <i>that</i> file could be corrected instead.
+</ul>
+
+#include "_footer.html"
+</BODY>
+</HTML>

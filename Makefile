@@ -26,7 +26,7 @@ all: index.shtml feedback.html mirrors.html cvs.html libs.html icons.html \
 	version7.html bugreport.html about.html support.html \
 	news.html news.shtml head.html foot.html \
 	oldnews.shtml indexheader.html indexfooter.html \
-	mailheader.html mailfooter.html info \
+	mailheader.html mailfooter.html info web-editing.html \
 	latest.shtml
 	cd docs; make
 	cd libcurl; make
@@ -55,6 +55,9 @@ head.html: _head.html $(MAINPARTS)
 	$(ACTION)
 
 version7.html: _version7.html $(MAINPARTS)
+	$(ACTION)
+
+web-editing.html: _web-editing.html $(MAINPARTS)
 	$(ACTION)
 
 foot.html: _foot.html $(MAINPARTS)
