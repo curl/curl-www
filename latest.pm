@@ -148,6 +148,11 @@ sub gettype {
         return($1, "cygwin-src",
                "Source archive for cygwin, bzip2, SSL-enabled");
     }
+    # curl-7.9.3-sparc-whatever-linux.tar.gz
+    elsif($file =~ /^curl-([0-9.]*)-sparc-whatever-linux.tar.gz/) {
+        return($1, "linux-sparc",
+               "Binary archive for linux on sparc, gzipped");
+    }
 }
 
 sub scanstatus {
