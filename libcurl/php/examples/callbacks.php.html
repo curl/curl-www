@@ -1,0 +1,9 @@
+This script demonstrates how you can set callback functions to receive the
+HTTP response as it comes through.
+<p>
+The advantage of this is that you don't have to wait for the whole response
+to be returned before you start work on it, you can monitor for certain
+headers, start outputting while you're receiving, etc..
+<p>
+For more info on CURLOPT_HEADERFUNCTION and CURLOPT_WRITEFUNCTION see:
+http://curl.haxx.se/libcurl/c/curl_easy_setopt.html
