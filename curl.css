@@ -29,6 +29,13 @@ BODY {
   font-weight: bold;
 }
 
+tr.tabletop {
+  font-size: 120%;
+  font-family: sans-serif;
+  color: #ffffff;
+  background-color: #0000ff;
+}
+
 .buildfail {
   color: #000000;
   background-color: #ff8080;
