@@ -9,12 +9,12 @@ TXT2HTML= txt2html --extract --hrule 10
 TXT2PLAIN = txt2plain.pl
 MAN2HTML = man2html | sed 's/^$$/\&nbsp;/g' | uniq
 
-all: index.html manpage.html faq.shtml faq.html changes.shtml		\
-	changes.html contribute.html internals.shtml internals.html	\
+all: index.html manpage.html faq.html changes.html contribute.html	\
+        internals.html					\
 	features.html resources.html bugs.html				\
 	install.html readme.html readme.curl.html			\
 	resources.html copyright.html thanks.html			\
-	y2k.html todo.html httpscripting.shtml httpscripting.html	\
+	y2k.html todo.html httpscripting.html	\
         comparison-table.html relatedtools.html osdistribs.html		\
 	versions.html history.html
 	@echo done 
@@ -47,10 +47,6 @@ history.html: _history.html $(MAINPARTS) history.t
 history.t: $(DOCROOT)/HISTORY
 	$(TXT2HTML) < $(DOCROOT)/HISTORY > history.t
 
-
-changes.shtml: _changes.shtml $(MAINPARTS) changes.t
-	$(ACTION)
-
 changes.html: _changes.shtml $(MAINPARTS) changes.t
 	$(ACTION)
 
@@ -70,9 +66,6 @@ thanks.t: $(DOCROOT)/THANKS
 	$(TXT2PLAIN) < $< > $@
 
 
-faq.shtml: _faq.shtml $(MAINPARTS) faq.t
-	$(ACTION)
-
 faq.html: _faq.shtml $(MAINPARTS) faq.t
 	$(ACTION)
 
@@ -81,9 +74,6 @@ faq.t: $(DOCROOT)/FAQ
 
 httpscript.t: $(DOCROOT)/TheArtOfHttpScripting
 	$(TXT2PLAIN) < $< > $@
-
-httpscripting.shtml: _httpscripting.shtml $(MAINPARTS) httpscript.t
-	$(ACTION)
 
 httpscripting.html: _httpscripting.shtml $(MAINPARTS) httpscript.t
 	$(ACTION)
@@ -146,9 +136,6 @@ versions.html: _versions.html $(MAINPARTS) versions.t
 versions.t: $(DOCROOT)/VERSIONS
 	$(TXT2HTML) < $(DOCROOT)/VERSIONS > versions.t
 
-
-internals.shtml: _internals.shtml $(MAINPARTS) internals.t
-	$(ACTION)
 
 internals.html: _internals.shtml $(MAINPARTS) internals.t
 	$(ACTION)
