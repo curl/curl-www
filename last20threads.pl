@@ -9,12 +9,14 @@ my $tree="mail/";
 my %listnames = ('archive' => 'Users',
                  'lib' => 'Library',
                  'curlphp' => 'PHP',
-                 'curlpython' => 'Python');
+                 'curlpython' => 'Python',
+                 'tracker' => 'Tracker');
 
 my %listrealname = ('archive' => 'curl-users',
                     'lib' => 'curl-library',
                     'curlphp' => 'curl-and-php',
-                    'curlpython' => 'curl-and-python');
+                    'curlpython' => 'curl-and-python',
+                    'tracker' => 'curl-tracker');
 
 opendir(DIR, $tree) || die "can't opendir $tree: $!";
 my @archives = grep { /^(.*)-(\d\d\d\d)-(\d\d)$/ && -d "$tree/$_" } readdir(DIR);
