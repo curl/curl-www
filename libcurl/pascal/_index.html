@@ -13,12 +13,16 @@ WHERE2(libcurl, "/libcurl/", libcurl Pascal Interface)
 
 <a name=top>
 TITLE(CurlPas -- accessing libcurl from Pascal)
+
 <p>
-<b>CurlPas</b> - <a href="http://www.freepascal.org"><i>free pascal</i></a> bindings to <a href="http://curl.haxx.se/libcurl"><i>libcurl</i></a>.
+<b>CurlPas</b> - A <a href="http://www.freepascal.org"><i>free pascal</i>,
+Delphi and Kylix</a> binding to <a
+href="http://curl.haxx.se/libcurl"><i>libcurl</i></a>.
+
 <br><br>
-<i>libcurl</i>&nbsp; is a web-client libray that can provide your <i>free pascal</i> applications with an easy way to implement such things as:<ul>
+<i>libcurl</i> is a web-client libray that can provide your <i>free pascal</i> applications with an easy way to implement such things as:<ul>
 <li>Download files using FTP or HTTP.
-<li>Upload files using FTP,&nbsp; HTTP PUT and multipart/form-data (aka rfc1867).
+<li>Upload files using FTP, HTTP PUT and multipart/form-data (aka rfc1867).
 <li>Support for remote FTP commands like MKD, CWD, DELE, and CHMOD.
 <li>Timeout settings for connect, minimum transfer speed, and total download time.
 <li>Resume partial file transfers.
@@ -51,12 +55,12 @@ Free Pascal >= 1.0.4, available from: <a href="http://www.freepascal.org/">http:
 Curl/libcurl >= 7.9.5, available from: <a href="http://curl.haxx.se">http://curl.haxx.se</a><br>
 <br>
 To build CurlPas and tCurl, <b>cd</b> into the curlpas directory and
-type:&nbsp <b>make</b><br> To build the example projects, issue the
+type: <b>make</b><br> To build the example projects, issue the
 <b>make</b> command again in the /examples/ directory.<br>
 <br>
 To install curlpas, you may either copy the files from the /curlpas/src/
 directory into a location where the compiler can find them, or you can edit
-your configuration file ( usually&nbsp; /etc/ppc386.cfg &nbsp;or&nbsp;
+your configuration file ( usually /etc/ppc386.cfg or
 ~/.ppc386.cfg ) and add the /src/ directory to the compiler's search path, for
 instance: <br>
 -Fu/home/username/curlpas/src
