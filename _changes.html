@@ -30,6 +30,19 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 </ul>
 #endif
 
+SUBTITLE(Fixed since -- available in CVS and pre-releases)
+<p> Bugs fixed:
+<ul>
+ <li> name resolving failed with glibc 2.2.93
+ <li> libtool build fix for -no-undefined
+ <li> the follow location code could crash occasionally
+ <li> multi interface and FOLLOW_LOCATION didn't work properly
+ <li> curl -j (CURLOPT_COOKIESESSION) didn't work properly
+ <li> config file parser could crash on the presense of CRLF newlines
+ <li> downloading HTTP without headers sometimes corrupted the data
+ <li> connecting to a bad port number with the multi interface did wrong
+</ul>
+
 SUBTITLE(Fixed in 7.10.1)
 <p> Changes:
 <ul>
