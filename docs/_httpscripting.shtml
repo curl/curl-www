@@ -16,7 +16,7 @@ WHERE2(Docs, "/docs/", Tutorial)
 TITLE(Using cURL to automate HTTP jobs)
 
 <pre>
-<!--#include virtual="/docs/httpscript.t" -->
+#include "httpscript.t"
 </pre>
 
 #include "_footer.html"

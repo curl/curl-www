@@ -15,7 +15,7 @@ WHERE2(Docs, "/docs/", Changes)
 TITLE(CHANGES -- track all changes)
 
 <pre>
-<!--#include virtual="/docs/changes.t" -->
+#include "changes.t"
 </pre>
 
 #include "_footer.html"

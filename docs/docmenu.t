@@ -11,7 +11,7 @@ DOCREF(bugs.html, Bugs)
 #ifdef DOCS_CHANGES
 HERE(x, Changes)
 #else
-DOCREF(changes.shtml, Changes)
+DOCREF(changes.html, Changes)
 #endif
 
 #ifdef DOCS_COMPARISON
@@ -60,7 +60,7 @@ DOCREF(./, Index)
 #ifdef DOCS_INTERNALS
 HERE(x, Internals)
 #else
-DOCREF(internals.shtml, Internals)
+DOCREF(internals.html, Internals)
 #endif
 
 #ifdef DOCS_MANPAGE
@@ -98,7 +98,7 @@ DOCREF(thanks.html, Thanks)
 #ifdef DOCS_HTTPSCRIPT
 HERE(x, Tutorial)
 #else
-DOCREF(httpscripting.shtml, Tutorial)
+DOCREF(httpscripting.html, Tutorial)
 #endif
 
 #ifdef DOCS_TODO

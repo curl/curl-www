@@ -10,7 +10,7 @@ TXT2PLAIN = txt2plain.pl
 MAN2HTML = man2html | sed 's/^$$/\&nbsp;/g' | uniq
 
 all: index.html manpage.html faq.shtml faq.html changes.shtml		\
-	contribute.html internals.shtml internals.t			\
+	changes.html contribute.html internals.shtml internals.html	\
 	features.html resources.html bugs.html				\
 	install.html readme.html readme.curl.html			\
 	resources.html copyright.html thanks.html			\
@@ -42,6 +42,9 @@ bugs.t: $(DOCROOT)/BUGS
 
 
 changes.shtml: _changes.shtml $(MAINPARTS) changes.t
+	$(ACTION)
+
+changes.html: _changes.shtml $(MAINPARTS) changes.t
 	$(ACTION)
 
 changes.t: $(SRCROOT)/CHANGES
@@ -137,7 +140,10 @@ versions.t: $(DOCROOT)/VERSIONS
 	$(TXT2HTML) < $(DOCROOT)/VERSIONS > versions.t
 
 
-internals.shtml: _internals.shtml $(MAINPARTS)
+internals.shtml: _internals.shtml $(MAINPARTS) internals.t
+	$(ACTION)
+
+internals.html: _internals.shtml $(MAINPARTS) internals.t
 	$(ACTION)
 
 internals.t: $(DOCROOT)/INTERNALS
