@@ -14,6 +14,12 @@
 WHERE2(Docs, "/docs/", Tutorial)
 
 TITLE(Using cURL to automate HTTP jobs)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="manpage.html">curl man page</a>
+<br><a href="manual.html">Manual</a>
+<br><a href="faq.html">FAQ</a>
+</div>
 
 <pre>
 #include "httpscript.t"
