@@ -84,6 +84,10 @@ sub scanstatus {
                 $pkg="rh71-".$pkg;
                 $desc="Linux i386 RPM package. (redhat 7.1 style)";
             }
+            elsif($3 eq "rh72") {
+                $pkg="rh72-".$pkg;
+                $desc="Linux i386 RPM package. (redhat 7.2 style)";
+            }
             storemax($_, $1, $size, $pkg, $desc);
         }
         # curl-7.4.1-1.ppc.rpm
@@ -103,6 +107,10 @@ sub scanstatus {
             if($3 eq "rh71") {
                 $pkg="rh71-".$pkg;
                 $desc="Linux i386 RPM package, SSL-enabled. (redhat 7.1 style)";
+            }
+            elsif($3 eq "rh72") {
+                $pkg="rh72-".$pkg;
+                $desc="Linux i386 RPM package, SSL-enabled. (redhat 7.2 style)";
             }
             storemax($_, $1, $size, $pkg, $desc);
         }
