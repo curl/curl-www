@@ -26,7 +26,7 @@ open(CH, "<changes.t");
 push @vers, "CVS";
 while(<CH>) {
     chomp;
-    if($_ =~ /Version ([^ ]*)/) {
+    if($_ =~ /^Version ([^ ]*)/) {
         push @vers, $1;
     }
 }
