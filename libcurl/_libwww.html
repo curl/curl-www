@@ -1,0 +1,44 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl - Libwww Comparison</TITLE>
+#include "css.t"
+</HEAD>
+
+#define LIBCURL_LIBWWW
+#define CURL_URL libcurl/libwww.html
+
+#include "_menu.html"
+#include "setup.t"
+#include "table.t"
+
+WHERE2(libcurl, "/libcurl/", Libwww Comparison)
+
+TITLE(Notes About Libwww compared to libcurl)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/docs/features.html">libcurl Features</a>
+<br><a href="competitors.html">Compare HTTP Libraries</a>.
+</div>
+
+<ul>
+
+ <li> libcurl is more portable
+
+ <li> libcurl is supported and has a living community
+
+ <li> programs need less code to transfer files using libcurl than a libwww-
+ using equivalent
+
+ <li> libcurl is thread-safe
+
+ <li> libcurl has a different feature-set and offers several features not
+ present in libwww
+
+ <li> libwww offers HTTP pipelining, which libcurl doesn't
+
+</ul>
+
+
+#include "_footer.html"
+</BODY>
+</HTML>
