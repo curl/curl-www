@@ -4,11 +4,11 @@ MAINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 
 # the latest stable version is:
-STABLE= 7.7.3
-RELDATE = "7th of May 2001"
-RELSIZE = "520643 bytes"
-BZ2SIZE = "405498 bytes"
-ZIPSIZE = "693600 bytes"
+STABLE= 7.8
+RELDATE = "7th of June 2001"
+RELSIZE = "630163 bytes"
+BZ2SIZE = "482689 bytes"
+ZIPSIZE = "764277 bytes"
 
 # name of the dir to tempoary unpack and build zip files in:
 TEMPDIR=tempzip
