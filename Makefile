@@ -5,8 +5,8 @@ libcurl/_links.html ad.t mirrorlinks.t searchform.t css.t sflogo.t
 NOW=$(shell gnudate +'-D__TODAY__=%B %e, %Y')
 
 # the latest stable version is:
-STABLE= 7.10.8
-RELDATE = "1st of November 2003"
+STABLE= 7.11.0
+RELDATE = "22nd of January 2004"
 
 # name of the dir to tempoary unpack and build zip files in:
 TEMPDIR=tempzip

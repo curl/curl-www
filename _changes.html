@@ -41,7 +41,66 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
  document (it is work in progress).
 </ul>
 
-SUBTITLE(Fixed 7.10.8)
+SUBTITLE(Fixed in 7.11.0)
+<p> Changes:
+<ul>
+ <li> allows the URL to be set by a callback when using the multi interface
+ <li> large file support was added. Use one of the new options: INFILESIZE_LARGE,
+   RESUME_FROM_LARGE and MAXFILESIZE_LARGE
+ <li> the new --ftp-pasv overrides a previous --ftpport
+ <li> CURLOPT_FTPSSL and ftps:// now do ssl over FTP "The Right Way" (the curl
+   tool now features the --ftp-ssl option)
+ <li> The Windows DLLs are built with an added "resource file"
+ <li> New LIBCURL_VERSION_* defines for easier checking version number
+ <li> Included Mac OS X 'framework' makefile in the release archive
+ <li> Removed the TRUE and FALSE #defines from the public curl header file
+ <li> Added CURLOPT_NETRC_FILE
+</ul>
+<p> Bugs:
+<ul>
+ <li> improved config file parsing for options with required parameters
+ <li> using --trace with a bad file name could crash
+ <li> release archive contains compressed help text
+ <li> the win32 password prompting supports backspace
+ <li> builds natively on AmigaOS (without unix emulation)
+ <li> ftps:// now uses port 990 by default
+ <li> the "configure --with-spnego" action was improved
+ <li> fixed a rare follow-redirect problem
+ <li> curl-config --feature now outputs AsynchDNS if enabled
+ <li> occational re-use of freed-memory problem fixed
+ <li> curl-config --libs now include the ares link directory
+ <li> configure --enable-ares now accepts a given path
+ <li> -lz no longer appear twice on the link line
+ <li> more descriptive error message if the FTP response reader fails
+ <li> curl-config --feature now shows 'AsynchDNS' when built with ares
+ <li> VMS build up-to-date and clarified source code
+ <li> resolve bug caused socks5 to fail
+ <li> Content-Length: is ignored when getting chunked Transfer-Encoding
+ <li> POST over proxy to https server failed
+ <li> improved how libcurl deals with persistant connections over FTP when a
+   transfer fails
+ <li> accessing a proxy that requires Basic auth without password caused a hang
+ <li> a free free-twice problem in the server certificate code
+ <li> minor memory leak when using ranges on persistant connections
+ <li> formpost parts sending files with .html extensions now use "Content-Type: 
+   text/html"
+ <li> formpost parts now default to "Content-Type: application/octet-stream"
+ <li> --progress-bar was slightly improved
+ <li> Failing to connect to localhost, using the multi interface on Solaris
+   showed a connect problem now fixed.
+ <li> The generated ca-bundle.h file is now generated in the build dir, not the
+   source dir
+ <li> The FTP-EPSV response parser for the 229 code was fixed
+ <li> curl finds the user's home dir slightly different and hopefully better on
+   Windows
+ <li> testcurl.sh can now be used to autotest daily tarballs
+ <li> a couple of command line options now check that the underlying library
+   actually supports the features before trying to enable them
+ <li> uninitialized variable fix
+ <li> better html versions of the man pages
+</ul>
+
+SUBTITLE(Fixed in 7.10.8)
 <p> Changes:
 <ul>
  <li> --head now works on file:// URLs too
