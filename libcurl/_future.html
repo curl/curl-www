@@ -36,30 +36,10 @@ SUBTITLE(subject for improvement in v8)
 SUBTITLE(subject for addition in v8)
 <p>
 <ul>
-<li> the multi interface
 <li> NTLM support
 <li> shareable connection pool
-<li> DNS caching
 <li> asynch DNS lookups
 </ul>
-
-TITLE(multi API)
-<p>
- We intend to add a new interface to libcurl, an interface that allows the
- calling application to "drive". We call that a "pull" interface.
-
-<p> This was once upon the time called a "low level" interface. The subject
- was brought up again during the autumn 2001 and we have now refined our ideas
- and our thoughts are now gathered around the "multi" interface.
-<p>
- This interface makes it very easy to transfer multiple files simultaneously,
- while also allowing the application to do stuff in the mean time. All this
- without using multiple threads.
-
-SUBTITLE(source code)
-<p>
- The multi interface source code was been merged into the MAIN branch again
- early January 2002. You can try it already!
 
 <p>
  Bring your ideas and feedback on this to the libcurl mailing list!
