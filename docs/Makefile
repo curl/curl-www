@@ -9,13 +9,14 @@ TXT2HTML= txt2html --extract --hrule 10
 TXT2PLAIN = txt2plain.pl
 MAN2HTML = man2html | sed 's/^$$/\&nbsp;/g' | uniq
 
-all: index.html manpage.html faq.shtml faq.html changes.shtml \
-	contribute.html internals.shtml internals.t \
-	features.html resources.html bugs.html \
-	install.html readme.html readme.curl.html \
-	resources.html copyright.html thanks.html \
-	y2k.html todo.html httpscripting.shtml comparison-table.html \
-	relatedtools.html osdistribs.html versions.html
+all: index.html manpage.html faq.shtml faq.html changes.shtml		\
+	contribute.html internals.shtml internals.t			\
+	features.html resources.html bugs.html				\
+	install.html readme.html readme.curl.html			\
+	resources.html copyright.html thanks.html			\
+	y2k.html todo.html httpscripting.shtml httpscripting.html	\
+        comparison-table.html relatedtools.html osdistribs.html		\
+	versions.html
 	@echo done 
 #archive/index.html
 
@@ -72,6 +73,9 @@ httpscript.t: $(DOCROOT)/TheArtOfHttpScripting
 	$(TXT2PLAIN) < $< > $@
 
 httpscripting.shtml: _httpscripting.shtml $(MAINPARTS) httpscript.t
+	$(ACTION)
+
+httpscripting.html: _httpscripting.shtml $(MAINPARTS) httpscript.t
 	$(ACTION)
 
 #faq.t: $(DOCROOT)/FAQ
