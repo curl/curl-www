@@ -23,7 +23,7 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden',
              'http://curl.wildyou.net/download/' => 'Estonia',
              'http://www.mirrorspace.org/curl/' => 'Germany',
              'http://curl.109k.com/download/' => 'US (Texas)',
-             'http://curl.netmirror.org/download/' => 'Germany',
+             'http://curl.netmirror.org/download/' => 'Germany (Frankfurt)',
              'http://curl.cofman.dk/download/' => 'Denmark',
              'http://curl.mirror.internet.tp/download/' => 'France',
              'http://curl.signal42.com/download/' => 'US (California)',
@@ -31,6 +31,7 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden',
              'http://curl.kgt.org/download/' => 'Germany',
              'ftp://ftp.kgt.org/pub/mirrors/curl/' => 'Germany',
              'http://www.mirrormonster.com/curl/download/' => 'US (California)',
+             'http://curl.mons-new-media.de/download/' => 'Germany (Karlsruhe)',
              );
 
 sub present {
