@@ -98,7 +98,7 @@ for $per (@sall) {
 
     printf("<td>%s %s</a></td>",
            ($$per{'name'} && $$per{'name'} ne "-")?show($$per{'name'}):"[no name]",
-           $$per{'email'}?"[email]":"[no email]");
+           $$per{'email'}?"[address]":"[no address]");
     printf("<td>%s</td>", show($$per{'size'}));
     printf("<td>%s</td>",
            $$per{'img'}?"<img src=\"/pix/".$$per{'img'}."\">":"&nbsp;");
