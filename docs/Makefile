@@ -121,7 +121,7 @@ readme.t: $(SRCROOT)/README
 readme.curl.html: _readme.curl.html $(MAINPARTS) manual.t
 	$(ACTION)
 
-manual.html: _readme.curl.html $(MAINPARTS) manual.t
+manual.html: _manual.html $(MAINPARTS) manual.t
 	$(ACTION)
 
 manual.t: $(DOCROOT)/MANUAL
