@@ -138,6 +138,11 @@ sub gettype {
         return($1, "cygwin-ssl",
                "Windows archive for cygwin, bzip2, SSL-enabled");
     }
+    # curl-7.8.1-2-nossl-cygwin.tar.bz2
+    elsif($file =~ /^curl-([0-9.]*)-(\d*)-nossl-cygwin.tar.bz2/) {
+        return($1, "cygwin-nossl",
+               "Windows archive for cygwin, bzip2");
+    }
     # curl-7.8.1-2-src-cygwin.tar.bz2
     elsif($file =~ /^curl-([0-9.]*)-(\d*)-src-cygwin.tar.bz2/) {
         return($1, "cygwin-src",
