@@ -32,6 +32,7 @@ all: index.shtml feedback.html mirrors.html cvs.html libs.html icons.html \
 	cd libcurl; make
 	cd mail; make
 	cd mirror; make
+	cd legal; make
 	@echo done 
 #archive/index.html
 
