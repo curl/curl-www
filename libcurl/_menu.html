@@ -135,6 +135,12 @@ LINK("", Lua)
 VLINK(/libcurl/lua/, Lua)
 #endif
 
+#ifdef LIBCURL_DOTNET
+LINK("", .NET)
+#else
+VLINK(/libcurl/dotnet/, .NET)
+#endif
+
 #ifdef LIBCURL_PASCAL2
 LINK("", Object-Pascal)
 #else

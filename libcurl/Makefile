@@ -41,6 +41,7 @@ all: index.html mail.html competitors.html threadsafe.html \
 	cd wx; make
 	cd ch; make
 	cd glib; make
+	cd dotnet; make
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
