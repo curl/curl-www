@@ -14,14 +14,19 @@
 WHERE3(libcurl, "/libcurl/", Using, "/libcurl/using/", autoconf macro)
 
 TITLE(autoconf macro for detecting libcurl)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="curl-config.html">curl-config</a>
+</div>
 <p>
  On unix-like systems, configure scripts are used to detect and check system
  informations. These scripts are generally built with <a
  href="http://www.gnu.org/software/autoconf/">Autoconf</a>.
 <p>
  If you write a program that depends on a certain version of libcurl, you
- might find this macro useful to detect if your prefered libcurl version is
- installed:
+ might find <a href="http://cool.haxx.se/cvs.cgi/curl/docs/libcurl/libcurl.m4?rev=HEAD&content-type=text/vnd.viewcvs-markup">this macro</a> useful to detect if your prefered libcurl version is
+ installed.
+#if 0
 <p>
 <pre>
 dnl MY_CURL
@@ -60,6 +65,7 @@ AC_DEFUN(MY_CURL,[
 </pre>
 <p>
  Nick Humfrey brought parts of this. Thanks!
+#endif
 
 #include "_footer.html"
 
