@@ -34,6 +34,7 @@ all: index.html mail.html competitors.html future.html threadsafe.html \
 	cd ocaml; make
 	cd ada95; make
 	cd ferite; make
+	cd d; make
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
