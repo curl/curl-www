@@ -3,7 +3,9 @@
 require "CGI.pm";
 
 use strict;
-use latest;
+use latest2;
+
+my $script="latest.cgi";
 
 require "curl.pm";
 
@@ -29,7 +31,7 @@ if($what eq "") {
 }
 else {
     &where("Download", "/download.html",
-           "Latest Archives", "/latest.cgi",
+           "Latest Archives", "/$script",
            $what);
 }
 
@@ -70,15 +72,6 @@ while(<DATA>) {
 }
 close(DATA);
 
-my %desc;
-open(DESC, "<latest.desc");
-while(<DESC>) {
-    if($_ =~ /^([^ ]*) (.*)/) {
-        $desc{$1}=$2;
-    }
-}
-close(DESC);
-
 sub randomorder {
     my @dl = @_;
     return sort { return int(rand(4)-2); } @_;
@@ -108,75 +101,72 @@ sub time_ago {
                    ($left/60)==1?"":"s" );
 }
 
-if($what ne "") {
-    my $display=0;
-    for(keys %name) {
-        if(($what eq $name{$_}) || ($what eq $_)) {
-            $display++;
-            my $archive=$name{$_};
+if($latest::version{$what}) {
+    my $archive=$name{$what};
             
-            my @dl =split('\|\|\|', $download{$archive});
+    my @dl =split('\|\|\|', $download{$archive});
             
-            # set to 1 if the local file is newer than the mirrors!
-            my $alert=0;
+    # set to 1 if the local file is newer than the mirrors!
+    my $alert=0;
+    
+    my $desc=$latest::desc{$what};
 
-            my $desc=$desc{$archtype{$archive}};
-
-            if($latest::file{$_} ne $archive) {
-                # there's a newer local file!
-                $archive=$latest::file{$_};
-                $alert = 1;
-                $size{$_} = $latest::size{$_};
-            }
-            my $md5full=`$md5sum "download/$archive"`;
-            my ($md5, $file)=split(" ", $md5full);
-
-            print "<h2>$archive</h2>\n";
-            
-            print "<b>What:</b> $desc\n",
-            
-            "<br><b>MD5:</b> <tt>".$md5."</tt>\n",
-            "<br><b>Size:</b> ".$size{$_}." bytes\n",
-            "<br><b>Version:</b> ".$latest::version{$_}."\n";
-
-            if($latest::headver ne $latest::version{$_}) {
-                print "<p><i>Note that this is </i>not<i> the most recent",
-                " release ($latest::headver) of the curl package!</i>";
-            }
-
-            if($alert) {
-                print "<p>Available from here (verified now):<ul>",
-                "<li> <b>HTTP</b> from <b>curl.haxx.se</b> => ",
-                "<a href=\"download/$archive\">$archive</a></ul>\n";
-            }
-            else {
-
-                print "<p>Available from these ".($#dl+1)." sites ",
-                "(listed in random order, verified ".&time_ago.")\n";
-            
-                print "<ul>";
-                #           for(&randomorder(@dl)) {
-                for(@dl) {
-                    my $url=$_;
-                    print "<li><b>".$proto{$url}."</b>",
-                    " from <b>".$host{$url}."</b> => ",
-                    "<a href=\"$url\">$archive</a>\n";
-                }
-                print "</ul>\n";
-            }
-        }
+    if($latest::file{$what} ne $archive) {
+        # there's a newer local file!
+        $archive=$latest::file{$what};
+        $alert = 1;
+        $size{$_} = $latest::size{$what};
     }
-    if(!$display) {
-        print "<p> The <b>recent-version-off-a-mirror</b> system has no info about ",
-        "your requested package! :-(\n";
+    my $md5full=`$md5sum "download/$archive"`;
+    my ($md5, $file)=split(" ", $md5full);
+
+    print "<h2>$archive</h2>\n";
+            
+    print "<b>What:</b> $desc\n",
+            
+    "<br><b>MD5:</b> <tt>".$md5."</tt>\n",
+    "<br><b>Size:</b> ".$size{$_}." bytes\n",
+    "<br><b>Version:</b> ".$latest::version{$what}."\n";
+    
+    if($latest::headver ne $latest::version{$what}) {
+        print "<p><i>Note that this is </i>not<i> the most recent",
+        " release ($latest::headver) of the curl package!</i>";
+    }
+
+    if($alert) {
+        print "<p>Available from here (verified now):<ul>",
+        "<li> <b>HTTP</b> from <b>curl.haxx.se</b> => ",
+        "<a href=\"download/$archive\">$archive</a></ul>\n";
+    }
+    else {
+        
+        print "<p>Available from these ".($#dl+1)." sites ",
+        "(listed in random order, verified ".&time_ago.")\n";
+        
+        print "<ul>";
+        #           for(&randomorder(@dl)) {
+        for(@dl) {
+            my $url=$_;
+            print "<li><b>".$proto{$url}."</b>",
+            " from <b>".$host{$url}."</b> => ",
+            "<a href=\"$url\">$archive</a>\n";
+        }
+        print "</ul>\n";
     }
 }
+else {
+    print "<p> The <b>recent-version-off-a-mirror</b> system has no info about ",
+    "your requested package \"$what\"! :-(\n";
+}
+
 print "<p> Select type below to get a link set for other archives:<br>\n";
 print "<ul><table cellspacing=0 cellpadding=1 border=0>\n";
-for(keys %download) {
-    if(($_ ne $what) && ($archtype{$_} ne $what)) {
-        printf("<tr><td><a href=\"latest.cgi?curl=".$archtype{$_}."\">%s</a></td><td>%s</td></tr>\n",
-               $archtype{$_}, $desc{$archtype{$_}});
+for(keys %latest::desc) {
+    if(($_ ne $what)) {
+        printf("<tr><td><a href=\"$script?curl=%s\">%s</a></td><td>%s</td></tr>\n",
+               $_,
+               $_,
+               $latest::desc{$_});
     }
 }
 print "</table></ul>\n";

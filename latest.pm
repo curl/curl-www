@@ -6,16 +6,18 @@ package latest;
 our $dir="/home/dast/curl_html/download";
 our $curl="/usr/local/bin/curl";
 
+# they're all hashed on 'type'
 our %high;
 our %file;
 our %size;
 our %version;
+our %desc;
 
 our $headver;
 my $headnum;
 
 sub storemax {
-    my ($version, $size, $which)=@_;
+    my ($filename, $version, $size, $which, $desc)=@_;
     my $num=0;
     if($version =~ /^(\d*)\.(\d*)$/) {
         $num = $1*1000+$2*100;
@@ -29,9 +31,10 @@ sub storemax {
     }
     if($num > $high{$which}) {
         $high{$which}=$num;
-        $file{$which}=$_;
+        $file{$which}=$filename;
         $size{$which}=$size;
         $version{$which}=$version;
+        $desc{$which}=$desc;
     }
     if($num > $headnum) {
         $headnum=$num;
@@ -53,43 +56,70 @@ sub scanstatus {
         
         # curl-7.5.1-win32-nossl.zip
         if($_ =~ /^curl-([0-9.]*)-win32-nossl.zip/) {
-            storemax($1, $size, "win32-nossl");
+            storemax($_, $1, $size,
+                     "win32-nossl",
+                     "Binary windows archive, zip compressed.");
         }
         elsif($_ =~ /^curl-([0-9.]*)-win32-ssl.zip/) {
-            storemax($1, $size, "win32-ssl");
+            storemax($_, $1, $size, "win32-ssl",
+                     "Binary windows archive, zip compressed, SSL-enabled.");
         }
         elsif($_ =~ /^curl-([0-9.]*).tar.gz/) {
-            storemax($1, $size, "tar.gz");
+            storemax($_, $1, $size, "tar.gz",
+                     "Source tar archive, gzip compressed.");
         }
         elsif($_ =~ /^curl-([0-9.]*).tar.bz2/) {
-            storemax($1, $size, "tar.bz2");
+            storemax($_, $1, $size, "tar.bz2",
+                     "Source tar archive, bzip2 compressed.");
         }
         elsif($_ =~ /^curl-([0-9.]*).zip/) {
-            storemax($1, $size, "zip");
+            storemax($_, $1, $size, "zip",
+                     "Source archive, zip compressed.");
         }
         # curl-7.4.1-1.i386.rpm
-        elsif($_ =~ /^curl-([0-9.]*)-(\d*).i386.rpm/) {
-            storemax($1, $size, "i386.rpm");
+        elsif($_ =~ /^curl-([0-9.]*)-(\d*)(.*).i386.rpm/) {
+            my $pkg="i386.rpm";
+            my $desc="Binary Linux i386 RPM package. (redhat 6.2 style)";
+            if($3 eq "rh71") {
+                $pkg="rh71-".$pkg;
+                $desc="Binary Linux i386 RPM package. (redhat 7.1 style)";
+            }
+            storemax($_, $1, $size, $pkg, $desc);
         }
         # curl-7.4.1-1.ppc.rpm
         elsif($_ =~ /^curl-([0-9.]*)-(\d*).ppc.rpm/) {
-            storemax($1, $size, "ppc.rpm");
+            storemax($_, $1, $size, "ppc.rpm",
+                     "Binary Linux PPC RPM package.");
         }
         # curl-7.4.1-1.src.rpm
         elsif($_ =~ /^curl-([0-9.]*)-(\d*).src.rpm/) {
-            storemax($1, $size, "src.rpm");
+            storemax($_, $1, $size, "src.rpm",
+                     "Source Linux RPM archive.");
         }
         # curl-ssl-7.4.1-1.i386.rpm
-        elsif($_ =~ /^curl-ssl-([0-9.]*)-(\d*).i386.rpm/) {
-            storemax($1, $size, "ssl-i386.rpm");
+        elsif($_ =~ /^curl-ssl-([0-9.]*)-(\d*)(.*).i386.rpm/) {
+            my $pkg="ssl-i386.rpm";
+            my $desc="Binary Linux i386 RPM package, SSL-enabled. (redhat 6.2 style)";
+            if($3 eq "rh71") {
+                $pkg="rh71-".$pkg;
+                $desc="Binary Linux i386 RPM package, SSL-enabled. (redhat 7.1 style)";
+            }
+            storemax($_, $1, $size, $pkg, $desc);
         }
         # curl-ssl-7.4.1-1.ppc.rpm
         elsif($_ =~ /^curl-ssl-([0-9.]*)-(\d*).ppc.rpm/) {
-            storemax($1, $size, "ssl-ppc.rpm");
+            storemax($_, $1, $size, "ssl-ppc.rpm",
+                     "Source Linux RPM archive, SSL-enabled.");
         }
         # curl-ssl-7.4.1-1.src.rpm
         elsif($_ =~ /^curl-ssl-([0-9.]*)-(\d*).src.rpm/) {
-            storemax($1, $size, "ssl-src.rpm");
+            storemax($_, $1, $size, "ssl-src.rpm",
+                     "Source Linux RPM archive, SSL-enabled.");
+        }
+        # curl-7.8.1-sparc-8-pkg.tar.gz
+        elsif($_ =~ /^curl-([0-9.]*)-sparc-(.*).pkg.tar.gz/) {
+            storemax($_, $1, $size, "solaris-sparc-pkg",
+                     "Binary Solaris SPARC archive.");
         }
     }
 }
