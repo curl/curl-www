@@ -42,6 +42,58 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 </ul>
 
 <p>
+SUBTITLE(Fixed in 7.12.3)
+<p>Changes:
+<ul>
+ <li> PKCS12 certificate support added
+ <li> added CURLINFO_SSL_ENGINES (and "--engine list")
+ <li> new configure options: --disable-cookies, --disable-crypto-auth and
+   --disable-verbose
+ <li> persistent ftp request improvements
+ <li> CURLOPT_IOCTLFUNCTION and CURLOPT_IOCTLDATA added. If your app uses HTTP
+   Digest, NTLM or Negotiate authentication, you will most likely want to use
+   these
+ <li> -w time_redirect and num_redirects
+ <li> no longer uses libcurl.def for building on Windows, OS/2 and Netware
+ <li> builds on Windows CE
+ <li> request retrying, --retry and family added
+ <li> FTP 3rd party transfers with source and dest on the same host now works
+ <li> added CURLINFO_NUM_CONNECTS
+</ul>
+<p> Bugfixes:
+<ul>
+ <li> curl -E on windows accepts "c:/path" with forward-slash
+ <li> several improvements for large file support on windows
+ <li> file handle leak in aborted multipart formpost file upload
+ <li> -T upload multiple files with backslashes in file names
+ <li> modified credentials between two requests on a persistent http connection
+ <li> large file file:// resumes on Windows
+ <li> URLs with username and IPv6 numerical addresses
+ <li> configure works better with SSL libs in a "non-standard ld.so dir"
+ <li> curl-config --vernum zero prefixed
+ <li> bad memory access in the NTLM code
+ <li> EPSV on multi-homed servers now works correctly
+ <li> chunked-encoded transfers could get closed pre-maturely without error
+ <li> proxy CONNECT now default timeouts after 3600 seconds
+ <li> disabling EPSV or EPRT is ignored when connecting to an IPv6 FTP server
+ <li> no extra progress meter newline output after each Location: followed
+ <li> HTTP PUT/POST with Digest, NTLM or Negotiate no longer uses HEAD
+ <li> works with or gracefully bails out when exceeding FD_SETSIZE file
+   descriptors
+ <li> CURLINFO_REDIRECT_TIME works
+ <li> building with gssapi libs and hdeaders in the default dirs
+ <li> curl_getdate() parsing of dates later than year 2037 with 32 bit time_t
+ <li> curl -v when stderr is closed wrote debug messages to the network socket
+ <li> build failure with libidn 0.3.X or older
+ <li> huge POSTs on VMS
+ <li> configure no longer uses pkg-config on cross-compiles
+ <li> potential gzip decompress memory leak
+ <li> "-C - --fail" on a HTTP page already downloaded
+ <li> formposting a zero byte file
+ <li> use setlocale() for better IDN functionality by default
+</ul>
+
+<p>
 SUBTITLE(Fixed in 7.12.2)
 <p>Changes:
 <ul>
