@@ -43,10 +43,21 @@ TITLE(Curl::easy -- accessing libcurl from perl)
 <p>
 Perl specific features are described in the <a href="easy.pm.html">Curl::easy POD documentation</a>.
 <p><b>Examples</b><br> Here's a first <a
- href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/curl/perl/examples/basicfirst.pl?rev=HEAD&content-type=text/vnd.viewcvs-markup">basic
- example</a>, please post your contributions!
+ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/curl/perl/examples/basicfirst.pl?rev=HEAD&content-type=text/vnd.viewcvs-markup">basic example</a>, please post your contributions!
+
+<p>Additional examples can be found in the 't/' directory of the distribution - the perl regression test scripts. These excercise many of curls functions, such as uploads, callbacks and ssl, so are a useful starting point.
+</p>
 
 <p><b>Download</b><br>
+ <a href="Curl-easy-1.1.9.tar.gz">Curl::easy 1.1.9</a> (18Kb) was released on
+ January 18, 2002.</p>
+<p>This release automatically adapts to the options in your libcurl version,
+and should support versions from 7.8.1 onwards, including 7.9.2 and 7.9.3.
+</p>
+<p>
+You should upgrade from 1.1.8 if you need access to options in libcurl versions
+after 7.9.
+</p>
  <a href="Curl-easy-1.1.8.tar.gz">Curl::easy 1.1.8</a> (14Kb) was released on
  September 20, 2001.</p>
 <p>This release includes support for libcurl options in libcurl 7.9, though it
@@ -60,7 +71,7 @@ Perl specific features are described in the <a href="easy.pm.html">Curl::easy PO
  September 13, 2001.
 <p>
  If you are using curl 7.8.1 or later, you will need to be using at least
- version 1.1.6 of Curl-easy.
+ version 1.1.6 of Curl::easy.
 <p>
  1.1.7 is a documentation only update, with more explicit licence information.
  There is no need to upgrade if you are already using 1.1.6.
