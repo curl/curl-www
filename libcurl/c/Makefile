@@ -18,19 +18,20 @@ TXT2HTML= txt2html --extract --hrule 10
 MAN2HTML= man2html -bare | sed -e 's/^$$/\&nbsp;/g' -e 's/\#/\&\#35\;/g' | uniq
 TXT2PLAIN = txt2plain.pl
 
-all: index.shtml example.shtml curl_easy_init.html \
-	curl_easy_cleanup.html curl_easy_setopt.html \
-	curl_easy_perform.html curl_version.html curl_getenv.html \
-	curl_slist_append.html curl_slist_free_all.html \
-	curl_formadd.html \
-	curl_getdate.html curl_easy_getinfo.html \
-	curl_formfree.html curl_escape.html curl_unescape.html \
-	curl_strequal.html curl_mprintf.html libcurl.html \
-	curl_global_init.html curl_global_cleanup.html \
-	the-guide.html libcurl-errors.html \
-	curl_multi_add_handle.html     curl_multi_init.html \
-	curl_multi_cleanup.html        curl_multi_perform.html \
-	curl_multi_fdset.html          curl_multi_remove_handle.html \
+all: index.shtml example.shtml curl_easy_init.html			\
+	curl_easy_cleanup.html curl_easy_setopt.html			\
+	curl_easy_perform.html curl_version.html curl_version_info.html	\
+        curl_getenv.html curl_free.html					\
+	curl_slist_append.html curl_slist_free_all.html			\
+	curl_formadd.html						\
+	curl_getdate.html curl_easy_getinfo.html			\
+	curl_formfree.html curl_escape.html curl_unescape.html		\
+	curl_strequal.html curl_mprintf.html libcurl.html		\
+	curl_global_init.html curl_global_cleanup.html			\
+	the-guide.html libcurl-errors.html				\
+	curl_multi_add_handle.html     curl_multi_init.html		\
+	curl_multi_cleanup.html        curl_multi_perform.html		\
+	curl_multi_fdset.html          curl_multi_remove_handle.html	\
 	curl_multi_info_read.html      libcurl-multi.html
 	cd html; make
 
@@ -78,6 +79,17 @@ curl_version.html: _curl_version.html $(MAINPARTS) curl_version.t
 	$(ACTION)
 curl_version.t: $(MANROOT)/curl_version.3
 	gnroff -man $< | $(MAN2HTML) >$@
+
+curl_version_info.html: _curl_version_info.html $(MAINPARTS) curl_version_info.t
+	$(ACTION)
+curl_version_info.t: $(MANROOT)/curl_version_info.3
+	gnroff -man $< | $(MAN2HTML) >$@
+
+curl_free.html: _curl_free.html $(MAINPARTS) curl_free.t
+	$(ACTION)
+curl_free.t: $(MANROOT)/curl_free.3
+	gnroff -man $< | $(MAN2HTML) >$@
+
 
 curl_escape.html: _curl_escape.html $(MAINPARTS) curl_escape.t
 	$(ACTION)

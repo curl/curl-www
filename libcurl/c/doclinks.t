@@ -74,6 +74,12 @@ THIS(curl_formfree)
 DOC(curl_formfree, curl_formfree.html)
 #endif
 
+#ifdef DOCS_FREE
+THIS(curl_free)
+#else
+DOC(curl_free, curl_free.html)
+#endif
+
 #ifdef DOCS_GETDATE
 THIS(curl_getdate)
 #else
@@ -133,6 +139,12 @@ DOC(curl_unescape, curl_unescape.html)
 THIS(curl_version)
 #else
 DOC(curl_version, curl_version.html)
+#endif
+
+#ifdef DOCS_VERSION_INFO
+THIS(curl_version_info)
+#else
+DOC(curl_version_info, curl_version_info.html)
 #endif
 
 THIS(<hr>)
