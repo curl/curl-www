@@ -4,7 +4,7 @@ Mirror:
 <a href="http://curl.planetmirror.com/">AU</a>,
 <a href="http://curl.tsuren.net/">RU</a>,
 <a href="http://curl.haxx.se/">SE</a>,
-<a href="http://curl.sf.net/">US1</a>
+<a href="http://curl.sf.net/">US1</a>,
 <a href="http://curl.cyberservers.net/">US2</a>
 #else
 <a href="http://curl.planetmirror.com/CURL_URL">AU</a>,
