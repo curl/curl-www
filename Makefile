@@ -155,7 +155,7 @@ full: all
 	@cd libcurl; make
 
 release:
-	cd stuff; ls -1 *curl* >curldist.txt;
+	cd download; ls -1 *curl* >curldist.txt;
 	@echo done
 
 clean:
