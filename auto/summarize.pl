@@ -198,10 +198,14 @@ sub endofsingle {
         $libver = $1;
     }
     if($libcurl =~ /OpenSSL\/([^ ]*)/i) {
+        $httpstest = 1;
         $sslver = $1;
     }
     if($libcurl =~ /zlib\/([^ ]*)/i) {
         $zlibver = $1;
+    }
+    if($libcurl =~ /libidn\/([^ ]*)/i) {
+        $libidn = $1;
     }
     if($krb4enabled) {
         $krb4 = "K";
@@ -424,7 +428,7 @@ sub singlefile {
             elsif($_ =~ /^TESTINFO: (\d*) tests were skipped/) {
                 $skipped = $1;
             }
-            elsif($_ =~ /^\* (libcurl\/.*)/) {
+            elsif($_ =~ /\) (libcurl\/.*)/) {
                 $libcurl = $1;
             }
             elsif(checkwarn($_)) {
@@ -479,7 +483,6 @@ sub singlefile {
             elsif($_ =~ /^\#define OS \"([^\"]*)\"/) {
                 $os=$1;
             }
-
         }
     }
     if($state) {
