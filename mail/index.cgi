@@ -67,6 +67,8 @@ sub curlmain {
         "<br> <a href=\"archive/\">October - December</a>",
         "\n";
     }
+
+    return "http://lists.sourceforge.net/lists/listinfo/curl-users";
 }
 
 
@@ -80,6 +82,8 @@ sub libcurl {
 
     &showarchs($num, @dirs);
 
+    # return subscription URL
+    return "http://lists.sourceforge.net/mailman/listinfo/curl-library";
 }
 
 sub curlphp {
@@ -92,9 +96,14 @@ sub curlphp {
     closedir DIR;
 
     &showarchs($num, @dirs);
+
+    # return subscription URL
+    return "http://lists.sourceforge.net/mailman/listinfo/curl-and-php";
 }
 
 if($list) {
+    my $subscr;
+
     &catfile("../head.html");
 
     &where("Mailing Lists", "http://curl.haxx.se/mail/", "$list archive");
@@ -111,16 +120,21 @@ MOO
 
     if(($list eq "curl-main") ||
        ($list eq "curl-users")) {
-        curlmain();
+        $subscr = curlmain();
     }
     elsif($list eq "curl-library") {
-        libcurl();
+        $subscr = libcurl();
     }
     elsif($list eq "curl-and-php") {
-        curlphp();
+        $subscr = curlphp();
     }
     else {
         print "$list? Are you playing with me? There's no such list!";
+    }
+
+    if($subscr) {
+        &title("Subscribe to $list");
+        print "<p> To subscribe on $list, use the web form on this page: <a href=\"$subscr\">subcribe to $list</a>";
     }
 
     &title("Other Mail Archives");
@@ -129,15 +143,12 @@ MOO
                'curl-library',
                'curl-and-php');
 
-    print "<p>";
-
     for(@archs) {
         my $this=$_;
         if($list ne $this) {
-            print "<a href=\"./?list=$this\">$this</a>\n";
+            print "<p><a href=\"./?list=$this\">$this</a>\n";
         }
     }
-    print "<p> <a href=\"./\">Mailing List Main Page</a>\n";
 
     &catfile("../foot.html");
     print "</body></html>\n";
