@@ -74,4 +74,12 @@ sub header {
     close(HEAD);
 }
 
+sub footer {
+    open(FOOT, "<$root/foot.html");
+    while(<FOOT>) {
+        print $_;
+    }
+    close(FOOT);
+}
+
 1;
