@@ -37,7 +37,7 @@ VLINK("/download.html", Download)
 LINK("/docs/", Docs)
 #include "docmenu.t"
 #else
-VLINK("/docs/", Docs)
+VLINK("/docs/", Docs &raquo;)
 #endif
 
 #ifdef CURL_NEWS
@@ -64,7 +64,7 @@ LINK("http://curl.haxx.se/feedback/", Feedback)
 VLINK("http://curl.haxx.se/feedback/", Feedback)
 #endif
 
-VLINK("/libcurl/", libcurl)
+VLINK("/libcurl/", libcurl &raquo;)
 
 #ifdef CURL_SUPPORT
 LINK("/support.html", Support)
