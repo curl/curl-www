@@ -24,7 +24,9 @@ TITLE(Curl::easy -- accessing libcurl from perl)
 
 <p><b>How to Install</b></br>
  Install curl and libcurl first. Make sure you install the libcurl.so library
- and curl's include files as well.
+ and curl's include files as well. (E.g. if you are using an rpm version of
+ curl, you will need to install the curl-devel rpm before you can build
+ the Perl interface.
 
 <p>
  Run these commands:
@@ -45,21 +47,30 @@ TITLE(Curl::easy -- accessing libcurl from perl)
 
  The Curl::easy interface is part of the full source code release archive from
  version 7.7 and onwards. It is however also released separately and thus
- there may be a newer perl interface. Check out <a
- href="http://www.koblenz-net.de/~horn/export/">www.koblenz-net.de/~horn/export/</a>
- for the latest packages.
+ there may be a newer perl interface.
 <p>
- <a href="Curl-easy-1.1.6.tar.gz">curl::easy 1.1.6</a> (12Kb) was uploaded on
- September 10, 2001.
+ <a href="Curl-easy-1.1.7.tar.gz">Curl::easy 1.1.7</a> (12Kb) was released on
+ September 13, 2001.
 <p>
- For curl versions before 7.7, download <a href="Curl_easy-1.0.2.tgz">Perl
- interface version 1.0.2</a>
+ If you are using curl 7.8.1 or later, you will need to be using at least
+ version 1.1.6 of Curl-easy.
+<p>
+ 1.1.7 is a documentation only update, with more explicit licence information.
+ There is no need to upgrade if you are already using 1.1.6.
+<p>
+ See <a href="/lxr/source/perl/Curl_easy/Changes">Changes</a> for complete
+ change information.
+<p>
+ For curl versions before 7.7, download Perl interface version 1.0.2
+ from
+ <a href="http://www.koblenz-net.de/~horn/export/">www.koblenz-net.de/~horn/export/</a>
 <p>
  Browse the <a href="/lxr/source/perl/Curl_easy/">/perl/Curl_easy/</a> files
  that are presently in CVS.
 
 <p><b>Credits</b><br>
- The Perl interface was written by Georg Horn with help from Cris Bailiff.
+ The Perl interface was initially written by Georg Horn and is currently 
+ maintained by Cris Bailiff.
 
 <p><b>What is Perl?</b><br>
  You'll find more info on the <a href="http://www.perl.com/">official
