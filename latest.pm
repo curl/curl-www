@@ -51,8 +51,8 @@ sub gettype {
     # curl-7.5.1-win32-nossl.zip
     if($file =~ /^curl-([0-9.]*)-win32-nossl.zip/) {
         return($1,
-                 "win32-nossl",
-                 "Windows archive, zip compressed.");
+               "win32-nossl",
+               "Windows archive, zip compressed.");
     }
     elsif($file =~ /^curl-([0-9.]*)-win32-ssl.zip/) {
         return($1, "win32-ssl",
@@ -63,124 +63,86 @@ sub gettype {
                  "Windows mingw devel archive, zip compressed, SSL-enabled.");
     }
     elsif($file =~ /^curl-([0-9.]*).tar.gz/) {
-            return($1, "tar.gz",
-                     "Source tar archive, gzip compressed.");
-        }
-        elsif($file =~ /^curl-([0-9.]*).tar.bz2/) {
-            return($1, "tar.bz2",
-                     "Source tar archive, bzip2 compressed.");
-        }
-        elsif($file =~ /^curl-([0-9.]*).zip/) {
-            return($1, "zip",
-                     "Source archive, zip compressed.");
-        }
-        # curl-7.4.1-1.i386.rpm
-        elsif($file =~ /^curl-([0-9.]*)-(\d*)(.*).i386.rpm/) {
-            my $pkg="i386.rpm";
-            my $desc="Linux i386 RPM package.";
-
-            if(0) {
-                if($3 eq "rh71") {
-                    $pkg="rh71-".$pkg;
-                    $desc="Linux i386 RPM package. (redhat 7.1 style)";
-                }
-                elsif($3 eq "rh72") {
-                    $pkg="rh72-".$pkg;
-                    $desc="Linux i386 RPM package. (redhat 7.2 style)";
-                }
-            }
-            return($1, $pkg, $desc);
-        }
-        # curl-7.4.1-1.ppc.rpm
-        elsif($file =~ /^curl-([0-9.]*)-(\d*).ppc.rpm/) {
-            return($1, "ppc.rpm",
-                     "Linux PPC RPM package.");
-        }
-        # curl-7.4.1-1.src.rpm
-        elsif($file =~ /^curl-([0-9.]*)-(\d*).src.rpm/) {
-            return($1, "src.rpm",
-                     "Source Linux RPM archive.");
-        }
-        # curl-ssl-7.4.1-1.i386.rpm
-        elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*)(.*).i386.rpm/) {
-            my $pkg="ssl-i386.rpm";
-            my $desc="Linux i386 RPM package, SSL-enabled.";
-            if(0) {
-                if($3 eq "rh71") {
-                    $pkg="rh71-".$pkg;
-                    $desc="Linux i386 RPM package, SSL-enabled. (redhat 7.1 style)";
-                }
-                elsif($3 eq "rh72") {
-                    $pkg="rh72-".$pkg;
-                    $desc="Linux i386 RPM package, SSL-enabled. (redhat 7.2 style)";
-                }
-            }
-            return($1, $pkg, $desc);
-        }
-        # curl-ssl-devel-7.9.1-1rh72.i386.rpm
-        elsif($file =~ /^curl-ssl-devel-([0-9.]*)-(\d*)(.*).i386.rpm/) {
-            my $pkg="ssl-devel-i386.rpm";
-            my $desc="Linux devel i386 RPM package, SSL-enabled. (redhat 6.2 style)";
-            if($3 eq "rh71") {
-                $pkg="rh71-".$pkg;
-                $desc="Linux devel i386 RPM package, SSL-enabled. (redhat 7.1 style)";
-            }
-            elsif($3 eq "rh72") {
-                $pkg="rh72-".$pkg;
-                $desc="Linux devel i386 RPM package, SSL-enabled. (redhat 7.2 style)";
-            }
-            return($1, $pkg, $desc);
-        }
-        # curl-devel-7.9.1-1rh72.i386.rpm
-        elsif($file =~ /^curl-devel-([0-9.]*)-(\d*)(.*).i386.rpm/) {
-            my $pkg="devel-i386.rpm";
-            my $desc="Linux devel i386 RPM package (redhat 6.2 style)";
-            if($3 eq "rh71") {
-                $pkg="rh71-".$pkg;
-                $desc="Linux devel i386 RPM package. (redhat 7.1 style)";
-            }
-            elsif($3 eq "rh72") {
-                $pkg="rh72-".$pkg;
-                $desc="Linux devel i386 RPM package. (redhat 7.2 style)";
-            }
-            return($1, $pkg, $desc);
-        }
-        # curl-ssl-7.4.1-1.ppc.rpm
-        elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*).ppc.rpm/) {
-            return($1, "ssl-ppc.rpm",
-                     "Source Linux RPM archive, SSL-enabled.");
-        }
-        # curl-ssl-7.4.1-1.src.rpm
-        elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*).src.rpm/) {
-            return($1, "ssl-src.rpm",
-                     "Source Linux RPM archive, SSL-enabled.");
-        }
-        # curl-ssl-7.8.1-sparc-8-pkg.tar.gz
-        elsif($file =~ /^curl-ssl-([0-9.]*)-sparc-8.pkg.tar.gz/) {
-            return($1, "solaris8-sparc-ssl",
-                     "Solaris 8 SPARC archive, SSL-enabled.");
-        }
-        # curl-ssl-7.9-sparc-2.6-pkg.tar.gz
-        elsif($file =~ /^curl-ssl-([0-9.]*)-sparc-2.6.pkg.tar.gz/) {
-            return($1, "solaris26-sparc-ssl",
-                     "Solaris 2.6 SPARC archive, SSL-enabled.");
-        }
-        # curl-7.8.1-vms.zip
-        elsif($file =~ /^curl-([0-9.]*)-vms\.zip/) {
-            return($1, "vms-zip",
-                     "OpenVMS archive, zip compressed.");
-        }
-        # curl-7.8.1-2-cygwin.tar.bz2
-        elsif($file =~ /^curl-([0-9.]*)-(\d*)-cygwin.tar.bz2/) {
-            return($1, "cygwin-ssl",
-                     "Windows archive for cygwin, bzip2, SSL-enabled");
-        }
-        # curl-7.8.1-2-src-cygwin.tar.bz2
-        elsif($file =~ /^curl-([0-9.]*)-(\d*)-src-cygwin.tar.bz2/) {
-            return($1, "cygwin-src",
-                     "Source archive for cygwin, bzip2, SSL-enabled");
-        }
-
+        return($1, "tar.gz",
+               "Source tar archive, gzip compressed.");
+    }
+    elsif($file =~ /^curl-([0-9.]*).tar.bz2/) {
+        return($1, "tar.bz2",
+               "Source tar archive, bzip2 compressed.");
+    }
+    elsif($file =~ /^curl-([0-9.]*).zip/) {
+        return($1, "zip",
+               "Source archive, zip compressed.");
+    }
+    # curl-7.4.1-1.i386.rpm
+    elsif($file =~ /^curl-([0-9.]*)-(\d*)(.*).i386.rpm/) {
+        my $pkg="i386.rpm";
+        my $desc="Linux i386 RPM package.";
+        return($1, $pkg, $desc);
+    }
+    # curl-7.4.1-1.ppc.rpm
+    elsif($file =~ /^curl-([0-9.]*)-(\d*).ppc.rpm/) {
+        return($1, "ppc.rpm",
+               "Linux PPC RPM package.");
+    }
+    # curl-7.4.1-1.src.rpm
+    elsif($file =~ /^curl-([0-9.]*)-(\d*).src.rpm/) {
+        return($1, "src.rpm",
+               "Source Linux RPM archive.");
+    }
+    # curl-ssl-7.4.1-1.i386.rpm
+    elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*)(.*).i386.rpm/) {
+        my $pkg="ssl-i386.rpm";
+        my $desc="Linux i386 RPM package, SSL-enabled.";
+        return($1, $pkg, $desc);
+    }
+    # curl-ssl-devel-7.9.1-1rh72.i386.rpm
+    elsif($file =~ /^curl-ssl-devel-([0-9.]*)-(\d*)(.*).i386.rpm/) {
+        my $pkg="ssl-devel-i386.rpm";
+        my $desc="Linux devel i386 RPM package, SSL-enabled.";
+        return($1, $pkg, $desc);
+    }
+    # curl-devel-7.9.1-1rh72.i386.rpm
+    elsif($file =~ /^curl-devel-([0-9.]*)-(\d*)(.*).i386.rpm/) {
+        my $pkg="devel-i386.rpm";
+        my $desc="Linux devel i386 RPM package";
+        return($1, $pkg, $desc);
+    }
+    # curl-ssl-7.4.1-1.ppc.rpm
+    elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*).ppc.rpm/) {
+        return($1, "ssl-ppc.rpm",
+               "Source Linux RPM archive, SSL-enabled.");
+    }
+    # curl-ssl-7.4.1-1.src.rpm
+    elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*).src.rpm/) {
+        return($1, "ssl-src.rpm",
+               "Source Linux RPM archive, SSL-enabled.");
+    }
+    # curl-ssl-7.8.1-sparc-8-pkg.tar.gz
+    elsif($file =~ /^curl-ssl-([0-9.]*)-sparc-8.pkg.tar.gz/) {
+        return($1, "solaris8-sparc-ssl",
+               "Solaris 8 SPARC archive, SSL-enabled.");
+    }
+    # curl-ssl-7.9-sparc-2.6-pkg.tar.gz
+    elsif($file =~ /^curl-ssl-([0-9.]*)-sparc-2.6.pkg.tar.gz/) {
+        return($1, "solaris26-sparc-ssl",
+               "Solaris 2.6 SPARC archive, SSL-enabled.");
+    }
+    # curl-7.8.1-vms.zip
+    elsif($file =~ /^curl-([0-9.]*)-vms\.zip/) {
+        return($1, "vms-zip",
+               "OpenVMS archive, zip compressed.");
+    }
+    # curl-7.8.1-2-cygwin.tar.bz2
+    elsif($file =~ /^curl-([0-9.]*)-(\d*)-cygwin.tar.bz2/) {
+        return($1, "cygwin-ssl",
+               "Windows archive for cygwin, bzip2, SSL-enabled");
+    }
+    # curl-7.8.1-2-src-cygwin.tar.bz2
+    elsif($file =~ /^curl-([0-9.]*)-(\d*)-src-cygwin.tar.bz2/) {
+        return($1, "cygwin-src",
+               "Source archive for cygwin, bzip2, SSL-enabled");
+    }
 }
 
 sub scanstatus {
