@@ -34,7 +34,7 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden (Uppsala)',
              'http://curl.mons-new-media.de/download/' => 'Germany (Karlsruhe)',
              'http://curl.islandofpoker.com/download/' => 'US (Phoenix)',
              'http://curl.tolix.org/download/' => 'US (California)',
-             'http://curl.seekmeup.com/download' => 'US (Texas)',
+             'http://curl.seekmeup.com/download/' => 'US (Texas)',
              );
 
 sub present {
