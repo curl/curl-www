@@ -72,7 +72,6 @@ td.newsdate {
   text-align: right;
 }
 
-
 .mini {
   font-size: 8pt;
   font-family: monospace;
@@ -299,4 +298,8 @@ div.yellowbox {
 ´/*
   width: 90%;
   margin-left: 5%; */
+}
+
+.mirrorlinks {
+  font-size: 8pt;
 }

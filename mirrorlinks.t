@@ -1,4 +1,4 @@
-<small>
+<span class="mirrorlinks">
 Mirror:
 #ifndef CURL_URL
 <a href="http://curl.gds.tuwien.ac.at/">AT</a>,
@@ -31,4 +31,4 @@ Mirror:
 <a href="http://curl.signal42.com/CURL_URL">US2</a>,
 <a href="http://curl.109k.com/CURL_URL">US3</a>
 #endif
-</small>
+</span>
