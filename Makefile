@@ -1,12 +1,12 @@
-AINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t	\
+MAINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t	\
 libcurl/_links.html ad.t mirrorlinks.t searchform.t css.t sflogo.t
 
 # today's date
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 
 # the latest stable version is:
-STABLE= 7.10.7
-RELDATE = "15th of August 2003"
+STABLE= 7.10.8
+RELDATE = "1st of November 2003"
 
 # name of the dir to tempoary unpack and build zip files in:
 TEMPDIR=tempzip
