@@ -40,3 +40,8 @@ BODY {
 .mini {
   font-size: 7pt;
 }
+
+.warning {
+  font-size: 9pt;
+  background-color: #ff8080;
+}
