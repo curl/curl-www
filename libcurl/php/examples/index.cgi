@@ -19,26 +19,17 @@ MOO
     my @ex = grep { /\.php$/ && -f "$some_dir/$_" } readdir(DIR);
     closedir DIR;
 
-    my $neat ="<font color=\"#ffffff\" size=+1 face=\"ariel,helvetica\">";
-    my $neatend = "</font>";
-
-    print "<p><table border=0 cellpadding=1 cellspacing=0><tr bgcolor=\"#0000ff\">",
-    "<td>$neat Example $neatend</td>",
-    "<td>$neat Description $neatend</td>",
+    print "<p><table border=\"0\" cellpadding=\"1\" cellspacing=\"0\"><tr class\"tabletop\">",
+    "<th>Example</th>",
+    "<th>Description</th>",
     "</tr>\n";
 
     my $c;
     for(@ex) {
         $filename = $_;
         
-        if($c++&1) {
-            $col=" bgcolor=\"#e0e0e0\"";
-        }
-        else {
-            $col="";
-        }
-        
-        print "<tr valign=top$col><td>";
+        my $class= ($c++&1)?"odd":"even";
+        print "<tr class=\"$class\" valign=\"top\"><td>";
 
         my ($dev,$ino,$mode,$nlink,$uid,$gid,$rdev,$size,
             $atime,$mtime,$ctime,$blksize,$blocks)
@@ -64,7 +55,12 @@ $req = new CGI;
 $ex = $req->param('ex');
 
 if($ex) {
-    $ex =~ s/.*\/(.*)/$1/;
+    if($ex =~ /\.\./) {
+        $ex = "invalid";
+    }
+    else {
+        $ex =~ s/.*\/(.*)/$1/;
+    }
     
     where("libcurl", "/libcurl/",
           "PHP", "/libcurl/php/",
