@@ -1,4 +1,4 @@
-#!/usr/local/bin/perl
+#!/usr/bin/perl
 
 require "../curl.pm";
 require "/home/dast/perl/date.pm";
