@@ -30,8 +30,7 @@ all: index.html \
 	help.html curlprograms.html download.html changes.html \
 	version7.html bugreport.html about.html support.html \
 	newslog.html news.html head.html foot.html \
-	oldnews.html indexheader.html indexfooter.html \
-	mailheader.html mailfooter.html info web-editing.html \
+	oldnews.html info web-editing.html \
 	donation.html devel.html competition.html search.html
 	cd docs; make
 	cd libcurl; make
@@ -143,18 +142,6 @@ feedback.html: _feedback.html $(MAINPARTS)
 	$(ACTION)
 
 libs.html: _libs.html $(MAINPARTS)
-	$(ACTION)
-
-indexheader.html: _indexheader.html $(MAINPARTS)
-	$(ACTION)
-
-indexfooter.html: _indexfooter.html $(MAINPARTS)
-	$(ACTION)
-
-mailheader.html: _mailheader.html $(MAINPARTS)
-	$(ACTION)
-
-mailfooter.html: _mailfooter.html $(MAINPARTS)
 	$(ACTION)
 
 infolxr.html: _infolxr.html $(MAINPARTS)
