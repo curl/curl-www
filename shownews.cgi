@@ -3,7 +3,7 @@
 $max = $ARGV[0];
 $start = $ARGV[1];
 
-if(!open(NEWS, "<news.html")) {
+if(!open(NEWS, "<newslog.html")) {
     print "<b>Failed to show news</b>";
     exit;
 }

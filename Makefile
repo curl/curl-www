@@ -22,14 +22,14 @@ ACTION=@echo preprocessing $@; \
        cpp -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
        chmod a-w+r $@
 
-all: index.shtml \
+all: index.html \
 	feedback.html mirrors.html cvs.html libs.html icons.html \
 	help.html curlprograms.html download.html changes.html \
 	version7.html bugreport.html about.html support.html \
-	news.html news.shtml head.html foot.html press.html \
-	oldnews.shtml indexheader.html indexfooter.html \
+	newslog.html news.html head.html foot.html press.html \
+	oldnews.html indexheader.html indexfooter.html \
 	mailheader.html mailfooter.html info web-editing.html \
-	latest.shtml donation.html
+	donation.html
 	cd docs; make
 	cd libcurl; make
 	cd mail; make
@@ -58,26 +58,32 @@ web-editing.html: _web-editing.html $(MAINPARTS)
 foot.html: _foot.html $(MAINPARTS)
 	$(ACTION)
 
-index.shtml: _main.html $(MAINPARTS) $(STAT)
+main.html: _main.html $(MAINPARTS) $(STAT)
 	$(ACTION)
 
-index2.shtml: _main2.html $(MAINPARTS) $(STAT)
-	$(ACTION)
+index.html: main.html
+	rm -f $@
+	./filter.pl < $< > $@
 
-news.html: _news.html $(MAINPARTS)
+newslog.html: _newslog.html $(MAINPARTS)
 	$(ACTION)
 
 press.html: _press.html $(MAINPARTS)
 	$(ACTION)
 
-news.shtml: _news2.html $(MAINPARTS)
+news2.html: _news2.html $(MAINPARTS)
 	$(ACTION)
 
-#oldnews.html: _oldnews.html $(MAINPARTS)
-#	$(ACTION)
+news.html: news2.html
+	rm -f $@
+	./filter.pl < $< > $@
 
-oldnews.shtml: _oldnews2.html $(MAINPARTS)
+olddata.html: _oldnews.html $(MAINPARTS)
 	$(ACTION)
+
+oldnews.html: olddata.html
+	rm -f $@
+	./filter.pl < $< > $@
 
 info: _info packstat.t
 	$(ACTION)
@@ -124,9 +130,6 @@ feedback.html: _feedback.html $(MAINPARTS)
 	$(ACTION)
 
 libs.html: _libs.html $(MAINPARTS)
-	$(ACTION)
-
-latest.shtml: _latest.shtml $(MAINPARTS)
 	$(ACTION)
 
 indexheader.html: _indexheader.html $(MAINPARTS)
