@@ -45,6 +45,8 @@ Requirements:
     not publicize any details about any submissions before the dead-line.
   o Submissions posted after dead-line will NOT enter the competition, but
     may be published anyway afterwards.
+  o Previously published/available programs/sources may be submitted, but the
+    jury will favour new creations.
 
 Money:
 
