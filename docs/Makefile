@@ -102,7 +102,7 @@ install.html: _install.html $(MAINPARTS) install.t
 	$(ACTION)
 
 install.t: $(DOCROOT)/INSTALL
-	$(TXT2HTML) < $(DOCROOT)/INSTALL > install.t
+	$(TXT2PLAIN) < $< > $@
 
 
 readme.html: _readme.html $(MAINPARTS) readme.t
