@@ -93,7 +93,7 @@ sub gettype {
     # curl-7.4.1-1.src.rpm
     elsif($file =~ /^curl-([0-9.]*)-(\d*).src.rpm/) {
         return($1, "src.rpm",
-               "Source Linux RPM archive.");
+               "Linux source RPM archive.");
     }
     # curl-ssl-7.4.1-1.i386.rpm
     elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*)(.*).i386.rpm/) {
@@ -126,7 +126,7 @@ sub gettype {
     # curl-ssl-7.4.1-1.src.rpm
     elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*).src.rpm/) {
         return($1, "ssl-src.rpm",
-               "Source Linux RPM archive, SSL-enabled.");
+               "Linux source RPM archive, SSL-enabled.");
     }
     # curl-ssl-7.8.1-sparc-8-pkg.tar.gz
     elsif($file =~ /^curl-ssl-([0-9.]*)-sparc-8.pkg.tar.gz/) {
@@ -158,7 +158,7 @@ sub gettype {
     # ^curl-([0-9.]*)-(d*)-cygwin-src.tar.bz2
     elsif($file =~ /^curl-([0-9.]*)-(\d*)-cygwin-src.tar.bz2/) {
         return($1, "cygwin-src",
-               "Source archive for cygwin, bzip2, SSL-enabled");
+               "Windows source archive for cygwin, bzip2, SSL-enabled");
     }
     # ^^curl-devel-([0-9.]*)-(d*)-cygwin.tar.bz2
     elsif($file =~ /^curl-devel-([0-9.]*)-(\d*)-cygwin.tar.bz2/) {
@@ -180,14 +180,14 @@ sub gettype {
     # OLD: curl-7.8.1-2-src-cygwin.tar.bz2
     elsif($file =~ /^curl-([0-9.]*)-(\d*)-src-cygwin.tar.bz2/) {
         return($1, "cygwin-src",
-               "Source archive for cygwin, bzip2, SSL-enabled");
+               "Windows source archive for cygwin, bzip2, SSL-enabled");
     }
 
 
     # curl-7.9.3-sparc-whatever-linux.tar.gz
     elsif($file =~ /^curl-([0-9.]*)-sparc-whatever-linux.tar.gz/) {
         return($1, "linux-sparc",
-               "Linux SPARC, gzipped");
+               "Linux SPARC, tar archive gzip");
     }
 }
 
