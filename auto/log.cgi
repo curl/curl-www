@@ -38,13 +38,7 @@ my @present;
 my $show=0;
 my $thisid;
 
-my $build;
-if(-r "inbox/build-$id.log") {
-    $build = "inbox/build-$id.log";
-}
-else {
-    $build = "inbox/inbox$year-$month-$day.log";
-}
+my $build = "inbox/build-$id.log";
 
 open(FILE, "<$build");
 my $num;
@@ -52,32 +46,26 @@ my $num;
 &initwarn();
 
 while(<FILE>) {
-    if($_ =~ /^INPIPE: startsingle here ([0-9-]*)/) {
-        $thisid=$1;
-    }
-    elsif($_ =~ /^testcurl: STARTING HERE/) {
+    if($_ =~ /^testcurl: STARTING HERE/) {
         @present="";
         next;
     }
     elsif($_ =~ /^(INPIPE: endsingle here|testcurl: ENDING HERE)/) {
-        if(($id eq $thisid) ||
-           (($name eq $inname) && ($indate eq $date)) ) {
-            push @out, "<div class=\"mini\">\n";
-            for(@present) {
-                chomp;
-                if(checkwarn($_) || ($_ =~ /FAILED/)) {
-                    $num++;
-                    push @out, "<a name=\"prob$num\"></a><div class=\"warning\">$_</div>\n";
-                }
-                else {
-                    push @out, "$_<br>\n";
-                }
+        push @out, "<div class=\"mini\">\n";
+        for(@present) {
+            chomp;
+            if(checkwarn($_) || ($_ =~ /FAILED/)) {
+                $num++;
+                push @out, "<a name=\"prob$num\"></a><div class=\"warning\">$_</div>\n";
             }
-            push @out, "</div>\n"; # end of mini-div
-            $show=1;
-            @present="";
-            last;
+            else {
+                push @out, "$_<br>\n";
+            }
         }
+        push @out, "</div>\n"; # end of mini-div
+        $show=1;
+        @present="";
+        last;
     }
     if($_ =~ /^testcurl: NAME = (.*)/) {
         $name = $1;
