@@ -31,6 +31,23 @@ TITLE(News in curl and libcurl land)
  NCOLE
 #endif
 
+ NSUBJ(libcurl NTLM Buffer Overflow)
+ NDATE(22 February 2005)
+ NCOLS
+
+  As was <a href="http://www.securityfocus.com/archive/1/391042">posted to
+  bugtraq</a>, all versions of curl that supports NTLM has this flaw. The <a
+  href="http://cool.haxx.se/cvs.cgi/curl/lib/http_ntlm.c.diff?r1=1.36&r2=1.37">fix</a>. It
+  requires a malicious server to send an unexpectedly long NTLM response
+  header to trigger. (No, we were not contacted nor notified about this
+  problem before they went public.)
+
+<p>
+  I'll be away for a week now but I'll put together a new release when I get
+  back.
+ 
+ NCOLE
+
  NSUBJ(curl and libcurl 7.13.0)
  NDATE(1 February 2005)
  NCOLS
