@@ -11,7 +11,7 @@ NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 ACTION=@echo preprocessing $@; rm -f $@; fcpp -I.. -I. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@;
 
 all: foot.html head.html loghead.html howto.html summary.html index.html \
-	cvshistory.html
+	cvshistory.html table0.html table1.html table2.html table3.html
 
 foot.html: _foot.html $(MAINPARTS)
 	$(ACTION)
@@ -33,5 +33,16 @@ howto.html: _howto.html $(MAINPARTS) _head.html
 
 loghead.html: _loghead.html $(MAINPARTS)
 	$(ACTION)
+
+table0.html: _table0.html $(MAINPARTS) table0.t
+	$(ACTION)
+
+table1.html: _table1.html $(MAINPARTS) table1.t
+	$(ACTION)
+table2.html: _table2.html $(MAINPARTS) table2.t
+	$(ACTION)
+table3.html: _table3.html $(MAINPARTS) table3.t
+	$(ACTION)
+
 
 full: all

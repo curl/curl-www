@@ -7,21 +7,50 @@ opendir(DIR, "inbox");
 my @logs = grep { /^inbox/ } readdir(DIR);
 closedir(DIR);
 
+system("rm -f table[0-9].t");
+
 my %combo;
 my $buildnum;
 
 my $showntop=0;
+my $prevtable = -1;
+my $tablesperpage = 7;
+
 sub tabletop {
     my @res;
     my ($date)=@_;
+
+    $tablecount++;
+    $tablenum = int($tablecount/$tablesperpage);
+    my $file = "table${tablenum}.t";
+
+    open(TABLE, ">>$file");
+
+    if($tablenum != $prevtable) {
+        my $max = scalar(@logs);
+        if($max > $tablesperpage) {
+            print TABLE "<p>Page: ";
+            for(0 .. $max/$tablesperpage) {
+                my $num = $_+1;
+                my $tab = $_;
+                if($tab == $tablenum) {
+                    print TABLE "<b>[$num]</b> ";
+                }
+                else {
+                    print TABLE "[<a href=\"table$tab.html\">$num</a>] ";
+                }
+            }
+        }
+    }
 
     if($date =~ /^(\d\d\d\d)(\d\d)(\d\d)/) {
         ($year, $month, $day) = ($1, $2, $3);
     }
 
+    $prevtable = $tablenum;
     if(!$showntop) {
-        title("$year-$month-$day");
-        print join("",
+        print TABLE stitle("$year-$month-$day");
+        print TABLE join("",
                    "<table cellspacing=\"0\" class=\"compile\" width=\"100%\"><tr>",
         "<th>Time</th>",
         "<th>Test</th>",
@@ -36,8 +65,9 @@ sub tabletop {
 }
 
 sub tablebot() {
-    print "</table>\n";
+    print TABLE "</table>\n";
     $showntop=0;
+    close(TABLE);
 }
 
 sub summary {
@@ -70,17 +100,14 @@ sub summary {
 my @data;
 
 if(!@logs) {
-    print "No build logs available at this time";
+    print TABLE "No build logs available at this time";
 }
 else {
     @data = "";
     for(reverse sort @logs) {
         my $filename=$_;
-
         singlefile("inbox/$filename");
-
     }
-
     summary();
 
     my $prevdate;
@@ -110,7 +137,7 @@ else {
             $prevdate ="$lyear$lmonth$lday";
             
 
-            print $_;
+            print TABLE $_;
         }
         tablebot();
     }
