@@ -10,6 +10,7 @@ ACTION=@echo preprocessing $@; rm -f $@; cpp -I.. -I. -I$(CURL) -WWW -Uunix -H -
 
 TXT2HTML= txt2html --extract --hrule 10
 MAN2HTML= man2html | sed 's/^$$/\&nbsp;/g' | uniq
+TXT2PLAIN = txt2plain.pl
 
 all: index.shtml example.shtml curl_easy_init.html \
 	curl_easy_cleanup.html curl_easy_setopt.html \
@@ -19,7 +20,8 @@ all: index.shtml example.shtml curl_easy_init.html \
 	curl_formparse.html curl_getdate.html curl_easy_getinfo.html \
 	curl_formfree.html curl_escape.html curl_unescape.html \
 	curl_strequal.html curl_mprintf.html libcurl.html \
-	curl_global_init.html curl_global_cleanup.html
+	curl_global_init.html curl_global_cleanup.html \
+	the-guide.html
 	cd html; make
 
 index.shtml: _index.html $(MAINPARTS)
@@ -144,6 +146,12 @@ tinytest2.html: tinytest2.c
 	$(TXT2PLAIN) < $< > $@
 
 curlgtk.html: curlgtk.c
+	$(TXT2PLAIN) < $< > $@
+
+the-guide.html: _the-guide.html the-guide.t 
+	$(ACTION)
+
+the-guide.t: $(DOCROOT)/libcurl-the-guide
 	$(TXT2PLAIN) < $< > $@
 
 

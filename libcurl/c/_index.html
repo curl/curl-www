@@ -19,13 +19,12 @@ TITLE(use libcurl in your C or C++ application)
 
 TITLE(The C interface)
 <p>
- <b>Starting with libcurl 7.8, you should always call <a
- href="curl_global_init.html">curl_global_init()</a> once to initialize
- libcurl globally, and when you've used libcurl for the last time in your
- application, you call <a
+ You should always call <a href="curl_global_init.html">curl_global_init()</a>
+ once to initialize libcurl globally, and when you've used libcurl for the
+ last time in your application, you call <a
  href="curl_global_cleanup.html">curl_global_cleanup()</a>. Failing to do so
  may lead to memory leaks!
- </b>
+
 <p>
  When using libcurl you <a href="curl_easy_init.html">init</a> your
  easy-session and get a handle, which you use as input to the following
