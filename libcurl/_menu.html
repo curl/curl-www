@@ -101,6 +101,12 @@ LINK("", Ferite)
 VLINK(/libcurl/ferite/, Ferite)
 #endif
 
+#ifdef LIBCURL_GAMBAS
+LINK("", Gambas)
+#else
+VLINK(/libcurl/gambas/, Gambas)
+#endif
+
 #ifdef LIBCURL_JAVA
 LINK("", Java)
 #else

@@ -37,6 +37,7 @@ all: index.html mail.html competitors.html threadsafe.html \
 	cd ferite; make
 	cd d; make
 	cd q; make
+	cd gambas; make
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
