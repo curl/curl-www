@@ -9,7 +9,7 @@ NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 
 ACTION=@echo preprocessing $@; \
        rm -f $@; \
-       cpp -WWW -Uunix -I$(ROOT) -H -C -V -LL "$(NOW)" $< $@; \
+       cpp -WWW -Uunix -I$(ROOT) -H -C -P -V -LL "$(NOW)" $< $@; \
        chmod a-w+r $@
 
 TXT2HTML= txt2html --extract --hrule 10
