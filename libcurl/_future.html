@@ -46,30 +46,26 @@ TITLE(multi API)
  We intend to add a new interface to libcurl, an interface that allows the
  calling application to "drive". We call that a "pull" interface.
 
-<p> This was once upon the time dicussed, calling it a "low level"
- interface. It was brought up again during the autumn 2001 and we have now
- refined our ideas and our thoughts are now gathered around the "multi"
- interface.
+<p> This was once upon the time called a "low level" interface. The subject
+ was brought up again during the autumn 2001 and we have now refined our ideas
+ and our thoughts are now gathered around the "multi" interface.
 <p>
  This interface makes it very easy to transfer multiple files simultaneously,
  while also allowing the application to do stuff in the mean time. All this
  without using multiple threads.
 
-SUBTITLE(header and initial source code)
+SUBTITLE(source code)
 <p>
- We have started working on the <a
- href="http://curl.haxx.se/lxr/source/lib/multi.h">multi.h</a> header file,
- which also pretty much contains all the docs there is yet.  The <a
- href="http://curl.haxx.se/lxr/source/lib/multi.c">multi.c</a> file is to be
- filled in with (more) source code.
-
-SUBTITLE(example using this interface)
+ We have a separate development branch for the multi interface development.
+ The code doesn't work yet.
 <p>
- The imaginary <a href="http://curl.haxx.se/dev/multi-app.c">multi-app.c</a>
- is application source code, showing how this interface could be used.
+ Checkout the CVS source code with the 'multi-dev' label. Note that you need
+ the -f flag to get the main branch of the files that aren't branched. An easy
+ way is to checkout the curl sources as usual, and then in the curl CVS source
+ root you invoke the following command: <b>cvs up -rmulti-dev -fdP</b>.
 
 <p>
- Bring your ideas and energy to the libcurl mailing list!
+ Bring your ideas and feedback on this to the libcurl mailing list!
 
 #include "_footer.html"
 
