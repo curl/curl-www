@@ -9,3 +9,5 @@ share/bison.simple", line 379: remark\(1498\): no prototype
 share/bison.simple, line 376: No prototype
 share/bison.simple, line 379: No prototype
 cfe: Warning 835: getdate.y, line 986: No prototype
+# gcc 2.95.3 cross-compiling for ARM complains on a system header:
+include/bits/confname.h:565: warning: comma at end of enumerator list
