@@ -41,6 +41,79 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
  document (it is work in progress).
 </ul>
 
+SUBTITLE(Fixed 7.10.8)
+<p> Changes:
+<ul>
+ <li> --head now works on file:// URLs too
+ <li> file: URLs with only one initial slash now works too
+ <li> RELEASE-NOTES document added to the release archive to summarize the big
+   and visible changes and bugfixes
+ <li> CURLOPT_MAXFILESIZE was added, and --max-filesize
+ <li> CURLOPT_PASSWDFUNCTION and CURLOPT_PASSWDDATA are no longer supported
+ <li> IPv6 is now supported on Windows builds too
+ <li> CURLOPT_IPRESOLVE lets you select pure IPv6 or IPv4 resolved addresses
+   (curl offers the command line options -4/--ipv4 and -6/--ipv6)
+ <li> GSS-Negotiate works fine with the MIT kerberos library
+ <li> SPNEGO support added, if libcurl is built with the FBopenssl libraries,
+   curl_version_info() can return a feature bit for it and curl -V displays
+   SPNEGO as a feature if libcurl is built with it enabled
+ <li> easy handles added to a multi handle now share DNS cache automaticly
+ <li> CURLINFO_HTTPAUTH_AVAIL and CURLINFO_PROXYAUTH_AVAIL were added
+ <li> CURLOPT_FTP_RESPONSE_TIMEOUT was added
+ <li> NTLM, Digest and GSS-Negotiate authentications also work for HTTPS over
+   proxies
+ <li> curl supports multiple -T flags to allow serveral uploaded files using
+   a single command line
+ <li> CURLINFO_RESPONSE_CODE can return the last FTP response code
+</ul>
+<p> Bugs:
+<ul>
+ <li> added work-around for a name resolve problem on some glibc versions
+ <li> a rare ERRORBUFFER single-byte overflow was fixed
+ <li> HTTP-resuming an already downloaded file works better
+ <li> builds better on Solaris 8+ with gcc
+ <li> --disable-eprt works now
+ <li> improved CA cert verification
+ <li> --anyauth could bug when the first response had no body contents
+ <li> double password prompting when doing NTLM fixed
+ <li> improved performance when used multi-threaded on windows
+ <li> share-locking during DNS lookups was modified
+ <li> resume was not possible to switch off properly once enabled
+ <li> fixed the ipv4 connect code when a DNS entry has multiple IPs
+ <li> now checks subjectAltNames when matching certs
+ <li> HTTP POST using read callback works again
+ <li> builds fine on BeOS now
+ <li> CURLOPT_COOKIE set to NULL no longer sends the previously set cookie
+ <li> if an FTP transfer used a bad path, the next transfer could fail too
+ <li> ares-built libcurl resolves IP-only names properly
+ <li> changed the curl_lock_function proto to prevent warnings on some compilers
+ <li> builds fine on QNX 6.2.x now
+ <li> PUT with --digest works now
+ <li> --anyauth that picks NTLM and then follows a redirect (and does NTLM again)
+   works now
+ <li> asynch resolves now work on NT4 too
+ <li> a DNS cache trash (possible segfault) was fixed
+ <li> runtests.pl clears all proxy environment variables before the test is run
+ <li> Microsoft's "Negotiate" authentication is now supported by the existing
+   GSSNEGOTIATE option
+ <li> A set zero-length proxy name confused libcurl
+ <li> Digest authentication works again without OpenSSL on 64bit architectures
+ <li> configure --enable-thread works now
+ <li> buffer problems in the test suite's web server were fixed
+ <li> improved proxy password handling
+ <li> LDAP is again working nicely with the current OpenLDAP
+ <li> asynch name lookup for non-resolving hosts now return a proper error message
+ <li> CURLOPT_SSL_VERIFYHOST set to 1 no longer aborts if no CN field is
+   obtainable, it will merely warn about it
+ <li> name resolve segfault with uClibc fixed
+ <li> multi interface and multi-part/formpost could end in segfault
+ <li> curl_multi_info_read() sets the msgs_in_queue to 0 when returning NULL
+ <li> multi interface, ares and non-resolving host caused a segfault
+ <li> minor single SSL memory leak fixed
+ <li> Setting CURLOPT_WRITEFUNCTION or CURLOPT_READFUNCTION to NULL resets them
+   to default
+</ul>
+
 SUBTITLE(Fixed in 7.10.7)
 <p> Changes:
 <ul>
