@@ -282,3 +282,14 @@ p.ingres {
   font-weight: bold;
   margin-left: 10%;
 }
+
+div.quote {
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+  padding: 2px 2px 2px 2px;
+
+  background-color: #f0f0ff; 
+  width: 90%;
+  margin-left: 5%;
+}
