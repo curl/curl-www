@@ -2,3 +2,5 @@
 lib/mprintf.c:950: warning: format not a string literal, argument types not checked
 # gcc 2.95.3 cross-compiling for ARM complains on a system header:
 include/bits/confname.h:565: warning: comma at end of enumerator list
+# gcc 2.95.3 cross-compiling for uClibc on ARM
+/usr/arm-linux-uclibc/include/bits/uClibc_ctype.h:62: warning: comma at end of enumerator list
