@@ -14,7 +14,7 @@ Accept-Charset: ISO-8859-1, utf-8;q=0.66, *;q=0.66
 Keep-Alive: 300
 Connection: keep-alive
 
-[Netscape 4.76]
+[Internet Explorer 5.00.2919.6307]
 
 GET /1 HTTP/1.1
 Accept: application/vnd.ms-excel, application/msword, application/vnd.ms-powerpoint, image/gif, image/x-xbit
@@ -25,7 +25,7 @@ User-Agent: Mozilla/4.0 (compatible; MSIE 5.01; Windows NT)
 Host: beppo:8000
 Connection: Keep-Alive
 
-[Internet Explorer 5.00.2919.6307]
+[Netscape 4.76]
 
 GET /1 HTTP/1.0
 Connection: Keep-Alive
