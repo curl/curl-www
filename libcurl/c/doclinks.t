@@ -114,10 +114,12 @@ THIS(curl_getdate)
 DOC(curl_getdate, curl_getdate.html)
 #endif
 
+#if 0
 #ifdef DOCS_GETENV
 THIS(curl_getenv)
 #else
 DOC(curl_getenv, curl_getenv.html)
+#endif
 #endif
 
 #ifdef DOCS_GLOBAL_CLEANUP
@@ -132,11 +134,12 @@ THIS(curl_global_init)
 DOC(curl_global_init, curl_global_init.html)
 #endif
 
-
+#if 0
 #ifdef DOCS_MPRINTF
 THIS(curl_mprintf)
 #else
 DOC(curl_mprintf, curl_mprintf.html)
+#endif
 #endif
 
 #ifdef DOCS_SLIST_APPEND
@@ -151,10 +154,12 @@ THIS(curl_slist_free_all)
 DOC(curl_slist_free_all, curl_slist_free_all.html)
 #endif
 
+#if 0
 #ifdef DOCS_STREQUAL
 THIS(curl_strequal)
 #else
 DOC(curl_strequal, curl_strequal.html)
+#endif
 #endif
 
 #ifdef DOCS_UNESCAPE
