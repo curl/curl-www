@@ -54,6 +54,12 @@ THIS(curl_easy_cleanup)
 DOC(curl_easy_cleanup, curl_easy_cleanup.html)
 #endif
 
+#ifdef DOCS_EASY_DUPHANDLE
+THIS(curl_easy_duphandle)
+#else
+DOC(curl_easy_duphandle, curl_easy_duphandle.html)
+#endif
+
 #ifdef DOCS_EASY_SETOPT
 THIS(curl_easy_setopt)
 #else

@@ -37,7 +37,7 @@ all: index.html example.html curl_easy_init.html			\
 	curl_multi_info_read.html      libcurl-multi.html \
 	libcurl-easy.html libcurl-share.html allfuncs.html \
 	curl_share_cleanup.html curl_share_init.html \
-	curl_share_setopt.html
+	curl_share_setopt.html curl_easy_duphandle.html
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
@@ -51,6 +51,11 @@ allfuncs.html: _allfuncs.html $(MAINPARTS)
 curl_easy_init.html: _curl_easy_init.html $(MAINPARTS) curl_easy_init.t
 	$(ACTION)
 curl_easy_init.t: $(MANROOT)/curl_easy_init.3
+	$(MAN2HTML) < $< >$@
+
+curl_easy_duphandle.html: _curl_easy_duphandle.html $(MAINPARTS) curl_easy_duphandle.t
+	$(ACTION)
+curl_easy_duphandle.t: $(MANROOT)/curl_easy_duphandle.3
 	$(MAN2HTML) < $< >$@
 
 curl_easy_perform.html: _curl_easy_perform.html $(MAINPARTS) curl_easy_perform.t
