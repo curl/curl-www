@@ -417,6 +417,9 @@ if(!$pick_flav && $pick_os && $pick_type) {
         elsif($ua=~ /gentoo/i) {
             $sel_flav = "Gentoo";
         }
+        elsif($ua=~ /cygwin/i) {
+            $sel_flav = "cygwin";
+        }
 
         showsteps();
 
@@ -531,8 +534,14 @@ if($pick_os && $pick_flav && $pick_ver && !$pick_cpu) {
         elsif($ua =~ /ia64/i) {
             $sel_cpu = "ia64";
         }
-        elsif($ua =~ /x86_64|athlon/i) {
+        elsif($ua =~ /x86_64|athlon|AMD64/i) {
             $sel_cpu = "x86_64";
+        }
+        elsif($ua =~ /alpha/i) {
+            $sel_cpu = "Alpha";
+        }
+        elsif($ua =~ /arm/i) {
+            $sel_cpu = "StrongARM";
         }
 
         my $ver=$pick_ver;
