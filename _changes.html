@@ -35,7 +35,7 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 </ul>
 #endif
 
-SUBTITLE(Fixed since -- available in CVS and pre-releases)
+SUBTITLE(Fixed in 7.10.4)
 <p> Changes:
 <ul>
  <li> the curl tool now "clears" sensitive commands line args
@@ -43,9 +43,13 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
  <li> script for distributed, automatic, multi-platform testing added. Please
    join up and help us test the bleeding edge curl on various platforms!
  <li> the "scratch buffer" is now only allocated when actually needed
+ <li> removed the strequal and strnequal macros from curl/curl.h
+ <li> added CURLOPT_UNRESTRICTED_AUTH / --location-trusted
 </ul>
 <p> Bugs:
 <ul>
+ <li> "curl -O" only, now outputs an error message accordingly
+ <li> builds fine on Redhat Linux 9 (configure fix)
  <li> the CA cert bundle included a demo cert now removed
  <li> changing some attributes between two transfers when re-using a connection
    did not "take effect" properly
