@@ -29,7 +29,7 @@ all: index.html \
 	feedback.html mirrors.html cvs.html libs.html icons.html \
 	help.html curlprograms.html download.html changes.html \
 	version7.html bugreport.html about.html support.html \
-	newslog.html news.html head.html foot.html press.html \
+	newslog.html news.html head.html foot.html \
 	oldnews.html indexheader.html indexfooter.html \
 	mailheader.html mailfooter.html info web-editing.html \
 	donation.html devel.html competition.html search.html
