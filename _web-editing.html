@@ -23,7 +23,6 @@ cvs -d [user]@cvs.curl.sourceforge.net:/cvsroot/curl checkout www
  'CVS-README' present which contains some hard technical facts about
  things. Read that first.
 
-
 <p>
  To think of:
 <ul>
@@ -33,6 +32,10 @@ cvs -d [user]@cvs.curl.sourceforge.net:/cvsroot/curl checkout www
 
  <li> The web site is updated from CVS every 20 minutes. If you notice a
       mistake, it will stay that way at least until next update.
+
+ <li> The same contents appear on several different hosts, with one main site.
+      Include the host name 'curl.haxx.se' only when linking to pages/contents
+      that are not mirrored. See list below.
 </ul>
 
 <p>
@@ -53,6 +56,18 @@ cvs -d [user]@cvs.curl.sourceforge.net:/cvsroot/curl checkout www
  <li> If the problem is in a page out of control from the web site, chances are
       that the page is generated automatically from a file in the source code
       archive and then <i>that</i> file could be corrected instead.
+</ul>
+
+<p>
+ Site content that is not mirrored and thus only available from <a
+ href="http://curl.haxx.se/">curl.haxx.se</a>:
+<ul>
+<li> <tt>/feedback/</tt> The feedback/suggestion area
+<li> <tt>/mail/</tt> Mailing list archives
+<li> <tt>/download/</tt> Curl release archives/packages
+<li> <tt>/beta/</tt> Curl pre-releases and beta archives
+<li> <tt>/htdig/</tt> Site content search 
+<li> <tt>/latest.cgi</tt> script for display curl archive status on mirrors
 </ul>
 
 #include "_footer.html"
