@@ -12,21 +12,33 @@
 
 WHERE2(libcurl, "/libcurl/", C API Index)
 
-TITLE(use libcurl in your C application)
+TITLE(Using The libcurl C Interface)
 <p>
- First of all, read <a href="the-guide.html">The Guide</a>.
+ There's the tutorial to start with, read <a href="the-guide.html">The
+ Guide</a> to get a general in-depth grip of what libcurl programming is all
+ about.
 <p>
  There are some <a href="example.shtml">example C source codes</a> you can
- check out.
+ check out. They're not all-covering or even very extensive, but they might
+ serve as a source of inspiration to start hacking.
 
-TITLE(The C interface)
+TITLE(Going Easy or Going Multi)
 <p>
- You should always call <a href="curl_global_init.html">curl_global_init()</a>
- once to initialize libcurl globally, and when you've used libcurl for the
- last time in your application, you call <a
- href="curl_global_cleanup.html">curl_global_cleanup()</a>. Failing to do so
- may lead to memory leaks!
+ libcurl has offered the "easy" interface for file transfers since libcurl
+ version 7 was released the first time, during spring year 2000. The easy
+ interface is a synchronous, efficient, quickly used and... yes, easy
+ interface for file transfers. Numerous applications have been built using
+ this.
+<p>
+ As of recent releases, we have started to put focus more and more on the new
+ interface, the so called "multi" interface. The multi interface is the
+ asynchronous brother in the family and it also offers multiple transfers
+ using a single thread and more. The multi interface's documentation is still
+ not available on the web site, but the man pages are included in the curl
+ release archives starting with 7.9.6. You can also read <a
+ href="libcurl-multi.html">the multi interface overview</a>.
 
+TITLE(The Easy interface)
 <p>
  When using libcurl you <a href="curl_easy_init.html">init</a> your
  easy-session and get a handle, which you use as input to the following
