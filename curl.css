@@ -66,7 +66,8 @@ td.newsdate {
 
 
 .mini {
-  font-size: 7pt;
+  font-size: 8pt;
+  font-family: monospace;
 }
 
 .warning {

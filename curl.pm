@@ -1,6 +1,11 @@
+sub stitle {
+    my ($title)=@_;
+    return "<h1 class=\"pagetitle\">$title</h1>";
+}
+
 sub title {
     my $title=$_[0];
-    print "<h1 class=\"pagetitle\">$title</h1>";
+    print stitle($title);
 }
 
 # WHERE2(Feedback, "/feedback/", Bug Report)

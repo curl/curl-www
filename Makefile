@@ -32,7 +32,7 @@ all: index.html \
 	newslog.html news.html head.html foot.html press.html \
 	oldnews.html indexheader.html indexfooter.html \
 	mailheader.html mailfooter.html info web-editing.html \
-	donation.html devel.html competition.html
+	donation.html devel.html competition.html search.html
 	cd docs; make
 	cd libcurl; make
 	cd mail; make
@@ -54,6 +54,9 @@ donation.html: _donation.html $(MAINPARTS)
 	$(ACTION)
 
 version7.html: _version7.html $(MAINPARTS)
+	$(ACTION)
+
+search.html: _search.html $(MAINPARTS)
 	$(ACTION)
 
 web-editing.html: _web-editing.html $(MAINPARTS)

@@ -1,0 +1,40 @@
+#include "_doctype.html"
+<html><head>
+<title>Curl -- Search this site</title>
+#include "css.t"
+</head>
+
+#define CURL_SEARCH
+#define CURL_URL search.html
+
+#include "_menu.html"
+#include "setup.t"
+#include "pic.t"
+
+WHERE1(Search)
+TITLE(Search This Site)
+<p>
+ Search the site using <a href="http://www.google.com/">Google</a>:
+
+<p>
+
+<center>
+<table width=70% cellspacing=0 cellpadding=5 border=2><tr><td>
+<form action="http://www.google.com/search">
+
+<input name=as_q size=30> <input value="Search" type=submit>
+<input type=hidden name=as_sitesearch value="curl.haxx.se">
+</form>
+</td></tr></table>
+</center>
+<p>
+
+<b>Note:</b> the search results may include mailing list postings that may
+contain details and inaccurate facts. Just be aware of this. Also, note that
+the search engine might offer links to source code.
+
+<p>
+#include "_footer.html"
+</body></html>
+
+
