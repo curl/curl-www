@@ -1,0 +1,62 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl - WinInet Comparison</TITLE>
+#include "css.t"
+</HEAD>
+
+#define LIBCURL_WININET
+#define CURL_URL libcurl/wininet.html
+
+#include "_menu.html"
+#include "setup.t"
+#include "table.t"
+
+WHERE2(libcurl, "/libcurl/", WinInet Comparison)
+
+TITLE(Notes About WinInet compared to libcurl)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/docs/features.html">libcurl Features</a>
+<br><a href="competitors.html">Compare HTTP Libraries</a>.
+</div>
+
+<ul>
+
+ <li> there's a tech note from Microsoft that says not to use WinInet from
+ system context.  Gotta dig up the link.
+
+ <li> Even if you ignore the tech note, there are a bunch of annoyances with
+ using WinInet from system context.  The biggest of which is proxy settings.
+ In general, the settings are stored per user, so if you find yourself in
+ system context, the correct settings may not be there.  Or, if you need to
+ impersonate another user, you're in the same boat.  Gotta love the plain text
+ config file.  I am curious if people worry about their proxy credentials
+ lying around in plain text, or if they encrypt them, or what.
+
+ <li> Even with the correct settings, there are certain versions of IE (I
+ think it's 6, and maybe with some service packs) that don't work properly
+ when communicating to proxies with basic authentication.
+
+ <li> There are so many sweet features with curl that I doubt are available
+ with WinInet.  I'm using the curl executable, so I get bandwidth limiting
+ which isn't in the library, but --speed-time and --speed-limit are great.
+
+ <li> I haven't started using c-ares, but the non-blocking DNS lookups should
+ make the whole thing that much more reliable.
+
+ <li> I've never tried to deal with Microsoft for WinInet support, but the
+ curl support (i.e. this list, and Daniel in particular) is _really_ good.
+
+ <li> Even if portability isn't a concern now, it might be later.  And,
+ there's more than just code portability.  If you get good with curl, you'll
+ have a useful skill if you work on other platforms.  I doubt we'll see
+ WinInet ported anywhere else anytime soon.
+
+</ul>
+
+<p> Facts/opinions brought by David Byron. If you disagree, agree and/or have
+ other facts/opinions. Mail us!
+
+#include "_footer.html"
+</BODY>
+</HTML>
