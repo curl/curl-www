@@ -112,6 +112,34 @@ sub gettype {
             }
             return($1, $pkg, $desc);
         }
+        # curl-ssl-devel-7.9.1-1rh72.i386.rpm
+        elsif($file =~ /^curl-ssl-devel-([0-9.]*)-(\d*)(.*).i386.rpm/) {
+            my $pkg="ssl-devel-i386.rpm";
+            my $desc="Linux devel i386 RPM package, SSL-enabled. (redhat 6.2 style)";
+            if($3 eq "rh71") {
+                $pkg="rh71-".$pkg;
+                $desc="Linux devel i386 RPM package, SSL-enabled. (redhat 7.1 style)";
+            }
+            elsif($3 eq "rh72") {
+                $pkg="rh72-".$pkg;
+                $desc="Linux devel i386 RPM package, SSL-enabled. (redhat 7.2 style)";
+            }
+            return($1, $pkg, $desc);
+        }
+        # curl-devel-7.9.1-1rh72.i386.rpm
+        elsif($file =~ /^curl-devel-([0-9.]*)-(\d*)(.*).i386.rpm/) {
+            my $pkg="devel-i386.rpm";
+            my $desc="Linux devel i386 RPM package (redhat 6.2 style)";
+            if($3 eq "rh71") {
+                $pkg="rh71-".$pkg;
+                $desc="Linux devel i386 RPM package. (redhat 7.1 style)";
+            }
+            elsif($3 eq "rh72") {
+                $pkg="rh72-".$pkg;
+                $desc="Linux devel i386 RPM package. (redhat 7.2 style)";
+            }
+            return($1, $pkg, $desc);
+        }
         # curl-ssl-7.4.1-1.ppc.rpm
         elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*).ppc.rpm/) {
             return($1, "ssl-ppc.rpm",
