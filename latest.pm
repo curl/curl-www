@@ -163,7 +163,7 @@ sub gettype {
     # ^^curl-devel-([0-9.]*)-(d*)-cygwin.tar.bz2
     elsif($file =~ /^curl-devel-([0-9.]*)-(\d*)-cygwin.tar.bz2/) {
         return($1, "cygwin-devel",
-               " Windows cygwin devel tar, bzip2");
+               "Windows cygwin devel tar, bzip2");
     }
 
     # curl-7.8.1-2-cygwin.tar.bz2
