@@ -1,27 +1,34 @@
 BODY {
-        background-color: white; 
-        color: black;
+  background-color: white; 
+  color: black;
 }
 
 .pagetitle {
-        border-style: solid;
-        border-width: thin;
-        border-color: black;
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
 
-        background-color: #e0e0ff; 
-        font-family: arial, helvetica, ariel, sans-serif;
-        color: #0000ff;
-        font-size: 150%;
-        font-weight: bold;
+  background-color: #e0e0ff; 
+  font-family: arial, helvetica, ariel, sans-serif;
+  color: #0000ff;
+  font-size: 150%;
+  font-weight: bold;
 }
 
 .title {
-        background-color: #f0f0ff; 
-        font-family: arial, helvetica, ariel, sans-serif;
-        font-size: 120%;
+  background-color: #f0f0ff; 
+  font-family: arial, helvetica, ariel, sans-serif;
+  font-size: 120%;
 }
 
 .subtitle {
-        font-weight: bold;
+  font-weight: bold;
 }
 
+.buildfail {
+  background-color: #ff8080;
+}
+
+.buildfine {
+  background-color: #00ff00;
+}
