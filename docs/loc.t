@@ -19,7 +19,7 @@ TITLE(Lines of Code in curl and libcurl)
 (including generated code and example code), starting with curl 4.8 (dated
 late August 1998) and ending with the 7.10.7 package (August 2003), we have
 produced a graph showing how the amount has changed over time.
-<p>
+<p align="center">
  <a href="loc.png"><img border="0" src="loc-mini.png"></a>
 <p>
  Interestingly, the growth has not decreased over time, but seems to be at a
@@ -27,6 +27,10 @@ steady rate of 8000 new lines of code every year... Since the size of the
 generated code and the amount of examples increase, we can assume that the
 growth rate of actual curl and libcurl code declines a little over time, but
 not very much.
+<p>
+ <a href="loc.txt">Raw data file, comma-separated text file</a>. The columns
+are: Release name, number of lines, number of words, number of bytes and
+finally release date.
 
 #include "_footer.html"
 
