@@ -25,7 +25,7 @@ ACTION=@echo preprocessing $@; \
        cpp -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
        chmod a-w+r $@
 
-all: index.html index2.html \
+all: index.html \
 	feedback.html mirrors.html cvs.html libs.html icons.html \
 	help.html curlprograms.html download.html changes.html \
 	version7.html bugreport.html about.html support.html \
@@ -63,10 +63,7 @@ foot.html: _foot.html $(MAINPARTS)
 main.html: _main.html $(MAINPARTS) $(STAT) $(RELEASE)
 	$(ACTION)
 
-index.html: _index.html
-	$(ACTION)
-
-index2.html: main.html newslog.html
+index.html: main.html newslog.html
 	rm -f $@
 	./filter.pl < $< > $@
 
