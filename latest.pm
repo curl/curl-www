@@ -121,6 +121,11 @@ sub scanstatus {
             storemax($_, $1, $size, "solaris-sparc-pkg",
                      "Binary Solaris SPARC archive.");
         }
+        # curl-7.8.1-vms.zip
+        elsif($_ =~ /^curl-([0-9.]*)-vms\.zip/) {
+            storemax($_, $1, $size, "vms-zip",
+                     "Binary OpenVMS archive, zip compressed.");
+        }
     }
 }
 
