@@ -1,0 +1,36 @@
+We should add a system to libcurl, that makes it capable of reading and
+writing a full set of cookies (from what we call a "cookie jar"). This
+document collects a bunch of ideas in this topic.
+
+The discussion on the mailing list can be followed from this link:
+http://curl.haxx.se/mail/archive-2001-06/0092.html
+
+The ability of writing the full set of cookies, is important when you use
+multiple curl invokes to deal with multiple requests that require a mixed set
+of cookies.
+
+The cookie jar should most probably be using netscape/mozilla cookie file
+format.
+
+Before we save the cookies, we load the old cookie file again to incorporate
+any possbily new entries that could've been added since we read it (if our
+operation was a long one).
+
+Use exclusive locking when reading/writing the jar, so that multiple curls can
+access the same jar.
+
+Can we come up with a design in which the library can let the application
+store the jar in memory for speed?
+
+Can we come up with a design to allow command line options for the curl tool
+to control more specificly which cookies we want (or not want) to send in a
+request from the jar (in case many cookies match and we don't want them all to
+get sent). One way could look like:
+
+  curl --cookie-jar cookie-jar.txt \
+  --cookie-skip-if name="silly-cookie*" \
+  --cookie-skip-if domain="ourdomain.com" \
+  --cookie-skip-if path="/login" [URL]
+
+This would of course imply that the library can "ask" the application (using a
+callback?) what cookies that are OK or not OK to pass in a request.
