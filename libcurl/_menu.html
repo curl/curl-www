@@ -77,6 +77,12 @@ LINK("", Java)
 VLINK(/libcurl/java/, Java)
 #endif
 
+#ifdef LIBCURL_PASCAL
+LINK("", Pascal)
+#else
+VLINK(/libcurl/pascal/, Pascal)
+#endif
+
 #ifdef LIBCURL_PERL
 LINK("", Perl)
 #else
