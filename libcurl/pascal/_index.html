@@ -14,18 +14,119 @@ WHERE2(libcurl, "/libcurl/", libcurl Pascal Interface)
 <a name=top>
 TITLE(CurlPas -- accessing libcurl from Pascal)
 <p>
- CurlPas is free pascal bindings to libcurl. All details on CurlPas is found
+<b>CurlPas</b> - <a href="http://www.freepascal.org"><i>free pascal</i></a> bindings to <a href="http://curl.haxx.se/libcurl"><i>libcurl</i></a>.
+<br><br>
+<i>libcurl</i>&nbsp; is a web-client libray that can provide your <i>free pascal</i> applications with an easy way to implement such things as:<ul>
+<li>Download files using FTP or HTTP.
+<li>Upload files using FTP,&nbsp; HTTP PUT and multipart/form-data (aka rfc1867).
+<li>Support for remote FTP commands like MKD, CWD, DELE, and CHMOD.
+<li>Timeout settings for connect, minimum transfer speed, and total download time.
+<li>Resume partial file transfers.
+<li>Basic username:password authentication to remote and/or proxy servers.
+<li>Retrieve header info from an http response, without downloading the entire file.
+<li>Send and receive cookies ( from a file, or input/output strings ).
+<li>Send "spoofed" headers such as HTTP_USER_AGENT and DOCUMENT_REFERRER.
+<li>Set additional custom HTTP headers if needed.
+<li>Option to <i>follow</i> or <i>fail</i> on HTTP redirects.
+<li>Generate "human-readable" error output and/or logs on failed transfers.
+</ul>
+<i>libcurl</i> also provides <i><b>many</b></i> other functions such as TELNET and SSL, but not all these have been tested in <i>curlpas</i>.<br>
+<br>
+CurlPas also includes <b>tCurl</b>, an object-oriented interface, to provide an easy to use "wrapper" around libcurl.
+<br><br>
+
+<p>
+ All details on CurlPas is found
  on the CurlPas web page at: <a
  href="http://houston.quik.com/jkp/curlpas/">http://houston.quik.com/jkp/curlpas/</a>.
 
 <p><b>How to Install</b></br>
- <a href="http://houston.quik.com/jkp/curlpas/">install CurlPas</a>
+
+CurlPas was developed and tested on <a href="http://www.suse.com">SuSE</a>
+Linux 7.1, and should be <br> compatible with most other Linux i386-i686
+systems.<br>
+<br>
+CurlPas requires:<br>
+Free Pascal >= 1.0.4, available from: <a href="http://www.freepascal.org/">http://www.freepascal.org</a><br>
+Curl/libcurl >= 7.9.5, available from: <a href="http://curl.haxx.se">http://curl.haxx.se</a><br>
+<br>
+To build CurlPas and tCurl, <b>cd</b> into the curlpas directory and
+type:&nbsp <b>make</b><br> To build the example projects, issue the
+<b>make</b> command again in the /examples/ directory.<br>
+<br>
+To install curlpas, you may either copy the files from the /curlpas/src/
+directory into a location where the compiler can find them, or you can edit
+your configuration file ( usually&nbsp; /etc/ppc386.cfg &nbsp;or&nbsp;
+~/.ppc386.cfg ) and add the /src/ directory to the compiler's search path, for
+instance: <br>
+-Fu/home/username/curlpas/src
 
 <p><b>Examples</b><br> 
- <a href="http://houston.quik.com/jkp/curlpas/">CurlPas examples</a>
+A simple http download program...<br>
+<pre>
+<meta name="generator" content="pas2html 0.9.2">
+<b><font color="#A000A0">program </font></b>testget; 
+
+<b><font color="#A000A0">uses </font></b>curlobj;
+
+<b><font color="#A000A0">var</font></b> MyCurl: tCurl;
+
+<font color="#808080"><i>{ a very basic progress callback... }</i></font>
+<b><font color="#A000A0">function </font></b>Progress( p:pointer; dltotal, dlnow, ultotal, ulnow:longint ): longint;
+<b><font color="#A000A0">begin</font></b>
+Write(StdErr, <font color="#008000">'Received: '</font>,  dlnow:9, <font color="#008000">' of '</font>, dltotal, #13);
+  Progress := 0;
+<b><font color="#A000A0">end</font></b>;
+
+<font color="#808080"><i>{ main... }</i></font>
+<b><font color="#A000A0">begin</font></b>
+<font color="#A000A0">if</font> ( ParamCount = 1 ) <font color="#A000A0">then</font> <b><font color="#A000A0">begin</font></b>
+MyCurl := tCurl.Create;
+    <b><font color="#A000A0">with</font></b> MyCurl <font color="#A000A0">do</font> <b><font color="#A000A0">begin</font></b>
+URL := ParamStr(1);
+      OutputFile := <font color="#008000">'testget.tmp'</font>;
+      HeaderFile := <font color="#008000">'headers.txt'</font>;
+      ErrorFile := <font color="#008000">'errors.txt'</font>;
+      NoProgress := False;
+      ProgressCallback := @Progress;
+      Verbose := True;
+      FollowLocation := True;
+      <font color="#A000A0">if</font> Perform <font color="#A000A0">then</font> <b><font color="#A000A0">begin</font></b>
+<font color="#808080"><i>{ Print some statistics about the transfer ... }</i></font>
+WriteLn;
+        WriteLn(<font color="#008000">'Effective URL: '</font>, EffectiveUrl);
+        WriteLn(<font color="#008000">'Content-Type:  '</font>, ContentType);    
+        WriteLn(<font color="#008000">'Http code:     '</font>, HttpCode:3);
+        WriteLn(<font color="#008000">'DNS lookup time:  '</font>, NameLookuptime:10:4, <font color="#008000">' sec'</font>);
+        WriteLn(<font color="#008000">'Connect time:     '</font>, ConnectTime:10:4,    <font color="#008000">' sec'</font>);
+        WriteLn(<font color="#008000">'Total time:       '</font>, TotalTime:10:4,      <font color="#008000">' sec'</font>);
+        WriteLn(<font color="#008000">'Total size:       '</font>, SizeDownload:9,    <font color="#008000">' bytes'</font>);
+        WriteLn(<font color="#008000">'Download Speed:   '</font>, SpeedDownload:9:0, <font color="#008000">' bps'</font>);
+      <b><font color="#A000A0">end</font></b> <font color="#A000A0">else</font> WriteLn(ErrorString); <font color="#808080"><i>{ &lt;- Show the error if Perform fails }</i></font>
+Destroy;
+    <b><font color="#A000A0">end</font></b>;
+  <b><font color="#A000A0">end</font></b> <font color="#A000A0">else</font> <b><font color="#A000A0">begin</font></b> <font color="#808080"><i>{ Usage... }</i></font>
+WriteLn(#10, <font color="#008000">'Download a file using http...'</font>);
+    WriteLn(<font color="#008000">' File will be saved to disk as "testget.tmp"'</font>);
+    WriteLn(<font color="#008000">' Response headers are saved in "headers.txt"'</font>);
+    WriteLn(<font color="#008000">' Error messages are saved in "errors.txt"'</font>, #10);
+    WriteLn(<font color="#008000">'Usage: testget &lt;remote-url&gt;'</font>, #10);
+  <b><font color="#A000A0">end</font></b>;
+<b><font color="#A000A0">end</font></b>.
+</pre>
+<br>
+( Additional examples for FTP uploads, HTTP POST, and multipart/form-data applications are included with the CurlPas sources. )
 
 <p><b>Interface documentation</b><br>
  <a href="http://www.houston.quik.com/jkp/curlpas/tcurl.html">CurlPas docs</a>
+<p>
+The pascal bindings are quite similar to their C-language equivalents,<br>
+read the libcurl documentation for information, in particular:<br>
+<ul>
+<li>man libcurl<br>
+<li>man curl_easy_setopt<br>
+<li>man curl_easy_getinfo<br>
+</ul>
 
 <p><b>Download</b><br> <a
  href="http://www.houston.quik.com/jkp/curlpas/files/curlpas.tar.gz">curlpas.tar.gz</a>
