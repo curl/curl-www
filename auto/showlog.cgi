@@ -38,7 +38,7 @@ while(<FILE>) {
             print "<div class=\"mini\">\n";
             for(@present) {
                 chomp;
-                if(($_ =~ /([.\/a-zA-Z0-9]*)\.[ch]:([0-9:]*): warning/) ||
+                if(($_ =~ /([.\/a-zA-Z0-9]*)\.[ch]:([0-9:]*): /) ||
                    ($_ =~ /FAILED/) ) {
                     print "<div class=\"warning\">$_</div>\n";
                 }
