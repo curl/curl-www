@@ -5,11 +5,11 @@ libcurl/_links.html ad.t mirrorlinks.t searchform.t css.t
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 
 # the latest stable version is:
-STABLE= 7.9.8
-RELDATE = "13th of June 2002"
-RELSIZE = "730459 bytes"
-BZ2SIZE = "575047 bytes"
-ZIPSIZE = "953092 bytes"
+STABLE= 7.10
+RELDATE = "1st of October 2002"
+RELSIZE = "839380 bytes"
+BZ2SIZE = "659271 bytes"
+ZIPSIZE = "1069302 bytes"
 
 # name of the dir to tempoary unpack and build zip files in:
 TEMPDIR=tempzip

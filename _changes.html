@@ -33,6 +33,7 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 SUBTITLE(Fixes in upcoming 7.10)
 <p> Changes:
 <ul>
+ <li> curl -x "" now disables proxy-usage completely
  <li> The libcurl and thus the curl version string too are modified slightly
  <li> added curl_version_info() for various runtime version info
  <li> added curl_free() that allows freeing data libcurl malloced()
@@ -52,6 +53,7 @@ SUBTITLE(Fixes in upcoming 7.10)
 </ul>
 <p> Bugs fixed:
 <ul>
+ <li> transfer after a failed connect when using the multi interface
  <li> headerless HTTP downloads
  <li> "-C -" on multiple file downloads
  <li> resume on file:// downloads
