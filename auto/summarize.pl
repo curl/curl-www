@@ -279,6 +279,7 @@ sub endofsingle {
         if(0 == $testfine) {
             $untestedtotal++;
         }
+        $testfine = 0 + $testfine; # to force it numeric
         $res .= "<td class=\"buildfine\">$a $testfine";
 
         if($skipped) {
@@ -296,13 +297,12 @@ sub endofsingle {
         $res .= "<td>0</td>\n";
     }
 
-    $memory=($memorydebug)?"D":"-";
+    $memory=($debug)?"D":"-";
     $https=($httpstest)?"S":"-";
     $asynch=$ares?"A":"-";
+    $sspi=$sspi?"P":"-";
 
-    my $uniq = $uname.$libver.$sslver.$krb4.$ipv6.$memory.$https;
-
-    my $o = "$krb4$ipv6$memory$https$asynch$zlib$gss$idn";
+    my $o = "$krb4$ipv6$memory$https$asynch$zlib$gss$idn$sspi";
 
     if(!$desc) {
         $desc = $os;
@@ -337,10 +337,11 @@ sub endofsingle {
     $warning=0;
     $skipped=0;
     $configure=0;
-    $memorydebug=0;
+    $debug=0;
     $httpstest=0;
     $cvsfail=0;
     $ares=0;
+    $sspi=0;
     $buildid="";
     $failamount=0;
     $ipv6enabled=0;
@@ -399,6 +400,12 @@ sub singlefile {
             elsif($_ =~ /^testcurl: DESC = (.*)/) {
                 $desc = $1;
             }
+            elsif($_ =~ /^testcurl: CONFOPTS = (.*)/) {
+                my $confopts = $1;
+                if($confopts =~ /--enable-debug/) {
+                    $debug=1;
+                }
+            }
             elsif($_ =~ /^testcurl: date = (.*)/) {
                 $date = $1;
             }
@@ -410,7 +417,7 @@ sub singlefile {
                 $fail = $1;
             }
             elsif($_ =~ /^TESTDONE: (\d*) tests out of (\d*)/) {
-                $testfine = $1;
+                $testfine = 0 + $1;
                 my $numtests= $2;
                 if($numtests <= 0) {
                     # no tests performed, but we are fine with it
@@ -445,10 +452,10 @@ sub singlefile {
             }
             elsif($_ =~ /^\* libcurl debug: *(.*)/) {
                 if($1 eq "ON") {
-                    $memorydebug=1;
+                    $debug=1;
                 }
                 else {
-                    $memorydebug=0;
+                    $debug=0;
                 }
             }
             elsif($_ =~ /^\* System: *(.*)/) {
@@ -464,6 +471,12 @@ sub singlefile {
             }
             elsif($_ =~ /^\#define USE_ARES 1/) {
                 $ares = 1;
+            }
+            elsif($_ =~ /^\#define USE_WINDOWS_SSPI 1/) {
+                $sspi = 1;
+            }
+            elsif($_ =~ /^\#define USE_SSLEAY 1/) {
+                $httpstest = 1;
             }
             elsif($_ =~ /^\#define ENABLE_IPV6 1/) {
                 $ipv6enabled = 1;
