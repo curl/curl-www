@@ -78,6 +78,54 @@ sub randomorder {
     return sort { return int(rand(4)-2); } @_;
 }
 
+sub flag {
+    my ($country)=@_;
+    my $tld;
+
+    if($country =~ /Australia/) {
+        $tld="au";
+    }
+    elsif($country =~ /Austria/) {
+        $tld="at";
+    }
+    elsif($country =~ /Denmark/) {
+        $tld="dk";
+    }
+    elsif($country =~ /Estonia/) {
+        $tld="ee";
+    }
+    elsif($country =~ /France/) {
+        $tld="fr";
+    }
+    elsif($country =~ /Germany/) {
+        $tld="de";
+    }
+    elsif($country =~ /Greece/) {
+        $tld="gr";
+    }
+    elsif($country =~ /Hong Kong/) {
+        $tld="hk";
+    }
+    elsif($country =~ /Russia/) {
+        $tld="ru";
+    }
+    elsif($country =~ /Sweden/) {
+        $tld="se";
+    }
+    elsif($country =~ /Thailand/) {
+        $tld="th";
+    }
+    elsif($country =~ /US/) {
+        $tld="us";
+    }
+
+    if($tld) {
+        return "<img src=\"/pix/flags/$tld.png\" alt=\"$tld\">";
+    }
+
+    return "&nbsp;";
+}
+
 sub time_ago {
     my ($dev,$ino,$mode,$nlink,$uid,$gid,$rdev,$size,
         $atime,$mtime,$ctime,$blksize,$blocks)
@@ -149,7 +197,7 @@ if($latest::version{$what}) {
         "(verified ".&time_ago.")\n";
         
         print "<table><tr>";
-        for(('Where', 'Proto', 'Host', 'File')) {
+        for(('Flag', 'Where', 'Proto', 'Host', 'File')) {
             print "<th>$_</th>";
         }
         print "</tr>\n";
@@ -157,9 +205,13 @@ if($latest::version{$what}) {
         my $i=0;
         for(sort {$where{$a} cmp $where{$b}} @dl) {
             my $url=$_;
+
+            my $flag = flag($where{$url});
+
             $i++;
-            printf "<tr class=\"%s\"><td><b>%s</b></td><td>%s</td><td>%s</td><td><a href=\"%s\">%s</a></td></tr>\n",
+            printf "<tr class=\"%s\"><td>%s</td><td><b>%s</b></td><td>%s</td><td>%s</td><td><a href=\"%s\">%s</a></td></tr>\n",
             $i&1?"odd":"even",
+            $flag,
             $where{$url},
             $proto{$url},
             $host{$url},
