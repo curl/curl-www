@@ -4,16 +4,16 @@ THIS(C API Front)
 DOC(C API Front, .)
 #endif
 
+#ifdef DOCS_TUTORIAL
+THIS(Tutorial)
+#else
+DOC(Tutorial, libcurl-tutorial.html)
+#endif
+
 #ifdef DOCS_ERRORS
 THIS(Error Codes)
 #else
 DOC(Error Codes, libcurl-errors.html)
-#endif
-
-#ifdef DOCS_GUIDE
-THIS(Tutorial)
-#else
-DOC(Tutorial, the-guide.html)
 #endif
 
 #ifdef DOCS_ALLFUNCS

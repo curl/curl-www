@@ -34,7 +34,8 @@ PAGES = index.html example.html curl_easy_init.html			\
  libcurl-multi.html libcurl-easy.html libcurl-share.html allfuncs.html	\
  curl_share_cleanup.html curl_share_init.html curl_share_setopt.html	\
  curl_easy_duphandle.html curl_easy_strerror.html			\
- curl_multi_strerror.html curl_share_strerror.html
+ curl_multi_strerror.html curl_share_strerror.html			\
+ libcurl-tutorial.html
 
 all: $(PAGES)
 
@@ -202,6 +203,11 @@ libcurl-share.t: $(MANROOT)/libcurl-share.3
 libcurl-errors.html: _libcurl-errors.html $(MAINPARTS) libcurl-errors.t
 	$(ACTION)
 libcurl-errors.t: $(MANROOT)/libcurl-errors.3
+	$(MAN2HTML) < $< >$@
+
+libcurl-tutorial.html: _libcurl-tutorial.html $(MAINPARTS) libcurl-tutorial.t
+	$(ACTION)
+libcurl-tutorial.t: $(MANROOT)/libcurl-tutorial.3
 	$(MAN2HTML) < $< >$@
 
 curl_multi_add_handle.html: _curl_multi_add_handle.html $(MAINPARTS) curl_multi_add_handle.t
