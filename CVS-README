@@ -1,0 +1,16 @@
+You read this because you got all these web pages from the curl CVS repository.
+
+To build actual HTML pages from these source files, you will most likely need
+the following tools:
+
+o 'cpp'        Daniel's cpp preprocessor with web extensions
+o 'man2html'   A man page to HTML converter
+o 'txt2html'   A plain text to HTML converter
+o 'txt2plain'  Daniel's very simple perl script to convert < and > etc to HTML
+
+Run 'make' in the www-root to build the full site.
+
+You must have .shtml running on your server, you must have perl in
+/usr/bin/perl.
+
+There are probably a thousand more things to say, but this is a start! ;-)
