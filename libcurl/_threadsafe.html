@@ -1,0 +1,38 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl - a thread safe transfer library</TITLE>
+</HEAD>
+
+#define LIBCURL_THREADSAFE
+
+#include "_menu.html"
+#include "setup.t"
+#include "pic.t"
+#include "download.t"
+
+WHERE2(libcurl, "/libcurl/", Thread Safe)
+
+TITLE(libcurl - a thread safe transfer library)
+<p>
+ libcurl is designed and implemented entirely thread safe. There are some
+ considerations to keep in mind when using libcurl in multiple threads though,
+ as mentioned below:
+<p>
+ <b>Never</b> share easy handles between multiple threads. You should only use
+ one easy handle in one single thread at any given time.
+<p>
+ libcurl uses certain system calls to obtain information. Some of the most
+ crucial ones are the name resoluition calls (the <i>gethostby*</i>
+ family). It is very important that libcurl found and can use thread safe
+ versions of these and other system calls, as otherwise it can't function
+ fully thread safe.
+<p>
+ Some operating systems are known to have faulty thread implementations. We
+ have previously received problem reports on *BSD. Some operating systems that
+ are known to have solid and working thread support are Linux, Solaris and
+ Windows.
+
+#include "_footer.html"
+
+</BODY>
+</HTML>

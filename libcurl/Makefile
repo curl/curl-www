@@ -4,7 +4,8 @@ MAINPARTS= ../_doctype.html _menu.html _links.html setup.t pic.t ../where.t down
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 ACTION=@echo preprocessing $@; rm -f $@; cpp -I..  -WWW -Uunix -H -C -V -LL "$(NOW)" $< $@; chmod a-w+r $@
 
-all: index.html mail.html competitors.html future.html
+all: index.html mail.html competitors.html future.html threadsafe.html \
+     fast.html ipv6.html
 	cd c; make
 	cd perl; make
 	cd php; make
@@ -23,6 +24,15 @@ all: index.html mail.html competitors.html future.html
 	cd basic; make
 
 index.html: _index.html $(MAINPARTS)
+	$(ACTION)
+
+threadsafe.html: _threadsafe.html $(MAINPARTS)
+	$(ACTION)
+
+ipv6.html: _ipv6.html $(MAINPARTS)
+	$(ACTION)
+
+fast.html: _fast.html $(MAINPARTS)
 	$(ACTION)
 
 competitors.html: _competitors.html $(MAINPARTS)
