@@ -148,7 +148,7 @@ internals.t: $(DOCROOT)/INTERNALS
 sslcerts.html: _sslcerts.html $(MAINPARTS) sslcerts.t
 	$(ACTION)
 
-sslcerts.t: $(SRCROOT)/SSLCERTS
+sslcerts.t: $(DOCROOT)/SSLCERTS
 	$(TXT2PLAIN) < $< > $@
 
 copyright.html: _copyright.html $(MAINPARTS)
