@@ -15,6 +15,7 @@ my %download;
 my %proto;
 my %host;
 my %archtype;
+my %where;
 
 my $md5sum="md5sum";#/home/dast/solaris/bin/md5sum";
 
@@ -42,6 +43,7 @@ else {
 
 open(DATA, "<latest.curl");
 while(<DATA>) {
+    chomp; # remove newline
     if($_ =~ /^ARCHIVE: ([^:]*): ([^ ]*) (\d*)/) {
         my $type=$1;
         my $archive=$2;
@@ -52,10 +54,8 @@ while(<DATA>) {
 
         $archtype{$archive}=$type;
     }
-    elsif($_ =~ /^DOWNLOAD: ([^ ]*) ([^ ]*)/) {
-        my $archive=$1;
-        my $curl=$2;
-        $curl =~ s/\n//g;
+    elsif($_ =~ /^DOWNLOAD: ([^ ]*) ([^ ]*) ([^ ]*)/) {
+        my ($archive, $curl, $where)=($1, $2, $3);
 
         my $proto = uc($curl);
 
@@ -67,6 +67,7 @@ while(<DATA>) {
         $download{$archive} .= "$curl|||";
         $proto{$curl}=$proto;
         $host{$curl}=$host;
+        $where{$curl}=$where;
     }
       
 }

@@ -3,27 +3,20 @@
 use strict;
 use latest;
 
-my @mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/',
-             'http://cool.haxx.se/curl/',
-             'ftp://ftp.fu-berlin.de/pub/unix/network/curl/',
-             #'http://curl.linuxworx.com.au/',
-             'ftp://ftp.rge.com/pub/networking/curl/',
-             'http://www.cubic.ch/mirror/curl/',
-             'http://curl.webmeta.com/',
-             'ftp://gd.tuwien.ac.at/utils/archivers/curl/',
-             'http://gd.tuwien.ac.at/utils/archivers/curl/',
-             #'http://telia.dl.sourceforge.net/sourceforge/curl/',
-             #'http://unc.dl.sourceforge.net/sourceforge/curl/',
-             #'http://belnet.dl.sourceforge.net/sourceforge/curl/',
-             #'http://west.dl.sourceforge.net/sourceforge/curl/',
-             'http://curl.sourceforge.net/download/',
-             'ftp://ftp.debian.org/mounts/u3/sourceforge/curl/',
-             'ftp://ftp.falsehope.com/home/tengel/curl/',
-             'http://www.planetmirror.com/pub/curl/',
-             'ftp://ftp.planetmirror.com/pub/curl/',
-             'http://www.execve.net/curl/',
-             'http://curl.tsuren.net/download/',
-             'http://curl.cyberservers.net/download/',
+my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'SE',
+             'http://cool.haxx.se/curl/' => 'SE',
+             'ftp://ftp.fu-berlin.de/pub/unix/network/curl/' => 'DE',
+             'ftp://ftp.rge.com/pub/networking/curl/' => 'US',
+             'http://www.cubic.ch/mirror/curl/' => 'CH',
+             'http://curl.webmeta.com/' => '?',
+             'ftp://gd.tuwien.ac.at/utils/archivers/curl/' => 'AT',
+             'http://gd.tuwien.ac.at/utils/archivers/curl/' => 'AT',
+             'http://curl.sourceforge.net/download/' => 'US (CA)',
+             'http://www.planetmirror.com/pub/curl/' => 'AU',
+             'ftp://ftp.planetmirror.com/pub/curl/' => 'AU',
+             'http://www.execve.net/curl/' => 'HK',
+             'http://curl.tsuren.net/download/' => 'RU',
+             'http://curl.cyberservers.net/download/' => 'US (TX)',
              );
 
 sub present {
@@ -46,14 +39,16 @@ for(keys %latest::file) {
     printf("ARCHIVE: %s: %s %d\n",
            $_, $archive, $latest::size{$_});
 
-    printf("DOWNLOAD: %s %s\n", $archive,
+    printf("DOWNLOAD: %s %s SE\n", $archive,
            "http://curl.haxx.se/download/$archive");
 
-    for(@mirrors) {
+    for(keys %mirrors) {
         my $site=$_;
         if(present($site, $archive)) {
-            printf("DOWNLOAD: %s %s\n", $archive,
-                   "${site}${archive}");
+            printf("DOWNLOAD: %s %s %s\n",
+                   $archive,
+                   "${site}${archive}",
+                   $mirrors{$site});
         }
     }
 }
