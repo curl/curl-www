@@ -1,0 +1,23 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl - error codes</TITLE>
+</HEAD>
+
+#define LIBCURL_DOCS
+#define DOCS_ERRORS
+
+#include "_menu.html"
+#include "setup.t"
+#include "download.t"
+
+WHERE3(libcurl, "/libcurl/", Docs, "/libcurl/docs/", libcurl)
+
+TITLE(libcurl-errors.3 -- man page)
+
+#undef SIZE
+#include "libcurl-errors.t"
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
