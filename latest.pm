@@ -116,10 +116,15 @@ sub scanstatus {
             storemax($_, $1, $size, "ssl-src.rpm",
                      "Source Linux RPM archive, SSL-enabled.");
         }
-        # curl-7.8.1-sparc-8-pkg.tar.gz
-        elsif($_ =~ /^curl-ssl-([0-9.]*)-sparc-(.*).pkg.tar.gz/) {
-            storemax($_, $1, $size, "solaris-sparc-pkg",
-                     "Solaris SPARC archive, SSL-enabled.");
+        # curl-ssl-7.8.1-sparc-8-pkg.tar.gz
+        elsif($_ =~ /^curl-ssl-([0-9.]*)-sparc-8.pkg.tar.gz/) {
+            storemax($_, $1, $size, "solaris8-sparc-ssl",
+                     "Solaris 8 SPARC archive, SSL-enabled.");
+        }
+        # curl-ssl-7.9-sparc-2.6-pkg.tar.gz
+        elsif($_ =~ /^curl-ssl-([0-9.]*)-sparc-2.6.pkg.tar.gz/) {
+            storemax($_, $1, $size, "solaris26-sparc-ssl",
+                     "Solaris 2.6 SPARC archive, SSL-enabled.");
         }
         # curl-7.8.1-vms.zip
         elsif($_ =~ /^curl-([0-9.]*)-vms\.zip/) {
