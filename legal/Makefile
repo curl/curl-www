@@ -10,9 +10,12 @@ ACTION=@echo preprocessing $@; rm -f $@; cpp -I$(ROOT) -Idocs -WWW -Uunix -H -C 
 TXT2HTML= txt2html --extract --hrule 10
 TXT2PLAIN = ./txt2plain.pl
 
-all: index.html dual.html
+all: index.html dual.html thename.html
 
 index.html: _index.html $(MAINPARTS)
+	$(ACTION)
+
+thename.html: _thename.html $(MAINPARTS)
 	$(ACTION)
 
 dual.html: _dual.html $(MAINPARTS)
