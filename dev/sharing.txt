@@ -1,0 +1,125 @@
+/* $Id$ */
+
+/***********************************************************************
+ *
+ * Prototype:   CURLSH *curl_share_create(void);
+ *
+ * DESCRIPTION
+ *
+ * Returns a handle to a container that can "share data" between multitple
+ * curl easy handles. By default, no data is shared. This just creates the
+ * ability, if given further setup.
+ *
+ * The share will hold the data until destroyed. The easy handles that use
+ * this share, will not keep the same data itself it will instead make the
+ * data get stored and managed by the share.
+ *
+ * Thus, you can have a share to keep data between multiple, sequential easy
+ * handles instances.
+ *
+ * Returns:     A pointer to a share, use as input to other curl_share*
+ *              functions.
+ *
+ * Example: share = curl_share_create();
+ *
+ ***********************************************************************/
+
+/***********************************************************************
+ *
+ * Prototype: CURLSHERR curl_share_setopt(CURLSH *share, CURLSHARE opt, ...);
+ *
+ * DESCRIPTION
+ *
+ * Sets options for the specified share container. What to share.  How to
+ * share and more.
+ *
+ * The share will always only share exactly what has been specified and not
+ * more. While this might make older programs not take benefit from new
+ * caches, it is still always gonna make older programs retain the same
+ * functionality no matter what new share options we add to future libcurls.
+ *
+ * Sharing data between multiple handles needs mutexes if you intend to have
+ * threads running independent of each other. You can share data fine between
+ * easy handles without mutexes if they're used one at a time, or within a
+ * single multi stack etc.
+ *
+ * DO NOT change options while a share is in use by an easy handle.  If you
+ * must change options run-time, you must first disconnect the share from all
+ * easy handles that are using it.
+ *
+ * Example: success = curl_share_setopt(share, CURLSHARE_BIKESHED, TRUE);
+ *
+ * Options:
+ *
+ *     CURLSHARE_SSL_SESSIONS
+ *     CURLSHARE_COOKIES
+ *     CURLSHARE_DNS
+ *     CURLSHARE_CONNECTIONS
+ *
+ ***********************************************************************/
+
+/***********************************************************************
+ * 
+ * Prototype:   CURLSHERR curl_share_destroy(CURLSH *share);
+ * 
+ * DESCRIPTION
+ *
+ * Destroy a share and free all resources. DO NOT destroy a share that is
+ * being in use by one or more easy handles!
+ *
+ * Example:     success = curl_share_destroy(share);
+ *
+ ***********************************************************************/
+
+/***********************************************************************
+ * 
+ * typedef enum {
+ *   CURL_MUTEX_NONE,       -- this is never used 
+ *   CURL_MUTEX_COOKIE,
+ *   CURL_MUTEX_DNS,
+ *   CURL_MUTEX_SSL_SESSION,
+ *   CURL_MUTEX_CONNECTION,
+ *   CURL_MUTEX_LAST,       -- only used to count the number of mutexes
+ * } curl_mutex;
+ *
+ * typedef int (*curl_mutex_func)(CURL *easy, curl_mutex id, void *clientp);
+ *
+ * Prototype:   CURLSHERR curl_share_mutex(CURLSH *share,
+ *                                         curl_mutex_func lock,
+ *                                         curl_mutex_func unlock,
+ *                                         void *clientp);
+ *
+ * DESCRIPTION
+ *
+ * Setup how to get mutual exclusive access to various shared resources. The
+ * 'lock' function is called when libcurl wants exclusive access. The 'unlock'
+ * is called when the exclusive access is given up. The 'clientp' pointer
+ * passed as argument to this function is passed untouched to the mutex
+ * callbacks in the 'clientp' argument.
+ *
+ * libcurl guarantees to never lock more than one mutex at any single moment,
+ * from within the same thread.
+ *
+ * Set both function pointers to NULL to again disable the use of mutexes for
+ * this share.
+ *
+ ***********************************************************************/
+
+/***********************************************************************
+ *
+ * We add a new option to curl_easy_setopt() for share management.
+ *
+ * You set an easy handle to use a specific share. The share's properties
+ * control exactly what data to share. The share's options MUST NOT be changed
+ * during while an easy handle is using the share.
+ *
+ * CURLOPT_SHARE, share
+ *
+ *   This makes the specified easy handle use the specified share for storing
+ *   and accessing the data as specified by the share.
+ *
+ *   Setting NULL here will make the easy handle get back to manage its own
+ *   data internally on per-handle basis. Note that this might mean a loss of
+ *   information that is stored and kept in the share.
+ *
+ ***********************************************************************/
