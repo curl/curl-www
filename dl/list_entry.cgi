@@ -20,13 +20,13 @@ my $per;
 sub sortent {
     my $r = $$a{'os'} cmp $$b{'os'};
     if(!$r) {
+        $r = $$a{'flav'} cmp $$b{'flav'};
+    }
+    if(!$r) {
         $r = $$a{'osver'} cmp $$b{'osver'};
     }
     if(!$r) {
         $r = $$a{'cpu'} cmp $$b{'cpu'};
-    }
-    if(!$r) {
-        $r = $$a{'flav'} cmp $$b{'flav'};
     }
     if(!$r) {
         $r = $$a{'file'} cmp $$b{'file'};
@@ -101,7 +101,7 @@ for $per (@sall) {
            $$per{'email'}?"[address]":"[no address]");
     printf("<td>%s</td>", show($$per{'size'}));
     printf("<td>%s</td>",
-           $$per{'img'}?"<img src=\"/pix/".$$per{'img'}."\">":"&nbsp;");
+           $$per{'img'}?"<img src=\"/pix/".$$per{'img'}."\">":"[none]");
     print "</tr>\n";
     $i++;
 }
