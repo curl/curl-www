@@ -41,6 +41,12 @@ VLINK("/libcurl/using/", Using libcurl )
 <hr>
 <font color="#ffffff">Bindings:</font>
 
+#ifdef LIBCURL_ADA95
+LINK("", Ada95)
+#else
+VLINK(/libcurl/ada95/, Ada95)
+#endif
+
 #ifdef LIBCURL_BASIC
 LINK("", Basic)
 #else
