@@ -301,3 +301,16 @@ div.quote {
   width: 90%;
   margin-left: 5%;
 }
+
+/* yellow box */
+div.yellowbox {
+  border-style: outset;
+  border-width: 3px;
+  border-color: black;
+  padding: 2px 2px 2px 2px;
+
+  background-color: #fffff0; 
+´/*
+  width: 90%;
+  margin-left: 5%; */
+}
