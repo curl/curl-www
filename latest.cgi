@@ -146,17 +146,24 @@ if($latest::version{$what}) {
     else {
         
         print "<p>Available from these ".($#dl+1)." sites ",
-        "(listed in random order, verified ".&time_ago.")\n";
+        "(verified ".&time_ago.")\n";
         
-        print "<ul>";
-        #           for(&randomorder(@dl)) {
-        for(@dl) {
-            my $url=$_;
-            print "<li><b>".$proto{$url}."</b>",
-            " from <b>".$host{$url}."</b> => ",
-            "<a href=\"$url\">$archive</a>\n";
+        print "<table><tr>";
+        for(('Where', 'Proto', 'Host', 'File')) {
+            print "<th>$_</th>";
         }
-        print "</ul>\n";
+        print "</tr>\n";
+
+        for(sort {$where{$a} cmp $where{$b}} @dl) {
+            my $url=$_;
+            printf "<tr><td>%s</td><td>%s</td><td>%s</td><td><a href=\"%s\">%s</a></td></tr>\n",
+            $where{$url},
+            $proto{$url},
+            $host{$url},
+            $url,
+            $archive;
+        }
+        print "</table>\n";
     }
 }
 elsif($what) {
