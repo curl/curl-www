@@ -22,6 +22,10 @@ TITLE(Recent Changes -- The Nice and Clean Version)
 
 <p> Fixed since (available in CVS and 7.8.1 pre-releases)
 <ul>
+<li> bugfix: CURLOPT_POST without postfields caused libcurl crash
+<li> bugfixed the URL parser for IPv6 IP addresses (RFC 2732)
+<li> corrected some minor size_t mixups in the code
+<li> rfc1876-style form posts no longer has any size-limit
 <li> bugfixed the redirected stderr feature
 <li> more test cases added
 <li> libcurl now verifies the CN name of server certificates when SSLing
