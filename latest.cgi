@@ -39,6 +39,19 @@ else {
 
 &title("The Most Recent Archives Off the Mirrors");
 
+print <<RELATED
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="changes.html">Changelog</a>
+<br><a href="download.html">Download</a>
+<br><a href="http://cool.haxx.se/curl-daily/">Daily Snapshot</a>
+<br><a href="http://daniel.haxx.se/address.html">GPG Key</a>
+</div>
+
+RELATED
+    ;
+
+
 # check what's available right *now*
 &latest::scanstatus();
 
