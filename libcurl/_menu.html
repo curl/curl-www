@@ -101,6 +101,12 @@ LINK("", Ruby API)
 VLINK(/libcurl/ruby/, Ruby API)
 #endif
 
+#ifdef LIBCURL_SCHEME
+LINK("", Scheme API)
+#else
+VLINK(/libcurl/scheme/, Scheme API)
+#endif
+
 #ifdef LIBCURL_TCL
 LINK("", Tcl API)
 #else

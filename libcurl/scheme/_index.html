@@ -25,8 +25,37 @@ TITLE(accessing libcurl from Scheme)
 <p><b>How to Install</b></br>
  Install curl and libcurl first.
 
-<p><b>Interface documentation</b><br> No specific available right now, use the
-<a href="../c/">C API manual</a>.
+<p><b>Examples</b><br>
+<pre>
+(module
+  test
+  (use 
+    (curl "curl-bigloo.scm")))
+
+(print "CURL version: " (curl-version))
+
+;; Initialization
+(define curl-ptr (curl-easy-init))
+
+(print "URL: " 
+       (curl-easy-setopt curl-ptr (CURLOPT-URL) "http://localhost/index.html"))
+
+(print "FILE: "
+       (curl-easy-setopt curl-ptr (CURLOPT-FILE) (fopen "index.html" "w")))
+
+(print "WRITE-HEADER: "
+       (curl-easy-setopt curl-ptr (CURLOPT-WRITEHEADER) (fopen "header" "w")))
+
+(print "Perform: " (curl-easy-perform curl-ptr))
+
+;; Clean up
+(curl-easy-cleanup curl-ptr)
+
+(exit)
+</pre>
+
+<p><b>Interface documentation</b><br> Use the <a href="../c/">C API manual</a>
+and lookup a corresponding Scheme binding in curl-bigloo.scm.
 
 <p><b>Download</b><br> Get the <a
  href="http://pair.com/lisovsky/download/curl-bigloo.tgz">curl-bigloo
