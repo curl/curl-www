@@ -12,28 +12,19 @@ while(<DESC>) {
 }
 close(DESC);
 
+my $some_dir=".";
+opendir(DIR, $some_dir) || die "can't opendir $some_dir: $!";
+my @files = grep { /\.(txt|html)/ && -f "$some_dir/$_" } readdir(DIR);
+closedir DIR;
+
+
 print "<table>";
-open(FILES, "ls -1t *.txt *.html 2>/dev/null|");
-@files=<FILES>;
-close(FILES);
-
-sub sortfunc {
-    my $A=$a;
-    my $B=$b;
-    $A =~ s/[a-zA-Z]//g;
-    $B =~ s/[a-zA-Z]//g;
-
-    return ($A <=> $B);
-}
-
-@sfiles = sort sortfunc @files;
 
 print "<tr class=\"tabletop\"><th>File name</th>",
     "<th>Size</th>",
     "<th>Description</th>",
     "</tr>";
-for(@sfiles) {
-    chop;
+for(sort @files) {
     $filename = $_;
 
     if($filename =~ /index/) {
@@ -44,11 +35,11 @@ for(@sfiles) {
 
     $showname =~ s/\.[a-z]*$//g;
 
-    ($dev,$ino,$mode,$nlink,$uid,$gid,$rdev,$size,
+    my ($dev,$ino,$mode,$nlink,$uid,$gid,$rdev,$size,
      $atime,$mtime,$ctime,$blksize,$blocks)
         = stat($filename);
 
-    ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) =
+    my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) =
         localtime($ctime);
     $mon++;
     $year+=1900;
