@@ -157,8 +157,10 @@ sslcerts.html: _sslcerts.html $(MAINPARTS) sslcerts.t
 sslcerts.t: $(DOCROOT)/SSLCERTS
 	$(TXT2PLAIN) < $< > $@
 
-copyright.html: _copyright.html $(MAINPARTS)
+copyright.html: _copyright.html $(MAINPARTS) copying.t
 	$(ACTION)
+copying.t: $(SRCROOT)/COPYING
+	$(TXT2PLAIN) < $< > $@
 
 comparison-table.html: _comparison-table.html $(MAINPARTS)
 	$(ACTION)
