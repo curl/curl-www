@@ -29,7 +29,7 @@ all: index.shtml \
 	news.html news.shtml head.html foot.html press.html \
 	oldnews.shtml indexheader.html indexfooter.html \
 	mailheader.html mailfooter.html info web-editing.html \
-	latest.shtml
+	latest.shtml donation.html
 	cd docs; make
 	cd libcurl; make
 	cd mail; make
@@ -44,6 +44,9 @@ check:
 	cd /home/dast/htdig/common; make
 
 head.html: _head.html $(MAINPARTS)
+	$(ACTION)
+
+donation.html: _donation.html $(MAINPARTS)
 	$(ACTION)
 
 version7.html: _version7.html $(MAINPARTS)
