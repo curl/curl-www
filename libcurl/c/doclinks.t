@@ -14,7 +14,7 @@ THIS(index)
 DOC(index, .)
 #endif
 
-#ifdef DOCS_GUIDE
+#ifdef DOCS_ERRORS
 THIS(error codes)
 #else
 DOC(error codes, libcurl-errors.html)
