@@ -95,7 +95,7 @@ tr.odd {
 }
 
 /* a non-selected item in the main menu, with the mouse hovering */
-.menuitem:hover, libitem:hover {
+.menuitem:hover, .libitem:hover {
   text-decoration: none;
   color: #ffffff;
   white-space: nowrap;
@@ -114,11 +114,6 @@ tr.odd {
 
 /* the main curl site left-side menu box */
 .mainmenu, .libmenu {
-/*
-  border-color: black;
-  border-width: 1px;
-  border-style: solid;
-*/
   background-color: #4040ff;
   padding: 4px 4px 4px 4px;
 }
