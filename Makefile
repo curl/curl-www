@@ -30,13 +30,13 @@ all: index.shtml feedback.html mirrors.html cvs.html libs.html icons.html \
 	latest.shtml
 	cd docs; make
 	cd libcurl; make
-	cd htdig; make
-	cd /home/dast/htdig/common; make
 	cd mail; make
 	@echo done 
 #archive/index.html
 
 check: download/curl-$(STABLE).tar.bz2 download/curl-$(STABLE).zip 
+	cd htdig; make
+	cd /home/dast/htdig/common; make
 
 download/curl-$(STABLE).tar.bz2: download/curl-$(STABLE).tar.gz
 	gzip -dc $< | bzip2 - > $@
