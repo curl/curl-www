@@ -30,6 +30,21 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 </ul>
 #endif
 
+SUBTITLE(Fixed in 7.10.1)
+<p> Changes:
+<ul>
+ <li> configure --without-zlib explicitly disables zlib in builds
+</ul>
+<p> Bugs fixed:
+<ul>
+ <li> junk data could get inserted when saving HTTP headers
+ <li> telnet connections timeout properly
+ <li> make install when built outside source tree works again
+ <li> FOLLOW_LOCATION works for the multi interface too
+ <li> HTTP Location following now deals with ./ and ../ cases
+ <li> The OpenSSL ENGINE check was improved in the configure script
+</ul>
+
 SUBTITLE(Fixed in 7.10)
 <p> Changes:
 <ul>
