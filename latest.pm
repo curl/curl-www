@@ -49,7 +49,7 @@ sub gettype {
     my ($file)=@_;
 
     # curl-7.5.1-win32-nossl.zip
-    if($file =~ /^curl-([0-9.-]*)-win32-nossl.zip/) {
+    if($file =~ /^curl-([0-9.]*)(-([0-9]*)|)-win32-nossl.zip/) {
         return($1,
                "win32-nossl",
                "Windows archive, zip compressed.");
