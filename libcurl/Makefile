@@ -10,7 +10,7 @@ ACTION=@echo preprocessing $@; \
 	cpp -I.. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
 	chmod a-w+r $@
 
-all: index.html mail.html competitors.html future.html threadsafe.html \
+all: index.html mail.html competitors.html threadsafe.html \
      fast.html ipv6.html comparison-table.html relatedlibs.html \
      features.html support.html
 	cd c; make
@@ -60,9 +60,6 @@ competitors.html: _competitors.html $(MAINPARTS)
 	$(ACTION)
 
 comparison-table.html: _comparison-table.html $(MAINPARTS)
-	$(ACTION)
-
-future.html: _future.html $(MAINPARTS)
 	$(ACTION)
 
 mail.html: _mail.html $(MAINPARTS)
