@@ -100,7 +100,7 @@ HERE(x, OSes)
 DOCREF(osdistribs.html, OSes)
 #endif
 
-#ifdef CURL_PRESS
+#ifdef DOCS_PRESS
 HERE(x, Press)
 #else
 DOCREF(/press.html, Press)
