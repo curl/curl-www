@@ -1,9 +1,7 @@
-# robots.txt for curl.haxx.se
+# robots.txt for curl.haxx.se and mirrors
 
 User-agent: *
 Disallow: /archive_pre_oct_99/ # this is just sooo old
 Disallow: /archive/
 Disallow: /stats/
-Disallow: /yaws/
-Disallow: /docs/changes.html # this is just too unorganized
 Disallow: /lxr/              # shows too much "raw" stuff!
