@@ -274,3 +274,11 @@ tr.odd {
   padding: 2px 2px 2px 2px;
   background: white;
 }
+
+p.ingres {
+  width: 80%;
+  font-family: arial, helvetica, ariel, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  margin-left: 10%;
+}
