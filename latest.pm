@@ -126,6 +126,11 @@ sub scanstatus {
             storemax($_, $1, $size, "vms-zip",
                      "Binary OpenVMS archive, zip compressed.");
         }
+        # curl-7.8.1-ssl-cygwin.tar.bz2
+        elsif($_ =~ /^curl-([0-9.]*)-ssl-cygwin.tar.bz2/) {
+            storemax($_, $1, $size, "cygwin-ssl",
+                     "Binary win32 tar archive for cygwin, bzip2 compressed.");
+        }
     }
 }
 
