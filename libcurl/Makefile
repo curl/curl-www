@@ -18,6 +18,7 @@ all: index.html mail.html competitors.html future.html
 	cd scheme; make
 	cd using; make
 	cd cplusplus; make
+	cd postgres; make
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
