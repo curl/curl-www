@@ -41,6 +41,7 @@ print "<table><tr>\n";
 for $h (('edit',
          'Package',
          'Version',
+         'Hidden',
          'Type',
          'SSL',
          'Date',
@@ -87,6 +88,7 @@ for $per (@sall) {
     }
     printf("<td><a href=\"%s\">%s</a></td>",
            $fi, $$per{'curl'});
+    printf("<td>%s</th>", $$per{'hide'} eq "Yes"?"Hide":"");
     printf("<td>%s</td>", $$per{'type'}eq"bin"?
            "<b>bin</b>":show($$per{'type'}));
     printf("<td>%s</td>",

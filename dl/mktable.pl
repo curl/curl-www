@@ -20,9 +20,9 @@ close(FILE);
 
 sub sortent {
     my $r = $$a{'os'} cmp $$b{'os'};
-    if(!$r) {
-        $r = $$a{'osver'} cmp $$b{'osver'};
-    }
+#    if(!$r) {
+#        $r = $$a{'osver'} cmp $$b{'osver'};
+#    }
     if(!$r) {
         $r = $$a{'flav'} cmp $$b{'flav'};
     }
@@ -117,6 +117,11 @@ for $per (@sall) {
     my $img;
     my $s = $$per{'os'};
     my $origs = $s;
+
+    if($$per{'hide'} eq "Yes") {
+        # told to hide this
+        next;
+    }
 
     if($s eq "-") {
         next;

@@ -20,6 +20,7 @@ require "stuff.pm";
        "re"=>CGI::param("re"),
        "resp"=>CGI::param("resp"),
        "img"=>CGI::param("img"),
+       "hide"=>CGI::param("hide"),
        );
 
 $id=CGI::param("__id");
@@ -169,6 +170,9 @@ sub my_show_form()
 
     alternative("Responsible", "resp",
                 "username of the person responsible for this package");
+
+    alternative("Hide from download page", "hide",
+                "'Yes' makes this entry not appear in the HTML output");
 
 ###slut
     print "</table>\n";
