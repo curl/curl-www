@@ -103,8 +103,7 @@ features.html: _features.html $(MAINPARTS) features.t
 	$(ACTION)
 
 features.t: $(DOCROOT)/FEATURES
-	$(TXT2HTML) < $(DOCROOT)/FEATURES > features.t
-
+	$(TXT2PLAIN) < $<  > $@
 
 resources.html: _resources.html $(MAINPARTS) resources.t
 	$(ACTION)
