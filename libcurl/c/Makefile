@@ -144,6 +144,11 @@ curl_global_init.html: _curl_global_init.html $(MAINPARTS) curl_global_init.t
 curl_global_init.t: $(MANROOT)/curl_global_init.3
 	$(MAN2HTML) < $< >$@
 
+curl_global_init_mem.html: _curl_global_init_mem.html $(MAINPARTS) curl_global_init_mem.t
+	$(ACTION)
+curl_global_init_mem.t: $(MANROOT)/curl_global_init_mem.3
+	$(MAN2HTML) < $< >$@
+
 curl_global_cleanup.html: _curl_global_cleanup.html $(MAINPARTS) curl_global_cleanup.t
 	$(ACTION)
 curl_global_cleanup.t: $(MANROOT)/curl_global_cleanup.3

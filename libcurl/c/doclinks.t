@@ -134,6 +134,12 @@ THIS(curl_global_init)
 DOC(curl_global_init, curl_global_init.html)
 #endif
 
+#ifdef DOCS_GLOBAL_INIT_MEM
+THIS(curl_global_init_mem)
+#else
+DOC(curl_global_init_mem, curl_global_init_mem.html)
+#endif
+
 #if 0
 #ifdef DOCS_MPRINTF
 THIS(curl_mprintf)
