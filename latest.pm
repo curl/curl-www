@@ -77,14 +77,17 @@ sub gettype {
         # curl-7.4.1-1.i386.rpm
         elsif($file =~ /^curl-([0-9.]*)-(\d*)(.*).i386.rpm/) {
             my $pkg="i386.rpm";
-            my $desc="Linux i386 RPM package. (redhat 6.2 style)";
-            if($3 eq "rh71") {
-                $pkg="rh71-".$pkg;
-                $desc="Linux i386 RPM package. (redhat 7.1 style)";
-            }
-            elsif($3 eq "rh72") {
-                $pkg="rh72-".$pkg;
-                $desc="Linux i386 RPM package. (redhat 7.2 style)";
+            my $desc="Linux i386 RPM package.";
+
+            if(0) {
+                if($3 eq "rh71") {
+                    $pkg="rh71-".$pkg;
+                    $desc="Linux i386 RPM package. (redhat 7.1 style)";
+                }
+                elsif($3 eq "rh72") {
+                    $pkg="rh72-".$pkg;
+                    $desc="Linux i386 RPM package. (redhat 7.2 style)";
+                }
             }
             return($1, $pkg, $desc);
         }
@@ -101,14 +104,16 @@ sub gettype {
         # curl-ssl-7.4.1-1.i386.rpm
         elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*)(.*).i386.rpm/) {
             my $pkg="ssl-i386.rpm";
-            my $desc="Linux i386 RPM package, SSL-enabled. (redhat 6.2 style)";
-            if($3 eq "rh71") {
-                $pkg="rh71-".$pkg;
-                $desc="Linux i386 RPM package, SSL-enabled. (redhat 7.1 style)";
-            }
-            elsif($3 eq "rh72") {
-                $pkg="rh72-".$pkg;
-                $desc="Linux i386 RPM package, SSL-enabled. (redhat 7.2 style)";
+            my $desc="Linux i386 RPM package, SSL-enabled.";
+            if(0) {
+                if($3 eq "rh71") {
+                    $pkg="rh71-".$pkg;
+                    $desc="Linux i386 RPM package, SSL-enabled. (redhat 7.1 style)";
+                }
+                elsif($3 eq "rh72") {
+                    $pkg="rh72-".$pkg;
+                    $desc="Linux i386 RPM package, SSL-enabled. (redhat 7.2 style)";
+                }
             }
             return($1, $pkg, $desc);
         }
