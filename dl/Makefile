@@ -1,5 +1,5 @@
 
 TARGET = files.html
 
-$(TARGET): data/databas.db
+$(TARGET): data/databas.db ../Makefile
 	perl mktable.pl > files.html
