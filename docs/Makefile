@@ -9,7 +9,7 @@ ACTION=@echo preprocessing $@; rm -f $@; cpp -I.. -Idocs -WWW -Uunix -H -C -V -P
 
 TXT2HTML= txt2html --extract --hrule 10
 TXT2PLAIN = txt2plain.pl
-MAN2HTML = man2html | sed 's/^$$/\&nbsp;/g' | uniq
+MAN2HTML = roffit --bare
 
 all: index.html manpage.html faq.html changes.html contribute.html	\
         internals.html sslcerts.html					\
@@ -33,7 +33,7 @@ manpage.html: _manpage.html $(MAINPARTS) manual.t
 	$(ACTION)
 
 manual.t: $(DOCROOT)/curl.1
-	gnroff -man $(DOCROOT)/curl.1 | $(MAN2HTML) >manual.t
+	 $(MAN2HTML) < $(DOCROOT)/curl.1 > manual.t
 
 
 bugs.html: _bugs.html $(MAINPARTS) bugs.t
