@@ -6,6 +6,8 @@ title \
 </font> \
 </td></tr></table></td></tr></table>
 
+#define SUBTITLE(x) <h2>x</h2>
+
 #define DATE(date) <b>date</b>
 #define SIZE(size) <i><small>size</small></i>
 
