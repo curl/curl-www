@@ -98,6 +98,7 @@ tr.odd {
 .menuitem:hover, .libitem:hover {
   text-decoration: none;
   color: #ffffff;
+  background-color: #202080;
   white-space: nowrap;
   font-weight: bold;
 }
