@@ -49,10 +49,8 @@ Build PHP (In php-4.0.xpl1 directory)
  <li> To make -lssl comes before -lcrypto (as advised), search for "-lcrypto"
 in ./configure and put "-lssl" before it.
  <li>
-./configure --with-mysql --with-openssl=/usr/local/ssl --with-curl=/usr/loca
-l/lib --with-apache=../apache_1.3.x<br>
+./configure --with-mysql --with-openssl=/usr/local/ssl --with-curl=/usr/local/lib --with-apache=../apache_1.3.x<br>
     (In most cases of linking problem, it should complain here in debug.log)
-
  <li> make
  <li> make install (If --with-apache option is omitted, it should generate php
 executable in /usr/loca/bin)
@@ -63,8 +61,7 @@ executable in /usr/loca/bin)
 Build and install SSL-aware Apache (In mod_ssl-2.8.xxxx directory)
 <ol>
  <li>
-./configure --with-apache=../apache1.3.x --with-ssl=/usr/local/ssl --prefix=
-/usr/loca/apache --activate-module=src/modules/php4/libphp4.a
+./configure --with-apache=../apache1.3.x --with-ssl=/usr/local/ssl --prefix=/usr/local/apache --activate-module=src/modules/php4/libphp4.a
  <li> Follow remaining steps the output tells.
  <li> Restart your apache... BINGO!
 </ol>
