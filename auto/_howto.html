@@ -63,9 +63,17 @@ SUBTITLE(Make more tests run)
 <p>
  This is because some of the tests require specal conditions that are not
  enabled everywhere. You can improve this situation by using the configure's
- --enable-debug option (which enables much more thorough memory and netrc
- debugging) and to make sure that you have stunnel installed (which enables
- HTTPS tests to run).
+ <b>--enable-debug</b> option (which enables much more thorough memory and
+ netrc debugging) and to make sure that you have <b>stunnel</b> installed
+ (which enables HTTPS tests to run).
+
+SUBTITLE(Build Table Updates)
+<p>
+The tables are rebuilt every 20 minutes if there has been a new build log
+mailed in since the previous table was built.
+<p>
+We automatically remove build logs older than 10 - 12 days to reduce the
+amount of data and used disk space.
 
 #include "_footer.html"
 </body> </html>
