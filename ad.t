@@ -80,7 +80,8 @@ google_color_text = "333333";
   </tr>
 </table>
 </td><td>
-<a href="http://curl.haxx.se/ad/goto.cgi?url=www.schrenk.com"><img border="0" width="230" height="60" src="http://curl.haxx.se/ad/" align="right"></a>
+<a href="http://www.schrenk.com/2004/bots_spiders_curl.php"><img border="0"
+width="230" height="60" src="/ad/schrenk.png" align="right"></a>
 </tr></table>
 #endif
 </td>
