@@ -10,7 +10,7 @@ Mirror:
 <a href="http://curl.tsuren.net/">RU</a>,
 <a href="http://curl.haxx.se/">SE</a>,
 <a href="http://curl.siamu.ac.th/">TH</a>,
-<a href="http://curl.mirrors.redwire.net/">US1</a>
+<a href="http://curl.mirrors.redwire.net/">US1</a>,
 <a href="http://curl.signal42.com/">US2</a>
 #else
 <a href="http://curl.gds.tuwien.ac.at/CURL_URL">AT</a>,
@@ -22,7 +22,7 @@ Mirror:
 <a href="http://curl.tsuren.net/CURL_URL">RU</a>,
 <a href="http://curl.haxx.se/CURL_URL">SE</a>,
 <a href="http://curl.siamu.ac.th/CURL_URL">TH</a>,
-<a href="http://curl.mirrors.redwire.net/CURL_URL">US1</a>
+<a href="http://curl.mirrors.redwire.net/CURL_URL">US1</a>,
 <a href="http://curl.signal42.com/CURL_URL">US2</a>
 #endif
 </small>
