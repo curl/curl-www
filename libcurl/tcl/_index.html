@@ -36,27 +36,43 @@ TITLE(accessing libcurl from Tcl)
   make install
 </pre>
 
- To test the installation do:
+ To test the installation do:<br>
 <pre>
- $tclsh
+    $tclsh
     % package require TclCurl
 </pre>
 <p>
   If Tcl returns TclCurl's version number, all went well.
 
-<p><b>Examples</b><br> One basic example:
+<p><b>Examples</b>
+<p>There are a couple of ways to perform a transfer with TclCurl, for
+simple cases you can do:<br>
 <pre>
- package require TclCurl
+    curl::transfer -file index.html -url http://curl.haxx.se
+</pre>
+<p>In more complex cases in which you may want to use persistant
+connections or get information about the transfer:
+
+<pre>
     set curlHandle [curl::init]
-    $curlHandle setopt CURLOPT_URL http://curl.haxx.se
-    $curlHandle setopt CURLOPT_FILE index.html
+
+    $curlHandle configure -url "http://curl.haxx.se/" -file index.html
     $curlHandle perform
+
+    $curlHandle configure -url "http://curl.haxx.se/libcurl/" \
+            -file lib.html -filetime 1
+    $curlHandle perform
+
+    puts "Effective url: [$curlHandle getinfo effectiveurl]"
+    puts "Http code: [$curlHandle getinfo httpcode]"
+    set fileTime [$curlHandle getinfo filetime]
+    puts "Filetime: $fileTime - [clock format $fileTime]"
+
     $curlHandle cleanup
 </pre>
-
- There are more <a
- href="http://personal1.iddeo.es/andresgarci/tclcurl/english/examples.html">examples
- on the TclCurl site</a>
+<p>There are more
+<a href="http://personal1.iddeo.es/andresgarci/tclcurl/english/examples.html">
+examples on the TclCurl site</a>
 
 <p><b>Interface documentation</b><br>
  Available at 
@@ -64,7 +80,7 @@ TITLE(accessing libcurl from Tcl)
  TclCurl's home page.</a>
 
 <p><b>Credits</b><br>
- The Tcl interface was written by Andrés García.
+ The Tcl interface is written and maintained by Andrés García.
 
 <p><b>What is Tcl?</b><br>
 You can find more info on 
