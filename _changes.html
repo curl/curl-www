@@ -30,6 +30,42 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 </ul>
 #endif
 
+SUBTITLE(Fixes in upcoming 7.10)
+<p> Changes:
+<ul>
+ <li> The libcurl and thus the curl version string too are modified slightly
+ <li> CURLOPT_ENCODING added, supports decompression of compressed downloaded data
+   This is used with 'curl --compressed'. This feature uses the libz library,
+   if present.
+ <li> MIT-licensed only, no dual-stuff. That is history. Old. Gone. Forgotten.
+ <li> libcurl does peer certificate verification by default. This needs to be
+   disabled if you need to talk to SSL servers in an insecure way! (curl -k
+   does this). See further details in the UPGRADE document.
+ <li> SOCKS5-proxy support was added (somewhat flawed, see CHANGES for details)
+ <li> More SSL error codes was added
+ <li> CURLOPT_NOSIGNAL was added for multi-threaded programs to use
+ <li> --limit-rate is now supported
+ <li> CURLOPT_BUFFERSIZE sets a desired read buffer size
+ <li> The FTP PORT command uses a better default IP address
+</ul>
+<p> Bugs fixed:
+<ul>
+ <li> IPv6 IP-address only URLs sent bad Host: headers
+ <li> --silent is more silent when doing URL globbing fetches
+ <li> *multi_perform() now returns control properly when waiting for connect
+ <li> curl_formadd man page was corrected
+ <li> curl_escape() and curl_unescape() no longer deals with '+'
+ <li> improved performance on persistent transfers on windows
+ <li> no longer closes ftp connections unncessarily often
+ <li> -N works again
+ <li> the windows DLL now builds with the multi interface enabled
+ <li> the internal password prompt now uses stderr instead of stdout
+ <li> minor cookie parsing bug when no space came after the header colon
+ <li> better #ifdef conditions in the global curl header files
+ <li> the curl tool didn't allow POST of zero contents
+ <li> literal RFC2732-style IPv6 addresses didn't work
+</ul>
+
 SUBTITLE(Fixed in 7.9.8)
 <p> Changes:
 <ul>
