@@ -1,6 +1,5 @@
 #!/bin/sh
 
-set -x
 # Auto-build the daily CVS extract of curl.  Parameters are: 
 #  1: the email address to notify when this script runs
 #  2: proxy url if required
