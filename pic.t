@@ -5,6 +5,6 @@
 #define BOXBOT </td></tr></table></td></tr></table>
 
 BOXTOP
-<a href="http://curl.haxx.se/download.html"><font color="#0000ff" size="+1">
+<a href="/download.html"><font color="#0000ff" size="+1">
 <b><i>Download</i></b></font></a>
 BOXBOT
