@@ -230,7 +230,7 @@ sub endofsingle {
 
     # prefer the date from the actual log file, it might have been from
     # another day
-    $logdate=`date --utc --date "$date" "+%Y-%m-%d"`;
+    $logdate=`date --utc --date "$date" "+%Y-%m-%d" 2>/dev/null`;
     if($logdate =~ /^(\d\d\d\d)-(\d\d)-(\d\d)/) {
         ($lyear, $lmonth, $lday) = ($1, $2, $3);
     }
