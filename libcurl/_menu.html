@@ -77,6 +77,12 @@ LINK("", Cocoa)
 VLINK(/libcurl/cocoa/, Cocoa)
 #endif
 
+#ifdef LIBCURL_D
+LINK("", D)
+#else
+VLINK(/libcurl/d/, D)
+#endif
+
 #ifdef LIBCURL_DYLAN
 LINK("", Dylan)
 #else
