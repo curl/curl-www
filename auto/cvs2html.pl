@@ -201,7 +201,7 @@ my $lastval;
 sub datemonger {
     my ($date)=@_;
 
-    if($date =~ /(\d\d\d\d)\/(\d\d)\/(\d\d) (\d\d):(\d\d):(\d\d)/) {
+    if($date =~ /(\d\d\d\d)-(\d\d)-(\d\d) (\d\d):(\d\d):(\d\d)/) {
         my ($year, $month, $day, $hour, $min, $sec)=($1,$2,$3,$4,$5,$6);
 
         my $val = $sec + $min*60+$hour*3600+ $day*3600*24 +
