@@ -102,6 +102,10 @@
  *
  * Set both function pointers to NULL to again disable the use of mutexes for
  * this share.
+ * 
+ * The lock and unlock callbacks should return 0 if everything is OK.
+ * Returning a non-zero signals error and will cause libcurl to abort its
+ * current operation.
  *
  ***********************************************************************/
 
