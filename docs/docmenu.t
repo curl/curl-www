@@ -101,6 +101,12 @@ HERE(x, Resources)
 DOCREF(resources.html, Resources)
 #endif
 
+#ifdef DOCS_SSLCERTS
+HERE(x, SSL Certs)
+#else
+DOCREF(sslcerts.html, SSL Certs)
+#endif
+
 #ifdef DOCS_THANKS
 HERE(x, Thanks)
 #else
