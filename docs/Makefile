@@ -11,7 +11,7 @@ TXT2HTML= txt2html --extract --hrule 10
 TXT2PLAIN = txt2plain.pl
 MAN2HTML = roffit --bare
 
-all: index.html manpage.html faq.html changes.html contribute.html	\
+PAGES = index.html manpage.html faq.html changes.html contribute.html	\
         internals.html sslcerts.html					\
 	features.html resources.html bugs.html				\
 	install.html readme.html readme.curl.html			\
@@ -19,8 +19,12 @@ all: index.html manpage.html faq.html changes.html contribute.html	\
 	y2k.html todo.html httpscripting.html	\
         comparison-table.html relatedtools.html osdistribs.html		\
 	versions.html history.html loc.html knownbugs.html manual.html
+
+all: $(PAGES)
 	@echo done 
-#archive/index.html
+
+clean:
+	rm -f $(PAGES)
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
