@@ -52,27 +52,27 @@ sub gettype {
     if($file =~ /^curl-([0-9.]*)(-([0-9]*)|)-win32-nossl.zip/) {
         return($1,
                "win32-nossl",
-               "Windows, zip compressed.");
+               "Windows, zip.");
     }
     elsif($file =~ /^curl-([0-9.]*)(-([0-9]*)|)-win32-ssl.zip/) {
         return($1, "win32-ssl",
-                 "Windows, zip compressed, SSL-enabled.");
+                 "Windows, zip, SSL-enabled.");
     }
     elsif($file =~ /^curl-([0-9.]*)(-([0-9]*)|)-win32-ssl-devel-mingw32.zip/) {
         return($1, "win32-ssl-devel-mingw",
-                 "Windows mingw devel, zip compressed, SSL-enabled.");
+                 "Windows mingw devel, zip, SSL-enabled.");
     }
     elsif($file =~ /^curl-([0-9.]*).tar.gz/) {
         return($1, "tar.gz",
-               "Generic source tar, gzip compressed.");
+               "Generic source tar, gzip.");
     }
     elsif($file =~ /^curl-([0-9.]*).tar.bz2/) {
         return($1, "tar.bz2",
-               "Generic source tar, bzip2 compressed.");
+               "Generic source tar, bzip2.");
     }
     elsif($file =~ /^curl-([0-9.]*).zip/) {
         return($1, "zip",
-               "Generic source, zip compressed.");
+               "Generic source, zip.");
     }
     # curl-7.4.1-1.i386.rpm
     elsif($file =~ /^curl-([0-9.]*)-(\d*)(.*).i386.rpm/) {
@@ -146,7 +146,7 @@ sub gettype {
     # curl-7.8.1-vms.zip
     elsif($file =~ /^curl-([0-9.]*)-vms\.zip/) {
         return($1, "vms-zip",
-               "OpenVMS, zip compressed.");
+               "OpenVMS, zip.");
     }
 
     # Kevin's new formats starting with curl 7.10:
