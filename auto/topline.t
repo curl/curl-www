@@ -5,9 +5,7 @@
 <br><a href="/changes.html">Changelog</a>
 </div>
 
-[<a href="./">build table</a>]
-[<a href="summary.html">stats</a>]
-[<a href="missing.html">missing</a>]
-[<a href="cvshistory.html">CVS history</a>]
-[<a href="howto.html">autobuild HOWTO</a>]
-[<a href="http://cool.haxx.se/cvs.cgi/curl-www/auto/ignores?rev=HEAD&content-type=text/vnd.viewcvs-markup">ignored warnings</a>]
+[<a href="./">Build Log</a>]
+[<a href="cvshistory.html">CVS History</a>]
+[<a href="summary.html">Stats</a>]
+[<a href="howto.html">Details</a>]
