@@ -1,9 +1,9 @@
 ROOT = ..
 TXT2PLAIN= txt2plain.pl
 
-MAINPARTS= $(ROOT)/_doctype.html _menu.html _links.html setup.t pic.t	 \
-           $(ROOT)/where.t download.t $(ROOT)/mirrorlinks.t $(ROOT)/ad.t \
-	   $(ROOT)/css.t $(ROOT)/sflogo.t $(ROOT)/_footer.html
+MAINPARTS= $(ROOT)/_doctype.html _menu.html _links.html $(ROOT)/setup.t pic.t \
+ $(ROOT)/where.t download.t $(ROOT)/mirrorlinks.t $(ROOT)/ad.t $(ROOT)/css.t  \
+ $(ROOT)/sflogo.t $(ROOT)/_footer.html
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 ACTION=@echo preprocessing $@; \
 	rm -f $@; \
