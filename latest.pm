@@ -152,12 +152,12 @@ sub gettype {
     # Kevin's new formats starting with curl 7.10:
     # curl-([0-9.]*)-(d*)-cygwin-nossl.tar.bz2
     elsif($file =~ /^curl-([0-9.]*)-(\d*)-cygwin-nossl.tar.bz2/) {
-        return($1, "cygwin-nossl",
+        return($1, "cygwin-nossl2",
                "Windows archive for cygwin, bzip2");
     }
     # ^curl-([0-9.]*)-(d*)-cygwin-src.tar.bz2
     elsif($file =~ /^curl-([0-9.]*)-(\d*)-cygwin-src.tar.bz2/) {
-        return($1, "cygwin-src",
+        return($1, "cygwin-src2",
                "Source archive for cygwin, bzip2, SSL-enabled");
     }
     # ^^curl-devel-([0-9.]*)-(d*)-cygwin.tar.bz2
