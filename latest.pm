@@ -54,11 +54,11 @@ sub gettype {
                "win32-nossl",
                "Windows archive, zip compressed.");
     }
-    elsif($file =~ /^curl-([0-9.]*)-win32-ssl.zip/) {
+    elsif($file =~ /^curl-([0-9.]*)(-([0-9]*)|)-win32-ssl.zip/) {
         return($1, "win32-ssl",
                  "Windows archive, zip compressed, SSL-enabled.");
     }
-    elsif($file =~ /^curl-([0-9.]*)-win32-ssl-devel-mingw32.zip/) {
+    elsif($file =~ /^curl-([0-9.]*)(-([0-9]*)|)-win32-ssl-devel-mingw32.zip/) {
         return($1, "win32-ssl-devel-mingw",
                  "Windows mingw devel archive, zip compressed, SSL-enabled.");
     }
