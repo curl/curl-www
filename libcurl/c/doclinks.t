@@ -8,6 +8,12 @@
 #define DOC(t,l) <tr><td align=right><a href=/libcurl/c/l><font color="#705050">t</font></a></tr>
 #endif
 
+#ifdef DOCS_GUIDE
+THIS(tutorial)
+#else
+DOC(tutorial, the-guide.html)
+#endif
+
 #ifdef DOCS_INDEX
 THIS(index)
 #else
