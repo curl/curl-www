@@ -128,6 +128,10 @@ if($latest::version{$what}) {
     "<br><b>Size:</b> ".$latest::size{$what}." bytes\n",
     "<br><b>Version:</b> ".$latest::version{$what}."\n";
     
+    if( -r "download/$archive.asc" ) {
+        print "<br><b>GPG signature:</b> <a href=\"download/$archive.asc\">link</a>";
+    }
+    
     if($latest::headver ne $latest::version{$what}) {
         print "<p><i>Note that this is </i>not<i> the most recent",
         " release ($latest::headver) of the curl package!</i>";
