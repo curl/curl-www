@@ -1,0 +1,37 @@
+cookie_spec.html Netscape's cookie specification
+rfc0959.txt FILE TRANSFER PROTOCOL (FTP)
+rfc1635.txt How to Use Anonymous FTP
+rfc1738.txt Uniform Resource Locators (obsoleted by RFC 2396)
+rfc1777.txt Lightweight Directory Access Protocol
+rfc1808.txt Relative Uniform Resource Locators
+rfc1867.txt Form-based File Upload in HTML
+rfc1945.txt Hypertext Transfer Protocol -- HTTP/1.0
+rfc1950.txt ZLIB Compressed Data Format Specification
+rfc1951.txt DEFLATE Compressed Data Format Specification
+rfc1952.txt gzip compression format
+rfc1959.txt LDAP URL syntax
+rfc2045.txt (MIME) Part One: Format of Internet Message Bodies
+rfc2046.txt (MIME) Part Two: Media Types
+rfc2047.txt (MIME) Part Three: Message Header Extensions for Non-ASCII Text
+rfc2048.txt (MIME) Part Four: Registration Procedures
+rfc2049.txt (MIME) Part Five: Conformance Criteria and Examples
+rfc2068.txt HTTP 1.1 (obsoleted by RFC 2616)
+rfc2109.txt HTTP State Management Mechanism (obsoleted by RFC 2964)
+rfc2183.txt The Content-Disposition Header Field
+rfc2229.txt A Dictionary Server Protocol
+rfc2255.txt Newer LDAP URL syntax document.
+rfc2231.txt MIME Parameter Value and Encoded Word Extensions:  Character Sets, Languages, and Continuations
+rfc2326.txt Real Time Streaming Protocol (RTSP)
+rfc2388.txt Returning Values from Forms: multipart/form-data
+rfc2396.txt Uniform Resource Identifiers: Generic Syntax and Semantics
+rfc2428.txt FTP Extensions for IPv6 and NATs
+rfc2518.txt HTTP Extensions for Distributed Authoring -- WEBDAV
+rfc2577.txt FTP Security Considerations
+rfc2616.txt HTTP 1.1, the latest
+rfc2617.txt HTTP Authentication
+rfc2718.txt Guidelines for new URL Schemes
+rfc2732.txt Format for Literal IPv6 Addresses in URL's
+rfc2818.txt HTTP Over TLS (TLS is the successor to SSL)
+rfc2936.txt HTTP MIME Type Handler Detection
+rfc2964.txt Use of HTTP State Management
+rfc2965.txt HTTP State Management Mechanism. Cookies. (Obsoletes RFC2109)
