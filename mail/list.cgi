@@ -123,11 +123,11 @@ if($list) {
 
     &where("Mailing Lists", "http://curl.haxx.se/mail/", "$list archive");
 
-    &title("$list Archives");
+    &title("The $list Mailing List Archives");
 
 print <<MOO
 <p>
-This is the complete web archive of all stored mails ever posted to this
+This is the complete web archive of all stored mails ever posted to the $list
 mailing list.
 
 MOO
