@@ -104,8 +104,8 @@ for(reverse sort { $log{$a} cmp $log{$b} } keys %log) {
         my $line=$c&1?"odd":"even";
 
         my $subj = $subject{$_};
-        if(length($subj) > 50) {
-            $subj = substr($subj, 0, 50)."...";
+        if(length($subj) > 40) {
+            $subj = substr($subj, 0, 40)."...";
         }
 
         my $subjectline=sprintf("<tr class=\"%s\"><td><a href=\"%s\">%s</a></td>\n",
@@ -135,7 +135,7 @@ for(reverse sort { $log{$a} cmp $log{$b} } keys %log) {
 
         print $subjectline, $infoline;
 
-        if($c++>=$numberoutput) {
+        if(++$c>=$numberoutput) {
             last;
         }
         $shown{$s}++;
@@ -223,6 +223,8 @@ sub getthreads {
                 $last{$s} = $file;
             }
         }
+
+        $name =~ s/(.*)_at_(.*)/$1/;
 
         $log{$file}=$date;
         $name{$file}=$name;
