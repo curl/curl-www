@@ -85,15 +85,15 @@ TREND
 
 TRODD
   NEWCOL US ENDCOL
-  NEWCOL FTP ENDCOL
-  NEWCOL <a href="ftp://ftp.debian.org/mounts/u3/sourceforge/curl/">ftp.debian.org</a> ENDCOL
-  NEWCOL &nbsp; ENDCOL
+  NEWCOL HTTP ENDCOL
+  NEWCOL <a href="http://curl.cyberservers.net/download/">curl.cyberservers.net</a> ENDCOL
+  NEWCOL Eric L ENDCOL
 TREND
 
 TREVEN
  NEWCOL SE ENDCOL
  NEWCOL HTTP ENDCOL
- NEWCOL <a href="http://cool.haxx.se/curl/">http://cool.haxx.se</a> ENDCOL
+ NEWCOL <a href="http://cool.haxx.se/curl/">cool.haxx.se</a> ENDCOL
  NEWCOL Daniel Stenberg ENDCOL
 TREND
 
