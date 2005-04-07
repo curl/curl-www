@@ -215,6 +215,10 @@ MOO
         }
     }
 
+    &title("Search This Site");
+
+    &catfile("../sitesearch.t");
+
     &catfile("../foot.html");
     print "</body></html>\n";
     exit;
