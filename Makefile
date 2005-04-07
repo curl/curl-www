@@ -49,7 +49,7 @@ donation.html: _donation.html $(MAINPARTS)
 version7.html: _version7.html $(MAINPARTS)
 	$(ACTION)
 
-search.html: _search.html $(MAINPARTS)
+search.html: _search.html $(MAINPARTS) sitesearch.t
 	$(ACTION)
 
 web-editing.html: _web-editing.html $(MAINPARTS)
