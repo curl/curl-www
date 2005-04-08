@@ -7,6 +7,7 @@ Mirror:
 <a href="http://curl.netmirror.org/">DE2</a>
 <a href="http://curl.kgt.org/">DE3</a>
 <a href="http://curl.mons-new-media.de/">DE4</a>
+<a href="http://curl.mirroring.de/">DE5</a>
 <a href="http://curl.cofman.dk/">DK</a>
 <a href="http://curl.wildyou.net/">EE</a>
 <a href="http://curl.mirror.internet.tp/">FR</a>
@@ -29,6 +30,7 @@ Mirror:
 <a href="http://curl.netmirror.org/CURL_URL">DE2</a>
 <a href="http://curl.kgt.org/CURL_URL">DE3</a>
 <a href="http://curl.mons-new-media.de/CURL_URL">DE4</a>
+<a href="http://curl.mirroring.de/CURL_URL">DE5</a>
 <a href="http://curl.cofman.dk/CURL_URL">DK</a>
 <a href="http://curl.wildyou.net/CURL_URL">EE</a>
 <a href="http://curl.mirror.internet.tp/CURL_URL">FR</a>
