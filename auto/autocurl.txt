@@ -47,19 +47,21 @@ notify () {
   fi
 }
 
+# The new file is ready just after 0200h UTC
 TODAY=`env TZ=Etc/GMT+2 date +%Y%m%d`
 
-cd $BUILD
+cd "$BUILD"
 
+# Parse the daily builds index page for today's file name
 NEWCURLURL=`$CURL $CURLOPTS $URL | grep "href=.*$TODAY.tar.bz2" | sed -e 's/^.*href="//' -e 's/".*//'`
 NEWCURL=`basename $NEWCURLURL`
-if [ ! -e "$NEWCURL" ] ; then
+if [ ! -r "$NEWCURL" ] ; then
   $CURL $CURLOPTS -o $NEWCURL $NEWCURLURL
 fi
 ret=$?
 
 if [ "$ret" -eq "0" ]; then
-  LIST=`tar xjvf $NEWCURL | wc -c`
+  LIST=`bzip2 -dc $NEWCURL | tar xvf - | wc -l`
   ret=$?
   if [ $LIST -eq 0 -o $ret -gt 0 ]; then
     notify "Empty tar file?"
