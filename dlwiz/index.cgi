@@ -311,7 +311,7 @@ if($pick_type && !$pick_os) {
     elsif($ua =~ /(Lynx|w3m|Dillo|MMM|Grail|Mosaic|amaya|Konqueror|Links)/i) {
         $sel_os = "Linux"; # we don't know these are Linux, we just guess
     }
-    elsif($ua =~ /(Python-urllib|Wget|lwp)/i) {
+    elsif($ua =~ /(libcurl|Python-urllib|Wget|lwp|libwww-perl)/i) {
         $sel_os = "no idea"; # automated agents
     }
 
@@ -409,7 +409,7 @@ if(!$pick_flav && $pick_os && $pick_type) {
     else {
         $sel_flav = "";
         if($ua =~ /mdk/i) {
-            $sel_flav = "Mandrake";
+            $sel_flav = "Mandriva";
         }
         elsif($ua=~ /Debian/i) {
             $sel_flav = "Debian";
