@@ -274,6 +274,18 @@ tr.odd {
   background: white;
 }
 
+div.oslinks {
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+  color: #000000;
+  float: right;
+  text-align: left;
+  padding: 2px 2px 2px 2px;
+  background: white;
+}
+
+
 div.pollbox {
   border-color: black;
   border-width: 2px;
