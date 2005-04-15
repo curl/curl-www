@@ -276,13 +276,14 @@ tr.odd {
 
 div.oslinks {
   border-color: black;
-  border-width: 2px;
-  border-style: solid;
+  border-width: 1px;
+  border-style: outset;
   color: #000000;
   float: right;
-  text-align: left;
+  text-align: right;
   padding: 2px 2px 2px 2px;
   background: white;
+  font-size: 80%;
 }
 
 
