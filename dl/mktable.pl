@@ -82,11 +82,12 @@ for(@os) {
     $os{$$_{'os'}}=1;
 }
 
+print "<div class=\"oslinks\">\n";
 my $p=0;
 for(sort keys %os) {
     if($_ ne "-") {
         if($p) {
-            print ",\n";
+            print "<br>\n";
         }
         my $anch=$_;
         $anch =~ s/[^a-zA-Z0-9]//g;
@@ -94,6 +95,7 @@ for(sort keys %os) {
         $p++;
     }
 }
+print "</div>\n";
 
 print "\n<p><table class=\"download2\" cellpadding=\"0\" cellspacing=\"0\">\n";
     print "<tr>\n";    
@@ -166,6 +168,15 @@ for $per (@sall) {
             $anch =~ s/[^a-zA-Z0-9]//g;
             $aname= "<a name=\"$anch\"></a>";
             $shown{$s}=$anch;
+        }
+        my $c = "${s}${f}";
+        if($f && ($f ne "-")) {
+            if(!$shown{"$c"}) {
+                my $anch="$c";
+                $anch =~ s/[^a-zA-Z0-9]//g;
+                $aname .= "<a name=\"$anch\"></a>";
+                $shown{"$c"}=$anch;
+            }
         }
         my $img;
         if($$per{'img'}) {
