@@ -8,11 +8,13 @@ MAINPARTS= $(ROOT)/_doctype.html $(CURL)/_menu.html $(CURL)/_footer.html \
   $(CURL)/setup.t $(CURL)/pic.t $(CURL)/where.t $(CURL)/css.t \
   $(ROOT)/mirrorlinks.t topline.t $(ROOT)/ad.t
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
-ACTION=@echo preprocessing $@; rm -f $@; fcpp -I.. -I. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@;
+ACTION=echo preprocessing $@; \
+ rm -f $@; \
+ fcpp -I.. -I. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@;
 
 PAGES = foot.html head.html loghead.html howto.html summary.html \
 	cvshistory.html table0.html table1.html table2.html table3.html \
-	missing.html
+	missing.html keywords.html
 
 all: $(PAGES)
 
@@ -32,6 +34,9 @@ missing.html: _missing.html $(MAINPARTS)
 	$(ACTION)
 
 howto.html: _howto.html $(MAINPARTS) _head.html
+	$(ACTION)
+
+keywords.html: _keywords.html $(MAINPARTS) _head.html keywords.t
 	$(ACTION)
 
 loghead.html: _loghead.html $(MAINPARTS)
