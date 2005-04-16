@@ -198,8 +198,9 @@ sub endofsingle {
         $libver = $1;
     }
     if($libcurl =~ /OpenSSL\/([^ ]*)/i) {
-        $httpstest = 1;
+        $openssl = 1;
         $sslver = $1;
+        $ssl = 1;
     }
     if($libcurl =~ /zlib\/([^ ]*)/i) {
         $zlibver = $1;
@@ -298,7 +299,7 @@ sub endofsingle {
     }
 
     $memory=($debug)?"D":"-";
-    $https=($httpstest)?"S":"-";
+    $https=($openssl)?"S":($gnutls?"T":"-");
     $asynch=$ares?"A":"-";
     $sspi=$sspi?"P":"-";
 
@@ -338,7 +339,9 @@ sub endofsingle {
     $skipped=0;
     $configure=0;
     $debug=0;
-    $httpstest=0;
+    $openssl=0;
+    $gnutls=0;
+    $ssl=0;
     $cvsfail=0;
     $ares=0;
     $sspi=0;
@@ -463,10 +466,10 @@ sub singlefile {
             }
             elsif($_ =~ /^\* libcurl SSL: *(.*)/) {
                 if($1 eq "ON") {
-                    $httpstest=1;
+                    $ssl=1;
                 }
                 else {
-                    $httpstest=0;
+                    $ssl=0;
                 }
             }
             elsif($_ =~ /^\#define USE_ARES 1/) {
@@ -476,7 +479,10 @@ sub singlefile {
                 $sspi = 1;
             }
             elsif($_ =~ /^\#define USE_SSLEAY 1/) {
-                $httpstest = 1;
+                $openssl = 1;
+            }
+            elsif($_ =~ /^\#define USE_GNUTLS 1/) {
+                $gnutls = 1;
             }
             elsif($_ =~ /^\#define ENABLE_IPV6 1/) {
                 $ipv6enabled = 1;
