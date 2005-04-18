@@ -25,6 +25,30 @@ my $req = new CGI;
 
 my $what=$req->param('curl');
 
+sub otherarchive {
+
+    print "<form method=\"GET\" action=\"latest.cgi\">\n";
+    print "<p> Select another archive: \n";
+    print "<select name=\"curl\">\n";
+    for(sort {$latest::desc{$a} cmp $latest::desc{$b}} keys %latest::desc) {
+        my $def;
+        if($_ eq $what) {
+            $def=" SELECTED";
+        }
+        else {
+            $def="";
+        }
+        printf("<option value=\"%s\"%s>%s (%s)</option>\n",
+               $_, $def, $latest::desc{$_}, $latest::version{$_});
+    }
+    print <<MOO
+
+</select><input type=submit value="Show Mirrors"></form>
+
+MOO
+;
+}
+
 if($what eq "") {
     &header("Archives from Mirrors");
 
@@ -197,20 +221,26 @@ if($latest::version{$what}) {
     if( -r "download/$archive.asc" ) {
         print "<br><b>GPG signature:</b> <a href=\"download/$archive.asc\">$archive.asc</a>";
     }
-    
+
+    if($#dl > 10 ) {
+        # so many mirrors we show this above them as well
+        otherarchive();
+    }
+
     if($latest::headver ne $latest::version{$what}) {
         print "<p><i>Note that this is </i>not<i> the most recent",
         " release ($latest::headver) of the curl package!</i>";
     }
 
+    print "<p><b><tt>$archive</tt></b> is available from\n";
     if($alert) {
-        print "<p>Available from here (<a href=\"#verified\">verified</a> now):<ul>",
+        print "(<a href=\"#verified\">verified</a> now):<ul>",
         "<li> <b>HTTP</b> from <b>curl.haxx.se</b> => ",
         "<a href=\"download/$archive\">$archive</a></ul>\n";
     }
     else {
         
-        print "<p>Available from these ".($#dl+1)." sites ",
+        print "the following ".($#dl+1)." sites ",
         "(<a href=\"#verified\">verified</a> ".&time_ago.")\n";
         
         print "<table><tr>";
@@ -244,23 +274,9 @@ elsif($what) {
     "is no up-to-date release for \"$what\".";
 }
 
-print "<p> Select below to see links for other archives:<br>\n";
-print "<form method=\"GET\" action=\"latest.cgi\">\n";
-print "<select name=\"curl\">\n";
-for(sort {$latest::desc{$a} cmp $latest::desc{$b}} keys %latest::desc) {
-    my $def;
-    if($_ eq $what) {
-        $def=" SELECTED";
-    }
-    else {
-        $def="";
-    }
-    printf("<option value=\"%s\"%s>%s (%s)</option>\n",
-           $_, $def, $latest::desc{$_}, $latest::version{$_});
-}
-print <<MOO
+otherarchive();
 
-</select><input type=submit value="Gimme a List of Links"></form>
+print <<MOO
 
 <p> This service automatically and frequently scans through known <a
 href="mirrors.html">mirrors</a> and builds links to the latest versions of
