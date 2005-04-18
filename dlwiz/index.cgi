@@ -73,7 +73,7 @@ $db->open($database);
 
 my @all = $db->find_all("typ"=>"^entry\$");
 
-printf("<div class=\"relatedbox\">Total number of packages: %d", $#all+1);
+printf("<div class=\"relatedbox\">Number of packages: %d", $#all+1);
 
 for $e (@all) {
     my $o = $$e{'os'};
