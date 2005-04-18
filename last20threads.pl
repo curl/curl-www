@@ -101,7 +101,7 @@ for(reverse sort { $log{$a} cmp $log{$b} } keys %log) {
 
         $thr = "($numthr)";
         if($st) {
-            $thr .= " <a href=\"$s\">thread</a>";
+            $thr .= " <a href=\"$s\">first</a>";
         }
     }
 
@@ -216,7 +216,7 @@ sub getthreads {
 
         my $s= $subject;
 
-        $s =~ s/^((Sv|Réf[. ]*|Re|Re\[(\d+)\]): *)*//i;
+        $s =~ s/^((Sv|Réf[. ]*|Re *|Re\[(\d+)\]): *)*//i;
         $s =~ s/[ \t\n]+/ /g;
 
         $store{$s}++;
