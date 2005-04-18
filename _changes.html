@@ -38,10 +38,11 @@ SUBTITLE(Fixed since -- available in CVS and pre-releases)
 <ul>
  Check the current <a
  href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a>
- document (it is work in progress).
-</ul>
+ document (it is work in progress). Or why not the <a
+ href="http://curl.haxx.se/auto/cvshistory.html">recent CVS activity</a>!
+ </ul>
 
-SUBTITLE(Fixed in 7.13.2)
+SUBTITLE(Fixed in 7.13.2 - Apr 4 2005)
 <p> Changes:
 <ul>
  <li> Added --form-string
@@ -69,7 +70,7 @@ SUBTITLE(Fixed in 7.13.2)
  <li> SSL seeding no longer attempts to read the whole random file
 </ul>
 
-SUBTITLE(Fixed in 7.13.1)
+SUBTITLE(Fixed in 7.13.1 - Mar 4 2005)
 <p> Changes:
 <ul>
  <li> CURLOPT_COOKIEFILE set to "" is now activating the cookie engine
@@ -93,7 +94,7 @@ SUBTITLE(Fixed in 7.13.1)
  <li> locale names in some date strings
 </ul>
 
-SUBTITLE(Fixed in 7.13.0)
+SUBTITLE(Fixed in 7.13.0 - Feb 1 2005)
 <p> Changes:
 <ul>
  <li> added --ftp-account and CURLOPT_FTP_ACCOUNT
@@ -130,7 +131,7 @@ SUBTITLE(Fixed in 7.13.0)
 </ul>
 
 <p>
-SUBTITLE(Fixed in 7.12.3)
+SUBTITLE(Fixed in 7.12.3 - Dec 20 2004)
 <p>Changes:
 <ul>
  <li> PKCS12 certificate support added
@@ -182,7 +183,7 @@ SUBTITLE(Fixed in 7.12.3)
 </ul>
 
 <p>
-SUBTITLE(Fixed in 7.12.2)
+SUBTITLE(Fixed in 7.12.2 - Oct 18 2004)
 <p>Changes:
 <ul>
  <li> the IDN code now verifies that only TLD-legitmate letters are used in the
@@ -234,7 +235,7 @@ SUBTITLE(Fixed in 7.12.2)
  <li> FTP response 530 on 'PASS' now sends back a better error message
 </ul>
 <p>
-SUBTITLE(Fixed in 7.12.1)
+SUBTITLE(Fixed in 7.12.1 - Aug 10 2004)
 <p>Changes:
 <ul>
  <li> the version string now only contains info about (sub) package versions,
@@ -285,7 +286,7 @@ SUBTITLE(Fixed in 7.12.1)
 </ul>
 
 <p>
-SUBTITLE(Fixed in 7.12.0)
+SUBTITLE(Fixed in 7.12.0 - Jun 2 2004)
 <p>Changes:
 <ul>
  <li> added ability to "upload" to file:// URLs
@@ -320,7 +321,7 @@ SUBTITLE(Fixed in 7.12.0)
 </ul>
 
 <p>
-SUBTITLE(Fixed in 7.11.2)
+SUBTITLE(Fixed in 7.11.2 - Apr 26 2004)
 <p>Changes:
 <ul>
  <li> removed maximum user+password+hostname size limit
@@ -368,7 +369,7 @@ SUBTITLE(Fixed in 7.11.2)
  <li> builds fine on VMS again and even nicer than before
 </ul>
 
-SUBTITLE(Fixed in 7.11.1)
+SUBTITLE(Fixed in 7.11.1 - Mar 19 2004)
 <p> Changes:
 <ul>
  <li> CURLOPT_POSTFIELDSIZE_LARGE added to offer POSTs larger than 2GB
@@ -428,7 +429,7 @@ SUBTITLE(Fixed in 7.11.1)
 </ul>
 
 
-SUBTITLE(Fixed in 7.11.0)
+SUBTITLE(Fixed in 7.11.0 - Jan 22 2004)
 <p> Changes:
 <ul>
  <li> allows the URL to be set by a callback when using the multi interface
@@ -487,7 +488,7 @@ SUBTITLE(Fixed in 7.11.0)
  <li> better html versions of the man pages
 </ul>
 
-SUBTITLE(Fixed in 7.10.8)
+SUBTITLE(Fixed in 7.10.8 - Nov 1 2003)
 <p> Changes:
 <ul>
  <li> --head now works on file:// URLs too
@@ -560,7 +561,7 @@ SUBTITLE(Fixed in 7.10.8)
    to default
 </ul>
 
-SUBTITLE(Fixed in 7.10.7)
+SUBTITLE(Fixed in 7.10.7 - Aug 15 2003)
 <p> Changes:
 <ul>
  <li> CURLOPT_PROXYAUTH was added to allow different authentication methods on
@@ -591,7 +592,7 @@ SUBTITLE(Fixed in 7.10.7)
  <li> the mkhelp script now compresses properly on DOS/Windows
 </ul>
 
-SUBTITLE(Fixed in 7.10.6)
+SUBTITLE(Fixed in 7.10.6 - Jul 28 2003)
 <p> Changes:
 <ul>
  <li> CURLOPT_SSL_CTX_FUNCTION allows a custom callback for SSL connections
@@ -637,7 +638,7 @@ SUBTITLE(Fixed in 7.10.6)
  <li> curl_unescape() now only unescapes valid %HH codes
 </ul>
 
-SUBTITLE(Fixed in 7.10.5)
+SUBTITLE(Fixed in 7.10.5 - May 19 2003)
 <p> Changes:
 <ul>
  <li> support for Content-Encoding: gzip was added
@@ -676,7 +677,7 @@ SUBTITLE(Fixed in 7.10.5)
  <li> test suite runs on cygwin
 </ul>
 
-SUBTITLE(Fixed in 7.10.4)
+SUBTITLE(Fixed in 7.10.4 - Apr 2 2003)
 <p> Changes:
 <ul>
  <li> the curl tool now "clears" sensitive commands line args
@@ -729,7 +730,7 @@ SUBTITLE(Fixed in 7.10.4)
  <li> CURLINFO_PRIVATE can return NULL properly
 </ul>
 
-SUBTITLE(Fixed in 7.10.3)
+SUBTITLE(Fixed in 7.10.3 - Jan 14 200)
 <p> Changes:
 <ul>
  <li> Added CURLOPT_PRIVATE and CURLINFO_PRIVATE
@@ -762,13 +763,13 @@ SUBTITLE(Fixed in 7.10.3)
 </ul>
 
 
-SUBTITLE(Fixed in 7.10.2)
+SUBTITLE(Fixed in 7.10.2 - Nov 18 2002)
 <p> Changes:
 <ul>
  <li> PDF versions of much documentation are included in the tarball
  <li> Transfer-Encoding: chunked for uploads are now supported
 </ul>
-<p> Bugs fixed:
+<p> Bugfixes:
 <ul>
  <li> builds fine on MSVC again
  <li> CURLOPT_CONNECTTIMEOUT works better
@@ -782,12 +783,12 @@ SUBTITLE(Fixed in 7.10.2)
  <li> connecting to a bad port number with the multi interface did wrong
 </ul>
 
-SUBTITLE(Fixed in 7.10.1)
+SUBTITLE(Fixed in 7.10.1 - Oct 11 2002)
 <p> Changes:
 <ul>
  <li> configure --without-zlib explicitly disables zlib in builds
 </ul>
-<p> Bugs fixed:
+<p> Bugfixes:
 <ul>
  <li> junk data could get inserted when saving HTTP headers
  <li> telnet connections timeout properly
@@ -797,7 +798,7 @@ SUBTITLE(Fixed in 7.10.1)
  <li> The OpenSSL ENGINE check was improved in the configure script
 </ul>
 
-SUBTITLE(Fixed in 7.10)
+SUBTITLE(Fixed in 7.10 - Oct 1 2002)
 <p> Changes:
 <ul>
  <li> curl -x "" now disables proxy-usage completely
@@ -818,7 +819,7 @@ SUBTITLE(Fixed in 7.10)
  <li> CURLOPT_BUFFERSIZE sets a desired read buffer size
  <li> The FTP PORT command uses a better default IP address
 </ul>
-<p> Bugs fixed:
+<p> Bugfixes:
 <ul>
  <li> transfer after a failed connect when using the multi interface
  <li> headerless HTTP downloads
@@ -842,7 +843,7 @@ SUBTITLE(Fixed in 7.10)
  <li> literal RFC2732-style IPv6 addresses didn't work
 </ul>
 
-SUBTITLE(Fixed in 7.9.8)
+SUBTITLE(Fixed in 7.9.8 - Jun 13 2002)
 <p> Changes:
 <ul>
  <li> curl_formadd() can do file upload parts from buffer
@@ -853,7 +854,7 @@ SUBTITLE(Fixed in 7.9.8)
  <li> CURLOPT_NETRC now supports optional or required netrc mode
  <li> curl_formadd() now returns a CURLFORMcode type, not a plain int.
 </ul>
-<p> Bugs fixed:
+<p> Bugfixes:
 <ul>
  <li> name resolves can now time-out properly (on unix-like systems)
  <li> an empty connect failure error message was filled in
@@ -872,7 +873,7 @@ SUBTITLE(Fixed in 7.9.8)
  <li> minor compiler problems on FreeBSD fixed
 </ul>
 
-SUBTITLE(Fixed in 7.9.7)
+SUBTITLE(Fixed in 7.9.7 - May 10 2002)
 <ul>
  <li> CURLOPT_COOKIESESSION (-j with the client) starts a new cookie session
  <li> --trace or --trace-ascii dump a full network/debug dump to a given file
@@ -893,7 +894,7 @@ SUBTITLE(Fixed in 7.9.7)
  <li> Bugfix: rfc1867-formposting a non-existent file now causes a failure
 </ul>
 
-SUBTITLE(Fixed in 7.9.6)
+SUBTITLE(Fixed in 7.9.6 - Apr 14 2002)
 <ul>
  <li> libcurl skips preceeding white spaces in cookie contents
  <li> Bugfix: CURLINFO_CONNECT_TIME is now set even when connect fails
@@ -920,7 +921,7 @@ SUBTITLE(Fixed in 7.9.6)
  <li> Bugfixed a missing newline after --progress-bar output
 </ul>
 
-SUBTITLE(Fixed in 7.9.5)
+SUBTITLE(Fixed in 7.9.5 - Mar 7 2002)
 <ul>
  <li> Bugfixed the client-side backslash treatment in URLs
  <li> Mofied the file hierarchy in the archive somewhat
@@ -943,7 +944,8 @@ SUBTITLE(Fixed in 7.9.5)
  <li> Bugfixed another SSL download problem
 </ul>
 
-<p> Fixed in 7.9.4
+SUBTITLE(Fixed in 7.9.4 - Mar 4 2002)
+<p>
 <ul>
  <li> Improved the gethostbyname_r configure check for HP-UX 11.00
  <li> Bugfixed the DNS cache
@@ -959,7 +961,8 @@ SUBTITLE(Fixed in 7.9.5)
  <li> No longer installs the multi examples on make install.
 </ul>
 
-<p> Fixed in 7.9.3
+SUBTITLE(Fixed in 7.9.3 - Jan 23 2002)
+<p>
 <ul>
  <li> bufixed multipart formposts with non-existing files
  <li> builds with OpenSSL versions prior to 0.9.5 again
@@ -979,7 +982,8 @@ SUBTITLE(Fixed in 7.9.5)
  <li> minor compiling problems fixed for some platforms
 </ul>
 
-<p> Fixed in 7.9.2
+SUBTITLE(Fixed in 7.9.2 - Dec 5 2001)
+<p>
 <ul>
  <li> compiles and builds on the good old Mac OS (in addition to Mac OS X)
  <li> bugfixed persistant connections over proxy with multiple protocols
@@ -1003,7 +1007,8 @@ SUBTITLE(Fixed in 7.9.5)
  <li> bugfixed LDAP transfers
 </ul>
 
-<p> Fixed in 7.9.1
+SUBTITLE(Fixed in 7.9.1 - Nov 4 2001)
+<p>
 <ul>
 <li> much better connection re-use validity check
 <li> bugfixed connection re-use for FTP urls containing name and password
@@ -1025,7 +1030,9 @@ SUBTITLE(Fixed in 7.9.5)
 <li> bugfixed CURLINFO_FILETIME
 <li> bugfixed cookiejar
 </ul>
-<p> Fixed in 7.9
+
+SUBTITLE(Fixed in 7.9 - Sep 23 2001)
+<p>
 <ul>
 <li> now properly returns an error code when connection to an SSL server with
  a non-legitimate certificate.
@@ -1049,7 +1056,8 @@ SUBTITLE(Fixed in 7.9.5)
 <li> fixed the configure script --with-ssl problem
 </ul>
 
-<p> Fixed in 7.8.1
+SUBTITLE(Fixed in 7.8.1 - Aug 20 2001)
+<p>
 <ul>
 <li> the configure script now sets up socklen_t properly
 <li> added the -G option that converts -d posts to use GET requests
@@ -1099,9 +1107,8 @@ SUBTITLE(Fixed in 7.9.5)
 <li> several Location: header related bugs corrected
 </ul>
 
-#if 0
-
-<p> Fixed in 7.7.3
+SUBTITLE(Fixed in 7.7.3 - May 4 2001)
+<p>
 <ul>
 <li> we've discovered that TELNET does not work under win32
 <li> HTTP Content-Length: 0 works better
@@ -1112,7 +1119,8 @@ SUBTITLE(Fixed in 7.9.5)
 <li> corrected the OpenSSL version string output
 </ul>
 
-<p> Fixed in 7.7.2
+SUBTITLE(Fixed in 7.7.2 - Apr 22 2001)
+<p>
 <ul>
 <li> 'curl-config' was added to help applications use libcurl
 <li> The <a href="/libcurl/perl/">Perl interface</a> is improved a lot
@@ -1129,7 +1137,8 @@ SUBTITLE(Fixed in 7.9.5)
 <li> The Host: headers could get wrong on persistent connections
 </ul>
 
-<p> Fixed in 7.7.1
+SUBTITLE(Fixed in 7.7.1 - Apr 3 2001)
+<p>
 <ul>
 <li> location:-fix
 <li> two crash reasons removed
@@ -1144,7 +1153,8 @@ SUBTITLE(Fixed in 7.9.5)
 <li> curl_escape() don't re-encode already encoded letters anymore
 </ul>
 
-<p> Fixed in 7.7
+SUBTITLE(Fixed in 7.7 - Mar 22 2001)
+<p>
 <ul> 
 <li> curl_escape and curl_unescape are now part of the official libcurl interface
 <li> supports HTTP proxy with IPv6
@@ -1156,7 +1166,8 @@ SUBTITLE(Fixed in 7.9.5)
 <li> persistent connection support
 </ul>
 
-<p> Fixed in 7.6.1
+SUBTITLE(Fixed in 7.6.1 - Feb 9 2001)
+<p>
 <ul>
 <li> partial IPv6 support (HTTP without proxy and only "active" FTP so far)
 <li> two new options to curl_easy_getinfo() for file sizes were added
@@ -1168,7 +1179,8 @@ SUBTITLE(Fixed in 7.9.5)
 <li> HTTP download resume again complains if Range isn't supported
 </ul>
 
-<p> Fixed in 7.6
+SUBTITLE(Fixed in 7.6 - Jan 26 2001)
+<p>
 <ul>
 <li> fixed 'total time' counter to be more accurate
 <li> possible SSL-read problem fixed (which could make curl return empty HTML)
@@ -1183,7 +1195,8 @@ SUBTITLE(Fixed in 7.9.5)
 <li> massive symbol renaming of libcurl internals to decrease name pollution
 </ul>
 
-<p> Fixed in 7.5.2
+SUBTITLE(Fixed in 7.5.2 - Jan 4 2001)
+<p>
 <ul>
 <li> new licensing, MPL or MIT/X
 <li> updated man page
@@ -1193,7 +1206,8 @@ SUBTITLE(Fixed in 7.9.5)
 <li> misaligned free() crash removed (<a href="http://curl.haxx.se/mail/archive-2000-12/0053.html">patch</a>)
 </ul>
 
-<p> Fixed in 7.5.1
+SUBTITLE(Fixed in 7.5.1 - Dec 11 2002)
+<p>
 <ul>
 <li> added Borland makefiles
 <li> portability fixes for SCO and HPUX
@@ -1201,7 +1215,8 @@ SUBTITLE(Fixed in 7.9.5)
 <li> multiple URLs and -o or -O works better! (<a href="http://curl.haxx.se/mail/archive-2000-12/0031.html">patch</a>)
 </ul>
 
-<p> Fixed in 7.5
+SUBTITLE(Fixed in 7.5 - Dec 1 2000)
+<p>
 <ul>
 <li> the shared libcurl library gets a proper version number now
 <li> the MSVC++ makefiles are updated to work
@@ -1225,7 +1240,8 @@ SUBTITLE(Fixed in 7.9.5)
 <li> § in HTTP usernames or passwords made bad authorization headers.
 </ul>
 
-<p> Fixed in 7.4.2
+SUBTITLE(Fixed in 7.4.2 - Nov 15 2000)
+<p>
 <ul>
 <li> configure now attempts to find openssl libs better
 <li> an initial attempt to make a test suite is included
@@ -1252,12 +1268,14 @@ SUBTITLE(Fixed in 7.9.5)
 <li> more informative error message when https has not been built-in
 </ul>
 
-<p> Fixed in 7.4.1
+SUBTITLE(Fixed in 7.4.1 - Oct 16 2000)
+<p>
 <ul>
 <li> Corrected the makefiles in the release archive!
 </ul>
 
-<p> Fixed in 7.4
+SUBTITLE(Fixed in 7.4 - Oct 16 2000)
+<p>
 <ul>
 <li> possible buffer overflow by an evil ftp server fixed
 <li> removed typedef bool from the public include file
@@ -1272,7 +1290,8 @@ SUBTITLE(Fixed in 7.9.5)
 <li> uploading with curl uses a smaller buffer to start with, to make a better progress meter
 </ul>
 
-<p> Fixed in 7.3
+SUBTITLE(Fixed in 7.3 - Sep 28 2000)
+<p>
 <ul>
 <li> file:// was fixed
 <li> --proxytunnel, non-HTTP tunneled through a http proxy is added
@@ -1284,21 +1303,24 @@ SUBTITLE(Fixed in 7.9.5)
 <li> more resolver fixes
 </ul>
 
-<p> Fixed in 7.2.1
+SUBTITLE(Fixed in 7.2.1 - Aug 31 2000)
+<p>
 <ul>
 <li> Linux name resolve check in the configure script is fixed
 <li> -I on ftp was fixed
 <li> ftp files with + in the file name was corrected.
 </ul>
 
-<p> Fixed in 7.2
+SUBTITLE(Fixed in 7.2 - Aug 30 2000)
+<p>
 <ul>
 <li> Name resolving problems fixed for AIX, HPUX, Digital Unix/Tru64...
 <li> --data-binary was added to allow fully binary -d style posts.
 <li> Updated the VC++ makefile
 </ul>
 
-<p> Fixed in 7.1.1
+SUBTITLE(Fixed in 7.1.1 - Aug 21 2000)
+<p>
 <ul>
 <li> No user but password in a URL is now working properly
 <li> curl now allows replacing of the Content-Type: and Content-Length: headers when doing -d posts
@@ -1307,10 +1329,8 @@ SUBTITLE(Fixed in 7.9.5)
 <li> -w did not do well when used with multiple URLs
 </ul>
 
-<p> Fixed in 7.1 since 6.5.2
+SUBTITLE(Fixed in 7.1 - Aug 7 2000)
 <p>
-   A full-size <a href="version7.html">version seven rant</a> is also
-   available.
 <ul>
 <li> builds libcurl as a shared library with libtool
 <li> JavaWebServer's incorrect Content-Range headers are supported
@@ -1364,12 +1384,14 @@ SUBTITLE(Fixed in 7.9.5)
 <li> location following to an absolute URL on a different port didn't work
 </ul>
 
-<p> Fixed in 6.5.2
+SUBTITLE(Fixed in 6.5.2 - Mar 21 2000)
+<p>
 <ul>
 <li> corrected the -D mockup that caused 6.5.1 to crash
 </ul>
 
-<p> Fixed in 6.5.1
+SUBTITLE(Fixed in 6.5.1 - Mar 20 2000)
+<p>
 <ul>
  <li> curl_unescape() buffer overrun removed
  <li> -w 'http_code' works!
@@ -1378,7 +1400,8 @@ SUBTITLE(Fixed in 7.9.5)
  <li> -D/--dump-header now only writes the file when needed, and not before
 </ul>
 
-<p> Fixed in 6.5
+SUBTITLE(Fixed in 6.5 - Mar 13 2000)
+<p>
 <ul>
  <li> now sends cookies space separated
  <li> Corrected OpenSSL 0.9.5 compliance problems
@@ -1399,7 +1422,8 @@ SUBTITLE(Fixed in 7.9.5)
       isn't set.
 </ul>
 
-<p> Fixed in 6.4
+SUBTITLE(Fixed in 6.4 - Jan 17 2000)
+<p>
 <ul>
  <li> Improved progress meter
  <li> Ability to run --quote commands <i>after</i> ftp transfers now, as well as before
@@ -1411,7 +1435,8 @@ SUBTITLE(Fixed in 7.9.5)
  <li> BeOS port by Lars J. Aas!
 </ul>
 
-<p> Fixed in 6.3.1
+SUBTITLE(Fixed in 6.3.1 - Nov 23 1999)
+<p>
 <ul>
  <li> posting an empty variable with -F, like "name=" did cause curl to hang
  <li> when the download from a http server gets cut off curl now warns about it
@@ -1421,7 +1446,8 @@ SUBTITLE(Fixed in 7.9.5)
 
 </ul>
 
-<p> Fixed in 6.3
+SUBTITLE(Fixed in 6.3 - Nov 10 1999)
+<p>
 <ul>
  <li> -z (date-dependent HTTP fetches) now works better since we're doing a
    date comparison in the client as well.
@@ -1439,7 +1465,8 @@ SUBTITLE(Fixed in 7.9.5)
   Suwandi found this for us!
 </ul>
 
-<p> Fixed in 6.2
+SUBTITLE(Fixed in 6.2 - Oct 21 1999)
+<p>
 <ul>
  <li> another bug in loction: following with proxies when the protocol part
   isn't specified was fixed
@@ -1453,7 +1480,8 @@ SUBTITLE(Fixed in 7.9.5)
  <li> the configure script understands --without-ssl now!
 </ul>
 
-<p> Fixed in 6.1
+SUBTITLE(Fixed in 6.1 - Oct 17 1999)
+<p>
 <ul>
  <li> zlib proved not to be as easy to add as I had anticipated. I'll keep
       it on hold for now.
@@ -1463,7 +1491,8 @@ SUBTITLE(Fixed in 7.9.5)
       building
 </ul>
 
-<p> Fixed in 6.1 beta
+SUBTITLE(Fixed in 6.1 beta)
+<p>
 <ul>
  <li> -d now can get data from a file or stdin
  <li> HTTP: "Accept-Encoding: gzip,compress,deflate" - experiments
@@ -1471,7 +1500,8 @@ SUBTITLE(Fixed in 7.9.5)
  <li> HTTP: Made the -F form posting accept files from stdin as well.
 </ul>
 
-<p> Fixed in 6.0
+SUBTITLE(Fixed in 6.0 - Sep 13 1999)
+<p>
 <ul>
  <li> <b>ldap://</b> with <a href="http://www.openldap.org">openldap</a>
  <li> <b>file://</b> works, for unix and win32
@@ -1482,8 +1512,6 @@ SUBTITLE(Fixed in 7.9.5)
  <li> improved configure openssl path specifier
  <li> enabled "custom" http requests (like DELETE or TRACE)
 </ul>
-
-#endif
 
 <p> Earlier changes elsewhere
 
