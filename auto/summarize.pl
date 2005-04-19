@@ -258,8 +258,12 @@ sub endofsingle {
             if($cvsfail) {
                 $res .= "CVS";
             }
-            elsif(!$configure) {
-                $res .= "build";
+            elsif(!$buildconf) {
+                $res .= "buildconf";
+            }
+            elsif($configure) {
+                # true if configure failed
+                $res .= "configure";
             }
             else {
                 $totallink++;
@@ -337,6 +341,7 @@ sub endofsingle {
     $linkfine=0;
     $warning=0;
     $skipped=0;
+    $buildconf=0;
     $configure=0;
     $debug=0;
     $openssl=0;
@@ -448,6 +453,9 @@ sub singlefile {
                 $cvsfail=1;
             }
             elsif($_ =~ /^testcurl: configure created/) {
+                $buildconf=1;
+            }
+            elsif($_ =~ /^testcurl: configure didn\'t work/) {
                 $configure=1;
             }
             elsif($_ =~ /^testcurl: src\/curl was created fine/) {
