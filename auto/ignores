@@ -8,3 +8,6 @@ include/bits/confname.h:565: warning: comma at end of enumerator list
 curl/src/main.c:29..: the 'setlocale' function supports only
 # libtool warning with mingw 3.4.2 cross-compiling for win32
 lt-curl.c:79: warning: passing arg 2 of `execv' from incompatible pointer type
+# long long warnings in oldish gcc:
+curl/lib/mprintf.c:.*: warning: ANSI C does not support `long long'
+curl/src/main.c:.*: warning: ANSI C forbids long long integer constants
