@@ -8,7 +8,7 @@ $(ROOT)/sflogo.t
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 ACTION=@echo preprocessing $@; rm -f $@; cpp -I.. -I$(ROOT) -P -WWW -Uunix -H -C -V -LL "$(NOW)" $< $@; chmod a-w+r $@
 
-all: index.html install.html apps.html examples.html iis.html
+all: index.html install.html apps.html examples.html iis.html hosting.html
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
@@ -20,6 +20,9 @@ apps.html: _apps.html $(MAINPARTS)
 	$(ACTION)
 
 iis.html: _iis.html $(MAINPARTS)
+	$(ACTION)
+
+hosting.html: _hosting.html $(MAINPARTS)
 	$(ACTION)
 
 examples.html: _examples.html $(MAINPARTS)

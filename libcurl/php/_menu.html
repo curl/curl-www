@@ -20,9 +20,7 @@
 #include "ad.t"
 #include "mirrorlinks.t"
 
-<table cellspacing=0 cellpadding=5><tr><td valign=top align=left>
-
-
+<table cellspacing="0" cellpadding="5"><tr><td valign="top" align="left">
 <div class="libmenu">
 
 <div><a href="/" class="menuitem"><img border="0" src="/pix/left.png"><img border="0" src="/pix/left.png">Front Page</a></div>
@@ -42,6 +40,12 @@ LINK("/libcurl/php/install.html", Installing )
 VLINK("/libcurl/php/install.html", Installing )
 #endif
 
+#ifdef PHP_IIS
+LINK("/libcurl/php/iis.html", IIS )
+#else
+VLINK("/libcurl/php/iis.html", IIS )
+#endif
+
 #ifdef PHP_APPS
 LINK("/libcurl/php/apps.html", Apps )
 #else
@@ -54,9 +58,15 @@ LINK("/libcurl/php/examples/", Examples )
 VLINK("/libcurl/php/examples/", Examples)
 #endif
 
+#ifdef PHP_HOSTING
+LINK("/libcurl/php/hosting.html", Hosting )
+#else
+VLINK("/libcurl/php/hosting.html", Hosting )
+#endif
+
 </div>
 
 <p>
 #include "sflogo.t"
 
-</td><td valign=top align=left>
+</td><td valign="top" align="left">
