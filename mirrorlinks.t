@@ -23,6 +23,7 @@ Mirror:
 <a href="http://curl.signal42.com/">US6</a>
 <a href="http://curl.tolix.org/">US7</a>
 <a href="http://curl.seekmeup.com/">US8</a>
+<a href="http://curl.webhosting76.com/">US9</a>
 #else
 <a href="http://curl.gds.tuwien.ac.at/CURL_URL">AT</a>
 <a href="http://curl.planetmirror.com/CURL_URL">AU</a>
@@ -46,5 +47,6 @@ Mirror:
 <a href="http://curl.signal42.com/CURL_URL">US6</a>
 <a href="http://curl.tolix.org/CURL_URL">US7</a>
 <a href="http://curl.seekmeup.com/CURL_URL">US8</a>
+<a href="http://curl.webhosting76.com/CURL_URL">US9</a>
 #endif
 </span>
