@@ -82,6 +82,12 @@ HERE(x, curl Man Page)
 DOCREF(/docs/manpage.html, curl Man Page)
 #endif
 
+#ifdef DOCS_LIBS
+HERE(x, Dependencies)
+#else
+DOCREF(/docs/libs.html, Dependencies)
+#endif
+
 #ifdef DOCS_FAQ
 HERE(x, FAQ)
 #else

@@ -19,7 +19,7 @@ PAGES = index.html manpage.html faq.html changes.html contribute.html	\
  httpscripting.html comparison-table.html relatedtools.html		\
  osdistribs.html versions.html history.html loc.html knownbugs.html	\
  manual.html caextract.html programs.html security.html testcurl.html \
- runtests.html
+ runtests.html libs.html
 
 all: $(PAGES)
 	@echo done 
@@ -33,6 +33,9 @@ index.html: _index.html $(MAINPARTS)
 index2.html: _index2.html $(MAINPARTS)
 	$(ACTION)
 
+
+libs.html: _libs.html $(MAINPARTS)
+	$(ACTION)
 
 manpage.html: _manpage.html $(MAINPARTS) mandump.t
 	$(ACTION)
