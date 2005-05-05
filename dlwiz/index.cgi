@@ -240,7 +240,7 @@ if(!$pick_type) {
         for(sort keys %type) {
             print "<blockquote><a href=\"./?type=$_\">".$typelonger{$_}."</a> - ".$typedesc{$_}."</blockquote>";
         }
-        print "<blockquote><a <a href=\"./?type=*\">Show All</a> - Display all known package types.</blockquote>";
+        print "<blockquote><a href=\"./?type=*\">Show All</a> - Display all known package types.</blockquote>";
 
     }
 
@@ -677,7 +677,7 @@ MOO
         print " RPM is a file format and tools collection made to handle software installation for a range of different Linux systems. <a href=\"http://en.wikipedia.org/wiki/RPM_Package_Manager\">Wikipedia has more details on RPM</a>";
     }
     elsif($pack eq "deb") {
-        print " deb is a file format with accompanying tools collection made to handle software installation for Debian Linux (and derivates). <a href=\"http://en.wikipedia.org/wiki/Deb_%28file_format%29\">Wikipedia has more details on deb</a>";
+        print " deb is a file format with accompanying tools collection made to handle software installation for Debian Linux (and derivatives). <a href=\"http://en.wikipedia.org/wiki/Deb_%28file_format%29\">Wikipedia has more details on deb</a>";
     }
 
     print "</div>";
