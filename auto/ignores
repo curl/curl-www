@@ -4,8 +4,8 @@ lib/mprintf.c:950: warning: format not a string literal, argument types not chec
 include/bits/confname.h:565: warning: comma at end of enumerator list
 # gcc 2.95.3 cross-compiling for uClibc on ARM
 /usr/arm-linux-uclibc/include/bits/uClibc_ctype.h:62: warning: comma at end of enumerator list
-# gcc 2.95.3 cross-compiling for ARM SA1110 uClibc
-curl/src/main.c:29..: the 'setlocale' function supports only
+# gcc 2.95.3 cross-compiling for ARM uClibc
+curl/src/main.c:.*: the 'setlocale' function supports only
 # libtool warning with mingw 3.4.2 cross-compiling for win32
 lt-curl.c:79: warning: passing arg 2 of `execv' from incompatible pointer type
 # long long warnings in oldish gcc:
