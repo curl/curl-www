@@ -15,6 +15,9 @@ my $inname=$req->param('name');
 my $indate=$req->param('date');
 
 my $id=$req->param('id');
+# Strip any unsafe log name characters
+$id =~ s/[^-0-9_a-zA-Z]//g;
+
 my @out;
 
 if($id =~ /^(\d\d\d\d)(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)-(\d+)/) {
@@ -25,7 +28,7 @@ if($id =~ /^(\d\d\d\d)(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)-(\d+)/) {
 
 print "Content-Type: text/html\n\n";
 
-header("Autobuilds - singe log");
+header("Autobuilds - single log");
 where("Autobuilds", "/auto", "Log From $year-$month-$day");
 title("Log from $year-$month-$day");
 
@@ -64,7 +67,7 @@ while(<FILE>) {
     push @present, $_;
 }
 
-push @out, "<div class=\"mini\">\n";
+push @out, "\n<div class=\"mini\">\n";
 for(@present) {
     chomp;
     if(checkwarn($_) || ($_ =~ /FAILED/)) {
@@ -72,7 +75,7 @@ for(@present) {
         push @out, "<a name=\"prob$num\"></a><div class=\"warning\">$_</div>\n";
     }
     else {
-        push @out, "$_<br>\n";
+        push @out, CGI::escapeHTML($_) . "<br>\n";
     }
 }
 push @out, "</div>\n"; # end of mini-div
