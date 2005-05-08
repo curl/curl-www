@@ -3,6 +3,7 @@ Mirror:
 #ifndef CURL_URL
 <a href="http://curl.gds.tuwien.ac.at/">AT</a>
 <a href="http://curl.planetmirror.com/">AU</a>
+<a href="http://curl.meulie.net/">CA</a>
 <a href="http://curl.mirror.at.stealer.net/">DE1</a>
 <a href="http://curl.netmirror.org/">DE2</a>
 <a href="http://curl.kgt.org/">DE3</a>
@@ -27,6 +28,7 @@ Mirror:
 #else
 <a href="http://curl.gds.tuwien.ac.at/CURL_URL">AT</a>
 <a href="http://curl.planetmirror.com/CURL_URL">AU</a>
+<a href="http://curl.meulie.net/CURL_URL">CA</a>
 <a href="http://curl.mirror.at.stealer.net/CURL_URL">DE1</a>
 <a href="http://curl.netmirror.org/CURL_URL">DE2</a>
 <a href="http://curl.kgt.org/CURL_URL">DE3</a>
