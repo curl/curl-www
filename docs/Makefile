@@ -86,7 +86,12 @@ press.html: _press.html $(MAINPARTS)
 	$(ACTION)
 
 thanks.html: _thanks.html $(MAINPARTS) thanks.t
-	$(ACTION)
+	(nc=`tr ',' '\012' < thanks.t | wc -l`; \
+        oc=`wc -l thanks.t | awk '{print $$1}' `; \
+	actual=`echo $$nc - $$oc + 1 | bc`; \
+	echo preprocessing $@; \
+	echo "People: $$actual"; \
+	fcpp -I.. -Idocs -WWW -Uunix -H -C -V -P -LL -D__NUM__=$$actual "$(NOW)" $< $@;)
 
 thanks.t: $(DOCROOT)/THANKS
 	$(TXT2PLAIN) < $< | grep -v "^ " > $@
