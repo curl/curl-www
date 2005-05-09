@@ -18,11 +18,11 @@ TITLE(A Collecton of Links to Articles About cURL)
  about curl on other sites. Enjoy!
 <p>
 
-#define ARTICLE <tr bgcolor="#ccccff" valign="top">
+#define ARTICLE <tr class="odd" valign="top">
 #define NARTICLE </tr>
 #define WHEN(x) <td>x</td>
 #define WHO(x)  <td>x</td>
-#define SITE(x) <td>x</td></tr><tr valign="top"><td>&nbsp;</td>
+#define SITE(x) <td>x</td></tr><tr class="even" valign="top"><td>&nbsp;</td>
 #undef LINK
 #define LINK(name,link) <td><a href="link">name</a></td>
 #define DESC    <td>
@@ -30,13 +30,24 @@ TITLE(A Collecton of Links to Articles About cURL)
 
 <table cellspacing="0">
 ARTICLE
- WHEN(juli-2003)
+ WHEN(May-2005)
+ WHO(Ethan McCallum)
+ SITE(linuxdevcenter.com)
+ LINK(Simplify Network Programming with libCURL,
+      "http://www.linuxdevcenter.com/pub/a/linux/2005/05/05/libcurl.html")
+ DESC
+  A friendly and positive introductory article on libcurl programming
+ NDESC
+NARTICLE
+
+ARTICLE
+ WHEN(July-2003)
  WHO(Hartwig Tauber)
  SITE(amiga-magazin.de)
  LINK(Das Internet in einer Shell,
       "http://www.amiga-magazin.de/magazin/a07-03/curl/index.html")
  DESC
-  A german article describing the magics of curl.
+  A german article describing the magics of curl
  NDESC
 NARTICLE
 
@@ -47,7 +58,7 @@ ARTICLE
  LINK(curl Simplifies Web Retrieval,
       "http://www.unixreview.com/documents/s=1820/uni1011713175619/0201i.htm")
  DESC
-  A general and positive article about curl and libcurl.
+  A general and positive article about curl and libcurl
  NDESC
 NARTICLE
 
@@ -58,7 +69,7 @@ ARTICLE
  LINK(Downloading without a Browser,
       "http://www.linuxgazette.com//issue70/chung.html")
  DESC
-  The September 2001 issue of Linux Gazette. A few curl examples are included.
+  The September 2001 issue of Linux Gazette. A few curl examples are included
  NDESC
 NARTICLE
 
@@ -70,7 +81,7 @@ ARTICLE
       "http://www.networkcomputing.com/1213/1213f26.html")
  DESC
   The article is test of network filtering programs, and it describes how they
-  haved used curl to drive the tests.
+  haved used curl to drive the tests
  NDESC
 NARTICLE
 
@@ -81,7 +92,7 @@ ARTICLE
  LINK(Working with cURL,
       "http://currents.net/articles/daily/7,3,1,0523,01.html")
  DESC
-  Short article basicly saying that curl is useful for automatic HTTP tasks.
+  Short article basicly saying that curl is useful for automatic HTTP tasks
  NDESC
 NARTICLE
 
@@ -92,20 +103,8 @@ ARTICLE
  LINK(Anacom,
       "http://www.phpbuilder.com/columns/michael20010510.php3")
  DESC
-  This article explains how to use curl within PHP with Anacom. Anacom is a
-  popular online credit card processor.
- NDESC
-NARTICLE
-
-ARTICLE
- WHEN(13-oct-2000)
- WHO(Wichert Akkerman)
- SITE(securityfocus.com)
- LINK(cURL Remote Buffer Overflow Vulnerability,
-      "http://www.securityfocus.com/bid/1804")
- DESC
-  Discusses a remote buffer overflow in many curl releases, fixed in the 7.4.1.
-  The 'exploit' section is wrong though. It doesn't show a remote exploit at all.
+  This article explains how to use curl within PHP with Anacom (a
+  popular online credit card processor)
  NDESC
 NARTICLE
 
