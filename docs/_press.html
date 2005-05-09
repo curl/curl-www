@@ -19,89 +19,91 @@ TITLE(A Collecton of Links to Articles About cURL)
 <p>
 
 #define ARTICLE <tr class="odd" valign="top">
+#define ARTICLEEVEN <tr class="even" valign="top">
+
 #define NARTICLE </tr>
 #define WHEN(x) <td>x</td>
 #define WHO(x)  <td>x</td>
-#define SITE(x) <td>x</td></tr><tr class="even" valign="top"><td>&nbsp;</td>
 #undef LINK
 #define LINK(name,link) <td><a href="link">name</a></td>
 #define DESC    <td>
 #define NDESC   </td>
 
-<table cellspacing="0">
+<table cellspacing="0" cellpadding="2" summary="list of external articles about curl and libcurl">
+
+<tr class="tabletop">
+ <th>Article</th>
+ <th>Date</th>
+ <th>Author</th>
+ <th>Summary</th>
+</tr>
+
 ARTICLE
- WHEN(May-2005)
- WHO(Ethan McCallum)
- SITE(linuxdevcenter.com)
  LINK(Simplify Network Programming with libCURL,
       "http://www.linuxdevcenter.com/pub/a/linux/2005/05/05/libcurl.html")
+ WHEN(May-2005)
+ WHO(Ethan McCallum)
  DESC
   A friendly and positive introductory article on libcurl programming
  NDESC
 NARTICLE
 
-ARTICLE
- WHEN(July-2003)
- WHO(Hartwig Tauber)
- SITE(amiga-magazin.de)
+ARTICLEEVEN
  LINK(Das Internet in einer Shell,
       "http://www.amiga-magazin.de/magazin/a07-03/curl/index.html")
+ WHEN(July-2003)
+ WHO(Hartwig Tauber)
  DESC
-  A german article describing the magics of curl
+  German article describing the magics of curl
  NDESC
 NARTICLE
 
 ARTICLE
- WHEN(23-jan-2002)
- WHO(Cameron Laird and Kathryn Soraiz)
- SITE(unixreview.com)
  LINK(curl Simplifies Web Retrieval,
       "http://www.unixreview.com/documents/s=1820/uni1011713175619/0201i.htm")
+ WHEN(23-jan-2002)
+ WHO(Cameron Laird and Kathryn Soraiz)
  DESC
-  A general and positive article about curl and libcurl
+  General and positive article about curl and libcurl
  NDESC
 NARTICLE
 
-ARTICLE
- WHEN(3-sep-2001)
- WHO(Adrian J Chung)
- SITE(linuxgazette.com)
+ARTICLEEVEN
  LINK(Downloading without a Browser,
       "http://www.linuxgazette.com//issue70/chung.html")
+ WHEN(3-sep-2001)
+ WHO(Adrian J Chung)
  DESC
-  The September 2001 issue of Linux Gazette. A few curl examples are included
+  September 2001 issue of Linux Gazette. A few curl examples are included
  NDESC
 NARTICLE
 
 ARTICLE
- WHEN(9-aug-2001)
- WHO(Sean Doherty)
- SITE(networkcomputing.com)
  LINK(network filtering,
       "http://www.networkcomputing.com/1213/1213f26.html")
+ WHEN(9-aug-2001)
+ WHO(Sean Doherty)
  DESC
-  The article is test of network filtering programs, and it describes how they
+  A test of network filtering programs. Describes how they
   used curl to drive the tests
  NDESC
 NARTICLE
 
-ARTICLE
- WHEN(1-jun-2001)
- WHO(Garth Gillespie)
- SITE(currents.net)
+ARTICLEEVEN
  LINK(Working with cURL,
       "http://currents.net/articles/daily/7,3,1,0523,01.html")
+ WHEN(1-jun-2001)
+ WHO(Garth Gillespie)
  DESC
   Short article basicly saying that curl is useful for automatic HTTP tasks
  NDESC
 NARTICLE
 
 ARTICLE
- WHEN(10-may-2001)
- WHO(Michael Reynolds)
- SITE(phpbuilder.com)
  LINK(Anacom,
       "http://www.phpbuilder.com/columns/michael20010510.php3")
+ WHEN(10-may-2001)
+ WHO(Michael Reynolds)
  DESC
   This article explains how to use curl within PHP with Anacom (a
   popular online credit card processor)
@@ -109,6 +111,9 @@ ARTICLE
 NARTICLE
 
 </table>
+
+<p>
+ If you have written (or know of) other related articles, please tell us!
 
 #include "_footer.html"
 </BODY>
