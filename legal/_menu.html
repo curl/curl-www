@@ -1,0 +1,57 @@
+
+#define BACKGROUND "#ffffff"
+#define TEXTCOLOR "#000000"
+
+#ifndef NOBODY
+
+<BODY bgcolor=BACKGROUND text=TEXTCOLOR LINK="#0000ff" VLINK="#808080" ALINK="red">
+#endif
+
+#undef LINK
+#define LINK(l,t) <div class="libselect">t</div>
+
+#undef VLINK
+#define VLINK(l,t) <div><a href="l" class="libitem">t</a></div>
+
+#include "ad.t"
+#include "mirrorlinks.t"
+
+<table cellspacing="0" cellpadding="5"><tr><td valign="top" align="left">
+
+<div class="libmenu">
+
+<div><a href="/" class="menuitem"><img border="0" src="/pix/left.png" alt="<">Front Page</a></div>
+
+<hr>
+
+#ifdef LEGAL_MAIN
+LINK("", Legal Index )
+#else
+VLINK("/legal/", Legal Index )
+#endif
+
+#ifdef LEGAL_COPYRIGHT
+LINK("", Copyright )
+#else
+VLINK("/docs/copyright.html", Copyright &raquo;)
+#endif
+
+#ifdef LEGAL_LICMIX
+LINK("", Licence Mixing )
+#else
+VLINK("/legal/licmix.html", License Mixing )
+#endif
+
+#ifdef LEGAL_THENAME
+LINK("", The Name)
+#else
+VLINK("/legal/thename.html", The Name)
+#endif
+
+
+</div>
+
+<p>
+#include "sflogo.t"
+
+</td><td valign="top" align="left">

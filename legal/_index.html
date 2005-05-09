@@ -4,10 +4,13 @@
 #include "css.t"
 </HEAD>
 
+#define CURL_URL /legal
+#define LEGAL_MAIN
+
 #include "_menu.html"
 #include "setup.t"
 
-WHERE2(Copyright, "/copyright.html", Legal Index)
+WHERE2(Legal, "/legal/", Index)
 
 TITLE(Legal stuff and Licensing Issues)
 <div class="relatedbox">
@@ -20,6 +23,11 @@ TITLE(Legal stuff and Licensing Issues)
  We get repeated questions about the legal status of <a
  href="thename.html">the name curl</a>. Who owns it, can we use it, will
  someone sue us?
+<p>
+ This section also contains the <a href="licmix.html">Licence Mixing</a>
+ document since curl/libcurl can be built and used with quite a few
+ dependences and this document tries to sort out some of the license issues
+ involved.
 
 #include "_footer.html"
 </BODY>
