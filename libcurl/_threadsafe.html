@@ -24,8 +24,8 @@ TITLE(libcurl - a thread safe transfer library)
  considerations to keep in mind when using libcurl in multiple threads though,
  as mentioned below:
 <p>
- <b>Never</b> share easy handles between multiple threads. You should only use
- one easy handle in one single thread at any given time. You can still share
+ <b>Never</b> share libcurl handles between multiple threads. You should only
+ use one handle in one single thread at any given time. You can still share
  certain data between multiple threads by using the <a
  href="/libcurl/c/libcurl-share.html">share interface</a>.
 <p>
@@ -36,12 +36,14 @@ TITLE(libcurl - a thread safe transfer library)
  fully thread safe.
 <p>
  Some operating systems are known to have faulty thread implementations. We
- have previously received problem reports on *BSD. Some operating systems that
- are known to have solid and working thread support are Linux, Solaris and
- Windows.
+ have previously received problem reports on *BSD (at least in the past, they
+ may be working fine these days). Some operating systems that are known to
+ have solid and working thread support are Linux, Solaris and Windows.
 <p>
- Further, if you use any SSL-based protocol you need to setup OpenSSL
- callbacks for synch. See the libcurl-tutorial(3) man page for details.
+ Further, if you use any SSL/TLS-based protocol (HTTPS or FTPS) you need to
+ setup OpenSSL or GnuTLS callbacks for synch. See the <a
+ href="http://curl.haxx.se/libcurl/c/libcurl-tutorial.html#Multi-threading">libcurl-tutorial(3)</a>
+ man page for details.
 
 #include "_footer.html"
 
