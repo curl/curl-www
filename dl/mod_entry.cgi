@@ -73,7 +73,7 @@ if (CGI::param("action")) {
 lfooter();
 
 sub alternative {
-    my ($desc, $short, $explain)=@_;
+    my ($desc, $short, $explain, $len)=@_;
 
     my $per;
     my %hash;
@@ -84,7 +84,7 @@ sub alternative {
     }
 
     print "<tr><td class=\"desc\">$desc:</td><td>";
-    
+
     my $found;
     if(scalar(keys %hash)) {
         print "<select name=\"pre-$short\">\n";
@@ -104,13 +104,16 @@ sub alternative {
         print "</select>\n";
     }
 
-    print "<input type=text size=30 name=\"$short\" value=\"";
+    if(!$len) {
+        $len=20;
+    }
+    print "<input type=text size=\"$len\" name=\"$short\" value=\"";
     if(!$found) {
         print CGI::escapeHTML($$ref{$short});
     }
-    print "\"></td>\n";
+    print "\"> $explain</td>\n";
 
-    print "<td>$explain</td></tr>\n";
+    print "</tr>\n";
 }
 
 sub my_show_form()
@@ -153,8 +156,7 @@ sub my_show_form()
     alternative("Package Format", "pack",
                 "RPM / deb / tar / tar+gz / OTHER");
 
-    alternative("File/URL", "file",
-                "file name / URL");
+    alternative("File/URL", "file", "file name / URL", 50);
 
     alternative("curl version", "curl",
                 "7.10.3 or similar");
@@ -169,7 +171,7 @@ sub my_show_form()
                 "Full name");
 
     alternative("Packager Email/URL", "email",
-                "name\@somwhere.come or URL");
+                "name\@somwhere.com or URL");
 
     alternative("Regex-name", "re",
                 "name of the package regex, see latest.cgi");
@@ -181,10 +183,10 @@ sub my_show_form()
                 "'Yes' makes this entry not appear in the HTML output");
 
     alternative("Autocheck this URL", "churl",
-                "\$version gets replaced");
+                "\$version gets replaced", 50);
 
     alternative("Match this regex in the autocheck URL", "chregex",
-                "make sure a () group extracts the version number");
+                "make sure the first () group extracts the version number, unless \$version is part of check URL", 40);
 
 ###slut
     print "</table>\n";
