@@ -63,6 +63,7 @@ sub show {
 
 my $i=0;
 my $utd=0; # up to date
+my $auto=0; # auto or local
 for $per (@sall) {
     my $cl;
     if($stable eq $$per{'curl'}) {
@@ -84,14 +85,19 @@ for $per (@sall) {
            show($$per{'pack'}));
 
     my $fi = $$per{'file'};
+    my $here;
     if($fi !~ /^(http|ftp):/) {
         $fi = "/download/$fi";
+        $here=1; # a local file, no need to auto
     }
     printf("<td><a href=\"%s\">%s</a></td>",
            $fi, $$per{'curl'});
     printf("<td>%s</th>", $$per{'hide'} eq "Yes"?"Hide":"");
 
-    printf("<td>%s</th>", $$per{'churl'}?"Yes":"");
+    printf("<td>%s</th>", $here?"Local":($$per{'churl'}?"Auto":""));
+    if($here || $$per{'churl'}) {
+        $auto++;
+    }
 
     printf("<td>%s</td>", $$per{'type'}eq"bin"?
            "<b>bin</b>":show($$per{'type'}));
@@ -110,7 +116,7 @@ for $per (@sall) {
     $i++;
 }
 print "</table>",
-    "<p> $i entries, $utd is up-to-date\n";
+    "<p> $i entries, $utd is up-to-date, $auto is auto or local\n";
 
 # Skriv ut sidfoten
 lfooter();
