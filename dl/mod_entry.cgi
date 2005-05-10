@@ -99,6 +99,17 @@ sub alternative {
                 $found=1;
             }
             my $val = $_;#CGI::escapeHTML($_);
+
+            # while we continue to have a few unescaped things in the
+            # database, we scan for a few known villain and run escape on the
+            # string then.
+            if($val =~ /[<>]/) {
+                $val = CGI::escapeHTML($val);
+            }
+            elsif(($val =~ /&/) && ($val !~ /&(lt|gt|amp|quot)\;/)) {
+                $val = CGI::escapeHTML($val);
+            }
+
             print "<option$s>$val</option>\n";
         }
         print "</select>\n";
@@ -120,15 +131,15 @@ sub my_show_form()
 {
 #####################################################3
 ##### Visa formuläret
-    print "<table class=\"mod_entry\">";
-    print "<form action=\"$cgi\" method=post>\n";
-
+    print "<form action=\"$cgi\" method=\"post\">\n";
 ##### Dolda saker
     if ($id ne "") {
         print "<input type=hidden name=\"__id\" value=\"$id\">\n";
         print "<input type=hidden name=\"modify_time\" value=\"";
         print $$ref{"modify_time"},"\">\n";
     }
+
+    print "<table class=\"mod_entry\">";
 
 ##### Textinmatning
 
