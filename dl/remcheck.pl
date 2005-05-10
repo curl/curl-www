@@ -9,12 +9,38 @@ $db->open($databasefilename);
 
 my $mod; # number of changes made
 
+my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) =
+    gmtime(time);
+my $logfile = sprintf("log/remcheck-%04d%02d%02d-%02d%02d.log",
+                      $year+1900, $mon, $mday, $hour, $min);
+
+# open and close each time to allow removal at any time
+sub logmsg {
+    my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) =
+        gmtime(time);
+    open(FTPLOG, ">>$logfile");
+    printf FTPLOG ("%02d:%02d:%02d ", $hour, $min, $sec);
+    print FTPLOG @_;
+    close(FTPLOG);
+    print @_;
+}
+
 &latest::scanstatus();
 
 @all = $db->find_all("typ"=>"^entry\$");
 
-print "\$version = $latest::headver\n";
+logmsg "\$version = $latest::headver\n";
+logmsg sprintf("%d packages found in database\n", scalar(@all));
+logmsg "All times in this log is GMT/UTC\n";
 my $version = $latest::headver;
+
+sub show {
+    my ($t)=@_;
+    if($t eq "-") {
+        return "";
+    }
+    return $t;
+}
 
 sub getlast5versions {
     my @five;
@@ -47,9 +73,10 @@ sub getlast5versions {
 
 #print getlast5versions();
 
-my $curlcmd="curl -fsm20 ";
+my $curlcmd="curl -fsm20 --compressed";
 
 my $update;
+my $missing;
 my $ref;
 for $ref (@all) {
     my $inurl = $$ref{'churl'};
@@ -57,9 +84,28 @@ for $ref (@all) {
     my $churl = $inurl;
     my $osversion = $$ref{'osver'};
     my $fixedver;
+
+    my $s = $$ref{'os'};
+
+    if($s eq "-") {
+        $s = "Generic";
+    }
+    logmsg sprintf("===> Package: %s %s %s %s %s by %s\n",
+                   $s,
+                   show($$ref{'osver'}),
+                   show($$ref{'cpu'}),
+                   show($$ref{'flav'}),
+                   show($$ref{'pack'}),
+                   $$ref{'name'} );
+    logmsg sprintf " Modify: http://curl.haxx.se/dl/mod_entry.cgi?__id=%s\n",
+    $$ref{'__id'};
+
+
     if($churl) {
         # there's a URL to check
         # expand $version!
+        logmsg " Check URL: \"$churl\"\n";
+
         if($churl =~ s/\$version/$version/g) {
             # 'fixedver' means that we have the version number in the URL
             # and thus success means this version exists
@@ -67,24 +113,25 @@ for $ref (@all) {
         }
         $churl =~ s/\$osversion/$osversion/g;
 
-        print "===> CHURL $churl\n";
-
+        logmsg " Used URL: \"$churl\"\n";
         my @data = `$curlcmd "$churl"`;
 
         if($chregex) {
             if(!$data[0]) {
-                print STDERR "CHURL $churl failed, no such URL or dead for now\n";
+                logmsg " $churl failed, no such URL or dead for now\n";
                 next;
             }
 
             # there's a regex to check for in the downloaded page
             $chregex = CGI::unescapeHTML($chregex);
 
+            logmsg " Scan for regex \"$chregex\"\n";
+
             # replace variables in the regex too
             $chregex =~ s/\$version/$ver/g;
             $chregex =~ s/\$osversion/$osversion/g;
 
-            print "Get CHREGEX $chregex\n";
+            logmsg " Use regex \"$chregex\"\n";
             #$chregex = quotemeta($chregex);
             my $l;
             my $match;
@@ -98,65 +145,78 @@ for $ref (@all) {
                         $r = $version;
                     }
                     $match++;
-                    print "Remote version found: $r\n";
-                    printf "Present database version: %s\n", $$ref{'curl'};
+                    logmsg " Remote version found: $r\n";
+                    logmsg sprintf " Present database version: %s\n",
+                    $$ref{'curl'};
 
                     if($$ref{'curl'} ne $r) {
                         # TODO: actually store the new version here
                         $update++;
                     }
                     else {
-                        print "not updated\n";
+                        logmsg " NOT updated\n";
                     }
                     last;
                 }
             }
-            print "No line matched the regex!\n" if(!$match);
+            logmsg " NO line matched the regex!\n" if(!$match);
         }
         else {
-            my @five = getlast5versions();
-
-            shift @five; # we already tried the latest
-
-            # while no data was received, try older versions
+            # store version as of now
             my $ver = $version;
 
             if($fixedver) {
                 #
                 # Only scan for older URLs if the $version is part of it
                 #
+
+                my @five = getlast5versions();
+
+                shift @five; # we already tried the latest
+
+                # while no data was received, try older versions
                 while(!$data[0] && @five) {
                     $ver = shift @five;
                     $churl = $inurl;
                     $churl =~ s/\$version/$ver/g;
                     $churl =~ s/\$osversion/$osversion/g;
                     
-                    print "Try same URL with version $ver: \"$churl\"\n";
+                    logmsg " Retry with version $ver: \"$churl\"\n";
                     my @data = `$curlcmd "$churl"`;
                 }
             }
 
             if(!$data[0]) {
-                print STDERR "None of the 5 latest versions found!\n";
-                print "not updated\n";
+                logmsg " None of the 5 latest versions found!\n";
+                logmsg " NOT updated\n";
                 next;
             }
 
-            print "Remote version found: $ver\n";
-            printf "Present database version: %s\n", $$ref{'curl'};
+            logmsg " Remote version found: $ver\n";
+            logmsg sprintf " Present database version: %s\n", $$ref{'curl'};
             if($$ref{'curl'} ne $version) {
                 # TODO: actually store the new version here
                 $update++;
             }
             else {
-                print "not updated\n";
+                logmsg " NOT updated\n";
             }
         }
     }
+    else {
+        $missing++;
+    }
+}
+
+if($missing) {
+    logmsg "$missing listed packages lacked autocheck URL\n";
 }
 
 if($update) {
     # one or more updated entries, save!
     #$db->save();
-    print "$update changes saved\n";
+    logmsg "$update changes saved\n";
+}
+else {
+    logmsg "Nothing was updated\n";
 }
