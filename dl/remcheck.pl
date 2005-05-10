@@ -164,7 +164,7 @@ for $ref (@all) {
             logmsg " Check regex \"$chregex\"\n";
 
             # replace variables in the regex too
-            $chregex =~ s/\$version/$ver/g;
+            $chregex =~ s/\$version/$version/g;
             $chregex =~ s/\$osversion/$osversion/g;
 
             logmsg " Use regex \"$chregex\"\n";
@@ -221,7 +221,7 @@ for $ref (@all) {
                     $churl =~ s/\$osversion/$osversion/g;
                     
                     logmsg " Retry with version $ver: \"$churl\"\n";
-                    my @data = geturl($churl);
+                    @data = geturl($churl);
                 }
             }
 
