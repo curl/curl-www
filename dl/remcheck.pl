@@ -55,14 +55,21 @@ for $ref (@all) {
     my $inurl = $$ref{'churl'};
     my $chregex = $$ref{'chregex'};
     my $churl = $inurl;
+    my $osversion = $$ref{'osver'};
+    my $fixedver;
     if($churl) {
         # there's a URL to check
         # expand $version!
-        $churl =~ s/\$version/$version/g;
+        if($churl =~ s/\$version/$version/g) {
+            # 'fixedver' means that we have the version number in the URL
+            # and thus success means this version exists
+            $fixedver=1;
+        }
+        $churl =~ s/\$osversion/$osversion/g;
 
-        print "Get CHURL $churl\n";
+        print "===> CHURL $churl\n";
 
-        my @data = `$curlcmd $churl`;
+        my @data = `$curlcmd "$churl"`;
 
         if($chregex) {
             if(!$data[0]) {
@@ -72,13 +79,25 @@ for $ref (@all) {
 
             # there's a regex to check for in the downloaded page
             $chregex = CGI::unescapeHTML($chregex);
+
+            # replace variables in the regex too
+            $chregex =~ s/\$version/$ver/g;
+            $chregex =~ s/\$osversion/$osversion/g;
+
             print "Get CHREGEX $chregex\n";
             #$chregex = quotemeta($chregex);
             my $l;
+            my $match;
             for $l (@data) {
               #  print "$l\n";
                 if($l =~ /$chregex/) {
                     my $r = $1;
+                    if($fixedver) {
+                        # '$version' was part of the URL and thus we don't
+                        # need/want to extract it from the regex match
+                        $r = $version;
+                    }
+                    $match++;
                     print "Remote version found: $r\n";
                     printf "Present database version: %s\n", $$ref{'curl'};
 
@@ -92,7 +111,7 @@ for $ref (@all) {
                     last;
                 }
             }
-            print "No line matched the regex!\n";
+            print "No line matched the regex!\n" if(!$match);
         }
         else {
             my @five = getlast5versions();
@@ -102,17 +121,24 @@ for $ref (@all) {
             # while no data was received, try older versions
             my $ver = $version;
 
-            while(!$data[0] && @five) {
-                $ver = shift @five;
-                $churl = $inurl;
-                $churl =~ s/\$version/$ver/g;
-
-                print "Try same URL with version $ver: $churl!\n";
-                my @data = `$curlcmd $churl`;
+            if($fixedver) {
+                #
+                # Only scan for older URLs if the $version is part of it
+                #
+                while(!$data[0] && @five) {
+                    $ver = shift @five;
+                    $churl = $inurl;
+                    $churl =~ s/\$version/$ver/g;
+                    $churl =~ s/\$osversion/$osversion/g;
+                    
+                    print "Try same URL with version $ver: \"$churl\"\n";
+                    my @data = `$curlcmd "$churl"`;
+                }
             }
 
             if(!$data[0]) {
                 print STDERR "None of the 5 latest versions found!\n";
+                print "not updated\n";
                 next;
             }
 
