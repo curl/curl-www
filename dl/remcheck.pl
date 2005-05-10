@@ -11,8 +11,8 @@ my $mod; # number of changes made
 
 my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) =
     gmtime(time);
-my $logfile = sprintf("log/remcheck-%04d%02d%02d-%02d%02d.log",
-                      $year+1900, $mon, $mday, $hour, $min);
+my $logfile = sprintf("log/remcheck-%04d%02d%02d-%02d%02d%02d.log",
+                      $year+1900, $mon+1, $mday, $hour, $min, $sec);
 
 # open and close each time to allow removal at any time
 sub logmsg {
@@ -73,10 +73,29 @@ sub getlast5versions {
 
 #print getlast5versions();
 
-my $curlcmd="curl -fsm20 --compressed";
+# a hash with arrays (url => url contents)
+my %urlhash;
+sub geturl {
+    my $curlcmd="curl -fsm20 --compressed";
 
-my $update;
-my $missing;
+    my ($url) = @_;
+
+    if($urlhash{$url}) {
+        # return the array
+        logmsg " URL contents CACHED, no need to fetch again\n";
+        return @{$urlhash{$url}};
+    }
+    my @content = `$curlcmd \"$url\"`;
+    if(@content) {
+        # store the content in the hash
+        @{$urlhash{$url}}=@content;
+    }
+    return @content;
+}
+
+my $update=0;
+my $uptodate=0;
+my $missing=0;
 my $ref;
 for $ref (@all) {
     my $inurl = $$ref{'churl'};
@@ -114,7 +133,7 @@ for $ref (@all) {
         $churl =~ s/\$osversion/$osversion/g;
 
         logmsg " Used URL: \"$churl\"\n";
-        my @data = `$curlcmd "$churl"`;
+        my @data = geturl($churl);
 
         if($chregex) {
             if(!$data[0]) {
@@ -154,6 +173,7 @@ for $ref (@all) {
                         $update++;
                     }
                     else {
+                        $uptodate++;
                         logmsg " NOT updated\n";
                     }
                     last;
@@ -182,7 +202,7 @@ for $ref (@all) {
                     $churl =~ s/\$osversion/$osversion/g;
                     
                     logmsg " Retry with version $ver: \"$churl\"\n";
-                    my @data = `$curlcmd "$churl"`;
+                    my @data = geturl($churl);
                 }
             }
 
@@ -199,6 +219,7 @@ for $ref (@all) {
                 $update++;
             }
             else {
+                $uptodate++;
                 logmsg " NOT updated\n";
             }
         }
@@ -207,6 +228,8 @@ for $ref (@all) {
         $missing++;
     }
 }
+
+logmsg "SUMMARY:\n$update packages found up-to-date\n";
 
 if($missing) {
     logmsg "$missing listed packages lacked autocheck URL\n";
