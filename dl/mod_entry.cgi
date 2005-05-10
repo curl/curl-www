@@ -21,6 +21,8 @@ require "stuff.pm";
        "resp"=>CGI::param("resp"),
        "img"=>CGI::param("img"),
        "hide"=>CGI::param("hide"),
+       "churl"=>CGI::param("churl"),
+       "chregex"=>CGI::param("chregex"),
        );
 
 $id=CGI::param("__id");
@@ -49,6 +51,9 @@ if (CGI::param("action")) {
         my $d = CGI::param("pre-".$_);
         if(($d ne "new") && ($data{$_} eq "")) {
             $data{$_}=$d;
+        }
+        else {
+            $data{$_} = CGI::escapeHTML($data{$_});
         }
     }
     &inputstuff::save_input(%data);
@@ -93,7 +98,8 @@ sub alternative {
                 $s= " selected";
                 $found=1;
             }
-            print "<option$s>$_</option>\n";
+            my $val = $_;#CGI::escapeHTML($_);
+            print "<option$s>$val</option>\n";
         }
         print "</select>\n";
     }
@@ -173,6 +179,12 @@ sub my_show_form()
 
     alternative("Hide from download page", "hide",
                 "'Yes' makes this entry not appear in the HTML output");
+
+    alternative("Autocheck this URL", "churl",
+                "\$version gets replaced");
+
+    alternative("Match this regex in the autocheck URL", "chregex",
+                "make sure a () group extracts the version number");
 
 ###slut
     print "</table>\n";
