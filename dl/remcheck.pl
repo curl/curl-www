@@ -122,9 +122,13 @@ for $ref (@all) {
 
     if($churl) {
         # there's a URL to check
-        # expand $version!
+
+        # first unescape HTML encoding
+        $churl = CGI::unescapeHTML($churl);
+
         logmsg " Check URL: \"$churl\"\n";
 
+        # expand $version!
         if($churl =~ s/\$version/$version/g) {
             # 'fixedver' means that we have the version number in the URL
             # and thus success means this version exists
