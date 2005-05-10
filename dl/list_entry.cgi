@@ -42,11 +42,12 @@ for $h (('edit',
          'Package',
          'Version',
          'Hidden',
+         'Autocheck',
          'Type',
          'SSL',
-         'Date',
+ #        'Date',
          'Submitter',
-         'Size',
+ #        'Size',
          'Picture')) {
     print "<th>$h</th>\n";
 }
@@ -89,17 +90,20 @@ for $per (@sall) {
     printf("<td><a href=\"%s\">%s</a></td>",
            $fi, $$per{'curl'});
     printf("<td>%s</th>", $$per{'hide'} eq "Yes"?"Hide":"");
+
+    printf("<td>%s</th>", $$per{'churl'}?"Yes":"");
+
     printf("<td>%s</td>", $$per{'type'}eq"bin"?
            "<b>bin</b>":show($$per{'type'}));
     printf("<td>%s</td>",
            $$per{'ssl'}eq"Yes"?"<b>SSL</b>":
            $$per{'ssl'}eq"No"?"&nbsp;":$$per{'ssl'});
-    printf("<td>%s</td>", show($$per{'date'}));
+  #  printf("<td>%s</td>", show($$per{'date'}));
 
     printf("<td>%s %s</a></td>",
            ($$per{'name'} && $$per{'name'} ne "-")?show($$per{'name'}):"[no name]",
            ($$per{'email'} && $$per{'email'} ne "-")?"[address]":"[no address]");
-    printf("<td>%s</td>", show($$per{'size'}));
+ #   printf("<td>%s</td>", show($$per{'size'}));
     printf("<td>%s</td>",
            $$per{'img'}?"<img src=\"/pix/".$$per{'img'}."\">":"[none]");
     print "</tr>\n";
