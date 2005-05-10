@@ -190,6 +190,12 @@ for $ref (@all) {
                         $update++;
                         logmsg " NEWER version found!\n";
                         $$ref{'curl'}=$r;
+                        if($versionembedded) {
+                            # the version string is embedded in the test URL
+                            # so we update the download URL as well!
+                            $$ref{'file'}=$churl;
+                            logmsg " Updated download URL!\n";
+                        }
                     }
                     else {
                         $uptodate++;
@@ -222,6 +228,13 @@ for $ref (@all) {
                     
                     logmsg " Retry with version $ver: \"$churl\"\n";
                     @data = geturl($churl);
+
+                    if($ver eq $$ref{'curl'}) {
+                        # no need to scan for older packages than what we
+                        # already have
+                        logmsg " Ending scan here, $ver is database version\n";
+                        last;
+                    }
                 }
             }
 
@@ -240,6 +253,12 @@ for $ref (@all) {
                 $update++;
                 logmsg " NEWER version found!\n";
                 $$ref{'curl'} = $ver;
+                if($versionembedded) {
+                    # the version string is embedded in the test URL
+                    # so we update the download URL as well!
+                    $$ref{'file'}=$churl;
+                    logmsg " Updated download URL!\n";
+                }
             }
             else {
                 $uptodate++;
@@ -264,8 +283,6 @@ if($missing) {
 if($update) {
     # one or more updated entries, save!
     $db->save();
-    logmsg "$update update found\n";
 }
-else {
-    logmsg "Nothing was updated\n";
-}
+logmsg "$update packages updated\n";
+
