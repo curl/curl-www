@@ -96,13 +96,17 @@ sub geturl {
 my $update=0;
 my $uptodate=0;
 my $missing=0;
+my $failedcheck=0;
+my $localpackage=0;
 my $ref;
 for $ref (@all) {
     my $inurl = $$ref{'churl'};
     my $chregex = $$ref{'chregex'};
     my $churl = $inurl;
     my $osversion = $$ref{'osver'};
-    my $fixedver;
+
+    # is '$version' embedded in the test URL
+    my $versionembedded;
 
     my $s = $$ref{'os'};
 
@@ -120,7 +124,15 @@ for $ref (@all) {
     $$ref{'__id'};
 
 
-    if($churl) {
+    if($$ref{'curl'} eq $version) {
+        logmsg " Already at latest version ($version), no need to check\n";
+        $uptodate++;
+    }
+    elsif($$ref{'file'} !~ /^(http|ftp):/) {
+        logmsg " Local package, no check needed\n";
+        $localpackage++;
+    }
+    elsif($churl) {
         # there's a URL to check
 
         # first unescape HTML encoding
@@ -132,7 +144,7 @@ for $ref (@all) {
         if($churl =~ s/\$version/$version/g) {
             # 'fixedver' means that we have the version number in the URL
             # and thus success means this version exists
-            $fixedver=1;
+            $versionembedded=1;
         }
         $churl =~ s/\$osversion/$osversion/g;
 
@@ -142,13 +154,14 @@ for $ref (@all) {
         if($chregex) {
             if(!$data[0]) {
                 logmsg " $churl failed, no such URL or dead for now\n";
+                $failedcheck++;
                 next;
             }
 
             # there's a regex to check for in the downloaded page
             $chregex = CGI::unescapeHTML($chregex);
 
-            logmsg " Scan for regex \"$chregex\"\n";
+            logmsg " Check regex \"$chregex\"\n";
 
             # replace variables in the regex too
             $chregex =~ s/\$version/$ver/g;
@@ -162,7 +175,7 @@ for $ref (@all) {
               #  print "$l\n";
                 if($l =~ /$chregex/) {
                     my $r = $1;
-                    if($fixedver) {
+                    if($versionembedded) {
                         # '$version' was part of the URL and thus we don't
                         # need/want to extract it from the regex match
                         $r = $version;
@@ -175,6 +188,8 @@ for $ref (@all) {
                     if($$ref{'curl'} ne $r) {
                         # TODO: actually store the new version here
                         $update++;
+                        logmsg " NEWER version found!\n";
+                        $$ref{'curl'}=$r;
                     }
                     else {
                         $uptodate++;
@@ -189,7 +204,7 @@ for $ref (@all) {
             # store version as of now
             my $ver = $version;
 
-            if($fixedver) {
+            if($versionembedded) {
                 #
                 # Only scan for older URLs if the $version is part of it
                 #
@@ -211,16 +226,20 @@ for $ref (@all) {
             }
 
             if(!$data[0]) {
-                logmsg " None of the 5 latest versions found!\n";
+                logmsg sprintf(" None of the 5 latest versions found! Database contains version %s\n",
+                               $$ref{'curl'});
                 logmsg " NOT updated\n";
+                $failedcheck++;
                 next;
             }
 
             logmsg " Remote version found: $ver\n";
             logmsg sprintf " Present database version: %s\n", $$ref{'curl'};
-            if($$ref{'curl'} ne $version) {
+            if($$ref{'curl'} ne $ver) {
                 # TODO: actually store the new version here
                 $update++;
+                logmsg " NEWER version found!\n";
+                $$ref{'curl'} = $ver;
             }
             else {
                 $uptodate++;
@@ -233,7 +252,10 @@ for $ref (@all) {
     }
 }
 
-logmsg "SUMMARY:\n$update packages found up-to-date\n";
+logmsg "*** SUMMARY ***\n";
+logmsg "$uptodate packages found up-to-date\n";
+logmsg "$failedcheck packages failed to get checked\n";
+logmsg "$localpackage packages are local and taken care of differently\n";
 
 if($missing) {
     logmsg "$missing listed packages lacked autocheck URL\n";
@@ -241,8 +263,8 @@ if($missing) {
 
 if($update) {
     # one or more updated entries, save!
-    #$db->save();
-    logmsg "$update changes saved\n";
+    $db->save();
+    logmsg "$update update found\n";
 }
 else {
     logmsg "Nothing was updated\n";
