@@ -25,8 +25,9 @@ sub lheader {
     print <<MOO
 Content-Type: text/html
 
-<html><head><title>cURL: $title</title>
-<link rel="stylesheet" type="text/css" href="/curl.css" />
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><title>$title</title>
+<link rel="stylesheet" type="text/css" href="/curl.css">
 </head>
 <body><table><tr valign="top">
 <td class="menu">$menu</td>
