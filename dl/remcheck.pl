@@ -25,6 +25,13 @@ sub logmsg {
     print @_;
 }
 
+sub timestamp {
+    my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) =
+        gmtime(time);
+    return  sprintf("%04d%02d%02d-%02d%02d%02d",
+                    $year+1900, $mon+1, $mday, $hour, $min, $sec);
+}
+
 &latest::scanstatus();
 
 @all = $db->find_all("typ"=>"^entry\$");
@@ -140,6 +147,8 @@ for $ref (@all) {
 
         logmsg " Check URL: \"$churl\"\n";
 
+        $$ref{'remcheck'} = timestamp();
+
         # expand $version!
         if($churl =~ s/\$version/$version/g) {
             # 'fixedver' means that we have the version number in the URL
@@ -189,6 +198,7 @@ for $ref (@all) {
                         # TODO: actually store the new version here
                         $update++;
                         logmsg " NEWER version found!\n";
+                        $$ref{'remdate'} = timestamp();
                         $$ref{'curl'}=$r;
                         if($versionembedded) {
                             # the version string is embedded in the test URL
@@ -252,6 +262,7 @@ for $ref (@all) {
                 # TODO: actually store the new version here
                 $update++;
                 logmsg " NEWER version found!\n";
+                $$ref{'remdate'} = timestamp();
                 $$ref{'curl'} = $ver;
                 if($versionembedded) {
                     # the version string is embedded in the test URL
@@ -280,9 +291,9 @@ if($missing) {
     logmsg "$missing listed packages lacked autocheck URL\n";
 }
 
-if($update) {
-    # one or more updated entries, save!
-    $db->save();
-}
+# one or more updated entries, save!
+# we have updated time stamps after each run, always save!
+$db->save();
+
 logmsg "$update packages updated\n";
 

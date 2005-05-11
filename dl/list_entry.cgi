@@ -41,8 +41,7 @@ print "<table><tr>\n";
 for $h (('edit',
          'Package',
          'Version',
-         'Hidden',
-         'Autocheck',
+         'Details',
          'Type',
          'SSL',
  #        'Date',
@@ -92,17 +91,18 @@ for $per (@sall) {
     }
     printf("<td><a href=\"%s\">%s</a></td>",
            $fi, $$per{'curl'});
-    printf("<td>%s</th>", $$per{'hide'} eq "Yes"?"Hide":"");
+    printf("<td>%s", $$per{'hide'} eq "Yes"?"Hide ":"");
 
-    printf("<td>%s</th>", $here?"Local":($$per{'churl'}?"Auto":""));
+    printf("%s</td>", $here?"Local":($$per{'churl'}?"Auto":""));
+
     if($here || $$per{'churl'}) {
         $auto++;
     }
 
     printf("<td>%s</td>", $$per{'type'}eq"bin"?
-           "<b>bin</b>":show($$per{'type'}));
+           "bin":show($$per{'type'}));
     printf("<td>%s</td>",
-           $$per{'ssl'}eq"Yes"?"<b>SSL</b>":
+           $$per{'ssl'}eq"Yes"?"SSL":
            $$per{'ssl'}eq"No"?"&nbsp;":$$per{'ssl'});
   #  printf("<td>%s</td>", show($$per{'date'}));
 

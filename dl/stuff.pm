@@ -34,9 +34,10 @@ Content-Type: text/html
 <td>
 MOO
 ;
-    print "<a href=\"list_entry.cgi\">list entries</a>\n",
-    "<a href=\"mod_entry.cgi\">add entry</a>\n",
-    "<a href=\"/download.html\">download page</a>",
+    print "<a href=\"list_entry.cgi\">[List Entries]</a>\n",
+    "<a href=\"mod_entry.cgi\">[New Entry]</a>\n",
+    "<a href=\"/download.html\">[Download Page]</a>\n",
+    "<a href=\"log/\">[Remcheck Logs]</a>",
     "<div class=\"pagetitle\">$title</div>";
 }
 

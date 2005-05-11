@@ -72,6 +72,13 @@ if (CGI::param("action")) {
 # Skriv ut sidfoten
 lfooter();
 
+# show a read-only (for this form) variable
+sub information {
+    my ($desc, $short)=@_;
+    print "<tr><td class=\"desc\">$desc:</td><td>";
+    print CGI::escapeHTML($$ref{$short})."</td></tr>\n";
+}
+
 sub alternative {
     my ($desc, $short, $explain, $len)=@_;
 
@@ -199,6 +206,9 @@ sub my_show_form()
 
     alternative("Match this regex in the autocheck URL", "chregex",
                 "make sure the first () group extracts the version number, unless \$version is part of check URL", 40);
+
+    information("Latest remcheck", "remcheck");
+    information("Latest remcheck update", "remdate");
 
 ###slut
     print "</table>\n";
