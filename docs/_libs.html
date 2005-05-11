@@ -34,7 +34,8 @@ TITLE(Dependencies)
 <td>
   SSL (https) support. Use <a href="http://www.openssl.org">OpenSSL</a>. Curl
   compiles, builds and runs perfectly with it. <a
-  href="download.html#openssl">download links</a>
+  href="download.html#openssl">download links</a>. Since curl 7.14.0, you can
+  optionally use GnuTLS instead.
 </td>
 </tr>
 
@@ -111,6 +112,19 @@ TITLE(Dependencies)
 <td>
   libidn is used by libcurl to perform the proper IDNA encodings for
   international domain names to work.
+</td>
+</tr>
+
+<tr>
+<td align="center">
+  <img src="../gnutls.png" width="94" height="86" alt="GnuTLS" border="0"><br>
+  <a href="http://www.gnutls.org"><small>www.gnutls.org</small></a>
+</td>
+
+<td>
+  TLS (https) support. Use <a href="http://www.gnutls.org">GnuTLS</a>. Curl
+  (7.14.0 or later) compiles, builds and runs perfectly with it. Optionally
+  used instead of OpenSSL.
 </td>
 </tr>
 
