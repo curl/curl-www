@@ -96,7 +96,7 @@ sub alternative {
             }
             if($_ eq $$ref{$short}) {
                 $s= " selected";
-                $found=1;
+                $found=$_;
             }
             my $val = $_;#CGI::escapeHTML($_);
 
@@ -122,7 +122,8 @@ sub alternative {
     if(!$found) {
         print CGI::escapeHTML($$ref{$short});
     }
-    print "\"> $explain</td>\n";
+    printf "\">%s $explain</td>\n",
+    $found =~ /^(http|ftp|https):/?"<a href=\"$found\">URL</a>":"";
 
     print "</tr>\n";
 }
