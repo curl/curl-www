@@ -5,7 +5,7 @@ our $root="/userdir/dast/curl_html";
 
 sub stitle {
     my ($title)=@_;
-    return "<h1 class=\"pagetitle\">$title</h1>";
+    return "<h1 class=\"pagetitle\">".CGI::escapeHTML($title)."</h1>";
 }
 
 sub title {
@@ -15,7 +15,7 @@ sub title {
 
 sub subtitle {
     my $title=$_[0];
-    print "<h2>$title</h2>";
+    print "<h2>".CGI::escapeHTML($title)."</h2>";
 }
 
 # WHERE2(Feedback, "/feedback/", Bug Report)
@@ -32,10 +32,10 @@ sub where {
         if($name) {
             # things look ok
             if($link) {
-                print " <a href=\"$link\">$name</a> $pic";
+                print " <a href=\"$link\">".CGI::escapeHTML($name)."</a> $pic";
             }
             else {
-                print " <b>$name</b>";
+                print " <b>".CGI::escapeHTML($name)."</b>";
             }
         }
         else {
@@ -44,6 +44,7 @@ sub where {
     }
 }
 
+# catfile assumes a HTML-encoded file!
 sub catfile {
     open (CAT, $_[0]);
     while(<CAT>) {
@@ -52,7 +53,7 @@ sub catfile {
     close(CAT);
 }
 
-# <pre>-print a file, convert <> to HTML
+# <pre>-print a file, convert to HTML encoding
 sub precatfile {
     open (CAT, $_[0]);
     print "<pre>\n";
@@ -64,7 +65,8 @@ sub precatfile {
 }
 
 sub header {
-    my ($head)=@_;
+    my ($ihead)=@_;
+    my $head = CGI::escapeHTML($ihead);
 
     open(HEAD, "<$root/head.html");
     while(<HEAD>) {
