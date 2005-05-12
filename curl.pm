@@ -1,4 +1,6 @@
 
+require "CGI.pm";
+
 our $root="/userdir/dast/curl_html";
 
 sub stitle {
@@ -55,9 +57,7 @@ sub precatfile {
     open (CAT, $_[0]);
     print "<pre>\n";
     while(<CAT>) {
-        $_ =~ s/</&lt;/g;
-        $_ =~ s/>/&gt;/g;
-        print "$_";
+        print CGI::escapeHTML($_);
     }
     close(CAT);
     print "</pre>\n";
