@@ -83,7 +83,7 @@ sub getlast5versions {
 # a hash with arrays (url => url contents)
 my %urlhash;
 sub geturl {
-    my $curlcmd="curl -fsm20 --compressed";
+    my $curlcmd="curl -Lfsm20 --compressed";
 
     my ($url) = @_;
 
