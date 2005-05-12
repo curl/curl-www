@@ -11,7 +11,7 @@ $referer=$ENV{'HTTP_REFERER'};
 
 &title("Oops! This document does not seem to exist!");
 
-print "<p>The document <b>$file</b> (that you requested) doesn't exist here.",
+print "<p>The document <b>".CGI::escapeHTML($file)."</b> (that you requested) doesn't exist here.",
     " It may have existed here earlier and",
     " is now removed, or it may never have existed.\n";
 
@@ -22,8 +22,9 @@ if($file =~ /(rpm|zip|gz|bz2)$/) {
 }
 
 if(($referer ne "") && ($referer !~ /curl.haxx/)) {
+    my $ref = CGI::escapeHTML($referer);
     print "<p> It would be polite of you to contact the admins of <a href=",
-    "\"$referer\">$referer</a> and inform them about this problem.\n";
+    "\"$ref\">$ref</a> and inform them about this problem.\n";
 }
 
 print "<p> Sometimes search engines keep very old information that might have",
