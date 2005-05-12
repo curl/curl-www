@@ -18,9 +18,11 @@ my $logfile = sprintf("log/remcheck-%04d%02d%02d-%02d%02d%02d.log",
 sub logmsg {
     my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) =
         gmtime(time);
+    my $t = sprintf ("%02d:%02d:%02d", $hour, $min, $sec);
     open(FTPLOG, ">>$logfile");
-    printf FTPLOG ("%02d:%02d:%02d ", $hour, $min, $sec);
-    print FTPLOG @_;
+    for(@_) {
+        print FTPLOG "$t $_";
+    }
     close(FTPLOG);
     print @_;
 }
@@ -91,7 +93,20 @@ sub getlast5versions {
     return @five;
 }
 
-#print getlast5versions();
+sub islast5versions {
+    my ($ver)=@_;
+
+    my @last = getlast5versions();
+
+    for(@last) {
+        if($_ eq $ver) {
+            # yeps
+            return 1;
+        }
+    }
+    # nopes
+    return 0;
+}
 
 # a hash with arrays (url => url contents)
 my %urlhash;
@@ -138,6 +153,7 @@ my $uptodate=0;
 my $missing=0;
 my $failedcheck=0;
 my $localpackage=0;
+my $oldies=0;
 my $ref;
 for $ref (@all) {
     my $inurl = $$ref{'churl'};
@@ -176,6 +192,21 @@ for $ref (@all) {
     elsif($churl) {
         # there's a URL to check
 
+        if(!islast5versions($$ref{'curl'})) {
+            # the database version of this is older than the 5 (6?) last
+            # versions, slow down the checking of this by aborting this package
+            # check in a random matter
+            my $r = rand(100);
+            # starting off with a 40% continue rate
+            my $skip = ($r > 40);
+            logmsg sprintf(" Not a recent version, random value: %d %s\n",
+                           int($r), $skip?"SKIP":"CHECK");
+            if($skip) {
+                $oldies++;
+                next;
+            }
+        }
+
         # first unescape HTML encoding
         $churl = CGI::unescapeHTML($churl);
 
@@ -197,7 +228,7 @@ for $ref (@all) {
         if($chregex) {
             @data = geturl($churl, 0);
             if(!$data[0]) {
-                logmsg " $churl failed, no such URL or dead for now\n";
+                logmsg " $churl failed. Document too old, missing or URL/host dead for now\n";
                 $failedcheck++;
                 next;
             }
@@ -322,9 +353,10 @@ for $ref (@all) {
 }
 
 logmsg "*** SUMMARY ***\n";
-logmsg "$uptodate packages found up-to-date\n";
+logmsg "$uptodate remote packages found up-to-date with database versions\n";
 logmsg "$failedcheck packages failed to get checked\n";
 logmsg "$localpackage packages are local and taken care of differently\n";
+logmsg "$oldies checks were skipped due to old release number\n";
 
 if($missing) {
     logmsg "$missing listed packages lacked autocheck URL\n";
@@ -334,5 +366,5 @@ if($missing) {
 # we have updated time stamps after each run, always save!
 $db->save();
 
-logmsg "$update packages updated\n";
+logmsg "$update package versions updated\n";
 
