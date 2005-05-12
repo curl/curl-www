@@ -39,6 +39,8 @@ sub timestamp {
 logmsg "\$version = $latest::headver\n";
 logmsg sprintf("%d packages found in database\n", scalar(@all));
 logmsg "All times in this log is GMT/UTC\n";
+logmsg "curl version used in this script:\n";
+logmsg `curl --version`;
 my $version = $latest::headver;
 
 sub show {
@@ -47,6 +49,17 @@ sub show {
         return "";
     }
     return $t;
+}
+
+sub content_length {
+    my (@doc)=@_;
+    my $cl;
+
+    if(join("", @doc) =~ /Content-Length: *(\d+)/i) {
+        $cl = $1;
+        logmsg " Content-Length: $cl found\n";
+    }
+    return $cl;
 }
 
 sub getlast5versions {
@@ -83,15 +96,35 @@ sub getlast5versions {
 # a hash with arrays (url => url contents)
 my %urlhash;
 sub geturl {
-    my $curlcmd="curl -Lfsm20 --compressed";
+    my ($url, $head) = @_;
+    my $curlcmd="curl -Lfsm20";
 
-    my ($url) = @_;
+    if(!$head) {
+        my $t = time();
+    
+        # two weeks ago
+        $t -= (24*3600)*14;
 
-    if($urlhash{$url}) {
+        my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) =
+            gmtime($t);
+        my $twoweeksago = sprintf("%04d%02d%02d %02d:%02d:%02d",
+                                  $year+1900, $mon+1, $mday,
+                                  $hour, $min, $sec);
+
+        $curlcmd .= " -z \"$twoweeksago\" --compressed";
+    }
+
+    if($head) {
+        # we don't cache HEAD requests
+        $curlcmd .= " --head";
+        #logmsg " issue a HEAD request\n";
+    }
+    elsif($urlhash{$url}) {
         # return the array
         logmsg " URL contents CACHED, no need to fetch again\n";
         return @{$urlhash{$url}};
     }
+    logmsg " \$ $curlcmd \"$url\"\n";
     my @content = `$curlcmd \"$url\"`;
     if(@content) {
         # store the content in the hash
@@ -120,13 +153,14 @@ for $ref (@all) {
     if($s eq "-") {
         $s = "Generic";
     }
-    logmsg sprintf("===> Package: %s %s %s %s %s by %s\n",
+    logmsg sprintf("===> Package: %s %s %s %s %s by %s (%s)\n",
                    $s,
                    show($$ref{'osver'}),
                    show($$ref{'cpu'}),
                    show($$ref{'flav'}),
                    show($$ref{'pack'}),
-                   $$ref{'name'} );
+                   $$ref{'name'},
+                   $$ref{'curl'});
     logmsg sprintf " Modify: http://curl.haxx.se/dl/mod_entry.cgi?__id=%s\n",
     $$ref{'__id'};
 
@@ -158,9 +192,10 @@ for $ref (@all) {
         $churl =~ s/\$osversion/$osversion/g;
 
         logmsg " Used URL: \"$churl\"\n";
-        my @data = geturl($churl);
+        my @data;
 
         if($chregex) {
+            @data = geturl($churl, 0);
             if(!$data[0]) {
                 logmsg " $churl failed, no such URL or dead for now\n";
                 $failedcheck++;
@@ -217,6 +252,10 @@ for $ref (@all) {
             logmsg " NO line matched the regex!\n" if(!$match);
         }
         else {
+            # since there's no regex, just do a head request to verify the
+            # file's mere existance
+            @data = geturl($churl, 1);
+
             # store version as of now
             my $ver = $version;
 
@@ -230,14 +269,14 @@ for $ref (@all) {
                 shift @five; # we already tried the latest
 
                 # while no data was received, try older versions
-                while(!$data[0] && @five) {
+                while(!content_length(@data) && @five) {
                     $ver = shift @five;
                     $churl = $inurl;
                     $churl =~ s/\$version/$ver/g;
                     $churl =~ s/\$osversion/$osversion/g;
                     
                     logmsg " Retry with version $ver: \"$churl\"\n";
-                    @data = geturl($churl);
+                    @data = geturl($churl, 1);
 
                     if($ver eq $$ref{'curl'}) {
                         # no need to scan for older packages than what we
@@ -248,7 +287,7 @@ for $ref (@all) {
                 }
             }
 
-            if(!$data[0]) {
+            if(!content_length(@data)) {
                 logmsg sprintf(" None of the 5 latest versions found! Database contains version %s\n",
                                $$ref{'curl'});
                 logmsg " NOT updated\n";
