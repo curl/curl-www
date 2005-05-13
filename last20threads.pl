@@ -89,17 +89,17 @@ for(reverse sort { $log{$a} cmp $log{$b} } keys %log) {
 
     if($start{$s} eq $_) {
         if($numthr > 1) {
-            $thr="($numthr) first";
+            $thr="$numthr first";
         }
         else {
-            $thr="(1)";
+            $thr="1";
         }
     }
     else {
         my $st = $start{$s};      
         my $s = file2url($start{$s});
 
-        $thr = "($numthr)";
+        $thr = "$numthr";
         if($st) {
             $thr .= " <a href=\"$s\">first</a>";
         }
