@@ -124,7 +124,7 @@ for(reverse sort { $log{$a} cmp $log{$b} } keys %log) {
         my $da = $log{$_};
         my $stamp;
         if($da =~ /^(\d\d\d\d\d\d\d\d)(\d\d)(\d\d)(\d\d)/) {
-            $stamp=`date -u -d "$1 $2:$3:4 +0100" +%s`;
+            $stamp=`date -u -d "$1 $2:$3:4" +%s`; # this is GMT
             chomp $stamp;
             $stamp=reltime($stamp);
         }
@@ -177,6 +177,7 @@ sub parsehtmlfile {
     my ($date, $name, $email, $subject, $inreplyto);
     while(<FILE>) {
         if(/^<!-- isoreceived=\"([^\"]*)\"/) {
+            # this is GMT
             $date = $1;
         }
         elsif(/^<!-- name=\"([^\"]*)\"/) {

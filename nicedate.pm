@@ -16,9 +16,9 @@ sub reltime {
     my $then_t  = $_[0];
 
     my $now_t = time();
-    my @now = localtime( $now_t );
-    my @yday = localtime( $now_t - 86400 );
-    my @then = localtime( $then_t );
+    my @now = gmtime( $now_t );
+    my @yday = gmtime( $now_t - 86400 );
+    my @then = gmtime( $then_t );
     my $diff = $now_t - $then_t;
     my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = @then;
 
@@ -44,10 +44,10 @@ sub reldate {
     my $then_t  = $_[0];
 
     my $now_t = time();
-    my @now = localtime( $now_t );
-    my @yday = localtime( $now_t - 86400 );
-    my @nday = localtime( $now_t + 86400 );
-    my @then = localtime( $then_t );
+    my @now = gmtime( $now_t );
+    my @yday = gmtime( $now_t - 86400 );
+    my @nday = gmtime( $now_t + 86400 );
+    my @then = gmtime( $then_t );
     my $diff = abs($now_t - $then_t);
     my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = @then;
 
