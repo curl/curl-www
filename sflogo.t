@@ -1,40 +1,14 @@
 <a href="/donation.html"><img border="0" src="/pix/donate.png" alt="donate!" width="88" height="31"></a>
 <p>
-#if 1 /* was: if defined(AD_GOOGLELEFT) && !defined(AD_BIGGOOGLELEFT) */
-<script type="text/javascript"><!--
-google_ad_client = "pub-9313125053076989";
-google_ad_width = 120;
-google_ad_height = 240;
-google_ad_format = "120x240_as";
-google_ad_channel ="9544108509";
-google_ad_type = "text";
-google_color_border = "000000";
-google_color_bg = "F0F0F0";
-google_color_link = "0000FF";
-google_color_url = "008000";
-google_color_text = "000000";
-//--></script>
-<script type="text/javascript"
-  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-#endif
-#if 0 /* was: #ifdef AD_BIGGOOGLELEFT */
-<script type="text/javascript"><!--
-google_ad_client = "pub-9313125053076989";
-google_ad_width = 120;
-google_ad_height = 600;
-google_ad_format = "120x600_as";
-google_ad_channel ="7157291319";
-google_color_border = "000000";
-google_color_bg = "F0F0F0";
-google_color_link = "0000FF";
-google_color_url = "008000";
-google_color_text = "000000";
-//--></script>
-<script type="text/javascript"
-  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-#endif
+<TABLE WIDTH="120" CELLPADDING="4" HEIGHT="240" style="border-width: thin;
+border-style: solid;" BORDERCOLOR="#000000" BGCOLOR="#CCCCCC"><TR><TD VALIGN="TOP"><DIV ALIGN="CENTER"><A HREF="http://searchenginez.com"><FONT FACE="Verdana, Arial, Helvetica, sans-serif" SIZE="1">Search 
+Engines</FONT></A></DIV><HR size="1" WIDTH="30%" noshade ALIGN="CENTER"><DIV ALIGN="CENTER"><FONT FACE="Verdana, Arial, Helvetica, sans-serif" SIZE="1"><A HREF="http://ezytracks.com/">Buy 
+Music Online</A></FONT></DIV><HR SIZE="1" WIDTH="30%" noshade ALIGN="CENTER"><DIV ALIGN="CENTER"><FONT FACE="Verdana, Arial, Helvetica, sans-serif" SIZE="1"><A HREF="http://ezyaddress.com/">Cheap 
+Domain Names</A></FONT></DIV><HR SIZE="1" WIDTH="30%" noshade ALIGN="CENTER"><DIV ALIGN="CENTER"><FONT FACE="Verdana, Arial, Helvetica, sans-serif" SIZE="1"><A HREF="http://ezyim.com/">Internet 
+Messengers</A></FONT></DIV><HR SIZE="1" WIDTH="30%" noshade ALIGN="CENTER"><DIV ALIGN="CENTER"><FONT FACE="Verdana, Arial, Helvetica, sans-serif" SIZE="1"><A HREF="http://stkildabeach.com">St 
+Kilda Beach</A></FONT><HR SIZE="1" WIDTH="30%" noshade ALIGN="CENTER"><DIV ALIGN="CENTER"><FONT FACE="Verdana, Arial, Helvetica, sans-serif" SIZE="1"><A HREF="http://fiind.com/">Locate 
+Someone</A></FONT></DIV><HR SIZE="1" WIDTH="30%" noshade ALIGN="CENTER"><DIV ALIGN="CENTER"><FONT FACE="Verdana, Arial, Helvetica, sans-serif" SIZE="1"><A HREF="http://searchenginez.com/online_payments.html">Online 
+Payments </A></FONT></DIV></DIV></TD></TR></TABLE>
 <p>
 
 <TABLE BORDER="1" width="120" bgcolor="#fCfcfc" cellpadding="0" cellspacing="0">
