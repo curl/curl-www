@@ -1,0 +1,17 @@
+ihtmlheaderfile = indexheader.html
+ihtmlfooterfile = indexfooter.html
+
+mhtmlheaderfile = mailheader.html
+mhtmlfooterfile = mailfooter.html
+
+thrdlevels = 5
+
+#set hm_dir = archive_%y_%M
+
+dirmode= 755
+
+dateformat = %Y-%m-%d
+
+spamprotect = On
+
+deleted = no-header-can-delete-a-mail
