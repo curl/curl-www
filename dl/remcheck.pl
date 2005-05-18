@@ -3,6 +3,8 @@
 require "../latest.pm";
 require "stuff.pm";
 
+my $show = $ARGV[0];
+
 # get database
 $db=new pbase;
 $db->open($databasefilename);
@@ -44,6 +46,10 @@ logmsg "All times in this log is GMT/UTC\n";
 logmsg "curl version used in this script:\n";
 logmsg `curl --version`;
 my $version = $latest::headver;
+
+if($show) {
+    logmsg "told to only deal with packages matching \"$show\"\n";
+}
 
 sub show {
     my ($t)=@_;
@@ -169,14 +175,20 @@ for $ref (@all) {
     if($s eq "-") {
         $s = "Generic";
     }
-    logmsg sprintf("===> Package: %s %s %s %s %s by %s (%s)\n",
-                   $s,
-                   show($$ref{'osver'}),
-                   show($$ref{'cpu'}),
-                   show($$ref{'flav'}),
-                   show($$ref{'pack'}),
-                   $$ref{'name'},
-                   $$ref{'curl'});
+    my $desc = sprintf("%s %s %s %s %s by %s (%s)",
+                       $s,
+                       show($$ref{'osver'}),
+                       show($$ref{'cpu'}),
+                       show($$ref{'flav'}),
+                       show($$ref{'pack'}),
+                       $$ref{'name'},
+                       $$ref{'curl'});
+
+    if($show && ($desc !~ /$show/i)) {
+        next;
+    }
+                       
+    logmsg "===> Package: $desc\n";
     logmsg sprintf " Modify: http://curl.haxx.se/dl/mod_entry.cgi?__id=%s\n",
     $$ref{'__id'};
 
@@ -212,8 +224,6 @@ for $ref (@all) {
 
         logmsg " Check URL: \"$churl\"\n";
 
-        $$ref{'remcheck'} = timestamp();
-
         # expand $version!
         if($churl =~ s/\$version/$version/g) {
             # 'fixedver' means that we have the version number in the URL
@@ -232,6 +242,8 @@ for $ref (@all) {
                 $failedcheck++;
                 next;
             }
+
+            $$ref{'remcheck'} = timestamp();
 
             # there's a regex to check for in the downloaded page
             $chregex = CGI::unescapeHTML($chregex);
@@ -325,6 +337,8 @@ for $ref (@all) {
                 $failedcheck++;
                 next;
             }
+
+            $$ref{'remcheck'} = timestamp();
 
             logmsg " Remote version found: $ver\n";
             logmsg sprintf " Present database version: %s\n", $$ref{'curl'};
