@@ -6,8 +6,9 @@ require "../curl.pm";
 
 $databasefilename = "data/databas.db";
 
-sub lheader {
+sub getheader {
     my ($title)=@_;
+    my @head;
 
     if ($title eq "") {
         $title="curl packages";
@@ -22,28 +23,30 @@ sub lheader {
     close(FILE);
 
     # valid login-user, continue
-    print <<MOO
-Content-Type: text/html
-
+    push @head, <<MOO
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><title>$title</title>
 <link rel="stylesheet" type="text/css" href="/curl.css">
 </head>
-<body><table><tr valign="top">
-<td class="menu">$menu</td>
-<td>
+<body>
+<a href="/dl/list_entry.cgi">[List Entries]</a>
+<a href="/dl/mod_entry.cgi">[New Entry]</a>
+<a href="/download.html">[Download Page]</a>
+<a href="/dl/log/">[Remcheck Logs]</a>
+<div class="pagetitle">$title</div>
 MOO
 ;
-    print "<a href=\"list_entry.cgi\">[List Entries]</a>\n",
-    "<a href=\"mod_entry.cgi\">[New Entry]</a>\n",
-    "<a href=\"/download.html\">[Download Page]</a>\n",
-    "<a href=\"log/\">[Remcheck Logs]</a>",
-    "<div class=\"pagetitle\">$title</div>";
+    return @head;
 }
+
+sub lheader {
+    print "Content-Type: text/html\n\n";
+    print getheader(@_);
+}
+
 
 sub lfooter {
     print <<FOOT
-</td></tr></table>
 </body></html>
 FOOT
 ;
