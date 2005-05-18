@@ -250,7 +250,7 @@ for $ref (@all) {
         if($chregex) {
             @data = geturl($churl, 0);
             if(!$data[0]) {
-                logmsg " $churl failed. Document too old, missing or URL/host dead for now\n";
+                logmsg " <div class=\"buildfail\">$churl failed. Document too old, missing or URL/host dead for now</div>\n";
                 $failedcheck++;
                 next;
             }
@@ -287,7 +287,7 @@ for $ref (@all) {
                     if($$ref{'curl'} ne $r) {
                         # TODO: actually store the new version here
                         $update++;
-                        logmsg " NEWER version found!\n";
+                        logmsg " <div class=\"latest2\">NEWER version found!</div>\n";
                         $$ref{'remdate'} = timestamp();
                         $$ref{'curl'}=$r;
                         if($versionembedded) {
@@ -337,16 +337,14 @@ for $ref (@all) {
                     if($ver eq $$ref{'curl'}) {
                         # no need to scan for older packages than what we
                         # already have
-                        logmsg " Ending scan here, $ver is database version\n";
                         last;
                     }
                 }
             }
 
             if(!$cl) {
-                logmsg sprintf(" None of the 5 latest versions found! Database contains version %s\n",
-                               $$ref{'curl'});
-                logmsg " NOT updated\n";
+                logmsg " <div class\"buildfail\">None of the 5 latest versions found!\n";
+                logmsg " NOT updated</div>\n";
                 $failedcheck++;
                 next;
             }
@@ -367,7 +365,7 @@ for $ref (@all) {
             if($$ref{'curl'} ne $ver) {
                 # TODO: actually store the new version here
                 $update++;
-                logmsg " NEWER version found!\n";
+                logmsg " <div class=\"latest2\">NEWER version found!</div>\n";
                 $$ref{'remdate'} = timestamp();
                 $$ref{'curl'} = $ver;
             }
