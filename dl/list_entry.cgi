@@ -36,7 +36,7 @@ sub sortent {
 
 @sall = sort sortent @all;
 
-print "<table><tr>\n";
+print "<table cellpadding=\"1\" cellspacing=\"0\"><tr class=\"tabletop\">\n";
     
 for $h (('edit',
          'Package',
@@ -68,6 +68,9 @@ for $per (@sall) {
     if($stable eq $$per{'curl'}) {
         $cl=" class=\"latest2\"";
         $utd++;
+    }
+    else {
+        $cl = sprintf(" class=\"%s\"", ($i&1)?"even":"odd");
     }
     print "<tr$cl><td><a href=\"mod_entry.cgi?__id=".$$per{'__id'}."\">edit</a></td>";
 
@@ -106,12 +109,12 @@ for $per (@sall) {
            $$per{'ssl'}eq"No"?"&nbsp;":$$per{'ssl'});
   #  printf("<td>%s</td>", show($$per{'date'}));
 
-    printf("<td>%s %s</a></td>",
-           ($$per{'name'} && $$per{'name'} ne "-")?show($$per{'name'}):"[no name]",
-           ($$per{'email'} && $$per{'email'} ne "-")?"[address]":"[no address]");
+    printf("<td>%s</a></td>",
+           ($$per{'name'} && $$per{'name'} ne "-")?show($$per{'name'}):"&nbsp;");
  #   printf("<td>%s</td>", show($$per{'size'}));
-    printf("<td>%s</td>",
-           $$per{'img'}?"<img src=\"/pix/".$$per{'img'}."\">":"[none]");
+#    printf("<td>%s</td>",
+#           $$per{'img'}?"<img src=\"/pix/".$$per{'img'}."\">":"[none]");
+    printf("<td>%s</td>", $$per{'img'}?"[PIC]":"&nbsp;");
     print "</tr>\n";
     $i++;
 }
