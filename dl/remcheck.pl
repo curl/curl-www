@@ -13,17 +13,14 @@ my $mod; # number of changes made
 
 my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) =
     gmtime(time);
-my $logfile = sprintf("log/remcheck-%04d%02d%02d-%02d%02d%02d.log",
+my $logfile = sprintf("log/remcheck-%04d%02d%02d-%02d%02d%02d.html",
                       $year+1900, $mon+1, $mday, $hour, $min, $sec);
 
 # open and close each time to allow removal at any time
 sub logmsg {
-    my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) =
-        gmtime(time);
-    my $t = sprintf ("%02d:%02d:%02d", $hour, $min, $sec);
     open(FTPLOG, ">>$logfile");
     for(@_) {
-        print FTPLOG "$t $_";
+        print FTPLOG "$_<br>";
     }
     close(FTPLOG);
     print @_;
@@ -40,6 +37,10 @@ sub timestamp {
 
 @all = $db->find_all("typ"=>"^entry\$");
 
+open(FTPLOG, ">>$logfile");
+print FTPLOG getheader("Remcheck $logfile");
+close(FTPLOG);
+
 logmsg "\$version = $latest::headver\n";
 logmsg sprintf("%d packages found in database\n", scalar(@all));
 logmsg "All times in this log is GMT/UTC\n";
@@ -48,7 +49,7 @@ logmsg `curl --version`;
 my $version = $latest::headver;
 
 if($show) {
-    logmsg "told to only deal with packages matching \"$show\"\n";
+    logmsg "<strong>told to only deal with packages matching \"$show\"</strong>\n";
 }
 
 sub show {
@@ -175,23 +176,27 @@ for $ref (@all) {
     if($s eq "-") {
         $s = "Generic";
     }
-    my $desc = sprintf("%s %s %s %s %s by %s (%s)",
+    my $desc = sprintf("%s %s %s %s %s %s by %s (%s)",
                        $s,
                        show($$ref{'osver'}),
                        show($$ref{'cpu'}),
                        show($$ref{'flav'}),
                        show($$ref{'pack'}),
+                       show($$ref{'type'}),                       
                        $$ref{'name'},
                        $$ref{'curl'});
 
     if($show && ($desc !~ /$show/i)) {
         next;
     }
-                       
-    logmsg "===> Package: $desc\n";
-    logmsg sprintf " Modify: http://curl.haxx.se/dl/mod_entry.cgi?__id=%s\n",
-    $$ref{'__id'};
+    
+    logmsg sprintf "<h2>Package: $desc <a href=\"http://curl.haxx.se/dl/mod_entry.cgi?__id=%s\">edit</a></h2>", $$ref{'__id'};
+    
+    my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) =
+        gmtime(time);
+    my $t = sprintf ("%02d:%02d:%02d", $hour, $min, $sec);
 
+    logmsg "Time: $t\n";
 
     if($$ref{'curl'} eq $version) {
         logmsg " Already at latest version ($version), no need to check\n";
@@ -205,14 +210,16 @@ for $ref (@all) {
         # there's a URL to check
 
         if(!islast5versions($$ref{'curl'})) {
+
             # the database version of this is older than the 5 (6?) last
-            # versions, slow down the checking of this by aborting this package
-            # check in a random matter
+            # versions, slow down the checking of this by aborting this
+            # package check in a random matter
+
             my $r = rand(100);
-            # starting off with a 40% continue rate
-            my $skip = ($r > 40);
-            logmsg sprintf(" Not a recent version, random value: %d %s\n",
-                           int($r), $skip?"SKIP":"CHECK");
+            # 20% continue rate
+            my $skip = ($r > 20);
+            logmsg sprintf(" Not a recent version, %s\n",
+                           $skip?"SKIP":"but check anyway");
             if($skip) {
                 $oldies++;
                 next;
@@ -222,7 +229,9 @@ for $ref (@all) {
         # first unescape HTML encoding
         $churl = CGI::unescapeHTML($churl);
 
-        logmsg " Check URL: \"$churl\"\n";
+        logmsg sprintf(" Check URL: <a href=\"%s\">%s</a>\n",
+                       CGI::escapeHTML($churl),
+                       CGI::escapeHTML($churl));
 
         # expand $version!
         if($churl =~ s/\$version/$version/g) {
@@ -232,7 +241,10 @@ for $ref (@all) {
         }
         $churl =~ s/\$osversion/$osversion/g;
 
-        logmsg " Used URL: \"$churl\"\n";
+        logmsg sprintf(" Use URL: <a href=\"%s\">%s</a>\n",
+                       CGI::escapeHTML($churl),
+                       CGI::escapeHTML($churl));
+
         my @data;
 
         if($chregex) {
@@ -248,13 +260,15 @@ for $ref (@all) {
             # there's a regex to check for in the downloaded page
             $chregex = CGI::unescapeHTML($chregex);
 
-            logmsg " Check regex \"$chregex\"\n";
+            logmsg sprintf(" Check regex <b><tt>%s</tt></b>\n",
+                           CGI::escapeHTML($chregex));
 
             # replace variables in the regex too
             $chregex =~ s/\$version/$version/g;
             $chregex =~ s/\$osversion/$osversion/g;
 
-            logmsg " Use regex \"$chregex\"\n";
+            logmsg sprintf(" Use regex <b><tt>%s</tt></b>\n",
+                           CGI::escapeHTML($chregex));
             #$chregex = quotemeta($chregex);
             my $l;
             my $match;
@@ -268,9 +282,7 @@ for $ref (@all) {
                         $r = $version;
                     }
                     $match++;
-                    logmsg " Remote version found: $r\n";
-                    logmsg sprintf " Present database version: %s\n",
-                    $$ref{'curl'};
+                    logmsg " Remote version: <b>$r</b>\n";
 
                     if($$ref{'curl'} ne $r) {
                         # TODO: actually store the new version here
@@ -301,6 +313,7 @@ for $ref (@all) {
 
             # store version as of now
             my $ver = $version;
+            my $cl;
 
             if($versionembedded) {
                 #
@@ -312,7 +325,7 @@ for $ref (@all) {
                 shift @five; # we already tried the latest
 
                 # while no data was received, try older versions
-                while(!content_length(@data) && @five) {
+                while(!($cl = content_length(@data)) && @five) {
                     $ver = shift @five;
                     $churl = $inurl;
                     $churl =~ s/\$version/$ver/g;
@@ -330,7 +343,7 @@ for $ref (@all) {
                 }
             }
 
-            if(!content_length(@data)) {
+            if(!$cl) {
                 logmsg sprintf(" None of the 5 latest versions found! Database contains version %s\n",
                                $$ref{'curl'});
                 logmsg " NOT updated\n";
@@ -342,18 +355,21 @@ for $ref (@all) {
 
             logmsg " Remote version found: $ver\n";
             logmsg sprintf " Present database version: %s\n", $$ref{'curl'};
+
+            if($versionembedded) {
+                # the version string is embedded in the test URL
+                # so we update the download URL as well!
+                $$ref{'file'}=$churl;
+            }
+            # store the size as well since we know it
+            $$ref{'size'}=$cl;
+
             if($$ref{'curl'} ne $ver) {
                 # TODO: actually store the new version here
                 $update++;
                 logmsg " NEWER version found!\n";
                 $$ref{'remdate'} = timestamp();
                 $$ref{'curl'} = $ver;
-                if($versionembedded) {
-                    # the version string is embedded in the test URL
-                    # so we update the download URL as well!
-                    $$ref{'file'}=$churl;
-                    logmsg " Updated download URL!\n";
-                }
             }
             else {
                 $uptodate++;
@@ -362,11 +378,12 @@ for $ref (@all) {
         }
     }
     else {
+        logmsg " Package lacks autocheck URL\n";
         $missing++;
     }
 }
 
-logmsg "*** SUMMARY ***\n";
+logmsg "<h1>Summary</h1>\n";
 logmsg "$uptodate remote packages found up-to-date with database versions\n";
 logmsg "$failedcheck packages failed to get checked\n";
 logmsg "$localpackage packages are local and taken care of differently\n";
