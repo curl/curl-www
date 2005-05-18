@@ -74,9 +74,9 @@ lfooter();
 
 # show a read-only (for this form) variable
 sub information {
-    my ($desc, $short)=@_;
+    my ($desc, $short, $explain)=@_;
     print "<tr><td class=\"desc\">$desc:</td><td>";
-    print CGI::escapeHTML($$ref{$short})."</td></tr>\n";
+    print CGI::escapeHTML($$ref{$short})." ($explain)</td></tr>\n";
 }
 
 sub alternative {
@@ -207,8 +207,9 @@ sub my_show_form()
     alternative("Match this regex in the autocheck URL", "chregex",
                 "make sure the first () group extracts the version number, unless \$version is part of check URL", 40);
 
-    information("Latest remcheck", "remcheck");
-    information("Latest remcheck update", "remdate");
+    information("Remcheck", "remcheck", "Most recent successful check");
+    information("Remcheck update", "remdate",
+                "Last updated by remcheck");
 
 ###slut
     print "</table>\n";
