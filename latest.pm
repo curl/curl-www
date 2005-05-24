@@ -54,9 +54,18 @@ sub gettype {
                "win32-nossl",
                "Windows, zip");
     }
+    elsif($file =~ /^curl-([0-9.]*)(-([0-9]*)|)-win32-nossl-sspi.zip$/) {
+        return($1,
+               "win32-nossl-sspi",
+               "Windows, zip. SSPI-enabled");
+    }
     elsif($file =~ /^curl-([0-9.]*)(-([0-9]*)|)-win32-ssl.zip$/) {
         return($1, "win32-ssl",
                  "Windows, zip, SSL-enabled");
+    }
+    elsif($file =~ /^curl-([0-9.]*)(-([0-9]*)|)-win32-ssl-sspi.zip$/) {
+        return($1, "win32-ssl-sspi",
+                 "Windows, zip, SSL-enabled, SSPI-enabled");
     }
     elsif($file =~ /^curl-([0-9.]*)(-([0-9]*)|)-win32-ssl-devel-mingw32.zip$/) {
         return($1, "win32-ssl-devel-mingw",
