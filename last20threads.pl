@@ -10,13 +10,15 @@ my %listnames = ('archive' => 'Users',
                  'lib' => 'Library',
                  'curlphp' => 'PHP',
                  'curlpython' => 'Python',
-                 'tracker' => 'Tracker');
+                 'tracker' => 'Tracker',
+                 'curlpp' => 'cURLpp');
 
 my %listrealname = ('archive' => 'curl-users',
                     'lib' => 'curl-library',
                     'curlphp' => 'curl-and-php',
                     'curlpython' => 'curl-and-python',
-                    'tracker' => 'curl-tracker');
+                    'tracker' => 'curl-tracker',
+                    'curlpp' => 'curlpp');
 
 opendir(DIR, $tree) || die "can't opendir $tree: $!";
 my @archives = grep { /^(.*)-(\d\d\d\d)-(\d\d)$/ && -d "$tree/$_" } readdir(DIR);
@@ -219,6 +221,10 @@ sub getthreads {
 
         $s =~ s/^((Sv|Réf[. ]*|Re *|RE\.|Fwd|FW|Re\[(\d+)\]): *)*//ig;
         $s =~ s/[ \t\n]+/ /g;
+
+        # Here's a special to strip off the subject prefix of the curlpp
+        # mailing list:
+        $s =~ s/\[cURLpp\] *//g;
 
         $store{$s}++;
 
