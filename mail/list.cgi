@@ -151,6 +151,22 @@ sub curltracker {
     return "http://cool.haxx.se/mailman/listinfo/curl-tracker";
 }
 
+sub curlpp {
+
+    my ($num)=@_;
+
+    my $some_dir=".";
+    opendir(DIR, $some_dir) || die "can't opendir $some_dir: $!";
+    my @dirs = sort {$a cmp $b} grep { /^curlpp-/ && -d "$some_dir/$_" } readdir(DIR);
+    closedir DIR;
+
+    &showarchs($num, @dirs);
+
+    # return subscription URL
+    return "http://www.rrette.com/mailman/listinfo/curlpp";
+}
+
+
 if($list) {
     my $subscr;
 
@@ -166,8 +182,7 @@ print <<MOO
 <br><a href="/mail/etiquette.html">Mailing List Etiquette</a>
 </div>
 <p>
-This is the complete web archive of all stored mails ever posted to the
-<b>$list</b> mailing list.
+This is a web archive of mails posted to the <b>$list</b> mailing list.
 
 MOO
     ;
@@ -188,6 +203,9 @@ MOO
     elsif($list eq "curl-tracker") {
         $subscr = curltracker();
     }
+    elsif($list eq "curlpp") {
+        $subscr = curlpp();
+    }
     else {
         print "$list? Are you playing with me? There's no such list!";
     }
@@ -203,7 +221,8 @@ MOO
                'curl-library',
                'curl-and-php',
                'curl-and-python',
-               'curl-tracker');
+               'curl-tracker',
+               'curlpp');
 
     my $n;
     for(@archs) {
