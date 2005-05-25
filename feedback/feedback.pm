@@ -54,12 +54,13 @@ sub Header {
 
     title($title);
 
-    print <<SLUT
+    print <<END
 <p>
+<a href="/donation.html"><img border="0" src="/pix/donate.png" alt="donate!" width="88" height="31" align="right"></a>
 [<a href="list.cgi">List Suggestions</a>]
 [<a href="addentry.cgi">Add Suggestion</a>]
-[<a href="/bugreport.html">Add Bug Report</a>]
-SLUT
+[<a href="/bugreport.html">Report a Bug</a>]
+END
     ;
 #    print "<h1>$title</h1>\n";
 }
