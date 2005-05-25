@@ -8,7 +8,7 @@ use feedback;
 
 Top();
 &where("Feedback", "/feedback/", "List Suggestions");
-Header("List Suggestions");
+Header("Provide Feedback");
 
 $ideasperpage = 25;
 
