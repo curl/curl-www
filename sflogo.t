@@ -1,4 +1,3 @@
-<a href="/donation.html"><img border="0" src="/pix/donate.png" alt="donate!" width="88" height="31"></a>
 <p>
 <TABLE WIDTH="120" CELLPADDING="4" HEIGHT="240" style="border-width: thin;
 border-style: solid;" BORDERCOLOR="#000000" BGCOLOR="#CCCCCC"><TR><TD VALIGN="TOP"><DIV ALIGN="CENTER"><A HREF="http://searchenginez.com"><FONT FACE="Verdana, Arial, Helvetica, sans-serif" SIZE="1">Search 
