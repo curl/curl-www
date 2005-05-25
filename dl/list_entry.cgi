@@ -96,7 +96,12 @@ for $per (@sall) {
            $fi, $$per{'curl'});
     printf("<td>%s", $$per{'hide'} eq "Yes"?"Hide ":"");
 
-    printf("%s</td>", $here?"Local":($$per{'churl'}?"Auto":""));
+    my $churl = $$per{'churl'};
+    if($churl eq "-") {
+        $churl = "";
+    }
+        
+    printf("%s</td>", $here?"Local":($churl?"Auto":""));
 
     if($here || $$per{'churl'}) {
         $auto++;

@@ -63,12 +63,20 @@ sub show {
 sub content_length {
     my (@doc)=@_;
     my $cl;
+    my $stat=0;
 
     if(join("", @doc) =~ /Content-Length: *(\d+)/i) {
         $cl = $1;
+        $stat = 1;
         logmsg " Content-Length: $cl found\n";
     }
-    return $cl;
+    elsif((join("", @doc) =~ /^HTTP\/\d.\d (\d+)/)  && ($1 == 200)) {
+        # still, it return 200 which indicates OK!
+        logmsg " No Content-Length but 200 response-code!\n";
+        $stat = 1;
+    }
+
+    return ($cl, $stat);
 }
 
 sub getlast5versions {
@@ -119,7 +127,7 @@ sub islast5versions {
 my %urlhash;
 sub geturl {
     my ($url, $head) = @_;
-    my $curlcmd="curl -Lfsm20";
+    my $curlcmd="curl -Lfsm120";
 
     if(!$head) {
         my $t = time();
@@ -190,14 +198,12 @@ for $ref (@all) {
         next;
     }
     
-    logmsg sprintf "<h2>Package: $desc <a href=\"http://curl.haxx.se/dl/mod_entry.cgi?__id=%s\">edit</a></h2>", $$ref{'__id'};
-    
     my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) =
         gmtime(time);
     my $t = sprintf ("%02d:%02d:%02d", $hour, $min, $sec);
 
-    logmsg "Time: $t\n";
-
+    logmsg sprintf "<h2>$t $desc <a href=\"http://curl.haxx.se/dl/mod_entry.cgi?__id=%s\">edit</a></h2>", $$ref{'__id'};
+    
     if($$ref{'curl'} eq $version) {
         logmsg " Already at latest version ($version), no need to check\n";
         $uptodate++;
@@ -206,7 +212,7 @@ for $ref (@all) {
         logmsg " Local package, no check needed\n";
         $localpackage++;
     }
-    elsif($churl) {
+    elsif($churl && ($churl ne "-")) {
         # there's a URL to check
 
         if(!islast5versions($$ref{'curl'})) {
@@ -229,9 +235,7 @@ for $ref (@all) {
         # first unescape HTML encoding
         $churl = CGI::unescapeHTML($churl);
 
-        logmsg sprintf(" Check URL: <a href=\"%s\">%s</a>\n",
-                       CGI::escapeHTML($churl),
-                       CGI::escapeHTML($churl));
+        logmsg sprintf(" Check URL: %s\n", CGI::escapeHTML($churl));
 
         # expand $version!
         if($churl =~ s/\$version/$version/g) {
@@ -240,10 +244,6 @@ for $ref (@all) {
             $versionembedded=1;
         }
         $churl =~ s/\$osversion/$osversion/g;
-
-        logmsg sprintf(" Use URL: <a href=\"%s\">%s</a>\n",
-                       CGI::escapeHTML($churl),
-                       CGI::escapeHTML($churl));
 
         my @data;
 
@@ -299,7 +299,6 @@ for $ref (@all) {
                     }
                     else {
                         $uptodate++;
-                        logmsg " NOT updated\n";
                     }
                     last;
                 }
@@ -313,9 +312,11 @@ for $ref (@all) {
 
             # store version as of now
             my $ver = $version;
-            my $cl;
+            my $cl, $st;
 
-            if($versionembedded) {
+            ($cl, $st) = content_length(@data);
+
+            if(!$st && $versionembedded) {
                 #
                 # Only scan for older URLs if the $version is part of it
                 #
@@ -325,42 +326,44 @@ for $ref (@all) {
                 shift @five; # we already tried the latest
 
                 # while no data was received, try older versions
-                while(!($cl = content_length(@data)) && @five) {
+                while(@five && !$st) {
+
+                    if($ver eq $$ref{'curl'}) {
+                        # no need to scan for older packages than what
+                        # we already have
+                        last;
+                    }
+
                     $ver = shift @five;
                     $churl = $inurl;
                     $churl =~ s/\$version/$ver/g;
                     $churl =~ s/\$osversion/$osversion/g;
                     
-                    logmsg " Retry with version $ver: \"$churl\"\n";
                     @data = geturl($churl, 1);
-
-                    if($ver eq $$ref{'curl'}) {
-                        # no need to scan for older packages than what we
-                        # already have
-                        last;
-                    }
+                    ($cl, $st) = content_length(@data);
                 }
             }
 
-            if(!$cl) {
-                logmsg " <div class\"buildfail\">None of the 5 latest versions found!\n";
-                logmsg " NOT updated</div>\n";
+            if(!$st) {
+                logmsg " <div class=\"buildfail\">None of the 5 latest versions found!</div>\n";
                 $failedcheck++;
                 next;
             }
 
             $$ref{'remcheck'} = timestamp();
 
-            logmsg " Remote version found: $ver\n";
-            logmsg sprintf " Present database version: %s\n", $$ref{'curl'};
+            logmsg " Remote version: <b>$ver</b>\n";
 
             if($versionembedded) {
                 # the version string is embedded in the test URL
                 # so we update the download URL as well!
                 $$ref{'file'}=$churl;
             }
-            # store the size as well since we know it
-            $$ref{'size'}=$cl;
+            # store the size as well if we know it
+            if($cl) {
+                $$ref{'size'}=$cl;
+                logmsg " Store size: $cl bytes\n";
+            }
 
             if($$ref{'curl'} ne $ver) {
                 # TODO: actually store the new version here
@@ -371,7 +374,6 @@ for $ref (@all) {
             }
             else {
                 $uptodate++;
-                logmsg " NOT updated\n";
             }
         }
     }
@@ -379,6 +381,7 @@ for $ref (@all) {
         logmsg " Package lacks autocheck URL\n";
         $missing++;
     }
+    $db->save();
 }
 
 logmsg "<h1>Summary</h1>\n";
