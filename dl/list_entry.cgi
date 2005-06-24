@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 
 require "stuff.pm";
+require "dtime.pm";
 
 $id=CGI::param("__id");
 
@@ -38,16 +39,14 @@ sub sortent {
 
 print "<table cellpadding=\"1\" cellspacing=\"0\"><tr class=\"tabletop\">\n";
     
-for $h (('edit',
-         'Package',
+for $h (('Package',
          'Version',
-         'Details',
+         'Update',
          'Type',
          'SSL',
- #        'Date',
-         'Submitter',
- #        'Size',
-         'Picture')) {
+         'Who',
+         'Pic',
+         'Check')) {
     print "<th>$h</th>\n";
 }
 print "</tr>\n";
@@ -60,9 +59,24 @@ sub show {
     return $t;
 }
 
+sub since {
+    my ($then)=@_;
+
+    if($then =~ /^(\d\d\d\d)(\d\d)(\d\d)-(\d\d)(\d\d)(\d\d)/) {
+        my ($year, $mon, $day, $hour, $min, $sec)=($1,$2,$3,$4,$5,$6);
+        my $ttime = timelocal($sec, $min, $hour, $day, $mon-1, $year-1900);
+
+        return sprintf("%d d", (time()-$ttime)/(24*60*60));
+    }
+    else {
+        return "!";
+    }
+}
+
 my $i=0;
 my $utd=0; # up to date
 my $auto=0; # auto or local
+my $hidden=0; # hidden
 for $per (@sall) {
     my $cl;
     if($stable eq $$per{'curl'}) {
@@ -72,19 +86,24 @@ for $per (@sall) {
     else {
         $cl = sprintf(" class=\"%s\"", ($i&1)?"even":"odd");
     }
-    print "<tr$cl><td><a href=\"mod_entry.cgi?__id=".$$per{'__id'}."\">edit</a></td>";
 
     my $s = $$per{'os'};
 
     if($s eq "-") {
         $s = "Generic";
     }
-    printf("<td>%s %s %s %s %s</td>",
-           $s,
-           show($$per{'osver'}),
-           show($$per{'cpu'}),
-           show($$per{'flav'}),
-           show($$per{'pack'}));
+    my $packname =
+        sprintf("%s %s %s %s %s",
+                $s,
+                show($$per{'osver'}),
+                show($$per{'cpu'}),
+                show($$per{'flav'}),
+                show($$per{'pack'}));
+    if($packname =~ /^[ \t]$/) {
+        $packname = "nameless";
+    }
+
+    print "<tr$cl><td><a href=\"mod_entry.cgi?__id=".$$per{'__id'}."\">$packname</a></td>";
 
     my $fi = $$per{'file'};
     my $here;
@@ -95,6 +114,9 @@ for $per (@sall) {
     printf("<td><a href=\"%s\">%s</a></td>",
            $fi, $$per{'curl'});
     printf("<td>%s", $$per{'hide'} eq "Yes"?"Hide ":"");
+    if($$per{'hide'} eq "Yes") {
+        $hidden++;
+    }
 
     my $churl = $$per{'churl'};
     if($churl eq "-") {
@@ -106,9 +128,11 @@ for $per (@sall) {
     if($here || $$per{'churl'}) {
         $auto++;
     }
+    my $type = $$per{'type'};
+    $type =~ s/source/src/;
+    $type =~ s/devel/dev/;
+    printf("<td>%s</td>", show($type));
 
-    printf("<td>%s</td>", $$per{'type'}eq"bin"?
-           "bin":show($$per{'type'}));
     printf("<td>%s</td>",
            $$per{'ssl'}eq"Yes"?"SSL":
            $$per{'ssl'}eq"No"?"&nbsp;":$$per{'ssl'});
@@ -119,12 +143,15 @@ for $per (@sall) {
  #   printf("<td>%s</td>", show($$per{'size'}));
 #    printf("<td>%s</td>",
 #           $$per{'img'}?"<img src=\"/pix/".$$per{'img'}."\">":"[none]");
-    printf("<td>%s</td>", $$per{'img'}?"[PIC]":"&nbsp;");
+    printf("<td>%s</td>", $$per{'img'}?"pic":"&nbsp;");
+
+    printf("<td>%s</td>",
+           $here?"-":($churl?since($$per{'remcheck'}):"manual"));
     print "</tr>\n";
     $i++;
 }
 print "</table>",
-    "<p> $i entries, $utd is up-to-date, $auto is auto or local\n";
+    "<p> $i entries, $utd is up-to-date, $auto is auto or local, $hidden are hidden\n";
 
 # Skriv ut sidfoten
 lfooter();
