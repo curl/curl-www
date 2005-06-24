@@ -132,8 +132,8 @@ sub geturl {
     if(!$head) {
         my $t = time();
     
-        # two weeks ago
-        $t -= (24*3600)*14;
+        # six weeks ago
+        $t -= (24*3600)*7*6;
 
         my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) =
             gmtime($t);
@@ -163,6 +163,7 @@ sub geturl {
     return @content;
 }
 
+my $regexmisses=0;
 my $update=0;
 my $uptodate=0;
 my $missing=0;
@@ -303,7 +304,10 @@ for $ref (@all) {
                     last;
                 }
             }
-            logmsg " NO line matched the regex!\n" if(!$match);
+            if(!$match) {
+                $regexmisses++;
+                logmsg "<div class=\"buildfail\">NO line matched the regex!</div>\n";
+            }
         }
         else {
             # since there's no regex, just do a head request to verify the
@@ -312,7 +316,7 @@ for $ref (@all) {
 
             # store version as of now
             my $ver = $version;
-            my $cl, $st;
+            my ($cl, $st);
 
             ($cl, $st) = content_length(@data);
 
@@ -389,6 +393,7 @@ logmsg "$uptodate remote packages found up-to-date with database versions\n";
 logmsg "$failedcheck packages failed to get checked\n";
 logmsg "$localpackage packages are local and taken care of differently\n";
 logmsg "$oldies checks were skipped due to old release number\n";
+logmsg "$regexmisses regexes didn't match on successful URL fetches\n";
 
 if($missing) {
     logmsg "$missing listed packages lacked autocheck URL\n";
