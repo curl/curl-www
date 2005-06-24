@@ -231,7 +231,7 @@ for $per (@sall) {
            $mirror?"</a>":"");
 
     my $fi = $$per{'file'};
-    if($fi !~ /^(http|ftp):/) {
+    if($fi !~ /^(http|ftp|javascript):/) {
         $fi = "/download/$fi";
     }
     else {
