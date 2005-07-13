@@ -6,7 +6,8 @@ MAINPARTS= ../_doctype.html _menu.html ../_footer.html ../setup.t ../pic.t \
    ../where.t ../ad.t ../libcurl/_links.html ../mirrorlinks.t		   \
    ../css.t ../sflogo.t Makefile
 NOW=$(shell gnudate +'-D__TODAY__=%B %e, %Y')
-ACTION=@echo preprocessing $@; rm -f $@; fcpp -I.. -Idocs -WWW -Uunix -H -C -V -P -LL "$(NOW)" $< $@;
+FCPPOPTS=-I.. -Idocs -WWW -Uunix -H -C -V -P -LL "$(NOW)"
+ACTION=@echo preprocessing $@; rm -f $@; fcpp $(FCPPOPTS) $< $@;
 
 TXT2HTML= txt2html --extract --hrule 10
 TXT2PLAIN = txt2plain.pl
@@ -86,15 +87,10 @@ press.html: _press.html $(MAINPARTS)
 	$(ACTION)
 
 thanks.html: _thanks.html $(MAINPARTS) thanks.t
-	(nc=`tr ',' '\012' < thanks.t | wc -l`; \
-        oc=`wc -l thanks.t | awk '{print $$1}' `; \
-	actual=`echo $$nc - $$oc + 1 | bc`; \
-	echo preprocessing $@; \
-	echo "People: $$actual"; \
-	fcpp -I.. -Idocs -WWW -Uunix -H -C -V -P -LL -D__NUM__=$$actual "$(NOW)" $< $@;)
+	actual=`wc -l thanks.t | awk '{print $$1}'` && fcpp $(FCPPOPTS) -D__NUM__=$$actual $< $@
 
 thanks.t: $(DOCROOT)/THANKS
-	$(TXT2PLAIN) < $< | grep -v "^ " > $@
+	grep "^[A-Za-z]" $(DOCROOT)/THANKS | awk '{ print $$0 ", ";}' > $@
 
 faq.html: _faq.shtml $(MAINPARTS) faq.t
 	$(ACTION)
