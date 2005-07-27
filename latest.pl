@@ -40,6 +40,7 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden (Uppsala)',
              'http://curl.meulie.net/download/' => 'Canada (Toronto)',
              'http://curl.miscellaneousmirror.org/download/' =>
              'Germany (Cologne)',
+             'http://curl.hostingzero.com/download/' => 'US (Texas)',
              );
 
 sub present {
