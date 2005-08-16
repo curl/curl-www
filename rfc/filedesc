@@ -49,6 +49,7 @@ rfc1884.txt IP Version 6 Addressing Architecture (obsolete)
 rfc2373.txt IP Version 6 Addressing Architecture (obsolete)
 rfc3513.txt IP Version 6 Addressing Architecture
 draft-murray-auth-ftp-ssl-15.txt Securing FTP with TLS
+draft-murray-auth-ftp-ssl-16.txt Securing FTP with TLS
 ntlm.html Eric Glass' NTLM Authentication Protocol specification
 draft-brezak-spnego-http-04.txt SPNEGO Access Authentication
 draft-luotonen-web-proxy-tunneling-01.txt Tunneling TCP based protocols through Web proxy servers
