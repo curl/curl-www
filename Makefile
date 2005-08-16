@@ -25,11 +25,11 @@ ACTION=@echo preprocessing $@; \
        cpp -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
        chmod a-w+r $@
 
-all: index.html feedback.html mirrors.html cvs.html libs.html help.html	  \
- download.html changes.html bugreport.html about.html support.html	  \
- newslog.html news.html head.html foot.html oldnews.html \
- info web-editing.html	  \
- donation.html devel.html competition.html search.html index2.html
+all: index.html feedback.html mirrors.html cvs.html libs.html		\
+ help.html download.html changes.html bugreport.html about.html		\
+ support.html newslog.html news.html head.html foot.html oldnews.html	\
+ info web-editing.html ad.html donation.html devel.html			\
+ competition.html search.html index2.html
 	cd docs; make
 	cd libcurl; make
 	cd mail; make
@@ -148,6 +148,9 @@ infolxr.html: _infolxr.html $(MAINPARTS)
 	$(ACTION)
 
 support.html: _support.html $(MAINPARTS)
+	$(ACTION)
+
+ad.html: ad.t
 	$(ACTION)
 
 #archive/index.html: mail
