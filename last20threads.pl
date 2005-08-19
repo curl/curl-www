@@ -219,12 +219,12 @@ sub getthreads {
 
         my $s= $subject;
 
-        $s =~ s/^((Sv|Réf[. ]*|Re *|RE\.|Fwd|FW|Re\[(\d+)\]): *)*//ig;
-        $s =~ s/[ \t\n]+/ /g;
-
         # Here's a special to strip off the subject prefix of the curlpp
         # mailing list:
         $s =~ s/\[cURLpp\] *//g;
+
+        $s =~ s/^((Sv|Réf[. ]*|Re *|RE\.|Fwd|FW|Re\[(\d+)\]): *)*//ig;
+        $s =~ s/[ \t\n]+/ /g;
 
         $store{$s}++;
 
