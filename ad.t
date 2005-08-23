@@ -52,7 +52,7 @@ google_color_text = "000000";
 
 </td><td>
 <a href="http://www.haxx.se/curl.html"><img border="0" width="150" height="60"
-src="/ad/haxx-curl-ad3.png" alt="Haxx ad"></a>
+src="WEBROOT/ad/haxx-curl-ad3.png" alt="Haxx ad"></a>
 </td>
 </tr></table>
 
