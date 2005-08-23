@@ -1,5 +1,5 @@
 MAINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t	\
-libcurl/_links.html ad.t mirrorlinks.t css.t sflogo.t ad.t
+libcurl/_links.html ad.t mirrorlinks.t css.t sflogo.t
 
 # today's date
 NOW=$(shell gnudate +'-D__TODAY__=%B %e, %Y')
@@ -150,7 +150,7 @@ infolxr.html: _infolxr.html $(MAINPARTS)
 support.html: _support.html $(MAINPARTS)
 	$(ACTION)
 
-ad.html: ad.t
+ad.html: _ad.html ad.t
 	$(ACTION)
 
 #archive/index.html: mail

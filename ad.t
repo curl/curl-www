@@ -1,9 +1,13 @@
+#ifndef WEBROOT
+#define WEBROOT
+#endif
+
 #ifdef CURL_MAIN
 #define AD_PRICERUNNER
 #else
 #define AD_GOOGLETOP
 #endif
-<table width="100%"><tr valign="top"><td> <a href="/"><img border="0" src="/ds-curlicon.png"
+<table width="100%"><tr valign="top"><td> <a href="WEBROOT/"><img border="0" src="WEBROOT/ds-curlicon.png"
 width="99" height="37" alt="cURL"></a></td>
 <td align="center">
 <table><tr valign="top"><td>
@@ -54,5 +58,5 @@ src="/ad/haxx-curl-ad3.png" alt="Haxx ad"></a>
 
 </td>
 <td align="right"><a
-href="/libcurl/"><img src="/ds-libcurlicon.png" border="0" alt="libcurl"
+href="WEBROOT/libcurl/"><img src="WEBROOT/ds-libcurlicon.png" border="0" alt="libcurl"
 width="99" height="37"></a></td></tr></table>
