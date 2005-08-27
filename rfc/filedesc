@@ -1,5 +1,9 @@
 cookie_spec.html Netscape's cookie specification
-rfc0959.txt FILE TRANSFER PROTOCOL (FTP)
+rfc0822.txt Arpa Internet Text Messages (mostly for the date format)
+rfc0850.txt Interchange of USENET Messages (mostly for the date format) 
+rfc1036.txt Interchange of USENET Messages (mostly for the date format)
+rfc1123.txt Requirements for Internet Hosts
+rfc0959.txt File Transfer Protocol (FTP)
 rfc1635.txt How to Use Anonymous FTP
 rfc1639.txt FTP Operation Over Big Address Records (FOOBAR)
 rfc1738.txt Uniform Resource Locators (obsoleted by RFC 2396)
