@@ -36,6 +36,12 @@ LINK("", Copyright )
 VLINK("/docs/copyright.html", Copyright &raquo;)
 #endif
 
+#ifdef LEGAL_DISTRO_DILEMMA
+LINK("", Distro Dilemma )
+#else
+VLINK("/legal/distro-dilemma.html", Distro Dilemma)
+#endif
+
 #ifdef LEGAL_LICMIX
 LINK("", Licence Mixing )
 #else

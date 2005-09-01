@@ -11,7 +11,7 @@ ACTION=@echo preprocessing $@; rm -f $@; cpp -I$(ROOT) -Idocs -WWW -Uunix -H -C 
 
 TXT2PLAIN = txt2plain.pl
 
-all: index.html thename.html licmix.html
+all: index.html thename.html licmix.html distro-dilemma.html
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
@@ -22,7 +22,13 @@ thename.html: _thename.html $(MAINPARTS)
 licmix.html: _licmix.html $(MAINPARTS) licmix.t
 	$(ACTION)
 
+distro-dilemma.html: _distro-dilemma.html $(MAINPARTS) distro.t
+	$(ACTION)
+
 licmix.t: $(DOCROOT)/LICENSE-MIXING
+	$(TXT2PLAIN) < $< > $@
+
+distro.t: $(DOCROOT)/DISTRO-DILEMMA
 	$(TXT2PLAIN) < $< > $@
 
 full: all
