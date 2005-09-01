@@ -44,6 +44,52 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 <li> <a href="http://curl.haxx.se/auto/cvshistory.html">recent CVS activity</a>
  </ul>
 
+SUBTITLE(Fixed in 7.14.1 - September 1 2005)
+<p> Changes:
+<ul>
+ <li> GNU GSS support
+ <li> --ignore-content-length and CURLOPT_IGNORE_CONTENT_LENGTH added
+ <li> negotiates data connection SSL earlier when doing FTPS with PASV
+ <li> CURLOPT_COOKIELIST and CURLINFO_COOKIELIST
+ <li> trailer support for chunked encoded data streams 
+ <li> -x/CURL_PROXY strings may now contain user+password
+ <li> --trace-time now outputs the full microsecond, all 6 digits
+</ul>
+<p> Bugfixes:
+<ul>
+ <li> MSVC build problem with the DSP file
+ <li> windows threaded resolver access violation with multi interface
+ <li> test suite works with valgrind 3
+ <li> CA cert verification with GnuTLS builds
+ <li> handles expiry times in cookie files that go beyond 32 bits in size
+ <li> several client problems with files, such as doing -d @file when the file
+   isn't readable now gets a warning displayed
+ <li> write callback abort didn't always "take"
+ <li> the curl -z "bad syntax" warning is now hidden when -s is used
+ <li> curl -d @nonexisting no longer makes a GET
+ <li> minor debug callback data size
+ <li> date parsing of dates including daylight savings time zone names
+ <li> using NTLM over proxy with an FTP URL
+ <li> curl-config --features now displays SSL when built with GnuTLS too
+ <li> CURLOPT_HTTPGET, CURLOPT_POST and CURLOPT_HTTPPOST reset CURLOPT_NOBODY
+ <li> builds fine on AmigaOS again
+ <li> corrected date parsing on Windows with auto-DST-adjust enabled
+ <li> treats CONNECT 407 responses with bodies better during Digest/NTLM auth
+ <li> improved strerror_r() API guessing when cross-compiling
+ <li> debug builds work on Tru64
+ <li> improved libcurl.m4
+ <li> possible memory leak in windows name resolves
+ <li> c-ares enabled build with mingw
+ <li> proxy host set with numerical IPv6 address
+ <li> better treatment of binary zeroes in HTTP response headers
+ <li> fixed the notorious FTP server failure in the test suite
+ <li> better checking of text output in the test suite on windows
+ <li> FTP servers' TYPE command response check made less strict
+ <li> URL-without-slash as in http://somehost?data
+ <li> strerror_r() configure check for HP-UX 10.20 (and others)
+ <li> time parse work-around on HP-UX 10.20 since its gmtime_r() is broken
+</ul>
+
 SUBTITLE(Fixed in 7.14.0 - May 16 2005)
 <p> Changes:
 <ul>
