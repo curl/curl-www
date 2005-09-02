@@ -1,15 +1,17 @@
 cookie_spec.html Netscape's cookie specification
 rfc0822.txt Arpa Internet Text Messages (mostly for the date format)
 rfc0850.txt Interchange of USENET Messages (mostly for the date format) 
+rfc0959.txt File Transfer Protocol (FTP)
 rfc1036.txt Interchange of USENET Messages (mostly for the date format)
 rfc1123.txt Requirements for Internet Hosts
-rfc0959.txt File Transfer Protocol (FTP)
+rfc1350.txt The TFTP Protocol (Revision 2)
 rfc1635.txt How to Use Anonymous FTP
 rfc1639.txt FTP Operation Over Big Address Records (FOOBAR)
 rfc1738.txt Uniform Resource Locators (obsoleted by RFC 2396)
 rfc1777.txt Lightweight Directory Access Protocol
 rfc1808.txt Relative Uniform Resource Locators
 rfc1867.txt Form-based File Upload in HTML
+rfc1884.txt IP Version 6 Addressing Architecture (obsolete)
 rfc1928.txt SOCKS Protocol Version 5
 rfc1945.txt Hypertext Transfer Protocol -- HTTP/1.0
 rfc1950.txt ZLIB Compressed Data Format Specification
@@ -27,10 +29,11 @@ rfc2183.txt The Content-Disposition Header Field
 rfc2184.txt MIME Parameter Value and Encoded Word Extensions
 rfc2228.txt FTP Security Extensions
 rfc2229.txt A Dictionary Server Protocol
+rfc2231.txt MIME Parameter Value and Encoded Word Extensions:  Character Sets, Languages, and Continuations
 rfc2246.txt The TLS Protocol
 rfc2255.txt Newer LDAP URL syntax document.
-rfc2231.txt MIME Parameter Value and Encoded Word Extensions:  Character Sets, Languages, and Continuations
 rfc2326.txt Real Time Streaming Protocol (RTSP)
+rfc2373.txt IP Version 6 Addressing Architecture (obsolete)
 rfc2388.txt Returning Values from Forms: multipart/form-data
 rfc2389.txt Feature negotiation mechanism for FTP
 rfc2396.txt Uniform Resource Identifiers: Generic Syntax and Semantics
@@ -49,9 +52,8 @@ rfc2936.txt HTTP MIME Type Handler Detection
 rfc2964.txt Use of HTTP State Management
 rfc2965.txt HTTP State Management Mechanism. Cookies. (Obsoletes RFC2109)
 rfc3280.txt Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile
-rfc1884.txt IP Version 6 Addressing Architecture (obsolete)
-rfc2373.txt IP Version 6 Addressing Architecture (obsolete)
 rfc3513.txt IP Version 6 Addressing Architecture
+rfc3617.txt Uniform Resource Identifier (URI) Scheme for TFTP
 draft-murray-auth-ftp-ssl-15.txt Securing FTP with TLS
 draft-murray-auth-ftp-ssl-16.txt Securing FTP with TLS
 ntlm.html Eric Glass' NTLM Authentication Protocol specification
