@@ -219,6 +219,12 @@ LINK("", Scheme)
 VLINK(/libcurl/scheme/, Scheme)
 #endif
 
+#ifdef LIBCURL_SLANG
+LINK("", S-Lang)
+#else
+VLINK(/libcurl/slang/, S-Lang)
+#endif
+
 #ifdef LIBCURL_TCL
 LINK("", Tcl)
 #else
