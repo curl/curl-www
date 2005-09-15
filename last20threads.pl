@@ -120,7 +120,7 @@ for(reverse sort { $log{$a} cmp $log{$b} } keys %log) {
         my $subjectline=sprintf("<tr class=\"%s\"><td><a href=\"%s\">%s</a></td>\n",
                                 $line,
                                 file2url($_),
-                                $subj?$subj:"(no subject)");
+                                $subj?&CGI::escapeHTML($subj):"(no subject)");
 
         #20041105 11:05:25
         my $da = $log{$_};
@@ -189,7 +189,9 @@ sub parsehtmlfile {
             $email = $1;
         }
         elsif(/^<!-- subject=\"([^\"]*)\"/) {
-            $subject = $1;
+            my $hm = $1;
+            $hm =~ s/\&ndash;/-/g;
+            $subject = &CGI::unescapeHTML($hm);
         }
         elsif(/^<!-- inreplyto=\"([^\"]*)\"/) {
             $inreplyto = $1;
