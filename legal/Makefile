@@ -29,7 +29,7 @@ licmix.t: $(DOCROOT)/LICENSE-MIXING
 	$(TXT2PLAIN) < $< > $@
 
 distro.t: $(DOCROOT)/DISTRO-DILEMMA
-	$(TXT2PLAIN) < $< > $@
+	./dilemma.pl < $< > $@
 
 full: all
 
