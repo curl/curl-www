@@ -1,0 +1,49 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Mailing List Data Were Lost</TITLE>
+#include "css.t"
+</HEAD>
+
+#define CURL_MAIL_LOST
+#define CURL_URL mail
+
+#include "_menu.html"
+#include "setup.t"
+#include "table.t"
+
+WHERE2(Mailing Lists, "/mail/", Lost Mailing List Data)
+
+TITLE(Lost Mailing List Data)
+<p>
+  At exactly 23:17 CET on September 16th 2005 - a malicious user deleted all
+  existing mailing list info and all lists of then currently subscribed
+  users. He did this vicious act by exploiting a security hole in the twiki
+  installation we have on the same server that hosts the curl mailing lists
+  (cool.haxx.se).  Lots of other data was erased as well but that did
+  fortunately not affect this project.
+<p>
+  With the hole fixed, we restored backups only to discover that we had messed
+  up and hadn't actually backed up the mailing lists <i>at all</i>.
+<p>
+  In order to minimize the damage, I wrote up a script that scanned the logs
+  of subscribe requests and recent postings to the mailing lists and imported
+  these lists to the appropriate mailing lists.
+<p>
+  This had several immediate side-effects:
+<ol>
+  <li> people who haven't posted nor subscribed recently were lost completely
+  <li> some people that had already unsubscribed wrongly got re-added
+  <li> everyone got a new password set for the membership on the list (and thus
+      for their preference edits etc)
+</ol>
+
+<p>
+ Still, we got several hundred legitimate subscribers back this way. We just
+ have to bear the initial flood of people sending 'unsubscribe' request to the
+ list (against all sense and knowledge).
+<p>
+ The mailing list archives weren't affected. They are even hosted on a
+ different server.
+
+#include "_footer.html"
+</body></html>
