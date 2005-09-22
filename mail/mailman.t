@@ -33,7 +33,8 @@
  be sent email requesting confirmation. The list of members is only visible to
  admins.
 
- <ul>
+<p>
+ <MM-Subscribe-Form-Start>
  <TABLE BORDER="0" CELLSPACING="2" CELLPADDING="2">
  <TR>
    <TD BGCOLOR="#dddddd">Your email address:</TD>
@@ -63,12 +64,11 @@
  <mm-digest-question-end>
  <tr>
    <td colspan="2">
-   <center><MM-Subscribe-Button></P></center>
+   <center><MM-Subscribe-Button></center>
    </td>
  </tr>
  </TABLE>
  <MM-Form-End>
- </ul>
 
  <a name="subscribers"></a>
  <h2><MM-List-Name> preferences</h2>
