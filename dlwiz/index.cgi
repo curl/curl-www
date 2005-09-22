@@ -620,9 +620,9 @@ sub single {
 
 <p>This package is <b>not</b> built from the latest version available. This is
 version <b>$version</b> while the latest source available has version
-<b>$latest::headver</b>. This might be OK for you. If not, ${premail}contact
-the maintainer of this package ${maint}and ask kindly for an
-update${postmail}. Or get a 'source' package and build a newer one yourself.
+<b>$latest::headver</b>. This might be OK for you. If not, contact
+the maintainer of this package ${premail}${maint}${postmail} and ask kindly for an
+update. Or get a 'source' package and build a newer one yourself.
 
 MOO
 ;
