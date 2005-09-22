@@ -225,7 +225,7 @@ sub getthreads {
         # mailing list:
         $s =~ s/\[cURLpp\] *//g;
 
-        $s =~ s/^((Sv|Réf[. ]*|Re *|RE\.|Fwd|FW|Re\[(\d+)\]): *)*//ig;
+        $s =~ s/^((Sv|Réf[. ]*|Re *|RE\.|Fwd|AW|FW|Re\[(\d+)\]): *)*//ig;
         $s =~ s/[ \t\n]+/ /g;
 
         $store{$s}++;
