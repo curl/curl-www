@@ -169,6 +169,7 @@ sub curlpp {
 
 if($list) {
     my $subscr;
+    my $none;
 
     &header("The $list Mailing List");
 
@@ -181,8 +182,6 @@ print <<MOO
 <b>Related:</b>
 <br><a href="/mail/etiquette.html">Mailing List Etiquette</a>
 </div>
-<p>
-This is a web archive of mails posted to the <b>$list</b> mailing list.
 
 MOO
     ;
@@ -206,9 +205,25 @@ MOO
     elsif($list eq "curlpp") {
         $subscr = curlpp();
     }
+    elsif(($list eq "curl-announce") ||
+          ($list eq "curl-www-commits") ||
+          ($list eq "curl-commits")) {
+        $subscr = "http://cool.haxx.se/cgi-bin/mailman/listinfo/$list";
+        print "There is no archive of this list.";
+        $none=1;
+    }
     else {
         print "$list? Are you playing with me? There's no such list!";
+        $none=1;
     }
+
+    if(!$none) {
+print <<MOO
+<p>
+This is a web archive of mails posted to the <b>$list</b> mailing list.
+MOO
+;
+}
 
     if($subscr) {
         &subtitle("Subscribe to $list");
