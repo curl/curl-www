@@ -14,39 +14,45 @@
 
 WHERE2(Docs, "/docs/", CA Extract)
 
-TITLE(Extract CA Certs from Mozilla)
+TITLE(Extract CA Certs from mozilla.org)
 <div class="relatedbox">
 <b>Related:</b>
 <br><a href="sslcerts.html">SSL Certs</a>
 </div>
-<p>
- Roland Krikava provided this very useful script that builds a CA cert bundle
- useful for curl, by extracting information provided in the <a
- href="http://www.mozilla.org/">Mozilla</a> source tree. The Mozilla file
- needed for this job is named
- <a href="http://lxr.mozilla.org/seamonkey/source/security/nss/lib/ckfw/builtins/certdata.txt">/mozilla/security/nss/lib/ckfw/builtins/certdata.txt</a>.
+<p class="ingres">
+ The <a href="parse-certs.txt">parse-certs</a> script converts <a
+ href="http://www.mozilla.org/">Mozilla</a>'s CA cert bundle to PEM format,
+ suitable for (lib)curl and others. Writtten by Roland Krikava.
 
+SUBTITLE(Automated Conversions)
 <p>
- <a href="parse-certs.txt">parse-certs.sh</a> is a shell script with an
+ We provide automated conversions. The
+ output CA bundle file in PEM format is available from here:
+ <ul>
+ <li> <a
+ href="http://curl.haxx.se/ca/cacert.pem">cacert.pem</a> (~420KB)
+ <li> <a
+ href="http://curl.haxx.se/ca/cacert.pem.gz">cacert.pem.gz</a> (~150 KB).
+ <li> <a
+ href="http://curl.haxx.se/ca/cacert.pem.bz2">cacert.pem.bz2</a> (~120 KB).
+</ul>
+<p>
+ The file contains the datestamp of the conversion.
+
+SUBTITLE(Requirements)
+<o>
+ It is a shell script with an
  embedded Ruby script. You thus need to have Ruby installed to make this work.
-
+ The script uses the 'openssl' tool and it requires the version
+ that comes with the 0.9.7 series or later.
 <p>
- <b>Note:</b> the script uses the 'openssl' tool and it requires the version
- that comes with the 0.9.7 series.
-
-SUBTITLE(We Did This For You)
-<p>
- We run a script regularly that makes this conversion automatically. The
- output CA bundle file in PEM format is available from here: <a
- href="http://curl.haxx.se/ca/cacert.pem">cacert.pem</a> (~320KB) and <a
- href="http://curl.haxx.se/ca/cacert.pem.gz">cacert.pem.gz</a> (~113 KB).
-<p>
- The output file contains the datestamp of the conversion.
+ The exact Mozilla file needed for this job is found at <a
+ href="http://lxr.mozilla.org/seamonkey/source/security/nss/lib/ckfw/builtins/certdata.txt">/mozilla/security/nss/lib/ckfw/builtins/certdata.txt</a>.
 
 SUBTITLE(License)
 <p>
  This new file is only a converted version of the original one and thus it is
- licensed under the same licenses: MPL or GPL v2.
+ licensed under the same licenses: MPL 1.1, GPL v2.0 or LGPL 2.1
 
 #include "_footer.html"
 
