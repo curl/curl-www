@@ -246,8 +246,8 @@ if($latest::version{$what}) {
         print "the following ".($#dl+1)." sites ",
         "(<a href=\"#verified\">verified</a> ".&time_ago.")\n";
         
-        print "<table><tr>";
-        for(('Flag', 'Where', 'Proto', 'Host', 'File')) {
+        print "<table><tr class=\"tabletop\">";
+        for(('&nbsp;', 'Location', 'Proto', 'Host', 'File')) {
             print "<th>$_</th>";
         }
         print "</tr>\n";
