@@ -7,23 +7,31 @@ Mirror:
 <a href="http://curl.meulie.net/">CA</a>
 #endif
 <a href="http://curl.mirror.at.stealer.net/">DE1</a>
+#if 0
 <a href="http://curl.netmirror.org/">DE2</a>
+#endif
 <a href="http://curl.freemirror.de/">DE3</a>
 <a href="http://curl.mons-new-media.de/">DE4</a>
 <a href="http://curl.mirroring.de/">DE5</a>
 <a href="http://curl.miscellaneousmirror.org/">DE6</a>
 <a href="http://curl.cofman.dk/">DK</a>
+#if 0
 <a href="http://curl.wildyou.net/">EE</a>
+#endif
 <a href="http://curl.fastmirror.net/">FR</a>
 <a href="http://curl.tsuren.net/">RU</a>
 <a href="http://curl.haxx.se/">SE</a>
 <a href="http://curl.siamu.ac.th/">TH</a>
 <a href="http://curl.cs.pu.edu.tw/">TW</a>
 <a href="http://curl.mirrors.redwire.net/">US1</a>
+#if 0
 <a href="http://curl.islandofpoker.com/">US2</a>
+#endif
 <a href="http://curl.109k.com/">US3</a>
 <a href="http://curl.mirrormonster.com/">US4</a>
+#if 0
 <a href="http://curl.mirrors.cyberservers.net/">US5</a>
+#endif
 <a href="http://curl.signal42.com/">US6</a>
 <a href="http://curl.tolix.org/">US7</a>
 <a href="http://curl.seekmeup.com/">US8</a>
@@ -36,23 +44,31 @@ Mirror:
 <a href="http://curl.meulie.net/CURL_URL">CA</a>
 #endif
 <a href="http://curl.mirror.at.stealer.net/CURL_URL">DE1</a>
+#if 0
 <a href="http://curl.netmirror.org/CURL_URL">DE2</a>
+#endif
 <a href="http://curl.freemirror.de/CURL_URL">DE3</a>
 <a href="http://curl.mons-new-media.de/CURL_URL">DE4</a>
 <a href="http://curl.mirroring.de/CURL_URL">DE5</a>
 <a href="http://curl.miscellaneousmirror.org/CURL_URL">DE6</a>
 <a href="http://curl.cofman.dk/CURL_URL">DK</a>
+#if 0
 <a href="http://curl.wildyou.net/CURL_URL">EE</a>
+#endif
 <a href="http://curl.fastmirror.net/CURL_URL">FR</a>
 <a href="http://curl.tsuren.net/CURL_URL">RU</a>
 <a href="http://curl.haxx.se/CURL_URL">SE</a>
 <a href="http://curl.siamu.ac.th/CURL_URL">TH</a>
 <a href="http://curl.cs.pu.edu.tw/CURL_URL">TW</a>
 <a href="http://curl.mirrors.redwire.net/CURL_URL">US1</a>
+#if 0
 <a href="http://curl.islandofpoker.com/CURL_URL">US2</a>
+#endif
 <a href="http://curl.109k.com/CURL_URL">US3</a>
 <a href="http://curl.mirrormonster.com/CURL_URL">US4</a>
+#if 0
 <a href="http://curl.mirrors.cyberservers.net/CURL_URL">US5</a>
+#endif
 <a href="http://curl.signal42.com/CURL_URL">US6</a>
 <a href="http://curl.tolix.org/CURL_URL">US7</a>
 <a href="http://curl.seekmeup.com/CURL_URL">US8</a>
