@@ -27,9 +27,7 @@ Mirror:
 <a href="http://curl.islandofpoker.com/">US2</a>
 <a href="http://curl.109k.com/">US3</a>
 <a href="http://curl.mirrormonster.com/">US4</a>
-#if 0
 <a href="http://curl.mirrors.cyberservers.net/">US5</a>
-#endif
 <a href="http://curl.signal42.com/">US6</a>
 <a href="http://curl.tolix.org/">US7</a>
 <a href="http://curl.seekmeup.com/">US8</a>
@@ -62,9 +60,7 @@ Mirror:
 <a href="http://curl.islandofpoker.com/CURL_URL">US2</a>
 <a href="http://curl.109k.com/CURL_URL">US3</a>
 <a href="http://curl.mirrormonster.com/CURL_URL">US4</a>
-#if 0
 <a href="http://curl.mirrors.cyberservers.net/CURL_URL">US5</a>
-#endif
 <a href="http://curl.signal42.com/CURL_URL">US6</a>
 <a href="http://curl.tolix.org/CURL_URL">US7</a>
 <a href="http://curl.seekmeup.com/CURL_URL">US8</a>
