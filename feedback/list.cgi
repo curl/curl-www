@@ -64,7 +64,7 @@ print <<STOPP
 
 <p> Do you have an idea for improving curl, the tool, the lib, the docs or the
  web site?  Want to suggest a new feature or an improvement to an existing
- one?  Is there aditional documentation you\'d like to see? For complete
+ one?  Is there aditional documentation you\'d like to see? For questions,
  discussions and talks, <a href="http://curl.haxx.se/mail/">join a mailing
  list</a> and take it there!
 
