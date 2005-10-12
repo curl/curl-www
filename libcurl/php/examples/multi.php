@@ -1,12 +1,13 @@
+<?php
 /************************************\
 * Multi interface in PHP with curl  *
 * Requires PHP 5.0, Apache 2.0 and  *
 * Curl 				    *
 *************************************
 * Writen By Cyborg 19671897         *
+* Bugfixed by Jeremy Ellman         *
 \***********************************/
 
-<?php
 $urls = array(
    "http://www.google.com/",
    "http://www.altavista.com/",
@@ -26,7 +27,7 @@ foreach ($urls as $i => $url) {
 
 do { $n=curl_multi_exec($mh,$active); } while ($active);
 
-foreach ($connomains as $i => $url) {
+foreach ($urls as $i => $url) {
        $res[$i]=curl_multi_getcontent($conn[$i]);
        curl_multi_remove_handle($mh,$conn[$i]);
        curl_close($conn[$i]);
