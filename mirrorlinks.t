@@ -3,7 +3,6 @@ Mirror:
 #ifndef CURL_URL
 <a href="http://curl.gds.tuwien.ac.at/">AT</a>
 <a href="http://curl.planetmirror.com/">AU</a>
-<a href="http://curl.meulie.net/">CA</a>
 <a href="http://curl.mirror.at.stealer.net/">DE1</a>
 #if 0
 <a href="http://curl.netmirror.org/">DE2</a>
@@ -31,10 +30,10 @@ Mirror:
 <a href="http://curl.seekmeup.com/">US8</a>
 <a href="http://curl.webhosting76.com/">US9</a>
 <a href="http://curl.hostingzero.com/">US10</a>
+<a href="http://curl.meulie.net/">US11</a>
 #else
 <a href="http://curl.gds.tuwien.ac.at/CURL_URL">AT</a>
 <a href="http://curl.planetmirror.com/CURL_URL">AU</a>
-<a href="http://curl.meulie.net/CURL_URL">CA</a>
 <a href="http://curl.mirror.at.stealer.net/CURL_URL">DE1</a>
 #if 0
 <a href="http://curl.netmirror.org/CURL_URL">DE2</a>
@@ -62,5 +61,6 @@ Mirror:
 <a href="http://curl.seekmeup.com/CURL_URL">US8</a>
 <a href="http://curl.webhosting76.com/CURL_URL">US9</a>
 <a href="http://curl.hostingzero.com/CURL_URL">US10</a>
+<a href="http://curl.meulie.net/CURL_URL">US11</a>
 #endif
 </span>
