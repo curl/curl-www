@@ -35,6 +35,27 @@ TITLE(curl Security)
  We appreciate getting notified in advance before you go public with security
  advisories for the sake of our users.
 
+SUBTITLE(libcurl NTLM Buffer Overflow)
+<p>
+  October 13, 2005<br>
+  Affected versions: curl and libcurl 7.10.6 to and including 7.14.1<br>
+  Not affected versions: curl and libcurl 7.10.5 and earlier, 7.15.0 and later<br>
+  Patch: <a href="http://curl.haxx.se/libcurl-ntlmbuf.patch">libcurl-ntlmbuf.patch</a>
+<p>
+ libcurl's NTLM function can overflow a stack-based buffer if given a too long
+ user name or domain name. This would happen if you enable NTLM authentication
+ and either:
+<ol>
+ <li> pass in a user name and domain name to libcurl that together are longer
+     than 192 bytes
+
+ <li> allow (lib)curl to follow HTTP "redirects" (Location: and the appropriate
+     HTTP 30x response code) and the new URL contains a URL with a user name
+     and domain name that together are longer than 192 bytes
+</ol>
+<p>
+  There is no known exploit/malicious server at the time of this writing.
+
 <a name="BID12616"></a>
 SUBTITLE(Kerberos Authentication Buffer Overflow)
 <p>
