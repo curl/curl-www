@@ -38,11 +38,13 @@ TITLE(curl Security)
 SUBTITLE(libcurl NTLM Buffer Overflow)
 <p>
   October 13, 2005<br>
-  Mitre: CAN-2005-3185<br>
+  Mitre: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-3185">CAN-2005-3185</a><br>
   Affected versions: curl and libcurl 7.10.6 to and including 7.14.1<br>
   Not affected versions: curl and libcurl 7.10.5 and earlier, 7.15.0 and later<br>
   Patch: <a href="http://curl.haxx.se/libcurl-ntlmbuf.patch">libcurl-ntlmbuf.patch</a><br>
-  Advisory: <a href="http://curl.haxx.se/mail/lib-2005-10/0061.html">Project cURL Security Advisory</a>
+  Advisory: <a href="adv_20051013.html">Project cURL Security Advisory</a>,  <a
+  href="http://www.idefense.com/application/poi/display?id=322&type=vulnerabilities">iDEFENSE's
+  advisory</a>
 <p>
  libcurl's NTLM function can overflow a stack-based buffer if given a too long
  user name or domain name. This would happen if you enable NTLM authentication
@@ -61,9 +63,7 @@ SUBTITLE(libcurl NTLM Buffer Overflow)
   The <a
   href="http://article.gmane.org/gmane.comp.web.wget.general/5064">notification
   mail</a> to us about this flaw was also sent to a public wget mailing list
-  and thus became official immediately. <a
-  href="http://www.idefense.com/application/poi/display?id=322&type=vulnerabilities">iDEFENSE's
-  advisory</a>
+  and thus became official immediately.
 
 <a name="BID12616"></a>
 SUBTITLE(Kerberos Authentication Buffer Overflow)
