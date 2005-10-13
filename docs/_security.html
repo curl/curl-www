@@ -40,7 +40,8 @@ SUBTITLE(libcurl NTLM Buffer Overflow)
   October 13, 2005<br>
   Affected versions: curl and libcurl 7.10.6 to and including 7.14.1<br>
   Not affected versions: curl and libcurl 7.10.5 and earlier, 7.15.0 and later<br>
-  Patch: <a href="http://curl.haxx.se/libcurl-ntlmbuf.patch">libcurl-ntlmbuf.patch</a>
+  Patch: <a href="http://curl.haxx.se/libcurl-ntlmbuf.patch">libcurl-ntlmbuf.patch</a><br>
+  Advisory: <a href="http://curl.haxx.se/mail/lib-2005-10/0061.html">Project cURL Security Advisory</a>
 <p>
  libcurl's NTLM function can overflow a stack-based buffer if given a too long
  user name or domain name. This would happen if you enable NTLM authentication
