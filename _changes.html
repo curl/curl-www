@@ -45,6 +45,25 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 <li> <a href="http://curl.haxx.se/auto/cvshistory.html">recent CVS activity</a>
  </ul>
 
+SUBTITLE(Fixed in 7.15.0 - October 13 2005)
+<p> Changes:
+<ul>
+ <li> --ftp-skip-pasv-ip / CURLOPT_FTP_SKIP_PASV_IP (sponsored by CU*Answers)
+ <li> TFTP support added
+</ul>
+<p> Bugfixes:
+<ul>
+ <li> user+domain name buffer overflow in the NTLM code (security flaw)
+ <li> -z over FTP now considers equal timestamps "not modified since"
+ <li> Weird characters removed from the configure script
+ <li> Fixed time zone offsets for MEST and CEST for the time parser
+ <li> HTTP Content-Range header parser crash
+ <li> FTPS negotiation timeouts/errors
+ <li> SSPI works even for Windows 9x
+ <li> crash in --dump-header on FTP
+ <li> test 56 runs better
+</ul>
+
 SUBTITLE(Fixed in 7.14.1 - September 1 2005)
 <p> Changes:
 <ul>
