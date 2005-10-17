@@ -4,17 +4,12 @@ Mirror:
 <a href="http://curl.gds.tuwien.ac.at/">AT</a>
 <a href="http://curl.planetmirror.com/">AU</a>
 <a href="http://curl.mirror.at.stealer.net/">DE1</a>
-#if 0
-<a href="http://curl.netmirror.org/">DE2</a>
-#endif
+<a href="http://curl.mirror-server.net/">DE2</a>
 <a href="http://curl.freemirror.de/">DE3</a>
 <a href="http://curl.mons-new-media.de/">DE4</a>
 <a href="http://curl.mirroring.de/">DE5</a>
 <a href="http://curl.miscellaneousmirror.org/">DE6</a>
 <a href="http://curl.cofman.dk/">DK</a>
-#if 0
-<a href="http://curl.wildyou.net/">EE</a>
-#endif
 <a href="http://curl.fastmirror.net/">FR</a>
 <a href="http://curl.tsuren.net/">RU</a>
 <a href="http://curl.haxx.se/">SE</a>
@@ -31,21 +26,17 @@ Mirror:
 <a href="http://curl.webhosting76.com/">US9</a>
 <a href="http://curl.hostingzero.com/">US10</a>
 <a href="http://curl.meulie.net/">US11</a>
+<a href="http://curl.hoxt.com/">US12</a>
 #else
 <a href="http://curl.gds.tuwien.ac.at/CURL_URL">AT</a>
 <a href="http://curl.planetmirror.com/CURL_URL">AU</a>
 <a href="http://curl.mirror.at.stealer.net/CURL_URL">DE1</a>
-#if 0
-<a href="http://curl.netmirror.org/CURL_URL">DE2</a>
-#endif
+<a href="http://curl.mirror-server.net/CURL_URL">DE2</a>
 <a href="http://curl.freemirror.de/CURL_URL">DE3</a>
 <a href="http://curl.mons-new-media.de/CURL_URL">DE4</a>
 <a href="http://curl.mirroring.de/CURL_URL">DE5</a>
 <a href="http://curl.miscellaneousmirror.org/CURL_URL">DE6</a>
 <a href="http://curl.cofman.dk/CURL_URL">DK</a>
-#if 0
-<a href="http://curl.wildyou.net/CURL_URL">EE</a>
-#endif
 <a href="http://curl.fastmirror.net/CURL_URL">FR</a>
 <a href="http://curl.tsuren.net/CURL_URL">RU</a>
 <a href="http://curl.haxx.se/CURL_URL">SE</a>
@@ -62,5 +53,6 @@ Mirror:
 <a href="http://curl.webhosting76.com/CURL_URL">US9</a>
 <a href="http://curl.hostingzero.com/CURL_URL">US10</a>
 <a href="http://curl.meulie.net/CURL_URL">US11</a>
+<a href="http://curl.hoxt.com/CURL_URL">US12</a>
 #endif
 </span>
