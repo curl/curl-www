@@ -138,6 +138,9 @@ sub flag {
     elsif($country =~ /France/) {
         $tld="fr";
     }
+    elsif($country =~ /Netherlands/) {
+        $tld="nl";
+    }
     elsif($country =~ /Germany/) {
         $tld="de";
     }
