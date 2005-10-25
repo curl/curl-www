@@ -11,6 +11,7 @@ Mirror:
 <a href="http://curl.miscellaneousmirror.org/">DE6</a>
 <a href="http://curl.cofman.dk/">DK</a>
 <a href="http://curl.fastmirror.net/">FR</a>
+<a href="http://curl.nedmirror.nl/">NL</a>
 <a href="http://curl.tsuren.net/">RU</a>
 <a href="http://curl.haxx.se/">SE</a>
 <a href="http://curl.siamu.ac.th/">TH</a>
@@ -38,6 +39,7 @@ Mirror:
 <a href="http://curl.miscellaneousmirror.org/CURL_URL">DE6</a>
 <a href="http://curl.cofman.dk/CURL_URL">DK</a>
 <a href="http://curl.fastmirror.net/CURL_URL">FR</a>
+<a href="http://curl.nedmirror.nl/CURL_URL">NL</a>
 <a href="http://curl.tsuren.net/CURL_URL">RU</a>
 <a href="http://curl.haxx.se/CURL_URL">SE</a>
 <a href="http://curl.siamu.ac.th/CURL_URL">TH</a>
