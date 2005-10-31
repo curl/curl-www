@@ -86,11 +86,14 @@ companies.html: _companies.html $(MAINPARTS)
 press.html: _press.html $(MAINPARTS)
 	$(ACTION)
 
-thanks.html: _thanks.html $(MAINPARTS) thanks.t
+thanks.html: _thanks.html $(MAINPARTS) thanks.t thanks2.t
 	actual=`wc -l thanks.t | awk '{print $$1}'` && fcpp $(FCPPOPTS) -D__NUM__=$$actual $< $@
 
 thanks.t: $(DOCROOT)/THANKS
 	grep "^[A-Za-z]" $(DOCROOT)/THANKS | awk '{ print $$0 ", ";}' > $@
+
+thanks2.t: $(DOCROOT)/THANKS thanks.pl
+	grep "^[A-Za-z]" $(DOCROOT)/THANKS | ./thanks.pl > $@
 
 faq.html: _faq.shtml $(MAINPARTS) faq.t
 	$(ACTION)
