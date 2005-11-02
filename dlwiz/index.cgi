@@ -308,7 +308,7 @@ if($pick_type && !$pick_os) {
     elsif($ua =~ /Indy Library/i) {     # Windows-only client library
         $sel_os = "Win32";
     }
-    elsif($ua =~ /(Lynx|w3m|Dillo|MMM|Grail|Mosaic|amaya|Konqueror|Links)/i) {
+    elsif($ua =~ /(Lynx|w3m|Dillo|MMM|Grail|Mosaic|amaya|Konqueror|Links|gzilla)/i) {
         $sel_os = "Linux"; # we don't know these are Linux, we just guess
     }
     elsif($ua =~ /(libcurl|Python-urllib|Wget|lwp|libwww-perl)/i) {
@@ -408,8 +408,11 @@ if(!$pick_flav && $pick_os && $pick_type) {
     }
     else {
         $sel_flav = "";
-        if($ua =~ /mdk/i) {
+        if($ua =~ /mdk|Mandriva/i) {
             $sel_flav = "Mandriva";
+        }
+        elsif($ua=~ /ubuntu/i) {
+            $sel_flav = "Ubuntu"; # Must be before Debian
         }
         elsif($ua=~ /Debian/i) {
             $sel_flav = "Debian";
@@ -419,6 +422,20 @@ if(!$pick_flav && $pick_os && $pick_type) {
         }
         elsif($ua=~ /cygwin/i) {
             $sel_flav = "cygwin";
+        }
+        elsif($ua=~ /Red Hat|CentOS/i) {
+            $sel_flav = "Redhat";
+        }
+        elsif($ua=~ /SUSE/i) {
+            $sel_flav = "Suse";
+        }
+        elsif($ua=~ /Fedora|fc[\d]/i) {
+            $sel_flav = "Fedora";
+        }
+        # Some indicators of a PDA device
+        # Not necessarily Familiar, but that's all we have to offer
+        elsif($ua=~ /Qtopia|Qt *embedded|embedix|PDA/i) {
+            $sel_flav = "Familiar";
         }
 
         showsteps();
