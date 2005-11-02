@@ -260,6 +260,26 @@ sub gettype {
         return($1, "devel-i386-libcurl-rpm",
                "Linux libcurl devel i386, RPM");
     }
+    # libcurl-7.15.0-win32-nossl-sspi.zip
+    elsif($file =~ /^libcurl-([0-9.]*)-win32-nossl-sspi.zip$/) {
+        return($1, "win32-devel-sspi",
+               "Windows libcurl devel SSPI-enabled");
+    }
+    # libcurl-7.15.0-win32-nossl.zip
+    elsif($file =~ /^libcurl-([0-9.]*)-win32-nossl.zip$/) {
+        return($1, "win32-devel",
+               "Windows libcurl devel");
+    }
+    # libcurl-7.15.0-win32-ssl-sspi.zip
+    elsif($file =~ /^libcurl-([0-9.]*)-win32-ssl-sspi.zip$/) {
+        return($1, "win32-devel-ssl-sspi",
+               "Windows libcurl devel SSPI-enabled SSL-enabled");
+    }
+    # libcurl-7.15.0-win32-ssl.zip
+    elsif($file =~ /^libcurl-([0-9.]*)-win32-ssl.zip$/) {
+        return($1, "win32-devel-ssl",
+               "Windows libcurl devel SSL-enabled");
+    }
     
 }
 
