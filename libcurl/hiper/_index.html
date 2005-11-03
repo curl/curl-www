@@ -15,6 +15,43 @@ WHERE2(libcurl, "/libcurl/", hiper)
 
 <a name=top>
 TITLE(High Performance libcurl)
+<p>
+  Hiper is the name of the sub-project that intends to bring high performance
+  adjustments and additions to the libcurl multi interface.
+<p>
+  The aim is to 1) provide a better API for _extremely_ large amounts of
+  simultaneous transfers (the c10k problem) and 2) introduce HTTP pipelining
+  support. By better API, we mean both better suited to deal with the amount
+  of connections (i.e no artificial limits like select() imposes etc), better
+  performance-wise by avoiding expensive looping over all file descriptors to
+  check for actions and to allow users to pick an underlying event system of
+  their own choice.
+<p>
+SUBTITLE(Schedule)
+<p>
+  Daniel intends to work more or less full-time with the Hiper project during
+  December 2005. Leftovers will be done part-time in 2006 with possibly some
+  further full-time periods during spring 2006.
+<p>
+  I'll get back with more specific (release) dates later on.
+
+SUBTITLE(Funding)
+<p>
+  Daniel receives funding from the Swedish foundation IIS for the purpose of
+  implementing this.
+
+SUBTITLE(Project Involvement)
+<p>
+  The plan is to keep the process and progress as open and public as I
+  possibly can, to allow anyone and everyone who feels like contributing or
+  just watching to do so. This is still curl, this is still open source and I
+  still value and appreciate all user feedback and comments.
+
+SUBTITLE(Source Code Repository)
+<p>
+  For the sake of being able to be 100% public and open, I will create a
+  branch in the CVS repository so that the Hiper experiments and developments
+  won't interfere with the "normal" libcurl development.
 
 #include "_footer.html"
 

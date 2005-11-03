@@ -1,0 +1,85 @@
+#include "_doctype.html"
+<html>
+<head> <title>hiper - roadmap</title>
+#include "css.t"
+</head>
+
+#define LIBCURL_HIPER
+#define HIPER_ROADMAP
+#define CURL_URL libcurl/hiper/roadmap.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(libcurl, "/libcurl/", hiper, "/libcurl/hiper/", hiper roadmap)
+
+<a name=top>
+TITLE(Project Hiper Roadmap)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="schedule.html">schedule</a>
+</div>
+<p>
+ How we intend/hope this project to proceed:
+
+SUBTITLE(1. Measure and Benchmark Existing API)
+<p>
+<ol>
+<li> gather _many_ unique existing URLs (a lot more than 10,000)
+<p>
+<ul>
+<li> mostly to unique hosts, but not necessarily all unique. For the sake of
+     comparing with a future pipelining version, the test script should be
+     able to ask for the same document Y times, at least in a later stage.
+<li> Write up a curl-using script and use these services:<br>
+      http://randomurl.com/body.php<br>
+      http://random.yahoo.com/fast/ryl<br>
+      http://www.uroulette.com/visit
+<li> Store the tens of thousands of random URLs in a text file
+</ul>
+
+<li> Write up a multi interface using program that extracts N random URLs from
+   the list and downloads them simultaneously.
+ <p>
+   The random seed and N must be able to be specified to be able to repeat the
+   exact same set in a subsequent invoke, but in general testing we must vary
+   the seed in order to not exhaust the same hosts.
+ <p>
+   libcurl should most likely be built with c-ares support.
+ <p>
+   Use debug builds to be able to generated memory-trace logs to fully track
+   and check amount of memory used per connection.
+ <p>
+   Compare the memory usage measurements with the amount of memory installed
+   in the development machines so that we remain testing within the amount of
+   available system RAM.
+
+<li> Measure time from select() returning to it being called again. Run
+    multiple times - do many measurements.
+</ol>
+
+SUBTITLE(Implement the curl_multi_socket API)
+<p>
+  - Port the test program from phase 1 to the new API.
+<p>
+  - Run measurements and benchmarks
+
+SUBTITLE(3. Implement HTTP pipelining support)
+<p>
+   Make sure that:
+<ul>
+<li> the test program enables pipelining
+
+<li> the test program talks to a fair amount of servers that support pipelining
+
+<li> a fair amount of documents are fetched from the same servers so that
+    pipelining actually can get activated
+</ul>
+<p>
+   To make benchmarks, identify high-latency high-bandwith servers that allow
+   pipelining to get a feel for "optimal" performance boosts.
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
