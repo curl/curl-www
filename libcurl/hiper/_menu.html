@@ -1,0 +1,49 @@
+
+#define BACKGROUND "#ffffff"
+#define TEXTCOLOR "#000000"
+#define MENUTEXT "#ffffff"
+#define MENUCOLOR "#e0c0c0"
+
+#ifndef NOBODY
+
+<BODY bgcolor=BACKGROUND text=TEXTCOLOR LINK="#0000ff" VLINK="#808080" ALINK="red">
+#endif
+
+#undef LINK
+#define LINK(l,t) <div class="libselect">t</div>
+
+#undef VLINK
+#define VLINK(l,t) <div><a href=l class="libitem">t</a></div>
+
+#include "ad.t"
+#include "mirrorlinks.t"
+
+<table cellspacing=0 cellpadding=5><tr><td valign=top align=left>
+
+<div class="libmenu">
+
+<div><a href="/" class="menuitem"><img border="0" src="/pix/left.png"><img
+border="0" src="/pix/left.png">Front Page</a></div>
+<div><a href="../" class="menuitem"><img border="0"
+src="/pix/left.png">libcurl index</a></div>
+
+<hr>
+
+#ifdef HIPER_INDEX
+LINK("/libcurl/hiper/", Hiper index )
+#else
+VLINK("/libcurl/hiper/", Hiper index )
+#endif
+
+#ifdef HIPER_SCHEDULE
+LINK("/libcurl/hiper/schedule.html", schedule)
+#else
+VLINK("/libcurl/hiper/schedule.html", schedule)
+#endif
+
+</div>
+
+<p>
+#include "sflogo.t"
+
+</td><td valign=top align=left>
