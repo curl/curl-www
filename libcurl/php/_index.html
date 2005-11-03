@@ -14,21 +14,33 @@
 WHERE2(libcurl, "/libcurl/", PHP Binding)
 
 <a name="top"></a>
-TITLE(CURL -- accessing libcurl from PHP)
+TITLE(PHP/CURL -- accessing libcurl from PHP)
 <p>
- We can take advantage of libcurl straight from within PHP programs. Curl is
- supported built-in since PHP 4.0.2, no extra stuff is needed but the PHP and
- curl packages.
+ We can take advantage of libcurl straight from within PHP programs. PHP/CURL
+ is supported built-in since PHP 4.0.2, no extra stuff is needed but PHP
+ and libcurl installed.
 
 <p>
- All you need to do is to configure PHP with curl awareness on build time, and
- you'll get a set of extra functions to use.
+ <big><em>PHP/CURL is a binding that uses libcurl. It means that the PHP team
+ has written a glue layer for PHP that speaks to the underlying libcurl. That
+ layer, the binding, is what we call PHP/CURL and that is what offers the
+ functions named curl_* within the PHP language for you. The PHP/CURL binding
+ is written, maintained and being provided by the PHP team and you <b>will
+ not</b> find any binaries, DLLs or other packages for it on this
+ site.</em></big>
 
 <p>
- <b>How to Install?</b><br> You need to enable the curl support when you build
- PHP: <a href="install.html">install the curl-PHP binding</a>. There's also
- the document with <a href="iis.html">hints on how to install PHP/CURL on
- IIS</a>.
+ <b>How to Install?</b><br>
+
+ The primary site for all things PHP is of course the <a
+ href="http://www.php.net/">www.php.net</a> site. See their <a
+ href="http://www.php.net/curl">curl section</a> for details on the PHP/CURL
+ binding.
+<p>
+ (If you for some reason still don't read the instructions on the php.net
+ site...) You need to enable the curl support when you build PHP: <a
+ href="install.html">install the curl-PHP binding</a>. There's also the
+ document with <a href="iis.html">hints on how to install PHP/CURL on IIS</a>.
 
 <p>
  <b>Applications</b><br>
