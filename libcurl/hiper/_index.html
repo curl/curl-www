@@ -19,10 +19,21 @@ TITLE(High Performance libcurl)
   Hiper is the name of the sub-project that intends to bring high performance
   adjustments and additions to the libcurl multi interface.
 <p>
-  The aim is to 1) provide a better API for _extremely_ large amounts of
-  simultaneous transfers (the c10k problem) and 2) introduce HTTP pipelining
-  support. By better API, we mean both better suited to deal with the amount
-  of connections (i.e no artificial limits like select() imposes etc), better
+  The aim is to
+<ol>
+
+<li> provide a better API for <i>extremely</i> large amounts of simultaneous
+  transfers (the <a href="http://www.kegel.com/c10k.html">c10k problem</a>)
+  and
+
+<li> add <a
+href="http://www.mozilla.org/projects/netlib/http/pipelining-faq.html">HTTP
+pipelining</a> support.
+
+</ol>
+<p>
+  By better API, we mean both better suited to deal with the amount of
+  connections (i.e no artificial limits like select() imposes etc), better
   performance-wise by avoiding expensive looping over all file descriptors to
   check for actions and to allow users to pick an underlying event system of
   their own choice.
@@ -33,12 +44,14 @@ SUBTITLE(Schedule)
   December 2005. Leftovers will be done part-time in 2006 with possibly some
   further full-time periods during spring 2006.
 <p>
-  I'll get back with more specific (release) dates later on.
+  I'll get back with more <a href="schedule.html">specific (release) dates</a>
+  later on. See also the <a href="roadmap.html">roadmap</a>.
 
 SUBTITLE(Funding)
 <p>
-  Daniel receives funding from the Swedish foundation IIS for the purpose of
-  implementing this.
+  Daniel receives <a
+  href="http://curl.haxx.se/mail/lib-2005-10/0136.html">funding</a> from the
+  Swedish foundation IIS for the purpose of implementing this.
 
 SUBTITLE(Project Involvement)
 <p>
@@ -46,12 +59,19 @@ SUBTITLE(Project Involvement)
   possibly can, to allow anyone and everyone who feels like contributing or
   just watching to do so. This is still curl, this is still open source and I
   still value and appreciate all user feedback and comments.
+<p>
+  Progress reports will be posted and discussions will be held on the regular
+  <a
+  href="http://curl.haxx.se/mail/list.cgi?list=curl-library">curl-library</a>
+  mailing list.
 
 SUBTITLE(Source Code Repository)
 <p>
   For the sake of being able to be 100% public and open, I will create a
   branch in the CVS repository so that the Hiper experiments and developments
   won't interfere with the "normal" libcurl development.
+<p>
+  The name of the tag will be announced when this has been done.
 
 #include "_footer.html"
 

@@ -17,7 +17,7 @@ WHERE3(libcurl, "/libcurl/", hiper, "/libcurl/hiper/", hiper roadmap)
 TITLE(Project Hiper Roadmap)
 <div class="relatedbox">
 <b>Related:</b>
-<br><a href="schedule.html">schedule</a>
+<br><a href="schedule.html">Schedule</a>
 </div>
 <p>
  How we intend/hope this project to proceed:
@@ -25,18 +25,21 @@ TITLE(Project Hiper Roadmap)
 SUBTITLE(1. Measure and Benchmark Existing API)
 <p>
 <ol>
-<li> gather _many_ unique existing URLs (a lot more than 10,000)
-<p>
+<li> gather <i>many</i> unique existing URLs (a lot more than 10,000)
 <ul>
 <li> mostly to unique hosts, but not necessarily all unique. For the sake of
      comparing with a future pipelining version, the test script should be
      able to ask for the same document Y times, at least in a later stage.
+
 <li> Write up a curl-using script and use these services:<br>
       http://randomurl.com/body.php<br>
       http://random.yahoo.com/fast/ryl<br>
       http://www.uroulette.com/visit
+
 <li> Store the tens of thousands of random URLs in a text file
+
 </ul>
+<p>
 
 <li> Write up a multi interface using program that extracts N random URLs from
    the list and downloads them simultaneously.
@@ -58,7 +61,7 @@ SUBTITLE(1. Measure and Benchmark Existing API)
     multiple times - do many measurements.
 </ol>
 
-SUBTITLE(Implement the curl_multi_socket API)
+SUBTITLE(2. Implement the curl_multi_socket API)
 <p>
   - Port the test program from phase 1 to the new API.
 <p>
