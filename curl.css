@@ -1,5 +1,7 @@
 BODY {
   background-color: white; 
+  font-family: arial, helvetica, ariel, sans-serif;
+  font-size: 90%;
   color: black;
 }
 
@@ -311,7 +313,8 @@ p.ingres {
   width: 80%;
   font-family: arial, helvetica, ariel, sans-serif;
   font-style: italic;
-  margin-left: 10%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div.quote {
@@ -340,4 +343,12 @@ div.yellowbox {
 
 .mirrorlinks {
   font-size: 8pt;
+}
+
+.phpbox {
+  font-size: 110%;
+  background-color: #e0e0ff; 
+  color: #0000ff;
+  border: solid 1px #000000;
+  padding: 2px 2px 2px 2px;
 }
