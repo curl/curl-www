@@ -30,37 +30,47 @@ TITLE(PHP/CURL -- accessing libcurl from PHP)
  site.</em></big>
 
 <p>
+<div class="quote">
+Performance Comparison<a href="#perf">*</a>
+<p>
+10 per minute for fopen/fread for 100 HTTP files<br>
+2000 per minute for PHP/CURL for 2000 HTTP files
+</div>
+
+<p>
  <b>How to Install?</b><br>
 
  The primary site for all things PHP is of course the <a
  href="http://www.php.net/">www.php.net</a> site. See their <a
- href="http://www.php.net/curl">curl section</a> for details on the PHP/CURL
- binding.
+ href="http://www.php.net/curl">PHP/CURL section</a> for details.
 <p>
  (If you for some reason still don't read the instructions on the php.net
- site...) You need to enable the curl support when you build PHP: <a
- href="install.html">install the curl-PHP binding</a>. There's also the
+ site...) You need to enable the PHP/CURL support when you build PHP: <a
+ href="install.html">install PHP/CURL</a>. There's also the
  document with <a href="iis.html">hints on how to install PHP/CURL on IIS</a>.
 
 <p>
- <b>Applications</b><br>
- We collect a <a href="apps.html">list of PHP applications powered by curl</a>.
+ <b>Applications</b><br> We collect a <a href="apps.html">list of PHP
+ applications powered by PHP/CURL</a>.
 
 <p>
  <b>Examples</b><br> We keep a few <a href="examples/">example source codes</a>
  on this site for your pleasure.
+
 <p>
  Michael Reynolds wrote an article on <a
  href="http://www.phpbuilder.com/columns/michael20010510.php3">phpbuilder.com</a>
- how he used curl to communicate with a credit card payment site with PHP.
+ how he used curl (the command line tool) to communicate with a credit card
+ payment site with PHP.
 
 <p>
- <i>phpfreak</i> over at phpfreaks.com wrote an
-<a href="http://www.phpfreaks.com/tutorials/49/1.php">5-page introduction to PHP/CURL</a>.
+ <i>phpfreak</i> over at phpfreaks.com wrote an <a
+href="http://www.phpfreaks.com/tutorials/49/1.php">5-page introduction to
+PHP/CURL</a>.
 
 <p>
  <b>Binding documentation</b><br> The <a
- href="http://www.php.net/manual/ref.curl.php">PHP/curl binding
+ href="http://www.php.net/manual/ref.curl.php">PHP/CURL binding
  description</a> is found on the PHP site.
 #if 0
 <p>
@@ -82,8 +92,8 @@ Zmievski).
 <p><b>Books</b>
 <br>
 
-So far, there aren't many books for PHP/CURL only, but the following books
-have a varying degree of PHP/CURL documentation included:
+So far, there aren't any books for PHP/CURL only, but the following books have
+a varying degree of PHP/CURL documentation included:
 
 <ul>
 <li> <a
@@ -94,33 +104,38 @@ manual included.
 
 <li><a
  href="http://www.amazon.com/exec/obidos/tg/stores/detail/-/books/0672319241/103-9804937-2489406">The
- PHP Programmer's Cookbook</a> by Sterling Hughes contains some curl-using
+ PHP Programmer's Cookbook</a> by Sterling Hughes contains some PHP/CURL-using
  examples.
 
 <li><a
 href="http://www.amazon.com/exec/obidos/tg/stores/detail/-/books/0672317842/glance/002-2397607-9589611">PHP
 and MySQL Web Development</a> by Luke Welling and Laura Thomson contains some
-curl info.
+PHP/CURL info.
 
 <li><a
 href="http://www.amazon.com/exec/obidos/tg/stores/detail/-/books/1861003730/glance/002-2397607-9589611">Beginning
-PHP4</a> by Lea, Choi, Ken, Prasad and Ullman seems to only mention a few curl
-functions very briefly.
+PHP4</a> by Lea, Choi, Ken, Prasad and Ullman seems to only mention a few
+PHP/CURL functions very briefly.
 
-<li><a href="http://curl.phptrack.com/index.php">CURL PHP Examples Book with
+<li><a href="http://curl.phptrack.com/index.php">PHP/CURL Examples Book with
 Tutorial Help and online Assistance</a> by Muhammad Imran Khalid. It is
 claimed to contain examples, step by step guides, "header tracking solutions",
 XML, credit card processing etc.
 
 </ul>
 
-
 <p><b>Credits</b><br>
- The CURL module for PHP was written by Sterling Hughes.
+ The PHP/CURL module was written by Sterling Hughes.
 
 <p><b>What is PHP?</b><br>
  You'll find more info on the <a href="http://www.php.net/">official
  PHP web page</a>.
+
+SUBTITLE(Footnotes)
+<p>
+[*] = <a name="perf"></a> The performance numbers above comes from <a
+href="http://www.php.net/manual/ref.curl.php#57872">admin at sellchain dot
+com</a>
 
 #include "_footer.html"
 
