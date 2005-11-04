@@ -10,7 +10,7 @@ sub listexamples {
 <p>
  We try to collect examples on how to program the CURL interface from PHP
  here. If you have any source snippests you want to share with the rest of the
- world, please let us know!
+ world, please let <a href="mailto:curl-web@haxx.se">us</a> know!
 MOO
     ;
 
@@ -25,7 +25,7 @@ MOO
     "</tr>\n";
 
     my $c;
-    for(@ex) {
+    for(sort @ex) {
         $filename = $_;
         
         my $class= ($c++&1)?"odd":"even";
