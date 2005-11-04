@@ -30,7 +30,7 @@ int curl_socket_callback(CURL *easy,      /* easy handle */
   my_s[nsockets].easy_h = easy;
 
   nsockets++;
-  
+
   return 0;
 
 } /* end of callback */
@@ -47,7 +47,7 @@ void main(int argc, char **argv)
   CURL *easyh[NEASYHANDLES];
 
   /* setup all easy handles */
-  
+
   easyh[0] = curl_easy_init();
   easyh[1] = curl_easy_init();
   easyh[2] = curl_easy_init();
@@ -62,7 +62,7 @@ void main(int argc, char **argv)
 
   /* open up your own sockets, pipes, file handles and whatever you want to
      use in your app */
-  
+
   /* start the transfers */
   curl_multi_socket_all(multi_h,
                         curl_socket_callback,
@@ -81,7 +81,7 @@ void main(int argc, char **argv)
   }
 
   do {
-  
+
     /* Wait for action(s) on sockets or timeout. The action can be on your own
        sockets or on libcurl's sockets. */
 
@@ -92,12 +92,12 @@ void main(int argc, char **argv)
        handle for it is, and you call curl_multi_socket() telling libcurl.
        You point out a callback and userp again since libcurl may very well
        update the state of its sockets for us.*/
-    
+
     curl_multi_socket(multi_h, thissocket, thiseasyh
                       curl_socket_callback, my_s);
 
   } while(!done);
-    
+
   cleanups();
 
   return 0; /* success! */
