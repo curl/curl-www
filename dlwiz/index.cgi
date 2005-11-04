@@ -16,6 +16,7 @@ my $onlyone;
 my $sel_os;
 my $sel_cpu;
 my $sel_flav;
+my $sel_ver;
 
 my %typedesc=(
               'devel' => <<MOO
@@ -257,6 +258,9 @@ if($pick_type && !$pick_os) {
     elsif($ua =~ /IRIX/i) {
         $sel_os = "IRIX";
     }
+    elsif($ua =~ /(SunOS [1-4])/i) {
+        $sel_os = "SunOS";
+    }
     elsif($ua =~ /(SunOS|Solaris)/i) {
         $sel_os = "Solaris";
     }
@@ -412,7 +416,7 @@ if(!$pick_flav && $pick_os && $pick_type) {
             $sel_flav = "Mandriva";
         }
         elsif($ua=~ /ubuntu/i) {
-            $sel_flav = "Ubuntu"; # Must be before Debian
+            $sel_flav = "Ubuntu"; # Must be before Debian, as that's in the UA, too
         }
         elsif($ua=~ /Debian/i) {
             $sel_flav = "Debian";
@@ -433,7 +437,7 @@ if(!$pick_flav && $pick_os && $pick_type) {
             $sel_flav = "Fedora";
         }
         # Some indicators of a PDA device
-        # Not necessarily Familiar, but that's all we have to offer
+        # Not necessarily Familiar, but that's the best we have to offer
         elsif($ua=~ /Qtopia|Qt *embedded|embedix|PDA/i) {
             $sel_flav = "Familiar";
         }
@@ -491,6 +495,32 @@ if($pick_os && $pick_flav && !$pick_ver) {
         $onlyone .= "ver ";
     }
     else {
+        $sel_ver = "";
+        if($pick_flav eq "Fedora" && $ua =~ /fc(\d+)/i) {
+            $sel_ver = $1;
+        }
+        elsif($pick_flav eq "Redhat" && $ua =~ /centos([\d\.]+)/i) {
+            $sel_ver = "RHEL" . $1;
+        }
+        elsif($pick_os eq "Win32" && $ua =~ /Windows NT ?5\b|Windows XP/i) {
+            $sel_ver = "2000/XP";
+        }
+        elsif($pick_os eq "AIX" && $ua =~ /AIX ([\d\.]+)/i) {
+            $sel_ver = $1;
+        }
+        elsif($pick_os eq "HPUX" && $ua =~ /HP-UX [A-Z]\.([\d\.]+)/i) {
+            $sel_ver = $1;
+        }
+        elsif($pick_os eq "IRIX" && $ua =~ /IRIX ([\d\.]+)/i) {
+            $sel_ver = $1;
+        }
+        elsif($pick_os eq "Solaris" && $ua =~ /SunOS 5\.([2-6]+)/i) {
+            $sel_ver = "2." . $1;
+        }
+        elsif($pick_os eq "Solaris" && $ua =~ /SunOS 5\.([7-9]+)|SunOS 5\.(1\d+)/i) {
+            $sel_ver = $1;
+        }
+
         showsteps();
 
         subtitle("Select which $fl $pick_os Version");
@@ -505,11 +535,16 @@ if($pick_os && $pick_flav && !$pick_ver) {
         "Show package for <b>$fl $pick_os</b> version: ",
         "<select onChange=\"submit();\" name=\"ver\">\n";
         for(sort keys %ver) {
+            my $s;
+
+            if($sel_ver eq $_) {
+                $s=" SELECTED";
+            }
             my $show = $_;
             if($_ eq "-") {
                 $show = "Unspecified";
             }
-            print "<option value=\"$_\">$show</option>\n";
+            print "<option$s value=\"$_\">$show</option>\n";
         }
         print "</select>",
         "<input type=\"submit\" value=\"Select!\">",
@@ -542,7 +577,10 @@ if($pick_os && $pick_flav && $pick_ver && !$pick_cpu) {
     }
     else {
         $sel_cpu = "i386"; # naive default assumption
-        if($ua =~ /(Mac|PPC)/i) {
+        if($ua =~ /68K/i) {
+            $sel_cpu = "68k";
+        }
+        elsif($ua =~ /(Mac|PPC)/i) {
             $sel_cpu = "PPC";
         }
         elsif($ua =~ /sun4|sparc/i) {
@@ -551,7 +589,7 @@ if($pick_os && $pick_flav && $pick_ver && !$pick_cpu) {
         elsif($ua =~ /ia64/i) {
             $sel_cpu = "ia64";
         }
-        elsif($ua =~ /x86_64|athlon|AMD64/i) {
+        elsif($ua =~ /x86_64|athlon|amd64/i) {
             $sel_cpu = "x86_64";
         }
         elsif($ua =~ /alpha/i) {
