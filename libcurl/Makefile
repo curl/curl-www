@@ -10,9 +10,9 @@ ACTION=@echo preprocessing $@; \
 	cpp -I.. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
 	chmod a-w+r $@
 
-all: index.html mail.html competitors.html threadsafe.html \
-     fast.html ipv6.html comparison-table.html relatedlibs.html \
-     features.html support.html wininet.html libwww.html docs.html
+all: index.html mail.html competitors.html \
+     comparison-table.html relatedlibs.html \
+     features.html wininet.html libwww.html
 	cd c; make
 	cd perl; make
 	cd php; make

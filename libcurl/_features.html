@@ -10,9 +10,9 @@
 #include "_menu.html"
 #include "setup.t"
 
-WHERE2(libcurl, "/libcurl/", Feature Rich)
+WHERE2(libcurl, "/libcurl/", Better Than the Competition)
 
-TITLE(libcurl - Unmatched Set of Features)
+TITLE(libcurl - What Makes It So Special)
 <div class="relatedbox">
 <b>Related:</b>
 <br><a href="/docs/copyright.html">Free</a>
@@ -20,10 +20,95 @@ TITLE(libcurl - Unmatched Set of Features)
 <br><a href="ipv6.html">IPv6 compatible</a>
 <br><a href="support.html">Well supported</a>
 </div>
+
+<a name="thread"></a>
+SUBTITLE(Thread Safe)
+<p>
+<p>
+ libcurl is designed and implemented entirely thread safe. There are some
+ considerations to keep in mind when using libcurl in multiple threads though,
+ as mentioned below:
+<p>
+ <b>Never</b> share libcurl handles between multiple threads. You should only
+ use one handle in one single thread at any given time. You can still share
+ certain data between multiple threads by using the <a
+ href="/libcurl/c/libcurl-share.html">share interface</a>.
+<p>
+ libcurl uses certain system calls to obtain information. Some of the most
+ crucial ones are the name resoluition calls (the <i>gethostby*</i>
+ family). It is very important that libcurl found and can use thread safe
+ versions of these and other system calls, as otherwise it can't function
+ fully thread safe.
+<p>
+ Some operating systems are known to have faulty thread implementations. We
+ have previously received problem reports on *BSD (at least in the past, they
+ may be working fine these days). Some operating systems that are known to
+ have solid and working thread support are Linux, Solaris and Windows.
+<p>
+ Further, if you use any SSL/TLS-based protocol (HTTPS or FTPS) you need to
+ setup OpenSSL or GnuTLS callbacks for synch. See the <a
+ href="http://curl.haxx.se/libcurl/c/libcurl-tutorial.html#Multi-threading">libcurl-tutorial(3)</a>
+ man page for details.
+
+
+<a name="features"></a>
+SUBTITLE(Unmatched Set of Features)
 <p>
  There simply is no other HTTP and FTP library that can boast the same amount
  and set of <a href="/docs/features.html">features</a> that libcurl does. Be
  it free or commercial.
+
+<a name="ipv6"></a>
+SUBTITLE(Supports IPv6)
+<p>
+ If compiled with IPv6 support enabled, FTP, FTPS, HTTP and HTTPS all work
+ splendidly on IPv6 stacks (kerberos4 does not work over IPv6 by design).
+
+<p> There is nothing in particular needed to get IPv6 to be used, the library
+API remains exactly the same and adjusts to IPv4/Ipv6 dynamicly. You can use
+host names that only have AAAA DNS records, or you can use IPv6 IP-only style
+addresses like <tt>[::1]</tt>.
+
+<a name="support"></a>
+SUBTITLE(Well Supported)
+<p>
+ We claim libcurl is well supported because you can get help on one of the
+ mailing lists, very quickly and accurately. Often within a few hours. Having
+ the mailing list archives available on the web also makes them searchable and
+ allows you to find already mentioned solutions and answers.
+<p>
+ We also provide very detailed documentation on all operations, not just in
+ every release archive but also available on the web site(s).
+<p>
+ You can get support from one of the listed <a href="/support.html">curl
+ support</a> companies.
+<p>
+ Since the code is free and available, any skilled programmer can fix and
+ improve the tool and library whenever. If you can't, you can hire one!
+
+<a name="fast"></a>
+SUBTITLE(Fast!)
+<p>
+ Tests performed by independent users, have proved libcurl to be equally fast,
+ up to a lot faster than <a href="libwww.html">libwww</a> in comparable test
+ cases.
+<p>
+ TODO: add references to hard facts here. If you have any or know any
+ comparisons with real-world numbers, then please let us know!
+
+<a name="docs"></a>
+SUBTITLE(Thoroughly Documented)
+<p> All functions have their own detailed <a
+ href="/libcurl/c/allfuncs.html">man pages</a> describing their actual
+ functionality and purpose.
+<p> All interfaces have overview-style man pages describing concepts that glue
+ functions together: <a href="/libcurl/c/libcurl-easy.html">easy</a>, <a
+ href="/libcurl/c/libcurl-multi.html">multi</a> and <a
+ href="/libcurl/c/libcurl-share.html">share</a>.
+<p> There is a <a
+href="/libcurl/c/libcurl-tutorial.html">tutorial</a>.
+<p> We have numerous commented <a href="/libcurl/c/example.html">source code
+examples</a>.
 
 #include "_footer.html"
 
