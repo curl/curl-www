@@ -78,6 +78,11 @@ the note to Win32 users on <a href="http://php.net/curl">php.net/curl</a>. The
 two SSL-related DLLs from the OpenSSL project (libeay32.dll and ssleay32.dll)
 are bundled with the Windows PHP package.
 <p>
+ In order to SSL-based protocols (such as HTTPS and FTPS) in your Windows
+ environment, you must copy libeay32.dll and ssleay32.dll from the DLL folder
+ of the PHP/ binary package to the SYSTEM folder of your Windows machine. (Ex:
+ C:\WINNT\SYSTEM32 or C:\WINDOWS\SYSTEM).
+<p>
  (Michael Wallner contributed to this)
 
 #include "_footer.html"
