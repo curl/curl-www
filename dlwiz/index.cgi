@@ -7,7 +7,7 @@ require CGI;
 
 require "../latest.pm";
 
-$req = new CGI;
+#$req = new CGI;
 
 print "Content-Type: text/html\n\n";
 
@@ -61,7 +61,7 @@ my %typelonger = ('bin' => 'curl executable',
                   'lib' => 'libcurl',
                   '*' => 'Show All');
 
-#print "<h1>$ua</h1>\n";
+#print "<h1>" . CGI::escapeHTML($ua) . "</h1>\n";
 
 &header("Download Wizard");
 &where("Download", "/download.html", "Download Wizard");
@@ -92,11 +92,13 @@ print <<MOO
 MOO
     ;
 
-my $pick_os = CGI::param('os');
-my $pick_flav = CGI::param('flav');
-my $pick_ver = CGI::param('ver');
-my $pick_cpu = CGI::param('cpu');
-my $pick_type = CGI::param('type');
+# CGI::escapeHTML() should be the identity function for the data types we
+# expect here, but it prevents XSS attacks when we print them out
+my $pick_os = CGI::escapeHTML(CGI::param('os'));
+my $pick_flav = CGI::escapeHTML(CGI::param('flav'));
+my $pick_ver = CGI::escapeHTML(CGI::param('ver'));
+my $pick_cpu = CGI::escapeHTML(CGI::param('cpu'));
+my $pick_type = CGI::escapeHTML(CGI::param('type'));
 
 my $fl = $pick_flav;
 if($pick_flav eq "-") {
@@ -165,7 +167,7 @@ sub showsteps {
         if($s eq "Flavour" && $pick_flav) {
             my $p;
             if($onlyone !~ /flav /) {
-                print "<a href=\"./?type=$pick_type&os=$pick_os\">";
+                print "<a href=\"./?type=$pick_type&amp;os=$pick_os\">";
                 $p="</a>";
             }
             if($pick_flav eq "-") {
@@ -180,7 +182,7 @@ sub showsteps {
         if($s eq "OS Version" && $pick_ver) {
             my $p;
             if($onlyone !~ /ver /) {
-                print "<a href=\"./?type=$pick_type&os=$pick_os&flav=$pick_flav\">";
+                print "<a href=\"./?type=$pick_type&amp;os=$pick_os&amp;flav=$pick_flav\">";
                 $p="</a>";
             }
             if($pick_ver eq "-") {
@@ -195,7 +197,7 @@ sub showsteps {
         if($s eq "CPU" && $pick_cpu) {
             my $p;
             if($onlyone !~ /cpu /) {
-                print "<a href=\"./?type=$pick_type&os=$pick_os&flav=$pick_flav&ver=$pick_ver\">";
+                print "<a href=\"./?type=$pick_type&amp;os=$pick_os&amp;flav=$pick_flav&amp;ver=$pick_ver\">";
                 $p="</a>";
             }
             if($pick_cpu eq "-") {
@@ -208,7 +210,7 @@ sub showsteps {
             next;
         }
     
-        print "<font color=\"#f0a0a0\">$s</font>";
+        print "<font color=\"#f0a0a0\">$s</font>\n";
     }
 
     if($pick_cpu) {
@@ -239,9 +241,9 @@ if(!$pick_type) {
         print "<p> We provide packages of different types. Select one (or select 'show all' to view all types)";
 
         for(sort keys %type) {
-            print "<blockquote><a href=\"./?type=$_\">".$typelonger{$_}."</a> - ".$typedesc{$_}."</blockquote>";
+            print "<blockquote><a href=\"./?type=$_\">".$typelonger{$_}."</a> - ".$typedesc{$_}."</blockquote>\n";
         }
-        print "<blockquote><a href=\"./?type=*\">Show All</a> - Display all known package types.</blockquote>";
+        print "<blockquote><a href=\"./?type=*\">Show All</a> - Display all known package types.</blockquote>\n";
 
     }
 
@@ -320,7 +322,8 @@ if($pick_type && !$pick_os) {
     }
 
     if(!$sel_os && $ua) {
-        print "<p><b>Beta Alert! We couldn't detect your OS, please inform me (daniel\@haxx.se) and include this User-Agent string in the report: \"$ua\"</b><p>";
+        print "<p><b>Beta Alert! We couldn't detect your OS, please inform me (daniel\@haxx.se) and include this User-Agent string in the report: \"";
+        print CGI::escapeHTML($ua) . "\"</b><p>\n";
     }
 
     #print "<p> If you want a curl package for the OS you are currently using, you want a package for <b>$sel_os</b>";
@@ -336,7 +339,7 @@ if($pick_type && !$pick_os) {
     my $numos = scalar(keys %os);
     if($numos == 0 ) {
         showsteps();
-        print "<p> Internal error: We found no operating systems for the given package type: $pick_type";
+        print "<p> Internal error: We found no operating systems for the given package type: $pick_type\n";
     }
     elsif($numos == 1 ) {
         my @o =keys %os;
@@ -400,7 +403,7 @@ if(!$pick_flav && $pick_os && $pick_type) {
     if($numflav == 0) {
         showsteps();
 
-        print "<p> Internal error: We found no flavour at all for $pick_os";
+        print "<p> Internal error: We found no flavour at all for $pick_os\n";
     }
     elsif($numflav == 1) {
         my @f=keys %flav;
@@ -416,7 +419,7 @@ if(!$pick_flav && $pick_os && $pick_type) {
             $sel_flav = "Mandriva";
         }
         elsif($ua=~ /ubuntu/i) {
-            $sel_flav = "Ubuntu"; # Must be before Debian, as that's in the UA, too
+            $sel_flav = "Ubuntu"; # Must be before Debian, which can be in the UA, too
         }
         elsif($ua=~ /Debian/i) {
             $sel_flav = "Debian";
@@ -446,7 +449,7 @@ if(!$pick_flav && $pick_os && $pick_type) {
 
         subtitle("Select for What Flavour");
 
-        printf ("<p> We have %s packages listed for %d different flavours of <b>$pick_os</b>.",
+        printf ("<p> We have %s packages listed for %d different flavours of <b>$pick_os</b>.\n",
                 $pick_type eq "*"?"":"<b>".$typelonger{$pick_type}."</b>",
                 $numflav);
 
@@ -487,7 +490,7 @@ if($pick_os && $pick_flav && !$pick_ver) {
     if($numver == 0) {
         showsteps();
 
-        print "<p> Internal error: We found no version at all for $pick_flav";
+        print "<p> Internal error: We found no version at all for $pick_flav\n";
     }
     elsif($numver == 1) {
         my @v=keys %ver;
@@ -511,8 +514,8 @@ if($pick_os && $pick_flav && !$pick_ver) {
         elsif($pick_os eq "HPUX" && $ua =~ /HP-UX [A-Z]\.([\d\.]+)/i) {
             $sel_ver = $1;
         }
-        elsif($pick_os eq "IRIX" && $ua =~ /IRIX ([\d\.]+)/i) {
-            $sel_ver = $1;
+        elsif($pick_os eq "IRIX" && $ua =~ /IRIX(64)? ([\d\.]+)/i) {
+            $sel_ver = $2;
         }
         elsif($pick_os eq "Solaris" && $ua =~ /SunOS 5\.([2-6]+)/i) {
             $sel_ver = "2." . $1;
@@ -525,7 +528,7 @@ if($pick_os && $pick_flav && !$pick_ver) {
 
         subtitle("Select which $fl $pick_os Version");
 
-        printf ("<p> We have packages listed for %d different versions of <b>$fl $pick_os</b>.",
+        printf ("<p> We have packages listed for %d different versions of <b>$fl $pick_os</b>.\n",
                 $numver);
 
         print "<form action=\"./\" method=\"GET\">\n",
@@ -568,7 +571,7 @@ if($pick_os && $pick_flav && $pick_ver && !$pick_cpu) {
 
     if($numcpu == 0) {
         showsteps();
-        print "<p>Internal error: We found no CPUs at all for this version of this OS!";
+        print "<p>Internal error: We found no CPUs at all for this version of this OS!\n";
     }
     elsif($numcpu == 1) {
         my @c = (keys %cpu);
@@ -607,7 +610,7 @@ if($pick_os && $pick_flav && $pick_ver && !$pick_cpu) {
 
         subtitle("Select for What CPU");
 
-        printf ("<p> We have packages listed for %d different CPUs for <b>$fl $pick_os $ver</b>.",
+        printf ("<p> We have packages listed for %d different CPUs for <b>$fl $pick_os $ver</b>.\n",
                 $numcpu);
 
         print "<form action=\"./\" method=\"GET\">\n",
