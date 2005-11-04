@@ -1,0 +1,36 @@
+#include "_doctype.html"
+<html>
+<head> <title>hiper - API</title>
+#include "css.t"
+</head>
+
+#define LIBCURL_HIPER
+#define HIPER_API
+#define CURL_URL libcurl/hiper/api.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(libcurl, "/libcurl/", hiper, "/libcurl/hiper/", hiper API)
+
+<a name=top>
+TITLE(Hiper API)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="app.html">Application</a>
+<br><a href="roadmap.html">Roadmap</a>
+<br><a href="schedule.html">Schedule</a>
+</div>
+<p>
+ Below here is the piece of the API as outlined and drafted before, and as
+ it already is present in curl/multi.h. It might be adjusted before this goes
+ live.
+
+<pre>
+#include "api.t"
+</pre>
+
+#include "_footer.html"
+
+</BODY>
+</HTML>

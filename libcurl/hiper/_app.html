@@ -1,0 +1,35 @@
+#include "_doctype.html"
+<html>
+<head> <title>hiper - Sample Application</title>
+#include "css.t"
+</head>
+
+#define LIBCURL_HIPER
+#define HIPER_APP
+#define CURL_URL libcurl/hiper/app.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(libcurl, "/libcurl/", hiper, "/libcurl/hiper/", hiper Sample App)
+
+<a name=top>
+TITLE(Hiper Sample Application)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="api.html">API</a>
+<br><a href="roadmap.html">Roadmap</a>
+</div>
+<p>
+ Below here is a sample application as it might work with the current API
+ suggestion. It is not detailed and should be considered to be a
+ <i>sample</i> and demo only.
+
+<pre>
+#include "app.t"
+</pre>
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
