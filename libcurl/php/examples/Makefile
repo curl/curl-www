@@ -9,21 +9,15 @@ ACTION=@echo preprocessing $@; rm -f $@; cpp -I.. -I$(ROOT) -P -WWW -Uunix -H -C
 
 PHPSRC = $(shell echo *.php)
 PHPHTML = $(patsubst %.php,%.html,$(PHPSRC))
+PHPDESC = $(patsubst %.php,%.php.html,$(PHPSRC))
 
 all: index.html $(PHPHTML)
 
-index.html: ./mkindex.pl $(MAINPARTS)
+index.html: ./mkindex.pl $(MAINPARTS) $(PHPDESC)
 	./mkindex.pl > $@
 
-
-%.html: %.php ./mkindex.pl
-	echo $@ $<
+%.html: %.php ./mkindex.pl %.php.html $(PHPDESC)
 	./mkindex.pl $< > $@ 
 
-php:
-	(for i in $(PHPSRC); do \
-	  echo $$i; \
-	done)
-
-html:
-	echo $(PHPHTML)
+clean:
+	rm -f index.html $(PHPHTML)

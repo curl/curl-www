@@ -8,7 +8,7 @@ require "CGI.pm";
 sub listexamples {
     print <<MOO
 <p>
- We try to collect examples on how to program the CURL interface from PHP
+ We try to collect examples on how to program the PHP/CURL interface
  here. If you have any source snippests you want to share with the rest of the
  world, please let <a href="mailto:curl-web@haxx.se">us</a> know!
 MOO
@@ -53,6 +53,15 @@ MOO
 
 &catfile("../examples.html");
 
+{
+    where("libcurl", "/libcurl/",
+          "PHP", "/libcurl/php/",
+          "Examples");
+
+    &title("PHP/CURL Examples Collection");
+    listexamples();
+}
+
 # get example file name from argv
 $ex = $ARGV[0];
 
@@ -63,26 +72,19 @@ if($ex) {
     else {
         $ex =~ s/.*\/(.*)/$1/;
     }
-    
-    where("libcurl", "/libcurl/",
-          "PHP", "/libcurl/php/",
-          "Examples", "/libcurl/php/examples/",
-          $ex);
-    &title("The $ex Example");
+
+     
+ #   where("libcurl", "/libcurl/",
+ #         "PHP", "/libcurl/php/",
+ #         "Examples", "/libcurl/php/examples/",
+ #         $ex);
+    subtitle("The $ex Example");
 
     if( -r "$ex.html") {
         precatfile("$ex.html");
     }
 
     precatfile($ex);
-}
-else {
-    where("libcurl", "/libcurl/",
-          "PHP", "/libcurl/php/",
-          "Examples");
-
-    &title("PHP/CURL Examples Collection");
-    listexamples();
 }
 
 &catfile("../../../foot.html");
