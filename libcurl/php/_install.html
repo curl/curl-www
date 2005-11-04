@@ -12,66 +12,73 @@
 
 WHERE3(libcurl, "/libcurl/", PHP Binding, "/libcurl/php/", Install)
 
-TITLE(Installing the PHP binding)
+TITLE(Installing the PHP/CURL binding)
 <p>
   You might also find it helpful to install Apache + PHP + CURL + SSL using
-  the <a href="http://www.apachetoolbox.com/">Apache Toolbox</a>.
+  the <a href="http://www.apachetoolbox.com/">Apache Toolbox</a>. Check
+  further down for <a href="#windows">Windows install</a>.
 
-<p>
- Original instruction was contributed by <b>Lim Chung Keng</b>. Kudos!
-
-<p>
- My purpose is to have : PHP code with curl functions (using curl_init etc.)
- calling HTTPS server.
+SUBTITLE(Manual Build and Install)
 <p>
  Build OpenSSL (In openssl-0.9.x directory)
-<ol>
- <li> ./config
- <li> make
- <li> make test
- <li> make install
-</ol>
+<p>
+<div class="quote"><pre>
+./config
+make
+make test
+make install
+</pre></div>
 
 <p>
 Build CURL (In curl-7.x.x directory)
-<ol>
- <li> ./configure --disable-ipv6 --with-ssl=/usr/local/ssl (if only ssl was
-built here)
- <li> make
- <li> make install (libcurl.so is now in /usr/local/lib)
-</ol>
+<p>
+<div class="quote"><pre>
+./configure --with-ssl=/usr/local/ssl (if ssl was installed here)
+make
+make install (libcurl.so is now in /usr/local/lib)
+</pre></div>
 
 <p>
-Build PHP (In php-4.0.xpl1 directory)
-<ol>
- <li> To make -lssl comes before -lcrypto (as advised), search for "-lcrypto"
-in ./configure and put "-lssl" before it (*).
- <li>
-./configure --with-mysql --with-openssl=/usr/local/ssl --with-curl=/usr/local/lib --with-apache=../apache_1.3.x<br>
-    (In most cases of linking problem, it should complain here in debug.log)
- <li> make
- <li> make install (If --with-apache option is omitted, it should generate php
-executable in /usr/loca/bin)
- <li> Library for modphp4 is now in apache_1.3.x/src/modules/php4
-</ol>
+Build PHP (In php-4.x.x directory)
+<p>
+<div class="quote"><pre>
+./configure --with-openssl=/usr/local/ssl &#92;
+  --with-curl=/usr/local/lib --with-apache=../apache_1.3.x
+make
+make install
+</pre></div>
 
 <p>
 Build and install SSL-aware Apache (In mod_ssl-2.8.xxxx directory)
-<ol>
- <li>
-./configure --with-apache=../apache1.3.x --with-ssl=/usr/local/ssl --prefix=/usr/local/apache --activate-module=src/modules/php4/libphp4.a
- <li> Follow remaining steps the output tells.
- <li> Restart your apache... BINGO!
-</ol>
+<p>
+<div class="quote"><pre>
+./configure --with-apache=../apache1.3.x --with-ssl=/usr/local/ssl &#92;
+  --prefix=/usr/local/apache --activate-module=src/modules/php4/libphp4.a
+Follow remaining steps the output tells.
+Restart your apache... BINGO!
+</pre></div>
+<p>
+ (contributed by Lim Chung Keng)
+
+<a name="windows"></a>
+SUBTITLE(Windows)
+<p>
+Activation of PHP/CURL on windows is starting up notepad (or similar) and
+removing a semicolon from the following line in <tt>php.ini</tt>:
+<pre>
+;extension=php_curl.dll
+</pre>
+
+(Mentioned here: <a
+href="http://php.net/manual/install.windows.extensions.php">php.net/manual/install.windows.extensions.php</a>)
 
 <p>
-(*) = You can optionally do the replaceing with this set of commands:
-<ol>
-<li> sed 's/-lcrypto/-lssl -lcrypto/g' configure > c2
-<li> rm -f configure
-<li> cp c2 configure
-<li> chmod 755 configure
-</ol>
+libcurl is statically linked in, <b>but the SSL libraries are not</b>, thus
+the note to Win32 users on <a href="http://php.net/curl">php.net/curl</a>. The
+two SSL-related DLLs from the OpenSSL project (libeay32.dll and ssleay32.dll)
+are bundled with the Windows PHP package.
+<p>
+ (Michael Wallner contributed to this)
 
 #include "_footer.html"
 
