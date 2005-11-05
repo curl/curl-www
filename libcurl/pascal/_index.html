@@ -43,38 +43,11 @@ href="http://curl.haxx.se/libcurl"><i>libcurl</i></a>.
 CurlPas also includes <b>tCurl</b>, an object-oriented binding, to provide an easy to use "wrapper" around libcurl.
 <br><br>
 
+<p><b>Documentation</b><br> 
 <p>
- All details on CurlPas is found on the CurlPas web page
+ All details on CurlPas is found on the CurlPas web page:
+<a href="http://curlpas.sourceforge.net/">curlpas.sourceforge.net</a>.
 
-#if 0
- at: <a
- href="http://houston.quik.com/jkp/curlpas/">http://houston.quik.com/jkp/curlpas/</a>.
-#endif
-
- [not presently working]. The package is said to be located here for the
- moment: <a
- href="http://www.geocities.com/yetanothergeek/curlpas.tar.gz">http://www.geocities.com/yetanothergeek/curlpas.tar.gz</a>
-
-<p><b>How to Install</b></br>
-
-CurlPas was developed and tested on <a href="http://www.suse.com">SuSE</a>
-Linux 7.1, and should be <br> compatible with most other Linux i386-i686
-systems.<br>
-<br>
-CurlPas requires:<br>
-Free Pascal >= 1.0.4, available from: <a href="http://www.freepascal.org/">http://www.freepascal.org</a><br>
-Curl/libcurl >= 7.9.5, available from: <a href="http://curl.haxx.se">http://curl.haxx.se</a><br>
-<br>
-To build CurlPas and tCurl, <b>cd</b> into the curlpas directory and
-type: <b>make</b><br> To build the example projects, issue the
-<b>make</b> command again in the /examples/ directory.<br>
-<br>
-To install curlpas, you may either copy the files from the /curlpas/src/
-directory into a location where the compiler can find them, or you can edit
-your configuration file ( usually /etc/ppc386.cfg or
-~/.ppc386.cfg ) and add the /src/ directory to the compiler's search path, for
-instance: <br>
--Fu/home/username/curlpas/src
 
 <p><b>Examples</b><br> 
 A simple http download program...<br>
@@ -133,7 +106,7 @@ WriteLn(#10, <font color="#008000">'Download a file using http...'</font>);
 ( Additional examples for FTP uploads, HTTP POST, and multipart/form-data applications are included with the CurlPas sources. )
 
 <p><b>Binding documentation</b><br>
- <a href="http://www.houston.quik.com/jkp/curlpas/tcurl.html">CurlPas docs</a>
+ <a href="http://curlpas.sourceforge.net/doc/">CurlPas docs</a>
 <p>
 The pascal bindings are quite similar to their C-language equivalents,<br>
 read the libcurl documentation for information, in particular:<br>
@@ -142,9 +115,6 @@ read the libcurl documentation for information, in particular:<br>
 <li>man curl_easy_setopt<br>
 <li>man curl_easy_getinfo<br>
 </ul>
-
-<p><b>Download</b><br> <a
- href="http://www.houston.quik.com/jkp/curlpas/files/curlpas.tar.gz">curlpas.tar.gz</a>
 
 <p><b>Credits</b><br>
  Written by Jeffrey Pohlmeyer.
