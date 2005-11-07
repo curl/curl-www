@@ -26,16 +26,19 @@ the output of this command should be the same as the phpinfo() method - which
 is a big HTML listing with all the current settings php is running on.
 <p>
 if you get any warning messages check the following:
-<ol>
+<ul>
+
 <li>
 The extensions directory has not been set correctly in the php.ini file to fix
-it - make sure there is the following line in your php.ini file
+it - make sure there is the following line in your <tt>php.ini</tt> file
 extension_dir="c:\php\extensions\" (or the relevant directory string) (I put
 the \ on the end because php automagically puts in a / if its not there. I'm
 not sure if it has any effect tho. but it did change the warning messages I
 was getting.)
 
-<li> Make sure the php_curl.dll file is in that directory.
+<li> Make sure the php_curl.dll file is in that directory. <big><b>Note:</b>
+the <i>php_curl.dll</i> is the PHP/CURL binding DLL and is included in the
+binary PHP download package for Windows.</big>
 
 <li> Also make sure that the files necessary for curl to run are in the
 system[32] directory [32] for non 9x machines.  libeay32.dll ssleay32.dll
@@ -45,7 +48,7 @@ same (I found this out by running the installer. and then copying the
 php_curl.dll file from the zip package) to fix this replace all the files in
 the php install directory with those from the zip package. (theres only 3 or
 so)
-</ol>
+</ul>
 <p>
 (stolen directly from the php install.txt)
 <p>
