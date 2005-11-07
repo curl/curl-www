@@ -6,7 +6,7 @@ require "date.pm";
 
 use feedback;
 
-$maxcommperpage = 5;
+$maxcommperpage = 10;
 
 Top();
 &where("Feedback", "/feedback/", "Display Suggestion");
