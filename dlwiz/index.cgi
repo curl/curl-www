@@ -308,6 +308,9 @@ if($pick_type && !$pick_os) {
     elsif($ua =~ /DOS/i) {
         $sel_os = "DOS";
     }
+    elsif($ua =~ /AtheOS/i) {
+        $sel_os = "Syllable";
+    }
     elsif($ua =~ /OS\/2/i) {
         $sel_os = "OS/2";
     }
@@ -521,7 +524,7 @@ if($pick_os && $pick_flav && !$pick_ver) {
             $sel_ver = "2." . $1;
         }
         elsif($pick_os eq "Solaris" && $ua =~ /SunOS 5\.([7-9]+)|SunOS 5\.(1\d+)/i) {
-            $sel_ver = $1;
+            $sel_ver = $1 . $2;
         }
 
         showsteps();
