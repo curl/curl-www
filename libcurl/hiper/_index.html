@@ -23,20 +23,23 @@ TITLE(High Performance libcurl)
 <ol>
 
 <li> provide a better API for <i>extremely</i> large amounts of simultaneous
-  transfers (the <a href="http://www.kegel.com/c10k.html">c10k problem</a>)
-  and
-
-<li> add <a
-href="http://www.mozilla.org/projects/netlib/http/pipelining-faq.html">HTTP
-pipelining</a> support.
-
-</ol>
-<p>
+  transfers (the <a href="http://www.kegel.com/c10k.html">c10k problem</a>).
   By better API, we mean both better suited to deal with the amount of
   connections (i.e no artificial limits like select() imposes etc), better
   performance-wise by avoiding expensive looping over all file descriptors to
   check for actions and to allow users to pick an underlying event system of
   their own choice.
+
+<li> add <a
+href="http://www.mozilla.org/projects/netlib/http/pipelining-faq.html">HTTP
+pipelining</a> support.
+
+<li> (NEW) provide a <i>zero copy</i> interface that reduces the amount of
+ data copies needed when transferring data to/from memory.
+
+</ol>
+<p>
+  The order above is the order of preference and implementation.
 <p>
 SUBTITLE(Schedule)
 <p>
