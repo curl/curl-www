@@ -1,7 +1,7 @@
 #ifndef WEBROOT
 #define WEBROOT
 #endif
-
+<!-- first-line-in-body -->
 #ifdef CURL_MAIN
 #define AD_PRICERUNNER
 #else
