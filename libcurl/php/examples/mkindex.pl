@@ -81,7 +81,7 @@ if($ex) {
     subtitle("The $ex Example");
 
     if( -r "$ex.html") {
-        precatfile("$ex.html");
+        catfile("$ex.html");
     }
 
     precatfile($ex);
