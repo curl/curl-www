@@ -1,6 +1,6 @@
 #include "_doctype.html"
 <HTML>
-<HEAD> <TITLE>libcurl - fully featured</TITLE>
+<HEAD> <TITLE>libcurl - What Makes It So Special</TITLE>
 #include "css.t"
 </HEAD>
 
@@ -10,7 +10,7 @@
 #include "_menu.html"
 #include "setup.t"
 
-WHERE2(libcurl, "/libcurl/", Better Than the Competition)
+WHERE2(libcurl, "/libcurl/", What Makes It So Special)
 
 TITLE(libcurl - What Makes It So Special)
 <div class="relatedbox">
@@ -18,9 +18,42 @@ TITLE(libcurl - What Makes It So Special)
 <br><a href="/docs/copyright.html">License</a>
 </div>
 
-<a name="thread"></a>
-SUBTITLE(Thread Safe)
+<a name="reliable"></a>
+SUBTITLE(Solid and Reliable!)
 <p>
+ libcurl was released in its current "incarnation" in the year 2000 and it has
+ been in constant use by a large number of <a
+ href="using/apps.html">applications</a> and <a
+ href="/docs/companies.html">companies</a> ever since. Sure there have been
+ bugs and even a few <a href="/docs/security.html">security-related</a> flaws,
+ but it has remained a very solid and reliable library and lots of users are
+ still using libcurl versions released many years ago as they stick with what
+ works.
+
+<a name="widelyused"></a>
+SUBTITLE(Widely Used!)
+<p>
+ libcurl is the most used C-based highly portable transfer library in the
+ world. Some of the world's biggest <a
+ href="/docs/companies.html">companies</a> use libcurl in high volume
+ applications. Some of the open source <a
+ href="using/apps.html">applications</a> using libcurl are very widely used.
+<p>
+ We estimate that the amount of users who frequently use (lib)curl, knowingly
+ or not, is well over one million.
+
+<a name="portable"></a>
+SUBTITLE(Portable!)
+<p>
+ libcurl has been ported to numerous platforms and CPUs. libcurl offers the
+ same API and feature set on all of them! Using libcurl assures you that you
+ can write your application to work on very large amount of systems, including
+ but not limited to Solaris, NetBSD, FreeBSD, OpenBSD, Darwin, HPUX, IRIX,
+ AIX, Tru64, Linux, UnixWare, HURD, Windows, Amiga, OS/2, BeOs, Mac OS X,
+ Ultrix, QNX, OpenVMS, RISC OS, Novell NetWare, DOS and more...
+
+<a name="thread"></a>
+SUBTITLE(Thread Safe!)
 <p>
  libcurl is designed and implemented entirely thread safe. There are some
  considerations to keep in mind when using libcurl in multiple threads though,
@@ -49,35 +82,40 @@ SUBTITLE(Thread Safe)
 
 
 <a name="features"></a>
-SUBTITLE(Unmatched Set of Features)
+SUBTITLE(Unmatched Set of Features!)
 <p>
  There simply is no other HTTP and FTP library that can boast the same amount
  and set of <a href="/docs/features.html">features</a> that libcurl does. Be
  it free or commercial.
+<p>
+ libcurl also offers an unmatched set of bindings, enabling you to access and
+ use libcurl from basically whatever language you can think of!
 
 <a name="ipv6"></a>
-SUBTITLE(Supports IPv6)
+SUBTITLE(Supports IPv6!)
 <p>
  If compiled with IPv6 support enabled, FTP, FTPS, HTTP and HTTPS all work
  splendidly on IPv6 stacks (kerberos4 does not work over IPv6 by design).
 
 <p> There is nothing in particular needed to get IPv6 to be used, the library
-API remains exactly the same and adjusts to IPv4/Ipv6 dynamicly. You can use
-host names that only have AAAA DNS records, or you can use IPv6 IP-only style
-addresses like <tt>[::1]</tt>.
+ API remains exactly the same and adjusts to IPv4/Ipv6 dynamicly. You can use
+ host names that only have AAAA DNS records, or you can use IPv6 IP-only style
+ addresses like <tt>[::1]</tt>.
 
 <a name="support"></a>
-SUBTITLE(Well Supported)
+SUBTITLE(Well Supported!)
 <p>
  We claim libcurl is well supported because you can get help on one of the
  mailing lists, very quickly and accurately. Often within a few hours. Having
  the mailing list archives available on the web also makes them searchable and
  allows you to find already mentioned solutions and answers.
 <p>
+ We have a public bug tracker and known bugs are mostly fixed very swiftly.
+<p>
  We also provide very detailed documentation on all operations, not just in
  every release archive but also available on the web site(s).
 <p>
- You can get support from one of the listed <a href="/support.html">curl
+ You can get paid support from one of the listed <a href="/support.html">curl
  support</a> companies.
 <p>
  Since the code is free and available, any skilled programmer can fix and
@@ -90,20 +128,28 @@ SUBTITLE(Fast!)
  up to a lot faster than <a href="libwww.html">libwww</a> in comparable test
  cases.
 <p>
- TODO: add references to hard facts here. If you have any or know any
- comparisons with real-world numbers, then please let us know!
+ When using libcurl bindings, you will get unmatched speeds due to libcurl
+ being programmed in C and very often the language-specific alternatives (be
+ it perl, Python, PHP, tcl or whatever) are <i>much</i> slower.
+<p>
+ TODO: add references to hard facts here. <i>If you have any or know any
+ comparisons with real-world numbers, then please let <a
+ href="mailto:curl-web@haxx.se">us</a> know!</i>
 
 <a name="docs"></a>
-SUBTITLE(Thoroughly Documented)
-<p> All functions have their own detailed <a
+SUBTITLE(Thoroughly Documented!)
+<p> All functions in libcurl have their own detailed <a
  href="/libcurl/c/allfuncs.html">man pages</a> describing their actual
  functionality and purpose.
-<p> All interfaces have overview-style man pages describing concepts that glue
- functions together: <a href="/libcurl/c/libcurl-easy.html">easy</a>, <a
+
+<p> All interfaces have overview-style man pages describing the concepts that
+ glue all the functions together: <a
+ href="/libcurl/c/libcurl-easy.html">easy</a>, <a
  href="/libcurl/c/libcurl-multi.html">multi</a> and <a
  href="/libcurl/c/libcurl-share.html">share</a>.
-<p> There is a <a
-href="/libcurl/c/libcurl-tutorial.html">tutorial</a>.
+
+<p> There is a <a href="/libcurl/c/libcurl-tutorial.html">libcurl tutorial</a>.
+
 <p> We have numerous commented <a href="/libcurl/c/example.html">source code
 examples</a>.
 
