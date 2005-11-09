@@ -15,19 +15,19 @@ WHERE2(libcurl, "/libcurl/", PHP Binding)
 
 <a name="top"></a>
 TITLE(PHP/CURL -- accessing libcurl from PHP)
-<p>
- We can take advantage of libcurl straight from within PHP programs. PHP/CURL
- is supported built-in since PHP 4.0.2, no extra stuff is needed but PHP
- and libcurl installed.
+<p class="ingres">
+ Get libcurl functionality straight from within your PHP programs. PHP/CURL is
+ supported built-in since PHP 4.0.2, no extra stuff is needed but PHP and
+ libcurl installed.
+</p>
 
 <p>
- <big><em>PHP/CURL is a binding that uses libcurl. It means that the PHP team
- has written a glue layer for PHP that speaks to the underlying libcurl. That
+ <em>PHP/CURL is a binding that uses libcurl. It means that the PHP team has
+ written a glue layer for PHP that speaks to the underlying libcurl. That
  layer, the binding, is what we call PHP/CURL and that is what offers the
  functions named curl_* within the PHP language for you. The PHP/CURL binding
  is written, maintained and being provided by the PHP team and you <b>will
- not</b> find any binaries, DLLs or other packages for it on this
- site.</em></big>
+ not</b> find any binaries, DLLs or other packages for it on this site.</em>
 
 <p>
 <div class="quote">
@@ -37,9 +37,8 @@ Performance Comparison<a href="#perf">*</a>
 2000 per minute for PHP/CURL for 2000 HTTP files
 </div>
 
+SUBTITLE(Install)
 <p>
- <b>How to Install?</b><br>
-
  The primary site for all things PHP is of course the <a
  href="http://www.php.net/">www.php.net</a> site. See their <a
  href="http://www.php.net/curl">PHP/CURL section</a> for details.
@@ -49,59 +48,60 @@ Performance Comparison<a href="#perf">*</a>
  href="install.html">install PHP/CURL</a>. There's also the
  document with <a href="iis.html">hints on how to install PHP/CURL on IIS</a>.
 
+SUBTITLE(Applications)
 <p>
- <b>Applications</b><br> We collect a <a href="apps.html">list of PHP/CURL
- powered applications</a>.
+ We collect a <a href="apps.html">list of PHP/CURL powered applications</a>.
 
+SUBTITLE(Docs and Examples)
 <p>
- <b>Docs and Examples</b>
-<br>
- The <a
- href="http://www.php.net/manual/ref.curl.php">PHP/CURL binding
+ The <a href="http://www.php.net/manual/ref.curl.php">PHP/CURL binding
  description</a> is found on the PHP site.
 <p>
- We host a few <a href="examples/">example sources</a>.
+ We provide <a href="examples/">example sources</a> showing how to use
+ PHP/CURL in various ways.
+
+SUBTITLE(Off-site Articles)
+<p>
+ These are all fine articles written by others. They are all fairly friendly
+ towards newcomers to PHP/CURL.
 
 <p>
- Michael Reynolds wrote an article on <a
- href="http://www.phpbuilder.com/columns/michael20010510.php3">phpbuilder.com</a>
- how he used curl (the command line tool) to communicate with a credit card
- payment site with PHP.
+ Michael Reynolds wrote about <a
+ href="http://www.phpbuilder.com/columns/michael20010510.php3">credit card
+ payment</a> with curl (the command line tool) and PHP.
 
 <p>
- <i>phpfreak</i> over at phpfreaks.com wrote an <a
+ phpfreak wrote an <a
 href="http://www.phpfreaks.com/tutorials/49/1.php">5-page introduction to
 PHP/CURL</a>.
 
-#if 0
 <p>
- <a href="http://pres.lerdorf.com/show/advancedphp-oscon2002/35">cURL
-slides</a> from the "Advanced PHP" presentation (Sterling Hughes and Andrei
-Zmievski).
-#endif
-<p>
- Jim Thome has posted <a
- href="http://zend.com/zend/tut/tutorial-thome3.php">an article</a> about php
- and curl over at <a href="http://zend.com">zend.com</a>.
+ Jim Thome's simple <a
+ href="http://zend.com/zend/tut/tutorial-thome3.php">getting-started with
+ PHP/CURL</a>.
 
-<p><b>Mailing List</b><br> We have this special-purpose <a
+<p>
+ higherpass.com's <a
+ href="http://www.higherpass.com/php/Tutorials/Using-Curl-To-Query-Remote-Servers/">Using
+ curl to Query Remote Servers</a> (does in fact use PHP/CURL)
+
+SUBTITLE(Mailing List / Forum)
+<p> We have this special-purpose <a
  href="http://curl.haxx.se/mail/list.cgi?list=curl-and-php">mailing list for
  PHP/CURL</a>
 
-<p><b>Web forum</b><br> phptrack.com runs a <a
+<p> phptrack.com runs a <a
  href="http://curl.phptrack.com/forum/viewforum.php?f=1">PHP/CURL web
  forum</a> (heavily promoting their book...)
 
-<p><b>See Also</b
-<br>
+SUBTITLE(See Also)
+<p>
 The <a href="http://pecl.php.net/package/pecl_http">PECL HTTP</a> package that
 might in fact suit you better! It too uses libcurl.
 
-<p><b>Books</b>
-<br>
-
-So far, there aren't any books for PHP/CURL only, but the following books have
-a varying degree of PHP/CURL documentation included:
+SUBTITLE(Books)
+<p>
+The following books have a varying degree of PHP/CURL documentation included:
 
 <ul>
 <li> <a
@@ -132,10 +132,12 @@ XML, credit card processing etc.
 
 </ul>
 
-<p><b>Credits</b><br>
+SUBTITLE(Credits)
+<p>
  The PHP/CURL module was written by Sterling Hughes.
 
-<p><b>What is PHP?</b><br>
+SUBTITLE(What is PHP)
+<p>
  You'll find more info on the <a href="http://www.php.net/">official
  PHP web page</a>.
 
