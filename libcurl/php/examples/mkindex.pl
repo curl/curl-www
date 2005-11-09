@@ -19,7 +19,7 @@ MOO
     my @ex = grep { /\.php$/ && -f "$some_dir/$_" } readdir(DIR);
     closedir DIR;
 
-    print "<p><table border=\"0\" cellpadding=\"1\" cellspacing=\"0\"><tr class=\"tabletop\">",
+    print "<p><table border=\"0\" cellpadding=\"2\" cellspacing=\"0\"><tr class=\"tabletop\">",
     "<th>Example</th>",
     "<th>Description</th>",
     "</tr>\n";
@@ -38,8 +38,12 @@ MOO
         my $exfile = $filename;
 
         $exfile =~ s/\.php$/.html/;
+
+        my $fileshow = $filename;
+
+        $fileshow =~ s/\.php$//;
         
-        print "<a href=\"./$exfile\">$filename</a></td><td>\n";
+        print "<a href=\"./$exfile\">$fileshow</a></td><td>\n";
         if( -r "$filename.html") {
             &catfile("$filename.html");
         }
