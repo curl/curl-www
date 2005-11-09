@@ -87,9 +87,10 @@ if($ex) {
     if( -r "$ex.html") {
         catfile("$ex.html");
     }
-
+    print "<p><div class=\"quote\">\n";
     precatfile($ex);
+    print "</div>\n";
 }
 
-&catfile("../../../foot.html");
+footer();
 
