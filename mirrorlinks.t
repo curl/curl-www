@@ -4,7 +4,9 @@ Mirror:
 <a href="http://curl.gds.tuwien.ac.at/">AT</a>
 <a href="http://curl.planetmirror.com/">AU</a>
 <a href="http://curl.mirror.at.stealer.net/">DE1</a>
+#if 0
 <a href="http://curl.mirror-server.net/">DE2</a>
+#endif
 <a href="http://curl.freemirror.de/">DE3</a>
 <a href="http://curl.mons-new-media.de/">DE4</a>
 <a href="http://curl.mirroring.de/">DE5</a>
@@ -33,7 +35,9 @@ Mirror:
 <a href="http://curl.gds.tuwien.ac.at/CURL_URL">AT</a>
 <a href="http://curl.planetmirror.com/CURL_URL">AU</a>
 <a href="http://curl.mirror.at.stealer.net/CURL_URL">DE1</a>
+#if 0
 <a href="http://curl.mirror-server.net/CURL_URL">DE2</a>
+#endif
 <a href="http://curl.freemirror.de/CURL_URL">DE3</a>
 <a href="http://curl.mons-new-media.de/CURL_URL">DE4</a>
 <a href="http://curl.mirroring.de/CURL_URL">DE5</a>
