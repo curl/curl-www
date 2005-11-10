@@ -275,12 +275,13 @@ tr.odd {
 
 .relatedbox {
   border-color: black;
-  border-width: 2px;
+  border-width: 1px;
   border-style: solid;
   color: #000000;
   float: right;
   text-align: left;
   padding: 2px 2px 2px 2px;
+  margin: 4px 4px 4px 4px;
   background: white;
 }
 
