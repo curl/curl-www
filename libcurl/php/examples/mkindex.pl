@@ -22,6 +22,7 @@ MOO
     print "<p><table border=\"0\" cellpadding=\"2\" cellspacing=\"0\"><tr class=\"tabletop\">",
     "<th>Example</th>",
     "<th>Description</th>",
+    "<th>Author</th>",
     "</tr>\n";
 
     my $c;
@@ -50,10 +51,21 @@ MOO
         else {
             print "&nbsp;";
         }
-        print "</td></tr>\n";
+        printf "</td><td>%s</td></tr>\n", $author{$filename};
     }
     print "</table>\n";   
 }
+
+# author info about each PHP file
+open(AUTH, "<authors.txt");
+while(<AUTH>) {
+    if($_ =~ /^([^ ]*) (.*)/) {
+        $author{$1}=$2;
+    }
+}
+close(AUTH);
+
+
 
 &catfile("../examples.html");
 
@@ -86,6 +98,9 @@ if($ex) {
 
     if( -r "$ex.html") {
         catfile("$ex.html");
+    }
+    if($author{$ex}) {
+        print "Written by ".$author{$ex};
     }
     print "<p><div class=\"quote\">\n";
     precatfile($ex);

@@ -16,7 +16,7 @@ all: index.html $(PHPHTML)
 index.html: ./mkindex.pl $(MAINPARTS) $(PHPDESC)
 	./mkindex.pl > $@
 
-%.html: %.php ./mkindex.pl %.php.html $(PHPDESC) $(MAINPARTS)
+%.html: %.php ./mkindex.pl %.php.html $(PHPDESC) $(MAINPARTS) authors.txt
 	./mkindex.pl $< > $@ 
 
 clean:
