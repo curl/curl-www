@@ -54,7 +54,8 @@ rfc2965.txt HTTP State Management Mechanism. Cookies. (Obsoletes RFC2109)
 rfc3280.txt Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile
 rfc3513.txt IP Version 6 Addressing Architecture
 rfc3617.txt Uniform Resource Identifier (URI) Scheme for TFTP
-draft-murray-auth-ftp-ssl-16.txt Securing FTP with TLS
+draft-murray-auth-ftp-ssl-16.txt Securing FTP with TLS (Obsoleted by RFC4217)
 ntlm.html Eric Glass' NTLM Authentication Protocol specification
 draft-brezak-spnego-http-04.txt SPNEGO Access Authentication
 draft-luotonen-web-proxy-tunneling-01.txt Tunneling TCP based protocols through Web proxy servers
+rfc4217.txt Securing FTP with TLS
