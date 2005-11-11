@@ -14,33 +14,46 @@ WHERE2(libcurl, "/libcurl/", libcurl Pascal Binding)
 
 <a name=top>
 TITLE(CurlPas -- accessing libcurl from Pascal)
-
+</a>
 <p>
-<b>CurlPas</b> - A <a href="http://www.freepascal.org"><i>free pascal</i>,
-Delphi and Kylix</a> binding to <a
-href="http://curl.haxx.se/libcurl"><i>libcurl</i></a>.
+<b>CurlPas</b> is a 
+<a href="http://www.freepascal.org">FreePascal</a> -
+<a href="http://lazarus.freepascal.org">Lazarus</a> -
+<a href="http://www.borland.com/delphi">Delphi</a> -
+<a href="http://www.borland.com/kylix"> Kylix</a> -
+ compatible binding and object-oriented wrapper for 
+<a href="http://curl.haxx.se/libcurl"><i>libcurl</i></a>.
 <p>
- Also, check out Christophe Espern's <a href="../pascal2/">Object-Pascal</a>
- binding.
+ Also, check out Christophe Espern's <a href="../pascal2/">Object-Pascal</a> binding.
 
 <br><br>
-<i>libcurl</i> is a web-client libray that can provide your <i>free pascal</i> applications with an easy way to implement such things as:<ul>
+<b><i>Libcurl</i></b> is a web-client library that can provide cross-platform Pascal 
+applications with an easy way to implement such things as:
+<ul>
 <li>Download files using FTP or HTTP.
-<li>Upload files using FTP, HTTP PUT and multipart/form-data (aka rfc1867).
-<li>Support for remote FTP commands like MKD, CWD, DELE, and CHMOD.
-<li>Timeout settings for connect, minimum transfer speed, and total download time.
+<li>Upload files using FTP,&nbsp; HTTP PUT and multipart/form-data (aka rfc1867).
+<li>Perform multiple concurrent transfers using the <tt>curl_multi</tt> interface.
 <li>Resume partial file transfers.
-<li>Basic username:password authentication to remote and/or proxy servers.
-<li>Retrieve header info from an http response, without downloading the entire file.
-<li>Send and receive cookies ( from a file, or input/output strings ).
-<li>Send "spoofed" headers such as HTTP_USER_AGENT and DOCUMENT_REFERRER.
-<li>Set additional custom HTTP headers if needed.
-<li>Option to <i>follow</i> or <i>fail</i> on HTTP redirects.
+<li>Timeout settings for connect, minimum transfer speed, and total download time.
+<li>Username:password authentication to remote and/or proxy servers.
+<li>SSL/TLS connections using the <a href="http://www.openssl.org">OpenSSL</a> 
+    or <a href="http://www.gnu.org/software/gnutls/">GnuTLS</a> libraries.
+<li>Retrieve resource information such as HTTP HEAD or FTP LIST.
+<li>Send and receive cookies ( from a NS cookie file, or input/output strings ).
+<li>Send "spoofed" headers such as <tt>User-Agent</tt> and <tt>Referer</tt>.
+<li>Set additional custom HTTP headers as required.
+<li>Support for remote FTP commands like MKDIR, DEL, and CHMOD.
 <li>Generate "human-readable" error output and/or logs on failed transfers.
+<li>And much more...
 </ul>
-<i>libcurl</i> also provides <i><b>many</b></i> other functions such as TELNET and SSL, but not all these have been tested in <i>curlpas</i>.<br>
 <br>
-CurlPas also includes <b>tCurl</b>, an object-oriented binding, to provide an easy to use "wrapper" around libcurl.
+
+CurlPas also includes the <b><i>tCurl</i></b> and <b><i>tCurlMulti</i></b> components, 
+to provide an easy to use "wrapper" around libcurl.<br>
+( This provides simple get/set properties for libcurl's options and information 
+functions, event-based hooks to <br>
+libcurl's I/O, status, and progress callbacks, and wraps the c-style file I/O behind 
+simple filename properties. )
 <br><br>
 
 <p><b>Documentation</b><br> 
@@ -50,71 +63,44 @@ CurlPas also includes <b>tCurl</b>, an object-oriented binding, to provide an ea
 
 
 <p><b>Examples</b><br> 
-A simple http download program...<br>
-<pre>
-<meta name="generator" content="pas2html 0.9.2">
-<b><font color="#A000A0">program </font></b>testget; 
+A simple http download program...
+<pre style="color:#0000C0; background:#F0F0F0; margin:64px">
 
-<b><font color="#A000A0">uses </font></b>curlobj;
+  <b>program</b> simple<b>;</b>
 
-<b><font color="#A000A0">var</font></b> MyCurl: tCurl;
+  <i>{$APPTYPE CONSOLE}</i>
 
-<font color="#808080"><i>{ a very basic progress callback... }</i></font>
-<b><font color="#A000A0">function </font></b>Progress( p:pointer; dltotal, dlnow, ultotal, ulnow:longint ): longint;
-<b><font color="#A000A0">begin</font></b>
-Write(StdErr, <font color="#008000">'Received: '</font>,  dlnow:9, <font color="#008000">' of '</font>, dltotal, #13);
-  Progress := 0;
-<b><font color="#A000A0">end</font></b>;
+  <b><i>uses </i></b>curlobj<b>;
 
-<font color="#808080"><i>{ main... }</i></font>
-<b><font color="#A000A0">begin</font></b>
-<font color="#A000A0">if</font> ( ParamCount = 1 ) <font color="#A000A0">then</font> <b><font color="#A000A0">begin</font></b>
-MyCurl := tCurl.Create;
-    <b><font color="#A000A0">with</font></b> MyCurl <font color="#A000A0">do</font> <b><font color="#A000A0">begin</font></b>
-URL := ParamStr(1);
-      OutputFile := <font color="#008000">'testget.tmp'</font>;
-      HeaderFile := <font color="#008000">'headers.txt'</font>;
-      ErrorFile := <font color="#008000">'errors.txt'</font>;
-      NoProgress := False;
-      ProgressCallback := @Progress;
-      Verbose := True;
-      FollowLocation := True;
-      <font color="#A000A0">if</font> Perform <font color="#A000A0">then</font> <b><font color="#A000A0">begin</font></b>
-<font color="#808080"><i>{ Print some statistics about the transfer ... }</i></font>
-WriteLn;
-        WriteLn(<font color="#008000">'Effective URL: '</font>, EffectiveUrl);
-        WriteLn(<font color="#008000">'Content-Type:  '</font>, ContentType);    
-        WriteLn(<font color="#008000">'Http code:     '</font>, HttpCode:3);
-        WriteLn(<font color="#008000">'DNS lookup time:  '</font>, NameLookuptime:10:4, <font color="#008000">' sec'</font>);
-        WriteLn(<font color="#008000">'Connect time:     '</font>, ConnectTime:10:4,    <font color="#008000">' sec'</font>);
-        WriteLn(<font color="#008000">'Total time:       '</font>, TotalTime:10:4,      <font color="#008000">' sec'</font>);
-        WriteLn(<font color="#008000">'Total size:       '</font>, SizeDownload:9,    <font color="#008000">' bytes'</font>);
-        WriteLn(<font color="#008000">'Download Speed:   '</font>, SpeedDownload:9:0, <font color="#008000">' bps'</font>);
-      <b><font color="#A000A0">end</font></b> <font color="#A000A0">else</font> WriteLn(ErrorString); <font color="#808080"><i>{ &lt;- Show the error if Perform fails }</i></font>
-Destroy;
-    <b><font color="#A000A0">end</font></b>;
-  <b><font color="#A000A0">end</font></b> <font color="#A000A0">else</font> <b><font color="#A000A0">begin</font></b> <font color="#808080"><i>{ Usage... }</i></font>
-WriteLn(#10, <font color="#008000">'Download a file using http...'</font>);
-    WriteLn(<font color="#008000">' File will be saved to disk as "testget.tmp"'</font>);
-    WriteLn(<font color="#008000">' Response headers are saved in "headers.txt"'</font>);
-    WriteLn(<font color="#008000">' Error messages are saved in "errors.txt"'</font>, #10);
-    WriteLn(<font color="#008000">'Usage: testget &lt;remote-url&gt;'</font>, #10);
-  <b><font color="#A000A0">end</font></b>;
-<b><font color="#A000A0">end</font></b>.
+  var </b>
+    Curl: TCurl;
+
+  <b>begin</b>
+    Curl := TCurl.Create(nil);
+    Curl.URL := <span style="color:#008800">'http://curl.haxx.se/'</span>;
+    Curl.OutputFile := <span style="color:#008800">'curl.html'</span>;
+
+    <b>if not </b>Curl.Perform <b>then</b>
+      WriteLn(Curl.ErrorString);
+
+    Curl.Free;
+  <b>end.</b>
+
 </pre>
-<br>
-( Additional examples for FTP uploads, HTTP POST, and multipart/form-data applications are included with the CurlPas sources. )
+( Several more complex examples are included with the CurlPas sources. )<br><br>
 
 <p><b>Binding documentation</b><br>
- <a href="http://curlpas.sourceforge.net/doc/">CurlPas docs</a>
+Documentation for the component wrapper can be found in the source package,<br>
+and on the <a href="http://curlpas.sourceforge.net/doc/">CurlPas</a> website.
 <p>
-The pascal bindings are quite similar to their C-language equivalents,<br>
+The core pascal bindings are quite similar to their C-language equivalents,<br>
 read the libcurl documentation for information, in particular:<br>
 <ul>
 <li>man libcurl<br>
 <li>man curl_easy_setopt<br>
 <li>man curl_easy_getinfo<br>
 </ul>
+
 
 <p><b>Credits</b><br>
  Written by Jeffrey Pohlmeyer.
