@@ -81,10 +81,10 @@ sub curlmain {
     &showarchs($num, @dirs);
 
     if($num <= 0 ) {
-        print "<p><b>Year 1999</b><br>\n";
+        print "<b>1999</b>\n";
 
-        print " <a href=\"archive_pre_oct_99/\">August - September</a>\n",
-        "<br> <a href=\"archive/\">October - December</a>",
+        print " <a href=\"archive_pre_oct_99/\">Aug - Sep</a>\n",
+        " <a href=\"archive/\">Oct - Dec</a>",
         "\n";
     }
 
