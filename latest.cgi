@@ -286,17 +286,17 @@ if($latest::version{$what}) {
         "(<a href=\"#verified\">verified</a> ".&time_ago.")\n";
 
         if($showall && ($inmycontinent || $inmycountry)) {
-            print "<p> <a href=\"$script?curl=$what\">Show my best mirrors</a>";
+            print "<p> <a href=\"$script?curl=$what\">Show my closest mirrors</a>";
         }
         elsif($inmycountry) {
-            print "<p>$inmycountry of these mirrors are located in ".ucfirst(lc($mycountry))." where it looks like you are located. <a href=\"$script?curl=$what&all=yes\">Show all</a>\n";
+            print "<p>$inmycountry of these mirrors are located in ".ucfirst(lc($mycountry))." where it looks like you are located. <p><a href=\"$script?curl=$what&all=yes\">Show all mirrors</a>\n";
         }
         elsif($inmycontinent) {
             print "<p>$inmycontinent of these mirrors are located in ".ucfirst(lc($mycontinent))." where it looks like you are located. Showing those mirrors only!\n";
         }
         
         print "<table><tr class=\"tabletop\">";
-        for(('&nbsp;', 'Location', 'Proto', 'Host', 'File')) {
+        for(('&nbsp;', 'Location', 'Download', 'Proto', 'Host')) {
             print "<th>$_</th>";
         }
         print "</tr>\n";
@@ -322,14 +322,14 @@ if($latest::version{$what}) {
             }
 
             $i++;
-            printf "<tr class=\"%s\"><td>%s</td><td><b>%s</b></td><td>%s</td><td>%s</td><td><a href=\"%s\">%s</a></td></tr>\n",
+            printf "<tr class=\"%s\"><td>%s</td><td><b>%s</b></td><td><a href=\"%s\">%s</a></td><td>%s</td><td>%s</td></tr>\n",
             $i&1?"odd":"even",
             $flag,
             $where{$url},
-            $proto{$url},
-            $host{$url},
             $url,
-            $archive;
+            $archive,
+            $proto{$url},
+            $host{$url};
         }
         print "</table>\n";
     }
