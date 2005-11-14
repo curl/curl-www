@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 
 require "CGI.pm";
+require "ipwhere.pm";
 
 use strict;
 use latest;
@@ -25,9 +26,15 @@ my $req = new CGI;
 
 my $what=$req->param('curl');
 
+my $showall=$req->param('all'); # override geographic checks
+
+my ($mytld, $mycontinent, $mycountry);
+my $inmycountry;
+my $inmycontinent;
+
 sub otherarchive {
 
-    print "<form method=\"GET\" action=\"latest.cgi\">\n";
+    print "<form method=\"GET\" action=\"$script\">\n";
     print "<p> Select another archive: \n";
     print "<select name=\"curl\">\n";
     for(sort {$latest::desc{$a} cmp $latest::desc{$b}} keys %latest::desc) {
@@ -116,7 +123,7 @@ sub randomorder {
     return sort { return int(rand(4)-2); } @_;
 }
 
-sub flag {
+sub gettld {
     my ($country)=@_;
     my $tld;
 
@@ -165,6 +172,13 @@ sub flag {
     elsif($country =~ /Taiwan/) {
         $tld="tw";
     }
+    return $tld;
+}
+
+sub flag {
+    my ($country)=@_;
+
+    my $tld = gettld($country);
 
     if($tld) {
         return "<img src=\"/pix/flags/$tld.png\" alt=\"$tld\">";
@@ -223,7 +237,7 @@ if($latest::version{$what}) {
     "<br><b>MD5:</b> <tt>".$md5."</tt>\n",
     "<br><b>Size:</b> ".$latest::size{$what}." bytes\n",
     "<br><b>Version:</b> ".$latest::version{$what}."\n";
-    
+
     if( -r "download/$archive.asc" ) {
         print "<br><b>GPG signature:</b> <a href=\"download/$archive.asc\">$archive.asc</a>";
     }
@@ -231,6 +245,28 @@ if($latest::version{$what}) {
     if($#dl > 10 ) {
         # so many mirrors we show this above them as well
         otherarchive();
+    }
+
+    my $myip = $ENV{'REMOTE_ADDR'} || "193.15.23.28";
+
+    ($mytld, $mycontinent, $mycountry) = mycountry($myip);
+    #($mytld, $mycontinent, $mycountry) = ("NO", "Oceania", "NORWAY");
+
+    $mycountry = ucfirst(lc($mycountry));
+
+    # print "<p>ME: $tld in $cont\n";
+    
+    for(@dl) {
+        my $url=$_;
+        my $flag = gettld($where{$url});
+        my $urlcontinent = tld2continent( $flag );
+
+        if($flag eq lc($mytld)) {
+            $inmycountry++;
+        }
+        if($urlcontinent eq $mycontinent) {
+            $inmycontinent++;
+        }
     }
 
     if($latest::headver ne $latest::version{$what}) {
@@ -246,8 +282,18 @@ if($latest::version{$what}) {
     }
     else {
         
-        print "the following ".($#dl+1)." sites ",
+        print " ".($#dl+1)." sites ",
         "(<a href=\"#verified\">verified</a> ".&time_ago.")\n";
+
+        if($showall && ($inmycontinent || $inmycountry)) {
+            print "<p> <a href=\"$script?curl=$what\">Show my best mirrors</a>";
+        }
+        elsif($inmycountry) {
+            print "<p>$inmycountry of these mirrors are located in ".ucfirst(lc($mycountry))." where it looks like you are located. <a href=\"$script?curl=$what&all=yes\">Show all</a>\n";
+        }
+        elsif($inmycontinent) {
+            print "<p>$inmycontinent of these mirrors are located in ".ucfirst(lc($mycontinent))." where it looks like you are located. Showing those mirrors only!\n";
+        }
         
         print "<table><tr class=\"tabletop\">";
         for(('&nbsp;', 'Location', 'Proto', 'Host', 'File')) {
@@ -260,6 +306,20 @@ if($latest::version{$what}) {
             my $url=$_;
 
             my $flag = flag($where{$url});
+
+            if($showall) {
+                ;
+            }
+            elsif($inmycountry) {
+                if(gettld($where{$url}) ne lc($mytld)) {
+                    next;
+                }
+            }
+            elsif($inmycontinent) {
+                if(tld2continent( gettld($where{$url})) ne $mycontinent) {
+                    next;
+                }
+            }
 
             $i++;
             printf "<tr class=\"%s\"><td>%s</td><td><b>%s</b></td><td>%s</td><td>%s</td><td><a href=\"%s\">%s</a></td></tr>\n",
@@ -283,12 +343,47 @@ elsif($what) {
 otherarchive();
 
 print <<MOO
+<h2>Mirroring</h2>
+MOO
+    ;
 
-<p> This service automatically and frequently scans through known <a
+if(!$inmycontinent && $mycontinent) {
+print <<MOO
+<p>
+
+ There is currently <b>no download mirrors in your continent</b> holding this
+ package. If this is a new package, there might appear one later on, or we
+ hope that <i>you</i> <a href="/mirror/">start hosting a mirror</a> in
+ $mycontinent!
+
+MOO
+;
+}
+
+elsif(!$inmycountry && $mycountry) {
+print <<MOO
+<p>
+
+ There is currently <b>no download mirrors in your country</b> holding this
+ package. If this is a new package, there might appear one later on, or we
+ hope that <i>you</i> <a href="/mirror/">start hosting a mirror</a> in
+ $mycountry!
+
+MOO
+;
+}
+
+print <<MOO
+<p>
+This service automatically and frequently scans through known <a
 href="mirrors.html">mirrors</a> and builds links to the latest versions of
 many different curl archives. This page is fine to bookmark!
 
-<h2>Verification of Mirrored Packages</h2>
+<p> Our system that tries to detect your location is using data from <a
+href="http://hostip.info/">hostip.info</a>. If it seems to do wrong, please go
+there and update the info about your IP!
+
+<h2>Verification of Packages</h2>
 <a name="verified"></a>
 
 The script that "verifies" mirrored files only checks if they are present or
