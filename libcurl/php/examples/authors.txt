@@ -7,3 +7,4 @@ multi.php Roman Rozanov
 multipartpost.php Pete James
 linkchecker.php <a title="Michael Phipps is a PHP Programmer located in Brisbane, Queensland, Australia." href="http://michaelphipps.com" >Michael Phipps</a>
 ftpupload.php Daniel Stenberg
+rss-adsense.php <a href="http://planetOzh.com">Ozh</a>
