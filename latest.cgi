@@ -19,6 +19,7 @@ my %archtype;
 my %where;
 
 my $md5sum="md5sum";#/home/dast/solaris/bin/md5sum";
+my $sha1sum="sha1sum";
 
 print "Content-Type: text/html\n\n";
 
@@ -230,10 +231,14 @@ if($latest::version{$what}) {
     my $md5full=`$md5sum "download/$archive"`;
     my ($md5, $file)=split(" ", $md5full);
 
+    my $sha1full=`$sha1sum "download/$archive"`;
+    my ($sha1, $dummy)=split(" ", $sha1full);
+
     print "<h2>$archive</h2>\n";
             
     print "<b>What:</b> $desc\n",
             
+    "<br><b>SHA-1:</b> <tt>".$sha1."</tt>\n",
     "<br><b>MD5:</b> <tt>".$md5."</tt>\n",
     "<br><b>Size:</b> ".$latest::size{$what}." bytes\n",
     "<br><b>Version:</b> ".$latest::version{$what}."\n";
@@ -391,7 +396,8 @@ not, to verify that you can download them.
 <p>
 
 To be really sure and safe that the contents of the files are correct, you
-should use the MD5 checksum and GPG signature to verify downloads yourself!
+should use the SHA-1 checksum, the MD5 checksum and GPG signature to verify
+downloads yourself!
 
 MOO
 ;
