@@ -41,6 +41,20 @@ pipelining</a> support.
 <p>
   The order above is the order of preference and implementation.
 <p>
+  I've also decided <i>not to</i>:
+<ol>
+
+<li> Make any parts of this new API aware of any thread API or similar, it
+remains thread agnostic but of course perfectly good to use in (many) threads.
+
+<li> Offer any API to help applications to dispatch transfer jobs between many
+threads. A high-volume transfer application could very well have N threads
+with a multi handle in each, using the <i>Hiper</i> API, but we do not offer
+any built-in support to dispatch transfers to the various threads. This is
+indeed room for future improvements.
+
+</ol>
+<p>
 SUBTITLE(Schedule)
 <p>
   Daniel intends to work more or less full-time with the Hiper project during
@@ -66,7 +80,10 @@ SUBTITLE(Project Involvement)
   Progress reports will be posted and discussions will be held on the regular
   <a
   href="http://curl.haxx.se/mail/list.cgi?list=curl-library">curl-library</a>
-  mailing list.
+  mailing list. I will also post "quarterly" reports in Swedish to IIS (as
+  mandated by the contract I've signed with them as a condition for me to
+  receive the money), and I will make those reports available here online as
+  well.
 
 SUBTITLE(Source Code Repository)
 <p>
