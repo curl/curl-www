@@ -11,3 +11,5 @@ lt-curl.c:79: warning: passing arg 2 of `execv' from incompatible pointer type
 # long long warnings in oldish gcc:
 curl/lib/mprintf.c:.*: warning: ANSI C does not support `long long'
 curl/src/main.c:.*: warning: ANSI C forbids long long integer constants
+# ming/libtool warning:
+.libs/lt-curl.exe.c:
