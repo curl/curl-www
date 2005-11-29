@@ -251,7 +251,10 @@ if(!$pick_type) {
 
 if($pick_type && !$pick_os) {
 
-    if($ua =~ /(windows|win32|Win98|Win95|WinNT)/i) {
+    if($ua =~ /Windows 3\.|Win16/i) {
+        $sel_os = "DOS";
+    }
+    elsif($ua =~ /(windows|win32|Win98|Win95|Win9x|WinNT)/i) {
         $sel_os = "Win32";
     }
     elsif($ua =~ /Linux/i) {
@@ -296,7 +299,7 @@ if($pick_type && !$pick_os) {
     elsif($ua =~ /RISC OS/i) {
         $sel_os = "RISC OS";
     }
-    elsif($ua =~ /SymbianOS|Symbian OS/i) {
+    elsif($ua =~ /Symbian/i) {
         $sel_os = "Symbian OS";
     }
     elsif($ua =~ /OSF1/i) {
@@ -418,6 +421,8 @@ if(!$pick_flav && $pick_os && $pick_type) {
     }
     else {
         $sel_flav = "";
+
+        # Linux flavours (should really check for that first)
         if($ua =~ /mdk|Mandriva/i) {
             $sel_flav = "Mandriva";
         }
@@ -442,10 +447,21 @@ if(!$pick_flav && $pick_os && $pick_type) {
         elsif($ua=~ /Fedora|fc[\d]/i) {
             $sel_flav = "Fedora";
         }
+        elsif($ua=~ /ASPLinux/i) {
+            $sel_flav = "ASP";
+        }
+        elsif($ua=~ /VineLinux/i) {
+            $sel_flav = "Vine";
+        }
         # Some indicators of a PDA device
         # Not necessarily Familiar, but that's the best we have to offer
         elsif($ua=~ /Qtopia|Qt *embedded|embedix|PDA/i) {
             $sel_flav = "Familiar";
+        }
+
+	# Non-Linux flavours
+        elsif($ua=~ /PocketPC|Windows CE/i) {
+            $sel_flav = "WinCE";
         }
 
         showsteps();
@@ -506,6 +522,9 @@ if($pick_os && $pick_flav && !$pick_ver) {
             $sel_ver = $1;
         }
         elsif($pick_flav eq "Redhat" && $ua =~ /centos([\d\.]+)/i) {
+            $sel_ver = "RHEL" . $1;
+        }
+        elsif($pick_flav eq "Redhat" && $ua =~ /\bEL([\d\.]+)/i) {
             $sel_ver = "RHEL" . $1;
         }
         elsif($pick_os eq "Win32" && $ua =~ /Windows NT ?5\b|Windows XP/i) {
