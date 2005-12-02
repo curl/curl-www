@@ -27,32 +27,24 @@ TITLE(Project Hiper Schedule and Dates)
 <table>
 
 START
- MARKDATE(Oct 24 2005) Daniel visited the "Internetdagarna" conference in
- Stockholm, Sweden and receives a diploma, a flower and some sturdy handshakes
- when the <a href="http://www.iis.se/">IIS</a> foundation announced that
- Daniel will receive 150,000 SEK from their fund. Daniel was notified about
- their decision roughly one week before this.
+
+ MARKDATE(Dec 2 2005) Made a script that figuered out a few thousand "random"
+ URLs.<p>Started writing a test application using the existing multi
+ interface. It fetches N simultaneous URLs and measures how long time is spent
+ in the curl_multi_perform() calls. With "just" 100 simultaneous downloads the
+ time spent is very small so I guess I need to up the timer resolution and use
+ many more simultaneous transfers. Since my goal is to increase performance
+ when very many transfers <i>are in progress</i> I need to somehow weight the
+ stats counters to consider the amount of current transfers.
+ <p>
+ I've decided I'll commit/shouw my test program(s) as soon as I have something
+ that actually show numbers I trust and are reliable.
+
 STOP
 
 START
- MARKDATE(Nov 3 2005) announced the 'hiper' project to the world, and added
- this hiper section of the curl web site.
-STOP
-
-START
- MARKDATE(Nov 4 2005) Added the <a href="api.html">API</a> and <a
- href="app.html">Sample app</a> pages here.
-STOP
-
-START
- MARKDATE(Nov 9 2005) Discussing possible Windows-adjustments to the hiper
- concept on the <a href="http://curl.haxx.se/mail/list.cgi?list=curl-library">curl-library</a> mailing list.
-STOP
-
-START
- MARKDATE(Nov 28 2005) Discussing how the "zero copy" interface for
- libcurl could work. On the <a href="http://curl.haxx.se/mail/list.cgi?list=curl-library">curl-library</a> mailing list.
-
+ MARKDATE(Dec 1 2005) Daniel started working full-time on project Hiper (during
+ the entire month of December).
 STOP
 
 START
@@ -62,9 +54,34 @@ START
 STOP
 
 START
- MARKDATE(Dec 1 2005) Daniel started working full-time on project Hiper (during
- the entire month of December).
+ MARKDATE(Nov 28 2005) Discussing how the "zero copy" interface for
+ libcurl could work. On the <a href="http://curl.haxx.se/mail/list.cgi?list=curl-library">curl-library</a> mailing list.
+
 STOP
+
+START
+ MARKDATE(Nov 9 2005) Discussing possible Windows-adjustments to the hiper
+ concept on the <a href="http://curl.haxx.se/mail/list.cgi?list=curl-library">curl-library</a> mailing list.
+STOP
+
+START
+ MARKDATE(Nov 4 2005) Added the <a href="api.html">API</a> and <a
+ href="app.html">Sample app</a> pages here.
+STOP
+
+START
+ MARKDATE(Nov 3 2005) announced the 'hiper' project to the world, and added
+ this hiper section of the curl web site.
+STOP
+
+START
+ MARKDATE(Oct 24 2005) Daniel visited the "Internetdagarna" conference in
+ Stockholm, Sweden and receives a diploma, a flower and some sturdy handshakes
+ when the <a href="http://www.iis.se/">IIS</a> foundation announced that
+ Daniel will receive 150,000 SEK from their fund. Daniel was notified about
+ their decision roughly one week before this.
+STOP
+
 
 #include "_footer.html"
 
