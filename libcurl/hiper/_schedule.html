@@ -35,6 +35,74 @@ TITLE(Project Hiper Schedule and Dates)
 
 START
 
+ MARKDATE(Dec 6 2005) Been struggling to get a test program that can be used
+ to measure and show the current overhead/speed in a good way. I've been quite
+ surprised by the speed of the existing implementation. My test application
+ easily initiates and transfers 2000 simultaneous transfers (and man does this
+ work nicer with a c-ares built libcurl!). The average time spent for each
+ curl_multi_perform() in these cases is easily measured, but it is not easily
+ to draw any specific conclusions. With 50 simultaneous connections, the
+ average time per invoke is less than 600us on my Athon XP2800 Linux 2.6 box.
+<p>
+ Some more numbers from the tests. I have a list with a few thousand URLs that
+ the test app reads from and starts transferring data from. See below for more
+ descriptions.
+<p>
+<pre>
+Total time 108149477us - Paused 12906983us = Active 95242494us = Active/total 47621us
+ Active/(connections that delivered data) = 115585us
+ 824 out of 2000 connections provided data
+46684 calls to curl_multi_perform(), average 206 alive. Average time: 2040us
+45267 calls to select(), average 193 alive
+ Average number of readable connections per select() return: 172
+ Max number of readable connections for a single select() return: 549
+0 select() timeouts
+</pre>
+<p>
+<ul>
+ <li> Total time - duration of the test. It stops when less than 50
+ connections are alive
+ <li> Paused - time we don't care about, during which select() is called
+ <li> Active - time we care about. The total amount spent in curl_multi_perform()
+ <li> Active/total - is then the active time split on total number of connections (2000 in this case)
+ <li> It is worth noting that not during the test, not a single select() call
+   timed out. I use a 50ms timeout
+ <li> The numbers shown here are quoted from a single test run, but they are
+   very similar on repeated invokes
+</ul>
+<p>
+ I managed to get this very high number of simultaneous connections returned
+ from the select() call by patching libcurl to only read from connections one
+ byte at a time!
+<p>
+ The test program finally produces a summary that is separated into number of
+ alive connections. So that we can see the average time curl_multi_perform()
+ takes when N connections are still alive. I'll show a few lines from the list
+ (times are in microseconds):
+
+<pre>
+Time 50 connections, average 579 max 2351 (283 laps) average/conn: 11
+Time 60 connections, average 673 max 3036 (594 laps) average/conn: 11
+Time 70 connections, average 877 max 5402 (566 laps) average/conn: 12
+Time 100 connections, average 1134 max 2367 (431 laps) average/conn: 11
+Time 150 connections, average 1787 max 3025 (11 laps) average/conn: 11
+Time 200 connections, average 2112 max 3843 (74 laps) average/conn: 10
+Time 300 connections, average 2901 max 5629 (27 laps) average/conn: 9
+Time 401 connections, average 3855 max 8623 (65 laps) average/conn: 9
+Time 500 connections, average 4552 max 8409 (25 laps) average/conn: 9
+Time 915 connections, average 11700 max 38587 (6 laps) average/conn: 12
+</pre>
+
+<p>
+ Worth noticing is that this splits the time on "alive connections", while we
+ don't really know how many connections that are readable at any given time
+ here. The average number shown above does indicate that the amount of
+ readable connections are fairly high all the time though.
+
+STOP
+
+START
+
  MARKDATE(Dec 2 2005) Made a script that figuered out a few thousand "random"
  URLs.<p>Started writing a test application using the existing multi
  interface. It fetches N simultaneous URLs and measures how long time is spent
