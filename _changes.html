@@ -45,6 +45,38 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 <li> <a href="http://curl.haxx.se/auto/cvshistory.html">recent CVS activity</a>
  </ul>
 
+SUBTITLE(Fixed in 7.15.1 - December 7 2005)
+<p> Changes:
+<ul>
+ <li> the libcurl.pc pkgconfig file now gets installed on make install
+ <li> URL globbing now offers "range steps": [1-100:10]
+ <li> LDAPv3 is now the preferred LDAP protocol version
+ <li> --max-redirs and CURLOPT_MAXREDIRS set to 0 limits redirects
+ <li> improved MSVC makefile
+</ul>
+<p> Bugfixes:
+<ul>
+ <li> buffer overflow problem: http://curl.haxx.se/docs/adv_20051207.html
+ <li> using file:// on non-existing files are properly handled
+ <li> builds fine on DJGPP
+ <li> CURLOPT_ERRORBUFFER is now always filled in on errors
+ <li> curl outputs error on bad --limit-rate units
+ <li> fixed libcurl's use of poll() on cygwin
+ <li> the GnuTLS code didn't support client certificates
+ <li> TFTP over IPv6 works
+ <li> no reverse lookups on IP addresses when ipv6-enabled
+ <li> SSPI compatibility fix: using the proper DLLs
+ <li> binary LDAP properties are now shown base64 encoded
+ <li> Windows uploads from stdin using curl can now contain ctrl-Z bytes
+ <li> -r [num] would produce an invalid HTTP Range: header
+ <li> multi interface with multi IP hosts could leak socket descriptors
+ <li> the GnuTLS code didn't handle rehandshakes
+ <li> re-use of a dead FTP connection
+ <li> name resolve error codes fixed for Windows builds
+ <li> double WWW-Authenticate Digest headers are now handled
+ <li> curl-config --vernum fixed
+</ul>
+
 SUBTITLE(Fixed in 7.15.0 - October 13 2005)
 <p> Changes:
 <ul>
