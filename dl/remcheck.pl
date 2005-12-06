@@ -204,8 +204,13 @@ for $ref (@all) {
     my $t = sprintf ("%02d:%02d:%02d", $hour, $min, $sec);
 
     logmsg sprintf "<h2>$t $desc <a href=\"http://curl.haxx.se/dl/mod_entry.cgi?__id=%s\">edit</a></h2>", $$ref{'__id'};
+
+    if($$ref{'hide'} eq "Yes") {
+        logmsg "Marked as hidden, skiping the check\n";
+        $hidden++;
+    }
     
-    if($$ref{'curl'} eq $version) {
+    elsif($$ref{'curl'} eq $version) {
         logmsg " Already at latest version ($version), no need to check\n";
         $uptodate++;
     }
@@ -394,6 +399,7 @@ logmsg "$failedcheck packages failed to get checked\n";
 logmsg "$localpackage packages are local and taken care of differently\n";
 logmsg "$oldies checks were skipped due to old release number\n";
 logmsg "$regexmisses regexes didn't match on successful URL fetches\n";
+logmsg "$hidden packages were skipped since they are 'hidden'\n";
 
 if($missing) {
     logmsg "$missing listed packages lacked autocheck URL\n";
