@@ -20,8 +20,7 @@ TITLE(Project Hiper Schedule and Dates)
 <br><a href="roadmap.html">Roadmap</a>
 </div>
 
-#define MARKDATE(x)  <td nowrap><span class="whodate"> x </span></td><td>
-#define START <tr valign="top">
+#define MARKDATE(x)  <tr valign="top"><td nowrap><span class="whodate"> x </span></td><td>
 #define STOP </td></tr>
 
 <p>
@@ -33,9 +32,24 @@ TITLE(Project Hiper Schedule and Dates)
 
 <table class="news">
 
-START
+ MARKDATE(Dec 6 2005) Ok, I think I'll change my measuring approach and I will
+ instead write up my own HTTP server and control that to allow it to either
+ site perfectly quite (just keeping the connection alive) or to send an
+ endless stream of data. By allowing the selection of behaviour be based on
+ the URL, I should be able to modify my test program to run and test a given
+ number of "active" connections with a given number of "existing connections".
+ I guess the real-world URLs are too hard to use to make adequate tests with.
+<p>
+ I found this little benchmark on select() performace compared to other event
+ systems:
+ <br>
+ <a href="http://monkey.org/~provos/libevent/libevent-benchmark.jpg"><img border="0" src="bench.jpg" alt="graph comparing event systems' performances"></a>
+<p>
 
- MARKDATE(Dec 6 2005) Been struggling to get a test program that can be used
+STOP
+
+ MARKDATE(Dec 6 2005)
+ Been struggling to get a test program that can be used
  to measure and show the current overhead/speed in a good way. I've been quite
  surprised by the speed of the existing implementation. My test application
  easily initiates and transfers 2000 simultaneous transfers (and man does this
@@ -101,8 +115,6 @@ Time 915 connections, average 11700 max 38587 (6 laps) average/conn: 12
 
 STOP
 
-START
-
  MARKDATE(Dec 2 2005) Made a script that figuered out a few thousand "random"
  URLs.<p>Started writing a test application using the existing multi
  interface. It fetches N simultaneous URLs and measures how long time is spent
@@ -117,39 +129,32 @@ START
 
 STOP
 
-START
  MARKDATE(Dec 1 2005) Daniel started working full-time on project Hiper (during
  the entire month of December).
 STOP
 
-START
  MARKDATE(Nov 29 2005) Mailed the <a href="kvartalsrapport1.pdf">first
  quarterly report in Swedish</a> to IIS, about project Hiper. (282KB PDF)
 
 STOP
 
-START
  MARKDATE(Nov 28 2005) Discussing how the "zero copy" interface for
  libcurl could work. On the <a href="http://curl.haxx.se/mail/list.cgi?list=curl-library">curl-library</a> mailing list.
 
 STOP
 
-START
  MARKDATE(Nov 9 2005) Discussing possible Windows-adjustments to the hiper
  concept on the <a href="http://curl.haxx.se/mail/list.cgi?list=curl-library">curl-library</a> mailing list.
 STOP
 
-START
  MARKDATE(Nov 4 2005) Added the <a href="api.html">API</a> and <a
  href="app.html">Sample app</a> pages here.
 STOP
 
-START
  MARKDATE(Nov 3 2005) announced the 'hiper' project to the world, and added
  this hiper section of the curl web site.
 STOP
 
-START
  MARKDATE(Oct 24 2005) Daniel visited the "Internetdagarna" conference in
  Stockholm, Sweden and receives a diploma, a flower and some sturdy handshakes
  when the <a href="http://www.iis.se/">IIS</a> foundation announced that
