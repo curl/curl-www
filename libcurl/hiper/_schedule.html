@@ -32,6 +32,15 @@ TITLE(Project Hiper Schedule and Dates)
 
 <table class="news">
 
+MARKDATE(Dec 6 2005) I committed my currently used code to CVS: <a
+href="http://cool.haxx.se/cvs.cgi/curl/hiper/">cool.haxx.se/cvs.cgi/curl/hiper/</a>
+- not terribly much to see but I wanted to added it to make it easier for me
+to keep older versions around. This doesn't include the (minor) changes to
+libcurl I've done so far but none of those changes are required for this to
+run/work.
+
+STOP
+
  MARKDATE(Dec 6 2005) Ok, I think I'll change my measuring approach and I will
  instead write up my own HTTP server and control that to allow it to either
  sit perfectly quiet (just keeping the connection alive) or to send an endless
@@ -40,7 +49,7 @@ TITLE(Project Hiper Schedule and Dates)
  "active" connections with a given number of "existing connections".  I guess
  the real-world URLs are too hard to use to make adequate tests with.
 <p>
- I found this little benchmark on select() performace compared to other event
+ I found this little benchmark on select() performance compared to other event
  systems:
  <br>
  <a href="http://monkey.org/~provos/libevent/libevent-benchmark.jpg"><img border="0" src="bench.jpg" alt="graph comparing event systems' performances"></a>
@@ -48,15 +57,15 @@ TITLE(Project Hiper Schedule and Dates)
 
 STOP
 
- MARKDATE(Dec 6 2005)
- Been struggling to get a test program that can be used
+ MARKDATE(Dec 6 2005) Been struggling to get a test program that can be used
  to measure and show the current overhead/speed in a good way. I've been quite
  surprised by the speed of the existing implementation. My test application
  easily initiates and transfers 2000 simultaneous transfers (and man does this
  work nicer with a c-ares built libcurl!). The average time spent for each
  curl_multi_perform() in these cases is easily measured, but it is not easily
  to draw any specific conclusions. With 50 simultaneous connections, the
- average time per invoke is less than 600us on my Athon XP2800 Linux 2.6 box.
+ average time per invoke is less than 600us on my Athlon XP2800 Linux
+ 2.6/glibc 2.3.5/libcurl 7.15.1 test setup.
 <p>
  Some more numbers from the tests. I have a list with a few thousand URLs that
  the test app reads from and starts transferring data from. See below for more
