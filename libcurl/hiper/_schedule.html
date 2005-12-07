@@ -32,6 +32,26 @@ TITLE(Project Hiper Schedule and Dates)
 
 <table class="news">
 
+MARKDATE(Dec 7 2005) Different test/measure approach:
+
+<p> I now have a local HTTP server that can serve two modes: idle and
+active. The idle mode does nothing after it accepted the client's request,
+while the active mode sends a never-ending stream.
+
+<p>
+The application now does X connects using idle mode and Y using active, and
+then measure how long each call to select() and curl_multi_perform() takes
+with a varying amount of idle connections added.
+
+<p>
+Of course I hit some minor quirks having to avoid the varios 1024 file
+descriptor limits: the FD_SETSIZE default define is 1024 (limits how many
+descriptors select() can use) and a user process defaults to max 1024 as
+well. Working to smooth them out to be able to run tests using 1000, 2000 and
+5000 idle connections with a single active one.
+
+STOP
+
 MARKDATE(Dec 6 2005) I committed my currently used code to CVS: <a
 href="http://cool.haxx.se/cvs.cgi/curl/hiper/">cool.haxx.se/cvs.cgi/curl/hiper/</a>
 - not terribly much to see but I wanted to added it to make it easier for me
