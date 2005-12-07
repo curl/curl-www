@@ -206,7 +206,7 @@ for $ref (@all) {
     logmsg sprintf "<h2>$t $desc <a href=\"http://curl.haxx.se/dl/mod_entry.cgi?__id=%s\">edit</a></h2>", $$ref{'__id'};
 
     if($$ref{'hide'} eq "Yes") {
-        logmsg "Marked as hidden, skiping the check\n";
+        logmsg "Marked as hidden, skipping the check\n";
         $hidden++;
     }
     
