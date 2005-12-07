@@ -46,9 +46,9 @@ with a varying amount of idle connections added.
 <p>
 Of course I hit some minor quirks having to avoid the varios 1024 file
 descriptor limits: the FD_SETSIZE default define is 1024 (limits how many
-descriptors select() can use) and a user process defaults to max 1024 as
-well. Working to smooth them out to be able to run tests using 1000, 2000 and
-5000 idle connections with a single active one.
+descriptors select() can use) and a user process defaults to allowing max 1024
+file descritors. Working to smooth them out to be able to run tests using
+1000, 2000 and 5000 idle connections with a single active one.
 
 STOP
 
