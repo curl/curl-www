@@ -32,6 +32,48 @@ TITLE(Project Hiper Schedule and Dates)
 
 <table class="news">
 
+MARKDATE(Dec 9 2005) I consider this round of tests to complete my first
+ investigation and measure phase in which I've carefully studied how an
+ applicaton performs with the existing API and the accompanying "enforced" use
+ of select().
+
+<p>
+ I worked around the 1024 connection limits for both
+ server and client side. I built the test program and ran it to use a single
+ active connection and N number of idle ones (idle meaning the server never
+ repsonds with any data, it just keeps the connection alive).
+<p>
+ The results were pretty much as I had imagined, and I'm pleased with the test
+ setup and the stable and repeatable test numbers. Due to the amount of RAM in
+ my test box, and the amount of memory required for each single connection in
+ both the client and server (since they were running on the same box), I
+ stopped testing at 9000 simultaneous connections since doing more would've
+ forced use of swap and killed all reliable results.
+<p>
+ I ran the test client with 1001, 2001, 3001, 5001 and 9001 connections and
+ measured how long select() and curl_multi_perform() would take in average,
+ over a period of 20 seconds. Each read call in libcurl would only read one
+ single byte, so thus we are sure that the active connection will be
+ "readable" in the select() sense during the entire test. It also ensured that
+ there would be no significant time spent in the read() call itself. The
+ read() overhead is thus also constant in all the tests.
+<p>
+ <a href="perf-20051209.png"><img src="perf-20051209t.png" border="0"></a>
+<p>
+ The exact numbers of the graph are:
+<pre>
+Connections  multi_perform  select
+1001         3504           951
+2001         7606           1988
+3001         11045          2715
+5001         16406          4024
+9001         32147          8030
+</pre>
+<p>
+ Each time above is in microseconds and is the average time of 5 or 6 test runs.
+
+STOP
+
 MARKDATE(Dec 7 2005) Different test/measure approach:
 
 <p> I now have a local HTTP server that can serve two modes: idle and
