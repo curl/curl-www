@@ -93,6 +93,14 @@ Connections  multi_perform  select
 
 </ol>
 
+<p>
+ I should perhaps add that the curl_multi_fdset() invoke is also included in
+ the multi_perform() time, so there are two loops going over all
+ descriptors. One to set bits in the fd_set variables and one to check all
+ bits of the fd_set variables. So at 32000 us for 9000 connections, it loops
+ 18000 laps which makes less than 2 microseconds per lap. (Of course counting
+ time/laps is an oversimplification, but anyway...)
+
 STOP
 
 MARKDATE(Dec 7 2005) Different test/measure approach:
@@ -122,9 +130,8 @@ to keep older versions around. This doesn't include the (minor) changes to
 libcurl I've done so far but none of those changes are required for this to
 run/work.
 
-STOP
-
- MARKDATE(Dec 6 2005) Ok, I think I'll change my measuring approach and I will
+<p>
+ Ok, I think I'll change my measuring approach and I will
  instead write up my own HTTP server and control that to allow it to either
  sit perfectly quiet (just keeping the connection alive) or to send an endless
  stream of data. By allowing the selection of behaviour be based on the URL, I
@@ -137,10 +144,7 @@ STOP
  <br>
  <a href="http://monkey.org/~provos/libevent/libevent-benchmark.jpg"><img border="0" src="bench.jpg" alt="graph comparing event systems' performances"></a>
 <p>
-
-STOP
-
- MARKDATE(Dec 6 2005) Been struggling to get a test program that can be used
+ I've been struggling to get a test program that can be used
  to measure and show the current overhead/speed in a good way. I've been quite
  surprised by the speed of the existing implementation. My test application
  easily initiates and transfers 2000 simultaneous transfers (and man does this
