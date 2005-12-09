@@ -72,6 +72,27 @@ Connections  multi_perform  select
 <p>
  Each time above is in microseconds and is the average time of 5 or 6 test runs.
 
+<p>
+ What do I hope for in new "socket" extension of the multi API, in pure
+ numbers in comparison to graph above using a test that is identical "in
+ spirit"? (using curl_multi_socket() instead of curl_multi_perform())
+<p>
+<ol>
+
+<li> Time spent in curl_multi_socket() should be (more or less) fixed no
+ matter how many idle connections that are used. I sincerely hope that means
+ less than 10 microseconds in this test setup.
+
+<li> The select() benchmark graph below suggests that libevent is pretty much
+ fixed at 50 microseconds (although I don't know what test box was used in
+ their testing, we can compare the select()-times from my tests and see that
+ they are at least resonably close).
+
+<li> Summing up, the collected ~40 ms spent at 9000 connections could possibly
+ be lowered to something around 60 us!
+
+</ol>
+
 STOP
 
 MARKDATE(Dec 7 2005) Different test/measure approach:
