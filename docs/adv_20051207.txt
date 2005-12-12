@@ -59,9 +59,11 @@ We were notified by Stefan Esser on November 29th, 2005.
 
 Discussions were held and the patch to fix this flaw was made swiftly.
 
+[Dec 12 2005] Additional info on what's required for 7.14.0 and earlier was
+provided by Wilfried Weissmann in a Redhat bug report. The provided patch
+above was updated and adjusted to the newly discovered facts.
+
 5. CREDITS
 
 Reported to us by Stefan Esser. Thanks a lot!
 
-[Dec 12 2005] Additional info on what's required for 7.14.0 and earlier was
-provided by Wilfried Weissmann in a Redhat bug report.
