@@ -17,65 +17,65 @@
 
 <table cellspacing="0" cellpadding="5"><tr><td valign="top" align="left">
 #define LINK(l,t) <div class="itemselect">t</div>
-#define VLINK(l,t) <div><a href="l" class="menuitem">t</a></div>
+#define VLINK(l,t,itle) <div><a href="l" class="menuitem" title="itle">t</a></div>
 
 <div class="mainmenu">
 
 #ifdef CURL_MAIN
 LINK("/", Front Page)
 #else
-VLINK("/", Front Page)
+VLINK("/", Front Page, curl site front page)
 #endif
 
 #ifdef CURL_DOWNLOAD
 LINK("/download.html", Download)
 #else
-VLINK("/download.html", Download)
+VLINK("/download.html", Download, Get curl packages)
 #endif
 
 #ifdef CURL_DOCS
 LINK("/docs/", Docs)
 #include "docmenu.t"
 #else
-VLINK("/docs/", Docs &raquo;)
+VLINK("/docs/", Docs &raquo;, curl documentation)
 #endif
 
 #ifdef CURL_NEWS
 LINK("/news.html", News)
 #else
-VLINK("/news.html", News)
+VLINK("/news.html", News, Recent events and news in the project)
 #endif
 
 #ifdef CURL_MAIL
 LINK("/mail/", Mailing Lists)
 #else
-VLINK("/mail/", Mailing Lists)
+VLINK("/mail/", Mailing Lists, Mailing List info and archives)
 #endif
 
 #ifdef CURL_DEVEL
 LINK("/devel.html", Development)
 #else
-VLINK("/devel.html", Development)
+VLINK("/devel.html", Development, Resources for development and developers)
 #endif
 
 #ifdef CURL_FEEDBACK
 LINK("http://curl.haxx.se/feedback/", Feedback)
 #else
-VLINK("http://curl.haxx.se/feedback/", Feedback)
+VLINK("http://curl.haxx.se/feedback/", Feedback, Provide or read others feedback on curl and the site)
 #endif
 
-VLINK("/libcurl/", libcurl &raquo;)
+VLINK("/libcurl/", libcurl &raquo;, libcurl web site section)
 
 #ifdef CURL_SUPPORT
 LINK("/support.html", Support)
 #else
-VLINK("/support.html", Support)
+VLINK("/support.html", Support, Buy commercial support from these companies)
 #endif
 
 #ifdef CURL_SEARCH
 LINK("/search.html", Search)
 #else
-VLINK("/search.html", Search)
+VLINK("/search.html", Search, Search the curl web site)
 #endif
 
 </div>
