@@ -9,7 +9,9 @@ Mirror:
 <a href="http://curl.mons-new-media.de/">DE4</a>
 <a href="http://curl.mirroring.de/">DE5</a>
 <a href="http://curl.miscellaneousmirror.org/">DE6</a>
+#if 0
 <a href="http://curl.triplemind.com/">DE7</a>
+#endif
 <a href="http://curl.cofman.dk/">DK</a>
 <a href="http://curl.fastmirror.net/">FR</a>
 <a href="http://curl.hkmirror.org/">HK</a>
@@ -28,7 +30,9 @@ Mirror:
 <a href="http://curl.mirrormonster.com/">US4</a>
 <a href="http://curl.mirrors.cyberservers.net/">US5</a>
 <a href="http://curl.signal42.com/">US6</a>
+#if 0
 <a href="http://curl.tolix.org/">US7</a>
+#endif
 <a href="http://curl.seekmeup.com/">US8</a>
 <a href="http://curl.webhosting76.com/">US9</a>
 <a href="http://curl.hostingzero.com/">US10</a>
@@ -43,7 +47,9 @@ Mirror:
 <a href="http://curl.mons-new-media.de/CURL_URL">DE4</a>
 <a href="http://curl.mirroring.de/CURL_URL">DE5</a>
 <a href="http://curl.miscellaneousmirror.org/CURL_URL">DE6</a>
+#if 0
 <a href="http://curl.triplemind.com/">DE7</a>
+#endif
 <a href="http://curl.cofman.dk/CURL_URL">DK</a>
 <a href="http://curl.fastmirror.net/CURL_URL">FR</a>
 <a href="http://curl.hkmirror.org/CURL_URL">HK</a>
@@ -62,7 +68,9 @@ Mirror:
 <a href="http://curl.mirrormonster.com/CURL_URL">US4</a>
 <a href="http://curl.mirrors.cyberservers.net/CURL_URL">US5</a>
 <a href="http://curl.signal42.com/CURL_URL">US6</a>
+#if 0
 <a href="http://curl.tolix.org/CURL_URL">US7</a>
+#endif
 <a href="http://curl.seekmeup.com/CURL_URL">US8</a>
 <a href="http://curl.webhosting76.com/CURL_URL">US9</a>
 <a href="http://curl.hostingzero.com/CURL_URL">US10</a>
