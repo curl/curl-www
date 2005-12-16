@@ -12,8 +12,11 @@ Mirror:
 <a href="http://curl.triplemind.com/">DE7</a>
 <a href="http://curl.cofman.dk/">DK</a>
 <a href="http://curl.fastmirror.net/">FR</a>
+<a href="http://curl.hkmirror.org/">HK</a>
 <a href="http://curl.nedmirror.nl/">NL</a>
+#if 0
 <a href="http://curl.tsuren.net/">RU</a>
+#endif
 <a href="http://curl.haxx.se/">SE</a>
 #if 0
 <a href="http://curl.siamu.ac.th/">TH</a>
@@ -43,8 +46,11 @@ Mirror:
 <a href="http://curl.triplemind.com/">DE7</a>
 <a href="http://curl.cofman.dk/CURL_URL">DK</a>
 <a href="http://curl.fastmirror.net/CURL_URL">FR</a>
+<a href="http://curl.hkmirror.org/CURL_URL">HK</a>
 <a href="http://curl.nedmirror.nl/CURL_URL">NL</a>
+#if 0
 <a href="http://curl.tsuren.net/CURL_URL">RU</a>
+#endif
 <a href="http://curl.haxx.se/CURL_URL">SE</a>
 #if 0
 <a href="http://curl.siamu.ac.th/CURL_URL">TH</a>
