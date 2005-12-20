@@ -1,23 +1,22 @@
 #include "_doctype.html"
 <HTML>
-<HEAD> <TITLE>cURL - Useful Stuff when Mirroring the Curl Site</TITLE>
+<HEAD> <TITLE>cURL - How To Mirror the Curl Site</TITLE>
 #include "css.t"
 </HEAD>
 
-#define CURL_MIRRORTOOLS
+#define CURL_MIRRORHOWTO
 
 #include "_menu.html"
 #include "setup.t"
 
-WHERE3(Download, "/download.html", Mirrors, "/mirrors.html", Mirror Tools)
+WHERE3(Download, "/download.html", Mirrors, "/mirrors.html", How To Mirror)
 
-TITLE(rsync)
+TITLE(How To Mirror the Curl Site)
 <p>
- We offer both the full web site and the download packages for mirroring using
+ We provide the full web site and the download packages for mirroring using
  rsync. It is both the easiest and quickest way to do this.
 <p>
- You can start mirroring this contents at any time, using these rsync command
- lines:
+ You can mirror the contents at any time, using these command lines:
 <pre>
   rsync -r -t --delete "rsync://cool.haxx.se/curlweb&#47;*" curl-web-root/
   rsync -t --delete "rsync://cool.haxx.se/curldownload&#47;*" curl-web-root/download/
@@ -25,43 +24,10 @@ TITLE(rsync)
 <p>
   The first line of course mirror the web site, while the second line mirrors
   the download packages in the download directory.
-<p>
-  If you decide to mirror anything regularly, please let <a
-  href="mailto:curl-web_at_haxx.se">us</a> know.
-
-#if 0
-TITLE(Mirroring Tools and Scripts)
-<p>
- If you wanna setup an old-style (that is like we did before we offered rsync
- access) download mirror for the curl packages, I've setup this section to
- collect information on how, as well as a few scripts and tools that'll do the
- job for you. If you want to mirror the whole curl web site, mail us at
- curl-web at haxx.se and we'll discuss it.
-<p>
- The file named <a
- href="http://curl.haxx.se/download/curldist.txt">http://curl.haxx.se/download/curldist.txt</a>
- contains all files that should be mirrored. The list contains nothing but
- file names, and you should prepend 'http://curl.haxx.se/download/' to every
- single file in order to fetch them.
-<p>
- The 'curldist.txt' file changes as soon as I release a new package or remove
- an old package. Thus, files get both added and removed from the list.
-
-<ul>
-<li> <a href="display.cgi?file=curlmirror.php">curlmirror.php</a> by Matt Allen
-<li> <a href="display.cgi?file=mirror.pl">mirror.pl</a> by Daniel Stenberg
-<li> <a href="display.cgi?file=mirror_curl.sh">mirror_curl.sh</a> by Tim Tassonis
-</ul>
-#endif
 
 <p>
- If you decide to mirror the curl packages, please let me know so that I can
- properly advertise your mirror site. I also add existing mirrors to the
- 'check mirrored package status' system available from <a
- href="http://curl.haxx.se/latest.cgi">here</a>.
-
-<p>
- See the list of <a href="../mirrors.html">existing mirror sites</a>.
+ See the list of <a href="../mirrors.html">existing mirror sites</a> and our
+ <a href="http://curl.haxx.se/latest.cgi">download-from-mirror</a> service.
 
 SUBTITLE(Requirements for curl Official Web Site Mirrors)
 <p>
@@ -69,19 +35,46 @@ SUBTITLE(Requirements for curl Official Web Site Mirrors)
  simple requirements must be met:
 <ul>
 
-<li> Mirror the site using rsync, as described above
+<li> Mirror the site using rsync, as described above, at least every 24 hours.
 
-<li> Setup the local download page links to work (either by mirroring the
+<li> Make your local /download.html page links work (either by mirroring the
 download files too, or by making them redirect the user to a working download
 mirror)
 
-<li> Use a host name that starts with "curl". Like curl.[yourdomain].[tld]. Examples: curl.haxx.se, curl.tsuren.net, curl.cyberservers.net.
+<li> Use a host name that starts with "curl". Like
+curl.[yourdomain].[tld]. Examples: curl.haxx.se, curl.tsuren.net,
+curl.cyberservers.net.
 
-<li> provide a contact email address to curl-web at haxx.se
-
-<li> mirror the contents at least every 24 hours
+<li> Mail your info and provide a contact email address to <a
+href="mailto:curl-web@haxx.se">curl-web</a>.
 
 </ul>
+
+SUBTITLE(Info for Mirror Admins)
+<p>
+ We check the age of your mirror regularly. Should your mirror appear
+ out-of-date or non-responding too often we will remove it from the list of
+ official mirrors.
+<p>
+ If you want to add a small 'hosted by [your orginazation]' link in the top or
+ bottom of the HTML pages, it is OK with us and for this purpose we offer two
+ strings in the HTML pages that are easily recognizable and
+ search-and-replacable. Please use them instead of simply prepending or
+ appending stuff so that the output HTML remains as standards compliant as
+ possible.
+
+<ul>
+
+<li> &lt;!-- first-line-in-body --&gt; appears in a line above the curl logo
+ and ad at the very top of the pages.
+
+<li> &lt;!-- last-line-in-body --&gt; appears below the "about"-box in the
+ bottom right end of the pages.
+
+</ul>
+<p>
+ Both these markers can be examined on the curl.haxx.se main site live, as
+ they are shown unmodified there in all HTML pages.
 
 #include "_footer.html"
 </BODY>
