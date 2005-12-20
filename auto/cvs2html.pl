@@ -76,7 +76,8 @@ my %shortnames=('bagder' => 'Daniel',
                 'giva'   => 'Gisle',
                 'danf'   => 'Dan F',
                 'curlvms' => 'Marty',
-                'dmeglio' => 'Dominick');
+                'dmeglio' => 'Dominick',
+                'yangtse' => 'Yang');
 
 # URL root to prepend file names with
 my $root="http://cool.haxx.se/cvs.cgi/curl";
@@ -307,7 +308,7 @@ if( $changecount) {
     my @c = sort { $datemong{$b} <=> $datemong{$a} } keys %changedates;
     my $i=0;
 
-    print "<table class=\"changetable\"><tr><th>when (GMT)</th><th>who</th><th>where / diff</th><th>what</th></tr>\n";
+    print "<table class=\"changetable\"><tr class=\"tabletop\"><th>GMT</th><th>Who</th><th>File / Diff</th><th>Description</th></tr>\n";
     for(@c) {
         my $date = $_;
 
