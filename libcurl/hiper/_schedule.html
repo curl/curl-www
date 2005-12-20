@@ -32,6 +32,61 @@ TITLE(Project Hiper Schedule and Dates)
 
 <table class="news">
 
+MARKDATE(Dec 20 2005) Time to sum up what we have:
+<p>
+ <a href="hiper-1.patch">hiper-1.patch</a> is the first 60K something patch to
+ try out if you feel brave and want something to do. Define
+ HAVE_CURL_MULTI_SOCKET in your build to make it all go smooth. This change
+ also includes the new <a
+ href="http://daniel.haxx.se/projects/c-ares/mail/c-ares-archive-2005-12/0002.shtml">ares_getsocks()</a>
+ function.
+<p>
+ Internally, we now report back plain sockets everywhere instead of the
+ previous fd_sets. The new callback style information in the *socket()
+ interface seems to work at least for the simple test case setup I'm
+ using. The downside of this new interface is that the callback style
+ information we get is adding code to the application for keeping track of an
+ unknown amount of sockets to wait for action on. Also, since I'm unfamiliar
+ with libevent I thought I'd first make an app that still uses select() even
+ though it uses the new API and it sure is somewhat awkward. I trust this will
+ feel a lot better once I start using libevent for real.
+<p>
+ My first very simple test app using the new socket is working. I'll extend it
+ to use curl_multi_socket() properly only on the sockets with action, so I'll
+ let the app do the loop to check for actions on the sockets.
+<p>
+ The implementation so far has two tricky areas:
+<ol>
+<li> The function that checks what sockets a particular handle should wait for
+ action on, and how they differ from "last". As libcurl must call the callback
+ for all changes.
+<li> Timeouts. The multi interface has so far gotten away with a documented
+ "call the perform() function every once in a while not too long in between"
+ (like maximum 5 seconds interval), so that timeouts and retries etc can be
+ done properly. While I think I'll duck for the problem a while more and have
+ my test app do curl_multi_socket_all() every 5 seconds, it isn't a nice
+ fix. We must make sure that the code keep track of timeout times for each
+ handle and that it can call the callback to set them properly when they
+ change.
+</ol>
+
+STOP
+
+MARKDATE(Dec 14 2005) I'm working on imlementing code for the new API. I've
+now re-arranged the internals to report back plain sockets all over instead of
+fd_sets and the old test code seems to work still! I need to write up a proper
+client that can actually use the new API now to be able to start squashing
+bugs.
+<p>
+As a little side-note I added another little measurement ot the existing test
+app that is quite revealing. If I still read only one byte per read() and I
+measure the amount of usec spent for each byte read when having 0 idle and 1
+active compared to 2000/1, the spent time per byte goes from 5usec to
+9626usec! It matches the math and the previous results, as it is just about
+2000 times slower...
+
+STOP
+
 MARKDATE(Dec 9 2005) I consider this round of tests to complete my first
  investigation and measure phase in which I've carefully studied how an
  applicaton performs with the existing API and the accompanying "enforced" use
