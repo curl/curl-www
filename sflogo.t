@@ -32,6 +32,7 @@ Payments </A></FONT></DIV></DIV></TD></TR></TABLE>
             <A href="http://www.shopbot.com.au/c-82-0-0-1.html">Processors</A>. 
             <A href="http://www.shopbot.com.au/">See all...</A> 
         </font></TD></TR></TBODY></TABLE>
+#if 0
 <p>
 <TABLE cellSpacing="0" cellPadding="0" width="120" bgColor="#fcfcfc" border="1">
 <TBODY>
@@ -48,5 +49,6 @@ Payments </A></FONT></DIV></DIV></TD></TR></TABLE>
 </TR>
 </TBODY>
 </TABLE>
+#endif
 <p>
 <a href="http://sourceforge.net/projects/curl/"><img src="http://sourceforge.net/sflogo.php?group_id=976&amp;type=1" width="88" height="31" border="0" alt="SourceForge.net Logo"></a>
