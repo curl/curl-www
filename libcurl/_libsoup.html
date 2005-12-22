@@ -1,0 +1,48 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl - Libsoup Comparison</TITLE>
+#include "css.t"
+</HEAD>
+
+#define LIBCURL_LIBSOUP
+#define CURL_URL libcurl/libsoup.html
+
+#include "_menu.html"
+#include "setup.t"
+#include "table.t"
+
+WHERE2(libcurl, "/libcurl/", libsoup Comparison)
+
+TITLE(Notes About libsoup compared to libcurl)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/docs/features.html">libcurl Features</a>
+<br><a href="competitors.html">Compare HTTP Libraries</a>
+<br><a href="wininet.html">WinInet comparison</a>
+<br><a href="libwww.html">libwww comparison</a>
+</div>
+
+<p>
+ These are only some quick notes. If you have additional experiencies and
+comments you want to share with the world, we're all ears!
+
+<p>
+ Som info for this page was extracted from <a
+ href="http://live.gnome.org/LibSoup_2fToDo">here</a>.
+
+<ul>
+
+ <li> libcurl is (far) more portable
+
+ <li> libsoup lacks support for: cookies, NTLM for proxies
+ (Proxy-Authentication:), GSS, gzip encoding, trailers in chunked responses
+ and more that libcurl already provides.
+
+ <li> libsoup is using GNOME-related libs, making it a less convenient choice
+ for non-GNOME environments.
+
+</ul>
+
+#include "_footer.html"
+</BODY>
+</HTML>

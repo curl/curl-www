@@ -72,12 +72,15 @@ of them also do a lot more than libcurl):
   and seen people use this with WebDAV as their main interest.
 </ul>
 
-<b><a href="ftp://ftp.gnome.org/pub/gnome/sources/libsoup/">libsoup</a></b> (LGPL)<br>
+<b><a href="ftp://ftp.gnome.org/pub/gnome/sources/libsoup/">libsoup</a></b> (LGPL)  <a href="libsoup.html">comparison with libcurl</a><br>
 <ul>
+
  Part of glib (GNOME). Supports: HTTP 1.1, Persistent connections, Asyncronous
  DNS and transfers, Connection cache, Redirects, Basic, Digest, NTLM
  authentication, SSL with OpenSSL or Mozilla NSS, Proxy support including SSL,
- SOCKS support, POST data. Probably not very portable.
+ SOCKS support, POST data. Probably not very portable. Lacks: cookie support,
+ NTLM for proxies, GSS, gzip encoding, trailers in chunked responses and more.
+
 </ul>
 
 <b><a href="http://www.mozilla.org/projects/netlib/">mozilla netlib</a></b> (MPL)<br>
