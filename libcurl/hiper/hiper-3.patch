@@ -1,291 +1,10 @@
-Index: ares/Makefile.inc
-===================================================================
-RCS file: /cvsroot/curl/curl/ares/Makefile.inc,v
-retrieving revision 1.11
-diff -u -r1.11 Makefile.inc
---- ares/Makefile.inc	10 Aug 2005 16:54:00 -0000	1.11
-+++ ares/Makefile.inc	22 Dec 2005 15:02:35 -0000
-@@ -1,11 +1,11 @@
--CSOURCES = ares_fds.c ares_process.c ares_free_hostent.c ares_query.c       \
--ares__close_sockets.c ares_free_string.c ares_search.c ares__get_hostent.c  \
--ares_gethostbyaddr.c ares_send.c ares__read_line.c ares_gethostbyname.c     \
--ares_strerror.c ares_cancel.c ares_init.c ares_timeout.c ares_destroy.c     \
--ares_mkquery.c ares_version.c ares_expand_name.c ares_parse_a_reply.c       \
--windows_port.c ares_expand_string.c ares_parse_ptr_reply.c                  \
--ares_parse_aaaa_reply.c ares_getnameinfo.c inet_net_pton.c bitncmp.c        \
--inet_ntop.c
-+CSOURCES = ares_fds.c ares_getsock.c ares_process.c ares_free_hostent.c	\
-+ares_query.c ares__close_sockets.c ares_free_string.c ares_search.c	\
-+ares__get_hostent.c ares_gethostbyaddr.c ares_send.c ares__read_line.c	\
-+ares_gethostbyname.c ares_strerror.c ares_cancel.c ares_init.c		\
-+ares_timeout.c ares_destroy.c ares_mkquery.c ares_version.c		\
-+ares_expand_name.c ares_parse_a_reply.c windows_port.c			\
-+ares_expand_string.c ares_parse_ptr_reply.c ares_parse_aaaa_reply.c	\
-+ares_getnameinfo.c inet_net_pton.c bitncmp.c inet_ntop.c
- 
- HHEADERS = ares.h ares_private.h setup.h ares_dns.h ares_version.h          \
-            nameser.h inet_net_pton.h inet_ntop.h ares_ipv6.h bitncmp.h
-Index: ares/ares.h
-===================================================================
-RCS file: /cvsroot/curl/curl/ares/ares.h,v
-retrieving revision 1.21
-diff -u -r1.21 ares.h
---- ares/ares.h	19 Dec 2005 00:15:04 -0000	1.21
-+++ ares/ares.h	22 Dec 2005 15:02:35 -0000
-@@ -70,8 +70,8 @@
- #define ARES_EBADFLAGS          18
- 
- /* ares_getaddrinfo error codes */
--#define ARES_ENONAME		19
--#define ARES_EBADHINTS		20
-+#define ARES_ENONAME            19
-+#define ARES_EBADHINTS          20
- 
- /* Flag values */
- #define ARES_FLAG_USEVC         (1 << 0)
-@@ -108,27 +108,32 @@
- #define ARES_NI_LOOKUPHOST              (1 << 8)
- #define ARES_NI_LOOKUPSERVICE           (1 << 9)
- /* Reserved for future use */
--#define ARES_NI_IDN			(1 << 10)
--#define ARES_NI_IDN_ALLOW_UNASSIGNED	(1 << 11)
-+#define ARES_NI_IDN                     (1 << 10)
-+#define ARES_NI_IDN_ALLOW_UNASSIGNED    (1 << 11)
- #define ARES_NI_IDN_USE_STD3_ASCII_RULES (1 << 12)
- 
- /* Addrinfo flag values */
--#define ARES_AI_CANONNAME		(1 << 0)
--#define ARES_AI_NUMERICHOST		(1 << 1)
--#define ARES_AI_PASSIVE			(1 << 2)
--#define ARES_AI_NUMERICSERV		(1 << 3)
--#define ARES_AI_V4MAPPED		(1 << 4)
--#define ARES_AI_ALL			(1 << 5)
--#define ARES_AI_ADDRCONFIG		(1 << 6)
-+#define ARES_AI_CANONNAME               (1 << 0)
-+#define ARES_AI_NUMERICHOST             (1 << 1)
-+#define ARES_AI_PASSIVE                 (1 << 2)
-+#define ARES_AI_NUMERICSERV             (1 << 3)
-+#define ARES_AI_V4MAPPED                (1 << 4)
-+#define ARES_AI_ALL                     (1 << 5)
-+#define ARES_AI_ADDRCONFIG              (1 << 6)
- /* Reserved for future use */
--#define ARES_AI_IDN			(1 << 10)
--#define ARES_AI_IDN_ALLOW_UNASSIGNED	(1 << 11)
-+#define ARES_AI_IDN                     (1 << 10)
-+#define ARES_AI_IDN_ALLOW_UNASSIGNED    (1 << 11)
- #define ARES_AI_IDN_USE_STD3_ASCII_RULES (1 << 12)
--#define ARES_AI_CANONIDN		(1 << 13)
-+#define ARES_AI_CANONIDN                (1 << 13)
- 
--#define ARES_AI_MASK			(ARES_AI_CANONNAME|ARES_AI_NUMERICHOST|ARES_AI_PASSIVE| \
--				 	 ARES_AI_NUMERICSERV|ARES_AI_V4MAPPED|ARES_AI_ALL| \
--					 ARES_AI_ADDRCONFIG)
-+#define ARES_AI_MASK (ARES_AI_CANONNAME|ARES_AI_NUMERICHOST|ARES_AI_PASSIVE| \
-+                      ARES_AI_NUMERICSERV|ARES_AI_V4MAPPED|ARES_AI_ALL| \
-+                      ARES_AI_ADDRCONFIG)
-+#define ARES_GETSOCK_MAXNUM 16 /* ares_getsock() can return info about this
-+                                  many sockets */
-+#define ARES_GETSOCK_READABLE(bits,num) (bits & (1<< (num)))
-+#define ARES_GETSOCK_WRITABLE(bits,num) (bits & (1 << ((num) + \
-+                                         ARES_GETSOCK_MAXNUM)))
- 
- struct ares_options {
-   int flags;
-@@ -172,9 +177,11 @@
- void ares_gethostbyaddr(ares_channel channel, const void *addr, int addrlen,
-                         int family, ares_host_callback callback, void *arg);
- void ares_getnameinfo(ares_channel channel, const struct sockaddr *sa,
--                      socklen_t salen, int flags, ares_nameinfo_callback callback,
-+                      socklen_t salen, int flags,
-+                      ares_nameinfo_callback callback,
-                       void *arg);
- int ares_fds(ares_channel channel, fd_set *read_fds, fd_set *write_fds);
-+int ares_getsock(ares_channel channel, int *socks, int numsocks);
- struct timeval *ares_timeout(ares_channel channel, struct timeval *maxtv,
-                              struct timeval *tv);
- void ares_process(ares_channel channel, fd_set *read_fds, fd_set *write_fds);
-Index: ares/ares_getsock.c
-===================================================================
-RCS file: ares/ares_getsock.c
-diff -N ares/ares_getsock.c
---- /dev/null	1 Jan 1970 00:00:00 -0000
-+++ ares/ares_getsock.c	22 Dec 2005 15:02:35 -0000
-@@ -0,0 +1,71 @@
-+/* $Id$ */
-+
-+/* Copyright 2005 by Daniel Stenberg.
-+ *
-+ * Permission to use, copy, modify, and distribute this software and its
-+ * documentation for any purpose and without fee is hereby granted, provided
-+ * that the above copyright notice appear in all copies and that both that
-+ * copyright notice and this permission notice appear in supporting
-+ * documentation, and that the name of M.I.T. not be used in advertising or
-+ * publicity pertaining to distribution of the software without specific,
-+ * written prior permission.  M.I.T. makes no representations about the
-+ * suitability of this software for any purpose.  It is provided "as is"
-+ * without express or implied warranty.
-+ */
-+
-+#include "setup.h"
-+#include <sys/types.h>
-+
-+#ifdef HAVE_SYS_TIME_H
-+#include <sys/time.h>
-+#endif
-+
-+#include "ares.h"
-+#include "ares_private.h"
-+
-+int ares_getsock(ares_channel channel,
-+                 int *s,
-+                 int numsocks) /* size of the 'socks' array */
-+{
-+  struct server_state *server;
-+  ares_socket_t nfds;
-+  int i;
-+  int sockindex=0;
-+  int bitmap = 0;
-+  unsigned int setbits = 0xffffffff;
-+
-+  ares_socket_t *socks = (ares_socket_t *)s;
-+
-+  /* No queries, no file descriptors. */
-+  if (!channel->queries)
-+    return 0;
-+
-+  nfds = 0;
-+  for (i = 0; i < channel->nservers; i++)
-+    {
-+      server = &channel->servers[i];
-+      if (server->udp_socket != ARES_SOCKET_BAD)
-+        {
-+          if(sockindex >= numsocks)
-+            break;
-+          socks[sockindex] = server->udp_socket;
-+          bitmap |= ARES_GETSOCK_READABLE(setbits, sockindex);
-+          sockindex++;
-+        }
-+      if (server->tcp_socket != ARES_SOCKET_BAD)
-+       {
-+         if(sockindex >= numsocks)
-+           break;
-+         socks[sockindex] = server->tcp_socket;
-+         bitmap |= ARES_GETSOCK_READABLE(setbits, sockindex);
-+         sockindex++;
-+
-+         if (server->qhead) {
-+           /* then the tcp socket is also writable! */
-+           bitmap |= ARES_GETSOCK_WRITABLE(setbits, sockindex-1);
-+         }
-+
-+       }
-+    }
-+  return (int)nfds;
-+}
-Index: docs/libcurl/curl_multi_socket.3
-===================================================================
-RCS file: docs/libcurl/curl_multi_socket.3
-diff -N docs/libcurl/curl_multi_socket.3
---- /dev/null	1 Jan 1970 00:00:00 -0000
-+++ docs/libcurl/curl_multi_socket.3	22 Dec 2005 15:02:35 -0000
-@@ -0,0 +1,82 @@
-+.\" $Id$
-+.\"
-+.TH curl_multi_socket 3 "21 Dec 2005" "libcurl 7.16.0" "libcurl Manual"
-+.SH NAME
-+curl_multi_socket - reads/writes available data
-+.SH SYNOPSIS
-+#include <curl/curl.h>
-+
-+CURLMcode curl_multi_socket(CURLM * multi_handle,
-+                            curl_socket_t sockfd,
-+                            CURL *easy,
-+                            curl_socket_callback callback,
-+                            void *userp);
-+
-+CURLMcode curl_multi_socket_all(CURLM *multi_handle,
-+                                curl_socket_callback callback,
-+                                void *userp);
-+.SH DESCRIPTION
-+Alternative versions of \fIcurl_multi_perform()\fP that allows the application
-+to pass in one of the file descriptors/sockets that have been detected to have
-+\&"action" on them and let libcurl perform. This allows libcurl to not have to
-+scan through all possible file descriptors to check for action. The
-+application is recommended to pass in the \fBeasy\fP argument (or set it to
-+CURL_EASY_NONE) to make libcurl figure out the internal structure even faster
-+and easier.  If the easy argument is set to something else than
-+CURL_EASY_NONE, the \fBsockfd\fP argument will be ignored by libcurl.
-+
-+These functions inform the application about updates in the socket (file
-+descriptor) status by doing none, one or multiple calls to the
-+curl_socket_callback given in the \fBcallback\fP argument. They update the
-+status with changes since the previous time this function was used. If
-+\fBcallback\fP is NULL, no callback will be called. A status change may also
-+be a new timeout only, having the same IN/OUT status as before.
-+
-+If a previous wait for socket action(s) timed out, you should call this
-+function with the socket argument set to CURL_SOCKET_TIMEOUT. If you want to
-+force libcurl to (re-)check all its internal sockets, and call the callback
-+with status for all sockets no matter what the previous state is, you call
-+curl_multi_socket_all() instead.
-+
-+curl_multi_perform() is the equivalent of calling
-+curl_multi_socket_all(handle, NULL, NULL);
-+
-+Regarding the timeout argument in the callback: it is the timeout (in
-+milliseconds) for waiting on action on this socket (and the given time period
-+starts when the callback is called) until you should call curl_multi_socket()
-+with the timeout stuff mentioned above. If "actions" happens on the socket
-+before the timeout happens, remember that the timout timer keeps ticking until
-+told otherwise.
-+
-+The "what" argument has one of five values:
-+.RS
-+.IP "CURL_POLL_NONE (0)"
-+register, not interested in readiness (yet)
-+.IP "CURL_POLL_IN (1)"
-+register, interested in read readiness
-+.IP "CURL_POLL_OUT (2)"
-+register, interested in write readiness
-+.IP "CURL_POLL_INOUT (3)"
-+register, interested in both read and write readiness
-+.IP "CURL_POLL_REMOVE (4)"
-+deregister
-+.RE
-+.SH "RETURN VALUE"
-+CURLMcode type, general libcurl multi interface error code.
-+
-+If you receive \fICURLM_CALL_MULTI_PERFORM\fP, this basically means that you
-+should call \fIcurl_multi_perform\fP again, before you select() on more
-+actions. You don't have to do it immediately, but the return code means that
-+libcurl may have more data available to return or that there may be more data
-+to send off before it is "satisfied".
-+
-+NOTE that this only returns errors etc regarding the whole multi stack. There
-+might still have occurred problems on individual transfers even when this
-+function returns OK.
-+.SH "TYPICAL USAGE"
-+Call curl_multi_socket_all() first. Setup a "collection" of sockets to
-+supervise, then when action happens call curl_multi_socket() for the easy
-+handle that got the action.
-+.SH "SEE ALSO"
-+.BR curl_multi_cleanup "(3), " curl_multi_init "(3), "
-+.BR curl_multi_fdset "(3), " curl_multi_info_read "(3)"
-Index: docs/libcurl/curl_multi_socket_all.3
-===================================================================
-RCS file: docs/libcurl/curl_multi_socket_all.3
-diff -N docs/libcurl/curl_multi_socket_all.3
---- /dev/null	1 Jan 1970 00:00:00 -0000
-+++ docs/libcurl/curl_multi_socket_all.3	22 Dec 2005 15:02:35 -0000
-@@ -0,0 +1 @@
-+.so man3/curl_multi_socket.3
 Index: lib/ftp.c
 ===================================================================
 RCS file: /cvsroot/curl/curl/lib/ftp.c,v
 retrieving revision 1.342
 diff -u -r1.342 ftp.c
 --- lib/ftp.c	11 Dec 2005 23:37:59 -0000	1.342
-+++ lib/ftp.c	22 Dec 2005 15:02:36 -0000
++++ lib/ftp.c	22 Dec 2005 15:36:57 -0000
 @@ -95,6 +95,7 @@
  #include "select.h"
  #include "parsedate.h" /* for the week day and month names */
@@ -339,7 +58,7 @@ RCS file: /cvsroot/curl/curl/lib/ftp.h,v
 retrieving revision 1.22
 diff -u -r1.22 ftp.h
 --- lib/ftp.h	9 Feb 2005 13:06:40 -0000	1.22
-+++ lib/ftp.h	22 Dec 2005 15:02:36 -0000
++++ lib/ftp.h	22 Dec 2005 15:36:57 -0000
 @@ -34,10 +34,9 @@
                               int *ftpcode);
  CURLcode Curl_ftp_nextconnect(struct connectdata *conn);
@@ -360,7 +79,7 @@ RCS file: /cvsroot/curl/curl/lib/hostares.c,v
 retrieving revision 1.14
 diff -u -r1.14 hostares.c
 --- lib/hostares.c	19 Apr 2005 23:19:23 -0000	1.14
-+++ lib/hostares.c	22 Dec 2005 15:02:36 -0000
++++ lib/hostares.c	22 Dec 2005 15:36:57 -0000
 @@ -105,15 +105,13 @@
   * Returns: CURLE_OK always!
   */
@@ -388,7 +107,7 @@ RCS file: /cvsroot/curl/curl/lib/hostip.h,v
 retrieving revision 1.45
 diff -u -r1.45 hostip.h
 --- lib/hostip.h	11 Dec 2005 23:37:59 -0000	1.45
-+++ lib/hostip.h	22 Dec 2005 15:02:36 -0000
++++ lib/hostip.h	22 Dec 2005 15:36:57 -0000
 @@ -159,6 +159,14 @@
  CURLcode Curl_wait_for_resolv(struct connectdata *conn,
                                struct Curl_dns_entry **dnsentry);
@@ -423,7 +142,7 @@ RCS file: /cvsroot/curl/curl/lib/hostsyn.c,v
 retrieving revision 1.5
 diff -u -r1.5 hostsyn.c
 --- lib/hostsyn.c	19 Apr 2005 23:19:23 -0000	1.5
-+++ lib/hostsyn.c	22 Dec 2005 15:02:36 -0000
++++ lib/hostsyn.c	22 Dec 2005 15:36:57 -0000
 @@ -126,17 +126,15 @@
   * It is present here to keep #ifdefs out from multi.c
   */
@@ -454,7 +173,7 @@ RCS file: /cvsroot/curl/curl/lib/multi.c,v
 retrieving revision 1.68
 diff -u -r1.68 multi.c
 --- lib/multi.c	8 Mar 2005 22:21:59 -0000	1.68
-+++ lib/multi.c	22 Dec 2005 15:02:37 -0000
++++ lib/multi.c	22 Dec 2005 15:36:58 -0000
 @@ -73,6 +73,18 @@
    CURLM_STATE_LAST /* not a true state, never use this */
  } CURLMstate;
@@ -1563,7 +1282,7 @@ RCS file: /cvsroot/curl/curl/lib/multiif.h,v
 retrieving revision 1.3
 diff -u -r1.3 multiif.h
 --- lib/multiif.h	31 Mar 2005 07:02:03 -0000	1.3
-+++ lib/multiif.h	22 Dec 2005 15:02:37 -0000
++++ lib/multiif.h	22 Dec 2005 15:36:58 -0000
 @@ -27,4 +27,16 @@
   * Prototypes for library-wide functions provided by multi.c
   */
@@ -1587,7 +1306,7 @@ RCS file: /cvsroot/curl/curl/lib/setup.h,v
 retrieving revision 1.103
 diff -u -r1.103 setup.h
 --- lib/setup.h	20 Dec 2005 22:20:04 -0000	1.103
-+++ lib/setup.h	22 Dec 2005 15:02:37 -0000
++++ lib/setup.h	22 Dec 2005 15:36:58 -0000
 @@ -279,6 +279,7 @@
  
  #endif /* WIN32 */
@@ -1612,7 +1331,7 @@ RCS file: /cvsroot/curl/curl/lib/transfer.c,v
 retrieving revision 1.290
 diff -u -r1.290 transfer.c
 --- lib/transfer.c	24 Nov 2005 10:22:47 -0000	1.290
-+++ lib/transfer.c	22 Dec 2005 15:02:37 -0000
++++ lib/transfer.c	22 Dec 2005 15:36:58 -0000
 @@ -101,6 +101,7 @@
  #include "share.h"
  #include "memory.h"
@@ -1698,7 +1417,7 @@ RCS file: /cvsroot/curl/curl/lib/transfer.h,v
 retrieving revision 1.24
 diff -u -r1.24 transfer.h
 --- lib/transfer.h	31 Mar 2005 07:02:03 -0000	1.24
-+++ lib/transfer.h	22 Dec 2005 15:02:37 -0000
++++ lib/transfer.h	22 Dec 2005 15:36:58 -0000
 @@ -28,11 +28,9 @@
  CURLcode Curl_posttransfer(struct SessionHandle *data);
  CURLcode Curl_follow(struct SessionHandle *data, char *newurl, bool retry);
@@ -1720,7 +1439,7 @@ RCS file: /cvsroot/curl/curl/lib/url.c,v
 retrieving revision 1.486
 diff -u -r1.486 url.c
 --- lib/url.c	20 Dec 2005 22:46:12 -0000	1.486
-+++ lib/url.c	22 Dec 2005 15:02:39 -0000
++++ lib/url.c	22 Dec 2005 15:37:00 -0000
 @@ -2054,26 +2054,22 @@
          conn->ip_addr_str, conn->port);
  }
@@ -1777,7 +1496,7 @@ RCS file: /cvsroot/curl/curl/lib/url.h,v
 retrieving revision 1.23
 diff -u -r1.23 url.h
 --- lib/url.h	17 Jul 2005 12:44:11 -0000	1.23
-+++ lib/url.h	22 Dec 2005 15:02:39 -0000
++++ lib/url.h	22 Dec 2005 15:37:00 -0000
 @@ -45,6 +45,16 @@
  CURLcode Curl_protocol_connecting(struct connectdata *conn, bool *done);
  CURLcode Curl_protocol_doing(struct connectdata *conn, bool *done);
@@ -1807,7 +1526,7 @@ RCS file: /cvsroot/curl/curl/lib/urldata.h,v
 retrieving revision 1.275
 diff -u -r1.275 urldata.h
 --- lib/urldata.h	28 Nov 2005 23:06:00 -0000	1.275
-+++ lib/urldata.h	22 Dec 2005 15:02:39 -0000
++++ lib/urldata.h	22 Dec 2005 15:37:00 -0000
 @@ -634,17 +634,15 @@
  
    /* Called from the multi interface during the PROTOCONNECT phase, and it
@@ -1859,7 +1578,7 @@ RCS file: /cvsroot/curl/curl/tests/server/sws.c,v
 retrieving revision 1.75
 diff -u -r1.75 sws.c
 --- tests/server/sws.c	15 Sep 2005 20:22:43 -0000	1.75
-+++ tests/server/sws.c	22 Dec 2005 15:02:40 -0000
++++ tests/server/sws.c	22 Dec 2005 15:37:01 -0000
 @@ -66,6 +66,13 @@
  /* include memdebug.h last */
  #include "memdebug.h"
