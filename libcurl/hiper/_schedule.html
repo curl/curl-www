@@ -28,9 +28,28 @@ TITLE(Project Hiper Schedule and Dates)
  here, or provide some other kind of feedback on the Hiper work, please post
  all such to the <a
  href="http://curl.haxx.se/mail/list.cgi?list=curl-library">curl-library
- mailing list</a>!
+ mailing list</a>! Oh, and I hang out on IRC, channel #curl on
+ irc.freenode.net while working.
 
 <table class="news">
+
+MARKDATE(Dec 21 2005) Regarding the time-outs, I think I'll just make sure
+that libcurl keeps a I-want-to-get-called-no-later-than-this time ("last
+time") for each easy handle, and then the callback will be called with a
+timeout set to ("last time" - now) for all sockets in the easy handle's care.
+<p>
+ I think that'll work out nicely. No code written for this yet though. The
+main quirk to figure out for this approach is how the *socket() callback is on
+a per-socket (file descriptor) basis, while I want the time-out stuff to be on
+a per easy-handle basis...
+<p>
+ Oh, and curl_multi_socket() in the hiper-1 patch doesn't work. I'll provide
+ an updated patch at the end of this week as I'll be away most of next week
+ and then won't work on this again for real until next year.
+<p>
+ Wrote up the first draft of man page for the curl_multi_socket functions.
+
+STOP
 
 MARKDATE(Dec 20 2005) Time to sum up what we have:
 <p>
