@@ -30,6 +30,12 @@ LINK("", libcurl index )
 VLINK("/libcurl/", libcurl index )
 #endif
 
+#ifdef LIBCURL_FEATURES
+LINK("", Features )
+#else
+VLINK("/libcurl/features.html", Features )
+#endif
+
 #ifdef LIBCURL_MAIL
 LINK("", Mailing List )
 #else
