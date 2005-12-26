@@ -33,7 +33,9 @@ Mirror:
 <a href="http://curl.tolix.org/">US7</a>
 #endif
 <a href="http://curl.seekmeup.com/">US8</a>
+#if 0
 <a href="http://curl.webhosting76.com/">US9</a>
+#endif
 <a href="http://curl.hostingzero.com/">US10</a>
 <a href="http://curl.meulie.net/">US11</a>
 <a href="http://curl.hoxt.com/">US12</a>
@@ -70,7 +72,9 @@ Mirror:
 <a href="http://curl.tolix.org/CURL_URL">US7</a>
 #endif
 <a href="http://curl.seekmeup.com/CURL_URL">US8</a>
+#if 0
 <a href="http://curl.webhosting76.com/CURL_URL">US9</a>
+#endif
 <a href="http://curl.hostingzero.com/CURL_URL">US10</a>
 <a href="http://curl.meulie.net/CURL_URL">US11</a>
 <a href="http://curl.hoxt.com/CURL_URL">US12</a>
