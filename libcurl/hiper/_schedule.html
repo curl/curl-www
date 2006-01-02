@@ -33,6 +33,34 @@ TITLE(Project Hiper Schedule and Dates)
 
 <table class="news">
 
+MARKDATE(Jan 2 2006) Had a refreshing week of holiday and got back to work
+today.
+
+<p> Started the day by making sure the existing code base could run the
+existing test suite 100% OK. I want to have the code in a good shape by the
+end of the week, as I'm not sure when I'll get back to this work again
+(hopefully sometime this spring).
+
+<p> Removed the timeout argument from the socket callback now, as I mentioned
+before and in <a href="http://curl.haxx.se/mail/lib-2006-01/0004.html">this
+mail</a>.
+
+<p> Started working on curl_multi_timeout() now. I need to make a sorted list
+of all expire-times for a single multi handle to get this done fast
+enough... I started working on some splay code I wrote for 8-9 years ago that
+should be fine enough for this purpose. It started to work during the
+afternoon. Now I'll just need to go over the libcurl code and make sure we
+store the expire-time for all timeouts all over so that we can make wait as
+long as possible before a libcurl function gets called.
+
+<p> Updated the <a
+href="/libcurl/c/curl_multi_socket.html">curl_multi_socket()</a> man page and
+created the first man page for <a
+href="/libcurl/c/curl_multi_timeout.html">curl_multi_timeout()</a>.
+
+STOP
+
+
 MARKDATE(Dec 22 2005) I can now properly run tests with several hundred
  connections using curl_multi_socket() and it works. The lack of timeout
  support of course hampers it but my test case doesn't reveal this. At the
