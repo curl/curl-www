@@ -31,7 +31,7 @@ vulnerability.
 There is no known exploit at the time of this writing.
 
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
-CAN-XXXX-XXX to this issue.
+CVE-2005-4077 to this issue.
 
 2. AFFECTED VERSIONS
 
