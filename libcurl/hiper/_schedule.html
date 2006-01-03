@@ -33,6 +33,28 @@ TITLE(Project Hiper Schedule and Dates)
 
 <table class="news">
 
+MARKDATE(Jan 3 2006) Splay code added and it seems to build nicely sorted
+ trees. I implemented <a
+ href="/libcurl/c/curl_multi_timeout.html">curl_multi_timeout()</a> and it
+ uses the splay system just fine!
+<p>
+ The added bonus here is also that <a
+href="/libcurl/c/curl_multi_timeout.html">curl_multi_timeout()</a> will work
+nicely for good old <a
+href="/libcurl/c/curl_multi_perform.html">curl_multi_perform()</a>-using
+applications.
+<p>
+ I think that the main thing I still haven't addressed is to add a hash table
+ for the case when you get action on a socket and you call <a
+ href="/libcurl/c/curl_multi_socket.html">curl_multi_socket()</a> without
+ having a proper easy handle to pass in. It must map socket(s) to easy handle.
+<p>
+ Hm, for the c-ares using case, can there perhaps even be more than one easy
+ handle waiting for action on the same (dns) socket? Yes I think so and that
+ certainly makes things slightly trickier.
+
+STOP
+
 MARKDATE(Jan 2 2006) Had a refreshing week of holiday and got back to work
 today.
 
@@ -48,10 +70,12 @@ mail</a>.
 <p> Started working on curl_multi_timeout() now. I need to make a sorted list
 of all expire-times for a single multi handle to get this done fast
 enough... I started working on some splay code I wrote for 8-9 years ago that
-should be fine enough for this purpose. It started to work during the
-afternoon. Now I'll just need to go over the libcurl code and make sure we
-store the expire-time for all timeouts all over so that we can make wait as
-long as possible before a libcurl function gets called.
+should be fine enough for this purpose (the date in my original source file I
+found said "March 5 1997" - which happens to predate curl with over a
+year...). It started to work during the afternoon. Now I'll just need to go
+over the libcurl code and make sure we store the expire-time for all timeouts
+all over so that we can make wait as long as possible before a libcurl
+function gets called.
 
 <p> Updated the <a
 href="/libcurl/c/curl_multi_socket.html">curl_multi_socket()</a> man page and
