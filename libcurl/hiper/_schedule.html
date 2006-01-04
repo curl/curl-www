@@ -33,6 +33,40 @@ TITLE(Project Hiper Schedule and Dates)
 
 <table class="news">
 
+MARKDATE(Jan 4 2006) I wonder if the easy handle passed to the callback will
+ ever be used by an application properly since when an action happens on a
+ socket later on, the app would basically need a hash table lookup to figure
+ out the easy handle to pass in. And since we want the easy handle pass-in to
+ be optional, we still need to provide <i>exactly</i> that hash lookup code in
+ libcurl... I feel tempted to remove the easy handle from the callback and <a
+ href="/libcurl/c/curl_multi_socket.html">curl_multi_socket()</a> prototypes
+ for this very reason.
+<p>
+ We already have hash lookup code within libcurl, written and provided a long
+ time ago by Sterling Hughes and used for the DNS cache. I'll need to
+ investigate how we can re-use those functions to provide a socket-to-easy
+ handle lookup.
+<p>
+ The lookup will actually become a "one socket to one or more easy handles"-
+ lookup (1:N) since in the c-ares case more than one easy handle might be
+ waiting for the response on the same c-ares socket (when doing asynch DNS
+ resolving).  We'll just have to accept this fact and adjust accordingly.
+<p>
+ The fact that the lookup is a 1:N one is another factor that makes me lean
+ towards removing the easy handle from the prototypes since I guess we risk
+ that applications would implement the lookup 1:1 and get into trouble.
+<p><b>A few hours later...</b>
+<p>
+ I decided to follow my earlier instinct and I've now removed the 'easy'
+ argument from the curl_multi_socket() function. It didn't serve any useful
+ purpose.
+<p>
+ I added the hash table lookup and now I think most of the API is in place and
+ at least working partly. I need to do more (extensive) testing before I can
+ be really sure of everything.
+
+STOP
+
 MARKDATE(Jan 3 2006) Splay code added and it seems to build nicely sorted
  trees. I implemented <a
  href="/libcurl/c/curl_multi_timeout.html">curl_multi_timeout()</a> and it
