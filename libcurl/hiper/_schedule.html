@@ -33,6 +33,17 @@ TITLE(Project Hiper Schedule and Dates)
 
 <table class="news">
 
+MARKDATE(Jan 7 2006) Sun Yi-Ming's comments also made me realize that we need
+to better take care of the socket state for sockets that are used by more than
+one easy handle. The "check for socket change" within the multi code currently
+doesn't...
+<p>
+ I've decided to add a <i>curl_multi_setopt</i> function and let that set the
+callback function and userp pointer, to better allow the callback to get
+called even when easy handles are removed from a multi handle etc.
+
+STOP
+
 MARKDATE(Jan 6 2006)
  <a href="hiper-6.patch">hiper-6.patch</a> is 88K and now contains the test
  case files I've been using.
