@@ -11,6 +11,7 @@ Mirror:
 <a href="http://curl.miscellaneousmirror.org/">DE6</a>
 <a href="http://curl.triplemind.com/">DE7</a>
 <a href="http://curl.storemypix.com/">DE8</a>
+<a href="http://curl.mirroarrr.de/">DE9</a>
 <a href="http://curl.cofman.dk/">DK</a>
 <a href="http://curl.fastmirror.net/">FR</a>
 <a href="http://curl.hkmirror.org/">HK</a>
@@ -50,6 +51,7 @@ Mirror:
 <a href="http://curl.miscellaneousmirror.org/CURL_URL">DE6</a>
 <a href="http://curl.triplemind.com/CURL_URL">DE7</a>
 <a href="http://curl.storemypix.com/CURL_URL">DE8</a>
+<a href="http://curl.mirroarrr.de/CURL_URL">DE9</a>
 <a href="http://curl.cofman.dk/CURL_URL">DK</a>
 <a href="http://curl.fastmirror.net/CURL_URL">FR</a>
 <a href="http://curl.hkmirror.org/CURL_URL">HK</a>
