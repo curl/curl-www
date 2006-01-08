@@ -158,6 +158,9 @@ sub gettld {
     elsif($country =~ /Hong Kong/) {
         $tld="hk";
     }
+    elsif($country =~ /Japan/) {
+        $tld="jp";
+    }
     elsif($country =~ /Russia/) {
         $tld="ru";
     }

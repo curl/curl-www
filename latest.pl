@@ -49,6 +49,7 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden (Uppsala)',
              'ftp://ftp.hkmirror.org/pub/curl/' => 'Hong Kong',
              'http://curl.storemypix.com/download/' => 'Germany (Karlsruhe)',
              'http://curl.mirroarrr.de/download/' => 'Germany (Berlin)',
+             'http://curl.s-lines.net/download/' => 'Japan (Shizuoka)',
              );
 
 sub present {
