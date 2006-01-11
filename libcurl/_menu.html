@@ -261,6 +261,12 @@ LINK("", wxWidgets)
 VLINK(/libcurl/wx/, wxWidgets)
 #endif
 
+#ifdef LIBCURL_XBLITE
+LINK("", XBLite)
+#else
+VLINK(/libcurl/xblite/, XBLite)
+#endif
+
 </div>
 
 <p>

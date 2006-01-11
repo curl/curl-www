@@ -48,6 +48,7 @@ all: index.html mail.html competitors.html \
 	cd lisp; make
 	cd slang; make
 	cd hiper; make
+	cd xblite; make
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
