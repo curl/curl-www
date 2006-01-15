@@ -36,7 +36,7 @@ PAGES = index.html example.html curl_easy_init.html			\
  curl_easy_duphandle.html curl_easy_strerror.html			\
  curl_multi_strerror.html curl_share_strerror.html			\
  libcurl-tutorial.html curl_easy_reset.html curl_multi_socket.html \
- curl_multi_timeout.html
+ curl_multi_timeout.html curl_multi_setopt.html
 
 all: $(PAGES)
 
@@ -285,6 +285,11 @@ curl_multi_socket.t: $(MANROOT)/curl_multi_socket.3
 curl_multi_timeout.html: _curl_multi_timeout.html $(MAINPARTS) curl_multi_timeout.t
 	$(ACTION)
 curl_multi_timeout.t: $(MANROOT)/curl_multi_timeout.3
+	$(MAN2HTML) < $< >$@
+
+curl_multi_setopt.html: _curl_multi_setopt.html $(MAINPARTS) curl_multi_setopt.t
+	$(ACTION)
+curl_multi_setopt.t: $(MANROOT)/curl_multi_setopt.3
 	$(MAN2HTML) < $< >$@
 
 full: all
