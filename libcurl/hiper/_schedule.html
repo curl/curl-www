@@ -33,6 +33,14 @@ TITLE(Project Hiper Schedule and Dates)
 
 <table class="news">
 
+MARKDATE(Jan 16 2006) <a
+href="http://curl.haxx.se/libcurl/hiper/hiper-7.patch">hiper-7.patch</a>
+introduces <a href="../c/curl_multi_setopt.html">curl_multi_setopt</a> to set
+the socket callback, to allow other functions than just the *multi_socket()
+ones to cause the callback to get called.
+
+STOP
+
 MARKDATE(Jan 7 2006) Sun Yi-Ming's comments also made me realize that we need
  to better take care of the socket state for sockets that are used by more
  than one easy handle. The "check for socket change" within the multi code
