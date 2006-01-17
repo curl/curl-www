@@ -12,6 +12,7 @@
 
 #undef VLINK
 #define VLINK(l,t) <div><a href="l" class="libitem">t</a></div>
+#define TLINK(l,t,itle) <div><a href="l" class="libitem" title="itle">t</a></div>
 
 #include "ad.t"
 #include "mirrorlinks.t"
@@ -27,37 +28,40 @@
 #ifdef LIBCURL_MAIN
 LINK("", libcurl index )
 #else
-VLINK("/libcurl/", libcurl index )
+TLINK("/libcurl/", libcurl index, Front page of the libcurl section)
 #endif
 
 #ifdef LIBCURL_COMPETITORS
 LINK("", Competitors )
 #else
-VLINK("/libcurl/competitors.html", Competitors )
+TLINK("/libcurl/competitors.html", Competitors,
+      Figure what competing libraries there are )
 #endif
 
 #ifdef LIBCURL_FEATURES
 LINK("", Features )
 #else
-VLINK("/libcurl/features.html", Features )
+TLINK("/libcurl/features.html", Features, What makes libcurl special )
 #endif
 
 #ifdef LIBCURL_MAIL
 LINK("", Mailing List )
 #else
-VLINK("http://curl.haxx.se/mail/list.cgi?list=curl-library", Mailing List )
+TLINK("http://curl.haxx.se/mail/list.cgi?list=curl-library", Mailing List,
+      curl-library mailing list info and archives)
 #endif
 
 #ifdef LIBCURL_USING
 LINK("", Using libcurl )
 #else
-VLINK("/libcurl/using/", Using libcurl &raquo;)
+TLINK("/libcurl/using/", Using libcurl &raquo;, How to use libcurl section)
 #endif
 
 #ifdef LIBCURL_RELATEDLIBS
 LINK("", Related Libs )
 #else
-VLINK("/libcurl/relatedlibs.html", Related Libs )
+TLINK("/libcurl/relatedlibs.html", Related Libs,
+      Related libraries that you might find useful together with libcurl)
 #endif
 
 <hr>
