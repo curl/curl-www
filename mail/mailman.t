@@ -19,10 +19,17 @@
 <p>
 <h2>Using <MM-List-Name></h2>
 
+<p> Before you consider sending any mails to this list, take a moment and
+ study our <a href="http://curl.haxx.se/mail/etiquette.html">Mailing List
+ Etiquette</a> guidelines.
+
 <p> To post a message to all the <MM-List-Name> list members, send email to <A
  HREF="mailto:<MM-Posting-Addr>"><MM-Posting-Addr></A>. You <b>must</b> be
  subscribed before you post, as otherwise your mail will simply be silently
  discarded.
+
+<p> By posting to this list, you agree to your posting getting archived and
+ all its contents becoming publicly available.
 
 <p>You can subscribe to the list, or change your existing subscription, in the
  sections below.
