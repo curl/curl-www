@@ -1,0 +1,95 @@
+#include "_doctype.html"
+<html lang="en">
+<head>
+<title><MM-List-Name> Info Page</title>
+<link rel="STYLESHEET" type="text/css" href="http://curl.haxx.se/curl.css">
+<link rel="shortcut icon" href="http://curl.haxx.se/favicon.ico">
+<base href="http://curl.haxx.se/">
+</head>
+
+#include "_menu.html"
+#include "setup.t"
+#include "table.t"
+
+WHERE1(Mailing Lists)
+
+TITLE(<MM-List-Name> -- <MM-List-Description>)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="http://curl.haxx.se/mail/list.cgi?list=<MM-List-Name>"><MM-List-Name> archives</a>
+<br><a href="http://curl.haxx.se/mail/">Mailing Lists</a>
+</div>
+
+<P class="ingres"> <MM-List-Info>
+<p>
+<h2>Using <MM-List-Name></h2>
+
+<p> Before you consider sending any mails to this list, take a moment and
+ study our <a href="http://curl.haxx.se/mail/etiquette.html">Mailing List
+ Etiquette</a> guidelines.
+
+<p> To post a message to all the <MM-List-Name> list members, send email to <A
+ HREF="mailto:<MM-Posting-Addr>"><MM-Posting-Addr></A>. You <b>must</b> be
+ subscribed before you post, as otherwise your mail will simply be silently
+ discarded.
+
+<p> By posting to this list, you agree to your posting getting archived and
+ all its contents becoming publicly available.
+
+<p>You can subscribe to the list, or change your existing subscription, in the
+ sections below.
+
+<h2>Subscribing to <MM-List-Name></h2>
+
+<P> Subscribe to <MM-List-Name> by filling out the following form.  You will
+ be sent email requesting confirmation. The list of members is only visible to
+ admins.
+
+<p>
+ <MM-Subscribe-Form-Start>
+ <TABLE BORDER="0" CELLSPACING="2" CELLPADDING="2">
+ <TR>
+   <TD BGCOLOR="#dddddd">Your email address:</TD>
+   <TD><MM-Subscribe-Box></TD>
+ </TR>
+   <tr>
+   <td bgcolor="#dddddd">Your name (optional):</td>
+   <td><mm-fullname-box></td>
+   </tr>
+
+ <TR>
+   <TD BGCOLOR="#dddddd">Pick a password:</TD>
+   <TD><MM-New-Password-Box></TD>
+ </TR>
+ <TR> 
+   <TD BGCOLOR="#dddddd">Reenter password to confirm:</TD>
+   <TD><MM-Confirm-Password></TD>
+ </TR>
+
+ <mm-digest-question-start>
+ <tr>
+   <td>Receive list mail batched in a daily digest?</td>
+   <td><MM-Undigest-Radio-Button> No
+       <MM-Digest-Radio-Button>  Yes
+   </td>
+ </tr>
+ <mm-digest-question-end>
+ <tr>
+   <td colspan="2">
+   <center><MM-Subscribe-Button></center>
+   </td>
+ </tr>
+ </TABLE>
+ <MM-Form-End>
+
+ <a name="subscribers"></a>
+ <h2><MM-List-Name> preferences</h2>
+ <MM-Options-Form-Start>
+ <MM-Editing-Options>
+ <MM-Form-End>
+<p>
+<a href="http://cool.haxx.se/cgi-bin/mailman/admin/<MM-List-Name>">admin interface</a>
+
+#include "_footer.html"
+</body></html>
+
