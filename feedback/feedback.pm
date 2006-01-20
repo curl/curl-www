@@ -21,11 +21,14 @@ sub cleantext {
         # insert <p> to make new paragraphs
         $idea =~ s/\r\n\r\n/\r\n<p>\r\n/g;
 
+        # we add rel=\"nofollow\" to stop Google from following links:
+        # http://googleblog.blogspot.com/2005/01/preventing-comment-spam.html
+
         # replace http://-specified URLs
-        $idea =~ s/(http:\/\/[^ \r\n]*)/<a href=\"$1\">$1<\/a>/gi;
+        $idea =~ s/(http:\/\/[^ \t\r\n\"]*)/<a href=\"$1\" rel=\"nofollow\">$1<\/a>/gi;
 
         # replace www.-specified sites
-        $idea =~ s/([^\/]|^)(www.[^ \r\n]*)/$1<a href=\"http:\/\/$2\">$2<\/a>/g;
+        $idea =~ s/([^\/]|^)(www.[^ \t\r\n\"]*)/$1<a href=\"http:\/\/$2\" rel=\"nofollow\">$2<\/a>/g;
 
         # replace blabla@blabla mailtos
         $idea =~ s/([ \t\n]|^)(([^ \r\n]+)\@([^ \r\n]+))/$1<a href=\"mailto:$2\">$2<\/a>/g;
