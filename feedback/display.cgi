@@ -180,6 +180,9 @@ if(($support eq "yes") && $supps) {
 
         $em = $row{"suppemail$si"};
 
+        $em =~ s/@/ at /;
+        $em =~ s/\./ dot /;
+
         $da = $row{"suppdate$si"};
         $da = "&nbsp;" if($da eq "");
 
