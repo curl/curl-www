@@ -37,7 +37,7 @@ Payments </A></FONT></DIV></DIV></TD></TR></TABLE>
 <p>
 <table cellspacing="0" cellpadding="0" width="120" border="1">
 <tbody> <tr> <td>
-<font face="arial" size="1"><A
+<font face="arial" size="1">
 <a href="http://www.shop-script.com">Shopping cart software</a>
 <br>
 <a href="http://www.webasyst.net">Online collaboration software</a>
