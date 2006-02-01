@@ -30,6 +30,18 @@ $cleanname = &cleantext($name, 0);
 $cleanemail = $email;
 $cleanidea = &cleantext($idea, 1);
 
+my @ahref = split("a href", $cleanidea);
+my $ahrefnum = scalar(@ahref) -1;
+
+if($ahrefnum > 2) {
+    &Top();
+    &Header("URL flood");
+    print "<p> You're not allowed to include that many URLs. Please trim your",
+    " message and re-submit.";
+    &Footer;
+    exit;
+}
+
 if($preview ne "") {
     Top();
     # This is a preview-only!

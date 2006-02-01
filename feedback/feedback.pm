@@ -88,6 +88,10 @@ sub GetCategories {
 
 sub ShowInput {
 
+    if($preview && $title) {
+        $submitbutton="<input type=submit value=\"submit\" name=\"submit\">";
+    }
+
 print <<EOD
 <form action="add.cgi" method="post">
 <center>
@@ -101,7 +105,7 @@ print <<EOD
 <tr><td colspan=2>Suggestion</td></tr>
 <tr><td colspan=2>
  <textarea name=idea rows=10 cols=60 wrap=virtual>$idea</textarea></td></tr>
-<tr><td><input type=submit value="submit" name=submit><input type=submit value="preview" name=preview></td>
+<tr><td>$submitbutton<input type=submit value="preview" name=preview></td>
 <td align=right><input type=submit value="cancel" name=cancel></td></tr>
 </table>
 </td></tr></table>
