@@ -88,7 +88,7 @@ sub GetCategories {
 
 sub ShowInput {
 
-    if($preview && $title) {
+    if($preview && (length($title)>5) ) {
         $submitbutton="<input type=submit value=\"submit\" name=\"submit\">";
     }
 
