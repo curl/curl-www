@@ -114,6 +114,14 @@ if(length($passwd) < 4) {
     exit;
 }
 
+if(length($title) < 4) {
+    &Top();
+    &Header("bad title");
+    print "<p> I insist on getting a sensible and proper title.";
+    &Footer;
+    exit;
+}
+
 
 $db = new pbase;
 $db->open("data/ideas");
