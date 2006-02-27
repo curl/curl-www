@@ -45,6 +45,47 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 <li> <a href="http://curl.haxx.se/auto/cvshistory.html">recent CVS activity</a>
  </ul>
 
+SUBTITLE(Fixed in 7.15.2 - February 27 2006)
+<p> Changes:
+<ul>
+ <li> Support for SOCKS4 proxies (added --socks4)
+ <li> CURLOPT_CONNECT_ONLY and CURLINFO_LASTSOCKET added
+ <li> CURLOPT_LOCALPORT and CURLOPT_LOCALPORTRANGE (--local-port) added
+ <li> Dropped support for the LPRT ftp command
+ <li> Gopher is now officially abandoned as a protocol (lib)curl tries to support
+ <li> curl_global_init() and curl_global_cleanup() are now using a refcount so
+   that it is now legal to call them multiple times. See updated info for
+   details
+</ul>
+<p> Bugfixes:
+<ul>
+ <li> two bugs concerning using curl_multi_remove_handle() before the transfer
+   was complete
+ <li> multi-pass authentication and compressed content
+ <li> minor format string mistake in the GSS/Negotiate code
+ <li> cached DNS entries could remain in the cache too long
+ <li> improved GnuTLS check in configure
+ <li> re-used FTP connections when the second request didn't do a transfer
+ <li> plain --limit-rate [num] means bytes
+ <li> re-creating a dead connection is no longer counted internally as a followed
+   redirect and thus prevents a weird error that would occur if a FTP
+   connection died on an attempted re-use
+ <li> Try PASV after failing to connect to the port the EPSV response contained
+ <li> -P [IP] with non-local address with ipv6-enabled curl
+ <li> -P [hostname] with ipv6-disabled curl
+ <li> libcurl.m4 was updated
+ <li> configure no longer warns if the current path contains a space
+ <li> test suite kill race condition
+ <li> FTP_SKIP_PASV_IP and FTP_USE_EPSV when doing FTP over HTTP proxy
+ <li> Doing a second request with FTP on the same bath path, would make libcurl
+   confuse what current working directory it had
+ <li> FTP over HTTP proxy now sends the second CONNECT properly
+ <li> numerous compiler warnings and build quirks for various compilers have
+   been addressed
+ <li> supports name and passwords up to 255 bytes long, embedded in URLs
+ <li> the HTTP_ONLY define disables the TFTP support
+</ul>
+
 SUBTITLE(Fixed in 7.15.1 - December 7 2005)
 <a href="http://curl.haxx.se/docs/adv_20051207.html"><img src="/pix/alert.png" align="right" alt="Release contains security-related bug fix" border="0"></a>
 <p> Changes:
