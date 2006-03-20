@@ -53,6 +53,9 @@ contained a valid patch.
 
 Daniel didn't read the mail until the 12th due to vacations.
 
+curl 7.15.3 was released on March 20 2006, just before this flaw was
+publicly disclosed.
+
 5. CREDITS
 
 Reported to us by Ulf Harnhammar. Thanks a lot!

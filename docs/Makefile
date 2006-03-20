@@ -19,7 +19,8 @@ PAGES = index.html manpage.html faq.html changes.html contribute.html	 \
  thanks.html y2k.html todo.html httpscripting.html comparison-table.html \
  relatedtools.html osdistribs.html versions.html history.html loc.html	 \
  knownbugs.html manual.html caextract.html programs.html security.html	 \
- testcurl.html runtests.html libs.html adv_20051013.html adv_20051207.html
+ testcurl.html runtests.html libs.html adv_20051013.html adv_20051207.html \
+ adv_20060320.html
 
 all: $(PAGES)
 	@echo done 
@@ -209,6 +210,12 @@ adv_20051207.html: _adv_20051207.html adv_20051207.t $(MAINPARTS)
 	$(ACTION)
 
 adv_20051207.t: adv_20051207.txt
+	$(TXT2PLAIN) < $< > $@
+
+adv_20060320.html: _adv_20060320.html adv_20060320.t $(MAINPARTS)
+	$(ACTION)
+
+adv_20060320.t: adv_20060320.txt
 	$(TXT2PLAIN) < $< > $@
 
 
