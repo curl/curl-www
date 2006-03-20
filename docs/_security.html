@@ -35,6 +35,32 @@ TITLE(curl Security)
  We appreciate getting notified in advance before you go public with security
  advisories for the sake of our users.
 
+<a name="20060320"></a>
+SUBTITLE(libcurl TFTP Packet Buffer Overflow)
+<p>
+<table class="news">
+  <tr><td>Date:</td><td>March 20, 2006</td></tr>
+  <tr><td>ID</td><td>
+#if 0
+<a href="http://www.securityfocus.com/bid/15756">BID 15756</a>
+<a href="http://secunia.com/advisories/17907/">SA17907</a>
+#endif
+<a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1061">CVE-2006-1061</a>
+<small><a href="#20060320">(permalink)</a></small></td></tr>
+  <tr><td>Affected versions</td><td>curl and libcurl 7.15.0 to and including 7.15.2</td></tr>
+  <tr><td>Not affected versions</td><td>curl and libcurl 7.14.1 and earlier, 7.15.3 and later</td></tr>
+  <tr><td>Patch</td><td><a href="http://curl.haxx.se/libcurl-tftp.patch">libcurl-tftp.patch</a></td></tr>
+
+  <tr><td>Advisories</td><td>
+<a href="adv_20060320.html">Project cURL Security  Advisory</a> </td></tr>
+
+</table>
+<p>
+libcurl uses the given file part of a TFTP URL in a manner that allows a
+malicious user to overflow a heap-based memory buffer due to the lack of
+boundary check.
+
+
 <a name="BID15756"></a><a name="20051207"></a>
 SUBTITLE(libcurl URL Buffer Overflow)
 <p>
