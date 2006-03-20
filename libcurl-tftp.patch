@@ -1,0 +1,18 @@
+Index: lib/tftp.c
+===================================================================
+RCS file: /cvsroot/curl/curl/lib/tftp.c,v
+retrieving revision 1.16
+diff -u -r1.16 tftp.c
+--- lib/tftp.c	8 Dec 2005 20:38:04 -0000	1.16
++++ lib/tftp.c	13 Mar 2006 12:30:32 -0000
+@@ -271,7 +271,9 @@
+       /* If we are downloading, send an RRQ */
+       state->spacket.event = htons(TFTP_EVENT_RRQ);
+     }
+-    sprintf((char *)state->spacket.u.request.data, "%s%c%s%c",
++    snprintf((char *)state->spacket.u.request.data,
++             sizeof(state->spacket.u.request.data),
++             "%s%c%s%c",
+             filename, '\0',  mode, '\0');
+     sbytes = 4 + (int)strlen(filename) + (int)strlen(mode);
+     sbytes = sendto(state->sockfd, (void *)&state->spacket,

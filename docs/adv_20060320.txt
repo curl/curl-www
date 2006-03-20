@@ -1,0 +1,58 @@
+              libcurl TFTP Packet Buffer Overflow Vulnerability
+              =================================================
+
+Project cURL Security Advisory, March 20th 2006
+http://curl.haxx.se/docs/security.html
+
+1. VULNERABILITY
+
+libcurl uses the given file part of a TFTP URL in a manner that allows a
+malicious user to overflow a heap-based memory buffer due to the lack of
+boundary check.
+
+This overflow happens if you pass in a URL with a TFTP protocol prefix
+("tftp://"), using a valid host and a path part that is longer than 512 bytes.
+
+The affected flaw can be triggered by a redirect, if curl/libcurl is told to
+follow redirects and an HTTP server points the client to a tftp URL with the
+characteristics described above.
+
+There is no known exploit at the time of this writing.
+
+The Common Vulnerabilities and Exposures (CVE) project has assigned the name
+CVE-2006-1061 to this issue.
+
+2. AFFECTED VERSIONS
+
+Affected versions: curl and libcurl 7.15.0 to and including 7.15.2
+Not affected versions: curl and libcurl 7.14.1 and earlier, 7.15.3 and later
+
+libcurl 7.15.1 and 7.15.2 contain code that prevents this code from being
+executed on architecures where a struct is not of the same assumed packed size
+it has on x86, thus they are not vulnerable. For exact details on this, please
+review the code and patch.
+
+Also note that (lib)curl is used by many applications, and not always
+advertised as such.
+
+3. RECOMMENDATIONS
+
+We suggest you take one of the following actions immediately:
+
+ I - Upgrade to curl and libcurl 7.15.3
+
+ II - Apply the patch http://curl.haxx.se/libcurl-tftp.patch to your
+      libcurl version and install this
+
+ III - Build curl with TFTP disabled with configure --disable-tftp
+
+4. TIME LINE
+
+We were notified by Ulf Harnhammar on March 10th, 2006. His notification email
+contained a valid patch.
+
+Daniel didn't read the mail until the 12th due to vacations.
+
+5. CREDITS
+
+Reported to us by Ulf Harnhammar. Thanks a lot!

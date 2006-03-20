@@ -45,6 +45,27 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 <li> <a href="http://curl.haxx.se/auto/cvshistory.html">recent CVS activity</a>
  </ul>
 
+SUBTITLE(Fixed in 7.15.3 - March 20 2006)
+<a href="http://curl.haxx.se/docs/adv_20060320.html"><img src="/pix/alert.png"
+align="right" alt="Release contains security-related bug fix" border="0"></a>
+<p> Changes:
+<ul>
+ <li> added docs for --ftp-method and CURLOPT_FTP_FILEMETHOD
+</ul>
+<p> Bugfixes:
+<ul>
+ <li> <a href="http://curl.haxx.se/docs/adv_20060320.html">TFTP Packet Buffer Overflow Vulnerability</a>
+ <li> properly detecting problems with sending the FTP command USER
+ <li> wrong error message shown when certificate verification failed
+ <li> multi-part formpost with multi interface crash
+ <li> the CURLFTPSSL_CONTROL setting for CURLOPT_FTP_SSL is acknowledged
+ <li> "SSL: couldn't set callback" is now treated as a less serious problem
+ <li> Interix build fix
+ <li> fixed curl "hang" when out of file handles at start
+ <li> prevent FTP uploads to URLs with trailing slash
+</ul>
+
+
 SUBTITLE(Fixed in 7.15.2 - February 27 2006)
 <p> Changes:
 <ul>
