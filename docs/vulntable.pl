@@ -3,7 +3,7 @@
 # un-preprocessed _changes-file as input
 
 # datestamp, first vulnerable version, last vulnerable version
-my @vuln = ("20060320|7.15.0|7.15.2",
+my @vuln = ("BID17154|7.15.0|7.15.2",
             "BID15756|7.11.2|7.15.0",
             "BID15102|7.10.6|7.14.1",
             "BID12616|7.3   |7.13.0",
