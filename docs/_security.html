@@ -42,15 +42,15 @@ TITLE(curl Security)
 <a name="20060320"></a>
 SUBTITLE(libcurl TFTP Packet Buffer Overflow)
 <p>
-<table class="news">
+<table class="secbox">
   <tr><td>Date:</td><td>March 20, 2006</td></tr>
   <tr><td>ID</td><td>
 <a href="http://www.securityfocus.com/bid/17154">BID 17154</a>
 <a href="http://secunia.com/advisories/19271/">SA19271</a>
 <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1061">CVE-2006-1061</a>
 <small><a href="#20060320">(permalink)</a></small></td></tr>
-  <tr><td>Affected versions</td><td>curl and libcurl 7.15.0 to and including 7.15.2</td></tr>
-  <tr><td>Not affected versions</td><td>curl and libcurl 7.14.1 and earlier, 7.15.3 and later</td></tr>
+  <tr><td>Affected versions</td><td>7.15.0 to and including 7.15.2</td></tr>
+  <tr><td>Not affected versions</td><td>7.14.1 and earlier, 7.15.3 and later</td></tr>
   <tr><td>Patch</td><td><a href="http://curl.haxx.se/libcurl-tftp.patch">libcurl-tftp.patch</a></td></tr>
 
   <tr><td>Advisories</td><td>
@@ -66,11 +66,11 @@ boundary check.
 <a name="BID15756"></a><a name="20051207"></a>
 SUBTITLE(libcurl URL Buffer Overflow)
 <p>
-<table class="news">
+<table class="secbox">
   <tr><td>Date:</td><td>December 7, 2005</td></tr>
   <tr><td>ID</td><td><a href="http://www.securityfocus.com/bid/15756">BID 15756</a> <a href="http://secunia.com/advisories/17907/">SA17907</a> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4077">CVE-2005-4077</a> <small><a href="#20051207">(permalink)</a></small></td></tr>
-  <tr><td>Affected versions</td><td>curl and libcurl 7.11.2 to and including 7.15.0</td></tr>
-  <tr><td>Not affected versions</td><td>curl and libcurl 7.11.1 and earlier, 7.15.1 and later</td></tr>
+  <tr><td>Affected versions</td><td>7.11.2 to and including 7.15.0</td></tr>
+  <tr><td>Not affected versions</td><td>7.11.1 and earlier, 7.15.1 and later</td></tr>
   <tr><td>Patch</td><td><a href="http://curl.haxx.se/libcurl-urllen.patch">libcurl-urllen.patch</a> (<b>Note:</b> for 7.14.0 and earlier the patch <i>MUST</i> be made to do +3 and <i>not</i> just +2.</td></tr>
 
   <tr><td>Advisories</td><td>
@@ -86,12 +86,12 @@ SUBTITLE(libcurl URL Buffer Overflow)
 <a name="BID15102"></a><a name="CAN-2005-3185"></a>
 SUBTITLE(libcurl NTLM Buffer Overflow)
 <p>
-<table class="news">
+<table class="secbox">
   <tr><td>Date:</td><td>October 13, 2005</td></tr>
   <tr><td>ID</td><td><a href="http://www.securityfocus.com/bid/15102">BID 15102</a> <a
   href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-3185">CAN-2005-3185</a> <small><a href="#BID15102">(permalink)</a></small></td></tr>
-  <tr><td>Affected versions</td><td>curl and libcurl 7.10.6 to and including 7.14.1</td></tr>
-  <tr><td>Not affected versions</td><td>curl and libcurl 7.10.5 and earlier, 7.15.0 and later</td></tr>
+  <tr><td>Affected versions</td><td>7.10.6 to and including 7.14.1</td></tr>
+  <tr><td>Not affected versions</td><td>7.10.5 and earlier, 7.15.0 and later</td></tr>
   <tr><td>Patch</td><td><a href="http://curl.haxx.se/libcurl-ntlmbuf.patch">libcurl-ntlmbuf.patch</a></td></tr>
   <tr><td>Advisories</td><td><a href="adv_20051013.html">Project cURL Security Advisory</a>,  <a
   href="http://www.idefense.com/application/poi/display?id=322&type=vulnerabilities">iDEFENSE's
@@ -120,12 +120,18 @@ SUBTITLE(libcurl NTLM Buffer Overflow)
 <a name="BID12616"></a><a name="CAN-2005-0490"></a>
 SUBTITLE(Kerberos Authentication Buffer Overflow)
 <p>
-  Date: February 21, 2005<br>
-  ID: <a href="http://www.securityfocus.com/bid/12616">BID
+<table class="secbox">
+  <tr><td>Date:</td><td>February 21, 2005</td></tr>
+  <tr><td>ID</td><td><a href="http://www.securityfocus.com/bid/12616">BID
   12616</a> <a
-  href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0490">CAN-2005-0490</a> <small><a href="#BID12616">(permalink)</a></small> <br>
-  Affected versions: 7.3 to and including 7.13.0<br>
-  Not affected versions: 7.13.1 and later
+  href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0490">CAN-2005-0490</a> <small><a href="#BID12616">(permalink)</a></small> </td></tr>
+  <tr><td>Affected versions</td><td>7.3 to and including 7.13.0</td></tr>
+  <tr><td>Not affected versions</td><td>7.13.1 and later</td></tr>
+  <tr><td>Advisories</td><td><a
+  href="http://www.idefense.com/application/poi/display?id=203">iDEFENSE's
+  advisory</a></td></tr>
+</table>
+
 <p>
   Due to bad usage of the base64 decode function to a
   stack-based buffer without checking the data length, it was possible for a
@@ -138,12 +144,17 @@ SUBTITLE(Kerberos Authentication Buffer Overflow)
 <a name="BID12615"></a>
 SUBTITLE(NTLM Authentication Buffer Overflow)
 <p>
-  Date: February 21, 2005<br>
-  ID: <a href="http://www.securityfocus.com/bid/12615">BID
+<table class="secbox">
+  <tr><td>Date:</td><td>February 21, 2005</td></tr>
+  <tr><td>ID</td><td><a href="http://www.securityfocus.com/bid/12615">BID
   12615</a> <a
-  href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0490">CAN-2005-0490</a>  <small><a href="#BID12615">(permalink)</a></small><br>
-  Affected versions: 7.10.6 to and including 7.13.0<br>
-  Not affected versions: 7.13.1 and later
+  href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0490">CAN-2005-0490</a>  <small><a href="#BID12615">(permalink)</a></small> </td></tr>
+  <tr><td>Affected versions</td><td>7.10.6 to and including 7.13.0</td></tr>
+  <tr><td>Not affected versions</td><td>7.13.1 and later</td></tr>
+  <tr><td>Advisories</td><td><a
+  href="http://www.idefense.com/application/poi/display?id=202">iDEFENSE's
+  advisory</a></td></tr>
+</table>
  <p>
   Due to bad usage of the base64 decode function to a stack-based buffer
   without checking the data length, it was possible for a malicious HTTP
@@ -154,10 +165,12 @@ SUBTITLE(NTLM Authentication Buffer Overflow)
 <a name="BID8432"></a>
 SUBTITLE(Proxy Authentication Header Information Leakage)
 <p>
-  Date: August 3, 2003<br>
-  ID: <a href="http://www.securityfocus.com/bid/8432">BID 8432</a>  <small><a href="#BID8432">(permalink)</a></small><br>
-  Affected versions: 7.1 to and including 7.10.6<br>
-  Not affected versions: 7.10.7 and later
+<table class="secbox">
+  <tr><td>Date:</td><td>August 3, 2003</td></tr>
+  <tr><td>ID</td><td><a href="http://www.securityfocus.com/bid/8432">BID 8432</a>  <small><a href="#BID8432">(permalink)</a></small></td></tr>
+  <tr><td>Affected versions</td><td>7.1 to and including 7.10.6</td></tr>
+  <tr><td>Not affected versions</td><td>7.10.7 and later</td></tr>
+</table>
 <p>
   When curl connected to a site via an HTTP proxy with the CONNECT request, the
   user and password used for the proxy connection was also sent off to the
@@ -166,12 +179,14 @@ SUBTITLE(Proxy Authentication Header Information Leakage)
 <a name="BID1804"></a>
 SUBTITLE(FTP Server Response Buffer Overflow)
 <o>
-  Date: October 13, 2000<br>
-  ID: <a href="http://www.securityfocus.com/bid/1804">BID
+<table class="secbox">
+  <tr><td>Date:</td><td>October 13, 2000</td></tr>
+  <tr><td>ID</td><td> <a href="http://www.securityfocus.com/bid/1804">BID
   1804</a> <a
-  href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0973">CVE-2000-0973</a>  <small><a href="#BID1804">(permalink)</a></small><br>
-  Affected versions: 6.0 (and possibly earlier) to and including 7.4<br>
-  Not affected versions: 7.4.1 and later
+  href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0973">CVE-2000-0973</a>  <small><a href="#BID1804">(permalink)</a></small></td></tr>
+  <tr><td>Affected versions</td><td>6.0 (and possibly earlier) to and including 7.4</td></tr>
+  <tr><td>Not affected versions</td><td>7.4.1 and later</td></tr>
+</table>
 <p>
   When storing an FTP server's error message on failure, there was no check
   for input length and thus a malicious FTP server could overflow curl's stack
