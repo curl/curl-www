@@ -54,6 +54,7 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden (Uppsala)',
              'http://curl.linux-mirror.org/download/' => 'Germany (Cologne)',
              'http://dl.ambiweb.de/mirrors/curl.haxx.se/' => 'Germany (Erfurt)',
              'http://curl.download.nextag.com/download/' => 'US (California)',
+             'http://curl.mirroarrr.de/download/' => 'Germany (Berlin)',
              );
 
 sub present {
