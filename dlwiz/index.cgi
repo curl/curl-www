@@ -263,7 +263,7 @@ if($pick_type && !$pick_os) {
     elsif($ua =~ /IRIX/i) {
         $sel_os = "IRIX";
     }
-    elsif($ua =~ /(SunOS [1-4])/i) {
+    elsif($ua =~ /(SunOS [1-4]\b)/i) {
         $sel_os = "SunOS";
     }
     elsif($ua =~ /(SunOS|Solaris)/i) {
@@ -435,9 +435,6 @@ if(!$pick_flav && $pick_os && $pick_type) {
         elsif($ua=~ /gentoo/i) {
             $sel_flav = "Gentoo";
         }
-        elsif($ua=~ /cygwin/i) {
-            $sel_flav = "cygwin";
-        }
         elsif($ua=~ /Red Hat|CentOS/i) {
             $sel_flav = "Redhat";
         }
@@ -453,15 +450,19 @@ if(!$pick_flav && $pick_os && $pick_type) {
         elsif($ua=~ /VineLinux/i) {
             $sel_flav = "Vine";
         }
+
+	# Non-Linux flavours
+        elsif($ua=~ /cygwin/i) {
+            $sel_flav = "cygwin";
+        }
+        elsif($ua=~ /PocketPC|Windows CE/i) {
+            $sel_flav = "WinCE";
+        }
+
         # Some indicators of a PDA device
         # Not necessarily Familiar, but that's the best we have to offer
         elsif($ua=~ /Qtopia|Qt *embedded|embedix|PDA/i) {
             $sel_flav = "Familiar";
-        }
-
-	# Non-Linux flavours
-        elsif($ua=~ /PocketPC|Windows CE/i) {
-            $sel_flav = "WinCE";
         }
 
         showsteps();
