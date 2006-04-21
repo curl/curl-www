@@ -36,7 +36,8 @@ PAGES = index.html example.html curl_easy_init.html			\
  curl_easy_duphandle.html curl_easy_strerror.html			\
  curl_multi_strerror.html curl_share_strerror.html			\
  libcurl-tutorial.html curl_easy_reset.html curl_multi_socket.html \
- curl_multi_timeout.html curl_multi_setopt.html
+ curl_multi_timeout.html curl_multi_setopt.html \
+ curl_easy_escape.html curl_easy_unescape.html
 
 all: $(PAGES)
 
@@ -109,6 +110,16 @@ curl_escape.t: $(MANROOT)/curl_escape.3
 curl_unescape.html: _curl_unescape.html $(MAINPARTS) curl_unescape.t
 	$(ACTION)
 curl_unescape.t: $(MANROOT)/curl_unescape.3
+	$(MAN2HTML) < $< >$@
+
+curl_easy_escape.html: _curl_easy_escape.html $(MAINPARTS) curl_easy_escape.t
+	$(ACTION)
+curl_easy_escape.t: $(MANROOT)/curl_easy_escape.3
+	$(MAN2HTML) < $< >$@
+
+curl_easy_unescape.html: _curl_easy_unescape.html $(MAINPARTS) curl_easy_unescape.t
+	$(ACTION)
+curl_easy_unescape.t: $(MANROOT)/curl_easy_unescape.3
 	$(MAN2HTML) < $< >$@
 
 curl_getenv.html: _curl_getenv.html $(MAINPARTS) curl_getenv.t
