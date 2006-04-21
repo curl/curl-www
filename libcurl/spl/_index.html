@@ -1,0 +1,38 @@
+#include "_doctype.html"
+<html>
+<head> <title>libcurl with SPL</title>
+#include "css.t"
+</head>
+
+#define LIBCURL_SPL
+#define CURL_URL libcurl/spl
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(libcurl, "/libcurl/", SPL Binding)
+
+<a name=top>
+TITLE(accessing libcurl from SPL)
+
+<p>
+ The curl module comes bundled with the main SPL package.
+
+<p><b>How to Install</b><br>
+ Install SPL as documented.
+
+<p><b>Download</b><br> Get it from <a
+ href="http://www.clifford.at/spl/">the SPL language web page</a> 
+
+<p><b>Credits</b><br>
+ The SPL binding was written by Clifford Wolf.
+
+<p><b>What is SPL?</b><br>
+ You'll find more info on SPL here:
+<p>
+<a href="http://www.clifford.at/spl/">www.clifford.at/spl</a>
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
