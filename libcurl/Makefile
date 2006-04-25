@@ -10,9 +10,9 @@ ACTION=@echo preprocessing $@; \
 	cpp -I.. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
 	chmod a-w+r $@
 
-all: index.html mail.html competitors.html \
-     comparison-table.html relatedlibs.html \
-     features.html wininet.html libwww.html libsoup.html
+all: index.html mail.html competitors.html comparison-table.html	  \
+     relatedlibs.html features.html wininet.html libwww.html libsoup.html \
+     theysay.html
 	cd c; make
 	cd perl; make
 	cd php; make
@@ -92,3 +92,7 @@ libwww.html: _libwww.html $(MAINPARTS)
 
 libsoup.html: _libsoup.html $(MAINPARTS)
 	$(ACTION)
+
+theysay.html: _theysay.html $(MAINPARTS)
+	$(ACTION)
+

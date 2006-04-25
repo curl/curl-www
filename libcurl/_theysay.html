@@ -1,0 +1,45 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl - What Developers Say About It</TITLE>
+#include "css.t"
+</HEAD>
+
+#define LIBCURL_THEYSAY
+#define CURL_URL libcurl/theysay.html
+
+#include "_menu.html"
+#include "setup.t"
+#include "table.t"
+
+WHERE2(libcurl, "/libcurl/", What Developers Say)
+
+TITLE(What Developers Say About libcurl)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/docs/features.html">libcurl Features</a>
+<br><a href="competitors.html">Compare HTTP Libraries</a>
+<br><a href="wininet.html">WinInet comparison</a>
+<br><a href="libwww.html">libwww comparison</a>
+</div>
+
+<p>
+ This is what developers have said about libcurl. If you want to add your
+ sentiments here, please mail <a href="mailto:curl-web@haxx.se">curl-web</a>
+ and open your heart!
+
+<p>
+<ul>
+<li>
+ <i>The <a href="http://dev.bluesecurity.com/">Blue Frog</a> application uses
+ a libcurl based HTTP client engine (with Zlib and OpenSSL), that is
+ scriptable through Lua scripts using an internally developed glue
+ library. Libcurl proved to be a solid solution with excellent support and a
+ lively community of developers. The high level interface is feature rich,
+ easy to use and well documented (!). During our debugging sessions we noticed
+ that code is well written and is open for enhancements. Definitely a safe bet
+ when it comes to HTTP client libraries.</i> - Shmulik Regev
+</ul>
+
+#include "_footer.html"
+</BODY>
+</HTML>
