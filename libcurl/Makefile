@@ -12,7 +12,7 @@ ACTION=@echo preprocessing $@; \
 
 all: index.html mail.html competitors.html comparison-table.html	  \
      relatedlibs.html features.html wininet.html libwww.html libsoup.html \
-     theysay.html
+     theysay.html bindings.html
 	cd c; make
 	cd perl; make
 	cd php; make
@@ -51,7 +51,7 @@ all: index.html mail.html competitors.html comparison-table.html	  \
 	cd xblite; make
 	cd spl; make
 
-index.html: _index.html $(MAINPARTS)
+index.html: _index.html $(MAINPARTS) bindingbox.t
 	$(ACTION)
 
 threadsafe.html: _threadsafe.html $(MAINPARTS)
@@ -94,5 +94,8 @@ libsoup.html: _libsoup.html $(MAINPARTS)
 	$(ACTION)
 
 theysay.html: _theysay.html $(MAINPARTS)
+	$(ACTION)
+
+bindings.html: _bindings.html $(MAINPARTS) bindingbox.t
 	$(ACTION)
 

@@ -1,0 +1,32 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl - Bindings</TITLE>
+#include "css.t"
+</HEAD>
+
+#define LIBCURL_BINDINGS
+#define CURL_URL libcurl/bindings.html
+
+#include "_menu.html"
+#include "setup.t"
+#include "table.t"
+
+WHERE2(libcurl, "/libcurl/", Bindings)
+
+TITLE(libcurl Bindings)
+<p class="bindingbox">
+#include "bindingbox.t"
+</p>
+<p>
+ Project cURL produces and releases libcurl, which only offers an API in plain
+ <a href="c/">C</a>.
+<p>
+ Lots of other people and organizations make and offer bindings to libcurl for
+ other languages and environments, and we gladly help you find and use them.
+<p>
+ Pick your binding of choice on the list to the right to get further info.
+
+
+#include "_footer.html"
+</BODY>
+</HTML>

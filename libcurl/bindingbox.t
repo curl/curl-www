@@ -1,0 +1,37 @@
+<b>Bindings</b><br>
+<br>
+<a href="ada95/">Ada95</a><br>
+<a href="basic/">Basic</a><br>
+<a href="c/">C</a><br>
+<a href="cplusplus/">C++</a><br>
+<a href="ch/">Ch</a><br>
+<a href="cocoa/">Cocoa</a><br>
+<a href="d/">D</a><br>
+<a href="dylan/">Dylan</a><br>
+<a href="euphoria/">Euphoria</a><br>
+<a href="ferite/">Ferite</a><br>
+<a href="gambas/">Gambas</a><br>
+<a href="glib/">glib/GTK+</a><br>
+<a href="java/">Java</a><br>
+<a href="lisp/">Lisp</a><br>
+<a href="lua/">Lua</a><br>
+<a href="mono/">Mono</a><br>
+<a href="dotnet/">.NET</a><br>
+<a href="pascal2/">Object-Pascal</a><br>
+<a href="ocaml/">OCaml</a><br>
+<a href="pascal/">Pascal</a><br>
+<a href="perl/">Perl</a><br>
+<a href="php/">PHP</a><br>
+<a href="postgres/">Postgres</a><br>
+<a href="python/">Python</a><br>
+<a href="r/">R</a><br>
+<a href="rexx/">Rexx</a><br>
+<a href="ruby/">Ruby</a><br>
+<a href="scheme/">Scheme</a><br>
+<a href="slang/">S-Lang</a><br>
+<a href="spl/">SPL</a><br>
+<a href="tcl/">Tcl</a><br>
+<a href="vb/">Visual Basic</a><br>
+<a href="q/">Q</a><br>
+<a href="wx/">wxWidgets</a><br>
+<a href="xblite/">XBLite</a><br>

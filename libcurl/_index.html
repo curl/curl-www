@@ -2,7 +2,7 @@
 <HTML>
 <HEAD> <TITLE>libcurl - the multiprotocol file transfer library</TITLE>
 #include "css.t"
-<meta name="description" content="libcurl is a free and easy-to-use client-side URL transfer library, supporting FTP, FTPS, TFTP, HTTP, HTTPS, TELNET, DICT, FILE and LDAP.  libcurl supports HTTPS certificates, HTTP POST, HTTP PUT, FTP uploading, kerberos, HTTP form based upload, proxies, cookies, user+password authentication, file transfer resume, http proxy tunneling and more">
+<meta name="description" content="libcurl is a free and easy-to-use client-side URL transfer library, supporting FTP, FTPS, TFTP, HTTP, HTTPS, TELNET, DICT, FILE and LDAP.  libcurl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, kerberos, HTTP form based upload, proxies, cookies, user+password authentication, file transfer resume, http proxy tunneling and more">
 </HEAD>
 
 #define LIBCURL_MAIN
@@ -10,6 +10,9 @@
 
 #include "_menu.html"
 #include "setup.t"
+<p class="bindingbox">
+#include "bindingbox.t"
+</p>
 #include "pic.t"
 
 WHERE1(libcurl Front Page)
@@ -17,12 +20,13 @@ WHERE1(libcurl Front Page)
 TITLE(libcurl - the multiprotocol file transfer library)
 <p class="ingres">
 
- libcurl is a <a href="/docs/copyright.html" title="free as in both free speech and zero price!">free</a> and easy-to-use
- client-side URL transfer library, supporting FTP, FTPS, TFTP, HTTP, HTTPS,
- TELNET, DICT, FILE and LDAP.  libcurl supports HTTPS certificates,
- HTTP POST, HTTP PUT, FTP uploading, HTTP form based upload, proxies, cookies,
- user+password authentication (Basic, Digest, NTLM, Negotiate, Kerberos4),
- file transfer resume, http proxy tunneling and more!
+ libcurl is a <a href="/docs/copyright.html" title="free as in both free
+ speech and zero price!">free</a> and easy-to-use client-side URL transfer
+ library, supporting FTP, FTPS, TFTP, HTTP, HTTPS, TELNET, DICT, FILE and
+ LDAP.  libcurl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading,
+ HTTP form based upload, proxies, cookies, user+password authentication
+ (Basic, Digest, NTLM, Negotiate, Kerberos4), file transfer resume, http proxy
+ tunneling and more!
 </p>
 
 <p class="ingres">
@@ -64,9 +68,9 @@ TITLE(libcurl - the multiprotocol file transfer library)
 
 </td></tr></table>
 
-<div class="phpbox">
-  Daniel is working on improving libcurl for high performance, in <a href="hiper/" title="improve libcurl">project Hiper</a>!
-</div>
+<span class="phpbox">
+  Daniel is working on improving libcurl for high performance, in <a href="hiper/" title="improve libcurl for high speed with large amounts of connections">project Hiper</a>!
+</span>
 
 
 #include "_footer.html"

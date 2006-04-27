@@ -31,6 +31,20 @@ LINK("", libcurl index )
 TLINK("/libcurl/", libcurl index, Front page of the libcurl section)
 #endif
 
+#ifdef LIBCURL_DOCS
+LINK("", API)
+#else
+TLINK(/libcurl/c/, API &raquo;,
+       Functions provided by libcurl )
+#endif
+
+#ifdef LIBCURL_BINDINGS
+LINK("", Bindings)
+#else
+TLINK(/libcurl/bindings.html, Bindings,
+      Using libcurl powers within your language of choice! )
+#endif
+
 #ifdef LIBCURL_COMPETITORS
 LINK("", Competitors )
 #else
@@ -51,12 +65,6 @@ TLINK("http://curl.haxx.se/mail/list.cgi?list=curl-library", Mailing List,
       curl-library mailing list info and archives)
 #endif
 
-#ifdef LIBCURL_USING
-LINK("", Using libcurl )
-#else
-TLINK("/libcurl/using/", Using libcurl &raquo;, How to use libcurl section)
-#endif
-
 #ifdef LIBCURL_RELATEDLIBS
 LINK("", Related Libs )
 #else
@@ -64,217 +72,16 @@ TLINK("/libcurl/relatedlibs.html", Related Libs,
       Related libraries that you might find useful together with libcurl)
 #endif
 
-<hr>
-<font color="#ffffff">Bindings:</font>
-
-#ifdef LIBCURL_ADA95
-LINK("", Ada95)
+#ifdef LIBCURL_USING
+LINK("", Using libcurl )
 #else
-VLINK(/libcurl/ada95/, Ada95)
+TLINK("/libcurl/using/", Using libcurl &raquo;, How to use libcurl section)
 #endif
 
-#ifdef LIBCURL_BASIC
-LINK("", Basic)
+#ifdef LIBCURL_THEYSAY
+LINK("", Testamonials )
 #else
-VLINK(/libcurl/basic/, Basic)
-#endif
-
-#ifdef LIBCURL_DOCS
-LINK("", C)
-#else
-VLINK(/libcurl/c/, C &raquo;)
-#endif
-
-#ifdef LIBCURL_CPLUSPLUS
-LINK("", C++)
-#else
-VLINK(/libcurl/cplusplus/, C++)
-#endif
-
-#ifdef LIBCURL_CH
-LINK("", Ch)
-#else
-VLINK(/libcurl/ch/, Ch)
-#endif
-
-#ifdef LIBCURL_COCOA
-LINK("", Cocoa)
-#else
-VLINK(/libcurl/cocoa/, Cocoa)
-#endif
-
-#ifdef LIBCURL_D
-LINK("", D)
-#else
-VLINK(/libcurl/d/, D)
-#endif
-
-#ifdef LIBCURL_DYLAN
-LINK("", Dylan)
-#else
-VLINK(/libcurl/dylan/, Dylan)
-#endif
-
-#ifdef LIBCURL_EUPHORIA
-LINK("", Euphoria)
-#else
-VLINK(/libcurl/euphoria/, Euphoria)
-#endif
-
-#ifdef LIBCURL_FERITE
-LINK("", Ferite)
-#else
-VLINK(/libcurl/ferite/, Ferite)
-#endif
-
-#ifdef LIBCURL_GAMBAS
-LINK("", Gambas)
-#else
-VLINK(/libcurl/gambas/, Gambas)
-#endif
-
-#ifdef LIBCURL_GLIB
-LINK("", glib/GTK+)
-#else
-VLINK(/libcurl/glib/, glib/GTK+)
-#endif
-
-#ifdef LIBCURL_JAVA
-LINK("", Java)
-#else
-VLINK(/libcurl/java/, Java)
-#endif
-
-#ifdef LIBCURL_LISP
-LINK("", Lisp)
-#else
-VLINK(/libcurl/lisp/, Lisp)
-#endif
-
-#ifdef LIBCURL_LUA
-LINK("", Lua)
-#else
-VLINK(/libcurl/lua/, Lua)
-#endif
-
-#ifdef LIBCURL_MONO
-LINK("", Mono)
-#else
-VLINK(/libcurl/mono/, Mono)
-#endif
-
-#ifdef LIBCURL_DOTNET
-LINK("", .NET)
-#else
-VLINK(/libcurl/dotnet/, .NET)
-#endif
-
-#ifdef LIBCURL_PASCAL2
-LINK("", Object-Pascal)
-#else
-VLINK(/libcurl/pascal2/, Object-Pascal)
-#endif
-
-#ifdef LIBCURL_OCAML
-LINK("", OCaml)
-#else
-VLINK(/libcurl/ocaml/, OCaml)
-#endif
-
-#ifdef LIBCURL_PASCAL
-LINK("", Pascal)
-#else
-VLINK(/libcurl/pascal/, Pascal)
-#endif
-
-#ifdef LIBCURL_PERL
-LINK("", Perl)
-#else
-VLINK(/libcurl/perl/, Perl)
-#endif
-
-#ifdef LIBCURL_PHP
-LINK("", PHP)
-#else
-VLINK(/libcurl/php/, PHP &raquo;)
-#endif
-
-#ifdef LIBCURL_POSTGRES
-LINK("", Postgres)
-#else
-VLINK(/libcurl/postgres/, Postgres)
-#endif
-
-#ifdef LIBCURL_PYTHON
-LINK("", Python)
-#else
-VLINK(/libcurl/python/, Python)
-#endif
-
-#ifdef LIBCURL_R
-LINK("", R)
-#else
-VLINK(/libcurl/r/, R)
-#endif
-
-#ifdef LIBCURL_REXX
-LINK("", Rexx)
-#else
-VLINK(/libcurl/rexx/, Rexx)
-#endif
-
-#ifdef LIBCURL_RUBY
-LINK("", Ruby)
-#else
-VLINK(/libcurl/ruby/, Ruby)
-#endif
-
-#ifdef LIBCURL_SCHEME
-LINK("", Scheme)
-#else
-VLINK(/libcurl/scheme/, Scheme)
-#endif
-
-#ifdef LIBCURL_SLANG
-LINK("", S-Lang)
-#else
-VLINK(/libcurl/slang/, S-Lang)
-#endif
-
-#ifdef LIBCURL_SPL
-LINK("", SPL)
-#else
-VLINK(/libcurl/spl/, SPL)
-#endif
-
-#ifdef LIBCURL_TCL
-LINK("", Tcl)
-#else
-VLINK(/libcurl/tcl/, Tcl)
-#endif
-
-#ifdef LIBCURL_VB
-LINK("", Visual Basic)
-#else
-VLINK(/libcurl/vb/, Visual Basic)
-#endif
-
-#ifdef LIBCURL_Q
-LINK("", Q)
-#else
-VLINK(/libcurl/q/, Q)
-#endif
-
-#ifdef LIBCURL_WX
-LINK("", wxWidgets)
-#else
-VLINK(/libcurl/wx/, wxWidgets)
-#endif
-
-#ifdef LIBCURL_XBLITE
-LINK("", XBLite)
-#else
-VLINK(/libcurl/xblite/, XBLite)
+TLINK("/libcurl/theysay.html", Testamonials, What developers using libcurl say about it)
 #endif
 
 </div>
