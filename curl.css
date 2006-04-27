@@ -65,6 +65,11 @@ table.news {
   border: outset 2px #8080ff;
 }
 
+table.secbox {
+  border: outset 2px #8080ff;
+  background-color: #e0e0ff;
+}
+
 table.latestmail {
   border: outset 2px #8080ff;
   font-size: 100%;
@@ -348,9 +353,15 @@ div.yellowbox {
 }
 
 .phpbox {
-  font-size: 110%;
-  background-color: #e0e0ff; 
+  background-color: #ffe0e0; 
   color: #0000ff;
   border: solid 1px #000000;
+  padding: 4px 4px 4px 4px;
+}
+
+.bindingbox {
+  float: right;
+  border: solid 1px #000000;
+  background-color: #ffffff; 
   padding: 2px 2px 2px 2px;
 }
