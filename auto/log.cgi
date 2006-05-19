@@ -72,7 +72,7 @@ for(@present) {
     chomp;
     if(checkwarn($_) || ($_ =~ /FAILED/)) {
         $num++;
-        push @out, "<a name=\"prob$num\"></a><div class=\"warning\">$_</div>\n";
+        push @out, "<a name=\"prob$num\"></a><div class=\"warning\">" . CGI::escapeHTML($_) . "</div>\n";
     }
     else {
         push @out, CGI::escapeHTML($_) . "<br>\n";
