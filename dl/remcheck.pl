@@ -154,7 +154,8 @@ sub geturl {
         logmsg " URL contents CACHED, no need to fetch again\n";
         return @{$urlhash{$url}};
     }
-    logmsg " \$ $curlcmd \"$url\"\n";
+    logmsg " \$ $curlcmd \"<a href=\"" . CGI::escapeHTML($url) . "\">" .
+           CGI::escapeHTML($url) . "</a>\"\n";
     my @content = `$curlcmd \"$url\"`;
     if(@content) {
         # store the content in the hash
@@ -395,10 +396,10 @@ for $ref (@all) {
 
 logmsg "<h1>Summary</h1>\n";
 logmsg "$uptodate remote packages found up-to-date with database versions\n";
-logmsg "$failedcheck packages failed to get checked\n";
+logmsg "<div class=\"buildfail\">$failedcheck packages failed to get checked</div>\n";
 logmsg "$localpackage packages are local and taken care of differently\n";
 logmsg "$oldies checks were skipped due to old release number\n";
-logmsg "$regexmisses regexes didn't match on successful URL fetches\n";
+logmsg "<div class=\"buildfail\">$regexmisses regexes didn't match on successful URL fetches</div>\n";
 logmsg "$hidden packages were skipped since they are 'hidden'\n";
 
 if($missing) {
@@ -409,5 +410,5 @@ if($missing) {
 # we have updated time stamps after each run, always save!
 $db->save();
 
-logmsg "$update package versions updated\n";
+logmsg "<div class=\"latest2\">$update package versions updated</div>\n";
 
