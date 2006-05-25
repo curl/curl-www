@@ -36,7 +36,7 @@ rfc2326.txt Real Time Streaming Protocol (RTSP)
 rfc2373.txt IP Version 6 Addressing Architecture (obsolete)
 rfc2388.txt Returning Values from Forms: multipart/form-data
 rfc2389.txt Feature negotiation mechanism for FTP
-rfc2396.txt Uniform Resource Identifiers: Generic Syntax and Semantics
+rfc2396.txt Uniform Resource Identifiers: Generic Syntax (see RFC3986)
 rfc2428.txt FTP Extensions for IPv6 and NATs
 rfc2459.txt Internet X.509 Public Key Infrastructure Certificate and CRL Profile
 rfc2518.txt HTTP Extensions for Distributed Authoring -- WEBDAV
@@ -59,3 +59,6 @@ ntlm.html Eric Glass' NTLM Authentication Protocol specification
 draft-brezak-spnego-http-04.txt SPNEGO Access Authentication
 draft-luotonen-web-proxy-tunneling-01.txt Tunneling TCP based protocols through Web proxy servers
 rfc4217.txt Securing FTP with TLS
+rfc3986.txt Uniform Resource Identifier (URI): Generic Syntax
+rfc2854.txt The 'text/html' Media Type
+rfc4248.txt The telnet URI Scheme

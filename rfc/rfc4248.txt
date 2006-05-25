@@ -1,0 +1,227 @@
+
+
+
+
+
+
+Network Working Group                                         P. Hoffman
+Request for Comments: 4248                                VPN Consortium
+Obsoletes: 1738                                             October 2005
+Category: Standards Track
+
+
+                         The telnet URI Scheme
+
+Status of this Memo
+
+   This document specifies an Internet standards track protocol for the
+   Internet community, and requests discussion and suggestions for
+   improvements.  Please refer to the current edition of the "Internet
+   Official Protocol Standards" (STD 1) for the standardization state
+   and status of this protocol.  Distribution of this memo is unlimited.
+
+Copyright Notice
+
+   Copyright (C) The Internet Society (2005).
+
+Abstract
+
+   This document specifies the telnet Uniform Resource Identifier (URI)
+   scheme that was originally specified in RFC 1738.  The purpose of
+   this document is to allow RFC 1738 to be made obsolete while keeping
+   the information about the scheme on standards track.
+
+1.  Introduction
+
+   URIs were previously defined in [RFC2396], which was updated by
+   [RFC3986].  Those documents also specify how to define schemes for
+   URIs.
+
+   The first definition for many URI schemes appeared in [RFC1738].
+   Because that document has been made obsolete, this document copies
+   the telnet URI scheme from it to allow that material to remain on
+   standards track.
+
+2.  Scheme Definition
+
+   The Telnet URL scheme is used to designate interactive services that
+   may be accessed by the Telnet protocol [STD8].
+
+   A telnet URL takes the form:
+
+   telnet://<user>:<password>@<host>:<port>/
+
+
+
+
+
+Hoffman                     Standards Track                     [Page 1]
+
+RFC 4248                 The telnet URI Scheme              October 2005
+
+
+   The final "/" character may be omitted.  If :<port> is omitted, the
+   port defaults to 23.  The :<password> can be omitted, as well as the
+   whole <user>:<password> part.  Few implementations handle the user
+   name and password very well, if at all.
+
+   This URL does not designate a data object, but rather an interactive
+   service.  Remote interactive services vary widely in the means by
+   which they allow remote logins; in practice, the <user> and
+   <password> supplied are advisory only: clients accessing a telnet URL
+   merely advise the user of the suggested username and password.
+
+   Many RFCs have added various services to the Telnet protocol for
+   better authentication, encryption of traffic, or both.  Those RFCs
+   have not specified new URI schemes for Telnet to invoke those
+   services (along the lines of "https" being a different URI scheme
+   from "http").  Some modern telnet clients attempt to invoke those
+   more-secure versions of Telnet when resolving a "telnet" URL.
+
+3.  Security Considerations
+
+   There are many security considerations for URI schemes discussed in
+   [RFC3986].
+
+   The Telnet protocol normally uses passwords in the clear for
+   authentication, and normally offers no privacy.  In normal telnet,
+   both the user's identity and their password are exposed without any
+   protection; after that, the contents of the entire Telnet session is
+   exposed without any protection.
+
+   Many extensions have been made to Telnet to make it more secure in
+   different ways.  In particular, [RFC2941] gives a framework based on
+   a telnet option that many other security extensions have leveraged
+   off of.  These extensions are certainly worthwhile methods for
+   reducing the obvious problems with exposing the user's name,
+   password, and plaintext of the session in the clear.
+
+   Although some modern telnet clients attempt to invoke those more-
+   secure versions of Telnet when resolving a "telnet" URL, other telnet
+   clients do not, so a user cannot rely on this type of security unless
+   it is explicitly enabled and the results of the security negotiation
+   are checked.
+
+
+
+
+
+
+
+
+
+
+Hoffman                     Standards Track                     [Page 2]
+
+RFC 4248                 The telnet URI Scheme              October 2005
+
+
+4.  Normative References
+
+   [STD8]     Postel, J. and J. Reynolds, "Telnet Protocol
+              Specification", STD 8, RFC 854, May 1983.
+
+5.  Informative References
+
+   [RFC1738]  Berners-Lee, T., Masinter, L., and M. McCahill, "Uniform
+              Resource Locators (URL)", RFC 1738, December 1994.
+
+   [RFC2396]  Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
+              Resource Identifiers (URI): Generic Syntax", RFC 2396,
+              August 1998.
+
+   [RFC2941]  Ts'o, T. and J. Altman, "Telnet Authentication Option",
+              RFC 2941, September 2000.
+
+   [RFC3986]  Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
+              Resource Identifier (URI): Generic Syntax", STD 66,
+              RFC 3986, January 2005.
+
+Author's Address
+
+   Paul Hoffman
+   VPN Consortium
+   127 Segre Place
+   Santa Cruz, CA  95060
+   US
+
+   EMail: paul.hoffman@vpnc.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hoffman                     Standards Track                     [Page 3]
+
+RFC 4248                 The telnet URI Scheme              October 2005
+
+
+Full Copyright Statement
+
+   Copyright (C) The Internet Society (2005).
+
+   This document is subject to the rights, licenses and restrictions
+   contained in BCP 78, and except as set forth therein, the authors
+   retain all their rights.
+
+   This document and the information contained herein are provided on an
+   "AS IS" basis and THE CONTRIBUTOR, THE ORGANIZATION HE/SHE REPRESENTS
+   OR IS SPONSORED BY (IF ANY), THE INTERNET SOCIETY AND THE INTERNET
+   ENGINEERING TASK FORCE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED,
+   INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE
+   INFORMATION HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED
+   WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+Intellectual Property
+
+   The IETF takes no position regarding the validity or scope of any
+   Intellectual Property Rights or other rights that might be claimed to
+   pertain to the implementation or use of the technology described in
+   this document or the extent to which any license under such rights
+   might or might not be available; nor does it represent that it has
+   made any independent effort to identify any such rights.  Information
+   on the procedures with respect to rights in RFC documents can be
+   found in BCP 78 and BCP 79.
+
+   Copies of IPR disclosures made to the IETF Secretariat and any
+   assurances of licenses to be made available, or the result of an
+   attempt made to obtain a general license or permission for the use of
+   such proprietary rights by implementers or users of this
+   specification can be obtained from the IETF on-line IPR repository at
+   http://www.ietf.org/ipr.
+
+   The IETF invites any interested party to bring to its attention any
+   copyrights, patents or patent applications, or other proprietary
+   rights that may cover technology that may be required to implement
+   this standard.  Please address the information to the IETF at ietf-
+   ipr@ietf.org.
+
+Acknowledgement
+
+   Funding for the RFC Editor function is currently provided by the
+   Internet Society.
+
+
+
+
+
+
+
+Hoffman                     Standards Track                     [Page 4]
+
