@@ -458,7 +458,7 @@ sub singlefile {
             elsif($_ =~ /^testcurl: configure didn\'t work/) {
                 $configure=1;
             }
-            elsif($_ =~ /^testcurl: src\/curl was created fine/) {
+            elsif($_ =~ /^testcurl:.*curl was created fine/) {
                 $linkfine=1;
             }
             elsif($_ =~ /^\* libcurl debug: *(.*)/) {
