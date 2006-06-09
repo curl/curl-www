@@ -293,14 +293,14 @@ if($latest::version{$what}) {
     }
     else {
         
-        print " ".($#dl+1)." sites ",
+        print " ".($#dl+1)." known sites ",
         "(<a href=\"#verified\">verified</a> ".&time_ago.")\n";
 
         if($showall && ($inmycontinent || $inmycountry)) {
             print "<p> <a href=\"$script?curl=$what\">Show my closest mirrors</a>";
         }
         elsif($inmycountry) {
-            print "<p>$inmycountry of these mirrors are located in ".ucfirst(lc($mycountry))." where it looks like you are located. <p><a href=\"$script?curl=$what&all=yes\">Show all mirrors</a>\n";
+            print "<p>$inmycountry of these mirrors are located in ".ucfirst(lc($mycountry))." where it looks like you are located. <a href=\"$script?curl=$what&all=yes\">Show all mirrors</a>\n";
         }
         elsif($inmycontinent) {
             print "<p>$inmycontinent of these mirrors are located in ".ucfirst(lc($mycontinent))." where it looks like you are located. Showing those mirrors only!\n";
