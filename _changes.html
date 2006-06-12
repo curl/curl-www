@@ -45,6 +45,46 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 <li> <a href="http://curl.haxx.se/auto/cvshistory.html">recent CVS activity</a>
  </ul>
 
+SUBTITLE(Fixed in 7.15.4 - June 12 2006)
+<p> Changes:
+<ul>
+ <li> NTLM2 session response support
+ <li> CURLOPT_COOKIELIST set to "SESS" clears all session cookies
+ <li> CURLINFO_LASTSOCKET returned sockets are now checked more before returned
+ <li> curl-config got a --checkfor option to compare version numbers
+ <li> line end conversions for FTP ASCII transfers
+ <li> curl_multi_socket() API added (still mostly untested)
+ <li> conversion callback options for EBCDIC <=> ASCII conversions
+ <li> added CURLINFO_FTP_ENTRY_PATH
+ <li> less blocking for the multi interface during (Open)SSL connect negotiation
+</ul>
+<p> Bugfixes:
+<ul>
+ <li> builds fine on cygwin
+ <li> md5-sess with Digest authentication
+ <li> dict with letters such as space in a word
+ <li> dict with url-encoded words in the URL
+ <li> libcurl.m4 when default=yes but no libcurl was found
+ <li> numerous bugs fixed in the TFTP code
+ <li> possible memory leak when adding easy handles to multi stack
+ <li> TFTP works in a more portable fashion (== on more platforms)
+ <li> WSAGetLastError() is now used (better) on Windows
+ <li> GnuTLS non-block case that could cause data trashing
+ <li> deflate code survives lack of zlib header
+ <li> CURLOPT_INTERFACE works with hostname
+ <li> configure runs fine with ICC
+ <li> closed control connection with FTP when easy handle was removed from multi
+ <li> curl --trace crash when built with VS2005
+ <li> SSL connect time-out
+ <li> improved NTLM functionality
+ <li> following redirects with more than one question mark in source URL
+ <li> fixed debug build crash with -d
+ <li> generates a fine AIX Toolbox RPM spec
+ <li> treat FTP AUTH failures properly
+ <li> TFTP transfers could trash data
+ <li> -d + -G combo crash
+</ul>
+
 SUBTITLE(Fixed in 7.15.3 - March 20 2006)
 <a href="http://curl.haxx.se/docs/adv_20060320.html"><img src="/pix/alert.png"
 align="right" alt="Release contains security-related bug fix" border="0"></a>
