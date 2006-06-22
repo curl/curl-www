@@ -390,7 +390,8 @@ This service automatically and frequently scans through known <a
 href="mirrors.html">mirrors</a> and builds links to the latest versions of
 many different curl archives. This page is fine to bookmark!
 
-<p> Our system that tries to detect your location is using data from <a
+<p> The <a href="http://daniel.haxx.se/projects/ipwhere/">ipwhere tool</a>
+tries to detect your location using data from <a
 href="http://hostip.info/">hostip.info</a>. If it seems to do wrong, please go
 there and update the info about your IP!
 
