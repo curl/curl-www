@@ -251,13 +251,7 @@ if(!$pick_type) {
 
 if($pick_type && !$pick_os) {
 
-    if($ua =~ /Windows 3\.|Win16/i) {
-        $sel_os = "DOS";
-    }
-    elsif($ua =~ /(windows|win32|Win98|Win95|Win9x|WinNT)/i) {
-        $sel_os = "Win32";
-    }
-    elsif($ua =~ /Linux/i) {
+    if($ua =~ /Linux/i) {
         $sel_os = "Linux";
     }
     elsif($ua =~ /IRIX/i) {
@@ -317,7 +311,18 @@ if($pick_type && !$pick_os) {
     elsif($ua =~ /OS\/2/i) {
         $sel_os = "OS/2";
     }
+    elsif($ua =~ /Palm/i) {
+        $sel_os = "Palm OS";
+    }
     elsif($ua =~ /Indy Library/i) {     # Windows-only client library
+        $sel_os = "Win32";
+    }
+    elsif($ua =~ /Windows 3\.|Win16/i) {
+        $sel_os = "DOS";
+    }
+    # Windows goes near the end because some other platforms also say Windows
+    # for compatibility reasons
+    elsif($ua =~ /(windows|win32|Win98|Win95|Win9x|WinNT)/i) {
         $sel_os = "Win32";
     }
     elsif($ua =~ /(Lynx|w3m|Dillo|MMM|Grail|Mosaic|amaya|Konqueror|Links|gzilla)/i) {
@@ -527,6 +532,9 @@ if($pick_os && $pick_flav && !$pick_ver) {
         }
         elsif($pick_flav eq "Redhat" && $ua =~ /\bEL([\d\.]+)/i) {
             $sel_ver = "RHEL" . $1;
+        }
+        elsif($pick_flav eq "Ubuntu" && $ua =~ /\bUbuntu\/([\w\.]+)/i) {
+            $sel_ver = $1;
         }
         elsif($pick_os eq "Win32" && $ua =~ /Windows NT ?5\b|Windows XP/i) {
             $sel_ver = "2000/XP";
