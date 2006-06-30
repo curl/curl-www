@@ -20,30 +20,30 @@ close(FILE);
 
 sub sortent {
     # OS name
-    my $r = $$a{'os'} cmp $$b{'os'};
+    my $r = lc($$a{'os'}) cmp lc($$b{'os'});
     if(!$r) {
         # OS flavour
-        $r = $$a{'flav'} cmp $$b{'flav'};
+        $r = lc($$a{'flav'}) cmp lc($$b{'flav'});
     }
     if(!$r) {
         # architecture
-        $r = $$a{'cpu'} cmp $$b{'cpu'};
+        $r = lc($$a{'cpu'}) cmp lc($$b{'cpu'});
     }
     if(!$r) {
         # OS version
-        $r = $$a{'osver'} cmp $$b{'osver'};
+        $r = lc($$a{'osver'}) cmp lc($$b{'osver'});
     }
     if(!$r) {
         # curl version
-        $r = $$a{'curl'} cmp $$b{'curl'};
+        $r = lc($$a{'curl'}) cmp lc($$b{'curl'});
     }
     if(!$r) {
         # type (bin/devel/source/lib)
-        $r = $$a{'type'} cmp $$b{'type'};
+        $r = lc($$a{'type'}) cmp lc($$b{'type'});
     }
     if(!$r) {
         # SSL (yes/no)
-        $r = $$a{'ssl'} cmp $$b{'ssl'};
+        $r = lc($$a{'ssl'}) cmp lc($$b{'ssl'});
     }
     return $r;
 }
@@ -250,8 +250,8 @@ for $per (@sall) {
         # email is a plain URL
     }
     elsif($em =~ /@/) { 
-        $em =~ s/\@/ at /g;
-        $em =~ s/\./ dot /g;
+        $em =~ s/\@/%20at%20/g;
+        $em =~ s/\./%20dot%20/g;
         $em = "mailto:$em";
     }
 
