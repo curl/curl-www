@@ -22,9 +22,6 @@ TITLE(Notes About WinInet compared to libcurl)
 <br><a href="libsoup.html">libsoup comparison</a>
 </div>
 
-<p> Opinions brought by David Byron:
-
-<div class="quote">
 <ul>
 
  <li> there's a <a href="http://support.microsoft.com/kb/q238425/">tech note
@@ -42,9 +39,8 @@ TITLE(Notes About WinInet compared to libcurl)
  think it's 6, and maybe with some service packs) that don't work properly
  when communicating to proxies with basic authentication.
 
- <li> There are so many sweet features with curl that I doubt are available
- with WinInet.  I'm using the curl executable, so I get bandwidth limiting
- which isn't in the library, but --speed-time and --speed-limit are great.
+ <li> There are so many sweet features with curl that aren't available with
+ WinInet. Like for example support for more protocols.
 
  <li> I've never tried to deal with Microsoft for WinInet support, but the
  curl support (i.e. the <a href="/mail/">libcurl mailing list</a>, and Daniel
@@ -55,11 +51,25 @@ TITLE(Notes About WinInet compared to libcurl)
  have a useful skill if you work on other platforms.  I doubt we'll see
  WinInet ported anywhere else anytime soon.
 
+ <li> We had some servers in-house and others outside our main network.  Each
+ one needed its own proxy and id/password settings for connecting.  WinInet
+ will only store one current configuration.  This meant that we couldn't
+ connect to both an internal and external server at the same time.
+
+ <li> Another issue was trying to explain to people that when they messed up
+ their IE settings, the application would fail.
+
+ <li> Some of our customers did not USE Internet Explorer.  It was installed,
+ but not configured.  This meant they had to set up and configure the beast
+ that is IE, even if they would never use it.
+
 </ul>
-</div>
+
+<p> Thanks to David Byron and Bradford Bruce
 
 <p>
- If you disagree, agree and/or have other facts/opinions. Mail us!
+ If you disagree, agree and/or have other facts/opinions. Mail the <a
+ href="/mail/">curl-library mailing list</a> and tell!
 
 #include "_footer.html"
 </BODY>
