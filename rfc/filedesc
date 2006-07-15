@@ -64,3 +64,6 @@ rfc2854.txt The 'text/html' Media Type
 rfc4248.txt The telnet URI Scheme
 rfc4346.txt TLS/1.1 (obsoletes RFC 2246)
 rfc4366.txt TLS Extensions (server name, client certificate URLs, etc.)
+rfc3493.txt Basic Socket Interface Extensions for IPv6
+rfc2553.txt Basic Socket Interface Extensions for IPv6 (see RFC3493)
+rfc2133.txt Basic Socket Interface Extensions for IPv6 (see RFC3493)
