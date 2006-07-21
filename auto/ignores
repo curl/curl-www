@@ -5,11 +5,11 @@ include/bits/confname.h:565: warning: comma at end of enumerator list
 # gcc 2.95.3 cross-compiling for uClibc on ARM
 /usr/arm-linux-uclibc/include/bits/uClibc_ctype.h:62: warning: comma at end of enumerator list
 # gcc 2.95.3 cross-compiling for ARM uClibc
-curl/src/main.c:.*: the 'setlocale' function supports only
+src/main.c:.*: the 'setlocale' function supports only
 # libtool warning with mingw 3.4.2 cross-compiling for win32
 lt-curl.c:79: warning: passing arg 2 of `execv' from incompatible pointer type
 # long long warnings in oldish gcc:
-curl/lib/mprintf.c:.*: warning: ANSI C does not support `long long'
-curl/src/main.c:.*: warning: ANSI C forbids long long integer constants
+lib/mprintf.c:.*: warning: ANSI C does not support `long long'
+src/main.c:.*: warning: ANSI C forbids long long integer constants
 # ming/libtool warning:
 .libs/lt-curl.exe.c:
