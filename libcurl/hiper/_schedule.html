@@ -33,6 +33,15 @@ TITLE(Project Hiper Schedule and Dates)
 
 <table class="news">
 
+MARKDATE(July 27 2006) I added curl_multi_assign() today that tells libcurl to
+associate a given custom pointer with a socket that libcurl has told the
+application about. I also added that custom pointer to the callback proto so
+that applications easier can map incoming "action" to a particlar struct or
+so, without having to implement a hash table of its own - since libcurl
+already have and use such an hash table.
+
+STOP
+
 MARKDATE(April 10 2006) Recent changes broke the hiper patches several times
  and I've decided to make an effort to merge the hiper patch with HEAD of the
  curl repository. Not because it is exactly ready to fly, but mostly since I
