@@ -293,7 +293,7 @@ if($pick_type && !$pick_os) {
     elsif($ua =~ /RISC OS/i) {
         $sel_os = "RISC OS";
     }
-    elsif($ua =~ /Symbian/i) {
+    elsif($ua =~ /Symbian|EPOC/i) {	# EPOC is on from the old Psions
         $sel_os = "Symbian OS";
     }
     elsif($ua =~ /OSF1/i) {
@@ -314,7 +314,19 @@ if($pick_type && !$pick_os) {
     elsif($ua =~ /Palm/i) {
         $sel_os = "Palm OS";
     }
-    elsif($ua =~ /Indy Library/i) {     # Windows-only client library
+    elsif($ua =~ /Embedix/i) {	# Embedded Linux distro from Lineo
+        $sel_os = "Linux";
+    }
+    elsif($ua =~ /Qtopia/i) {	# Linux-based GUI
+        $sel_os = "Linux";
+    }
+    elsif($ua =~ /MOT-E2/i) {	# Motorola ROKR E2 phone device
+        $sel_os = "Linux";
+    }
+    elsif($ua =~ /P800|P900/i) {	# Sony Ericsson P800/P900 phone
+        $sel_os = "Symbian OS";
+    }
+    elsif($ua =~ /Indy Library|Microsoft/i) {     # Windows-only client library
         $sel_os = "Win32";
     }
     elsif($ua =~ /Windows 3\.|Win16/i) {
@@ -325,7 +337,7 @@ if($pick_type && !$pick_os) {
     elsif($ua =~ /(windows|win32|Win98|Win95|Win9x|WinNT)/i) {
         $sel_os = "Win32";
     }
-    elsif($ua =~ /(Lynx|w3m|Dillo|MMM|Grail|Mosaic|amaya|Konqueror|Links|gzilla)/i) {
+    elsif($ua =~ /(Unix|Lynx|w3m|Dillo|MMM|Grail|Mosaic|amaya|Konqueror|Links|gzilla)/i) {
         $sel_os = "Linux"; # we don't know these are Linux, we just guess
     }
     elsif($ua =~ /(libcurl|Python-urllib|Wget|lwp|libwww-perl)/i) {
@@ -434,7 +446,7 @@ if(!$pick_flav && $pick_os && $pick_type) {
         elsif($ua=~ /ubuntu/i) {
             $sel_flav = "Ubuntu"; # Must be before Debian, which can be in the UA, too
         }
-        elsif($ua=~ /Debian/i) {
+        elsif($ua=~ /Debian|kanotix/i) { # Debian and Debian-based distros
             $sel_flav = "Debian";
         }
         elsif($ua=~ /gentoo/i) {
@@ -454,6 +466,9 @@ if(!$pick_flav && $pick_os && $pick_type) {
         }
         elsif($ua=~ /VineLinux/i) {
             $sel_flav = "Vine";
+        }
+        elsif($ua=~ /Maemo/i) {
+            $sel_flav = "Maemo";
         }
 
 	# Non-Linux flavours
@@ -623,10 +638,10 @@ if($pick_os && $pick_flav && $pick_ver && !$pick_cpu) {
         elsif($ua =~ /ia64/i) {
             $sel_cpu = "ia64";
         }
-        elsif($ua =~ /x86_64|athlon|amd64/i) {
+        elsif($ua =~ /x86_64|athlon|amd64|x64/i) {
             $sel_cpu = "x86_64";
         }
-        elsif($ua =~ /alpha/i) {
+        elsif($ua =~ /alpha|AXP/i) {
             $sel_cpu = "Alpha";
         }
         elsif($ua =~ /arm/i) {
