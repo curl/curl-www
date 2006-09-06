@@ -202,6 +202,12 @@ THIS(curl_multi_add_handle)
 DOC(curl_multi_add_handle, curl_multi_add_handle.html)
 #endif
 
+#ifdef DOCS_MULTI_ASSIGN
+THIS(curl_multi_assign)
+#else
+DOC(curl_multi_assign, curl_multi_assign.html)
+#endif
+
 #ifdef DOCS_MULTI_CLEANUP
 THIS(curl_multi_cleanup)
 #else
@@ -238,10 +244,28 @@ THIS(curl_multi_remove_handle)
 DOC(curl_multi_remove_handle, curl_multi_remove_handle.html)
 #endif
 
+#ifdef DOCS_MULTI_SETOPT
+THIS(curl_multi_setopt)
+#else
+DOC(curl_multi_setopt, curl_multi_setopt.html)
+#endif
+
+#ifdef DOCS_MULTI_SOCKET
+THIS(curl_multi_socket)
+#else
+DOC(curl_multi_socket, curl_multi_socket.html)
+#endif
+
 #ifdef DOCS_MULTI_STRERROR
 THIS(curl_multi_strerror)
 #else
 DOC(curl_multi_strerror, curl_multi_strerror.html)
+#endif
+
+#ifdef DOCS_MULTI_TIMEOUT
+THIS(curl_multi_timeout)
+#else
+DOC(curl_multi_timeout, curl_multi_timeout.html)
 #endif
 
 #endif /* MENU_MULTI */
