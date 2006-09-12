@@ -37,7 +37,8 @@ PAGES = index.html example.html curl_easy_init.html			\
  curl_multi_strerror.html curl_share_strerror.html			\
  libcurl-tutorial.html curl_easy_reset.html curl_multi_socket.html \
  curl_multi_timeout.html curl_multi_setopt.html \
- curl_easy_escape.html curl_easy_unescape.html curl_multi_assign.html
+ curl_easy_escape.html curl_easy_unescape.html curl_multi_assign.html \
+ curl_formget.html
 
 all: $(PAGES)
 
@@ -150,6 +151,11 @@ curl_formadd.t: $(MANROOT)/curl_formadd.3
 curl_formfree.html: _curl_formfree.html $(MAINPARTS) curl_formfree.t
 	$(ACTION)
 curl_formfree.t: $(MANROOT)/curl_formfree.3
+	$(MAN2HTML) < $< >$@
+
+curl_formget.html: _curl_formget.html $(MAINPARTS) curl_formget.t
+	$(ACTION)
+curl_formget.t: $(MANROOT)/curl_formget.3
 	$(MAN2HTML) < $< >$@
 
 curl_global_init.html: _curl_global_init.html $(MAINPARTS) curl_global_init.t
