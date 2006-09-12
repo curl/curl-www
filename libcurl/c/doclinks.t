@@ -42,6 +42,12 @@ DOC(share Interface, libcurl-share.html)
 
 #ifdef MENU_EASY
 <hr>
+#ifdef DOCS_EASY_ESCAPE
+THIS(curl_easy_escape)
+#else
+DOC(curl_easy_escape, curl_easy_escape.html)
+#endif
+
 #ifdef DOCS_EASY_INIT
 THIS(curl_easy_init)
 #else
@@ -88,6 +94,12 @@ DOC(curl_easy_setopt, curl_easy_setopt.html)
 THIS(curl_easy_strerror)
 #else
 DOC(curl_easy_strerror, curl_easy_strerror.html)
+#endif
+
+#ifdef DOCS_EASY_UNESCAPE
+THIS(curl_easy_unescape)
+#else
+DOC(curl_easy_unescape, curl_easy_unescape.html)
 #endif
 
 #ifdef DOCS_ESCAPE
