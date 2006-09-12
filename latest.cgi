@@ -303,10 +303,10 @@ if($latest::version{$what}) {
             print "<p> <a href=\"$script?curl=$what\">Show my closest mirrors</a>";
         }
         elsif($inmycountry) {
-            print "<p>$inmycountry of these mirrors are located in ".ucfirst(lc($mycountry))." where it looks like you are located. <a href=\"$script?curl=$what&all=yes\">Show all mirrors</a>\n";
+            print "<p>$inmycountry of these mirrors are located in ".ucfirst(lc($mycountry))." where it looks like you are located. <a href=\"$script?curl=$what&amp;all=yes\">Show all mirrors</a>\n";
         }
         elsif($inmycontinent) {
-            print "<p>$inmycontinent of these mirrors are located in ".ucfirst(lc($mycontinent))." where it looks like you are located. Showing those mirrors only!\n";
+            print "<p>$inmycontinent of these mirrors are located in ".ucfirst(lc($mycontinent))." where it looks like you are located. Showing those mirrors only! <a href=\"$script?curl=$what&amp;all=yes\">Show all mirrors</a>\n";
         }
         
         print "<table><tr class=\"tabletop\">";
