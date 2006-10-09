@@ -61,6 +61,9 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden (Uppsala)',
              'http://curl.oslevel.de/download/' => 'Germany (Karlsruhe)',
              'http://curl.gfiles.org/download/' => 'Russia (Vladivostok)',
              'http://curl.geosdreams.info/download/' => 'Poland (Olsztyn)',
+             'http://curl.online-mirror.de/download/' => 'Germany (Cologne)',
+             'http://curl.blogvoid.com/download/' => 'Canada (Montreal)',
+             'http://curl.internet.bs/download/' => 'United Kingdom (London)',
              );
 
 sub present {
