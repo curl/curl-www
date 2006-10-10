@@ -176,11 +176,14 @@ sub gettld {
     elsif($country =~ /Thailand/) {
         $tld="th";
     }
+    elsif($country =~ /Taiwan/) {
+        $tld="tw";
+    }
     elsif($country =~ /US/) {
         $tld="us";
     }
-    elsif($country =~ /Taiwan/) {
-        $tld="tw";
+    elsif($country =~ /United Kingdom/i) {
+        $tld="uk";
     }
     return $tld;
 }
