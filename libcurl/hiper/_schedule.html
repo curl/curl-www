@@ -33,6 +33,28 @@ TITLE(Project Hiper Schedule and Dates)
 
 <table class="news">
 
+MARKDATE(October 12 2006) I've been working with Jeff Pohlmeyer lately and
+we've now agreed that adding a CURLMOPT_TIMERFUNCTION is a good idea. There's
+a funny angle to this, as we once had a timeout info in the socket
+callback... but I think this is the better way as the timeout in libcurl
+really isn't tied to a single socket.
+
+<p>
+ Note that all this work is now done in the plain standard libcurl CVS, so you
+can stop reading this special hiper section and just track the normal libcurl
+development!
+
+<p>
+ Since HTTP pipelining support is already added to CVS too, <b>project hiper
+is really close to having reached its goals</b>. We just need a release now!
+Note that the "new" item I wanted to add in this project, the zero-copy
+interface, has been scrapped for now. It wasn't present in my original plan
+and there's been very little demand from the outside world. Also, it should be
+fairly easy to implement anyway as it doesn't involve much complexities but is
+more or less just "straight forward" coding.
+
+STOP
+
 MARKDATE(July 27 2006) I added curl_multi_assign() today that tells libcurl to
 associate a given custom pointer with a socket that libcurl has told the
 application about. I also added that custom pointer to the callback proto so
