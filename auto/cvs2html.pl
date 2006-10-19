@@ -77,7 +77,8 @@ my %shortnames=('bagder' => 'Daniel',
                 'danf'   => 'Dan F',
                 'curlvms' => 'Marty',
                 'dmeglio' => 'Dominick',
-                'yangtse' => 'Yang');
+                'yangtse' => 'Yang',
+                'wahem'   => 'William'); # William Ahern
 
 # URL root to prepend file names with
 my $root="http://cool.haxx.se/cvs.cgi/curl";
