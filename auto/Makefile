@@ -14,9 +14,12 @@ ACTION=echo preprocessing $@; \
 
 PAGES = foot.html head.html loghead.html howto.html summary.html \
 	cvshistory.html table0.html table1.html table2.html table3.html \
-	missing.html keywords.html
+	missing.html keywords.html index.html
 
 all: $(PAGES)
+
+index.html:
+	ln -s table0.html index.html
 
 foot.html: _foot.html $(MAINPARTS)
 	$(ACTION)
