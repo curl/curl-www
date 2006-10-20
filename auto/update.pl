@@ -53,12 +53,14 @@ if($new) {
 }
 
 # get latest cvs data
+my $cwd=`pwd`; 
+chomp $cwd;
 chdir "curl";
-system("../last5commits.pl > ../dump 2>/dev/null");
+system("$cwd/last5commits.pl > $cwd/dump 2>/dev/null");
 
 chdir "tests";
-system("./keywords.pl > ../../keywords.t 2>/dev/null");
-chdir "../..";
+system("./keywords.pl > $cwd/keywords.t 2>/dev/null");
+chdir "$cwd";
 
 if ( -s "dump") {
     # create html table
