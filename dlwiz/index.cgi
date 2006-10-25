@@ -290,7 +290,7 @@ if($pick_type && !$pick_os) {
     elsif($ua =~ /Mac/i) {
         $sel_os = "Mac OS X";
     }
-    elsif($ua =~ /RISC OS/i) {
+    elsif($ua =~ /RISC OS|NetSurf/i) {
         $sel_os = "RISC OS";
     }
     elsif($ua =~ /Symbian|EPOC/i) {	# EPOC is on from the old Psions
@@ -305,7 +305,7 @@ if($pick_type && !$pick_os) {
     elsif($ua =~ /DOS/i) {
         $sel_os = "DOS";
     }
-    elsif($ua =~ /AtheOS/i) {
+    elsif($ua =~ /AtheOS|Syllable/i) {
         $sel_os = "Syllable";
     }
     elsif($ua =~ /OS\/2/i) {
