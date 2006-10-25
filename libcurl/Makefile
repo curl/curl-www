@@ -50,6 +50,7 @@ all: index.html mail.html competitors.html comparison-table.html	  \
 	cd hiper; make
 	cd xblite; make
 	cd spl; make
+	cd smalltalk; make
 
 index.html: _index.html $(MAINPARTS) bindingbox.t
 	$(ACTION)
