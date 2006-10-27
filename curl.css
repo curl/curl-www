@@ -52,6 +52,11 @@ tr.tabletop {
   background-color: #ff8080;
 }
 
+.buildserverprob {
+  color: #000000;
+  background-color: #ffff00;
+}
+
 .buildfine {
   color: #000000;
   background-color: #00ff00;

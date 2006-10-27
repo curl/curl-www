@@ -8,6 +8,7 @@ opendir(DIR, "inbox");
 my @logs = grep { /^inbox/ } readdir(DIR);
 closedir(DIR);
 
+my $prefix ="table";
 
 my %combo;
 my $buildnum;
@@ -17,7 +18,7 @@ my $prevtable = -1;
 my $tablesperpage = 4;
 
 for ( 0 .. 3 ) {
-    open(CLEAR, ">table$_.t");
+    open(CLEAR, ">$prefix$_.t");
     
     my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday) =
         gmtime(time);
@@ -34,7 +35,7 @@ sub tabletop {
 
     $tablecount++;
     $tablenum = int($tablecount/$tablesperpage);
-    my $file = "table${tablenum}.t";
+    my $file = "$prefix${tablenum}.t";
 
     open(TABLE, ">>$file");
 
@@ -293,6 +294,11 @@ sub endofsingle {
         $res .= "</td>\n";
     }
 
+    my $sfail="";
+    if(keys %serverfail) {
+        $sfail = sprintf("<span class='buildserverprob'>%s</a>",
+                         join(", ", keys %serverfail));
+    }
     $totalwarn += $warning;
     if($warning>0) {
         $res .= "<td class=\"buildfail\">$warning</td>";
@@ -301,6 +307,7 @@ sub endofsingle {
         $warnfree++;
         $res .= "<td>0</td>\n";
     }
+    undef %serverfail;
 
     $memory=($debug)?"D":"-";
     $https=($openssl)?"S":($gnutls?"T":"-");
@@ -313,7 +320,7 @@ sub endofsingle {
         $desc = $os;
     }
 
-    $res .= "<td class=\"mini\">$o</td>\n<td>$desc</td>\n<td>$name</td></tr>\n";
+    $res .= "<td class=\"mini\">$o</td>\n<td>$desc $sfail</td>\n<td>$name</td></tr>\n";
 
     $combo{$o}++;
     $desc{$desc}++;
@@ -445,6 +452,9 @@ sub singlefile {
             }
             elsif($_ =~ /\) (libcurl\/.*)/) {
                 $libcurl = $1;
+            }
+            elsif($_ =~ /SKIPPED: failed starting (.*) server/) {
+                $serverfail{$1}++;
             }
             elsif(checkwarn($_)) {
                 $warning++;
