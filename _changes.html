@@ -34,6 +34,53 @@ SUBTITLE(Fixed since -- available in CVS and daily snapshots)
 </ul>
 #endif
 
+SUBTITLE(Fixed in 7.16.0 - October 30 2006)
+<p> Changes:
+<ul>
+ <li> Added CURLE_SSL_CACERT_BADFILE
+ <li> Added CURLMOPT_TIMERFUNCTION and CURLMOPT_TIMERDATA
+ <li> (FTP) the CURLOPT_SOURCE_* options are removed and so are the --3p* command
+   line options
+ <li> curl_multi_socket() and family are suitable to start using
+ <li> uses WSAPoll() on Windows Vista
+ <li> (FTP) --ftp-ssl-control was added
+ <li> CURLOPT_SSL_SESSIONID_CACHE and --no-sessionid added
+ <li> CURLMOPT_PIPELINING added for enabling HTTP pipelined transfers
+ <li> multi handles now have a shared connection cache
+ <li> Added support for other MS-DOS compilers (besides djgpp)
+ <li> CURLOPT_SOCKOPTFUNCTION and CURLOPT_SOCKOPTDATA were added
+ <li> (FTP) libcurl avoids sending TYPE if the desired type was already set
+ <li> (FTP) CURLOPT_PREQUOTE works even when CURLOPT_NOBODY is set true
+</ul>
+<p> Bugfixes:
+<ul>
+ <li> (HTTP) CURLOPT_FAILONERROR (curl -f) covers a few more reponse cases
+ <li> curl_multi_socket() and the LOW_SPEED options
+ <li> curl_multi_socket() expire timer during c-ares name resolves
+ <li> curl_multi_add_handle on an already added handle now fails gracefully
+ <li> multi interface crash if bad function call order was used for cleanup
+ <li> put a new URL in saved cookie jar files
+ <li> configure --with-gssapi-libs
+ <li> SOCKS proxy connection fixes
+ <li> (FTP) a failed upload does not invalidate the control connection
+ <li> proxy URL with user name and empty password or no password at all now work
+ <li> fixed a socket state problem with *multi_socket()
+ <li> (HTTP) NTLM hostname fix
+ <li> getsockname usage fixes
+ <li> SOCKS5 proxy connects can now time-out
+ <li> SOCKS5 connects that require auth no longer segfaults when auth not given
+ <li> multi interface using asynch resolves could get stuck in wrong state
+ <li> the 'running_handles' counter wasn't always updated properly when
+   curl_multi_remove_handle() was used
+ <li> (FTP) EPRT transfers with IPv6 didn't work properly
+ <li> (FTP) SINGLECWD mode and using files in the root dir
+ <li> (HTTP) Expect: header disabling work better
+ <li> (HTTP) "Expect: 100-continue" disable on second POST on re-used connection
+ <li> src/config.h.in is fixed
+ <li> (HTTP) POST data logged to the debug callback function is now correctly
+   tagged as data, not header
+</ul>
+
 SUBTITLE(Fixed since -- available in CVS and daily snapshots)
 <ul>
 <li> current <a
