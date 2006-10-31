@@ -251,12 +251,12 @@ sub gettype {
                "Linux IA64 devel, RPM");
     }
     # libcurl3-7.12.2-1.i386.rpm
-    elsif($file =~ /^libcurl3-([0-9.]*)-(\d*).i386.rpm$/) {
+    elsif($file =~ /^libcurl\d-([\d\.]*)-(\d*).i386.rpm$/) {
         return($1, "i386-libcurl-rpm",
                "Linux libcurl i386, RPM");
     }
     # libcurl3-devel-7.12.2-1.i386.rpm
-    elsif($file =~ /^libcurl3-devel-([0-9.]*)-(\d*).i386.rpm$/) {
+    elsif($file =~ /^libcurl\d-devel-([\d\.]*)-(\d*).i386.rpm$/) {
         return($1, "devel-i386-libcurl-rpm",
                "Linux libcurl devel i386, RPM");
     }
