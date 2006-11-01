@@ -190,7 +190,7 @@ sub my_show_form()
                 "Full name");
 
     alternative("Packager Email/URL", "email",
-                "name\@somwhere.com or URL");
+                "name\@somewhere.com or URL");
 
     alternative("Regex-name", "re",
                 "name of the package regex, see latest.cgi");
@@ -202,7 +202,7 @@ sub my_show_form()
                 "'Yes' makes this entry not appear in the HTML output");
 
     alternative("Autocheck this URL", "churl",
-                "\$version gets replaced", 50);
+                "\$version/\$osversion/\$cpu gets replaced", 50);
 
     alternative("Match this regex in the autocheck URL", "chregex",
                 "make sure the first () group extracts the version number, unless \$version is part of check URL", 40);

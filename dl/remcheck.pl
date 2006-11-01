@@ -177,6 +177,7 @@ for $ref (@all) {
     my $chregex = $$ref{'chregex'};
     my $churl = $inurl;
     my $osversion = $$ref{'osver'};
+    my $cpu = $$ref{'cpu'};
 
     # is '$version' embedded in the test URL
     my $versionembedded;
@@ -251,6 +252,7 @@ for $ref (@all) {
             $versionembedded=1;
         }
         $churl =~ s/\$osversion/$osversion/g;
+        $churl =~ s/\$cpu/$cpu/g;
 
         my @data;
 
@@ -273,6 +275,7 @@ for $ref (@all) {
             # replace variables in the regex too
             $chregex =~ s/\$version/$version/g;
             $chregex =~ s/\$osversion/$osversion/g;
+            $chregex =~ s/\$cpu/$cpu/g;
 
             logmsg sprintf(" Use regex <b><tt>%s</tt></b>\n",
                            CGI::escapeHTML($chregex));
@@ -348,6 +351,7 @@ for $ref (@all) {
                     $churl = $inurl;
                     $churl =~ s/\$version/$ver/g;
                     $churl =~ s/\$osversion/$osversion/g;
+                    $churl =~ s/\$cpu/$cpu/g;
                     
                     @data = geturl($churl, 1);
                     ($cl, $st) = content_length(@data);
