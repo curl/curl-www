@@ -30,6 +30,7 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
 #define MISSING <td class="no">no</td>
 #define UNKNOWN <td class="unknown">?</td>
 #define FEATURE_P <td class="yes">yes*</td>
+#define MISSING_P <td class="no">no*</td>
 
 #define NEWCOL <td>
 #define ENDCOL </td>
@@ -43,14 +44,6 @@ TITLE(Compare cURL Features with Other FTP+HTTP Tools)
 #define NICETD <th>
 #define NICETDEND </th>
 
-/*
-some more features that could be added: 
- - multilingual messages  (pavuk, wget)
- - simultaneous downloads (pavuk, aria2c, lftp)
- - pipelining ((lib)curl,lftp)
- - rate limiting (curl, wget)
- - SSL private certificates (curl, wget)
-*/
 <p>
 <table cellspacing="2" cellpadding="2" border="0" summary="Comparison of curl features with other FTP and HTTP tools">
  <thead>
@@ -77,7 +70,19 @@ some more features that could be added:
   MISSING
   FEATURE
   MISSING
-  FEATURE_P
+  MISSING_P
+ ENDLINE
+
+ NEWLINE
+  FEAT Simultaneous Downloads ENDFEAT
+  MISSING_P
+  MISSING
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+  FEATURE
+  MISSING_P
  ENDLINE
 
  NEWLINE
@@ -201,6 +206,18 @@ some more features that could be added:
  ENDLINE
 
  NEWLINE
+  FEAT SSL Private Certificates ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
   FEAT .netrc Support ENDFEAT
   FEATURE
   MISSING
@@ -234,6 +251,18 @@ some more features that could be added:
   MISSING
   MISSING
   MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT Multilingual Messages ENDFEAT
+  MISSING
+  MISSING
+  FEATURE
+  FEATURE
+  MISSING
+  MISSING
+  FEATURE
+  FEATURE
  ENDLINE
 
  NEWLINE
@@ -624,7 +653,12 @@ some more features that could be added:
  href="http://www.freebsd.org/">FreeBSD</a> operating system.
 
 <p>
-* aria2c supports multiple URLs only if they all point to the same file.
+* aria2c supports downloading multiple URLs simultaneously only if they
+all point to the same file.
+
+<p>
+* curl does not support downloading multiple URLs simultaneously, although
+libcurl does.
 
 <p>
  This comparison table started as a rip-off from the now extinct <i>snarf comparison
