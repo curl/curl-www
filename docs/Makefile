@@ -176,7 +176,7 @@ copyright.html: _copyright.html $(MAINPARTS) copying.t
 copying.t: $(SRCROOT)/COPYING
 	$(TXT2PLAIN) < $< > $@
 
-comparison-table.html: _comparison-table.html $(MAINPARTS)
+comparison-table.html: _comparison-table.html $(MAINPARTS)  ../release.t
 	$(ACTION)
 
 relatedtools.html: _relatedtools.html $(MAINPARTS)
