@@ -70,7 +70,7 @@ while(<FILE>) {
 push @out, "\n<div class=\"mini\">\n";
 for(@present) {
     chomp;
-    if(checkwarn($_) || ($_ =~ /FAILED/)) {
+    if(checkwarn($_) || ($_ =~ /FAILED/) || ($_ =~ /MEMORY FAILURE/)) {
         $num++;
         push @out, "<a name=\"prob$num\"></a><div class=\"warning\">" . CGI::escapeHTML($_) . "</div>\n";
     }
