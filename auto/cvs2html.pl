@@ -390,7 +390,7 @@ if( $changecount) {
         print "</td><td>";
 
         my %comm;
-        # loop over all athours
+        # loop over all authors
         foreach $author (split(":::", $changedates{$date})) {
 
             # loop over all comments by this author at this date
@@ -400,6 +400,7 @@ if( $changecount) {
         }
         my $comm = join(" ", keys %comm);
 
+        $comm =~ s/&/&amp;/g;
         $comm =~ s/\</&lt;/g;
         $comm =~ s/\>/&gt;/g;
 
