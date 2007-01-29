@@ -45,6 +45,56 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 <li> <a href="http://curl.haxx.se/auto/cvshistory.html">recent CVS activity</a>
  </ul>
 
+SUBTITLE(Fixed in 7.16.1 - January 29 2007)
+<p> Changes:
+<ul>
+ <li> Support for SCP and SFTP were added (powered by libssh2)
+ <li> CURLOPT_CLOSEPOLICY is now deprecated
+ <li> --ftp-ssl-ccc and CURLOPT_FTP_SSL_CCC were added
+ <li> HTTP support for non-ASCII platforms
+ <li> --libcurl was added
+</ul>
+<p> Bugfixes:
+<ul>
+ <li> proxy close during CONNECT authentication is now dealt with nicely
+ <li> the CURLOPT_DEBUGFUNCTION was sometimes called even when CURLOPT_VERBOSE
+   was not enabled
+ <li> multiple TFTP transfers on the same (easy or multi) handle could cause a
+   crash
+ <li> SIGSEGV when disconnecting on a transfer on a re-used handle when the
+   host name didn't resolve
+ <li> stack overwrite on 64bit Windows in the chunked decoding department
+ <li> HTTP responses on persistent connections without Content-Length nor chunked
+   encoding are now considered to be without response body
+ <li> Content-Range: header parsing improved
+ <li> CPU 100% load when HTTP upload connection broke
+ <li> active FTP didn't work with multi interface
+ <li> curl_getdate() could be off one hour for TZ time zones with DST, on windows
+ <li> CURLOPT_FORBID_REUSE works again
+ <li> CURLOPT_MAXCONNECTS set to zero caused libcurl to SIGSEGV
+ <li> rate limiting works better
+ <li> getting FTP response code errors when using the multi-interface caused
+   libcurl to leak memory
+ <li> no more SIGPIPE when GnuTLS is used
+ <li> FTP downloading 2 zero byte files in a row
+ <li> using proxy and URLs without protocol prefixes
+ <li> first using a proxy and then accessing a site that 'no_proxy' matched,
+   would still make libcurl use the proxy...
+ <li> curl_easy_duphandle() now makes a handle that is valid for the multi
+   interface since the magic number is set fine
+ <li> libcurl.pc now uses Libs.private for "private" libs
+ <li> --limit-rate (CURLOPT_MAX_SEND_SPEED_LARGE and CURLOPT_MAX_RECV_SPEED_LARGE)
+   now work on windows again
+ <li> improved download performance by avoiding the unconditional "double copying"
+ <li> base64 encoding/decoding works on non-ASCII platforms
+ <li> large file downloads
+ <li> CURLOPT_COOKIELIST set to "ALL" crash
+ <li> easy handle removal from multi handle before completion
+ <li> TFTP upload memory leak
+ <li> curl_easy_reset() now resets the CA bundle path correctly
+ <li> two User-Agent headers in CONNECT requests with custom User-Agent
+</ul>
+
 SUBTITLE(Fixed in 7.16.0 - October 30 2006)
 <p> Changes:
 <ul>
