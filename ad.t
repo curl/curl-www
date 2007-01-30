@@ -2,11 +2,7 @@
 #define WEBROOT
 #endif
 <!-- first-line-in-body -->
-#ifdef CURL_MAIN
-#define AD_PRICERUNNER
-#else
 #define AD_GOOGLETOP
-#endif
 <table width="100%"><tr valign="top"><td> <a href="WEBROOT/"><img border="0" src="WEBROOT/ds-curlicon.png"
 width="99" height="37" alt="cURL"></a></td>
 <td align="center">
