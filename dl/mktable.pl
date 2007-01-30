@@ -235,7 +235,9 @@ for $per (@sall) {
         $fi = "/download/$fi";
     }
     else {
-        $fi =~ s/\&/\&amp;/g;
+        if(($fi =~ /&/) && ($fi !~ /&(lt|gt|amp|quot)\;/)) {
+            $fi = CGI::escapeHTML($fi);
+        }
     }
     printf("<td class=\"col2\"><a href=\"%s\">%s</a></td>\n",
            $fi, $$per{'curl'});
