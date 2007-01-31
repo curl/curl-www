@@ -38,9 +38,7 @@ sub checkwarn {
         # MSVC
         ($l =~ /^[\.\\]*([.\\\/a-zA-Z0-9-]*)\.[chy]\(([0-9:]*)/) ||
         # GNU ld error
-        # It's tough to reliably detect individual ld error messages, so
-        # instead highlight gcc's complaint that ld failed.
-        ($l =~ /: ld returned/))
+        ($l =~ /^[^ ?*]*ld: /))
     {
         my $re;
         foreach $re (@ig) {
