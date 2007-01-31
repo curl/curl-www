@@ -383,14 +383,17 @@ sub singlefile {
     while(<READ>) {
         chomp;
         my $line = $_;
+        # MIME-replacements
+        $line =~ s/=3D/=/g;
+        $line =~ s/=20/ /g;
 
  #       print "L: $state - $line\n";
-        if($_ =~ /^INPIPE: startsingle here ([0-9-]*)/) {
+        if($line =~ /^INPIPE: startsingle here ([0-9-]*)/) {
             $buildid = $1;
         }
         # we don't check for state here to allow this to abort all
         # states
-        elsif($_ =~ /^testcurl: STARTING HERE/) {
+        elsif($line =~ /^testcurl: STARTING HERE/) {
             # mail headers here
             if($state) {
                 push @data, endofsingle();
@@ -398,7 +401,7 @@ sub singlefile {
             $state = 2;
         }
         elsif($state &&
-              ($_ =~ /^(INPIPE: endsingle here|testcurl: ENDING HERE)/) ) {
+              ($line =~ /^(INPIPE: endsingle here|testcurl: ENDING HERE)/) ) {
             # detect end of test in all states
             # mail headers here
             push @data, endofsingle();
@@ -406,32 +409,32 @@ sub singlefile {
         }
         elsif((2 == $state)) {
             # this is testcurl output
-            if($_ =~ /^testcurl: NAME = (.*)/) {
+            if($line =~ /^testcurl: NAME = (.*)/) {
                 $name = $1;
             }
-            elsif($_ =~ /^testcurl: EMAIL = (.*)/) {
+            elsif($line =~ /^testcurl: EMAIL = (.*)/) {
                 $email = $1;
             }
-            elsif($_ =~ /^testcurl: DESC = (.*)/) {
+            elsif($line =~ /^testcurl: DESC = (.*)/) {
                 $desc = $1;
             }
-            elsif($_ =~ /^testcurl: CONFOPTS = (.*)/) {
+            elsif($line =~ /^testcurl: CONFOPTS = (.*)/) {
                 my $confopts = $1;
                 if($confopts =~ /--enable-debug/) {
                     $debug=1;
                 }
             }
-            elsif($_ =~ /^testcurl: date = (.*)/) {
+            elsif($line =~ /^testcurl: date = (.*)/) {
                 $date = $1;
             }
-            elsif($_ =~ /^NOTICE:.*cross-compiling/) {
+            elsif($line =~ /^NOTICE:.*cross-compiling/) {
                 $fail = 0;
                 $fine = 1;
             }
-            elsif($_ =~ /^TESTFAIL: These test cases failed: (.*)/) {
+            elsif($line =~ /^TESTFAIL: These test cases failed: (.*)/) {
                 $fail = $1;
             }
-            elsif($_ =~ /^TESTDONE: (\d*) tests out of (\d*)/) {
+            elsif($line =~ /^TESTDONE: (\d*) tests out of (\d*)/) {
                 $testfine = 0 + $1;
                 my $numtests= $2;
                 if($numtests <= 0) {
@@ -447,31 +450,31 @@ sub singlefile {
                     $fine = 1;
                 }
             }
-            elsif($_ =~ /^TESTINFO: (\d*) tests were skipped/) {
+            elsif($line =~ /^TESTINFO: (\d*) tests were skipped/) {
                 $skipped = $1;
             }
-            elsif($_ =~ /\) (libcurl\/.*)/) {
+            elsif($line =~ /\) (libcurl\/.*)/) {
                 $libcurl = $1;
             }
-            elsif($_ =~ /SKIPPED: failed starting (.*) server/) {
+            elsif($line =~ /SKIPPED: failed starting (.*) server/) {
                 $serverfail{$1}++;
             }
-            elsif(checkwarn($_)) {
+            elsif(checkwarn($line)) {
                 $warning++;
             }
-            elsif($_ =~ /^testcurl: failed to update from CVS/) {
+            elsif($line =~ /^testcurl: failed to update from CVS/) {
                 $cvsfail=1;
             }
-            elsif($_ =~ /^testcurl: configure created/) {
+            elsif($line =~ /^testcurl: configure created/) {
                 $buildconf=1;
             }
-            elsif($_ =~ /^testcurl: configure didn\'t work/) {
+            elsif($line =~ /^testcurl: configure didn\'t work/) {
                 $configure=1;
             }
-            elsif($_ =~ /^testcurl:.*curl was created fine/) {
+            elsif($line =~ /^testcurl:.*curl was created fine/) {
                 $linkfine=1;
             }
-            elsif($_ =~ /^\* libcurl debug: *(.*)/) {
+            elsif($line =~ /^\* libcurl debug: *(.*)/) {
                 if($1 eq "ON") {
                     $debug=1;
                 }
@@ -479,10 +482,10 @@ sub singlefile {
                     $debug=0;
                 }
             }
-            elsif($_ =~ /^\* System: *(.*)/) {
+            elsif($line =~ /^\* System: *(.*)/) {
                 $uname = $1;
             }
-            elsif($_ =~ /^\* libcurl SSL: *(.*)/) {
+            elsif($line =~ /^\* libcurl SSL: *(.*)/) {
                 if($1 eq "ON") {
                     $ssl=1;
                 }
@@ -490,34 +493,34 @@ sub singlefile {
                     $ssl=0;
                 }
             }
-            elsif($_ =~ /^\#define USE_ARES 1/) {
+            elsif($line =~ /^\#define USE_ARES 1/) {
                 $ares = 1;
             }
-            elsif($_ =~ /^\#define USE_WINDOWS_SSPI 1/) {
+            elsif($line =~ /^\#define USE_WINDOWS_SSPI 1/) {
                 $sspi = 1;
             }
-            elsif($_ =~ /^\#define USE_SSLEAY 1/) {
+            elsif($line =~ /^\#define USE_SSLEAY 1/) {
                 $openssl = 1;
             }
-            elsif($_ =~ /^\#define USE_GNUTLS 1/) {
+            elsif($line =~ /^\#define USE_GNUTLS 1/) {
                 $gnutls = 1;
             }
-            elsif($_ =~ /^\#define ENABLE_IPV6 1/) {
+            elsif($line =~ /^\#define ENABLE_IPV6 1/) {
                 $ipv6enabled = 1;
             }
-            elsif($_ =~ /^\#define HAVE_KRB4 1/) {
+            elsif($line =~ /^\#define HAVE_KRB4 1/) {
                 $krb4enabled = 1;
             }
-            elsif($_ =~ /^\#define HAVE_GSSAPI 1/) {
+            elsif($line =~ /^\#define HAVE_GSSAPI 1/) {
                 $gssapi=1;
             }
-            elsif($_ =~ /^\#define HAVE_LIBIDN 1/) {
+            elsif($line =~ /^\#define HAVE_LIBIDN 1/) {
                 $libidn=1;
             }
-            elsif($_ =~ /^\#define HAVE_LIBZ 1/) {
+            elsif($line =~ /^\#define HAVE_LIBZ 1/) {
                 $libz=1;
             }
-            elsif($_ =~ /^\#define OS \"([^\"]*)\"/) {
+            elsif($line =~ /^\#define OS \"([^\"]*)\"/) {
                 $os=$1;
             }
         }
