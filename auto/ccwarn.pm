@@ -36,7 +36,11 @@ sub checkwarn {
         # MIPS o32 compiler:
         ($l =~ /^cfe: Warning (\d*):/) ||
         # MSVC
-        ($l =~ /^[\.\\]*([.\\\/a-zA-Z0-9-]*)\.[chy]\(([0-9:]*)/))
+        ($l =~ /^[\.\\]*([.\\\/a-zA-Z0-9-]*)\.[chy]\(([0-9:]*)/) ||
+        # GNU ld error
+        # It's tough to reliably detect individual ld error messages, so
+        # instead highlight gcc's complaint that ld failed.
+        ($l =~ /: ld returned/))
     {
         my $re;
         foreach $re (@ig) {
