@@ -383,9 +383,10 @@ sub singlefile {
     while(<READ>) {
         chomp;
         my $line = $_;
-        # MIME-replacements
-        $line =~ s/=3D/=/g;
+        # simple quoted-printable MIME-replacements
         $line =~ s/=20/ /g;
+        $line =~ s/=46/F/g;
+        $line =~ s/=3D/=/g;
 
  #       print "L: $state - $line\n";
         if($line =~ /^INPIPE: startsingle here ([0-9-]*)/) {
