@@ -37,6 +37,8 @@ sub checkwarn {
         ($l =~ /^cfe: Warning (\d*):/) ||
         # MSVC
         ($l =~ /^[\.\\]*([.\\\/a-zA-Z0-9-]*)\.[chy]\(([0-9:]*)/) ||
+        # libtool error
+        ($l =~ /^libtool: link: /) ||
         # GNU ld error
         ($l =~ /^[^ ?*]*ld: /))
     {
