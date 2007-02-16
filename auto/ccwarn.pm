@@ -39,8 +39,8 @@ sub checkwarn {
         ($l =~ /^[\.\\]*([.\\\/a-zA-Z0-9-]*)\.[chy]\(([0-9:]*)/) ||
         # libtool error
         ($l =~ /^libtool: link: /) ||
-        # GNU ld error
-        ($l =~ /^[^ ?*]*ld: /))
+        # GNU and MIPS ld error
+        ($l =~ /^[^ ?*]*ld((32)|(64))?: /))
     {
         my $re;
         foreach $re (@ig) {
