@@ -75,6 +75,9 @@ for(@present) {
         push @out, "<a name=\"prob$num\"></a><div class=\"warning\">" . CGI::escapeHTML($_) . "</div>\n";
     }
     else {
+        if($_ =~ /EMAIL/) {
+            $_ =~ s:\@: /at/ :g;
+        }
         push @out, CGI::escapeHTML($_) . "<br>\n";
     }
 }
