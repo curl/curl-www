@@ -313,8 +313,9 @@ sub endofsingle {
     $https=($openssl)?"S":($gnutls?"T":"-");
     $asynch=$ares?"A":"-";
     $sspi=$sspi?"P":"-";
+    my $ssh=$libssh2?"2":"-";
 
-    my $o = "$krb4$ipv6$memory$https$asynch$zlib$gss$idn$sspi";
+    my $o = "$krb4$ipv6$memory$https$asynch$zlib$gss$idn$sspi$ssh";
 
     if(!$desc) {
         $desc = $os;
@@ -353,6 +354,7 @@ sub endofsingle {
     $debug=0;
     $openssl=0;
     $gnutls=0;
+    $libssh2=0;
     $ssl=0;
     $cvsfail=0;
     $ares=0;
@@ -505,6 +507,9 @@ sub singlefile {
             }
             elsif($line =~ /^\#define USE_GNUTLS 1/) {
                 $gnutls = 1;
+            }
+            elsif($line =~ /^\#define USE_LIBSSH2 1/) {
+                $libssh2 = 1;
             }
             elsif($line =~ /^\#define ENABLE_IPV6 1/) {
                 $ipv6enabled = 1;
