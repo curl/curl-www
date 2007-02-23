@@ -3,6 +3,7 @@
 require "CGI.pm";
 require "../curl.pm";
 require "ccwarn.pm";
+use MIME::QuotedPrint;
 
 opendir(DIR, "inbox");
 my @logs = grep { /^inbox/ } readdir(DIR);
@@ -381,14 +382,55 @@ sub singlefile {
 
     chmod 0644, $file;
 
+    # find out if log file is quoted-printable encoded
+    my $qpencoded = 0;
+    if(open(SCAN, "<$file")) {
+        my $linecount = 0;
+        my $mimecount = 0;
+        while(<SCAN>) {
+            chomp;
+            my $line = $_;
+            $linecount++;
+            if(($mimecount == 0) &&
+               ($line =~ /testcurl: NAME =3D/)) {
+                $mimecount++;
+            }
+            if(($mimecount != 0) &&
+               ($line =~ /testcurl: [A-Z]+ =3D/)) {
+                $mimecount++;
+            }
+            if($linecount > 50) {
+                $qpencoded = 0;
+                last;
+            }
+            if($mimecount > 5) {
+                $qpencoded = 1;
+                last;
+            }
+        }
+        close(SCAN);
+    }
+
+    my $buffer = "";
+
     open(READ, "<$file");
-    while(<READ>) {
-        chomp;
-        my $line = $_;
-        # simple quoted-printable MIME-replacements
-        $line =~ s/=20/ /g;
-        $line =~ s/=46/F/g;
-        $line =~ s/=3D/=/g;
+    while(my $chunk = <READ>) {
+        my $line;
+        # decode quoted printable if encoded
+        if($qpencoded) {
+            $buffer .= decode_qp $chunk;
+            if($buffer =~ /\n/) {
+                $line = $buffer;
+                $buffer = "";
+            }
+            else {
+                next; # chunk
+            }
+        }
+        else {
+            $line = $chunk;
+        }
+        chomp $line;
 
  #       print "L: $state - $line\n";
         if($line =~ /^INPIPE: startsingle here ([0-9-]*)/) {
