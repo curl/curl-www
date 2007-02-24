@@ -1,8 +1,9 @@
 #!/usr/bin/perl
 
-require "CGI.pm";
-
 use strict;
+use MIME::QuotedPrint ();
+
+require "CGI.pm";
 require "../curl.pm";
 require "ccwarn.pm";
 
@@ -45,26 +46,59 @@ my $build = "inbox/build-$id.log";
 
 my $num;
 
+# find out if log file is quoted-printable encoded
+my $qpencoded = 0;
+if(open(SCAN, "<$file")) {
+    my $linecount;
+    my $mimecount;
+    while(<SCAN>) {
+        if($_ =~ /^testcurl: [A-Z]+ =3D/) {
+            if($mimecount++ > 5) {
+                $qpencoded = 1;
+                last;
+            }
+        }
+        last if($linecount++ > 30);
+    }
+    close(SCAN);
+}
+
+my $buffer = "";
+
 open(FILE, "<$build") || print "file not found!";
 
 &initwarn();
 
-while(<FILE>) {
-    if($_ =~ /^testcurl: STARTING HERE/) {
+while(my $chunk = <FILE>) {
+    my $line;
+    # decode quoted-printable if encoded
+    if($qpencoded) {
+        $buffer .= MIME::QuotedPrint::decode_qp($chunk);
+        if($buffer =~ /\n$/) {
+            $line = $buffer;
+            $buffer = "";
+        }
+        else {
+            next; # chunk
+        }
+    }
+    else {
+        $line = $chunk;
+    }
+    if($line =~ /^testcurl: STARTING HERE/) {
         @present="";
         next;
     }
-    elsif($_ =~ /^(INPIPE: endsingle here|testcurl: ENDING HERE)/) {
+    elsif($line =~ /^(INPIPE: endsingle here|testcurl: ENDING HERE)/) {
         last;
     }
-    if($_ =~ /^testcurl: NAME = (.*)/) {
+    if($line =~ /^testcurl: NAME = (.*)/) {
         $name = $1;
     }
-    elsif($_ =~ /^testcurl: date = (.*)/) {
+    elsif($line =~ /^testcurl: date = (.*)/) {
         $date = $1;
     }
-
-    push @present, $_;
+    push @present, $line;
 }
 
 push @out, "\n<div class=\"mini\">\n";
