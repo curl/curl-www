@@ -48,7 +48,7 @@ my $num;
 
 # find out if log file is quoted-printable encoded
 my $qpencoded = 0;
-if(open(SCAN, "<$file")) {
+if(open(SCAN, "<$build")) {
     my $linecount;
     my $mimecount;
     while(<SCAN>) {
