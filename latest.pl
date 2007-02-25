@@ -67,6 +67,8 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden (Uppsala)',
              'http://curl.miroir-francais.fr/download/' => 'France (Paris)',
              'ftp://miroir-francais.fr/pub/curl/' => 'France (Paris)',
              'http://curl.dsmirror.nl/download/' => 'Netherlands (Amsterdam)',
+             'http://curl.basemirror.de/download/' => 'Germany (Nuremberg)',
+             'http://curl.xxtracker.org/download/' => 'Netherlands (Amsterdam)',
              );
 
 sub present {
