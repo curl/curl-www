@@ -9,17 +9,13 @@ require "ccwarn.pm";
 
 my $req = new CGI;
 
-my $year=$req->param('year');
-my $month=$req->param('month');
-my $day=$req->param('day');
-my $inname=$req->param('name');
-my $indate=$req->param('date');
+my $year = "";
+my $month = "";
+my $day = "";
 
-my $id=$req->param('id');
+my $id = $req->param('id');
 # Strip any unsafe log name characters
 $id =~ s/[^-0-9_a-zA-Z]//g;
-
-my @out;
 
 if($id =~ /^(\d\d\d\d)(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)-(\d+)/) {
     my ($bhour, $bmin, $bsec, $bpid);
@@ -33,18 +29,7 @@ header("Autobuilds - single log");
 where("Autobuilds", "/auto", "Log From $year-$month-$day");
 title("Log from $year-$month-$day");
 
-#print "year $year month $month day $day name $inname date $indate";
-
-my $date;
-my $name;
-my @present;
-
-my $show=0;
-my $thisid;
-
 my $build = "inbox/build-$id.log";
-
-my $num;
 
 # find out if log file is quoted-printable encoded
 my $qpencoded = 0;
@@ -53,73 +38,83 @@ if(open(SCAN, "<$build")) {
     my $mimecount;
     while(<SCAN>) {
         if($_ =~ /^testcurl: [A-Z]+ =3D/) {
-            if($mimecount++ > 5) {
+            if($mimecount++ > 3) {
                 $qpencoded = 1;
                 last;
             }
         }
-        last if($linecount++ > 30);
+        last if($linecount++ > 18);
     }
     close(SCAN);
 }
 
-my $buffer = "";
+my $date;
+my $timestamp;
+my $description;
 
-open(FILE, "<$build") || print "file not found!";
-
-&initwarn();
-
-while(my $chunk = <FILE>) {
-    my $line;
-    # decode quoted-printable if encoded
-    if($qpencoded) {
-        $buffer .= MIME::QuotedPrint::decode_qp($chunk);
-        if($buffer =~ /\n$/) {
-            $line = $buffer;
-            $buffer = "";
+if(open(FILE, "<$build")) {
+    #
+    &initwarn();
+    #
+    my @out;
+    my $num = 0;
+    my $state = 0;
+    my $buffer = "";
+    #
+    push @out, "\n<div class=\"mini\">\n";
+    #
+    while(my $chunk = <FILE>) {
+        my $line;
+        # decode quoted-printable if encoded
+        if($qpencoded) {
+            $buffer .= MIME::QuotedPrint::decode_qp($chunk);
+            if($buffer =~ /\n$/) {
+                $line = $buffer;
+                $buffer = "";
+            }
+            else {
+                next; # chunk
+            }
         }
         else {
-            next; # chunk
+            $line = $chunk;
+        }
+        chomp $line;
+        #
+        if($state) {
+            if($line =~ /^testcurl: ENDING HERE/) {
+                last;
+            }
+            elsif($line =~ /^testcurl: DESC = (.*)/) {
+                $description = $1;
+            }
+            elsif($line =~ /^testcurl: date = (.*)/) {
+                $date = $1;
+            }
+            elsif($line =~ /^testcurl: timestamp = (.*)/) {
+                $timestamp = $1;
+            }
+            elsif($line =~ /EMAIL/) {
+                $line =~ s:\@: /at/ :g;
+            }
+            #
+            if(checkwarn($line) || ($line =~ /FAILED/) || ($line =~ /MEMORY FAILURE/)) {
+                $num++;
+                push @out, "<a name=\"prob$num\"></a><div class=\"warning\">" . CGI::escapeHTML($line) . "</div>\n";
+            }
+            else {
+                push @out, CGI::escapeHTML($line) . "<br>\n";
+            }
+        }
+        elsif($line =~ /^testcurl: STARTING HERE/) {
+            $state = 1;
+            next;
         }
     }
-    else {
-        $line = $chunk;
-    }
-    if($line =~ /^testcurl: STARTING HERE/) {
-        @present="";
-        next;
-    }
-    elsif($line =~ /^(INPIPE: endsingle here|testcurl: ENDING HERE)/) {
-        last;
-    }
-    if($line =~ /^testcurl: NAME = (.*)/) {
-        $name = $1;
-    }
-    elsif($line =~ /^testcurl: date = (.*)/) {
-        $date = $1;
-    }
-    push @present, $line;
-}
-
-push @out, "\n<div class=\"mini\">\n";
-for(@present) {
-    chomp;
-    if(checkwarn($_) || ($_ =~ /FAILED/) || ($_ =~ /MEMORY FAILURE/)) {
-        $num++;
-        push @out, "<a name=\"prob$num\"></a><div class=\"warning\">" . CGI::escapeHTML($_) . "</div>\n";
-    }
-    else {
-        if($_ =~ /EMAIL/) {
-            $_ =~ s:\@: /at/ :g;
-        }
-        push @out, CGI::escapeHTML($_) . "<br>\n";
-    }
-}
-push @out, "</div>\n"; # end of mini-div
-
-close(FILE);
-
-if($out[0]) {
+    close(FILE);
+    #
+    push @out, "</div>\n"; # end of mini-div
+    #
     if($num) {
         print "jump down to ";
         print "<a href=\"#prob1\">problem 1</a>\n";
@@ -127,9 +122,13 @@ if($out[0]) {
             print "<a href=\"#prob$num\">problem $num (last)</a>\n";
         }
     }
+    #
     print @out;
+    #
 }
-
+else {
+    print "file not found!";
+}
 
 &catfile("foot.html");
 
