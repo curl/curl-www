@@ -76,26 +76,30 @@ if(open(FILE, "<$build")) {
                 next; # chunk
             }
         }
-        else {
-            $line = $chunk;
+        elsif(!$line) {
+            # if not qp encoded and ref is not set yet,
+            # set line as ref to chunk to avoid copy.
+            $line = "@{[$chunk]}";
         }
         chomp $line;
         #
         if($state) {
-            if($line =~ /^testcurl: ENDING HERE/) {
-                last;
-            }
-            elsif($line =~ /^testcurl: DESC = (.*)/) {
-                $description = $1;
-            }
-            elsif($line =~ /^testcurl: date = (.*)/) {
-                $date = $1;
-            }
-            elsif($line =~ /^testcurl: timestamp = (.*)/) {
-                $timestamp = $1;
-            }
-            elsif($line =~ /EMAIL/) {
-                $line =~ s:\@: /at/ :g;
+            if($line =~ /^testcurl: /) {
+                if($line =~ /^testcurl: ENDING HERE/) {
+                    last;
+                }
+                elsif($line =~ /^testcurl: DESC = (.*)/) {
+                    $description = $1;
+                }
+                elsif($line =~ /^testcurl: date = (.*)/) {
+                    $date = $1;
+                }
+                elsif($line =~ /^testcurl: timestamp = (.*)/) {
+                    $timestamp = $1;
+                }
+                elsif($line =~ /^testcurl: EMAIL/) {
+                    $line =~ s:\@: /at/ :g;
+                }
             }
             #
             if(checkwarn($line) || ($line =~ /FAILED/) || ($line =~ /MEMORY FAILURE/)) {
@@ -116,18 +120,19 @@ if(open(FILE, "<$build")) {
     push @out, "</div>\n"; # end of mini-div
     #
     if($num) {
-        print "jump down to ";
+        print "<div>Jump down to ";
         print "<a href=\"#prob1\">problem 1</a>\n";
         if($num>1) {
             print "<a href=\"#prob$num\">problem $num (last)</a>\n";
         }
+        print "</div><br>\n";
     }
     #
     print @out;
     #
 }
 else {
-    print "file not found!";
+    print "File not found!";
 }
 
 &catfile("foot.html");
