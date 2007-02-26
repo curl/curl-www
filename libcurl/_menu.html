@@ -78,11 +78,24 @@ LINK("", Using libcurl )
 TLINK("/libcurl/using/", Using libcurl &raquo;, How to use libcurl section)
 #endif
 
+#ifdef DOCS_TUTORIAL
+LINK(""Tutorial)
+#else
+TLINK("c/libcurl-tutorial.html", Tutorial &raquo;, libcurl programming tutorial)
+#endif
+
 #ifdef LIBCURL_THEYSAY
 LINK("", Testimonials )
 #else
 TLINK("/libcurl/theysay.html", Testimonials, What developers using libcurl say about it)
 #endif
+
+#ifdef CURL_SEARCH
+LINK("/search.html", Search)
+#else
+VLINK("/search.html", Search, Search the curl web site)
+#endif
+
 
 </div>
 
