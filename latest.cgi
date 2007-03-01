@@ -261,7 +261,7 @@ if($latest::version{$what}) {
     }
 
     print "<br><br>Download this file with a <a href=\"metalink.cgi?curl=$whate\">",
-    	  "<img src=\"/pix/metalink.png\" alt=\"\">Metalink</a>.<br>\n";
+    	  "<img src=\"/pix/metalink.png\" alt=\"\" border=\"0\">Metalink</a>.<br>\n";
 
     if($#dl > 10 ) {
         # so many mirrors we show this above them as well
@@ -400,7 +400,8 @@ This service automatically and frequently scans through known <a
 href="mirrors.html">mirrors</a> and builds links to the latest versions of
 many different curl archives. This page is fine to bookmark!
 The above <a href="http://www.metalinker.org/">Metalink</a> lets you download
-this file faster by downloading from several of these mirrors simultaneously.
+this file faster by downloading from several of these mirrors simultaneously,
+using the appropriate software.
 
 <p> The <a href="http://daniel.haxx.se/projects/ipwhere/">ipwhere tool</a>
 tries to detect your location using data from <a
