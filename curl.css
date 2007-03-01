@@ -219,6 +219,12 @@ tr.odd {
   background-color: #e0e0e0;
 }
 
+/* used for Metalink download links */
+span.metalink {
+  font-weight: bold;
+  font-family: arial narrow, sans-serif;
+}
+
 /* a non-selected item in the main menu */
 .menuitem, .libitem {
   text-decoration: none;

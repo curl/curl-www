@@ -260,8 +260,8 @@ if($latest::version{$what}) {
         print "<br><b>GPG signature:</b> <a href=\"download/$archive.asc\">$archive.asc</a>";
     }
 
-    print "<br><br>Download this file with a <a href=\"metalink.cgi?curl=$whate\">",
-    	  "<img src=\"/pix/metalink.png\" alt=\"\" border=\"0\">Metalink</a>.<br>\n";
+    print "<br><br>Download this file with a <span class=\"metalink\"><a href=\"metalink.cgi?curl=$whate\">",
+    	  "<img src=\"/pix/metalink.png\" border=\"0\" alt=\"\">metalink</a></span>.<br>\n";
 
     if($#dl > 10 ) {
         # so many mirrors we show this above them as well
