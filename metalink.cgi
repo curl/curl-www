@@ -26,9 +26,8 @@ print "Content-Type: application/metalink+xml\n\n";
 
 my $req = new CGI;
 
-# CGI::escapeHTML here should effectively be a no-op, but improves security
+# CGI::escapeHTML here should effectively be a no-op, but improves security when output
 my $what=CGI::escapeHTML($req->param('curl'));
-my $showall=CGI::escapeHTML($req->param('all')); # override geographic checks
 
 my ($mytld, $mycontinent, $mycountry);
 
@@ -44,6 +43,7 @@ print <<EOF
 <metalink version="3.0" generator="curl Metalink Generator" xmlns="http://www.metalinker.org/"
 type="dynamic" refreshdate="$now_string">
 <publisher>
+<name>curl</name>
 <url>http://curl.haxx.se/</url>
 </publisher>
 EOF
@@ -172,7 +172,7 @@ if($latest::version{$what}) {
     my $sha1full=`$sha1sum "download/$archive"`;
     my ($sha1, $dummy)=split(" ", $sha1full);
 
-    print "<description>$archive $desc</description>\n",
+    print "<description>curl $desc</description>\n",
     	  "<files><file name=\"$archive\">\n",
     	  "<version>".$latest::version{$what}."</version>\n",
     	  "<size>".$latest::size{$what}."</size>\n",
