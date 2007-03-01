@@ -229,7 +229,7 @@ if($latest::version{$what}) {
 
             $i++;
             printf "<url type=\"%s\" location=\"%s\" preference=\"%d\">%s</url>\n",
-		    $proto{$url},
+		    lc($proto{$url}),
 		    gettld($where{$url}),
 		    $pref,
 		    CGI::escapeHTML($url);
