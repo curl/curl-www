@@ -26,6 +26,7 @@ print "Content-Type: text/html\n\n";
 my $req = new CGI;
 
 my $what=$req->param('curl');
+my $whate=CGI::escapeHTML($what);
 
 my $showall=$req->param('all'); # override geographic checks
 
@@ -259,6 +260,9 @@ if($latest::version{$what}) {
         print "<br><b>GPG signature:</b> <a href=\"download/$archive.asc\">$archive.asc</a>";
     }
 
+    print "<br><br>Download this file with a <a href=\"metalink.cgi?curl=$whate\">",
+    	  "<img src=\"/pix/metalink.png\" alt=\"\">Metalink</a>.<br>\n";
+
     if($#dl > 10 ) {
         # so many mirrors we show this above them as well
         otherarchive();
@@ -303,20 +307,20 @@ if($latest::version{$what}) {
         "(<a href=\"#verified\">verified</a> ".&time_ago.")\n";
 
         if($showall && ($inmycontinent || $inmycountry)) {
-            print "<p> <a href=\"$script?curl=$what\">Show my closest mirrors</a>";
+            print "<p> <a href=\"$script?curl=$whate\">Show my closest mirrors</a>";
         }
         elsif($inmycountry) {
-            print "<p>$inmycountry of these mirrors are located in ".ucfirst(lc($mycountry))." where it looks like you are located. <a href=\"$script?curl=$what&amp;all=yes\">Show all mirrors</a>\n";
+            print "<p>$inmycountry of these mirrors are located in ".ucfirst(lc($mycountry))." where it looks like you are located. <a href=\"$script?curl=$whate&amp;all=yes\">Show all mirrors</a>\n";
         }
         elsif($inmycontinent) {
-            print "<p>$inmycontinent of these mirrors are located in ".ucfirst(lc($mycontinent))." where it looks like you are located. Showing those mirrors only! <a href=\"$script?curl=$what&amp;all=yes\">Show all mirrors</a>\n";
+            print "<p>$inmycontinent of these mirrors are located in ".ucfirst(lc($mycontinent))." where it looks like you are located. Showing those mirrors only! <a href=\"$script?curl=$whate&amp;all=yes\">Show all mirrors</a>\n";
         }
         
-        print "<table><tr class=\"tabletop\">";
+        print "<table summary=\"List of curl download mirror locations\"><thead><tr class=\"tabletop\">";
         for(('&nbsp;', 'Location', 'Download', 'Proto', 'Host')) {
             print "<th>$_</th>";
         }
-        print "</tr>\n";
+        print "</tr></thead><tbody>\n";
 
         my $i=0;
         for(sort {$where{$a} cmp $where{$b}} @dl) {
@@ -348,13 +352,13 @@ if($latest::version{$what}) {
             $proto{$url},
             $host{$url};
         }
-        print "</table>\n";
+        print "</tbody></table>\n";
     }
 }
 elsif($what) {
     print "<p> The <b>recent-version-off-a-mirror</b> system has no info about ",
-    "your requested package \"$what\"! :-( This is most likely because there\n",
-    "is no up-to-date release for \"$what\".";
+    "your requested package \"$whate\"! :-( This is most likely because there\n",
+    "is no up-to-date release for \"$whate\".";
 }
 
 otherarchive();
@@ -395,6 +399,8 @@ print <<MOO
 This service automatically and frequently scans through known <a
 href="mirrors.html">mirrors</a> and builds links to the latest versions of
 many different curl archives. This page is fine to bookmark!
+The above <a href="http://www.metalinker.org/">Metalink</a> lets you download
+this file faster by downloading from several of these mirrors simultaneously.
 
 <p> The <a href="http://daniel.haxx.se/projects/ipwhere/">ipwhere tool</a>
 tries to detect your location using data from <a
