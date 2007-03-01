@@ -100,6 +100,17 @@ if(open(FILE, "<$build")) {
                 elsif($line =~ /^testcurl: EMAIL/) {
                     $line =~ s:\@: /at/ :g;
                 }
+                elsif($line =~ /^testcurl: TRANSFER CONTROL/) {
+                    $state = 2;
+                }
+                elsif($line =~ /^testcurl: NAME/) {
+                    $state = 1;
+                }
+            }
+            if($state == 2) {
+                my $nlend = ($line =~ /\n$/);
+                $line =~ s/([^a-zA-Z0-9:=_]{1}?)/sprintf("[%02X]",ord($1))/ge;
+                $line .= "\n" if($nlend);
             }
             #
             if(checkwarn($line) || ($line =~ /FAILED/) || ($line =~ /MEMORY FAILURE/)) {
