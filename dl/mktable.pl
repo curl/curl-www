@@ -211,8 +211,11 @@ for $per (@sall) {
     print "<tr class=\"$cl\">\n";
 
     my $mirror;
+    my $metalink;
     if($$per{'re'} ne "-") {
         $mirror="<a href=\"http://curl.haxx.se/latest.cgi?curl=$$per{'re'}\">";
+        $metalink="<a href=\"http://curl.haxx.se/metalink.cgi?curl=$$per{'re'}\">" .
+                  "<img src=\"/pix/metalink.png\" border=\"0\" alt=\"metalink\" title=\"metalink\"></a>";
     }
     my $p;
     if($numpack>1) {
@@ -223,12 +226,13 @@ for $per (@sall) {
     if($flav eq "-") {
         $flav = "$s";
     }
-    printf("<td class=\"col1\">%s%s %s %s $p%s</td>\n",
+    printf("<td class=\"col1\">%s%s %s %s $p%s%s</td>\n",
            $mirror?$mirror:"",
            $numflav>1?$flav:$s,
            show($$per{'osver'}),
            $numcpu>1?show($$per{'cpu'}):"",
-           $mirror?"</a>":"");
+           $mirror?"</a> ":"",
+           $metalink);
 
     my $fi = $$per{'file'};
     if($fi !~ /^(http|ftp|javascript):/) {
