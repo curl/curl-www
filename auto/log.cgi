@@ -3,7 +3,6 @@
 # $Id$
 
 use strict;
-use MIME::QuotedPrint ();
 
 require "CGI.pm";
 require "../curl.pm";
