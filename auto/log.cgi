@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+# $Id$
+
 use strict;
 use MIME::QuotedPrint ();
 
@@ -31,56 +33,22 @@ title("Log from $year-$month-$day");
 
 my $build = "inbox/build-$id.log";
 
-# find out if log file is quoted-printable encoded
-my $qpencoded = 0;
-if(open(SCAN, "<$build")) {
-    my $linecount;
-    my $mimecount;
-    while(<SCAN>) {
-        if($_ =~ /^testcurl: [A-Z]+ =3D/) {
-            if($mimecount++ > 3) {
-                $qpencoded = 1;
-                last;
-            }
-        }
-        last if($linecount++ > 18);
-    }
-    close(SCAN);
-}
-
 my $date;
 my $timestamp;
 my $description;
 
-if(open(FILE, "<$build")) {
+if(open(my $logfile, "<$build")) {
     #
     &initwarn();
     #
     my @out;
     my $num = 0;
     my $state = 0;
-    my $buffer = "";
     #
     push @out, "\n<div class=\"mini\">\n";
     #
-    while(my $chunk = <FILE>) {
-        my $line;
-        # decode quoted-printable if encoded
-        if($qpencoded) {
-            $buffer .= MIME::QuotedPrint::decode_qp($chunk);
-            if($buffer =~ /\n$/) {
-                $line = $buffer;
-                $buffer = "";
-            }
-            else {
-                next; # chunk
-            }
-        }
-        elsif(!$line) {
-            # if not qp encoded and ref is not set yet,
-            # set line as ref to chunk to avoid copy.
-            $line = "@{[$chunk]}";
-        }
+    while(my $line = <$logfile>) {
+        #
         chomp $line;
         #
         if($state) {
@@ -101,6 +69,10 @@ if(open(FILE, "<$build")) {
                     $line =~ s:\@: /at/ :g;
                 }
                 elsif($line =~ /^testcurl: TRANSFER CONTROL/) {
+                    if($line =~ /^testcurl: .+ CHAR LINEo{1066}LINE_END/) {
+                        # Don't show the transfer control line if complete
+                        next;
+                    }
                     $state = 2;
                 }
                 elsif($line =~ /^testcurl: NAME/) {
@@ -108,9 +80,7 @@ if(open(FILE, "<$build")) {
                 }
             }
             if($state == 2) {
-                my $nlend = ($line =~ /\n$/);
                 $line =~ s/([^a-zA-Z0-9:=_]{1}?)/sprintf("[%02X]",ord($1))/ge;
-                $line .= "\n" if($nlend);
             }
             #
             if(checkwarn($line) || ($line =~ /FAILED/) || ($line =~ /MEMORY FAILURE/)) {
@@ -126,7 +96,7 @@ if(open(FILE, "<$build")) {
             next;
         }
     }
-    close(FILE);
+    close($logfile);
     #
     push @out, "</div>\n"; # end of mini-div
     #
