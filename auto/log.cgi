@@ -110,6 +110,10 @@ if(open(my $logfile, "<$build")) {
     #
     print @out;
     #
+    print "<div><br>\n";
+    print "<a href=\"logdnld.cgi/build-$id.log\">Download build log</a>\n";
+    print "</div><br>\n";
+    #
 }
 else {
     print "File not found!";
