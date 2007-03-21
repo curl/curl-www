@@ -177,7 +177,7 @@ for $ref (@all) {
     my $chregex = $$ref{'chregex'};
     my $churl = $inurl;
     my $osversion = $$ref{'osver'};
-    my $cpu = $$ref{'cpu'};
+    my $cpu = lc($$ref{'cpu'});
 
     # is '$version' embedded in the test URL
     my $versionembedded;
