@@ -232,7 +232,7 @@ sub endofsingle {
    # $showdate =~ s/(GMT|UTC|Mon|Tue|Wed|Thu|Fri|Sat|Sun)//ig;
     $showdate =~ s/.*(\d\d):(\d\d):(\d\d).*/$1:$2/;
     if (!$showdate) {
-        $showdate ='??:??';
+        $showdate ='--:--';
     }
 
     # prefer the date from the actual log file, it might have been from
