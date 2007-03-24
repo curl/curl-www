@@ -15,5 +15,6 @@ curl/tests/libtest/lib518.c:.*: warning: ANSI C forbids long long integer consta
 curl/tests/libtest/lib537.c:.*: warning: ANSI C forbids long long integer constants
 # ming/libtool warning:
 .libs/lt-curl.exe.c:
-# gcc 2.96 warning with --disable-verbose
+# gcc 2.96 warnings with --disable-verbose
 lib/sendf.h:.*: warning: ISO C does not permit named variadic macros
+lib/sendf.h:.*: warning: anonymous variadic macros were introduced in C99
