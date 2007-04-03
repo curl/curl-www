@@ -39,6 +39,8 @@ sub checkwarn {
         ($l =~ /^[\.\\]*([.\\\/a-zA-Z0-9-]*)\.[chy]\(([0-9:]*)/) ||
         # libtool error
         ($l =~ /^libtool: link: /) ||
+        # NetWare's nlmconv linker
+        ($l =~ /^nlmconv: warning: /) ||
         # GNU and MIPS ld error
         ($l =~ /^[^ ?*]*ld((32)|(64))?: /))
     {
