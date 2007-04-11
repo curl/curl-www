@@ -95,6 +95,9 @@ sub gettld {
     elsif($country =~ /Austria/) {
         $tld="at";
     }
+    elsif($country =~ /Belgium/i) {
+        $tld="be";
+    }
     elsif($country =~ /Canada/) {
         $tld="ca";
     }
@@ -144,7 +147,8 @@ sub gettld {
         $tld="us";
     }
     elsif($country =~ /United Kingdom/i) {
-        $tld="uk";
+        # NOTE: this is GB not UK, as the Metalink spec says
+        $tld="gb";
     }
     return $tld;
 }
