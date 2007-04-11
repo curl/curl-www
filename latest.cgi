@@ -135,6 +135,9 @@ sub gettld {
     elsif($country =~ /Austria/) {
         $tld="at";
     }
+    elsif($country =~ /Belgium/i) {
+        $tld="be";
+    }
     elsif($country =~ /Canada/) {
         $tld="ca";
     }
