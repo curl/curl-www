@@ -45,6 +45,51 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 <li> <a href="http://curl.haxx.se/auto/cvshistory.html">recent CVS activity</a>
  </ul>
 
+SUBTITLE(Fixed in 7.16.2 - April 11 2007)
+<p> Changes:
+<ul>
+ <li> added CURLOPT_TIMEOUT_MS and CURLOPT_CONNECTTIMEOUT_MS
+ <li> added CURLOPT_HTTP_CONTENT_DECODING, CURLOPT_HTTP_TRANSFER_DECODING and
+   --raw
+ <li> added support for using the NSS library for TLS/SSL
+ <li> changed default anonymous FTP password
+ <li> changed the CURLOPT_FTP_SSL_CCC option to handle active and passive
+   CCC shutdown
+ <li> added the --ftp-ssl-ccc-mode command line option
+ <li> includes VC8 Makefiles in the release archive
+ <li> --ftp-ssl-control is now honoured on ftps:// URLs
+ <li> added experimental CURL_ACKNOWLEDGE_EINTR symbol definition check
+ <li> --key and new --pubkey options for SSH public key file logins
+ <li> --pass now works for a SSH public key file, too
+ <li> select (2) support no longer needed to build the library if poll() used
+ <li> CURLOPT_POSTQUOTE works for SFTP
+</ul>
+<p> Bugfixes:
+<ul>
+ <li> in testsuite, update test cookies expiration from 2007-Feb-1 to year 2035 
+ <li> socks5 works
+ <li> builds fine with VC2005
+ <li> CURLOPT_RANGE set to NULL resets the range for FTP
+ <li> curl_multi_remove_handle() rare crash
+ <li> passive FTP transfers work with SOCKS
+ <li> multi interface HTTPS connection re-use memory leak
+ <li> libcurl.m4's --with-libcurl is improved
+ <li> curl-config --libs and libcurl.pc no longer list unnecessary dependencies
+ <li> fixed an issue with CCC not working on some servers
+ <li> several HTTP pipelining problems
+ <li> HTTP CONNECT thru a proxy is now less blocking when the multi interface is
+   used
+ <li> HTTP Digest header parsing fix for unquoted last word ending with CRLF
+ <li> CURLOPT_PORT, HTTP proxy, re-using connections and non-HTTP protocols
+ <li> CURLOPT_INTERFACE for ipv6
+ <li> use-after-free issue with HTTP transfers with the multi interface
+ <li> the progress callback can get called more frequently
+ <li> timeout would restart when signal caught while awaiting socket events
+ <li> curl -f with user+password embedded in the URL
+ <li> 26 flaws identified by coverity.com
+ <li> builds on QNX 6 again
+</ul>
+
 SUBTITLE(Fixed in 7.16.1 - January 29 2007)
 <p> Changes:
 <ul>
