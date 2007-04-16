@@ -54,6 +54,12 @@ sub gettype {
                "win32-nossl",
                "Windows, zip");
     }
+    # curl-7.5.1-win64-nossl.zip
+    elsif($file =~ /^curl-([0-9.]*)(-([0-9]*)|)-win64-nossl.zip$/) {
+        return($1,
+               "win64-nossl",
+               "Windows 64bit, zip");
+    }
     elsif($file =~ /^curl-([0-9.]*)(-([0-9]*)|)-win32-nossl-sspi.zip$/) {
         return($1,
                "win32-nossl-sspi",
