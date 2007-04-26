@@ -66,6 +66,7 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden (Uppsala)',
              'ftp://ftp.spegulo.be/pub/curl/' => 'Belgium (Antwerpen)',
              'http://curl.piotrkosoft.net/download/' => 'Poland (Oswiecim)',
              'http://curl.smudge-it.net/download/' => 'US (Missouri)', 
+             'http://curl.askapache.com/download/' => 'US (Indiana)',
              );
 
 sub present {
