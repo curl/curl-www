@@ -25,7 +25,7 @@ if($id =~ /^(\d\d\d\d)(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)-(\d+)/) {
         ($1, $2, $3, $4, $5, $6, $7);
 }
 
-print "Content-Type: text/html\n\n";
+print "Content-Type: text/html\n";
 
 # Allow this page to be cached for a couple of hours
 print "Expires: " . time2str(time + 7200) . "\n\n";
