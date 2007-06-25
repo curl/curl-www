@@ -46,6 +46,62 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 <li> <a href="http://curl.haxx.se/auto/cvshistory.html">recent CVS activity</a>
  </ul>
 
+SUBTITLE(Fixed in 7.16.3 - June 25 2007)
+<p> Changes:
+<ul>
+ <li> added curl_multi_socket_action()
+ <li> deprecated curl_multi_socket()
+ <li> uses less memory in non-pipelined use cases
+ <li> CURLOPT_HTTP200ALIASES matched transfers assume HTTP 1.0 compliance
+ <li> more than one test harness can run at the same time without conflict
+ <li> SFTP now supports quote commands before a transfer
+ <li> CURLMOPT_MAXCONNECTS added to curl_multi_setopt()
+ <li> upload resume works for file:// URLs
+ <li> asynchronous name resolves now require c-ares 1.4.0 or later
+ <li> added SOCKS test cases
+ <li> CURLOPT_FTP_CREATE_MISSING_DIRS and --ftp-create-dirs now work for SFTP
+   operations as well
+</ul>
+<p> Bugfixes:
+<ul>
+ <li> if2up too long interface name memory leak
+ <li> test case 534 started to fail 2007-04-13 due to the existance of a
+   new host on the net with the same silly domain the test was using
+   for a host which was supposed not to exist.
+ <li> test suite SSL certificate works better with newer stunnel
+ <li> internal progress meter update frequency back to once per second
+ <li> avoid some unnecessary calls to function gettimeofday
+ <li> a double-free in the SSL-layer
+ <li> GnuTLS free of NULL credentials
+ <li> NSS-fix for closing down SSL
+ <li> bad warning from configure when gnutls was selected
+ <li> compilation on VMS 64-bit mode
+ <li> SCP/SFTP downloads could hang on the last bytes of a transfer
+ <li> curl_easy_duphandle() crash
+ <li> curl -V / curl_version*() works even when GnuTLS is used on a system without
+   a good random source
+ <li> curl_multi_socket() not "noticing" newly added handles
+ <li> lack of Content-Length and chunked encoding now requires HTTP 1.1 as well
+   to be treated as without response body
+ <li> connection cache growth in multi handles
+ <li> better handling of out of memory conditions
+ <li> overwriting an uploaded file with sftp now truncates it first
+ <li> SFTP quote commands chmod, chown, chgrp can now set a value of 0
+ <li> TFTP connect timouts less than 5 seconds
+ <li> improved curl -w for TFTP transfers
+ <li> memory leak when failed OpenSSL certificate CN field checking
+ <li> memory leak when OpenSSL failed PKCS #12 parsing
+ <li> FPL-SSL when built with NSS
+ <li> out-of-boundary write in Curl_select()
+ <li> -s/--silent can now be used to toggle off the silence again
+ <li> builds fine on 64bit HP-UX
+ <li> multi interface HTTP CONNECT glitch
+ <li> list FTP root directories when login dir is not root
+ <li> no longer slows down when getting very many URLs on the same command line
+ <li> lock share before decreasing dirty counter
+ <li> no-body FTP requests on re-used connections
+</ul>
+
 SUBTITLE(Fixed in 7.16.2 - April 11 2007)
 <p> Changes:
 <ul>
