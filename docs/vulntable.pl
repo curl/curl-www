@@ -21,10 +21,12 @@ sub vernum {
 print "<table>";
 sub head {
     print "<tr class=\"tabletop\"><th>Version</th>";
+    my $v=1;
     for(@vuln) {
         my ($id, $start, $stop)=split('\|');
         $id =~ s/ //;
-        print "<th><a href=\"/docs/security.html\#$id\">$id</a></th>";
+        print "<th title=\"$id\"><a href=\"/docs/security.html\#$id\">#$v</a></th>";
+        $v++;
     }
     print "</tr>\n";
 }
