@@ -46,6 +46,26 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 <li> <a href="http://curl.haxx.se/auto/cvshistory.html">recent CVS activity</a>
  </ul>
 
+SUBTITLE(Fixed in 7.16.4 - July 10 2007)
+<p> Changes:
+<ul>
+ <li> added CURLOPT_NEW_FILE_PERMS and CURLOPT_NEW_DIRECTORY_PERMS
+ <li> improved hashing of sockets for the multi_socket API
+ <li> ftp kerberos5 support added
+</ul>
+<p> Bugfixes:
+<ul>
+ <li> adjusted how libcurl treats HTTP 1.1 responses without content-lenth or
+   chunked encoding
+ <li> fixed the 10-at-a-time.c example
+ <li> FTP over SOCKS proxy
+ <li> improved error messages on SCP upload failures
+ <li> <a href="http://curl.haxx.se/docs/adv_20070710.html">security flaw</a> in which libcurl
+   failed to properly reject some outdated or not yet valid server certificates
+   when built with GnuTLS
+</ul>
+
+
 SUBTITLE(Fixed in 7.16.3 - June 25 2007)
 <p> Changes:
 <ul>
