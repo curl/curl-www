@@ -71,14 +71,15 @@ my $head=0; # don't output HEAD
 my $maxnumshown = 30; # only show this many
 
 # CVS user names
-my %shortnames=('bagder' => 'Daniel',
-                'gknauf' => 'Günter',
-                'giva'   => 'Gisle',
-                'danf'   => 'Dan F',
+my %shortnames=('bagder' => 'Daniel Stenberg',
+                'gknauf' => 'Günter Knauf',
+                'giva'   => 'Gisle Vanem',
+                'danf'   => 'Dan Fandrich',
                 'curlvms' => 'Marty',
-                'dmeglio' => 'Dominick',
-                'yangtse' => 'Yang',
-                'wahem'   => 'William'); # William Ahern
+                'dmeglio' => 'Dominick Meglio',
+                'yangtse' => 'Yang Tse',
+                'wahem'   => 'William Ahern', # William Ahern
+                'jehousley' => 'James Housley'); # James Housley
 
 # URL root to prepend file names with
 my $root="http://cool.haxx.se/cvs.cgi/curl";
