@@ -72,7 +72,7 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden (Uppsala)',
 sub present {
     my ($site, $file)=@_;
 
-    my $res = system("$latest::curl -f -m 60 -I ${site}${file} -o /dev/null -s");
+    my $res = system("$latest::curl -f -m 60 -L -I ${site}${file} -o /dev/null -s");
     if($res >> 8) {
         return 0; # not present
     }
