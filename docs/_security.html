@@ -38,6 +38,35 @@ TITLE(curl Security)
  See also the <a href="vulnerabilities.html">Vulnerabilties Table</a> to see
  what versions that are vulnerable to what flaws.
 
+<a name="20070710"></a>
+SUBTITLE(libcurl GnuTLS insufficient cert verification)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>July 10, 2007</td></tr>
+  <tr><td>ID</td><td>
+#if 0
+<a href="http://www.securityfocus.com/bid/17154">BID 17154</a>
+<a href="http://secunia.com/advisories/19271/">SA19271</a>
+#endif
+<a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3564">CVE-2007-3564</a>
+<small><a href="#20070710">(permalink)</a></small></td></tr>
+  <tr><td>Affected versions</td><td>7.14.0 to and including 7.16.3</td></tr>
+  <tr><td>Not affected versions</td><td>7.13.2 and earlier, 7.16.4 and later</td></tr>
+  <tr><td>Patch</td><td><a href="http://curl.haxx.se/libcurl-gnutlscert.patch">libcurl-gnutlscert.patch</a></td></tr>
+
+  <tr><td>Advisories</td><td>
+<a href="adv_20070710.html">Project cURL Security Advisory</a> </td></tr>
+
+</table>
+<p>
+libcurl (when built to use GnuTLS) fails to verify that a peer's certificate
+hasn't already expired or hasn't yet become valid. This allows malicious
+servers to present certificates to libcurl that won't be rejected properly.
+<p>
+Notably, the cacert and common name checks are still in place which reduces
+the risk for random servers to take advantage of this flaw.
+
+
 <a name="BID17154"></a>
 <a name="20060320"></a>
 SUBTITLE(libcurl TFTP Packet Buffer Overflow)
