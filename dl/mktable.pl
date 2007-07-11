@@ -267,8 +267,14 @@ for $per (@sall) {
            $em?"</a>":"");
     my $size = show($$per{'size'});
     $size = int($size/1024);
-    printf("<td class=\"col7\">%s</td>\n", $size?"$size KB":"&nbsp;");
-    print "</tr>\n";
+    my $szstr="&nbsp;";
+    if($size && ($size < 999)) {
+        $szstr = "$size KB";
+    }
+    elsif($size > 0) {
+        $szstr = sprintf("%.2f MB", $size/1024);
+    }
+    print "<td class=\"col7\">$szstr</td></tr>\n";
     $i++;
 }
 bot();
