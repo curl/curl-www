@@ -302,6 +302,7 @@ span.metalink {
 }
 
 div.oslinks {
+  clear: right;
   border-color: black;
   border-width: 1px;
   border-style: outset;
