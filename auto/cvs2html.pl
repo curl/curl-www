@@ -380,7 +380,10 @@ if( $changecount) {
                     $p = sprintf("%d.%d", $num, $dot-1);
 
                     # viewcvs.cgi style diff URL:
-                    $r = "<a href=\"$root/$file.diff?r1=$p&r2=$r\">$r</a>";
+                    $r = "<a href=\"$root/$file.diff?r1=$p&amp;r2=$r\">$r</a>";
+                } else {
+                    # viewcvs.cgi style view file URL:
+                    $r = "<a href=\"$root/$file?rev=$r&amp;content-type=text/vnd.viewcvs-markup\">$r</a>";
                 }
 
             }
