@@ -27,8 +27,8 @@ if($id =~ /^(\d\d\d\d)(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)-(\d+)/) {
 
 print "Content-Type: text/html\n";
 
-# Allow this page to be cached for a couple of hours
-print "Expires: " . time2str(time + 7200) . "\n\n";
+# Allow this page to be cached for a day
+print "Expires: " . time2str(time + 3600*24) . "\n\n";
 
 header("Autobuilds - single log");
 where("Autobuilds", "/auto", "Log From $year-$month-$day");
