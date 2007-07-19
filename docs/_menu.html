@@ -40,6 +40,12 @@ HERE(x, Docs Index)
 DOCREF(/docs/, Docs Index)
 #endif
 
+#ifdef DOCS_BUGS
+HERE(x, Bugs)
+#else
+DOCREF(/docs/bugs.html, Bugs)
+#endif
+
 #ifdef DOCS_CAEXTRACT
 HERE(x, CA Extract)
 #else
