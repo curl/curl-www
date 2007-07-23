@@ -521,4 +521,20 @@ sub tld2country {
     return $tld2cntr{lc($tld)};
 }
 
+# convert an exact country string into a two-letter TLD
+sub country2tld {
+    my ($cntr)=@_;
+
+    for (keys(%tld2cntr)) {
+        if ($cntr =~ /$tld2cntr{$_}/) {
+        	return $_;
+        }
+    }
+    # Special case alternative country name
+    if ($cntr =~ /US/) {
+    	return "us";
+    }
+    return "";
+}
+
 1;

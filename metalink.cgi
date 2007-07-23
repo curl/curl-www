@@ -87,66 +87,9 @@ close(DATA);
 
 sub gettld {
     my ($country)=@_;
-    my $tld;
+    my $tld = country2tld($country);
 
-    if($country =~ /Australia/) {
-        $tld="au";
-    }
-    elsif($country =~ /Austria/) {
-        $tld="at";
-    }
-    elsif($country =~ /Belgium/i) {
-        $tld="be";
-    }
-    elsif($country =~ /Canada/) {
-        $tld="ca";
-    }
-    elsif($country =~ /Denmark/) {
-        $tld="dk";
-    }
-    elsif($country =~ /Estonia/) {
-        $tld="ee";
-    }
-    elsif($country =~ /France/) {
-        $tld="fr";
-    }
-    elsif($country =~ /Netherlands/) {
-        $tld="nl";
-    }
-    elsif($country =~ /Germany/) {
-        $tld="de";
-    }
-    elsif($country =~ /Greece/) {
-        $tld="gr";
-    }
-    elsif($country =~ /Hong Kong/) {
-        $tld="hk";
-    }
-    elsif($country =~ /Ireland/) {
-        $tld="ie";
-    }
-    elsif($country =~ /Japan/) {
-        $tld="jp";
-    }
-    elsif($country =~ /Poland/) {
-        $tld="pl";
-    }
-    elsif($country =~ /Russia/) {
-        $tld="ru";
-    }
-    elsif($country =~ /Sweden/) {
-        $tld="se";
-    }
-    elsif($country =~ /Thailand/) {
-        $tld="th";
-    }
-    elsif($country =~ /Taiwan/) {
-        $tld="tw";
-    }
-    elsif($country =~ /US/) {
-        $tld="us";
-    }
-    elsif($country =~ /United Kingdom/i) {
+    if($country =~ /United Kingdom/i) {
         # NOTE: this is GB not UK, as the Metalink spec says
         $tld="gb";
     }
@@ -222,10 +165,10 @@ if($latest::version{$what}) {
         for(sort {$where{$a} cmp $where{$b}} @dl) {
             my $url=$_;
 
-            if(gettld($where{$url}) eq lc($mytld)) {
+            if(country2tld($where{$url}) eq lc($mytld)) {
                 $pref = 90;
             }
-            elsif(tld2continent( gettld($where{$url})) eq $mycontinent) {
+            elsif(tld2continent( country2tld($where{$url})) eq $mycontinent) {
                 $pref = 70;
             } else {
                 $pref = 30;

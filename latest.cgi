@@ -121,81 +121,13 @@ while(<DATA>) {
 close(DATA);
 
 sub randomorder {
-    my @dl = @_;
     return sort { return int(rand(4)-2); } @_;
-}
-
-sub gettld {
-    my ($country)=@_;
-    my $tld;
-
-    if($country =~ /Australia/) {
-        $tld="au";
-    }
-    elsif($country =~ /Austria/) {
-        $tld="at";
-    }
-    elsif($country =~ /Belgium/i) {
-        $tld="be";
-    }
-    elsif($country =~ /Canada/) {
-        $tld="ca";
-    }
-    elsif($country =~ /Denmark/) {
-        $tld="dk";
-    }
-    elsif($country =~ /Estonia/) {
-        $tld="ee";
-    }
-    elsif($country =~ /France/) {
-        $tld="fr";
-    }
-    elsif($country =~ /Netherlands/) {
-        $tld="nl";
-    }
-    elsif($country =~ /Germany/) {
-        $tld="de";
-    }
-    elsif($country =~ /Greece/) {
-        $tld="gr";
-    }
-    elsif($country =~ /Hong Kong/) {
-        $tld="hk";
-    }
-    elsif($country =~ /Ireland/) {
-        $tld="ie";
-    }
-    elsif($country =~ /Japan/) {
-        $tld="jp";
-    }
-    elsif($country =~ /Poland/) {
-        $tld="pl";
-    }
-    elsif($country =~ /Russia/) {
-        $tld="ru";
-    }
-    elsif($country =~ /Sweden/) {
-        $tld="se";
-    }
-    elsif($country =~ /Thailand/) {
-        $tld="th";
-    }
-    elsif($country =~ /Taiwan/) {
-        $tld="tw";
-    }
-    elsif($country =~ /US/) {
-        $tld="us";
-    }
-    elsif($country =~ /United Kingdom/i) {
-        $tld="uk";
-    }
-    return $tld;
 }
 
 sub flag {
     my ($country)=@_;
 
-    my $tld = gettld($country);
+    my $tld = country2tld($country);
 
     if($tld) {
         return "<img src=\"/pix/flags/$tld.png\" alt=\"$tld\">";
@@ -282,7 +214,7 @@ if($latest::version{$what}) {
     
     for(@dl) {
         my $url=$_;
-        my $flag = gettld($where{$url});
+        my $flag = country2tld($where{$url});
         my $urlcontinent = tld2continent( $flag );
 
         if($flag eq lc($mytld)) {
@@ -335,12 +267,12 @@ if($latest::version{$what}) {
                 ;
             }
             elsif($inmycountry) {
-                if(gettld($where{$url}) ne lc($mytld)) {
+                if(country2tld($where{$url}) ne lc($mytld)) {
                     next;
                 }
             }
             elsif($inmycontinent) {
-                if(tld2continent( gettld($where{$url})) ne $mycontinent) {
+                if(tld2continent( country2tld($where{$url})) ne $mycontinent) {
                     next;
                 }
             }
