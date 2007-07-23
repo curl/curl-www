@@ -89,8 +89,8 @@ sub gettld {
     my ($country)=@_;
     my $tld = country2tld($country);
 
-    if($country =~ /United Kingdom/i) {
-        # NOTE: this is GB not UK, as the Metalink spec says
+    if($tld eq "uk") {
+        # NOTE: this is GB, not UK, to follow the Metalink spec
         $tld="gb";
     }
     return $tld;
