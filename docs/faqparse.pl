@@ -35,7 +35,8 @@ while(<STDIN>) {
                     print "\n<p>\n";
                     $o = $s;
                 }
-                printf "<a href=\"faq.html#%s\">%s</a> %s<br>\n", $_, $_, $faq{$_};
+                printf "<a href=\"faq.html#%s\">%s</a> %s<br>\n",
+                $link{$_}, $_, $faq{$_};
             }
 
             print "<hr>\n";
@@ -46,6 +47,16 @@ while(<STDIN>) {
             my ($num, $phrase)=($1, $2);
 #            print "$num $phrase\n";
             $faq{$num} = $phrase;
+            my $l = substr($phrase, 0, 32);
+            # filter off "odd" chars
+            $l =~ s/[^a-z0-9A-Z]/_/g;
+            # filter off trailing underscores
+            $l =~ s/_+\z//;
+            # filter off initial underscores
+            $l =~ s/^_+//;
+            # filter off multiple underscores
+            $l =~ s/_+/_/g;
+            $link{$num} = $l;
             push @toc, $num;
         }
         elsif($_ =~ /([0-9])\. (.*)/) {
@@ -72,6 +83,8 @@ while(<STDIN>) {
             my $s=$_;
             chomp $s;
             $s =~ s/^ *(.*) */$1/;
+            print "<a name=\"$link{$toc[$q]}\"></a>";
+            # we provide the older name as well to make oldish links live
             print "<a name=\"$toc[$q]\"></a><h3>$s</h3><p>\n";
             $q++;
         }
