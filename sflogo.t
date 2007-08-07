@@ -48,9 +48,16 @@ SIZE="1"><A HREF="http://searchenginez.com/">Search Engines</A></FONT></DIV>
 <table cellspacing="0" cellpadding="0" width="120" border="1">
 <tbody> <tr> <td>
 <font face="arial" size="1">
-<a href="http://www.shop-script.com">Shopping cart software</a>
-<br>
-<a href="http://www.webasyst.net">Online collaboration software</a>
+<a href="http://www.shop-script.com">Shopping cart software</a>, 
+<a href="http://www.webasyst.net/files/">Online file storage and sharing</a>,
+<a href="http://www.webasyst.net/photos/">Online photo storage and sharing</a>,
+<a href="http://www.webasyst.net/shop/">Online store builder</a>,
+<a href="http://www.webasyst.net/contacts/">Online contact management</a>,
+<a href="http://www.webasyst.net/mail/">Online email marketing</a>,
+<a href="http://www.webasyst.net/projects/">Online project management</a>,
+<a href="http://www.webasyst.net/issue-tracker/">Online issue tracking</a>,
+<a href="http://www.webasyst.net/notes/">Online notepad</a>,
+<a href="http://www.webasyst.net/pages/">Online publishing</a>
 </font>
 </td></tr></tbody></table>
 <p>
