@@ -563,6 +563,9 @@ sub singlefile {
             elsif($line =~ /^\#define OS \"([^\"]*)\"/) {
                 $os=$1;
             }
+            elsif($line =~ / -DCURLDEBUG /) {
+                $debug=1;
+            }
         }
     }
     if($state) {
