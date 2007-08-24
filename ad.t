@@ -2,7 +2,7 @@
 #define WEBROOT
 #endif
 <!-- first-line-in-body -->
-#define AD_GOOGLETOP
+#define AD_YOURADHERE
 <table width="100%"><tr valign="top"><td> <a href="WEBROOT/"><img border="0" src="WEBROOT/ds-curlicon.png"
 width="99" height="37" alt="cURL"></a></td>
 <td align="center">
@@ -26,24 +26,11 @@ google_color_text = "000000";
   src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 #endif
-#ifdef AD_PRICERUNNER
-<table width="468" border="0" cellspacing="0" cellpadding="1" bgcolor="#ffffff" height="60" STYLE="color: black; font: 9pt Helvetica; line-height: 13pt; border: 1px solid #000000;">
-  <tr>
-    <td width="190" valign="middle" align="center">
-     <a href="http://www.pricerunner.com/"><img src="http://i.pricerunner.com/images/i/pricerunnerlogo_178x54_payo.gif" width="178" height="54" border="0" alt="PriceRunner.com - compare before you shop" target="_blank"></a> 
-    </td>
-    <td valign="middle" align="center">
-     Compare and find best prices on
-     <br>
-     <a href="http://www.pricerunner.com/photography/digital-cameras/browse" target="_blank" style="text-decoration: none;">Digital Cameras</A> - 
-     <a href="http://www.pricerunner.com/sound-and-vision/vision/camcorders/browse" target="_blank" style="text-decoration: none;">Camcorders</A> - 
-     <a href="http://www.pricerunner.com/sound-and-vision/vision/tv/browse" target="_blank" style="text-decoration: none;">TVs</A>
-     <br>
-     <a href="http://www.pricerunner.com/sound-and-vision/personal-audio/mp3-players/browse" target="_blank" style="text-decoration: none;">MP3-players</A> - 
-     <a href="http://www.pricerunner.com/games/" target="_blank" style="text-decoration: none;">Video Games & Consoles</A>
-    </td>
-  </tr>
-</table>
+#ifdef AD_YOURADHERE
+<a href="/about.html#ads" title="Your ad here would be seen by 100,000 unique
+vistors every month"><img border="0" src="/pix/468x60-your-ad-here.png"
+width="468" height="60" alt="Your ad here would be seen by 100,000 unique
+vistors every month"></a>
 #endif
 
 </td><td>
