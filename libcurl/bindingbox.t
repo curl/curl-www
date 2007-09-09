@@ -30,6 +30,7 @@
 <a href="scheme/">Scheme</a><br>
 <a href="slang/">S-Lang</a><br>
 <a href="smalltalk/">Smalltalk</a><br>
+<a href="spf/">SP-Forth</a><br>
 <a href="spl/">SPL</a><br>
 <a href="tcl/">Tcl</a><br>
 <a href="vb/">Visual Basic</a><br>
