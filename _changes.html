@@ -46,6 +46,54 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 <li> <a href="http://curl.haxx.se/auto/cvshistory.html">recent CVS activity</a>
  </ul>
 
+<a name="7_17_0"></a>
+SUBTITLE(Fixed in 7.17.0 - September 13 2007)
+<p> Changes:
+<ul>
+ <li> support for OS/400 Secure Sockets Layer library
+ <li> curl_easy_setopt() now allocates strings passed to it
+ <li> SCP and SFTP support now requires libssh2 0.16 or later
+ <li> LDAP libraries are now linked "regularly" and not with dlopen
+ <li> HTTP transfers have the download size info "available" earlier
+ <li> FTP transfers have the download size info "available" earlier
+ <li> builds and runs on OS/400
+ <li> several error codes and options were marked as obsolete and subject to
+   future removal (set CURL_NO_OLDIES to see if your application is using them)
+ <li> SFTP errors can return more specific error codes 
+</ul>
+<p> Bugfixes:
+<ul>
+ <li> test cases 31, 46, 61, 506, 517 now work in time zones that use leap seconds
+ <li> problem with closed proxy connection during HTTP CONNECT auth negotiation
+ <li> transfer-encoding skipping didn't ignore the 407 response bodies properly
+ <li> CURLOPT_SSL_VERIFYHOST set to 1
+ <li> CONNECT endless loop
+ <li> krb5 support builds with Heimdal
+ <li> added returned error string for connection refused case
+ <li> re-use of dead FTP control connections
+ <li> login to FTP servers that don't require (nor understand) PASS after the
+   USER command
+ <li> bad free of memory from libssh2
+ <li> the SFTP PWD command works
+ <li> HTTP Digest auth on a re-used connection
+ <li> FTPS data connection close
+ <li> AIX 4 and 5 get to use non-blocking sockets
+ <li> small POST with NTLM
+ <li> resumed file:// transfers
+ <li> CURLOPT_DNS_CACHE_TIMEOUT and CURLOPT_DNS_USE_GLOBAL_CACHE are 64 bit
+   "clean"
+ <li> memory leak when handling compressed data streams from broken servers
+ <li> no NTLM unicode response
+ <li> resume HTTP PUT using Digest authentication
+ <li> FTP NOBODY requests on directories sent "SIZE (null)"
+ <li> FTP NOBODY request on file crash
+ <li> excessively long FTP server responses and response lines
+ <li> file:// upload then FTP:// upload crash
+ <li> TFTP error 0 is no longer treated as success
+ <li> uploading empty file over FTP on re-used connection
+ <li> superfluous CWD command on re-used FTP connections without subdirs used
+</ul>
+
 <a name="7_16_4"></a>
 SUBTITLE(Fixed in 7.16.4 - July 10 2007)
 <a href="http://curl.haxx.se/docs/adv_20070710.html"><img src="/pix/alert.png"
