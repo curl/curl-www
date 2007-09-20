@@ -77,8 +77,8 @@ changes.t: $(SRCROOT)/CHANGES
 contribute.html: _contribute.html $(MAINPARTS) contribute.t
 	$(ACTION)
 
-contribute.t: $(DOCROOT)/CONTRIBUTE
-	$(TXT2HTML) < $(DOCROOT)/CONTRIBUTE > contribute.t
+contribute.t: $(DOCROOT)/CONTRIBUTE faqparse.pl
+	./faqparse.pl < $< > $@
 
 companies.html: _companies.html $(MAINPARTS)
 	$(ACTION)
