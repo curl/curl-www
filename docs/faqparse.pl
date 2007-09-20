@@ -35,7 +35,7 @@ while(<STDIN>) {
                     print "\n<p>\n";
                     $o = $s;
                 }
-                printf "<a href=\"faq.html#%s\">%s</a> %s<br>\n",
+                printf "<a href=\"#%s\">%s</a> %s<br>\n",
                 $link{$_}, $_, $faq{$_};
             }
 
