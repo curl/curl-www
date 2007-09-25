@@ -81,6 +81,7 @@ my %shortnames=('bagder' => 'Daniel Stenberg',
                 'wahem'   => 'William Ahern',
                 'jehousley' => 'James Housley',
                 'patrickm' => 'Patrick Monnerat',
+                'sesse' => 'Steinar Gunderson',
                 );
 
 # URL root to prepend file names with
