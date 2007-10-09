@@ -1,0 +1,23 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl - ABI</TITLE>
+#include "css.t"
+</HEAD>
+
+#define LIBCURL_ABI
+#define CURL_URL libcurl/abi.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(libcurl, "/libcurl/abi.html", libcurl binary interface)
+
+TITLE(libcurl binary interface)
+#include "abi.t"
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
+
+

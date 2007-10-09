@@ -38,6 +38,12 @@ TLINK(/libcurl/c/, API &raquo;,
        Functions provided by libcurl )
 #endif
 
+#ifdef LIBCURL_ABI
+LINK("", Binary Interface)
+#else
+TLINK(/libcurl/abi.html, Binary Interface,
+       ABI guarantees between releases and more )
+#endif
 #ifdef LIBCURL_BINDINGS
 LINK("", Bindings)
 #else

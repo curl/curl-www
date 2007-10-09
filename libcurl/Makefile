@@ -1,10 +1,12 @@
 ROOT = ..
+CVSROOT= ../cvssource
 TXT2PLAIN= txt2plain.pl
 
 MAINPARTS= $(ROOT)/_doctype.html _menu.html _links.html $(ROOT)/setup.t pic.t \
  $(ROOT)/where.t download.t $(ROOT)/mirrorlinks.t $(ROOT)/ad.t $(ROOT)/css.t  \
  $(ROOT)/sflogo.t $(ROOT)/_footer.html
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
+TXT2HTML= txt2html --extract --hrule 10
 ACTION=@echo preprocessing $@; \
 	rm -f $@; \
 	cpp -I.. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
@@ -12,7 +14,7 @@ ACTION=@echo preprocessing $@; \
 
 all: index.html mail.html competitors.html comparison-table.html	  \
      relatedlibs.html features.html wininet.html libwww.html libsoup.html \
-     theysay.html bindings.html
+     theysay.html bindings.html abi.html
 	cd c; make
 	cd perl; make
 	cd php; make
@@ -57,6 +59,12 @@ index.html: _index.html $(MAINPARTS) bindingbox.t
 
 threadsafe.html: _threadsafe.html $(MAINPARTS)
 	$(ACTION)
+
+abi.html: _abi.html abi.t $(MAINPARTS)
+	$(ACTION)
+
+abi.t: $(CVSROOT)/docs/libcurl/ABI
+	$(TXT2HTML) < $< > $@
 
 features.html: _features.html $(MAINPARTS)
 	$(ACTION)
