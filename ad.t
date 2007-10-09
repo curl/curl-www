@@ -27,7 +27,7 @@ google_color_text = "000000";
 </script>
 #endif
 #ifdef AD_YOURADHERE
-<a href="about.html#ads" title="Your ad here would be seen by 100,000 unique
+<a href="/about.html#ads" title="Your ad here would be seen by 100,000 unique
 vistors every month"><img border="0"
 src="http://curl.haxx.se/pix/468x60-your-ad-here.png" width="468" height="60"
 alt="Your ad here would be seen by 100,000 unique vistors every month"></a>
