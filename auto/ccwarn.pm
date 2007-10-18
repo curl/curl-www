@@ -33,6 +33,8 @@ sub checkwarn {
         ($l =~ /cc: (REMARK|WARNING) File/) ||
         # Intel icc 8.0:
         ($l =~ /: (remark|warning) \#/) ||
+        # Intel icc linker:
+        ($l =~ /: warning: warning: /) ||
         # MIPS o32 compiler:
         ($l =~ /^cfe: Warning (\d*):/) ||
         # MSVC
