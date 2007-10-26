@@ -86,7 +86,9 @@ if(open(my $logfile, "<$build")) {
                 $line =~ s/([^a-zA-Z0-9:=_]{1}?)/sprintf("[%02X]",ord($1))/ge;
             }
             #
-            if(checkwarn($line) || ($line =~ /FAILED/) || ($line =~ /MEMORY FAILURE/) || ($line =~ / at .+ line \d+\./)) {
+            if(checkwarn($line) || ($line =~ /FAILED/) || 
+               ($line =~ /MEMORY FAILURE/) || ($line =~ / at .+ line \d+\./) ||
+               ($line =~ /valgrind ERROR/)) {
                 $num++;
                 push @out, "<a name=\"prob$num\"></a><div class=\"warning\">" . CGI::escapeHTML($line) . "</div>\n";
             }
