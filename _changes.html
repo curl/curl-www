@@ -46,6 +46,49 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 <li> <a href="http://curl.haxx.se/auto/cvshistory.html">recent CVS activity</a>
  </ul>
 
+<a name="7_17_1"></a>
+SUBTITLE(Fixed in 7.17.1 - October 29 2007)
+<p> Changes:
+<ul>
+ <li> automatically append ";type=<a|i>" when using HTTP proxies for FTP urls
+ <li> improved NSS support
+ <li> added --proxy-negotiate
+ <li> added --post301 and CURLOPT_POST301
+ <li> builds with c-ares 1.5.0
+ <li> added CURLOPT_SSH_HOST_PUBLIC_KEY_MD5 and --hostpubmd5
+ <li> renamed CURLE_SSL_PEER_CERTIFICATE to CURLE_PEER_FAILED_VERIFICATION
+ <li> added CURLOPT_OPENSOCKETFUNCTION and CURLOPT_OPENSOCKETDATA
+ <li> CULROPT_COOKIELIST supports "FLUSH"
+ <li> added CURLOPT_COPYPOSTFIELDS
+ <li> added --static-libs to curl-config
+</ul>
+<p> Bugfixes:
+<ul>
+ <li> curl-config --protocols now properly reports LDAPS, SCP and SFTP
+ <li> ldapv3 support on Windows
+ <li> ldap builds with the MSVC makefiles
+ <li> no HOME and no key given caused SSH auth failure
+ <li> Negotiate authentication over proxy
+ <li> --ftp-method nocwd on directory listings
+ <li> FTP, CURLOPT_NOBODY enabled and CURLOPT_HEADER disabled now does TYPE
+   before SIZE
+ <li> re-used handle transfers with SFTP
+ <li> curl_easy_escape() problem with byte values >= 128
+ <li> handles chunked-encoded CONNECT responses
+ <li> misuse of ares_timeout() result
+ <li> --local-port on TFTP transfers
+ <li> CURLOPT_POSTFIELDS could fail to send binary data
+ <li> specifying a proxy with a trailing slash didn't work (unless it also
+   contained a port number)
+ <li> redirect from HTTP to FTP or TFTP memory problems and leaks
+ <li> re-used connections a bit too much when using non-SSL protocols tunneled
+   over a HTTP proxy
+ <li> embed the manifest in VC8 builds
+ <li> use valgrind in the tests even when the lib is built shared with libtool
+ <li> libcurl built with NSS can now ignore the peer verification even when the
+   ca cert bundle is absent
+</ul>
+
 <a name="7_17_0"></a>
 SUBTITLE(Fixed in 7.17.0 - September 13 2007)
 <p> Changes:
