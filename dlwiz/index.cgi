@@ -644,7 +644,7 @@ if($pick_os && $pick_flav && $pick_ver && !$pick_cpu) {
         elsif($ua =~ /alpha|AXP/i) {
             $sel_cpu = "Alpha";
         }
-        elsif($ua =~ /arm/i) {
+        elsif($ua =~ /arm|iPhone/i) {
             $sel_cpu = "StrongARM";
         }
 
