@@ -70,7 +70,7 @@ TITLE(Compare cURL Features with Other Download Tools)
   MISSING
   FEATURE
   MISSING
-  MISSING_P
+  FEATURE
  ENDLINE
 
  NEWLINE
@@ -82,7 +82,7 @@ TITLE(Compare cURL Features with Other Download Tools)
   MISSING
   MISSING
   FEATURE
-  MISSING_P
+  FEATURE
  ENDLINE
 
  NEWLINE
@@ -688,9 +688,11 @@ TITLE(Compare cURL Features with Other Download Tools)
  'Fetch' is an integral part of the <a
  href="http://www.freebsd.org/">FreeBSD</a> operating system.
 
+#if 0
 <p>
 * aria2c supports downloading multiple URLs simultaneously only if they
 all point to the same file.
+#endif
 
 <p>
 * curl does not support downloading multiple URLs simultaneously, although
