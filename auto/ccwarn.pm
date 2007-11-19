@@ -42,7 +42,7 @@ sub checkwarn {
         # libtool error
         ($l =~ /^libtool: link: /) ||
         # NetWare's nlmconv linker
-        ($l =~ /^nlmconv: warning: /) ||
+        ($l =~ /^nlmconv:/) ||
         # GNU and MIPS ld error
         ($l =~ /^[^ ?*]*ld((32)|(64))?: /))
     {
