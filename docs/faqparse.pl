@@ -26,7 +26,7 @@ while(<STDIN>) {
             my $o=0;
             for(@toc) {
                 $s = $_;
-                $s =~ s/^([0-9]).*/$1/g;
+                $s =~ s/^([0-9]+).*/$1/g;
                 if($s != $o) {
                     my $ti = $section[$s];
                     chomp $ti;
@@ -43,7 +43,7 @@ while(<STDIN>) {
             
             next;
         }
-        if($_ =~ /([0-9.]+\.[0-9]+) (.*)/) {
+        if($_ =~ /([0-9]+\.[0-9]+) (.*)/) {
             my ($num, $phrase)=($1, $2);
 #            print "$num $phrase\n";
             $faq{$num} = $phrase;
@@ -59,7 +59,7 @@ while(<STDIN>) {
             $link{$num} = $l;
             push @toc, $num;
         }
-        elsif($_ =~ /([0-9])\. (.*)/) {
+        elsif($_ =~ /([0-9]+)\. (.*)/) {
 #            print "SECTION: $1 \"$2\"\n";
             $section[$1]=$2;
             push @secs, $2;
@@ -68,7 +68,7 @@ while(<STDIN>) {
     elsif($state == 3) {
         my $l = $_;
 
-        if($secs[$sec] && ($_ =~ /^\s*[0-9]\. $secs[$sec]/i)) {
+        if($secs[$sec] && ($_ =~ /^\s*([0-9]+)\. $secs[$sec]/i)) {
             # a new section
             my $ti = $l;
             chomp $ti;
