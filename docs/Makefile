@@ -7,7 +7,7 @@ MAINPARTS= ../_doctype.html _menu.html ../_footer.html ../setup.t ../pic.t \
    ../css.t ../sflogo.t Makefile
 NOW=$(shell gnudate +'-D__TODAY__=%B %e, %Y')
 FCPPOPTS=-I.. -Idocs -WWW -Uunix -H -C -V -P -LL "$(NOW)"
-ACTION=@echo preprocessing $@; rm -f $@; fcpp $(FCPPOPTS) $< $@;
+ACTION=fcpp $(FCPPOPTS) $< $@;
 
 TXT2HTML= txt2html --extract --hrule 10
 TXT2PLAIN = txt2plain.pl
@@ -149,8 +149,8 @@ manual.t: $(DOCROOT)/MANUAL
 todo.html: _todo.html $(MAINPARTS) todo.t
 	$(ACTION)
 
-todo.t: $(DOCROOT)/TODO
-	$(TXT2PLAIN) < $< > $@
+todo.t: $(DOCROOT)/TODO faqparse.pl
+	./faqparse.pl < $< | sed -e 's:*:\&#47;:g' -e 's:#:\&#35;:g'> $@
 
 versions.html: _versions.html $(MAINPARTS) versions.t
 	$(ACTION)
