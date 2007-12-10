@@ -43,9 +43,9 @@ while(<STDIN>) {
             
             next;
         }
-        if($_ =~ /([0-9]+\.[0-9]+) (.*)/) {
+        if($_ =~ /([0-9.]+\.[0-9]+) (.*)/) {
             my ($num, $phrase)=($1, $2);
-#            print "$num $phrase\n";
+    #        print STDERR "$num $phrase\n";
             $faq{$num} = $phrase;
             my $l = substr($phrase, 0, 32);
             # filter off "odd" chars
@@ -60,13 +60,15 @@ while(<STDIN>) {
             push @toc, $num;
         }
         elsif($_ =~ /([0-9]+)\. (.*)/) {
-#            print "SECTION: $1 \"$2\"\n";
+    #        print STDERR "SECTION: $1 \"$2\"\n";
             $section[$1]=$2;
             push @secs, $2;
         }
     }
     elsif($state == 3) {
         my $l = $_;
+
+    #    print STDERR "C: $toc[$q]\n";
 
         if($secs[$sec] && ($_ =~ /^\s*([0-9]+)\. $secs[$sec]/i)) {
             # a new section
@@ -78,14 +80,13 @@ while(<STDIN>) {
             $sec++;
         }
 
-        elsif($toc[$q] && ($_ =~ /^\s*$toc[$q]/i)) {
+        elsif($toc[$q] && ($_ =~ /^ *$toc[$q]/i)) {
             # a question
             my $s=$_;
             chomp $s;
             $s =~ s/^ *(.*) */$1/;
             print "<a name=\"$link{$toc[$q]}\"></a>";
-            # we provide the older name as well to make oldish links live
-            print "<a name=\"$toc[$q]\"></a><h3>$s</h3><p>\n";
+            print "<h3>$s</h3><p>\n";
             $q++;
         }
         else {
