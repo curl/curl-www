@@ -72,6 +72,12 @@ THIS(curl_easy_getinfo)
 DOC(curl_easy_getinfo, curl_easy_getinfo.html)
 #endif
 
+#ifdef DOCS_EASY_PAUSE
+THIS(curl_easy_pause)
+#else
+DOC(curl_easy_pause, curl_easy_pause.html)
+#endif
+
 #ifdef DOCS_EASY_PERFORM
 THIS(curl_easy_perform)
 #else
