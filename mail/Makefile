@@ -14,12 +14,16 @@ ACTION=@echo preprocessing $@; rm -f $@; cpp -I.. -I. -WWW -Uunix -P -H -C -V -L
 TXT2HTML= txt2html --extract --hrule 10
 
 all: subscribe.html mail.html etiquette.html index.html indexheader.html \
- indexfooter.html mailheader.html mailfooter.html lost.html mailman.html
+ indexfooter.html mailheader.html mailfooter.html lost.html mailman.html \
+ activity.html
 
 subscribe.html: _subscribe.html $(MAINPARTS)
 	$(ACTION)
 
 etiquette.html: _etiquette.html $(MAINPARTS)
+	$(ACTION)
+
+activity.html: _activity.html $(MAINPARTS)
 	$(ACTION)
 
 mail.html: _mail.html $(MAINPARTS)

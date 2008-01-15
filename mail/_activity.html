@@ -1,0 +1,47 @@
+#include "_doctype.html"
+<html>
+<head> <title>cURL - Mailing List Activity</title>
+#include "css.t"
+</head>
+
+#define CURL_MAIL_ACTIVITY
+#define CURL_URL mail/activity.html
+
+#include "_menu.html"
+#include "setup.t"
+#include "pic.t"
+#include "table.t"
+
+WHERE2(Mailing List, "/mail/", Mailing List Activity)
+
+TITLE(Mail Traffic Graphs)
+<p>
+ <a href="http://cool.haxx.se/mailman/listinfo/curl-users">curl-users</a><br>
+<img src="http://gmane.org/plot-rate.php?group=gmane.comp.web.curl.general">
+
+<p>
+ <a href="http://cool.haxx.se/mailman/listinfo/curl-library">curl-library</a><br>
+<img src="http://gmane.org/plot-rate.php?group=gmane.comp.web.curl.library">
+
+<p>
+ <a href="http://cool.haxx.se/mailman/listinfo/curl-and-php">curl-and-php</a><br>
+<img src="http://gmane.org/plot-rate.php?group=gmane.comp.web.curl.php">
+
+<p>
+ <a href="http://cool.haxx.se/mailman/listinfo/curl-announce">curl-announce</a><br>
+<img src="http://gmane.org/plot-rate.php?group=gmane.comp.web.curl.announce">
+
+<p>
+ <a href="http://cool.haxx.se/mailman/listinfo/curl-commits">curl-commits</a><br>
+<img src="http://gmane.org/plot-rate.php?group=gmane.comp.web.curl.cvs">
+
+<p>
+ <a href="http://cool.haxx.se/mailman/listinfo/curl-www-commits">curl-www-commits</a><br>
+<img src="http://gmane.org/plot-rate.php?group=gmane.comp.web.curl.www.cvs">
+
+<p>
+ As you can see, these graphs are present thanks to stats and all by <a href="http://gmane.org/">gmane.org</a>
+
+#include "_footer.html"
+</BODY>
+</HTML>
