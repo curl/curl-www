@@ -10,3 +10,4 @@ ftpupload.php Daniel Stenberg
 rss-adsense.php <a href="http://planetOzh.com">Ozh</a>
 put.php Julian Bond
 google-analytics-login.php <a href="http://www.askapache.com/">AskApache.com</a>
+httpfileupload.php <a href="http://daniel.haxx.se/">Daniel Stenberg</a>
