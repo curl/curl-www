@@ -3,6 +3,7 @@
 <TABLE WIDTH="120" CELLPADDING="4" HEIGHT="240" style="border-width: thin;
 border-style: solid;" BORDERCOLOR="#000000" BGCOLOR="#CCCCCC">
 <TR><TD VALIGN="TOP">
+#if 0
 <DIV ALIGN="CENTER"><A HREF="http://www.fontset.com/"><FONT FACE="Verdana, Arial, Helvetica, sans-serif" SIZE="1">Free Font Sets</FONT></A></DIV>
 <HR size="1" WIDTH="30%" noshade ALIGN="CENTER">
 <DIV ALIGN="CENTER"><FONT FACE="Verdana, Arial, Helvetica, sans-serif" SIZE="1"><A HREF="http://www.saw4.net/">Saw 4</A></FONT></DIV>
@@ -16,14 +17,17 @@ SIZE="1"><A HREF="http://searchenginez.com/">Search Engines</A></FONT></DIV>
 <HR SIZE="1" WIDTH="30%" noshade ALIGN="CENTER">
 <DIV ALIGN="CENTER"><FONT FACE="Verdana, Arial, Helvetica, sans-serif" SIZE="1"><A HREF="http://ezyaddress.com/">Cheap Domain Names</A></FONT></DIV>
 <HR SIZE="1" WIDTH="30%" noshade ALIGN="CENTER">
-<DIV ALIGN="CENTER"><FONT FACE="Verdana, Arial, Helvetica, sans-serif" SIZE="1"><A HREF="http://fiind.com/">People Searching Directory</A></FONT></DIV></DIV></TD></TR></TABLE>
+<DIV ALIGN="CENTER"><FONT FACE="Verdana, Arial, Helvetica, sans-serif" SIZE="1"><A HREF="http://fiind.com/">People Searching Directory</A></FONT></DIV></DIV>
+#endif
+</TD></TR></TABLE>
 
-#if 1
 <p>
-      <TABLE cellSpacing="0" cellPadding="0" width="120" bgColor="#fcfcfc" border="1">
+      <TABLE cellSpacing="0" cellPadding="0" height=200 width="120" bgColor="#fcfcfc" border="1">
         <TBODY>
         <TR>
-          <TD vAlign="top"><font face="arial" size="1"><A 
+          <TD vAlign="top"><font face="arial" size="1">
+#if 0
+<A 
             href="http://www.shopbot.com.au/">COMPARE PRICES</A>:<BR><A 
             href="http://www.shopbot.com.au/c-39-0-0-1.html">Digital 
             cameras</A>, <A href="http://www.shopbot.com.au/c-28-0-0-1.html">MP3 
@@ -42,8 +46,10 @@ SIZE="1"><A HREF="http://searchenginez.com/">Search Engines</A></FONT></DIV>
 		<A href="http://www.shopbot.com.au/price/ipod.html">ipod</A>,
             <A href="http://www.shopbot.com.au/c-82-0-0-1.html">Processors</A>. 
             <A href="http://www.shopbot.com.au/">See all...</A> 
-        </font></TD></TR></TBODY></TABLE>
+        </font>
 #endif
+</TD></TR></TBODY></TABLE>
+
 <p>
 <table cellspacing="0" cellpadding="0" width="120" border="1">
 <tbody> <tr> <td>
