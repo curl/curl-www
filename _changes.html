@@ -46,6 +46,65 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 <li> <a href="http://curl.haxx.se/auto/cvshistory.html">recent CVS activity</a>
  </ul>
 
+<a name="7_18_0"></a>
+SUBTITLE(Fixed in 7.18.0 - January 28 2008)
+<p> Changes:
+<ul>
+ <li> --data-urlencode
+ <li> CURLOPT_PROXY_TRANSFER_MODE
+ <li> --no-keepalive - now curl does connections with keep-alive enabled by
+   default
+ <li> --socks4a added (proxy type CURLPROXY_SOCKS4A for libcurl)
+ <li> --socks5-hostname added (CURLPROXY_SOCKS5_HOSTNAME for libcurl)
+ <li> curl_easy_pause()
+ <li> CURLOPT_SEEKFUNCTION and CURLOPT_SEEKDATA
+ <li> --keepalive-time
+ <li> curl --help output was re-ordered
+</ul>
+<p> Bugfixes:
+<ul>
+ <li> curl-config --features and --protocols show the correct output when built
+   with NSS, and also when SCP, SFTP and libz are not available
+ <li> free problem in the curl tool for users with empty home dir
+ <li> curl.h version 7.17.1 problem when building C++ apps with MSVC
+ <li> SFTP and SCP use persistent connections
+ <li> segfault on bad URL
+ <li> variable wrapping when using absolutely huge send buffer sizes
+ <li> variable wrapping when using debug callback and the HTTP request wasn't sent
+   in one go
+ <li> SSL connections with NSS done with the multi-interface
+ <li> setting a share no longer activates cookies
+ <li> Negotiate now works on auth and proxy simultanouesly
+ <li> support HTTP Digest nonces up to 1023 letters
+ <li> resumed ftp upload no longer requires the read callback to return full
+   buffers
+ <li> no longer default-appends ;type= on FTP URLs thru proxies
+ <li> SSL session id caching
+ <li> POST with callback over proxy requiring NTLM or Digest
+ <li> Expect: 100-continue flaw on re-used connection with POSTs
+ <li> build fix for MSVC 9.0 (VS2008)
+ <li> Windows curl builds failed file truncation when retry downloading
+ <li> SSL session ID cache memory leak
+ <li> bad connection re-use check with environment variable-activated proxy use
+ <li> --libcurl now generates a return statement as well
+ <li> socklen_t is no longer used in the public includes
+ <li> time zone offsets from -1400 to +1400 are now accepted by the date parser
+ <li> allows more spaces in WWW/Proxy-Authenticate: headers
+ <li> curl-config --libs skips /usr/lib64
+ <li> range support for file:// transfers
+ <li> libcurl hang with huge POST request and request-body read from callback
+ <li> removed extra newlines from many error messages
+ <li> improved pipelining
+ <li> improved OOM handling for data url encoded HTTP POSTs when read from a file
+ <li> test suite could pick wrong tool(s) if more than one existed in the PATH
+ <li> curl_multi_fdset() failed to return socket while doing CONNECT over proxy
+ <li> curl_multi_remove_handle() on a handle that is in used for a pipeline now
+   break that pipeline
+ <li> CURLOPT_COOKIELIST memory leaks
+ <li> progress meter/callback during http proxy CONNECT requests
+ <li> auth for http proxy when the proxy closes connection after first response
+</ul>
+
 <a name="7_17_1"></a>
 SUBTITLE(Fixed in 7.17.1 - October 29 2007)
 <p> Changes:
