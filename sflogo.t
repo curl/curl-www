@@ -22,11 +22,11 @@ SIZE="1"><A HREF="http://searchenginez.com/">Search Engines</A></FONT></DIV>
 </TD></TR></TABLE>
 
 <p>
-      <TABLE cellSpacing="0" cellPadding="0" height=200 width="120" bgColor="#fcfcfc" border="1">
+      <TABLE cellSpacing="0" cellPadding="0" width="120" bgColor="#fcfcfc" border="1">
         <TBODY>
         <TR>
           <TD vAlign="top"><font face="arial" size="1">
-#if 0
+#if 1
 <A 
             href="http://www.shopbot.com.au/">COMPARE PRICES</A>:<BR><A 
             href="http://www.shopbot.com.au/c-39-0-0-1.html">Digital 
