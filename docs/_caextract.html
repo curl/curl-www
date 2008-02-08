@@ -20,9 +20,12 @@ TITLE(Extract CA Certs from mozilla.org)
 <br><a href="sslcerts.html">SSL Certs</a>
 </div>
 <p class="ingres">
- The <a href="parse-certs.txt">parse-certs</a> script converts <a
+
+ The <a
+ href="http://curl.haxx.se/lxr/source/lib/mk-ca-bundle.pl">lib/mk-ca-bundle.pl</a>
+ script (in CVS and bundled in recent curl tarballs) converts <a
  href="http://www.mozilla.org/">Mozilla</a>'s CA cert bundle to PEM format,
- suitable for (lib)curl and others. Writtten by Roland Krikava.
+ suitable for (lib)curl and others. Writtten by Guenter Knauf.
 
 SUBTITLE(Automated Conversions)
 <p>
@@ -41,10 +44,8 @@ SUBTITLE(Automated Conversions)
 
 SUBTITLE(Requirements)
 <o>
- It is a shell script with an
- embedded Ruby script. You thus need to have Ruby installed to make this work.
- The script uses the 'openssl' tool and it requires the version
- that comes with the 0.9.7 series or later.
+ It is a perl script.  The script uses the 'openssl' tool and it requires the
+ version that comes with the 0.9.7 series or later.
 <p>
  The exact Mozilla file needed for this job is found at <a
  href="http://lxr.mozilla.org/seamonkey/source/security/nss/lib/ckfw/builtins/certdata.txt">lxr.mozilla.org/seamonkey/source/security/nss/lib/ckfw/builtins/certdata.txt</a>.
