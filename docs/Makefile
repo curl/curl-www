@@ -39,7 +39,7 @@ index2.html: _index2.html $(MAINPARTS)
 libs.html: _libs.html $(MAINPARTS)
 	$(ACTION)
 
-gsoc2007.html: _gsoc2008.html $(MAINPARTS)
+gsoc2008.html: _gsoc2008.html $(MAINPARTS)
 	$(ACTION)
 
 manpage.html: _manpage.html $(MAINPARTS) mandump.t
