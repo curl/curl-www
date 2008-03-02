@@ -1,0 +1,74 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Google Summer of Code Ideas</TITLE>
+#include "css.t"
+</HEAD>
+
+#define CURL_DOCS
+#define DOCS_GSOC2008
+
+#define CURL_URL docs/gsoc2008.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Docs, "/docs/", Google Summer of Code Ideas)
+
+TITLE(Google Summer of Code Ideas)
+<p>
+
+ We intend to sign up to become a mentoring organization for <b>Google Summer
+ of Code 2008</b>, and on this page we collect ideas that could serve as
+ starting points when students want to write up a project idea for curl!
+
+<p>
+ Also note that we need volunteering mentors!
+
+<p>
+ Please suggest further projects ideas and your mentor status on the
+ associated <a href="/mail/">mailing list</a>.
+
+<ul>
+
+<li> SMTP
+
+<li> native (i.e.: library-less) LDAP(S)
+
+<li> data: URLs?
+
+<li> Preparing for fips accreditation (using openssl fips)?
+
+<li> RTSP?
+
+<li> MMS:// streams?
+
+<li> RTMP?
+
+<li> Complete Java integration/binding
+
+<li> HTTP Caching<br>
+  This isn't as simple a problem as it might seem as there are
+  potential issues with security and also because depending on use cases, you
+  will want to store the cache in different places with different sizes...
+<br>
+  Or rather, a "caching framework" which allows the user to define callbacks
+  for actually storing the data in a filesystem, database, or whatever he
+  prefers.
+<br>
+  Some aspects of the HTTP standard are not well-known and people are bound to
+  get them wrong if they implement caching themselves, e.g. the "Vary" and
+  "Etag" headers.
+
+<li> Fix the last remaining blocking calls within libcurl?
+
+<li> Fixing up/replacing language bindings?
+
+<li> make the curl tool use the multi interface and allow it to do parallel transfers
+
+</ul>
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
+

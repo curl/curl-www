@@ -20,7 +20,8 @@ PAGES = index.html manpage.html faq.html changes.html contribute.html	 \
  relatedtools.html osdistribs.html versions.html history.html loc.html	 \
  knownbugs.html manual.html caextract.html programs.html security.html	 \
  testcurl.html runtests.html libs.html adv_20051013.html adv_20051207.html \
- adv_20060320.html vulnerabilities.html adv_20070710.html
+ adv_20060320.html vulnerabilities.html adv_20070710.html \
+ gsoc2008.html
 
 all: $(PAGES)
 	@echo done 
@@ -36,6 +37,9 @@ index2.html: _index2.html $(MAINPARTS)
 
 
 libs.html: _libs.html $(MAINPARTS)
+	$(ACTION)
+
+gsoc2007.html: _gsoc2008.html $(MAINPARTS)
 	$(ACTION)
 
 manpage.html: _manpage.html $(MAINPARTS) mandump.t
