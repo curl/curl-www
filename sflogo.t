@@ -9,10 +9,19 @@ border-style: solid;" BORDERCOLOR="#000000" BGCOLOR="#CCCCCC">
 <TABLE WIDTH="120" CELLPADDING="4" HEIGHT="240" style="border-width: thin;
 border-style: solid;" BORDERCOLOR="#000000" BGCOLOR="#e0e0ff">
 <TR><TD VALIGN="TOP">
+<a href="http://www.glosses.net/dictionary/words_starting_with_m/misdirect_mistakable/miss_out_something.html">Word definition</a><br>
+<a href="http://furniturefromhome.com/category/Entertainment-Centers">Entertainment Centers</a><br>
+<a href="http://www.download32.com">Software Downloads Archive</a><br>
+<a href="http://www.supershareware.com">Shareware Super Downloads</a><br>
+<a href="http://www.dirfile.com">Free Programs PC</a><br>
+<a href="http://www.easyfreeware.com">Visit New Easy Freeware</a><br>
+<a href="http://www.programurl.com">More Internet Tools Here</a>
+
 </TD></TR></TABLE>
 
 <p>
-<table cellspacing="0" cellpadding="0" width="120" border="1">
+<table cellspacing="0" cellpadding="0" width="120" style="border-width: thin;
+border-style: solid;">
 <tbody> <tr> <td>
 <font face="arial" size="1">
 <a href="http://www.shop-script.com">Shopping cart software</a>, 
