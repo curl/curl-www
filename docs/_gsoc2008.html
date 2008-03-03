@@ -29,25 +29,57 @@ TITLE(Google Summer of Code)
  associated <a href="/mail/">mailing list</a>.
 
 
-SUBTITLE(Ideas for Projects)
+SUBTITLE(Ideas)
+<p>
+ <b>New Protocols</b>
+
 <ul>
 
-<li> SMTP
+<li> SMTP - although it isn't really yet determined that this would truly be a
+ good addition. Prepare to explain to use why it is!
+
+<li> <a href="http://en.wikipedia.org/wiki/Data:_URI_scheme">data: URLs</a>
+ (mostly a case of completeness for applications that use libcurl for all
+ URLs)
+
+<li> <a href="http://en.wikipedia.org/wiki/Real_Time_Streaming_Protocol">RTSP</a>
+ is for streaming data
+
+<li> MMS:// streams. A Microsoft protocol for streaming content. See the
+ existing <a href="http://www.geocities.com/majormms/">mms client</a> source
+ code for inspiration and start.
+
+<li> <a href="http://en.wikipedia.org/wiki/Real_Time_Messaging_Protocol">RTMP</a>
+A patch for parts of this is mentioned here:
+http://savannah.gnu.org/task/?5930#comment5
+
+<li> <a href="ftp://ftp.rfc-editor.org/in-notes/rfc3507.txt">ICAP</a>
+
+</ul>
+
+<p><b>Improving existing stuff</b>
 
 <li> native (i.e.: library-less) LDAP(S)
 
-<li> data: URLs
-
 <li> Preparing for fips accreditation (using openssl fips)
-
-<li> RTSP
-
-<li> MMS:// streams
-
-<li> RTMP?
 
 <li> Complete Java integration/binding
 
+<li> Fix the last remaining blocking calls within libcurl
+
+<li> Fixing up lacking language bindings
+
+<li> make the curl tool use the multi interface and allow it to do parallel
+transfers
+
+<li> Test suite improvements: adding support for more protocols. Most notably
+ perhaps FTPS, telnet and ldap(s). Make a "native" stunnel version that works
+ with the selected SSL library of choice.
+
+</ul>
+
+<p><b>Provide New Functionality</b>
+<ul>
 <li> HTTP Caching<br>
   This isn't as simple a problem as it might seem as there are
   potential issues with security and also because depending on use cases, you
@@ -60,17 +92,8 @@ SUBTITLE(Ideas for Projects)
   Some aspects of the HTTP standard are not well-known and people are bound to
   get them wrong if they implement caching themselves, e.g. the "Vary" and
   "Etag" headers.
-
-<li> Fix the last remaining blocking calls within libcurl
-
-<li> Fixing up/replacing language bindings
-
-<li> make the curl tool use the multi interface and allow it to do parallel
-transfers
-
-<li> <a href="ftp://ftp.rfc-editor.org/in-notes/rfc3507.txt">ICAP</a>
-
 </ul>
+
 
 SUBTITLE(Mentors)
 <p>
