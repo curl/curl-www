@@ -93,6 +93,11 @@ transfers
   Some aspects of the HTTP standard are not well-known and people are bound to
   get them wrong if they implement caching themselves, e.g. the "Vary" and
   "Etag" headers.
+
+<li> Non-blocking third party FTP transfers. libcurl did previously support
+ third party FTP transfers (sometimes called FXP), but not in non-blocking
+ manner and the code wasn't maintained properly so support was dropped.
+
 </ul>
 
 <p>
