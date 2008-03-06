@@ -1,9 +1,13 @@
 <p>
 
+#if 0
 <TABLE WIDTH="120" CELLPADDING="4" HEIGHT="240" style="border-width: thin;
 border-style: solid;" BORDERCOLOR="#000000" BGCOLOR="#CCCCCC">
 <TR><TD VALIGN="TOP">
 </TD></TR></TABLE>
+#else
+<a href="http://www.submitcomfort.com/" rel="nofollow"><img alt="SEO services" border="0" src="/pix/submitcomfort.gif"></a>
+#endif
 <p>
 
 <TABLE WIDTH="120" CELLPADDING="4" HEIGHT="240" style="border-width: thin;
