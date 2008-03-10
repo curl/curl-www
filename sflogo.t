@@ -10,8 +10,7 @@ border-style: solid;" BORDERCOLOR="#000000" BGCOLOR="#CCCCCC">
 #endif
 <p>
 
-<TABLE WIDTH="120" CELLPADDING="4" HEIGHT="240" style="border-width: thin;
-border-style: solid;" BORDERCOLOR="#000000" BGCOLOR="#e0e0ff">
+<table width="120" cellspacing="0" cellpadding="0" height="240" style="border-width: thin; border-style: solid;" bordercolor="#000000" bgcolor="#e0e0ff">
 <TR><TD VALIGN="TOP">
 <a href="http://www.glosses.net/dictionary/words_starting_with_m/misdirect_mistakable/miss_out_something.html">Word definition</a><br>
 <a href="http://furniturefromhome.com/category/Entertainment-Centers">Entertainment Centers</a><br>
