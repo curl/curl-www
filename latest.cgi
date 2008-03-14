@@ -195,7 +195,7 @@ if($latest::version{$what}) {
         print "<br><b>GPG signature:</b> <a href=\"download/$archive.asc\">$archive.asc</a>";
     }
 
-    print "<br><br>Download this file with a <span class=\"metalink\"><a href=\"metalink.cgi?curl=$whate\">",
+    print "<br><br>Download this file with a <span class=\"metalink\"><a href=\"metalink.cgi?curl=$whate\" type=\"application/metalink+xml\">",
     	  "<img src=\"/pix/metalink.png\" border=\"0\" alt=\"\">metalink</a></span>.<br>\n";
 
     if($#dl > 10 ) {
