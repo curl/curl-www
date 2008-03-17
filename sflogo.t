@@ -10,17 +10,19 @@ border-style: solid;" BORDERCOLOR="#000000" BGCOLOR="#CCCCCC">
 #endif
 <p>
 
-<table width="120" cellspacing="0" cellpadding="0" height="240" style="border-width: thin; border-style: solid;" bordercolor="#000000" bgcolor="#e0e0ff">
+<table width="120" cellspacing="0" cellpadding="0" height="240" style="border: thin solid #000000; font-size: 8pt;">
 <TR><TD VALIGN="TOP">
-<a href="http://www.glosses.net/dictionary/words_starting_with_m/misdirect_mistakable/miss_out_something.html">Word definition</a><br>
-<a href="http://furniturefromhome.com/category/Entertainment-Centers">Entertainment Centers</a><br>
-<a href="http://www.download32.com">Software Downloads Archive</a><br>
-<a href="http://www.supershareware.com">Shareware Super Downloads</a><br>
-<a href="http://www.dirfile.com">Free Programs PC</a><br>
-<a href="http://www.easyfreeware.com">Visit New Easy Freeware</a><br>
-<a href="http://www.programurl.com">More Internet Tools Here</a><br>
-<a href="http://www.nobelcom.com/">calling cards</a><br>
-<a href="http://www.toplyrics.net/artist_n/nicho_hinojosa_lyrics.html">Hinojosa Music</a>
+<a href="http://www.glosses.net/dictionary/words_starting_with_m/misdirect_mistakable/miss_out_something.html">Word definition</a>,
+<a href="http://furniturefromhome.com/category/Entertainment-Centers">Entertainment Centers</a>,
+<a href="http://www.download32.com">Software Downloads Archive</a>,
+<a href="http://www.supershareware.com">Shareware Super Downloads</a>,
+<a href="http://www.dirfile.com">Free Programs PC</a>,
+<a href="http://www.easyfreeware.com">Visit New Easy Freeware</a>,
+<a href="http://www.programurl.com">More Internet Tools Here</a>,
+<a href="http://www.nobelcom.com/">calling cards</a>,
+<a href="http://www.toplyrics.net/artist_n/nicho_hinojosa_lyrics.html">Hinojosa Music</a>,
+<a href="http://www.hotel-erb.de/default.aspx?lang=en">Hotelbooking</a>,
+<a href="http://www.messehotel-erb-muenchen.de/default.aspx?lang=en">Munich Fair Hotel</a>
 
 </TD></TR></TABLE>
 
