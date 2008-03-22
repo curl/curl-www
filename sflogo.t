@@ -12,7 +12,6 @@ border-style: solid;" BORDERCOLOR="#000000" BGCOLOR="#CCCCCC">
 
 <table width="120" cellspacing="0" cellpadding="0" height="240" style="border: thin solid #000000; font-size: 8pt;">
 <TR><TD VALIGN="TOP">
-<a href="http://www.glosses.net/dictionary/words_starting_with_m/misdirect_mistakable/miss_out_something.html">Word definition</a>,
 <a href="http://furniturefromhome.com/category/Entertainment-Centers">Entertainment Centers</a>,
 <a href="http://www.download32.com">Software Downloads Archive</a>,
 <a href="http://www.supershareware.com">Shareware Super Downloads</a>,
