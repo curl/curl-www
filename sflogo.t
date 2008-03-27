@@ -21,7 +21,8 @@ border-style: solid;" BORDERCOLOR="#000000" BGCOLOR="#CCCCCC">
 <a href="http://www.nobelcom.com/">calling cards</a>,
 <a href="http://www.toplyrics.net/artist_n/nicho_hinojosa_lyrics.html">Hinojosa Music</a>,
 <a href="http://www.hotel-erb.de/default.aspx?lang=en">Hotelbooking</a>,
-<a href="http://www.messehotel-erb-muenchen.de/default.aspx?lang=en">Munich Fair Hotel</a>
+<a href="http://www.messehotel-erb-muenchen.de/default.aspx?lang=en">Munich Fair Hotel</a>,
+<a href="http://www.superwarehouse.com/">Printers</a>
 
 </TD></TR></TABLE>
 
