@@ -46,6 +46,56 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 <li> <a href="http://curl.haxx.se/auto/cvshistory.html">recent CVS activity</a>
  </ul>
 
+<a name="7_18_1"></a>
+SUBTITLE(Fixed in 7.18.1 - March 30 2008)
+<p> Changes:
+<ul>
+ <li> added support for HttpOnly cookies
+ <li> 'make ca-bundle' downloads and generates an updated ca bundle file
+ <li> we no longer distribute or install a ca cert bundle
+ <li> SSLv2 is now disabled by default for SSL operations
+ <li> the test509-style setting URL in callback is officially no longer supported
+ <li> support a full chain of certificates in a given PKCS12 certificate
+ <li> resumed transfers work with SFTP
+ <li> added type checking macros for curl_easy_setopt() and curl_easy_getinfo(),
+   watch out for new warnings in code using libcurl (needs gcc-4.3 and
+   currently only works in C mode)
+ <li> curl_easy_setopt(), curl_easy_getinfo(), curl_share_setopt() and
+   curl_multi_setopt() uses are now checked to use exactly three arguments
+ <li> --with-ca-path=DIR configure option allows to set an openSSL CApath instead
+   of a default ca bundle.
+</ul>
+<p> Bugfixes:
+<ul>
+ <li> improved pipelining
+ <li> improved strdup replacement
+ <li> GnuTLS-built libcurl failed when doing global cleanup and reinit
+ <li> error message problem when unable to resolve a host on Windows
+ <li> Accept: header replacing
+ <li> not verifying server certs with GnuTLS still failed if gnutls had
+   problems with the cert
+ <li> when using the multi interface and a handle is removed while still having
+   a transfer going on, the connection is now closed by force
+ <li> bad re-use of SSL connections in non-complete state
+ <li> test case 405 failures with GnuTLS builds
+ <li> crash when connection cache size is 1 and Curl_do() failed
+ <li> GnuTLS-built libcurl can now be forced to prefer SSLv3
+ <li> crash when doing Negotiate again on a re-used connection
+ <li> select/poll regression
+ <li> better MIT kerberos configure check
+ <li> curl_easy_reset() + SFTP re-used connection download crash
+ <li> SFTP non-existing file + SFTP existing file error
+ <li> sharing DNS cache between easy handles running in multiple threads could
+   lead to crash
+ <li> SFTP upload with CURLOPT_FTP_CREATE_MISSING_DIRS on re-used connection
+ <li> SFTP infinite loop when given an invalid quote command
+ <li> curl-config erroneously reported LDAPS support with missing LDAP libraries
+ <li> SCP infinite loop when downloading a zero byte file
+ <li> setting the CURLOPT_SSL_CTX_FUNCTION with libcurl built without OpenSSL
+   now makes curl_easy_setopt() properly return failure
+ <li> configure --with-libssh2 (with no given path)
+</ul>
+
 <a name="7_18_0"></a>
 SUBTITLE(Fixed in 7.18.0 - January 28 2008)
 <p> Changes:
