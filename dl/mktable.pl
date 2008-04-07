@@ -121,6 +121,18 @@ my %typelong=('bin' => '<b>binary</b>',
               'source' => 'source',
               'lib', => 'libcurl');
 
+my %formats=(	'RPM' => 'application/x-rpm',
+		'deb' => 'application/x-debian-package',
+		'ipk' => 'application/octet-stream',
+		'iso' => 'application/octet-stream',
+		'lha' => 'application/octet-stream',
+		'pkg' => 'application/octet-stream',
+		'tar' => 'application/x-tar',
+		'tar+Z' => 'application/x-compress',
+		'tar+bz2' => 'application/x-bzip2',
+		'tar+gz' => 'application/x-gzip',
+		'zip' => 'application/zip');
+
 my $numcpu; # for this particular OS
 my $numpack; # for this particular OS
 my $numflav; # for this particular OS
@@ -243,8 +255,18 @@ for $per (@sall) {
             $fi = CGI::escapeHTML($fi);
         }
     }
-    printf("<td class=\"col2\"><a href=\"%s\">%s</a></td>\n",
-           $fi, $$per{'curl'});
+
+    my $contenttype;
+    if ($mirror) {
+        # If the file is served locally, include its content type in the link
+        $contenttype=$formats{$$per{'pack'}};
+        if ($contenttype) {
+            $contenttype = " type=\"$contenttype\"";
+        }
+    }
+
+    printf("<td class=\"col2\"><a href=\"%s\"%s>%s</a></td>\n",
+           $fi, $contenttype, $$per{'curl'});
     printf("<td class=\"col3\">%s</td>\n",
            show($typelong{$$per{'type'}}));
     printf("<td class=\"col4\">%s</td>\n",
