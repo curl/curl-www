@@ -15,8 +15,6 @@ WHERE1(Download)
 
 #include "release.t"
 
-<img src="/pix/1million.jpg" alt="One Million Downloads - per year">
-
 TITLE(Releases and Downloads)
 <div class="relatedbox">
 <b>Related:</b>
@@ -28,7 +26,12 @@ TITLE(Releases and Downloads)
 <br><a href="http://cool.haxx.se/curl-daily/">Daily Snapshot</a>
 <br><a href="http://daniel.haxx.se/address.html">GPG Key</a>
 </div>
-
+<div class="relatedbox" style="width: 10em; font-size: 90%; clear: right;">
+The cURL project only provides source packages.
+<p>
+All other packages are kindly provided by external persons and organizations.
+</div>
+<table><tr><td>
 SUBTITLE(Source Archives)
 <p>
  <b>curl __STABLE</b>, Released on the DATE(__RELDATE).
@@ -53,16 +56,6 @@ SUBTITLE(Source Archives)
 <p>
  Recommended <a href="/docs/libs.html">libraries</a> curl can or might use.
 
-<p>
-<div class="relatedbox" style="width: 12em; font-size: 100%;">
-The cURL project only
-provides source packages.
-<p>
-All other packages are kindly
-provided by external persons
-and organizations.
-</div>
-
 SUBTITLE(Download Wizard)
 <p>
  Need help to select what to download? Use the <a href="http://curl.haxx.se/dlwiz/">curl Download Wizard</a>!
@@ -71,6 +64,9 @@ SUBTITLE(Packages)
 <p>
 Click on the package name to get a list with links to all known mirrored
 versions.
+</td>
+<td align="right"><img src="/pix/1milliondownloads.gif"></td>
+</tr></table>
 <p>
 #include "dl/files.html"
 <p>
