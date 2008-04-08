@@ -12,6 +12,7 @@ border-style: solid;" BORDERCOLOR="#000000" BGCOLOR="#CCCCCC">
 
 <table width="120" cellspacing="0" cellpadding="0" height="240" style="border: thin solid #000000; font-size: 8pt;">
 <TR><TD VALIGN="TOP">
+<font face="arial" size="1">
 <a href="http://furniturefromhome.com/category/Entertainment-Centers">Entertainment Centers</a>,
 <a href="http://www.download32.com">Software Downloads Archive</a>,
 <a href="http://www.supershareware.com">Shareware Super Downloads</a>,
@@ -24,8 +25,10 @@ border-style: solid;" BORDERCOLOR="#000000" BGCOLOR="#CCCCCC">
 <a href="http://www.messehotel-erb-muenchen.de/default.aspx?lang=en">Munich Fair Hotel</a>,
 <a href="http://www.superwarehouse.com/">Printers</a>,
 <a href="http://www.couponcactus.com/">coupon code</a>,
-<a href="http://www.hotel-erb.de/">M&uuml;nchen Hotel</a>
-
+<a href="http://www.hotel-erb.de/">M&uuml;nchen Hotel</a>,
+<a href="http://www.hotel-am-borsigturm.de/">Hotel Berlin</a>,
+<a href="http://catalogue.horse21.net/">Hotel booking online</a>
+</font>
 </TD></TR></TABLE>
 
 <p>
