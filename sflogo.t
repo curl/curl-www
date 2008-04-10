@@ -28,7 +28,8 @@ border-style: solid;" BORDERCOLOR="#000000" BGCOLOR="#CCCCCC">
 <a href="http://www.hotel-erb.de/">M&uuml;nchen Hotel</a>,
 <a href="http://www.hotel-am-borsigturm.de/">Hotel Berlin</a>,
 <a href="http://catalogue.horse21.net/">Hotel booking online</a>,
-<a href="http://www.3gb.biz/">join 3gb community</a>
+<a href="http://www.3gb.biz/">join 3gb community</a>,
+<a href="http://www.g-sistah.com/m/madonna.html">madonna lyrics</a>
 </font>
 </TD></TR></TABLE>
 
