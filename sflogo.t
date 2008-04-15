@@ -28,10 +28,10 @@ border-style: solid;" BORDERCOLOR="#000000" BGCOLOR="#CCCCCC">
 <a href="http://www.hotel-erb.de/">M&uuml;nchen Hotel</a>,
 <a href="http://www.hotel-am-borsigturm.de/">Hotel Berlin</a>,
 <a href="http://catalogue.horse21.net/">Hotel booking online</a>,
-<a href="http://www.3gb.biz/">join 3gb community</a>,
 <a href="http://www.g-sistah.com/m/madonna.html">madonna lyrics</a>,
 <a href="http://www.iphoneunlocking.org.uk">Iphone unlock</a>,
-<a href="http://www.acairoots.com">acai</a>
+<a href="http://www.beth-lehem.com/other_artists_g/gian_marco.html">Gian Page</a>,
+<a href="http://www.natalieravera.com/Browse_R/Rui_Veloso_Lyrics.html">Collection of Natalie</a>
 </font>
 </TD></TR></TABLE>
 
