@@ -124,8 +124,8 @@ if($latest::version{$what}) {
     	  "<version>".$latest::version{$what}."</version>\n",
     	  "<size>".$latest::size{$what}."</size>\n",
     	  "<verification>\n",
-    	  "<signature type=\"md5\">".$md5."</signature>\n",
-    	  "<signature type=\"sha1\">".$sha1."</signature>\n";
+    	  "<hash type=\"md5\">".$md5."</hash>\n",
+    	  "<hash type=\"sha1\">".$sha1."</hash>\n";
 
     if( -r "download/$archive.asc" ) {
         print "<signature type=\"pgp\" file=\"$archive.asc\">\n";
