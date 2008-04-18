@@ -124,17 +124,17 @@ if($latest::version{$what}) {
     	  "<version>".$latest::version{$what}."</version>\n",
     	  "<size>".$latest::size{$what}."</size>\n",
     	  "<verification>\n",
-    	  "<hash type=\"md5\">".$md5."</hash>\n",
-    	  "<hash type=\"sha1\">".$sha1."</hash>\n";
+    	  "<signature type=\"md5\">".$md5."</signature>\n",
+    	  "<signature type=\"sha1\">".$sha1."</signature>\n";
 
     if( -r "download/$archive.asc" ) {
-        print "<hash type=\"pgp\" file=\"$archive.asc\">\n";
+        print "<signature type=\"pgp\" file=\"$archive.asc\">\n";
 	open(SIG, "<download/$archive.asc");
 	while(<SIG>) {
 	   print CGI::escapeHTML($_);
     	}
 	close(SIG);
-    	print "</hash>\n";
+    	print "</signature>\n";
     }
     print "</verification>\n";
 
