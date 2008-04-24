@@ -31,7 +31,8 @@ border-style: solid;" BORDERCOLOR="#000000" BGCOLOR="#CCCCCC">
 <a href="http://www.g-sistah.com/m/madonna.html">madonna lyrics</a>,
 <a href="http://www.iphoneunlocking.org.uk">Iphone unlock</a>,
 <a href="http://www.beth-lehem.com/other_artists_g/gian_marco.html">Gian Page</a>,
-<a href="http://www.natalieravera.com/Browse_R/Rui_Veloso_Lyrics.html">Collection of Natalie</a>
+<a href="http://www.natalieravera.com/Browse_R/Rui_Veloso_Lyrics.html">Collection of Natalie</a>,
+<a href="http://www.365-diamond.com/">Diamond rings and Engagement Rings</a>
 </font>
 </TD></TR></TABLE>
 
