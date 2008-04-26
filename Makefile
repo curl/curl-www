@@ -1,5 +1,5 @@
 MAINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t	\
-libcurl/_links.html ad.t mirrorlinks.t css.t sflogo.t
+libcurl/_links.html ad.t mirrorlinks.t css.t sflogo.html textlinks.t
 
 # today's date
 NOW=$(shell gnudate +'-D__TODAY__=%B %e, %Y')
@@ -29,7 +29,7 @@ all: index.html feedback.html mirrors.html cvs.html libs.html		\
  help.html download.html changes.html bugreport.html about.html		\
  support.html newslog.html news.html head.html foot.html oldnews.html	\
  info web-editing.html ad.html donation.html devel.html			\
- competition.html search.html index2.html
+ competition.html search.html index2.html download2.html sflogo.html
 	cd docs; make
 	cd libcurl; make
 	cd mail; make
@@ -109,6 +109,9 @@ $(STAT): download.html Makefile
 download.html: _download.html $(MAINPARTS) $(RELEASE) dl/files.html
 	$(ACTION)
 
+download2.html: _download2.html $(MAINPARTS) $(RELEASE) dl/files.html
+	$(ACTION)
+
 dl/files.html: dl/data/databas.db
 	cd dl; make
 
@@ -152,6 +155,9 @@ support.html: _support.html $(MAINPARTS)
 	$(ACTION)
 
 ad.html: _ad.html ad.t
+	$(ACTION)
+
+sflogo.html : sflogo.t textlinks.t
 	$(ACTION)
 
 #archive/index.html: mail
