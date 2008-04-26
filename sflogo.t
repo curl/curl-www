@@ -13,26 +13,7 @@ border-style: solid;" BORDERCOLOR="#000000" BGCOLOR="#CCCCCC">
 <table width="120" cellspacing="0" cellpadding="0" height="240" style="border: thin solid #000000; font-size: 8pt;">
 <TR><TD VALIGN="TOP">
 <font face="arial" size="1">
-<a href="http://furniturefromhome.com/category/Entertainment-Centers">Entertainment Centers</a>,
-<a href="http://www.download32.com">Software Downloads Archive</a>,
-<a href="http://www.supershareware.com">Shareware Super Downloads</a>,
-<a href="http://www.dirfile.com">Free Programs PC</a>,
-<a href="http://www.easyfreeware.com">Visit New Easy Freeware</a>,
-<a href="http://www.programurl.com">More Internet Tools Here</a>,
-<a href="http://www.nobelcom.com/">calling cards</a>,
-<a href="http://www.gettherhythm.com/b/beyonce.html">beyonce lyrics</a>,
-<a href="http://www.hotel-erb.de/default.aspx?lang=en">Hotelbooking</a>,
-<a href="http://www.messehotel-erb-muenchen.de/default.aspx?lang=en">Munich Fair Hotel</a>,
-<a href="http://www.superwarehouse.com/">Printers</a>,
-<a href="http://www.couponcactus.com/">coupon code</a>,
-<a href="http://www.hotel-erb.de/">M&uuml;nchen Hotel</a>,
-<a href="http://www.hotel-am-borsigturm.de/">Hotel Berlin</a>,
-<a href="http://catalogue.horse21.net/">Hotel booking online</a>,
-<a href="http://www.g-sistah.com/m/madonna.html">madonna lyrics</a>,
-<a href="http://www.iphoneunlocking.org.uk">Iphone unlock</a>,
-<a href="http://www.beth-lehem.com/other_artists_g/gian_marco.html">Gian Page</a>,
-<a href="http://www.natalieravera.com/Browse_R/Rui_Veloso_Lyrics.html">Collection of Natalie</a>,
-<a href="http://www.365-diamond.com/">Diamond rings and Engagement Rings</a>
+#include "textlinks.t"
 </font>
 </TD></TR></TABLE>
 
