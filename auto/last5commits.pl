@@ -22,7 +22,7 @@ $year+=1900;
 $date=sprintf("%04d%02d%02d", $year,$mon, $mday);
 $dateto=sprintf("%04d-%02d-%02d %02d:%02d", $year,$mon, $mday, $hour,$min);
 
-$time = time() - (3600*24*14) ; # only the previous 14 days
+$time = time() - (3600*24*31) ; # the previous month
 ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) =
     localtime($time);
 $mon+=1;
