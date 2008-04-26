@@ -1,9 +1,9 @@
 #include "_doctype.html"
-<html>
+<html lang="en">
 <head>
 <title>cURL and libcurl</title>
 #include "css.t"
-<meta name="description" content="curl is a command line tool for transferring files with URL syntax, supporting FTP, FTPS, HTTP, HTTPS, GOPHER, TELNET, DICT, FILE and LDAP. Curl supports HTTPS certificates, HTTP POST, HTTP PUT, FTP uploading, kerberos, HTTP form based upload, proxies, cookies, user+password authentication, file transfer resume, http proxy tunneling and a busload of  other useful tricks">
+<meta name="description" content="curl is a command line tool for transferring files with URL syntax, supporting FTP, FTPS, TFTP, HTTP, HTTPS, TELNET, DICT, FILE and LDAP. Curl supports HTTPS certificates, HTTP POST, HTTP PUT, FTP uploading, kerberos, HTTP form based upload, proxies, cookies, user+password authentication, file transfer resume, http proxy tunneling and a busload of other useful tricks">
 </head>
 
 #define CURL_MAIN
@@ -14,47 +14,45 @@
 #include "packstat.t"
 #include "release.t"
 
-<center><img src="/ds-curl.jpg" width="455" height="167" alt="cURL">
+<center><img src="/pix/curl-refined.jpg" width="471" height="175" alt="cURL">
 </center>
 
 TITLE(cURL groks URLs)
+
 <p class="ingres">
-  Curl is a command line tool for transferring files with URL syntax,
-  supporting FTP, FTPS, HTTP, HTTPS, GOPHER, TELNET, DICT, FILE and LDAP.
-  Curl supports HTTPS certificates, HTTP POST, HTTP PUT, FTP uploading,
-  kerberos, HTTP form based upload, proxies, cookies, user+password
-  authentication, file transfer resume, http proxy tunneling and a busload of
-  other <a href="docs/features.html">useful tricks</a>.
+  curl is a command line tool for transferring files with URL syntax,
+  supporting FTP, FTPS, TFTP, HTTP, HTTPS, TELNET, DICT, FILE and
+  LDAP. curl supports HTTPS certificates, HTTP POST, HTTP PUT, FTP uploading,
+  HTTP form based upload, proxies, cookies, user+password authentication
+  (Basic, Digest, NTLM, Negotiate, kerberos...), file transfer resume, proxy
+  tunneling and a busload of other <a href="docs/features.html">useful
+  tricks</a>.
 </p>
-#include "poll2.t"
+
+#include "poll.t"
+<table><tr valign="top"><td width="60%">
 <p>
-  Curl is free and <a href="docs/copyright.html">open software</a> that
+  Curl is free and <a href="docs/copyright.html" title=" Curl and libcurl are licensed under a MIT/X derivate license">open software</a> that
   compiles under a wide variety of operating systems. Curl exists thanks to
-  efforts from <a href="docs/thanks.html">many authors</a>, with <a
-  href="http://daniel.haxx.se/">Daniel Stenberg</a> being primary author and
-  project maintainer. Curl is the result of many spare time hours of
-  programming. Voluntary contributions are vital.  We greatly appreciate <a
-  href="help.html">your help</a>!
+  efforts from <a href="docs/thanks.html" title="More than 450 named contributors">many authors</a>.
 <p>
   <b>The most recent stable version of curl is version __STABLE</b>, released
-  on __RELDATE.  There are currently __CURR available archives of the <a
-  href="download.html">latest curl package</a>.
+  on __RELDATE.  Currently, __CURR of the <a href="download.html" title="We have a very extensive download page!">available archives</a> are of the
+  latest version.  </td><td>
 <p>
-  Curl comes bundled with many <a href="docs/osdistribs.html">Operating
-  Systems</a>. You may already have it installed!
+  Use the cURL <a href="/docs/manpage.html" title="man page for curl">command line tool</a> or use <a
+  href="libcurl/" title="bindings for everyone!">libcurl</a> from within your own programs.
 <p>
-  Use the cURL <a href="/docs/manpage.html">command line tool</a> or use <a
-  href="libcurl/">libcurl</a> from within your own programs, report bugs on
-  the <a href="http://sourceforge.net/bugs/?group_id=976">curl bug
-  tracker</a>, post questions to one of the <a href="mail/">mailing lists</a>,
-  have a look at the <a href="docs/">documentation section</a> and the <a
-  href="docs/faq.html">Frequently Asked Questions</a> document.
+<div class="phpbox">
+  PHP users! Look for the <a href="libcurl/php/" title="improves your PHP experience!">PHP/CURL</a> binding!
+</div>
+</td></tr></table>
 <p>
+
 <table align="center" class="news">
 <caption>Latest News</caption>
 <!--#exec cmd="./shownews.cgi 2" -->
 </table>
-
 <p align="right">
  <small><a href="news.html">more news</a></small>
 <p>
