@@ -15,4 +15,5 @@
 <a href='http://www.acairoots.com'>acai</a>,
 <a href='http://www.beth-lehem.com/other_artists_g/gian_marco.html'>Gian Page</a>,
 <a href='http://www.natalieravera.com/Browse_R/Rui_Veloso_Lyrics.html'>Collection of Natalie</a>,
-<a href='http://www.365-diamond.com/'>Diamond rings and Engagement Rings</a>
+<a href='http://www.365-diamond.com/'>Diamond rings and Engagement Rings</a>,
+<a href='http://www.plazahotel.de/'>Hotel Berlin</a>
