@@ -39,7 +39,7 @@ alt="Your ad here would be seen by 100,000 unique vistors every month"></a>
 src="WEBROOT/ad/haxx-curl-ad3.png" alt="Haxx ad"></a>
 #endif
 <a href="http://www.easyalgo.com/eaupload.aspx" title="Asp.net file upload component"><img
-src="/pix/easyalgo.gif" width="150" height="60" border="0" alt="File upload component for ASP.NET" /></a>
+src="http://curl.haxx.se/pix/easyalgo.gif" width="150" height="60" border="0" alt="File upload component for ASP.NET" /></a>
 </td>
 </tr></table>
 
