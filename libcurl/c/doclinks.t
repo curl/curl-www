@@ -84,10 +84,22 @@ THIS(curl_easy_perform)
 DOC(curl_easy_perform, curl_easy_perform.html)
 #endif
 
+#ifdef DOCS_EASY_RECV
+THIS(curl_easy_recv)
+#else
+DOC(curl_easy_recv, curl_easy_recv.html)
+#endif
+
 #ifdef DOCS_EASY_RESET
 THIS(curl_easy_reset)
 #else
 DOC(curl_easy_reset, curl_easy_reset.html)
+#endif
+
+#ifdef DOCS_EASY_SEND
+THIS(curl_easy_send)
+#else
+DOC(curl_easy_send, curl_easy_send.html)
 #endif
 
 #ifdef DOCS_EASY_SETOPT

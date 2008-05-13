@@ -38,7 +38,8 @@ PAGES = index.html example.html curl_easy_init.html			\
  libcurl-tutorial.html curl_easy_reset.html curl_multi_socket.html \
  curl_multi_timeout.html curl_multi_setopt.html \
  curl_easy_escape.html curl_easy_unescape.html curl_multi_assign.html \
- curl_formget.html curl_easy_pause.html
+ curl_formget.html curl_easy_pause.html curl_easy_recv.html \
+ curl_easy_send.html
 
 all: $(PAGES)
 
@@ -87,6 +88,15 @@ curl_easy_pause.html: _curl_easy_pause.html $(MAINPARTS) curl_easy_pause.t
 curl_easy_pause.t: $(MANROOT)/curl_easy_pause.3
 	$(MAN2HTML) < $< >$@
 
+curl_easy_recv.html: _curl_easy_recv.html $(MAINPARTS) curl_easy_recv.t
+	$(ACTION)
+curl_easy_recv.t: $(MANROOT)/curl_easy_recv.3
+	$(MAN2HTML) < $< >$@
+
+curl_easy_send.html: _curl_easy_send.html $(MAINPARTS) curl_easy_send.t
+	$(ACTION)
+curl_easy_send.t: $(MANROOT)/curl_easy_send.3
+	$(MAN2HTML) < $< >$@
 
 curl_easy_getinfo.html: _curl_easy_getinfo.html $(MAINPARTS) curl_easy_getinfo.t
 	$(ACTION)
