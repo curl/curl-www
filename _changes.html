@@ -46,6 +46,43 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 <li> <a href="http://curl.haxx.se/auto/cvshistory.html">recent CVS activity</a>
  </ul>
 
+<a name="7_18_2"></a>
+SUBTITLE(Fixed in 7.18.2 - June 4 2008)
+<p> Changes:
+<ul>
+ <li> CURLFORM_STREAM was added
+ <li> CURLOPT_NOBODY is now supported over SFTP
+ <li> curl can now run on Symbian OS
+ <li> curl -w redirect_url and CURLINFO_REDIRECT_URL
+ <li> added curl_easy_send() and curl_easy_recv()
+</ul>
+<p> Bugfixes:
+<ul>
+ <li> CURLOPT_NOBODY first set to TRUE and then FALSE for HTTP no longer causes
+   the confusion that could lead to a hung transfer
+ <li> curl_easy_reset() resets the max redirect limit properly
+ <li> configure now correctly recognizes Heimdal and MIT gssapi libraries
+ <li> malloc() failure check in Negotiate
+ <li> -i and -I together now work the same no matter what order they're used
+ <li> the typechecker can be bypassed by defining CURL_DISABLE_TYPECHECK
+ <li> a pointer mixup could make the FTP code send bad user+password under rare
+   circumstances (found when using curlftpfs)
+ <li> CURLOPT_OPENSOCKETFUNCTION can now be used to create a unix domain socket
+ <li> CURLOPT_TCP_NODELAY crash due to getprotobyname() use
+ <li> libcurl sometimes sent body twice when using CURLAUTH_ANY
+ <li> configure detecting debug-enabled c-ares
+ <li> microsecond resolution keys for internal splay trees
+ <li> krb4 and krb5 ftp segfault
+ <li> multi interface busy loop for CONNECT requests
+ <li> internal time differences now use monotonic time source if available
+ <li> several curl_multi_socket() fixes
+ <li> builds fine for Haiku OS
+ <li> follow redirect with only a new query string
+ <li> SCP and SFTP memory leaks on aborted transfers
+ <li> curl_multi_socket() and HTTP pipelining transfer stalls
+ <li> lost telnet data on an EWOULDBLOCK condition
+</ul>
+
 <a name="7_18_1"></a>
 SUBTITLE(Fixed in 7.18.1 - March 30 2008)
 <p> Changes:
