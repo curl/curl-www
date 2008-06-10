@@ -6,7 +6,7 @@
 <a href='http://catalogue.horse21.net/'>Hotel booking online</a>,
 <a href='http://www.hotel-am-borsigturm.de/'>Hotel Berlin</a>,
 <a href='http://www.messehotel-erb-muenchen.de/default.aspx?lang=en'>Munich Fair Hotel</a>,
-<a href='http://www.hotel-erb.de'>München Hotel</a>,
+<a href='http://www.hotel-erb.de/default.aspx?lang=en'>Hotel Munich</a>,
 <a href='http://www.acairoots.com'>acai</a>,
 <a href='http://www.beth-lehem.com/other_artists_g/gian_marco.html'>Gian Page</a>,
 <a href='http://www.natalieravera.com/Browse_R/Rui_Veloso_Lyrics.html'>Collection of Natalie</a>,
@@ -14,4 +14,5 @@
 <a href='http://www.plazahotel.de/'>Hotel Berlin</a>,
 <a href='http://www.g-sistah.com/m/madonna.html'>madonna lyrics</a>,
 <a href='http://www.gettherhythm.com/b/beyonce.html'>beyonce lyrics</a>,
-<a href='http://www.couponcactus.com/'>Coupon code</a>
+<a href='http://www.couponcactus.com/'>Coupon code</a>,
+<a href='http://catalogue.horse21.net/'>Hotel booking online</a>
