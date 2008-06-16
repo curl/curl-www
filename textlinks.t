@@ -12,7 +12,6 @@
 <a href='http://www.natalieravera.com/Browse_R/Rui_Veloso_Lyrics.html'>Collection of Natalie</a>,
 <a href='http://www.365-diamond.com/'>Diamond rings and Engagement Rings</a>,
 <a href='http://www.plazahotel.de/'>Hotel Berlin</a>,
-<a href='http://www.g-sistah.com/m/madonna.html'>madonna lyrics</a>,
-<a href='http://www.gettherhythm.com/b/beyonce.html'>beyonce lyrics</a>,
+<a href='http://www.heidischwartz.com/browse_h/hannah_montana_lyrics/i_learned_from_you_lyrics.html'>I learned from you</a>,
 <a href='http://www.couponcactus.com/'>Coupon code</a>,
 <a href='http://catalogue.horse21.net/'>Hotel booking online</a>
