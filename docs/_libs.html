@@ -33,9 +33,8 @@ TITLE(Dependencies)
 </td>
 <td>
   SSL (https) support. Use <a href="http://www.openssl.org">OpenSSL</a>. Curl
-  compiles, builds and runs perfectly with it. <a
-  href="/download.html#openssl">download links</a>. Since curl 7.14.0, you can
-  optionally use GnuTLS or yassl instead.
+  compiles, builds and runs with it. <a
+  href="/download.html#openssl">download links</a>. 
 </td>
 </tr>
 
@@ -115,7 +114,7 @@ TITLE(Dependencies)
 </td>
 </tr>
 
-<tr>
+<tr class="even">
 <td align="center">
   <img src="../gnutls.png" width="94" height="86" alt="GnuTLS" border="0"><br>
   <a href="http://www.gnutls.org"><small>www.gnutls.org</small></a>
@@ -123,24 +122,34 @@ TITLE(Dependencies)
 
 <td>
   TLS (https) support. Use <a href="http://www.gnutls.org">GnuTLS</a>. Curl
-  (7.14.0 or later) compiles, builds and runs perfectly with it. Optionally
-  used instead of OpenSSL and yassl.
+  (7.14.0 or later) compiles, builds and runs with it.
 </td>
 </tr>
 
 <tr class="odd">
+<td align="center"> <a
+href="http://www.mozilla.org/projects/security/pki/nss/">NSS</a> </td>
+
+<td>
+  TLS (https) support. Use <a
+  href="http://www.mozilla.org/projects/security/pki/nss/">NSS</a>. Curl
+  (7.16.2 or later) compiles, builds and runs with it.
+
+</td>
+</tr>
+
+<tr class="even">
 <td align="center">
   <a href="http://www.yassl.com/">yassl</a>
 </td>
 
 <td>
   TLS (https) support. Use <a href="http://www.yassl.com/">yassl</a>. Curl
-  (7.15.4 or later) compiles, builds and runs perfectly with it. Optionally
-  used instead of OpenSSL and GnuTLS.
+  (7.15.4 or later) compiles, builds and runs with it.
 </td>
 </tr>
 
-<tr class="even">
+<tr class="odd">
 <td align="center">
   <a href="http://www.libssh2.org/">libssh2</a>
 </td>
