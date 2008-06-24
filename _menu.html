@@ -83,7 +83,11 @@ VLINK("/search.html", Search, Search the curl web site)
 </div>
 
 <p>
+#ifdef INDEX_HTML
+#include "sflogo-main.html"
+#else
 #include "sflogo.html"
+#endif
 
 </td><td valign="top" align="left" width="100%">
 

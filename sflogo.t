@@ -13,7 +13,9 @@ border-style: solid;" BORDERCOLOR="#000000" BGCOLOR="#CCCCCC">
 <table width="120" cellspacing="0" cellpadding="0" height="240" style="border: thin solid #000000; font-size: 8pt;">
 <TR><TD VALIGN="TOP">
 <font face="arial" size="1">
+#ifdef INDEX_HTML
 #include "textlinks.t"
+#endif
 </font>
 </TD></TR></TABLE>
 
