@@ -23,7 +23,6 @@ RELEASE = release.t
 ACTION=@echo preprocessing $@; \
        rm -f $@; \
        cpp -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
-       chmod a-w+r $@
 
 all: index.html feedback.html mirrors.html cvs.html libs.html		\
  help.html download.html changes.html bugreport.html about.html		\
@@ -59,8 +58,10 @@ web-editing.html: _web-editing.html $(MAINPARTS)
 foot.html: _foot.html $(MAINPARTS)
 	$(ACTION)
 
-main.html: _main.html $(MAINPARTS) $(STAT) $(RELEASE) poll.t recentmail.t
-	$(ACTION)
+main.html: _main.html $(MAINPARTS) $(STAT) $(RELEASE) poll.t recentmail.t \
+	sflogo-main.html
+	@echo preprocessing $@; \
+	cpp -WWW -Uunix -DINDEX_HTML -P -H -C -V -LL "$(NOW)" $< $@;
 
 index.html: main.html newslog.html
 	rm -f $@
@@ -157,8 +158,12 @@ support.html: _support.html $(MAINPARTS)
 ad.html: _ad.html ad.t
 	$(ACTION)
 
-sflogo.html : sflogo.t textlinks.t
+sflogo.html : sflogo.t
 	$(ACTION)
+
+sflogo-main.html : sflogo.t textlinks.t
+	@echo preprocessing $@; \
+	cpp -WWW -Uunix -DINDEX_HTML -P -H -C -V -LL "$(NOW)" $< $@;
 
 #archive/index.html: mail
 #	./fixit
