@@ -43,6 +43,8 @@ sub checkwarn {
         ($l =~ /^libtool: link: /) ||
         # NetWare's nlmconv linker
         ($l =~ /^nlmconv:/) ||
+        # Tru64 compiler
+        ($l =~ /^cc: Error:/) ||
         # GNU and MIPS ld error
         ($l =~ /^[^ ?*]*ld((32)|(64))?: /))
     {
