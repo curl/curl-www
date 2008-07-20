@@ -27,8 +27,8 @@ sub checkwarn {
     if (($l =~ /([.\/a-zA-Z0-9]*)\.[chsy]:([0-9:]*): /) ||
         # AIX xlc warnings:
         ($l =~ /\"([_.\/a-zA-Z0-9]+)\", line/) ||
-        # Tru64 cc warning:
-        ($l =~ /^cc: Warning: ([.\/a-zA-Z0-9]*)/) ||
+        # Tru64 DEC/Compaq C compiler:
+        ($l =~ /^cc: ((Warning)|(Error)|(Severe))?: ([.\/a-zA-Z0-9]*)/) ||
         # MIPSPro C 7.3:
         ($l =~ /cc: (REMARK|WARNING) File/) ||
         # Intel icc 8.0:
@@ -43,8 +43,6 @@ sub checkwarn {
         ($l =~ /^libtool: link: /) ||
         # NetWare's nlmconv linker
         ($l =~ /^nlmconv:/) ||
-        # Tru64 compiler
-        ($l =~ /^cc: Error:/) ||
         # GNU and MIPS ld error
         ($l =~ /^[^ ?*]*ld((32)|(64))?: /))
     {
