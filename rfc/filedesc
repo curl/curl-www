@@ -68,3 +68,4 @@ rfc3493.txt Basic Socket Interface Extensions for IPv6
 rfc2553.txt Basic Socket Interface Extensions for IPv6 (see RFC3493)
 rfc2133.txt Basic Socket Interface Extensions for IPv6 (see RFC3493)
 draft-ietf-secsh-scp-sftp-ssh-uri-04.txt Uniform Resource Identifier (URI) Scheme for Secure File Transfer Protocol (SFTP) and Secure Shell (SSH)
+rfc3659.txt Extensions to FTP
