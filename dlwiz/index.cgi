@@ -647,6 +647,9 @@ if($pick_os && $pick_flav && $pick_ver && !$pick_cpu) {
         elsif($ua =~ /arm|iPhone/i) {
             $sel_cpu = "StrongARM";
         }
+        elsif($ua =~ /avr32/i) {
+            $sel_cpu = "AVR32";
+        }
 
         my $ver=$pick_ver;
         if($ver eq "-") {
