@@ -24,16 +24,16 @@ border-style: solid;" BORDERCOLOR="#000000" BGCOLOR="#CCCCCC">
 border-style: solid;">
 <tbody> <tr> <td>
 <font face="arial" size="1">
-<a href="http://www.shop-script.com">Shopping cart software</a>, 
-<a href="http://www.webasyst.net/files/">Online file storage and sharing</a>,
-<a href="http://www.webasyst.net/photos/">Online photo storage and sharing</a>,
-<a href="http://www.webasyst.net/shop/">Online store builder</a>,
-<a href="http://www.webasyst.net/contacts/">Online contact management</a>,
-<a href="http://www.webasyst.net/mail/">Online email marketing</a>,
-<a href="http://www.webasyst.net/projects/">Online project management</a>,
-<a href="http://www.webasyst.net/issue-tracker/">Online issue tracking</a>,
+<a href="http://www.shop-script.com">Shopping cart software</a>,
+<a href="http://www.webasyst.net/files/">Online file storage</a>,
+<a href="http://www.webasyst.net/photos/">Online photo storage</a>,
+<a href="http://www.webasyst.net/shop/">Hosted shopping cart</a>,
+<a href="http://www.webasyst.net/contacts/">Contact management software</a>,
+<a href="http://www.webasyst.net/mail/">Email marketing software</a>,
+<a href="http://www.webasyst.net/projects/">Project management software</a>,
+<a href="http://www.webasyst.net/issue-tracker/">Issue tracking software</a>,
 <a href="http://www.webasyst.net/notes/">Online notepad</a>,
-<a href="http://www.webasyst.net/pages/">Online publishing</a>
+<a href="http://www.webasyst.net/pages/">Web publishing software</a>
 </font>
 </td></tr></tbody></table>
 <p>
