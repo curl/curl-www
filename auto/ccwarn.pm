@@ -30,13 +30,13 @@ sub checkwarn {
         # Tru64 DEC/Compaq C compiler:
         ($l =~ /^cc: ((Warning)|(Error)|(Severe))?: ([.\/a-zA-Z0-9]*)/) ||
         # MIPSPro C 7.3:
-        ($l =~ /cc: (REMARK|WARNING) File/) ||
+        ($l =~ /cc: (REMARK|WARNING|ERROR) File/) ||
         # Intel icc 8.0:
         ($l =~ /: (remark|warning) \#/) ||
         # Intel icc linker:
         ($l =~ /: warning: warning: /) ||
         # MIPS o32 compiler:
-        ($l =~ /^cfe: Warning (\d*):/) ||
+        ($l =~ /^cfe: (Warning |Error)(\d*):/) ||
         # MSVC
         ($l =~ /^[\.\\]*([.\\\/a-zA-Z0-9-]*)\.[chy]\(([0-9:]*)/) ||
         # libtool error
