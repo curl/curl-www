@@ -10,10 +10,10 @@ src/main.c:.*: the 'setlocale' function supports only
 lt-curl.c:79: warning: passing arg 2 of `execv' from incompatible pointer type
 # long long warnings in oldish gcc:
 lib/mprintf.c:.*: warning: ANSI C does not support `long long'
-lib/curlbuild.h:.*: warning: ANSI C does not support `long long'
+curlbuild.h:.*: warning: ANSI C does not support `long long'
 src/main.c:.*: warning: ANSI C forbids long long integer constants
-curl/tests/libtest/lib518.c:.*: warning: ANSI C forbids long long integer constants
-curl/tests/libtest/lib537.c:.*: warning: ANSI C forbids long long integer constants
+tests/libtest/lib518.c:.*: warning: ANSI C forbids long long integer constants
+tests/libtest/lib537.c:.*: warning: ANSI C forbids long long integer constants
 # ming/libtool warning:
 .libs/lt-curl.exe.c:
 # gcc 2.96 warnings with --disable-verbose
