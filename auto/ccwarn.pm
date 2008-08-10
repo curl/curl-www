@@ -44,7 +44,9 @@ sub checkwarn {
         # NetWare's nlmconv linker
         ($l =~ /^nlmconv:/) ||
         # GNU and MIPS ld error
-        ($l =~ /^[^ ?*]*ld((32)|(64))?: /))
+        ($l =~ /^[^ ?*]*ld((32)|(64))?: /) ||
+        # autoconf overquoting in configure script
+        ($l =~ /configure: .*command not found/))
     {
         my $re;
         foreach $re (@ig) {
