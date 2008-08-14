@@ -606,8 +606,8 @@ if($pick_os && $pick_flav && $pick_ver && !$pick_cpu) {
     for $e (@all) {
         if( ($$e{'os'} eq $pick_os) &&
             (($pick_type eq "*") || ($$e{'type'} eq $pick_type)) &&
-            ($$e{'flav'} eq $pick_flav) &&
-            ($$e{'osver'} eq $pick_ver) ) {
+            (($pick_flav eq "*") || ($$e{'flav'} eq $pick_flav)) &&
+            (($pick_ver eq "*") || ($$e{'osver'} eq $pick_ver))) {
             my $c = $$e{'cpu'};
             $cpu{$c}++;
         }
