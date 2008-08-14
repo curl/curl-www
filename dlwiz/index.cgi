@@ -519,7 +519,8 @@ if($pick_os && $pick_flav && !$pick_ver) {
     for $e (@all) {
         if(($$e{'os'} eq $pick_os) &&
            (($pick_type eq "*") || ($$e{'type'} eq $pick_type)) &&
-           ($$e{'flav'} eq $pick_flav)) {
+           ($$e{'flav'} eq $pick_flav) &&
+           ($$e{'hide'} ne "Yes")) {
             my $v = $$e{'osver'};
             $ver{"$v"}++;
         }
@@ -607,7 +608,8 @@ if($pick_os && $pick_flav && $pick_ver && !$pick_cpu) {
         if( ($$e{'os'} eq $pick_os) &&
             (($pick_type eq "*") || ($$e{'type'} eq $pick_type)) &&
             (($pick_flav eq "*") || ($$e{'flav'} eq $pick_flav)) &&
-            (($pick_ver eq "*") || ($$e{'osver'} eq $pick_ver))) {
+            (($pick_ver eq "*") || ($$e{'osver'} eq $pick_ver)) &&
+            ($$e{'hide'} ne "Yes")) {
             my $c = $$e{'cpu'};
             $cpu{$c}++;
         }
@@ -824,7 +826,8 @@ if($pick_os && $pick_flav && $pick_ver && $pick_cpu) {
             (($pick_type eq "*") || ($$e{'type'} eq $pick_type)) &&
             (($pick_flav eq "*") || ($$e{'flav'} eq $pick_flav)) &&
             (($pick_ver eq "*") || ($$e{'osver'} eq $pick_ver)) &&
-            ($$e{'cpu'} eq $pick_cpu)) {
+            ($$e{'cpu'} eq $pick_cpu) &&
+            ($$e{'hide'} ne "Yes")) {
 
             push @match, $e;
 
