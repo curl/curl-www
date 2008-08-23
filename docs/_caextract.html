@@ -33,11 +33,11 @@ SUBTITLE(Automated Conversions)
  output CA bundle file in PEM format is available from here:
  <ul>
  <li> <a
- href="http://curl.haxx.se/ca/cacert.pem">cacert.pem</a> (~500KB)
+ href="http://curl.haxx.se/ca/cacert.pem">cacert.pem</a> (~200KB)
  <li> <a
- href="http://curl.haxx.se/ca/cacert.pem.gz">cacert.pem.gz</a> (~190 KB)
+ href="http://curl.haxx.se/ca/cacert.pem.gz">cacert.pem.gz</a> (~90 KB)
  <li> <a
- href="http://curl.haxx.se/ca/cacert.pem.bz2">cacert.pem.bz2</a> (~150 KB)
+ href="http://curl.haxx.se/ca/cacert.pem.bz2">cacert.pem.bz2</a> (~90 KB)
 </ul>
 <p>
  The file contains the datestamp of the conversion.
@@ -47,13 +47,18 @@ SUBTITLE(Requirements)
  It is a perl script.  The script uses the 'openssl' tool and it requires the
  version that comes with the 0.9.7 series or later.
 <p>
- The exact Mozilla file needed for this job is found at <a
- href="http://lxr.mozilla.org/seamonkey/source/security/nss/lib/ckfw/builtins/certdata.txt">lxr.mozilla.org/seamonkey/source/security/nss/lib/ckfw/builtins/certdata.txt</a>.
+ The exact Mozilla file needed for this job is found within that script.
 
 SUBTITLE(License)
 <p>
  This new file is only a converted version of the original one and thus it is
  licensed under the same licenses: MPL 1.1, GPL v2.0 or LGPL 2.1
+
+SUBTITLE(Convert from your local Firefox installation)
+
+<p> You can also extract the ca certs off your Firefox installation, if you
+ just have the 'certutil' tool installed and run the <a href="http://curl.haxx.se/lxr/source/lib/firefox-db2pem.sh">firefox-db2pem.sh</a> script!
+
 
 #include "_footer.html"
 
