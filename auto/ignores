@@ -15,6 +15,7 @@ lib/progress.c:.*: warning: ANSI C forbids long long integer constants
 src/main.c:.*: warning: ANSI C forbids long long integer constants
 tests/libtest/lib518.c:.*: warning: ANSI C forbids long long integer constants
 tests/libtest/lib537.c:.*: warning: ANSI C forbids long long integer constants
+tests/libtest/lib557.c:.*: warning: ANSI C forbids long long integer constants
 # ming/libtool warning:
 .libs/lt-curl.exe.c:
 # gcc 2.96 warnings with --disable-verbose
