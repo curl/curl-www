@@ -113,11 +113,12 @@ for(reverse sort { $log{$a} cmp $log{$b} } keys %log) {
         my $line=$c&1?"odd":"even";
 
         my $subj = $subject{$_};
+        my $title= CGI::escapeHTML($subj);
         if(length($subj) > 40) {
             $subj = substr($subj, 0, 40)."...";
         }
 
-        my $subjectline=sprintf("<tr class=\"%s\"><td><a href=\"%s\">%s</a></td>\n",
+        my $subjectline=sprintf("<tr class=\"%s\"><td><a title=\"$title\" href=\"%s\">%s</a></td>\n",
                                 $line,
                                 file2url($_),
                                 $subj?&CGI::escapeHTML($subj):"(no subject)");
