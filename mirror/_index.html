@@ -11,22 +11,28 @@
 
 WHERE3(Download, "/download.html", Mirrors, "/mirrors.html", How To Mirror)
 
-TITLE(How To Mirror the Curl Site)
+TITLE(How To Mirror)
 <p>
- We provide the full web site and the download packages for mirroring using
- rsync. It is both the easiest and quickest way to do this.
-<p>
- You can mirror the contents at any time, using these command lines:
+ We provide the download packages for mirroring using rsync. You can mirror
+ the contents at any time, using these command lines:
 <pre>
-  rsync -r -t --delete rsync://cool.haxx.se/curlweb curl-web-root
   rsync -t --delete rsync://cool.haxx.se/curldownload curl-web-root/download
 </pre>
 <p>
   The first line of course mirror the web site, while the second line mirrors
   the download packages in the download directory.
 <p>
- <b>Note: I'm considering to scrap the web mirror system, only to keep the
- mirrored downloads. Stay tuned for updates on this.</b>
+ <b><strong>Note: we are scrapping the web mirror system, only to keep the
+ mirrored downloads. While you may continue to mirror the web site for your
+ own joy, we will not provide any link to web mirrors in the
+ future.</strong></b>
+
+<p>
+ The web site contents can be rsynced like this:
+
+<pre>
+  rsync -r -t --delete rsync://cool.haxx.se/curlweb curl-web-root
+</pre>
 
 <p>
  See the list of <a href="../mirrors.html">existing mirror sites</a> and our
