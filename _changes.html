@@ -46,6 +46,66 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 <li> <a href="http://curl.haxx.se/auto/cvshistory.html">recent CVS activity</a>
  </ul>
 
+<a name="7_19_0"></a>
+SUBTITLE(Fixed in 7.19.0 - September 1 2008
+<p> Changes:
+<ul>
+ <li> curl_off_t gets its size/typedef somewhat differently than before. This _may_
+   cause an ABI change for you. See <a href="http://curl.haxx.se/lxr/source/lib/README.curl_off_t">lib/README.curl_off_t</a> for a full explanation.
+ <li> Added CURLINFO_PRIMARY_IP
+ <li> Added CURLOPT_CRLFILE and CURLE_SSL_CRL_BADFILE
+ <li> Added CURLOPT_ISSUERCERT and CURLE_SSL_ISSUER_ERROR
+ <li> curl's option parser for boolean options reworked
+ <li> Added --remote-name-all
+ <li> Now builds for the INTEGRITY operating system
+ <li> Added CURLINFO_APPCONNECT_TIME
+ <li> Added test selection by key word in runtests.pl
+ <li> the curl tool's -w option support the %{ssl_verify_result} variable
+ <li> Added CURLOPT_ADDRESS_SCOPE and scope parsing of the URL according to RFC4007
+ <li> Support --append on SFTP uploads (not with OpenSSH, though)
+ <li> Added curlbuild.h and curlrules.h to the external library interface
+</ul>
+<p> Bugfixes:
+<ul>
+ <li> Fixed curl-config --ca
+ <li> Fixed the multi interface connection re-use with NSS-built libcurl
+ <li> connection re-use when using the multi interface with pipelining enabled
+ <li> curl_multi_socket() socket callback fix for close/re-create sockets case
+ <li> SCP or SFTP over socks proxy crashed
+ <li> RC4-MD5 cipher now works with NSS-built libcurl
+ <li> range requests with --head are now done correctly
+ <li> fallback to gettimeofday when monotonic clock is unavailable at run-time
+ <li> range numbers could be made to wrongly get output as signed
+ <li> unexpected 1xx responses hung transfers
+ <li> FTP transfers segfault when using different CURLOPT_FTP_FILEMETHOD
+ <li> c-ares powered libcurls can resolve/use IPv6 addresses
+ <li> poll not working on Windows Vista due to POLLPRI being incorrectly used
+ <li> user-agent in CONNECT with non-HTTP protocols
+ <li> CURL_READFUNC_PAUSE problems fixed
+ <li> --use-ascii now works on Symbian OS, MS-DOS and OS/2
+ <li> CURLINFO_SSL_VERIFYRESULT is fixed
+ <li> FTP URLs and IPv6 URLs mangled when sent to proxy with CURLOPT_PORT set
+ <li> a user name in a proxy URL without a password was parsed incorrectly
+ <li> library will now be built with _REENTRANT symbol defined only if needed
+ <li> no longer link with gdi32 on Windows cross-compiled targets
+ <li> HTTP PUT with -C - sent bad Content-Range: header
+ <li> HTTP PUT or POST with redirect could lead to hang
+ <li> re-use of connections with failed SSL connects in the multi interface
+ <li> NTLM over proxy state was wrongly cleared when host connection was closed
+ <li> Windows SSPI DLL loading is now done in curl_global_init()
+ <li> runtests.pl has an improved find-stunnel-and-invoke
+ <li> FTP sessions could go out of sync on a long header boundary condition
+ <li> potential buffer overflows in the MS-DOS command-line port fixed
+ <li> --stderr is now honoured with the -v option
+ <li> memory leak in libcurl on Windows built with OpenSSL
+ <li> improved curl_m*printf() integral data type size and signedness handling
+ <li> error when --dump-header - used with more than one URL
+ <li> proxy closing connect during CONNECT with auth with the multi interface
+ <li> CURLOPT_UPLOAD sets HTTP method back to GET or HEAD when passed in a 0
+ <li> shared cookies could get locked twice
+ <li> deal with closed connection while doing POST/PUT
+</ul>
+
 <a name="7_18_2"></a>
 SUBTITLE(Fixed in 7.18.2 - June 4 2008)
 <p> Changes:
