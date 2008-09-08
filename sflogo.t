@@ -1,15 +1,14 @@
 <p>
 
-#if 1
+#if 0
 <TABLE WIDTH="120" CELLPADDING="4" HEIGHT="240" style="border-width: thin;
 border-style: solid;" BORDERCOLOR="#000000" BGCOLOR="#CCCCCC">
 <TR><TD VALIGN="TOP">
 </TD></TR></TABLE>
-#else
-<a href="http://www.submitcomfort.com/" rel="nofollow"><img alt="SEO services" border="0" src="/pix/submitcomfort.gif"></a>
-#endif
 <p>
+#endif
 
+#if 0
 <table width="120" cellspacing="0" cellpadding="0" height="240" style="border: thin solid #000000; font-size: 8pt;">
 <TR><TD VALIGN="TOP">
 <font face="arial" size="1">
@@ -20,6 +19,8 @@ border-style: solid;" BORDERCOLOR="#000000" BGCOLOR="#CCCCCC">
 </TD></TR></TABLE>
 
 <p>
+#endif
+
 <table cellspacing="0" cellpadding="0" width="120" style="border-width: thin;
 border-style: solid;">
 <tbody> <tr> <td>
