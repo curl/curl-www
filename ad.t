@@ -3,6 +3,8 @@
 #endif
 <!-- first-line-in-body -->
 #define AD_YOURADHERE
+#define AD_HAXX
+
 <table width="100%"><tr valign="top"><td> <a href="WEBROOT/"><img border="0" src="WEBROOT/ds-curlicon.png"
 width="99" height="37" alt="cURL"></a></td>
 <td align="center">
@@ -38,8 +40,10 @@ alt="Your ad here would be seen by 100,000 unique vistors every month"></a>
 <a href="http://www.haxx.se/curl.html"><img border="0" width="150" height="60"
 src="WEBROOT/ad/haxx-curl-ad3.png" alt="Haxx ad"></a>
 #endif
+#ifdef AD_EASYALGO
 <a href="http://www.easyalgo.com/eaupload.aspx" title="Asp.net file upload component"><img
 src="http://curl.haxx.se/pix/easyalgo.gif" width="150" height="60" border="0" alt="File upload component for ASP.NET" /></a>
+#endif
 </td>
 </tr></table>
 
