@@ -34,7 +34,7 @@ sub checkwarn {
         # Intel icc 8.0:
         ($l =~ /: (remark|warning|error) \#/) ||
         # Intel icc 10.1:
-        ($l =~ /\(\d+\): error: /) ||
+        ($l =~ /\(([0-9][0-9]*)\): (error)?: /) ||
         # Intel icc linker:
         ($l =~ /: warning: warning: /) ||
         # MIPS o32 compiler:
