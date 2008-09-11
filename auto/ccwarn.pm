@@ -32,7 +32,9 @@ sub checkwarn {
         # MIPSPro C 7.3:
         ($l =~ /cc: (REMARK|WARNING|ERROR) File/) ||
         # Intel icc 8.0:
-        ($l =~ /: (remark|warning) \#/) ||
+        ($l =~ /: (remark|warning|error) \#/) ||
+        # Intel icc 10.1:
+        ($l =~ /\(\d+\): error: /) ||
         # Intel icc linker:
         ($l =~ /: warning: warning: /) ||
         # MIPS o32 compiler:
