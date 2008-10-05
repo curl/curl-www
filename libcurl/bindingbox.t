@@ -34,6 +34,7 @@
 <a href="spl/">SPL</a><br>
 <a href="tcl/">Tcl</a><br>
 <a href="vb/">Visual Basic</a><br>
+<a href="foxpro/">Visual FoxPro</a><br>
 <a href="q/">Q</a><br>
 <a href="wx/">wxWidgets</a><br>
 <a href="xblite/">XBLite</a><br>
