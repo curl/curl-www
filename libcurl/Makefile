@@ -53,6 +53,7 @@ all: index.html mail.html competitors.html comparison-table.html	  \
 	cd xblite; make
 	cd spl; make
 	cd smalltalk; make
+	cd foxpro; make
 
 index.html: _index.html $(MAINPARTS) bindingbox.t
 	$(ACTION)
