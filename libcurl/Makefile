@@ -54,6 +54,7 @@ all: index.html mail.html competitors.html comparison-table.html	  \
 	cd spl; make
 	cd smalltalk; make
 	cd foxpro; make
+	cd ilerpg; make
 
 index.html: _index.html $(MAINPARTS) bindingbox.t
 	$(ACTION)
