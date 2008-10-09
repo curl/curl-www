@@ -47,6 +47,8 @@ sub checkwarn {
         ($l =~ /^nlmconv:/) ||
         # GNU and MIPS ld error
         ($l =~ /^[^ ?*]*ld((32)|(64))?: /) ||
+        # AC_MSG_WARN output in configure script
+        ($l =~ /configure: WARNING:/) ||
         # autoconf overquoting in configure script
         ($l =~ /configure: .*command not found/))
     {
