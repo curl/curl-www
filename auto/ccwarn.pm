@@ -48,7 +48,7 @@ sub checkwarn {
         # GNU and MIPS ld error
         ($l =~ /^[^ ?*]*ld((32)|(64))?: /) ||
         # AC_MSG_WARN output in configure script
-        ($l =~ /configure: WARNING:/) ||
+        ($l =~ /configure: WARNING: .*compiler options rejected/) ||
         # autoconf overquoting in configure script
         ($l =~ /configure: .*command not found/))
     {
