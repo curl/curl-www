@@ -49,6 +49,7 @@ sub checkwarn {
         ($l =~ /^[^ ?*]*ld((32)|(64))?: /) ||
         # AC_MSG_WARN output in configure script
         ($l =~ /configure: WARNING: .*compiler options rejected/) ||
+        ($l =~ /configure: WARNING: .*cannot determine strerror_r/) ||
         # autoconf overquoting in configure script
         ($l =~ /configure: .*command not found/))
     {
