@@ -46,6 +46,48 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 <li> <a href="http://curl.haxx.se/auto/cvshistory.html">recent CVS activity</a>
  </ul>
 
+<a name="7_19_1"></a>
+SUBTITLE(Fixed in 7.19.1 - November 5 2008)
+<p> Changes:
+<ul>
+ <li> pkg-config can now show supported_protocols and supported_features
+ <li> Added CURLOPT_CERTINFO and CURLINFO_CERTINFO
+ <li> Added CURLOPT_POSTREDIR
+ <li> Better detect HTTP 1.0 servers and don't do HTTP 1.1 requests on them
+ <li> configure --disable-proxy disables proxy support
+ <li> Added CURLOPT_USERNAME and CURLOPT_PASSWORD
+ <li> --interface now works with IPv6 connections on glibc systems
+ <li> Added CURLOPT_PROXYUSERNAME and CURLOPT_PROXYPASSWORD
+</ul>
+
+<p> Bugfixes:
+<ul>
+ <li> MingW32 non-configure builds are now largefile feature enabled by default
+ <li> NetWare LIBC builds are now largefile feature enabled by default
+ <li> curl_easy_pause() could behave wrongly on unpause
+ <li> cookies with invalid expire dates are now considered expired
+ <li> HTTP pipelining over proxy
+ <li> fix regression in configure script which affected OpenSSL builds on MSYS
+ <li> GnuTLS-based multi interface doing HTTPS over proxy failed
+ <li> recv() failures cause CURLE_RECV_ERROR
+ <li> SFTP over SOCKS crash fixed
+ <li> thread-safety issues addressed for NSS-powered libcurls
+ <li> removed the use of mktime() and gmtime(_r)() in date parsing and conversions
+ <li> HTTP Digest with a blank realm did wrong
+ <li> CURLINFO_REDIRECT_URL didn't work with the multi interface
+ <li> CURLOPT_RANGE now works for SFTP downloads
+ <li> FTP SIZE response 550 now causes CURLE_REMOTE_FILE_NOT_FOUND
+ <li> CURLINFO_PRIMARY_IP fixed for persistent connection re-use cases
+ <li> remove_handle/add_handle multi interface timer callback flaw
+ <li> CURLINFO_REDIRECT_URL memory leak and wrong-doing
+ <li> case insensitive string matching works in Turkish too
+ <li> Solaris builds get _REENTRANT defined properly and work again
+ <li> Garbage sent on chunky upload after curl_easy_pause()
+ <li> ipv4 name resolves when libcurl is built with ipv6-enabled c-ares
+ <li> undersized IPv6 address internal buffer truncated long IPv6 addresses
+ <li> CURLINFO_FILETIME works for file:// transfers as well
+</ul>
+
 <a name="7_19_0"></a>
 SUBTITLE(Fixed in 7.19.0 - September 1 2008)
 <p> Changes:
