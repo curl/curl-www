@@ -46,6 +46,16 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 <li> <a href="http://curl.haxx.se/auto/cvshistory.html">recent CVS activity</a>
  </ul>
 
+<a name="7_19_2"></a>
+SUBTITLE(Fixed in 7.19.2 - November 13 2008)
+<p> Bugfixes:
+<ul>
+ <li> build failure when using MSVC 6 makefile and on four platforms more
+ <li> crash when using --interface name on Linux systems with a TEQL device
+ <li> using the multi interface to download a HTTPS page with libcurl built
+   powered by OpenSSL could download "rubbish" instead of actual content
+</ul>
+
 <a name="7_19_1"></a>
 SUBTITLE(Fixed in 7.19.1 - November 5 2008)
 <p> Changes:
