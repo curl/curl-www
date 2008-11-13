@@ -50,6 +50,7 @@ sub checkwarn {
         # AC_MSG_WARN output in configure script
         ($l =~ /configure: WARNING: .*compiler options rejected/) ||
         ($l =~ /configure: WARNING: .*cannot determine strerror_r/) ||
+        ($l =~ /configure: WARNING: .*cannot determine non-blocking/) ||
         # autoconf overquoting in configure script
         ($l =~ /configure: .*command not found/))
     {
