@@ -21,7 +21,7 @@ sub vernum {
 
 print "<table>";
 sub head {
-    print "<tr class=\"tabletop\"><th>Version</th>";
+    print "<tr class=\"tabletop\"><th>index</th><th>Version</th>";
     my $v=1;
     for(@vuln) {
         my ($id, $start, $stop)=split('\|');
@@ -29,7 +29,7 @@ sub head {
         print "<th title=\"$id\"><a href=\"/docs/security.html\#$id\">#$v</a></th>";
         $v++;
     }
-    print "</tr>\n";
+    print "<th>Release Date</th><th>Since Most Recent</th></tr>\n";
 }
 
 head();
@@ -37,8 +37,9 @@ head();
 my $l;
 
 while(<STDIN>) {
-    if($_ =~ /^SUBTITLE\(Fixed in ([0-9.]*)/) {
+    if($_ =~ /^SUBTITLE\(Fixed in ([0-9.]*) - (.*)\)/) {
         my $str=$1;
+        my $date=$2;
         my $this = vernum($str);
 
         my @v;
@@ -56,16 +57,50 @@ while(<STDIN>) {
             }
             $i++;
         }
-        printf "<tr class=\"%s\"><td>$str</td>", $l&1?"even":"odd";
-        for my $i (0 .. scalar(@vuln)-1 ) {
-            printf("<td>%s</td>", $v[$i]?"yes":"&nbsp;");
-        }
-        print "</tr>\n";
+        my $anchor = $str;
 
-        if(!(++$l % 20)) {
+        $anchor =~ s/\./_/g;
+
+        my $datesecs=`date -d "$date" +%s`;
+        my $daysbetween;
+
+        if($prevsecs) {
+            # number of seconds between two releases!
+            my $reltime = $prevsecs - $datesecs;
+
+            # convert to days
+            $daysbetween = int($reltime/(3600*24));
+
+            if($daysbetween < 100) {
+                $age = "$daysbetween days";
+            }
+            elsif($daysbetween < 400) {
+                $age = sprintf("%d months", int($daysbetween/30));
+            }
+            else {
+                my $mon = int(($daysbetween%365)/30);
+                $age = sprintf("%d years, %d months", 
+                               int($daysbetween/365),
+                               $mon);
+            }
+        }
+        else {
+            # store the first date
+            $prevsecs = $datesecs;
+            $age="most recent";
+        }
+
+        printf("<tr class=\"%s\"><td>%d</td><td><a href=\"/changes.html#$anchor\">$str</a></td>",
+               $l&1?"even":"odd",
+               $index++);
+        for my $i (0 .. scalar(@vuln)-1 ) {
+            printf("<td%s</td>", $v[$i]?" style=\"background-color: #f00000;\">yes":">&nbsp;");
+        }
+        print "<td>$date</td><td>$age</td></tr>";
+
+        if(!(++$l % 25)) {
             head();
         }
-
     }
 }
 
