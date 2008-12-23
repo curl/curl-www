@@ -58,6 +58,7 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden (Uppsala)',
              'http://curl.wetzlmayr.at/download/' => 'Germany (Nuremberg)',
              'http://curl.gominet.net/download/' => 'Portugal (Vizcaya)',
              'http://curl.very-clever.com/download/' => 'Germany (Nuremberg)',
+             'http://curl.sommerhusguide.dk/download/' => 'Denmark (Vildbjerg)',
              );
 
 sub present {
