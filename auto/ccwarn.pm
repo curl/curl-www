@@ -41,8 +41,11 @@ sub checkwarn {
         ($l =~ /^cfe: (Warning |Error)(\d*):/) ||
         # MSVC
         ($l =~ /^[\.\\]*([.\\\/a-zA-Z0-9-]*)\.[chy]\(([0-9:]*)/) ||
-        # libtool error
-        ($l =~ /^libtool: link: /) ||
+
+        # libtool 2 prefixes lots of "normal" lines with "libool: link: " so we
+        # cannot use that simple rule to detect errors
+        # ($l =~ /^libtool: link: /) ||
+
         # NetWare's nlmconv linker
         ($l =~ /^nlmconv:/) ||
         # GNU and MIPS ld error
