@@ -43,8 +43,10 @@ sub checkwarn {
         ($l =~ /^[\.\\]*([.\\\/a-zA-Z0-9-]*)\.[chy]\(([0-9:]*)/) ||
 
         # libtool 2 prefixes lots of "normal" lines with "libool: link: " so we
-        # cannot use that simple rule to detect errors
-        # ($l =~ /^libtool: link: /) ||
+        # cannot use that simple rule to detect errors. Adding "warning:" reduces
+        # false positives but skip some legitimate warnings that don't contain
+        # "warning:".
+        ($l =~ /^libtool: \w+: warning:/) ||
 
         # NetWare's nlmconv linker
         ($l =~ /^nlmconv:/) ||
