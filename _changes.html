@@ -46,6 +46,53 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 <li> <a href="http://curl.haxx.se/auto/cvshistory.html">recent CVS activity</a>
  </ul>
 
+<a name="7_19_3"></a>
+SUBTITLE(Fixed in 7.19.3 - January 19 2009)
+<p> Changes:
+<ul>
+ <li> CURLAUTH_DIGEST_IE bit added for CURLOPT_HTTPAUTH and CURLOPT_PROXYAUTH
+ <li> VC9 Makefiles were added to the release package
+</ul
+
+<p> Bugfixes:
+<ul>
+ <li> build failure when disabling FTP but enabling GSS
+ <li> fixed several calls to memory functions that didn't check return codes
+ <li> memory leak for SSL connects with libcurl/NSS when CURLOPT_ISSUERCERT was
+   used
+ <li> re-use of connections with the multi interface when multiple handles used
+   the same server
+ <li> memory leak with HTTP GSS/kerberos authentication
+ <li> removed the default use of "Pragma: no-cache"
+ <li> fix SCP/SFTP busyloop by using a new libssh2 1.0 function
+ <li> bad fclose() after a fatal error in cookie code
+ <li> curl_multi_remove_handle() when the handle was in use in a HTTP pipeline
+ <li> GSS authentication infinite loop problem
+ <li> 550 response from SIZE no longer treated as missing file
+ <li> ftps:// control connections now use explicit protection level
+ <li> dotted IPv6 addresses longer than 39 bytes failed
+ <li> curl_easy_duphandle() doesn't try to duplicate the connection cache pointer
+ <li> build failure on OS/400 when enabling IPv6
+ <li> better detection of SFTP failures
+ <li> improved connection re-use for subsequent SCP and SFTP transfers
+ <li> multi interface does less busy-loops for SCP and SFTP transfers with libssh2
+   1.0 or later
+ <li> curl_multi_timeout() no longer returns timeout 0 when there's still more
+   than 0 but less than 999 microseconds left
+ <li> the multi_socket API and HTTP pipelining now work a lot better when combined
+ <li> SFTP seek/resume beyond 32bit file sizes
+ <li> fixed breakage with --with-ssl --disable-verbose
+ <li> TTL "leak" in the DNS cache
+ <li> improved NSS initing
+ <li> curl_easy_reset now resets more options
+ <li> rare Location: follow bug with the multi interface
+ <li> the configure script can now detect gnutls with pkg-config
+ <li> curlbuild.h was adjusted for SunPro compilers
+ <li> CURLOPT_COOKIELIST set to "SESS" on an easy handle with no cookies data
+ <li> fixed timeouts for TFTP
+ <li> fixed PPC builds
+</ul>
+
 <a name="7_19_2"></a>
 SUBTITLE(Fixed in 7.19.2 - November 13 2008)
 <p> Bugfixes:
