@@ -1,8 +1,8 @@
 SRCROOT=../cvssource
 DOCROOT=$(SRCROOT)/docs
 
-MAINPARTS= ../_doctype.html ../_menu.html ../_footer.html ../setup.t ../pic.t \
-   ../where.t ../ad.t ../libcurl/_links.html ../mirrorlinks.t		      \
+MAINPARTS= ../_doctype.html ../docs/_menu.html ../_footer.html ../setup.t \
+   ../pic.t ../where.t ../ad.t ../libcurl/_links.html ../mirrorlinks.t	  \
    ../css.t ../sflogo.html Makefile
 NOW=$(shell gnudate +'-D__TODAY__=%B %e, %Y')
 ACTION=@echo preprocessing $@; rm -f $@; fcpp -I../docs -I.. -WWW -Uunix -H -C -V -P -LL "$(NOW)" $< $@;
