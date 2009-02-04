@@ -4,7 +4,7 @@ TESTROOT=$(SRCROOT)/tests
 
 MAINPARTS= ../_doctype.html _menu.html ../_footer.html ../setup.t ../pic.t \
    ../where.t ../ad.t ../libcurl/_links.html ../mirrorlinks.t		   \
-   ../css.t ../sflogo.html Makefile
+   ../css.t ../sflogo.html
 NOW=$(shell gnudate +'-D__TODAY__=%B %e, %Y')
 FCPPOPTS=-I.. -Idocs -WWW -Uunix -H -C -V -P -LL "$(NOW)"
 ACTION=fcpp $(FCPPOPTS) $< $@;
@@ -21,7 +21,7 @@ PAGES = index.html manpage.html faq.html changes.html contribute.html	 \
  knownbugs.html manual.html caextract.html programs.html security.html	 \
  testcurl.html runtests.html libs.html adv_20051013.html adv_20051207.html \
  adv_20060320.html vulnerabilities.html adv_20070710.html \
- gsoc2008.html
+ gsoc2008.html releases.html
 
 all: $(PAGES)
 	@echo done 
@@ -233,6 +233,12 @@ vulnerabilities.html: _vulnerabilities.html vuln.txt $(MAINPARTS)
 
 vuln.txt: ../_changes.html ./vulntable.pl
 	./vulntable.pl < $< > $@
+
+releases.html: _releases.html rel.txt $(MAINPARTS)
+	$(ACTION)
+
+rel.txt: ../_changes.html ./relinfo.pl
+	./relinfo.pl < $< > $@
 
 
 #archive/index.html: mail
