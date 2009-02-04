@@ -47,6 +47,9 @@ while(<STDIN>) {
             my ($num, $phrase)=($1, $2);
     #        print STDERR "$num $phrase\n";
             $faq{$num} = $phrase;
+            $faq{$num} =~ s/&/&amp;/g;
+            $faq{$num} =~ s/\</&lt;/g;
+            $faq{$num} =~ s/\>/&gt;/g;
             my $l = substr($phrase, 0, 32);
             # filter off "odd" chars
             $l =~ s/[^a-z0-9A-Z]/_/g;
@@ -84,15 +87,20 @@ while(<STDIN>) {
             # a question
             my $s=$_;
             chomp $s;
+            $s =~ s/&/&amp;/g;
+            $s =~ s/\</&lt;/g;
+            $s =~ s/\>/&gt;/g;
             $s =~ s/^ *(.*) */$1/;
             print "<a name=\"$link{$toc[$q]}\"></a>";
             print "<h3>$s</h3><p>\n";
             $q++;
         }
         else {
-            my $l = $_;
-            $l = s/\</&lt;/g;
-            $l = s/\</&gt;/g;
+            s/&/&amp;/g;
+            s/\</&lt;/g;
+            s/\>/&gt;/g;
+            # Emphasize _underlined_ words
+            s/\b_([[:alnum:]]+)_\b/<em>$1<\/em>/g;
 
             if($_ =~ /^     /) {
                 # five or more initial spaces, use <pre>
@@ -105,7 +113,7 @@ while(<STDIN>) {
                     print "</pre>\n";
                     undef @pre;
                 }
-                $l = s/((http|ftp):\/\/([a-z0-9.\/_%-?]*[a-z\/]))/<a href=\"$2:\/\/$3\">$1<\/a>/g;
+                s/((http|ftp):\/\/([a-z0-9.\/_%-?]*[a-z\/]))/<a href=\"$2:\/\/$3\">$1<\/a>/g;
                 
                 # prevent many blanks
                 my $show = $_;
