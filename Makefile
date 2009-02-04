@@ -25,7 +25,7 @@ ACTION=@echo preprocessing $@; \
        cpp -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
 
 all: index.html feedback.html mirrors.html cvs.html libs.html		\
- help.html download.html changes.html bugreport.html about.html		\
+ help.html download.html changes.html about.html		\
  support.html newslog.html news.html head.html foot.html oldnews.html	\
  info web-editing.html ad.html donation.html devel.html			\
  competition.html search.html index2.html download2.html sflogo.html
@@ -132,9 +132,6 @@ cvs.html: _cvs.html $(MAINPARTS)
 	$(ACTION)
 
 help.html: _help.html $(MAINPARTS)
-	$(ACTION)
-
-bugreport.html: _bugreport.html $(MAINPARTS)
 	$(ACTION)
 
 mirrors.html: _mirrors.html $(MAINPARTS)
