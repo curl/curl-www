@@ -127,7 +127,7 @@ sub islast5versions {
 my %urlhash;
 sub geturl {
     my ($url, $head) = @_;
-    my $curlcmd="curl -Lfsm120";
+    my $curlcmd="curl -Lfsm120 --ftp-method singlecwd";
 
     if(!$head) {
         my $t = time();
@@ -230,7 +230,9 @@ for $ref (@all) {
             # package check in a random matter
 
             my $r = rand(100);
-            # 20% continue rate
+            # 20% continue rate. This gives a 79% chance that it will be
+            # checked at least every week (when run once a day), and a 99.9%
+            # chance that it will be checked at least once every month.
             my $skip = ($r > 20);
             logmsg sprintf(" Not a recent version, %s\n",
                            $skip?"SKIP":"but check anyway");
