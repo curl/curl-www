@@ -83,21 +83,17 @@ sub gettype {
         return($1, "win32-ssl-devel-mingw",
                  "Windows mingw devel, zip, SSL-enabled");
     }
-    elsif($file =~ /^curl-([0-9.]*)(-([0-9]*)|)-win32-ssl-devel.zip$/) {
-        return($1, "win32-ssl-devel-msvc",
-                 "Windows MSVC devel, zip, SSL-enabled");
-    }
-    # old-style MSVC libcurl devel
-    elsif($file =~ /^curl-([0-9.]*)(-([0-9]*)|)-win32-devel.zip$/) {
-        return($1, "win32-devel-msvc-old",
-                 "Windows MSVC devel, zip");
-    }
-    # new-style MSVC libcurl devel package: libcurl-7.13.1-win32-msvc.zip
+
+    # MSVC libcurl devel package: libcurl-7.13.1-win32-msvc.zip
     elsif($file =~ /^libcurl-([0-9.]*)(-([0-9]*)|)-win32-msvc.zip$/) {
         return($1, "win32-devel-msvc",
                "Windows MSVC libcurl devel, zip");
     }
-
+    # MSVC libcurl SSL devel package: libcurl-7.19.3-win32-ssl-msvc.zip
+    elsif($file =~ /^libcurl-([0-9.]*)(-([0-9]*)|)-win32-ssl-msvc.zip$/) {
+        return($1, "win32-ssl-devel-msvc",
+               "Windows MSVC libcurl devel, zip, SSL-enabled");
+    }
 
     elsif($file =~ /^curl-([0-9.]*).tar.gz$/) {
         return($1, "tar.gz",
@@ -132,25 +128,6 @@ sub gettype {
         return($1, "src.rpm",
                "Linux source RPM");
     }
-    # curl-ssl-7.4.1-1.i386.rpm
-    #elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*)(.*).i386.rpm$/) {
-    #    my $pkg="ssl-i386.rpm";
-    #    my $desc="Linux i386 RPM, SSL-enabled.";
-    #    return($1, $pkg, $desc);
-    #}
-    # curl-ssl-devel-7.9.1-1rh72.i386.rpm
-    #elsif($file =~ /^curl-ssl-devel-([0-9.]*)-(\d*)(.*).i386.rpm$/) {
-    #    my $pkg="ssl-devel-i386.rpm";
-    #    my $desc="Linux i386 devel RPM, SSL-enabled.";
-    #    return($1, $pkg, $desc);
-    #}
-    # curl-devel-7.9.1-1rh72.i386.rpm
-    #elsif($file =~ /^curl-devel-([0-9.]*)-(\d*)(.*).i386.rpm$/) {
-    #    my $pkg="devel-i386.rpm";
-    #    my $desc="Linux i386 devel RPM";
-    #    return($1, $pkg, $desc);
-    #}
-
     # curl-ssl-7.4.1-1.ppc.rpm
     elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*).ppc.rpm$/) {
         return($1, "ssl-ppc.rpm",
@@ -161,11 +138,7 @@ sub gettype {
         return($1, "ssl-devel-ppc.rpm",
                "Linux PPC devel RPM, SSL-enabled");
     }
-    # curl-ssl-7.4.1-1.src.rpm
-    #elsif($file =~ /^curl-ssl-([0-9.]*)-(\d*).src.rpm$/) {
-    #    return($1, "ssl-src.rpm",
-    #           "Linux source RPM, SSL-enabled");
-    #}
+
     # curl-ssl-7.8.1-sparc-8-pkg.tar.gz
     elsif($file =~ /^curl-ssl-([0-9.]*)-sparc-8.pkg.tar.gz/) {
         return($1, "solaris8-sparc-ssl",
@@ -181,11 +154,7 @@ sub gettype {
         return($1, "solaris26-sparc-ssl",
                "Solaris 2.6 SPARC, SSL-enabled");
     }
-    # curl-7.8.1-vms.zip (old style)
-#    elsif($file =~ /^curl-([0-9.]*)-vms\.zip$/) {
-#        return($1, "vms-zip",
-#               "OpenVMS, zip");
-#    }
+
     # curl-7.8.1-vms-vax.zip
     elsif($file =~ /^curl-([0-9.]*)-vms-vax\.zip$/) {
         return($1, "vms-vax-zip",
@@ -206,7 +175,6 @@ sub gettype {
                "Linux ARM, SSL disabled, tar+gz");
     }
 
-    # Kevin's new formats starting with curl 7.10:
     # curl-([0-9.]*)-(d*)-cygwin-nossl.tar.bz2
     elsif($file =~ /^curl-([0-9.]*)-(\d*)-cygwin-nossl.tar.bz2$/) {
         return($1, "cygwin-nossl",
@@ -227,16 +195,6 @@ sub gettype {
     elsif($file =~ /^curl-([0-9.]*)-(\d*)-cygwin.tar.bz2$/) {
         return($1, "cygwin-ssl",
                "Windows cygwin, bzip2, SSL-enabled");
-    }
-    # OLD: curl-7.8.1-2-nossl-cygwin.tar.bz2
-    elsif($file =~ /^curl-([0-9.]*)-(\d*)-nossl-cygwin.tar.bz2$/) {
-        return($1, "cygwin-nossl",
-               "Windows cygwin, bzip2");
-    }
-    # OLD: curl-7.8.1-2-src-cygwin.tar.bz2
-    elsif($file =~ /^curl-([0-9.]*)-(\d*)-src-cygwin.tar.bz2$/) {
-        return($1, "cygwin-src",
-               "Windows cygwin source, bzip2, SSL-enabled");
     }
 
     # curl-7.9.3-sparc-whatever-linux.tar.gz
