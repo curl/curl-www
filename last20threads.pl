@@ -6,19 +6,21 @@ require "CGI.pm";
 
 my $tree="mail/";
 
-my %listnames = ('archive' => 'Users',
-                 'lib' => 'Library',
+my %listnames = ('archive' => 'curl users',
+                 'lib' => 'libcurl',
                  'curlphp' => 'PHP',
                  'curlpython' => 'Python',
                  'tracker' => 'Tracker',
-                 'curlpp' => 'cURLpp');
+                 'curlpp' => 'curlpp',
+                 'curlppdev' => 'curlpp-devel');
 
 my %listrealname = ('archive' => 'curl-users',
                     'lib' => 'curl-library',
                     'curlphp' => 'curl-and-php',
                     'curlpython' => 'curl-and-python',
                     'tracker' => 'curl-tracker',
-                    'curlpp' => 'curlpp');
+                    'curlpp' => 'curlpp',
+                    'curlppdev' => 'curlpp-devel');
 
 opendir(DIR, $tree) || die "can't opendir $tree: $!";
 my @archives = grep { /^(.*)-(\d\d\d\d)-(\d\d)$/ && -d "$tree/$_" } readdir(DIR);
