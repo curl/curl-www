@@ -166,6 +166,21 @@ sub curlpp {
     return "http://www.rrette.com/mailman/listinfo/curlpp";
 }
 
+sub curlppdev {
+
+    my ($num)=@_;
+
+    my $some_dir=".";
+    opendir(DIR, $some_dir) || die "can't opendir $some_dir: $!";
+    my @dirs = sort {$a cmp $b} grep { /^curlppdev-/ && -d "$some_dir/$_" } readdir(DIR);
+    closedir DIR;
+
+    &showarchs($num, @dirs);
+
+    # return subscription URL
+    return "http://groups.google.com/group/curlpp-devel";
+}
+
 
 if($list) {
     my $subscr;
@@ -205,6 +220,9 @@ MOO
     elsif($list eq "curlpp") {
         $subscr = curlpp();
     }
+    elsif($list eq "curlpp-devel") {
+        $subscr = curlppdev();
+    }
     elsif(($list eq "curl-announce") ||
           ($list eq "curl-www-commits") ||
           ($list eq "curl-commits")) {
@@ -237,7 +255,8 @@ MOO
                'curl-and-php',
                'curl-and-python',
                'curl-tracker',
-               'curlpp');
+               'curlpp',
+               'curlpp-devel');
 
     my $n;
     for(@archs) {
