@@ -1,0 +1,74 @@
+#***************************************************************************
+#                                  _   _ ____  _
+#  Project                     ___| | | |  _ \| |
+#                             / __| | | | |_) | |
+#                            | (__| |_| |  _ <| |___
+#                             \___|\___/|_| \_\_____|
+#
+# Copyright (C) 1998 - 2009, Daniel Stenberg, <daniel@haxx.se>, et al.
+#
+# This software is licensed as described in the file COPYING, which
+# you should have received as part of this distribution. The terms
+# are also available at http://curl.haxx.se/docs/copyright.html.
+#
+# You may opt to use, copy, modify, merge, publish, distribute and/or sell
+# copies of the Software, and permit persons to whom the Software is
+# furnished to do so, under the terms of the COPYING file.
+#
+# This software is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY
+# KIND, either express or implied.
+#
+# $Id$
+#***************************************************************************
+
+# --------------------------------------------------------------------------
+#                      curl and libcurl MSVC makefile
+# --------------------------------------------------------------------------
+
+# -------------------------------
+# Ensure that MSVC is available
+# -------------------------------
+
+!IF "$(MSVCDIR)" == ""
+!  MESSAGE Environment variable MSVCDIR not set.
+!  MESSAGE Run MSVC's vcvars32.bat or vsvars32.bat to fix above condition.
+!  ERROR   See previous message.
+!ENDIF
+
+# --------------------------------------------
+# Detect NMAKE version deducing MSVC version
+# --------------------------------------------
+
+!IFNDEF _NMAKE_VER
+!  MESSAGE Macro _NMAKE_VER not defined.
+!  MESSAGE Use MSVC's NMAKE to process this makefile.
+!  ERROR   See previous message.
+!ENDIF
+
+!IF     "$(_NMAKE_VER)" == "6.00.8168.0"
+CC_VERS = vc60
+!ELSEIF "$(_NMAKE_VER)" == "6.00.9782.0"
+CC_VERS = vc60
+!ELSEIF "$(_NMAKE_VER)" == "7.00.9466"
+CC_VERS = vc70
+!ELSEIF "$(_NMAKE_VER)" == "7.10.3077"
+CC_VERS = vc71
+!ELSEIF "$(_NMAKE_VER)" == "8.00.40607.16"
+CC_VERS = vc80
+!ELSEIF "$(_NMAKE_VER)" == "8.00.50727.42"
+CC_VERS = vc80
+!ELSE
+!  MESSAGE Unknown value for _NMAKE_VER macro: "$(_NMAKE_VER)"
+!  MESSAGE Please, report this condition on the libcurl development
+!  MESSAGE mailing list: http://cool.haxx.se/mailman/listinfo/curl-library/
+!  ERROR   See previous message.
+!ENDIF
+
+# --------------------------------
+# Show some variables and values
+# --------------------------------
+
+!MESSAGE ----------------------------------
+!MESSAGE CC_VERS = $(CC_VERS)
+!MESSAGE ----------------------------------
+
