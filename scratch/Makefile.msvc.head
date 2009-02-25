@@ -25,13 +25,31 @@
 #                      curl and libcurl MSVC makefile
 # --------------------------------------------------------------------------
 
+# -------------------------------------------------------
+# Control messages shown while processing this makefile
+# -------------------------------------------------------
+ 
+MAKEFILE_VERBOSITY = 2
+
 # -------------------------------
 # Ensure that MSVC is available
 # -------------------------------
 
 !IF "$(MSVCDIR)" == ""
 !  MESSAGE Environment variable MSVCDIR not set.
-!  MESSAGE Run MSVC's vcvars32.bat or vsvars32.bat to fix above condition.
+!  MESSAGE Run MSVC's vcvars32.bat or vsvars32.bat to fix above condition
+!  MESSAGE and properly configure other Visual Studio environment variables.
+!  ERROR   See previous message.
+!ENDIF
+
+# -----------------------------------------------
+# Ensure that Windows/Platform SDK is available
+# -----------------------------------------------
+
+!IF "$(MSSDK)" == ""
+!  MESSAGE Environment variable MSSDK not set.
+!  MESSAGE Run Windows SDK's setenv.bat or setenv.cmd to fix above condition
+!  MESSAGE and properly configure other Windows SDK environment variables.
 !  ERROR   See previous message.
 !ENDIF
 
@@ -72,11 +90,24 @@ CC_VERS = vc90
 !  ERROR   See previous message.
 !ENDIF
 
+# ------------------------------------------------------------
+# Ensure that current subdirectory matches makefile location
+# ------------------------------------------------------------
+
+!IF !EXIST("Makefile.msvc")
+!  MESSAGE Makefile.msvc not found in current subdirectory.
+!  MESSAGE Process Makefile.msvc from the subdirectory where it is located.
+!  ERROR   See previous message.
+!ENDIF
+
 # --------------------------------
 # Show some variables and values
 # --------------------------------
 
-!MESSAGE ----------------------------------
-!MESSAGE CC_VERS = $(CC_VERS)
-!MESSAGE ----------------------------------
+!IF $(MAKEFILE_VERBOSITY) >= 2
+!  MESSAGE ----------------------------------
+!  MESSAGE CC_VERS = $(CC_VERS)
+!  MESSAGE ----------------------------------
+!ENDIF
+
 
