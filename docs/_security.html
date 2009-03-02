@@ -38,6 +38,47 @@ TITLE(curl Security)
  See also the <a href="vulnerabilities.html">Vulnerabilties Table</a> to see
  what versions that are vulnerable to what flaws.
 
+<a name="20090303"></a>
+SUBTITLE(libcurl Arbitrary File Access)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>March 3, 2009</td></tr>
+  <tr><td>ID</td><td>
+<a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0037">CVE-2009-0037</a>
+<small><a href="#20090303">(permalink)</a></small></td></tr>
+  <tr><td>Affected versions</td><td>5.11 to and including 7.19.3</td></tr>
+  <tr><td>Not affected versions</td><td>5.10 and earlier, 7.19.4 and later</td></tr>
+  <tr><td>Patches</td><td><a href="http://curl.haxx.se/CVE-2009-0037/">curl.haxx.se/CVE-2009-0037</a></td></tr>
+
+  <tr><td>Advisories</td><td>
+<a href="adv_20090303.html">Project cURL Security Advisory</a> </td></tr>
+
+</table>
+<p>
+  When told to follow a "redirect" automatically, libcurl does not question
+  the new target URL but will follow to any new URL that it understands. As
+  libcurl supports FILE:// URLs, a rogue server can thus "trick" a
+  libcurl-using application to read a local file instead of the remote one.
+<p>
+  This is a problem, for example, when the application is running on a server
+  and is written to upload or to otherwise provide the transfered data to a
+  user, to another server or to another application etc, as it can be used to
+  expose local files it was not meant to.
+<p>
+  The problem can also be exploited for uploading, if the rogue server
+  redirects the client to a local file and thus it would (over)write a local
+  file instead of sending it to the server.
+<p>
+  libcurl compiled to support SCP can get tricked to get a file using embedded
+  semicolons, which can lead to execution of commands on the given
+  server. "Location: scp://name:passwd@host/a'``;date >/tmp/test``;'".
+<p>
+  Files on servers other than the one running libcurl are also accessible when
+  credentials for those servers are stored in the .netrc file of the user
+  running libcurl.  This is most common for FTP servers, but can occur with
+  any protocol supported by libcurl.  Files on remote SSH servers are also
+  accessible when the user has an unencrypted SSH key.
+
 <a name="20070710"></a>
 SUBTITLE(libcurl GnuTLS insufficient cert verification)
 <p>
