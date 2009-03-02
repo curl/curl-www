@@ -49,6 +49,50 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_19_4"></a>
+SUBTITLE(Fixed in 7.19.4 - March 3 2009)
+<p> Changes:
+<ul class="changes">
+ CHG Added CURLOPT_NOPROXY and the corresponding --noproxy
+ CHG the OpenSSL-specific code disables TICKET (rfc5077) which is enabled by
+   default in openssl 0.9.8j
+ CHG Added CURLOPT_TFTP_BLKSIZE
+ CHG Added CURLOPT_SOCKS5_GSSAPI_SERVICE and CURLOPT_SOCKS5_GSSAPI_NEC - with
+   the corresponding curl options --socks5-gssapi-service and
+   --socks5-gssapi-nec
+ CHG Improved IPv6 support when built with with c-ares >= 1.6.1
+ CHG Added CURLPROXY_HTTP_1_0 and --proxy1.0
+ CHG Added docs/libcurl/symbols-in-versions
+ CHG Added CURLINFO_CONDITION_UNMET
+ CHG Added support for Digest and NTLM authentication using GnuTLS
+ CHG CURLOPT_FTP_CREATE_MISSING_DIRS can now be set to 2 to retry the CWD even
+   when MKD fails
+ CHG GnuTLS initing moved to curl_global_init()
+ CHG Added CURLOPT_REDIR_PROTOCOLS and CURLOPT_PROTOCOLS
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF missing ssh.obj in VS makefiles
+ BGF FTP ;type=i URLs now work with CURLOPT_PROXY_TRANSFER_MODE in Turkish
+   locale 
+ BGF realms with quoted quotation marks in HTTP Digest headers
+ BGF VC9 makefiles are now really included
+ BGF multi interface memory leak with CURLMOPT_MAXCONNECTS set
+ BGF CURLINFO_CONTENT_LENGTH_DOWNLOAD size from file:// "transfers" with
+   CURLOPT_NOBODY set true
+ BGF memory leak on some libz errors for content encodings
+ BGF NSS-enabled build is repaired
+ BGF superfluous wait in SFTP downloads removed
+ BGF FTP with the multi interface no longer kills the control connection as
+   easily on transfer failures
+ BGF compilation halting when using VS2008 to build a Windows 2000 target
+ BGF ease creation of libcurl Mac OS X Framework
+ BGF CURLINFO_CONTENT_LENGTH_DOWNLOAD and CURLINFO_CONTENT_LENGTH_UPLOAD are -1
+   if unknown
+ BGF Negotiate proxy authentication
+ BGF CURLOPT_INTERFACE and CURLOPT_LOCALPORT used together
+</ul>
+
 <a name="7_19_3"></a>
 SUBTITLE(Fixed in 7.19.3 - January 19 2009)
 <p> Changes:
