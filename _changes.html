@@ -22,6 +22,7 @@ TITLE(Changelog)
 <br><a href="/docs/todo.html">TODO</a>
 <br><a href="http://curl.haxx.se/docs/verdiff.cgi">Detailed Changes</a>
 <br><a href="/docs/vulnerabilities.html">Vulnerabilities Table</a>
+<br><a href="/docs/releases.html">Releaselog</a>
 </div>
 #if 0
 SUBTITLE(Fixed since -- available in CVS and daily snapshots)
@@ -51,6 +52,10 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 
 <a name="7_19_4"></a>
 SUBTITLE(Fixed in 7.19.4 - March 3 2009)
+<a href="http://curl.haxx.se/docs/adv_20090303.html"><img src="/pix/alert.png"
+align="right" title="Release contains security-related bug fix" alt="Release
+contains security-related bug fix" border="0"></a>
+
 <p> Changes:
 <ul class="changes">
  CHG Added CURLOPT_NOPROXY and the corresponding --noproxy
@@ -68,7 +73,7 @@ SUBTITLE(Fixed in 7.19.4 - March 3 2009)
  CHG CURLOPT_FTP_CREATE_MISSING_DIRS can now be set to 2 to retry the CWD even
    when MKD fails
  CHG GnuTLS initing moved to curl_global_init()
- CHG Added CURLOPT_REDIR_PROTOCOLS and CURLOPT_PROTOCOLS
+ CHG Added CURLOPT_REDIR_PROTOCOLS and CURLOPT_PROTOCOLS, see also the <a href="http://curl.haxx.se/docs/adv_20090303.html">security advisory</a>
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
