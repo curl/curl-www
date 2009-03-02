@@ -231,13 +231,13 @@ adv_20070710.t: adv_20070710.txt
 vulnerabilities.html: _vulnerabilities.html vuln.txt $(MAINPARTS)
 	$(ACTION)
 
-vuln.txt: ../_changes.html ./vulntable.pl
+vuln.txt: ../_changes.html ./vulntable.pl vuln.pm
 	./vulntable.pl < $< > $@
 
 releases.html: _releases.html rel.txt $(MAINPARTS)
 	$(ACTION)
 
-rel.txt: ../_changes.html ./relinfo.pl
+rel.txt: ../_changes.html ./relinfo.pl vuln.pm
 	./relinfo.pl < $< > $@
 
 
