@@ -8,6 +8,7 @@
 <a href="cocoa/">Cocoa</a><br>
 <a href="d/">D</a><br>
 <a href="dylan/">Dylan</a><br>
+<a href="eiffel/">Eiffel</a><br>
 <a href="euphoria/">Euphoria</a><br>
 <a href="ferite/">Ferite</a><br>
 <a href="gambas/">Gambas</a><br>
