@@ -1,0 +1,42 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Release Table</TITLE>
+#include "css.t"
+#include "manpage.t"
+</HEAD>
+
+#define CURL_DOCS
+#define CURL_URL docs/releases.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Docs, "/docs/", Release Table)
+
+TITLE(curl releases)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="security.html">Security</a>
+<br><a href="manual.html">Manual</a>
+<br><a href="faq.html">FAQ</a>
+<br><a href="/changes.html">Changelog</a>
+<br><a href="vulnerabilities.html">Vulnerabilities</a>
+</div>
+<p>
+ This is an overview that displays curl versions and some stats and numbers
+ for each release.
+
+<p>
+ In the <b>Bugfixes</b> and <b>Changes</b> column, the numbers within
+ parentheses are the total number combined. The complete amount since that
+ version until the moste recent one.
+<p>
+ <b>Days</b> shows number of days since the previous release, <b>index</b> is
+ just an index counting all releases starting at 0 for the most recent.
+
+<pre>
+#include "rel.txt"
+</pre>
+
+#include "_footer.html"
+</body> </html>
