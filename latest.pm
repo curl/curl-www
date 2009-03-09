@@ -103,6 +103,10 @@ sub gettype {
         return($1, "tar.bz2",
                "Generic source tar, bzip2");
     }
+    elsif($file =~ /^curl-([0-9.]*).tar.lzma$/) {
+        return($1, "tar.lzma",
+               "Generic source tar, lzma");
+    }
     elsif($file =~ /^curl-([0-9.]*).zip$/) {
         return($1, "zip",
                "Generic source, zip");
