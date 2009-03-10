@@ -26,30 +26,32 @@
 # --------------------------------------------------------------------------
 #
 # Makefile options:
+# -----------------
 #
-#   ENABLE_STATIC=YES|NO|1|0
-#   ENABLE_SHARED=YES|NO|1|0
-#   DISABLE_STATIC=YES|NO|1|0
-#   DISABLE_SHARED=YES|NO|1|0
+# ENABLE_STATIC  = YES|NO|1|0
+# ENABLE_SHARED  = YES|NO|1|0
+# DISABLE_STATIC = YES|NO|1|0
+# DISABLE_SHARED = YES|NO|1|0
 #
-# Whether a shared (.dll) or static (.lib) libcurl library is built, and used
-# for curl, can be specified when running nmake providing one of the above
-# four options and a valid value. Default is a shared (.dll) libcurl library.
+#   Whether a shared (.dll) or static (.lib) libcurl library is built, and
+#   used for curl, can be specified when running nmake providing one of the
+#   above four options with a valid value. If none of these four options is
+#   given, default behaviour is to build a shared (.dll) libcurl library.
 #
-# Any of the following five commands builds a shared (.dll) libcurl library:
+#   Any of the following five commands builds a shared (.dll) libcurl library:
 #
-#   nmake -f Makefile.msvc
-#   nmake -f Makefile.msvc ENABLE_STATIC=NO
-#   nmake -f Makefile.msvc ENABLE_SHARED=YES
-#   nmake -f Makefile.msvc DISABLE_STATIC=YES
-#   nmake -f Makefile.msvc DISABLE_SHARED=NO
+#     nmake -f Makefile.msvc
+#     nmake -f Makefile.msvc ENABLE_STATIC=NO
+#     nmake -f Makefile.msvc ENABLE_SHARED=YES
+#     nmake -f Makefile.msvc DISABLE_STATIC=YES
+#     nmake -f Makefile.msvc DISABLE_SHARED=NO
 #
-# Any of the following four commands builds a static (.lib) libcurl library:
+#   Any of the following four commands builds a static (.lib) libcurl library:
 #
-#   nmake -f Makefile.msvc ENABLE_STATIC=YES
-#   nmake -f Makefile.msvc ENABLE_SHARED=NO
-#   nmake -f Makefile.msvc DISABLE_STATIC=NO
-#   nmake -f Makefile.msvc DISABLE_SHARED=YES
+#     nmake -f Makefile.msvc ENABLE_STATIC=YES
+#     nmake -f Makefile.msvc ENABLE_SHARED=NO
+#     nmake -f Makefile.msvc DISABLE_STATIC=NO
+#     nmake -f Makefile.msvc DISABLE_SHARED=YES
 #
 
 # -------------------------------------------------------
@@ -145,7 +147,7 @@ LIBCURL_TYPE_SET = X$(LIBCURL_TYPE_SET)
 LIBCURL_TYPE = dll
 LIBCURL_TYPE_SET = X$(LIBCURL_TYPE_SET)
 !ELSEIF "$(ENABLE_STATIC)" != ""
-!  MESSAGE Invalid ENABLE_STATIC specification "$(ENABLE_STATIC)". Must be: 'yes' or 'no'.
+!  MESSAGE Invalid ENABLE_STATIC option value. It must be: YES, NO, 1 or 0.
 !  ERROR   See previous message.
 !ENDIF
 
@@ -160,7 +162,7 @@ LIBCURL_TYPE_SET = X$(LIBCURL_TYPE_SET)
 LIBCURL_TYPE = lib
 LIBCURL_TYPE_SET = X$(LIBCURL_TYPE_SET)
 !ELSEIF "$(ENABLE_SHARED)" != ""
-!  MESSAGE Invalid ENABLE_SHARED specification "$(ENABLE_SHARED)". Must be: 'yes' or 'no'.
+!  MESSAGE Invalid ENABLE_SHARED option value. It must be: YES, NO, 1 or 0.
 !  ERROR   See previous message.
 !ENDIF
 
@@ -175,7 +177,7 @@ LIBCURL_TYPE_SET = X$(LIBCURL_TYPE_SET)
 LIBCURL_TYPE = lib
 LIBCURL_TYPE_SET = X$(LIBCURL_TYPE_SET)
 !ELSEIF "$(DISABLE_STATIC)" != ""
-!  MESSAGE Invalid DISABLE_STATIC specification "$(DISABLE_STATIC)". Must be: 'yes' or 'no'.
+!  MESSAGE Invalid DISABLE_STATIC option value. It must be: YES, NO, 1 or 0.
 !  ERROR   See previous message.
 !ENDIF
 
@@ -190,16 +192,17 @@ LIBCURL_TYPE_SET = X$(LIBCURL_TYPE_SET)
 LIBCURL_TYPE = dll
 LIBCURL_TYPE_SET = X$(LIBCURL_TYPE_SET)
 !ELSEIF "$(DISABLE_SHARED)" != ""
-!  MESSAGE Invalid DISABLE_SHARED specification "$(DISABLE_SHARED)". Must be: 'yes' or 'no'.
+!  MESSAGE Invalid DISABLE_SHARED option value. It must be: YES, NO, 1 or 0.
 !  ERROR   See previous message.
 !ENDIF
 
 !IF     "$(LIBCURL_TYPE_SET)" == ""
 LIBCURL_TYPE = dll
 !ELSEIF "$(LIBCURL_TYPE_SET)" != "X"
-!  MESSAGE Detected multiple occurances of ENABLE_STATIC, ENABLE_SHARED, DISABLE_STATIC,
-!  MESSAGE or DISABLE_SHARED. Only one of these, with value 'yes' or 'no', must be used
-!  MESSAGE to specify a shared (.dll) or static (.lib) libcurl library.
+!  MESSAGE Mutually exclusive options detected.
+!  MESSAGE In order to specify wether to build a shared (.dll) or static (.lib)
+!  MESSAGE libcurl library, only one option among ENABLE_STATIC, ENABLE_SHARED,
+!  MESSAGE DISABLE_STATIC, or DISABLE_SHARED is allowed at a given time.
 !  ERROR   See previous message.
 !ENDIF
 
