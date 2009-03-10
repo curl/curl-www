@@ -1,26 +1,5 @@
 <p>
 
-#if 0
-<TABLE WIDTH="120" CELLPADDING="4" HEIGHT="240" style="border-width: thin;
-border-style: solid;" BORDERCOLOR="#000000" BGCOLOR="#CCCCCC">
-<TR><TD VALIGN="TOP">
-</TD></TR></TABLE>
-<p>
-#endif
-
-#if 0
-<table width="120" cellspacing="0" cellpadding="0" height="240" style="border: thin solid #000000; font-size: 8pt;">
-<TR><TD VALIGN="TOP">
-<font face="arial" size="1">
-#ifdef INDEX_HTML
-#include "textlinks.t"
-#endif
-</font>
-</TD></TR></TABLE>
-
-<p>
-#endif
-
 <table cellspacing="0" cellpadding="0" width="120" style="border-width: thin;
 border-style: solid;">
 <tbody> <tr> <td>
@@ -38,4 +17,4 @@ border-style: solid;">
 </font>
 </td></tr></tbody></table>
 <p>
-<a href="http://sourceforge.net/projects/curl/"><img src="http://sourceforge.net/sflogo.php?group_id=976&amp;type=1" width="88" height="31" border="0" alt="SourceForge.net Logo"></a>
+<a href="http://sourceforge.net/projects/curl/"><img src="http://sourceforge.net/sflogo.php?group_id=976&type=8" width="80" height="15" border="0" alt="curl's project page on SourceForge.net"></a>
