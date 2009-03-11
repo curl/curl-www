@@ -28,6 +28,7 @@
 # Makefile options:
 # -----------------
 #
+#
 # ENABLE_STATIC  = YES|NO|1|0
 # ENABLE_SHARED  = YES|NO|1|0
 # DISABLE_STATIC = YES|NO|1|0
@@ -53,6 +54,98 @@
 #     nmake -f Makefile.msvc DISABLE_STATIC=NO
 #     nmake -f Makefile.msvc DISABLE_SHARED=YES
 #
+#
+# ENABLE_DEBUG    = YES|NO|1|0
+# ENABLE_RELEASE  = YES|NO|1|0
+# DISABLE_DEBUG   = YES|NO|1|0
+# DISABLE_RELEASE = YES|NO|1|0
+#
+#   Whether a debug or release version libcurl library is built, and used for
+#   curl, can be specified when running nmake providing one of the above four
+#   options with a valid value. If none of these four options is given, default
+#   behaviour is to build a release libcurl library.
+#
+#   Any of the following five commands builds a release libcurl library:
+#
+#     nmake -f Makefile.msvc
+#     nmake -f Makefile.msvc ENABLE_DEBUG=NO
+#     nmake -f Makefile.msvc ENABLE_RELEASE=YES
+#     nmake -f Makefile.msvc DISABLE_DEBUG=YES
+#     nmake -f Makefile.msvc DISABLE_RELEASE=NO
+#
+#   Any of the following four commands builds a debug libcurl library:
+#
+#     nmake -f Makefile.msvc ENABLE_DEBUG=YES
+#     nmake -f Makefile.msvc ENABLE_RELEASE=NO
+#     nmake -f Makefile.msvc DISABLE_DEBUG=NO
+#     nmake -f Makefile.msvc DISABLE_RELEASE=YES
+#
+#
+# ENABLE_OPTIMIZE  = YES|NO|1|0
+# DISABLE_OPTIMIZE = YES|NO|1|0
+#
+#   Whether compiler optimizations will be enabled or disabled when building
+#   libcurl library, and curl, can be specified when running nmake providing
+#   one of the above two options with a valid value. If none of these options
+#   are given, default behaviour is to use optimizations for release builds
+#   and no compiler optimizations for debug builds.
+#
+#   Any of the following three commands builds libcurl with optimizations:
+#
+#     nmake -f Makefile.msvc
+#     nmake -f Makefile.msvc ENABLE_OPTIMIZE=YES
+#     nmake -f Makefile.msvc DISABLE_OPTIMIZE=NO
+#
+#   Any of the following two commands builds libcurl without optimizations:
+#
+#     nmake -f Makefile.msvc ENABLE_OPTIMIZE=NO
+#     nmake -f Makefile.msvc DISABLE_OPTIMIZE=YES
+#
+#
+# ENABLE_WARNINGS  = YES|NO|1|0
+# DISABLE_WARNINGS = YES|NO|1|0
+#
+#   Whether strict compiler warnings will be enabled or disabled when building
+#   libcurl library, and curl, can be specified when running nmake providing
+#   one of the above two options with a valid value. If none of these options
+#   are given, default behaviour is to use strict compiler warnings for debug
+#   builds and issue less compiler warnings for release builds.
+#
+#   Any of the following three commands builds libcurl without strict warnings:
+#
+#     nmake -f Makefile.msvc
+#     nmake -f Makefile.msvc ENABLE_WARNINGS=NO
+#     nmake -f Makefile.msvc DISABLE_WARNINGS=YES
+#
+#   Any of the following two commands builds libcurl with strict warnings:
+#
+#     nmake -f Makefile.msvc ENABLE_WARNINGS=YES
+#     nmake -f Makefile.msvc DISABLE_WARNINGS=NO
+#
+#
+# WITH_CRT = DYNAMIC|SHARED|DLL|STATIC|PRIVATE|LIB
+#
+#   This option allows to specify which C run-time library will be used for
+#   curl and libcurl. DYNAMIC, SHARED and DLL are all synonyms and imply that
+#   libcurl linking will be done with the dynamic C run-time. On the other hand
+#   STATIC, PRIVATE and LIB will force linking with the static C run-time. When
+#   not specified the default behaviour is to use the dynamic C run-time.
+#
+#   Any of the following four commands builds libcurl with the dynamic CRT:
+#
+#     nmake -f Makefile.msvc
+#     nmake -f Makefile.msvc WITH_CRT=DYNAMIC
+#     nmake -f Makefile.msvc WITH_CRT=SHARED
+#     nmake -f Makefile.msvc WITH_CRT=DLL
+#
+#   Any of the following three commands builds libcurl with the static CRT:
+#
+#     nmake -f Makefile.msvc WITH_CRT=STATIC
+#     nmake -f Makefile.msvc WITH_CRT=PRIVATE
+#     nmake -f Makefile.msvc WITH_CRT=LIB
+#
+#
+
 
 # -------------------------------------------------------
 # Control messages shown while processing this makefile
@@ -129,23 +222,23 @@ CC_VERS = vc90
 !  ERROR   See previous message.
 !ENDIF
 
-# --------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # libcurl library type selection. Default is libcurl shared library (.dll)
-# --------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
-LIBCURL_TYPE =
-LIBCURL_TYPE_SET =
+OPT_LIBTYPE =
+OPT_LIBTYPE_SET =
 
 !IF     "$(ENABLE_STATIC)" == "YES" || \
         "$(ENABLE_STATIC)" == "yes" || \
         "$(ENABLE_STATIC)" == "1"
-LIBCURL_TYPE = lib
-LIBCURL_TYPE_SET = X$(LIBCURL_TYPE_SET)
+OPT_LIBTYPE = lib
+OPT_LIBTYPE_SET = X$(OPT_LIBTYPE_SET)
 !ELSEIF "$(ENABLE_STATIC)" == "NO"  || \
         "$(ENABLE_STATIC)" == "no"  || \
         "$(ENABLE_STATIC)" == "0"
-LIBCURL_TYPE = dll
-LIBCURL_TYPE_SET = X$(LIBCURL_TYPE_SET)
+OPT_LIBTYPE = dll
+OPT_LIBTYPE_SET = X$(OPT_LIBTYPE_SET)
 !ELSEIF "$(ENABLE_STATIC)" != ""
 !  MESSAGE Invalid ENABLE_STATIC option value. It must be: YES, NO, 1 or 0.
 !  ERROR   See previous message.
@@ -154,13 +247,13 @@ LIBCURL_TYPE_SET = X$(LIBCURL_TYPE_SET)
 !IF     "$(ENABLE_SHARED)" == "YES" || \
         "$(ENABLE_SHARED)" == "yes" || \
         "$(ENABLE_SHARED)" == "1"
-LIBCURL_TYPE = dll
-LIBCURL_TYPE_SET = X$(LIBCURL_TYPE_SET)
+OPT_LIBTYPE = dll
+OPT_LIBTYPE_SET = X$(OPT_LIBTYPE_SET)
 !ELSEIF "$(ENABLE_SHARED)" == "NO"  || \
         "$(ENABLE_SHARED)" == "no"  || \
         "$(ENABLE_SHARED)" == "0"
-LIBCURL_TYPE = lib
-LIBCURL_TYPE_SET = X$(LIBCURL_TYPE_SET)
+OPT_LIBTYPE = lib
+OPT_LIBTYPE_SET = X$(OPT_LIBTYPE_SET)
 !ELSEIF "$(ENABLE_SHARED)" != ""
 !  MESSAGE Invalid ENABLE_SHARED option value. It must be: YES, NO, 1 or 0.
 !  ERROR   See previous message.
@@ -169,13 +262,13 @@ LIBCURL_TYPE_SET = X$(LIBCURL_TYPE_SET)
 !IF     "$(DISABLE_STATIC)" == "YES" || \
         "$(DISABLE_STATIC)" == "yes" || \
         "$(DISABLE_STATIC)" == "1"
-LIBCURL_TYPE = dll
-LIBCURL_TYPE_SET = X$(LIBCURL_TYPE_SET)
+OPT_LIBTYPE = dll
+OPT_LIBTYPE_SET = X$(OPT_LIBTYPE_SET)
 !ELSEIF "$(DISABLE_STATIC)" == "NO"  || \
         "$(DISABLE_STATIC)" == "no"  || \
         "$(DISABLE_STATIC)" == "0"
-LIBCURL_TYPE = lib
-LIBCURL_TYPE_SET = X$(LIBCURL_TYPE_SET)
+OPT_LIBTYPE = lib
+OPT_LIBTYPE_SET = X$(OPT_LIBTYPE_SET)
 !ELSEIF "$(DISABLE_STATIC)" != ""
 !  MESSAGE Invalid DISABLE_STATIC option value. It must be: YES, NO, 1 or 0.
 !  ERROR   See previous message.
@@ -184,26 +277,249 @@ LIBCURL_TYPE_SET = X$(LIBCURL_TYPE_SET)
 !IF     "$(DISABLE_SHARED)" == "YES" || \
         "$(DISABLE_SHARED)" == "yes" || \
         "$(DISABLE_SHARED)" == "1"
-LIBCURL_TYPE = lib
-LIBCURL_TYPE_SET = X$(LIBCURL_TYPE_SET)
+OPT_LIBTYPE = lib
+OPT_LIBTYPE_SET = X$(OPT_LIBTYPE_SET)
 !ELSEIF "$(DISABLE_SHARED)" == "NO"  || \
         "$(DISABLE_SHARED)" == "no"  || \
         "$(DISABLE_SHARED)" == "0"
-LIBCURL_TYPE = dll
-LIBCURL_TYPE_SET = X$(LIBCURL_TYPE_SET)
+OPT_LIBTYPE = dll
+OPT_LIBTYPE_SET = X$(OPT_LIBTYPE_SET)
 !ELSEIF "$(DISABLE_SHARED)" != ""
 !  MESSAGE Invalid DISABLE_SHARED option value. It must be: YES, NO, 1 or 0.
 !  ERROR   See previous message.
 !ENDIF
 
-!IF     "$(LIBCURL_TYPE_SET)" == ""
-LIBCURL_TYPE = dll
-!ELSEIF "$(LIBCURL_TYPE_SET)" != "X"
+!IF     "$(OPT_LIBTYPE_SET)" == ""
+OPT_LIBTYPE = dll
+!ELSEIF "$(OPT_LIBTYPE_SET)" != "X"
 !  MESSAGE Mutually exclusive options detected.
 !  MESSAGE In order to specify wether to build a shared (.dll) or static (.lib)
 !  MESSAGE libcurl library, only one option among ENABLE_STATIC, ENABLE_SHARED,
 !  MESSAGE DISABLE_STATIC, or DISABLE_SHARED is allowed at a given time.
 !  ERROR   See previous message.
+!ENDIF
+
+# ------------------------------------------------------------------------------
+# libcurl library debug or release build selection. Default is release build
+# ------------------------------------------------------------------------------
+
+OPT_DEBUG =
+OPT_DEBUG_SET =
+
+!IF     "$(ENABLE_DEBUG)" == "YES" || \
+        "$(ENABLE_DEBUG)" == "yes" || \
+        "$(ENABLE_DEBUG)" == "1"
+OPT_DEBUG = yes
+OPT_DEBUG_SET = X$(OPT_DEBUG_SET)
+!ELSEIF "$(ENABLE_DEBUG)" == "NO"  || \
+        "$(ENABLE_DEBUG)" == "no"  || \
+        "$(ENABLE_DEBUG)" == "0"
+OPT_DEBUG = no
+OPT_DEBUG_SET = X$(OPT_DEBUG_SET)
+!ELSEIF "$(ENABLE_DEBUG)" != ""
+!  MESSAGE Invalid ENABLE_DEBUG option value. It must be: YES, NO, 1 or 0.
+!  ERROR   See previous message.
+!ENDIF
+
+!IF     "$(ENABLE_RELEASE)" == "YES" || \
+        "$(ENABLE_RELEASE)" == "yes" || \
+        "$(ENABLE_RELEASE)" == "1"
+OPT_DEBUG = no
+OPT_DEBUG_SET = X$(OPT_DEBUG_SET)
+!ELSEIF "$(ENABLE_RELEASE)" == "NO"  || \
+        "$(ENABLE_RELEASE)" == "no"  || \
+        "$(ENABLE_RELEASE)" == "0"
+OPT_DEBUG = yes
+OPT_DEBUG_SET = X$(OPT_DEBUG_SET)
+!ELSEIF "$(ENABLE_RELEASE)" != ""
+!  MESSAGE Invalid ENABLE_RELEASE option value. It must be: YES, NO, 1 or 0.
+!  ERROR   See previous message.
+!ENDIF
+
+!IF     "$(DISABLE_DEBUG)" == "YES" || \
+        "$(DISABLE_DEBUG)" == "yes" || \
+        "$(DISABLE_DEBUG)" == "1"
+OPT_DEBUG = no
+OPT_DEBUG_SET = X$(OPT_DEBUG_SET)
+!ELSEIF "$(DISABLE_DEBUG)" == "NO"  || \
+        "$(DISABLE_DEBUG)" == "no"  || \
+        "$(DISABLE_DEBUG)" == "0"
+OPT_DEBUG = yes
+OPT_DEBUG_SET = X$(OPT_DEBUG_SET)
+!ELSEIF "$(DISABLE_DEBUG)" != ""
+!  MESSAGE Invalid DISABLE_DEBUG option value. It must be: YES, NO, 1 or 0.
+!  ERROR   See previous message.
+!ENDIF
+
+!IF     "$(DISABLE_RELEASE)" == "YES" || \
+        "$(DISABLE_RELEASE)" == "yes" || \
+        "$(DISABLE_RELEASE)" == "1"
+OPT_DEBUG = yes
+OPT_DEBUG_SET = X$(OPT_DEBUG_SET)
+!ELSEIF "$(DISABLE_RELEASE)" == "NO"  || \
+        "$(DISABLE_RELEASE)" == "no"  || \
+        "$(DISABLE_RELEASE)" == "0"
+OPT_DEBUG = no
+OPT_DEBUG_SET = X$(OPT_DEBUG_SET)
+!ELSEIF "$(DISABLE_RELEASE)" != ""
+!  MESSAGE Invalid DISABLE_RELEASE option value. It must be: YES, NO, 1 or 0.
+!  ERROR   See previous message.
+!ENDIF
+
+!IF     "$(OPT_DEBUG_SET)" == ""
+OPT_DEBUG = no
+!ELSEIF "$(OPT_DEBUG_SET)" != "X"
+!  MESSAGE Mutually exclusive options detected.
+!  MESSAGE In order to specify wether to build a debug or release version of
+!  MESSAGE libcurl library, only one option among ENABLE_DEBUG, ENABLE_RELEASE,
+!  MESSAGE DISABLE_DEBUG, or DISABLE_RELEASE is allowed at a given time.
+!  ERROR   See previous message.
+!ENDIF
+
+# ------------------------------------------------------------------------------
+# libcurl library compiler optimizations build selection. Default setting is
+# no compiler optimizations for debug builds, and optimizations for release.
+# ------------------------------------------------------------------------------
+
+OPT_OPTIMIZE =
+OPT_OPTIMIZE_SET =
+
+!IF     "$(ENABLE_OPTIMIZE)" == "YES" || \
+        "$(ENABLE_OPTIMIZE)" == "yes" || \
+        "$(ENABLE_OPTIMIZE)" == "1"
+OPT_OPTIMIZE = yes
+OPT_OPTIMIZE_SET = X$(OPT_OPTIMIZE_SET)
+!ELSEIF "$(ENABLE_OPTIMIZE)" == "NO"  || \
+        "$(ENABLE_OPTIMIZE)" == "no"  || \
+        "$(ENABLE_OPTIMIZE)" == "0"
+OPT_OPTIMIZE = no
+OPT_OPTIMIZE_SET = X$(OPT_OPTIMIZE_SET)
+!ELSEIF "$(ENABLE_OPTIMIZE)" != ""
+!  MESSAGE Invalid ENABLE_OPTIMIZE option value. It must be: YES, NO, 1 or 0.
+!  ERROR   See previous message.
+!ENDIF
+
+!IF     "$(DISABLE_OPTIMIZE)" == "YES" || \
+        "$(DISABLE_OPTIMIZE)" == "yes" || \
+        "$(DISABLE_OPTIMIZE)" == "1"
+OPT_OPTIMIZE = no
+OPT_OPTIMIZE_SET = X$(OPT_OPTIMIZE_SET)
+!ELSEIF "$(DISABLE_OPTIMIZE)" == "NO"  || \
+        "$(DISABLE_OPTIMIZE)" == "no"  || \
+        "$(DISABLE_OPTIMIZE)" == "0"
+OPT_OPTIMIZE = yes
+OPT_OPTIMIZE_SET = X$(OPT_OPTIMIZE_SET)
+!ELSEIF "$(DISABLE_OPTIMIZE)" != ""
+!  MESSAGE Invalid DISABLE_OPTIMIZE option value. It must be: YES, NO, 1 or 0.
+!  ERROR   See previous message.
+!ENDIF
+
+!IF     "$(OPT_OPTIMIZE_SET)" == "" && "$(OPT_DEBUG)" == "no"
+OPT_OPTIMIZE = yes
+!ELSEIF "$(OPT_OPTIMIZE_SET)" == ""
+OPT_OPTIMIZE = no
+!ELSEIF "$(OPT_OPTIMIZE_SET)" != "X"
+!  MESSAGE Mutually exclusive options detected.
+!  MESSAGE In order to specify wether compiler optimizations should be enabled
+!  MESSAGE or disabled when building libcurl library, only a single option among
+!  MESSAGE ENABLE_OPTIMIZE or DISABLE_OPTIMIZE is allowed at a given time.
+!ENDIF
+
+# TODO RIGHT HERE:
+# Do we wish to disallow OPT_DEBUG=YES with OPT_OPTIMIZE=YES builds ?
+# MSVC might get upset due to the compiler flags these settings would use.
+
+# ------------------------------------------------------------------------------
+# libcurl library compiler warnings build selection. Default setting is to
+# maximize compiler warnings for debug builds, and less warnings for release.
+# ------------------------------------------------------------------------------
+
+OPT_WARNINGS =
+OPT_WARNINGS_SET =
+
+!IF     "$(ENABLE_WARNINGS)" == "YES" || \
+        "$(ENABLE_WARNINGS)" == "yes" || \
+        "$(ENABLE_WARNINGS)" == "1"
+OPT_WARNINGS = yes
+OPT_WARNINGS_SET = X$(OPT_WARNINGS_SET)
+!ELSEIF "$(ENABLE_WARNINGS)" == "NO"  || \
+        "$(ENABLE_WARNINGS)" == "no"  || \
+        "$(ENABLE_WARNINGS)" == "0"
+OPT_WARNINGS = no
+OPT_WARNINGS_SET = X$(OPT_WARNINGS_SET)
+!ELSEIF "$(ENABLE_WARNINGS)" != ""
+!  MESSAGE Invalid ENABLE_WARNINGS option value. It must be: YES, NO, 1 or 0.
+!  ERROR   See previous message.
+!ENDIF
+
+!IF     "$(DISABLE_WARNINGS)" == "YES" || \
+        "$(DISABLE_WARNINGS)" == "yes" || \
+        "$(DISABLE_WARNINGS)" == "1"
+OPT_WARNINGS = no
+OPT_WARNINGS_SET = X$(OPT_WARNINGS_SET)
+!ELSEIF "$(DISABLE_WARNINGS)" == "NO"  || \
+        "$(DISABLE_WARNINGS)" == "no"  || \
+        "$(DISABLE_WARNINGS)" == "0"
+OPT_WARNINGS = yes
+OPT_WARNINGS_SET = X$(OPT_WARNINGS_SET)
+!ELSEIF "$(DISABLE_WARNINGS)" != ""
+!  MESSAGE Invalid DISABLE_WARNINGS option value. It must be: YES, NO, 1 or 0.
+!  ERROR   See previous message.
+!ENDIF
+
+!IF     "$(OPT_WARNINGS_SET)" == "" && "$(OPT_DEBUG)" == "yes"
+OPT_WARNINGS = yes
+!ELSEIF "$(OPT_WARNINGS_SET)" == ""
+OPT_WARNINGS = no
+!ELSEIF "$(OPT_WARNINGS_SET)" != "X"
+!  MESSAGE Mutually exclusive options detected.
+!  MESSAGE In order to specify wether strict compiler warnings should be enabled
+!  MESSAGE or disabled when building libcurl library, only a single option among
+!  MESSAGE ENABLE_WARNINGS or DISABLE_WARNINGS is allowed at a given time.
+!ENDIF
+
+# ------------------------------------------------------------------------------
+# C run-time library selection for curl and libcurl. Default is dynamic CRT.
+# ------------------------------------------------------------------------------
+
+OPT_CRT =
+OPT_CRT_SET =
+
+!IF     "$(WITH_CRT)" == "DYNAMIC" || \
+        "$(WITH_CRT)" == "dynamic" || \
+        "$(WITH_CRT)" == "SHARED"  || \
+        "$(WITH_CRT)" == "shared"  || \
+        "$(WITH_CRT)" == "DLL"     || \
+        "$(WITH_CRT)" == "dll"
+OPT_CRT = dynamic
+OPT_CRT_SET = X$(OPT_CRT_SET)
+!ELSEIF "$(WITH_CRT)" == "STATIC"  || \
+        "$(WITH_CRT)" == "static"  || \
+        "$(WITH_CRT)" == "PRIVATE" || \
+        "$(WITH_CRT)" == "private" || \
+        "$(WITH_CRT)" == "LIB"     || \
+        "$(WITH_CRT)" == "lib"
+OPT_CRT = static
+OPT_CRT_SET = X$(OPT_CRT_SET)
+!ELSEIF "$(WITH_CRT)" != ""
+!  MESSAGE Invalid WITH_CRT option value. Must be: DYNAMIC, DLL, STATIC or LIB.
+!  MESSAGE This option specifies which C run-time library libcurl will use.
+!  ERROR   See previous message.
+!ENDIF
+
+!IF "$(OPT_CRT_SET)" == ""
+OPT_CRT = dynamic
+!ENDIF
+
+!IF "$(OPT_LIBTYPE)" == "dll" && "$(OPT_CRT)" == "static"
+!  MESSAGE +-------------------------------------------------------------------+
+!  MESSAGE |   WARNING  WARNING  WARNING  WARNING  WARNING  WARNING  WARNING   |
+!  MESSAGE +-------------------------------------------------------------------+
+!  MESSAGE |    Building a dynamic (.dll) libcurl library with a static or     |
+!  MESSAGE |    private C run-time is highly discouraged. Don't cry later.     |
+!  MESSAGE +-------------------------------------------------------------------+
+!  MESSAGE |   WARNING  WARNING  WARNING  WARNING  WARNING  WARNING  WARNING   |
+!  MESSAGE +-------------------------------------------------------------------+
 !ENDIF
 
 # ------------------------------------------------------------------
@@ -213,7 +529,11 @@ LIBCURL_TYPE = dll
 !IF $(MAKEFILE_VERBOSITY) >= 2
 !  MESSAGE ----------------------------------
 !  MESSAGE CC_VERS      = $(CC_VERS)
-!  MESSAGE LIBCURL_TYPE = $(LIBCURL_TYPE)
+!  MESSAGE OPT_LIBTYPE  = $(OPT_LIBTYPE)
+!  MESSAGE OPT_DEBUG    = $(OPT_DEBUG)
+!  MESSAGE OPT_WARNINGS = $(OPT_WARNINGS)
+!  MESSAGE OPT_OPTIMIZE = $(OPT_OPTIMIZE)
+!  MESSAGE OPT_CRT      = $(OPT_CRT)
 !  MESSAGE ----------------------------------
 !ENDIF
 
