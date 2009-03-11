@@ -71,8 +71,14 @@ http://curl.haxx.se/docs/security.html
     For curl 7.18.1:
     http://curl.haxx.se/CVE-2009-0037/curl-7.18.1-CVE-2009-0037.patch
 
+    For curl 7.17.0:
+    http://curl.haxx.se/CVE-2009-0037/curl-7.17.0-CVE-2009-0037.patch
+
     For curl 7.16.4:
     http://curl.haxx.se/CVE-2009-0037/curl-7.16.4-CVE-2009-0037.patch
+
+    For curl 7.15.3:
+    http://curl.haxx.se/CVE-2009-0037/curl-7.15.3-CVE-2009-0037.patch
 
     For curl 7.15.1:
     http://curl.haxx.se/CVE-2009-0037/curl-7.15.1-CVE-2009-0037.patch
