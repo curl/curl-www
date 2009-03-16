@@ -186,31 +186,33 @@ MAKEFILE_VERBOSITY = 2
 !ENDIF
 
 !IF     "$(_NMAKE_VER)" == "6.00.8168.0"
-CC_VERS = vc60
+CC_VERS_NUM = 60
 !ELSEIF "$(_NMAKE_VER)" == "6.00.9782.0"
-CC_VERS = vc60
+CC_VERS_NUM = 60
 !ELSEIF "$(_NMAKE_VER)" == "7.00.9466"
-CC_VERS = vc70
+CC_VERS_NUM = 70
 !ELSEIF "$(_NMAKE_VER)" == "7.00.9955"
-CC_VERS = vc70
+CC_VERS_NUM = 70
 !ELSEIF "$(_NMAKE_VER)" == "7.10.3077"
-CC_VERS = vc71
+CC_VERS_NUM = 71
 !ELSEIF "$(_NMAKE_VER)" == "8.00.40607.16"
-CC_VERS = vc80
+CC_VERS_NUM = 80
 !ELSEIF "$(_NMAKE_VER)" == "8.00.50727.42"
-CC_VERS = vc80
+CC_VERS_NUM = 80
 !ELSEIF "$(_NMAKE_VER)" == "8.00.50727.762"
-CC_VERS = vc80
+CC_VERS_NUM = 80
 !ELSEIF "$(_NMAKE_VER)" == "9.00.21022.08"
-CC_VERS = vc90
+CC_VERS_NUM = 90
 !ELSEIF "$(_NMAKE_VER)" == "9.00.30729.01"
-CC_VERS = vc90
+CC_VERS_NUM = 90
 !ELSE
 !  MESSAGE Unknown value for _NMAKE_VER macro: "$(_NMAKE_VER)"
 !  MESSAGE Please, report this condition on the libcurl development
 !  MESSAGE mailing list: http://cool.haxx.se/mailman/listinfo/curl-library/
 !  ERROR   See previous message.
 !ENDIF
+
+CC_VERS_STR = vc$(CC_VERS_NUM)
 
 # ------------------------------------------------------------
 # Ensure that current subdirectory matches makefile location
@@ -528,7 +530,8 @@ OPT_CRT = dynamic
 
 !IF $(MAKEFILE_VERBOSITY) >= 2
 !  MESSAGE ----------------------------------
-!  MESSAGE CC_VERS      = $(CC_VERS)
+!  MESSAGE CC_VERS_NUM  = $(CC_VERS_NUM)
+!  MESSAGE CC_VERS_STR  = $(CC_VERS_STR)
 !  MESSAGE OPT_LIBTYPE  = $(OPT_LIBTYPE)
 !  MESSAGE OPT_DEBUG    = $(OPT_DEBUG)
 !  MESSAGE OPT_WARNINGS = $(OPT_WARNINGS)
