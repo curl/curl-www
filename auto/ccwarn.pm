@@ -47,6 +47,8 @@ sub checkwarn {
         # false positives but skip some legitimate warnings that don't contain
         # "warning:".
         ($l =~ /^libtool: \w+: warning:/) ||
+        ($l =~ /^libtool: link:.*cannot find the library/) ||
+        ($l =~ /^libtool: link:.*is not a valid libtool object/) ||
 
         # NetWare's nlmconv linker
         ($l =~ /^nlmconv:/) ||
