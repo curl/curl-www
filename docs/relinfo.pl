@@ -3,6 +3,12 @@
 # un-preprocessed _changes-file as input
 require "vuln.pm";            
 
+my $raw; # raw output. no html
+
+if($ARGV[0] eq "--raw") {
+    $raw=1;
+}
+
 sub vernum {
     my ($ver)=@_;
     my @v = split('\.', $ver);
@@ -19,8 +25,11 @@ for(@vuln) {
     $v++;
 }
 
-print "<table>";
+print "<table>" if(!$raw);
 sub head {
+    if($raw) {
+        return;
+    }
     print "<tr class=\"tabletop\"><th>index</th><th>Version</th><th>Vulnerabilites</th>";
     printf("<th>Date</th><th>Since %s</th><th>Days</th><th>Bugfixes</th><th>Changes</th></tr>\n",
            $releases[0]);
@@ -127,10 +136,16 @@ for my $str (@releases) {
     my $anchor = $str;
     
     $anchor =~ s/\./_/g;
-    
-    printf("<tr class=\"%s\"><td>%d</td><td><a href=\"/changes.html#$anchor\">$str</a></td>",
-           $l&1?"even":"odd",
-           $index++);
+
+    if($raw) {
+        printf "%d;$str;", $index;
+    }
+    else {
+        printf("<tr class=\"%s\"><td>%d</td><td><a href=\"/changes.html#$anchor\">$str</a></td>",
+               $l&1?"even":"odd",
+               $index);
+    }
+    $index++;
     my $vulc=0;
     my $vulstr;
     for my $i (0 .. scalar(@vuln)-1 ) {
@@ -141,11 +156,16 @@ for my $str (@releases) {
             $vulc++;
         }
     }
-    if($vulstr) {
-        print "<td>$vulstr</td>";
+    if($raw) {
+        printf "%d;", $vulc;
     }
     else {
-        print "<td>&nbsp;</td>";
+        if($vulstr) {
+            print "<td>$vulstr</td>";
+        }
+        else {
+            print "<td>&nbsp;</td>";
+        }
     }
     if($date =~ /([A-Za-z]+) (\d+) (\d\d\d\d)/) {
         if(length($1)>3) {
@@ -162,11 +182,19 @@ for my $str (@releases) {
     my $deltadays = $delta{$later{$str}};
     $totaldays += $deltadays;
 
-    printf("<td>$date</td><td>$age</td><td>$deltadays ($totaldays)</td><td>%d (%d)</td><td>%d (%d)</td></tr>\n",
-           $bugfixes{$str}, $totalbugs,
-           $changes{$str}, $totalchanges);
+    if($raw) {
+        printf("$date;$age;%d;$totaldays;%d;%d;%d;%d;\n",
+               $deltadays,
+               $bugfixes{$str}, $totalbugs,
+               $changes{$str}, $totalchanges);
+    }
+    else {
+        printf("<td>$date</td><td>$age</td><td>$deltadays ($totaldays)</td><td>%d (%d)</td><td>%d (%d)</td></tr>\n",
+               $bugfixes{$str}, $totalbugs,
+               $changes{$str}, $totalchanges);
+    }
  
     ++$l;
 }
 
-print "</table>\n";
+print "</table>\n" if(!$raw);
