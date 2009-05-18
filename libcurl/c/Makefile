@@ -39,7 +39,7 @@ PAGES = index.html example.html curl_easy_init.html			\
  curl_multi_timeout.html curl_multi_setopt.html \
  curl_easy_escape.html curl_easy_unescape.html curl_multi_assign.html \
  curl_formget.html curl_easy_pause.html curl_easy_recv.html \
- curl_easy_send.html
+ curl_easy_send.html curl_multi_socket_action.html
 
 all: $(PAGES)
 
@@ -312,6 +312,11 @@ curl_easy_reset.t: $(MANROOT)/curl_easy_reset.3
 curl_multi_socket.html: _curl_multi_socket.html $(MAINPARTS) curl_multi_socket.t
 	$(ACTION)
 curl_multi_socket.t: $(MANROOT)/curl_multi_socket.3
+	$(MAN2HTML) < $< >$@
+
+curl_multi_socket_action.html: _curl_multi_socket_action.html $(MAINPARTS) curl_multi_socket_action.t
+	$(ACTION)
+curl_multi_socket_action.t: $(MANROOT)/curl_multi_socket_action.3
 	$(MAN2HTML) < $< >$@
 
 curl_multi_timeout.html: _curl_multi_timeout.html $(MAINPARTS) curl_multi_timeout.t

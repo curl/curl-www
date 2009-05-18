@@ -286,6 +286,12 @@ THIS(curl_multi_socket)
 DOC(curl_multi_socket, curl_multi_socket.html)
 #endif
 
+#ifdef DOCS_MULTI_SOCKET_ACTION
+THIS(curl_multi_socket_action)
+#else
+DOC(curl_multi_socket_action, curl_multi_socket_action.html)
+#endif
+
 #ifdef DOCS_MULTI_STRERROR
 THIS(curl_multi_strerror)
 #else
