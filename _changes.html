@@ -24,6 +24,7 @@ TITLE(Changelog)
 <br><a href="/docs/releases.html">Releaselog</a>
 </div>
 #if 0
+<a name="9_19_19"></a>
 SUBTITLE(Fixed since -- available in CVS and daily snapshots)
 <p> Changes:
 <ul class="changes">
@@ -48,6 +49,51 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 
 #define CHG <li>
 #define BGF <li>
+
+<a name="7_19_5"></a>
+SUBTITLE(Fixed in 7.19.5 - May 18 2009)
+<p> Changes:
+<ul class="changes">
+ CHG libcurl now closes all dead connections whenever you attempt to open a new
+   connection
+ CHG libssh2's version number can now be figured out run-time instead of using
+   the build-time fixed number
+ CHG CURLOPT_SEEKFUNCTION may now return CURL_SEEKFUNC_CANTSEEK
+ CHG curl can now upload with resume even when reading from a pipe
+ CHG a build-time configured curl_socklen_t is now used instead of socklen_t
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF NTLM authentication memory leak on SSPI enabled Windows builds
+ BGF fixed the GnuTLS-using code to do correct return code checks
+ BGF an alloc-related call in the OpenSSL-using code didn't check the return value
+ BGF curl_easy_duphandle() failed to duplicate cookies at times
+ BGF missing TELNET timeout support in Windows builds
+ BGF missing Curl_read() and write callback result checking in TELNET transfers
+ BGF more ciphers enabled in libcurl built to use NSS
+ BGF properly return an error code in curl_easy_recv
+ BGF Sun compilers specific preprocessor block removed from curlbuild.h.dist
+ BGF allow creation of four way fat libcurl Mac OS X Framework
+ BGF several memory leaks in libcurl+NSS
+ BGF improved the CURLOPT_NOBODY set to 0 confusions
+ BGF persistent connections when doing FTP over a HTTP proxy
+ BGF --libcurl bogus strings where other data was pointed to
+ BGF crash related to FTP and "Re-used connection seems dead, get a new one"
+ BGF CURLINFO_APPCONNECT_TIME with the multi interface
+ BGF Enhanced upload speeds on Windows
+ BGF TFTP problems after a failed transfer to the same host
+ BGF improved out of the box TPF compatibility
+ BGF HTTP PUT protocol line endings portions mangled from CRLF to CRCRLF
+ BGF Rejected SSL session ids are killed properly (for OpenSSL and GnuTLS builds)
+ BGF Deal with the TFTP OACK packet
+ BGF fixed roff mistakes in man pages
+ BGF use SOCKS proxy with the multi interface
+ BGF fixed the Curl_getoff_all_pipelines SIGSEGV 
+ BGF POST, NTLM and following a redirect hang
+ BGF libcurl+NSS endless loop on incorrect password for private key
+ BGF gzip decompression memory leak
+ BGF no_proxy flaw with user name in URL
+</ul>
 
 <a name="7_19_4"></a>
 SUBTITLE(Fixed in 7.19.4 - March 3 2009)
