@@ -141,7 +141,8 @@ sub geturl {
                                   $year+1900, $mon+1, $mday,
                                   $hour, $min, $sec);
 
-        $curlcmd .= " -z \"$twoweeksago\" --compressed";
+        #$curlcmd .= " -z \"$twoweeksago\"";
+        $curlcmd .= " --compressed";
     }
 
     if($head) {
