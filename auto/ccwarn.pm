@@ -58,6 +58,7 @@ sub checkwarn {
         ($l =~ /configure: WARNING: .*compiler options rejected/) ||
         ($l =~ /configure: WARNING: .*cannot determine strerror_r/) ||
         ($l =~ /configure: WARNING: .*cannot determine non-blocking/) ||
+        ($l =~ /configure: WARNING: .*cannot enable curl debug/) ||
         # autoconf overquoting in configure script
         ($l =~ /configure: .*command not found/))
     {
