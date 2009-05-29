@@ -26,3 +26,5 @@ lib/sendf.h:.*: warning: anonymous variadic macros were introduced in C99
 /usr/kerberos/include/.* is not defined
 # NetScape Portable Runtime library 4.7.3 (dependency of NSS)
 nspr/prlink.h:.*: warning: function declaration isn't a prototype
+# NSS 3.12.2
+nss/cert.h:.*: warning: function declaration isn't a prototype
