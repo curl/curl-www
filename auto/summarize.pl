@@ -315,7 +315,7 @@ sub endofsingle {
     undef %serverfail;
 
     $memory=($debug)?"D":"-";
-    $https=($openssl)?"S":($gnutls?"T":"-");
+    $https=($openssl)?"S":($gnutls?"T":($nss?"N":($ssl?"?":"-")));
     $asynch=$ares?"A":"-";
     $sspi=$sspi?"P":"-";
     my $ssh=$libssh2?"2":"-";
@@ -359,6 +359,7 @@ sub endofsingle {
     $debug=0;
     $openssl=0;
     $gnutls=0;
+    $nss=0;
     $libssh2=0;
     $ssl=0;
     $cvsfail=0;
@@ -541,6 +542,9 @@ sub singlefile {
             }
             elsif($line =~ /^\#define USE_GNUTLS 1/) {
                 $gnutls = 1;
+            }
+            elsif($line =~ /^\#define USE_NSS 1/) {
+                $nss = 1;
             }
             elsif($line =~ /^\#define USE_LIBSSH2 1/) {
                 $libssh2 = 1;
