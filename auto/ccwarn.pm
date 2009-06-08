@@ -49,8 +49,8 @@ sub checkwarn {
         ($l =~ /^libtool: \w+: warning:/) ||
         ($l =~ /^libtool: link:.*cannot find the library/) ||
         ($l =~ /^libtool: link:.*is not a valid libtool object/) ||
-        ($l =~ /^\*\*\* Warning: .* library needs some functionality .*/) ||
-        ($l =~ /^\*\*\* Warning: .* does not have real file for .*/) ||
+        ($l =~ /Warning: .* library needs some functionality .*/) ||
+        ($l =~ /Warning: .* does not have real file for .*/) ||
 
         # NetWare's nlmconv linker
         ($l =~ /^nlmconv:/) ||
