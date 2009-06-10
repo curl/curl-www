@@ -314,7 +314,7 @@ sub endofsingle {
     }
     undef %serverfail;
 
-    $showdebug=($debug)?"D":"-".($trackmem)?"M":"-";
+    $showdebug=($debug?"D":"-").($trackmem?"M":"-");
     $https=($openssl)?"S":($gnutls?"T":($nss?"N":($ssl?"?":"-")));
     $asynch=$ares?"A":"-";
     $sspi=$sspi?"P":"-";
