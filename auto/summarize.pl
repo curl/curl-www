@@ -314,13 +314,13 @@ sub endofsingle {
     }
     undef %serverfail;
 
-    $memory=($debug)?"D":"-";
+    $showdebug=($debug)?"D":"-".($trackmem)?"M":"-";
     $https=($openssl)?"S":($gnutls?"T":($nss?"N":($ssl?"?":"-")));
     $asynch=$ares?"A":"-";
     $sspi=$sspi?"P":"-";
     my $ssh=$libssh2?"2":"-";
 
-    my $o = "$krb4$ipv6$memory$https$asynch$zlib$gss$idn$sspi$ssh";
+    my $o = "$krb4$ipv6$showdebug$https$asynch$zlib$gss$idn$sspi$ssh";
 
     if(!$desc) {
         $desc = $os;
@@ -357,6 +357,7 @@ sub endofsingle {
     $buildconf=0;
     $configure=0;
     $debug=0;
+    $trackmem=0;
     $openssl=0;
     $gnutls=0;
     $nss=0;
@@ -512,12 +513,20 @@ sub singlefile {
             elsif($line =~ /^testcurl:.*curl was created fine/) {
                 $linkfine=1;
             }
-            elsif($line =~ /^\* libcurl debug: *(.*)/) {
+            elsif($line =~ /^\* debug build: *(.*)/) {
                 if($1 eq "ON") {
                     $debug=1;
                 }
                 else {
                     $debug=0;
+                }
+            }
+            elsif($line =~ /^\* track memory: *(.*)/) {
+                if($1 eq "ON") {
+                    $trackmem=1;
+                }
+                else {
+                    $trackmem=0;
                 }
             }
             elsif($line =~ /^\* System: *(.*)/) {
