@@ -576,10 +576,10 @@ sub singlefile {
             elsif($line =~ /^\#define OS \"([^\"]*)\"/) {
                 $os=$1;
             }
-            elsif($line =~ / -DDEBUGBUILD /) {
+            if($line =~ / -DDEBUGBUILD /) {
                 $debug=1;
             }
-            elsif($line =~ / -DCURLDEBUG /) {
+            if($line =~ / -DCURLDEBUG /) {
                 $trackmem=1;
             }
         }
