@@ -391,8 +391,8 @@ sub singlefile {
     # find out if log file is quoted-printable encoded
     my $qpencoded = 0;
     if(open(SCAN, "<$file")) {
-        my $linecount;
-        my $mimecount;
+        my $linecount = 0;
+        my $mimecount = 0;
         while(<SCAN>) {
             if($_ =~ /^testcurl: [A-Z]+ =3D/) {
                 if($mimecount++ > 5) {
@@ -576,8 +576,11 @@ sub singlefile {
             elsif($line =~ /^\#define OS \"([^\"]*)\"/) {
                 $os=$1;
             }
-            elsif($line =~ / -DCURLDEBUG /) {
+            elsif($line =~ / -DDEBUGBUILD /) {
                 $debug=1;
+            }
+            elsif($line =~ / -DCURLDEBUG /) {
+                $trackmem=1;
             }
         }
     }
