@@ -68,7 +68,7 @@ abi.html: _abi.html abi.t $(MAINPARTS)
 	$(ACTION)
 
 abi.t: $(CVSROOT)/docs/libcurl/ABI
-	$(TXT2HTML) < $< > $@
+	$(TXT2PLAIN) < $< > $@
 
 features.html: _features.html $(MAINPARTS)
 	$(ACTION)
