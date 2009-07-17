@@ -258,13 +258,13 @@ sub endofsingle {
     my $res = join("",
                    "<!-- $lyear$lmonth$lday $showdate --><tr>\n",
                    "<td>$a$showdate</a></td>\n");
-    if($fail || !$linkfine || !$fine) {
+    if($fail || !$linkfine || !$fine || $nospaceleft) {
         $res .= "<td class=\"buildfail\">";
-        if(!$linkfine) {
-            if($nospaceleft) {
-                $res .= "no&nbsp;space";
-            }
-            elsif($cvsfail) {
+        if($nospaceleft) {
+            $res .= "no&nbsp;space";
+        }
+        elsif(!$linkfine) {
+            if($cvsfail) {
                 $res .= "CVS";
             }
             elsif(!$buildconf) {
