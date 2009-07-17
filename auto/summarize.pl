@@ -262,7 +262,7 @@ sub endofsingle {
         $res .= "<td class=\"buildfail\">";
         if(!$linkfine) {
             if($nospaceleft) {
-                $res .= "no space";
+                $res .= "no&nbsp;space";
             }
             elsif($cvsfail) {
                 $res .= "CVS";
@@ -502,13 +502,13 @@ sub singlefile {
             elsif($line =~ /SKIPPED: failed starting (.*) server/) {
                 $serverfail{$1}++;
             }
-            elsif(checkwarn($line)) {
-                $warning++;
-            }
             elsif(($line =~ /No space left on device/) ||
                   ($line =~ /cat: Cannot write to output/) ||
                   ($line =~ /ld: I\/O error/)) {
                 $nospaceleft=1;
+            }
+            elsif(checkwarn($line)) {
+                $warning++;
             }
             elsif($line =~ /^testcurl: failed to update from CVS/) {
                 $cvsfail=1;
