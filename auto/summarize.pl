@@ -261,7 +261,10 @@ sub endofsingle {
     if($fail || !$linkfine || !$fine) {
         $res .= "<td class=\"buildfail\">";
         if(!$linkfine) {
-            if($cvsfail) {
+            if($nospaceleft) {
+                $res .= "no space";
+            }
+            elsif($cvsfail) {
                 $res .= "CVS";
             }
             elsif(!$buildconf) {
@@ -364,6 +367,7 @@ sub endofsingle {
     $libssh2=0;
     $ssl=0;
     $cvsfail=0;
+    $nospaceleft=0;
     $ares=0;
     $sspi=0;
     $buildid="";
@@ -500,6 +504,11 @@ sub singlefile {
             }
             elsif(checkwarn($line)) {
                 $warning++;
+            }
+            elsif(($line =~ /No space left on device/) ||
+                  ($line =~ /cat: Cannot write to output/) ||
+                  ($line =~ /ld: I/O error/)) {
+                $nospaceleft=1;
             }
             elsif($line =~ /^testcurl: failed to update from CVS/) {
                 $cvsfail=1;
