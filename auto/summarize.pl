@@ -507,7 +507,7 @@ sub singlefile {
             }
             elsif(($line =~ /No space left on device/) ||
                   ($line =~ /cat: Cannot write to output/) ||
-                  ($line =~ /ld: I/O error/)) {
+                  ($line =~ /ld: I\/O error/)) {
                 $nospaceleft=1;
             }
             elsif($line =~ /^testcurl: failed to update from CVS/) {
