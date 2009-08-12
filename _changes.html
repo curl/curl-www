@@ -50,6 +50,51 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_19_6"></a>
+SUBTITLE(Fixed in 7.19.6 - August 12 2009)
+<a href="http://curl.haxx.se/docs/adv_20090812.html"><img src="/pix/alert.png"
+align="right" title="Release contains security-related bug fix" alt="Release
+contains security-related bug fix" border="0"></a>
+<p> Changes:
+<ul class="changes">
+ CHG CURLOPT_FTPPORT (and curl's -P/--ftpport) support port ranges
+ CHG Added CURLOPT_SSH_KNOWNHOSTS, CURLOPT_SSH_KEYFUNCTION, CURLOPT_SSH_KEYDATA
+ CHG CURLOPT_QUOTE, CURLOPT_POSTQUOTE and CURLOPT_PREQUOTE can be told to ignore
+   error responses when used with FTP
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF crash on bad socket close with FTP
+ BGF leaking cookie memory when duplicate domains or paths were used
+ BGF build fix for Symbian
+ BGF CURLOPT_USERPWD set to NULL clears auth credentials
+ BGF libcurl-NSS build fixes
+ BGF configure script fixed for VMS
+ BGF set Content-Length: with POST and PUT failed with NTLM auth
+ BGF allow building libcurl for VxWorks
+ BGF curl tool exit codes fixed for VMS
+ BGF --no-buffer treated correctly
+ BGF djgpp build fix
+ BGF configure detection of GnuTLS now based on pkg-config as well
+ BGF libcurl-NSS client cert handling segfaults
+ BGF curl uploading from stdin/pipes now works in non-blocking way so that it
+   continues the downloading even when the read stalls
+ BGF ftp credentials are added to the url if needed for http proxies
+ BGF curl -o - sends data to stdout using binary mode on windows
+ BGF fixed the separators for "array" style string that CURLINFO_CERTINFO returns
+ BGF auth problem over several hosts with re-used connection
+ BGF improved the support for client certificates in libcurl+NSS
+ BGF fix leak in gtls code
+ BGF missing algorithms in libcurl+OpenSSL
+ BGF with noproxy set you could still get a proxy if a proxy env was set
+ BGF rand seeding on libcurl on windows built with OpenSSL was not thread-safe
+ BGF fixed the zero byte inserted in cert name flaw in libcurl+OpenSSL
+ BGF don't try SNI with SSLv2 or SSLv3 (OpenSSL and GnuTLS builds)
+ BGF libcurl+OpenSSL would wrongly acknowledge a cert if CN matched but
+   subjectAltName didn't
+ BGF TFTP upload sent illegal TSIZE packets
+</ul>
+
 <a name="7_19_5"></a>
 SUBTITLE(Fixed in 7.19.5 - May 18 2009)
 <p> Changes:

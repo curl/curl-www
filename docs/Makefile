@@ -21,7 +21,7 @@ PAGES = index.html manpage.html faq.html changes.html contribute.html	 \
  knownbugs.html manual.html caextract.html programs.html security.html	 \
  testcurl.html runtests.html libs.html adv_20051013.html adv_20051207.html \
  adv_20060320.html vulnerabilities.html adv_20070710.html \
- gsoc2008.html releases.html adv_20090303.html
+ gsoc2008.html releases.html adv_20090303.html releases.csv adv_20090812.html
 
 all: $(PAGES)
 	@echo done 
@@ -234,6 +234,12 @@ adv_20090303.html: _adv_20090303.html adv_20090303.t $(MAINPARTS)
 adv_20090303.t: adv_20090303.txt
 	$(TXT2PLAIN) < $< > $@
 
+adv_20090812.html: _adv_20090812.html adv_20090812.t $(MAINPARTS)
+	$(ACTION)
+
+adv_20090812.t: adv_20090812.txt
+	$(TXT2PLAIN) < $< > $@
+
 vulnerabilities.html: _vulnerabilities.html vuln.txt $(MAINPARTS)
 	$(ACTION)
 
@@ -245,6 +251,9 @@ releases.html: _releases.html rel.txt $(MAINPARTS)
 
 rel.txt: ../_changes.html ./relinfo.pl vuln.pm
 	./relinfo.pl < $< > $@
+
+releases.csv: ../_changes.html ./relinfo.pl vuln.pm
+	./relinfo.pl --raw < $< > $@
 
 
 #archive/index.html: mail
