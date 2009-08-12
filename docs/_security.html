@@ -38,6 +38,43 @@ TITLE(curl Security)
  See also the <a href="vulnerabilities.html">Vulnerabilties Table</a> to see
  what versions that are vulnerable to what flaws.
 
+<a name="20090812"></a>
+SUBTITLE(libcurl embedded zero in cert name)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>March 12, 2009</td></tr>
+  <tr><td>ID</td><td>
+<a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0037">CVE-2009-2417</a>
+<small><a href="#20090812">(permalink)</a></small></td></tr>
+  <tr><td>Affected versions</td><td>7.4 to and including 7.19.5</td></tr>
+  <tr><td>Not affected versions</td><td>7.19.6 and later</td></tr>
+  <tr><td>Patches</td><td><a href="http://curl.haxx.se/CVE-2009-2417/">curl.haxx.se/CVE-2009-2417</a></td></tr>
+
+  <tr><td>Advisories</td><td>
+<a href="adv_20090812.html">Project cURL Security Advisory</a> </td></tr>
+
+</table>
+<p>
+   SSL and TLS Server certificates contain one or more fields with server name
+  or otherwise matching patterns. These strings are stored as content and
+  length within the certificate, and thus there is no particular terminating
+  character.
+<p>
+  curl's OpenSSL interfacing code did faulty assumptions about those names and
+  patterns being zero terminated, allowing itself to be fooled in case a
+  certificate would get a zero byte embedded into one of the name fields. To
+  illustrate, a name that would show this vulnerability could look like:
+<p>
+<pre>
+    "example.com\0.haxx.se"
+</pre>
+<p>
+  This cert is thus made for "haxx.se" but curl would erroneously verify it
+  with no complaints for "example.com".
+<p>
+  According to a recently published presentation, this kind of zero embedding
+  has been proven to be possible with at least one CA.
+
 <a name="20090303"></a>
 SUBTITLE(libcurl Arbitrary File Access)
 <p>
