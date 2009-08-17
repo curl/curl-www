@@ -32,5 +32,5 @@ $datefrom=sprintf("%04d-%02d-%02d %02d:%02d", $year,$mon, $mday, $hour,$min);
 
 #print "$datefrom to $dateto\n";
 
-print `cvs -Q log -d "$datefrom<now"`
+print `TZ=GMT cvs -Q log -d "$datefrom<now"`
 
