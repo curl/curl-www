@@ -28,7 +28,8 @@ all: index.html feedback.html mirrors.html cvs.html libs.html		\
  help.html download.html changes.html about.html		\
  support.html newslog.html news.html head.html foot.html oldnews.html	\
  info web-editing.html ad.html donation.html devel.html			\
- competition.html search.html index2.html download2.html sflogo.html
+ competition.html search.html index2.html download2.html sflogo.html \
+ sponsors.html
 	cd docs; make
 	cd libcurl; make
 	cd mail; make
@@ -138,6 +139,9 @@ mirrors.html: _mirrors.html $(MAINPARTS)
 	$(ACTION)
 
 about.html: _about.html $(MAINPARTS)
+	$(ACTION)
+
+sponsors.html: _sponsors.html $(MAINPARTS)
 	$(ACTION)
 
 feedback.html: _feedback.html $(MAINPARTS)
