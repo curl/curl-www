@@ -3,14 +3,20 @@
 // A simple PHP/CURL FTP upload to a remote site
 //
 
-$ch = curl_init();
-$localfile = "me-and-my-dog.jpg"
+$localfile = "me-and-my-dog.jpg";
+$ftpserver = "ftp.mysite.com";
+$ftppath   = "/path/to";
+$ftpuser   = "myname";
+$ftppass   = "mypass";
 
-$fp = fopen ($localfile, "r");
+$remoteurl = "ftp://${ftpuser}:${ftppasswd}@${ftpserver}${ftppath}/${localfile}";
+
+$ch = curl_init();
+
+$fp = fopen($localfile, "rb");
 
 // we upload a JPEG image
-curl_setopt($ch, CURLOPT_URL,
-            "ftp://mynamw:mypassword@ftp.mysite.com/path/to/destination.jpg");
+curl_setopt($ch, CURLOPT_URL, $remoteurl);
 curl_setopt($ch, CURLOPT_UPLOAD, 1);
 curl_setopt($ch, CURLOPT_INFILE, $fp);
 
@@ -18,9 +24,9 @@ curl_setopt($ch, CURLOPT_INFILE, $fp);
 // extra error checking on the upload.
 curl_setopt($ch, CURLOPT_INFILESIZE, filesize($localfile));
 
-$error = curl_exec ($ch);
+$error = curl_exec($ch);
 
 // check $error here to see if it did fine or not!
 
-curl_close ($ch); 
+curl_close($ch); 
 ?>
