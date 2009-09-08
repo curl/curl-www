@@ -1,0 +1,28 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl - %cfile%</TITLE>
+#include "css.t"
+</HEAD>
+
+#define LIBCURL_EXAMPLE
+#define DOCS_INDEX
+#define CURL_URL libcurl/c/%htmlfile%
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(libcurl, "/libcurl/", C API index, "/libcurl/c/", Example Source Codes)
+
+TITLE(%cfile%)
+<p>
+
+#include "%rawfile%"
+
+<p>
+ You'll also find all examples in the distribution archive, in the
+ <b>docs/examples directory</b>.
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
