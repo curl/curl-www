@@ -1,8 +1,7 @@
 #!/usr/local/bin/perl
 
 require "../curl.pm";
-
-require "/home/dast/perl/date.pm";
+require "../date.pm";
 
 print "Content-Type: text/html\n\n";
 

@@ -3,7 +3,8 @@
 
 package latest;
 
-our $dir="/home/dast/curl_html/download";
+# only used when run in the site
+our $dir="/sites/curl2.haxx.se/download";
 our $curl="curl";
 
 # they're all hashed on 'type'

@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-require "/home/dast/perl/date.pm";
+require "../date.pm";
 require "../dl/pbase.pm";
 require "../curl.pm";
 require CGI;

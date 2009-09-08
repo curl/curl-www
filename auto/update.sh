@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PATH="/userdir/dast/linux/bin:/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin"
+PATH="/home/dast/bin:/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin"
 
 export PATH
 

@@ -19,7 +19,7 @@ my %host;
 my %archtype;
 my %where;
 
-my $md5sum="md5sum";#/home/dast/solaris/bin/md5sum";
+my $md5sum="md5sum";
 my $sha1sum="sha1sum";
 
 print "Content-Type: application/metalink+xml\n\n";

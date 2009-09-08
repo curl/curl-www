@@ -1,7 +1,7 @@
 
 require "CGI.pm";
 
-our $root="/home/dast/curl_html";
+our $root="/sites/curl2.haxx.se";
 
 sub stitle {
     my ($title)=@_;
