@@ -19,25 +19,10 @@ TITLE(How To Mirror)
   rsync -t --delete rsync://cool.haxx.se/curldownload curl-web-root/download
 </pre>
 <p>
-  The first line of course mirror the web site, while the second line mirrors
-  the download packages in the download directory.
-<p>
- <b><strong>Note: we are scrapping the web mirror system, only to keep the
- mirrored downloads. While you may continue to mirror the web site for your
- own joy, we will not provide any link to web mirrors in the
- future.</strong></b>
-
-<p>
- The web site contents can be rsynced like this:
-
-<pre>
-  rsync -r -t --delete rsync://cool.haxx.se/curlweb curl-web-root
-</pre>
-
-<p>
  See the list of <a href="../mirrors.html">existing mirror sites</a> and our
  <a href="http://curl.haxx.se/latest.cgi">download-from-mirror</a> service.
 
+#if 0
 SUBTITLE(Requirements for curl Official Web Site Mirrors)
 <p>
  To be recognized and advertised as an offcial curl web site mirror, these
@@ -88,6 +73,8 @@ SUBTITLE(Info for Mirror Admins)
 <p>
  Both these markers can be examined on the curl.haxx.se main site live, as
  they are shown unmodified there in all HTML pages.
+
+#endif
 
 SUBTITLE(Your mirror mentioned)
 <p>
