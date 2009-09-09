@@ -8,24 +8,24 @@
 <th>Thread</th>
 <th>List</th>
 </tr>
-<tr class="even"><td><a href="http://curl.haxx.se/mail/archive-2005-10/0043.html">FTP-ssl command channel clear mode</a></td>
-<td>Wednesday 07:49</td><td>Daniel Stenberg</td><td>3 <a href="http://curl.haxx.se/mail/archive-2005-10/0042.html">first</a></td><td><a href="http://curl.haxx.se/mail/list.cgi?list=curl-users">Users</a></td></tr>
-<tr class="odd"><td><a href="http://curl.haxx.se/mail/lib-2005-10/0059.html">Order of appearance of header settings</a></td>
-<td>Tuesday 23:07</td><td>Jason Pump</td><td>7 <a href="http://curl.haxx.se/mail/lib-2005-10/0047.html">first</a></td><td><a href="http://curl.haxx.se/mail/list.cgi?list=curl-library">Library</a></td></tr>
-<tr class="even"><td><a href="http://curl.haxx.se/mail/lib-2005-10/0056.html">Prevent copying of data between curl buf...</a></td>
-<td>Tuesday 14:45</td><td>Daniel Stenberg</td><td>6 <a href="http://curl.haxx.se/mail/lib-2005-10/0043.html">first</a></td><td><a href="http://curl.haxx.se/mail/list.cgi?list=curl-library">Library</a></td></tr>
-<tr class="odd"><td><a href="http://curl.haxx.se/mail/archive-2005-10/0041.html">Problems with a certifikation</a></td>
-<td>Tuesday 13:49</td><td>Daniel Stenberg</td><td>2 <a href="http://curl.haxx.se/mail/archive-2005-10/0040.html">first</a></td><td><a href="http://curl.haxx.se/mail/list.cgi?list=curl-users">Users</a></td></tr>
-<tr class="even"><td><a href="http://curl.haxx.se/mail/archive-2005-10/0039.html">problems with curl</a></td>
-<td>Tuesday 12:48</td><td>Daniel Stenberg</td><td>2 <a href="http://curl.haxx.se/mail/archive-2005-10/0038.html">first</a></td><td><a href="http://curl.haxx.se/mail/list.cgi?list=curl-users">Users</a></td></tr>
-<tr class="odd"><td><a href="http://curl.haxx.se/mail/lib-2005-10/0054.html">javacurl on Mac OS 10.4.2</a></td>
-<td>Tuesday 12:02</td><td>ygor</td><td>3 <a href="http://curl.haxx.se/mail/lib-2005-10/0036.html">first</a></td><td><a href="http://curl.haxx.se/mail/list.cgi?list=curl-library">Library</a></td></tr>
-<tr class="even"><td><a href="http://curl.haxx.se/mail/lib-2005-10/0053.html">On resetting cookie &quot;engine&quot; and curl co...</a></td>
-<td>Tuesday 11:30</td><td>Daniel Stenberg</td><td>2 <a href="http://curl.haxx.se/mail/lib-2005-10/0051.html">first</a></td><td><a href="http://curl.haxx.se/mail/list.cgi?list=curl-library">Library</a></td></tr>
-<tr class="odd"><td><a href="http://curl.haxx.se/mail/lib-2005-10/0042.html">Freeing Error in getinmemory.c</a></td>
-<td>Monday 21:05</td><td>Daniel Stenberg</td><td>2 <a href="http://curl.haxx.se/mail/lib-2005-10/0039.html">first</a></td><td><a href="http://curl.haxx.se/mail/list.cgi?list=curl-library">Library</a></td></tr>
-<tr class="even"><td><a href="http://curl.haxx.se/mail/lib-2005-10/0041.html">AIX 5100-06 build failures!</a></td>
-<td>Monday 18:41</td><td>Daniel Stenberg</td><td>3 <a href="http://curl.haxx.se/mail/lib-2005-10/0030.html">first</a></td><td><a href="http://curl.haxx.se/mail/list.cgi?list=curl-library">Library</a></td></tr>
-<tr class="odd"><td><a href="http://curl.haxx.se/mail/lib-2005-10/0040.html">libcurls behaviour without zlib?</a></td>
-<td>Monday 18:40</td><td>Daniel Stenberg</td><td>4 <a href="http://curl.haxx.se/mail/lib-2005-10/0035.html">first</a></td><td><a href="http://curl.haxx.se/mail/list.cgi?list=curl-library">Library</a></td></tr>
+<tr class="even"><td><a title="Fix for known bug #64 / simplification of hostthre.c" href="http://curl.haxx.se/mail/lib-2009-09/0121.html">Fix for known bug #64 / simplification o...</a></td>
+<td>Tuesday 21:56</td><td>Constantine Sapuntzakis</td><td>7 <a href="http://curl.haxx.se/mail/lib-2009-09/0094.html">first</a></td><td><a href="http://curl.haxx.se/mail/list.cgi?list=curl-library">libcurl</a></td></tr>
+<tr class="odd"><td><a title="some more NSS questions ..." href="http://curl.haxx.se/mail/lib-2009-09/0120.html">some more NSS questions ...</a></td>
+<td>Tuesday 17:49</td><td>Guenter</td><td>3</td><td><a href="http://curl.haxx.se/mail/list.cgi?list=curl-library">libcurl</a></td></tr>
+<tr class="even"><td><a title="curl chunk option?" href="http://curl.haxx.se/mail/archive-2009-09/0014.html">curl chunk option?</a></td>
+<td>Tuesday 12:42</td><td>Chris Cross</td><td>7 <a href="http://curl.haxx.se/mail/archive-2009-07/0025.html">first</a></td><td><a href="http://curl.haxx.se/mail/list.cgi?list=curl-users">curl users</a></td></tr>
+<tr class="odd"><td><a title="[ curl-Feature Requests-2853962 ] Expose curl socket descriptors for the curl_multi API&#39;s." href="http://curl.haxx.se/mail/tracker-2009-09/0002.html">[ curl-Feature Requests-2853962 ] Expose...</a></td>
+<td>Tuesday 08:23</td><td>SourceForge.net</td><td>1</td><td><a href="http://curl.haxx.se/mail/list.cgi?list=curl-tracker">Tracker</a></td></tr>
+<tr class="even"><td><a title="Multipart form trouble" href="http://curl.haxx.se/mail/lib-2009-09/0117.html">Multipart form trouble</a></td>
+<td>Tuesday 08:20</td><td>Daniel Stenberg</td><td>8 <a href="http://curl.haxx.se/mail/lib-2009-09/0110.html">first</a></td><td><a href="http://curl.haxx.se/mail/list.cgi?list=curl-library">libcurl</a></td></tr>
+<tr class="odd"><td><a title="curl.haxx.se moved" href="http://curl.haxx.se/mail/archive-2009-09/0013.html">curl.haxx.se moved</a></td>
+<td>Monday 21:39</td><td>Daniel Stenberg</td><td>1</td><td><a href="http://curl.haxx.se/mail/list.cgi?list=curl-users">curl users</a></td></tr>
+<tr class="even"><td><a title="v2 of patch to fix busy-waiting during Windows async name lookup" href="http://curl.haxx.se/mail/lib-2009-09/0109.html">v2 of patch to fix busy-waiting during W...</a></td>
+<td>Monday 16:34</td><td>Daniel Stenberg</td><td>9 <a href="http://curl.haxx.se/mail/lib-2009-09/0077.html">first</a></td><td><a href="http://curl.haxx.se/mail/list.cgi?list=curl-library">libcurl</a></td></tr>
+<tr class="odd"><td><a title="[ curl-Bugs-2853575 ] range support waits on keepalive timeout" href="http://curl.haxx.se/mail/tracker-2009-09/0001.html">[ curl-Bugs-2853575 ] range support wait...</a></td>
+<td>Monday 14:23</td><td>SourceForge.net</td><td>1</td><td><a href="http://curl.haxx.se/mail/list.cgi?list=curl-tracker">Tracker</a></td></tr>
+<tr class="even"><td><a title="NSS and configure and pkg-config" href="http://curl.haxx.se/mail/lib-2009-09/0105.html">NSS and configure and pkg-config</a></td>
+<td>Monday 12:47</td><td>Daniel Stenberg</td><td>31 <a href="http://curl.haxx.se/mail/lib-2009-08/0410.html">first</a></td><td><a href="http://curl.haxx.se/mail/list.cgi?list=curl-library">libcurl</a></td></tr>
+<tr class="odd"><td><a title="UNSUBSCRIBE" href="http://curl.haxx.se/mail/lib-2009-09/0099.html">UNSUBSCRIBE</a></td>
+<td>Monday 12:20</td><td>Dick Fleming</td><td>1</td><td><a href="http://curl.haxx.se/mail/list.cgi?list=curl-library">libcurl</a></td></tr>
 </table>
