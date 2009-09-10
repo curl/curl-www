@@ -54,7 +54,7 @@ for my $f (@samps) {
 
             # find curl_ function invokes
             if($l =~ /^(.*)(curl_[a-z_]*)( *\(.*)/) {
-                $l = sprintf "$1<a href=\"%s\">%s</a>$3\n", "$manpage/$2.html", $2;
+                $l = "$1<a href=\"$manpage/$2.html\">$2</a>$3\n";
             }
 
             # find CURLOPT_ uses
@@ -63,9 +63,11 @@ for my $f (@samps) {
                 my ($pre, $opt, $post) = ($1, $2, $3);
                 
                 $cut =~ s/_//g;
-                $l = sprintf "$pre<a href=\"%s\">%s</a>$post\n",
-                "$manpage/curl_easy_setopt.html#$cut", $opt;
+                $l = "$pre<a href=\"$manpage/curl_easy_setopt.html#$cut\">$opt</a>$post\n";
             }
+
+            # replace backslashes
+            $l =~ s/\\\n/\\&nbsp;\n/g;
 
             if($l eq "\n") {
                 print ET "&nbsp;\n";
