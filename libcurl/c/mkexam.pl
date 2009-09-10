@@ -10,6 +10,7 @@ closedir DIR;
 
 my @mak;
 my @htmlfiles;
+my @basefiles;
 
 for my $f (@samps) {
     my $base = $f;
@@ -61,6 +62,7 @@ for my $f (@samps) {
     close(CMD);
 
     push @htmlfiles, $htmlfile;
+    push @basefiles, $base;
 
     push @mak, "$htmlfile: $rawfile \$(MAINPARTS)\n\t\$(ACTION)\n\n";
 
@@ -78,3 +80,11 @@ close(MAK);
 open(MAK, ">Makefile.examples");
 print MAK @mak;
 close(MAK);
+
+open(EX, ">allex.t");
+for my $b (sort @basefiles) {
+    printf EX "<a href=\"%s.html\">%s.c</a><br>", $b, $b;
+}
+print EX "\n";
+close(EX);
+

@@ -51,8 +51,11 @@ clean:
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
 
-example.html: _example.html $(MAINPARTS)
+example.html: _example.html $(MAINPARTS) allex.t
 	$(ACTION)
+
+allex.t:
+	perl mkexam.pl
 
 allfuncs.html: _allfuncs.html $(MAINPARTS)
 	$(ACTION)
