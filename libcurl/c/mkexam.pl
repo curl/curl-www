@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+my $manpage="http://curl.haxx.se/libcurl/c";
+
 my $template="_example-templ.html";
 
 my $dir="../../cvssource/docs/examples";
@@ -36,7 +38,8 @@ for my $f (@samps) {
     close(OUT);
     close(F);
 
-    # now run enscript and extract the PRE part
+    # now run enscript and extract the PRE part and linkify some of the libcurl
+    # stuff
     # 
     open(ET, ">$encfile");
     open(CMD, "$cmd|");
@@ -47,11 +50,28 @@ for my $f (@samps) {
         }
 
         if($show) {
-            if($_ eq "\n") {
+            my $l=$_;
+
+            # find curl_ function invokes
+            if($l =~ /^(.*)(curl_[a-z_]*)( *\(.*)/) {
+                $l = sprintf "$1<a href=\"%s\">%s</a>$3\n", "$manpage/$2.html", $2;
+            }
+
+            # find CURLOPT_ uses
+            if($l =~ /^(.*)(CURLOPT_[A-Z_]*)(.*)/) {
+                my $cut = $2;
+                my ($pre, $opt, $post) = ($1, $2, $3);
+                
+                $cut =~ s/_//g;
+                $l = sprintf "$pre<a href=\"%s\">%s</a>$post\n",
+                "$manpage/curl_easy_setopt.html#$cut", $opt;
+            }
+
+            if($l eq "\n") {
                 print ET "&nbsp;\n";
             }
             else {
-                print ET $_;
+                print ET $l;
             }
             if($_ =~ /^<\/PRE/) {
                 $show = 0;
