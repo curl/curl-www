@@ -59,6 +59,8 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden (Uppsala)',
              'http://curl.gominet.net/download/' => 'Portugal (Vizcaya)',
              'http://curl.very-clever.com/download/' => 'Germany (Nuremberg)',
              'http://curl.sommerhusguide.dk/download/' => 'Denmark (Vildbjerg)',
+             'http://mirror.adriaticus.org/pub/curl/' => 'Germany (Falkenstein)',
+             'ftp://mirror.adriaticus.org/pub/curl/' => 'Germany (Falkenstein)',
              );
 
 sub present {
