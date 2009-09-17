@@ -1,0 +1,163 @@
+#!/usr/bin/perl
+# ftproxy -- forward standard GET proxy requests to a user@host proxy
+# (derived from "fwdport.pl" by Tom Christiansen)
+
+use FileHandle;
+use IPC::Open2;
+use Getopt::Long;           # for option processing
+use Net::hostent;      # Example 17-8    # by-name interface for host info
+use IO::Socket;             # for creating server and client sockets
+use POSIX ":sys_wait_h";    # for reaping our dead children
+
+my $localip = "146.253.130.135";
+my $ftpgw = "ftp-gw";
+
+my (
+    %Children,              # hash of outstanding child processes
+    $proxy_server,          # the socket we accept() from
+    $ME,                    # basename of this program
+);
+
+($ME = $0) =~ s,.*/,,;      # retain just basename of script name
+
+start_proxy();              # launch our own server
+service_clients();          # wait for incoming
+die "NOT REACHED";          # you can't get here from there
+
+# begin our server 
+sub start_proxy {
+    $proxy_server = IO::Socket::INET->new(Listen    => 5,
+                                          LocalAddr => $localip,
+                                          LocalPort => 8080,
+                                          Proto     => 'tcp' )
+#                                          Reuse     => 1)
+        or die "can't create proxy server: $@";
+    print "[Proxy server initialized";
+    print " on " . $proxy_server->sockhost() . ":" . 
+        $proxy_server->sockport() . "]\n";
+}
+
+sub service_clients { 
+    my (
+        $local_client,              # someone internal wanting out
+        $lc_info,                   # local client's name/port information
+        @rs_config,                 # temp array for remote socket options
+        $rs_info,                   # remote server's name/port information
+        $kidpid,                    # spawned child for each connection
+        $getline,
+        $host,
+        $file
+    );
+
+    $SIG{CHLD} = \&REAPER;          # harvest the moribund
+
+    print "Listening...\n";
+    # an accepted connection here means someone inside wants out
+    while ($local_client = $proxy_server->accept()) {
+        $lc_info = peerinfo($local_client);
+        printf "[Connect from $lc_info]\n";
+
+        $kidpid = fork();
+        die "Cannot fork" unless defined $kidpid;
+        if ($kidpid) {
+            $Children{$kidpid} = time();            # remember his start time
+            close $local_client;                    # likewise
+            next;                                   # go get another client
+        } 
+
+        # now, read the GET line from the browser, reformat it
+        # and pass it on to curl
+
+        $getline = <$local_client>;
+
+        $getline =~ m|GET ftp://([^/]+)(.*?) HTTP|;
+        $host = $1;
+        $file = $2;
+        
+        print "Getline: $getline\n";
+        print "host: $host\n";
+        print "file: $file\n";
+
+#curl -O -u anonymous@ftp.sunet.se:nothing ftp://ftp-gw/pub6/os/OpenBSD/patches/2.7.tar.gz
+        $getline = "curl -v -u anonymous@".$host.":nobody@here.not ftp://$ftpgw$file";
+        print "Running: $getline\n";
+
+        $kidpid = open2( *Reader, *Writer, $getline );
+        
+        # file or catalog? 
+        if ( $file =~ m|/$| ) {
+            # Catalog. Parsing needed
+            @lines = <Reader>;
+
+            print $local_client "<html><body>\n";
+
+            print $local_client "<h3>$host:$file</h3>\n<pre>\n";
+            
+            if ( $file ne "/" ) {
+                print $local_client "$apa <a href=\"../\">Up to parent dir</a>\n";
+            }
+
+            foreach ( @lines ) {
+                s/\n//g;
+                s/\r//g;
+                $line = $_;
+
+                if ( /(^.*\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d+\s+[\d:]+\s+)(.*)/i ) {
+                    $fname = $3;
+                    $apa = $1;
+                }
+
+                if ( /^d/ ) {
+                    print $local_client "$apa <a href=\"$fname/\">$fname/</a>\n";
+                }
+                elsif ( /^l/ ) {
+                    $fname =~ /(.*?) -> (.*)/;
+                    print $local_client "$apa <a href=\"$1/\">$1/</a> ($2)\n";
+                }
+                else {
+                    print $local_client "$apa <a href=\"$fname\">$fname</a>\n";
+                }
+            }
+            print $local_client "</pre></body></html>\n";
+        }
+        else {
+            # file - just sent everything to receiver
+            while ( <Reader> )
+            {
+                print $local_client $_;
+            }
+        }
+        exit;                           # whoever's still alive bites it
+    }
+}
+
+# helper function to produce a nice string in the form HOST:PORT
+sub peerinfo {
+    my $sock = shift;
+    my $hostinfo = gethostbyaddr($sock->peeraddr);
+    return sprintf("%s:%s", 
+                    $hostinfo->name || $sock->peerhost, 
+                    $sock->peerport);
+} 
+
+# somebody just died.  keep harvesting the dead until 
+# we run out of them.  check how long they ran.
+sub REAPER { 
+    my $child;
+    my $start;
+    while (($child = waitpid(-1,WNOHANG)) > 0) {
+        if ($start = $Children{$child}) {
+            my $runtime = time() - $start;
+            printf "Child $child ran %dm%ss\n", 
+                $runtime / 60, $runtime % 60;
+            delete $Children{$child};
+        } else {
+            print "Unknown child process $child exited $?\n";
+        } 
+    }
+    # If I had to choose between System V and 4.2, I'd resign. --Peter Honeyman
+    $SIG{CHLD} = \&REAPER; 
+};
+
+
+

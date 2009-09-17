@@ -1,0 +1,42 @@
+#Personliga uppgifter:
+
+$username="u1234567";
+$password="ABcDe123";
+
+$curl="curl"; # sökväg till curl
+
+#  _   _    _   __  ___  __
+# | | | |  / \  \ \/ | \/ /
+# | |_| | / _ \  \  / \  /
+# |  _  |/ ___ \ /  \ /  \
+# |_| |_/_/   \_Y_/\_Y_/\_\
+#
+# http://www.haxx.se/
+
+
+# Snabba lösningar för svåra problem.
+#
+# Det här skriptet är gjort för att automatiskt logga in på Comhems 
+# kabelinternet. Fyll i användarnamn och lösenord upptill på sidan. 
+# Till hjälp används curl (http://curl.haxx.se/) och du kan behöva modifiera
+# sökvägen till det programmet.
+# Metoden är att först hämta startsidan, plocka ut en dold tidsstämpel och 
+# sedan posta tillbaka formuläret.
+#
+# Skrivet av Kjell.Ericson@haxx.se 2000
+#
+# Uppdaterat 2001-02-14 av Kjell Ericson och Björn Stenberg
+
+$initpage="http://login1.telia.com/sd/init";
+$loginpage="http://login1.telia.com/sd/login";
+
+system "$curl $initpage";
+
+$username=~ s/([^a-zA-Z0-9_.-])/uc sprintf("%%%02X",ord($1))/eg;
+$password=~ s/([^a-zA-Z0-9_.-])/uc sprintf("%%%02X",ord($1))/eg;
+$cmd="$curl -d \"username=$username&password=$password\"  $loginpage";
+$result=`$cmd`;
+print $result;
+
+
+

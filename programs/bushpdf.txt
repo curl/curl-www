@@ -1,0 +1,57 @@
+<?
+/*Suppose that we have to download a serie of files from a site.
+All the files are named along this convention:
+http://site.com/xxxx[start]xxxxx[end].yyy
+Where site.com, and xx.. are anything kosher in an url address and yyy the file extension.
+[start] and [end] being two numbers, with [end] = [start] + increment
+For example
+With [start] = 201,  [end] = 600 and an increment of 50, the files are:
+http://site.com/filename_201to250.pdf  
+http://site.com/filename_251to300.pdf  
+http://site.com/filename_301to350.pdf  
+http://site.com/filename_351to400.pdf  
+http://site.com/filename_401to450.pdf  
+http://site.com/filename_451to500.pdf  
+http://site.com/filename_501to550.pdf  
+http://site.com/filename_51to100.pdf   
+http://site.com/filename_551to600.pdf  
+
+ This is a short PHP script that can be used with cURL to get these files.
+
+ */
+
+function getitall ($urlbase,$start,$end,$increment){
+
+	for ($i = $start; $i <= $end; $i+=$increment) {
+	
+		#Edit the url address for each file
+		$finish = $i+$increment-1;
+		$address = str_replace( "[start]", $i, $urlbase);
+		$address = str_replace( "[end]", $finish , $address);
+		$file = basename($address); 
+		
+		#Verify the file name
+		echo $file ."<BR>";
+		flush();
+
+		#Get cURL going with it
+		$fd = popen("curl -O $address","r");
+		
+	}	
+	echo "all done";
+} # end of function
+
+# Now use the above function to get all files in the default directory with
+#getitall ("http://site.com/filename_[start]to[end].pdf",201,600,50);
+#A 'live' example is the release of the donors list at the bush campaign. (No connection with me whatsoever..;) So with this script try:
+getitall ("http://webevents.broadcast.com/georgewbush/pdf/91099_FEC_[start]to[end].pdf",1,900,50);
+
+/*
+ We can delete the above three lines and 
+if the name of the program is: http://www.site.com/progname.php3
+We can call the function from the browser with:
+http://www.site.com/progname.php3?urlbase=http://site.com/filename_[start]to[end].pdf&start=201&end=600&increment=50
+For the bush campaign:
+http://www.sonic.net/alain/curl/bushpdf.php3?urlbase=http://webevents.broadcast.com/georgewbush/pdf/91099_FEC_[start]to[end].pdf"&start=1&end=900&increment=50
+*/
+?>	
