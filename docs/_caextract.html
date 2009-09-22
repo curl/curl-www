@@ -21,23 +21,21 @@ TITLE(Extract CA Certs from mozilla.org)
 </div>
 <p class="ingres">
 
- The <a
- href="http://curl.haxx.se/lxr/source/lib/mk-ca-bundle.pl">lib/mk-ca-bundle.pl</a>
- script (in CVS and bundled in recent curl tarballs) converts <a
- href="http://www.mozilla.org/">Mozilla</a>'s CA cert bundle to PEM format,
- suitable for (lib)curl and others. Writtten by Guenter Knauf.
+ The <b>lib/mk-ca-bundle.pl</b> script (in CVS and bundled in curl tarballs)
+ converts <a href="http://www.mozilla.org/">Mozilla</a>'s CA cert bundle to
+ PEM format, suitable for (lib)curl and others. Writtten by Guenter Knauf.
 
 SUBTITLE(Automated Conversions)
 <p>
- We provide automated conversions. The
+ We provide automated conversions - done weekly. The
  output CA bundle file in PEM format is available from here:
  <ul>
  <li> <a
- href="http://curl.haxx.se/ca/cacert.pem">cacert.pem</a> (~200KB)
+ href="http://curl.haxx.se/ca/cacert.pem">cacert.pem</a> (220KB)
  <li> <a
- href="http://curl.haxx.se/ca/cacert.pem.gz">cacert.pem.gz</a> (~90 KB)
+ href="http://curl.haxx.se/ca/cacert.pem.gz">cacert.pem.gz</a> (110 KB)
  <li> <a
- href="http://curl.haxx.se/ca/cacert.pem.bz2">cacert.pem.bz2</a> (~90 KB)
+ href="http://curl.haxx.se/ca/cacert.pem.bz2">cacert.pem.bz2</a> (110 KB)
 </ul>
 <p>
  The file contains the datestamp of the conversion.
@@ -58,7 +56,6 @@ SUBTITLE(Convert from your local Firefox installation)
 
 <p> You can also extract the ca certs off your Firefox installation, if you
  just have the 'certutil' tool installed and run the <a href="http://curl.haxx.se/lxr/source/lib/firefox-db2pem.sh">firefox-db2pem.sh</a> script!
-
 
 #include "_footer.html"
 
