@@ -163,7 +163,7 @@ sub curlpp {
     &showarchs($num, @dirs);
 
     # return subscription URL
-    return "http://www.rrette.com/mailman/listinfo/curlpp";
+    return "http://groups.google.com/group/curlpp";
 }
 
 sub curlppdev {
