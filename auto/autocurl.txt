@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Auto-build the daily CVS extract of curl.  Parameters are: 
-#  1: email address to notify when this script runs, if not the curl build server
+#  1: email address to notify when this script runs
 #  2: proxy url (if required)
 #  3: proxy userid (if required)
 
