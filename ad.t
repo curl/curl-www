@@ -1,5 +1,5 @@
 #ifndef WEBROOT
-#define WEBROOT
+#define WEBROOT http://curl.haxx.se
 #endif
 <!-- first-line-in-body -->
 #define AD_YOURADHERE
