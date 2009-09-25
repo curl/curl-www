@@ -49,7 +49,7 @@ if($new) {
     system("md5sum inbox/inbox* > md5");
 
     # build the summary
-    system("./summarize.pl");
+    system("nice ./summarize.pl");
 }
 
 # get latest cvs data
