@@ -30,15 +30,14 @@ all: index.html feedback.html mirrors.html cvs.html libs.html		\
  info web-editing.html ad.html donation.html devel.html			\
  competition.html search.html index2.html download2.html sflogo.html \
  sponsors.html
-	cd docs; make
-	cd libcurl; make
-	cd mail; make
-	cd mirror; make
-	cd legal; make
-	cd rfc; make
-	cd feedback; make
+	cd docs && make
+	cd libcurl && make
+	cd mail && make
+	cd mirror && make
+	cd legal && make
+	cd rfc && make
+	cd viewvc-templates/include && make
 	@echo done 
-#archive/index.html
 
 head.html: _head.html $(MAINPARTS) css.t
 	$(ACTION)
