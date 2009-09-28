@@ -18,7 +18,7 @@ my %host;
 my %archtype;
 my %where;
 
-my $md5sum="md5sum";
+my $md5sum="/usr/bin/md5sum";
 my $sha1sum="sha1sum";
 
 print "Content-Type: text/html\n\n";
@@ -176,7 +176,7 @@ if($latest::version{$what}) {
         $alert = 1;
         $size{$_} = $latest::size{$what};
     }
-    my $md5full=`$md5sum "download/$archive"`;
+    my $md5full=`$md5sum "$latest::dir/$archive"`;
     my ($md5, $file)=split(" ", $md5full);
 
     my $sha1full=`$sha1sum "download/$archive"`;
