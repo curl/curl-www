@@ -13,12 +13,12 @@
 #include "_menu.html"
 
 <div class="vc_navheader">
-<table><tr>
-<td><strong>[if-any roots_href]<a href="[roots_href]"><span class="pathdiv">/</span></a>[else]<span class="pathdiv">/</span>[end][if-any nav_path][for nav_path][if-any nav_path.href]<a href="[nav_path.href]">[end][if-index nav_path first][[][nav_path.name]][else][nav_path.name][end][if-any nav_path.href]</a>[end][if-index nav_path last][else]<span class="pathdiv">/</span>[end][end][end]</strong></td>
-<td style="text-align: right;">[if-any username]Logged in as: <strong>[username]</strong>[end]</td>
-</tr></table>
+
+<strong>[if-any roots_href]<a href="[roots_href]"><span class="pathdiv">/</span></a>[else]<span class="pathdiv">/</span>[end][if-any nav_path][for nav_path][if-any nav_path.href]<a href="[nav_path.href]">[end][if-index nav_path first][[][nav_path.name]][else][nav_path.name][end][if-any nav_path.href]</a>[end][if-index nav_path last][else]<span class="pathdiv">/</span>[end][end][end]</strong>
+
 </div>
 
-<h1>[page_title]</h1>
+<h1 class="pagetitle">[page_title]</h1>
+
 
 
