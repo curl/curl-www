@@ -149,9 +149,6 @@ feedback.html: _feedback.html $(MAINPARTS)
 libs.html: _libs.html $(MAINPARTS)
 	$(ACTION)
 
-infolxr.html: _infolxr.html $(MAINPARTS)
-	$(ACTION)
-
 support.html: _support.html $(MAINPARTS)
 	$(ACTION)
 
