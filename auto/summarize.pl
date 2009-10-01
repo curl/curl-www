@@ -7,7 +7,7 @@ require "../curl.pm";
 require "ccwarn.pm";
 
 opendir(DIR, "inbox");
-my @logs = grep { /^inbox/ } readdir(DIR);
+my @logs = grep { /^inbox.*log$/ } readdir(DIR);
 closedir(DIR);
 
 my $prefix ="table";

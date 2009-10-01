@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 opendir(DIR, "inbox");
-my @logs = grep { /^inbox/ } readdir(DIR);
+my @logs = grep { /^inbox.*log$/ } readdir(DIR);
 closedir DIR;
 
 map {$logfile{$_}="p";} (@logs);
@@ -46,7 +46,7 @@ if($new) {
     system('find inbox -mtime +15 -exec rm {} \;');
 
     # build md5 checksum file
-    system("md5sum inbox/inbox* > md5");
+    system("md5sum inbox/inbox*log > md5");
 
     # build the summary
     system("nice ./summarize.pl");
