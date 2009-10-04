@@ -8,7 +8,7 @@ map {$logfile{$_}="p";} (@logs);
 
 if(open(MD5, "<md5")) {
     while(<MD5>) {
-        if(/([^ ]*)  .*\/(.*)/) {
+        if(/([^ ]*) .*\/(.*)/) {
             $logfile{$2}="c";
         }
     }
