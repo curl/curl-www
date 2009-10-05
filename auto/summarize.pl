@@ -1,7 +1,5 @@
 #!/usr/bin/env perl
 
-use MIME::QuotedPrint ();
-
 require "CGI.pm";
 require "../curl.pm";
 require "ccwarn.pm";
@@ -392,42 +390,8 @@ sub singlefile {
 
     chmod 0644, $file;
 
-    # find out if log file is quoted-printable encoded
-    my $qpencoded = 0;
-    if(open(SCAN, "<$file")) {
-        my $linecount = 0;
-        my $mimecount = 0;
-        while(<SCAN>) {
-            if($_ =~ /^testcurl: [A-Z]+ =3D/) {
-                if($mimecount++ > 5) {
-                    $qpencoded = 1;
-                    last;
-                }
-            }
-            last if($linecount++ > 30);
-        }
-        close(SCAN);
-    }
-
-    my $buffer = "";
-
     open(READ, "<$file");
-    while(my $chunk = <READ>) {
-        my $line;
-        # decode quoted-printable if encoded
-        if($qpencoded) {
-            $buffer .= MIME::QuotedPrint::decode_qp($chunk);
-            if($buffer =~ /\n$/) {
-                $line = $buffer;
-                $buffer = "";
-            }
-            else {
-                next; # chunk
-            }
-        }
-        else {
-            $line = $chunk;
-        }
+    while(my $line = <READ>) {
         chomp $line;
 
  #       print "L: $state - $line\n";
