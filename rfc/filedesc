@@ -17,7 +17,7 @@ rfc1945.txt Hypertext Transfer Protocol -- HTTP/1.0
 rfc1950.txt ZLIB Compressed Data Format Specification
 rfc1951.txt DEFLATE Compressed Data Format Specification
 rfc1952.txt gzip compression format
-rfc1959.txt LDAP URL syntax
+rfc1959.txt LDAP URL Format (obsoleted by RFC 2255)
 rfc2045.txt (MIME) Part One: Format of Internet Message Bodies
 rfc2046.txt (MIME) Part Two: Media Types
 rfc2047.txt (MIME) Part Three: Message Header Extensions for Non-ASCII Text
@@ -31,7 +31,7 @@ rfc2228.txt FTP Security Extensions
 rfc2229.txt A Dictionary Server Protocol
 rfc2231.txt MIME Parameter Value and Encoded Word Extensions:  Character Sets, Languages, and Continuations
 rfc2246.txt The TLS Protocol
-rfc2255.txt Newer LDAP URL syntax document.
+rfc2255.txt LDAP URL Format (obsoleted by RFC 4516)
 rfc2326.txt Real Time Streaming Protocol (RTSP)
 rfc2373.txt IP Version 6 Addressing Architecture (obsolete)
 rfc2388.txt Returning Values from Forms: multipart/form-data
@@ -67,5 +67,6 @@ rfc4366.txt TLS Extensions (server name, client certificate URLs, etc.)
 rfc3493.txt Basic Socket Interface Extensions for IPv6
 rfc2553.txt Basic Socket Interface Extensions for IPv6 (see RFC3493)
 rfc2133.txt Basic Socket Interface Extensions for IPv6 (see RFC3493)
+rfc4516.txt LDAP Uniform Resource Locator (obsoletes RFC 2255)
 draft-ietf-secsh-scp-sftp-ssh-uri-04.txt Uniform Resource Identifier (URI) Scheme for Secure File Transfer Protocol (SFTP) and Secure Shell (SSH)
 rfc3659.txt Extensions to FTP
