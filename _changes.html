@@ -50,6 +50,49 @@ href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> document
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_19_7"></a>
+SUBTITLE(Fixed in 7.19.7 - November 4 2009)
+<p> Changes:
+<ul class="changes">
+ CHG -T. is now for non-blocking uploading from stdin
+ CHG SYST handling on FTP for OS/400 FTP server cases
+ CHG libcurl refuses to read a single HTTP header longer than 100K
+ CHG added the --crlfile option to curl
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF The windows makefiles work again
+ BGF libcurl-NSS acknowledges verifyhost
+ BGF SIGSEGV when pipelined pipe unexpectedly breaks
+ BGF data corruption issue with re-connected transfers
+ BGF use after free if we're completed but easy_conn not NULL (pipelined)
+ BGF missing strdup() return code check
+ BGF CURLOPT_PROXY_TRANSFER_MODE could pass along wrong syntax
+ BGF configure --with-gnutls=PATH fixed
+ BGF ftp response reader bug on failed control connections
+ BGF improved NSS error message on failed host name verifications
+ BGF ftp NOBODY on re-used connection hang
+ BGF configure uses pkg-config for cross-compiles as well
+ BGF improved NSS detection in configure
+ BGF cookie expiry date at 1970-jan-1 00:00:00
+ BGF libcurl-OpenSSL failed to verify some certs with Subject Alternative Name
+ BGF libcurl-OpenSSL can load CRL files with more than one certificate inside
+ BGF received cookies without explicit path got saved wrong if the URL had a
+   query part
+ BGF don't shrink SO_SNDBUF on windows for those who have it set large already
+ BGF connect next bug
+ BGF invalid file name characters handling on Windows
+ BGF double close() on the primary socket with libcurl-NSS
+ BGF GSS negotiate infinite loop on bad credentials
+ BGF memory leak in SCP/SFTP connections
+ BGF use pkg-config to find out libssh2 installation details in configure
+ BGF unparsable cookie expire dates make cookies get treated as session coookies
+ BGF POST with Digest authentication and "Transfer-Encoding: chunked"
+ BGF SCP connection re-use with wrong auth
+ BGF CURLINFO_CONTENT_LENGTH_DOWNLOAD for 0 bytes transfers
+ BGF CURLINFO_SIZE_DOWNLOAD for ldap transfers (-w size_download)
+</ul>
+
 <a name="7_19_6"></a>
 SUBTITLE(Fixed in 7.19.6 - August 12 2009)
 <a href="http://curl.haxx.se/docs/adv_20090812.html"><img src="/pix/alert.png"
