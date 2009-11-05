@@ -1,8 +1,20 @@
 #!/usr/bin/env perl
 
+use Fcntl ':flock';
+
 require "CGI.pm";
 require "../curl.pm";
 require "ccwarn.pm";
+
+my $SUMMARIZESEMAPHOREFH;
+my $summarize_semaphore = './inbox/summarize_pl.sem';
+
+open($SUMMARIZESEMAPHOREFH, ">$summarize_semaphore")
+    or die("can't open $summarize_semaphore: $!");
+if(!flock($SUMMARIZESEMAPHOREFH, LOCK_EX|LOCK_NB)) {
+    close($SUMMARIZESEMAPHOREFH);
+    die("Another instance of summarize.pl already running");
+}
 
 opendir(DIR, "inbox");
 my @logs = grep { /^inbox.*log$/ } readdir(DIR);
@@ -178,6 +190,7 @@ else {
 
 }
 
+close($SUMMARIZESEMAPHOREFH);
 exit;
 
 my $warning=0;
