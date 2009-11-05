@@ -4,7 +4,6 @@ use strict;
 use latest;
 
 my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden (Uppsala)',
-             'http://cool.haxx.se/curl/' => 'Sweden (Kista)',
              'ftp://gd.tuwien.ac.at/utils/archivers/curl/' => 'Austria (Vienna)',
              'http://gd.tuwien.ac.at/utils/archivers/curl/' => 'Austria (Vienna)',
              #'http://curl.mirrors.redwire.net/download/' => 'US (California)',
@@ -83,7 +82,7 @@ for(keys %latest::file) {
     printf("ARCHIVE: %s: %s %d\n",
            $_, $archive, $latest::size{$_});
 
-    printf("DOWNLOAD: %s %s Sweden (Kista)\n", $archive,
+    printf("DOWNLOAD: %s %s Sweden (Stockholm)\n", $archive,
            "http://curl.haxx.se/download/$archive");
 
     for(keys %mirrors) {
