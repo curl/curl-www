@@ -57,6 +57,7 @@ all: index.html mail.html competitors.html comparison-table.html	  \
 	cd ilerpg; make
 	cd haskell; make
 	cd eiffel; make
+	cd falcon && make
 
 index.html: _index.html $(MAINPARTS) bindingbox.t
 	$(ACTION)
