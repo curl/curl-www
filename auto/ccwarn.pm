@@ -60,6 +60,8 @@ sub checkwarn {
         ($l =~ /configure: WARNING: .*compiler options rejected/) ||
         ($l =~ /configure: WARNING: .*cannot determine strerror_r/) ||
         ($l =~ /configure: WARNING: .*cannot determine non-blocking/) ||
+        # problem in runtests.pl script
+        ($l =~ /runtests\.pl line/) ||
         # autoconf overquoting in configure script
         ($l =~ /configure: .*command not found/))
     {
