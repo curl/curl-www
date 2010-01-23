@@ -324,11 +324,11 @@ sub endofsingle {
 
     $showdebug=($debug?"D":"-").($trackmem?"M":"-");
     $https=($openssl)?"S":($gnutls?"T":($nss?"N":($ssl?"?":"-")));
-    $asynch=$ares?"A":"-";
+    my $showres=($asynch)?($ares?"A":"H"):"-";
     $sspi=$sspi?"P":"-";
     my $ssh=$libssh2?"2":"-";
 
-    my $o = "$krb4$ipv6$showdebug$https$asynch$zlib$gss$idn$sspi$ssh";
+    my $o = "$krb4$ipv6$showdebug$https$showres$zlib$gss$idn$sspi$ssh";
 
     if(!$desc) {
         $desc = $os;
@@ -373,6 +373,7 @@ sub endofsingle {
     $ssl=0;
     $cvsfail=0;
     $nospaceleft=0;
+    $asynch=0;
     $ares=0;
     $sspi=0;
     $buildid="";
@@ -520,7 +521,11 @@ sub singlefile {
                     $ssl=0;
                 }
             }
+            elsif($line =~ ^supported_features(.*)AsynchDNS/) {
+                $asynch = 1;
+            }
             elsif($line =~ /^\#define USE_ARES 1/) {
+                $asynch = 1;
                 $ares = 1;
             }
             elsif($line =~ /^\#define USE_WINDOWS_SSPI 1/) {
