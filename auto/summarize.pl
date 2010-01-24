@@ -521,7 +521,7 @@ sub singlefile {
                     $ssl=0;
                 }
             }
-            elsif($line =~ ^supported_features(.*)AsynchDNS/) {
+            elsif($line =~ /^supported_features(.*)AsynchDNS/) {
                 $asynch = 1;
             }
             elsif($line =~ /^\#define USE_ARES 1/) {
