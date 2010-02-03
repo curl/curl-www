@@ -86,7 +86,7 @@ if(open(my $logfile, "<$build")) {
                 $line =~ s/([^a-zA-Z0-9:=_]{1}?)/sprintf("[%02X]",ord($1))/ge;
             }
             #
-            if(checkwarn($line) || ($line =~ /FAILED/) || 
+            if(checkwarn($line) || ($line =~ /\sFAILED/) || 
                ($line =~ /MEMORY FAILURE/) || ($line =~ / at .+ line \d+\./) ||
                ($line =~ /valgrind ERROR/)) {
                 $num++;
