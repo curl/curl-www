@@ -1,5 +1,6 @@
 # datestamp, first vulnerable version, last vulnerable version
 @vuln = (
+    "20100209|7.10.5|7.19.7|libcurl data callback excessive length",
     "20090812|7.4   |7.19.5|libcurl embedded zero in cert name",
     "20090303|5.11  |7.19.3|libcurl Arbitrary File Access",
     "20070710|7.14.0|7.16.3|libcurl GnuTLS insufficient cert verification",
