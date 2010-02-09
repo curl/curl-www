@@ -58,6 +58,8 @@ http://curl.haxx.se/docs/security.html
 
   D - Rebuild curl without zlib support
 
+  E - change your code to use 4*CURL_MAX_WRITE_SIZE for buffer sizes
+
 
 5. TIME LINE
 
