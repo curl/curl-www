@@ -26,7 +26,7 @@ http://curl.haxx.se/docs/security.html
   There is no known exploit for this problem and we have not found any libcurl
   client software that is vulnerable to this flaw - but we acknowledge that
   there may still be vulnerable software in existence.
-  
+
 2. AFFECTED VERSIONS
 
   Affected versions: curl and libcurl 7.10.5 to and including 7.19.7
