@@ -50,6 +50,60 @@ href="http://curl.haxx.se/cvs.cgi/curl/RELEASE-NOTES?view=markup">RELEASE-NOTES<
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_20_0"></a>
+SUBTITLE(Fixed in 7.20.0 - February 9 2010)
+<a href="http://curl.haxx.se/docs/adv_20100209.html"><img src="/pix/alert.png"
+align="right" title="Release contains security-related bug fix" alt="Release
+contains security-related bug fix" border="0"></a>
+<p> Changes:
+<ul class="changes">
+ CHG support SSL_FILETYPE_ENGINE for client certificate
+ CHG curl-config can now show the arguments used when building curl
+ CHG non-blocking TFTP
+ CHG send Expect: 100-continue for POSTs with unknown sizes
+ CHG added support for IMAP(S), POP3(S), SMTP(S) and RTSP
+ CHG added new curl_easy_setopt() options for SMTP and RTSP
+ CHG added --mail-from and --mail-rcpt for SMTP
+ CHG VMS build system enhancements
+ CHG added support for the PRET ftp command
+ CHG curl supports --ssl and --ssl-reqd
+ CHG added -J/--remote-header-name for using server-provided filename with -O
+ CHG enhanced asynchronous DNS lookups
+ CHG symbol CURL_FORMAT_OFF_T is obsoleted
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF progress meter percentage and transfer time estimates fixes
+ BGF portability enhancement for OS's without orthogonal directory tree structure
+ BGF progress meter/callback during FTP connection
+ BGF DNS cache timeout while transfer in progress
+ BGF compilation when configured --with-gssapi having GNU GSS installed
+ BGF SSL connection reused with mismatched protection level
+ BGF configure --with-nss is set but not "yes"
+ BGF don't store LDFLAGS in pkg-config file
+ BGF never-pruned DNS cached entries
+ BGF HTTP proxy tunnel re-used connection even if tunnel got disabled
+ BGF SSL lib post-close write
+ BGF curl failed to report write errors for tiny failed downloads
+ BGF TFTP BLKSIZE
+ BGF Expect: 100-continue handling when set by the application
+ BGF multi interface with OpenSSL read already freed memory when closing down
+ BGF --retry didn't do right for FTP transient errors
+ BGF some *_proxy environment variables didn't function
+ BGF libcurl-OpenSSL engine cleanup
+ BGF header include fix for FreeBSD versions before v8
+ BGF fragment part of URLs are no longer sent to the server
+ BGF progress callback called repeatedly with c-ares for resolving
+ BGF OpenSSL session id ref count leak
+ BGF progress callback called repeatedly during slow connects
+ BGF curl_multi_fdset() would return -1 too often during SCP/SFTP transfers
+ BGF FTP file size checks with ASCII transfers
+ BGF HTTP Cookie: headers sort cookies based on specified path lengths
+ BGF CURLM_CALL_MULTI_PERFORM fix for multi socket timeout calls
+ BGF <a href="http://curl.haxx.se/docs/adv_20100209.html">libcurl data callback excessive length</a>
+   
+</ul>
+
 <a name="7_19_7"></a>
 SUBTITLE(Fixed in 7.19.7 - November 4 2009)
 <p> Changes:
