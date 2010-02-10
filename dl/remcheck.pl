@@ -338,8 +338,7 @@ for $ref (@all) {
                 #
 
                 my @five = getlast5versions();
-
-                shift @five; # we already tried the latest
+                @five = grep (!/^$version$/, @five); # we already tried the latest
 
                 # while no data was received, try older versions
                 while(@five && !$st) {
