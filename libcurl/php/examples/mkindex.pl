@@ -10,7 +10,7 @@ sub listexamples {
 <p>
  We try to collect examples on how to program the PHP/CURL interface
  here. If you have any source snippests you want to share with the rest of the
- world, please let <a href="mailto:curl-web@haxx.se">us</a> know!
+ world, please let <a href="mailto:curl-web\@haxx.se">us</a> know!
 MOO
     ;
 
