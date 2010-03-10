@@ -494,32 +494,15 @@ sub singlefile {
             elsif($line =~ /^testcurl:.*curl was created fine/) {
                 $linkfine=1;
             }
-            elsif($line =~ /^\* debug build: *(.*)/) {
-                if($1 eq "ON") {
-                    $debug=1;
-                }
-                else {
-                    $debug=0;
-                }
-            }
-            elsif($line =~ /^\* track memory: *(.*)/) {
-                if($1 eq "ON") {
-                    $trackmem=1;
-                }
-                else {
-                    $trackmem=0;
-                }
+            elsif($line =~ /^\* debug build: *(ON|OFF) *track memory: *(ON|OFF)/) {
+                $debug = ($1 eq "ON") ? 1 : 0;
+                $trackmem = ($2 eq "ON") ? 1 : 0;
             }
             elsif($line =~ /^\* System: *(.*)/) {
                 $uname = $1;
             }
-            elsif($line =~ /^\* libcurl SSL: *(.*)/) {
-                if($1 eq "ON") {
-                    $ssl=1;
-                }
-                else {
-                    $ssl=0;
-                }
+            elsif($line =~ /^\* Server SSL: *(ON|OFF) *libcurl SSL: *(ON|OFF)/) {
+                $ssl = ($2 eq "ON") ? 1 : 0;
             }
             elsif($line =~ /^supported_features(.*)AsynchDNS/) {
                 $asynch = 1;
