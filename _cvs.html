@@ -69,6 +69,25 @@ TITLE(<b>Change</b> the Sources)
  libcurl mailing list in advance and we might give you write permission
  straight into the CVS!
 
+TITLE(<b>Sync</b> the repo)
+<p>
+ Advanced users may opt to rsync the entire CVS repository.
+<p>
+  The repo exists at
+<pre>
+         rsync://curl.haxx.se/curl-cvs
+</pre>
+<p>
+An example sync command line to run when you want to catch up would be:
+<pre>
+         rsync -rztpv --delete rsync://curl.haxx.se/curl-cvs/ curl 
+</pre>
+<i>
+WARNING: when you sync like this, your repo will be overwritten each time you
+sync so never ever try to commit anything to your local copy - if you're not
+prepared to loose it at next sync. 
+</i>
+
 #include "_footer.html"
 
 </BODY>
