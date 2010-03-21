@@ -1,0 +1,78 @@
+#include "_doctype.html"
+<HEAD> <TITLE>cURL - have a look at the source</TITLE>
+#include "css.t"
+</HEAD>
+
+#define CURL_SOURCE
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Download, "/download.html", Source)
+
+TITLE(Sources code control)
+<p>
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="http://cool.haxx.se/curl-daily/">Daily Snaphot</a>
+<br><a href="/docs/install.html">Build Instructions</a>
+</div>
+<p>
+ In the cURL project we've been using CVS since the start of the project, and
+ around its 12th birthday (March 20, 2010) we started converting over to the
+ new git repository. The transition is still incomplete!
+
+TITLE(<b>Browse</b> the Sources)
+<p>
+  <a href="http://github.com/bagder/curl">Browse the CVS Repository</a> (on github.com)
+
+TITLE(<b>Get</b> the Sources)
+<p>
+  The curl sources are kept in a git repository. You can get the most recent
+  curl source files from there at any time. git is the version control system
+  we use for the curl project. All files in the release archive that aren't
+  generated from other files are kept there, to allow full backtracking of
+  older versions. To use git you need a git client, get yours from <a
+  href="http://git-scm.com/">git-scm.com</a>.  Windows users might
+  fancy <a href="http://code.google.com/p/tortoisegit/">tortoisegit</a> or <a
+  href="http://code.google.com/p/msysgit/">msysgit</a>.
+<p>
+  This is mostly a feature for you who really want to have a peek in how the
+  current development version looks like, and not if you just want to download
+  a version to run. If you just want to download a tar or binary archive, <a
+  href="download.html">go here</a>.
+<p>
+  If you want to use the git server, run:
+<pre>
+   git clone git://github.com/bagder/curl.git
+</pre>
+ <b>Note</b> that this will create a curl subdirectory.
+<p>
+  If you at a later time want to get the updated set of files, just cd into
+  this directory and run this command (there's no need for the -d then):
+<pre>
+  git pull
+</pre>
+<p>
+  If a proxy, firewall or something else is preventing you from using git to
+  get the latest sources, you can get the sources off the repo using HTTP like:
+<pre>
+   git clone http://github.com/bagder/curl.git
+</pre>
+ You can also opt to download a <a
+ href="http://cool.haxx.se/curl-daily/">daily snapshot</a>.
+
+TITLE(<b>Compile and Build</b> the Sources)
+<p>
+ When you checkout the sources, you get a file named CVS-INFO in the source
+ root that describes how to proceed to compile and build them.
+
+TITLE(<b>Change</b> the Sources)
+<p>
+ If you are about to do a lot of modifications, discuss it on the curl or
+ libcurl mailing list in advance and please consider to use git directly to do
+ the changes and provide the necessary patches back to the project!
+
+#include "_footer.html"
+
+</BODY>
+</HTML>

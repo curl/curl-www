@@ -28,8 +28,8 @@ all: index.html feedback.html mirrors.html cvs.html libs.html		\
  help.html download.html changes.html about.html		\
  support.html newslog.html news.html head.html foot.html oldnews.html	\
  info web-editing.html ad.html donation.html devel.html			\
- competition.html search.html index2.html download2.html sflogo.html \
- sponsors.html
+ competition.html search.html sflogo.html \
+ sponsors.html source.html
 	cd docs && make
 	cd libcurl && make
 	cd mail && make
@@ -128,6 +128,9 @@ competition.raw: competition.t
 	$(TXT2PLAIN) < $< > $@
 
 cvs.html: _cvs.html $(MAINPARTS)
+	$(ACTION)
+
+source.html: _source.html $(MAINPARTS)
 	$(ACTION)
 
 help.html: _help.html $(MAINPARTS)
