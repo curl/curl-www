@@ -55,26 +55,11 @@ if($new) {
 # get latest cvs data
 my $cwd=`pwd`; 
 chomp $cwd;
-chdir "curl";
-system("$cwd/last5commits.pl > $cwd/dump 2>/dev/null");
+system("$cwd/last5commits.pl > $cwd/cvs.t");
 
 chdir "tests";
 system("./keywords.pl > $cwd/keywords.t 2>/dev/null");
 chdir "$cwd";
-
-if ( -s "dump") {
-    # create html table
-    open(OUT, ">cvs.t");
-    open(DUMP, "./cvs2html.pl dump|");
-    while(<DUMP>) {
-        # convert the begining of a "C comment" to a html code to prevent the
-        # cpp to barf
-        $_ =~ s/\/\*/&\#47;*/g;
-        print OUT $_;
-    }
-    close(OUT);
-    close(DUMP);
-}
 
 # rebuild the HTML
 system("make -k >/dev/null 2>&1");
