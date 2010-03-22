@@ -1,36 +1,65 @@
 #!/usr/bin/perl
 #
-# Copyright (C) 2002, Daniel Stenberg, <daniel@haxx.se>
+# Copyright (C) 2010, Daniel Stenberg, <daniel@haxx.se>
+
 #
-# This software is licensed as described in the file COPYING, which
-# you should have received as part of this distribution.
-# 
-# You may opt to use, copy, modify, merge, publish, distribute and/or sell
-# copies of the Software, and permit persons to whom the Software is
-# furnished to do so, under the terms of the COPYING file.
+# commit d4cd5411a66d6814adccdfc81ff1d8a80e8c58af
+# Author: Daniel Stenberg <daniel@haxx.se>
+# Date:   Mon Mar 22 22:00:55 2010 +0100
 #
-# This software is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY
-# KIND, either express or implied.
+#     Thomas Lopatic fixed the alarm()-based DNS timeout
 #
+# :100644 100644 02d7b27... 8d81272... M  CHANGES
+# :100644 100644 29ad85b... 072ad7e... M  RELEASE-NOTES
+#
+my @lines=`cd curl && git log --raw -20`;
 
-$time=time();
-my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) =
- localtime($time);
-$mon+=1;
-$year+=1900;
+sub header {
+    print "<table>\n";
+}
 
-$date=sprintf("%04d%02d%02d", $year,$mon, $mday);
-$dateto=sprintf("%04d-%02d-%02d %02d:%02d", $year,$mon, $mday, $hour,$min);
+sub footer {
+    print "</table>\n";
+}
 
-$time = time() - (3600*24*31) ; # the previous month
-($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) =
-    localtime($time);
-$mon+=1;
-$year+=1900;
+sub showc {
+    $cl = $counter++&1?"odd":"even";
+    if($c{'commit'}) {
+        printf("<tr class=\"%s\"><td nowrap><a href=\"%s/%s\">%s</a></td><td>%s</td><td><pre>%s</pre></td><td>%s</td></tr>\n",
+               $cl,
+               "http://github.com/bagder/curl/commit/",
+               $c{'commit'},
+               $c{'Date:'}, $c{'Author:'},
+               $c{'files'}, $c{'desc'});
+    }
+    undef %c;
+}
 
-$datefrom=sprintf("%04d-%02d-%02d %02d:%02d", $year,$mon, $mday, $hour,$min);
+sub showlines {
 
-#print "$datefrom to $dateto\n";
+    for my $l (@lines) {
+        chomp $l;
 
-print `TZ=GMT cvs -Q log -d "$datefrom<now"`
+        if($l =~ /^(commit|Author:|Date:) *(.*)/) {
+            my ($k, $v)=($1, $2);
+            if($k eq "commit") {
+                showc();
+            }
+            $c{$k}=$v;
+        }
+        elsif($l =~ /^    (.*)/) {
+            my $d=$1;
+            $c{'desc'}.= "$d ";
+        }
+        elsif($l =~ /^:.*\t(.*)/) {
+            $c{'files'} .= "$1\n";
+        }
+    }
+    showc();
+
+}
+
+header();
+showlines();
+footer();
 
