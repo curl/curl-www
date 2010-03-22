@@ -1,0 +1,49 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl - Neon Comparison</TITLE>
+#include "css.t"
+</HEAD>
+
+#define LIBCURL_NEON
+#define CURL_URL libcurl/neon.html
+
+#include "_menu.html"
+#include "setup.t"
+#include "table.t"
+
+WHERE2(libcurl, "/libcurl/", neon Comparison)
+
+TITLE(Notes About neon compared to libcurl)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/docs/features.html">libcurl Features</a>
+<br><a href="competitors.html">Compare HTTP Libraries</a>
+<br><a href="wininet.html">WinInet comparison</a>
+<br><a href="libwww.html">libwww comparison</a>
+</div>
+
+<p>
+ These are some notes about libcurl compared against <a
+href="http://www.webdav.org/neon/">neon</a>. If you have additional
+experiencies and comments you want to share with the world, we're all ears!
+
+<ul>
+
+ <li> libcurl is more portable (VMS, OS/400, etc)
+
+ <li> neon lacks support for: NTLM on non-windows, it doesn't offer SSL
+  built to use NSS, it doesn't support cookies, it doesn't support compression
+  deflating and it only supports HTTP(S) as transfer protocol
+
+ <li> neon offers WebDAV support
+
+</ul>
+
+<i>"I found that libneon is actually a bit more efficient (maybe 33% fewer CPU
+cycles in a similar setup as above), but I think only because it does blocking
+reads.  libneon is also a lot more work to use, as it forces the user to
+implement more of the HTTP session state machine."</i> - Matt Gruenke
+
+#include "_footer.html"
+</BODY>
+</HTML>

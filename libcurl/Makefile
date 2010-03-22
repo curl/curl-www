@@ -14,7 +14,7 @@ ACTION=@echo preprocessing $@; \
 
 all: index.html mail.html competitors.html comparison-table.html	  \
      relatedlibs.html features.html wininet.html libwww.html libsoup.html \
-     theysay.html bindings.html abi.html
+     theysay.html bindings.html abi.html neon.html
 	cd c; make
 	cd perl; make
 	cd php; make
@@ -105,6 +105,9 @@ libwww.html: _libwww.html $(MAINPARTS)
 	$(ACTION)
 
 libsoup.html: _libsoup.html $(MAINPARTS)
+	$(ACTION)
+
+neon.html: _neon.html $(MAINPARTS)
 	$(ACTION)
 
 theysay.html: _theysay.html $(MAINPARTS)
