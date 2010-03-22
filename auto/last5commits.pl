@@ -56,8 +56,8 @@ sub showlines {
             my $d=$1;
             $c{'desc'}.= "$d ";
         }
-        elsif($l =~ /^:.*\t(.*)/) {
-            $c{'files'} .= "$1\n";
+        elsif($l =~ /^:.*(.)\t(.*)/) {
+            $c{'files'} .= "$1 $2\n";
         }
     }
     showc();
