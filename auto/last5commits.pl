@@ -25,11 +25,16 @@ sub footer {
 sub showc {
     $cl = $counter++&1?"odd":"even";
     if($c{'commit'}) {
+        my $auth = $c{'Author:'};
+        $auth =~ s/</[/g;
+        $auth =~ s/>/]/g;
+        $auth =~ s/@/ at /g;
+        $auth =~ s/ at (.)/ at $1 /;
         printf("<tr class=\"%s\"><td nowrap><a href=\"%s/%s\">%s</a></td><td>%s</td><td><pre>%s</pre></td><td>%s</td></tr>\n",
                $cl,
                "http://github.com/bagder/curl/commit/",
                $c{'commit'},
-               $c{'Date:'}, $c{'Author:'},
+               $c{'Date:'}, $auth,
                $c{'files'}, $c{'desc'});
     }
     undef %c;
