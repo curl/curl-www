@@ -24,7 +24,7 @@ my $showntop=0;
 my $prevtable = -1;
 my $tablesperpage = 4;
 
-for ( 0 .. 3 ) {
+for ( 0 .. 5 ) {
     open(CLEAR, ">$prefix$_.t");
     
     my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday) =
@@ -145,9 +145,13 @@ if(!@logs) {
 }
 else {
     @data = "";
+    my $onlydo = 1000; # limit the amount of log parsings to this amount
     for(reverse sort @logs) {
         my $filename=$_;
         singlefile("inbox/$filename");
+        if(!$onlydo--) {
+            last;
+        }
     }
     summary();
 
