@@ -1,3 +1,6 @@
+# Redirect the CVS page to the new source control page: (2010-03-22)
+RedirectPermanent /cvs.html http://curl.haxx.se/source.html
+
 # Redirect commonly referred examples over LXR
 RedirectPermanent /lxr/source/docs/examples/getinmemory.c http://curl.haxx.se/libcurl/c/getinmemory.html
 RedirectPermanent /lxr/source/docs/examples/10-at-a-time.c http://curl.haxx.se/libcurl/c/10-at-a-time.html
