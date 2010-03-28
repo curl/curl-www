@@ -26,16 +26,20 @@ sub showc {
     $cl = $counter++&1?"odd":"even";
     if($c{'commit'}) {
         my $auth = $c{'Author:'};
+        my $desc = $c{'desc'};
         $auth =~ s/</[/g;
         $auth =~ s/>/]/g;
         $auth =~ s/@/ at /g;
         $auth =~ s/ at (.)/ at $1 /;
+
+        $desc =~ s/   */<p>/g;
+
         printf("<tr class=\"%s\"><td nowrap><a href=\"%s/%s\">%s</a></td><td>%s</td><td><pre>%s</pre></td><td>%s</td></tr>\n",
                $cl,
                "http://github.com/bagder/curl/commit",
                $c{'commit'},
                $c{'Date:'}, $auth,
-               $c{'files'}, $c{'desc'});
+               $c{'files'}, $desc);
     }
     undef %c;
 }
