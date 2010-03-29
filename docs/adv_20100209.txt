@@ -27,6 +27,9 @@ http://curl.haxx.se/docs/security.html
   client software that is vulnerable to this flaw - but we acknowledge that
   there may still be vulnerable software in existence.
 
+  The Common Vulnerabilities and Exposures (CVE) project has assigned the name
+  CVE-2010-0734 to this issue.
+
 2. AFFECTED VERSIONS
 
   Affected versions: curl and libcurl 7.10.5 to and including 7.19.7
