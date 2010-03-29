@@ -10,7 +10,7 @@
 #include "setup.t"
 
 WHERE2(Devel, "/devel.html", Automatic Build HOWTO)
-TITLE(Setup Your Machine to Autobuild from CVS)
+TITLE(Setup Your Machine to Autobuild from git)
 
 #include "topline.t"
 
@@ -19,23 +19,22 @@ TITLE(Setup Your Machine to Autobuild from CVS)
 
 #include "setup.t"
 
-SUBTITLE(Get a Fresh Check-out from CVS)
+SUBTITLE(Get a Fresh Check-out from git)
 <p>
  First, run these commands:
 
 <pre>
   $ mkdir someplacenice
   $ cd someplacenice
-  $ cvs -d :pserver:anonymous@cool.haxx.se:/cvsroot/curl login
-    [enter return when prompted for password ]
-  $ cvs -d :pserver:anonymous@cool.haxx.se:/cvsroot/curl checkout curl
+  $ git clone git://github.com/bagder/curl.git
   $ ./curl/tests/testcurl.pl
 </pre>
 <p>
- The first time to run testcurl.pl, it'll prompt you for some info. That info
- is then stored in the file named 'setup' in the current directory and will be
- used when this script is subsequently run. The format is easily manually
- edited using a text editor.
+ The first time to run <a herf="/docs/testcurl.html">testcurl.pl</a>, it'll
+ prompt you for some info (unless you provide that data using command line
+ options). That info is then stored in the file named 'setup' in the current
+ directory and will be used when this script is subsequently run. The format
+ is easily manually edited using a text editor.
 <p>
  You'll now see a full compile, build and test perform. Make sure everything
  works out fine.
@@ -49,8 +48,8 @@ SUBTITLE(Get a Fresh Check-out from CVS)
 <p>
 
 <b>Note:</b> It is important that you do include the word 'autobuild' in the
- subject of the mail, as mails to this receiver without it will be sent to
- /dev/null with no questions asked.
+ subject of the mail, as mails to this receiver without that word in the
+ subject will mercilessly get sent to /dev/null with no questions asked.
 
 <p>
  If mailing the info is not suitable for you, but you have a working curl
@@ -72,7 +71,7 @@ SUBTITLE(Other platforms than Unix)
   
 SUBTITLE(Build from daily tarballs)
 <p>
- If you can't checkout or update the sources from CVS easily, another approach
+ If you can't checkout or update the sources from git easily, another approach
  to automated testing of the latest sources is made by getting the latest <a
  href="http://cool.haxx.se/curl-daily/">daily tarballs</a> automaticly
  instead.
