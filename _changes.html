@@ -25,7 +25,7 @@ TITLE(Changelog)
 </div>
 #if 0
 <a name="9_19_19"></a>
-SUBTITLE(Fixed since -- available in git and daily snapshots)
+SUBTITLE(Fixed in 7.20.0 - February 9 2010)
 <p> Changes:
 <ul class="changes">
  CHG change
@@ -54,6 +54,49 @@ activity</a>
 
 #define CHG <li>
 #define BGF <li>
+
+<a name="7_20_1"></a>
+SUBTITLE(Fixed in 7.20.1 - April 14 2010)
+<p> Changes:
+<ul class="changes">
+ CHG The 'ares' subtree has been removed from the source repository
+ CHG smoother rate limiting
+ CHG allow user+password in the URL for all protocols
+ CHG POP3: Get message listing if no mailbox in URL
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF VMS builder bad behavior when used in a batch job
+ BGF multiple recepients with SMTP
+ BGF fixed the CURL_FORMAT_* defines when building with cmake
+ BGF missing quote in libcurl.m4
+ BGF SMTP: now waits for 250 after the DATA transfer
+ BGF SMTP: use angle brackets in RCPT TO
+ BGF curl --trace-time not using local time
+ BGF off-by-one in the chunked encoding trailer parser
+ BGF superfluous blocking for OpenSSL-based SSL connects and multi interface
+ BGF TFTP upload
+ BGF FTP timeouts after file transferred completely
+ BGF skip poll() on Interix
+ BGF CURLOPT_CERTINFO memory leak
+ BGF sub-second timeouts improvements
+ BGF configure fixes for GSSAPI
+ BGF threaded resolver double free when closing curl handle
+ BGF configure fixes for building with the clang compiler
+ BGF easy interix rate limiting logic
+ BGF curl_multi_remove_handle() caused use after free
+ BGF TFTP improved error codes
+ BGF TFTP fixed TSIZE handling for uploads
+ BGF SSL possible double free when reusing curl handle
+ BGF alarm()-based DNS timeout bug
+ BGF re-used FTP connection multi interface crash
+ BGF chunked-encoding with Content-Length: header problem
+ BGF multi interface HTTP POST over a proxy using PROXYTUNNEL
+ BGF RTSP GET_PARAMETER
+ BGF timeout after last data chunk was handled
+ BGF SFTP download hang
+ BGF FTP quote commands prefixed with '*' now can fail without aborting
+</ul>
 
 <a name="7_20_0"></a>
 SUBTITLE(Fixed in 7.20.0 - February 9 2010)
