@@ -45,6 +45,10 @@ sub sortent {
         # SSL (yes/no)
         $r = lc($$a{'ssl'}) cmp lc($$b{'ssl'});
     }
+    if(!$r) {
+        # SSH (yes/no)
+        $r = lc($$a{'ssh'}) cmp lc($$b{'ssh'});
+    }
     return $r;
 }
 
@@ -54,7 +58,7 @@ my $shownprev;
 sub top {
     my ($os, $aname, $img)=@_;
 
-    print "<tr class=\"os\"><td class=\"ostitle\" colspan=\"6\">";
+    print "<tr class=\"os\"><td class=\"ostitle\" colspan=\"7\">";
     if($img) {
         print "$img$aname$os</td></tr>\n";
     }
@@ -65,7 +69,7 @@ sub top {
 
 }
 sub bot {
-    print "<tr><td class=\"osend\" colspan=\"7\">&nbsp;</td></tr>\n";
+    print "<tr><td class=\"osend\" colspan=\"8\">&nbsp;</td></tr>\n";
 }
 
 sub show {
@@ -103,7 +107,7 @@ print "\n<p><table class=\"download2\" cellpadding=\"0\" cellspacing=\"0\">\n";
              'Version',
              'Type',
              'SSL',
-#             'Date',
+             'SSH',
              'Provider',
              'Size')) {
         print "<th>$h</th>\n";
@@ -272,7 +276,9 @@ for $per (@sall) {
     printf("<td class=\"col4\">%s</td>\n",
            $$per{'ssl'}eq"Yes"?"<img width=\"27\" height=\"12\" alt=\"SSL enabled\" src=\"/ssl.png\">":
            $$per{'ssl'}eq"No"?"<img width=\"27\" height=\"12\" alt=\"SSL disabled\" src=\"/nossl.png\">":$$per{'ssl'});
-#    printf("<td class=\"col5\">%s</td>\n", show($$per{'date'}));
+
+    printf("<td class=\"col5\">%s</td>\n",
+           $$per{'ssh'}eq"Yes"?"SSH":"&nbsp;");
     my $em = show($$per{'email'});
     if($em =~ /:\/\//) {
         # email is a plain URL

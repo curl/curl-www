@@ -44,6 +44,7 @@ for $h (('Package',
          'Update',
          'Type',
          'SSL',
+         'SSH',
          'Who',
          'Pic',
          'Check')) {
@@ -136,7 +137,10 @@ for $per (@sall) {
     printf("<td>%s</td>",
            $$per{'ssl'}eq"Yes"?"SSL":
            $$per{'ssl'}eq"No"?"&nbsp;":$$per{'ssl'});
-  #  printf("<td>%s</td>", show($$per{'date'}));
+
+    printf("<td>%s</td>",
+           $$per{'ssh'}eq"Yes"?"SSH":
+           $$per{'ssh'}eq"No"?"&nbsp;":$$per{'ssh'});
 
     printf("<td>%s</a></td>",
            ($$per{'name'} && $$per{'name'} ne "-")?show($$per{'name'}):"&nbsp;");

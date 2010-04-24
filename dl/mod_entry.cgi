@@ -2,13 +2,14 @@
 
 require "stuff.pm";
 
-# databasfält:
+# fields in the database
 %data=("typ"=>"entry",
        "os"=>CGI::param("os"),
        "osver"=>CGI::param("osver"),
        "flav"=>CGI::param("flav"),
        "cpu"=>CGI::param("cpu"),
        "ssl"=>CGI::param("ssl"),
+       "ssh"=>CGI::param("ssh"),
        "type"=>CGI::param("type"),
        "pack"=>CGI::param("pack"),
        "file"=>CGI::param("file"),
@@ -167,6 +168,9 @@ sub my_show_form()
                 "i386 / i686 / PowerPC / StrongARM / etc");
 
     alternative("SSL-enabled", "ssl",
+                "Yes / No");
+
+    alternative("SSH-enabled", "ssh",
                 "Yes / No");
 
     alternative("Package Type", "type",
