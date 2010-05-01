@@ -1,3 +1,4 @@
+#if 0
 <p>
 
 <table cellspacing="0" cellpadding="0" width="120" style="border-width: thin;
@@ -16,6 +17,7 @@ border-style: solid;">
 <a href="http://www.webasyst.net/pages/">Web publishing software</a>
 </font>
 </td></tr></tbody></table>
+#endif
 <p>
 <a href="http://sourceforge.net/projects/curl/"><img src="http://sourceforge.net/sflogo.php?group_id=976&amp;type=8" width="80" height="15" border="0" alt="curl's project page on SourceForge.net"></a>
 <p>
