@@ -98,8 +98,11 @@ SUBTITLE(Unmatched Set of Features!)
 <a name="ipv6"></a>
 SUBTITLE(Supports IPv6!)
 <p>
- If compiled with IPv6 support enabled, FTP, FTPS, HTTP and HTTPS all work
- splendidly on IPv6 stacks (kerberos4 does not work over IPv6 by design).
+
+ If compiled with IPv6 support enabled, <b>All protocols</b> work splendidly
+ on IPv6 stacks. There are some minor quirks to keep in mind: kerberos4 does
+ not work over IPv6 by design and the SOCKS support is not properly adapted
+ for IPv6.
 
 <p> There is nothing in particular needed to get IPv6 to be used, the library
  API remains exactly the same and adjusts to IPv4/Ipv6 dynamicly. You can use
