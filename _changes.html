@@ -55,6 +55,41 @@ activity</a>
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_21_0"></a>
+SUBTITLE(Fixed in 7.21.0 - June 16 2010)
+<p> Changes:
+<ul class="changes">
+ CHG added the --proto and -proto-redir options
+ CHG new configure option --enable-threaded-resolver
+ CHG improve TELNET ability with libcurl
+ CHG added support for PolarSSL
+ CHG added support for FTP wildcard matching and downloads
+ CHG added support for RTMP
+ CHG introducing new LDAP code for new enough OpenLDAP
+ CHG OpenLDAP support enabled for cygwin builds
+ CHG added CURLINFO_PRIMARY_PORT, CURLINFO_LOCAL_IP and CURLINFO_LOCAL_PORT
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF prevent needless reverse name lookups
+ BGF detect GSS on ancient Linux distros
+ BGF GnuTLS: EOF caused error when it wasn't
+ BGF GnuTLS: SSL handshake phase is non-blocking
+ BGF -J/--remote-header-name strips CRLF
+ BGF MSVC makefiles now use ws2_32.lib instead of wsock32.lib
+ BGF -O crash on windows
+ BGF SSL handshake timeout underflow in libcurl-NSS
+ BGF multi interface missed storing connection time
+ BGF broken CRL support in libcurl-NSS
+ BGF ignore response-body on redirect even if compressed
+ BGF OpenSSL handshake state-machine for multi interface
+ BGF TFTP timeout option sent correctly
+ BGF TFTP block id wrap
+ BGF curl_multi_socket_action() timeout handles inaccuracy in timers better
+ BGF SCP/SFTP failure to respect the timeout
+ BGF spurious SSL connection aborts with OpenSSL
+</ul>
+
 <a name="7_20_1"></a>
 SUBTITLE(Fixed in 7.20.1 - April 14 2010)
 <p> Changes:
