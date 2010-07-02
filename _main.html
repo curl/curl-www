@@ -54,6 +54,43 @@ TITLE(cURL groks URLs)
 </td></tr></table>
 <p>
 
+<div style="float: right; margin-left: 8px;">
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'search',
+  search: '#curl OR libcurl',
+  interval: 6000,
+  title: 'curl and libcurl tweets',
+  subject: '',
+  width: 250,
+  height: 300,
+  theme: {
+    shell: {
+      background: '#0000ff',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#444444',
+      links: '#1985b5'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: true,
+    live: true,
+    hashtags: true,
+    timestamp: true,
+    avatars: true,
+    toptweets: true,
+    behavior: 'default'
+  }
+}).render().start();
+</script>
+</div>
+
 <table align="center" class="news">
 <caption>Latest News</caption>
 <!--#exec cmd="./shownews.cgi 2" -->
