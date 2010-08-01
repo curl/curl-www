@@ -27,19 +27,17 @@ sub showc {
     if($c{'commit'}) {
         my $auth = $c{'Author:'};
         my $desc = $c{'desc'};
-        $auth =~ s/</[/g;
-        $auth =~ s/>/]/g;
-        $auth =~ s/@/ at /g;
-        $auth =~ s/ at (.)/ at $1 /;
-
+        my $date = $c{'Date:'};
+        $auth =~ s/<.*//g;
         $desc =~ s/   */<p>/g;
 
-        printf("<tr class=\"%s\"><td nowrap><a href=\"%s/%s\">%s</a></td><td>%s</td><td><pre>%s</pre></td><td>%s</td></tr>\n",
-               $cl,
+        printf("<tr class=\"$cl\"><td colspan=\"2\"><b>%s</b> at <a href=\"%s/%s\">%s</a></td></tr><tr class=\"$cl\"><td>%s</td><td><pre>%s</pre></td></tr>\n",
+               $auth,
                "http://github.com/bagder/curl/commit",
                $c{'commit'},
-               $c{'Date:'}, $auth,
-               $c{'files'}, $desc);
+               $date,
+               $desc,
+               $c{'files'});
     }
     undef %c;
 }
