@@ -58,6 +58,13 @@ TLINK("/libcurl/competitors.html", Competitors,
       Figure what competing libraries there are )
 #endif
 
+#ifdef LIBCURL_EXAMPLE
+LINK("", Example Sources )
+#else
+TLINK("/libcurl/c/example.html", Example Sources &raquo;,
+      Educational snippets of code )
+#endif
+
 #ifdef LIBCURL_FEATURES
 LINK("", Features )
 #else
