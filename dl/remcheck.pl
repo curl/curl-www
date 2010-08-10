@@ -127,7 +127,7 @@ sub islast5versions {
 my %urlhash;
 sub geturl {
     my ($url, $head) = @_;
-    my $curlcmd="curl -Lfsm120 --ftp-method singlecwd";
+    my $curlcmd="curl -Lfsm120 -A \"Mozilla/curl.haxx.se dl-package-check-probe\" --ftp-method singlecwd";
 
     if(!$head) {
         my $t = time();
