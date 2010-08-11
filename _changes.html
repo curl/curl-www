@@ -55,6 +55,56 @@ activity</a>
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_21_1"></a>
+SUBTITLE(Fixed in 7.21.1 - August 11 2010)
+<p> Changes:
+<ul class="changes">
+ CHG maketgz: produce CHANGES automatically
+ CHG added support for NTLM authentication when compiled with NSS
+ CHG build: Enable configure --enable-werror
+ CHG curl-config: --built-shared returns shared info
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF configure: spell --disable-threaded-resolver correctly
+ BGF multi: call the progress callback in all states
+ BGF multi: unmark handle as used when no longer head of pipeline
+ BGF sendrecv: treat all negative values from send/recv as errors
+ BGF ftp-wildcard: avoid tight loop when used without any pattern
+ BGF multi_socket: re-use of same socket without notifying app
+ BGF ftp wildcard: FTP LIST parser FIX
+ BGF urlglobbing backslash escaping bug
+ BGF build: add enable IPV6 option for the VC makefiles
+ BGF multi: CURLINFO_LASTSOCKET doesn't work after remove_handle
+ BGF --libcurl: use *_LARGE options with typecasted constants
+ BGF --libcurl: hide setopt() calls setting default options
+ BGF curl: avoid setting libcurl options to its default
+ BGF --libcurl: list the tricky options instead of using [REMARK]
+ BGF http: don't enable chunked during authentication negotiations
+ BGF upload: warn users trying to upload from stdin with anyauth
+ BGF configure: allow environments variable to override internals
+ BGF threaded resolver: fix timeout issue
+ BGF multi: fix condition that remove timers before trigger
+ BGF examples: add curl_multi_timeout
+ BGF --retry: access violation with URL part sets continued
+ BGF ssh: Fix compile error on 64-bit systems.
+ BGF remote-header-name: chop filename at next semicolon
+ BGF ftp: response timeout bug in "quote" sending
+ BGF CUSTOMREQUEST: shouldn't be disabled when HTTP is disabled
+ BGF Watcom makefiles overhaul.
+ BGF NTLM tests: boost coverage by forcing the hostname
+ BGF multi: fix FTPS connecting the data connection with OpenSSL
+ BGF retry: consider retrying even if -f is used
+ BGF fix SOCKS problem when using multi interface
+ BGF typecheck-gcc: add checks for recently added options
+ BGF SCP: send large files properly with new enough libssh2
+ BGF multi_socket: set timeout for 100-continue
+ BGF ";type=" URL suffix over HTTP proxy
+ BGF acknowledge progress callback error returns during connect
+ BGF Watcom makefile fixes
+ BGF runtests: clear old setenv remainders before test
+</ul>
+
 <a name="7_21_0"></a>
 SUBTITLE(Fixed in 7.21.0 - June 16 2010)
 <p> Changes:
