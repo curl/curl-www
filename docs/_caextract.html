@@ -21,7 +21,7 @@ TITLE(Extract CA Certs from mozilla.org)
 </div>
 <p class="ingres">
 
- The <b>lib/mk-ca-bundle.pl</b> script (in CVS and bundled in curl tarballs)
+ The <b>lib/mk-ca-bundle.pl</b> script (in git and bundled in curl tarballs)
  converts <a href="http://www.mozilla.org/">Mozilla</a>'s CA cert bundle to
  PEM format, suitable for (lib)curl and others. Writtten by Guenter Knauf.
 
@@ -55,7 +55,7 @@ SUBTITLE(License)
 SUBTITLE(Convert from your local Firefox installation)
 
 <p> You can also extract the ca certs off your Firefox installation, if you
- just have the 'certutil' tool installed and run the <a href="http://curl.haxx.se/lxr/source/lib/firefox-db2pem.sh">firefox-db2pem.sh</a> script!
+ just have the 'certutil' tool installed and run the <a href="http://github.com/bagder/curl/blob/master/lib/firefox-db2pem.sh">firefox-db2pem.sh</a> script!
 
 #include "_footer.html"
 
