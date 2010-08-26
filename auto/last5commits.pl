@@ -28,7 +28,12 @@ sub showc {
         my $auth = $c{'Author:'};
         my $desc = $c{'desc'};
         my $date = $c{'Date:'};
+
         $auth =~ s/<.*//g;
+
+        $desc =~ s/&/&amp;/g;
+        $desc =~ s/\</&lt;/g;
+        $desc =~ s/\>/&gt;/g;
         $desc =~ s/   */<p>/g;
 
         printf("<tr class=\"$cl\"><td colspan=\"2\"><b>%s</b> at <a href=\"%s/%s\">%s</a></td></tr><tr class=\"$cl\"><td>%s</td><td><pre>%s</pre></td></tr>\n",
