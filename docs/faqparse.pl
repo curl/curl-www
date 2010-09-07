@@ -113,7 +113,7 @@ while(<STDIN>) {
                     print "</pre>\n";
                     undef @pre;
                 }
-                s/((http|ftp):\/\/([a-z0-9.\/_%-?]*[a-z\/]))/<a href=\"$2:\/\/$3\">$1<\/a>/g;
+                s/((http|ftp):\/\/([\w.\/%-?]*[a-z0-9\/]))/<a href=\"$2:\/\/$3\">$1<\/a>/g;
                 
                 # prevent many blanks
                 my $show = $_;
