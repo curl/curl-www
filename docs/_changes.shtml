@@ -17,12 +17,6 @@ TITLE(Changelog -- track all changes)
 <p>
  Read about changes in a nice and somewhat digested version, on <a
  href="../changes.html">changelog</a> page.
-<p>
- Get a view of exactly what <a href="verdiff.cgi">changes that were done
- between two specific curl versions</a>.
-<p>
- The full <a href="http://curl.haxx.se/lxr/source/CHANGES">CHANGES</a> file is
- also included in every curl release package.
 
 #include "_footer.html"
 
