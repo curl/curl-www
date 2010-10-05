@@ -11,10 +11,12 @@ NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 ACTION=echo preprocessing $@; \
  rm -f $@; \
  fcpp -I.. -I. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@;
+TXT2PLAIN = txt2plain.pl
 
 PAGES = foot.html head.html loghead.html howto.html summary.html \
 	cvshistory.html table0.html table1.html table2.html table3.html \
-	missing.html keywords.html index.html
+	missing.html keywords.html index.html todo-release.html \
+	release-notes.html
 
 all: $(PAGES)
 
@@ -34,6 +36,18 @@ cvshistory.html: _cvshistory.html $(MAINPARTS) cvs.t
 	$(ACTION)
 
 missing.html: _missing.html $(MAINPARTS)
+	$(ACTION)
+
+release-notes.txt: $(SRCROOT)/RELEASE-NOTES
+	$(TXT2PLAIN) < $< > $@
+
+release-notes.html: _release-notes.html release-notes.txt $(MAINPARTS)
+	$(ACTION)
+
+todo-release.txt: $(SRCROOT)/TODO-RELEASE
+	$(TXT2PLAIN) < $< > $@
+
+todo-release.html: _todo-release.html todo-release.txt $(MAINPARTS)
 	$(ACTION)
 
 howto.html: _howto.html $(MAINPARTS) _head.html

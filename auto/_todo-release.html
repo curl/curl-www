@@ -1,0 +1,40 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - TODO before next release</TITLE>
+#include "css.t"
+</HEAD>
+
+#define CURL_AUTO
+#define AUTO_TODORELEASE
+#define CURL_URL todo-release.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Devel, "/auto/", TODO RELEASE)
+
+TITLE(Things in the pipe for the upcoming releases)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="release-notes.html">RELEASE-NOTES</a>
+<br><a href="/changes.html">changelog</a>
+<br><a href="/docs/manpage.html">curl man page</a>
+<br><a href="/docs/manual.html">Manual</a>
+<br><a href="/docs/faq.html">FAQ</a>
+</div>
+
+<p>
+ This is the current TODO-RELEASE file. <i>The mentioned changes are only
+ ideas and suggestions of what to work on, they may or may not be fixed in the
+ next release</i>.
+<p>
+
+<pre>
+#include "todo-release.txt"
+</pre>
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
+
