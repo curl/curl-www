@@ -4,7 +4,7 @@
 #include "css.t"
 </head>
 
-#define CURL_AUTO
+#define DEVEL_BUILDHOWTO
 
 #include "_menu.html"
 #include "setup.t"
@@ -13,10 +13,6 @@ WHERE2(Devel, "/devel.html", Automatic Build HOWTO)
 TITLE(Setup Your Machine to Autobuild from git)
 
 #include "topline.t"
-
-[<a href="missing.html">Missing</a>]
-[<a href="http://cool.haxx.se/cvs.cgi/curl-www/auto/ignores?rev=HEAD&content-type=text/vnd.viewcvs-markup">ignored warnings</a>]
-
 #include "setup.t"
 
 SUBTITLE(Get a Fresh Check-out from git)
@@ -97,6 +93,30 @@ mailed in since the previous table was built.
 <p>
 We automatically remove build logs older than 10 - 12 days to reduce the
 amount of data and used disk space.
+
+<hr>
+
+SUBTITLE(Platforms/Options We Want Tested As Well)
+<p>
+ If you feel like helping out the project, have a peek here and see what
+ autobuilds we would appreciate to get going!
+
+<p> 
+We have no automatic building/testing on these platforms:
+
+<ul>
+ <li> AmigaOS
+ <li> BeOS
+ <li> HP-UX
+ <li> Hurd
+ <li> Mac OS X
+ <li> OS/2
+ <li> OpenBSD
+ <li> QNX
+ <li> RiscOS
+ <li> SCO Unix
+ <li> VMS
+</ul>
 
 #include "_footer.html"
 </body> </html>

@@ -1,0 +1,75 @@
+#ifndef __MENU
+#define __MENU
+
+#define BACKGROUND "#ffffff"
+#define TEXTCOLOR "#000000"
+#define MENUTEXT "#ffffff"
+#define MENUCOLOR "#e0e0ff"
+#define BLACK "#000000"
+
+#ifndef NOBODY
+
+<BODY bgcolor=BACKGROUND text=TEXTCOLOR LINK="#0000ff" VLINK="#808080" ALINK="red">
+#endif
+
+#define SEP <br>
+
+#define NOW(text) <b>text</b>
+#define REF(link,text) <a href=link>text</a>
+
+#include "ad.t"
+#include "mirrorlinks.t"
+
+<table cellspacing=0 cellpadding=5><tr><td valign=top align=left>
+
+#define LINK(l,t) <div class="itemselect">t</div>
+#define VLINK(l,t) <div><a href="l" class="menuitem">t</a></div>
+
+<div class="mainmenu">
+
+#define HERE LINK
+#define DOCREF VLINK
+
+<div><a href="/" class="menuitem"><img border="0" src="/pix/left.png" alt="<">Front Page</a></div>
+
+<hr>
+
+#ifdef DEVEL_INDEX
+HERE(x, Develop Index)
+#else
+DOCREF(/auto/, Develop Index)
+#endif
+
+#ifdef DEVEL_BUILDS
+HERE(x, Autobuilds)
+#else
+DOCREF(/auto/builds.html, Autobuilds)
+#endif
+
+#ifdef DEVEL_BUILDSTATS
+HERE(x, Build Stats)
+#else
+DOCREF(/auto/summary.html, Build Stats)
+#endif
+
+#ifdef DEVEL_RECENT
+HERE(x, Source Activity)
+#else
+DOCREF(/auto/cvshistory.html, Source Activity)
+#endif
+
+#ifdef DEVEL_BUILDHOWTO
+HERE(x, Build HOWTO)
+#else
+DOCREF(/auto/howto.html, Build HOWTO)
+#endif
+
+
+</div>
+
+<p>
+#include "sflogo.html"
+
+</td><td valign=top align=left>
+
+#endif

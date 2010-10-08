@@ -6,7 +6,7 @@ CURL= $(ROOT)
 
 MAINPARTS= $(ROOT)/_doctype.html $(CURL)/_menu.html $(CURL)/_footer.html \
   $(CURL)/setup.t $(CURL)/pic.t $(CURL)/where.t $(CURL)/css.t \
-  $(ROOT)/mirrorlinks.t topline.t $(ROOT)/ad.t
+  $(ROOT)/mirrorlinks.t topline.t $(ROOT)/ad.t _menu.html
 NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 ACTION=echo preprocessing $@; \
  rm -f $@; \
@@ -15,13 +15,16 @@ TXT2PLAIN = txt2plain.pl
 
 PAGES = foot.html head.html loghead.html howto.html summary.html \
 	cvshistory.html table0.html table1.html table2.html table3.html \
-	missing.html keywords.html index.html todo-release.html \
-	release-notes.html
+	missing.html keywords.html builds.html todo-release.html \
+	release-notes.html index.html
 
 all: $(PAGES)
 
-index.html:
-	ln -s table0.html index.html
+index.html: _index.html $(MAINPARTS)
+	$(ACTION)
+
+builds.html:
+	ln -s table0.html builds.html
 
 foot.html: _foot.html $(MAINPARTS)
 	$(ACTION)

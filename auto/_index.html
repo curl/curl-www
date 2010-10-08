@@ -1,0 +1,54 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Development</TITLE>
+#include "css.t"
+</HEAD>
+
+#define DEVEL_INDEX
+#define CURL_URL devel.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE1(Development)
+
+TITLE(Curl Development Overview)
+<p>
+ There is always development going on in the curl project.  To help out the
+ development team, we provide these services:
+<ul>
+<li>
+ <a href="http://curl.haxx.se/auto/cvshistory.html">Recent Source Activity</a>
+ - What happened recently in the source code repository?
+
+<li>
+ <a href="http://curl.haxx.se/auto/builds.html">Automatic Builds</a> - Friendly people
+ help us build curl automatically so that we can verify that it builds works
+ even on platforms and with options single developers may not use or have.
+<li>
+ <a href="http://cool.haxx.se/curl-daily/">Daily Snapshot</a> - The latest
+ development version of curl is automatically packaged and uploaded every day.
+
+<li>
+ <a href="http://curl.haxx.se/mail/">libcurl mailing list</a> - Development
+ talk and thoughts about how the future will become is discussed there.  You
+ can't be seriously interested in curl development without being subscribed to
+ at least that one mailing list.
+<li>
+ <a href="http://sourceforge.net/tracker/?group_id=976&atid=100976">Bug
+ tracker</a> - submit problems to the bug tracker as it makes it easy for the
+ development crew to keep track of all remaining problems. See also the <a
+ href="/docs/knownbugs.html">KNOWN_BUGS</a> document.
+<li>
+ <a href="/docs/todo.html">TODO</a> - we try to maintain lists of what things
+ you could <a href="help.html">help us with</a> and features a future curl
+ release might get.
+<li>
+ <a href="/source.html">Source code</a> - check out the latest and greatest
+ source directly from the curl source code repsitory
+
+</ul>
+
+#include "_footer.html"
+</BODY>
+</HTML>

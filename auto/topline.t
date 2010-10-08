@@ -6,7 +6,7 @@
 <br><a href="http://cool.haxx.se/mailman/listinfo/curl-commits">Commit mails</a>
 </div>
 
-[<a href="./">Build Log</a>]
+[<a href="./builds.html">Build Log</a>]
 [<a href="cvshistory.html">Source Activity</a>]
 [<a href="summary.html">Stats</a>]
 [<a href="howto.html">Details</a>]
