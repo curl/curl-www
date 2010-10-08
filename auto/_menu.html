@@ -23,12 +23,11 @@
 <table cellspacing=0 cellpadding=5><tr><td valign=top align=left>
 
 #define LINK(l,t) <div class="itemselect">t</div>
-#define VLINK(l,t) <div><a href="l" class="menuitem">t</a></div>
+#define VLINK(l,t,itle) <div><a href="l" class="menuitem" title="itle">t</a></div>
 
 <div class="mainmenu">
 
 #define HERE LINK
-#define DOCREF VLINK
 
 <div><a href="/" class="menuitem"><img border="0" src="/pix/left.png" alt="<">Front Page</a></div>
 
@@ -37,31 +36,37 @@
 #ifdef DEVEL_INDEX
 HERE(x, Develop Index)
 #else
-DOCREF(/auto/, Develop Index)
+VLINK(/auto/, Develop Index, Development section front page)
 #endif
 
 #ifdef DEVEL_BUILDS
 HERE(x, Autobuilds)
 #else
-DOCREF(/auto/builds.html, Autobuilds)
+VLINK(/auto/builds.html, Autobuilds, Automated non-stop builds)
 #endif
 
 #ifdef DEVEL_BUILDSTATS
 HERE(x, Build Stats)
 #else
-DOCREF(/auto/summary.html, Build Stats)
+VLINK(/auto/summary.html, Build Stats, Stats from the autobuilds)
 #endif
 
 #ifdef DEVEL_RECENT
 HERE(x, Source Activity)
 #else
-DOCREF(/auto/cvshistory.html, Source Activity)
+VLINK(/auto/cvshistory.html, Source Activity, Recent Activity in the git repo)
 #endif
 
 #ifdef DEVEL_BUILDHOWTO
 HERE(x, Build HOWTO)
 #else
-DOCREF(/auto/howto.html, Build HOWTO)
+VLINK(/auto/howto.html, Build HOWTO, Description on how to run autobuilds)
+#endif
+
+#ifdef DEVEL_TRACKER
+HERE(x, Bugtracker)
+#else
+VLINK(http://sourceforge.net/bugs/?group_id=976&amp;func=browse, Bugtracker &raquo;, Sourceforge bug tracker)
 #endif
 
 
