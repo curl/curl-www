@@ -26,8 +26,12 @@ RedirectPermanent /lxr/source/docs/examples/postit2.c http://curl.haxx.se/libcur
 RedirectPermanent /lxr/source/docs/examples/sepheaders.c http://curl.haxx.se/libcurl/c/sepheaders.html
 RedirectPermanent /lxr/source/docs/examples/simple.c http://curl.haxx.se/libcurl/c/simple.html
 RedirectPermanent /lxr/source/docs/examples/simplessl.c http://curl.haxx.se/libcurl/c/simplessl.html
+RedirectPermanent /devel.html http://curl.haxx.se/dev/
+RedirectPermanent /auto/ http://curl.haxx.se/dev/
+
 # a rough redirect for all other LXR references to avoid 404s
 RedirectMatch /lxr/source/(.*) http://cool.haxx.se/cvs.cgi/curl/$1
+RedirectMatch /cvs.cgi(.*) http://github.com/bagder/curl
 
 AddType text/plain .pl
 AddType text/plain .php
