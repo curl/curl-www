@@ -69,6 +69,17 @@ HERE(x, Bugtracker)
 VLINK(http://sourceforge.net/bugs/?group_id=976&amp;func=browse, Bugtracker &raquo;, Sourceforge bug tracker)
 #endif
 
+#ifdef DEVEL_RELEASENOTES
+HERE(x, RELEASE-NOTES)
+#else
+VLINK(/auto/release-notes.html, RELEASE-NOTES, The pending RELEASE-NOTES)
+#endif
+
+#ifdef DEVEL_TODORELEASE
+HERE(x, TODO-RELEASE)
+#else
+VLINK(/auto/todo-release.html, TODO-RELEASE, The pending TODO-RELEASE)
+#endif
 
 </div>
 
