@@ -28,6 +28,11 @@ RedirectPermanent /lxr/source/docs/examples/simple.c http://curl.haxx.se/libcurl
 RedirectPermanent /lxr/source/docs/examples/simplessl.c http://curl.haxx.se/libcurl/c/simplessl.html
 RedirectPermanent /devel.html http://curl.haxx.se/dev/
 RedirectPermanent /auto/ http://curl.haxx.se/dev/
+RedirectPermanent /docs/internals.html http://curl.haxx.se/dev/internals.html
+RedirectPermanent /docs/contribute.html http://curl.haxx.se/dev/contribute.html
+RedirectPermanent /docs/runtests.html http://curl.haxx.se/dev/runtests.html
+RedirectPermanent /docs/testcurl.html http://curl.haxx.se/dev/testcurl.html
+RedirectPermanent /source.html http://curl.haxx.se/dev/source.html
 
 # a rough redirect for all other LXR references to avoid 404s
 RedirectMatch /lxr/source/(.*) http://cool.haxx.se/cvs.cgi/curl/$1
