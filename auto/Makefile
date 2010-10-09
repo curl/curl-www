@@ -21,7 +21,9 @@ PAGES = foot.html head.html loghead.html howto.html summary.html \
 	missing.html keywords.html builds.html todo-release.html \
 	release-notes.html index.html contribute.html internals.html \
 	testcurl.html runtests.html source.html readme-ares.html \
-	readme-curl_off_t.html readme-curlx.html readme-encoding.html
+	readme-curl_off_t.html readme-curlx.html readme-encoding.html \
+	readme-hostip.html readme-httpauth.html readme-memoryleak.html \
+	readme-multi_socket.html
 
 all: $(PAGES)
 
@@ -124,6 +126,30 @@ README.encoding.dump: $(LIBROOT)/README.encoding
 	$(TXT2PLAIN) < $< > $@
 
 readme-encoding.html: _readme-encoding.html README.encoding.dump $(MAINPARTS)
+	$(ACTION)
+
+README.hostip.dump: $(LIBROOT)/README.hostip
+	$(TXT2PLAIN) < $< > $@
+
+readme-hostip.html: _readme-hostip.html README.hostip.dump $(MAINPARTS)
+	$(ACTION)
+
+README.httpauth.dump: $(LIBROOT)/README.httpauth
+	$(TXT2PLAIN) < $< > $@
+
+readme-httpauth.html: _readme-httpauth.html README.httpauth.dump $(MAINPARTS)
+	$(ACTION)
+
+README.memoryleak.dump: $(LIBROOT)/README.memoryleak
+	$(TXT2PLAIN) < $< > $@
+
+readme-memoryleak.html: _readme-memoryleak.html README.memoryleak.dump $(MAINPARTS)
+	$(ACTION)
+
+README.multi_socket.dump: $(LIBROOT)/README.multi_socket
+	$(TXT2PLAIN) < $< > $@
+
+readme-multi_socket.html: _readme-multi_socket.html README.multi_socket.dump $(MAINPARTS)
 	$(ACTION)
 
 full: all
