@@ -2,6 +2,7 @@ ROOT = ..
 
 SRCROOT=$(ROOT)/cvssource
 DOCROOT=$(SRCROOT)/docs
+TESTROOT=$(SRCROOT)/tests
 CURL= $(ROOT)
 
 MAINPARTS= $(ROOT)/_doctype.html $(CURL)/_menu.html $(CURL)/_footer.html \
@@ -12,16 +13,43 @@ ACTION=echo preprocessing $@; \
  rm -f $@; \
  fcpp -I.. -I. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@;
 TXT2PLAIN = txt2plain.pl
+MAN2HTML = roffit --bare
 
 PAGES = foot.html head.html loghead.html howto.html summary.html \
 	cvshistory.html table0.html table1.html table2.html table3.html \
 	missing.html keywords.html builds.html todo-release.html \
-	release-notes.html index.html
+	release-notes.html index.html contribute.html internals.html \
+	testcurl.html runtests.html source.html
 
 all: $(PAGES)
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
+
+source.html: _source.html $(MAINPARTS)
+	$(ACTION)
+
+testcurl.html: _testcurl.html $(MAINPARTS) testcurl.dump
+	$(ACTION)
+testcurl.dump: $(TESTROOT)/testcurl.1
+	$(MAN2HTML) < $< > $@
+
+runtests.html: _runtests.html $(MAINPARTS) runtests.dump
+	$(ACTION)
+runtests.dump: $(TESTROOT)/runtests.1
+	$(MAN2HTML) < $< > $@
+
+contribute.html: _contribute.html $(MAINPARTS) contribute.t
+	$(ACTION)
+
+contribute.t: $(DOCROOT)/CONTRIBUTE $(ROOT)/docs/faqparse.pl
+	$(ROOT)/docs/faqparse.pl < $< > $@
+
+internals.html: _internals.html $(MAINPARTS) internals.t
+	$(ACTION)
+
+internals.t: $(DOCROOT)/INTERNALS
+	$(TXT2PLAIN) < $< > $@
 
 builds.html:
 	ln -s table0.html builds.html

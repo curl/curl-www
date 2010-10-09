@@ -36,32 +36,34 @@
 #ifdef DEVEL_INDEX
 HERE(x, Develop Index)
 #else
-VLINK(/auto/, Develop Index, Development section front page)
+VLINK(/dev/, Develop Index, Development section front page)
 #endif
 
 #ifdef DEVEL_BUILDS
 HERE(x, Autobuilds)
 #else
-VLINK(/auto/builds.html, Autobuilds, Automated non-stop builds)
+VLINK(/dev/builds.html, Autobuilds, Automated non-stop builds)
 #endif
 
 #ifdef DEVEL_BUILDSTATS
-HERE(x, Build Stats)
+HERE(x, Autobuild Stats)
 #else
-VLINK(/auto/summary.html, Build Stats, Stats from the autobuilds)
+VLINK(/dev/summary.html, Autobuild Stats, Stats from the autobuilds)
+#endif
+
+#ifdef DEVEL_BUILDHOWTO
+HERE(x, Autobuild HOWTO)
+#else
+VLINK(/dev/howto.html, Autobuild HOWTO, Description on how to run autobuilds)
 #endif
 
 #ifdef DEVEL_RECENT
 HERE(x, Source Activity)
 #else
-VLINK(/auto/cvshistory.html, Source Activity, Recent Activity in the git repo)
+VLINK(/dev/cvshistory.html, Source Activity, Recent Activity in the git repo)
 #endif
 
-#ifdef DEVEL_BUILDHOWTO
-HERE(x, Build HOWTO)
-#else
-VLINK(/auto/howto.html, Build HOWTO, Description on how to run autobuilds)
-#endif
+<hr>
 
 #ifdef DEVEL_TRACKER
 HERE(x, Bugtracker)
@@ -70,15 +72,53 @@ VLINK(http://sourceforge.net/bugs/?group_id=976&amp;func=browse, Bugtracker &raq
 #endif
 
 #ifdef DEVEL_RELEASENOTES
-HERE(x, RELEASE-NOTES)
+HERE(x, Release Notes)
 #else
-VLINK(/auto/release-notes.html, RELEASE-NOTES, The pending RELEASE-NOTES)
+VLINK(/dev/release-notes.html, Release Notes, The pending RELEASE-NOTES)
 #endif
 
 #ifdef DEVEL_TODORELEASE
-HERE(x, TODO-RELEASE)
+HERE(x, TODO Release)
 #else
-VLINK(/auto/todo-release.html, TODO-RELEASE, The pending TODO-RELEASE)
+VLINK(/dev/todo-release.html, TODO Release, The pending TODO-RELEASE)
+#endif
+
+#ifdef DEVEL_SOURCE
+HERE(x, Source code)
+#else
+VLINK(/dev/source.html, Source code, How to get or view the source code)
+#endif
+
+<hr>
+
+#ifdef DEVEL_CONTRIBUTE
+HERE(x, Contribute)
+#else
+VLINK(/dev/contribute.html, Contribute, How to Contribute)
+#endif
+
+#ifdef DEVEL_INTERNALS
+HERE(x, Internals)
+#else
+VLINK(/dev/internals.html, Internals, Internals described)
+#endif
+
+#ifdef DEVEL_RUNTESTS
+HERE(x, Run Tests)
+#else
+VLINK(/dev/runtests.html, Run Tests, How to run the test suite)
+#endif
+
+#ifdef DEVEL_TESTCURL
+HERE(x, Test curl)
+#else
+VLINK(/dev/testcurl.html, Test curl, The automatic curl testing tool)
+#endif
+
+#ifdef DEVEL_SPECS
+HERE(x, Specifications)
+#else
+VLINK(/rfc/, Specifications, Specs and RFSs that concern us)
 #endif
 
 </div>
