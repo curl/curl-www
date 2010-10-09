@@ -6,7 +6,7 @@ BODY {
 }
 
 /* the curl-style blue main page titles */
-.pagetitle, h1.libtitle {
+.pagetitle, h1.libtitle, .newstitle {
   border-style: solid;
   border-width: thin;
   border-color: black;
@@ -80,12 +80,15 @@ table.latestmail {
   font-size: 100%;
 }
 
+/*
 .newstitle {
   font-size: 120%;
   white-space: nowrap;
-  background-color: #e0e0ff;
+  background-color: #0000ff;
+  color: #ffffff;
 }
 
+*/
 td.newsdate {
   text-align: right;
 }
