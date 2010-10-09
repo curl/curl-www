@@ -1,6 +1,5 @@
 SRCROOT=../cvssource
 DOCROOT=$(SRCROOT)/docs
-TESTROOT=$(SRCROOT)/tests
 
 MAINPARTS= ../_doctype.html _menu.html ../_footer.html ../setup.t ../pic.t \
    ../where.t ../ad.t ../libcurl/_links.html ../mirrorlinks.t		   \
@@ -13,13 +12,13 @@ TXT2HTML= txt2html --extract --hrule 10
 TXT2PLAIN = txt2plain.pl
 MAN2HTML = roffit --bare
 
-PAGES = index.html manpage.html faq.html changes.html contribute.html	 \
- internals.html sslcerts.html companies.html press.html features.html	 \
+PAGES = index.html manpage.html faq.html changes.html \
+ sslcerts.html companies.html press.html features.html	 \
  bugs.html install.html readme.html readme.curl.html copyright.html	 \
  thanks.html y2k.html todo.html httpscripting.html comparison-table.html \
  relatedtools.html osdistribs.html versions.html history.html loc.html	 \
  knownbugs.html manual.html caextract.html programs.html security.html	 \
- testcurl.html runtests.html libs.html adv_20051013.html adv_20051207.html \
+ libs.html adv_20051013.html adv_20051207.html \
  adv_20060320.html vulnerabilities.html adv_20070710.html \
  gsoc2008.html releases.html adv_20090303.html releases.csv adv_20090812.html \
  adv_20100209.html
@@ -49,17 +48,6 @@ manpage.html: _manpage.html $(MAINPARTS) mandump.t
 mandump.t: $(DOCROOT)/curl.1
 	 $(MAN2HTML) < $(DOCROOT)/curl.1 > mandump.t
 
-testcurl.html: _testcurl.html $(MAINPARTS) testcurl.dump
-	$(ACTION)
-testcurl.dump: $(TESTROOT)/testcurl.1
-	 $(MAN2HTML) < $< > $@
-
-runtests.html: _runtests.html $(MAINPARTS) runtests.dump
-	$(ACTION)
-runtests.dump: $(TESTROOT)/runtests.1
-	 $(MAN2HTML) < $< > $@
-
-
 bugs.html: _bugs.html $(MAINPARTS) bugs.t
 	$(ACTION)
 
@@ -78,12 +66,6 @@ changes.html: _changes.shtml $(MAINPARTS) changes.t
 
 changes.t: $(SRCROOT)/CHANGES
 	$(TXT2PLAIN) < $< > $@
-
-contribute.html: _contribute.html $(MAINPARTS) contribute.t
-	$(ACTION)
-
-contribute.t: $(DOCROOT)/CONTRIBUTE faqparse.pl
-	./faqparse.pl < $< > $@
 
 companies.html: _companies.html $(MAINPARTS)
 	$(ACTION)
@@ -162,13 +144,6 @@ versions.html: _versions.html $(MAINPARTS) versions.t
 
 versions.t: $(DOCROOT)/VERSIONS
 	$(TXT2HTML) < $(DOCROOT)/VERSIONS > versions.t
-
-
-internals.html: _internals.shtml $(MAINPARTS) internals.t
-	$(ACTION)
-
-internals.t: $(DOCROOT)/INTERNALS
-	$(TXT2PLAIN) < $< > $@
 
 sslcerts.html: _sslcerts.html $(MAINPARTS) sslcerts.t
 	$(ACTION)
