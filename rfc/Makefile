@@ -1,7 +1,7 @@
 SRCROOT=../cvssource
 DOCROOT=$(SRCROOT)/docs
 
-MAINPARTS= ../_doctype.html ../docs/_menu.html ../_footer.html ../setup.t \
+MAINPARTS= ../_doctype.html ../dev/_menu.html ../_footer.html ../setup.t \
    ../pic.t ../where.t ../ad.t ../libcurl/_links.html ../mirrorlinks.t	  \
    ../css.t ../sflogo.html Makefile
 NOW=$(shell gnudate +'-D__TODAY__=%B %e, %Y')
@@ -21,7 +21,6 @@ clean:
 
 index.html: _index.html $(MAINPARTS) index.t
 	$(ACTION)
-
 
 full: all
 
