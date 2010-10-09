@@ -3,6 +3,7 @@ ROOT = ..
 SRCROOT=$(ROOT)/cvssource
 DOCROOT=$(SRCROOT)/docs
 TESTROOT=$(SRCROOT)/tests
+LIBROOT=$(SRCROOT)/lib
 CURL= $(ROOT)
 
 MAINPARTS= $(ROOT)/_doctype.html $(CURL)/_menu.html $(CURL)/_footer.html \
@@ -19,7 +20,8 @@ PAGES = foot.html head.html loghead.html howto.html summary.html \
 	cvshistory.html table0.html table1.html table2.html table3.html \
 	missing.html keywords.html builds.html todo-release.html \
 	release-notes.html index.html contribute.html internals.html \
-	testcurl.html runtests.html source.html
+	testcurl.html runtests.html source.html readme-ares.html \
+	readme-curl_off_t.html readme-curlx.html readme-encoding.html
 
 all: $(PAGES)
 
@@ -100,6 +102,29 @@ table2.html: _table2.html $(MAINPARTS) table2.t explainopts.t
 table3.html: _table3.html $(MAINPARTS) table3.t explainopts.t
 	$(ACTION)
 
+README.ares.dump: $(LIBROOT)/README.ares
+	$(TXT2PLAIN) < $< > $@
+
+readme-ares.html: _readme-ares.html README.ares.dump $(MAINPARTS)
+	$(ACTION)
+
+README.curl_off_t.dump: $(LIBROOT)/README.curl_off_t
+	$(TXT2PLAIN) < $< > $@
+
+readme-curl_off_t.html: _readme-curl_off_t.html README.curl_off_t.dump $(MAINPARTS)
+	$(ACTION)
+
+README.curlx.dump: $(LIBROOT)/README.curlx
+	$(TXT2PLAIN) < $< > $@
+
+readme-curlx.html: _readme-curlx.html README.curlx.dump $(MAINPARTS)
+	$(ACTION)
+
+README.encoding.dump: $(LIBROOT)/README.encoding
+	$(TXT2PLAIN) < $< > $@
+
+readme-encoding.html: _readme-encoding.html README.encoding.dump $(MAINPARTS)
+	$(ACTION)
 
 full: all
 
