@@ -23,7 +23,7 @@ PAGES = foot.html head.html loghead.html howto.html summary.html \
 	testcurl.html runtests.html source.html readme-ares.html \
 	readme-curl_off_t.html readme-curlx.html readme-encoding.html \
 	readme-hostip.html readme-httpauth.html readme-memoryleak.html \
-	readme-multi_socket.html
+	readme-multi_socket.html readme-pingpong.html readme-pipelining.html
 
 all: $(PAGES)
 
@@ -150,6 +150,18 @@ README.multi_socket.dump: $(LIBROOT)/README.multi_socket
 	$(TXT2PLAIN) < $< > $@
 
 readme-multi_socket.html: _readme-multi_socket.html README.multi_socket.dump $(MAINPARTS)
+	$(ACTION)
+
+README.pingpong.dump: $(LIBROOT)/README.pingpong
+	$(TXT2PLAIN) < $< > $@
+
+readme-pingpong.html: _readme-pingpong.html README.pingpong.dump $(MAINPARTS)
+	$(ACTION)
+
+README.pipelining.dump: $(LIBROOT)/README.pipelining
+	$(TXT2PLAIN) < $< > $@
+
+readme-pipelining.html: _readme-pipelining.html README.pipelining.dump $(MAINPARTS)
 	$(ACTION)
 
 full: all
