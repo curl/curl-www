@@ -1,5 +1,6 @@
 # datestamp, first vulnerable version, last vulnerable version
 @vuln = (
+    "20101013|7.20.0|7.21.1|curl local file overwrite",
     "20100209|7.10.5|7.19.7|libcurl data callback excessive length",
     "20090812|7.4   |7.19.5|libcurl embedded zero in cert name",
     "20090303|5.11  |7.19.3|libcurl Arbitrary File Access",

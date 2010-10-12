@@ -38,6 +38,31 @@ TITLE(curl Security)
  See also the <a href="vulnerabilities.html">Vulnerabilties Table</a> to see
  what versions that are vulnerable to what flaws.
 
+<a name="20101013"></a>
+SUBTITLE(curl local file overwrite)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>October 13, 2010</td></tr>
+  <tr><td>ID</td><td><small><a href="#20101013">(permalink)</a></small></td></tr>
+  <tr><td>Affected versions</td><td>7.20.0 to and including 7.21.1</td></tr>
+  <tr><td>Not affected versions</td><td>libcurl <= 7.20.0 and >= 7.21.2</td></tr>
+  <tr><td>Patch</td><td><a href="http://curl.haxx.se/curl-content-disposition.patch">curl-content-disposition.patch</a></td></tr>
+
+  <tr><td>Advisories</td><td>
+<a href="adv_20101013.html">Project cURL Security Advisory</a> </td></tr>
+
+</table>
+<p>
+  curl offers a command line option --remote-header-name (also usable as -J)
+  which will use the file name of the Content-disposition: header when it
+  saves the downloaded data locally.
+
+  curl attempts to cut off the directory parts from any given file name in the
+  header to only store files in the current directory. It will overwrite a
+  local file using the same name as the header specifies.
+
+  The stripping of the directory did not take backslashes into account.
+
 <a name="20100209"></a>
 SUBTITLE(libcurl data callback excessive length)
 <p>
