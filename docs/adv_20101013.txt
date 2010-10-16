@@ -28,6 +28,9 @@ http://curl.haxx.se/docs/security.html
 
   There is no known exploit for this problem.
 
+  The Common Vulnerabilities and Exposures (CVE) project has assigned the name
+  CVE-2010-3842 to this issue.
+
 2. AFFECTED VERSIONS
 
   Affected versions: curl 7.20.0 to and including 7.21.1
