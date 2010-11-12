@@ -12,7 +12,7 @@
 
 WHERE1(Changes)
 
-<a name=changes>
+<a name="changes"></a>
 TITLE(Changelog)
 <div class="relatedbox">
 <b>Related:</b>
@@ -52,6 +52,59 @@ activity</a>
 
 #define CHG <li>
 #define BGF <li>
+
+<a name="7_21_2"></a>
+SUBTITLE(Fixed in 7.21.2 - October 13 2010)
+<a href="http://curl.haxx.se/docs/adv_20101013.html"><img src="/pix/alert.png"
+align="right" alt="Release contains security-related bug fix" border="0"></a>
+<p> Changes:
+<ul class="changes">
+ CHG curl -T: ignore file size of special files
+ CHG Added GOPHER protocol support
+ CHG Added mk-ca-bundle.vbs script
+ CHG c-ares build now requires c-ares >= 1.6.0
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="http://curl.haxx.se/docs/adv_20101013.html">--remote-header-name security vulnerability fixed</a>
+ BGF multi: support the timeouts correctly, fixes known bug #62
+ BGF multi: use timeouts properly for MAX_RECV/SEND_SPEED
+ BGF negotiation: Wrong proxy authorization
+ BGF multi: avoid sending multiple complete messages
+ BGF cmdline: make -F type= accept ;charset=
+ BGF RESUME_FROM: clarify what ftp uploads do
+ BGF http: handle trailer headers in all chunked responses
+ BGF Curl_is_connected: use correct errno
+ BGF Added SSPI build to Watcom makefile
+ BGF progress: callback for POSTs less than MAX_INITIAL_POST_SIZE
+ BGF linking problem on Fedora 13
+ BGF Link curl and the test apps with -lrt explicitly when necessary
+ BGF chunky parser: only rewind stream internally if needed
+ BGF remote-header-name: don't output filename when NULL
+ BGF Curl_timeleft: avoid returning "no timeout" by mistake
+ BGF timeout: use the correct start value as offset
+ BGF FTP: fix wrong timeout trigger
+ BGF buildconf got better output on failures
+ BGF rtsp: avoid SIGSEGV on malformed header
+ BGF LDAP: Support for tunnelling queries through HTTP proxy
+ BGF configure's --enable-werror had a bashism
+ BGF test565: Don't hardcode IP:PORT
+ BGF configure: check for gcrypt if using GnuTLS
+ BGF configure: don't enable RTMP if the lib detect fails
+ BGF curl_easy_duphandle: clone the c-ares handle correctly
+ BGF MacOSX-Framework: updates for Snowleopard
+ BGF support URL containing colon without trailing port number
+ BGF parsedate: allow time specified without seconds
+ BGF curl_easy_escape: don't escape "unreserved" characters
+ BGF SFTP: avoid downloading negative sizes
+ BGF Lots of GSS/KRB FTP fixes
+ BGF TFTP: Work around tftpd-hpa upload bug
+ BGF libcurl.m4: several fixes
+ BGF HTTP: remove special case for 416
+ BGF examples: use example.com in example URLs
+ BGF globbing: fix crash on unballanced open brace
+ BGF cmake: build fixed
+</ul>
 
 <a name="7_21_1"></a>
 SUBTITLE(Fixed in 7.21.1 - August 11 2010)
