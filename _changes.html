@@ -53,6 +53,49 @@ activity</a>
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_21_3"></a>
+SUBTITLE(Fixed in 7.21.3 - December 15 2010)
+<p> Changes:
+<ul class="changes">
+ CHG Added --noconfigure switch to testcurl.pl
+ CHG Added --xattr option
+ CHG Added CURLOPT_RESOLVE and --resolve
+ CHG Added CURLAUTH_ONLY
+ CHG Added version-check.pl to the examples dir
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF check for libcurl features for some command line options
+ BGF Curl_setopt: disallow CURLOPT_USE_SSL without SSL support
+ BGF http_chunks: remove debug output
+ BGF URL-parsing: consider ? a divider
+ BGF SSH: avoid using the libssh2_ prefix
+ BGF SSH: use libssh2_session_handshake() to work on win64
+ BGF ftp: prevent server from hanging on closed data connection when stopping
+   a transfer before the end of the full transfer (ranges)
+ BGF LDAP: detect non-binary attributes properly
+ BGF ftp: treat server's response 421 as CURLE_OPERATION_TIMEDOUT
+ BGF gnutls->handshake: improved timeout handling
+ BGF security: Pass the right parameter to init
+ BGF krb5: Use GSS_ERROR to check for error
+ BGF TFTP: resend the correct data
+ BGF configure: fix autoconf 2.68 warning: no AC_LANG_SOURCE call detected
+ BGF GnuTLS: now detects socket errors on Windows
+ BGF symbols-in-versions: updated en masse
+ BGF added a couple examples that were missing from the tar ball
+ BGF Curl_send/recv_plain: return errno on failure
+ BGF Curl_wait_for_resolv (for c-ares): correct timeout
+ BGF ossl_connect_common: detect connection re-use
+ BGF configure: Prevent link errors with --librtmp
+ BGF openldap: use remote port in URL passed to ldap_init_fd()
+ BGF url: provide dead_connection flag in Curl_handler::disconnect
+ BGF lots of compiler warning fixes
+ BGF ssh: fix a download resume point calculation
+ BGF fix getinfo CURLINFO_LOCAL* for reused connections
+ BGF multi: the returned running handles conuter could turn negative
+ BGF multi: only ever consider pipelining for connections doing HTTP(S)
+</ul>
+
 <a name="7_21_2"></a>
 SUBTITLE(Fixed in 7.21.2 - October 13 2010)
 <a href="http://curl.haxx.se/docs/adv_20101013.html"><img src="/pix/alert.png"
