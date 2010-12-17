@@ -54,7 +54,7 @@ index.html: _index.html $(MAINPARTS)
 example.html: _example.html $(MAINPARTS) allex.t
 	$(ACTION)
 
-allex.t: $(DOCROOT)/examples/Makefile.inc
+allex.t: $(DOCROOT)/examples/Makefile.inc _example-templ.html
 	perl mkexam.pl
 
 allfuncs.html: _allfuncs.html $(MAINPARTS)
