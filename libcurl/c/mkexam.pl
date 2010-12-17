@@ -96,7 +96,13 @@ print MAK "EXAMPLES = ";
 for my $f(@htmlfiles) {
     print MAK "$f ";
 }
-print MAK "\n";
+print MAK "\n\n";
+
+print MAK "EXAMPLESRCS = ";
+for my $f(@samps) {
+    print MAK "$dir/$f ";
+}
+
 close(MAK);
 
 open(MAK, ">Makefile.examples");

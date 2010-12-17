@@ -40,7 +40,8 @@ PAGES = index.html example.html curl_easy_init.html			\
  curl_multi_timeout.html curl_multi_setopt.html \
  curl_easy_escape.html curl_easy_unescape.html curl_multi_assign.html \
  curl_formget.html curl_easy_pause.html curl_easy_recv.html \
- curl_easy_send.html curl_multi_socket_action.html $(EXAMPLES)
+ curl_easy_send.html curl_multi_socket_action.html $(EXAMPLES) \
+ allexamples.zip
 
 all: $(PAGES)
 
@@ -328,6 +329,9 @@ curl_multi_assign.html: _curl_multi_assign.html $(MAINPARTS) curl_multi_assign.t
 	$(ACTION)
 curl_multi_assign.t: $(MANROOT)/curl_multi_assign.3
 	$(MAN2HTML) < $< >$@
+
+allexamples.zip: $(EXAMPLESRCS)
+	rm -f $@; zip -j $@ $(EXAMPLESRCS)
 
 include Makefile.examples
 
