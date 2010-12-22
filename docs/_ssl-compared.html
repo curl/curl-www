@@ -1,0 +1,251 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - SSL libraries compared</TITLE>
+#include "css.t"
+<link rel="stylesheet" type="text/css" href="comparison.css">
+</HEAD>
+
+#define CURL_DOCS
+#define DOCS_SSL_COMPARED
+#define CURL_URL docs/ssl-compared.html
+
+#include "_menu.html"
+#include "setup.t"
+#include "release.t"
+
+WHERE2(Docs, "/docs/", SSL libraries compared)
+
+TITLE(Compare SSL libraries)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="comparison-table.html">Compare HTTP/FTP Tools</a>
+<br><a href="../libcurl/competitors.html">Compare HTTP Libraries</a>
+</div>
+
+<p> This comparison only involves SSL/TLS libraries that libcurl can be built
+to use.
+
+#define FEATURE <td class="yes">yes</td>
+#define MISSING <td class="no">no</td>
+#define UNKNOWN <td class="unknown">?</td>
+#define FEATURE_P <td class="yes">yes*</td>
+#define MISSING_P <td class="no">no*</td>
+
+#define NEWCOL <td>
+#define ENDCOL </td>
+
+#define FEAT <td>
+#define ENDFEAT </td>
+
+#define NEWLINE <tr valign=top>
+#define ENDLINE </tr>
+
+#define NICETD <th>
+#define NICETDEND </th>
+
+<p>
+<table cellspacing="2" cellpadding="2" border="0" summary="Comparison of SSL libraries">
+ <thead>
+ <tr class="tabletop">
+  NICETD Feature NICETDEND
+  NICETD OpenSSL NICETDEND
+  NICETD GnuTLS NICETDEND
+  NICETD NSS NICETDEND
+  NICETD yaSSL NICETDEND
+  NICETD qssl NICETDEND
+  NICETD PolarSSL NICETDEND
+  NICETD axTLS NICETDEND
+ ENDLINE
+ </thead>
+
+ <tbody>
+ NEWLINE
+  FEAT TLS SRP ENDFEAT
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT Native CN check ENDFEAT
+  MISSING
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+ ENDLINE
+
+ NEWLINE
+  FEAT SSLv2 ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT SSLv3 ENDFEAT
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT TLSv1.0 ENDFEAT
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+ ENDLINE
+
+ NEWLINE
+  FEAT TLSv1.1 ENDFEAT
+  MISSING
+  FEATURE
+  FEATURE
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE
+  FEAT TLSv1.2 ENDFEAT
+  MISSING
+  FEATURE
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+  UNKNOWN
+ ENDLINE
+
+ NEWLINE
+  FEAT Small ENDFEAT
+  MISSING
+  MISSING
+  MISSING
+  FEATURE
+  MISSING
+  FEATURE
+  FEATURE
+ ENDLINE
+
+ NEWLINE
+  FEAT Runs on Windows ENDFEAT
+  FEATURE
+  FEATURE
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT FIPS-140 ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT First release ENDFEAT
+  NEWCOL 1998 ENDCOL
+  NEWCOL 2004? ENDCOL
+  NEWCOL ? ENDCOL
+  NEWCOL ? ENDCOL
+  NEWCOL ? ENDCOL
+  NEWCOL 2006 ENDCOL
+  NEWCOL 2006 ENDCOL
+ ENDLINE
+
+ NEWLINE
+  FEAT Version ENDFEAT
+  FEAT 1.0.0c ENDFEAT
+  FEAT 2.10.4 ENDFEAT
+  FEAT 3.12.4 ENDFEAT
+  FEAT 1.6.5 ENDFEAT
+  FEAT ? ENDFEAT
+  FEAT 0.14.0 ENDFEAT
+  FEAT 1.7.2 ENDFEAT
+ ENDLINE
+
+ </tbody>
+</table>
+
+<p>
+ Docs situation?
+<p>
+ File / run-time size requirements?
+<p>
+ API situation? (OpenSSL look-alike or not etc)
+
+SUBTITLE(Details)
+<p>
+ OpenSSL - lack of good docs and an API that isn't very consistent. The license is often
+mentioned as a problem since it isn't GPL compatible.
+<p>
+ GnuTLS - good docs, consistent API, wide support for TLS standards. Not as
+ widely used as OpenSSL.
+<p>
+ NSS - lack of good docs. API is focused around having data in databases
+ instead of individual files like the other libs do. Suffers a bit from being
+ seen as only used by Mozilla's browser and mail client by project members.
+<p>
+ yaSSL - lacks docs, has a OpenSSL-compatible API (if built that way) which
+ unfortunately doesn't work 100% like OpenSSL. Little used. Dual
+ GPL/commercial license.
+<p>
+ qssl - made for a single OS so it is of no use or interest for people who
+don't use OS/400
+<p>
+ PolarSSL - (formerly known as XySSL) targeted at embedded use. Small footprint.
+ Dual GPL/commercial license.
+<p>
+ axTSL - targeted at small footprint. BSD licensed. Lack of good docs. Written
+ by a single person.
+
+SUBTITLE(More reading)
+
+<p>
+ The mentioned libraries: <a href="http://www.openssl.org/">OpenSSL</a>, <a
+ href="http://www.gnutls.org/">GnuTLS</a>, <a
+ href="http://www.mozilla.org/projects/security/pki/nss/">NSS</a>, <a
+ href="http://www.yassl.com/">yaSSL</a>, <a
+ href="http://www.polarssl.org/">PolarSSL</a>, <a
+ href="http://axtls.sf.net/">axTLS</a>.
+
+<p>
+ <b>qssl</b> is a SSL library for AS/400 for which we have not found any
+ proper web site to link to.
+
+<p> More comparisons <a href="http://www.gnu.org/software/gnutls/comparison.html">hosted by the GnuTLS project</a>
+
+<p>
+ Please <a href="mailto:curl-web@haxx.se">mail us</a> corrections if this
+ table is incorrect, or tell us other features we should compare!
+
+#include "_footer.html"
+</BODY>
+</HTML>

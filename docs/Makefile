@@ -21,7 +21,7 @@ PAGES = index.html manpage.html faq.html changes.html \
  libs.html adv_20051013.html adv_20051207.html \
  adv_20060320.html vulnerabilities.html adv_20070710.html \
  gsoc2008.html releases.html adv_20090303.html releases.csv adv_20090812.html \
- adv_20100209.html adv_20101013.html
+ adv_20100209.html adv_20101013.html ssl-compared.html
 
 all: $(PAGES)
 	@echo done 
@@ -157,6 +157,9 @@ copying.t: $(SRCROOT)/COPYING
 	$(TXT2PLAIN) < $< > $@
 
 comparison-table.html: _comparison-table.html $(MAINPARTS)  ../release.t
+	$(ACTION)
+
+ssl-compared.html: _ssl-compared.html $(MAINPARTS)
 	$(ACTION)
 
 relatedtools.html: _relatedtools.html $(MAINPARTS)
