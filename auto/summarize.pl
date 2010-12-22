@@ -327,7 +327,7 @@ sub endofsingle {
     undef %serverfail;
 
     $showdebug=($debug?"D":"-").($trackmem?"M":"-");
-    $https=($openssl)?"S":($gnutls?"T":($nss?"N":($ssl?"?":"-")));
+    $https=($openssl)?"S":($gnutls?"T":($nss?"N":($polarssl?"O":($axtls?"X":"-")"-")"-"));
     my $showres=($asynch)?($ares?"A":"H"):"-";
     $sspi=$sspi?"P":"-";
     my $ssh=$libssh2?"2":"-";
@@ -523,6 +523,12 @@ sub singlefile {
             }
             elsif($line =~ /^\#define USE_GNUTLS 1/) {
                 $gnutls = 1;
+            }
+            elsif($line =~ /^\#define USE_AXTLS 1/) {
+                $axtls = 1;
+            }
+            elsif($line =~ /^\#define USE_POLARSSL 1/) {
+                $polarssl = 1;
             }
             elsif($line =~ /^\#define USE_NSS 1/) {
                 $nss = 1;
