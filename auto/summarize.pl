@@ -370,9 +370,9 @@ sub endofsingle {
     $configure=0;
     $debug=0;
     $trackmem=0;
-    $openssl=0;
-    $gnutls=0;
-    $nss=0;
+
+    $openssl=$gnutls=$nss=$axtls=$polarssl=0;
+
     $libssh2=0;
     $ssl=0;
     $cvsfail=0;
