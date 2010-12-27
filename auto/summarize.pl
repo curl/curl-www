@@ -327,7 +327,7 @@ sub endofsingle {
     undef %serverfail;
 
     $showdebug=($debug?"D":"-").($trackmem?"M":"-");
-    $https=($openssl)?"S":($gnutls?"T":($nss?"N":($polarssl?"O":($axtls?"X":"-")"-")"-"));
+    $https=($openssl)?"S":($gnutls?"T":($nss?"N":($polarssl?"O":($axtls?"X":"-"))));
     my $showres=($asynch)?($ares?"A":"H"):"-";
     $sspi=$sspi?"P":"-";
     my $ssh=$libssh2?"2":"-";
