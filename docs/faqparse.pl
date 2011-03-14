@@ -92,7 +92,8 @@ while(<STDIN>) {
             $s =~ s/\>/&gt;/g;
             $s =~ s/^ *(.*) */$1/;
             print "<a name=\"$link{$toc[$q]}\"></a>";
-            print "<h3>$s</h3><p>\n";
+            print "<h3>$s</h3>\n";
+            $line=0;
             $q++;
         }
         else {
@@ -117,13 +118,24 @@ while(<STDIN>) {
                 
                 # prevent many blanks
                 my $show = $_;
+                my $pref=0;
                 if($show =~ /^ *$/) {
                     $blank++;
                 }
                 else {
                     $blank=0;
+                    if($show =~ /^([ |\t]+)/) {
+                        $pref=length($1);
+                    }
+                    $line++;
                 }
-                print "$show<br>" if($blank < 2);
+                if($oldpref == $pref) {
+                    print " $show " if($blank < 2);                    
+                }
+                else {
+                    printf("%s$show", ($line>1)?"<br>":"") if($blank < 2);
+                }
+                $oldpref = $pref;
             }
         }
     }
