@@ -103,6 +103,8 @@ while(<STDIN>) {
             # Emphasize _underlined_ words
             s/\b_([[:alnum:]]+)_\b/<em>$1<\/em>/g;
 
+            # linkify URLs
+            s/((http|ftp):\/\/([\w.\/%-?]*[a-z0-9\/]))/<a href=\"$2:\/\/$3\">$1<\/a>/g;
             if($_ =~ /^     /) {
                 # five or more initial spaces, use <pre>
                 push @pre, $_;
@@ -114,7 +116,6 @@ while(<STDIN>) {
                     print "</pre>\n";
                     undef @pre;
                 }
-                s/((http|ftp):\/\/([\w.\/%-?]*[a-z0-9\/]))/<a href=\"$2:\/\/$3\">$1<\/a>/g;
                 
                 # prevent many blanks
                 my $show = $_;
