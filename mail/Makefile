@@ -15,13 +15,17 @@ TXT2HTML= txt2html --extract --hrule 10
 
 all: subscribe.html mail.html etiquette.html index.html indexheader.html \
  indexfooter.html mailheader.html mailfooter.html lost.html mailman.html \
- activity.html
+ activity.html 
 
 subscribe.html: _subscribe.html $(MAINPARTS)
 	$(ACTION)
 
-etiquette.html: _etiquette.html $(MAINPARTS)
+etiquette.html: _etiquette.html $(MAINPARTS) etiquette.t
 	$(ACTION)
+
+etiquette.t: $(DOCROOT)/MAIL-ETIQUETTE $(ROOT)/docs/faqparse.pl
+	$(ROOT)/docs/faqparse.pl < $< > $@
+
 
 activity.html: _activity.html $(MAINPARTS)
 	$(ACTION)
