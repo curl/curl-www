@@ -5,8 +5,8 @@ libcurl/_links.html ad.t mirrorlinks.t css.t sflogo.html textlinks.t
 NOW=$(shell gnudate +'-D__TODAY__=%B %e, %Y')
 
 # the latest stable version is:
-STABLE= 7.21.4
-RELDATE = "17th of February 2011"
+STABLE= 7.21.5
+RELDATE = "17th of April 2011"
 
 # name of the dir to tempoary unpack and build zip files in:
 TEMPDIR=tempzip
@@ -24,12 +24,11 @@ ACTION=@echo preprocessing $@; \
        rm -f $@; \
        cpp -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
 
-all: index.html feedback.html mirrors.html cvs.html libs.html		\
- help.html download.html changes.html about.html		\
- support.html newslog.html news.html head.html foot.html oldnews.html	\
- info web-editing.html ad.html donation.html devel.html			\
- competition.html search.html sflogo.html \
- sponsors.html source.html
+all: index.html feedback.html mirrors.html cvs.html libs.html help.html	\
+ download.html changes.html about.html support.html newslog.html	\
+ news.html head.html foot.html oldnews.html info web-editing.html	\
+ ad.html donation.html devel.html competition.html search.html		\
+ sflogo.html sponsors.html source.html
 	cd docs && make
 	cd libcurl && make
 	cd mail && make
