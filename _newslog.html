@@ -34,6 +34,21 @@ TITLE(News in curl and libcurl land)
  NCOLE
 #endif
 
+ NSUBJ(HTTPS over HTTP proxy bug - in 7.21.5)
+ NDATE(April 20 2011)
+ NCOLS
+
+  It has been confirmed that curl and libcurl 7.21.5 cannot speak HTTPS over a
+  HTTP proxy. This bug is a regression since the previous version, and you can
+  fix it by patching the source code using a <a
+  href="https://github.com/bagder/curl/commit/c2c89481909de99e37f4aee46c8bc1b1358a5988">diff
+  from commit c2c89481909d</a>
+
+ <p>
+  Thanks to Josue Andrade Gomes for <a href="http://curl.haxx.se/mail/lib-2011-04/0134.html">reporting this</a>
+
+ NCOLE
+
  NSUBJ(curl and libcurl 7.21.5)
  NDATE(April 17 2011)
  NCOLS
