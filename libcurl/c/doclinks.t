@@ -1,7 +1,7 @@
 #ifdef DOCS_INDEX
-THIS(C API Front)
+THIS(API)
 #else
-DOC(C API Front, .)
+DOC(API, .)
 #endif
 
 #ifdef DOCS_TUTORIAL
