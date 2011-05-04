@@ -631,7 +631,7 @@ if($pick_os && $pick_flav && $pick_ver && !$pick_cpu) {
         if($ua =~ /68K/i) {
             $sel_cpu = "68k";
         }
-        elsif($ua =~ /(Mac|PPC)/i) {
+        elsif($ua =~ /PPC/i) {
             $sel_cpu = "PPC";
         }
         elsif($ua =~ /sun4|sparc/i) {
