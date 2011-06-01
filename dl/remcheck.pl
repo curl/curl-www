@@ -309,6 +309,7 @@ for $ref (@all) {
                             $$ref{'file'}=$churl;
                             logmsg " Updated download URL!\n";
                         }
+                        $$ref{'size'}='';
                     }
                     else {
                         $uptodate++;
@@ -375,11 +376,9 @@ for $ref (@all) {
                 # so we update the download URL as well!
                 $$ref{'file'}=$churl;
             }
-            # store the size as well if we know it
-            if($cl) {
-                $$ref{'size'}=$cl;
-                logmsg " Store size: $cl bytes\n";
-            }
+            # store the size, whether it's known or unknown (blank)
+            $$ref{'size'}=$cl;
+            logmsg " Store size: " . ($cl || "unknown") . " bytes\n";
 
             if($$ref{'curl'} ne $ver) {
                 # TODO: actually store the new version here
