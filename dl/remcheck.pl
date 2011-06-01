@@ -69,6 +69,13 @@ sub content_length {
         $cl = $1;
         $stat = 1;
         logmsg " Content-Length: $cl found\n";
+
+        if(join("", @doc) =~ /Content-Type: *text\//i) {
+            # This is probably an index page, not a downloadable binary,
+            # so the length is meaningless
+            $cl = '';
+            logmsg " but ignored\n";
+        }
     }
     elsif((join("", @doc) =~ /^HTTP\/\d.\d (\d+)/)  && ($1 == 200)) {
         # still, it return 200 which indicates OK!
