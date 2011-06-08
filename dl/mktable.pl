@@ -261,8 +261,9 @@ for $per (@sall) {
     }
 
     my $contenttype;
-    if ($mirror) {
-        # If the file is served locally, include its content type in the link
+    if ($mirror || ($$per{'size'} > 0)) {
+        # If the file is served locally, or if it's a remote binary file
+        # (which a known size indicates), include its content type in the link
         $contenttype=$formats{$$per{'pack'}};
         if ($contenttype) {
             $contenttype = " type=\"$contenttype\"";
