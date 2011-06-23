@@ -38,6 +38,31 @@ TITLE(curl Security)
  See also the <a href="vulnerabilities.html">Vulnerabilties Table</a> to see
  what versions that are vulnerable to what flaws.
 
+<a name="20110623"></a>
+SUBTITLE(libcurl inappropriate GSSAPI delegation)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>June 23, 2011</td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-2192">CVE-2011-2192</a> <small><a href="#20110623">(permalink)</a></small></td></tr>
+  <tr><td>Affected versions</td><td>7.10.6 to and including 7.21.6</td></tr>
+  <tr><td>Not affected versions</td><td>libcurl <= 7.10.5 and >= 7.21.7</td></tr>
+  <tr><td>Patch</td><td><a href="http://curl.haxx.se/curl-gssapi-delegation.patch">curl-gssapi-delegation.patch</a></td></tr>
+
+  <tr><td>Advisories</td><td>
+<a href="adv_20110623.html">Project cURL Security Advisory</a> </td></tr>
+
+</table>
+<p>
+  When doing GSSAPI authentication, libcurl unconditionally performs
+  credential delegation. This hands the server a copy of the client's security
+  credentials, allowing the server to impersonate the client to any other
+  using the same GSSAPI mechanism. This is obviously a very sensitive
+  operation, which should only be done when the user explicitly so directs.
+<p>
+  The GSS/Negotiate feature is only used by libcurl for HTTP authentication if
+  told to, and only if libcurl was built with a library that provides the
+  GSSAPI. Many builds of libcurl don't have GSS enabled.
+
 <a name="20101013"></a>
 SUBTITLE(curl local file overwrite)
 <p>
@@ -56,11 +81,11 @@ SUBTITLE(curl local file overwrite)
   curl offers a command line option --remote-header-name (also usable as -J)
   which will use the file name of the Content-disposition: header when it
   saves the downloaded data locally.
-
+<p>
   curl attempts to cut off the directory parts from any given file name in the
   header to only store files in the current directory. It will overwrite a
   local file using the same name as the header specifies.
-
+<p>
   The stripping of the directory did not take backslashes into account.
 
 <a name="20100209"></a>

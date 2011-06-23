@@ -1,5 +1,6 @@
 # datestamp, first vulnerable version, last vulnerable version
 @vuln = (
+    "20110623|7.10.6|7.21.6|libcurl inappropriate GSSAPI delegation",
     "20101013|7.20.0|7.21.1|curl local file overwrite",
     "20100209|7.10.5|7.19.7|libcurl data callback excessive length",
     "20090812|7.4   |7.19.5|libcurl embedded zero in cert name",
