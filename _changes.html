@@ -53,6 +53,38 @@ activity</a>
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_21_7"></a>
+SUBTITLE(Fixed in 7.21.7 - June 23 2011)
+<a href="http://curl.haxx.se/docs/adv_20110623.html"><img src="/pix/alert.png"
+align="right" alt="Release contains security-related bug fix" border="0"></a>
+<p> Changes:
+<ul class="changes">
+ CHG recognize the [protocol]:// prefix in proxy hosts where the protocol is one
+   of socks4, socks4a, socks5 or socks5h.
+ CHG Added CURLOPT_CLOSESOCKETFUNCTION and CURLOPT_CLOSESOCKETDATA
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="/docs/adv_20110623.html">SECURITY ADVISORY: inappropriate GSSAPI delegation</a>
+   
+ BGF NTLM: work with unicode
+ BGF fix connect with SOCKS proxy when using the multi interface
+ BGF anyauthput.c: stdint.h must not be included unconditionally
+ BGF CMake: improved build
+ BGF SCP/SFTP enable non-blocking earlier
+ BGF GnuTLS handshake: fix timeout
+ BGF cyassl: build without filesystem
+ BGF HTTPS over HTTP proxy using the multi interface
+ BGF speedcheck: invalid timeout event on a reused handle
+ BGF Force connection close for HTTP 200 OK when time condition matched
+ BGF curl_formget: fix FILE * leak
+ BGF configure: improved OpenSSL detection
+ BGF Android build: support gingerbread
+ BGF CURLFORM_STREAM: acknowledge CURLFORM_FILENAME
+ BGF windows build: use correct MS CRT
+ BGF pop3: remove extra space in LIST command
+</ul>
+
 <a name="7_21_6"></a>
 SUBTITLE(Fixed in 7.21.6 - April 22 2011)
 <p> Changes:
