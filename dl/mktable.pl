@@ -251,7 +251,7 @@ for $per (@sall) {
            $metalink);
 
     my $fi = $$per{'file'};
-    if($fi !~ /^(http|ftp|javascript):/) {
+    if($fi !~ /^(http|https|ftp|javascript):/) {
         $fi = "/download/$fi";
     }
     else {
