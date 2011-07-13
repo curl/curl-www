@@ -224,7 +224,7 @@ for $ref (@all) {
         logmsg " Already at latest version ($version), no need to check\n";
         $uptodate++;
     }
-    elsif($$ref{'file'} !~ /^(http|ftp):/) {
+    elsif($$ref{'file'} !~ /^(http|https|ftp):/) {
         logmsg " Local package, no check needed\n";
         $localpackage++;
     }
