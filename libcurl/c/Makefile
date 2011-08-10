@@ -41,7 +41,7 @@ PAGES = index.html example.html curl_easy_init.html			\
  curl_easy_escape.html curl_easy_unescape.html curl_multi_assign.html \
  curl_formget.html curl_easy_pause.html curl_easy_recv.html \
  curl_easy_send.html curl_multi_socket_action.html $(EXAMPLES) \
- allexamples.zip
+ allexamples.zip options-in-examples.html
 
 all: $(PAGES)
 
@@ -332,6 +332,12 @@ curl_multi_assign.t: $(MANROOT)/curl_multi_assign.3
 
 allexamples.zip: $(EXAMPLESRCS)
 	rm -f $@; zip -j $@ $(EXAMPLESRCS)
+
+options-in-examples.html: _options-in-examples.html $(MAINPARTS) allex.t options-in-examples.t
+	$(ACTION)
+
+options-in-examples.t: allex.t options-used-in-examples.pl
+	perl options-used-in-examples.pl > options-in-examples.t
 
 include Makefile.examples
 

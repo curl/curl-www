@@ -1,0 +1,39 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl - options used by examples</TITLE>
+#include "css.t"
+</HEAD>
+
+#define LIBCURL_EXAMPLE
+#define DOCS_INDEX
+#define CURL_URL libcurl/c/options-in-examples.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", Options Used By Examples)
+
+TITLE(Options Used By Examples)
+
+<div style="float: right; border: 1px solid black; "> 
+SUBTITLE(All Examples)
+#include "allex.t"
+</div>
+<div style="width: 50em;">
+<p>
+ libcurl offers a vast amount of options to the <a
+ href="curl_easy_setopt.html">curl_easy_setopt()</a> function, and here's a
+ list that helps you find which examples that use specific options.
+<p>
+ If there's no example listed for the given option, please consider to write
+ one up and send us for future reference! Note that the list of options
+ exclude the few ones that are marked as deprecated.
+<p>
+
+#include "options-in-examples.t"
+</div>
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
