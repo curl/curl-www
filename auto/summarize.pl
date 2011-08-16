@@ -326,7 +326,7 @@ sub endofsingle {
     }
     undef %serverfail;
 
-    $showdebug=($debug?"D":"-").($trackmem?"M":"-");
+    $showdebug=($debug?"D":"-").($trackmem?"M":"-").($valgrind?"V":"-");
     $https=($openssl)?"S":($gnutls?"T":($nss?"N":($polarssl?"O":($axtls?"X":"-"))));
     my $showres=($asynch)?($ares?"A":"H"):"-";
     $sspi=$sspi?"P":"-";
@@ -370,6 +370,7 @@ sub endofsingle {
     $configure=0;
     $debug=0;
     $trackmem=0;
+    $valgrind=0;
 
     $openssl=$gnutls=$nss=$axtls=$polarssl=0;
 
@@ -507,6 +508,9 @@ sub singlefile {
             }
             elsif($line =~ /^\* Server SSL: *(ON|OFF) *libcurl SSL: *(ON|OFF)/) {
                 $ssl = ($2 eq "ON") ? 1 : 0;
+            }
+            elsif($line =~ /^\* valgrind: *(ON|OFF) *HTTP IPv6 *(ON|OFF)/) {
+                $valgrind = ($1 eq "ON") ? 1 : 0;
             }
             elsif($line =~ /^supported_features(.*)AsynchDNS/) {
                 $asynch = 1;
