@@ -56,6 +56,9 @@ sub checkwarn {
         ($l =~ /^nlmconv:/) ||
         # GNU and MIPS ld error
         ($l =~ /^[^ ?*]*ld((32)|(64))?: /) ||
+        # Wine runtime problems
+        ($l =~ /^fixme:.*:.*[sS][tT][uU][bB]/) ||
+        ($l =~ /^fixme:.*:.*[sS][uU][pP][pP][oO][rR][tT]/) ||
         # AC_MSG_WARN output in configure script
         ($l =~ /configure: WARNING: .*compiler options rejected/) ||
         ($l =~ /configure: WARNING: .*cannot determine strerror_r/) ||
