@@ -21,9 +21,11 @@ TITLE(Extract CA Certs from mozilla.org)
 </div>
 <p class="ingres">
 
- The <b>lib/mk-ca-bundle.pl</b> script (in git and bundled in curl tarballs)
- converts <a href="http://www.mozilla.org/">Mozilla</a>'s CA cert bundle to
- PEM format, suitable for (lib)curl and others. Writtten by Guenter Knauf.
+ The <a
+ href="https://github.com/bagder/curl/blob/master/lib/mk-ca-bundle.pl">lib/mk-ca-bundle.pl</a>
+ script converts <a href="http://www.mozilla.org/">Mozilla</a>'s CA cert
+ bundle to PEM format, suitable for (lib)curl and others. Writtten by Guenter
+ Knauf.
 
 SUBTITLE(Automated Conversions)
 <p>
@@ -39,6 +41,10 @@ SUBTITLE(Automated Conversions)
 </ul>
 <p>
  The file contains the datestamp of the conversion.
+<p>
+ These files do <b>not</b> contain the DigiNotar certificates anymore since
+ Mozilla started marking them as untrusted and our script was updated to be
+ aware of that marking.
 
 SUBTITLE(Requirements)
 <o>
