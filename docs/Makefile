@@ -51,9 +51,8 @@ mandump.t: $(DOCROOT)/curl.1
 bugs.html: _bugs.html $(MAINPARTS) bugs.t
 	$(ACTION)
 
-bugs.t: $(DOCROOT)/BUGS
-	$(TXT2HTML) < $(DOCROOT)/BUGS > bugs.t
-
+bugs.t: $(DOCROOT)/BUGS faqparse.pl
+	./faqparse.pl < $< > $@
 
 history.html: _history.html $(MAINPARTS) history.t
 	$(ACTION)
