@@ -53,6 +53,56 @@ activity</a>
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_22_0"></a>
+SUBTITLE(Fixed in 7.22.0 - September 13 2011)
+<p> Changes:
+<ul class="changes">
+ CHG Added CURLOPT_GSSAPI_DELEGATION
+ CHG Added support for NTLM delegation to Samba's winbind daemon helper ntlm_auth
+ CHG Display notes from setup file in testcurl.pl
+ CHG BSD-style lwIP TCP/IP stack experimental support on Windows
+ CHG OpenSSL: Use SSL_MODE_RELEASE_BUFFERS if available
+ CHG --delegation was added to set CURLOPT_GSSAPI_DELEGATION
+ CHG nss: start with no database if the selected database is broken
+ CHG telnet: allow programatic use on Windows
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF curl_getdate: detect some illegal dates better
+ BGF when sending a request and an error is received before the (entire) request
+   body is sent, stop sending the request and close the connection after
+   having received the entire response. This is equally true if an Expect:
+   100-continue header was used.
+ BGF When using both -J and a single -O with multiple URLs, a missing init
+   could cause a segfault
+ BGF -J fixed for escaped quotes
+ BGF -J fixed for file names with semicolons
+ BGF progress: reset flags at transfer start to avoid wrong 
+   CURLINFO_CONTENT_LENGTH_DOWNLOAD
+ BGF curl_gssapi: Guard files with HAVE_GSSAPI and rename private header
+ BGF silence picky compilers: mark unused parameters
+ BGF help output: more gnu like output
+ BGF libtests: stop checking for CURLM_CALL_MULTI_PERFORM
+ BGF setting a non-HTTP proxy with an environment variable or with CURLOPT_PROXY
+   / --proxy (without specifying CURLOPT_PROXYTYPE) would still make it do
+   proxy-like HTTP requests
+ BGF CURLFORM_BUFFER: insert filename as documented (regression)
+ BGF SOCKS: fix the connect timeout
+ BGF ftp_doing: bail out on error properly while multi interfacing
+ BGF improved Content-Encoded decoding error message
+ BGF asyn-thread: check for dotted addresses before thread starts
+ BGF cmake: find winsock when building on windows
+ BGF Curl_retry_request: check return code
+ BGF cookies: handle 'secure=' as if it was 'secure'
+ BGF tests: break busy loops in tests 502, 555, and 573
+ BGF FTP: fix proxy connect race condition with multi interface and SOCKS proxy
+ BGF RTSP: GET_PARAMETER requests have a body
+ BGF fixed several memory leaks in OOM situations
+ BGF bad expire(0) caused multi_socket API to hang
+ BGF Avoid ftruncate() static define with mingw64
+ BGF mk-ca-bundle.pl: ignore untrusted certs
+ BGF builds with PolarSSL 1.0.0
+</ul>
 <a name="7_21_7"></a>
 SUBTITLE(Fixed in 7.21.7 - June 23 2011)
 <a href="http://curl.haxx.se/docs/adv_20110623.html"><img src="/pix/alert.png"
