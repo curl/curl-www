@@ -52,6 +52,9 @@ sub checkwarn {
         ($l =~ /Warning: .* library needs some functionality/) ||
         ($l =~ /Warning: .* does not have real file for/) ||
 
+        # curl tool detecting libcurl violating CURL_MAX_WRITE_SIZE
+        ($l =~ /Warning: .* exceeds single call write limit/) ||
+
         # NetWare's nlmconv linker
         ($l =~ /^nlmconv:/) ||
         # GNU and MIPS ld error
