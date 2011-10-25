@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-# Copyright (C) 2010, Daniel Stenberg, <daniel@haxx.se>
+# Copyright (C) 2010-2011, Daniel Stenberg, <daniel@haxx.se>
 
 #
 # commit d4cd5411a66d6814adccdfc81ff1d8a80e8c58af
@@ -12,10 +12,10 @@
 # :100644 100644 02d7b27... 8d81272... M  CHANGES
 # :100644 100644 29ad85b... 072ad7e... M  RELEASE-NOTES
 #
-my @lines=`cd curl && git log --raw -20`;
+my @lines=`cd curl && git log --raw -100`;
 
 sub header {
-    print "<table>\n";
+    print "<table cellspacing=0 cellpadding=0>\n";
 }
 
 sub footer {
@@ -34,13 +34,18 @@ sub showc {
         $desc =~ s/&/&amp;/g;
         $desc =~ s/\</&lt;/g;
         $desc =~ s/\>/&gt;/g;
-        $desc =~ s/   */<p>/g;
 
-        printf("<tr class=\"$cl\"><td colspan=\"2\"><b>%s</b> at <a href=\"%s/%s\">%s</a></td></tr><tr class=\"$cl\"><td>%s</td><td><pre>%s</pre></td></tr>\n",
-               $auth,
+        $fl = $desc;
+        if($desc =~ s/^([^\n]*)//) {
+            $fl = $1;
+        }
+        $desc =~ s/\n\n/<p>/g;
+
+        printf("<tr class=\"$cl\"><td><a href=\"%s/%s\">%s</a></td><td>%s</td></tr><tr class=\"$cl\"><td>%s</td><td><pre>%s</pre></td></tr>\n",
                "http://github.com/bagder/curl/commit",
                $c{'commit'},
-               $date,
+               $fl,
+               $auth,
                $desc,
                $c{'files'});
     }
@@ -50,8 +55,6 @@ sub showc {
 sub showlines {
 
     for my $l (@lines) {
-        chomp $l;
-
         if($l =~ /^(commit|Author:|Date:) *(.*)/) {
             my ($k, $v)=($1, $2);
             if($k eq "commit") {
@@ -61,7 +64,7 @@ sub showlines {
         }
         elsif($l =~ /^    (.*)/) {
             my $d=$1;
-            $c{'desc'}.= "$d ";
+            $c{'desc'}.= "$d\n";
         }
         elsif($l =~ /^:.*(.)\t(.*)/) {
             $c{'files'} .= "$1 $2\n";
