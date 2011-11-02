@@ -55,6 +55,9 @@ sub checkwarn {
         # curl tool detecting libcurl violating CURL_MAX_WRITE_SIZE
         ($l =~ /Warning: .* exceeds single call write limit/) ||
 
+        # torture test leaving test server unresponsive
+        ($l =~ /server precheck FAILED /) ||
+
         # NetWare's nlmconv linker
         ($l =~ /^nlmconv:/) ||
         # GNU and MIPS ld error
