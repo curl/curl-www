@@ -53,6 +53,53 @@ activity</a>
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_23_0"></a>
+SUBTITLE(Fixed in 7.23.0 - November 15 2011)
+<p> Changes:
+<ul class="changes">
+ CHG Empty headers can be sent in HTTP requests by terminating with a semicolon
+ CHG SSL session sharing support added to curl_share_setopt()
+ CHG Added support to MAIL FROM for the optional SIZE parameter
+ CHG smtp: Added support for NTLM authentication
+ CHG curl tool: code split into tool_*.[ch] files
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF handle HTTP redirects to "//hostname/path"
+ BGF SMTP without --mail-from caused segfault
+ BGF prevent extra progress meter headers between multiple files
+ BGF allow Content-Length to be replaced when sending HTTP requests
+ BGF curl now always sets postfieldsize to allow --data-binary and --data
+   to be mixed in the same command line
+ BGF curl_multi_fdset: avoid FD_SET out of bounds
+ BGF lots of MinGW build tweaks
+ BGF Curl_gethostname: return un-qualified machine name
+ BGF fixed the openssl version number configure check
+ BGF nss: certificates from files are no longer looked up by file base names
+ BGF returning abort from the progress function when using the multi interface
+   would not properly cancel the transfer and close the connection
+ BGF fix libcurl.m4 to not fail with modern gcc versions
+ BGF ftp: improved the failed PORT host name resolved error message
+ BGF TFTP timeout and unexpected block adjustments
+ BGF HTTP and GOPHER test server-side connection closing adjustments
+ BGF fix endless loop upon transport connection timeout
+ BGF don't clobber errno on failed connect
+ BGF typecheck: allow NULL to unset CURLOPT_ERRORBUFFER
+ BGF formdata: ack read callback abort
+ BGF make --show-error properly position independent
+ BGF set the ipv6-connection boolean correctly on connect
+ BGF SMTP: fix end-of-body string escaping
+ BGF gtls: only call gnutls_transport_set_lowat with <gnutls-2.12.0
+ BGF HTTP: handle multiple auths in a single WWW-Authenticate line
+ BGF curl_multi_fdset: correct fdset with FTP PORT use
+ BGF windbuild: fix the static build
+ BGF fix builds with GnuTLS version 3
+ BGF fix calling of OpenSSL's ERR_remove_state(0)
+ BGF HTTP auth: fix proxy Negotiate bug when Negotiate not requested
+ BGF ftp PORT: don't hang if bind() fails
+ BGF -# would crash on terminals wider than 256 columns
+</ul>
+
 <a name="7_22_0"></a>
 SUBTITLE(Fixed in 7.22.0 - September 13 2011)
 <p> Changes:
