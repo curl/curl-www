@@ -16,6 +16,12 @@ THIS(Error Codes)
 DOC(Error Codes, libcurl-errors.html)
 #endif
 
+#ifdef DOCS_SYMBOLS
+THIS(Symbols In Versions)
+#else
+DOC(Symbols In Versions, symbols-in-versions.html)
+#endif
+
 #ifdef DOCS_ALLFUNCS
 THIS(All Functions)
 #else
