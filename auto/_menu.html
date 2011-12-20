@@ -63,6 +63,12 @@ HERE(x, Source Activity)
 VLINK(/dev/cvshistory.html, Source Activity, Recent Activity in the git repo)
 #endif
 
+#ifdef DEVEL_GITSTATS
+HERE(x, git stats)
+#else
+VLINK(/gitstats/, git stats &raquo;, Lots of statistics from the git repo)
+#endif
+
 <hr>
 
 #ifdef DEVEL_TRACKER
