@@ -53,6 +53,78 @@ activity</a>
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_24_0"></a>
+SUBTITLE(Fixed in 7.24.0 - January 24 2012)
+<img src="/pix/alert.png"
+align="right" alt="Release contains security-related bug fix" border="0">
+<p> Changes:
+<ul class="changes">
+ CHG <a href="http://curl.haxx.se/mail/lib-2011-11/0205.html">CURLOPT_QUOTE: SFTP supports the '*'-prefix now</a>
+ CHG <a href="http://curl.haxx.se/mail/lib-2011-11/0067.html">CURLOPT_DNS_SERVERS: set name servers if possible</a>
+ CHG <a href="http://curl.haxx.se/mail/lib-2011-11/0164.html">Add support for using nettle instead of gcrypt as gnutls backend</a>
+ CHG <a href="http://curl.haxx.se/mail/lib-2011-12/0107.html">CURLOPT_INTERFACE: avoid resolving interfaces names with magic prefixes</a>
+ CHG <a href="http://curl.haxx.se/libcurl/c/curl_easy_setopt.html#CURLOPTACCEPTTIMOUTMS">Added CURLOPT_ACCEPTTIMEOUT_MS</a>
+ CHG <a href="http://curl.haxx.se/mail/lib-2011-12/0133.html">configure: add symbols versioning option --enable-versioned-symbols</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="http://curl.haxx.se/docs/adv_20120124.html">curl was vulnerable to a data injection attack for certain protocols</a>
+ BGF <a href="http://curl.haxx.se/docs/adv_20120124B.html">curl was vulnerable to a SSL CBC IV vulnerability when built to use OpenSSL</a>
+
+ BGF <a href="http://curl.haxx.se/mail/lib-2011-11/0116.html">SSL session share: move the age counter to the share object</a>
+ BGF <a href="http://curl.haxx.se/mail/archive-2011-11/0030.htm">-J -O: use -O name if no Content-Disposition header comes!</a>
+ BGF <a href="http://curl.haxx.se/mail/archive-2011-11/0035.html">protocol_connect: show verbose connect and set connect time</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2011-11/0218.html">query-part: ignore the URI part for given protocols</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2011-11/0267.html">gnutls: only translate winsock errors for old versions</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2011-11/0279.html">POP3: fix end of body detection</a>
+ BGF POP3: detect when LIST returns no mails
+ BGF <a href="http://curl.haxx.se/mail/lib-2011-11/0247.html">TELNET: improved treatment of options</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2011-11/0294.html">configure: add support for pkg-config detection of libidn</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3442068">CyaSSL 2.0+ library initialization adjustment</a>
+ BGF multi interface: only use non-NULL socker function pointer
+ BGF call opensocket callback properly for active FTP
+ BGF <a href="http://curl.haxx.se/mail/lib-2011-12/0018.html">don't call close socket callback for sockets created with accept()</a>
+ BGF <a href="http://curl.haxx.se/mail/archive-2011-12/0010.html">differentiate better between host/proxy errors</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3451592">SSH: fix CURLOPT_SSH_HOST_PUBLIC_KEY_MD5 and --hostpubmd5</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2011-11/0371.html">multi: handle timeouts on DNS servers by checking for new sockets</a>
+ BGF CURLOPT_DNS_SERVERS: fix return code
+ BGF <a href="http://curl.haxx.se/mail/lib-2011-11/0368.html">POP3: fixed escaped dot not being stripped out</a>
+ BGF <a href="http://curl.haxx.se/mail/archive-2011-12/0012.html">OpenSSL: check for the SSLv2 function in configure</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2011-12/0063.html">MakefileBuild: fix the static build</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2011-12/0010.html">create_conn: don't switch to HTTP protocol if tunneling is enabled</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2011-12/0070.html">multi interface: fix block when CONNECT_ONLY option is used</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2011-11/0022.html">Fix connection reuse for TLS upgraded connections</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2011-12/0121.html">multiple file upload with -F and custom type</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2011-12/0179.html">multi interface: active FTP connections are no longer blocking</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2011-12/0215.html">Android build fix</a>
+ BGF <a href="http://curl.haxx.se/mail/archive-2011-12/0022.html">timer: restore PRETRANSFER timing</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2011-12/0218.html">libcurl.m4: Fix quoting arguments of AC_LANG_PROGRAM</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2011-12/0211.html">appconnect time fixed for non-blocking connect ssl backends</a>
+ BGF <a href="https://bugzilla.redhat.com/767490">do not include SSL handshake into time spent waiting for 100-continue</a>
+ BGF handle dns cache case insensitive
+ BGF <a href="http://curl.haxx.se/mail/lib-2011-12/0314.html">use new host name casing for subsequent HTTP requests</a>
+ BGF CURLOPT_RESOLVE: avoid adding already present host names
+ BGF <a href="http://curl.haxx.se/mail/lib-2011-12/0249.html">SFTP mkdir: use correct permission</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3463121">resolve: don't leak pre-populated dns entries</a>
+ BGF --retry: Retry transfers on timeout and DNS errors
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3466497">negotiate with SSPI backend: use the correct buffer for input</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2011-12/0249.html">SFTP dir: increase buffer size counter to avoid cut off file names</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-01/0146.html">TFTP: fix resending (again)</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-01/0160.html">c-ares: don't include getaddrinfo-using code</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-01/0096.html">FTP: CURLE_PARTIAL_FILE will not close the control channel</a>
+ BGF win32-threaded-resolver: stop using a dummy socket
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-01/0049.html">OpenSSL: remove reference to openssl internal struct</a>
+ BGF OpenSSL: SSL_OP_NETSCAPE_REUSE_CIPHER_CHANGE_BUG option no longer enabled
+ BGF OpenSSL: fix PKCS#12 certificate parsing related memory leak
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3474308">OpenLDAP: fix LDAP connection phase memory leak</a>
+ BGF Telnet: Use correct file descriptor for telnet upload
+ BGF Telnet: Remove bogus optimisation of telnet upload
+ BGF URL parse: user name with ipv6 numerical address
+ BGF polarssl: show cipher suite name correctly with 1.1.0
+ BGF polarssl: havege_rand is not present in version 1.1.0 WARNING, we still use the <a href="http://polarssl.org/trac/wiki/SecurityAdvisory201102">old API which is said to be insecure</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-01/0225.html">gnutls: enforced use of SSLv3</a>
+</ul>
+
 <a name="7_23_1"></a>
 SUBTITLE(Fixed in 7.23.1 - November 17 2011)
 <p> Bugfixes:
