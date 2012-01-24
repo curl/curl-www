@@ -38,6 +38,41 @@ TITLE(curl Security)
  See also the <a href="vulnerabilities.html">Vulnerabilties Table</a> to see
  what versions that are vulnerable to what flaws.
 
+<a name="20120124B"></a>
+SUBTITLE(curl SSL CBC IV vulnerability)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>January 24, 2012</td></tr>
+  <tr><td>ID</td><td> <small><a href="#20120124B">(permalink)</a></small></td></tr>
+  <tr><td>Affected versions</td><td>7.10.6 to and including 7.23.1</td></tr>
+  <tr><td>Not affected versions</td><td>< 7.10.6 and >= 7.24.0</td></tr>
+  <tr><td>Patch</td><td><a href="http://curl.haxx.se/curl-dont-insert-empty-fragments.patch">curl-dont-insert-empty-fragments.patch</a></td></tr>
+  <tr><td>Advisories</td><td>
+<a href="adv_20120124B.html">Project cURL Security Advisory</a> </td></tr>
+
+</table>
+<p>
+ When built to use OpenSSL, curl would wrongly disable the workaround for SSL
+ weaknesses in SSL3.0 and TLS1.0.
+
+<a name="20120124"></a>
+SUBTITLE(curl URL sanitization vulnerability)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>January 24, 2012</td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-0036">CVE-2012-0036</a> <small><a href="#20120124">(permalink)</a></small></td></tr>
+  <tr><td>Affected versions</td><td>7.20.0 to and including 7.23.1</td></tr>
+  <tr><td>Not affected versions</td><td>< 7.20.0 and >= 7.24.0</td></tr>
+  <tr><td>Patch</td><td><a href="http://curl.haxx.se/curl-url-sanitize.patch">curl-url-sanitize.patch</a></td></tr>
+  <tr><td>Advisories</td><td>
+<a href="adv_20120124.html">Project cURL Security Advisory</a> </td></tr>
+
+</table>
+<p>
+ When using URLs for the protocols IMAP, POP3 or SMTP curl wouldn't properly
+ sanitize data passed in, which would allow users to cause malice by embedding
+ url encoded control characters.
+
 <a name="20110623"></a>
 SUBTITLE(libcurl inappropriate GSSAPI delegation)
 <p>

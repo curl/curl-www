@@ -21,7 +21,8 @@ PAGES = index.html manpage.html faq.html changes.html \
  libs.html adv_20051013.html adv_20051207.html \
  adv_20060320.html vulnerabilities.html adv_20070710.html \
  gsoc2008.html releases.html adv_20090303.html releases.csv adv_20090812.html \
- adv_20100209.html adv_20101013.html adv_20110623.html ssl-compared.html
+ adv_20100209.html adv_20101013.html adv_20110623.html ssl-compared.html \
+ adv_20120124.html adv_20120124B.html
 
 all: $(PAGES)
 	@echo done 
@@ -234,6 +235,18 @@ adv_20110623.html: _adv_20110623.html adv_20110623.t $(MAINPARTS)
 	$(ACTION)
 
 adv_20110623.t: adv_20110623.txt
+	$(TXT2PLAIN) < $< > $@
+
+adv_20120124.html: _adv_20120124.html adv_20120124.t $(MAINPARTS)
+	$(ACTION)
+
+adv_20120124.t: adv_20120124.txt
+	$(TXT2PLAIN) < $< > $@
+
+adv_20120124B.html: _adv_20120124B.html adv_20120124B.t $(MAINPARTS)
+	$(ACTION)
+
+adv_20120124B.t: adv_20120124B.txt
 	$(TXT2PLAIN) < $< > $@
 
 vulnerabilities.html: _vulnerabilities.html vuln.txt $(MAINPARTS)
