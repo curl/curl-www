@@ -30,3 +30,7 @@ lib/sendf.h:.*: warning: anonymous variadic macros were introduced in C99
 nspr.*/prlink.h:.*: warning: function declaration isn't a prototype
 # NSS 3.12.2
 nss/cert.h:.*: warning: function declaration isn't a prototype
+# gcc 3.3 bug triggers warnings on some assert statements
+lib/warnless.c:191: warning: statement with no effect
+lib/warnless.c:210: warning: statement with no effect
+lib/warnless.c:250: warning: statement with no effect
