@@ -53,6 +53,47 @@ activity</a>
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_25_0"></a>
+SUBTITLE(Fixed in 7.25.0 - March 22 2012)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="http://curl.haxx.se/mail/lib-2012-02/0009.html">configure: add option disable --libcurl output</a>
+ CHG <a href="http://curl.haxx.se/mail/lib-2012-02/0001.html">--ssl-allow-beast and CURLOPT_SSL_OPTIONS added</a>
+ CHG <a href="http://curl.haxx.se/mail/lib-2012-01/0264.html">Added CURLOPT_TCP_KEEPALIVE, CURLOPT_TCP_KEEPIDLE, CURLOPT_TCP_KEEPINTVL</a>
+ CHG <a href="http://curl.haxx.se/mail/lib-2012-01/0263.html">curl: use new library-side TCP_KEEPALIVE options</a>
+ CHG <a href="http://curl.haxx.se/libcurl/c/curl_easy_setopt.html#CURLOPTMAILAUTH">Added a new CURLOPT_MAIL_AUTH option</a>
+ CHG <a href="http://curl.haxx.se/docs/manpage.html#--mail-auth">Added support for --mail-auth</a>
+ CHG <a href="http://curl.haxx.se/docs/manpage.html#--libcurl">--libcurl now also works with -F and more!</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-02/0098.html">--max-redirs: allow negative numbers as option value</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-02/0000.html">parse_proxy: bail out on zero-length proxy names</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-02/0052.html">configure: don't modify LD_LIBRARY_PATH for cross compiles</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3481551">curl_easy_reset: reset the referer string</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3481223">curl tool: don't abort glob-loop due to failures</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3482093">CONNECT: send correct Host: with IPv6 numerical address</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-01/0303.html">Explicitly link to the nettle/gcrypt libraries</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-01/0190.html">more resilient connection times among IP addresses</a>
+ BGF winbuild: fix IPV6 and IDN options
+ BGF SMTP: Fixed error when using CURLOPT_CONNECT_ONLY
+ BGF cyassl: update to CyaSSL 2.0.x API
+ BGF smtp: Fixed an issue with the EOB checking
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-02/0051.html">pop3: Fixed drop of final CRLF in EOB checking</a>
+ BGF smtp: Fixed an issue with writing postdata
+ BGF smtp: Added support for returning SMTP response codes
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3493129">CONNECT: fix ipv6 address in the Request-Line</a>
+ BGF curl-config: only provide libraries with --libs
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-03/0046.html">LWIP: don't consider HAVE_ERRNO_H to be winsock</a>
+ BGF ssh: tunnel through HTTP proxy if requested
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-03/0036.html">cookies: strip off [brackets] from numerical ipv6 host names</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3494091">libcurl docs: version corrections</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3494968">cmake: list_spaces_append_once failure</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-03/0045.html">resolve with c-ares: don't resolve IPv6 when not working</a>
+ BGF smtp: changed error code for EHLO and HELO responses
+ BGF parsedate: fix a numeric overflow
+</ul>
+
 <a name="7_24_0"></a>
 SUBTITLE(Fixed in 7.24.0 - January 24 2012)
 <img src="/pix/alert.png"
