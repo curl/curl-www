@@ -5,7 +5,7 @@ include/bits/confname.h:565: warning: comma at end of enumerator list
 # gcc 2.95.3 cross-compiling for uClibc 0.9.15 on ARM
 /usr/arm-linux-uclibc/include/bits/uClibc_ctype.h:62: warning: comma at end of enumerator list
 # gcc 2.95.3 cross-compiling for ARM uClibc
-src/main.c:.*: the 'setlocale' function supports only
+src/tool_operate.c:.*: the 'setlocale' function supports only
 # libtool warning with mingw 3.4.2 cross-compiling for win32
 lt-curl.c:79: warning: passing arg 2 of `execv' from incompatible pointer type
 # libtool warning on libtool generated cwrapper - fixed in libtool 2010 October
