@@ -53,6 +53,50 @@ activity</a>
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_26_0"></a>
+SUBTITLE(Fixed in 7.26.0 - May 24 2012)
+<p> Changes:
+<ul class="changes">
+ CHG nss: the minimal supported version of NSS bumped to 3.12.x
+ CHG nss: human-readable names are now provided for NSS errors if available
+ CHG add a manual page for mk-ca-bundle
+ CHG added --post303 and the CURL_REDIR_POST_303 option for CURLOPT_POSTREDIR
+ CHG smtp: Add support for DIGEST-MD5 authentication
+ CHG pop3: Added support for additional pop3 commands
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF nss: libcurl now uses NSS_InitContext() to prevent collisions if available [1]
+ BGF <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=670126">URL parse: reject numerical IPv6 addresses outside brackets</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-04/0246.html">MD5: fix OOM memory leak</a>
+ BGF OpenSSL cert: provide more details when cert check fails
+ BGF <a href="http://curl.haxx.se/mail/archive-2012-04/0060.html">HTTP: empty chunked POST ended up in two zero size chunks</a>
+ BGF fixed a regression when curl resolved to multiple addresses and the first isn't supported [7]
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3517418">-# progress meter: avoid superfluous updates and duplicate lines</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-04/0127.html">headers: surround GCC attribute names with double underscores</a>
+ BGF PolarSSL: correct return code for CRL matches
+ BGF PolarSSL: include version number in version string
+ BGF PolarSSL: add support for asynchronous connect
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-03/0238.html">mk-ca-bundle: revert the LWP usage</a>
+ BGF IPv6 cookie domain: get rid of the first bracket before the second
+ BGF connect.c: return changed to CURLE_COULDNT_CONNECT when opensocket fails
+ BGF <a href="http://tools.ietf.org/html/rfc6125#section-6.4.3">OpenSSL: Made cert hostname check conform to RFC 6125</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3510057">HTTP: reset expected DL/UL sizes on redirects</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-03/0278.html">CMake: fix Windows LDAP/LDAPS option handling</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-03/0255.html">CMake: fix MS Visual Studio x64 unsigned long long literal suffix</a>
+ BGF configure: update detection logic of getaddrinfo() thread-safeness
+ BGF configure: check for gethostbyname in the watt lib
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3528241">curl-config.1: fix curl-config usage in example</a>
+ BGF smtp: Fixed non-escaping of dot character at beginning of line
+ BGF MakefileBuild.vc: use the correct IDN variable
+ BGF autoconf: improve handling of versioned symbols
+ BGF curl.1: clarify -x usage
+ BGF curl: shorten user-agent
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-05/0108.html">smtp: issue with the multi-interface always sending postdata</a>
+ BGF compile error with GnuTLS+Nettle fixed
+ BGF winbuild: fix IPv6 enabled build
+</ul>
+
 <a name="7_25_0"></a>
 SUBTITLE(Fixed in 7.25.0 - March 22 2012)
 <p> Changes:
