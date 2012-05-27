@@ -275,8 +275,7 @@ for $per (@sall) {
     printf("<td class=\"col3\">%s</td>\n",
            show($typelong{$$per{'type'}}));
     printf("<td class=\"col4\">%s</td>\n",
-           $$per{'ssl'}eq"Yes"?"<img width=\"27\" height=\"12\" alt=\"SSL enabled\" src=\"/ssl.png\">":
-           $$per{'ssl'}eq"No"?"<img width=\"27\" height=\"12\" alt=\"SSL disabled\" src=\"/nossl.png\">":$$per{'ssl'});
+           $$per{'ssl'}eq"Yes"?"SSL":"&nbsp;");
 
     printf("<td class=\"col5\">%s</td>\n",
            $$per{'ssh'}eq"Yes"?"SSH":"&nbsp;");
