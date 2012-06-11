@@ -82,6 +82,9 @@ if(open(my $logfile, "<$build")) {
                     $state = 1;
                 }
             }
+            elsif($line =~ /^TESTDONE: (\d+) tests out of/) {
+                push @out, "<a name=\"TESTDONE\"></a>";
+            }
             if($state == 2) {
                 $line =~ s/([^a-zA-Z0-9:=_]{1}?)/sprintf("[%02X]",ord($1))/ge;
             }
@@ -90,7 +93,8 @@ if(open(my $logfile, "<$build")) {
                ($line =~ /MEMORY FAILURE/) || ($line =~ / at .+ line \d+\./) ||
                ($line =~ /valgrind ERROR/)) {
                 $num++;
-                push @out, "<a name=\"prob$num\"></a><div class=\"warning\">" . CGI::escapeHTML($line) . "</div>\n";
+                my $nx = $num + 1;
+                push @out, "<a name=\"prob$num\"></a><a href=\"#prob$nx\">goto problem $nx</a><div class=\"warning\">" . CGI::escapeHTML($line) . "</div>\n";
             }
             else {
                 push @out, CGI::escapeHTML($line) . "<br>\n";
@@ -106,11 +110,18 @@ if(open(my $logfile, "<$build")) {
     push @out, "</div>\n"; # end of mini-div
     #
     if($num) {
-        print "<div>Jump down to ";
-        print "<a href=\"#prob1\">problem 1</a>\n";
-        if($num>1) {
-            print "<a href=\"#prob$num\">problem $num (last)</a>\n";
+        print "<div>Jump down to problem:";
+        my $enough = $num;
+        if($enough > 30) {
+            $enough = 30;
         }
+        foreach my $i (1 .. $enough) {
+            print "<a href=\"#prob$i\">$i</a>\n";
+        }
+        if($num>30) {
+            print "<a href=\"#prob$num\">$num (last)</a>\n";
+        }
+        print "<a href=\"#TESTDONE\">test results</a>\n";
         print "</div><br>\n";
     }
     #
