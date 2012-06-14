@@ -327,7 +327,7 @@ sub endofsingle {
     undef %serverfail;
 
     $showdebug=($debug?"D":"-").($trackmem?"M":"-").($valgrind?"V":"-");
-    $https=($openssl)?"S":($gnutls?"T":($nss?"N":($polarssl?"O":($axtls?"X":"-"))));
+    $https=($openssl)?"S":($gnutls?"T":($nss?"N":($polarssl?"O":($axtls?"X":($schannel?"L":"-")))));
     my $showres=($asynch)?($ares?"A":"H"):"-";
     $sspi=$sspi?"P":"-";
     my $ssh=$libssh2?"2":"-";
@@ -372,7 +372,7 @@ sub endofsingle {
     $trackmem=0;
     $valgrind=0;
 
-    $openssl=$gnutls=$nss=$axtls=$polarssl=0;
+    $openssl=$gnutls=$nss=$axtls=$polarssl=$schannel=0;
 
     $libssh2=0;
     $ssl=0;
@@ -536,6 +536,9 @@ sub singlefile {
             }
             elsif($line =~ /^\#define USE_NSS 1/) {
                 $nss = 1;
+            }
+            elsif($line =~ /^\#define USE_SCHANNEL 1/) {
+                $schannel = 1;
             }
             elsif($line =~ /^\#define USE_LIBSSH2 1/) {
                 $libssh2 = 1;
