@@ -41,6 +41,8 @@ sub checkwarn {
         ($l =~ /^cfe: (Warning |Error)(\d*):/) ||
         # MSVC
         ($l =~ /^[\.\\]*([.\\\/a-zA-Z0-9-]*)\.[chy]\(([0-9:]*)/) ||
+        # Clang warnings not caught elsewhere:
+        ($l =~ /^clang: warning: /) ||
 
         # libtool 2 prefixes lots of "normal" lines with "libool: link: " so we
         # cannot use that simple rule to detect errors. Adding "warning:" reduces
