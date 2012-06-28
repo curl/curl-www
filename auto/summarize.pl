@@ -331,8 +331,9 @@ sub endofsingle {
     my $showres=($asynch)?($ares?"A":"H"):"-";
     $sspi=$sspi?"P":"-";
     my $ssh=$libssh2?"2":"-";
+    my $metalink=$libmetalink?"E":"-";
 
-    my $o = "$krb4$ipv6$showdebug$https$showres$zlib$gss$idn$sspi$ssh";
+    my $o = "$krb4$ipv6$showdebug$https$showres$zlib$gss$idn$sspi$ssh$metalink";
 
     if(!$desc) {
         $desc = $os;
@@ -374,6 +375,7 @@ sub endofsingle {
 
     $openssl=$gnutls=$nss=$axtls=$polarssl=$schannel=0;
 
+    $libmetalink=0;
     $libssh2=0;
     $ssl=0;
     $cvsfail=0;
@@ -542,6 +544,9 @@ sub singlefile {
             }
             elsif($line =~ /^\#define USE_LIBSSH2 1/) {
                 $libssh2 = 1;
+            }
+            elsif($line =~ /^\#define USE_METALINK 1/) {
+                $libmetalink = 1;
             }
             elsif($line =~ /^\#define ENABLE_IPV6 1/) {
                 $ipv6enabled = 1;
