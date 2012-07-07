@@ -18,7 +18,8 @@ PAGES = index.html manpage.html faq.html changes.html \
  thanks.html y2k.html todo.html httpscripting.html comparison-table.html \
  relatedtools.html osdistribs.html versions.html history.html loc.html	 \
  knownbugs.html manual.html caextract.html programs.html security.html	 \
- libs.html adv_20051013.html adv_20051207.html \
+ libs.html http-cookies.html \
+ adv_20051013.html adv_20051207.html \
  adv_20060320.html vulnerabilities.html adv_20070710.html \
  gsoc2008.html releases.html adv_20090303.html releases.csv adv_20090812.html \
  adv_20100209.html adv_20101013.html adv_20110623.html ssl-compared.html \
@@ -86,6 +87,12 @@ faq.html: _faq.shtml $(MAINPARTS) faq.t
 	$(ACTION)
 
 faq.t: $(DOCROOT)/FAQ faqparse.pl
+	./faqparse.pl < $< > $@
+
+http-cookies.html: _http-cookies.html $(MAINPARTS) http-cookies.t
+	$(ACTION)
+
+http-cookies.t: $(DOCROOT)/HTTP-COOKIES faqparse.pl
 	./faqparse.pl < $< > $@
 
 knownbugs.html: _knownbugs.html $(MAINPARTS) knownbugs.t
