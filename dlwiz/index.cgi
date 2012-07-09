@@ -9,7 +9,7 @@ require "../latest.pm";
 
 #$req = new CGI;
 
-print "Content-Type: text/html\n\n";
+print "Content-Type: text/html; charset=UTF-8\n\n";
 
 my $ua = $ENV{'HTTP_USER_AGENT'};
 my $onlyone;
@@ -768,7 +768,7 @@ MOO
     }
 
     if($pack eq "zip") {
-        print " Zip is a widely-used compression format. <a href=\"http://en.wikipedia.org/wiki/ZIP_file_format\">Wikipedia has more details on zip</a>.";
+        print " Zip is a widely-used file archiving format. <a href=\"http://en.wikipedia.org/wiki/ZIP_file_format\">Wikipedia has more details on zip</a>.";
     }
     elsif($pack eq "tar+gz") {
         print " This file is tar'ed and then gzipped. <a href=\"http://en.wikipedia.org/wiki/Gzip\">Wikipedia has more details on gzip</a>.";
@@ -790,6 +790,9 @@ MOO
     }
     elsif($pack eq "deb") {
         print " deb is a file format with accompanying tools collection made to handle software installation for Debian Linux (and derivatives). <a href=\"http://en.wikipedia.org/wiki/Deb_%28file_format%29\">Wikipedia has more details on deb</a>";
+    }
+    if($pack eq "7zip") {
+        print " 7zip is a file archiving format. <a href=\"http://en.wikipedia.org/wiki/7-ZIP_file_format\">Wikipedia has more details on 7zip</a>.";
     }
 
     print "</div>";
