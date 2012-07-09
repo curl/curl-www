@@ -40,7 +40,7 @@ MOO
 }
 
 sub lheader {
-    print "Content-Type: text/html\n\n";
+    print "Content-Type: text/html; charset=UTF-8\n\n";
     print getheader(@_);
 }
 
