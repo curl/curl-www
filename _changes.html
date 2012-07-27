@@ -53,6 +53,49 @@ activity</a>
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_27_0"></a>
+SUBTITLE(Fixed in 7.27.0 - July 27 2012)
+<p> Changes:
+<ul class="changes">
+ CHG nss: use human-readable error messages provided by NSS
+ CHG <a href="http://daniel.haxx.se/blog/2012/06/03/curling-the-metalink/">added --metalink for metalink download support</a>
+ CHG pop3: Added support for sasl plain text authentication
+ CHG pop3: Added support for sasl login authentication
+ CHG pop3: Added support for sasl ntlm authentication
+ CHG pop3: Added support for sasl cram-md5 authentication
+ CHG pop3: Added support for sasl digest-md5 authentication
+ CHG pop3: Added support for apop authentication
+ CHG <a href="http://daniel.haxx.se/blog/2012/06/12/schannel-support-in-libcurl/">Added support for Schannel (Native Windows) SSL/TLS encryption</a>
+ CHG <a href="http://daniel.haxx.se/blog/2012/06/28/darwin-native-ssl-for-curl/">Added support for Darwin SSL (Native Mac OS X and iOS)</a>
+ CHG <a href="https://bugzilla.redhat.com/676596">http: print reason phrase from HTTP status line on error</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF pop3: Fixed the issue of having to supply the user name for all requests
+ BGF configure: fix LDAPS disabling related misplaced closing parenthesis
+ BGF cmdline: made -D option work with -O and -J
+ BGF configure: Fix libcurl.pc and curl-config generation for static MingW* cross builds
+ BGF <a href="https://bugzilla.redhat.com/788526">ssl: fix duplicated SSL handshake with multi interface and proxy</a>
+ BGF winbuild: Fix Makefile.vc ignoring USE_IPV6 and USE_IDN flags
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3533045">OpenSSL: support longer certificate subject names</a>
+ BGF openldap: OOM fixes
+ BGF log2changes.pl: fix the Version output
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-06/0001.html">lib554.c: use curl_formadd() properly</a>
+ BGF urldata.h: fix cyassl build clash with wincrypt.h
+ BGF <a href="http://daniel.haxx.se/blog/2012/07/08/curls-new-http-cookies-docs/">cookies: changed the URL in the cookiejar headers</a>
+ BGF http-proxy: keep CONNECT connections alive (for NTLM)
+ BGF NTLM SSPI: fixed to work with unicode user names and passwords
+ BGF OOM fix in the curl tool when cloning cmdline options
+ BGF fixed some examples to use curl_global_init() properly
+ BGF cmdline: stricter numerical option parser
+ BGF HTTP HEAD: don't force-close after response-headers
+ BGF test231: fix wrong -C use
+ BGF docs: switch to proper UTF-8 for text file encoding
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3546257">keepalive: DragonFly uses milliseconds</a>
+ BGF HTTP Digest: Client's "qop" value should not be quoted
+ BGF make distclean works again
+</ul>
+
 <a name="7_26_0"></a>
 SUBTITLE(Fixed in 7.26.0 - May 24 2012)
 <p> Changes:
