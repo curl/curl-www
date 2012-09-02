@@ -310,6 +310,12 @@ THIS(curl_multi_timeout)
 DOC(curl_multi_timeout, curl_multi_timeout.html)
 #endif
 
+#ifdef DOCS_MULTI_WAIT
+THIS(curl_multi_wait)
+#else
+DOC(curl_multi_wait, curl_multi_wait.html)
+#endif
+
 #endif /* MENU_MULTI */
 
 #ifdef MENU_SHARE

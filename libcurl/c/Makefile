@@ -40,7 +40,9 @@ PAGES = index.html example.html curl_easy_init.html			\
  curl_multi_timeout.html curl_multi_setopt.html \
  curl_easy_escape.html curl_easy_unescape.html curl_multi_assign.html \
  curl_formget.html curl_easy_pause.html curl_easy_recv.html \
- curl_easy_send.html curl_multi_socket_action.html $(EXAMPLES) \
+ curl_easy_send.html curl_multi_socket_action.html \
+ curl_multi_wait.html \
+ $(EXAMPLES) \
  allexamples.zip options-in-examples.html symbols-in-versions.html
 
 all: $(PAGES)
@@ -256,6 +258,11 @@ curl_multi_info_read.t: $(MANROOT)/curl_multi_info_read.3
 curl_multi_init.html: _curl_multi_init.html $(MAINPARTS) curl_multi_init.t
 	$(ACTION)
 curl_multi_init.t: $(MANROOT)/curl_multi_init.3
+	$(MAN2HTML) < $< >$@
+
+curl_multi_wait.html: _curl_multi_wait.html $(MAINPARTS) curl_multi_wait.t
+	$(ACTION)
+curl_multi_wait.t: $(MANROOT)/curl_multi_wait.3
 	$(MAN2HTML) < $< >$@
 
 curl_multi_perform.html: _curl_multi_perform.html $(MAINPARTS) curl_multi_perform.t
