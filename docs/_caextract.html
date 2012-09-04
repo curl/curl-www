@@ -14,37 +14,39 @@
 
 WHERE2(Docs, "/docs/", CA Extract)
 
-TITLE(Extract CA Certs from mozilla.org)
+TITLE(Automatically converted CA Certs from mozilla.org)
 <div class="relatedbox">
 <b>Related:</b>
 <br><a href="sslcerts.html">SSL Certs</a>
 </div>
-<p class="ingres">
-
- The <a
- href="https://github.com/bagder/curl/blob/master/lib/mk-ca-bundle.pl">lib/mk-ca-bundle.pl</a>
- script converts <a href="http://www.mozilla.org/">Mozilla</a>'s CA cert
- bundle to PEM format, suitable for (lib)curl and others. Writtten by Guenter
- Knauf.
-
-SUBTITLE(Automated Conversions)
 <p>
- We provide automated conversions - done weekly. The
- output CA bundle file in PEM format is available from here:
+ We provide automated conversions. The output CA bundle file in PEM format is
+ available from here:
+
  <ul>
  <li> <a
- href="http://curl.haxx.se/ca/cacert.pem">cacert.pem</a> (234KB)
+ href="http://curl.haxx.se/ca/cacert.pem">cacert.pem</a> (243KB)
  <li> <a
  href="http://curl.haxx.se/ca/cacert.pem.gz">cacert.pem.gz</a> (131 KB)
  <li> <a
  href="http://curl.haxx.se/ca/cacert.pem.bz2">cacert.pem.bz2</a> (130 KB)
 </ul>
 <p>
- The file contains the datestamp of the conversion.
+ The PEM file contains the datestamp of the conversion and we try to only
+ convert if there's a change in either the script or the source file.
 <p>
- These files do <b>not</b> contain the DigiNotar certificates anymore since
- Mozilla started marking them as untrusted and our script was updated to be
- aware of that marking.
+ These ca cert bundles do <b>not</b> contain the <a
+ href="http://en.wikipedia.org/wiki/DigiNotar#Issuance_of_fraudulent_certificates">DigiNotar
+ certificates</a> as Mozilla marks them as untrusted and this script knows
+ the markup for that.
+
+SUBTITLE(The mk-ca-bundle.pl script)
+<p>
+The <a
+ href="https://github.com/bagder/curl/blob/master/lib/mk-ca-bundle.pl">lib/mk-ca-bundle.pl</a>
+ script converts <a href="http://www.mozilla.org/">Mozilla</a>'s <a
+ href="http://mxr.mozilla.org/mozilla/source/security/nss/lib/ckfw/builtins/certdata.txt">CA cert bundle</a> to PEM format, suitable for (lib)curl and
+ others. Writtten by Guenter Knauf.
 
 SUBTITLE(Requirements)
 <o>
@@ -53,10 +55,11 @@ SUBTITLE(Requirements)
 <p>
  The exact Mozilla file needed for this job is found within that script.
 
-SUBTITLE(License)
+SUBTITLE(CA bundle license)
 <p>
  This new file is only a converted version of the original one and thus it is
- licensed under the same licenses: MPL 1.1, GPL v2.0 or LGPL 2.1
+ licensed under the same licenses as the Mozilla source file: MPL 1.1, GPL
+ v2.0 or LGPL 2.1
 
 SUBTITLE(Convert from your local Firefox installation)
 
