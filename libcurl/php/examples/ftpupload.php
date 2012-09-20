@@ -9,7 +9,7 @@ $ftppath   = "/path/to";
 $ftpuser   = "myname";
 $ftppass   = "mypass";
 
-$remoteurl = "ftp://${ftpuser}:${ftppasswd}@${ftpserver}${ftppath}/${localfile}";
+$remoteurl = "ftp://${ftpuser}:${ftppass}@${ftpserver}${ftppath}/${localfile}";
 
 $ch = curl_init();
 
