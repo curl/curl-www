@@ -12,20 +12,23 @@ require "../curl.pm";
 require "ccwarn.pm";
 
 opendir(DIR, "inbox");
-my @logs = grep { /^inbox.*log$/ } readdir(DIR);
+my @logs = grep { /^build.*log$/ } readdir(DIR);
 closedir(DIR);
 
 my $prefix ="table";
+my $tprefix ="tmptable";
 
 my %combo;
 my $buildnum;
 
 my $showntop=0;
 my $prevtable = -1;
-my $tablesperpage = 4;
+my $tablesperpage = 10;
 
-for ( 0 .. 5 ) {
-    open(CLEAR, ">$prefix$_.t");
+my $onlydo = 200; # limit the amount of log parsings to this amount
+
+for ( 0 .. 3 ) {
+    open(CLEAR, ">$tprefix$_.t");
     
     my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday) =
         gmtime(time);
@@ -42,12 +45,12 @@ sub tabletop {
 
     $tablecount++;
     $tablenum = int($tablecount/$tablesperpage);
-    my $file = "$prefix${tablenum}.t";
+    my $file = "$tprefix${tablenum}.t";
 
     open(TABLE, ">>$file");
 
     if($tablenum != $prevtable) {
-        my $max = scalar(@logs);
+        my $max = $onlydo;
         if($max > $tablesperpage) {
             print TABLE "<p>Page: ";
             for(0 .. $max/$tablesperpage) {
@@ -145,9 +148,9 @@ if(!@logs) {
 }
 else {
     @data = "";
-    my $onlydo = 1000; # limit the amount of log parsings to this amount
     for(reverse sort @logs) {
         my $filename=$_;
+        print STDERR "Parse $filename\n";
         singlefile("inbox/$filename");
         if(!$onlydo--) {
             last;
@@ -187,6 +190,14 @@ else {
         tablebot();
     }
 
+}
+
+# rename outputs to their final names
+
+for ( 0 .. 3 ) {
+    unlink "$prefix$_.t";
+    print STDERR "rename $tprefix$_.t to $prefix$_.t\n";
+    rename "$tprefix$_.t", "$prefix$_.t";
 }
 
 exit 0;
@@ -412,6 +423,7 @@ sub singlefile {
  #       print "L: $state - $line\n";
         if($line =~ /^INPIPE: startsingle here ([0-9-]*)/) {
             $buildid = $1;
+            print STDERR " - build $buildid\n";
         }
         # we don't check for state here to allow this to abort all
         # states
