@@ -31,7 +31,7 @@ print "Content-Type: text/html\n";
 print "Expires: " . time2str(time + 3600*24) . "\n\n";
 
 header("Autobuilds - single log");
-where("Autobuilds", "/auto", "Log From $year-$month-$day");
+where("Autobuilds", "/dev/builds.html", "Log From $year-$month-$day");
 title("Log from $year-$month-$day");
 
 my $build = "inbox/build-$id.log";
