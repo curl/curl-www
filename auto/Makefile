@@ -16,13 +16,13 @@ ACTION=echo preprocessing $@; \
 TXT2PLAIN = txt2plain.pl
 MAN2HTML = roffit --bare
 
-PAGES = foot.html head.html loghead.html howto.html summary.html \
-	cvshistory.html table0.html table1.html table2.html table3.html \
-	missing.html keywords.html builds.html todo-release.html \
-	release-notes.html index.html contribute.html internals.html \
-	testcurl.html runtests.html source.html readme-ares.html \
-	readme-curl_off_t.html readme-curlx.html readme-encoding.html \
-	readme-hostip.html readme-httpauth.html readme-memoryleak.html \
+PAGES = foot.html head.html loghead.html howto.html summary.html	     \
+	cvshistory.html							     \
+	missing.html keywords.html builds.html todo-release.html	     \
+	release-notes.html index.html contribute.html internals.html	     \
+	testcurl.html runtests.html source.html readme-ares.html	     \
+	readme-curl_off_t.html readme-curlx.html readme-encoding.html	     \
+	readme-hostip.html readme-httpauth.html readme-memoryleak.html	     \
 	readme-multi_socket.html readme-pingpong.html readme-pipelining.html
 
 all: $(PAGES)
@@ -54,9 +54,6 @@ internals.html: _internals.html $(MAINPARTS) internals.t
 
 internals.t: $(DOCROOT)/INTERNALS
 	$(TXT2PLAIN) < $< > $@
-
-builds.html:
-	ln -s table0.html builds.html
 
 foot.html: _foot.html $(MAINPARTS)
 	$(ACTION)
@@ -94,14 +91,7 @@ keywords.html: _keywords.html $(MAINPARTS) _head.html keywords.t
 loghead.html: _loghead.html $(MAINPARTS)
 	$(ACTION)
 
-table0.html: _table0.html $(MAINPARTS) table0.t explainopts.t
-	$(ACTION)
-
-table1.html: _table1.html $(MAINPARTS) table1.t explainopts.t
-	$(ACTION)
-table2.html: _table2.html $(MAINPARTS) table2.t explainopts.t
-	$(ACTION)
-table3.html: _table3.html $(MAINPARTS) table3.t explainopts.t
+builds.html: _builds.html $(MAINPARTS) table.t explainopts.t
 	$(ACTION)
 
 README.ares.dump: $(LIBROOT)/README.ares

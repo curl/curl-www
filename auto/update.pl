@@ -43,7 +43,7 @@ if(!$new) {
 
 if($new) {
     # first remove oldies
-    system('find inbox -mtime +15 -exec rm {} \;');
+    system('find inbox -mtime +12 -exec rm {} \;');
 
     # build md5 checksum file
     system("md5sum inbox/inbox*log > md5");

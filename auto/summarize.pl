@@ -21,76 +21,33 @@ my $tprefix ="tmptable";
 my %combo;
 my $buildnum;
 
-my $showntop=0;
-my $prevtable = -1;
-my $tablesperpage = 10;
+my $onlydo = 600; # limit the amount of log parsings to this amount
 
-my $onlydo = 200; # limit the amount of log parsings to this amount
+my $file = "${tprefix}.t";
 
-for ( 0 .. 3 ) {
-    open(CLEAR, ">$tprefix$_.t");
-    
-    my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday) =
-        gmtime(time);
-
-    printf CLEAR ("<p><small>Page generated at %02d:%02d %04d-%02d-%02d (GMT)</small>",
-                  $hour, $min, $year+1900, $mon+1, $mday);
-
-    close(CLEAR);
-}
+open(TABLE, ">$file");
 
 sub tabletop {
-    my @res;
     my ($date)=@_;
-
-    $tablecount++;
-    $tablenum = int($tablecount/$tablesperpage);
-    my $file = "$tprefix${tablenum}.t";
-
-    open(TABLE, ">>$file");
-
-    if($tablenum != $prevtable) {
-        my $max = $onlydo;
-        if($max > $tablesperpage) {
-            print TABLE "<p>Page: ";
-            for(0 .. $max/$tablesperpage) {
-                my $num = $_+1;
-                my $tab = $_;
-                if($tab == $tablenum) {
-                    print TABLE "<b>[$num]</b> ";
-                }
-                else {
-                    print TABLE "[<a href=\"table$tab.html\">$num</a>] ";
-                }
-            }
-        }
-    }
 
     if($date =~ /^(\d\d\d\d)(\d\d)(\d\d)/) {
         ($year, $month, $day) = ($1, $2, $3);
     }
 
-    $prevtable = $tablenum;
-    if(!$showntop) {
-        print TABLE stitle("$year-$month-$day");
-        print TABLE join("",
-                   "<table cellspacing=\"0\" class=\"compile\" width=\"100%\"><tr>",
-        "<th>Time</th>",
-        "<th>Test</th>",
-        "<th>Warn</th>",
-        "<th>Options</th>",
-        "<th>Description</th>",
-        "<th>Name</th>",
-        "</tr>\n");
-        $showntop=1;
-    }
-    return @res;
+    print TABLE stitle("$year-$month-$day");
+    print TABLE join("",
+                     "<table cellspacing=\"0\" class=\"compile\" width=\"100%\"><tr>",
+                     "<th>Time</th>",
+                     "<th>Test</th>",
+                     "<th>Warn</th>",
+                     "<th>Options</th>",
+                     "<th>Description</th>",
+                     "<th>Name</th>",
+                     "</tr>\n");
 }
 
 sub tablebot() {
     print TABLE "</table>\n";
-    $showntop=0;
-    close(TABLE);
 }
 
 sub summary {
@@ -149,14 +106,37 @@ if(!@logs) {
 else {
     @data = "";
     for(reverse sort @logs) {
-        my $filename=$_;
-        print STDERR "Parse $filename\n";
-        singlefile("inbox/$filename");
+        my $f="inbox/$_";
+        print STDERR "Parse $f ($onlydo left)\n";
+        my $sz = -s $f;
+        if($sz < 1000) {
+            print STDERR " - only $sz bytes, skip it\n";
+            next;
+        }
+
+        if ( -s "$f.out") {
+            open(IN, "<$f.out");
+            my @in = <IN>;
+            close(IN);
+
+            # make it a single line
+            @data = join("", @in);
+        }
+        else {
+            singlefile("$f");
+            open(OUT, ">$f.out");
+            print OUT @data;
+            close(OUT);
+        }
+        push @more, @data;
+        @data = "";
         if(!$onlydo--) {
             last;
         }
     }
-    summary();
+    #summary(); - does not yet work with the quick method
+
+    @data = @more;
 
     my $prevdate;
     if(@data) {
@@ -172,7 +152,7 @@ else {
                 ($lyear, $lmonth, $lday) = ($1, $2, $3);
             }
             else {
-                last;
+                next;
             }
             
             if("$lyear$lmonth$lday" ne $prevdate) {
@@ -184,27 +164,25 @@ else {
             
             $prevdate ="$lyear$lmonth$lday";
             
-
             print TABLE $_;
         }
         tablebot();
     }
 
+    close(TABLE);
 }
 
 # rename outputs to their final names
-
-for ( 0 .. 3 ) {
-    unlink "$prefix$_.t";
-    print STDERR "rename $tprefix$_.t to $prefix$_.t\n";
-    rename "$tprefix$_.t", "$prefix$_.t";
-}
+print STDERR "rename $tprefix.t => $prefix.t\n";
+rename "$tprefix.t", "$prefix.t";
 
 exit 0;
 
 my $warning=0;
 
 sub endofsingle {
+    my ($file) = @_; # the single build file name
+
     my $escname = CGI::escape($name);
     my $escdate = CGI::escape($date);
 
@@ -430,7 +408,7 @@ sub singlefile {
         elsif($line =~ /^testcurl: STARTING HERE/) {
             # mail headers here
             if($state) {
-                push @data, endofsingle();
+                push @data, endofsingle($file);
             }
             $state = 2;
         }
@@ -438,7 +416,7 @@ sub singlefile {
               ($line =~ /^(INPIPE: endsingle here|testcurl: ENDING HERE)/) ) {
             # detect end of test in all states
             # mail headers here
-            push @data, endofsingle();
+            push @data, endofsingle($file);
             $state = 0;
         }
         elsif((2 == $state)) {
@@ -591,7 +569,7 @@ sub singlefile {
     }
     if($state) {
         # only for error-cases
-        push @data, endofsingle();
+        push @data, endofsingle($file);
     }
     close(READ);
 }
