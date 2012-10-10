@@ -53,6 +53,59 @@ activity</a>
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_28_0"></a>
+SUBTITLE(Fixed in 7.28.0 - October 10 2012)
+<p> Changes:
+<ul class="changes">
+ CHG SSH: added agent based authentication
+ CHG ftp: active conn, allow application to set sockopt after accept() call with CURLSOCKTYPE_ACCEPT
+ CHG <a href="http://daniel.haxx.se/blog/2012/09/03/introducing-curl_multi_wait/">multi: add curl_multi_wait()</a>
+ CHG metalink: Added support for Microsoft Windows CryptoAPI
+ CHG md5: Added support for Microsoft Windows CryptoAPI
+ CHG <a href="http://curl.haxx.se/bug/view.cgi?id=3566860">parse_proxy: treat "socks://x" as a socks4 proxy</a>
+ CHG socks: Added support for IPv6 connections through SOCKSv5 proxy
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-07/0310.html">WSAPoll disabled on Windows builds due to its bugs</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3544688">segfault on request retries</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3551460">curl-config: parentheses fix</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3552997">VC build: add define for openssl</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3546353">globbing: fix segfault when >9 globs were used</a>
+ BGF fixed a few clang-analyzer warnings
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3554668">metalink: change code order to build with gnutls-nettle</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3554668">gtls: fix build failure by including nettle-specific headers</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3545398">change preferred HTTP auth on a handle previously used for another auth</a>
+ BGF <a href="https://bugzilla.redhat.com/844385">file: use fdopen() to avoid race condition</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-07/0271.html">Added DWANT_IDN_PROTOTYPES define for MSVC too</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-07/0111.html">verbose: fixed (nil) output of hostnames in re-used connections</a>
+ BGF metalink: Un-broke the build when building --with-darwinssl
+ BGF curl man page cleanup
+ BGF Avoid leak of local device string when reusing connection
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-07/0122.html">Curl_socket_check: fix return code for timeout</a>
+ BGF nss: do not print misleading NSS error codes
+ BGF configure: remove the --enable/disable-nonblocking options
+ BGF darwinssl: add TLS 1.1 and 1.2 support, replace deprecated functions
+ BGF NTLM: re-use existing connection better
+ BGF schannel crash on multi and easy handle cleanup
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3561305">SOCKS: truly disable it if CURL_DISABLE_PROXY is defined</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-09/0019.html">mk-ca-bundle: detect start of trust section better</a>
+ BGF <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=685402">gnutls: do not fail on non-fatal handshake errors</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3564114">SMTP: only send SIZE if supported</a>
+ BGF ftpserver: respond with a 250 to SMTP EHLO
+ BGF ssh: do not crash if MD5 fingerprint is not provided by libssh2
+ BGF winbuild: Added support for building with SPNEGO enabled
+ BGF metalink: Fixed validation of binary files containing EOF
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3568327">setup.h: fixed for MS VC10 build</a>
+ BGF cmake: use standard findxxx modules for cmake v2.8+
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-09/0127.html">HTTP_ONLY: disable more protocols</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-09/0188.html">Curl_reconnect_request: clear pointer on failure</a>
+ BGF https.c example: remember to call curl_global_init()
+ BGF metalink: Filter resource URLs by type
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-09/0081.html">multi interface: CURLOPT_LOW_SPEED_* fix during rate limitation</a>
+ BGF curl_schannel: Removed buffer limit and optimized buffer strategy
+</ul>
+
 <a name="7_27_0"></a>
 SUBTITLE(Fixed in 7.27.0 - July 27 2012)
 <p> Changes:
