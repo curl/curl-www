@@ -1,4 +1,1 @@
-# robots.txt for curl.haxx.se and mirrors
-
-User-agent: *
-Disallow: /cvs.cgi/           # shows too much "raw" stuff!
+# robots.txt for curl.haxx.se
