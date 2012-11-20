@@ -53,6 +53,50 @@ activity</a>
 #define CHG <li>
 #define BGF <li>
 
+
+<a name="7_28_1"></a>
+SUBTITLE(Fixed in 7.28.1 - November 20 2012)
+<p> Changes:
+<ul class="changes">
+ CHG metalink/md5: Use CommonCrypto on Apple operating systems
+ CHG href_extractor: new example code extracting href elements
+ CHG <a href="http://curl.haxx.se/bug/view.cgi?id=3578163">NSS can be used for metalink hashing</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF Fix broken libmetalink-aware OpenSSL build
+ BGF <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=690551">gnutls: fix the error is fatal logic</a>
+ BGF darwinssl: un-broke iOS build, fix error on server disconnect
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3577710">asyn-ares: restore functionality with c-ares < 1.6.1</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3578418">tlsauthtype: deal with the string case insensitively</a>
+ BGF Fixed MSVC libssh2 static build
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3582407">evhiperfifo: fix the pointer passed to WRITEDATA</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3582408">BUGS: fix the bug tracker URL</a>
+ BGF winbuild: Use machine type of development environment
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3579064">FTP: prevent the multi interface from blocking</a>
+ BGF uniformly use AM_CPPFLAGS, avoid deprecated INCLUDES
+ BGF httpcustomheader.c: free the headers after use
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3582321">fix >2000 bytes POST over NTLM-using proxy</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3581898">redirects to URLs with fragments</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3579813">don't send '#' fragments when using proxy</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3579286">OpenSSL: show full issuer string</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3582718">fix HTTP auth regression</a>
+ BGF <a href="http://daniel.haxx.se/blog/2012/10/25/libcurl-claimed-to-be-dangerous/">CURLOPT_SSL_VERIFYHOST: stop supporting the 1 value</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3586338">ftp: EPSV-disable fix over SOCKS</a>
+ BGF <a href="https://github.com/bagder/curl/pull/50">Digest: Add microseconds into nounce calculation</a>
+ BGF SCP/SFTP: improve error code used for send failures
+ BGF SSL: Several SSL-backend related fixes
+ BGF removed the notorious "additional stuff not fine" debug output
+ BGF OpenSSL: Disable SSL/TLS compression - avoid the "CRIME" attack
+ BGF FILE: Make upload-writes unbuffered
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-11/0125.html">custom memory callbacks failure with HTTP proxy (and more)</a>
+ BGF TFTP: handle resends
+ BGF autoconf: don't force-disable compiler debug option
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3586741">winbuild: Fix PDB file output</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2012-11/0095.html">test2032: spurious failure caused by premature termination</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3575448">memory leak: CURLOPT_RESOLVE with multi interface</a>
+</ul>
+
 <a name="7_28_0"></a>
 SUBTITLE(Fixed in 7.28.0 - October 10 2012)
 <p> Changes:
