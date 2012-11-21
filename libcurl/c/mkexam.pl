@@ -14,6 +14,8 @@ my @mak;
 my @htmlfiles;
 my @basefiles;
 
+my %type;
+
 for my $f (@samps) {
     my $base = $f;
     my $ext;
@@ -90,6 +92,8 @@ for my $f (@samps) {
     push @htmlfiles, $htmlfile;
     push @basefiles, $base;
 
+    $type{$base}=$ext;
+
     push @mak, "$htmlfile: $rawfile \$(MAINPARTS)\n\t\$(ACTION)\n\n";
 
     push @mak, "$rawfile: $dir/$cfile\n\tperl mkexam.pl\n\n";
@@ -115,7 +119,8 @@ close(MAK);
 
 open(EX, ">allex.t");
 for my $b (sort @basefiles) {
-    printf EX "<a href=\"%s.html\">%s</a><br>\n", $b, $b;
+    printf EX "<a href=\"%s.html\">%s</a>%s<br>\n", $b, $b,
+    $type{$b} eq "cpp"?" (C&plus;&plus;)":"",
 }
 print EX "\n";
 close(EX);
