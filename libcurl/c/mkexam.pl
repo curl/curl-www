@@ -7,7 +7,7 @@ my $template="_example-templ.html";
 my $dir="../../cvssource/docs/examples";
 
 opendir(DIR, $dir) || die "can't opendir $dir: $!";
-my @samps = grep { /\.c\z/ && -f "$dir/$_" } readdir(DIR);
+my @samps = grep { /\.(c|cpp)\z/ && -f "$dir/$_" } readdir(DIR);
 closedir DIR;
 
 my @mak;
@@ -16,8 +16,12 @@ my @basefiles;
 
 for my $f (@samps) {
     my $base = $f;
-    $base =~ s/(.*)\.c/$1/;
-    my $cfile = "$base.c";
+    my $ext;
+    if($base =~ /^(.*)\.(c|cpp)\z/) {
+        $base = $1;
+        $ext = $2;
+    }
+    my $cfile = "$base.$ext";
     my $encfile = "$base.et";
     my $rawfile = "$base.t";
     my $htmlfile = "$base.html";
@@ -111,7 +115,7 @@ close(MAK);
 
 open(EX, ">allex.t");
 for my $b (sort @basefiles) {
-    printf EX "<a href=\"%s.html\">%s.c</a><br>", $b, $b;
+    printf EX "<a href=\"%s.html\">%s</a><br>\n", $b, $b;
 }
 print EX "\n";
 close(EX);
