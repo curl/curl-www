@@ -160,6 +160,25 @@ SUBTITLE(Thoroughly Documented!)
 <p> We have numerous commented <a href="/libcurl/c/example.html">source code
 examples</a>.
 
+<a name="stableapi"></a>
+SUBTITLE(Stable API and ABI)
+<p>
+ In the libcurl development we take API and ABI stability <b>very
+ seriously</b>. We have a few rules when it comes to API and ABI compatibility
+ and they are:<ol>
+
+<li> We don't break API or ABI compatibility
+
+<li> Seriously, we really don't and we work very hard to provide alternatives
+that introduce new ways instead of breaking old
+
+<li> A few times in the beginning of our project we felt forced to break
+existing behavior and we did API and ABI bumps. It was painful and hard and
+bad and we <b>really really</b> don't want to do it again. Ever! We have not
+done it since 2006.
+
+</ol>
+
 #include "_footer.html"
 
 </BODY>
