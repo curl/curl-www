@@ -8,7 +8,7 @@ my $num = CGI::param('id');
 # remove non-digits
 $num =~ s/[^0-9]//g; 
 
-if($num < 10000) {
+if($num < 1) {
     print "Content-Type: text/html\n\n";
 
     header("View a Bug Report");
@@ -26,6 +26,11 @@ MOO
 ;
     footer();
 
+}
+elsif($num < 10000) {
+    # low numbers are assumed to be the "new" numbers since the switch we 
+    # did on Dec 12 2012
+    print "Location: https://sourceforge.net/p/curl/bugs/$num/\n\n";
 }
 else {
     print "Location: http://sourceforge.net/tracker/index.php?func=detail&aid=$num&group_id=976&atid=100976\n\n";
