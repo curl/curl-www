@@ -134,6 +134,12 @@ HERE(x, Manual)
 DOCREF(/docs/manual.html, Manual)
 #endif
 
+#ifdef DOCS_MKCABUNDLE
+HERE(x, mk-ca-bundle)
+#else
+DOCREF(/docs/mk-ca-bundle.html, mk-ca-bundle)
+#endif
+
 #ifdef DOCS_PROGRAMS
 HERE(x, Programs)
 #else

@@ -23,7 +23,7 @@ PAGES = index.html manpage.html faq.html changes.html \
  adv_20060320.html vulnerabilities.html adv_20070710.html \
  gsoc2008.html releases.html adv_20090303.html releases.csv adv_20090812.html \
  adv_20100209.html adv_20101013.html adv_20110623.html ssl-compared.html \
- adv_20120124.html adv_20120124B.html
+ adv_20120124.html adv_20120124B.html mk-ca-bundle.html
 
 all: $(PAGES)
 	@echo done 
@@ -49,6 +49,12 @@ manpage.html: _manpage.html $(MAINPARTS) mandump.t
 
 mandump.t: $(DOCROOT)/curl.1
 	 $(MAN2HTML) < $(DOCROOT)/curl.1 > mandump.t
+
+mk-ca-bundle.html: _mk-ca-bundle.html $(MAINPARTS) mkdump.t
+	$(ACTION)
+
+mkdump.t: $(DOCROOT)/mk-ca-bundle.1
+	 $(MAN2HTML) < $(DOCROOT)/mk-ca-bundle.1 > mkdump.t
 
 bugs.html: _bugs.html $(MAINPARTS) bugs.t
 	$(ACTION)

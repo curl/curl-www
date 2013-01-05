@@ -1,0 +1,31 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE> - How To Use</TITLE>
+#include "css.t"
+#include "manpage.t"
+</HEAD>
+
+#define CURL_DOCS
+#define DOCS_MKCABUNDLE
+#define CURL_URL docs/mk-ca-bundle.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Docs, "/docs/", Man Page)
+
+TITLE(curl.1 the man page)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="manual.html">Manual</a>
+<br><a href="faq.html">FAQ</a>
+<br><a href="httpscripting.html">HTTP Scripting</a>
+</div>
+
+#include "mkdump.t"
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
+
