@@ -25,28 +25,32 @@ TITLE(Automatically converted CA Certs from mozilla.org)
 
  <ul>
  <li> <a
- href="http://curl.haxx.se/ca/cacert.pem">cacert.pem</a> (243KB)
+ href="http://curl.haxx.se/ca/cacert.pem">cacert.pem</a> (~250KB)
  <li> <a
- href="http://curl.haxx.se/ca/cacert.pem.gz">cacert.pem.gz</a> (131 KB)
+ href="http://curl.haxx.se/ca/cacert.pem.gz">cacert.pem.gz</a> (~130 KB)
  <li> <a
  href="http://curl.haxx.se/ca/cacert.pem.bz2">cacert.pem.bz2</a> (130 KB)
 </ul>
 <p>
  The PEM file contains the datestamp of the conversion and we try to only
  convert if there's a change in either the script or the source file.
+
 <p>
- These ca cert bundles do <b>not</b> contain the <a
+ These ca cert bundles do not contain the <a
  href="http://en.wikipedia.org/wiki/DigiNotar#Issuance_of_fraudulent_certificates">DigiNotar
- certificates</a> as Mozilla marks them as untrusted and this script knows
- the markup for that.
+ certificates</a> as Mozilla marks them as untrusted and this script knows the
+ markup for that, <b>but</b> it may contain related certificates that Mozilla
+ (and others) would block using other means. (Like some certs that were
+ cross-signed by Entrust etc). See details in <a
+ href="https://sourceforge.net/p/curl/bugs/1178/">bug #1178</a>.
 
 SUBTITLE(The mk-ca-bundle.pl script)
 <p>
-The <a
- href="https://github.com/bagder/curl/blob/master/lib/mk-ca-bundle.pl">lib/mk-ca-bundle.pl</a>
- script converts <a href="http://www.mozilla.org/">Mozilla</a>'s <a
- href="http://mxr.mozilla.org/mozilla/source/security/nss/lib/ckfw/builtins/certdata.txt">CA cert bundle</a> to PEM format, suitable for (lib)curl and
- others. Writtten by Guenter Knauf.
+ The <a href="mk-ca-bundle.html">mk-ca-bundle</a> tool converts <a
+ href="http://www.mozilla.org/">Mozilla</a>'s <a
+ href="http://mxr.mozilla.org/mozilla/source/security/nss/lib/ckfw/builtins/certdata.txt">CA
+ cert bundle</a> to PEM format, suitable for (lib)curl and others. Writtten by
+ Guenter Knauf.
 
 SUBTITLE(Requirements)
 <o>
