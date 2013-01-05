@@ -145,6 +145,8 @@ for(reverse sort { $log{$a} cmp $log{$b} } keys %log) {
                              $listurl,
                              $listdesc);
 
+        $subjectline =~ s/\/\*/&\#47;*/g;
+
         print $subjectline, $infoline;
 
         if(++$c>=$numberoutput) {
