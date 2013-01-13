@@ -19,7 +19,7 @@ while(<STDIN>) {
     $_ =~ s:^ *\#:&\#35:;
 
     # convert URLs to <a href>
-    $_ =~ s/((http|ftp):\/\/([a-zA-Z0-9.=\/_%?-]*[0-9A-Za-z\/]))/<a href=\"$2:\/\/$3\">$1<\/a>/g;
+    $_ =~ s/((http|https|ftp):\/\/([a-zA-Z0-9.=\/_%?-]*[0-9A-Za-z\/]))/<a href=\"$2:\/\/$3\">$1<\/a>/g;
 
     print $_;
 }
