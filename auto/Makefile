@@ -27,7 +27,10 @@ PAGES = foot.html head.html loghead.html howto.html summary.html	     \
 
 all: $(PAGES)
 
-index.html: _index.html $(MAINPARTS)
+bugbox.t:
+	perl rssbugs.pl > bugbox.t
+
+index.html: _index.html bugbox.t $(MAINPARTS)
 	$(ACTION)
 
 source.html: _source.html $(MAINPARTS)
