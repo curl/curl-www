@@ -11,6 +11,7 @@ sub vernum {
     return ($v[0] << 16) | ($v[1] << 8) | $v[2];
 }
 
+my @vname; # number + HTML links to each vulernability page
 print "<table>";
 sub head {
     print "<tr class=\"tabletop\"><th>index</th><th>Version</th>";
@@ -18,7 +19,9 @@ sub head {
     for(@vuln) {
         my ($id, $start, $stop, $desc)=split('\|');
         $id =~ s/ //;
-        print "<th title=\"$id - $desc\"><a href=\"/docs/security.html\#$id\">#$v</a></th>";
+        my $a="<a href=\"/docs/security.html\#$id\">#$v</a>";
+        $vname[$v-1]=$a;
+        print "<th title=\"$id - $desc\">$a</th>";
         $v++;
     }
     print "<th>Release Date</th></tr>\n";
@@ -27,6 +30,7 @@ sub head {
 head();
 
 my $l;
+my $index;
 
 while(<STDIN>) {
     if($_ =~ /^SUBTITLE\(Fixed in ([0-9.]*) - (.*)\)/) {
@@ -57,13 +61,12 @@ while(<STDIN>) {
                $l&1?"even":"odd",
                $index++);
         for my $i (0 .. scalar(@vuln)-1 ) {
-            printf("<td%s</td>", $v[$i]?" style=\"background-color: #f00000;\">yes":">&nbsp;");
+            printf("\n<td>%s</td>", $v[$i]?$vname[$i]:"&nbsp;");
         }
         print "<td>$date</td></tr>";
 
-        if(!(++$l % 25)) {
-            head();
-        }
+        
+        ++$l;
     }
 }
 
