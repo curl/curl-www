@@ -1,5 +1,6 @@
 # datestamp, first vulnerable version, last vulnerable version
 @vuln = (
+    "20130206|7.26.0|7.28.1|libcurl SASL buffer overflow vulnerability",
     "20120124B|7.10.6|7.23.1|curl SSL CBC IV vulnerability",
     "20120124|7.20.0|7.23.1|curl URL sanitization vulnerability",
     "20110623|7.10.6|7.21.6|libcurl inappropriate GSSAPI delegation",

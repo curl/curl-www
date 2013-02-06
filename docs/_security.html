@@ -38,6 +38,25 @@ TITLE(curl Security)
  See also the <a href="vulnerabilities.html">Vulnerabilties Table</a> to see
  what versions that are vulnerable to what flaws.
 
+<a name="20130206"></a>
+SUBTITLE(libcurl SASL buffer overflow vulnerability)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>February 6, 2013</td></tr>
+  <tr><td>ID</td><td> <small><a href="#20130206">(permalink)</a></small></td></tr>
+  <tr><td>Affected versions</td><td>7.26.0 to and including 7.28.1</td></tr>
+  <tr><td>Not affected versions</td><td>< 7.26.0 and >= 7.29.0</td></tr>
+  <tr><td>Patch</td><td><a href="http://curl.haxx.se/curl-sasl.patch">Curl_sasl_create_digest_md5_message-fix-buffer-overf.patch</a></td></tr>
+  <tr><td>Advisories</td><td>
+<a href="adv_20130206.html">Project cURL Security Advisory</a> </td></tr>
+
+</table>
+<p>
+ When negotiating SASL DIGEST-MD5 authentication, the function
+ Curl_sasl_create_digest_md5_message() uses the data provided from the server
+ without doing the proper length checks and that data is then appended to a
+ local fixed-size buffer on the stack.
+
 <a name="20120124B"></a>
 SUBTITLE(curl SSL CBC IV vulnerability)
 <p>
