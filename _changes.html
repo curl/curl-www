@@ -54,6 +54,61 @@ activity</a>
 #define BGF <li>
 
 
+<a name="7_29_0"></a>
+SUBTITLE(Fixed in 7.29.0 - February 6 2013)
+<p> Changes:
+<ul class="changes">
+ CHG test: offer "automake" output and check for perl better
+ CHG always-multi: always use non-blocking internals [1]
+ CHG imap: Added support for sasl digest-md5 authentication
+ CHG imap: Added support for sasl cram-md5 authentication
+ CHG imap: Added support for sasl ntlm authentication
+ CHG imap: Added support for sasl login authentication
+ CHG imap: Added support for sasl plain text authentication
+ CHG imap: Added support for login disabled server capability
+ CHG mk-ca-bundle: add -f, support passing to stdout and more [5]
+ CHG writeout: -w now supports remote_ip/port and local_ip/port
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="/docs/adv_20130206.html">SECURITY ADVISORY: SASL buffer overflow vulnerability</a>
+ BGF nss: prevent NSS from crashing on client auth hook failure
+ BGF darwinssl: Fixed inability to disable peer verification on Snow Leopard
+   and Lion
+ BGF curl_multi_remove_handle: fix memory leak triggered with CURLOPT_RESOLVE
+ BGF SCP: relative path didn't work as documented [7]
+ BGF setup_once.h: HP-UX <sys/socket.h> issue workaround
+ BGF configure: fix cross pkg-config detection
+ BGF runtests: Do not add undefined values to @INC
+ BGF build: fix compilation with CURL_DISABLE_CRYPTO_AUTH flag
+ BGF multi: fix re-sending request on early connection close
+ BGF HTTP: remove stray CRLF in chunk-encoded content-free request bodies
+ BGF build: fix AIX compilation and usage of events/revents
+ BGF VC Makefiles: add missing hostcheck
+ BGF nss: clear session cache if a client certificate from file is used
+ BGF nss: fix error messages for CURLE_SSL_{CACERT,CRL}_BADFILE
+ BGF fix HTTP CONNECT tunnel establishment upon delayed response [2]
+ BGF --libcurl: fix for non-zero default options
+ BGF FTP: reject illegal port numbers in EPSV 229 responses
+ BGF build: use per-target '_CPPFLAGS' for those currently using default
+ BGF configure: fix automake 1.13 compatibility [6]
+ BGF curl: ignore SIGPIPE [4]
+ BGF pop3: Added support for non-blocking SSL upgrade
+ BGF pop3: Fixed default authentication detection
+ BGF imap: Fixed usernames and passwords that contain escape characters
+ BGF packages/DOS/common.dj: remove COFF debug info generation [3]
+ BGF imap/pop3/smtp: Fixed failure detection during TLS upgrade [8]
+ BGF pop3: Fixed no known authentication mechanism when fallback is required [9]
+ BGF formadd: reject trying to read a directory where a file is expected [10]
+ BGF formpost: support quotes, commas and semicolon in file names [11]
+ BGF docs: update the comments about loading CA certs with NSS [12]
+ BGF docs: fix typos in man pages [13]
+ BGF darwinssl: Fix bug where packets were sometimes transmitted twice [14]
+ BGF winbuild: include version info for .dll .exe [15]
+ BGF schannel: Removed extended error connection setup flag [16]
+ BGF VMS: fix and generate the VMS build config
+</ul>
+
 <a name="7_28_1"></a>
 SUBTITLE(Fixed in 7.28.1 - November 20 2012)
 <p> Changes:
