@@ -26,7 +26,7 @@ http://curl.haxx.se/docs/security.html
   Both curl the command line tool and applications using the libcurl library
   are vulnerable.
 
-  There is no known exploit for this problem. There has been 
+  There is no known exploit for this problem.
 
   The Common Vulnerabilities and Exposures (CVE) project has assigned the name
   CVE-2013-0249 to this issue.
