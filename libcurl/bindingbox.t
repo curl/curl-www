@@ -14,6 +14,7 @@
 <a href="ferite/">Ferite</a><br>
 <a href="gambas/">Gambas</a><br>
 <a href="glib/">glib/GTK+</a><br>
+<a href="http://www.lonelycactus.com/guile-curl.html">Guile</a><br>
 <a href="haskell/">Haskell</a><br>
 <a href="ilerpg/">ILE/RPG</a><br>
 <a href="java/">Java</a><br>
