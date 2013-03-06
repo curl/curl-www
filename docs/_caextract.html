@@ -70,6 +70,25 @@ SUBTITLE(Convert from your local Firefox installation)
 <p> You can also extract the ca certs off your Firefox installation, if you
  just have the 'certutil' tool installed and run the <a href="http://github.com/bagder/curl/blob/master/lib/firefox-db2pem.sh">firefox-db2pem.sh</a> script!
 
+SUBTITLE(What - no HTTPS?)
+
+<p>
+ Yes, pointing out that this contents is not hosted on a HTTPS site is a
+ popular thing to do but really it doesn't help anyone, nor does it bring
+ any news.
+
+<ol>
+<li> If you don't trust the data or want to be more certain: run the script yourself
+
+<li> Offering the data over HTTPS would give you a chicken-and-egg problem as which CAs would you trust when you download the bundle?
+
+<li> You're free to run your own caextract service on a HTTPS site to redeem
+this. The scripts and everything we use to offer data on this page are
+available in the curl source code tree.
+
+</ol>
+
+
 #include "_footer.html"
 
 </BODY>
