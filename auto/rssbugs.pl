@@ -30,7 +30,7 @@ foreach my $item ( @{ $rss->{items} } )
         $num = $1;
     }
   
-    push @out, sprintf "<tr><td>#%d</td><td><a href=\"%s\"> %s</a></td></tr>\n", $num, $link, $title;
+    push @out, sprintf "<tr valign=top><td>#%d</td><td><a href=\"%s\"> %s</a></td></tr>\n", $num, $link, $title;
     $bugs++; 
 }
 push @out, "</table>\n";
