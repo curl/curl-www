@@ -6,11 +6,11 @@ require "CGI.pm";
 
 my $tree="mail/";
 
-my %listnames = ('archive' => 'curl users',
+my %listnames = ('archive' => 'curl-users',
                  'lib' => 'libcurl',
-                 'curlphp' => 'PHP',
-                 'curlpython' => 'Python',
-                 'tracker' => 'Tracker',
+                 'curlphp' => 'PHP/CURL',
+                 'curlpython' => 'pycurl',
+                 'tracker' => 'Bugs',
                  'curlpp' => 'curlpp',
                  'curlppdev' => 'curlpp-devel');
 
