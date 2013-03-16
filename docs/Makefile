@@ -150,7 +150,7 @@ todo.html: _todo.html $(MAINPARTS) todo.t
 	$(ACTION)
 
 todo.t: $(DOCROOT)/TODO faqparse.pl
-	./faqparse.pl < $< | sed -e 's:*:\&#47;:g' -e 's:#:\&#35;:g'> $@
+	./faqparse.pl < $< | sed -e 's:*:\&#42;:g' -e 's:#undef:\&#35;undef:g'> $@
 
 versions.html: _versions.html $(MAINPARTS) versions.t
 	$(ACTION)
