@@ -10,30 +10,26 @@
 #include "_menu.html"
 #include "setup.t"
 
-WHERE2(libcurl, "/libcurl/", CURLHandle Cocoa Binding)
+WHERE2(libcurl, "/libcurl/", CURLHandle Cocoa Bindings)
 
 <a name=top>
 TITLE(accessing libcurl from Cocoa)
 <p>
- CURLHandle is a Cocoa subclass of NSURLHandle that wraps an object-oriented
- shell around libcurl's C interface.
+ There are at least two different bindings for libcurl on Cocoa, <b>BBHTTP</b>
+ and
+ <b>CURLHandle</b>.
 
-<p><b>How to Install</b></br>
- Include CURLHandle.[hm], and (optionally) CURLHandle+extras.[hm] in your
- project
+SUBTITLE(BBHTTP)
+<p>
+ <a href="https://github.com/brunodecarvalho/BBHTTP">BBHTTP</a> is a rich
+ wrapper for libcurl written in Objective-C
 
-<p><b>Examples</b><br> 
- CURLHandleTester is an example that comes with the distribution.
+SUBTITLE(CURLHandle)
 
-<p><b>Binding documentation</b><br>
- View it on the <a
- href="http://curlhandle.sourceforge.net/">CURLHandle web site</a> 
-
-<p><b>Download</b><br> Get it from the <a
- href="http://curlhandle.sourceforge.net/">CURLHandle web site</a> 
-
-<p><b>Credits</b><br>
- CURLHandle was written by Dan Wood &lt;dwood_at_karelia.com&gt;
+<p>
+ <a href="https://github.com/karelia/curlhandle">CURLHandle</a> is a Cocoa
+ subclass of NSURLHandle that wraps an object-oriented shell around libcurl's
+ C interface.
 
 <p><b>What is Cocoa?</b><br>
 
