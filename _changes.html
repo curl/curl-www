@@ -54,6 +54,92 @@ activity</a>
 #define BGF <li>
 
 
+<a name="7_30_0"></a>
+SUBTITLE(Fixed in 7.30.0 - April 12 2013)
+<img src="/pix/alert.png"
+align="right" alt="Release contains security-related bug fix" border="0">
+<p> Changes:
+<ul class="changes">
+ CHG imap: Changed response tag generation to be completely unique
+ CHG imap: Added support for SASL-IR extension
+ CHG imap: Added support for the list command
+ CHG imap: Added support for the append command
+ CHG imap: Added custom request parsing
+ CHG imap: Added support to the fetch command for UID and SECTION properties
+ CHG imap: Added parsing and verification of the UIDVALIDITY mailbox attribute
+ CHG darwinssl: Make certificate errors less techy
+ CHG imap/pop3/smtp: Added support for the STARTTLS capability
+ CHG checksrc: ban use of sprintf, vsprintf, strcat, strncat and gets
+
+ CHG <a href="http://curl.haxx.se/bug/view.cgi?id=1168">curl_global_init() now
+     accepts the CURL_GLOBAL_ACK_EINTR flag</a>
+
+ CHG Added CURLMOPT_MAX_HOST_CONNECTIONS, CURLMOPT_MAX_TOTAL_CONNECTIONS for
+     new multi interface connection handling
+
+ CHG <a
+     href="http://daniel.haxx.se/blog/2013/03/26/better-pipelining-in-libcurl-7-30-0/">Added
+     CURLMOPT_MAX_PIPELINE_LENGTH, CURLMOPT_CONTENT_LENGTH_PENALTY_SIZE,
+     CURLMOPT_CHUNK_LENGTH_PENALTY_SIZE, CURLMOPT_PIPELINING_SITE_BL and
+     CURLMOPT_PIPELI NING_SERVER_BL for new pipelining control</a>
+
+ CHG change
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="http://curl.haxx.se/docs/adv_20130412.html">SECURITY ADVISORY: cookie tailmatching to avoid cross-domain leakage</a>
+ BGF darwinssl: Fix build under Leopard
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1184">DONE: consider callback-aborted transfers premature</a>
+ BGF ntlm: Fixed memory leaks
+ BGF smtp: Fixed an issue when processing EHLO failure responses
+ BGF pop3: Fixed incorrect return value from pop3_endofresp()
+ BGF pop3: Fixed SASL authentication capability detection
+ BGF pop3: Fixed blocking SSL connect when connecting via POP3S
+ BGF imap: Fixed memory leak when performing multiple selects
+ BGF nss: fix misplaced code enabling non-blocking socket mode
+ BGF <a href="http://curl.haxx.se/mail/archive-2013-02/0040.html">AddFormData: prevent only directories from being posted</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-03/0014.html">darwinssl: fix infinite loop if server disconnected abruptly</a>
+ BGF metalink: fix improbable crash parsing metalink filename
+ BGF show proper host name on failed resolve
+ BGF MacOSX-Framework: Make script work in Xcode 4.0 and later
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1192">strlcat: remove function</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-02/0145.html">darwinssl: Fix send glitchiness with data > 32 or so KB</a>
+ BGF polarssl: better 1.1.x and 1.2.x support
+ BGF various documentation improvements
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1194">multi: NULL pointer reference when closing an unused multi handle</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1190">SOCKS: fix socks proxy when noproxy matched</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1195">install-sh: updated to support multiple source files as arguments</a>
+ BGF PolarSSL: added human readable error strings
+ BGF resolver_error: remove wrong error message output
+ BGF docs: updates HTML index and general improvements
+ BGF curlbuild.h.dist: enhance non-configure GCC ABI detection logic
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1193">sasl: Fixed null pointer reference when decoding empty digest challenge</a>
+ BGF easy: do not ignore poll() failures other than EINTR
+ BGF darwinssl: disable ECC ciphers under Mountain Lion by default
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1204">CONNECT: count received headers</a>
+ BGF build: fixes for VMS
+ BGF <a href="https://groups.google.com/d/msg/msysgit/B31LNftR4BI/KhRTz0iuGmUJ">CONNECT: clear 'rewindaftersend' on success</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1206">HTTP proxy: insert slash in URL if missing</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1199">hiperfifo: updated to use current libevent API</a>
+ BGF getinmemory.c: abort the transfer nicely if not enough memory
+ BGF improved win32 memorytracking
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1204">corrected proxy header response headers count</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-03/0319.html">FTP quote operations on re-used connection</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1209">tcpkeepalive on win32</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1214">tcpkeepalive on Mac OS X</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1212">easy: acknowledge the CURLOPT_MAXCONNECTS option properly</a>
+ BGF easy interface: restore default MAXCONNECTS to 5
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1188">win32: don't set SO_SNDBUF for windows vista or later versions</a>
+ BGF HTTP: made cookie sort function more deterministic
+ BGF winssl: Fixed memory leak if connection was not successful
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1183">FTP: wait on both connections during active STOR state</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1189">connect: treat a failed local bind of an interface as a non-fatal error</a>
+ BGF darwinssl: disable insecure ciphers by default
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-04/0113.html">FTP: handle "rubbish" in front of directory name in 257 responses</a>
+ BGF mk-ca-bundle: Fixed lost OpenSSL output with "-t"
+</ul>
+#endif
+
 <a name="7_29_0"></a>
 SUBTITLE(Fixed in 7.29.0 - February 6 2013)
 <img src="/pix/alert.png"
