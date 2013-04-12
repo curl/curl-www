@@ -38,6 +38,26 @@ TITLE(curl Security)
  See also the <a href="vulnerabilities.html">Vulnerabilties Table</a> to see
  what versions that are vulnerable to what flaws.
 
+<a name="20130412"></a>
+SUBTITLE(libcurl cookie domain tailmatch)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>April 12, 2013</td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1944">CVE-2013-1944</a> <small><a href="#20130412">(permalink)</a></small></td></tr>
+  <tr><td>Affected versions</td><td>all versions, to and including 7.29.0</td></tr>
+  <tr><td>Not affected versions</td><td>>= 7.23.0</td></tr>
+  <tr><td>Patch</td><td><a href="http://curl.haxx.se/curl-tailmatch.patch">curl-tailmatch.patch</a></td></tr>
+  <tr><td>Advisories</td><td>
+<a href="adv_20130412.html">Project cURL Security Advisory</a></td></tr>
+
+</table>
+<p>
+  When communicating over HTTP(S) and having libcurl's cookie engine enabled,
+  libcurl will store and hold cookies for use when subsequent requests are
+  done to hosts and paths that match those kept cookies. Due to a bug in the
+  tailmatching function, libcurl could wrongly send cookies meant for the
+  domain <i>ample.com</i> when communicating with <i>example.com</i>.
+
 <a name="20130206"></a>
 SUBTITLE(libcurl SASL buffer overflow vulnerability)
 <p>
