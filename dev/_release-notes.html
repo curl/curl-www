@@ -1,0 +1,38 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - RELEASE NOTES for next release</TITLE>
+#include "css.t"
+</HEAD>
+
+#define DEVEL_RELEASENOTES
+#define CURL_URL release-notes.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Development, "/dev/", RELEASE-NOTES)
+
+TITLE(Pending RELEASE-NOTES for the upcoming releases)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="todo-release.html">TODO-RELEASE</a>
+<br><a href="/changes.html">changelog</a>
+<br><a href="/docs/manpage.html">curl man page</a>
+<br><a href="/docs/manual.html">Manual</a>
+<br><a href="/docs/faq.html">FAQ</a>
+</div>
+
+<p>
+ This is the current RELEASE-NOTES file. <i>It is work in progress and will
+ change before the release goes public.</i>
+<p>
+
+<pre>
+#include "release-notes.txt"
+</pre>
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
+

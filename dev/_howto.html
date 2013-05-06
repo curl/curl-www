@@ -1,0 +1,121 @@
+#include "_doctype.html"
+<html>
+<head> <title>cURL - Automatic Build HOWTO</title>
+#include "css.t"
+</head>
+
+#define DEVEL_BUILDHOWTO
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Development, "/dev/", Automatic Build HOWTO)
+TITLE(Setup Your Machine to Autobuild from git)
+
+#include "setup.t"
+
+SUBTITLE(Get a Fresh Check-out from git)
+<p>
+ First, run these commands:
+
+<pre>
+  $ mkdir someplacenice
+  $ cd someplacenice
+  $ git clone git://github.com/bagder/curl.git
+  $ ./curl/tests/testcurl.pl
+</pre>
+<p>
+ The first time to run <a href="testcurl.html">testcurl.pl</a>, it'll prompt
+ you for some info (unless you provide that data using command line
+ options). That info is then stored in the file named 'setup' in the current
+ directory and will be used when this script is subsequently run. The format
+ is easily manually edited using a text editor.
+<p>
+ You'll now see a full compile, build and test perform. Make sure everything
+ works out fine.
+
+<p>
+ Then, in a cron job do:
+<pre>
+ $ cd someplacenice
+ $ ./curl/tests/testcurl.pl | mail -s "autobuild" curl-autocompile@haxx.se
+</pre>
+<p>
+
+<b>Note:</b> It is important that you do include the word 'autobuild' in the
+ subject of the mail, as mails to this receiver without that word in the
+ subject will mercilessly get sent to /dev/null with no questions asked.
+
+<p>
+ If mailing the info is not suitable for you, but you have a working curl
+ version installed, you can upload the file with curl self:
+<pre>
+ $ ./curl/tests/testcurl.pl | curl -s -F file=@- http://curl.haxx.se/auto/upload.cgi
+</pre>
+<p>
+ You can also use this
+ <a href="http://curl.haxx.se/auto/upload.cgi">upload form</a> "manually".
+
+SUBTITLE(Other platforms than Unix)
+
+ On Unix/Linux testcurl.pl assumes a GNU-like build with configure; on Win32
+ the MSVC build is default. The testcurl.pl can now take an option
+ '<tt>--target=[your_os]</tt>' so you can specify to build targets for other
+ platforms.  With this option it should now be very easy to add other
+ autobuilds for platforms not able to use GNU-like build systems.
+  
+SUBTITLE(Build from daily tarballs)
+<p>
+ If you can't checkout or update the sources from git easily, another approach
+ to automated testing of the latest sources is made by getting the latest <a
+ href="http://cool.haxx.se/curl-daily/">daily tarballs</a> automaticly
+ instead.
+<p>
+ This is easily done with the use of the <a href="autocurl.txt">autocurl</a>
+ shell script, written by Ralph Mitchell.
+
+SUBTITLE(Make more tests run)
+<p>
+ The number of tests run on some tests are not the maximum amount, but instead
+ numerous ones are "skipped".
+<p>
+ This is because some of the tests require specal conditions that are not
+ enabled everywhere. You can improve this situation by using the configure's
+ <b>--enable-debug</b> option (which enables much more thorough memory and
+ netrc debugging) and to make sure that you have <b>stunnel</b> installed
+ (which enables HTTPS tests to run).
+
+SUBTITLE(Build Table Updates)
+<p>
+The tables are rebuilt every 20 minutes if there has been a new build log
+mailed in since the previous table was built.
+<p>
+We automatically remove build logs older than 10 - 12 days to reduce the
+amount of data and used disk space.
+
+<hr>
+
+SUBTITLE(Platforms/Options We Want Tested As Well)
+<p>
+ If you feel like helping out the project, have a peek here and see what
+ autobuilds we would appreciate to get going!
+
+<p> 
+We have no automatic building/testing on these platforms:
+
+<ul>
+ <li> AmigaOS
+ <li> BeOS
+ <li> HP-UX
+ <li> Hurd
+ <li> Mac OS X
+ <li> OS/2
+ <li> OpenBSD
+ <li> QNX
+ <li> RiscOS
+ <li> SCO Unix
+ <li> VMS
+</ul>
+
+#include "_footer.html"
+</body> </html>

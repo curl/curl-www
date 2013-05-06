@@ -1,0 +1,36 @@
+# gcc 2.9 on AIX can't be made to ignore this:
+lib/mprintf.c:950: warning: format not a string literal, argument types not checked
+# gcc 2.95.3 cross-compiling for ARM complains on a system header:
+include/bits/confname.h:565: warning: comma at end of enumerator list
+# gcc 2.95.3 cross-compiling for uClibc 0.9.15 on ARM
+/usr/arm-linux-uclibc/include/bits/uClibc_ctype.h:62: warning: comma at end of enumerator list
+# gcc 2.95.3 cross-compiling for ARM uClibc
+src/tool_operate.c:.*: the 'setlocale' function supports only
+# libtool warning with mingw 3.4.2 cross-compiling for win32
+lt-curl.c:79: warning: passing arg 2 of `execv' from incompatible pointer type
+# libtool warning on libtool generated cwrapper - fixed in libtool 2010 October
+lt-.*.c:.*: warning: string length .* is greater than the length .* compilers
+# long long warnings in oldish gcc:
+lib/mprintf.c:.*: warning: ANSI C does not support `long long'
+curlbuild.h:.*: warning: ANSI C does not support `long long'
+lib/progress.c:.*: warning: ANSI C forbids long long integer constants
+lib/strtoofft.c:.*: warning: ANSI C forbids long long integer constants
+src/main.c:.*: warning: ANSI C forbids long long integer constants
+tests/libtest/lib518.c:.*: warning: ANSI C forbids long long integer constants
+tests/libtest/lib537.c:.*: warning: ANSI C forbids long long integer constants
+tests/libtest/lib557.c:.*: warning: ANSI C forbids long long integer constants
+# ming/libtool warning:
+.libs/lt-curl.exe.c:
+# gcc 2.96 warnings with --disable-verbose
+lib/sendf.h:.*: warning: ISO C does not permit named variadic macros
+lib/sendf.h:.*: warning: anonymous variadic macros were introduced in C99
+# MIT Kerberos 1.2
+/usr/kerberos/include/.* is not defined
+# NetScape Portable Runtime library 4.7.3 (dependency of NSS)
+nspr.*/prlink.h:.*: warning: function declaration isn't a prototype
+# NSS 3.12.2
+nss/cert.h:.*: warning: function declaration isn't a prototype
+# gcc 3.3 bug triggers warnings on some assert statements
+lib/warnless.c:210: warning: statement with no effect
+lib/warnless.c:229: warning: statement with no effect
+lib/warnless.c:269: warning: statement with no effect
