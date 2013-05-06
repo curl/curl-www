@@ -1,0 +1,65 @@
+                       libcurl cookie domain tailmatch
+                       ===============================
+
+Project cURL Security Advisory, April 12th 2013
+http://curl.haxx.se/docs/security.html
+
+1. VULNERABILITY
+
+  libcurl is vulnerable to a cookie leak vulnerability when doing requests
+  across domains with matching tails.
+
+  When communicating over HTTP(S) and having libcurl's cookie engine enabled,
+  libcurl will store and hold cookies for use when subsequent requests are
+  done to hosts and paths that match those kept cookies. Due to a bug in the
+  tailmatching function, libcurl could wrongly send cookies meant for the
+  domain 'ample.com' when communicating with 'example.com'.
+
+  This vulnerability can be used to hijack sessions in targetted attacks since
+  registering domains using a known domain's name as an ending is trivial.
+
+  Both curl the command line tool and applications using the libcurl library
+  are vulnerable.
+
+  There are no known exploits available at this time.
+
+  The Common Vulnerabilities and Exposures (CVE) project has assigned the name
+  CVE-2013-1944 to this issue.
+
+2. AFFECTED VERSIONS
+
+  Affected versions: all versions to and including 7.29.0
+  Not affected versions: curl >= 7.30.0
+
+  libcurl is used by many applications, but not always advertised as such!
+
+3. THE SOLUTION
+
+  libcurl 7.30.0 implements the function properly and will not send cookies to
+  sites just because the host names use the same tail.
+
+4. RECOMMENDATIONS
+
+  We suggest you take one of the following actions immediately, in order of
+  preference:
+
+  A - Upgrade to curl and libcurl 7.30.0
+
+  B - Apply this patch and rebuild libcurl
+
+      http://curl.haxx.se/curl-tailmatch.patch
+
+  C - Disable use of cookies or HTTP entirely in your application
+
+5. TIME LINE
+
+  Vulnerability found and patched by YAMADA Yasuharu.
+
+  It was reported (publicly) to the curl project on April 9th 2013.
+
+  curl 7.30.0 was released on April 12th 2013, coordinated with the
+  publication of this advisory.
+
+6. CREDITS
+
+  Reported and fixed by YAMADA Yasuharu. Thanks a lot!
