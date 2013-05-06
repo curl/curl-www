@@ -1,0 +1,9 @@
+curl-www
+--------
+
+This is (most of) the curl.haxx.se web site contents. It mostly builds static
+HTML files that are preprocessed.
+
+[fill in details on how to build]
+
+Imported from CVS, May 6th 2013
