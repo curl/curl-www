@@ -35,7 +35,6 @@ all: index.html feedback.html mirrors.html cvs.html libs.html help.html	\
 	cd mirror && make
 	cd legal && make
 	cd rfc && make
-	cd viewvc-templates/include && make
 	@echo done 
 
 head.html: _head.html $(MAINPARTS) css.t
