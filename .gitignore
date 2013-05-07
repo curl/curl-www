@@ -1,2 +1,8 @@
 *~
 [^_]*.html
+info
+packstat.t
+release.t
+competition.raw
+dl/data
+dl/pbase_error.log
