@@ -290,6 +290,9 @@ if($pick_type && !$pick_os) {
     elsif($ua =~ /Mac/i) {
         $sel_os = "Mac OS X";
     }
+    elsif($ua =~ /iPhone|iPad/i) {
+        $sel_os = "Apple iOS";
+    }
     elsif($ua =~ /RISC OS|NetSurf/i) {
         $sel_os = "RISC OS";
     }
@@ -336,6 +339,9 @@ if($pick_type && !$pick_os) {
     # for compatibility reasons
     elsif($ua =~ /(windows|win32|Win98|Win95|Win9x|WinNT)/i) {
         $sel_os = "Win32";
+    }
+    elsif($ua =~ /Win64|WOW64/i) {
+        $sel_os = "Win64";
     }
     elsif($ua =~ /(Unix|Lynx|w3m|Dillo|MMM|Grail|Mosaic|amaya|Konqueror|Links|gzilla)/i) {
         $sel_os = "Linux"; # we don't know these are Linux, we just guess
@@ -470,6 +476,9 @@ if(!$pick_flav && $pick_os && $pick_type) {
         elsif($ua=~ /Maemo/i) {
             $sel_flav = "Maemo";
         }
+        elsif($ua=~ /Android/i) {
+            $sel_flav = "Android";
+        }
 
 	# Non-Linux flavours
         elsif($ua=~ /cygwin/i) {
@@ -552,7 +561,7 @@ if($pick_os && $pick_flav && !$pick_ver) {
         elsif($pick_flav eq "Ubuntu" && $ua =~ /\bUbuntu\/([\w\.]+)/i) {
             $sel_ver = $1;
         }
-        elsif($pick_os eq "Win32" && $ua =~ /Windows NT ?5\b|Windows XP/i) {
+        elsif($pick_os eq "Win32" && $ua =~ /Windows NT ?[56]\b|Windows XP/i) {
             $sel_ver = "2000/XP";
         }
         elsif($pick_os eq "AIX" && $ua =~ /AIX ([\d\.]+)/i) {
@@ -640,13 +649,13 @@ if($pick_os && $pick_flav && $pick_ver && !$pick_cpu) {
         elsif($ua =~ /ia64/i) {
             $sel_cpu = "ia64";
         }
-        elsif($ua =~ /x86_64|athlon|amd64|x64/i) {
+        elsif($ua =~ /x86_64|athlon|amd64|x64|WOW64/i) {
             $sel_cpu = "x86_64";
         }
         elsif($ua =~ /alpha|AXP/i) {
             $sel_cpu = "Alpha";
         }
-        elsif($ua =~ /arm|iPhone/i) {
+        elsif($ua =~ /arm|iPhone|iPad|Android/i) {
             $sel_cpu = "StrongARM";
         }
         elsif($ua =~ /avr32/i) {
