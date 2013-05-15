@@ -28,8 +28,16 @@ to use.
 #define FEATURE <td class="yes">yes</td>
 #define MISSING <td class="no">no</td>
 #define UNKNOWN <td class="unknown">?</td>
-#define FEATURE_P <td class="yes">yes*</td>
+#define FEATURE_P <td class="yes">yes [1]</td>
+#define FEATURE_P2 <td class="yes">yes [2]</td>
+#define FEATURE_P3 <td class="yes">yes [3]</td>
+#define FEATURE_P4 <td class="yes">yes [4]</td>
+#define FEATURE_P5 <td class="yes">yes [5]</td>
 #define MISSING_P <td class="no">no*</td>
+#define NA <td class="unknown">N/A</td>
+
+#define MANUAL <td class="no">manual</td>
+#define AUTOMATIC <td class="yes">automatic</td>
 
 #define NEWCOL <td>
 #define ENDCOL </td>
@@ -55,14 +63,110 @@ to use.
   NICETD qssl NICETDEND
   NICETD PolarSSL NICETDEND
   NICETD axTLS NICETDEND
+  NICETD Secure Channel (&quot;WinSSL&quot;) NICETDEND
+  NICETD Secure Transport (&quot;DarwinSSL&quot;) NICETDEND
  ENDLINE
  </thead>
 
  <tbody>
+
+ NEWLINE
+  FEAT Native CN check ENDFEAT
+  MISSING
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+ ENDLINE
+
+ NEWLINE
+  FEAT CRL ENDFEAT
+  MANUAL
+  MANUAL
+  AUTOMATIC
+  UNKNOWN
+  MISSING
+  MANUAL
+  MISSING
+  AUTOMATIC
+  AUTOMATIC
+ ENDLINE
+
+ NEWLINE
+  FEAT SSLv2 ENDFEAT
+  FEATURE
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  FEATURE
+  FEATURE
+ ENDLINE
+
+ NEWLINE
+  FEAT SSLv3 ENDFEAT
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  MISSING
+  FEATURE
+  FEATURE
+ ENDLINE
+
+ NEWLINE
+  FEAT TLSv1.0 ENDFEAT
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE
+ ENDLINE
+
+ NEWLINE
+  FEAT TLSv1.1 ENDFEAT
+  FEATURE_P
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE_P5
+  FEATURE
+  FEATURE
+  FEATURE
+  FEATURE_P2
+ ENDLINE
+
+ NEWLINE
+  FEAT TLSv1.2 ENDFEAT
+  FEATURE_P
+  FEATURE
+  MISSING
+  FEATURE
+  FEATURE_P5
+  FEATURE
+  MISSING
+  FEATURE_P4
+  FEATURE_P2
+ ENDLINE
+
  NEWLINE
   FEAT TLS SRP ENDFEAT
+  FEATURE_P
   FEATURE
-  FEATURE
+  MISSING
+  MISSING
   MISSING
   MISSING
   MISSING
@@ -79,72 +183,8 @@ to use.
   UNKNOWN
   UNKNOWN
   MISSING
- ENDLINE
-
- NEWLINE
-  FEAT Native CN check ENDFEAT
-  MISSING
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
- ENDLINE
-
- NEWLINE
-  FEAT SSLv2 ENDFEAT
-  FEATURE
-  MISSING
-  FEATURE
-  MISSING
-  MISSING
-  MISSING
-  MISSING
- ENDLINE
-
- NEWLINE
-  FEAT SSLv3 ENDFEAT
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  MISSING
- ENDLINE
-
- NEWLINE
-  FEAT TLSv1.0 ENDFEAT
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
- ENDLINE
-
- NEWLINE
-  FEAT TLSv1.1 ENDFEAT
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  UNKNOWN
-  FEATURE
-  FEATURE
- ENDLINE
-
- NEWLINE
-  FEAT TLSv1.2 ENDFEAT
-  FEATURE
-  FEATURE
-  MISSING
-  FEATURE
-  UNKNOWN
-  FEATURE
-  MISSING
+  FEATURE_P3
+  FEATURE_P2
  ENDLINE
 
  NEWLINE
@@ -153,17 +193,47 @@ to use.
   MISSING
   MISSING
   FEATURE
-  MISSING
+  NA
   FEATURE
   FEATURE
+  NA
+  NA
  ENDLINE
 
  NEWLINE
-  FEAT Runs on Windows ENDFEAT
+  FEAT Platforms ENDFEAT
+  FEAT POSIX, Windows, VMS ENDFEAT
+  FEAT POSIX, Windows ENDFEAT
+  FEAT POSIX, Windows ENDFEAT
+  FEAT POSIX, Windows ENDFEAT
+  FEAT IBM i          ENDFEAT
+  FEAT POSIX, Windows ENDFEAT
+  FEAT POSIX, Windows ENDFEAT
+  FEAT Windows (CE and NT) ENDFEAT
+  FEAT Darwin (inc. iOS and Mac OS X) ENDFEAT
+ ENDLINE
+
+ NEWLINE
+  FEAT Uses Certificate/Key Files ENDFEAT
   FEATURE
   FEATURE
   FEATURE
   FEATURE
+  UNKNOWN
+  FEATURE
+  FEATURE
+  MISSING
+  MISSING
+ ENDLINE
+
+ NEWLINE
+  FEAT Uses Certificate/Key Database ENDFEAT
+  MISSING
+  MISSING
+  FEATURE
+  MISSING
+  UNKNOWN
+  MISSING
   MISSING
   FEATURE
   FEATURE
@@ -178,6 +248,34 @@ to use.
   MISSING
   MISSING
   MISSING
+  FEATURE
+  FEATURE
+ ENDLINE
+
+ NEWLINE
+  FEAT OpenSSL-like API ENDFEAT
+  NA
+  FEAT limited ENDFEAT
+  FEAT separate ENDFEAT
+  MISSING
+  FEAT limited ENDFEAT
+  MISSING
+  FEAT limited ENDFEAT
+  MISSING
+  FEAT digests only ENDFEAT
+ ENDLINE
+
+ NEWLINE
+  FEAT Vendor ENDFEAT
+  FEAT <a href="https://www.openssl.org/">OpenSSL Project</a> ENDFEAT
+  FEAT <a href="https://www.gnu.org/">Free Software Foundation</a> ENDFEAT
+  FEAT <a href="https://www.mozilla.org/">Mozilla Foundation</a> ENDFEAT
+  FEAT <a href="http://www.yassl.com/">wolfSSL</a> ENDFEAT
+  FEAT <a href="http://www.ibm.com/">IBM Corporation</a> ENDFEAT
+  FEAT <a href="http://www.offspark.com/">Offspark B.V.</a> ENDFEAT
+  FEAT <a href="http://axtls.sourceforge.net/">Cameron Rich</a> ENDFEAT
+  FEAT <a href="https://www.microsoft.com/">Microsoft Corporation</a> ENDFEAT
+  FEAT <a href="https://ssl.apple.com/">Apple Inc.</a> ENDFEAT
  ENDLINE
 
  NEWLINE
@@ -189,6 +287,8 @@ to use.
   UNKNOWN
   FEAT GPLv2 / prop ENDFEAT
   FEAT BSD ENDFEAT
+  FEAT Proprietary ENDFEAT
+  FEAT APSL 2.0 ENDFEAT
  ENDLINE
 
  NEWLINE
@@ -200,65 +300,150 @@ to use.
   NEWCOL ? ENDCOL
   NEWCOL 2006 ENDCOL
   NEWCOL 2006 ENDCOL
+  NEWCOL 2000 ENDCOL
+  NEWCOL 2003? ENDCOL
  ENDLINE
 
  NEWLINE
   FEAT Version ENDFEAT
-  FEAT 1.0.1c ENDFEAT
-  FEAT 2.10.4 ENDFEAT
+  FEAT 1.0.1e ENDFEAT
+  FEAT 3.2.0 ENDFEAT
   FEAT 3.12.4 ENDFEAT
   FEAT 1.9.0 ENDFEAT
+  FEAT 7.1 TR6 ENDFEAT
+  FEAT 1.2.7 ENDFEAT
+  FEAT 1.4.9 ENDFEAT
+  FEAT 6.2.9200 ENDFEAT
+  FEAT 55179 ENDFEAT
+ ENDLINE
+
+ NEWLINE
+  FEAT Famous Application ENDFEAT
+  FEAT Apache HTTPD ENDFEAT
+  FEAT GNOME ENDFEAT
+  FEAT Mozilla Firefox ENDFEAT
+  FEAT MySQL ENDFEAT
+  FEAT IBM HTTPD ENDFEAT
+  FEAT Hiawatha HTTPD ENDFEAT
   FEAT ? ENDFEAT
-  FEAT 1.2.3 ENDFEAT
-  FEAT 1.4.5 ENDFEAT
+  FEAT Microsoft Internet Explorer ENDFEAT
+  FEAT Apple Safari ENDFEAT
  ENDLINE
 
  </tbody>
 </table>
 
 <p>
- Docs situation?
-<p>
- File / run-time size requirements?
-<p>
- API situation? (OpenSSL look-alike or not etc)
+ [1] = Requires OpenSSL 1.0.1c or later
+<br>
+ [2] = Requires iOS 5.0 or later, or OS X 10.8.0 or later
+<br>
+ [3] = Requires Windows Vista or later
+<br>
+ [4] = Requires Windows 7 or later
+<br>
+ [5] = Requires IBM i 7.1 TR6 or later
 
-SUBTITLE(Details)
+SUBTITLE(Glossary of Terms)
+
+<b>Native CN Check:</b> If yes, then this means that the engine will
+ automatically check the domain name in the server's certificate against the
+ domain name used to connect to the server, unless CURLOPT_VERIFYHOST was
+ manually disabled. If no, then libcurl will perform this check manually.
 <p>
- OpenSSL - lack of good docs and an API that isn't very consistent. The license is often
-mentioned as a problem since it isn't GPL compatible.
+
+<b>CRL:</b> CRL means "Certificate Revocation List" and is used to check to
+see if any certificates in the server's chain have been revoked for some
+reason. If automatic, then the engine will automatically download a CRL and
+use it to evaluate the trust of the server's certificate chain when performing
+the TLS handshake. If manual, then the engine will not automatically use a
+CRL, but you can provide one that has been downloaded separately by using the
+CURLOPT_CRL option. If no, then the CURLOPT_CRL option will be ignored.
 <p>
- GnuTLS - good docs, consistent API, wide support for TLS standards. Not as
- widely used as OpenSSL.
+
+<b>SSLv2:</b> This was the first public release of the SSL protocol. It is
+deprecated and really should no longer be used, because it has a number of
+serious security problems. Even if your engine supports it, libcurl will never
+default to allowing SSLv2 when performing a TLS handshake. Support for SSLv2
+is only provided here if you need to connect to a very old (circa 1995) SSL
+server that does not support a newer version of the protocol.
 <p>
- NSS - lack of good docs. API is focused around having data in databases
- instead of individual files like the other libs do. Suffers a bit from being
- seen as only used by Mozilla's browser and mail client by project members.
+
+<b>SSLv3:</b> This version of SSL fixed all of the major weaknesses in
+SSLv2. It is still widely supported on the public Internet, mainly because
+Microsoft Internet Explorer 6 does not support TLS by default, although TLS is
+a preferred protocol.
 <p>
- CyaSSL - Little used by curl users. Dual GPL/commercial license.
+
+<b>TLSv1.0:</b> TLS is a slight variation on SSLv3 that was the first version
+of the protocol to be approved of by the Internet Engineering Task Force
+(IETF). This version of TLS has been available since 1999 and is by far the
+most widely supported version on the public Internet. There have been a few
+minor security vulnerabilities found in TLSv1.0 which were fixed later, but
+all of them (so far) have been easily worked around, which has contributed to
+the longevity of this version of TLS.
 <p>
- qssl - made for a single OS so it is of no use or interest for people who
-don't use OS/400
+
+<b>TLSv1.1:</b> TLSv1.1 is similar to v1.0, except that it has a better fix
+for the CBC (Cipher Block Chain) cipher-suite attack that lead to the BEAST
+(Browser Exploit Against SSL/TLS) vulnerability in TLSv1.0. Unfortunately it
+was released seven years after v1.0, and took even longer to start appearing
+in TLS engines, so it's not very widely supported by servers yet.
 <p>
- PolarSSL - (formerly known as XySSL) targeted at embedded use. Small footprint.
- Dual GPL/commercial license.
+
+<b>TLSv1.2:</b> TLSv1.2 provides even better security than TLSv1.1 and
+earlier, with support for many all-new cipher suites that are even more
+difficult to crack. Unfortunately TLSv1.2 is not widely used on the public
+Internet yet for the same reasons that v1.1 support is scarce.
 <p>
- axTLS - targeted at small footprint. BSD licensed. Lack of good docs. Written
- by a single person.
+
+<b>TLS SRP:</b> SRP means "Secure Remote Password" and it is a method of
+performing client-side authentication with a TLS server by using a user name
+and password, sometimes coupled with a certificate. It is not yet widely
+supported, but for the engines that do support it, you can provide the
+credentials to curl by using the CURLOPT_TLSAUTH_USERNAME and
+CURLOPT_TLSAUTH_PASSWORD options.
+<p>
+
+<b>TLS ECC:</b> ECC means "Elliptic Curve Cryptography" and it is an advanced
+set of cipher-suites that are used in TLS connections (typically with
+TLSv1.2). Not all engines support ECC.
+<p>
+
+<b>Uses Certificate/Key Files:</b> Some engines, such as OpenSSL, read
+certificates and keys from files rather than a central database. These engines
+require you to use a certificate bundle in order to verify a server's
+certificate chain; this is usually set at build time but can also be set by
+using the CURLOPT_CAINFO option.
+<p>
+
+<b>Uses Certificate/Key Database:</b> Some engines, such as Apple's Security
+framework, use a central database instead of separate files to store
+certificates and keys. Apple's Security framework database, for instance, is
+called the Keychain. For engines that use a database and don't also support
+files, the CURLOPT_CAINFO option is ignored.
+<p>
+
+<b>FIPS-140:</b> FIPS-140 is a security standard used by the United States and
+Canada for transferring information that is sensitive but not classified. If
+yes, and you are using curl or a libcurl-based application in the US or
+Canadian government, or in a government contractor, then it's okay for you to
+use the engine when building curl/libcurl.
+<p>
+
+<b>License:</b> If you are deploying an application that uses libcurl, then
+the license used by the engine may affect whether or not you are able to
+distribute your application legally. OpenSSL's 4-clause BSD license, for
+instance, is not compatible with the GNU GPL.
 
 SUBTITLE(More reading)
-
 <p>
  The mentioned libraries: <a href="http://www.openssl.org/">OpenSSL</a>, <a
  href="http://www.gnutls.org/">GnuTLS</a>, <a
  href="http://www.mozilla.org/projects/security/pki/nss/">NSS</a>, <a
  href="http://www.yassl.com/">CyaSSL</a>, <a
  href="http://www.polarssl.org/">PolarSSL</a>, <a
- href="http://axtls.sf.net/">axTLS</a>.
-
-<p>
- <b>qssl</b> is a SSL library for AS/400 for which we have not found any
- proper web site to link to.
+ href="http://axtls.sf.net/">axTLS</a>, <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms678421(v=vs.85).aspx">Secure Channel</a>, <a href="http://developer.apple.com/documentation/security/Reference/secureTransportRef/">Secure Transport</a>.
 
 <p> More comparisons in the extensive <a
 href="http://en.wikipedia.org/wiki/Comparison_of_TLS_Implementations">feature-by-feature
