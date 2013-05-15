@@ -46,15 +46,17 @@ SUBTITLE(Get a Fresh Check-out from git)
  subject of the mail, as mails to this receiver without that word in the
  subject will mercilessly get sent to /dev/null with no questions asked.
 
+#if 0
 <p>
  If mailing the info is not suitable for you, but you have a working curl
  version installed, you can upload the file with curl self:
 <pre>
- $ ./curl/tests/testcurl.pl | curl -s -F file=@- http://curl.haxx.se/auto/upload.cgi
+ $ ./curl/tests/testcurl.pl | curl -s -F file=@- http://curl.haxx.se/dev/upload.cgi
 </pre>
 <p>
  You can also use this
- <a href="http://curl.haxx.se/auto/upload.cgi">upload form</a> "manually".
+ <a href="http://curl.haxx.se/dev/upload.cgi">upload form</a> "manually".
+#endif
 
 SUBTITLE(Other platforms than Unix)
 
