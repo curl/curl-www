@@ -1,0 +1,82 @@
+                   libcurl URL decode buffer boundary flaw
+                   =======================================
+
+Project cURL Security Advisory, June 22nd 2013
+http://curl.haxx.se/docs/security.html
+
+1. VULNERABILITY
+
+  libcurl is vulnerable to a case of bad checking of the input data which may
+  lead to heap corruption.
+
+  The function curl_easy_unescape() decodes URL encoded strings to raw binary
+  data. URL encoded octets are represented with %HH combinations where HH is a
+  two-digit hexadecimal number. The decoded string is written to an allocated
+  memory area that the function returns to the caller.
+
+  The function takes a source string and a length parameter, and if the length
+  provided is 0 the function will instead use strlen() to figure out how much
+  data to parse.
+
+  The "%HH" parser wrongly only considered the case where a zero byte would
+  terminate the input. If a length-limited buffer was passed in which ended
+  with a '%' character which was followed by two hexadecimal digits outside of
+  the buffer libcurl was allowed to parse alas without a terminating zero,
+  libcurl would still parse that sequence as well. The counter for remaining
+  data to handle would then be decreased too much and wrap to become a very
+  large integer and the copying would go on too long and the destination
+  buffer that is allocated on the heap would get overwritten.
+
+  We consider it unlikely that programs allow user-provided strings unfiltered
+  into this function. Also, only the not zero-terminated input string use case
+  is affected by this flaw. Exploiting this flaw for gain is probably possible
+  for specific circumstances but we consider the general risk for this to be
+  low.
+
+  The curl command line tool is not affected by this problem as it doesn't use
+  this function.
+
+  There are no known exploits available at this time.
+
+  The Common Vulnerabilities and Exposures (CVE) project has assigned the name
+  CVE-2013-2174 to this issue.
+
+2. AFFECTED VERSIONS
+
+  Affected versions: from libcurl 7.7 to and including 7.30.0
+  Not affected versions: libcurl before 7.7 and >= 7.31.0
+
+  libcurl is used by many applications, but not always advertised as such!
+
+3. THE SOLUTION
+
+  libcurl 7.31.0 implements a proper check that the following hexdigits are
+  within the provided input length.
+
+4. RECOMMENDATIONS
+
+  We suggest you take one of the following actions immediately, in order of
+  preference:
+
+  A - Upgrade to curl and libcurl 7.31.0
+
+  B - Apply this patch and rebuild libcurl
+
+      http://curl.haxx.se/libcurl-unescape.patch
+
+  C - Double-check your curl_easy_unescape() usage (for example use it with
+      the 'length' argument set to 0), or avoid using that function
+
+5. TIME LINE
+
+  Vulnerability found by Timo Sirainen. Patched by Daniel Stenberg.
+
+  It was reported to the curl project on May 19th 2013. We contacted
+  linux-distros on June 12th. 
+
+  curl 7.31.0 was released on June 22nd 2013, coordinated with the
+  publication of this advisory.
+
+6. CREDITS
+
+  Reported by Timo Sirainen. Thanks a lot!
