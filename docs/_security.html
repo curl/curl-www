@@ -38,6 +38,29 @@ TITLE(curl Security)
  See also the <a href="vulnerabilities.html">Vulnerabilties Table</a> to see
  what versions that are vulnerable to what flaws.
 
+<a name="20130622"></a>
+SUBTITLE(libcurl URL decode buffer boundary flaw)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>June 22, 2013</td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2174">CVE-2013-2174</a> <small><a href="#20130622">(permalink)</a></small></td></tr>
+  <tr><td>Affected versions</td><td>from libcurl 7.7 to and including 7.30.0</td></tr>
+  <tr><td>Not affected versions</td><td>libcurl < 7.7 and >= 7.31.0<td></tr>
+  <tr><td>Patch</td><td><a href="http://curl.haxx.se/libcurl-unescale.patch">curl-unescale.patch</a></td></tr>
+  <tr><td>Advisories</td><td>
+<a href="adv_20130622.html">Project cURL Security Advisory</a></td></tr>
+
+</table>
+<p>
+  The function curl_easy_unescape() decodes URL encoded strings to raw binary
+  data. URL encoded octets are represented with %HH combinations where HH is a
+  two-digit hexadecimal number. The decoded string is written to an allocated
+  memory area that the function returns to the caller.
+<p>
+  When provided a buffer limited by a length, and said input buffer ends
+  within hex triplet, libcurl would still parse the rest of the hex number and
+  could then overwrite heap memory.
+
 <a name="20130412"></a>
 SUBTITLE(libcurl cookie domain tailmatch)
 <p>
