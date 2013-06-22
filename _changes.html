@@ -53,6 +53,63 @@ activity</a>
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_31_0"></a>
+SUBTITLE(Fixed in 7.31.0 - June 22 2013)
+<img src="/pix/alert.png"
+align="right" alt="Release contains security-related bug fix" border="0">
+<p> Changes:
+<ul class="changes">
+ CHG darwinssl: add TLS session resumption
+ CHG darwinssl: add TLS crypto authentication
+ CHG imap/pop3/smtp: Added support for ;auth=<mech> in the URL
+ CHG imap/pop3/smtp: Added support for ;auth=<mech> to CURLOPT_USERPWD
+ CHG usercertinmem.c: add example showing user cert in memory
+ CHG url: Added smtp and pop3 hostnames to the protocol detection list
+ CHG <a href="http://curl.haxx.se/mail/lib-2012-03/0114.html">imap/pop3/smtp: Added support for enabling the SASL initial response</a>
+ CHG <a href="http://curl.haxx.se/bug/view.cgi?id=1196">curl -E: allow to use ':' in certificate nicknames</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF SECURITY VULNERABILITY: curl_easy_unescape() may parse data beyond the end of the input buffer [26]
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-04/0142.html">FTP: access files in root dir correctly</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1216">configure: try pthread_create without -lpthread</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-02/0102.html">FTP: handle a 230 welcome response</a>
+ BGF curl-config: don't output static libs when they are disabled
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-04/0294.html">CURL_CHECK_CA_BUNDLE: don't check for paths when cross-compiling</a>
+ BGF Various documentation updates
+ BGF <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=705783">getinfo.c: reset timecond when clearing session-info variables</a>
+ BGF <a href="https://bugzilla.redhat.com/906031">FILE: prevent an artificial timeout event due to stale speed-check data</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1218">ftp_state_pasv_resp: connect through proxy also when set by env</a>
+ BGF sshserver: disable StrictHostKeyChecking
+ BGF ftpserver: Fixed imap logout confirmation data
+ BGF curl_easy_init: use less mallocs
+ BGF smtp: Fixed unknown percentage complete in progress bar
+ BGF smtp: Fixed sending of double CRLF caused by first in EOB
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-05/0000.html">bindlocal: move brace out of #ifdef</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1219">winssl: Fixed invalid memory access during SSL shutdown</a>
+ BGF OS X framework: fix invalid symbolic link
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1220">OpenSSL: allow empty server certificate subject</a>
+ BGF axtls: prevent memleaks on SSL handshake failures
+ BGF cookies: only consider full path matches
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-05/0070.html">Revert win32 MemoryTracking: wcsdup() _wcsdup() and _tcsdup()</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1221">Curl_cookie_add: handle IPv6 hosts</a>
+ BGF ossl_send: SSL_write() returning 0 is an error too
+ BGF ossl_recv: SSL_read() returning 0 is an error too
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1230">Digest auth: escape user names with backslash or &quot; in them</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1233">curl_formadd.3: fixed wrong "end-marker" syntax</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1234">libcurl-tutorial.3: fix incorrect backslash</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1224">curl_multi_wait: reduce timeout if the multi handle wants to</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1239">tests/Makefile: typo in the perlcheck target</a>
+ BGF axtls: honor disabled VERIFYHOST
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1236">OpenSSL: avoid double free in the PKCS12 certificate code</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1228">multi_socket: reduce timeout inaccuracy margin</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1235">digest: support auth-int for empty entity body</a>
+ BGF axtls: now done non-blocking
+ BGF lib1900: use tutil_tvnow instead of gettimeofday
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1238">curl_easy_perform: avoid busy-looping</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1215">CURLOPT_COOKIELIST: take cookie share lock</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1248">multi_socket: react on socket close immediately</a>
+</ul>
 
 <a name="7_30_0"></a>
 SUBTITLE(Fixed in 7.30.0 - April 12 2013)
