@@ -238,7 +238,7 @@ if(!$pick_type) {
 
         subtitle("Select Type of Package");
 
-        print "<p> We provide packages of different types. Select one (or select 'show all' to view all types)";
+        print "<p> We provide packages of different types. Select one (or select 'show all' to view all types)\n";
 
         for(sort keys %type) {
             print "<blockquote><a href=\"./?type=$_\">".$typelonger{$_}."</a> - ".$typedesc{$_}."</blockquote>\n";
@@ -778,6 +778,9 @@ MOO
     if($pack eq "zip") {
         print " Zip is a widely-used file archiving format. <a href=\"http://en.wikipedia.org/wiki/ZIP_file_format\">Wikipedia has more details on zip</a>.";
     }
+    elsif($pack eq "tar+xz") {
+        print " This file is tar'ed and then xzipped. <a href=\"http://en.wikipedia.org/wiki/Xz\">Wikipedia has more details on xz</a>.";
+    }
     elsif($pack eq "tar+gz") {
         print " This file is tar'ed and then gzipped. <a href=\"http://en.wikipedia.org/wiki/Gzip\">Wikipedia has more details on gzip</a>.";
     }
@@ -799,11 +802,14 @@ MOO
     elsif($pack eq "deb") {
         print " deb is a file format with accompanying tools collection made to handle software installation for Debian Linux (and derivatives). <a href=\"http://en.wikipedia.org/wiki/Deb_%28file_format%29\">Wikipedia has more details on deb</a>";
     }
-    if($pack eq "7zip") {
+    elsif($pack eq "7zip") {
         print " 7zip is a file archiving format. <a href=\"http://en.wikipedia.org/wiki/7-ZIP_file_format\">Wikipedia has more details on 7zip</a>.";
     }
+    elsif($pack eq "ipk") {
+        print " ipkg is a file format and tools collection made to handle software installation for embedded Linux systems. <a href=\"http://en.wikipedia.org/wiki/Ipkg\">Wikipedia has more details on Ipkg</a>.";
+    }
 
-    print "</div>";
+    print "</div>\n";
 
     return $t;
 }
