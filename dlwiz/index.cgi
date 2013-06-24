@@ -591,7 +591,8 @@ if($pick_os && $pick_flav && !$pick_ver) {
         "<input type=\"hidden\" name=\"os\" value=\"$pick_os\">",
         "<input type=\"hidden\" name=\"flav\" value=\"$pick_flav\">",
         "Show package for <b>$fl $pick_os</b> version: ",
-        "<select onChange=\"submit();\" name=\"ver\">\n";
+        "<select onChange=\"submit();\" name=\"ver\">\n",
+        "<option value="*">Any</option>\n";
         for(sort keys %ver) {
             my $s;
 
@@ -661,7 +662,7 @@ if($pick_os && $pick_flav && $pick_ver && !$pick_cpu) {
         }
 
         my $ver=$pick_ver;
-        if($ver eq "-") {
+        if($ver eq "-" || $ver eq "*") {
             $ver = "";
         }
         showsteps();
@@ -823,7 +824,7 @@ if($pick_os && $pick_flav && $pick_ver && $pick_cpu) {
     subtitle("The Wizard Recommends...");
 
     my $ver=$pick_ver;
-    if($ver eq "-") {
+    if($ver eq "-" || $ver eq "*") {
         $ver = "";
     }
     my $os=$pick_os;
