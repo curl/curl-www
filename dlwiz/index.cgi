@@ -592,7 +592,7 @@ if($pick_os && $pick_flav && !$pick_ver) {
         "<input type=\"hidden\" name=\"flav\" value=\"$pick_flav\">",
         "Show package for <b>$fl $pick_os</b> version: ",
         "<select onChange=\"submit();\" name=\"ver\">\n",
-        "<option value="*">Any</option>\n";
+        "<option value=\"*\">Any</option>\n";
         for(sort keys %ver) {
             my $s;
 
