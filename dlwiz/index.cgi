@@ -72,7 +72,7 @@ $database = "../dl/data/databas.db";
 my $db=new pbase;
 $db->open($database);
 
-my @all = $db->find_all("typ"=>"^entry\$");
+my @all = $db->find_all("typ"=>"^entry\$","-hide"=>"^Yes\$");
 
 printf("<div class=\"relatedbox\">Number of packages: %d", $#all+1);
 
@@ -528,8 +528,7 @@ if($pick_os && $pick_flav && !$pick_ver) {
     for $e (@all) {
         if(($$e{'os'} eq $pick_os) &&
            (($pick_type eq "*") || ($$e{'type'} eq $pick_type)) &&
-           ($$e{'flav'} eq $pick_flav) &&
-           ($$e{'hide'} ne "Yes")) {
+           ($$e{'flav'} eq $pick_flav)) {
             my $v = $$e{'osver'};
             $ver{"$v"}++;
         }
@@ -617,8 +616,7 @@ if($pick_os && $pick_flav && $pick_ver && !$pick_cpu) {
         if( ($$e{'os'} eq $pick_os) &&
             (($pick_type eq "*") || ($$e{'type'} eq $pick_type)) &&
             (($pick_flav eq "*") || ($$e{'flav'} eq $pick_flav)) &&
-            (($pick_ver eq "*") || ($$e{'osver'} eq $pick_ver)) &&
-            ($$e{'hide'} ne "Yes")) {
+            (($pick_ver eq "*") || ($$e{'osver'} eq $pick_ver))) {
             my $c = $$e{'cpu'};
             $cpu{$c}++;
         }
@@ -840,8 +838,7 @@ if($pick_os && $pick_flav && $pick_ver && $pick_cpu) {
             (($pick_type eq "*") || ($$e{'type'} eq $pick_type)) &&
             (($pick_flav eq "*") || ($$e{'flav'} eq $pick_flav)) &&
             (($pick_ver eq "*") || ($$e{'osver'} eq $pick_ver)) &&
-            ($$e{'cpu'} eq $pick_cpu) &&
-            ($$e{'hide'} ne "Yes")) {
+            ($$e{'cpu'} eq $pick_cpu)) {
 
             push @match, $e;
 
