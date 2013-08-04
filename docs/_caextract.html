@@ -35,14 +35,27 @@ TITLE(Automatically converted CA Certs from mozilla.org)
  The PEM file contains the datestamp of the conversion and we try to only
  convert if there's a change in either the script or the source file.
 
-<p>
- These ca cert bundles do not contain the <a
- href="http://en.wikipedia.org/wiki/DigiNotar#Issuance_of_fraudulent_certificates">DigiNotar
+SUBTITLE(Changelog)
+<p> August 4th, 2013 -
+<br>
+ The cacert.pem output now only contains certificates that are explicity
+ marked as trusted. The script was updated in
+ commit <a href="https://github.com/bagder/curl/commit/51f0b798fa">51f0b798fa</a>
+ as a response to the
+ <a href="http://bonsai.mozilla.org/cvslog.cgi?file=mozilla/security/nss/lib/ckfw/builtins/certdata.txt&rev=HEAD&mark=1.84">1.84
+ revision update of certdata.txt</a> from June
+ 2012. The <a href="http://p11-glue.freedesktop.org/doc/storing-trust-policy/storing-trust-existing
+ .html">certdata.txt format documentation</a>?
+
+<p> January 6th, 2013 -
+<br>
+ These ca cert bundles no longer contain
+ the <a href="http://en.wikipedia.org/wiki/DigiNotar#Issuance_of_fraudulent_certificates">DigiNotar
  certificates</a> as Mozilla marks them as untrusted and this script knows the
  markup for that, <b>but</b> it may contain related certificates that Mozilla
  (and others) would block using other means. (Like some certs that were
- cross-signed by Entrust etc). See details in <a
- href="https://sourceforge.net/p/curl/bugs/1178/">bug #1178</a>.
+ cross-signed by Entrust etc). See details
+ in <a href="https://sourceforge.net/p/curl/bugs/1178/">bug #1178</a>.
 
 SUBTITLE(The mk-ca-bundle.pl script)
 <p>
