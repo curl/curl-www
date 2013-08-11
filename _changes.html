@@ -53,6 +53,61 @@ activity</a>
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_32_0"></a>
+SUBTITLE(Fixed in 7.32.0 - August 12 2013)
+<p> Changes:
+<ul class="changes">
+ CHG curl: allow timeouts to accept decimal values
+ CHG OS400: add slist and certinfo EBCDIC support
+ CHG OS400: new SSL backend GSKit
+ CHG CURLOPT_XFERINFOFUNCTION: introducing a new progress callback
+ CHG LIBCURL-STRUCTS: new document
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ o <a href="http://curl.haxx.se/bug/view.cgi?id=1200">dotdot: introducing dot file path cleanup</a>
+ o docs: fix typo in curl_easy_getinfo manpage
+ o test1230: avoid using hard-wired port number
+ o test1396: invoke the correct test tool
+ o <a href="http://curl.haxx.se/bug/view.cgi?id=1180">SIGPIPE: ignored while inside the library</a>
+ o darwinssl: fix crash that started happening in Lion
+ o <a href="http://curl.haxx.se/bug/view.cgi?id=1249">OpenSSL: check for read errors, don't assume</a>
+ o <a href="http://curl.haxx.se/bug/view.cgi?id=1191">c-ares: improve error message on failed resolve</a>
+ o printf: make sure %x are treated unsigned
+ o <a href="http://curl.haxx.se/bug/view.cgi?id=1251">formpost: better random boundaries</a>
+ o <a href="http://curl.haxx.se/mail/archive-2013-06/0052.html">url: restore the functionality of 'curl -u :'</a>
+ o <a href="http://curl.haxx.se/bug/view.cgi?id=1252">curl.1: fix typo in --xattr description</a>
+ o digest: improve nonce generation
+ o configure: automake 1.14 compatibility tweak
+ o curl.1: document the --post303 option in the man page
+ o curl.1: document the --sasl-ir option in the man page
+ o setup-vms.h: sk_pop symbol tweak
+ o tool_paramhlp: try harder to catch negatives
+ o <a href="http://curl.haxx.se/mail/lib-2013-07/0046.html">cmake: Fix for MSVC2010 project generation</a>
+ o asyn-ares: Don't blank ares servers if none configured
+ o curl_multi_wait: set revents for extra fds
+ o Reinstate "WIN32 MemoryTracking: track wcsdup() _wcsdup() and _tcsdup()
+ o <a href="http://curl.haxx.se/mail/lib-2013-07/0115.html">ftp_do_more: consider DO_MORE complete when server connects back</a>
+ o <a href="http://curl.haxx.se/mail/lib-2013-07/0103.html">curl_easy_perform: gradually increase the delay time</a>
+ o curl: fix symbolic names for CURLUSESSL_* enum in --libcurl output
+ o <a href="http://curl.haxx.se/bug/view.cgi?id=496">curl: fix upload of a zip file in OpenVMS</a>
+ o <a href="http://curl.haxx.se/bug/view.cgi?id=1217">build: fix linking on Solaris 10</a>
+ o <a href="http://curl.haxx.se/mail/lib-2013-07/0258.html">curl_formadd: CURLFORM_FILECONTENT wrongly rejected some option combos</a>
+ o <a href="http://curl.haxx.se/bug/view.cgi?id=758">curl_formadd: fix file upload on VMS</a>
+ o <a href="http://curl.haxx.se/mail/lib-2013-07/0239.html">curl_easy_pause: on unpause, trigger mulit-socket handling</a>
+ o <a href="http://curl.haxx.se/bug/view.cgi?id=1255">md5 & metalink: use better build macros on Apple operating systems</a>
+ o <a href="http://curl.haxx.se/bug/view.cgi?id=1255">darwinssl: fix build error in crypto authentication under Snow Leopard</a>
+ o <a href="http://curl.haxx.se/mail/archive-2013-07/0031.html">curl: make --progress-bar update the line less frequently</a>
+ o configure: don't error out on variable confusions (CFLAGS, LDFLAGS etc)
+ o mk-ca-bundle: skip more untrusted certificates
+ o <a href="http://curl.haxx.se/bug/view.cgi?id=1262">formadd: wrong pointer for file name when CURLFORM_BUFFERPTR used</a>
+ o FTP: when EPSV gets a 229 but fails to connect, retry with PASV
+ o <a href="http://curl.haxx.se/mail/lib-2013-08/0057.html">mk-ca-bundle.1: don't install on make install</a>
+ o VMS: lots of updates and fixes of the build procedure
+ o global dns cache: didn't work (regression)
+ o global dns cache: fix memory leak
+</ul>
+
 <a name="7_31_0"></a>
 SUBTITLE(Fixed in 7.31.0 - June 22 2013)
 <img src="/pix/alert.png"
