@@ -166,6 +166,12 @@ HERE(x, httpauth)
 VLINK(/dev/readme-httpauth.html, httpauth, httpauth explained)
 #endif
 
+#ifdef DEVEL_README_http2
+HERE(x, http2)
+#else
+VLINK(/dev/readme-http2.html, http2, http2 explained)
+#endif
+
 #ifdef DEVEL_README_memoryleak
 HERE(x, memoryleak)
 #else
