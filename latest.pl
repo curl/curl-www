@@ -60,6 +60,7 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden (Uppsala)',
              'http://curl.sommerhusguide.dk/download/' => 'Denmark (Vildbjerg)',
              'http://mirror.adriaticus.org/pub/curl/' => 'Germany (Falkenstein)',
              'ftp://mirror.adriaticus.org/pub/curl/' => 'Germany (Falkenstein)',
+             'http://mirror.weathercity.com/curl/' => 'Canada (Vancouver)'
              );
 
 sub present {
