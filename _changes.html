@@ -53,6 +53,66 @@ activity</a>
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_33_0"></a>
+SUBTITLE(Fixed in 7.33.0 - October 14 2013)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="http://daniel.haxx.se/blog/2013/08/20/testing-curl_multi_socket_action/">test code for testing the event based API</a>
+ CHG CURLM_ADDED_ALREADY: new error code
+ CHG test TFTP server: support "writedelay" within <servercmd>
+ CHG krb4 support has been removed
+ CHG <a href="http://curl.haxx.se/mail/lib-2013-08/0234.html">imap/pop3/smtp: added basic SASL XOAUTH2 support</a>
+ CHG darwinssl: add support for PKCS#12 files for client authentication
+ CHG darwinssl: enable BEAST workaround on iOS 7 & later
+ CHG <a href="http://curl.haxx.se/mail/lib-2013-08/0265.html">Pass password to OpenSSL engine by user interface</a>
+ CHG c-ares: Add support for various DNS binding options
+ CHG cookies: add expiration
+ CHG curl: added --oauth2-bearer option
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF nss: make sure that NSS is initialized
+ BGF curl: make --no-[option] work properly for several options
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-08/0043.html">FTP: with socket_action send better socket updates in active mode</a>
+ BGF curl: fix the --sasl-ir in the --help output
+ BGF tests 2032, 2033: Don't hardcode port in expected output
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1264">urlglob: better detect unclosed braces, empty lists and overflows</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1267">urlglob: error out on range overflow</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-08/0136.html">imap: Fixed response check for SEARCH, EXPUNGE, LSUB, UID and NOOP commands</a>
+ BGF <a href="http://bugs.debian.org/719856">handle arbitrary-length username and password</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1269">TFTP: make the CURLOPT_LOW_SPEED* options work</a>
+ BGF <a href="https://github.com/bagder/curl/pull/76">curl.h: name space pollution by "enum type"</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-08/0211.html">multi: move on from STATE_DONE faster</a>
+ BGF <a href="https://bugzilla.redhat.com/1005686">FTP: 60 secs delay if aborted in the CURLOPT_HEADERFUNCTION callback</a>
+ BGF multi_socket: improved 100-continue timeout handling
+ BGF curl_multi_remove_handle: allow multiple removes
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-08/0109.html">FTP: fix getsock during DO_MORE state</a>
+ BGF -x: rephrased the --proxy section somewhat
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1273">acinclude: fix --without-ca-path when cross-compiling</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-08/0209.html">LDAP: fix bad free() when URL parsing failed</a>
+ BGF --data: mention CRLF treatment when reading from file
+ BGF curl_easy_pause: suggest one way to unpause
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-08/0170.html">imap: Fixed calculation of transfer when partial FETCH received</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-08/0170.html">pingpong: Check SSL library buffers for already read data</a>
+ BGF imap/pop3/smtp: Speed up SSL connection initialization
+ BGF libcurl.3: for multi interface connections are held in the multi handle
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1278">curl_easy_setopt.3: mention RTMP URL quirks</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1279">curl.1: detail how short/long options work</a>
+ BGF curl.1: Added information about optional login options to --user option
+ BGF curl: Added clarification to the --mail options in the --help output
+ BGF curl_easy_setopt.3: clarify that TIMEOUT and TIMEOUT_MS set the same value
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1281">openssl: use correct port number in error message</a>
+ BGF darwinssl: block TLS_RSA_WITH_NULL_SHA256 cipher
+ BGF OpenSSL: acknowledge CURLOPT_SSL_VERIFYHOST without VERIFYPEER
+ BGF xattr: add support for FreeBSD xattr API
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1282">win32: fix Visual Studio 2010 build with WINVER >= 0x600</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-09/0182.html">configure: use icc options without space</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2010-02/0200.html">test1112: Increase the timeout from 7s to 16s</a>
+ BGF SCP: upload speed on a fast connection limited to 16384 B/s
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-10/0048.html">curl_setup_once: fix errno access for lwip on Windows</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1288">HTTP: Output http response 304 when modified time is too old</a>
+</ul>
+
 <a name="7_32_0"></a>
 SUBTITLE(Fixed in 7.32.0 - August 12 2013)
 <p> Changes:
