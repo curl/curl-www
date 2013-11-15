@@ -38,6 +38,36 @@ TITLE(curl Security)
  See also the <a href="vulnerabilities.html">Vulnerabilties Table</a> to see
  what versions that are vulnerable to what flaws.
 
+<a name="20131115"></a>
+SUBTITLE(libcurl cert name check ignore)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>November 15, 2013</td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4545">CVE-2013-4545</a> <small><a href="#20131115">(permalink)</a></small></td></tr>
+  <tr><td>Affected versions</td><td>from libcurl 7.18.0 to and including 7.32.0</td></tr>
+  <tr><td>Not affected versions</td><td>libcurl < 7.18.0 and >= 7.33.0<td></tr>
+  <tr><td>Patch</td><td><a href="https://github.com/bagder/curl/commit/3c3622b6">commit 3c3622b6</a></td></tr>
+  <tr><td>Advisories</td><td>
+<a href="adv_20131115.html">Project cURL Security Advisory</a></td></tr>
+
+</table>
+<p>
+  libcurl is vulnerable to a case of missing out the checking of the
+  certificate CN or SAN name field when the digital signature verification is
+  turned off - when built to use OpenSSL.
+<p>
+  libcurl offers two separate and independent options for verifying a server's
+  TLS certificate. CURLOPT_SSL_VERIFYPEER and CURLOPT_SSL_VERIFYHOST. The
+  first one tells libcurl to verify the trust chain using a CA cert bundle,
+  while the second tells libcurl to make sure that the name fields in the
+  server certificate meets the criteria. Both options are enabled by default.
+<p>
+  This flaw had the effect that when an application disabled
+  CURLOPT_SSL_VERIFYPEER, libcurl mistakenly also disabled the
+  CURLOPT_SSL_VERIFYHOST check. Applications can disable
+  CURLOPT_SSL_VERIFYPEER and still achieve security by doing the check on its
+  own using other means.
+
 <a name="20130622"></a>
 SUBTITLE(libcurl URL decode buffer boundary flaw)
 <p>
