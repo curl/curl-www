@@ -1,5 +1,6 @@
 # datestamp, first vulnerable version, last vulnerable version
 @vuln = (
+    "20131115|7.18.0|7.32.0|libcurl cert name check ignore",
     "20130622|7.7|7.30.0|libcurl URL decode buffer boundary flaw",
     "20130412|6.0|7.29.0|libcurl cookie domain tailmatch",
     "20130206|7.26.0|7.28.1|libcurl SASL buffer overflow vulnerability",
