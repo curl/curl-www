@@ -64,8 +64,8 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden (Uppsala)',
 
 sub present {
     my ($site, $file)=@_;
-    my $res;
-    my $code;
+    my $res=0;
+    my $code=200;
 
     if($site =~ /^ftp:/i) {
         # FTP check
