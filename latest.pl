@@ -40,7 +40,6 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden (Uppsala)',
              'http://curl.oslevel.de/download/' => 'Germany (Karlsruhe)',
              'http://curl.online-mirror.de/download/' => 'Germany (Cologne)',
              'http://curl.internet.bs/download/' => 'United Kingdom (London)',
-             'http://curl2.haxx.se/download/' => 'Sweden (Stockholm)',
              #'http://curl.miroir-francais.fr/download/' => 'France (Paris)',
              'ftp://miroir-francais.fr/pub/curl/download/' => 'France (Paris)',
              'http://curl.dsmirror.nl/download/' => 'Netherlands (Amsterdam)',
@@ -65,9 +64,20 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden (Uppsala)',
 
 sub present {
     my ($site, $file)=@_;
+    my $res;
+    my $code;
 
-    my $res = system("$latest::curl -f -m 60 -L -I ${site}${file} -o /dev/null -s");
-    if($res >> 8) {
+    if($site =~ /^ftp:/i) {
+        # FTP check
+        $res =
+            system("$latest::curl -f -m 30 -I ${site}${file} -o /dev/null -s");
+        $res >>= 8;
+    }
+    else {
+        $code = `$latest::curl -f -m 30 -I ${site}${file} -o /dev/null -s -w '%{http_code}\n'`;
+    }
+    if($res || ($code != 200)) {
+        # FTP or HTTP error condition
         return 0; # not present
     }
     else {
@@ -93,6 +103,10 @@ for(keys %latest::file) {
                    $archive,
                    "${site}${archive}",
                    $mirrors{$site});
+        }
+        else {
+            printf("FAILED: %s\n",
+                   "${site}${archive}");
         }
     }
 }
