@@ -24,7 +24,7 @@ PAGES = foot.html head.html loghead.html howto.html summary.html	     \
 	readme-curl_off_t.html readme-curlx.html readme-encoding.html	     \
 	readme-hostip.html readme-httpauth.html readme-memoryleak.html	     \
 	readme-multi_socket.html readme-pingpong.html readme-pipelining.html \
-	readme-http2.html
+	readme-http2.html security.html
 
 all: $(PAGES)
 
