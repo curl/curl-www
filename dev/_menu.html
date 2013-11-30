@@ -115,16 +115,22 @@ HERE(x, Run Tests)
 VLINK(/dev/runtests.html, Run Tests, How to run the test suite)
 #endif
 
-#ifdef DEVEL_TESTCURL
-HERE(x, Test curl)
+#ifdef DEVEL_SECURITY
+HERE(x, Security)
 #else
-VLINK(/dev/testcurl.html, Test curl, The automatic curl testing tool)
+VLINK(/dev/security.html, Security for curl developers)
 #endif
 
 #ifdef DEVEL_SPECS
 HERE(x, Specifications)
 #else
 VLINK(/rfc/, Specifications, Specs and RFSs that concern us)
+#endif
+
+#ifdef DEVEL_TESTCURL
+HERE(x, Test curl)
+#else
+VLINK(/dev/testcurl.html, Test curl, The automatic curl testing tool)
 #endif
 
 <hr>
