@@ -1,0 +1,25 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Security process for developers</TITLE>
+#include "css.t"
+</HEAD>
+
+#define DEVEL_SECURITY
+#define CURL_URL dev/security.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Development, "/dev/", Security)
+
+TITLE(SECURITY -- how security vulnerabilities should be handled)
+
+<pre>
+#include "security.t"
+</pre>
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
+
