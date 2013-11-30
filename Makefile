@@ -2,7 +2,7 @@ MAINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t	\
 libcurl/_links.html ad.t mirrorlinks.t css.t sflogo.html textlinks.t
 
 # today's date
-NOW=$(shell gnudate +'-D__TODAY__=%B %e, %Y')
+NOW=$(shell date +'-D__TODAY__=%B %e, %Y')
 
 # the latest stable version is:
 STABLE= 7.33.0

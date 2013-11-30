@@ -11,6 +11,7 @@ ACTION=fcpp $(FCPPOPTS) $< $@;
 TXT2HTML= txt2html --extract --hrule 10
 TXT2PLAIN = txt2plain.pl
 MAN2HTML = roffit --bare
+ADVBOX = adv-related-box.inc
 
 PAGES = index.html manpage.html faq.html changes.html \
  sslcerts.html companies.html press.html features.html	 \
@@ -197,91 +198,91 @@ programs.html: _programs.html $(MAINPARTS)
 security.html: _security.html $(MAINPARTS)
 	$(ACTION)
 
-adv_20051013.html: _adv_20051013.html adv_20051013.t $(MAINPARTS)
+adv_20051013.html: _adv_20051013.html adv_20051013.t $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 
 adv_20051013.t: adv_20051013.txt
 	$(TXT2PLAIN) < $< > $@
 
-adv_20051207.html: _adv_20051207.html adv_20051207.t $(MAINPARTS)
+adv_20051207.html: _adv_20051207.html adv_20051207.t $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 
 adv_20051207.t: adv_20051207.txt
 	$(TXT2PLAIN) < $< > $@
 
-adv_20060320.html: _adv_20060320.html adv_20060320.t $(MAINPARTS)
+adv_20060320.html: _adv_20060320.html adv_20060320.t $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 
 adv_20060320.t: adv_20060320.txt
 	$(TXT2PLAIN) < $< > $@
 
-adv_20070710.html: _adv_20070710.html adv_20070710.t $(MAINPARTS)
+adv_20070710.html: _adv_20070710.html adv_20070710.t $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 
 adv_20070710.t: adv_20070710.txt
 	$(TXT2PLAIN) < $< > $@
 
-adv_20090303.html: _adv_20090303.html adv_20090303.t $(MAINPARTS)
+adv_20090303.html: _adv_20090303.html adv_20090303.t $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 
 adv_20090303.t: adv_20090303.txt
 	$(TXT2PLAIN) < $< > $@
 
-adv_20090812.html: _adv_20090812.html adv_20090812.t $(MAINPARTS)
+adv_20090812.html: _adv_20090812.html adv_20090812.t $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 
 adv_20090812.t: adv_20090812.txt
 	$(TXT2PLAIN) < $< > $@
 
-adv_20100209.html: _adv_20100209.html adv_20100209.t $(MAINPARTS)
+adv_20100209.html: _adv_20100209.html adv_20100209.t $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 
 adv_20100209.t: adv_20100209.txt
 	$(TXT2PLAIN) < $< > $@
 
-adv_20101013.html: _adv_20101013.html adv_20101013.t $(MAINPARTS)
+adv_20101013.html: _adv_20101013.html adv_20101013.t $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 
 adv_20101013.t: adv_20101013.txt
 	$(TXT2PLAIN) < $< > $@
 
-adv_20110623.html: _adv_20110623.html adv_20110623.t $(MAINPARTS)
+adv_20110623.html: _adv_20110623.html adv_20110623.t $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 
 adv_20110623.t: adv_20110623.txt
 	$(TXT2PLAIN) < $< > $@
 
-adv_20120124.html: _adv_20120124.html adv_20120124.t $(MAINPARTS)
+adv_20120124.html: _adv_20120124.html adv_20120124.t $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 
 adv_20120124.t: adv_20120124.txt
 	$(TXT2PLAIN) < $< > $@
 
-adv_20120124B.html: _adv_20120124B.html adv_20120124B.t $(MAINPARTS)
+adv_20120124B.html: _adv_20120124B.html adv_20120124B.t $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 
 adv_20120124B.t: adv_20120124B.txt
 	$(TXT2PLAIN) < $< > $@
 
-adv_20130206.html: _adv_20130206.html adv_20130206.t $(MAINPARTS)
+adv_20130206.html: _adv_20130206.html adv_20130206.t $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 
 adv_20130206.t: adv_20130206.txt
 	$(TXT2PLAIN) < $< > $@
 
-adv_20130412.html: _adv_20130412.html adv_20130412.t $(MAINPARTS)
+adv_20130412.html: _adv_20130412.html adv_20130412.t $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 
 adv_20130412.t: adv_20130412.txt
 	$(TXT2PLAIN) < $< > $@
 
-adv_20130622.html: _adv_20130622.html adv_20130622.t $(MAINPARTS)
+adv_20130622.html: _adv_20130622.html adv_20130622.t $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 
 adv_20130622.t: adv_20130622.txt
 	$(TXT2PLAIN) < $< > $@
 
-adv_20131115.html: _adv_20131115.html adv_20131115.t $(MAINPARTS)
+adv_20131115.html: _adv_20131115.html adv_20131115.t $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 
 adv_20131115.t: adv_20131115.txt
