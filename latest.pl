@@ -14,8 +14,7 @@ my %mirrors=('ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden (Uppsala)',
              'http://dl.ambiweb.de/mirrors/curl.haxx.se/' => 'Germany (Erfurt)',
              'http://mirror.weathercity.com/curl/' => 'Canada (Vancouver)',
              'http://www.execve.net/curl/' => 'Singapore',
-
-
+             'http://dl.uxnr.de/os/curl/download/' => 'Germany (St. Wendel, Saarland)',
 
 #             'http://gd.tuwien.ac.at/utils/archivers/curl/' => 'Austria (Vienna)',
 #             'http://www.mirrorspace.org/curl/' => 'Germany (Bonn)',
