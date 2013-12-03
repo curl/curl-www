@@ -188,6 +188,12 @@ HERE(x, Version Nums)
 DOCREF(/docs/versions.html, Version Nums)
 #endif
 
+#ifdef DOCS_VULNTABLE
+HERE(x, Vulnerabilities Table)
+#else
+DOCREF(/docs/vulnerabilities.html, Vulnerabilities Table)
+#endif
+
 #ifdef CURL_SEARCH
 LINK("/search.html", Search)
 #else
