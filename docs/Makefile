@@ -195,7 +195,7 @@ caextract.html: _caextract.html $(MAINPARTS)
 programs.html: _programs.html $(MAINPARTS)
 	$(ACTION)
 
-security.html: _security.html $(MAINPARTS)
+security.html: _security.html $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 
 adv_20051013.html: _adv_20051013.html adv_20051013.t $(MAINPARTS) $(ADVBOX)
