@@ -31,8 +31,38 @@ TITLE(curl Security)
  See also the <a href="vulnerabilities.html">Vulnerabilities Table</a> to see
  what versions that are vulnerable to what flaws.
 
+<a name="20131217"></a>
+SUBTITLE(libcurl cert name check ignore GnuTLS)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>December 17, 2013</td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6422">CVE-2013-6422</a> <small><a href="#20131217">(permalink)</a></small></td></tr>
+  <tr><td>Affected versions</td><td>from libcurl 7.21.4 to and including 7.33.0</td></tr>
+  <tr><td>Not affected versions</td><td>libcurl < 7.21.4 and >= 7.34.0<td></tr>
+  <tr><td>Patch</td><td><a href="/cve-2013-6422.patch">cve-2013-6422.patch</a></td></tr>
+  <tr><td>Advisories</td><td>
+<a href="adv_20131217.html">Project cURL Security Advisory</a></td></tr>
+
+</table>
+<p>
+  libcurl is vulnerable to a case of missing out the checking of the
+  certificate CN or SAN name field when the digital signature verification is
+  turned off - when built to use GnuTLS.
+<p>
+  libcurl offers two separate and independent options for verifying a server's
+  TLS certificate. CURLOPT_SSL_VERIFYPEER and CURLOPT_SSL_VERIFYHOST. The
+  first one tells libcurl to verify the trust chain using a CA cert bundle,
+  while the second tells libcurl to make sure that the name fields in the
+  server certificate meets the criteria. Both options are enabled by default.
+<p>
+  This flaw had the effect that when an application disabled
+  CURLOPT_SSL_VERIFYPEER, libcurl mistakenly also disabled the
+  CURLOPT_SSL_VERIFYHOST check. Applications can disable
+  CURLOPT_SSL_VERIFYPEER and still achieve security by doing the check on its
+  own using other means.
+
 <a name="20131115"></a>
-SUBTITLE(libcurl cert name check ignore)
+SUBTITLE(libcurl cert name check ignore OpenSSL)
 <p>
 <table class="secbox">
   <tr><td>Date:</td><td>November 15, 2013</td></tr>
