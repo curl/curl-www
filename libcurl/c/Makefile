@@ -9,7 +9,7 @@ MAINPARTS= $(CURL)/_doctype.html _menu.html $(CURL)/_footer.html	    \
  $(CURL)/setup.t ../pic.t doclinks.t $(CURL)/where.t ../download.t	    \
  $(CURL)/ad.t Makefile $(CURL)/mirrorlinks.t $(CURL)/css.t $(CURL)/sflogo.html
 
-NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
+NOW=$(shell date +'-D__TODAY__=%B %d, %Y')
 ACTION=@echo preprocessing $@; \
        cpp -I.. -I. -I$(CURL) -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
 
