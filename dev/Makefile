@@ -13,7 +13,7 @@ NOW=$(shell gnudate +'-D__TODAY__=%B %d, %Y')
 ACTION=echo preprocessing $@; \
  rm -f $@; \
  fcpp -I.. -I. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@;
-TXT2PLAIN = txt2plain.pl
+TXT2PLAIN = $(ROOT)/docs/txt2plain.pl
 MAN2HTML = roffit --bare
 
 PAGES = foot.html head.html loghead.html howto.html summary.html	     \

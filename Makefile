@@ -11,9 +11,6 @@ RELDATE = "14th of October 2013"
 # name of the dir to tempoary unpack and build zip files in:
 TEMPDIR=tempzip
 
-# how to convert txt to "plain" html
-TXT2PLAIN = txt2plain.pl
-
 # generated file with binary package stats
 STAT = packstat.t
 
@@ -24,11 +21,10 @@ ACTION=@echo preprocessing $@; \
        rm -f $@; \
        cpp -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
 
-all: index.html feedback.html mirrors.html cvs.html libs.html help.html	\
- download.html changes.html about.html support.html newslog.html	\
- news.html head.html foot.html oldnews.html info web-editing.html	\
- ad.html donation.html devel.html competition.html search.html		\
- sflogo.html sponsors.html source.html
+all: index.html feedback.html mirrors.html cvs.html libs.html help.html	      \
+ download.html changes.html about.html support.html newslog.html news.html    \
+ head.html foot.html oldnews.html info web-editing.html ad.html donation.html \
+ devel.html search.html sflogo.html sponsors.html source.html
 	cd docs && make
 	cd libcurl && make
 	cd mail && make
@@ -118,12 +114,6 @@ changes.html: _changes.html $(MAINPARTS)
 
 devel.html: _devel.html $(MAINPARTS)
 	$(ACTION)
-
-competition.html: _competition.html $(MAINPARTS) competition.raw
-	$(ACTION)
-
-competition.raw: competition.t
-	$(TXT2PLAIN) < $< > $@
 
 cvs.html: _cvs.html $(MAINPARTS)
 	$(ACTION)
