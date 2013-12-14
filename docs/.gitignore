@@ -1,2 +1,5 @@
 *.t
 [^_]*.html
+rel.txt
+releases.csv
+vuln.txt
