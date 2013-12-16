@@ -53,6 +53,66 @@ activity</a>
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_34_0"></a>
+SUBTITLE(Fixed in 7.34.0 - December 17 2013)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="https://github.com/bagder/curl/pull/79">SSL: protocol version can be specified more precisely</a>
+ CHG imap/pop3/smtp: Added graceful cancellation of SASL authentication
+ CHG Add "Happy Eyeballs" for IPv4/IPv6 dual connect attempts
+ CHG <a href="http://curl.haxx.se/mail/lib-2013-10/0242.html">base64: Added validation of base64 input strings when decoding</a>
+ CHG curl_easy_setopt: Added the ability to set the login options separately
+ CHG smtp: Added support for additional SMTP commands
+ CHG curl_easy_getinfo: Added CURLINFO_TLS_SESSION for accessing TLS internals
+ CHG <a href="http://curl.haxx.se/mail/lib-2013-11/0162.html">nss: allow to use TLS > 1.0 if built against recent NSS</a>
+ CHG <a href="http://curl.haxx.se/dev/security.html">SECURITY: added this document to describe our security processes</a>
+ CHG parseconfig: warn if unquoted white spaces are detected
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF darwinssl: un-break iOS build after PKCS#12 feature added
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-10/0089.html">tool: use XFERFUNCTION to save some casts</a>
+ BGF usercertinmem: fix memory leaks
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-10/0096.html">ssh: Handle successful SSH_USERAUTH_NONE</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-10/0113.html">NSS: acknowledge the --no-sessionid/CURLOPT_SSL_SESSIONID_CACHE option</a>
+ BGF <a href="http://sourceforge.net/p/curl/bugs/1291">test906: Fixed failing test on some platforms</a>
+ BGF sasl: initialize NSS before using NTLM crypto
+ BGF sasl: Fixed memory leak in OAUTH2 message creation
+ BGF imap/pop3/smtp: Fixed QUIT / LOGOUT being sent when SSL connect fails
+ BGF <a href="http://sourceforge.net/p/curl/bugs/1292">cmake: unbreak for non-Windows platforms</a>
+ BGF ssh: initialize per-handle data in ssh_connect()
+ BGF glob: fix broken URLs
+ BGF configure: check for long long when building with cyassl
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-10/0062.html">CURLOPT_RESOLVE: mention they don't time-out</a>
+ BGF docs/examples/httpput.c: fix build for MSVC
+ BGF FTP: make the data connection work when going through proxy
+ BGF NSS: support for CERTINFO feature
+ BGF curl_multi_wait: accept 0 from multi_timeout() as valid timeout
+ BGF glob_range: pass the closing bracket for a-z ranges
+ BGF tool_help: Updated --list-only description to include POP3
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1295">Curl_ssl_push_certinfo_len: don't %.*s non-zero-terminated string</a>
+ BGF <a href="http://sourceforge.net/p/curl/bugs/1064">cmake: fix Windows build with IPv6 support</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-11/0057.html">ares: Fixed compilation under Visual Studio 2012</a>
+ BGF <a href="https://github.com/bagder/curl/pull/83">curl_easy_setopt.3: clarify CURLOPT_SSL_VERIFYHOST documentation</a>
+ BGF <a href="http://sourceforge.net/p/curl/bugs/1299">curl.1: mention that -O does no URL decoding</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-11/0076.html">darwinssl: PKCS#12 import feature now requires Lion or later</a>
+ BGF darwinssl: check for SSLSetSessionOption() presence when toggling BEAST
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1304">configure: Fix test with -Werror=implicit-function-declaration</a>
+ BGF sigpipe: factor out sigpipe_reset from easy.c
+ BGF curl_multi_cleanup: ignore SIGPIPE
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1305">globbing: curl glob counter mismatch with {} list use</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1297">parseconfig: dash options can't specified with colon or equals</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1308">digest: fix CURLAUTH_DIGEST_IE</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-12/0017.html">curl.h: <sys/select.h> for OpenBSD</a>
+ BGF darwinssl: Fix #if 10.6.0 for SecKeychainSearch
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1310">TFTP: fix return codes for connect timeout</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1311">login options: remove the ;[options] support from CURLOPT_USERPWD</a>
+ BGF imap: Fixed incorrect fallback to clear text authentication
+ BGF parsedate: avoid integer overflow
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1294">curl.1: document -J doesn't %-decode</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1298">multi: add timer inaccuracy margin to timeout/connecttimeout</a>
+</ul>
+
 <a name="7_33_0"></a>
 SUBTITLE(Fixed in 7.33.0 - October 14 2013)
 <p> Changes:
