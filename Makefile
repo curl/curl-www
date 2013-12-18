@@ -1,5 +1,5 @@
 MAINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t	\
-libcurl/_links.html ad.t mirrorlinks.t css.t sflogo.html textlinks.t
+libcurl/_links.html ad.t css.t
 
 # today's date
 NOW=$(shell date +'-D__TODAY__=%B %e, %Y')
@@ -147,13 +147,6 @@ ad.html: _ad.html ad.t
 
 sflogo.html : sflogo.t
 	$(ACTION)
-
-sflogo-main.html : sflogo.t textlinks.t
-	@echo preprocessing $@; \
-	cpp -WWW -Uunix -DINDEX_HTML -P -H -C -V -LL "$(NOW)" $< $@;
-
-#archive/index.html: mail
-#	./fixit
 
 full: all
 	@cd libcurl; make
