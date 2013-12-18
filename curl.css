@@ -263,6 +263,7 @@ span.metalink {
   color: #ffffff;
   background-color: #4040ff;
   padding: 8px 4px 8px 2px;
+  line-height: 140%;
 }
 
 /* the about infobox in the right-bottom */
