@@ -1,6 +1,6 @@
 ROOT = ..
 CVSROOT= ../cvssource
-TXT2PLAIN= txt2plain.pl
+TXT2PLAIN= $(ROOT/docs/txt2plain.pl
 
 MAINPARTS= $(ROOT)/_doctype.html _menu.html _links.html $(ROOT)/setup.t pic.t \
  $(ROOT)/where.t download.t $(ROOT)/mirrorlinks.t $(ROOT)/ad.t $(ROOT)/css.t  \
@@ -9,7 +9,7 @@ NOW=$(shell date +'-D__TODAY__=%B %d, %Y')
 TXT2HTML= txt2html --extract --hrule 10
 ACTION=@echo preprocessing $@; \
 	rm -f $@; \
-	cpp -I.. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
+	fcpp -I.. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
 	chmod a-w+r $@
 
 all: index.html mail.html competitors.html comparison-table.html	  \

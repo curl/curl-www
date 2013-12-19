@@ -10,7 +10,7 @@ MAINPARTS= $(ROOT)/_doctype.html _menu.html ../_links.html $(ROOT)/setup.t \
   $(ROOT)/mirrorlinks.t $(ROOT)/sflogo.html
 
 NOW=$(shell date +'-D__TODAY__=%B %d, %Y')
-ACTION=@echo preprocessing $@; rm -f $@; cpp -I.. -I$(ROOT) -I../c -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; chmod a-w+r $@
+ACTION=@echo preprocessing $@; rm -f $@; fcpp -I.. -I$(ROOT) -I../c -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; chmod a-w+r $@
 
 all: index.html apps.html curl-config.html autoconf.html icons.html
 

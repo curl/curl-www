@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 require "../curl.pm";
-require "/home/dast/perl/date.pm";
+require "../date.pm";
 
 my %desc;
 open(DESC, "<filedesc");

@@ -19,7 +19,7 @@ RELEASE = release.t
 
 ACTION=@echo preprocessing $@; \
        rm -f $@; \
-       cpp -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
+       fcpp -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
 
 all: index.html feedback.html mirrors.html cvs.html libs.html help.html	      \
  download.html changes.html about.html support.html newslog.html news.html    \
@@ -51,10 +51,9 @@ web-editing.html: _web-editing.html $(MAINPARTS)
 foot.html: _foot.html $(MAINPARTS)
 	$(ACTION)
 
-main.html: _main.html $(MAINPARTS) $(STAT) $(RELEASE) poll.t recentmail.t \
-	sflogo-main.html
+main.html: _main.html $(MAINPARTS) $(STAT) $(RELEASE) poll.t recentmail.t
 	@echo preprocessing $@; \
-	cpp -WWW -Uunix -DINDEX_HTML -P -H -C -V -LL "$(NOW)" $< $@;
+	fcpp -WWW -Uunix -DINDEX_HTML -P -H -C -V -LL "$(NOW)" $< $@;
 
 index.html: main.html newslog.html
 	rm -f $@
