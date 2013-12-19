@@ -12,9 +12,9 @@
 <BODY bgcolor=BACKGROUND text=TEXTCOLOR LINK="#0000ff" VLINK="#808080" ALINK="red">
 #endif
 
+<table cellspacing="0" cellpadding="5"><tr><td valign="top" align="left">
 #include "ad.t"
 
-<table cellspacing="0" cellpadding="5"><tr><td valign="top" align="left">
 #define LINK(l,t) <div class="itemselect">t</div>
 #define VLINK(l,t,itle) <div><a href="l" class="menuitem" title="itle">t</a></div>
 
@@ -88,11 +88,7 @@ VLINK("http://curl.haxx.se/search.html", Search, Search the curl web site)
 </div>
 
 <p>
-#ifdef INDEX_HTML
-#include "sflogo-main.html"
-#else
 #include "sflogo.html"
-#endif
 
 </td><td valign="top" align="left" width="100%">
 
