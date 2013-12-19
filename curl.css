@@ -350,29 +350,16 @@ div.quote {
   margin-right: 5%;
 }
 
-/* yellow box */
 div.yellowbox {
   border-style: outset;
   border-width: 3px;
   border-color: black;
   padding: 2px 2px 2px 2px;
-
   background-color: #fffff0; 
-/*
-  width: 90%;
-  margin-left: 5%; */
 }
 
 .mirrorlinks {
   font-size: 8pt;
-}
-
-.phpbox {
-  background-color: #ffe0e0; 
-  color: #0000ff;
-  border: solid 1px #000000;
-  padding: 4px 4px 4px 4px;
-  font-size: 120%;
 }
 
 .bindingbox {
