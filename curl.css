@@ -65,7 +65,7 @@ tr.tabletop {
   border: outset 2px #ffffff;
 }
 
-table.news {
+.news {
   border: outset 2px #8080ff;
 }
 
@@ -79,15 +79,6 @@ table.latestmail {
   font-size: 100%;
 }
 
-/*
-.newstitle {
-  font-size: 120%;
-  white-space: nowrap;
-  background-color: #0000ff;
-  color: #ffffff;
-}
-
-*/
 td.newsdate {
   text-align: right;
 }

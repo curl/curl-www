@@ -56,49 +56,10 @@ TITLE(curl groks URLs)
  Found a bug or a flaw? <a href="/docs/bugs.html">Report a bug!</a>
 
 </td></tr></table>
-<p>
 
-<div style="float: right; margin-left: 8px;">
-<script src="http://widgets.twimg.com/j/2/widget.js"></script>
-<script>
-new TWTR.Widget({
-  version: 2,
-  type: 'search',
-  search: 'pycurl OR libcurl OR curl.haxx.se',
-  interval: 6000,
-  title: 'curl stuff',
-  subject: '',
-  width: 250,
-  height: 300,
-  theme: {
-    shell: {
-      background: '#0000ff',
-      color: '#ffffff'
-    },
-    tweets: {
-      background: '#ffffff',
-      color: '#444444',
-      links: '#1985b5'
-    }
-  },
-  features: {
-    scrollbar: false,
-    loop: true,
-    live: true,
-    hashtags: true,
-    timestamp: true,
-    avatars: true,
-    toptweets: true,
-    behavior: 'default'
-  }
-}).render().start();
-</script>
+<div class="news">
+  <!--#exec cmd="./shownews.cgi 2" -->
 </div>
-
-<table align="center" class="news">
-<caption>Latest News</caption>
-<!--#exec cmd="./shownews.cgi 2" -->
-</table>
 <p align="right">
  <small><a href="news.html">more news</a></small>
 <p>

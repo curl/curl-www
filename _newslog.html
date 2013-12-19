@@ -10,14 +10,15 @@
 #include "setup.t"
 
 #undef DATE
-#define NSUBJ(x) <!-- start !--><tr class="newstitle"><td>x</td>
-#define NDATE(x) <td class="newsdate">x</td></tr>
 
-#define NCOLS <tr><td colspan="2">
-#define NCOLE </td></tr><!-- stop !-->
+#define NSUBJ(x) <!-- start !--><div class="newstitle">x
+#define NDATE(x) <span style="float: right">x</span></div>
 
-#define COLRED  <tr><td colspan="2" class="alert">
-#define COLREDE </td></tr><!-- stop !-->
+#define NCOLS <p>
+#define NCOLE </p><!-- stop !-->
+
+#define COLRED  <div class="alert">
+#define COLREDE </div><!-- stop !-->
 
 TITLE(News in curl and libcurl land)
 <table class="news">
