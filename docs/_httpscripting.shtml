@@ -21,13 +21,7 @@ TITLE(Using cURL to automate HTTP jobs)
 <br><a href="faq.html">FAQ</a>
 </div>
 
-<p> This document is also available <a
-href="http://asciiwhiteplayground.site88.net/curl.html">translated to
-Polish</a>.
-
-<pre>
 #include "httpscript.t"
-</pre>
 
 #include "_footer.html"
 

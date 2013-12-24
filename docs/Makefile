@@ -110,7 +110,7 @@ knownbugs.t: $(DOCROOT)/KNOWN_BUGS
 	$(TXT2PLAIN) < $< > $@
 
 httpscript.t: $(DOCROOT)/TheArtOfHttpScripting
-	$(TXT2PLAIN) < $< > $@
+	./faqparse.pl < $< > $@
 
 httpscripting.html: _httpscripting.shtml $(MAINPARTS) httpscript.t
 	$(ACTION)
