@@ -107,6 +107,9 @@ while(<STDIN>) {
             s/((http|https|ftp):\/\/([\w.\/%-?]*[a-z0-9\/]))/<a href=\"$2:\/\/$3\">$1<\/a>/g;
             if($_ =~ /^     /) {
                 # five or more initial spaces, use <pre>
+
+                # remove multiple whitespaces
+                $_ =~ s/[ \t]+/ /g;
                 push @pre, $_;
             }
             else {
@@ -122,6 +125,7 @@ while(<STDIN>) {
                 my $pref=0;
                 if($show =~ /^ *$/) {
                     $blank++;
+                    $line=0;
                 }
                 else {
                     $blank=0;
@@ -133,8 +137,8 @@ while(<STDIN>) {
                 if($oldpref == $pref) {
                     print " $show " if($blank < 2);                    
                 }
-                else {
-                    printf("%s$show", ($line>1)?"<br>":"") if($blank < 2);
+                elsif($line) {
+                    print "<p>$show";
                 }
                 $oldpref = $pref;
             }
