@@ -2,6 +2,8 @@ BODY {
   background-color: white; 
   font-family: arial, helvetica, ariel, sans-serif;
   color: black;
+  margin: 0;
+  padding: 0;
 }
 
 /* the curl-style blue main page titles */
