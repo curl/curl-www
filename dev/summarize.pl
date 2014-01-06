@@ -559,6 +559,24 @@ sub singlefile {
             elsif($line =~ /^\#define OS \"([^\"]*)\"/) {
                 $os=$1;
             }
+            elsif($line =~ /^Features: (.*)/) {
+                my $feat = $1;
+                if($feat =~ /Debug/i) {
+                    $debug = 1;
+                }
+                if($feat =~ /IDN/i) {
+                    $libidn = $1;
+                }
+                if($feat =~ /IPv6/i) {
+                    $ipv6enabled = 1;
+                }
+                if($feat =~ /SSPI/i) {
+                    $sspi = 1;
+                }
+                if($feat =~ /Metalink/i) {
+                    $libmetalink = 1;
+                }
+            }
             if($line =~ / -DDEBUGBUILD /) {
                 $debug=1;
             }
