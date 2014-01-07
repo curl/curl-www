@@ -203,11 +203,18 @@ sub endofsingle {
         $sslver = $1;
         $ssl = 1;
     }
+    if($libcurl =~ /WinSSL/i) {
+        $schannel = 1;
+        $ssl = 1;
+    }
     if($libcurl =~ /zlib\/([^ ]*)/i) {
         $zlibver = $1;
     }
     if($libcurl =~ /libidn\/([^ ]*)/i) {
         $libidn = $1;
+    }
+    if($libcurl =~ /libssh2\/([^ ]*)/i) {
+        $libssh2 = $1;
     }
     if($krb4enabled) {
         $krb4 = "K";
@@ -564,6 +571,12 @@ sub singlefile {
                 if($feat =~ /Debug/i) {
                     $debug = 1;
                 }
+                if($feat =~ /AsynchDNS/i) {
+                    $asynch = 1;
+                }
+                if($feat =~ /GSS-Negotiate/i) {
+                    $gssapi = 1;
+                }
                 if($feat =~ /IDN/i) {
                     $libidn = $1;
                 }
@@ -572,6 +585,9 @@ sub singlefile {
                 }
                 if($feat =~ /SSPI/i) {
                     $sspi = 1;
+                }
+                if($feat =~ /libz/i) {
+                    $libz = 1;
                 }
                 if($feat =~ /Metalink/i) {
                     $libmetalink = 1;
