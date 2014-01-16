@@ -40,7 +40,7 @@ sub checkwarn {
         # MIPS o32 compiler:
         ($l =~ /^cfe: (Warning |Error)(\d*):/) ||
         # MSVC
-        ($l =~ /^[\.\\]*([.\\\/a-zA-Z0-9-]*)\.[chy]\(([0-9:]*)/) ||
+        ($l =~ /^[\.\\]*([.\\\/a-zA-Z0-9-_]*)\.[chy]\(([0-9:]*)/) ||
         # Clang warnings not caught elsewhere:
         ($l =~ /^clang: warning: /) ||
         ($l =~ /^warning: unknown warning option /) ||
