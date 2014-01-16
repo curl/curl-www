@@ -19,9 +19,10 @@ sub head {
     for(@vuln) {
         my ($id, $start, $stop, $desc)=split('\|');
         $id =~ s/ //;
-        my $a="<a href=\"/docs/security.html\#$id\">#$v</a>";
+        my $a=sprintf("<a href=\"/docs/security.html\#$id\" title=\"$desc\">%02d</a>",
+                      $v);
         $vname[$v-1]=$a;
-        print "<th title=\"$id - $desc\">$a</th>";
+        print "<th title=\"$id - $desc\">&nbsp;</th>";
         $v++;
     }
     print "<th>Release Date</th></tr>\n";

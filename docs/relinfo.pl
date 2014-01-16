@@ -30,7 +30,7 @@ sub head {
     if($raw) {
         return;
     }
-    print "<tr class=\"tabletop\"><th>index</th><th>Version</th><th>Vulnerabilites</th>";
+    print "<tr class=\"tabletop\"><th>index</th><th>Version</th>";
     printf("<th>Date</th><th>Since %s</th><th>Days</th><th>Bugfixes</th><th>Changes</th></tr>\n",
            $releases[0]);
 }
@@ -147,26 +147,20 @@ for my $str (@releases) {
     }
     $index++;
     my $vulc=0;
-    my $vulstr;
-    for my $i (0 .. scalar(@vuln)-1 ) {
-        if($v[$i]) {
-            $vulstr .= sprintf("<a href=\"%s\" title=\"%s - %s\">#%d</a> ",
-                               $vulnurl[$i+1], $vulntitle[$i+1], $vulnid[$i+1],
-                               $i+1);
-            $vulc++;
-        }
-    }
+
+#   my $vulstr;
+#    for my $i (0 .. scalar(@vuln)-1 ) {
+#        if($v[$i]) {
+#            $vulstr .= sprintf("<a href=\"%s\" title=\"%s - %s\">#%d</a> ",
+#                               $vulnurl[$i+1], $vulntitle[$i+1], $vulnid[$i+1],
+#                               $i+1);
+#            $vulc++;
+#        }
+#    }
     if($raw) {
         printf "%d;", $vulc;
     }
-    else {
-        if($vulstr) {
-            print "<td>$vulstr</td>";
-        }
-        else {
-            print "<td>&nbsp;</td>";
-        }
-    }
+
     if($date =~ /([A-Za-z]+) (\d+) (\d\d\d\d)/) {
         if(length($1)>3) {
             # a long month name, use the shorter version
