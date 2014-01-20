@@ -1,0 +1,100 @@
+                 libcurl re-use of wrong HTTP NTLM connection
+                 ============================================
+
+Project cURL Security Advisory, January 29th 2014
+http://curl.haxx.se/docs/security.html
+
+1. VULNERABILITY
+
+  libcurl can in some circumstances re-use the wrong connection when asked to
+  do an NTLM-authenticated HTTP or HTTPS request.
+
+  libcurl features a pool of recent connections so that subsequent requests
+  can re-use an existing connection to avoid overhead.
+
+  When re-using a connection a range of criterion must first be met. Due to a
+  logical error in the code, a request that was issued by an application could
+  wrongfully re-use an existing connection to the same server that was
+  authenticated using different credentials. One underlying reason being that
+  NTLM authenticates connections and not requests, contrary to how HTTP is
+  designed to work and how other authentication methods work.
+
+  An application that allows NTLM and another auth method (the bug only
+  triggers if more than one auth method is asked for) to a server (that
+  responds wanting NTLM) with user1:password1 and then does another operation
+  to the same server with user2:password2 (when the previous connection was
+  left alive) - the second request will re-use the same connection and since
+  it'll then see that the NTLM negotiation is already made, it will just send
+  the request over that connection thinking it uses 'user2' credentials when
+  it is in fact still using the connection authenticated for user1...
+
+  The set of auth methods to use is set with CURLOPT_HTTPAUTH.
+
+  Two common auth defines in libcurl are CURLAUTH_ANY and CURLAUTH_ANYSAFE.
+  Both of them ask for NTLM and other methods and can therefore trigger this
+  problem.
+
+  Applications can disable libcurl's re-use of connections and thus mitigate
+  this problem, by using one of the following libcurl options to alter how
+  connections are or aren't re-used: CURLOPT_FRESH_CONNECT,
+  CURLOPT_MAXCONNECTS and CURLMOPT_MAX_HOST_CONNECTIONS (if using curl_multi
+  API).
+
+  The Common Vulnerabilities and Exposures (CVE) project has assigned the name
+  CVE-2014-0015 to this issue.
+
+2. AFFECTED VERSIONS
+
+  This flaw has existed ever since libcurl started to support NTLM, although
+  the code has been restructured a few times over the years so the mistake has
+  altered shape over the years.
+
+  Affected versions: from libcurl 7.10.6 to and including 7.34.0
+  Not affected versions: libcurl before 7.10.6 and >= 7.35.0
+
+  libcurl is used by many applications, but not always advertised as such!
+
+3. THE SOLUTION
+
+  libcurl 7.35.0 makes sure that connections that may use NTLM cannot re-use
+  another NTLM-using connection unless the credentials match.
+
+  A patch for this problem (that applies to libcurl >= 7.28.0) is
+  available at:
+
+    https://github.com/bagder/curl/commit/8ae35102c43d8d
+
+  A patch that applies for 7.27.0 is available at:
+
+    http://curl.haxx.se/CVE-2014-0015-7-27.patch
+
+  This fix is already committed to the public source code repository because
+  the full security impact wasn't properly realized until after the fact.
+
+4. RECOMMENDATIONS
+
+  We suggest you take one of the following actions immediately, in order of
+  preference:
+
+  A - Upgrade to curl and libcurl 7.35.0
+
+  B - Apply the patch and rebuild libcurl
+
+  C - Avoid using HTTP NTLM in your application, or make sure to *only*
+      specify NTLM as the requested authentication method.
+
+5. TIME LINE
+
+  It was reported to the curl project on January 7th 2014. We contacted
+  distros@openwall on January 14th.
+
+  libcurl 7.35.0 was released on January 29th 2014, coordinated with the
+  publication of this advisory.
+
+
+6. CREDITS
+
+  Bug originally reported by Paras Sethia. The security impact of it was
+  flagged by Yehezkel Horowitz.
+
+  Thanks a lot!

@@ -31,6 +31,32 @@ TITLE(curl Security)
  See also the <a href="vulnerabilities.html">Vulnerabilities Table</a> to see
  what versions that are vulnerable to what flaws.
 
+<a name="20140129"></a>
+SUBTITLE(libcurl re-use of wrong HTTP NTLM connection)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>January 29, 2014</td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0015">CVE-2014-0015</a> <small><a href="#20140129">(permalink)</a></small></td></tr>
+  <tr><td>Affected versions</td><td>from libcurl 7.10.6 to and including 7.34.0</td></tr>
+  <tr><td>Not affected versions</td><td>libcurl < 7.10.6 and >= 7.35.0<td></tr>
+  <tr><td>Patch</td><td>
+    <a href="https://github.com/bagder/curl/commit/8ae35102c43d8d">for libcurl >= 7.28.0</a>
+    <a href="http://curl.haxx.se/CVE-2014-0015-7-27.patch">for libcurl <= 7.27</a></td></tr>
+  <tr><td>Advisories</td><td>
+<a href="adv_20140129.html">Project cURL Security Advisory</a></td></tr>
+</table>
+<p>
+  libcurl can in some circumstances re-use the wrong connection when asked to
+  do an NTLM-authenticated HTTP or HTTPS request.
+<p>
+  libcurl features a pool of recent connections so that subsequent requests
+  can re-use an existing connection to avoid overhead.
+  When re-using a connection a range of criterion must first be met. Due to a
+  logical error in the code, a request that was issued by an application could
+  wrongfully re-use an existing connection to the same server that was
+  authenticated using different credentials.
+<p>
+
 <a name="20131217"></a>
 SUBTITLE(libcurl cert name check ignore GnuTLS)
 <p>

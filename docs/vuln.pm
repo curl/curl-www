@@ -1,5 +1,6 @@
 # datestamp, first vulnerable version, last vulnerable version
 @vuln = (
+    "20140129|7.10.6|7.34.0|libcurl re-use of wrong HTTP NTLM connection",
     "20131217|7.21.4|7.33.0|libcurl cert name check ignore GnuTLS",
     "20131115|7.18.0|7.32.0|libcurl cert name check ignore OpenSSL",
     "20130622|7.7|7.30.0|libcurl URL decode buffer boundary flaw",
