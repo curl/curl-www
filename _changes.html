@@ -55,6 +55,67 @@ activity</a>
 #define BGF <li>
 
 <a name="7_34_0"></a>
+SUBTITLE(Fixed in 7.35.0 - January 29 2014)
+<img src="/pix/alert.png"
+align="right" alt="Release contains security-related bug fix" border="0">
+<p> Changes:
+<ul class="changes">
+ CHG imap/pop3/smtp: Added support for SASL authentication downgrades
+ CHG imap/pop3/smtp: Extended the login options to support multiple auth mechanisms
+ CHG TheArtOfHttpScripting: major update, converted layout and more
+ CHG mprintf: Added support for I, I32 and I64 size specifiers
+ CHG makefile: Added support for VC7, VC11 and VC12
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="http://curl.haxx.se/docs/adv_20140129.html">SECURITY ADVISORY: re-use of wrong HTTP NTLM connection</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1313">curl_easy_setopt: Fixed OAuth 2.0 Bearer option name</a>
+ BGF pop3: Fixed APOP being determined by CAPA response rather than by timestamp
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-12/0113.html">Curl_pp_readresp: zero terminate line</a>
+ BGF FILE: don't wait due to CURLOPT_MAX_RECV_SPEED_LARGE [3]
+ BGF docs: mention CURLOPT_MAX_RECV/SEND_SPEED_LARGE don't work for FILE://
+ BGF pop3: Fixed auth preference not being honored when CAPA not supported
+ BGF imap: Fixed auth preference not being honored when CAPABILITY not supported
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1314">threaded resolver: Use pthread_t * for curl_thread_t</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1286">FILE: we don't support paused transfers using this protocol</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1315">connect: Try all addresses in first connection attempt</a>
+ BGF curl_easy_setopt.3: Added SMTP information to CURLOPT_INFILESIZE_LARGE
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-01/0002.html">OpenSSL: Fix forcing SSLv3 connections</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-01/0013.html">openssl: allow explicit sslv2 selection</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-01/0019.html">FTP parselist: fix "total" parser</a>
+ BGF conncache: fix possible dereference of null pointer
+ BGF multi.c: fix possible dereference of null pointer
+ BGF mk-ca-bundle: introduces -d and warns about using this script
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-01/0046.html">ConnectionExists: fix NTLM check for new connection</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1322">trynextip: fix build for non-IPV6 capable systems</a>
+ BGF <a href="http://curl.haxx.se/mail/archive-2014-01/0016.html">Curl_updateconninfo: don't do anything for UDP "connections"</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2013-12/0150.html">darwinssl: un-break Leopard build after PKCS#12 change</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-01/0061.html">threaded-resolver: never use NULL hints with getaddrinf</a>
+ BGF multi_socket: remind app if timeout didn't run
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1323">OpenSSL: deselect weak ciphers by default</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-01/0115.html">error message: Sensible message on timeout when transfer size unknown</a>
+ BGF curl_easy_setopt.3: mention how to unset CURLOPT_INFILESIZE*
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-01/0134.html">win32: Fixed use of deprecated function 'GetVersionInfoEx' for VC12</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1321">configure: fix gssapi linking on HP-UX</a>
+ BGF chunked-parser: abort on overflows, allow 64 bit chunks
+ BGF <a href="http://curl.haxx.se/mail/archive-2014-01/0000.html">chunked parsing: relax the CR strictness</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-01/0130.html">cookie: max-age fixes</a>
+ BGF progress bar: always update when at 100%
+ BGF progress bar: increase update frequency to 10Hz
+ BGF tool: Fixed incorrect return code if command line parser runs out of memory
+ BGF tool: Fixed incorrect return code if password prompting runs out of memory
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-01/0103.html">HTTP POST: omit Content-Length if data size is unknown</a>
+ BGF GnuTLS: disable insecure ciphers
+ BGF GnuTLS: honor --slv2 and the --tlsv1[.N] switches
+ BGF multi: Fixed a memory leak on OOM condition
+ BGF netrc: Fixed a memory and file descriptor leak on OOM
+ BGF <a href="https://github.com/bagder/curl/pull/87">getpass: fix password parsing from console</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-01/0246.html">TFTP: fix crash on time-out</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1327">hostip: don't remove DNS entries that are in use</a>
+ BGF tests: lots of tests fixed to pass the OOM torture tests
+</ul>
+
+<a name="7_34_0"></a>
 SUBTITLE(Fixed in 7.34.0 - December 17 2013)
 <img src="/pix/alert.png"
 align="right" alt="Release contains security-related bug fix" border="0">
@@ -583,7 +644,7 @@ SUBTITLE(Fixed in 7.26.0 - May 24 2012)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF nss: libcurl now uses NSS_InitContext() to prevent collisions if available [1]
- BGF <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=670126">URL parse: reject numerical IPv6 addresses outside brackets</a>
+ B
  BGF <a href="http://curl.haxx.se/mail/lib-2012-04/0246.html">MD5: fix OOM memory leak</a>
  BGF OpenSSL cert: provide more details when cert check fails
  BGF <a href="http://curl.haxx.se/mail/archive-2012-04/0060.html">HTTP: empty chunked POST ended up in two zero size chunks</a>
