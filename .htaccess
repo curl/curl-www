@@ -1,31 +1,4 @@
-# Redirect the CVS page to the new source control page: (2010-03-22)
-RedirectPermanent /cvs.html http://curl.haxx.se/source.html
 
-# Redirect commonly referred examples over LXR
-RedirectPermanent /lxr/source/docs/examples/getinmemory.c http://curl.haxx.se/libcurl/c/getinmemory.html
-RedirectPermanent /lxr/source/docs/examples/10-at-a-time.c http://curl.haxx.se/libcurl/c/10-at-a-time.html
-RedirectPermanent /lxr/source/docs/examples/curlgtk.c http://curl.haxx.se/libcurl/c/curlgtk.html
-RedirectPermanent /lxr/source/docs/examples/curlx.c http://curl.haxx.se/libcurl/c/curlx.html
-RedirectPermanent /lxr/source/docs/examples/debug.c http://curl.haxx.se/libcurl/c/debug.html
-RedirectPermanent /lxr/source/docs/examples/fileupload.c http://curl.haxx.se/libcurl/c/fileupload.html
-RedirectPermanent /lxr/source/docs/examples/fopen.c http://curl.haxx.se/libcurl/c/fopen.html
-RedirectPermanent /lxr/source/docs/examples/ftpget.c http://curl.haxx.se/libcurl/c/ftpget.html
-RedirectPermanent /lxr/source/docs/examples/ftpgetinfo.c http://curl.haxx.se/libcurl/c/ftpgetinfo.html
-RedirectPermanent /lxr/source/docs/examples/ftpgetresp.c http://curl.haxx.se/libcurl/c/ftpgetresp.html
-RedirectPermanent /lxr/source/docs/examples/ftpupload.c http://curl.haxx.se/libcurl/c/ftpupload.html
-RedirectPermanent /lxr/source/docs/examples/ftpuploadresume.c http://curl.haxx.se/libcurl/c/ftpuploadresume.html
-RedirectPermanent /lxr/source/docs/examples/ghiper.c http://curl.haxx.se/libcurl/c/ghiper.html
-RedirectPermanent /lxr/source/docs/examples/http-post.c http://curl.haxx.se/libcurl/c/http-post.html
-RedirectPermanent /lxr/source/docs/examples/httpput.c http://curl.haxx.se/libcurl/c/httpput.html
-RedirectPermanent /lxr/source/docs/examples/https.c http://curl.haxx.se/libcurl/c/https.html
-RedirectPermanent /lxr/source/docs/examples/multi-post.c http://curl.haxx.se/libcurl/c/multi-post.html
-RedirectPermanent /lxr/source/docs/examples/multithread.c http://curl.haxx.se/libcurl/c/multithread.html
-RedirectPermanent /lxr/source/docs/examples/persistant.c http://curl.haxx.se/libcurl/c/persistant.html
-RedirectPermanent /lxr/source/docs/examples/post-callback.c http://curl.haxx.se/libcurl/c/post-callback.html
-RedirectPermanent /lxr/source/docs/examples/postit2.c http://curl.haxx.se/libcurl/c/postit2.html
-RedirectPermanent /lxr/source/docs/examples/sepheaders.c http://curl.haxx.se/libcurl/c/sepheaders.html
-RedirectPermanent /lxr/source/docs/examples/simple.c http://curl.haxx.se/libcurl/c/simple.html
-RedirectPermanent /lxr/source/docs/examples/simplessl.c http://curl.haxx.se/libcurl/c/simplessl.html
 RedirectPermanent /devel.html http://curl.haxx.se/dev/
 RedirectPermanent /auto/ http://curl.haxx.se/dev/
 RedirectPermanent /docs/internals.html http://curl.haxx.se/dev/internals.html
@@ -34,10 +7,6 @@ RedirectPermanent /docs/runtests.html http://curl.haxx.se/dev/runtests.html
 RedirectPermanent /docs/testcurl.html http://curl.haxx.se/dev/testcurl.html
 RedirectPermanent /source.html http://curl.haxx.se/dev/source.html
 RedirectPermanent /bugreport.html http://curl.haxx.se/docs/bugs.html
-
-# a rough redirect for all other LXR references to avoid 404s
-RedirectMatch /lxr/source/(.*) http://cool.haxx.se/cvs.cgi/curl/$1
-RedirectMatch /cvs.cgi(.*) http://github.com/bagder/curl
 
 AddType text/plain .pl
 AddType text/plain .php
