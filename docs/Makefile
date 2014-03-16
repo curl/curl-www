@@ -26,7 +26,8 @@ PAGES = index.html manpage.html faq.html changes.html \
  adv_20100209.html adv_20101013.html adv_20110623.html ssl-compared.html \
  adv_20120124.html adv_20120124B.html mk-ca-bundle.html adv_20130206.html \
  adv_20130412.html adv_20130622.html adv_20131115.html adv_20131217.html \
- adv_20140129.html
+ adv_20140129.html adv_20140326A.html adv_20140326B.html adv_20140326C.html \
+ adv_20140326D.html
 
 all: $(PAGES)
 	@echo done 
@@ -299,6 +300,26 @@ adv_20140129.html: _adv_20140129.html adv_20140129.t $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 
 adv_20140129.t: adv_20140129.txt
+	$(TXT2PLAIN) < $< > $@
+
+adv_20140326A.html: _adv_20140326A.html adv_20140326A.t $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_20140326A.t: adv_20140326A.txt
+	$(TXT2PLAIN) < $< > $@
+
+adv_20140326B.html: _adv_20140326B.html adv_20140326B.t $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_20140326B.t: adv_20140326B.txt
+	$(TXT2PLAIN) < $< > $@
+
+adv_20140326C.html: _adv_20140326C.html adv_20140326C.t $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_20140326C.t: adv_20140326C.txt
+	$(TXT2PLAIN) < $< > $@
+
+adv_20140326D.html: _adv_20140326D.html adv_20140326D.t $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_20140326D.t: adv_20140326D.txt
 	$(TXT2PLAIN) < $< > $@
 
 vulnerabilities.html: _vulnerabilities.html vuln.txt $(MAINPARTS)

@@ -1,0 +1,91 @@
+              libcurl IP address wildcard certificate validation
+              ==================================================
+
+Project cURL Security Advisory, Match 26th 2014
+http://curl.haxx.se/docs/security.html
+
+1. VULNERABILITY
+
+  libcurl incorrectly validates wildcard SSL certificates containing literal
+  IP addresses.
+
+  RFC 2818 covers the requirements for matching Common Names (CNs) and
+  subjectAltNames in order to establish valid SSL connections. It first
+  discusses CNs that are for hostnames, and the rules for wildcards in this
+  case. The next paragraph in the RFC then discusses CNs that are IP
+  addresses:
+
+  'In some cases, the URI is specified as an IP address rather than a
+  hostname. In this case, the iPAddress subjectAltName must be present in the
+  certificate and must exactly match the IP in the URI.'
+
+  The intention of the RFC is clear in that you should not be able to use
+  wildcards with IP addresses (in order to avoid the ability to perform
+  man-in-the-middle attacks). Unfortunately libcurl fails to adhere to this
+  rule under certain conditions, and subsequently it would allow and use a
+  wildcard match specified in the CN field.
+
+  Exploiting this flaw, a malicious server could participate in a MITM attack
+  or just easier fool users that it is a legitimate site for whatever purpose,
+  when it actually isn't.
+
+  A good CA should refuse to issue a certificate with the CN as indicated,
+  however there only need be one CA to issue one in error for this issue to
+  result in the user getting no warning at all and being vulnerable to MITM.
+
+  This flaw is only present in libcurl when built to use one out of a few
+  specific TLS libraries: OpenSSL, axtls, qsossl or gskit.
+
+  This problem is similar to the one previously reported by Richard Moore,
+  found in multiple browsers [1].
+
+  The Common Vulnerabilities and Exposures (CVE) project has assigned the name
+  CVE-2014-0139 to this issue.
+
+2. AFFECTED VERSIONS
+
+  This flaw has existed ever since libcurl started to support SSL or TLS with
+  OpenSSL
+
+  Affected versions: from libcurl 7.1 to and including 7.35.0
+  Not affected versions: libcurl >= 7.36.0
+
+  libcurl is used by many applications, but not always advertised as such!
+
+3. THE SOLUTION
+
+  libcurl 7.36.0 has an improved host name verification function that rejects
+  wild card matching against IP addresses.
+
+  A patch for this problem is available at:
+
+    http://curl.haxx.se/libcurl-reject-cert-ip-wildcards.patch
+
+4. RECOMMENDATIONS
+
+  We suggest you take one of the following actions immediately, in order of
+  preference:
+
+  A - Upgrade to curl and libcurl 7.36.0
+
+  B - Apply the patch and rebuild libcurl
+
+  C - Build libcurl to use a different TLS backend
+
+5. TIME LINE
+
+  It was reported to the curl project on February 22nd 2014. We contacted
+  distros@openwall on March 16th 2014.
+
+  libcurl 7.36.0 was released on March 26th 2014, coordinated with the
+  publication of this advisory.
+
+
+6. CREDITS
+
+  Problem reported and patiently explained to us by Richard Moore from
+  Westpoint Ltd. Patch written by Daniel Stenberg.
+
+  Thanks a lot!
+
+  [1] = http://www.westpoint.ltd.uk/advisories/wp-10-0001.txt
