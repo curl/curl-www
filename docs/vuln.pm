@@ -1,5 +1,9 @@
 # datestamp, first vulnerable version, last vulnerable version
 @vuln = (
+    "20140326D|7.26.0|7.35.0|libcurl not verifying certs for TLS to IP address / Winssl",
+    "20140326C|7.26.0|7.35.0|libcurl not verifying certs for TLS to IP address / Darwinssl",
+    "20140326B|7.1|7.35.0|libcurl IP address wildcard certificate validation",
+    "20140326A|7.10.7|7.35.0|libcurl wrong re-use of connections",
     "20140129|7.10.6|7.34.0|libcurl re-use of wrong HTTP NTLM connection",
     "20131217|7.21.4|7.33.0|libcurl cert name check ignore GnuTLS",
     "20131115|7.18.0|7.32.0|libcurl cert name check ignore OpenSSL",

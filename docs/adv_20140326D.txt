@@ -1,0 +1,71 @@
+          libcurl not verifying certs for TLS to IP address / Winssl
+          ==========================================================
+
+Project cURL Security Advisory, March 26th 2014
+http://curl.haxx.se/docs/security.html
+
+1. VULNERABILITY
+
+  When asked to do a TLS connection (HTTPS, FTPS, IMAPS, etc) to a URL
+  specified with an IP address instead of a name, libcurl would wrongly not
+  verify the server's name in the certificate. The signature (whether it was
+  signed by a trusted CA) and validity (whether the date was within the
+  certificate's lifetime and it was not revoked) verifications were still
+  performed.
+
+  This is a problem in libcurl built to use the SChannel/Winssl TLS backend.
+  SChannel/Winssl is the native library provided by Microsoft Windows.
+
+  Only users on Windows can be affected by this. And only if libcurl was built
+  to use the native TLS backend library.
+
+  The Common Vulnerabilities and Exposures (CVE) project has assigned the name
+  CVE-2014-2522 to this issue.
+
+2. AFFECTED VERSIONS
+
+  This flaw has existed ever since libcurl started to support the
+  SChannel/Winssl backend.
+
+  Affected versions: from libcurl 7.27.0 to and including 7.35.0
+  Not affected versions: libcurl >= 7.36.0
+
+  libcurl is used by many applications, but not always advertised as such!
+
+3. THE SOLUTION
+
+  libcurl 7.36.0 makes sure that all TLS using requests verify the host name
+  even if specified as an IP address in the URL.
+
+  A patch for this problem is available at:
+
+    https://github.com/bagder/curl/commit/63fc8ee7be2b71
+
+  The fix was committed to the public source code repository because the full
+  security impact wasn't properly realized until after the fact.
+
+4. RECOMMENDATIONS
+
+  We suggest you take one of the following actions immediately, in order of
+  preference:
+
+  A - Upgrade to curl and libcurl 7.36.0
+
+  B - Apply the patch and rebuild libcurl
+
+  C - Rebuild libcurl to use another TLS backend
+
+5. TIME LINE
+
+  It was discovered by the curl project during late February 2014.
+
+  libcurl 7.36.0 was released on March 26th 2014, coordinated with the
+  publication of this advisory.
+
+6. CREDITS
+
+  David Ryskalczyk made us aware of this flaw and wrote the patch.
+
+  Marc Hoersken helped coordinate the bug fix.
+
+  Thanks a lot!
