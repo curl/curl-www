@@ -31,12 +31,87 @@ TITLE(curl Security)
  See also the <a href="vulnerabilities.html">Vulnerabilities Table</a> to see
  what versions that are vulnerable to what flaws.
 
+<a name="20140326A"></a>
+SUBTITLE(libcurl wrong re-use of connections)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>March 26, 2014</td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0138">CVE-2014-0138</a> <a href="#20140326A">20140326A</a></td></tr>
+  <tr><td>Affected versions</td><td>from libcurl 7.10.6 to and including 7.35.0</td></tr>
+  <tr><td>Not affected versions</td><td>libcurl < 7.10.6 and >= 7.36.0<td></tr>
+  <tr><td>Patch</td><td>
+    <a href="/libcurl-bad-reuse.patch">libcurl-bad-reuse.patch</a>
+  <tr><td>Advisories</td><td>
+<a href="adv_20140326A.html">Project cURL Security Advisory</a></td></tr>
+</table>
+<p>
+  libcurl can in some circumstances re-use the wrong connection when asked to
+  do transfers using other protocols than HTTP and FTP.
+<p>
+
+<a name="20140326B"></a>
+SUBTITLE(libcurl IP address wildcard certificate validation)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>March 26, 2014</td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0138">CVE-2014-0139</a> <a href="#20140326B">20140326B</a></td></tr>
+  <tr><td>Affected versions</td><td>from libcurl 7.1 to and including 7.35.0</td></tr>
+  <tr><td>Not affected versions</td><td>libcurl >= 7.36.0<td></tr>
+  <tr><td>Patch</td><td>
+    <a href="/libcurl-reject-cert-ip-wildcards.patch">libcurl-reject-cert-ip-wildcards.patch</a>
+  <tr><td>Advisories</td><td>
+<a href="adv_20140326B.html">Project cURL Security Advisory</a></td></tr>
+</table>
+<p>
+  libcurl incorrectly validates wildcard SSL certificates containing literal
+  IP addresses when built to use OpenSSL.
+<p>
+
+<a name="20140326C"></a>
+SUBTITLE(libcurl not verifying certs for TLS to IP address / Darwinssl)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>March 26, 2014</td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0138">CVE-2014-1263</a> <a href="#20140326C">20140326C</a></td></tr>
+  <tr><td>Affected versions</td><td>from libcurl 7.27.0 to and including 7.35.0</td></tr>
+  <tr><td>Not affected versions</td><td>libcurl < 7.27.0 and >= 7.36.0<td></tr>
+  <tr><td>Patch</td><td>
+    <a href="https://github.com/bagder/curl/commit/afc6e5004fabee">commit afc6e5004fabee</a>
+  <tr><td>Advisories</td><td>
+<a href="adv_20140326C.html">Project cURL Security Advisory</a></td></tr>
+</table>
+<p>
+  When asked to do a TLS connection (HTTPS, FTPS, IMAPS, etc) to a URL
+  specified with an IP address instead of a name, libcurl built to use
+  Darwinssl would wrongly not verify the server's name in the certificate.
+<p>
+
+<a name="20140326D"></a>
+SUBTITLE(libcurl not verifying certs for TLS to IP address / Winssl)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>March 26, 2014</td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0138">CVE-2014-1263</a> <a href="#20140326D">20140326D</a></td></tr>
+  <tr><td>Affected versions</td><td>from libcurl 7.27.0 to and including 7.35.0</td></tr>
+  <tr><td>Not affected versions</td><td>libcurl < 7.27.0 and >= 7.36.0<td></tr>
+  <tr><td>Patch</td><td>
+    <a href="https://github.com/bagder/curl/commit/63fc8ee7be2b71">commit 63fc8ee7be2b71</a>
+  <tr><td>Advisories</td><td>
+<a href="adv_20140326D.html">Project cURL Security Advisory</a></td></tr>
+</table>
+<p>
+  When asked to do a TLS connection (HTTPS, FTPS, IMAPS, etc) to a URL
+  specified with an IP address instead of a name, libcurl built to use Winssl
+  would wrongly not verify the server's name in the certificate.
+<p>
+
+
 <a name="20140129"></a>
 SUBTITLE(libcurl re-use of wrong HTTP NTLM connection)
 <p>
 <table class="secbox">
   <tr><td>Date:</td><td>January 29, 2014</td></tr>
-  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0015">CVE-2014-0015</a> <small><a href="#20140129">(permalink)</a></small></td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0015">CVE-2014-0015</a> <a href="#20140129">20140129</a></td></tr>
   <tr><td>Affected versions</td><td>from libcurl 7.10.6 to and including 7.34.0</td></tr>
   <tr><td>Not affected versions</td><td>libcurl < 7.10.6 and >= 7.35.0<td></tr>
   <tr><td>Patch</td><td>
@@ -49,20 +124,12 @@ SUBTITLE(libcurl re-use of wrong HTTP NTLM connection)
   libcurl can in some circumstances re-use the wrong connection when asked to
   do an NTLM-authenticated HTTP or HTTPS request.
 <p>
-  libcurl features a pool of recent connections so that subsequent requests
-  can re-use an existing connection to avoid overhead.
-  When re-using a connection a range of criterion must first be met. Due to a
-  logical error in the code, a request that was issued by an application could
-  wrongfully re-use an existing connection to the same server that was
-  authenticated using different credentials.
-<p>
-
 <a name="20131217"></a>
 SUBTITLE(libcurl cert name check ignore GnuTLS)
 <p>
 <table class="secbox">
   <tr><td>Date:</td><td>December 17, 2013</td></tr>
-  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6422">CVE-2013-6422</a> <small><a href="#20131217">(permalink)</a></small></td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6422">CVE-2013-6422</a> <a href="#20131217">20131217</a></td></tr>
   <tr><td>Affected versions</td><td>from libcurl 7.21.4 to and including 7.33.0</td></tr>
   <tr><td>Not affected versions</td><td>libcurl < 7.21.4 and >= 7.34.0<td></tr>
   <tr><td>Patch</td><td><a href="/cve-2013-6422.patch">cve-2013-6422.patch</a></td></tr>
@@ -74,25 +141,13 @@ SUBTITLE(libcurl cert name check ignore GnuTLS)
   libcurl is vulnerable to a case of missing out the checking of the
   certificate CN or SAN name field when the digital signature verification is
   turned off - when built to use GnuTLS.
-<p>
-  libcurl offers two separate and independent options for verifying a server's
-  TLS certificate. CURLOPT_SSL_VERIFYPEER and CURLOPT_SSL_VERIFYHOST. The
-  first one tells libcurl to verify the trust chain using a CA cert bundle,
-  while the second tells libcurl to make sure that the name fields in the
-  server certificate meets the criteria. Both options are enabled by default.
-<p>
-  This flaw had the effect that when an application disabled
-  CURLOPT_SSL_VERIFYPEER, libcurl mistakenly also disabled the
-  CURLOPT_SSL_VERIFYHOST check. Applications can disable
-  CURLOPT_SSL_VERIFYPEER and still achieve security by doing the check on its
-  own using other means.
 
 <a name="20131115"></a>
 SUBTITLE(libcurl cert name check ignore OpenSSL)
 <p>
 <table class="secbox">
   <tr><td>Date:</td><td>November 15, 2013</td></tr>
-  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4545">CVE-2013-4545</a> <small><a href="#20131115">(permalink)</a></small></td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4545">CVE-2013-4545</a> <a href="#20131115">20131115</a></td></tr>
   <tr><td>Affected versions</td><td>from libcurl 7.18.0 to and including 7.32.0</td></tr>
   <tr><td>Not affected versions</td><td>libcurl < 7.18.0 and >= 7.33.0<td></tr>
   <tr><td>Patch</td><td><a href="https://github.com/bagder/curl/commit/3c3622b6">commit 3c3622b6</a></td></tr>
@@ -104,25 +159,13 @@ SUBTITLE(libcurl cert name check ignore OpenSSL)
   libcurl is vulnerable to a case of missing out the checking of the
   certificate CN or SAN name field when the digital signature verification is
   turned off - when built to use OpenSSL.
-<p>
-  libcurl offers two separate and independent options for verifying a server's
-  TLS certificate. CURLOPT_SSL_VERIFYPEER and CURLOPT_SSL_VERIFYHOST. The
-  first one tells libcurl to verify the trust chain using a CA cert bundle,
-  while the second tells libcurl to make sure that the name fields in the
-  server certificate meets the criteria. Both options are enabled by default.
-<p>
-  This flaw had the effect that when an application disabled
-  CURLOPT_SSL_VERIFYPEER, libcurl mistakenly also disabled the
-  CURLOPT_SSL_VERIFYHOST check. Applications can disable
-  CURLOPT_SSL_VERIFYPEER and still achieve security by doing the check on its
-  own using other means.
 
 <a name="20130622"></a>
 SUBTITLE(libcurl URL decode buffer boundary flaw)
 <p>
 <table class="secbox">
   <tr><td>Date:</td><td>June 22, 2013</td></tr>
-  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2174">CVE-2013-2174</a> <small><a href="#20130622">(permalink)</a></small></td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2174">CVE-2013-2174</a> <a href="#20130622">20130622</a></td></tr>
   <tr><td>Affected versions</td><td>from libcurl 7.7 to and including 7.30.0</td></tr>
   <tr><td>Not affected versions</td><td>libcurl < 7.7 and >= 7.31.0<td></tr>
   <tr><td>Patch</td><td><a href="http://curl.haxx.se/libcurl-unescape.patch">curl-unescape.patch</a></td></tr>
@@ -132,20 +175,14 @@ SUBTITLE(libcurl URL decode buffer boundary flaw)
 </table>
 <p>
   The function curl_easy_unescape() decodes URL encoded strings to raw binary
-  data. URL encoded octets are represented with %HH combinations where HH is a
-  two-digit hexadecimal number. The decoded string is written to an allocated
-  memory area that the function returns to the caller.
+  data. There's a buffer overflow risk in there.
 <p>
-  When provided a buffer limited by a length, and said input buffer ends
-  within hex triplet, libcurl would still parse the rest of the hex number and
-  could then overwrite heap memory.
-
 <a name="20130412"></a>
 SUBTITLE(libcurl cookie domain tailmatch)
 <p>
 <table class="secbox">
   <tr><td>Date:</td><td>April 12, 2013</td></tr>
-  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1944">CVE-2013-1944</a> <small><a href="#20130412">(permalink)</a></small></td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1944">CVE-2013-1944</a> <a href="#20130412">20130412</a></td></tr>
   <tr><td>Affected versions</td><td>all versions, to and including 7.29.0</td></tr>
   <tr><td>Not affected versions</td><td>>= 7.23.0</td></tr>
   <tr><td>Patch</td><td><a href="http://curl.haxx.se/curl-tailmatch.patch">curl-tailmatch.patch</a></td></tr>
@@ -165,7 +202,7 @@ SUBTITLE(libcurl SASL buffer overflow vulnerability)
 <p>
 <table class="secbox">
   <tr><td>Date:</td><td>February 6, 2013</td></tr>
-  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-0249">CVE-2013-0249</a> <small><a href="#20130206">(permalink)</a></small></td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-0249">CVE-2013-0249</a> <a href="#20130206">20130206</a></td></tr>
   <tr><td>Affected versions</td><td>7.26.0 to and including 7.28.1</td></tr>
   <tr><td>Not affected versions</td><td>< 7.26.0 and >= 7.29.0</td></tr>
   <tr><td>Patch</td><td><a href="http://curl.haxx.se/curl-sasl.patch">Curl_sasl_create_digest_md5_message-fix-buffer-overf.patch</a></td></tr>
@@ -234,10 +271,6 @@ SUBTITLE(libcurl inappropriate GSSAPI delegation)
   credentials, allowing the server to impersonate the client to any other
   using the same GSSAPI mechanism. This is obviously a very sensitive
   operation, which should only be done when the user explicitly so directs.
-<p>
-  The GSS/Negotiate feature is only used by libcurl for HTTP authentication if
-  told to, and only if libcurl was built with a library that provides the
-  GSSAPI. Many builds of libcurl don't have GSS enabled.
 
 <a name="20101013"></a>
 SUBTITLE(curl local file overwrite)
@@ -256,13 +289,8 @@ SUBTITLE(curl local file overwrite)
 <p>
   curl offers a command line option --remote-header-name (also usable as -J)
   which will use the file name of the Content-disposition: header when it
-  saves the downloaded data locally.
-<p>
-  curl attempts to cut off the directory parts from any given file name in the
-  header to only store files in the current directory. It will overwrite a
-  local file using the same name as the header specifies.
-<p>
-  The stripping of the directory did not take backslashes into account.
+  saves the downloaded data locally. It may overwrite a local file using the
+  same name as the header specifies.
 
 <a name="20100209"></a>
 SUBTITLE(libcurl data callback excessive length)
@@ -302,25 +330,12 @@ SUBTITLE(libcurl embedded zero in cert name)
 
 </table>
 <p>
-   SSL and TLS Server certificates contain one or more fields with server name
-  or otherwise matching patterns. These strings are stored as content and
-  length within the certificate, and thus there is no particular terminating
-  character.
+  SSL and TLS Server certificates contain one or more fields with server name
+  or otherwise matching patterns. curl's OpenSSL interfacing code did faulty
+  assumptions about those names and patterns being zero terminated, allowing
+  itself to be fooled in case a certificate would get a zero byte embedded
+  into one of the name fields.
 <p>
-  curl's OpenSSL interfacing code did faulty assumptions about those names and
-  patterns being zero terminated, allowing itself to be fooled in case a
-  certificate would get a zero byte embedded into one of the name fields. To
-  illustrate, a name that would show this vulnerability could look like:
-<p>
-<pre>
-    "example.com\0.haxx.se"
-</pre>
-<p>
-  This cert is thus made for "haxx.se" but curl would erroneously verify it
-  with no complaints for "example.com".
-<p>
-  According to a recently published presentation, this kind of zero embedding
-  has been proven to be possible with at least one CA.
 
 <a name="20090303"></a>
 SUBTITLE(libcurl Arbitrary File Access)
@@ -343,25 +358,6 @@ SUBTITLE(libcurl Arbitrary File Access)
   the new target URL but will follow to any new URL that it understands. As
   libcurl supports FILE:// URLs, a rogue server can thus "trick" a
   libcurl-using application to read a local file instead of the remote one.
-<p>
-  This is a problem, for example, when the application is running on a server
-  and is written to upload or to otherwise provide the transfered data to a
-  user, to another server or to another application etc, as it can be used to
-  expose local files it was not meant to.
-<p>
-  The problem can also be exploited for uploading, if the rogue server
-  redirects the client to a local file and thus it would (over)write a local
-  file instead of sending it to the server.
-<p>
-  libcurl compiled to support SCP can get tricked to get a file using embedded
-  semicolons, which can lead to execution of commands on the given
-  server. "Location: scp://name:passwd@host/a'``;date >/tmp/test``;'".
-<p>
-  Files on servers other than the one running libcurl are also accessible when
-  credentials for those servers are stored in the .netrc file of the user
-  running libcurl.  This is most common for FTP servers, but can occur with
-  any protocol supported by libcurl.  Files on remote SSH servers are also
-  accessible when the user has an unencrypted SSH key.
 
 <a name="20070710"></a>
 SUBTITLE(libcurl GnuTLS insufficient cert verification)
@@ -453,23 +449,8 @@ SUBTITLE(libcurl NTLM Buffer Overflow)
 </table>
 <p>
  libcurl's NTLM function can overflow a stack-based buffer if given a too long
- user name or domain name. This would happen if you enable NTLM authentication
- and either:
-<ol>
- <li> pass in a user name and domain name to libcurl that together are longer
-     than 192 bytes
-
- <li> allow (lib)curl to follow HTTP "redirects" (Location: and the appropriate
-     HTTP 30x response code) and the new URL contains a URL with a user name
-     and domain name that together are longer than 192 bytes
-</ol>
+ user name or domain name.
 <p>
-  There is no known exploit/malicious server at the time of this writing.
-<p>
-  The <a
-  href="http://article.gmane.org/gmane.comp.web.wget.general/5064">notification
-  mail</a> to us about this flaw was also sent to a public wget mailing list
-  and thus became public immediately.
 
 <a name="BID12616"></a><a name="CAN-2005-0490"></a>
 SUBTITLE(Kerberos Authentication Buffer Overflow)
