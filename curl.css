@@ -369,3 +369,7 @@ div.yellowbox {
   margin-left: auto;
   margin-right: auto;
 }
+
+td.main {
+  width: 100%;
+}
