@@ -35,15 +35,17 @@ sub tabletop {
     }
 
     print TABLE stitle("$year-$month-$day");
-    print TABLE join("",
-                     "<table cellspacing=\"0\" class=\"compile\" width=\"100%\"><tr>",
-                     "<th>Time</th>",
-                     "<th>Test</th>",
-                     "<th>Warn</th>",
-                     "<th>Options</th>",
-                     "<th>Description</th>",
-                     "<th>Name</th>",
-                     "</tr>\n");
+    print TABLE '
+<table cellspacing="0" class="compile" width="100%">
+<tr>
+<th title="UTC time at which the build was started">Time</th>
+<th title="Number of tests which succeeded (green) or failed (red)">Test</th>
+<th title="Number of warnings which occurred during the build">Warn</th>
+<th title="Which build options were enabled during the build (see above for key)">Options</th>
+<th title="Description of the build">Description</th>
+<th title="Name of the person responsible for the build">Name</th>
+</tr>
+';
 }
 
 sub tablebot() {
