@@ -81,7 +81,9 @@ sub tabletop {
 <th title="UTC time at which the build was started">Time</th>
 <th title="Number of tests which succeeded (green) or failed (red)">Test</th>
 <th title="Number of warnings which occurred during the build">Warn</th>
-<th title="Which build options were enabled during the build (see above for key)">Options$filterform</th>
+<th title="Which build options were enabled during the build (see above for key)">Options',
+$filterform,
+'</th>
 <th title="Description of the build">Description</th>
 <th title="Name of the person responsible for the build">Name</th>
 </tr>
