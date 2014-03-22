@@ -190,7 +190,6 @@ sub endofsingle {
     my $sslver;
     my $zlibver;
     my $ipv6="-";
-    my $krb4="-";
     my $zlib="-";
     my $gss="-";
     my $idn="-";
@@ -215,9 +214,6 @@ sub endofsingle {
     }
     if($libcurl =~ /libssh2\/([^ ]*)/i) {
         $libssh2 = $1;
-    }
-    if($krb4enabled) {
-        $krb4 = "K";
     }
     if($ipv6enabled) {
         $ipv6 = "6";
@@ -329,7 +325,7 @@ sub endofsingle {
     my $ssh=$libssh2?"2":"-";
     my $metalink=$libmetalink?"E":"-";
 
-    my $o = "$krb4$ipv6$showdebug$https$showres$zlib$gss$idn$sspi$ssh$metalink";
+    my $o = "$ipv6$showdebug$https$showres$zlib$gss$idn$sspi$ssh$metalink";
 
     if(!$desc) {
         $desc = $os;
@@ -382,7 +378,6 @@ sub endofsingle {
     $buildid="";
     $failamount=0;
     $ipv6enabled=0;
-    $krb4enabled=0;
     $gssapi=0;
     $os="";
     $libidn=0;
@@ -550,9 +545,6 @@ sub singlefile {
             }
             elsif($line =~ /^\#define ENABLE_IPV6 1/) {
                 $ipv6enabled = 1;
-            }
-            elsif($line =~ /^\#define HAVE_KRB4 1/) {
-                $krb4enabled = 1;
             }
             elsif($line =~ /^\#define HAVE_GSSAPI 1/) {
                 $gssapi=1;
