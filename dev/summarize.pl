@@ -307,7 +307,7 @@ sub endofsingle {
 
     my $sfail="";
     if(keys %serverfail) {
-        $sfail = sprintf("<span class='buildserverprob'>%s</a>",
+        $sfail = sprintf("<span class='buildserverprob'>%s</span>",
                          join(", ", keys %serverfail));
     }
     $totalwarn += $warning;
