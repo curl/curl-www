@@ -16,7 +16,7 @@ ACTION=echo preprocessing $@; \
 TXT2PLAIN = $(ROOT)/docs/txt2plain.pl
 MAN2HTML = roffit --bare
 
-PAGES = foot.html head.html loghead.html howto.html summary.html	     \
+PAGES = foot.html head.html howto.html summary.html	     \
 	cvshistory.html							     \
 	missing.html keywords.html builds.html todo-release.html	     \
 	release-notes.html index.html contribute.html internals.html	     \
@@ -96,9 +96,6 @@ howto.html: _howto.html $(MAINPARTS) _head.html
 	$(ACTION)
 
 keywords.html: _keywords.html $(MAINPARTS) _head.html keywords.t
-	$(ACTION)
-
-loghead.html: _loghead.html $(MAINPARTS)
 	$(ACTION)
 
 builds.html: _builds.html $(MAINPARTS) table.t explainopts.t
