@@ -27,6 +27,46 @@ my $file = "${tprefix}.t";
 
 open(TABLE, ">$file");
 
+my $filterform = '
+<form class="filteroptions" style="display: none;">
+<select name="filter" class="filterinput" onChange="filterBuilds();">
+<option value="" selected>All</option>
+<option value="^.D">Debug</option>
+<option value="^.-">Debug disabled</option>
+<option value="^.......G">GSS</option>
+<option value="^.......-">GSS disabled</option>
+<option value="^........I">IDNA</option>
+<option value="^........-">IDNA disabled</option>
+<option value="^6">IPv6</option>
+<option value="^-">IPv6 disabled</option>
+<option value="^..M">Memory tracking</option>
+<option value="^..-">Memory tracking disabled</option>
+<option value="^...........E">Metalink</option>
+<option value="^...........-">Metalink disabled</option>
+<option value="^.....-">Resolver: standard</option>
+<option value="^.....A">Resolver: c-ares</option>
+<option value="^.....H">Resolver: threaded</option>
+<option value="^..........2">SSH</option>
+<option value="^..........-">SSH disabled</option>
+<option value="^....-">SSL: disabled</option>
+<option value="^....[^-]">SSL: enabled</option>
+<option value="^....X">SSL: axTLS</option>
+<option value="^....T">SSL: GnuTLS</option>
+<option value="^....N">SSL: NSS</option>
+<option value="^....S">SSL: OpenSSL</option>
+<option value="^....O">SSL: PolarSSL</option>
+<option value="^....R">SSL: SecureTransport</option>
+<option value="^....L">SSL: WinSSL</option>
+<option value="^.........P">SSPI</option>
+<option value="^.........-">SSPI disabled</option>
+<option value="^...V">Valgrind</option>
+<option value="^...-">Valgrind disabled</option>
+<option value="^......Z">zlib</option>
+<option value="^......-">zlib disabled</option>
+</select>
+</form>
+';
+
 sub tabletop {
     my ($date)=@_;
 
@@ -41,7 +81,7 @@ sub tabletop {
 <th title="UTC time at which the build was started">Time</th>
 <th title="Number of tests which succeeded (green) or failed (red)">Test</th>
 <th title="Number of warnings which occurred during the build">Warn</th>
-<th title="Which build options were enabled during the build (see above for key)">Options</th>
+<th title="Which build options were enabled during the build (see above for key)">Options$filterform</th>
 <th title="Description of the build">Description</th>
 <th title="Name of the person responsible for the build">Name</th>
 </tr>

@@ -373,3 +373,18 @@ div.yellowbox {
 td.main {
   width: 100%;
 }
+
+/* Options filtering menu on the autobuild page */
+.filteroptions {
+  /* Position select box to the right of the text */
+  float: right;
+}
+
+.filterinput {
+  /* Reduce the input box to the tiniest clickable size. Unfortunately, this
+   seems to make all the form entries too small in FF 26 and IE11.
+   TODO: fix this on these browsers. */
+  width: 1.5em;
+  /* Opera 12.16 needs this or the option list button is invisible */
+  background: #ffffff;
+}
