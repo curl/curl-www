@@ -24,12 +24,21 @@ in this Software without prior written authorization of the copyright holder.
 
 /* Functions used by the build filtering functions on the builds page */
 
-/* Forms are made invisible in CSS by default, and only enabled if JavaScript
-   is available and therefore the feature is usable by the user */
+/* Executed on page load */
 function showFilter() {
+    /* Forms are made invisible in CSS by default, and only made visible
+       if JavaScript is available and therefore the feature is usable by
+       the user */
     var forms = document.getElementsByClassName("filteroptions");
     for (var i=0; i<forms.length; i++) {
         forms[i].style.display = "";
+    }
+
+    /* Explicitly set the selected filter to "All" on page load to override
+       any previous filter selected by the user before reloading the page */
+    var selects = document.getElementsByClassName("filterinput");
+    for (var i=0; i<selects.length; i++) {
+        selects[i].selectedIndex = 0;
     }
 }
 window.onload = showFilter;
