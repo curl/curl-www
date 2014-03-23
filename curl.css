@@ -377,7 +377,7 @@ td.main {
 /* Options filtering menu on the autobuild page */
 .filteroptions {
   /* Position select box to the right of the text */
-  float: right;
+  display: inline;
 }
 
 .filterinput {
