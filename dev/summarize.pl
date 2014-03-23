@@ -29,7 +29,7 @@ open(TABLE, ">$file");
 
 my $filterform = '
 <form class="filteroptions" style="display: none;">
-<select name="filter" class="filterinput" onChange="filterBuilds();">
+<select name="filter" class="filterinput" onChange="filterBuilds(this);">
 <option value="" selected>All</option>
 <option value="^.D">Debug</option>
 <option value="^.-">Debug disabled</option>

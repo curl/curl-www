@@ -35,10 +35,15 @@ function showFilter() {
 window.onload = showFilter;
 
 /* Hide all rows on the build page that don't match the given options */
-function filterBuilds() {
-    var filterOption = document.getElementsByName("filter")[0];
-    /* the regular expression to filter by */
-    var filter = filterOption.options[filterOption.selectedIndex].value;
+function filterBuilds(selected) {
+    /* Select the chosen option on all filter forms on the page */
+    var selects = document.getElementsByClassName("filterinput");
+    for (var i=0; i<selects.length; i++) {
+	selects[i].selectedIndex = selected.selectedIndex;
+    }
+
+    /* Get the regular expression with which to filter */
+    var filter = selected.options[selected.selectedIndex].value;
     var filterRE = new RegExp(filter);
 
     /* Loop around all days of log tables */
