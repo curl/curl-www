@@ -54,6 +54,83 @@ activity</a>
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_36_0"></a>
+SUBTITLE(Fixed in 7.36.0 - March 26 2014)
+<img src="/pix/alert.png"
+align="right" alt="Release contains security-related bug fixes" border="0">
+<p> Changes:
+<ul class="changes">
+ CHG <a href="http://curl.haxx.se/mail/lib-2014-01/0183.html">ntlm: Added support for NTLMv2</a>
+ CHG <a href="http://curl.haxx.se/mail/archive-2013-11/0006.html">tool: Added support for URL specific options</a>
+ CHG openssl: add ALPN support
+ CHG gtls: add ALPN support
+ CHG nss: add ALPN and NPN support
+ CHG <a href="http://curl.haxx.se/libcurl/c/curl_easy_setopt.html#CURLOPTEXPECT100TIMEOUTMS">added CURLOPT_EXPECT_100_TIMEOUT_MS</a>
+ CHG tool: add --no-alpn and --no-npn
+ CHG added CURLOPT_SSL_ENABLE_NPN and CURLOPT_SSL_ENABLE_ALPN
+ CHG winssl: enable TLSv1.1 and TLSv1.2 by default
+ CHG winssl: TLSv1.2 disables certificate signatures using MD5 hash
+ CHG <a href="http://curl.haxx.se/mail/lib-2014-02/0243.html">winssl: enable hostname verification of IP address using SAN or CN</a>
+ CHG <a href="https://github.com/bagder/curl/pull/93">darwinssl: Don't omit CN verification when an IP address is used</a>
+ CHG http2: build with current nghttp2 version
+ CHG polarssl: dropped support for PolarSSL < 1.3.0
+ CHG openssl: info message with SSL version used
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="http://curl.haxx.se/docs/adv_20140326A.html">SECURITY ADVISORY: wrong re-use of connections</a>
+ BGF <a href="http://curl.haxx.se/docs/adv_20140326B.html">SECURITY ADVISORY: IP address wildcard certificate validation</a>
+ BGF <a href="http://curl.haxx.se/docs/adv_20140326C.html">SECURITY ADVISORY: not verifying certs for TLS to IP address / Darwinssl</a>
+ BGF <a href="http://curl.haxx.se/docs/adv_20140326D.html">SECURITY ADVISORY: not verifying certs for TLS to IP address / Winssl</a>
+ BGF <a href="https://bugzilla.redhat.com/1058776">nss: allow to use ECC ciphers if NSS implements them</a>
+ BGF netrc: Fixed a memory leak in an OOM condition
+ BGF ftp: fixed a memory leak on wildcard error path
+ BGF pipeline: Fixed a NULL pointer dereference on OOM
+ BGF nss: prefer highest available TLS version
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1334">100-continue: fix timeout condition</a>
+ BGF ssh: Fixed a NULL pointer dereference on OOM condition
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1333">formpost: use semicolon in multipart/mixaed</a>
+ BGF --help: add missing --tlsv1.x options
+ BGF formdata: Fixed memory leak on OOM condition
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-02/0100.html">ConnectionExists: reusing possible HTTP+NTLM connections better</a>
+ BGF mingw32: fix compilation
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-02/0097.html">chunked decoder: track overflows correctly</a>
+ BGF curl_easy_setopt.3: add CURL_HTTP_VERSION_2_0
+ BGF dict: fix memory leak in OOM exit path
+ BGF valgrind: added suppression on optimized code
+ BGF curl: output protocol headers using binary mode
+ BGF tool: Added URL index to password prompt for multiple operations
+ BGF <a href="http://thread.gmane.org/gmane.comp.version-control.git/242213">ConnectionExists: re-use non-NTLM connections better</a>
+ BGF axtls: call ssl_read repeatedly
+ BGF multi: make MAXCONNECTS default 4 x number of easy handles function
+ BGF configure: Fix the --disable-crypto-auth option
+ BGF multi: ignore SIGPIPE internally
+ BGF curl.1: update the description of --tlsv1
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-02/0155.html">SFTP: skip reading the dir when NOBODY=1</a>
+ BGF easy: Fixed a memory leak on OOM condition
+ BGF tool: Fixed incorrect return code when setting HTTP request fails
+ BGF configure: Tiny fix to honor POSIX
+ BGF tool: Do not output libcurl source for the information only parameters
+ BGF Rework Open Watcom make files to use standard Wmake features
+ BGF x509asn: moved out Curl_verifyhost from NSS builds
+ BGF configure: call it GSS-API
+ BGF hostcheck: Curl_cert_hostcheck is not used by NSS builds
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-02/0036.html">multi_runsingle: move timestamp into INIT</a>
+ BGF remote_port: allow connect to port 0
+ BGF parse_remote_port: error out on illegal port numbers better
+ BGF ssh: Pass errors from libssh2_sftp_read up the stack
+ BGF docs: remove documentation on setting up krb4 support
+ BGF polarssl: build fixes to work with PolarSSL 1.3.x
+ BGF polarssl: fix possible handshake timeout issue in multi
+ BGF nss: allow to enable/disable cipher-suites better
+ BGF ssh: prevent a logic error that could result in an infinite loop
+ BGF http2: free resources on disconnect
+ BGF polarssl: avoid extra newlines in debug messages
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-03/0134.html">rtsp: parse "Session:" header properly</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1337">trynextip: don't store 'ai' on failed connects</a>
+ BGF Curl_cert_hostcheck: strip trailing dots in host name and wildcard
+</ul>
+
 <a name="7_35_0"></a>
 SUBTITLE(Fixed in 7.35.0 - January 29 2014)
 <img src="/pix/alert.png"
