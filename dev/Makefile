@@ -95,7 +95,7 @@ todo-release.html: _todo-release.html todo-release.txt $(MAINPARTS)
 howto.html: _howto.html $(MAINPARTS) _head.html
 	$(ACTION)
 
-keywords.html: _keywords.html $(MAINPARTS) _head.html keywords.t
+keywords.html: _keywords.html $(MAINPARTS) _head.html keywords.txt
 	$(ACTION)
 
 builds.html: _builds.html $(MAINPARTS) table.t explainopts.t
