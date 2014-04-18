@@ -100,4 +100,14 @@ rfc2060.txt Internet Message Access Protocol - Version 4rev1 (obsoleted by RFC17
 rfc2061.txt IMAP4 Compatibility With Imap2Bis (obsoletes RFC1730)
 rfc2192.txt IMAP URL Scheme (obsoleted by RFC5092)
 rfc3501.txt Internet Message Access Protocol - Version 4rev1 (obsoletes RFC2060)
+rfc4959_txt IMAP Extension for Simple Authentication and Security Layer (SASL) Initial Client Response
 rfc5092.txt IMAP URL Scheme (obsoletes RFC2192)
+rfc2095.txt IMAP/POP AUTHorize Extension for Simple Challenge/Response (obsoleted by RFC2195)
+rfc2195_txt IMAP/POP AUTHorize Extension for Simple Challenge/Response (obsoletes RFC2095)
+rfc2222.txt Simple Authentication and Security Layer (SASL) (obsoleted by RFC4422)
+rfc2831.txt Using Digest Authentication as a SASL Mechanism (historic by RFC6331)
+rfc4422.txt Simple Authentication and Security Layer (SASL) (obsoletes RFC2222)
+rfc4616.txt The PLAIN Simple Authentication and Security Layer (SASL) Mechanism
+rfc5849.txt The OAuth 1.0 Protocol (obsoleted by RFC6749)
+rfc6749.txt The OAuth 2.0 Authorization Framework (obsoletes RFC5849)
+draft-murchison-sasl-login-00.txt The LOGIN SASL Mechanism (expired)
