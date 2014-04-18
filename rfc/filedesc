@@ -95,3 +95,9 @@ rfc2384.txt POP URL Scheme
 rfc2449.txt POP3 Extension Mechanism
 rfc2595.txt Using TLS with IMAP, POP3 and ACAP
 rfc5034.txt The Post Office Protocol (POP3) Simple Authentication and Security Layer (SASL) Authentication Mechanism (obsoletes RFC1734)
+rfc1730.txt Internet Message Access Protocol - Version 4 (obsoleted by RFC2060, RFC2061)
+rfc2060.txt Internet Message Access Protocol - Version 4rev1 (obsoleted by RFC1730)
+rfc2061.txt IMAP4 Compatibility With Imap2Bis (obsoletes RFC1730)
+rfc2192.txt IMAP URL Scheme (obsoleted by RFC5092)
+rfc3501.txt Internet Message Access Protocol - Version 4rev1 (obsoletes RFC2060)
+rfc5092.txt IMAP URL Scheme (obsoletes RFC2192)
