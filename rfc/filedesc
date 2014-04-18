@@ -85,3 +85,13 @@ rfc3207.txt SMTP Service Extension for Secure SMTP over Transport Layer Security
 rfc4954.txt SMTP Service Extension for Authentication (obsoletes RFC2554)
 rfc5321.txt Simple Mail Transfer Protocol (obsoletes RFC2821)
 draft-earhart-url-smtp-00.txt An SMTP URL Interface (expired)
+rfc1081.txt Post Office Protocol - Version 3 (obsoleted by RFC1225) 
+rfc1225.txt Post Office Protocol - Version 3 (obsoleted by RFC1460)
+rfc1460.txt Post Office Protocol - Version 3 (obsoleted by RFC1725)
+rfc1725.txt Post Office Protocol - Version 3 (obsoleted by RFC1939)
+rfc1734.txt POP3 AUTHentication command (obsoleted by RFC5034)
+rfc1939.txt Post Office Protocol - Version 3
+rfc2384.txt POP URL Scheme
+rfc2449.txt POP3 Extension Mechanism
+rfc2595.txt Using TLS with IMAP, POP3 and ACAP
+rfc5034.txt The Post Office Protocol (POP3) Simple Authentication and Security Layer (SASL) Authentication Mechanism (obsoletes RFC1734)
