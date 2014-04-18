@@ -1,0 +1,281 @@
+
+
+
+
+Network Working Group                                         R. Earhart
+Internet Draft: URL-SMTP                                 Carnegie Mellon
+Document: draft-earhart-url-smtp-00.txt                    December 1997
+Expires June 1997
+
+
+                         An SMTP URL Interface
+
+Status of this Memo
+
+   This document is an Internet-Draft.  Internet-Drafts are working
+   documents of the Internet Engineering Task Force (IETF), its areas,
+   and its working groups.  Note that other groups may also distribute
+   working documents as Internet-Drafts.
+
+   Internet-Drafts are draft documents valid for a maximum of six
+   months.  and may be updated, replaced, or obsoleted by other
+   documents at any time.  It is not appropriate to use Internet-Drafts
+   as reference material or to cite them other than as "work in
+   progress".
+
+   To learn the current status of any Internet-Draft, please check the
+   1id-abstracts.txt listing contained in the Internet-Drafts Shadow
+   Directories on ftp.is.co.za (Africa), ftp.nordu.net (Europe),
+   munnari.oz.au (Pacific Rim), ds.internic.net (US East Coast), or
+   ftp.isi.edu (US West Coast).
+
+   This document suggests a proposed protocol for the Internet
+   community, and requests discussion and suggestions for improvements.
+   Distribution of this draft is unlimited.
+
+   The protocol discussed in this document is experimental and subject
+   to change.  Persons planning on either implementing or using this
+   protocol are STRONGLY URGED to get in touch with the author before
+   embarking on such a project.
+
+
+Abstract
+
+   It is occasionally useful to be able to reference a generic server to
+   be used for message submission.  URLs provide a good mechanism for
+   refering to arbitrary network resources.  The SMTP URL scheme allows
+   a URL to specify an SMTP server, thus allowing other protocols to use
+   a general ''URL to be used for message delivery'' in place of an
+   explicit reference to SMTP.
+
+
+
+
+
+
+Earhart                                                         [Page 1]
+
+Internet DRAFT           An SMTP URL Interface         December 15, 1997
+
+
+1.   Conventions Used in this Document
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+   document are to be interpreted as described in [KEYWORDS].
+
+
+2.   SMTP URL Scheme
+
+   The SMTP URL follows the common Internet scheme syntax as defined in
+   [BASIC-URL] except that plaintext passwords are not permitted.  If
+   :<port> is omitted, the port defaults to 25.
+
+   The specified server should not be assumed to have any services
+   available other than SMTP.  Other than authentication, no protocol
+   actions are implied by an SMTP URL; an SMTP URL only specifies the
+   location of an SMTP service, not what to do with it (common actions
+   are to use the SMTP server to verify an address, and to submit
+   Internet mail).
+
+   An SMTP URL has the following general form:
+
+      url-smtp  = "smtp://" url-server
+
+   "smtp" refers to the URL scheme; "://" is used to indicate a
+   reference to an Internet host address.  The <url-server> element
+   includes the hostname, and optional user name, authentication
+   mechanism and port number.
+
+   Note that unsafe or reserved characters such as " " or "?" MUST be
+   hex encoded as described in the URL specification [BASIC-URL].  Hex
+   encoded octets are interpreted according to UTF-8 [UTF8].
+
+
+3.   SMTP URL User Name and Authentication Mechanism
+
+   A user name and/or authentication mechanism may be supplied.  They
+   are used to perform SASL [SASL] authentication after making the
+   connection to the SMTP server.  If no user name or authentication
+   mechanism is supplied, then the SASL ANONYMOUS [SASL-ANON] mechanism
+   is used by default.  If an authentication mechanism is supplied
+   without a user name, then one SHOULD be obtained from the specified
+   mechanism or requested from the user as appropriate.  If a user name
+   is supplied without an authentication mechanism then ";AUTH=*" is
+   assumed.
+
+   The ";AUTH=" authentication parameter is interpreted as described in
+   the IMAP URL Scheme [IMAP-URL].
+
+
+
+Earhart                                                         [Page 2]
+
+Internet DRAFT           An SMTP URL Interface         December 15, 1997
+
+
+   Note that if unsafe or reserved characters such as " " or ";" are
+   present in the user name or authentication mechanism, they MUST be
+   encoded as described in the URL specification [BASIC-URL].
+
+
+4.   Formal Syntax
+
+   The following syntax specification uses the augmented Backus-Naur
+   Form (BNF) notation as specified in [ABNF].  This uses the ABNF core
+   rules as specified in Appendix A of the ABNF specification [ABNF].
+
+   Except as noted otherwise, all alphabetic characters are case-
+   insensitive.  The use of upper or lower case characters to define
+   token strings is for editorial clarity only.  Implementations MUST
+   accept these strings in a case-insensitive fashion.
+
+      url-auth           = ";AUTH=" ("*" / url-enc-auth)
+
+      url-achar          = uchar / "&" / "=" / "~"
+                           ;; See [BASIC-URL] for definition of "uchar"
+
+      url-enc-auth       = 1*url-achar
+                           ;; encoded version of auth-type-name above
+
+      url-enc-user       = *url-achar
+                           ;; encoded version of login userid
+
+      url-server         = [url-enc-user [url-auth] "@"] hostport
+                           ;; See [BASIC-URL] for definition of "hostport"
+
+      url-smtp           = "smtp://" url-server
+
+
+5.   Security Considerations
+
+   SMTP URLs have the same security considerations as IMAP URLs [IMAP-
+   URL].
+
+   Clients SHOULD make the SMTP URL being used obvious to the user, as
+   using an undesireable server may compromise the security of the
+   user's message.
+
+
+
+
+
+
+
+
+
+
+Earhart                                                         [Page 3]
+
+Internet DRAFT           An SMTP URL Interface         December 15, 1997
+
+
+6.   Copyright
+
+   Copyright (C) The Internet Society 1997. All Rights Reserved.
+
+   This document and translations of it may be copied and furnished to
+   others, and derivative works that comment on or otherwise explain it
+   or assist in its implementation may be prepared, copied, published
+   and distributed, in whole or in part, without restriction of any
+   kind, provided that the above copyright notice and this paragraph are
+   included on all such copies and derivative works.  However, this
+   document itself may not be modified in any way, such as by removing
+   the copyright notice or references to the Internet Society or other
+   Internet organizations, except as needed for the purpose of
+   developing Internet standards in which case the procedures for
+   copyrights defined in the Internet Standards process must be
+   followed, or as required to translate it into languages other than
+   English.
+
+   The limited permissions granted above are perpetual and will not be
+   revoked by the Internet Society or its successors or assigns.
+
+   This document and the information contained herein is provided on an
+   "AS IS" basis and THE INTERNET SOCIETY AND THE INTERNET ENGINEERING
+   TASK FORCE DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING
+   BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION
+   HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF
+   MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+
+7.   References
+
+   [ABNF] Crocker, Overell, "Augmented BNF for Syntax Specifications:
+   ABNF", RFC 2234, November 1997.
+
+      <url:ftp://ds.internic.net/rfc/rfc2234.txt>
+
+   [BASIC-URL] Berners-Lee, Masinter, McCahill, "Uniform Resource
+   Locators (URL)", RFC 1738, December 1994.
+
+      <url:ftp://ds.internic.net/rfc/rfc1738.txt>
+
+   [IMAP-URL] Newman, "IMAP URL Scheme", RFC 2192, July 1997.
+
+      <url:ftp://ds.internic.net/rfc/rfc2192.txt>
+
+
+
+
+
+
+
+Earhart                                                         [Page 4]
+
+Internet DRAFT           An SMTP URL Interface         December 15, 1997
+
+
+   [KEYWORDS] Bradner, "Key words for use in RFCs to Indicate
+   Requirement Levels", BCP 14, RFC 2119, March 1997.
+
+      <url:ftp://ds.internic.net/rfc/rfc2119.txt>
+
+   [SASL] Myers, "Simple Authentication and Security Layer (SASL)", RFC
+   2222, October 1997.
+
+      <url:ftp://ds.internic.net/rfc/rfc2222.txt>
+
+   [SASL-ANON] Newman, "Anonymous SASL Mechanism", RFC 2245, November
+   1997.
+
+      <url:ftp://ds.internic.net/rfc/rfc2245.txt>
+
+   [UTF8] Yergeau, "UTF-8, a transformation format of Unicode and ISO
+   10646", RFC 2044, October 1996.
+
+      <url:ftp://ds.internic.net/rfc/rfc2044.txt>
+
+
+8.   Author's Address
+
+   Robert H. Earhart
+   Carnegie Mellon
+   5000 Forbes Ave.
+   Pittsburgh PA, 15213-3890
+
+   Email: earhart+@cmu.edu
+
+
+Expires June 1997
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Earhart                                                         [Page 5]
+
