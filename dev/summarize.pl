@@ -50,6 +50,7 @@ my $filterform = '
 <option value="^..........-">SSH disabled</option>
 <option value="^....[^-]">SSL: any</option>
 <option value="^....X">SSL: axTLS</option>
+<option value="^....C">SSL: CyaSSL</option>
 <option value="^....T">SSL: GnuTLS</option>
 <option value="^....N">SSL: NSS</option>
 <option value="^....S">SSL: OpenSSL</option>
@@ -363,7 +364,7 @@ sub endofsingle {
     undef %serverfail;
 
     $showdebug=($debug?"D":"-").($trackmem?"M":"-").($valgrind?"V":"-");
-    $https=($openssl)?"S":($gnutls?"T":($nss?"N":($polarssl?"O":($axtls?"X":($schannel?"L":($darwinssl?"R":"-"))))));
+    $https=($openssl)?"S":($gnutls?"T":($nss?"N":($polarssl?"O":($axtls?"X":($schannel?"L":($darwinssl?"R":($cyassl?"C":"-")))))));
     my $showres=($asynch)?($ares?"A":"H"):"-";
     $sspi=$sspi?"P":"-";
     my $ssh=$libssh2?"2":"-";
@@ -409,7 +410,7 @@ sub endofsingle {
     $trackmem=0;
     $valgrind=0;
 
-    $openssl=$gnutls=$nss=$axtls=$polarssl=$schannel=$darwinssl=0;
+    $openssl=$gnutls=$nss=$axtls=$polarssl=$schannel=$darwinssl=$cyassl=0;
 
     $libmetalink=0;
     $libssh2=0;
@@ -580,6 +581,9 @@ sub singlefile {
             }
             elsif($line =~ /^\#define USE_DARWINSSL 1/) {
                 $darwinssl = 1;
+            }
+            elsif($line =~ /^\#define USE_CYASSL 1/) {
+                $cyassl = 1;
             }
             elsif($line =~ /^\#define USE_LIBSSH2 1/) {
                 $libssh2 = 1;
