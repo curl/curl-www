@@ -20,17 +20,18 @@ TITLE(Automatically converted CA Certs from mozilla.org)
 <br><a href="sslcerts.html">SSL Certs</a>
 </div>
 <p>
- We provide automated conversions. The output CA bundle file in PEM format is
- available from here:
+ We provide automated conversions. The output CA bundle file in PEM format
+ (250KB) is available from here:
 
- <ul>
- <li> <a
- href="http://curl.haxx.se/ca/cacert.pem">cacert.pem</a> (~250KB)
- <li> <a
- href="http://curl.haxx.se/ca/cacert.pem.gz">cacert.pem.gz</a> (~130 KB)
- <li> <a
- href="http://curl.haxx.se/ca/cacert.pem.bz2">cacert.pem.bz2</a> (130 KB)
+<ul>
+<p>
+ HTTP from curl.haxx.se: <a href="http://curl.haxx.se/ca/cacert.pem">cacert.pem</a>
+
+<p>
+ HTTPS from github: <a href="https://raw.githubusercontent.com/bagder/ca-bundle/master/ca-bundle.crt">ca-bundle.crt</a>
+
 </ul>
+
 <p>
  The PEM file contains the datestamp of the conversion and we try to only
  convert if there's a change in either the script or the source file.
@@ -83,6 +84,7 @@ SUBTITLE(Convert from your local Firefox installation)
 <p> You can also extract the ca certs off your Firefox installation, if you
  just have the 'certutil' tool installed and run the <a href="http://github.com/bagder/curl/blob/master/lib/firefox-db2pem.sh">firefox-db2pem.sh</a> script!
 
+#if 0
 SUBTITLE(What - no HTTPS?)
 
 <p>
@@ -98,6 +100,7 @@ SUBTITLE(What - no HTTPS?)
 <li> You're free to run your own caextract service on a HTTPS site to redeem
 this. The scripts and everything we use to offer data on this page are
 available in the curl source code tree.
+#endif
 
 </ol>
 
