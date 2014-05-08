@@ -35,6 +35,26 @@ TITLE(News in curl and libcurl land)
  NCOLE
 #endif
 
+ NSUBJ(CA bundle over HTTPS)
+ NDATE(Mat 8 2014)
+ NCOLS
+
+  Our <a href="/docs/caextract.html">CA extract</a> service is very popular to
+  download Mozilla's CA cert bundle in PEM format. Starting now, we also
+  provide a proper HTTPS download link for users who want to be sure there's
+  no foul play going on during the download.
+
+<p>
+  The HTTPS download is provided via github so it will also provide an
+  alternative hosting site for cases where one or the other has
+  problems. Since there's a chicken-and-egg problem with TLS and CA certs, we
+  still offer the same download URL as before over plain HTTP as well.
+
+<p>
+  Thank you for flying curl.
+
+ NCOLE
+
  NSUBJ(a curl wiki)
  NDATE(April 25 2014)
  NCOLS
