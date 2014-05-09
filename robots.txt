@@ -1,1 +1,6 @@
 # robots.txt for curl.haxx.se
+Disallow: /dl/
+
+# these haven't existed for a while
+Disallow: /lxr/
+Disallow: /cvs.cgi

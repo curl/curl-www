@@ -7,6 +7,7 @@ RedirectPermanent /docs/runtests.html http://curl.haxx.se/dev/runtests.html
 RedirectPermanent /docs/testcurl.html http://curl.haxx.se/dev/testcurl.html
 RedirectPermanent /source.html http://curl.haxx.se/dev/source.html
 RedirectPermanent /bugreport.html http://curl.haxx.se/docs/bugs.html
+RedirectPermanent /cvs.cgi http://curl.haxx.se/dev/source.html
 
 AddType text/plain .pl
 AddType text/plain .php
