@@ -21,7 +21,7 @@ my $tprefix ="tmptable";
 my %combo;
 my $buildnum;
 
-my $onlydo = 600; # limit the amount of log parsings to this amount
+my $onlydo = 1200; # limit the amount of builds to show to this amount
 
 my $file = "${tprefix}.t";
 
