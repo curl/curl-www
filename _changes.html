@@ -54,6 +54,86 @@ activity</a>
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_37_0"></a>
+SUBTITLE(Fixed in 7.37.0 - May 21 2014)
+<p> Changes:
+<ul class="changes">
+ CHG URL parser: IPv6 zone identifiers are now supported
+ CHG CURLOPT_PROXYHEADER: set headers for proxy-only
+ CHG CURLOPT_HEADEROPT: added
+ CHG curl: add --proxy-header
+ CHG sasl: Added support for DIGEST-MD5 via Windows SSPI
+ CHG sasl: Added DIGEST-MD5 qop-option validation in native challange handling
+ CHG <a href="http://curl.haxx.se/mail/lib-2014-04/0067.html">imap: Expanded mailbox SEARCH support to use URL query strings</a>
+ CHG <a href="http://curl.haxx.se/mail/lib-2014-04/0067.html">imap: Extended FETCH support to include PARTIAL URL specifier</a>
+ CHG nss: implement non-blocking SSL handshake
+ CHG build: Reworked Visual Studio project files
+ CHG poll: enable poll on darwin13
+ CHG mk-ca-bundle: added -p
+ CHG libtests: add a wait_ms() function
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1350">mkhelp: generate code for --disable-manual as well</a>
+ BGF hostcheck: added a system include to define struct in_addr
+ BGF winbuild: added warnless.c to fix build
+ BGF Makefile.vc6: added warnless.c to fix build
+ BGF smtp: Fixed login denied when server doesn't support AUTH capability
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-03/0173.html">smtp: Fixed login denied with a RFC-821 based server</a>
+ BGF curl: stop interpreting IPv6 literals as glob patterns
+ BGF http2: remove _DRAFT09 from the NPN_HTTP2 enum
+ BGF http2: let openssl mention the exact protocol negotiated
+ BGF http2+openssl: fix compiler warnings in ALPN using code
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-02/0135.html (ruined)">ftp: in passive data connect wait for happy eyeballs sockets</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1349">HTTP: don't send Content-Length: 0 _and_ Expect: 100-continue</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-04/0053.html">http2: Compile with current nghttp2, which supports h2-11</a>
+ BGF http_negotiate_sspi: Fixed compilation when USE_HTTP_NEGOTIATE not defined
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-04/0063.html">strerror: fix comment about vxworks' strerror_r buffer size</a>
+ BGF url: only use if_nametoindex() if IFNAMSIZ is available
+ BGF imap: Fixed untagged response detection when no data after command
+ BGF various: fix possible dereference of null pointer
+ BGF various: fix use of uninitialized variable
+ BGF various: fix use of non-null terminated strings
+ BGF telnet.c: check sscanf results before passing them to snprintf
+ BGF parsedate.c: check sscanf result before passing it to strlen
+ BGF sockfilt.c: free memory in case of memory allocation errors
+ BGF sockfilt.c: ignore non-key-events and continue waiting for input
+ BGF sockfilt.c: properly handle disk files, pipes and character input
+ BGF sockfilt.c: fixed getting stuck waiting for MinGW stdin pipe
+ BGF sockfilt.c: clean up threaded approach and add documentation
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-04/0159.html">configure: use the nghttp2 path correctly with pkg-config</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1362">curl_global_init_mem: bump initialized even if already initialized</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-04/0145.html">gtls: fix NULL pointer dereference</a>
+ BGF cyassl: Use error-ssl.h when available
+ BGF <a href="https://github.com/bagder/curl/pull/97">handler: make 'protocol' always specified as a single bit</a>
+ BGF INFILESIZE: fields in UserDefined must not be changed run-time
+ BGF openssl: biomem->data is not zero terminated
+ BGF config-win32.h: Fixed HAVE_LONGLONG for Visual Studio .NET 2003 and up
+ BGF curl_ntlm_core: Fixed use of long long for VC6 and VC7
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-04/0161.html">SNI: strip off a single trailing dot from host name</a>
+ BGF curl: bail on cookie use when built with disabled cookies
+ BGF curl_easy_setopt.3: added the proto for CURLOPT_SSH_KNOWNHOSTS
+ BGF <a href="http://thread.gmane.org/gmane.comp.version-control.git/238242">curl_multi_cleanup: ignore SIGPIPE better</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1352">schannel: don't use the connect-timeout during send</a>
+ BGF mprintf: allow %.s with data not being zero terminated
+ BGF tool_help: Fixed missing --login-options option
+ BGF configure: Don't set LD_LIBRARY_PATH when cross-compiling
+ BGF <a href="https://bugzilla.redhat.com/1093348">http: auth failure on duplicated 'WWW-Authenticate: Negotiate' header</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1368">cacertinmem: fix memory leak</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-05/0081.html">lib1506: make sure the transfers are not within the same ms</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-05/0025.html">Makefile.b32: Fixed for vtls changes</a>
+ BGF sasl: Fixed missing qop in the client's challenge-response message
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1371">openssl: unbreak PKCS12 support</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1369">darwinssl: fix potential crash with a P12 file</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-05/0147.html">timers: fix timer regression involving redirects / reconnects</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-04/0203.html">CURLINFO_SSL_VERIFYRESULT: made more reliable</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-05/0127.html">HTTP: fixed connection re-use</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1343">configure: add SPNEGO to supported features</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1344">configure: add GSS-API to supported features</a>
+ BGF ALPN: fix typo in http/1.1 identifier
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1374">http2: make connection re-use work</a>
+</ul>
+
 <a name="7_36_0"></a>
 SUBTITLE(Fixed in 7.36.0 - March 26 2014)
 <img src="/pix/alert.png"
