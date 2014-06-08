@@ -23,7 +23,7 @@ rfc2046.txt (MIME) Part Two: Media Types
 rfc2047.txt (MIME) Part Three: Message Header Extensions for Non-ASCII Text
 rfc2048.txt (MIME) Part Four: Registration Procedures
 rfc2049.txt (MIME) Part Five: Conformance Criteria and Examples
-rfc2068.txt HTTP 1.1 (obsoleted by RFC 2616)
+rfc2068.txt Hypertext Transfer Protocol -- HTTP 1.1 (obsoleted by RFC 2616)
 rfc2109.txt HTTP State Management Mechanism (obsoleted by RFC 2964)
 rfc2183.txt The Content-Disposition Header Field
 rfc2184.txt MIME Parameter Value and Encoded Word Extensions
@@ -41,7 +41,7 @@ rfc2428.txt FTP Extensions for IPv6 and NATs
 rfc2459.txt Internet X.509 Public Key Infrastructure Certificate and CRL Profile
 rfc2518.txt HTTP Extensions for Distributed Authoring -- WEBDAV
 rfc2577.txt FTP Security Considerations
-rfc2616.txt HTTP 1.1, the latest
+rfc2616.txt Hypertext Transfer Protocol -- HTTP 1.1
 rfc2617.txt HTTP Authentication
 rfc2640.txt Internationalization of FTP
 rfc2718.txt Guidelines for new URL Schemes
