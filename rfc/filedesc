@@ -41,7 +41,7 @@ rfc2428.txt FTP Extensions for IPv6 and NATs
 rfc2459.txt Internet X.509 Public Key Infrastructure Certificate and CRL Profile
 rfc2518.txt HTTP Extensions for Distributed Authoring -- WEBDAV
 rfc2577.txt FTP Security Considerations
-rfc2616.txt Hypertext Transfer Protocol -- HTTP 1.1
+rfc2616.txt Hypertext Transfer Protocol -- HTTP 1.1 (obsoleted by RFC7230)
 rfc2617.txt HTTP Authentication
 rfc2640.txt Internationalization of FTP
 rfc2718.txt Guidelines for new URL Schemes
@@ -111,4 +111,10 @@ rfc4616.txt The PLAIN Simple Authentication and Security Layer (SASL) Mechanism
 rfc5849.txt The OAuth 1.0 Protocol (obsoleted by RFC6749)
 rfc6749.txt The OAuth 2.0 Authorization Framework (obsoletes RFC5849)
 draft-murchison-sasl-login-00.txt The LOGIN SASL Mechanism (expired)
-rfc2145.txt Use and Interpretation of HTTP Version Numbers
+rfc2145.txt Use and Interpretation of HTTP Version Numbers (obsoleted by RFC7230)
+rfc7230.txt Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing (obsoletes RFC2145, RFC2616)
+rfc7231.txt Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content (obsoletes RFC2616)
+rfc7232.txt Hypertext Transfer Protocol (HTTP/1.1): Conditional Requests (obsoletes RFC2616)
+rfc7233.txt Hypertext Transfer Protocol (HTTP/1.1): Range Requests (obsoletes RFC2616)
+rfc7234.txt Hypertext Transfer Protocol (HTTP/1.1): Caching (obsoletes RFC2616)
+rfc7235.txt Hypertext Transfer Protocol (HTTP/1.1): Authentication (obsoletes RFC2616)
