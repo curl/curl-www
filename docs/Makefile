@@ -27,7 +27,7 @@ PAGES = index.html manpage.html faq.html changes.html \
  adv_20120124.html adv_20120124B.html mk-ca-bundle.html adv_20130206.html \
  adv_20130412.html adv_20130622.html adv_20131115.html adv_20131217.html \
  adv_20140129.html adv_20140326A.html adv_20140326B.html adv_20140326C.html \
- adv_20140326D.html
+ adv_20140326D.html survey/survey2014.html
 
 all: $(PAGES)
 	@echo done 
@@ -82,6 +82,9 @@ companies.html: _companies.html $(MAINPARTS)
 	$(ACTION)
 
 press.html: _press.html $(MAINPARTS)
+	$(ACTION)
+
+survey/survey2014.html: survey/_survey2014.html $(MAINPARTS)
 	$(ACTION)
 
 thanks.html: _thanks.html $(MAINPARTS) thanks.t thanks2.t
