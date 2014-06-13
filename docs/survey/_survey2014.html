@@ -1,0 +1,310 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>curl and libcurl survey 2014 - results</TITLE>
+#include "css.t"
+</HEAD>
+
+#define CURL_DOCS
+#define CURL_URL docs
+
+#include "../_menu.html"
+#include "setup.t"
+
+WHERE2(Docs, "/docs/", Survey 2014 results)
+
+TITLE(curl and libcurl survey 2014 - results)
+
+SUBTITLE(About the survey)
+
+This survey ran in the beginning of June 2014 during 10 days. It was open to
+the public and advertised on the curl mailing lists and via twitter and
+Google+.
+
+The survey was hosted by google.com which lead to some users avoiding
+it. Other controversies among the questions led to another user category to
+avoid responding.
+
+Of course all answers are only indications to what the greater curl community
+thinks and does.
+
+SUBTITLE(Participants)
+
+<b>194 responses</b>
+
+<p> Contributed over time like this:<p>
+<img src="charts/chart_008.png">
+
+SUBTITLE(Please check the protocols you use curl/libcurl for)
+<p>
+<img align="left" src="charts/chart_010.png">
+
+<pre>
+DICT	3	1.5%
+FILE	17	9%
+FTP	84	43%
+FTPS	34	18%
+GOPHER	3	1.5%
+HTTP	176	91%
+HTTPS	175	90%
+IMAP	10	5%
+IMAPS	8	4%
+LDAP	8	4%
+LDAPS	7	3.6%
+POP3	6	3%
+POP3S	4	2%
+RTMP	5	2.5%
+RTSP	3	1.5%
+SCP	17	9%
+SFTP	35	18%
+SMTP	19	10%
+SMTPS	14	7%
+TELNET	7	3.6%
+TFTP	8	4%
+</pre>
+
+<div style="clear:left;">
+SUBTITLE(Do you use curl/libcurl on multiple platforms?)
+<p>
+<img align="left" src="charts/chart_014.png">
+
+<pre>
+Yes, more than 5	20	11%
+Yes, 4 - 5		23	12%
+Yes, 2 - 3		110	58%
+No, just one		36	19%
+</pre>
+</div>
+
+<div style="clear:left;">
+SUBTITLE(How many years have you been using libcurl?)
+<p>
+<img align="left" src="charts/chart_016.png">
+<pre>
+8 years or more	39	21%
+5 - 8 years	56	30%
+2 - 5 years	66	35%
+1 year or less	26	14%
+</pre>
+</div>
+
+<div style="clear:left;">
+SUBTITLE(Are you subscribed to a curl mailing list?)
+<p>
+<img align="left" src="charts/chart_006.png">
+<pre>
+curl-users	40	28%
+curl-library	62	43%
+curl-announce	33	23%
+other		9	6%
+</pre>
+</div>
+
+<div style="clear:left;">
+SUBTITLE(How have you contributed to the curl project?)
+<p>
+<img align="left" src="charts/chart_003.png">
+<pre>
+I've filed bug report(s)				47	25%
+I've sent patch(es)					56	29%
+I've responded to questions on mailing list / forums	43	23%
+I've helped out in other ways				38	20%
+I run tests or provide infrastructure			7	4%
+</pre>
+</div>
+
+<div style="clear:left;">
+SUBTITLE(Are you involved in other open source projects?)
+<p>
+<img align="left" src="charts/chart_015.png">
+<pre>
+Yes	146	78%
+no	42	22%
+</pre>
+</div>
+
+<div style="clear:left;">
+SUBTITLE(What are the primary reasons you haven't contributed or don't contribute more to the project?)
+<p>
+<img align="left" src="charts/chart_002.png">
+<pre>
+everything works to my satisfaction                113     38%
+things get fixed fast enough anyway                44      15%
+the project doesn't want my changes                5       2%
+I don't have the time                              64      21%
+I don't have the energy                            21      7%
+I don't know the programming languages used        21      7%
+I find it hard to work with the curl developers    0       0%
+I can't deal with the tools (git, make, diff etc)  5       2%
+I don't like or use email                          4       1%
+my work/legal reasons prohibit me                  9       3%
+Other                                              13      4%
+</pre>
+</div>
+
+<div style="clear:left;">
+SUBTITLE(How good is the project and its members to handle...)
+<p>
+ 1 - Really bad to 5 - Really good.
+<p>
+<img align="left" src="charts/chart_005.png">
+<pre>
+Patches
+1	0	0%
+2	1	1%
+3	14	12%
+4	56	46%
+5	50	41%
+</pre>
+</div>
+
+<div style="clear:left;">
+<p>
+<img align="left" src="charts/chart_007.png">
+<pre>
+Bug reports
+1	0	0%
+2	2	2%
+3	16	14%
+4	43	37%
+5	54	47%
+</pre>
+</div>
+
+<div style="clear:left;">
+<p>
+<img align="left" src="charts/chart_011.png">
+<pre>
+Female contributors and other minorities
+1	2	3%
+2	7	9%
+3	33	43%
+4	15	19%
+5	20	26%
+</pre>
+</div>
+
+<div style="clear:left;">
+<p>
+<img align="left" src="charts/chart_004.png">
+<pre>
+Attribution and giving credits
+1	0	0%
+2	0	0%
+3	16	15%
+4	27	25%
+5	63	59%
+</pre>
+</div>
+
+<div style="clear:left;">
+<p>
+<img align="left" src="charts/chart_009.png">
+<pre>
+Helping newcomers to the project
+1	0	0%
+2	6	6%
+3	32	29%
+4	31	28%
+5	40	37%
+</pre>
+</div>
+
+<div style="clear:left;">
+SUBTITLE(Which are the curl project’s best areas?)
+<p>
+ You could select up to 5 areas. The same areas and the same restriction was
+ then on the subsequent question about what our "worst areas".
+ 
+<p>
+<img align="left" src="charts/chart_012.png">
+<pre>
+transfer speeds                                         39      20%
+the support of many protocols                           96      49%
+the quality of the products, curl/libcurl               101     52%
+the features of the protocol implementations            67      34%
+bug fix rate                                            18      9%
+documentation                                           62      32%
+the user and developer community                        37      19%
+project leadership                                      30      15%
+its build environment/setup                             3       2%
+project web site and infrastructure                     3       2%
+support of multiple SSL backends                        29      15%
+test suite                                              8       4%
+its availability and functionality on many platforms    96      50%
+welcoming to new users and contributors                 10      5%
+footprint of the library/executable                     19      10%
+standards compliance                                    31      16%
+the libcurl API                                         64      33%
+</pre>
+</div>
+
+<div style="clear:left;">
+SUBTITLE(Which are the curl project’s worst areas?)
+<p>
+<img align="left" src="charts/chart_013.png">
+<pre>
+transfer speeds                                         15      8%
+the support of many protocols                           5       3%
+the quality of the products, curl/libcurl               5       3%
+the features of the protocol implementations            4       2%
+bug fix rate                                            8       4%
+documentation                                           32      17%
+the user and developer community                        2       1%
+project leadership                                      0       0%
+its build environment/setup                             17      9%
+project web site and infrastructure                     14      7%
+support of multiple SSL backends                        6       3%
+test suite                                              11      6%
+its availability and functionality on many platforms    1       0.5%
+welcoming to new users and contributors                 8       4%
+footprint of the library/executable                     5       3%
+standards compliance                                    3       2%
+the libcurl API                                         10      5%
+</pre>
+</div>
+
+<div style="clear:left;">
+SUBTITLE(If you could not use libcurl what would be your preferred alternative?)
+<p>
+<img align="left" src="charts/chart.png">
+<pre>
+wget (or code ripped out from wget)             67      41%
+libsoup                                         6       4%
+native lib in Perl, Python, Java, etc           40      25%
+Windows native libs (wininet or the likes)      9       6%
+homegrown                                       19      12%
+neon                                            6       4%
+serf                                            3       2%
+Other                                           13      8%
+</pre>
+</div>
+
+<div style="clear:left;">
+SUBTITLE(If you miss support for any protocol tell us which!)
+<p> Since this was a plain text field, I've parsed and edited the responses
+ and then counted the number of times the same one occured. Only a small
+ portion of the participants filled in this field.
+
+<ul>
+<li> 3 * SPDY
+<li> 3 * rsync
+<li> 3 * websockets
+<li> 2 * NNTP
+<li> zeromq
+<li> DDP
+<li> Meteor
+<li> RFC 1149
+<li> Shoutcast / Icecast
+<li> Strict transport security over HTTP
+<li> UUCP
+<li> cifs
+<li> http2
+<li> IRC
+<li> bit torrent
+</ul>
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
+
