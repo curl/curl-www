@@ -1,6 +1,6 @@
 #include "_doctype.html"
 <HTML>
-<HEAD> <TITLE>curl_easy_init() - CURLOPT_WRITEFUNCTION</TITLE>
+<HEAD> <TITLE>CURLOPT_WRITEFUNCTION</TITLE>
 #include "css.t"
 #include "manpage.t"
 </HEAD>
@@ -13,9 +13,11 @@
 #include "_menu.html"
 #include "setup.t"
 
-WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", CURLOPT_WRITEFUNCTION)
+WHERE4(libcurl, "/libcurl/",
+       libcurl API, "/libcurl/c/",
+       curl_easy_setopt, "/libcurl/c/curl_easy_setopt.html", CURLOPT_WRITEFUNCTION)
 
-TITLE(CURLOPT_WRITEFUNCTION.3 -- man page)
+TITLE(CURLOPT_WRITEFUNCTION explained)
 
 #include "CURLOPT_WRITEFUNCTION.t"
 
