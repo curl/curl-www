@@ -1,6 +1,6 @@
 ROOT = ..
 CVSROOT= ../cvssource
-TXT2PLAIN= $(ROOT/docs/txt2plain.pl
+TXT2PLAIN= $(ROOT)/docs/txt2plain.pl
 
 MAINPARTS= $(ROOT)/_doctype.html _menu.html _links.html $(ROOT)/setup.t pic.t \
  $(ROOT)/where.t download.t $(ROOT)/mirrorlinks.t $(ROOT)/ad.t $(ROOT)/css.t  \
