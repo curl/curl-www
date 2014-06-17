@@ -7,7 +7,9 @@ MANROOT=$(DOCROOT)/libcurl
 
 MAINPARTS= $(CURL)/_doctype.html _menu.html $(CURL)/_footer.html	    \
  $(CURL)/setup.t ../pic.t doclinks.t $(CURL)/where.t ../download.t	    \
- $(CURL)/ad.t Makefile $(CURL)/mirrorlinks.t $(CURL)/css.t $(CURL)/sflogo.html
+ $(CURL)/ad.t Makefile $(CURL)/css.t $(CURL)/sflogo.html
+
+MANPARTS=$(MAINPARTS) manpage.t
 
 NOW=$(shell date +'-D__TODAY__=%B %d, %Y')
 ACTION=@echo preprocessing $@; \
@@ -21,7 +23,10 @@ include Makefile.exhtml
 
 C = CURLOPT_
 
-opts = $(C)WRITEFUNCTION.html
+# run mkopts.pl to generate the Makefile.opt* files
+include Makefile.opttargets
+
+opts = $(OPTPAGES)
 
 PAGES = index.html example.html curl_easy_init.html			\
  curl_easy_cleanup.html curl_easy_setopt.html curl_easy_perform.html	\
@@ -340,10 +345,7 @@ curl_multi_assign.html: _curl_multi_assign.html $(MAINPARTS) curl_multi_assign.t
 curl_multi_assign.t: $(MANROOT)/curl_multi_assign.3
 	$(MAN2HTML) < $< >$@
 
-CURLOPT_WRITEFUNCTION.html: _CURLOPT_WRITEFUNCTION.html $(MAINPARTS) CURLOPT_WRITEFUNCTION.t
-	$(ACTION)
-CURLOPT_WRITEFUNCTION.t: $(MANROOT)/opts/CURLOPT_WRITEFUNCTION.3
-	$(MAN2HTML) < $< >$@
+include Makefile.opts
 
 allexamples.zip: $(EXAMPLESRCS)
 	rm -f $@; zip -j $@ $(EXAMPLESRCS)
