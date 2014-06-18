@@ -15,7 +15,7 @@ sub single {
     my ($name) = @_;
 
     open(F, "<_CURLOPT_template.html");
-    open(T, ">_$name.html");
+    open(T, ">$name.gen");
     while(<F>) {
         $_ =~ s/\@template\@/$name/g;
         print T $_;
@@ -29,7 +29,7 @@ sub makeit {
 
     open(M, ">>$actions");
     print M <<moo
-${name}.html: _$name.html \$(MANPARTS) $name.t
+${name}.html: $name.gen \$(MANPARTS) $name.t
 	\$(ACTION)
 $name.t: \$(MANROOT)/opts/$name.3
 	\$(MAN2HTML) <\$< >\$@

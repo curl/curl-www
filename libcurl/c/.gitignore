@@ -4,6 +4,6 @@
 Makefile.examples
 Makefile.exhtml
 allexamples.zip
-_CURLOPT_*html
+CURLOPT_*.gen
 Makefile.opts
 Makefile.opttargets
