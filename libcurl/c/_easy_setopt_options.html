@@ -1,0 +1,30 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>all options for curl_easy_setopt(3)</TITLE>
+#include "css.t"
+#include "manpage.t"
+</HEAD>
+
+#define MENU_EASY
+#define LIBCURL_DOCS
+#define DOCS_OPTS_INDEX
+#define CURL_URL libcurl/c/easy_setopt_options.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE4(libcurl, "/libcurl/",
+       libcurl API, "/libcurl/c/",
+       curl_easy_setopt, "/libcurl/c/curl_easy_setopt.html", all options)
+
+TITLE(All curl_easy_setopt options listed)
+<p>
+ Here's an index of all existing options
+ for <a href="curl_easy_setopt.html">curl_easy_setopt</a>.
+<p>
+
+#include "alloptions.t"
+
+#include "_footer.html"
+</BODY>
+</HTML>
