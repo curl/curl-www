@@ -57,7 +57,7 @@ all: $(PAGES)
 
 clean:
 	rm -f $(PAGES) curl_*.t libcurl.t libcurl-easy.t libcurl-multi.t \
-	libcurl-share.t
+	libcurl-share.t $(EXAMPLES) *.et
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
