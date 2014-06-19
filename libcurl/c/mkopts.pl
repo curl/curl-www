@@ -69,6 +69,7 @@ for (@opts) {
 open(TG, ">$targets");
 open(IDX, ">$index");
 print TG "OPTPAGES = ";
+print IDX "<table>\n";
 my $c = 0;
 for(sort @all) {
     if($c) {
@@ -77,7 +78,11 @@ for(sort @all) {
     print TG "  $_.html";
     $c++;
 
-    printf IDX "<br> <a href=\"$_.html\">$_</a> - %s\n", $desc{$_};
+    printf IDX ("<tr%s><td><a href=\"$_.html\">$_</a></td><td>%s</td></tr>\n",
+                $c&1?"":" class=\"odd\"",
+                $desc{$_});
 }
 close(TG);
+
+print IDX "</table>\n";
 close(IDX);
