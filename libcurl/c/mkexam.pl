@@ -67,9 +67,16 @@ for my $f (@samps) {
             if($l =~ /^(.*)(CURLOPT_[A-Z_]*)(.*)/) {
                 my $cut = $2;
                 my ($pre, $opt, $post) = ($1, $2, $3);
-                
-                $cut =~ s/_//g;
-                $l = "$pre<a href=\"$manpage/curl_easy_setopt.html#$cut\">$opt</a>$post\n";
+
+                if(-r "$opt.html") {
+                    # a dedicated web page exists for this option, link to that
+                    $l = "$pre<a href=\"$manpage/$opt.html\">$opt</a>$post\n";
+                }
+                else {
+                    # link to the generic page and the option fragment
+                    $cut =~ s/_//g;
+                    $l = "$pre<a href=\"$manpage/curl_easy_setopt.html#$cut\">$opt</a>$post\n";
+                }
             }
 
             # replace backslashes
