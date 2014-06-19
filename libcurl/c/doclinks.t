@@ -16,6 +16,12 @@ THIS(Error Codes)
 DOC(Error Codes, libcurl-errors.html)
 #endif
 
+#ifdef LIBCURL_EXAMPLE
+THIS(Example Sources )
+#else
+DOC(Example Sources &raquo;, /libcurl/c/example.html)
+#endif
+
 #ifdef DOCS_SYMBOLS
 THIS(Symbols In Versions)
 #else
