@@ -17,7 +17,7 @@ ACTION=fcpp -I.. -I. -I$(CURL) -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
 
 MAN2HTMLBASIC = roffit --bare --mandir=$(MANROOT) --mandir=$(OPTMAN) --mandir=$(DOCROOT)
 # postprocess the roffit HTML to add links to curl error codes
-MAN2HTML= ( $(MAN2HTMLBASIC) | perl -0x20 -pe '/(CURLE_\w*)/; $$err=$$erra=$$1; $$erra =~ s/_//g; s@CURLE_\w*@<a href="libcurl-errors.html\#$$erra">$$err</a>@;' )
+MAN2HTML= ( $(MAN2HTMLBASIC) | perl -0x20 -pe '/(CURL(E|M|SHE)_\w*)/; $$err=$$erra=$$1; $$erra =~ s/_//g; s@CURL(E|M|SHE)_\w*@<a href="libcurl-errors.html\#$$erra">$$err</a>@;' )
 
 TXT2PLAIN = $(CURL)/docs/txt2plain.pl
 
