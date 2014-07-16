@@ -54,6 +54,66 @@ activity</a>
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_37_1"></a>
+SUBTITLE(Fixed in 7.37.1 - July 16 2014)
+<p> Changes:
+<ul class="changes">
+ CHG bits.close: introduce connection close tracking
+ CHG darwinssl: Add support for --cacert
+ CHG polarssl: add ALPN support
+ CHG docs: Added new option man pages
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-05/0235.html">build: Fixed incorrect reference to curl_setup.h in Visual Studio files</a>
+ BGF build: Use $(TargetDir) and $(TargetName) macros for .pdb and .lib output
+ BGF curl.1: clarify that -u can't specify a user with colon
+ BGF openssl: Fix uninitialized variable use in NPN callback
+ BGF curl_easy_reset: reset the URL
+ BGF curl_version_info.3: returns a pointer to a static struct
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-05/0260.html">url-parser: only use if_nametoindex if detected by configure</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-05/0278.html">select: with winsock, avoid passing unsupported arguments to select()</a>
+ BGF gnutls: don't use deprecated type names anymore
+ BGF gnutls: allow building with nghttp2 but without ALPN support
+ BGF tests: Fix portability issue with the tftpd server
+ BGF curl_sasl_sspi: Fixed corrupt hostname in DIGEST-MD5 SPN
+ BGF curl_sasl: extended native DIGEST-MD5 cnonce to be a 32-byte hex string
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-06/0001.html">random: use Curl_rand() for proper random data</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-06/0003.html">Curl_ossl_init: call OPENSSL_config for initing engines</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1378">config-win32.h: Updated for VC12</a>
+ BGF winbuild: Don't USE_WINSSL when WITH_SSL is being used
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1380">getinfo: HTTP CONNECT code not reset between transfers</a>
+ BGF Curl_rand: Use a fake entropy for debug builds when CURL_ENTROPY set
+ BGF http2: avoid segfault when using the plain-text http2
+ BGF conncache: move the connection counter to the cache struct
+ BGF http2: better return code error checking
+ BGF curlbuild: fix GCC build on SPARC systems without configure script
+ BGF tool_metalink: Support polarssl as digest provider
+ BGF curl.h: reverse the enum/define setup for old symbols
+ BGF curl.h: moved two really old deprecated symbols
+ BGF curl.h: renamed CURLOPT_DEPRECATEDx to CURLOPT_OBSOLETEx
+ BGF buildconf: do not search tools in current directory.
+ BGF OS400: make it compilable again. Make RPG binding up to date
+ BGF nss: do not abort on connection failure (failing tests 305 and 404)
+ BGF nss: make the fallback to SSLv3 work again
+ BGF tool: prevent valgrind from reporting possibly lost memory (nss only)
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-06/0062.html">progress callback: skip last callback update on errors</a>
+ BGF nss: fix a memory leak when CURLOPT_CRLFILE is used
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1391">compiler warnings: potentially uninitialized variables</a>
+ BGF url.c: Fixed memory leak on OOM
+ BGF gnutls: ignore invalid certificate dates with VERIFYPEER disabled
+ BGF gnutls: fix SRP support with versions of GnuTLS from 2.99.0
+ BGF gnutls: fixed a couple of uninitialized variable references
+ BGF gnutls: fixed compilation against versions < 2.12.0
+ BGF build: Fixed overridden compiler PDB settings in VC7 to VC12
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-07/0103.html">ntlm_wb: Fixed buffer size not being large enough for NTLMv2 sessions</a>
+ BGF netrc: don't abort if home dir cannot be found
+ BGF netrc: fixed thread safety problem by using getpwuid_r if available
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-02/0184.html">cookie: avoid mutex deadlock</a>
+ BGF configure: respect host tool prefix for krb5-config
+ BGF gnutls: handle IP address in cert name check
+</ul>
+
 <a name="7_37_0"></a>
 SUBTITLE(Fixed in 7.37.0 - May 21 2014)
 <p> Changes:

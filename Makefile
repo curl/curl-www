@@ -5,8 +5,8 @@ libcurl/_links.html ad.t css.t
 NOW=$(shell date +'-D__TODAY__=%B %e, %Y')
 
 # the latest stable version is:
-STABLE= 7.37.0
-RELDATE = "21st of May 2014"
+STABLE= 7.37.1
+RELDATE = "16th of July 2014"
 
 # name of the dir to tempoary unpack and build zip files in:
 TEMPDIR=tempzip
