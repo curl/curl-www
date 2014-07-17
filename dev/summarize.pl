@@ -10,6 +10,7 @@ BEGIN {
 require "CGI.pm";
 require "../curl.pm";
 require "ccwarn.pm";
+use String::CRC32;
 
 opendir(DIR, "inbox");
 my @logs = grep { /^build.*log$/ } readdir(DIR);
@@ -190,7 +191,7 @@ else {
             my ($lyear, $lmonth, $lday);
             my $l = $_;
             my $class= $i&1?"even":"odd";
-            if(s/<tr>/<tr class=\"$class\">/) {
+            if(s/<tr( class=\"(.*)\")?>/<tr class=\"$class $2\">/) {
                 $i++;
             }
             if($l =~ /\<\!-- (\d\d\d\d)(\d\d)(\d\d)/) {
@@ -302,7 +303,7 @@ sub endofsingle {
     }
 
     my $res = join("",
-                   "<!-- $lyear$lmonth$lday $showdate --><tr>\n",
+                   "<!-- $lyear$lmonth$lday $showdate --><tr class=\"buildcode-$buildcode\">\n",
                    "<td>$a$showdate</a></td>\n");
     if($fail || !$linkfine || !$fine || $nospaceleft) {
         $res .= "<td class=\"buildfail\">";
@@ -409,6 +410,7 @@ sub endofsingle {
     $debug=0;
     $trackmem=0;
     $valgrind=0;
+    $buildcode=0;
 
     $openssl=$gnutls=$nss=$axtls=$polarssl=$schannel=$darwinssl=$cyassl=0;
 
@@ -466,7 +468,20 @@ sub singlefile {
             push @data, endofsingle($file);
             $state = 0;
         }
-        elsif((2 == $state)) {
+        elsif($state >= 2) {
+            if($state == 2) {
+                if($line =~ /^testcurl: version /) {
+                    # This is the end of the fixed portion of the test header
+                    $state = 3;
+                }
+                else {
+                  # Hash a unique code for this particular daily build
+                  # based on the specific fixed headers at the beginning
+                  # of the test log
+                  $buildcode = crc32($line, $buildcode);
+                }
+            }
+
             # this is testcurl output
             if($line =~ /^testcurl: NAME = (.*)/) {
                 $name = $1;
