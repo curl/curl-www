@@ -41,14 +41,13 @@ function showFilter() {
         selects[i].selectedIndex = 0;
     }
 }
-window.onload = showFilter;
 
 /* Hide all rows on the build page that don't match the given options */
 function filterBuilds(selected) {
     /* Select the chosen option on all filter forms on the page */
     var selects = document.getElementsByClassName("filterinput");
     for (var i=0; i<selects.length; i++) {
-	selects[i].selectedIndex = selected.selectedIndex;
+       selects[i].selectedIndex = selected.selectedIndex;
     }
 
     /* Get the regular expression with which to filter */
@@ -74,3 +73,61 @@ function filterBuilds(selected) {
         }
     }
 }
+
+var linefilter = "";
+function filterLine() {
+    /* Alternate between showing all and showing just this build */
+    if (linefilter) {
+        linefilter = "";
+    }
+    else {
+        linefilter = "none";
+    }
+    /* Start by hiding everything */
+    var rows = document.getElementsByClassName("even");
+    for (var i=0; i<rows.length; i++) {
+        rows[i].style.display = linefilter;
+    }
+    rows = document.getElementsByClassName("odd");
+    for (var i=0; i<rows.length; i++) {
+        rows[i].style.display = linefilter;
+    }
+    /* Get this line's build code */
+    var buildcode;
+    var buildrow = this.parentNode;
+    for (var i=0; i<buildrow.classList.length; i++) {
+        if (buildrow.classList[i].match(/^buildcode-/)) {
+          buildcode = buildrow.classList[i];
+          break;
+        }
+    }
+    /* Show just those lines matching this build code */
+    rows = document.getElementsByClassName(buildcode);
+    for (var i=0; i<rows.length; i++) {
+        rows[i].style.display = "";
+    }
+}
+
+function installLineFilter() {
+    var rows = document.getElementsByClassName("even");
+    // Set an onclick handler for the build description
+    for (var i=0; i<rows.length; i++) {
+        /* TODO: use a special class for the description TD element
+           to future proof this */
+        var buildCols = rows[i].getElementsByTagName("td");
+        buildCols[4].onclick = filterLine;
+    }
+    rows = document.getElementsByClassName("odd");
+    for (var i=0; i<rows.length; i++) {
+        var buildCols = rows[i].getElementsByTagName("td");
+        buildCols[4].onclick = filterLine;
+    }
+
+}
+
+function setUp() {
+        showFilter();
+        installLineFilter();
+}
+
+window.onload = setUp;
