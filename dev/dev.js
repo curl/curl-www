@@ -42,8 +42,13 @@ function showFilter() {
     }
 }
 
+var linefilter = "";
+
 /* Hide all rows on the build page that don't match the given options */
 function filterBuilds(selected) {
+    /* The build filter invalidates the line filter */
+    linefilter = "";
+
     /* Select the chosen option on all filter forms on the page */
     var selects = document.getElementsByClassName("filterinput");
     for (var i=0; i<selects.length; i++) {
@@ -74,15 +79,26 @@ function filterBuilds(selected) {
     }
 }
 
-var linefilter = "";
 function filterLine() {
+    var selected;
+
     /* Alternate between showing all and showing just this build */
     if (linefilter) {
         linefilter = "";
+        selected = 0;   /* All */
     }
     else {
         linefilter = "none";
+        selected = -1;  /* invalid */
     }
+    /* Invalidate all filter forms on the page (or set to All,
+       as appropriate). This allows the user to use the build filter form
+       and get the results he expects. */
+    var selects = document.getElementsByClassName("filterinput");
+    for (var i=0; i<selects.length; i++) {
+       selects[i].selectedIndex = selected;
+    }
+
     /* Start by hiding everything */
     var rows = document.getElementsByClassName("even");
     for (var i=0; i<rows.length; i++) {
@@ -110,7 +126,7 @@ function filterLine() {
 
 function installLineFilter() {
     var rows = document.getElementsByClassName("even");
-    // Set an onclick handler for the build description
+    /* Set an onclick handler for the build description */
     for (var i=0; i<rows.length; i++) {
         /* TODO: use a special class for the description TD element
            to future proof this */
