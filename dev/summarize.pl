@@ -481,6 +481,42 @@ sub singlefile {
                   $buildcode = crc32($line, $buildcode);
                 }
             }
+            elsif($state == 3) {
+                if($line =~ /^testcurl: configure created \(dummy message\)/) {
+                    # This isn't an autoconf build at all--we need to include
+                    # the contents of the config header files to make
+                    # a unique buildcode. This is more brittle as it is
+                    # sensitive to changes to the config file headers, but
+                    # is necessary to make a unique buildcode when the
+                    # configuration inputs are invisible.
+                    $state = 4;
+                }
+            }
+            elsif($state == 4) {
+                if($line =~ /^testcurl: display include\/curl\/curlbuild.h/) {
+                    $state = 5;
+                }
+            }
+            elsif($state == 5) {
+                if($line =~ /^testcurl: display lib\//) {
+                    # This is the start of curl_config.h or config-win32.h
+                    $state = 6;
+                }
+                else {
+                  # Include curlbuild.h in the hash
+                  $buildcode = crc32($line, $buildcode);
+                }
+            }
+            elsif($state == 6) {
+                if($line =~ /^testcurl: /) {
+                    # This is the end of curl_config.h or config-win32.h
+                    $state = 7;
+                }
+                else {
+                  # Include curl_config.h in the hash
+                  $buildcode = crc32($line, $buildcode);
+                }
+            }
 
             # this is testcurl output
             if($line =~ /^testcurl: NAME = (.*)/) {
