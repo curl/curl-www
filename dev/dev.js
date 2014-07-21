@@ -43,11 +43,13 @@ function showFilter() {
 }
 
 var linefilter = "";
+var linefiltername = "";
 
 /* Hide all rows on the build page that don't match the given options */
 function filterBuilds(selected) {
-    /* The build filter invalidates the line filter */
+    /* The build filter invalidates the line filters */
     linefilter = "";
+    linefiltername = "";
 
     /* Select the chosen option on all filter forms on the page */
     var selects = document.getElementsByClassName("filterinput");
@@ -68,10 +70,10 @@ function filterBuilds(selected) {
             /* Ignore the first row holding the table heading */
             if (buildCells.length > 5) {
                 if (filterRE.test(buildCells[3].childNodes[0].data)) {
-                    /* Hide non-matching */
+                    /* Show matching */
                     buildRows[i].style.display = "";
                 } else {
-                    /* Show matching */
+                    /* Hide non-matching */
                     buildRows[i].style.display = "none";
                 }
             }
@@ -91,6 +93,8 @@ function filterLine() {
         linefilter = "none";
         selected = -1;  /* invalid */
     }
+    linefiltername = ""
+
     /* Invalidate all filter forms on the page (or set to All,
        as appropriate). This allows the user to use the build filter form
        and get the results he expects. */
@@ -124,7 +128,52 @@ function filterLine() {
     }
 }
 
-function installLineFilter() {
+function filterLineName() {
+    var selected;
+
+    /* Alternate between showing all and showing just this build */
+    if (linefiltername) {
+        linefiltername = "";
+        selected = 0;   /* All */
+    }
+    else {
+        linefiltername = "none";
+        selected = -1;  /* invalid */
+    }
+    linefilter = ""
+
+    /* Invalidate all filter forms on the page (or set to All,
+       as appropriate). This allows the user to use the build filter form
+       and get the results he expects. */
+    var selects = document.getElementsByClassName("filterinput");
+    for (var i=0; i<selects.length; i++) {
+       selects[i].selectedIndex = selected;
+    }
+
+    /* Get this line's builder name */
+    var builderName = this.childNodes[0].data;
+
+    /* Loop around all days of log tables */
+    var buildTables = document.getElementsByClassName("compile");
+    for (var t=0; t<buildTables.length; t++) {
+        var buildRows = buildTables[t].getElementsByTagName("tr");
+        for (var i=0; i<buildRows.length; i++) {
+            var buildCells = buildRows[i].getElementsByTagName("td");
+            /* Ignore the first row holding the table heading */
+            if (buildCells.length > 5) {
+                if (buildCells[5].childNodes[0].data == builderName) {
+                    /* Show matching */
+                    buildRows[i].style.display = "";
+                } else {
+                    /* Hide non-matching (or show, if toggled) */
+                    buildRows[i].style.display = linefiltername;
+                }
+            }
+        }
+    }
+}
+
+function installLineFilters() {
     var rows = document.getElementsByClassName("even");
     /* Set an onclick handler for the build description */
     for (var i=0; i<rows.length; i++) {
@@ -132,18 +181,20 @@ function installLineFilter() {
            to future proof this */
         var buildCols = rows[i].getElementsByTagName("td");
         buildCols[4].onclick = filterLine;
+        buildCols[5].onclick = filterLineName;
     }
     rows = document.getElementsByClassName("odd");
     for (var i=0; i<rows.length; i++) {
         var buildCols = rows[i].getElementsByTagName("td");
         buildCols[4].onclick = filterLine;
+        buildCols[5].onclick = filterLineName;
     }
 
 }
 
 function setUp() {
         showFilter();
-        installLineFilter();
+        installLineFilters();
 }
 
 window.onload = setUp;
