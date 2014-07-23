@@ -39,6 +39,7 @@ function showFilter() {
     var selects = document.getElementsByClassName("filterinput");
     for (var i=0; i<selects.length; i++) {
         selects[i].selectedIndex = 0;
+        selects[i].onchange = filterBuilds;
     }
 }
 
@@ -46,7 +47,7 @@ var linefilter = "";
 var linefiltername = "";
 
 /* Hide all rows on the build page that don't match the given options */
-function filterBuilds(selected) {
+function filterBuilds() {
     /* The build filter invalidates the line filters */
     linefilter = "";
     linefiltername = "";
@@ -54,11 +55,11 @@ function filterBuilds(selected) {
     /* Select the chosen option on all filter forms on the page */
     var selects = document.getElementsByClassName("filterinput");
     for (var i=0; i<selects.length; i++) {
-       selects[i].selectedIndex = selected.selectedIndex;
+       selects[i].selectedIndex = this.selectedIndex;
     }
 
     /* Get the regular expression with which to filter */
-    var filter = selected.options[selected.selectedIndex].value;
+    var filter = this.options[this.selectedIndex].value;
     var filterRE = new RegExp(filter);
 
     /* Loop around all days of log tables */
@@ -173,9 +174,10 @@ function filterLineName() {
     }
 }
 
+/* Executed on page load */
 function installLineFilters() {
     var rows = document.getElementsByClassName("even");
-    /* Set an onclick handler for the build description */
+    /* Set onclick handlers for the build description and name */
     for (var i=0; i<rows.length; i++) {
         /* TODO: use a special class for the description TD element
            to future proof this */
@@ -189,12 +191,11 @@ function installLineFilters() {
         buildCols[4].onclick = filterLine;
         buildCols[5].onclick = filterLineName;
     }
-
 }
 
 function setUp() {
-        showFilter();
-        installLineFilters();
+    showFilter();
+    installLineFilters();
 }
 
 window.onload = setUp;

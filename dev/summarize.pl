@@ -30,7 +30,7 @@ open(TABLE, ">$file");
 
 my $filterform = '
 <form class="filteroptions" style="display: none;">
-<select name="filter" class="filterinput" onChange="filterBuilds(this);">
+<select name="filter" class="filterinput">
 <option value="" selected>All</option>
 <option value="^.D">Debug</option>
 <option value="^.-">Debug disabled</option>
