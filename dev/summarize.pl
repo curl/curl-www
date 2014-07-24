@@ -665,7 +665,7 @@ sub singlefile {
                 if($feat =~ /AsynchDNS/i) {
                     $asynch = 1;
                 }
-                if($feat =~ /GSS-Negotiate/i) {
+                if($feat =~ /GSS-API/i) {
                     $gssapi = 1;
                 }
                 if($feat =~ /IDN/i) {
