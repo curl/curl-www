@@ -6,8 +6,7 @@ libssh(<b>2</b>), m(<b>E</b>)talink
 
 <p> Text <span class='buildserverprob'>looking like this</span> is for servers
 that couldn't be started for the test round.
-
-<p> Use the pop-up menu next to Options or click on a build Description or Name
+Use the pop-up menu next to Options or click on a build Description or Name
 to see only matching builds (requires Javascript).
 <i> Note that selecting a build display filter may give inconsistent results
 for builds before 2014-07-27.</i>
