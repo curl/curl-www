@@ -38,10 +38,8 @@ h2 {
 }
 
 tr.tabletop {
-  font-size: 120%;
-  font-family: sans-serif;
-  color: #ffffff;
-  background-color: #0000ff;
+  color: #000000;
+  background-color: #f0f0ff;
 }
 
 .tabletop a {
