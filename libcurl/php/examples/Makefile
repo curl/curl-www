@@ -1,7 +1,7 @@
 ROOT = ../../..
 
 MAINPARTS= $(ROOT)/_doctype.html ../_menu.html $(ROOT)/setup.t	\
- $(ROOT)/where.t $(ROOT)/mirrorlinks.t $(ROOT)/ad.t $(ROOT)/sflogo.html
+ $(ROOT)/where.t $(ROOT)/mirrorlinks.t $(ROOT)/ad.t $(ROOT)/sflogo.t
 NOW=$(shell date +'-D__TODAY__=%B %d, %Y')
 ACTION=@echo preprocessing $@; rm -f $@; fcpp -I.. -I$(ROOT) -P -WWW -Uunix -H -C -V -LL "$(NOW)" $< $@; chmod a-w+r $@
 

@@ -3,7 +3,7 @@ DOCROOT=$(SRCROOT)/docs
 
 MAINPARTS= ../_doctype.html _menu.html ../_footer.html ../setup.t ../pic.t \
    ../where.t ../ad.t ../libcurl/_links.html ../mirrorlinks.t		   \
-   ../css.t ../sflogo.html
+   ../css.t ../sflogo.t
 NOW=$(shell date +'-D__TODAY__=%B %e, %Y')
 FCPPOPTS=-I.. -Idocs -WWW -Uunix -H -C -V -P -LL "$(NOW)"
 ACTION=fcpp $(FCPPOPTS) $< $@;

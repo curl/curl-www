@@ -224,7 +224,6 @@ span.metalink {
 .menuitem, .libitem {
   text-decoration: none;
   color: #ffffff;
-  background-color: #4040ff;
   white-space: nowrap;
   padding: 0px 0px 0px 0px;
   font-family: sans-serif;
@@ -255,6 +254,14 @@ span.metalink {
 .mainmenu, .libmenu {
   color: #ffffff;
   background-color: #4040ff;
+  padding: 8px 4px 8px 2px;
+  line-height: 140%;
+}
+
+/* the main curl site left-side menu box */
+.tailmenu {
+  color: #ffffff;
+  background-color: #4080ff;
   padding: 8px 4px 8px 2px;
   line-height: 140%;
 }

@@ -65,23 +65,7 @@ LINK("http://curl.haxx.se/dev/", Development)
 VLINK("http://curl.haxx.se/dev/", Development &raquo;, Resources for development and developers)
 #endif
 
-#if 0
-#ifdef CURL_FEEDBACK
-LINK("http://curl.haxx.sehttp://curl.haxx.se/feedback/", Feedback)
-#else
-VLINK("http://curl.haxx.sehttp://curl.haxx.se/feedback/", Feedback, Provide or read others feedback on curl and the site)
-#endif
-#endif
-
 VLINK("http://curl.haxx.se/libcurl/", libcurl &raquo;, libcurl web site section)
-
-#if 0
-#ifdef CURL_SUPPORT
-LINK("http://curl.haxx.se/support.html", Support)
-#else
-VLINK("http://curl.haxx.se/support.html", Support, Buy commercial support from these companies)
-#endif
-#endif
 
 #ifdef CURL_SEARCH
 LINK("http://curl.haxx.se/search.html", Search)
@@ -90,10 +74,7 @@ VLINK("http://curl.haxx.se/search.html", Search, Search the curl web site)
 #endif
 
 </div>
-
-<p>
-#include "sflogo.html"
-
+#include "sflogo.t"
 </td><td valign="top" align="left" class="main">
 
 #endif

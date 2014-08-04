@@ -8,7 +8,7 @@ OPTMAN=$(DOCROOT)/libcurl/opts
 
 MAINPARTS= $(CURL)/_doctype.html _menu.html $(CURL)/_footer.html	    \
  $(CURL)/setup.t ../pic.t doclinks.t $(CURL)/where.t ../download.t	    \
- $(CURL)/ad.t Makefile $(CURL)/css.t $(CURL)/sflogo.html
+ $(CURL)/ad.t Makefile $(CURL)/css.t $(CURL)/sflogo.t
 
 MANPARTS=$(MAINPARTS) manpage.t
 
