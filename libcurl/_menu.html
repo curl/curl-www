@@ -21,85 +21,85 @@
 #ifdef LIBCURL_MAIN
 LINK("", libcurl index )
 #else
-TLINK("/libcurl/", libcurl index, Front page of the libcurl section)
+VLINK("/libcurl/", libcurl index, Front page of the libcurl section)
 #endif
 
 #ifdef LIBCURL_DOCS
 LINK("", API)
 #else
-TLINK(/libcurl/c/, API &raquo;,
+VLINK(/libcurl/c/, API &raquo;,
        Functions provided by libcurl )
 #endif
 
 #ifdef LIBCURL_ABI
 LINK("", Binary Interface)
 #else
-TLINK(/libcurl/abi.html, Binary Interface,
+VLINK(/libcurl/abi.html, Binary Interface,
        ABI guarantees between releases and more )
 #endif
 #ifdef LIBCURL_BINDINGS
 LINK("", Bindings)
 #else
-TLINK(/libcurl/bindings.html, Bindings,
+VLINK(/libcurl/bindings.html, Bindings,
       Using libcurl powers within your language of choice! )
 #endif
 
 #ifdef LIBCURL_COMPETITORS
 LINK("", Competitors )
 #else
-TLINK("/libcurl/competitors.html", Competitors,
+VLINK("/libcurl/competitors.html", Competitors,
       Figure what competing libraries there are )
 #endif
 
 #ifdef LIBCURL_EXAMPLE
 LINK("", Example Sources )
 #else
-TLINK("/libcurl/c/example.html", Example Sources &raquo;,
+VLINK("/libcurl/c/example.html", Example Sources &raquo;,
       Educational snippets of code )
 #endif
 
 #ifdef LIBCURL_FEATURES
 LINK("", Features )
 #else
-TLINK("/libcurl/features.html", Features, What makes libcurl special )
+VLINK("/libcurl/features.html", Features, What makes libcurl special )
 #endif
 
 #ifdef LIBCURL_MAIL
 LINK("", Mailing List )
 #else
-TLINK("/mail/list.cgi?list=curl-library", Mailing List,
+VLINK("/mail/list.cgi?list=curl-library", Mailing List,
       curl-library mailing list info and archives)
 #endif
 
 #ifdef LIBCURL_RELATEDLIBS
 LINK("", Related Libs )
 #else
-TLINK("/libcurl/relatedlibs.html", Related Libs,
+VLINK("/libcurl/relatedlibs.html", Related Libs,
       Related libraries that you might find useful together with libcurl)
 #endif
 
 #ifdef LIBCURL_USING
 LINK("", Using libcurl )
 #else
-TLINK("/libcurl/using/", Using libcurl &raquo;, How to use libcurl section)
+VLINK("/libcurl/using/", Using libcurl &raquo;, How to use libcurl section)
 #endif
 
 #ifdef DOCS_TUTORIAL
 LINK(""Tutorial)
 #else
-TLINK("/libcurl/c/libcurl-tutorial.html", Tutorial &raquo;, libcurl programming tutorial)
+VLINK("/libcurl/c/libcurl-tutorial.html", Tutorial &raquo;, libcurl programming tutorial)
 #endif
 
 #ifdef LIBCURL_THEYSAY
 LINK("", Testimonials )
 #else
-TLINK("/libcurl/theysay.html", Testimonials, What developers using libcurl say about it)
+VLINK("/libcurl/theysay.html", Testimonials, What developers using libcurl say about it)
 #endif
 
 #ifdef CURL_SEARCH
 LINK("/search.html", Search)
 #else
-TLINK("/search.html", Search, Search the curl web site)
+VLINK("/search.html", Search, Search the curl web site)
 #endif
 </div>
 #include "sflogo.t"
