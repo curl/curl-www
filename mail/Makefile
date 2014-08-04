@@ -9,7 +9,7 @@ MAINPARTS= $(ROOT)/_doctype.html $(CURL)/_menu.html $(CURL)/_footer.html \
  $(ROOT)/ad.t $(ROOT)/sflogo.t
 
 NOW=$(shell date +'-D__TODAY__=%B %d, %Y')
-ACTION=@echo preprocessing $@; rm -f $@; fcpp -I.. -I. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; chmod a-w+r $@
+ACTION=@echo preprocessing $@; rm -f $@; fcpp -I.. -I. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@;
 
 all: subscribe.html mail.html etiquette.html index.html indexheader.html \
  indexfooter.html mailheader.html mailfooter.html lost.html mailman.html \
