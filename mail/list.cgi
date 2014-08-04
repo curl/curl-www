@@ -7,6 +7,7 @@ require CGI;
 $req = new CGI;
 
 my $list = $req->param('list');
+my $full = $req->param('full');
 
 print "Content-Type: text/html\n\n";
 
@@ -30,16 +31,8 @@ sub showarchs {
     @syears = sort { $b <=> $a } keys %years;
     
     print "<table cellspacing=\"3\">\n";
-    if(0) {
-        my @he =('Year', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',
-                 'Aug', 'Sep', 'Oct', 'Nov', 'Dec');
-    
-        print "<tr> ";
-        for(@he) {
-            print "<th>$_</th> ";
-        }
-        print "</tr>\n";
-    }
+
+    my $i=0;
 
     for(@syears) {
         my $year=$_;
@@ -65,6 +58,10 @@ sub showarchs {
             }
         }
         print "</tr>\n";
+
+        if((++$i > 4 && ($full < 1))) {
+            last;
+        }
     }
     print "</table>\n";
 
@@ -151,46 +148,15 @@ sub curltracker {
     return "http://cool.haxx.se/mailman/listinfo/curl-tracker";
 }
 
-sub curlpp {
-
-    my ($num)=@_;
-
-    my $some_dir=".";
-    opendir(DIR, $some_dir) || die "can't opendir $some_dir: $!";
-    my @dirs = sort {$a cmp $b} grep { /^curlpp-/ && -d "$some_dir/$_" } readdir(DIR);
-    closedir DIR;
-
-    &showarchs($num, @dirs);
-
-    # return subscription URL
-    return "http://groups.google.com/group/curlpp";
-}
-
-sub curlppdev {
-
-    my ($num)=@_;
-
-    my $some_dir=".";
-    opendir(DIR, $some_dir) || die "can't opendir $some_dir: $!";
-    my @dirs = sort {$a cmp $b} grep { /^curlppdev-/ && -d "$some_dir/$_" } readdir(DIR);
-    closedir DIR;
-
-    &showarchs($num, @dirs);
-
-    # return subscription URL
-    return "http://groups.google.com/group/curlpp-devel";
-}
-
-
 if($list) {
     my $subscr;
     my $none;
 
-    &header("The $list Mailing List");
+    &header("The $list archive");
 
     &where("Mailing Lists", "http://curl.haxx.se/mail/", "$list archive");
 
-    &title("The $list Mailing List Archives");
+    &title("The $list archive");
 
 print <<MOO
 <div class="relatedbox">
@@ -201,8 +167,7 @@ print <<MOO
 MOO
     ;
 
-    if(($list eq "curl-main") ||
-       ($list eq "curl-users")) {
+    if($list eq "curl-users") {
         $subscr = curlmain();
     }
     elsif($list eq "curl-library") {
@@ -217,12 +182,6 @@ MOO
     elsif($list eq "curl-tracker") {
         $subscr = curltracker();
     }
-    elsif($list eq "curlpp") {
-        $subscr = curlpp();
-    }
-    elsif($list eq "curlpp-devel") {
-        $subscr = curlppdev();
-    }
     elsif(($list eq "curl-announce") ||
           ($list eq "curl-www-commits") ||
           ($list eq "curl-commits")) {
@@ -236,27 +195,27 @@ MOO
     }
 
     if(!$none) {
-print <<MOO
-<p>
-This is a web archive of mails posted to the <b>$list</b> mailing list.
-MOO
-;
-}
+        if($full < 1) {
+            print "<p> This is the last few years of mails posted to the <b>$list</b> mailing list. See <a href=\"list.cgi?list=$list&amp;full=1\">full archive</a>.";
+        }
+        else {
+            print "<p> This is the entire archive of mails posted to the <b>$list</b> mailing list. See <a href=\"list.cgi?list=$list\">recent archive</a> only.";
+        }
+
+    }
 
     if($subscr) {
         &subtitle("Subscribe to $list");
         print "<p> <a href=\"$subscr\">subcribe to $list</a>";
     }
 
-    &title("Other Mailing List Archives");
+    &title("More Mailing Lists");
 
     my @archs=('curl-users',
                'curl-library',
                'curl-and-php',
                'curl-and-python',
-               'curl-tracker',
-               'curlpp',
-               'curlpp-devel');
+               'curl-tracker');
 
     my $n;
     for(@archs) {
@@ -268,7 +227,7 @@ MOO
         }
     }
 
-    &title("Search This Site");
+    &title("Search This Site (and the mailing lists)");
 
     &catfile("../sitesearch.t");
 
