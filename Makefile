@@ -33,7 +33,7 @@ all: index.html feedback.html mirrors.html cvs.html libs.html help.html	      \
 	cd rfc && make
 	@echo done 
 
-head.html: _head.html $(MAINPARTS) css.t
+head.html: _head.html $(MAINPARTS)
 	$(ACTION)
 
 donation.html: _donation.html $(MAINPARTS)
