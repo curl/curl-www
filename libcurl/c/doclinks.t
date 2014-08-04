@@ -86,7 +86,7 @@ VLINK("http://curl.haxx.se/libcurl/c/curl_easy_getinfo.html", curl_easy_getinfo,
 
 #ifdef DOCS_EASY_PAUSE
 LINK("http://curl.haxx.se/libcurl/c/curl_easy_pause.html", curl_easy_pause)
-#elseV
+#else
 VLINK("http://curl.haxx.se/libcurl/c/curl_easy_pause.html", curl_easy_pause, curl_easy_pause)
 #endif
 
