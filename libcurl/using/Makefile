@@ -10,7 +10,7 @@ MAINPARTS= $(ROOT)/_doctype.html _menu.html ../_links.html $(ROOT)/setup.t \
   $(ROOT)/mirrorlinks.t $(ROOT)/sflogo.t
 
 NOW=$(shell date +'-D__TODAY__=%B %d, %Y')
-ACTION=@echo preprocessing $@; rm -f $@; fcpp -I.. -I$(ROOT) -I../c -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; chmod a-w+r $@
+ACTION=@echo preprocessing $@; rm -f $@; fcpp -I.. -I$(ROOT) -I../c -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@;
 
 all: index.html apps.html curl-config.html autoconf.html icons.html
 
@@ -31,3 +31,5 @@ curl-config.t: $(DOCROOT)/curl-config.1
 icons.html: _icons.html $(MAINPARTS)
 	$(ACTION)
 
+clean:
+	rm index.html apps.html curl-config.html autoconf.html icons.html

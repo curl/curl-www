@@ -1,18 +1,13 @@
 
+#include "setup.t"
+
 #define BACKGROUND "#ffffff"
 #define TEXTCOLOR "#000000"
 
 #ifndef NOBODY
 
-<BODY bgcolor=BACKGROUND text=TEXTCOLOR LINK="#0000ff" VLINK="#808080" ALINK="red">
+<BODY bgcolor=BACKGROUND text=TEXTCOLOR link="#0000ff" vlink="#808080" alink="red">
 #endif
-
-#undef LINK
-#define LINK(l,t) <div class="libselect">t</div>
-
-#undef VLINK
-#define VLINK(l,t) <div><a href="l" class="libitem">t</a></div>
-#define TLINK(l,t,itle) <div><a href="l" class="libitem" title="itle">t</a></div>
 
 <table cellspacing="0" cellpadding="5"><tr><td valign="top" align="left">
 #include "ad.t"

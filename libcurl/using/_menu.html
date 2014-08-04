@@ -1,3 +1,4 @@
+#include "setup.t"
 
 #define BACKGROUND "#ffffff"
 #define TEXTCOLOR "#000000"
@@ -6,14 +7,8 @@
 
 #ifndef NOBODY
 
-<BODY bgcolor=BACKGROUND text=TEXTCOLOR LINK="#0000ff" VLINK="#808080" ALINK="red">
+<BODY bgcolor=BACKGROUND text=TEXTCOLOR link="#0000ff" vlink="#808080" alink="red">
 #endif
-
-#undef LINK
-#define LINK(l,t) <div class="libselect">t</div>
-
-#undef VLINK
-#define VLINK(l,t) <div><a href=l class="libitem">t</a></div>
 
 <table cellspacing=0 cellpadding=5><tr><td valign=top align=left>
 #include "ad.t"
@@ -28,36 +23,36 @@
 #ifdef USING_INDEX
 LINK("/libcurl/using/", Using libcurl )
 #else
-VLINK("/libcurl/using/", Using libcurl )
+VLINK("/libcurl/using/", Using libcurl, Using libcurl section)
 #endif
 
 #ifdef USING_AUTOCONF
 LINK("/libcurl/using/autoconf.html", autoconf)
 #else
-VLINK("/libcurl/using/autoconf.html", autoconf)
+VLINK("/libcurl/using/autoconf.html", autoconf, How to detect libcurl with autoconf)
 #endif
 
 #ifdef USING_CURL_CONFIG
 LINK("/libcurl/using/curl-config.html", curl-config)
 #else
-VLINK("/libcurl/using/curl-config.html", curl-config)
+VLINK("/libcurl/using/curl-config.html", curl-config, How to use curl-config)
 #endif
 
 #ifdef USING_APPS
 LINK("/libcurl/using/apps.html", Programs)
 #else
-VLINK("/libcurl/using/apps.html", Programs)
+VLINK("/libcurl/using/apps.html", Programs, Applications using libcurl)
 #endif
 
 #ifdef USING_ICONS
 LINK("/libcurl/using/icons.html", Icons)
 #else
-VLINK("/libcurl/using/icons.html", Icons)
+VLINK("/libcurl/using/icons.html", Icons, Some images to show-off libcurl usage)
 #endif
 
 </div>
 
 <p>
-#include "sflogo.html"
+#include "sflogo.t"
 
 </td><td valign=top align=left class="main">

@@ -1,6 +1,8 @@
 #ifndef __MENU
 #define __MENU
 
+#include "setup.t"
+
 #define BACKGROUND "#ffffff"
 #define TEXTCOLOR "#000000"
 #define MENUTEXT "#0000ff"
@@ -9,14 +11,11 @@
 
 #ifndef NOBODY
 
-<BODY bgcolor=BACKGROUND text=TEXTCOLOR LINK="#0000ff" VLINK="#808080" ALINK="red">
+<BODY bgcolor=BACKGROUND text=TEXTCOLOR link="#0000ff" vlink="#808080" alink="red">
 #endif
 
 <table cellspacing="0" cellpadding="5"><tr><td valign="top" align="left">
 #include "ad.t"
-
-#define LINK(l,t) <div class="itemselect">t</div>
-#define VLINK(l,t,itle) <div><a href="l" class="menuitem" title="itle">t</a></div>
 
 <div class="mainmenu">
 
