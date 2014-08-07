@@ -8,5 +8,3 @@ libssh(<b>2</b>), m(<b>E</b>)talink
 that couldn't be started for the test round.
 Use the pop-up menu next to Options or click on a build Description or Name
 to see only matching builds (requires Javascript).
-<i> Note that selecting a build display filter may give inconsistent results
-for builds before 2014-07-27.</i>
