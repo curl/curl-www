@@ -34,7 +34,7 @@ TITLE(Dependencies)
 <td>
   SSL (https) support. Use <a href="http://www.openssl.org">OpenSSL</a>. Curl
   compiles, builds and runs with it. <a
-  href="/download.html#openssl">download links</a>. 
+  href="/download.html#openssl">download links</a>.
 </td>
 </tr>
 
@@ -81,8 +81,18 @@ TITLE(Dependencies)
   <a href="http://www.pdc.kth.se/heimdal/">heimdal</a>
 </td>
 <td>
-  The GSSAPI support can be provided by the heimdal package. GSSAPI is used for
-  the GSS-Negotiate support in libcurl.
+  Support for GSS-API can be provided by the heimdal package and is used to
+  for provide the Kerberos and SPNEGO authentication in libcurl.
+</td>
+</tr>
+
+<tr>
+<td align=center>
+  <a href="http://web.mit.edu/kerberos/">MIT Kerberos</a>
+</td>
+<td>
+  The MIT Kerberos package is also a GSS-API library which can be used to
+  provide support for the Kerberos and SPNEGO authentication in libcurl.
 </td>
 </tr>
 
