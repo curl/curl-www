@@ -20,65 +20,53 @@ TITLE(Dependencies)
 <br><a href="/libcurl/competitors.html">libcurl competitors</a>
 </div>
 <p>
- Curl depends on external libraries for some features (and <a
- href="/libcurl/">libcurl</a> for all features). You can build curl without
- them, but curl gets a lot better if you have these libraries:
+ Curl depends on external libraries for some features
+ (and <a href="/libcurl/">libcurl</a> for all features). You can build curl
+ without them, but curl gets a lot better if you have a few of these
+ libraries:
 <p>
 <table cellpadding="4" cellspacing="0">
 
 <tr class="tabletop"><th>Library</th><th>Used for...</th></tr>
 
 <tr class="even">
-<td align="center">
-  <img src="../openssl.png" width="102" height="47" alt="OpenSSL" border="0"><br>
-  <a href="http://www.openssl.org"><small>www.openssl.org</small></a>
+<td>
+  <a href="http://www.openssl.org">OpenSSL</a>
 </td>
 <td>
-  SSL (https) support. Use <a href="http://www.openssl.org">OpenSSL</a>. Curl
-  compiles, builds and runs with it. <a
-  href="/download.html#openssl">download links</a>.
+  TLS (https) support
 </td>
 </tr>
 
 <tr class="odd">
-<td align="center">
-  <img src="../zlib.png" width="100" height="55" alt="zlib" border="0"><br>
-  <a href="http://www.gzip.org/zlib/"><small>www.gzip.org/zlib</small></a>
+<td>
+  <a href="http://www.gzip.org/zlib/">zlib</a>
 </td>
 <td>
-  The automatic "deflate" decompression depends on <a
-  href="http://www.gzip.org/zlib/">zlib</a>.  <a
-  href="/download.html#zlib">download links</a>
+  The automatic "deflate" decompression
 </td>
 </tr>
 
 <tr class="even">
-<td align="center">
-  <img src="../openldap2.png" width="150" height="42" alt="OpenLDAP" border="0"><br>
-  <a href="http://www.openldap.org"><small>www.openldap.org</small></a>
+<td>
+  <a href="http://www.openldap.org">OpenLDAP</a>
 </td>
 <td>
-  The LDAP support depends on <a href="http://www.openldap.org">OpenLDAP</a>.
+  LDAP support
 </td>
 </tr>
 
 <tr class="odd">
-<td align="center">
-  <small>kerberos4</small>
+<td>
+  <a href="http://www.polarssl.org/">PolarSSL</a>
 </td>
 <td>
-  The kerberos4 support depends on a kerberos4 package! :-) More information
-  can be found at <a
-  href="http://www.contrib.andrew.cmu.edu/~shadow/kerberos.html">http://www.contrib.andrew.cmu.edu/~shadow/kerberos.html</a>,
-  by asking <a href="http://www.google.com/search?q=kerberos">google</a> or at
-  the <a href="http://web.mit.edu/kerberos/www/">MIT kerberos package
-  page</a>. libcurl has been used successfully with <a
-  href="http://www.pdc.kth.se/kth-krb/">kth-krb4</a>.
+   TLS (https) support
 </td>
 </tr>
 
 <tr class="even">
-<td align=center>
+<td>
   <a href="http://www.pdc.kth.se/heimdal/">heimdal</a>
 </td>
 <td>
@@ -88,7 +76,7 @@ TITLE(Dependencies)
 </tr>
 
 <tr class="odd">
-<td align=center>
+<td>
   <a href="http://web.mit.edu/kerberos/">MIT Kerberos</a>
 </td>
 <td>
@@ -98,81 +86,75 @@ TITLE(Dependencies)
 </tr>
 
 <tr class="even">
-<td align="center">
+<td>
   <a href="http://nghttp2.org/">nghttp2</a>
 </td>
 <td>
-  nghttp2 is required for http2 support.
+  For http2 support.
 </td>
 </tr>
 
 <tr class="odd">
-<td align="center">
+<td>
   <a href="http://daniel.haxx.se/projects/c-ares/">c-ares</a>
 </td>
 <td>
-  c-ares is the library libcurl uses for asynchronous name resolves.
+  For asynchronous name resolves.
 </td>
 </tr>
 
 <tr class="even">
-<td align="center">
+<td>
   <a href="http://www.gnu.org/software/libidn/">libidn</a>
 </td>
 <td>
-  libidn is used by libcurl to perform the proper IDNA encodings for
-  international domain names to work.
+  For performing the proper IDNA encodings for international domain names to work.
 </td>
 </tr>
 
 <tr class="odd">
-<td align="center">
-  <img src="../gnutls.png" width="94" height="86" alt="GnuTLS" border="0"><br>
-  <a href="http://www.gnutls.org"><small>www.gnutls.org</small></a>
+<td>
+  <a href="http://www.gnutls.org">GnuTLS</a>
 </td>
 
 <td>
-  TLS (https) support. Use <a href="http://www.gnutls.org">GnuTLS</a>. Curl
-  (7.14.0 or later) compiles, builds and runs with it.
+  TLS (https) support.
 </td>
 </tr>
 
 <tr class="even">
-<td align="center"> <a
+<td> <a
 href="http://www.mozilla.org/projects/security/pki/nss/">NSS</a> </td>
 
 <td>
-  TLS (https) support. Use <a
-  href="http://www.mozilla.org/projects/security/pki/nss/">NSS</a>. Curl
-  (7.16.2 or later) compiles, builds and runs with it.
+  TLS (https) support.
 </td>
 </tr>
 
 <tr class="odd">
-<td align="center">
+<td>
   <a href="http://www.yassl.com/">yassl</a>
 </td>
 <td>
-  TLS (https) support. Use <a href="http://www.yassl.com/">yassl</a>. Curl
-  (7.15.4 or later) compiles, builds and runs with it.
+  TLS (https) support.
 </td>
 </tr>
 
 <tr class="even">
-<td align="center">
+<td>
   <a href="http://www.libssh2.org/">libssh2</a>
 </td>
 <td>
-  For SSH (SCP and SFTP) support, added in (lib)curl 7.16.1.
+  For SCP and SFTP support.
 </td>
 </tr>
 
 <tr class="odd">
-<td align="center">
+<td>
   <a href="https://launchpad.net/libmetalink">libmetalink</a>
 </td>
 <td>
-  For Metalink support, added in curl 7.27.0
+  For Metalink support.
 </td>
 </tr>
 
