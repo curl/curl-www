@@ -1,6 +1,6 @@
 #include "_doctype.html"
 <HTML>
-<HEAD> <TITLE>libcurl - autoconf macro</TITLE>
+<HEAD> <TITLE>libcurl.m4 - autoconf macro</TITLE>
 #include "css.t"
 </HEAD>
 
@@ -11,9 +11,9 @@
 #include "_menu.html"
 #include "setup.t"
 
-WHERE3(libcurl, "/libcurl/", Using, "/libcurl/using/", autoconf macro)
+WHERE3(libcurl, "/libcurl/", Using, "/libcurl/using/", libcurl.m4 - autoconf macro)
 
-TITLE(autoconf macro for detecting libcurl)
+TITLE(libcurl.m4 - autoconf macro for detecting libcurl)
 <div class="relatedbox">
 <b>Related:</b>
 <br><a href="curl-config.html">curl-config</a>
@@ -24,48 +24,9 @@ TITLE(autoconf macro for detecting libcurl)
  href="http://www.gnu.org/software/autoconf/">Autoconf</a>.
 <p>
  If you write a program that depends on a certain version of libcurl, you
- might find <a href="http://cool.haxx.se/cvs.cgi/curl/docs/libcurl/libcurl.m4?rev=HEAD&content-type=text/vnd.viewcvs-markup">this macro</a> useful to detect if your prefered libcurl version is
- installed.
-#if 0
-<p>
-<pre>
-dnl MY_CURL
-dnl -------
-dnl set my_cv_curl_vers to the version of libcurl or NONE
-dnl if libcurl is not found or is too old
-&nbsp;
-AC_DEFUN(MY_CURL,[
- AC_CACHE_VAL(my_cv_curl_vers,[
- my_cv_curl_vers=NONE
- dnl check is the plain-text version of the required version
- check="7.9.7"
- dnl check_hex must be UPPERCASE if any hex letters are present
- check_hex="070907"
-&nbsp;
- AC_MSG_CHECKING([for curl >= $check])
-&nbsp;
- if eval curl-config --version 2>/dev/null >/dev/null; then
-   ver=`curl-config --version | sed -e "s/libcurl //g"`
-   hex_ver=`curl-config --vernum | tr 'a-f' 'A-F'`
-   ok=`echo "ibase=16; if($hex_ver>=$check_hex) $hex_ver else 0" | bc`
-&nbsp;
-   if test x$ok != x0; then
-     my_cv_curl_vers="$ver"
-     AC_MSG_RESULT([$my_cv_curl_vers])
-   else
-     AC_MSG_RESULT(FAILED)
-     AC_MSG_WARN([$ver is too old. Need version $check or higher.])
-   fi
- else
-   AC_MSG_RESULT(FAILED)
-   AC_MSG_WARN([curl-config was not found])
- fi
- ])
-])
-</pre>
-<p>
- Nick Humfrey brought parts of this. Thanks!
-#endif
+ might
+ find <a href="https://github.com/bagder/curl/blob/master/docs/libcurl/libcurl.m4">libcurl.m4</a>
+ useful to detect libcurl.
 
 #include "_footer.html"
 
