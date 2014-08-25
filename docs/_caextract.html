@@ -36,6 +36,7 @@ TITLE(Automatically converted CA Certs from mozilla.org)
  The PEM file contains the datestamp of the conversion and we try to only
  convert if there's a change in either the script or the source file.
 
+#if 0
 SUBTITLE(Changelog)
 <p> August 4th, 2013 -
 <br>
@@ -58,13 +59,19 @@ SUBTITLE(Changelog)
  cross-signed by Entrust etc). See details
  in <a href="https://sourceforge.net/p/curl/bugs/1178/">bug #1178</a>.
 
-SUBTITLE(The mk-ca-bundle.pl script)
+#endif
+
+SUBTITLE(CA cert bundle license)
 <p>
- The <a href="mk-ca-bundle.html">mk-ca-bundle</a> tool converts <a
- href="http://www.mozilla.org/">Mozilla</a>'s <a
- href="http://mxr.mozilla.org/mozilla/source/security/nss/lib/ckfw/builtins/certdata.txt">CA
- cert bundle</a> to PEM format, suitable for (lib)curl and others. Writtten by
- Guenter Knauf.
+ This new file is only a converted version of the original one and thus it is
+ licensed under the same licenses as the Mozilla source file: MPL 1.1, GPL
+ v2.0 or LGPL 2.1
+
+SUBTITLE(The conversion script mk-ca-bundle)
+<p>
+ The <a href="mk-ca-bundle.html">mk-ca-bundle</a> tool
+ converts <a href="http://www.mozilla.org/">Mozilla</a>'s cert bundle to PEM
+ format, suitable for (lib)curl and others. Writtten by Guenter Knauf.
 
 SUBTITLE(Requirements)
 <o>
@@ -73,34 +80,10 @@ SUBTITLE(Requirements)
 <p>
  The exact Mozilla file needed for this job is found within that script.
 
-SUBTITLE(CA bundle license)
-<p>
- This new file is only a converted version of the original one and thus it is
- licensed under the same licenses as the Mozilla source file: MPL 1.1, GPL
- v2.0 or LGPL 2.1
-
 SUBTITLE(Convert from your local Firefox installation)
 
 <p> You can also extract the ca certs off your Firefox installation, if you
  just have the 'certutil' tool installed and run the <a href="http://github.com/bagder/curl/blob/master/lib/firefox-db2pem.sh">firefox-db2pem.sh</a> script!
-
-#if 0
-SUBTITLE(What - no HTTPS?)
-
-<p>
- Yes, pointing out that this contents is not hosted on a HTTPS site is a
- popular thing to do but really it doesn't help anyone, nor does it bring
- any news.
-
-<ol>
-<li> If you don't trust the data or want to be more certain: run the script yourself
-
-<li> Offering the data over HTTPS would give you a chicken-and-egg problem as which CAs would you trust when you download the bundle?
-
-<li> You're free to run your own caextract service on a HTTPS site to redeem
-this. The scripts and everything we use to offer data on this page are
-available in the curl source code tree.
-#endif
 
 </ol>
 
