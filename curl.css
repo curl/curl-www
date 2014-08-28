@@ -264,20 +264,6 @@ span.metalink {
   line-height: 140%;
 }
 
-/* the about infobox in the right-bottom */
-.aboutbox {
-  border-color: black;
-  border-width: 2px;
-  border-style: solid;
-  background-color: #e0e0ff;
-  color: #000000;
-  font-size: 80%;
-  float: right;
-  text-align: left;
-  width: 15em;
-  padding: 2px 2px 2px 2px;
-}
-
 /* the toplevel centered links */
 .ad a {
   border-color: #c0c0ff;
