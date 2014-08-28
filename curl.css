@@ -219,7 +219,7 @@ span.metalink {
 }
 
 /* a non-selected item in the main menu */
-.menuitem, .libitem {
+.menuitem {
   text-decoration: none;
   color: #ffffff;
   white-space: nowrap;
@@ -228,7 +228,7 @@ span.metalink {
 }
 
 /* a non-selected item in the main menu, with the mouse hovering */
-.menuitem:hover, .libitem:hover {
+.menuitem:hover {
   text-decoration: none;
   color: #ffffff;
   background-color: #202080;
@@ -238,7 +238,7 @@ span.metalink {
 }
 
 /* a selected item in the main menu */
-.itemselect, .libselect {
+.itemselect {
   font-family: sans-serif;
   text-decoration: none;
   background-color: white;
@@ -249,7 +249,7 @@ span.metalink {
 }
 
 /* the main curl site left-side menu box */
-.mainmenu, .libmenu {
+.mainmenu {
   color: #ffffff;
   background-color: #4040ff;
   padding: 8px 4px 8px 2px;
