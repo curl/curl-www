@@ -1,5 +1,5 @@
-MAINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t	\
-libcurl/_links.html ad.t css.t sflogo.t
+MAINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t ad.t	\
+ css.t sflogo.t
 
 # today's date
 NOW=$(shell date +'-D__TODAY__=%B %e, %Y')

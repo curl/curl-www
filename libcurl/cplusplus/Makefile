@@ -1,7 +1,7 @@
 ROOT = ../..
 
-MAINPARTS= $(ROOT)/_doctype.html ../_menu.html ../_links.html $(ROOT)/setup.t	\
- ../pic.t $(ROOT)/where.t $(ROOT)/mirrorlinks.t $(ROOT)/ad.t $(ROOT)/css.t	\
+MAINPARTS= $(ROOT)/_doctype.html ../_menu.html $(ROOT)/setup.t ../pic.t	\
+ $(ROOT)/where.t $(ROOT)/mirrorlinks.t $(ROOT)/ad.t $(ROOT)/css.t	\
  $(ROOT)/sflogo.t
 
 NOW=$(shell date +'-D__TODAY__=%B %d, %Y')

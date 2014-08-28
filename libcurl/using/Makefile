@@ -5,7 +5,7 @@ DOCROOT=$(SRCROOT)/docs
 CURL= $(ROOT)
 MAN2HTML= roffit --bare
 
-MAINPARTS= $(ROOT)/_doctype.html _menu.html ../_links.html $(ROOT)/setup.t \
+MAINPARTS= $(ROOT)/_doctype.html _menu.html $(ROOT)/setup.t \
   ../pic.t  $(ROOT)/where.t ../download.t $(ROOT)/ad.t $(ROOT)/css.t	   \
   $(ROOT)/mirrorlinks.t $(ROOT)/sflogo.t
 
