@@ -9,7 +9,7 @@
 #define DATE(date) <b>date</b>
 #define CURLSIZE(size) <i>size</i>
 
-#define LINK(l,t) <div class="itemselect">t</div>
+#define LINK(l,t) <div><a href="l" class="itemselect">t</a></div>
 #define VLINK(l,t,itle) <div><a href="l" class="menuitem" title="itle">t</a></div>
 
 #include "where.t"
