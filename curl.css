@@ -245,14 +245,14 @@ span.metalink {
   font-weight: bold;
   color: black;
   white-space: nowrap;
-  padding: 0px 2px 0px 2px;
+  padding: 0px 0px 0px 0px;
 }
 
 /* the main curl site left-side menu box */
 .mainmenu {
   color: #ffffff;
   background-color: #4040ff;
-  padding: 8px 4px 8px 2px;
+  padding: 4px 4px 4px 4px;
   line-height: 140%;
 }
 
@@ -260,7 +260,7 @@ span.metalink {
 .tailmenu {
   color: #ffffff;
   background-color: #4080ff;
-  padding: 8px 4px 8px 2px;
+  padding: 4px 4px 4px 4px;
   line-height: 140%;
 }
 
