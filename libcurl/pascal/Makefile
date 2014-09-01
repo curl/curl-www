@@ -1,9 +1,10 @@
 ROOT = ../..
 
-MAINPARTS= $(ROOT)/_doctype.html ../_menu.html $(ROOT)/setup.t \
- $(ROOT)/where.t $(ROOT)/ad.t
-NOW=$(shell date +'-D__TODAY__=%B %d, %Y')
-ACTION=@echo preprocessing $@; rm -f $@; fcpp -I.. -I$(ROOT) -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; chmod a-w+r $@
+include $(ROOT)/setup.mk
+include $(ROOT)/mainparts.mk
+include ../bindings.mk
+
+FCPP_OPTS=-I..
 
 all: index.html
 
