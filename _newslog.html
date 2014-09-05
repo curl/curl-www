@@ -35,6 +35,22 @@ TITLE(News in curl and libcurl land)
  NCOLE
 #endif
 
+ NSUBJ(RSA-1024 cacert cleanups)
+ NDATE(September 5 2014)
+ NCOLS
+
+ Mozilla has recently removed weak certs from
+ the <a href="/docs/caextract.html">CA certs bundle</a>. Weak, in the meaning
+ that they used 1024 bit RSA.
+ <p>
+ If you download the latest cacert bundle from the link above right now,
+ you'll see that s3.amazonaws.com sites no longer gets verified fine. I guess
+ that it goes for a few other sites too.
+ <p>
+ <a href="http://curl.haxx.se/mail/lib-2014-09/0041.html">Read more</a>.
+
+ NCOLE
+
  NSUBJ(curl and libcurl 7.37.1)
  NDATE(July 16 2014)
  NCOLS
