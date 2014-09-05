@@ -170,6 +170,7 @@ VLINK("http://curl.haxx.se/libcurl/c/curl_global_init.html", curl_global_init, c
 
 #ifdef DOCS_GLOBAL_INIT_MEM
 LINK("http://curl.haxx.se/libcurl/c/curl_global_init_mem.html", curl_global_init_mem)
+#else
 VLINK("http://curl.haxx.se/libcurl/c/curl_global_init_mem.html", curl_global_init_mem, curl_global_init_mem)
 #endif
 
@@ -181,6 +182,7 @@ VLINK("http://curl.haxx.se/libcurl/c/curl_slist_append.html", curl_slist_append,
 
 #ifdef DOCS_SLIST_FREE_ALL
 LINK("http://curl.haxx.se/libcurl/c/curl_slist_free_all.html", curl_slist_free_all)
+#else
 VLINK("http://curl.haxx.se/libcurl/c/curl_slist_free_all.html", curl_slist_free_all, curl_slist_free_all)
 #endif
 
@@ -202,6 +204,7 @@ VLINK("http://curl.haxx.se/libcurl/c/curl_version_info.html", curl_version_info,
 <hr>
 #ifdef DOCS_MULTI_ADD_HANDLE
 LINK("http://curl.haxx.se/libcurl/c/curl_multi_add_handle.html", curl_multi_add_handle)
+#else
 VLINK("http://curl.haxx.se/libcurl/c/curl_multi_add_handle.html", curl_multi_add_handle, curl_multi_add_handle)
 #endif
 
@@ -213,6 +216,7 @@ VLINK("http://curl.haxx.se/libcurl/c/curl_multi_assign.html", curl_multi_assign,
 
 #ifdef DOCS_MULTI_CLEANUP
 LINK("http://curl.haxx.se/libcurl/c/curl_multi_cleanup.html", curl_multi_cleanup)
+#else
 VLINK("http://curl.haxx.se/libcurl/c/curl_multi_cleanup.html", curl_multi_cleanup, curl_multi_cleanup)
 #endif
 
@@ -224,6 +228,7 @@ VLINK("http://curl.haxx.se/libcurl/c/curl_multi_fdset.html", curl_multi_fdset, c
 
 #ifdef DOCS_MULTI_INFO_READ
 LINK("http://curl.haxx.se/libcurl/c/curl_multi_info_read.html", curl_multi_info_read)
+#else
 VLINK("http://curl.haxx.se/libcurl/c/curl_multi_info_read.html", curl_multi_info_read, curl_multi_info_read)
 #endif
 
@@ -235,11 +240,13 @@ VLINK("http://curl.haxx.se/libcurl/c/curl_multi_init.html", curl_multi_init, cur
 
 #ifdef DOCS_MULTI_PERFORM
 LINK("http://curl.haxx.se/libcurl/c/curl_multi_perform.html", curl_multi_perform)
+#else
 VLINK("http://curl.haxx.se/libcurl/c/curl_multi_perform.html", curl_multi_perform, curl_multi_perform)
 #endif
 
 #ifdef DOCS_MULTI_REMOVE_HANDLE
 LINK("http://curl.haxx.se/libcurl/c/curl_multi_remove_handle.html", curl_multi_remove_handle)
+#else
 VLINK("http://curl.haxx.se/libcurl/c/curl_multi_remove_handle.html", curl_multi_remove_handle, curl_multi_remove_handle)
 #endif
 
@@ -257,16 +264,19 @@ VLINK("http://curl.haxx.se/libcurl/c/curl_multi_socket.html", curl_multi_socket,
 
 #ifdef DOCS_MULTI_SOCKET_ACTION
 LINK("http://curl.haxx.se/libcurl/c/curl_multi_socket_action.html", curl_multi_socket_action)
+#else
 VLINK("http://curl.haxx.se/libcurl/c/curl_multi_socket_action.html", curl_multi_socket_action, curl_multi_socket_action)
 #endif
 
 #ifdef DOCS_MULTI_STRERROR
 LINK("http://curl.haxx.se/libcurl/c/curl_multi_strerror.html", curl_multi_strerror)
+#else
 VLINK("http://curl.haxx.se/libcurl/c/curl_multi_strerror.html", curl_multi_strerror, curl_multi_strerror)
 #endif
 
 #ifdef DOCS_MULTI_TIMEOUT
 LINK("http://curl.haxx.se/libcurl/c/curl_multi_timeout.html", curl_multi_timeout)
+#else
 VLINK("http://curl.haxx.se/libcurl/c/curl_multi_timeout.html", curl_multi_timeout, curl_multi_timeout)
 #endif
 
@@ -282,6 +292,7 @@ VLINK("http://curl.haxx.se/libcurl/c/curl_multi_wait.html", curl_multi_wait, cur
 <hr>
 #ifdef DOCS_SHARE_CLEANUP
 LINK("http://curl.haxx.se/libcurl/c/curl_share_cleanup.html", curl_share_cleanup)
+#else
 VLINK("http://curl.haxx.se/libcurl/c/curl_share_cleanup.html", curl_share_cleanup, curl_share_cleanup)
 #endif
 
@@ -299,6 +310,7 @@ VLINK("http://curl.haxx.se/libcurl/c/curl_share_setopt.html", curl_share_setopt,
 
 #ifdef DOCS_SHARE_STRERROR
 LINK("http://curl.haxx.se/libcurl/c/curl_share_strerror.html", curl_share_strerror)
+#else
 VLINK("http://curl.haxx.se/libcurl/c/curl_share_strerror.html", curl_share_strerr, curl_share_strerr)
 #endif
 
