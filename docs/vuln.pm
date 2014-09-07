@@ -1,5 +1,7 @@
 # datestamp, first vulnerable version, last vulnerable version
 @vuln = (
+    "20140910B|7.31.0|7.37.1|libcurl cookie leak for TLDs",
+    "20140910A|7.1|7.37.1|libcurl cookie leak with IP address as domain",
     "20140326D|7.26.0|7.35.0|libcurl not verifying certs for TLS to IP address / Winssl",
     "20140326C|7.26.0|7.35.0|libcurl not verifying certs for TLS to IP address / Darwinssl",
     "20140326B|7.1|7.35.0|libcurl IP address wildcard certificate validation",

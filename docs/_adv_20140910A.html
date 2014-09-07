@@ -1,0 +1,27 @@
+#include "_doctype.html"
+#define FLAWNAME libcurl cookie leak with IP address as domain
+
+<HTML>
+<HEAD> <TITLE>cURL - FLAWNAME</TITLE>
+#include "css.t"
+#include "manpage.t"
+</HEAD>
+
+#define CURL_DOCS
+#define CURL_URL docs/adv_20140326A.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(Docs, "/docs/", Security, "/docs/security.html",
+ FLAWNAME)
+
+TITLE(FLAWNAME)
+#include "adv-related-box.inc"
+
+<pre>
+#include "adv_20140910A.t"
+</pre>
+
+#include "_footer.html"
+</body> </html>
