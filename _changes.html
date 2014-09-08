@@ -54,6 +54,91 @@ activity</a>
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_38_0"></a>
+SUBTITLE(Fixed in 7.38.0 - September 10 2014)
+<p> Changes:
+<ul class="changes">
+ CHG supports HTTP/2 draft-14
+ CHG CURLE_HTTP2 is a new error code
+ CHG CURLAUTH_NEGOTIATE is a new auth define
+ CHG CURL_VERSION_GSSAPI is a new capability bit
+ CHG no longer use fbopenssl for anything
+ CHG schannel: use CryptGenRandom for random numbers
+ CHG axtls: define curlssl_random using axTLS's PRNG
+ CHG cyassl: use RNG_GenerateBlock to generate a good random number
+ CHG findprotocol: show unsupported protocol within quotes
+ CHG version: detect and show LibreSSL
+ CHG version: detect and show BoringSSL
+ CHG imap/pop3/smtp: Kerberos (SASL GSSAPI) authentication via Windows SSPI
+ CHG http2: requires nghttp2 0.6.0 or later
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="/docs/adv_20140910A.html">SECURITY ADVISORY: cookie leak with IP address as domain</a>
+ BGF <a href="/docs/adv_20140910B.html">SECURITY ADVISORY: cookie leak for TLDs</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-07/0209.html">fix a build failure on Debian when NSS support is enabled</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-07/0202.html">HTTP/2: fixed compiler warnings when built disabled</a>
+ BGF cyassl: return the correct error code on no CA cert
+ BGF http: Deprecate GSS-Negotiate macros due to bad naming
+ BGF http: Fixed Negotiate: authentication
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1397">multi: Improve proxy CONNECT performance (regression)</a>
+ BGF ntlm_wb: Avoid invoking ntlm_auth helper with empty username
+ BGF ntlm_wb: Fix hard-coded limit on NTLM auth packet size
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1398">url.c: use the preferred symbol name: *READDATA</a>
+ BGF smtp: fixed a segfault during test 1320 torture test
+ BGF cyassl: made it compile with version 2.0.6 again
+ BGF nss: do not check the version of NSS at run time
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-07/0337.html">c-ares: fix build without IPv6 support</a>
+ BGF <a href="https://github.com/tatsuhiro-t/nghttp2/issues/62">HTTP/2: use base64url encoding</a>
+ BGF SSPI Negotiate: Fix 3 memory leaks
+ BGF <a href="https://github.com/bagder/curl/pull/105">libtest: fixed duplicated line in Makefile</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1399">conncache: fix compiler warning</a>
+ BGF openssl: make ossl_send return CURLE_OK better
+ BGF HTTP/2: Support expect: 100-continue
+ BGF HTTP/2: Fix infinite loop in readwrite_data()
+ BGF parsedate: fix the return code for an overflow edge condition
+ BGF darwinssl: don't use strtok()
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-06/0224.html">http_negotiate_sspi: Fixed specific username and password not working</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1401">openssl: replace call to OPENSSL_config</a>
+ BGF http2: show the received header for better debugging
+ BGF HTTP/2: Move :authority before non-pseudo header fields
+ BGF HTTP/2: Reset promised stream, not its associated stream
+ BGF HTTP/2: added some more logging for debugging stream problems
+ BGF ntlm: Added support for SSPI package info query
+ BGF ntlm: Fixed hard coded buffer for SSPI based auth packet generation
+ BGF sasl_sspi: Fixed memory leak with not releasing Package Info struct
+ BGF sasl_sspi: Fixed SPN not being converted to wchar under Unicode builds
+ BGF sasl: Use a dynamic buffer for DIGEST-MD5 SPN generation
+ BGF http_negotiate_sspi: Use a dynamic buffer for SPN generation
+ BGF sasl_sspi: Fixed missing free of challenge buffer on SPN failure
+ BGF sasl_sspi: Fixed hard coded buffer for response generation
+ BGF Curl_poll + Curl_wait_ms: fix timeout return value
+ BGF docs/SSLCERTS: update the section about NSS database
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-06/0189.html">create_conn: prune dead connections</a>
+ BGF openssl: fix version report for the 0.9.8 branch
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1409">mk-ca-bundle.pl: switched to using hg.mozilla.org</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-06/0221.html">http: fix the Content-Range: parser</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-08/0148.html">Curl_disconnect: don't free the URL</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-08/0155.html">win32: Fixed WinSock 2 #if</a>
+ BGF NTLM: ignore CURLOPT_FORBID_REUSE during NTLM HTTP auth
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1414">curl.1: clarify --limit-rate's effect on both directions</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-08/0148.html">disconnect: don't touch easy-related state on disconnects</a>
+ BGF Cmake: big cleanup and numerous fixes
+ BGF HTTP/2: supports draft-14 - moved :headers before the non-psuedo headers
+ BGF HTTP/2: Reset promised stream, not its associated stream
+ BGF configure.ac: Add support for recent GSS-API implementations for HP-UX
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1381">CONNECT: close proxy connections that fail</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-08/0236.html">CURLOPT_NOBODY.3: clarify this option is for downloads</a>
+ BGF <a href="https://github.com/bagder/curl/pull/115">darwinssl: fix CA certificate checking using PEM format</a>
+ BGF <a href="https://github.com/bagder/curl/pull/112">resolve: cache lookup for async resolvers</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-06/0235.html">low-speed-limit: avoid timeout flood</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1419">polarssl: implement CURLOPT_SSLVERSION</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-07/0206.html">multi: convert CURLM_STATE_CONNECT_PEND handling to a list</a>
+ BGF curl_multi_cleanup: remove superfluous NULL assigns
+ BGF polarssl: support CURLOPT_CAPATH / --capath
+ BGF progress: size_dl/size_ul are always >= 0, and clear "KNOWN" properly
+</ul>
+
 <a name="7_37_1"></a>
 SUBTITLE(Fixed in 7.37.1 - July 16 2014)
 <p> Changes:
