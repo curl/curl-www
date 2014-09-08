@@ -31,6 +31,46 @@ TITLE(curl Security)
  See also the <a href="vulnerabilities.html">Vulnerabilities Table</a> to see
  what versions that are vulnerable to what flaws.
 
+<a name="20140910A"></a>
+SUBTITLE(libcurl cookie leak with IP address as domain)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>September 10, 2014</td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3613">CVE-2014-3613</a> <a href="#20140910A">20140910A</a></td></tr>
+  <tr><td>Affected versions</td><td>from libcurl 7.1 to and including 7.37.1</td></tr>
+  <tr><td>Not affected versions</td><td>libcurl >= 7.38.0<td></tr>
+  <tr><td>Patch</td><td>
+    <a href="/CVE-2014-3613.patch">CVE-2014-3613.patch</a>
+  <tr><td>Advisories</td><td>
+<a href="adv_20140910A.html">Project cURL Security Advisory</a></td></tr>
+</table>
+<p>
+  By not detecting and rejecting domain names for partial literal IP addresses
+  properly when parsing received HTTP cookies, libcurl can be fooled to both
+  sending cookies to wrong sites and into allowing arbitrary sites to set
+  cookies for others.
+<p>
+
+<a name="20140910B"></a>
+SUBTITLE(libcurl cookie leak for TLDs)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>September 10, 2014</td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3613">CVE-2014-3620</a> <a href="#20140910B">20140910B</a></td></tr>
+  <tr><td>Affected versions</td><td>from libcurl 7.31 to and including 7.37.1</td></tr>
+  <tr><td>Not affected versions</td><td>libcurl < 7.31 and libcurl >= 7.38.0<td></tr>
+  <tr><td>Patch</td><td>
+    <a href="/CVE-2014-3620.patch">CVE-2014-3620.patch</a>
+  <tr><td>Advisories</td><td>
+<a href="adv_20140910B.html">Project cURL Security Advisory</a></td></tr>
+</table>
+<p>
+  libcurl wrongly allows cookies to be set for Top Level Domains (TLDs), thus
+  making them apply broader than cookies are allowed. This can allow arbitrary
+  sites to set cookies that then would get sent to a different and unrelated
+  site or domain.
+<p>
+
 <a name="20140326A"></a>
 SUBTITLE(libcurl wrong re-use of connections)
 <p>
