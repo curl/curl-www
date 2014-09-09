@@ -68,7 +68,7 @@ history.html: _history.html $(MAINPARTS) history.t
 	$(ACTION)
 
 history.t: $(DOCROOT)/HISTORY
-	$(TXT2HTML) < $(DOCROOT)/HISTORY > history.t
+	$(MARKDOWN) < $(DOCROOT)/HISTORY > history.t
 
 changes.html: _changes.shtml $(MAINPARTS) changes.t
 	$(ACTION)
@@ -187,9 +187,6 @@ osdistribs.html: _osdistribs.html $(MAINPARTS)
 	$(ACTION)
 
 y2k.html: _y2k.html $(MAINPARTS)
-	$(ACTION)
-
-loc.html: loc.t $(MAINPARTS)
 	$(ACTION)
 
 caextract.html: _caextract.html $(MAINPARTS)
