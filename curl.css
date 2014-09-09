@@ -259,12 +259,18 @@ span.metalink {
   padding: 0px 0px 0px 0px;
 }
 
-/* the main curl site left-side menu box */
+.menu {
+  padding: 4px 4px 4px 4px;
+  line-height: 140%;
+  float: left;
+}
+
+/* the top part of left-side menu box */
 .mainmenu {
+  clear: left;
   color: #ffffff;
   background-color: #4040ff;
   padding: 4px 4px 4px 4px;
-  line-height: 140%;
 }
 
 /* the main curl site left-side menu box */
@@ -372,8 +378,10 @@ div.yellowbox {
   margin-right: auto;
 }
 
-td.main {
-  width: 100%;
+.main {
+  clear: right;
+  float: right;
+  width: 86%;
 }
 
 /* Filtering menus on the autobuild page */
