@@ -1,15 +1,13 @@
+ROOT=..
 SRCROOT=../cvssource
 DOCROOT=$(SRCROOT)/docs
 
-MAINPARTS= ../_doctype.html _menu.html ../_footer.html ../setup.t ../pic.t \
-   ../where.t ../ad.t ../mirrorlinks.t		   \
-   ../css.t ../sflogo.t
-NOW=$(shell date +'-D__TODAY__=%B %e, %Y')
-FCPPOPTS=-I.. -Idocs -WWW -Uunix -H -C -V -P -LL "$(NOW)"
-ACTION=fcpp $(FCPPOPTS) $< $@;
+include $(ROOT)/mainparts.mk
+include $(ROOT)/setup.mk
+
+MAINPARTS += _menu.html
 
 TXT2HTML= txt2html --extract --hrule 10
-TXT2PLAIN = ./txt2plain.pl
 MAN2HTML = roffit --bare
 ADVBOX = adv-related-box.inc
 
@@ -176,7 +174,7 @@ copyright.html: _copyright.html $(MAINPARTS) copying.t
 copying.t: $(SRCROOT)/COPYING
 	$(TXT2PLAIN) < $< > $@
 
-comparison-table.html: _comparison-table.html $(MAINPARTS)  ../release.t
+comparison-table.html: _comparison-table.html $(MAINPARTS)  $(ROOT)/release.t
 	$(ACTION)
 
 ssl-compared.html: _ssl-compared.html $(MAINPARTS)
@@ -328,16 +326,16 @@ adv_20140326D.t: adv_20140326D.txt
 vulnerabilities.html: _vulnerabilities.html vuln.txt $(MAINPARTS)
 	$(ACTION)
 
-vuln.txt: ../_changes.html ./vulntable.pl vuln.pm
+vuln.txt: $(ROOT)/_changes.html ./vulntable.pl vuln.pm
 	./vulntable.pl < $< > $@
 
 releases.html: _releases.html rel.txt $(MAINPARTS)
 	$(ACTION)
 
-rel.txt: ../_changes.html ./relinfo.pl vuln.pm
+rel.txt: $(ROOT)/_changes.html ./relinfo.pl vuln.pm
 	./relinfo.pl < $< > $@
 
-releases.csv: ../_changes.html ./relinfo.pl vuln.pm
+releases.csv: $(ROOT)/_changes.html ./relinfo.pl vuln.pm
 	./relinfo.pl --raw < $< > $@
 
 

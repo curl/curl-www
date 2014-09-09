@@ -8,8 +8,6 @@ include $(ROOT)/setup.mk
 
 MAINPARTS += _menu.html
 
-TXT2PLAIN = $(ROOT)/docs/txt2plain.pl
-
 all: index.html thename.html licmix.html distro-dilemma.html
 
 index.html: _index.html $(MAINPARTS)

@@ -1,7 +1,5 @@
 ROOT = ../..
 
-TXT2PLAIN= $(ROOT)/docs/txt2plain.pl
-
 include $(ROOT)/mainparts.mk
 include $(ROOT)/setup.mk
 
