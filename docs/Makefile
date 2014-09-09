@@ -167,7 +167,7 @@ sslcerts.html: _sslcerts.html $(MAINPARTS) sslcerts.t
 	$(ACTION)
 
 sslcerts.t: $(DOCROOT)/SSLCERTS
-	$(TXT2PLAIN) < $< > $@
+	$(MARKDOWN) < $< > $@
 
 copyright.html: _copyright.html $(MAINPARTS) copying.t
 	$(ACTION)
