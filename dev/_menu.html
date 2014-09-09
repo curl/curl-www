@@ -104,6 +104,12 @@ LINK(x, Internals)
 VLINK(/dev/internals.html, Internals, Internals described)
 #endif
 
+#ifdef DEVEL_ROADMAP
+LINK(x, Roadmap)
+#else
+VLINK(/dev/roadmap.html, Roadmap, Roadmap for the nearest future)
+#endif
+
 #ifdef DEVEL_RUNTESTS
 LINK(x, Run Tests)
 #else

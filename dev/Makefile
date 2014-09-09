@@ -21,7 +21,7 @@ PAGES = foot.html head.html howto.html summary.html	     \
 	readme-curl_off_t.html readme-curlx.html readme-encoding.html	     \
 	readme-hostip.html readme-httpauth.html readme-memoryleak.html	     \
 	readme-multi_socket.html readme-pingpong.html readme-pipelining.html \
-	readme-http2.html security.html
+	readme-http2.html security.html roadmap.html
 
 all: $(PAGES)
 
@@ -33,6 +33,12 @@ index.html: _index.html bugbox.t $(MAINPARTS)
 
 source.html: _source.html $(MAINPARTS)
 	$(ACTION)
+
+roadmap.html: _roadmap.html roadmap.gen $(MAINPARTS)
+	$(ACTION)
+
+roadmap.gen: $(SRCROOT)/docs/ROADMAP.md
+	$(MARKDOWN) < $< > $@
 
 testcurl.html: _testcurl.html $(MAINPARTS) testcurl.dump
 	$(ACTION)
