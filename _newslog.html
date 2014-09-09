@@ -11,17 +11,16 @@
 
 #undef DATE
 
-#define NSUBJ(x) <!-- start !--><div class="newstitle">x
-#define NDATE(x) <span style="float: right">x</span></div>
+#define NSUBJ(subj) <!-- start !--> <h2> subj
+#define NDATE(date) <span style="float: right">date</span></h2>
 
-#define NCOLS <p>
-#define NCOLE </p><!-- stop !-->
+#define NCOLS <div>
+#define NCOLE </div><!-- stop !-->
 
-#define COLRED  <div class="alert">
-#define COLREDE </div><!-- stop !-->
+#define COLRED  <p class="alert">
+#define COLREDE </p><!-- stop !-->
 
 TITLE(News in curl and libcurl land)
-<table class="news">
 
 #if 0
  template:
@@ -2773,8 +2772,6 @@ The script is currently available here:
   href="http://www.unixreview.com/">unixreview.com</a>.
 
  NCOLE
-
-</table>
 
 #include "_footer.html"
 </BODY>

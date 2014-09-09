@@ -3,7 +3,6 @@
 <head>
 <title>curl and libcurl</title>
 #include "css.t"
-<meta name="description" content="curl is a command line tool for transferring data with URL syntax, supporting DICT, FILE, FTP, FTPS, Gopher, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, Telnet and TFTP. curl supports HTTPS certificates, HTTP POST, HTTP PUT, FTP uploading, kerberos, HTTP form based upload, proxies, cookies, user+password authentication, file transfer resume, http proxy tunneling and a busload of other useful tricks">
 </head>
 
 #define CURL_MAIN
@@ -19,49 +18,57 @@
 
 TITLE(curl groks URLs)
 
-<p class="ingres">
-  curl is a command line tool for transferring data with URL syntax,
-  supporting DICT, FILE, FTP, FTPS, Gopher, HTTP, HTTPS, IMAP, IMAPS, LDAP,
-  LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, Telnet and
-  TFTP. curl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading,
-  HTTP form based upload, proxies, cookies, user+password authentication
-  (Basic, Digest, NTLM, Negotiate, kerberos...), file transfer resume, proxy
-  tunneling and a busload of other <a href="docs/features.html">useful
-  tricks</a>.
-</p>
-
-<center><big><strong>
- Possibly more than <a href="http://daniel.haxx.se/blog/2012/05/16/300m-users/">500 million users</a> already, I'm sure you can use it as well!
-</strong></big></center>
-
-#if 0
-#include "poll.t"
-#endif
-<table><tr valign="top"><td width="60%">
+<div style="width: 50%; float: left; background-color: #ffffff; color: black; margin: 0px 0px 0px 0px; padding: 8px 8px 8px 8px;">
+<b>What is curl?</b>
 <p>
-  curl is free and <a href="docs/copyright.html" title="curl and libcurl are licensed under a MIT/X derivate license">open software</a> that compiles and
-  runs under a wide variety of operating systems. curl exists thanks to
-  efforts from <a href="docs/thanks.html" title="More than 1000 named contributors">many contributors</a>.
-
-<p>
-  <b>The most recent stable version of curl is version __STABLE</b>, released
-  on __RELDATE.  Currently, __CURR of the <a href="download.html" title="We have a very extensive download page!">listed archives</a> are of the latest
-  version.  </td><td>
-
-<p>
-  Use the curl <a href="/docs/manpage.html" title="man page for curl">command
-  line tool</a> or use <a href="libcurl/" title="bindings for everyone!">libcurl</a> from within your own programs.
-
-<p>
- Found a bug or a flaw? <a href="/docs/bugs.html">Report a bug!</a>
-
-</td></tr></table>
-
-<div class="news">
-  <!--#exec cmd="./shownews.cgi 2" -->
+curl is a command line tool and library for transferring data with URL syntax,
+supporting DICT, FILE, FTP, FTPS, Gopher, HTTP, HTTPS, IMAP, IMAPS, LDAP,
+LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, Telnet and TFTP. curl
+supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP form based
+upload, proxies, HTTP/2, cookies, user+password authentication (Basic, Digest,
+NTLM, Negotiate, kerberos...), file transfer resume, proxy tunneling and
+more.
 </div>
-<p align="right">
+
+<div style="background-color: #ffffff; color: black; margin: 0px 8px 0px 8px; padding: 8px 8px 8px 8px;">
+<b>What's curl used for?</b>
+<p>
+curl is used in command lines or scripts to transfer data. It is also used in
+cars, television sets, routers, printers, audio equipment, mobile phones,
+tablets, settop boxes, media players and is the internet transfer backbone for
+thousands of software applications totally affecting more than <i>one billion
+users</i>.
+
+</div>
+
+<div style="width: 50%; float: left; background-color: #ffffff; color: black; margin: 0px 0px 0px 0px; padding: 8px 8px 8px 8px;">
+<b>Who makes curl?</b>
+<p>
+curl is free and <a href="docs/copyright.html" title="curl and libcurl are
+licensed under a MIT/X derivate license" style="text-decoration: none;
+color:#4040ff;">open software</a> that compiles and runs under a wide variety
+of operating systems. curl exists thanks to <a style="text-decoration: none;
+color: #4040ff;" href="docs/thanks.html" title="More than 1200 named
+contributors">tousands of contributors</a>.
+</div>
+
+<div style="background-color: #ffffff; color: black; margin: 0px 8px 0px 8px; padding: 8px 8px 8px 8px;">
+<b>What's the latest curl?</b>
+<p>
+The most recent stable version is <b>__STABLE</b>, released on __RELDATE.
+Currently, __CURR of the <a style="text-decoration: none; color:#4080ff;"
+href="download.html" title="We have a very extensive download page!">listed
+archives</a> are of the latest version.
+
+</div>
+
+<div style="float: right;">
+  <!--#exec cmd="./shownews.cgi 2" -->
+
+<p align="right" >
  <small><a href="news.html">more news</a></small>
+</div>
+
 <p>
 #include "recentmail.t"
 
