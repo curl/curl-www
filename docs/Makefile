@@ -11,20 +11,18 @@ TXT2HTML= txt2html --extract --hrule 10
 MAN2HTML = roffit --bare
 ADVBOX = adv-related-box.inc
 
-PAGES = index.html manpage.html faq.html changes.html \
- sslcerts.html companies.html press.html features.html	 \
- bugs.html install.html readme.html readme.curl.html copyright.html	 \
- thanks.html y2k.html todo.html httpscripting.html comparison-table.html \
- relatedtools.html osdistribs.html versions.html history.html loc.html	 \
- knownbugs.html manual.html caextract.html programs.html security.html	 \
- libs.html http-cookies.html \
- adv_20051013.html adv_20051207.html \
- adv_20060320.html vulnerabilities.html adv_20070710.html \
+PAGES = index.html manpage.html faq.html changes.html sslcerts.html	      \
+ companies.html press.html features.html bugs.html install.html readme.html   \
+ readme.curl.html copyright.html thanks.html y2k.html todo.html		      \
+ httpscripting.html comparison-table.html relatedtools.html osdistribs.html   \
+ versions.html history.html knownbugs.html manual.html caextract.html	      \
+ programs.html security.html libs.html http-cookies.html adv_20051013.html    \
+ adv_20051207.html adv_20060320.html vulnerabilities.html adv_20070710.html   \
  gsoc2008.html releases.html adv_20090303.html releases.csv adv_20090812.html \
- adv_20100209.html adv_20101013.html adv_20110623.html ssl-compared.html \
- adv_20120124.html adv_20120124B.html mk-ca-bundle.html adv_20130206.html \
- adv_20130412.html adv_20130622.html adv_20131115.html adv_20131217.html \
- adv_20140129.html adv_20140326A.html adv_20140326B.html adv_20140326C.html \
+ adv_20100209.html adv_20101013.html adv_20110623.html ssl-compared.html      \
+ adv_20120124.html adv_20120124B.html mk-ca-bundle.html adv_20130206.html     \
+ adv_20130412.html adv_20130622.html adv_20131115.html adv_20131217.html      \
+ adv_20140129.html adv_20140326A.html adv_20140326B.html adv_20140326C.html   \
  adv_20140326D.html survey/survey2014.html
 
 all: $(PAGES)
