@@ -61,6 +61,18 @@ SUBTITLE(Changelog)
 
 #endif
 
+SUBTITLE(RSA-1024 removed)
+<p>
+ Around early September 2014, Mozilla removed the trust bits from the certs in
+ their CA bundle that were still using RSA 1024 bit keys. This may lead to TLS
+ libraries having a hard time to verify some sites if the library in question
+ doesn't properly support "path discovery" as per RFC 4158. (That includes
+ OpenSSL and GnuTLS.)
+<p>
+ The last CA bundle we converted from <i>before</i> that
+ cleanup: <a href="https://github.com/bagder/ca-bundle/blob/e9175fec5d0c4d42de24ed6d84a06d504d5e5a09/ca-bundle.crt">an
+ older ca-bundle from github</a>.
+
 SUBTITLE(CA cert bundle license)
 <p>
  This new file is only a converted version of the original one and thus it is
