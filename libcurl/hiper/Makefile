@@ -2,10 +2,10 @@ ROOT = ../..
 
 TXT2PLAIN= $(ROOT)/docs/txt2plain.pl
 
-MAINPARTS= $(ROOT)/_doctype.html _menu.html $(ROOT)/setup.t \
-../pic.t $(ROOT)/where.t ../download.t $(ROOT)/mirrorlinks.t $(ROOT)/ad.t
-NOW=$(shell date +'-D__TODAY__=%B %d, %Y')
-ACTION=@echo preprocessing $@; rm -f $@; fcpp -I.. -I$(ROOT) -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; chmod a-w+r $@
+include $(ROOT)/mainparts.mk
+include $(ROOT)/setup.mk
+
+MAINPARTS += _menu.html
 
 all: index.html schedule.html roadmap.html api.html app.html
 
