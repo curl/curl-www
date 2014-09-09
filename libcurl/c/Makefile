@@ -11,6 +11,9 @@ include $(ROOT)/setup.mk
 
 MAINPARTS += _menu.html doclinks.t Makefile
 
+# the files the opts pages depend on
+MANPARTS = $(MAINPARTS)
+
 MAN2HTMLBASIC = roffit --bare --mandir=$(MANROOT) --mandir=$(OPTMAN) --mandir=$(DOCROOT)
 # postprocess the roffit HTML to add links to curl error codes
 MAN2HTML= ( $(MAN2HTMLBASIC) | perl -0x20 -pe '/(CURL(E|M|SHE)_\w*)/; $$err=$$erra=$$1; $$erra =~ s/_//g; s@CURL(E|M|SHE)_\w*@<a href="libcurl-errors.html\#$$erra">$$err</a>@;' )
