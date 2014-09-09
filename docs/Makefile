@@ -172,7 +172,7 @@ sslcerts.t: $(DOCROOT)/SSLCERTS
 copyright.html: _copyright.html $(MAINPARTS) copying.t
 	$(ACTION)
 copying.t: $(SRCROOT)/COPYING
-	$(TXT2PLAIN) < $< > $@
+	$(MARKDOWN) < $< > $@
 
 comparison-table.html: _comparison-table.html $(MAINPARTS)  $(ROOT)/release.t
 	$(ACTION)
