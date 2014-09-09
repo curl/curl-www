@@ -2,15 +2,11 @@ ROOT = ..
 CVSROOT= ../cvssource
 TXT2PLAIN= $(ROOT)/docs/txt2plain.pl
 
-MAINPARTS= $(ROOT)/_doctype.html _menu.html $(ROOT)/setup.t pic.t \
- $(ROOT)/where.t download.t $(ROOT)/mirrorlinks.t $(ROOT)/ad.t $(ROOT)/css.t  \
- $(ROOT)/sflogo.t $(ROOT)/_footer.html
-NOW=$(shell date +'-D__TODAY__=%B %d, %Y')
+include $(ROOT)/mainparts.mk
+include $(ROOT)/setup.mk
+
+MAINPARTS += _menu.html
 TXT2HTML= txt2html --extract --hrule 10
-ACTION=@echo preprocessing $@; \
-	rm -f $@; \
-	fcpp -I.. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
-	chmod a-w+r $@
 
 all: index.html mail.html competitors.html comparison-table.html	  \
      relatedlibs.html features.html wininet.html libwww.html libsoup.html \
