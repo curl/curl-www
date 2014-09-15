@@ -21,10 +21,10 @@ ACTION=@echo preprocessing $@; \
        rm -f $@; \
        fcpp -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
 
-all: index.html feedback.html mirrors.html cvs.html libs.html help.html	      \
+all: index.html feedback.html mirrors.html libs.html help.html	      \
  download.html changes.html about.html support.html newslog.html news.html    \
  head.html foot.html oldnews.html info web-editing.html ad.html donation.html \
- devel.html search.html sflogo.html sponsors.html source.html
+ search.html sflogo.html sponsors.html source.html
 	cd docs && make
 	cd libcurl && make
 	cd mail && make
@@ -109,12 +109,6 @@ dl/files.html: dl/data/databas.db
 	cd dl; make
 
 changes.html: _changes.html $(MAINPARTS)
-	$(ACTION)
-
-devel.html: _devel.html $(MAINPARTS)
-	$(ACTION)
-
-cvs.html: _cvs.html $(MAINPARTS)
 	$(ACTION)
 
 source.html: _source.html $(MAINPARTS)

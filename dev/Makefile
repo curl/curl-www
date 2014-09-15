@@ -21,7 +21,7 @@ PAGES = foot.html head.html howto.html summary.html	     \
 	readme-curl_off_t.html readme-curlx.html readme-encoding.html	     \
 	readme-hostip.html readme-httpauth.html readme-memoryleak.html	     \
 	readme-multi_socket.html readme-pingpong.html readme-pipelining.html \
-	readme-http2.html security.html roadmap.html
+	readme-http2.html security.html roadmap.html sourceactivity.html
 
 all: $(PAGES)
 
@@ -77,7 +77,10 @@ head.html: _head.html $(MAINPARTS)
 summary.html: _summary.html $(MAINPARTS) summary.t
 	$(ACTION)
 
-cvshistory.html: _cvshistory.html $(MAINPARTS) cvs.t
+cvshistory.html: _sourceactivity.html $(MAINPARTS) cvs.t
+	$(ACTION)
+
+sourceactivity.html: _sourceactivity.html $(MAINPARTS) cvs.t
 	$(ACTION)
 
 missing.html: _missing.html $(MAINPARTS)

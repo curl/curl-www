@@ -7,6 +7,6 @@
 </div>
 
 [<a href="./builds.html">Build Log</a>]
-[<a href="cvshistory.html">Source Activity</a>]
+[<a href="sourceactivity.html">Source Activity</a>]
 [<a href="summary.html">Stats</a>]
 [<a href="howto.html">Details</a>]

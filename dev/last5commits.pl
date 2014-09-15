@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-# Copyright (C) 2010-2011, Daniel Stenberg, <daniel@haxx.se>
+# Copyright (C) 2010-2014, Daniel Stenberg, <daniel@haxx.se>
 
 #
 # commit d4cd5411a66d6814adccdfc81ff1d8a80e8c58af
@@ -15,7 +15,7 @@
 my @lines=`cd curl && git log --raw -100`;
 
 sub header {
-    print "<table cellspacing=0 cellpadding=0>\n";
+    print "<table cellspacing=0 cellpadding=0>\n<tr><th>Description</th><th>Author</th></tr>\n";
 }
 
 sub footer {
@@ -41,13 +41,20 @@ sub showc {
         }
         $desc =~ s/\n\n/<p>/g;
 
-        printf("<tr class=\"$cl\"><td><a href=\"%s/%s\">%s</a></td><td>%s</td></tr><tr class=\"$cl\"><td>%s</td><td><pre>%s</pre></td></tr>\n",
+#        printf("<tr class=\"$cl\"><td><a href=\"%s/%s\">%s</a></td><td>%s</td></tr><tr class=\"$cl\"><td>%s</td><td><pre>%s</pre></td></tr>\n",
+#               "http://github.com/bagder/curl/commit",
+#               $c{'commit'},
+#               $fl,
+#               $auth,
+#               $desc,
+#               $c{'files'});
+
+        printf("<tr class=\"$cl\"><td><a href=\"%s/%s\">%s</a></td><td>%s</td></tr>\n",
                "http://github.com/bagder/curl/commit",
                $c{'commit'},
-               $fl,
-               $auth,
-               $desc,
-               $c{'files'});
+               $fl, $auth);
+        
+
     }
     undef %c;
 }
