@@ -33,6 +33,7 @@ all: index.html mail.html competitors.html comparison-table.html	  \
 	cd lisp; make
 	cd lua; make
 	cd mono; make
+	cd nodejs; make
 	cd ocaml; make
 	cd pascal2; make
 	cd pascal; make
