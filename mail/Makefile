@@ -18,12 +18,11 @@ all: subscribe.html mail.html etiquette.html index.html indexheader.html \
 subscribe.html: _subscribe.html $(MAINPARTS)
 	$(ACTION)
 
-etiquette.html: _etiquette.html $(MAINPARTS) etiquette.t
+etiquette.html: _etiquette.html $(MAINPARTS) etiquette.gen
 	$(ACTION)
 
-etiquette.t: $(DOCROOT)/MAIL-ETIQUETTE $(ROOT)/docs/faqparse.pl
+etiquette.gen: $(DOCROOT)/MAIL-ETIQUETTE $(ROOT)/docs/faqparse.pl
 	$(ROOT)/docs/faqparse.pl < $< > $@
-
 
 activity.html: _activity.html $(MAINPARTS)
 	$(ACTION)
