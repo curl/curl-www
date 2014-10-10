@@ -78,6 +78,12 @@ LINK(x, Release Notes)
 VLINK(/dev/release-notes.html, Release Notes, The pending RELEASE-NOTES)
 #endif
 
+#ifdef DEVEL_RELEASEPROC
+LINK(x, Release Procedure)
+#else
+VLINK(/dev/release-procedure.html, Release Procedure, How to release and when)
+#endif
+
 #ifdef DEVEL_TODORELEASE
 LINK(x, TODO Release)
 #else
