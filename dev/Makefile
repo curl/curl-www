@@ -62,11 +62,11 @@ internals.html: _internals.html $(MAINPARTS) internals.t
 internals.t: $(DOCROOT)/INTERNALS
 	$(TXT2PLAIN) < $< > $@
 
-security.html: _security.html $(MAINPARTS) security.t
+security.html: _security.html $(MAINPARTS) security.gen
 	$(ACTION)
 
-security.t: $(DOCROOT)/SECURITY
-	$(TXT2PLAIN) < $< > $@
+security.gen: $(DOCROOT)/SECURITY
+	$(MARKDOWN) < $< > $@
 
 foot.html: _foot.html $(MAINPARTS)
 	$(ACTION)
