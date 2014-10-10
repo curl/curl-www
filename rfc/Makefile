@@ -15,7 +15,7 @@ all: $(PAGES)
 clean:
 	rm -f $(PAGES)
 
-index.html: _index.html $(MAINPARTS) index.t
+index.html: _index.html $(MAINPARTS) index.gen
 	$(ACTION)
 
 full: all
@@ -23,5 +23,5 @@ full: all
 new:
 	make index.t
 
-index.t: filedesc mkindex.pl
-	./mkindex.pl > index.t
+index.gen: filedesc mkindex.pl
+	./mkindex.pl > index.gen
