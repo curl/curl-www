@@ -35,6 +35,13 @@ sub showc {
         $desc =~ s/\</&lt;/g;
         $desc =~ s/\>/&gt;/g;
 
+        # convert the begining of a "C comment" to a html code to prevent the
+        # cpp to barf
+        $desc =~ s/\/\*/&\#47;*/g;
+
+        # convert ^#
+        $desc =~ s:^ *\#:&\#35:;
+
         $fl = $desc;
         if($desc =~ s/^([^\n]*)//) {
             $fl = $1;
