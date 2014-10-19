@@ -31,6 +31,24 @@ TITLE(curl Security)
  See also the <a href="vulnerabilities.html">Vulnerabilities Table</a> to see
  what versions that are vulnerable to what flaws.
 
+<a name="20141105"></a>
+SUBTITLE(libcurl duphandle read out of bounds)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>November 5, 2014</td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-XXXX">CVE-2014-XXX</a> <a href="#20141105">20141105</a></td></tr>
+  <tr><td>Affected versions</td><td>from libcurl 7.17.1 to and including 7.38.0</td></tr>
+  <tr><td>Not affected versions</td><td>libcurl >= 7.39.0<td></tr>
+  <tr><td>Patch</td><td>
+    <a href="/CVE-2014-XXXX.patch">CVE-2014-XXXX.patch</a>
+  <tr><td>Advisories</td><td>
+<a href="adv_20141105.html">Project cURL Security Advisory</a></td></tr>
+</table>
+<p>
+ Sending a binary HTTP POST with CURLOPT_COPYPOSTFIELDS and curl_easy_duphandle() can
+ lead to sending of wrong data from the heap.
+<p>
+
 <a name="20140910A"></a>
 SUBTITLE(libcurl cookie leak with IP address as domain)
 <p>

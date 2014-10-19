@@ -1,5 +1,6 @@
 # datestamp, first vulnerable version, last vulnerable version
 @vuln = (
+    "20141105|7.17.1|7.38.0|libcurl duphandle read out of bounds",
     "20140910B|7.31.0|7.37.1|libcurl cookie leak for TLDs",
     "20140910A|7.1|7.37.1|libcurl cookie leak with IP address as domain",
     "20140326D|7.26.0|7.35.0|libcurl not verifying certs for TLS to IP address / Winssl",
