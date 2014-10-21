@@ -59,7 +59,7 @@ sub showarchs {
         }
         print "</tr>\n";
 
-        if((++$i > 4 && ($full < 1))) {
+        if((++$i > 3 && ($full < 1))) {
             last;
         }
     }
