@@ -108,7 +108,7 @@ sub getlast5versions {
     my $c;
     for(reverse sort sortit keys %hash) {
         push @five, $_;
-        if($c++ >= 5) {
+        if($c++ >= 7) {
             last;
         }
     }
