@@ -62,11 +62,11 @@ index.html: _index.html $(MAINPARTS) bindingbox.t
 threadsafe.html: _threadsafe.html $(MAINPARTS)
 	$(ACTION)
 
-abi.html: _abi.html abi.t $(MAINPARTS)
+abi.html: _abi.html abi.gen $(MAINPARTS)
 	$(ACTION)
 
-abi.t: $(CVSROOT)/docs/libcurl/ABI
-	$(TXT2PLAIN) < $< > $@
+abi.gen: $(CVSROOT)/docs/libcurl/ABI
+	$(MARKDOWN) < $< > $@
 
 features.html: _features.html $(MAINPARTS)
 	$(ACTION)
