@@ -1,0 +1,30 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>all options for curl_multi_setopt(3)</TITLE>
+#include "css.t"
+#include "manpage.t"
+</HEAD>
+
+#define MENU_MULTI
+#define LIBCURL_DOCS
+#define DOCS_OPTS_INDEX
+#define CURL_URL libcurl/c/multi_setopt_options.html
+
+#include "setup.t"
+#include "_menu.html"
+
+WHERE4(libcurl, "/libcurl/",
+       libcurl API, "/libcurl/c/",
+       curl_multi_setopt, "/libcurl/c/curl_multi_setopt.html", all options)
+
+TITLE(All curl_multi_setopt options listed)
+<p>
+ Here's an index of all existing options
+ for <a href="curl_multi_setopt.html">curl_multi_setopt</a>.
+<p>
+
+#include "all-multi.t"
+
+#include "_footer.html"
+</BODY>
+</HTML>

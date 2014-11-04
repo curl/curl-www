@@ -8,14 +8,19 @@ closedir DIR;
 
 my $actions = "Makefile.opts";
 my $targets = "Makefile.opttargets";
-my $index = "alloptions.t";
 
 unlink $actions;
 
 sub single {
     my ($name) = @_;
+    my $prefix="";
 
-    open(F, "<_CURLOPT_template.html");
+    if($name =~ /([A-Z]*)_/) {
+        # figure out the name prefix
+        $prefix = $1;
+    }
+
+    open(F, "<_${prefix}_template.html");
     open(T, ">$name.gen");
     while(<F>) {
         $_ =~ s/\@template\@/$name/g;
@@ -67,22 +72,34 @@ for (@opts) {
 }
 
 open(TG, ">$targets");
-open(IDX, ">$index");
+
+open(IDXE, ">all-easy.t");
+open(IDXM, ">all-multi.t");
+
 print TG "OPTPAGES = ";
-print IDX "<table>\n";
+print IDXE "<table>\n";
+print IDXM "<table>\n";
 my $c = 0;
 for(sort @all) {
     if($c) {
         print TG " \\\n";
     }
     print TG "  $_.html";
-    $c++;
 
-    printf IDX ("<tr%s><td><a href=\"$_.html\">$_</a></td><td>%s</td></tr>\n",
-                $c&1?"":" class=\"odd\"",
-                $desc{$_});
+    my $l = sprintf ("<tr><td><a href=\"$_.html\">$_</a></td><td>%s</td></tr>\n",
+                     $desc{$_});
+    
+    if($_ =~ /^CURLOPT/) {
+        print IDXE $l;
+    }
+    else {
+        print IDXM $l;
+    }
 }
 close(TG);
 
-print IDX "</table>\n";
-close(IDX);
+print IDXE "</table>\n";
+print IDXM "</table>\n";
+close(IDXE);
+close(IDXM);
+
