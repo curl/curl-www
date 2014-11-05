@@ -27,10 +27,10 @@ while(<STDIN>) {
     if($n =~ /^([A-Za-z][A-Za-z. ])/i) {
         my $l=lc($1);
 
-        if(%cramped{$l}) {
+        if($cramped{$l}) {
             if($n =~ /^([A-Za-z][A-Za-z. ][A-Za-z.])/i) {
                 $l=lc($1);
-                if(%cramped{$l}) {
+                if($cramped{$l}) {
                     if($n =~ /^([A-Za-z][A-Za-z. ][A-Za-z. ][A-Za-z.])/i) {
                         $l=lc($1);
                     }
