@@ -36,16 +36,16 @@ SUBTITLE(libcurl duphandle read out of bounds)
 <p>
 <table class="secbox">
   <tr><td>Date:</td><td>November 5, 2014</td></tr>
-  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-XXXX">CVE-2014-XXX</a> <a href="#20141105">20141105</a></td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3707">CVE-2014-3707</a> <a href="#20141105">20141105</a></td></tr>
   <tr><td>Affected versions</td><td>from libcurl 7.17.1 to and including 7.38.0</td></tr>
   <tr><td>Not affected versions</td><td>libcurl >= 7.39.0<td></tr>
   <tr><td>Patch</td><td>
-    <a href="/CVE-2014-XXXX.patch">CVE-2014-XXXX.patch</a>
+    <a href="/CVE-2014-3707.patch">CVE-2014-3707.patch</a>
   <tr><td>Advisories</td><td>
 <a href="adv_20141105.html">Project cURL Security Advisory</a></td></tr>
 </table>
 <p>
- Sending a binary HTTP POST with CURLOPT_COPYPOSTFIELDS and curl_easy_duphandle() can
+ Sending a binary HTTP POST with <a href="/libcurl/c/CURLOPT_COPYPOSTFIELDS.html">CURLOPT_COPYPOSTFIELDS</a> and <a href="/libcurl/c/curl_easy_duphandle.html">curl_easy_duphandle()</a> can
  lead to sending of wrong data from the heap.
 <p>
 
