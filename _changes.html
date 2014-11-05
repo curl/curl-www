@@ -47,6 +47,87 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_39_0"></a>
+SUBTITLE(Fixed in 7.39.0 - November 5 2014)
+<p> Changes:
+<ul class="changes">
+ CHG SSLv3 is disabled by default
+ CHG <a href="http://curl.haxx.se/libcurl/c/CURLOPT_COOKIELIST.html">CURLOPT_COOKIELIST: Added "RELOAD" command</a>
+ CHG build: Added WinIDN build configuration options to Visual Studio projects
+ CHG ssh: improve key file search
+ CHG SSL: public key pinning. Use CURLOPT_PINNEDPUBLICKEY and --pinnedpubkey
+ CHG vtls: remove QsoSSL support, use gskit!
+ CHG mk-ca-bundle: added SHA-384 signature algorithm
+ CHG docs: added many examples for libcurl opts and other doc improvements
+ CHG build: Added VC ssh2 target to main Makefile
+ CHG MinGW: Added support to build with nghttp2
+ CHG NetWare: Added support to build with nghttp2
+ CHG build: added Watcom support to build with WinSSL
+ CHG build: Added optional specific version generation of VC project files
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="http://curl.haxx.se/docs/adv_20141105.html">curl_easy_duphandle: CURLOPT_COPYPOSTFIELDS read out of bounds</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-09/0064.html">openssl: build fix for versions < 0.9.8e</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-09/0075.html">newlines: fix mixed newlines to LF-only</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2014-08/0273.html">ntlm: Fixed HTTP proxy authentication when using Windows SSPI</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1422">sasl_sspi: Fixed Unicode build</a>
+ BGF file: reject paths using embedded %00
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1426">threaded-resolver: revert Curl_expire_latest() switch</a>
+ BGF configure: allow --with-ca-path with PolarSSL too
+ BGF HTTP/2: Fix busy loop when EOF is encountered
+ BGF CURLOPT_CAPATH: return failure if set without backend support
+ BGF nss: do not fail if a CRL is already cached
+ BGF smtp: Fixed intermittent "SSL3_WRITE_PENDING: bad write retry" error
+ BGF fixed 20+ nits/memory leaks identified by Coverity scans
+ BGF curl_schannel.c: Fixed possible memory or handle leak
+ BGF multi-uv.c: call curl_multi_info_read() better
+ BGF cmake: Check for OpenSSL before OpenLDAP
+ BGF cmake: Fix library list provided to cURL tests
+ BGF cmake: Avoid cycle directory dependencies
+ BGF cmake: Build with GSS-API libraries (MIT or Heimdal)
+ BGF vtls: provide backend defines for internal source code
+ BGF nss: fix a connection failure when FTPS handle is reused
+ BGF tests/http_pipe.py: Python 3 support
+ BGF cmake: build tool_hugehelp (ENABLE_MANUAL)
+ BGF cmake: enable IPv6 by default if available
+ BGF tests: move TESTCASES to Makefile.inc, add show for cmake
+ BGF ntlm: Avoid unnecessary buffer allocation for SSPI based type-2 token
+ BGF ntlm: Fixed empty/bad base-64 decoded buffer return codes
+ BGF ntlm: Fixed empty type-2 decoded message info text
+ BGF cmake: add CMake/Macros.cmake to the release tarball
+ BGF cmake: add SUPPORT_FEATURES and SUPPORT_PROTOCOLS
+ BGF cmake: use LIBCURL_VERSION from curlver.h
+ BGF cmake: generate pkg-config and curl-config
+ BGF fixed several superfluous variable assignements identified by cppcheck
+ BGF cleanup of 'CURLcode result' return code
+ BGF pipelining: only output "is not blacklisted" in debug builds
+ BGF SSL: Remove SSLv3 from SSL default due to POODLE attack
+ BGF gskit.c: remove SSLv3 from SSL default
+ BGF darwinssl: detect possible future removal of SSLv3 from the framework
+ BGF ntlm: Only define ntlm data structure when USE_NTLM is defined
+ BGF ntlm: Return CURLcode from Curl_ntlm_core_mk_lm_hash()
+ BGF ntlm: Return all errors from Curl_ntlm_core_mk_nt_hash()
+ BGF sspi: Only call CompleteAuthToken() when complete is needed
+ BGF http_negotiate: Fixed missing check for USE_SPNEGO
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1441">HTTP: return larger than 3 digit response codes too</a>
+ BGF openssl: Check for NPN / ALPN via OpenSSL version number
+ BGF openssl: enable NPN separately from ALPN
+ BGF sasl_sspi: Allow DIGEST-MD5 to use current windows credentials
+ BGF sspi: Return CURLE_LOGIN_DENIED on AcquireCredentialsHandle() failure
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1443">resume: consider a resume from</a>
+ BGF sasl: Fixed Kerberos V5 inclusion when CURL_DISABLE_CRYPTO_AUTH is used
+ BGF build-openssl.bat: Fix x64 release build
+ BGF cmake: drop _BSD_SOURCE macro usage
+ BGF cmake: fix gethostby{addr,name}_r in CurlTests
+ BGF cmake: clean OtherTests, fixing -Werror
+ BGF cmake: fix struct sockaddr_storage check
+ BGF Curl_single_getsock: fix hold/pause sock handling
+ BGF SSL: PolarSSL default min SSL version TLS 1.0
+ BGF <a href="https://github.com/bagder/curl/pull/123">cmake: fix ZLIB_INCLUDE_DIRS use</a>
+ BGF buildconf: stop checking for libtool
+</ul>
+
 <a name="7_38_0"></a>
 SUBTITLE(Fixed in 7.38.0 - September 10 2014)
 <p> Changes:
@@ -116,7 +197,7 @@ SUBTITLE(Fixed in 7.38.0 - September 10 2014)
  BGF NTLM: ignore CURLOPT_FORBID_REUSE during NTLM HTTP auth
  BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1414">curl.1: clarify --limit-rate's effect on both directions</a>
  BGF <a href="http://curl.haxx.se/mail/lib-2014-08/0148.html">disconnect: don't touch easy-related state on disconnects</a>
- BGF Cmake: big cleanup and numerous fixes
+ BGF cmake: big cleanup and numerous fixes
  BGF HTTP/2: supports draft-14 - moved :headers before the non-psuedo headers
  BGF HTTP/2: Reset promised stream, not its associated stream
  BGF configure.ac: Add support for recent GSS-API implementations for HP-UX
