@@ -88,10 +88,10 @@ thanks.html: _thanks.html $(MAINPARTS) thanks.gen thanksnum.gen
 	$(ACTION)
 
 thanksnum.gen: $(DOCROOT)/THANKS
-	grep "^\w" $< | wc -l | awk '{print "#define __THANKSNUM__ " $$1}' > $@
+	egrep '^[^ $$]' $< | wc -l  | awk '{print "#define __THANKSNUM__ " $$1}' > $@
 
 thanks.gen: $(DOCROOT)/THANKS thanks.pl
-	grep "^[A-Za-z]" $(DOCROOT)/THANKS | ./thanks.pl > $@
+	egrep '^[^ $$]' $< | ./thanks.pl > $@
 
 faq.html: _faq.shtml $(MAINPARTS) faq.t
 	$(ACTION)
