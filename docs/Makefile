@@ -84,13 +84,13 @@ press.html: _press.html $(MAINPARTS)
 survey/survey2014.html: survey/_survey2014.html $(MAINPARTS)
 	$(ACTION)
 
-thanks.html: _thanks.html $(MAINPARTS) thanks.t thanks2.t
-	actual=`wc -l thanks.t | awk '{print $$1}'` && fcpp $(FCPPOPTS) -D__NUM__=$$actual $< $@
+thanks.html: _thanks.html $(MAINPARTS) thanks.gen thanksnum.gen
+	$(ACTION)
 
-thanks.t: $(DOCROOT)/THANKS
-	grep "^[A-Za-z]" $(DOCROOT)/THANKS | awk '{ print $$0 ", ";}' > $@
+thanksnum.gen: $(DOCROOT)/THANKS
+	grep "^\w" $< | wc -l | awk '{print "#define __THANKSNUM__ " $$1}' > $@
 
-thanks2.t: $(DOCROOT)/THANKS thanks.pl
+thanks.gen: $(DOCROOT)/THANKS thanks.pl
 	grep "^[A-Za-z]" $(DOCROOT)/THANKS | ./thanks.pl > $@
 
 faq.html: _faq.shtml $(MAINPARTS) faq.t
