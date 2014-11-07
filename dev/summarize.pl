@@ -237,10 +237,11 @@ sub endofsingle {
     my $libver;
     my $sslver;
     my $zlibver;
+
     my $ipv6="-";
     my $zlib="-";
     my $gss="-";
-    my $spn="-";
+    my $spnego="-";
     my $idn="-";
 
     if($libcurl =~ /libcurl\/([^ ]*)/) {
@@ -270,8 +271,8 @@ sub endofsingle {
     if($gssapi) {
         $gss = "G";
     }
-    if($spnego) {
-        $spn = "K";
+    if($spnegoenabled) {
+        $spnego = "K";
     }
     if($libidn) {
         $idn = "I";
@@ -377,7 +378,7 @@ sub endofsingle {
     my $ssh=$libssh2?"2":"-";
     my $metalink=$libmetalink?"E":"-";
 
-    my $o = "$ipv6$showdebug$https$showres$zlib$gss$spn$idn$sspi$ssh$metalink";
+    my $o = "$ipv6$showdebug$https$showres$zlib$gss$spnego$idn$sspi$ssh$metalink";
 
     if(!$desc) {
         $desc = $os;
@@ -432,7 +433,7 @@ sub endofsingle {
     $failamount=0;
     $ipv6enabled=0;
     $gssapi=0;
-    $spnego=0;
+    $spnegoenabled=0;
     $os="";
     $libidn=0;
     $libz=0;
@@ -618,7 +619,7 @@ sub singlefile {
             }
             elsif($line =~ /^\#define USE_WINDOWS_SSPI 1/) {
                 $sspi = 1;
-                # this implies $spnego but not if crypto auth disabled
+                # this implies $spnegoenabled but not if crypto auth disabled
             }
             elsif($line =~ /^\#define USE_SSLEAY 1/) {
                 $openssl = 1;
@@ -655,7 +656,7 @@ sub singlefile {
             }
             elsif($line =~ /^\#define HAVE_GSSAPI 1/) {
                 $gssapi=1;
-                # this implies $spnego but not if crypto auth disabled
+                # this implies $spnegoenabled but not if crypto auth disabled
             }
             elsif($line =~ /^\#define HAVE_LIBIDN 1/) {
                 $libidn=1;
@@ -684,7 +685,7 @@ sub singlefile {
                     $ipv6enabled = 1;
                 }
                 if($feat =~ /SPNEGO/i) {
-                    $spnego = 1;
+                    $spnegoenabled = 1;
                 }
                 if($feat =~ /SSPI/i) {
                     $sspi = 1;
