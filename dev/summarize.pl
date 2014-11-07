@@ -36,21 +36,23 @@ my $filterform = '
 <option value="^.-">Debug disabled</option>
 <option value="^.......G">GSS-API</option>
 <option value="^.......-">GSS-API disabled</option>
-<option value="^.........I">IDNA</option>
-<option value="^.........-">IDNA disabled</option>
+<option value="^..........I">IDNA</option>
+<option value="^..........-">IDNA disabled</option>
 <option value="^6">IPv6</option>
 <option value="^-">IPv6 disabled</option>
+<option value="^........5">krb5</option>
+<option value="^........-">krb5 disabled</option>
 <option value="^..M">Memory tracking</option>
 <option value="^..-">Memory tracking disabled</option>
-<option value="^............E">Metalink</option>
-<option value="^............-">Metalink disabled</option>
+<option value="^.............E">Metalink</option>
+<option value="^.............-">Metalink disabled</option>
 <option value="^.....-">Resolver: standard</option>
 <option value="^.....A">Resolver: c-ares</option>
 <option value="^.....H">Resolver: threaded</option>
-<option value="^........K">SPNEGO</option>
-<option value="^........-">SPNEGO disabled</option>
-<option value="^...........2">SSH</option>
-<option value="^...........-">SSH disabled</option>
+<option value="^.........K">SPNEGO</option>
+<option value="^.........-">SPNEGO disabled</option>
+<option value="^............2">SSH</option>
+<option value="^............-">SSH disabled</option>
 <option value="^....[^-]">SSL: any</option>
 <option value="^....X">SSL: axTLS</option>
 <option value="^....C">SSL: CyaSSL</option>
@@ -61,8 +63,8 @@ my $filterform = '
 <option value="^....R">SSL: SecureTransport</option>
 <option value="^....L">SSL: WinSSL</option>
 <option value="^....-">SSL disabled</option>
-<option value="^..........P">SSPI</option>
-<option value="^..........-">SSPI disabled</option>
+<option value="^...........P">SSPI</option>
+<option value="^...........-">SSPI disabled</option>
 <option value="^...V">Valgrind</option>
 <option value="^...-">Valgrind disabled</option>
 <option value="^......Z">zlib</option>
@@ -241,6 +243,7 @@ sub endofsingle {
     my $ipv6="-";
     my $zlib="-";
     my $gss="-";
+    my $krb5="-";
     my $spnego="-";
     my $idn="-";
 
@@ -270,6 +273,9 @@ sub endofsingle {
     }
     if($gssapi) {
         $gss = "G";
+    }
+    if($krb5enabled) {
+        $krb5 = "5";
     }
     if($spnegoenabled) {
         $spnego = "K";
@@ -378,7 +384,7 @@ sub endofsingle {
     my $ssh=$libssh2?"2":"-";
     my $metalink=$libmetalink?"E":"-";
 
-    my $o = "$ipv6$showdebug$https$showres$zlib$gss$spnego$idn$sspi$ssh$metalink";
+    my $o = "$ipv6$showdebug$https$showres$zlib$gss$krb5$spnego$idn$sspi$ssh$metalink";
 
     if(!$desc) {
         $desc = $os;
@@ -433,6 +439,7 @@ sub endofsingle {
     $failamount=0;
     $ipv6enabled=0;
     $gssapi=0;
+    $krb5enabled=0;
     $spnegoenabled=0;
     $os="";
     $libidn=0;
@@ -619,7 +626,8 @@ sub singlefile {
             }
             elsif($line =~ /^\#define USE_WINDOWS_SSPI 1/) {
                 $sspi = 1;
-                # this implies $spnegoenabled but not if crypto auth disabled
+                # this implies $krb5enabled and $spnegoenabled but not if
+                # crypto auth disabled
             }
             elsif($line =~ /^\#define USE_SSLEAY 1/) {
                 $openssl = 1;
@@ -656,7 +664,8 @@ sub singlefile {
             }
             elsif($line =~ /^\#define HAVE_GSSAPI 1/) {
                 $gssapi=1;
-                # this implies $spnegoenabled but not if crypto auth disabled
+                # this implies $krb5enabled and $spnegoenabled but not if
+                # crypto auth disabled
             }
             elsif($line =~ /^\#define HAVE_LIBIDN 1/) {
                 $libidn=1;
@@ -683,6 +692,9 @@ sub singlefile {
                 }
                 if($feat =~ /IPv6/i) {
                     $ipv6enabled = 1;
+                }
+                if($feat =~ /krb5/i) {
+                    $krb5enabled = 1;
                 }
                 if($feat =~ /SPNEGO/i) {
                     $spnegoenabled = 1;
