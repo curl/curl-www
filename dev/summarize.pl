@@ -40,8 +40,8 @@ my $filterform = '
 <option value="^..........-">IDNA disabled</option>
 <option value="^6">IPv6</option>
 <option value="^-">IPv6 disabled</option>
-<option value="^........5">krb5</option>
-<option value="^........-">krb5 disabled</option>
+<option value="^........5">Kerberos</option>
+<option value="^........-">Kerberos disabled</option>
 <option value="^..M">Memory tracking</option>
 <option value="^..-">Memory tracking disabled</option>
 <option value="^.............E">Metalink</option>
@@ -693,7 +693,7 @@ sub singlefile {
                 if($feat =~ /IPv6/i) {
                     $ipv6enabled = 1;
                 }
-                if($feat =~ /krb5/i) {
+                if($feat =~ /Kerberos/i) {
                     $krb5enabled = 1;
                 }
                 if($feat =~ /SPNEGO/i) {
