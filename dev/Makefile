@@ -14,9 +14,9 @@ MAINPARTS += _menu.html
 MAN2HTML = roffit --bare
 
 PAGES = foot.html head.html howto.html summary.html cvshistory.html	\
-	missing.html keywords.html builds.html todo-release.html	\
-	release-notes.html index.html contribute.html internals.html	\
-	testcurl.html runtests.html source.html readme-ares.html	\
+	missing.html keywords.html builds.html release-notes.html	\
+	index.html contribute.html internals.html testcurl.html		\
+	runtests.html source.html readme-ares.html			\
 	readme-curl_off_t.html readme-curlx.html readme-encoding.html	\
 	readme-hostip.html readme-httpauth.html readme-memoryleak.html	\
 	readme-multi_socket.html readme-pingpong.html			\
@@ -96,12 +96,6 @@ release-procedure.gen: $(DOCROOT)/RELEASE-PROCEDURE
 	$(MARKDOWN) < $< > $@
 
 release-procedure.html: _release-procedure.html release-procedure.gen $(MAINPARTS)
-	$(ACTION)
-
-todo-release.txt: $(SRCROOT)/TODO-RELEASE
-	$(TXT2PLAIN) < $< > $@
-
-todo-release.html: _todo-release.html todo-release.txt $(MAINPARTS)
 	$(ACTION)
 
 howto.html: _howto.html $(MAINPARTS) _head.html
