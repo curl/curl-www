@@ -4,6 +4,12 @@ LINK("http://curl.haxx.se/libcurl/c/", API)
 VLINK("http://curl.haxx.se/libcurl/c/", API, API Front page)
 #endif
 
+#ifdef DOCS_OVERVIEW
+LINK("http://curl.haxx.se/libcurl/c/libcurl.html", Overview)
+#else
+VLINK("http://curl.haxx.se/libcurl/c/libcurl.html", Overview, Overview)
+#endif
+
 #ifdef DOCS_TUTORIAL
 LINK("http://curl.haxx.se/libcurl/c/libcurl-tutorial.html", Tutorial)
 #else
