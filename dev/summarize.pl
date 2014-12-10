@@ -390,7 +390,7 @@ sub endofsingle {
         $desc = $os;
     }
 
-    $res .= "<td class=\"mini\">$o</td>\n<td>$desc $sfail</td>\n<td>$name</td></tr>\n";
+    $res .= "<td class=\"mini\">$o</td>\n<td class=\"descrip\">$desc $sfail</td>\n<td>$name</td></tr>\n";
 
     $combo{$o}++;
     $desc{$desc}++;
