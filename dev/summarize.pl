@@ -29,8 +29,8 @@ my $file = "${tprefix}.t";
 open(TABLE, ">$file");
 
 my $filterform = '
-<form class="filteroptions" style="display: none;">
-<select name="filter" class="filterinput">
+<form class="filtermenu" style="display: none;">
+<select name="filter" class="inputbox filterinput">
 <option value="" selected>All</option>
 <option value="^.D">Debug</option>
 <option value="^.-">Debug disabled</option>
@@ -200,11 +200,10 @@ else {
         }
     }
     # Systems are de-duped in the hash table; now sort them & create a form
-    my @systems = keys %systemtypes;
-    sort @systems;
+    my @systems = sort keys %systemtypes;
     $systemform = '
-<form class="systemoptions" style="display: none;">
-<select name="filter" class="systeminput">
+<form class="filtermenu" style="display: none;">
+<select name="filter" class="inputbox systeminput">
 <option value="" selected>All</option>
 ';
     for(@systems) {

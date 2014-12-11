@@ -29,7 +29,7 @@ function showFilter() {
     /* Forms are made invisible in CSS by default, and only made visible
        if JavaScript is available and therefore the feature is usable by
        the user */
-    var forms = document.getElementsByClassName("filteroptions");
+    var forms = document.getElementsByClassName("filtermenu");
     for (var i=0; i<forms.length; i++) {
         forms[i].style.display = "";
     }
@@ -40,6 +40,11 @@ function showFilter() {
     for (var i=0; i<selects.length; i++) {
         selects[i].selectedIndex = 0;
         selects[i].onchange = filterBuilds;
+    }
+    selects = document.getElementsByClassName("systeminput");
+    for (var i=0; i<selects.length; i++) {
+        selects[i].selectedIndex = 0;
+        selects[i].onchange = filterSystemBuilds;
     }
 }
 
@@ -56,6 +61,19 @@ function filterBuilds() {
     var selects = document.getElementsByClassName("filterinput");
     for (var i=0; i<selects.length; i++) {
        selects[i].selectedIndex = this.selectedIndex;
+    }
+
+    /* If All is chosen, set all the forms to All */
+    var selected = this.selectedIndex;
+    if (selected != 0) {
+        selected = -1;
+    }
+
+    /* Invalidate all system filter forms on the page. This allows the user to
+     * use the system filter form later and get the results he expects. */
+    var selects = document.getElementsByClassName("systeminput");
+    for (var i=0; i<selects.length; i++) {
+       selects[i].selectedIndex = selected;
     }
 
     /* Get the regular expression with which to filter */
@@ -82,6 +100,48 @@ function filterBuilds() {
     }
 }
 
+/* Hide all rows on the build page that don't match the given system */
+function filterSystemBuilds() {
+    /* The system filter invalidates the line filters */
+    linefilter = "";
+    linefiltername = "";
+
+    /* Select the chosen option on all filter forms on the page */
+    var selects = document.getElementsByClassName("systeminput");
+    for (var i=0; i<selects.length; i++) {
+       selects[i].selectedIndex = this.selectedIndex;
+    }
+
+    /* If All is chosen, set all the forms to All */
+    var selected = this.selectedIndex;
+    if (selected != 0) {
+        selected = -1;
+    }
+
+    /* Invalidate all build filter forms on the page. This allows the user to
+     * use the build filter form later and get the results he expects. */
+    var selects = document.getElementsByClassName("filterinput");
+    for (var i=0; i<selects.length; i++) {
+        selects[i].selectedIndex = selected;
+    }
+
+    /* Get the regular expression with which to filter */
+    var filter = this.options[this.selectedIndex].value;
+    var filterRE = new RegExp("^" + filter);
+
+    /* Now, find matching lines */
+    var rows = document.getElementsByClassName("descrip");
+    for (var i=0; i<rows.length; i++) {
+        if (filterRE.test(rows[i].textContent)) {
+            /* Show matching */
+            rows[i].parentElement.style.display = "";
+        } else {
+            /* Hide non-matching */
+            rows[i].parentElement.style.display = "none";
+        }
+    }
+}
+
 function filterLine() {
     var selected;
 
@@ -97,9 +157,15 @@ function filterLine() {
     linefiltername = ""
 
     /* Invalidate all filter forms on the page (or set to All,
-       as appropriate). This allows the user to use the build filter form
-       and get the results he expects. */
+       as appropriate). */
     var selects = document.getElementsByClassName("filterinput");
+    for (var i=0; i<selects.length; i++) {
+       selects[i].selectedIndex = selected;
+    }
+
+    /* Invalidate all system forms on the page (or set to All,
+       as appropriate). */
+    selects = document.getElementsByClassName("systeminput");
     for (var i=0; i<selects.length; i++) {
        selects[i].selectedIndex = selected;
     }
@@ -144,9 +210,15 @@ function filterLineName() {
     linefilter = ""
 
     /* Invalidate all filter forms on the page (or set to All,
-       as appropriate). This allows the user to use the build filter form
-       and get the results he expects. */
+       as appropriate). */
     var selects = document.getElementsByClassName("filterinput");
+    for (var i=0; i<selects.length; i++) {
+       selects[i].selectedIndex = selected;
+    }
+
+    /* Invalidate all system forms on the page (or set to All,
+       as appropriate). */
+    selects = document.getElementsByClassName("systeminput");
     for (var i=0; i<selects.length; i++) {
        selects[i].selectedIndex = selected;
     }
@@ -179,8 +251,9 @@ function installLineFilters() {
     var rows = document.getElementsByClassName("even");
     /* Set onclick handlers for the build description and name */
     for (var i=0; i<rows.length; i++) {
-        /* TODO: use a special class for the description TD element
-           to future proof this */
+        /* TODO: use the "descrip" class for the description TD element
+           to future proof this. Should add a class type to the name
+           as well to do the same there. */
         var buildCols = rows[i].getElementsByTagName("td");
         buildCols[4].onclick = filterLine;
         buildCols[5].onclick = filterLineName;

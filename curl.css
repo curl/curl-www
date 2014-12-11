@@ -365,13 +365,14 @@ td.main {
   width: 100%;
 }
 
-/* Options filtering menu on the autobuild page */
-.filteroptions {
+/* Filtering menus on the autobuild page */
+.filtermenu {
   /* Position select box to the right of the text */
   display: inline;
 }
 
-.filterinput {
+/* Input elements in the filtering menus */
+.inputbox {
   /* Reduce the input box to the tiniest clickable size. Unfortunately, this
    seems to make all the form entries too small in FF 26 and IE11.
    TODO: fix this on these browsers. */
