@@ -73,6 +73,8 @@ my $filterform = '
 </form>
 ';
 
+my $systemform;
+
 sub tabletop {
     my ($date)=@_;
 
@@ -81,19 +83,19 @@ sub tabletop {
     }
 
     print TABLE stitle("$year-$month-$day");
-    print TABLE '
+    print TABLE "
 <table cellspacing="0" class="compile" width="100%">
 <tr>
 <th title="UTC time at which the build was started">Time</th>
 <th title="Number of tests which succeeded (green) or failed (red)">Test</th>
 <th title="Number of warnings which occurred during the build">Warn</th>
-<th title="Which build options were enabled during the build (see above for key)">Options',
-$filterform,
-'</th>
-<th title="Description of the build">Description</th>
+<th title="Which build options were enabled during the build (see above for key)">Options$filterform
+</th>
+<th title="Description of the build">Description$systemform
+</th>
 <th title="Name of the person responsible for the build">Name</th>
 </tr>
-';
+";
 }
 
 sub tablebot() {
@@ -187,6 +189,30 @@ else {
     #summary(); - does not yet work with the quick method
 
     @data = @more;
+
+    # Iterate through all builds & extract the first word of each Description
+    # to come up with a list to populate the drop-down box.
+    # This is typically used by people to specify a system type.
+    my %systemtypes;
+    for(@data) {
+        if(/<td class="descrip">(\w+)/) {
+            $systemtypes{$1}++;
+        }
+    }
+    # Systems are de-duped in the hash table; now sort them & create a form
+    my @systems = keys %systemtypes;
+    sort @systems;
+    $systemform = '
+<form class="systemoptions" style="display: none;">
+<select name="filter" class="systeminput">
+<option value="" selected>All</option>
+';
+    for(@systems) {
+        $systemform .= "<option value=\"$_\">$_</option>\n"
+    }
+    $systemform .= '</select>
+</form>
+';
 
     my $prevdate;
     if(@data) {
