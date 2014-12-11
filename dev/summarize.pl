@@ -84,16 +84,16 @@ sub tabletop {
 
     print TABLE stitle("$year-$month-$day");
     print TABLE "
-<table cellspacing="0" class="compile" width="100%">
+<table cellspacing=\"0\" class=\"compile\" width=\"100%\">
 <tr>
-<th title="UTC time at which the build was started">Time</th>
-<th title="Number of tests which succeeded (green) or failed (red)">Test</th>
-<th title="Number of warnings which occurred during the build">Warn</th>
-<th title="Which build options were enabled during the build (see above for key)">Options$filterform
+<th title=\"UTC time at which the build was started\">Time</th>
+<th title=\"Number of tests which succeeded (green) or failed (red)\">Test</th>
+<th title=\"Number of warnings which occurred during the build\">Warn</th>
+<th title=\"Which build options were enabled during the build (see above for key)\">Options$filterform
 </th>
-<th title="Description of the build">Description$systemform
+<th title=\"Description of the build\">Description$systemform
 </th>
-<th title="Name of the person responsible for the build">Name</th>
+<th title=\"Name of the person responsible for the build\">Name</th>
 </tr>
 ";
 }
