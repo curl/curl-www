@@ -406,15 +406,17 @@ sub endofsingle {
     }
     undef %serverfail;
 
-    $showdebug=($debug?"D":"-").($trackmem?"M":"-").($valgrind?"V":"-");
-    $https=($openssl)?"S":($gnutls?"T":($nss?"N":($polarssl?"O":($axtls?"X":($schannel?"L":($darwinssl?"R":($cyassl?"C":"-")))))));
-    my $showres=($asynch)?($ares?"A":"H"):"-";
-    $sspi=$sspi?"P":"-";
-    my $ssh=$libssh2?"2":"-";
-    my $metalink=$libmetalink?"E":"-";
-    my $idn=($libidn)?"I":($winidn?"W":"-");
+    my $showdebug = $debug ? "D" : "-";
+    my $showtrackmem = $trackmem ? "M" : "-";
+    my $showvalgrind = $valgrind ? "V" : "-";
+    my $showssl = $openssl ? "S" : ($gnutls ? "T" : ($nss ? "N" : ($polarssl ? "O" : ($axtls ? "X" : ($schannel ? "L" : ($darwinssl ? "R" : ($cyassl ? "C" : "-")))))));
+    my $showres = $asynch ? ($ares ? "A" : "H") : "-";
+    my $showsspi = $sspi ? "P" : "-";
+    my $showssh = $libssh2 ? "2" : "-";
+    my $showmetalink = $libmetalink ? "E" : "-";
+    my $showidn = $libidn ? "I" : ($winidn ? "W" : "-");
 
-    my $o = "$ipv6$showdebug$https$showres$zlib$gss$krb5$spnego$idn$sspi$ssh$metalink";
+    my $o = "$ipv6$showdebug$showtrackmem$showvalgrind$showssl$showres$zlib$gss$krb5$spnego$showidn$showsspi$showssh$showmetalink";
 
     if(!$desc) {
         $desc = $os;
