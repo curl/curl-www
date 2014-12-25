@@ -36,25 +36,27 @@ my $filterform = '
 <option value="^.-">Debug disabled</option>
 <option value="^.......G">GSS-API</option>
 <option value="^.......-">GSS-API disabled</option>
-<option value="^..........[^-]">IDNA: any</option>
-<option value="^..........I">IDNA: libidn</option>
-<option value="^..........W">IDNA: WinIDN</option>
-<option value="^..........-">IDNA disabled</option>
+<option value="^...........[^-]">IDNA: any</option>
+<option value="^...........I">IDNA: libidn</option>
+<option value="^...........W">IDNA: WinIDN</option>
+<option value="^...........-">IDNA disabled</option>
 <option value="^6">IPv6</option>
 <option value="^-">IPv6 disabled</option>
 <option value="^........5">Kerberos</option>
 <option value="^........-">Kerberos disabled</option>
 <option value="^..Y">Memory tracking</option>
 <option value="^..-">Memory tracking disabled</option>
-<option value="^.............E">Metalink</option>
-<option value="^.............-">Metalink disabled</option>
+<option value="^..............E">Metalink</option>
+<option value="^..............-">Metalink disabled</option>
+<option value="^..........M">NTLM</option>
+<option value="^..........-">NTLM disabled</option>
 <option value="^.....-">Resolver: standard</option>
 <option value="^.....A">Resolver: c-ares</option>
 <option value="^.....H">Resolver: threaded</option>
 <option value="^.........K">SPNEGO</option>
 <option value="^.........-">SPNEGO disabled</option>
-<option value="^............2">SSH</option>
-<option value="^............-">SSH disabled</option>
+<option value="^.............2">SSH</option>
+<option value="^.............-">SSH disabled</option>
 <option value="^....[^-]">SSL: any</option>
 <option value="^....X">SSL: axTLS</option>
 <option value="^....C">SSL: CyaSSL</option>
@@ -65,8 +67,8 @@ my $filterform = '
 <option value="^....R">SSL: SecureTransport</option>
 <option value="^....L">SSL: WinSSL</option>
 <option value="^....-">SSL disabled</option>
-<option value="^...........P">SSPI</option>
-<option value="^...........-">SSPI disabled</option>
+<option value="^............P">SSPI</option>
+<option value="^............-">SSPI disabled</option>
 <option value="^...V">Valgrind</option>
 <option value="^...-">Valgrind disabled</option>
 <option value="^......Z">zlib</option>
@@ -412,12 +414,13 @@ sub endofsingle {
     my $showvalgrind = $valgrind ? "V" : "-";
     my $showssl = $openssl ? "S" : ($gnutls ? "T" : ($nss ? "N" : ($polarssl ? "O" : ($axtls ? "X" : ($schannel ? "L" : ($darwinssl ? "R" : ($cyassl ? "C" : "-")))))));
     my $showres = $asynch ? ($ares ? "A" : "H") : "-";
+    my $showntlm = $ntlmenabled ? "M" : "-";
     my $showsspi = $sspi ? "P" : "-";
     my $showssh = $libssh2 ? "2" : "-";
     my $showmetalink = $libmetalink ? "E" : "-";
     my $showidn = $libidn ? "I" : ($winidn ? "W" : "-");
 
-    my $o = "$ipv6$showdebug$showtrackmem$showvalgrind$showssl$showres$zlib$gss$krb5$spnego$showidn$showsspi$showssh$showmetalink";
+    my $o = "$ipv6$showdebug$showtrackmem$showvalgrind$showssl$showres$zlib$gss$krb5$spnego$showntlm$showidn$showsspi$showssh$showmetalink";
 
     if(!$desc) {
         $desc = $os;
@@ -474,6 +477,7 @@ sub endofsingle {
     $gssapi=0;
     $krb5enabled=0;
     $spnegoenabled=0;
+    $ntlmenabled=0;
     $os="";
     $libidn=0;
     $winidn=0;
@@ -660,8 +664,8 @@ sub singlefile {
             }
             elsif($line =~ /^\#define USE_WINDOWS_SSPI 1/) {
                 $sspi = 1;
-                # this implies $krb5enabled and $spnegoenabled but not if
-                # crypto auth disabled
+                # this implies $krb5enabled, $spnegoenabled and $ntlmenabled but
+                # not if crypto auth disabled
             }
             elsif($line =~ /^\#define USE_SSLEAY 1/) {
                 $openssl = 1;
@@ -729,6 +733,9 @@ sub singlefile {
                 }
                 if($feat =~ /SPNEGO/i) {
                     $spnegoenabled = 1;
+                }
+                if($feat =~ /NTLM/i) {
+                    $ntlmenabled = 1;
                 }
                 if($feat =~ /SSPI/i) {
                     $sspi = 1;
