@@ -263,9 +263,10 @@ sub endofsingle {
     my $escdate = CGI::escape($date);
 
     my $libver;
-    my $sslver;
+    my $opensslver;
     my $zlibver;
     my $libidnver;
+    my $libssh2ver;
 
     my $ipv6="-";
     my $zlib="-";
@@ -277,13 +278,13 @@ sub endofsingle {
         $libver = $1;
     }
     if($libcurl =~ /OpenSSL\/([^ ]*)/i) {
-        $openssl = 1;
-        $sslver = $1;
         $ssl = 1;
+        $openssl = 1;
+        $opensslver = $1;
     }
     if($libcurl =~ /WinSSL/i) {
-        $schannel = 1;
         $ssl = 1;
+        $schannel = 1;
     }
     if($libcurl =~ /zlib\/([^ ]*)/i) {
         $zlibver = $1;
@@ -296,7 +297,8 @@ sub endofsingle {
         $winidn = 1;
     }
     if($libcurl =~ /libssh2\/([^ ]*)/i) {
-        $libssh2 = $1;
+        $libssh2 = 1;
+        $libssh2ver = $1;
     }
     if($ipv6enabled) {
         $ipv6 = "6";
