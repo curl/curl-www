@@ -649,6 +649,15 @@ sub singlefile {
             elsif($line =~ /^supported_features(.*)AsynchDNS/) {
                 $asynch = 1;
             }
+            elsif($line =~ /^supported_features(.*)Kerberos/) {
+                $krb5enabled = 1;
+            }
+            elsif($line =~ /^supported_features(.*)SPNEGO/) {
+                $spnegoenabled = 1;
+            }
+            elsif($line =~ /^supported_features(.*)NTLM/) {
+                $ntlmenabled = 1;
+            }
             elsif($line =~ /^\#define USE_ARES 1/) {
                 $asynch = 1;
                 $ares = 1;
