@@ -36,6 +36,7 @@ my $filterform = '
 <option value="^.-">Debug disabled</option>
 <option value="^.......G">GSS-API</option>
 <option value="^.......-">GSS-API disabled</option>
+<option value="^..........[^-]">IDNA: any</option>
 <option value="^..........I">IDNA: libidn</option>
 <option value="^..........W">IDNA: WinIDN</option>
 <option value="^..........-">IDNA disabled</option>
