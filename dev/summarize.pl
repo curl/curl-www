@@ -646,17 +646,24 @@ sub singlefile {
             elsif($line =~ /^\* valgrind: *(ON|OFF) *HTTP IPv6 *(ON|OFF)/) {
                 $valgrind = ($1 eq "ON") ? 1 : 0;
             }
-            elsif($line =~ /^supported_features(.*)AsynchDNS/) {
-                $asynch = 1;
-            }
-            elsif($line =~ /^supported_features(.*)Kerberos/) {
-                $krb5enabled = 1;
-            }
-            elsif($line =~ /^supported_features(.*)SPNEGO/) {
-                $spnegoenabled = 1;
-            }
-            elsif($line =~ /^supported_features(.*)NTLM/) {
-                $ntlmenabled = 1;
+            elsif($line =~ /^supported_features=\"(.*)\"/) {
+                my $feat = $1;
+
+                if($feat =~ /AsynchDNS/i) {
+                    $asynch = 1;
+                }
+
+                if($feat =~ /Kerberos/i) {
+                    $krb5enabled = 1;
+                }
+
+                if($feat =~ /SPNEGO/i) {
+                    $spnegoenabled = 1;
+                }
+
+                if($feat =~ /NTLM/i) {
+                    $ntlmenabled = 1;
+                }
             }
             elsif($line =~ /^\#define USE_ARES 1/) {
                 $asynch = 1;
