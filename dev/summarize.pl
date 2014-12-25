@@ -44,7 +44,7 @@ my $filterform = '
 <option value="^-">IPv6 disabled</option>
 <option value="^........5">Kerberos</option>
 <option value="^........-">Kerberos disabled</option>
-<option value="^..M">Memory tracking</option>
+<option value="^..Y">Memory tracking</option>
 <option value="^..-">Memory tracking disabled</option>
 <option value="^.............E">Metalink</option>
 <option value="^.............-">Metalink disabled</option>
@@ -408,7 +408,7 @@ sub endofsingle {
     undef %serverfail;
 
     my $showdebug = $debug ? "D" : "-";
-    my $showtrackmem = $trackmem ? "M" : "-";
+    my $showtrackmem = $trackmem ? "Y" : "-";
     my $showvalgrind = $valgrind ? "V" : "-";
     my $showssl = $openssl ? "S" : ($gnutls ? "T" : ($nss ? "N" : ($polarssl ? "O" : ($axtls ? "X" : ($schannel ? "L" : ($darwinssl ? "R" : ($cyassl ? "C" : "-")))))));
     my $showres = $asynch ? ($ares ? "A" : "H") : "-";
