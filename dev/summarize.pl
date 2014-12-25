@@ -36,7 +36,8 @@ my $filterform = '
 <option value="^.-">Debug disabled</option>
 <option value="^.......G">GSS-API</option>
 <option value="^.......-">GSS-API disabled</option>
-<option value="^..........I">IDNA</option>
+<option value="^..........I">IDNA: libidn</option>
+<option value="^..........W">IDNA: WinIDN</option>
 <option value="^..........-">IDNA disabled</option>
 <option value="^6">IPv6</option>
 <option value="^-">IPv6 disabled</option>
@@ -264,13 +265,13 @@ sub endofsingle {
     my $libver;
     my $sslver;
     my $zlibver;
+    my $libidnver;
 
     my $ipv6="-";
     my $zlib="-";
     my $gss="-";
     my $krb5="-";
     my $spnego="-";
-    my $idn="-";
 
     if($libcurl =~ /libcurl\/([^ ]*)/) {
         $libver = $1;
@@ -288,7 +289,11 @@ sub endofsingle {
         $zlibver = $1;
     }
     if($libcurl =~ /libidn\/([^ ]*)/i) {
-        $libidn = $1;
+        $libidn = 1;
+        $libidnver = $1;
+    }
+    if($libcurl =~ /WinIDN/i) {
+        $winidn = 1;
     }
     if($libcurl =~ /libssh2\/([^ ]*)/i) {
         $libssh2 = $1;
@@ -304,9 +309,6 @@ sub endofsingle {
     }
     if($spnegoenabled) {
         $spnego = "K";
-    }
-    if($libidn) {
-        $idn = "I";
     }
     if($zlibver || $libz) {
         $zlib = "Z";
@@ -408,6 +410,7 @@ sub endofsingle {
     $sspi=$sspi?"P":"-";
     my $ssh=$libssh2?"2":"-";
     my $metalink=$libmetalink?"E":"-";
+    my $idn=($libidn)?"I":($winidn?"W":"-");
 
     my $o = "$ipv6$showdebug$https$showres$zlib$gss$krb5$spnego$idn$sspi$ssh$metalink";
 
@@ -468,6 +471,7 @@ sub endofsingle {
     $spnegoenabled=0;
     $os="";
     $libidn=0;
+    $winidn=0;
     $libz=0;
 
     return $res;
@@ -711,9 +715,6 @@ sub singlefile {
                 }
                 if($feat =~ /GSS-API/i) {
                     $gssapi = 1;
-                }
-                if($feat =~ /IDN/i) {
-                    $libidn = $1;
                 }
                 if($feat =~ /IPv6/i) {
                     $ipv6enabled = 1;
