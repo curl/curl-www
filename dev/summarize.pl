@@ -271,12 +271,7 @@ sub endofsingle {
     my $libidnver;
     my $libssh2ver;
 
-    my $ipv6="-";
-    my $zlib="-";
-    my $gss="-";
-    my $krb5="-";
-    my $spnego="-";
-
+    # Detect third-party libraries and their respective versions
     if($libcurl =~ /libcurl\/([^ ]*)/) {
         $libver = $1;
     }
@@ -302,21 +297,6 @@ sub endofsingle {
     if($libcurl =~ /libssh2\/([^ ]*)/i) {
         $libssh2 = 1;
         $libssh2ver = $1;
-    }
-    if($ipv6enabled) {
-        $ipv6 = "6";
-    }
-    if($gssapi) {
-        $gss = "G";
-    }
-    if($krb5enabled) {
-        $krb5 = "5";
-    }
-    if($spnegoenabled) {
-        $spnego = "K";
-    }
-    if($zlibver || $libz) {
-        $zlib = "Z";
     }
 
     $showdate = $date;
@@ -409,18 +389,23 @@ sub endofsingle {
     }
     undef %serverfail;
 
+    my $showipv6 = $ipv6enabled ? "6" : "-";
     my $showdebug = $debug ? "D" : "-";
     my $showtrackmem = $trackmem ? "Y" : "-";
     my $showvalgrind = $valgrind ? "V" : "-";
     my $showssl = $openssl ? "S" : ($gnutls ? "T" : ($nss ? "N" : ($polarssl ? "O" : ($axtls ? "X" : ($schannel ? "L" : ($darwinssl ? "R" : ($cyassl ? "C" : "-")))))));
     my $showres = $asynch ? ($ares ? "A" : "H") : "-";
+    my $showzlib = ($zlibver || $libz) ? "Z" : "-";
+    my $showgssapi = $gssapi ? "G" : "-";
+    my $showkrb5 = $krb5enabled ? "5" : "-";
+    my $showspnego = $spnegoenabled ? "K" : "-";
     my $showntlm = $ntlmenabled ? "M" : "-";
     my $showsspi = $sspi ? "P" : "-";
     my $showssh = $libssh2 ? "2" : "-";
     my $showmetalink = $libmetalink ? "E" : "-";
     my $showidn = $libidn ? "I" : ($winidn ? "W" : "-");
 
-    my $o = "$ipv6$showdebug$showtrackmem$showvalgrind$showssl$showres$zlib$gss$krb5$spnego$showntlm$showidn$showsspi$showssh$showmetalink";
+    my $o = "$showipv6$showdebug$showtrackmem$showvalgrind$showssl$showres$showzlib$showgssapi$showkrb5$showspnego$showntlm$showidn$showsspi$showssh$showmetalink";
 
     if(!$desc) {
         $desc = $os;
