@@ -342,8 +342,8 @@ sub endofsingle {
             $res .= "no&nbsp;space";
         }
         elsif(!$linkfine) {
-            if($cvsfail) {
-                $res .= "CVS";
+            if($gitfail) {
+                $res .= "git";
             }
             elsif(!$buildconf) {
                 $res .= "buildconf";
@@ -457,7 +457,7 @@ sub endofsingle {
     $libmetalink=0;
     $libssh2=0;
     $ssl=0;
-    $cvsfail=0;
+    $gitfail=0;
     $nospaceleft=0;
     $asynch=0;
     $ares=0;
@@ -621,8 +621,8 @@ sub singlefile {
             elsif(checkwarn($line)) {
                 $warning++;
             }
-            elsif($line =~ /^testcurl: failed to update from CVS/) {
-                $cvsfail=1;
+            elsif($line =~ /^testcurl: failed to update from curl git/) {
+                $gitfail=1;
             }
             elsif($line =~ /^testcurl: configure created/) {
                 $buildconf=1;
