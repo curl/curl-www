@@ -268,6 +268,7 @@ sub endofsingle {
     my $libver;
     my $opensslver;
     my $zlibver;
+    my $caresver;
     my $libidnver;
     my $libssh2ver;
 
@@ -286,6 +287,11 @@ sub endofsingle {
     }
     if($libcurl =~ /zlib\/([^ ]*)/i) {
         $zlibver = $1;
+    }
+    if($libcurl =~ /c-ares\/([^ ]*)/i) {
+        $asynch = 1;
+        $ares = 1;
+        $caresver = $1;
     }
     if($libcurl =~ /libidn\/([^ ]*)/i) {
         $libidn = 1;
