@@ -649,8 +649,20 @@ sub singlefile {
             elsif($line =~ /^supported_features=\"(.*)\"/) {
                 my $feat = $1;
 
+                if($feat =~ /Debug/i) {
+                    $debug = 1;
+                }
+
                 if($feat =~ /AsynchDNS/i) {
                     $asynch = 1;
+                }
+
+                if($feat =~ /GSS-API/i) {
+                    $gssapi = 1;
+                }
+
+                if($feat =~ /IPv6/i) {
+                    $ipv6enabled = 1;
                 }
 
                 if($feat =~ /Kerberos/i) {
@@ -663,6 +675,18 @@ sub singlefile {
 
                 if($feat =~ /NTLM/i) {
                     $ntlmenabled = 1;
+                }
+
+                if($feat =~ /SSPI/i) {
+                    $sspi = 1;
+                }
+
+                if($feat =~ /libz/i) {
+                    $libz = 1;
+                }
+
+                if($feat =~ /Metalink/i) {
+                    $libmetalink = 1;
                 }
             }
             elsif($line =~ /^\#define USE_ARES 1/) {
