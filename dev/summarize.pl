@@ -69,6 +69,8 @@ my $filterform = '
 <option value="^....-">SSL disabled</option>
 <option value="^............P">SSPI</option>
 <option value="^............-">SSPI disabled</option>
+<option value="^...............U">Unix Sockets</option>
+<option value="^...............-">Unix Sockets disabled</option>
 <option value="^...V">Valgrind</option>
 <option value="^...-">Valgrind disabled</option>
 <option value="^......Z">zlib</option>
@@ -410,8 +412,9 @@ sub endofsingle {
     my $showssh = $libssh2 ? "2" : "-";
     my $showmetalink = $libmetalink ? "E" : "-";
     my $showidn = $libidn ? "I" : ($winidn ? "W" : "-");
+    my $showunixsockets = $unixsocketsenabled ? "U" : "-";
 
-    my $o = "$showipv6$showdebug$showtrackmem$showvalgrind$showssl$showres$showzlib$showgssapi$showkrb5$showspnego$showntlm$showidn$showsspi$showssh$showmetalink";
+    my $o = "$showipv6$showdebug$showtrackmem$showvalgrind$showssl$showres$showzlib$showgssapi$showkrb5$showspnego$showntlm$showidn$showsspi$showssh$showmetalink$showunixsockets";
 
     if(!$desc) {
         $desc = $os;
@@ -473,6 +476,7 @@ sub endofsingle {
     $libidn=0;
     $winidn=0;
     $libz=0;
+    $unixsocketsenabled=0;
 
     return $res;
 }
@@ -688,6 +692,10 @@ sub singlefile {
                 if($feat =~ /Metalink/i) {
                     $libmetalink = 1;
                 }
+
+                if($feat =~ /UnixSockets/i) {
+                    $unixsocketsenabled = 1;
+                }
             }
             elsif($line =~ /^\#define USE_ARES 1/) {
                 $asynch = 1;
@@ -728,6 +736,9 @@ sub singlefile {
             elsif($line =~ /^\#define USE_METALINK 1/) {
                 $libmetalink = 1;
             }
+            elsif($line =~ /^\#define USE_UNIX_SOCKETS 1/) {
+                $unixsocketsenabled = 1;
+            }
             elsif($line =~ /^\#define ENABLE_IPV6 1/) {
                 $ipv6enabled = 1;
             }
@@ -747,35 +758,49 @@ sub singlefile {
             }
             elsif($line =~ /^Features: (.*)/) {
                 my $feat = $1;
+
                 if($feat =~ /Debug/i) {
                     $debug = 1;
                 }
+
                 if($feat =~ /AsynchDNS/i) {
                     $asynch = 1;
                 }
+
                 if($feat =~ /GSS-API/i) {
                     $gssapi = 1;
                 }
+
                 if($feat =~ /IPv6/i) {
                     $ipv6enabled = 1;
                 }
+
                 if($feat =~ /Kerberos/i) {
                     $krb5enabled = 1;
                 }
+
                 if($feat =~ /SPNEGO/i) {
                     $spnegoenabled = 1;
                 }
+
                 if($feat =~ /NTLM/i) {
                     $ntlmenabled = 1;
                 }
+
                 if($feat =~ /SSPI/i) {
                     $sspi = 1;
                 }
+
                 if($feat =~ /libz/i) {
                     $libz = 1;
                 }
+
                 if($feat =~ /Metalink/i) {
                     $libmetalink = 1;
+                }
+
+                if($feat =~ /UnixSockets/i) {
+                    $unixsocketsenabled = 1;
                 }
             }
             if($line =~ / -DDEBUGBUILD /) {
