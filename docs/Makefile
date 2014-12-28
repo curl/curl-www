@@ -24,7 +24,7 @@ PAGES = index.html manpage.html faq.html changes.html sslcerts.html	      \
  adv_20130412.html adv_20130622.html adv_20131115.html adv_20131217.html      \
  adv_20140129.html adv_20140326A.html adv_20140326B.html adv_20140326C.html   \
  adv_20140326D.html survey/survey2014.html adv_20140910A.html		      \
- adv_20140910B.html adv_20141105.html
+ adv_20140910B.html adv_20141105.html adv_20150108A.html adv_20150108B.html
 
 all: $(PAGES)
 	@echo done 
@@ -332,6 +332,16 @@ adv_20140910B.t: adv_20140910B.txt
 adv_20141105.html: _adv_20141105.html adv_20141105.gen $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 adv_20141105.gen: adv_20141105.txt
+	$(MARKDOWN) < $< > $@
+
+adv_20150108A.html: _adv_20150108A.html adv_20150108A.gen $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_20150108A.gen: adv_20150108A.txt
+	$(MARKDOWN) < $< > $@
+
+adv_20150108B.html: _adv_20150108B.html adv_20150108B.gen $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_20150108B.gen: adv_20150108B.txt
 	$(MARKDOWN) < $< > $@
 
 vulnerabilities.html: _vulnerabilities.html vuln.txt $(MAINPARTS)

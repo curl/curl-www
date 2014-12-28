@@ -31,6 +31,43 @@ TITLE(curl Security)
  See also the <a href="vulnerabilities.html">Vulnerabilities Table</a> to see
  what versions that are vulnerable to what flaws.
 
+<a name="20150108A"></a>
+SUBTITLE(libcurl/darwinssl certificate check bypass)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>January 8, 2015</td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-8051">CVE-2014-8051</a> <a href="#20150108A">20150108A</a></td></tr>
+  <tr><td>Affected versions</td><td>from libcurl 7.31.0 to and including 7.39.0</td></tr>
+  <tr><td>Not affected versions</td><td>libcurl >= 7.40.0<td></tr>
+  <tr><td>Patch</td><td>
+    <a href="/CVE-2014-8051.patch">CVE-2014-8051.patch</a>
+  <tr><td>Advisories</td><td>
+<a href="adv_20150108A.html">Project cURL Security Advisory</a></td></tr>
+</table>
+<p>
+  Due to too agressive session re-use, a connection with disabled certificate check
+  can be re-used wrongly even if the certificate check is enabled again and should
+  reject the certificate.
+<p>
+
+<a name="20150108B"></a>
+SUBTITLE(URL request injection vulnerability)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>January 8, 2015</td></tr>
+  <tr><td>ID</td><td><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-8050">CVE-2014-8050</a> <a href="#20150108B">20150108B</a></td></tr>
+  <tr><td>Affected versions</td><td>from curl 6.0 to and including 7.39.0</td></tr>
+  <tr><td>Not affected versions</td><td>libcurl >= 7.40.0<td></tr>
+  <tr><td>Patch</td><td>
+    <a href="/CVE-2014-8050.patch">CVE-2014-8050.patch</a>
+  <tr><td>Advisories</td><td>
+<a href="adv_20150108B.html">Project cURL Security Advisory</a></td></tr>
+</table>
+<p>
+  libcurl did not reject carriage returns or line feeds embedded in the URL, which
+  could allow request or header injections when communicating over HTTP proxy.
+<p>
+  
 <a name="20141105"></a>
 SUBTITLE(libcurl duphandle read out of bounds)
 <p>

@@ -1,0 +1,25 @@
+#include "_doctype.html"
+#define FLAWNAME libcurl/darwinssl certificate check bypass
+
+<HTML>
+<HEAD> <TITLE>cURL - FLAWNAME</TITLE>
+#include "css.t"
+#include "manpage.t"
+</HEAD>
+
+#define CURL_DOCS
+#define CURL_URL docs/adv_20150108A.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(Docs, "/docs/", Security, "/docs/security.html",
+ FLAWNAME)
+
+TITLE(FLAWNAME)
+#include "adv-related-box.inc"
+
+#include "adv_20150108A.gen"
+
+#include "_footer.html"
+</body> </html>
