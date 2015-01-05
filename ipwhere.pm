@@ -489,7 +489,7 @@ my %tld2cntr =
  );
 
 # Use ipwhere to do IP geolocation lookup
-sub mycountry {
+sub mycountry_ipwhere {
     my ($ip)=@_;
     my @o=`/home/dast/bin/ipwhere $ip`;
     my ($tld, $area, $full);
@@ -509,7 +509,7 @@ sub mycountry {
 }
 
 # Use geoip to do IP geolocation lookup
-sub mycountry_geoip {
+sub mycountry {
     my ($ip)=@_;
     my @o=`/usr/bin/geoiplookup $ip`;
     $o[0] =~ /^.*: ([^,]*), ([^,]*)/;
