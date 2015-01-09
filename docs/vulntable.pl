@@ -41,60 +41,59 @@ while(<STDIN>) {
         my $str=$1;
         my $date=$2;
         my $this = vernum($str);
-        push @releases, $_;
+        push @releases, $str;
+        $reldate{$str}=$date;
+        $vernum{$str}=$this;
     }
 }
 
-for(@releases) {
-    if($_ =~ /^SUBTITLE\(Fixed in ([0-9.]*) - (.*)\)/) {
-        my $str=$1;
-        my $date=$2;
-        my $this = vernum($str);
+for my $str (@releases) {
+    my $date=$reldate{$str};
+    my $this = $vernum{$str};
 
-        my @v;
-        my $vnum;
-        my $i;
-        for(@vuln) {
-            my ($id, $start, $stop)=split('\|');
+    my @v;
+    my $vnum;
+    my $i;
+    for(@vuln) {
+        my ($id, $start, $stop)=split('\|');
 
-            #print "CHECK $start <= $this <= $stop\n";
+        #print "CHECK $start <= $this <= $stop\n";
 
-            if(($this >= vernum($start)) &&
-               ($this <= vernum($stop))) {
-                # vulnerable
-                $v[$i]=1; # this one
-            }
-            $i++;
+        if(($this >= vernum($start)) &&
+           ($this <= vernum($stop))) {
+            # vulnerable
+            $v[$i]=1; # this one
         }
-        my $anchor = $str;
-
-        $anchor =~ s/\./_/g;
-
-        printf("<tr class=\"%s\"><td>%d</td><td><a href=\"/changes.html#$anchor\">$str</a></td>",
-               $l&1?"even":"odd",
-               $index++);
-        my $col;
-        my $sum;
-        for my $i (0 .. $total-1 ) {
-            if(!$v[$i]) {
-                $col++;
-            }
-            else {
-                if($col) {
-                    printf("<td colspan=%d>&nbsp;</a>", $col);
-                    $col=0;
-                }
-                printf("<td>%s</td>", $vname[$i]);
-                $sum++;
-            }
-        }
-        if($col) {
-            printf("<td colspan=%d>&nbsp;</a>", $col);
-        }
-        printf "<td>%d</td><td>$date</td></tr>\n", $sum;
-        
-        ++$l;
+        $i++;
     }
+    my $anchor = $str;
+
+    $anchor =~ s/\./_/g;
+
+    printf("<tr class=\"%s\"><td>%d</td><td><a href=\"/changes.html#$anchor\">$str</a></td>",
+           $l&1?"even":"odd",
+           $index++);
+    my $col;
+    my $sum;
+    for my $i (0 .. $total-1 ) {
+        if(!$v[$i]) {
+            $col++;
+        }
+        else {
+            if($col) {
+                printf("<td colspan=%d>&nbsp;</a>", $col);
+                $col=0;
+            }
+            printf("<td>%s</td>", $vname[$i]);
+            $sum++;
+        }
+    }
+    if($col) {
+        printf("<td colspan=%d>&nbsp;</a>", $col);
+    }
+    printf "<td>%d</td><td>$date</td></tr>\n", $sum;
+        
+    ++$l;
 }
 
 print "</table>\n";
