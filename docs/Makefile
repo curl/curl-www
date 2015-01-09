@@ -31,6 +31,7 @@ all: $(PAGES)
 	@echo done 
 
 clean:
+	test -f vuln-make.gen && make -f vuln-make.gen clean
 	rm -f $(PAGES)
 
 index.html: _index.html $(MAINPARTS)

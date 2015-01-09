@@ -17,7 +17,7 @@ sub head {
     print "<tr class=\"tabletop\"><th>index</th><th>Version</th>";
     my $v=1;
     for(@vuln) {
-        my ($id, $start, $stop, $desc)=split('\|');
+        my ($id, $start, $stop, $desc, $cve)=split('\|');
         $id =~ s/ //;
         my $num = $#vuln - $v + 2;
         my $a=sprintf("<a style=\"color: white; text-decoration: none;\" href=\"$id\">%02d</a>", $num);
@@ -26,7 +26,8 @@ sub head {
         $vstop[$v-1]=$stop;
         $vurl[$v-1]= "$id";
         $vulndesc[$v-1]=$desc;
-        printf("<th title=\"$desc\">%02d</th>", $num);
+        $cve[$v-1]=$cve;
+        printf("<th title=\"$cve: $desc\">%02d</th>", $num);
         $v++;
     }
     print "<th>Total</th>\n";
@@ -43,13 +44,22 @@ sub single {
     my $vulnnum=scalar(@v);
 
     if($vulnnum) {
-        $vulnhtml = "<ol>";
+        $vulnhtml = "<table><tr class=\"tabletop\"><th>Flaw</th><th>From version</th><th>To and including</th><th>CVE</th></tr>";
+
         for my $i (@v) {
-            $vulnhtml .= sprintf("<li> <a href=\"%s\">%s</a>  - present in version <b>%s</b> to and including <b>%s</b>\n",
+            my $c = $cve[$i];
+            if($c ne "-") {
+                $c = "<a href=\"http://cve.mitre.org/cgi-bin/cvename.cgi?name=$c\">$c</a>";
+            }
+            else {
+                $c = "";
+            }
+            
+            $vulnhtml .= sprintf("<tr><td><a href=\"%s\">%s</a></td><td>%s</td><td>%s</td><td>$c</td></tr>\n",
                                  $vurl[$i], $vulndesc[$i],
                                  $vstart[$i], $vstop[$i]);
         }
-        $vulnhtml .= "</ol>";
+        $vulnhtml .= "</table>";
     }
     else {
         # nothing known - yet
@@ -161,8 +171,8 @@ for my $str (@releases) {
             }
             if(!$shown[$i]) {
                 # output only once, but use rowspan for the height
-                printf("<td valign=top style=\"background-color: red;\" title=\"%s\" rowspan=%d>%s</td>",
-                       $vulndesc[$i], $vercount[$i], $vhref[$i]);
+                printf("<td valign=top style=\"background-color: red;\" title=\"%s: %s\" rowspan=%d>%s</td>",
+                       $cve[$i], $vulndesc[$i], $vercount[$i], $vhref[$i]);
                 $shown[$i]=1;
             }
             $sum++;
@@ -197,6 +207,9 @@ include \$(ROOT)/setup.mk
 MAINPARTS += adv-related-box.inc
     
 all: ${allhtml}
+
+clean:
+	rm -f ${allhtml}
 
 FOO
     ;
