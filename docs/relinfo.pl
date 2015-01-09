@@ -1,8 +1,5 @@
 #!/usr/bin/perl
 
-# un-preprocessed _changes-file as input
-require "vuln.pm";            
-
 my $raw; # raw output. no html
 
 if($ARGV[0] eq "--raw") {
@@ -13,16 +10,6 @@ sub vernum {
     my ($ver)=@_;
     my @v = split('\.', $ver);
     return ($v[0] << 16) | ($v[1] << 8) | $v[2];
-}
-
-my $v=1;
-for(@vuln) {
-    my ($id, $start, $stop, $title)=split('\|');
-    $id =~ s/ //;
-    $vulnurl[$v]="/docs/security.html\#$id";
-    $vulnid[$v]="$id";
-    $vulntitle[$v]="$title";
-    $v++;
 }
 
 print "<table>" if(!$raw);
