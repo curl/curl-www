@@ -27,6 +27,7 @@ PAGES = index.html manpage.html faq.html changes.html sslcerts.html	      \
  adv_20140910B.html adv_20141105.html adv_20150108A.html adv_20150108B.html
 
 all: $(PAGES)
+	test -f vuln-make.gen && make -f vuln-make.gen
 	@echo done 
 
 clean:
@@ -347,7 +348,7 @@ adv_20150108B.gen: adv_20150108B.txt
 vulnerabilities.html: _vulnerabilities.html vuln.txt $(MAINPARTS)
 	$(ACTION)
 
-vuln.txt: $(ROOT)/_changes.html ./vulntable.pl vuln.pm
+vuln.txt: $(ROOT)/_changes.html ./vulntable.pl vuln.pm _singlevuln.templ
 	./vulntable.pl < $< > $@
 
 releases.html: _releases.html rel.txt $(MAINPARTS)
