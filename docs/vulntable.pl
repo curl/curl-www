@@ -19,21 +19,33 @@ sub head {
     for(@vuln) {
         my ($id, $start, $stop, $desc)=split('\|');
         $id =~ s/ //;
-        my $a=sprintf("<a href=\"/docs/security.html\#$id\" title=\"$desc\">%02d</a>",
-                      $v);
+        my $a=sprintf("<a style=\"color: blue;\" href=\"/docs/security.html\#$id\" title=\"$desc\">%02d</a>",
+                      $#vuln - $v + 2);
         $vname[$v-1]=$a;
-        print "<th title=\"$id - $desc\">&nbsp;</th>";
+        print "<th title=\"$id - $desc\">$a</th>";
         $v++;
     }
+    print "<th>Total</th>\n";
     print "<th>Release Date</th></tr>\n";
+    return $v-1;
 }
 
-head();
+my $total = head();
 
 my $l;
 my $index;
 
+
 while(<STDIN>) {
+    if($_ =~ /^SUBTITLE\(Fixed in ([0-9.]*) - (.*)\)/) {
+        my $str=$1;
+        my $date=$2;
+        my $this = vernum($str);
+        push @releases, $_;
+    }
+}
+
+for(@releases) {
     if($_ =~ /^SUBTITLE\(Fixed in ([0-9.]*) - (.*)\)/) {
         my $str=$1;
         my $date=$2;
@@ -61,11 +73,25 @@ while(<STDIN>) {
         printf("<tr class=\"%s\"><td>%d</td><td><a href=\"/changes.html#$anchor\">$str</a></td>",
                $l&1?"even":"odd",
                $index++);
-        for my $i (0 .. scalar(@vuln)-1 ) {
-            printf("\n<td>%s</td>", $v[$i]?$vname[$i]:"&nbsp;");
+        my $col;
+        my $sum;
+        for my $i (0 .. $total-1 ) {
+            if(!$v[$i]) {
+                $col++;
+            }
+            else {
+                if($col) {
+                    printf("<td colspan=%d>&nbsp;</a>", $col);
+                    $col=0;
+                }
+                printf("<td>%s</td>", $vname[$i]);
+                $sum++;
+            }
         }
-        print "<td>$date</td></tr>";
-
+        if($col) {
+            printf("<td colspan=%d>&nbsp;</a>", $col);
+        }
+        printf "<td>%d</td><td>$date</td></tr>\n", $sum;
         
         ++$l;
     }
