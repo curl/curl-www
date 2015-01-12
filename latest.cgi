@@ -106,10 +106,10 @@ while(<DATA>) {
 
         my $proto = uc($curl);
 
-        $proto =~ s/^(FTP|HTTP).*/$1/g;
+        $proto =~ s/^(FTP|HTTPS|HTTP).*/$1/g;
 
         my $host = $curl;
-        $host =~ s/^(FTP|HTTP):\/\/([^\/]*).*/$2/ig;
+        $host =~ s/^(FTP|HTTPS|HTTP):\/\/([^\/]*).*/$2/ig;
 
         $download{$archive} .= "$curl|||";
         $proto{$curl}=$proto;
