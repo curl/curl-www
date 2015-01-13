@@ -166,7 +166,7 @@ for my $str (@releases) {
         }
         else {
             if($col) {
-                printf("<td colspan=%d>&nbsp;</a>", $col);
+                printf("<td colspan=%d>&nbsp;</td>", $col);
                 $col=0;
             }
             if(!$shown[$i]) {
