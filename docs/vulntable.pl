@@ -179,7 +179,7 @@ for my $str (@releases) {
         }
     }
     if($col) {
-        printf("<td colspan=%d>&nbsp;</a>", $col);
+        printf("<td colspan=%d>&nbsp;</td>", $col);
     }
     printf "<td>%d</td><td>$date</td></tr>\n", $sum;
 
