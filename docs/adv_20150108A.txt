@@ -14,7 +14,7 @@ handshake. The actual implementation for the Session ID caching varies
 depending on the underlying TLS backend.
 
 libcurl allows applications to switch off certificate verification in two
-different ways - using CURLOPT_SSL_VERIFYHOST and CURLOPT_SSL_VERIFYPEER.
+different ways - using `CURLOPT_SSL_VERIFYHOST` and `CURLOPT_SSL_VERIFYPEER`.
 
 When an application connected to a TLS server with certificate verification
 disabled, it would store the Session ID in the cache and if then a subsequent
