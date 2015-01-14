@@ -512,9 +512,9 @@ sub mycountry_ipwhere {
 sub mycountry {
     my ($ip)=@_;
     my @o=`/usr/bin/geoiplookup $ip`;
-    $o[0] =~ /^.*: ([^,]*), ([^,]*)/;
+    $o[0] =~ /^.*: ([^,]*), ([^,]*?)\s*$/;
     my ($tld,$ctry) = ($1,$2);
-    $tld = "UK" if ($tld = "GB");  # TLD is uk, not gb
+    $tld = "UK" if ($tld eq "GB");  # TLD is uk, not gb
     return ($tld, tld2continent($tld), $ctry);
 }
 
