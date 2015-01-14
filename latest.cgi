@@ -338,11 +338,6 @@ The above <a href="http://www.metalinker.org/">Metalink</a> lets you download
 this file faster by downloading from several of these mirrors simultaneously,
 using the appropriate software.
 
-<p> The <a href="http://daniel.haxx.se/projects/ipwhere/">ipwhere tool</a>
-tries to detect your location using data from <a
-href="http://hostip.info/">hostip.info</a>. If it seems to do wrong, please go
-there and update the info about your IP!
-
 <h2>Verification of Packages</h2>
 <a name="verified"></a>
 
