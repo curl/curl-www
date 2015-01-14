@@ -171,8 +171,8 @@ for my $str (@releases) {
             }
             if(!$shown[$i]) {
                 # output only once, but use rowspan for the height
-                printf("<td valign=top style=\"background-color: red;\" title=\"%s: %s\" rowspan=%d>%s</td>",
-                       $cve[$i], $vulndesc[$i], $vercount[$i], $vhref[$i]);
+                printf("<td valign=top style=\"background-color: red;\" title=\"%s: %s\" rowspan=%d onclick=\"window.location.href='%s'\">%s</td>",
+                       $cve[$i], $vulndesc[$i], $vercount[$i], $vurl[$i], $vhref[$i]);
                 $shown[$i]=1;
             }
             $sum++;
