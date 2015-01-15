@@ -6,14 +6,6 @@ use latest;
 my %mirrors=(
     'ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden (Uppsala)',
     'http://curl.askapache.com/download/' => 'US (Indiana)',
-    'http://curl.mirror.at.stealer.net/download/' => 'Germany (Nuernberg)',
-    'ftp://gd.tuwien.ac.at/utils/archivers/curl/' => 'Austria (Vienna)',
-    'ftp://ftp.planetmirror.com/pub/curl/' => 'Australia',
-    'http://curl.nedmirror.nl/download/' => 'Netherlands (Amsterdam)',
-    'http://curl.online-mirror.de/download/' => 'Germany (Cologne)',
-    'http://curl.oslevel.de/download/' => 'Germany (Karlsruhe)',
-    'http://dl.ambiweb.de/mirrors/curl.haxx.se/' => 'Germany (Erfurt)',
-    'http://mirror.weathercity.com/curl/' => 'Canada (Vancouver)',
     'http://www.execve.net/curl/' => 'Singapore',
     'http://dl.uxnr.de/os/curl/download/' => 'Germany (St. Wendel, Saarland)',
     'https://psh01ams3.uxnr.de/mirror/curl/' => 'Netherlands (Amsterdam)',
@@ -28,11 +20,15 @@ sub present {
     if($site =~ /^ftp:/i) {
         # FTP check
         $res =
-            system("$latest::curl -f -m 30 -I ${site}${file} -o /dev/null -s");
+            system("$latest::curl -f -m 10 -I ${site}${file} -o /dev/null -s");
         $res >>= 8;
     }
     else {
-        $code = `$latest::curl -f -m 30 -I ${site}${file} -o /dev/null -s -w '%{http_code}\n'`;
+        $code = `$latest::curl -f -m 10 -I ${site}${file} -s | egrep "(HTTP/1.1 200 OK|Content-Length:)" | wc -l`;
+        # the above should match two lines and thus result in '2' if fine I
+        # check for Content-Length: too since too many dead/parked servers
+        # return 200 for everything.
+        $code *= 100;
     }
     if($res || ($code != 200)) {
         # FTP or HTTP error condition
