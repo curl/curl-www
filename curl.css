@@ -6,6 +6,17 @@ BODY {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: #4040ff;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #4040ff;
+}
+
 /* the curl-style blue main page titles */
 .pagetitle, h1.libtitle, .newstitle {
   border-style: solid;
