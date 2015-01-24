@@ -60,6 +60,7 @@ my $filterform = '
 <option value="^....[^-]">SSL: any</option>
 <option value="^....X">SSL: axTLS</option>
 <option value="^....C">SSL: CyaSSL</option>
+<option value="^....B">SSL: BoringSSL</option>
 <option value="^....T">SSL: GnuTLS</option>
 <option value="^....N">SSL: NSS</option>
 <option value="^....S">SSL: OpenSSL</option>
@@ -401,7 +402,7 @@ sub endofsingle {
     my $showdebug = $debug ? "D" : "-";
     my $showtrackmem = $trackmem ? "Y" : "-";
     my $showvalgrind = $valgrind ? "V" : "-";
-    my $showssl = $openssl ? "S" : ($gnutls ? "T" : ($nss ? "N" : ($polarssl ? "O" : ($axtls ? "X" : ($schannel ? "L" : ($darwinssl ? "R" : ($cyassl ? "C" : "-")))))));
+    my $showssl = $openssl ? "S" : ($gnutls ? "T" : ($nss ? "N" : ($polarssl ? "O" : ($axtls ? "X" : ($schannel ? "L" : ($darwinssl ? "R" : ($cyassl ? "C" : ($boringssl ? "B" : "-"))))))));
     my $showres = $asynch ? ($ares ? "A" : "H") : "-";
     my $showzlib = ($zlibver || $libz) ? "Z" : "-";
     my $showgssapi = $gssapi ? "G" : "-";
@@ -455,7 +456,7 @@ sub endofsingle {
     $valgrind=0;
     $buildcode=0;
 
-    $openssl=$gnutls=$nss=$axtls=$polarssl=$schannel=$darwinssl=$cyassl=0;
+    $openssl=$gnutls=$nss=$axtls=$polarssl=$schannel=$darwinssl=$cyassl=boringssl=0;
 
     $libmetalink=0;
     $libssh2=0;
@@ -752,6 +753,9 @@ sub singlefile {
             }
             elsif($line =~ /^\#define HAVE_LIBZ 1/) {
                 $libz=1;
+            }
+            elsif($line =~ /^\#define HAVE_BORINGSSL 1/) {
+                $boringssl = 1;
             }
             elsif($line =~ /^\#define OS \"([^\"]*)\"/) {
                 $os=$1;
