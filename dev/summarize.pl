@@ -456,7 +456,7 @@ sub endofsingle {
     $valgrind=0;
     $buildcode=0;
 
-    $openssl=$gnutls=$nss=$axtls=$polarssl=$schannel=$darwinssl=$cyassl=boringssl=0;
+    $openssl=$gnutls=$nss=$axtls=$polarssl=$schannel=$darwinssl=$cyassl=$boringssl=0;
 
     $libmetalink=0;
     $libssh2=0;
