@@ -719,7 +719,9 @@ sub singlefile {
                 # not if crypto auth disabled
             }
             elsif($line =~ /^\#define USE_SSLEAY 1/) {
-                $openssl = 1;
+                if(!$boringssl) {
+                  $openssl = 1;
+                }
             }
             elsif($line =~ /^\#define USE_GNUTLS 1/) {
                 $gnutls = 1;
