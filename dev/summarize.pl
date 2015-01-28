@@ -281,12 +281,10 @@ sub endofsingle {
     }
 
     if($libcurl =~ /OpenSSL\/([^ ]*)/i) {
-        $ssl = 1;
         $openssl = 1;
         $opensslver = $1;
     }
     elsif($libcurl =~ /WinSSL/i) {
-        $ssl = 1;
         $schannel = 1;
     }
     elsif($libcurl =~ /BoringSSL/i) {
@@ -695,6 +693,10 @@ sub singlefile {
                     $sspi = 1;
                 }
 
+                if($feat =~ /SSL/i) {
+                    $ssl = 1;
+                }
+
                 if($feat =~ /libz/i) {
                     $libz = 1;
                 }
@@ -804,6 +806,10 @@ sub singlefile {
                     $sspi = 1;
                 }
 
+                if($feat =~ /SSL/i) {
+                    $ssl = 1;
+                }
+
                 if($feat =~ /libz/i) {
                     $libz = 1;
                 }
@@ -816,9 +822,11 @@ sub singlefile {
                     $unixsocketsenabled = 1;
                 }
             }
+
             if($line =~ / -DDEBUGBUILD /) {
                 $debug=1;
             }
+
             if($line =~ / -DCURLDEBUG /) {
                 $trackmem=1;
             }
