@@ -279,30 +279,39 @@ sub endofsingle {
     if($libcurl =~ /libcurl\/([^ ]*)/) {
         $libver = $1;
     }
+
     if($libcurl =~ /OpenSSL\/([^ ]*)/i) {
         $ssl = 1;
         $openssl = 1;
         $opensslver = $1;
     }
-    if($libcurl =~ /WinSSL/i) {
+    elsif($libcurl =~ /WinSSL/i) {
         $ssl = 1;
         $schannel = 1;
     }
+    elsif($libcurl =~ /BoringSSL/i) {
+        $boringssl = 1;
+    }
+
     if($libcurl =~ /zlib\/([^ ]*)/i) {
         $zlibver = $1;
     }
+
     if($libcurl =~ /c-ares\/([^ ]*)/i) {
         $asynch = 1;
         $ares = 1;
         $caresver = $1;
     }
+
     if($libcurl =~ /libidn\/([^ ]*)/i) {
         $libidn = 1;
         $libidnver = $1;
     }
+
     if($libcurl =~ /WinIDN/i) {
         $winidn = 1;
     }
+
     if($libcurl =~ /libssh2\/([^ ]*)/i) {
         $libssh2 = 1;
         $libssh2ver = $1;
