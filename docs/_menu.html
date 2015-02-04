@@ -115,12 +115,6 @@ VLINK(/docs/knownbugs.html, Known Bugs, Already known problems )
 
 VLINK(/legal/, Legal &raquo;, A subsection with legal info)
 
-#ifdef DOCS_MANUAL
-LINK(x, Manual)
-#else
-VLINK(/docs/manual.html, Manual, A curl tutorial)
-#endif
-
 #ifdef DOCS_MKCABUNDLE
 LINK(x, mk-ca-bundle)
 #else
@@ -173,6 +167,12 @@ VLINK(/docs/thanks.html, Thanks, Named and listed contributors)
 LINK(x, TODO)
 #else
 VLINK(/docs/todo.html, TODO, Things we might do in the future)
+#endif
+
+#ifdef DOCS_MANUAL
+LINK(x, Tutorial)
+#else
+VLINK(/docs/manual.html, Tutorial, A curl tutorial)
 #endif
 
 #ifdef DOCS_VERSIONS
