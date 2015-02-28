@@ -7,7 +7,8 @@ my %mirrors=(
     'ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden (Uppsala)',
     'http://curl.askapache.com/download/' => 'US (Indiana)',
     'http://www.execve.net/curl/' => 'Singapore',
-    'http://dl.uxnr.de/os/curl/download/' => 'Germany (St. Wendel, Saarland)',
+    'http://dl.uxnr.de/mirror/curl/' => 'Germany (St. Wendel, Saarland)',
+    'http://ngcobalt13.uxnr.de/mirror/curl/' => 'Germany (St. Wendel, Saarland)',
     'https://psh01ams3.uxnr.de/mirror/curl/' => 'Netherlands (Amsterdam)',
     'https://psh02sgp1.uxnr.de/mirror/curl/' => 'Singapore',
     );
