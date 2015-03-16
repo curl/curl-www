@@ -1,12 +1,12 @@
-P.level0 {
+pre.level0, P.level0 {
  padding-left: 2em;
 }
 
-P.level1 {
+pre.level1, P.level1 {
  padding-left: 4em;
 }
 
-P.level2 {
+pre.level2, P.level2 {
  padding-left: 6em;
 }
 
