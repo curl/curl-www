@@ -1,13 +1,13 @@
 pre.level0, P.level0 {
- padding-left: 0em;
-}
-
-pre.level1, P.level1 {
  padding-left: 2em;
 }
 
-pre.level2, P.level2 {
+pre.level1, P.level1 {
  padding-left: 4em;
+}
+
+pre.level2, P.level2 {
+ padding-left: 6em;
 }
 
 span.emphasis {
