@@ -34,6 +34,7 @@
 <a href="rexx/">Rexx</a><br>
 <a href="ruby/">Ruby</a><br>
 <a href="scheme/">Scheme</a><br>
+<a href="scilab/">Scilab</a><br>
 <a href="slang/">S-Lang</a><br>
 <a href="smalltalk/">Smalltalk</a><br>
 <a href="spf/">SP-Forth</a><br>
