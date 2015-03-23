@@ -46,6 +46,7 @@ all: index.html mail.html competitors.html comparison-table.html	  \
 	cd rexx; make
 	cd ruby; make
 	cd scheme; make
+        cd scilab; make
 	cd slang; make
 	cd smalltalk; make
 	cd spf; make
