@@ -530,6 +530,13 @@ sub singlefile {
                     # This is the end of the fixed portion of the test header
                     $state = 3;
                 }
+                elsif($line =~ /^testcurl: NOTES =/) {
+                    # Don't include this line in the build code. It doesn't
+                    # affect the build in any way, and it allows the builder to
+                    # include varying information (e.g. local build ID or link)
+                    # as additional debugging info while maintaining the same
+                    # build code.
+                }
                 else {
                   # Hash a unique code for this particular daily build
                   # based on the specific fixed headers at the beginning
