@@ -265,9 +265,6 @@ my $warning=0;
 sub endofsingle {
     my ($file) = @_; # the single build file name
 
-    my $escname = CGI::escape($name);
-    my $escdate = CGI::escape($date);
-
     my $libver;
     my $opensslver;
     my $zlibver;
@@ -277,12 +274,12 @@ sub endofsingle {
 
     # Detect third-party libraries and their respective versions
     if($libcurl =~ /libcurl\/([^ ]*)/) {
-        $libver = $1;
+        $libver = CGI::escapeHTML($1);
     }
 
     if($libcurl =~ /OpenSSL\/([^ ]*)/i) {
         $openssl = 1;
-        $opensslver = $1;
+        $opensslver = CGI::escapeHTML($1)
     }
     elsif($libcurl =~ /WinSSL/i) {
         $schannel = 1;
@@ -292,18 +289,18 @@ sub endofsingle {
     }
 
     if($libcurl =~ /zlib\/([^ ]*)/i) {
-        $zlibver = $1;
+        $zlibver = CGI::escapeHTML($1);
     }
 
     if($libcurl =~ /c-ares\/([^ ]*)/i) {
         $asynch = 1;
         $ares = 1;
-        $caresver = $1;
+        $caresver = CGI::escapeHTML($1);
     }
 
     if($libcurl =~ /libidn\/([^ ]*)/i) {
         $libidn = 1;
-        $libidnver = $1;
+        $libidnver = CGI::escapeHTML($1);
     }
 
     if($libcurl =~ /WinIDN/i) {
@@ -312,7 +309,7 @@ sub endofsingle {
 
     if($libcurl =~ /libssh2\/([^ ]*)/i) {
         $libssh2 = 1;
-        $libssh2ver = $1;
+        $libssh2ver = CGI::escapeHTML($1);
     }
 
     $showdate = $date;
@@ -583,29 +580,29 @@ sub singlefile {
 
             # this is testcurl output
             if($line =~ /^testcurl: NAME = (.*)/) {
-                $name = $1;
+                $name = CGI::escapeHTML($1);
             }
             elsif($line =~ /^testcurl: EMAIL = (.*)/) {
-                $email = $1;
+                $email = CGI::escapeHTML($1);
             }
             elsif($line =~ /^testcurl: DESC = (.*)/) {
-                $desc = $1;
+                $desc = CGI::escapeHTML($1);
             }
             elsif($line =~ /^testcurl: CONFOPTS = (.*)/) {
-                my $confopts = $1;
+                my $confopts = CGI::escapeHTML($1);
                 if($confopts =~ /--enable-debug/) {
                     $debug=1;
                 }
             }
             elsif($line =~ /^testcurl: date = (.*)/) {
-                $date = $1;
+                $date = CGI::escapeHTML($1);
             }
             elsif($line =~ /^NOTICE:.*cross-compiling/) {
                 $fail = 0;
                 $fine = 1;
             }
             elsif($line =~ /^TESTFAIL: These test cases failed: (.*)/) {
-                $fail = $1;
+                $fail = CGI::escapeHTML($1);
             }
             elsif($line =~ /^TESTDONE: (\d*) tests out of (\d*)/) {
                 $testfine = 0 + $1;
@@ -627,7 +624,7 @@ sub singlefile {
                 $skipped = $1;
             }
             elsif($line =~ /\) (libcurl\/.*)/) {
-                $libcurl = $1;
+                $libcurl = CGI::escapeHTML($1);
             }
             elsif($line =~ /SKIPPED: failed starting (.*) server/) {
                 $serverfail{$1}++;
@@ -657,7 +654,7 @@ sub singlefile {
                 $trackmem = ($2 eq "ON") ? 1 : 0;
             }
             elsif($line =~ /^\* System: *(.*)/) {
-                $uname = $1;
+                $uname = CGI::escapeHTML($1);
             }
             elsif($line =~ /^\* Server SSL: *(ON|OFF) *libcurl SSL: *(ON|OFF)/) {
                 $ssl = ($2 eq "ON") ? 1 : 0;
@@ -666,7 +663,7 @@ sub singlefile {
                 $valgrind = ($1 eq "ON") ? 1 : 0;
             }
             elsif($line =~ /^supported_features=\"(.*)\"/) {
-                my $feat = $1;
+                my $feat = CGI::escapeHTML($1);
 
                 if($feat =~ /Debug/i) {
                     $debug = 1;
@@ -778,10 +775,10 @@ sub singlefile {
                 $boringssl = 1;
             }
             elsif($line =~ /^\#define OS \"([^\"]*)\"/) {
-                $os=$1;
+                $os=CGI::escapeHTML($1);
             }
             elsif($line =~ /^Features: (.*)/) {
-                my $feat = $1;
+                my $feat = CGI::escapeHTML($1);
 
                 if($feat =~ /Debug/i) {
                     $debug = 1;
