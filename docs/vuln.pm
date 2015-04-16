@@ -1,5 +1,6 @@
 # page, first vulnerable version, last vulnerable version, CVE, date (YYYYMMDD)
 @vuln = (
+    "adv_20150422D.html|7.37.0|7.41.0|host name out of boundary memory access|-|20150422",
     "adv_20150422C.html|7.31.0|7.41.0|cookie parser out of boundary memory access|-|20150422",
     "adv_20150422B.html|7.10.6|7.41.0|Negotiate not treated as connection-oriented|-|20150422",
     "adv_20150422A.html|7.10.6|7.41.0|Re-using authenticated connection when unauthenticated|-|20150422",
