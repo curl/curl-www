@@ -54,9 +54,10 @@ sub single {
                 $c = "";
             }
             
-            $vulnhtml .= sprintf("<tr><td><a href=\"%s\">%s</a></td><td>%s</td><td>%s</td><td>$c</td></tr>\n",
+            $vulnhtml .= sprintf("<tr><td><a href=\"%s\">%s</a></td><td><a href=\"vuln-%s.html\">%s</a></td><td><a href=\"vuln-%s.html\">%s</a></td><td>$c</td></tr>\n",
                                  $vurl[$i], $vulndesc[$i],
-                                 $vstart[$i], $vstop[$i]);
+                                 $vstart[$i], $vstart[$i],
+                                 $vstop[$i], $vstop[i]);
         }
         $vulnhtml .= "</table>";
     }
