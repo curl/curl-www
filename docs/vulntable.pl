@@ -2,7 +2,6 @@
 
 # un-preprocessed _changes-file as input
 
-# datestamp, first vulnerable version, last vulnerable version
 require "vuln.pm";            
             
 sub vernum {

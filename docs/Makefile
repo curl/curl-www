@@ -25,8 +25,8 @@ PAGES = index.html manpage.html faq.html changes.html sslcerts.html	      \
  adv_20140129.html adv_20140326A.html adv_20140326B.html adv_20140326C.html   \
  adv_20140326D.html survey/survey2014.html adv_20140910A.html		      \
  adv_20140910B.html adv_20141105.html adv_20150108A.html adv_20150108B.html   \
- adv_20150422A.html adv_20150422B.html
-
+ adv_20150422A.html adv_20150422B.html adv_20001013.html adv_20030803.html    \
+ adv_20050221A.html adv_20050221B.html
 
 all: $(PAGES)
 	test -f vuln-make.gen && make -f vuln-make.gen
@@ -198,8 +198,10 @@ caextract.html: _caextract.html $(MAINPARTS)
 programs.html: _programs.html $(MAINPARTS)
 	$(ACTION)
 
-security.html: _security.html $(MAINPARTS) $(ADVBOX)
+security.html: _security.html seclist.gen $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
+seclist.gen: vuln.pm listvulns.pl
+	./listvulns.pl > seclist.gen
 
 adv_20051013.html: _adv_20051013.html adv_20051013.t $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
@@ -357,6 +359,18 @@ adv_20150422B.html: _adv_20150422B.html adv_20150422B.gen $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 adv_20150422B.gen: adv_20150422B.txt
 	$(MARKDOWN) < $< > $@
+
+adv_20001013.html: _adv_20001013.html $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+
+adv_20030803.html: _adv_20030803.html $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+
+adv_20050221A.html: _adv_20050221A.html $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+
+adv_20050221B.html: _adv_20050221B.html $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
 
 vulnerabilities.html: _vulnerabilities.html vuln.txt $(MAINPARTS)
 	$(ACTION)
