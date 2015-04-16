@@ -39,29 +39,7 @@ sub MonthLen {
 
 # Return the month name of the index given
 sub MonthName {
-    my $num=$_[0];
-
-    my @mname = ('januari',
-                 'februari',
-                 'mars',
-                 'april',
-                 'maj',
-                 'juni',
-                 'juli',
-                 'augusti',
-                 'september',
-                 'oktober',
-                 'november',
-                 'december' );
-
-    while( $num > 12 ) {
-        $num -= 12;
-    }
-    if ($num < 1) {
-        $num = 1;
-    }
-    return $mname[$num-1];
-
+    return MonthNameEng($_[0]);
 }
 
 # Return the month name of the index given, in english
