@@ -7,6 +7,7 @@ print "<table>\n";
 
 print <<HEAD
 <tr class=\"tabletop\">
+<th>#</th>
 <th>Vulnerability</th>
 <th>Date</th>
 <th>First</th>
@@ -16,7 +17,7 @@ print <<HEAD
 HEAD
     ;
 
-            
+my $num = $#vuln + 1;
 for(@vuln) {
     my ($id, $start, $stop, $desc, $cve, $date)=split('\|');
     my $year, $mon, $day;
@@ -36,14 +37,16 @@ for(@vuln) {
     
     print <<VUL
 <tr>
+<td>$num</td>
 <td><a href="$id">$desc</a></td>
 <td>$monn $day, $year</td>
-<td>$start</td>
-<td>$stop</td>
+<td><a href="vuln-$start.html">$start</a></td>
+<td><a href="vuln-$stop.html">$stop</a></td>
 <td>$cvestr</td>
 </tr>
 VUL
 ;
+    $num--;
 }
 
 print "</table>\n";
