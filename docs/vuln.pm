@@ -1,9 +1,9 @@
 # page, first vulnerable version, last vulnerable version, CVE, date (YYYYMMDD)
 @vuln = (
-    "adv_20150422D.html|7.37.0|7.41.0|host name out of boundary memory access|-|20150422",
-    "adv_20150422C.html|7.31.0|7.41.0|cookie parser out of boundary memory access|-|20150422",
-    "adv_20150422B.html|7.10.6|7.41.0|Negotiate not treated as connection-oriented|-|20150422",
-    "adv_20150422A.html|7.10.6|7.41.0|Re-using authenticated connection when unauthenticated|-|20150422",
+    "adv_20150422D.html|7.37.0|7.41.0|host name out of boundary memory access|CVE-2015-3144|20150422",
+    "adv_20150422C.html|7.31.0|7.41.0|cookie parser out of boundary memory access|CVE-2015-3145|20150422",
+    "adv_20150422B.html|7.10.6|7.41.0|Negotiate not treated as connection-oriented|CVE-2015-3148|20150422",
+    "adv_20150422A.html|7.10.6|7.41.0|Re-using authenticated connection when unauthenticated|CVE-2015-3143|20150422",
     "adv_20150108A.html|7.31.0|7.39.0|darwinssl certificate check bypass|CVE-2014-8151|20150108",
     "adv_20150108B.html|6.0|7.39.0|URL request injection|CVE-2014-8150|20150108",
     "adv_20141105.html|7.17.1|7.38.0|duphandle read out of bounds|CVE-2014-3707|20141105",
