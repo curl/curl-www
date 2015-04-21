@@ -47,6 +47,140 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_42_0"></a>
+SUBTITLE(Fixed in 7.42.0 - April 22 2015)
+<p> Changes:
+<ul class="changes">
+ CHG openssl: show the cipher selection to use in verbose text
+ CHG gtls: implement <a href="http://curl.haxx.se/libcurl/c/CURLOPT_CERTINFO.html">CURLOPT_CERTINFO</a>
+ CHG add <a href="http://curl.haxx.se/libcurl/c/CURLOPT_SSL_FALSESTART.html">CURLOPT_SSL_FALSESTART</a> option (darwinssl and NSS)
+ CHG curl: add <a href="http://curl.haxx.se/docs/manpage.html#--false-start">--false-start</a> option
+ CHG add <a href="http://curl.haxx.se/libcurl/c/CURLOPT_PATH_AS_IS.html">CURLOPT_PATH_AS_IS</a>
+ CHG curl: add <a href="curl.haxx.se/docs/manpage.html#--path-as-is">--path-as-is</a> option
+ CHG <a href="https://github.com/bagder/curl/issues/183">curl: create output file on successful download of an empty file</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="http://curl.haxx.se/docs/adv_20150422A.html">ConnectionExists: for NTLM re-use, require credentials to match</a>
+ BGF <a href="http://curl.haxx.se/docs/adv_20150422C.html">cookie: cookie parser out of boundary memory access</a>
+ BGF <a href="http://curl.haxx.se/docs/adv_20150422D.html">fix_hostname: zero length host name caused -1 index offset</a>
+ BGF <a href="http://curl.haxx.se/docs/adv_20150422B.html">http_done: close Negotiate connections when done</a>
+ BGF sws: timeout idle CONNECT connections
+ BGF nss: improve error handling in Curl_nss_random()
+ BGF nss: do not skip Curl_nss_seed() if data is NULL
+ BGF curl-config.in: eliminate double quotes around CURL_CA_BUNDLE
+ BGF http2: move lots of verbose output to be debug-only
+ BGF dist: add extern-scan.pl to the tarball
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1487">http2: return recv error on unexpected EOF</a>
+ BGF build: Use default RandomizedBaseAddress directive in VC9+ project files
+ BGF build: Removed DataExecutionPrevention directive from VC9+ project files
+ BGF tool: Updated the warnf() function to use the GlobalConfig structure
+ BGF http2: Return error if stream was closed with other than NO_ERROR
+ BGF mprintf.h: remove #ifdef CURLDEBUG
+ BGF <a href="https://github.com/bagder/curl/pull/144">libtest: fixed linker errors on msvc</a>
+ BGF tool: use ENABLE_CURLX_PRINTF instead of _MPRINTF_REPLACE
+ BGF curl.1: fix "The the" typo
+ BGF cmake: handle build definitions CURLDEBUG/DEBUGBUILD
+ BGF openssl: remove all uses of USE_SSLEAY
+ BGF <a href="https://github.com/bagder/curl/issues/147">multi: fix memory-leak on timeout (regression)</a>
+ BGF curl_easy_setopt.3: added <a href="http://curl.haxx.se/libcurl/c/CURLOPT_SSL_VERIFYSTATUS.html">CURLOPT_SSL_VERIFYSTATUS</a>
+ BGF <a href="https://github.com/bagder/curl/issues/150">metalink: add some error checks</a>
+ BGF TLS: make it possible to enable ALPN/NPN without HTTP/2
+ BGF http2: use CURL_HTTP_VERSION_* symbols instead of NPN_*
+ BGF conncontrol: only log changes to the connection bit
+ BGF <a href="http://curl.haxx.se/mail/lib-2015-01/0170.html">multi: fix *getsock() with CONNECT</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2015-03/0052.html">symbols.pl: handle '-' in the deprecated field</a>
+ BGF <a href="https://github.com/bagder/curl/pull/157">MacOSX-Framework: use @rpath instead of @executable_path</a>
+ BGF GnuTLS: add support for CURLOPT_CAPATH
+ BGF GnuTLS: print negotiated TLS version and full cipher suite name
+ BGF GnuTLS: don't print double newline after certificate dates
+ BGF memanalyze.pl: handle free(NULL)
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1492">proxy: re-use proxy connections (regression)</a>
+ BGF mk-ca-bundle: Don't report SHA1 numbers with "-q"
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1491">http: always send Host: header as first header</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1487">openssl: sort ciphers to use based on strength</a>
+ BGF openssl: use colons properly in the ciphers list
+ BGF <a href="https://github.com/bagder/curl/issues/166">http2: detect premature close without data transfered</a>
+ BGF hostip: Fix signal race in Curl_resolv_timeout
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1493">closesocket: call multi socket cb on close even with custom close</a>
+ BGF mksymbolsmanpage.pl: use std header and generate better nroff header
+ BGF <a href="https://github.com/bagder/curl/pull/168">connect: Fix happy eyeballs logic for IPv4-only builds</a>
+ BGF curl_easy_perform.3: remove superfluous close brace from example
+ BGF <a href="https://github.com/bagder/curl/issues/169">HTTP: don't use Expect: headers when on HTTP/2</a>
+ BGF Curl_sh_entry: remove unused 'timestamp'
+ BGF docs/libcurl: makefile portability fix
+ BGF mkhelp: Remove trailing carriage return from every line of input
+ BGF nss: explicitly tell NSS to disable NPN/ALPN when libcurl disables it
+ BGF curl_easy_setopt.3: added a few missing options
+ BGF metalink: fix resource leak in OOM
+ BGF axtls: version 1.5.2 now requires that config.h be manually included
+ BGF HTTP: don't switch to HTTP/2 from 1.1 until we get the 101
+ BGF cyassl: detect the library as renamed wolfssl
+ BGF <a href="http://curl.haxx.se/libcurl/c/CURLOPT_HTTPHEADER.html">CURLOPT_HTTPHEADER</a>.3: add a "SECURITY CONCERNS" section
+ BGF <a href="http://curl.haxx.se/libcurl/c/CURLOPT_URL.html">CURLOPT_URL</a>.3: Added "SECURITY CONCERNS
+ BGF openssl: try to avoid accessing OCSP structs when possible
+ BGF test938: added missing closing tags
+ BGF testcurl: Allow '=' in values given on command line
+ BGF tests/certs: added make target to rebuild certificates
+ BGF tests/certs: rebuild certificates with modified key usage bits
+ BGF gtls: avoid uninitialized variable
+ BGF gtls: dereferencing NULL pointer
+ BGF gtls: add check of return code
+ BGF test1513: eliminated race condition in test run
+ BGF dict: rename byte to avoid compiler shadowed declaration warning
+ BGF <a href="http://curl.haxx.se/libcurl/c/curl_easy_recv.html">curl_easy_recv</a>/<a href="http://curl.haxx.se/libcurl/c/curl_easy_send.html">send</a>: make them work with the multi interface
+ BGF vtls: fix compile with --disable-crypto-auth but with SSL
+ BGF openssl: adapt to ASN1/X509 things gone opaque in 1.1
+ BGF <a href="http://curl.haxx.se/mail/lib-2015-03/0205.html">openssl: verifystatus: only use the OCSP work-around <= 1.0.2a</a>
+ BGF curl_memory: make curl_memory.h the second-last header file loaded
+ BGF testcurl.pl: add the --notes option to supply more info about a build
+ BGF cyassl: If wolfSSL then identify as such in version string
+ BGF cyassl: Check for invalid length parameter in Curl_cyassl_random
+ BGF cyassl: default to highest possible TLS version
+ BGF Curl_ssl_md5sum: return CURLcode (fixes OOM)
+ BGF polarssl: remove dead code
+ BGF polarssl: called mbedTLS in 1.3.10 and later
+ BGF globbing: fix step parsing for character globbing ranges
+ BGF globbing: fix url number calculation when using range with step
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1465">multi: on a request completion, check all CONNECT_PEND transfers</a>
+ BGF build: link curl to openssl libraries when openssl support is enabled
+ BGF url: Don't accept CURLOPT_SSLVERSION unless USE_SSL is defined
+ BGF vtls: Don't accept unknown CURLOPT_SSLVERSION values
+ BGF build: Fix libcurl.sln erroneous mixed configurations
+ BGF cyassl: remove undefined reference to CyaSSL_no_filesystem_verify
+ BGF cyassl: add SSL context callback support for CyaSSL
+ BGF tool: only set SSL options if SSL is enabled
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1465">multi: remove_handle: move pending connections</a>
+ BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1486">configure: Use KRB5CONFIG for krb5-config</a>
+ BGF axtls: add timeout within Curl_axtls_connect
+ BGF <a href="http://curl.haxx.se/libcurl/c/CURLOPT_HTTP200ALIASES.html">CURLOPT_HTTP200ALIASES</a>.3: Mainly SHOUTcast servers use "ICY 200"
+ BGF cyassl: Fix library initialization return value
+ BGF <a href="https://github.com/bagder/curl/issues/195">cookie: handle spaces after the name in Set-Cookie</a>
+ BGF <a href="https://github.com/bagder/curl/issues/192">http2: Fix missing nghttp2_session_send call in Curl_http2_switched</a>
+ BGF cyassl: Fix certificate load check
+ BGF build-openssl.bat: Fix mixed line endings
+ BGF checksrc.bat: Check lib\vtls source
+ BGF DNS: fix refreshing of obsolete dns cache entries
+ BGF <a href="http://curl.haxx.se/libcurl/c/CURLOPT_RESOLVE.html">CURLOPT_RESOLVE</a>: actually implement removals
+ BGF checksrc.bat: quotes to support an SRC_DIR with spaces
+ BGF cyassl: Remove 'Connecting to' message from cyassl_connect_step2
+ BGF cyassl: Use CYASSL_MAX_ERROR_SZ for error buffer size
+ BGF lib/transfer.c: Remove factor of 8 from sleep time calculation
+ BGF lib/makefile.m32: add missing libs to build libcurl.dll
+ BGF build: Generate source prerequisites for Visual Studio in generate.bat
+ BGF cyassl: Include the CyaSSL build config
+ BGF firefox-db2pem: fix wildcard to find Firefox default profile
+ BGF BUGS: refer to the github issue tracker now as primary
+ BGF vtls_openssl: improve several certificate error messages
+ BGF cyassl: Add support for TLS extension SNI
+ BGF parsecfg: do not continue past a zero termination
+ BGF <a href="https://github.com/bagder/curl/pull/171">configure --with-nss=PATH: query pkg-config if available</a>
+ BGF configure --with-nss: drop redundant if statement
+ BGF <a href="http://curl.haxx.se/mail/lib-2015-04/0069.html">cyassl: Fix include order</a>
+ BGF <a href="https://github.com/bagder/curl/issues/223">HTTP: fix PUT regression with Negotiate</a>
+ BGF <a href="https://github.com/bagder/curl/issues/225">curl_version_info.3: fixed the 'protocols' variable type</a>
+</ul>
+
 <a name="7_41_0"></a>
 SUBTITLE(Fixed in 7.41.0 - February 25 2015)
 <p> Changes:

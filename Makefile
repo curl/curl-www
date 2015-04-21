@@ -5,8 +5,8 @@ MAINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t ad.t	\
 NOW=$(shell date +'-D__TODAY__=%B %e, %Y')
 
 # the latest stable version is:
-STABLE= 7.41.0
-RELDATE = "25th of February 2015"
+STABLE= 7.42.0
+RELDATE = "22th of April 2015"
 
 # name of the dir to tempoary unpack and build zip files in:
 TEMPDIR=tempzip
