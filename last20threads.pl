@@ -77,37 +77,14 @@ print <<MOO
 <th>Subject</th>
 <th>GMT</th>
 <th>Author</th>
-<th>Thread</th>
 <th>List</th>
 </tr>
 MOO
     ;
 
 for(reverse sort { $log{$a} cmp $log{$b} } keys %log) {
-
-
     my $s = $subject{$_};
- 
-    my $thr;
     my $numthr = $store{$subject{$_}};
-
-    if($start{$s} eq $_) {
-        if($numthr > 1) {
-            $thr="$numthr first";
-        }
-        else {
-            $thr="1";
-        }
-    }
-    else {
-        my $st = $start{$s};      
-        my $s = file2url($start{$s});
-
-        $thr = "$numthr";
-        if($st) {
-            $thr .= " <a href=\"$s\">first</a>";
-        }
-    }
 
     if(!$shown{$s}) {
         my $short = $name{$_};
@@ -138,10 +115,9 @@ for(reverse sort { $log{$a} cmp $log{$b} } keys %log) {
         my $listdesc = listname2desc($list);
         my $listurl="http://curl.haxx.se/mail/list.cgi?list=".$listrealname{$list};
 
-        my $infoline=sprintf("<td>%s</td><td>%s</td><td>%s</td><td><a href=\"%s\">%s</a></td></tr>\n",
+        my $infoline=sprintf("<td>%s</td><td>%s</td><td><a href=\"%s\">%s</a></td></tr>\n",
                              $stamp,
                              $short,
-                             $thr,
                              $listurl,
                              $listdesc);
 
