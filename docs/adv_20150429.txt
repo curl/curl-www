@@ -1,0 +1,102 @@
+sensitive HTTP server headers also sent to proxies
+==================================================
+
+Project cURL Security Advisory, April 29th 2015 -
+[Permalink](http://curl.haxx.se/docs/adv_20150429.html)
+
+VULNERABILITY
+-------------
+
+libcurl provides applications a way to set custom HTTP headers to be sent to
+the server by using `CURLOPT_HTTPHEADER`. A similar option is available for
+the curl command-line tool with the '--header' option.
+
+When the connection passes through an HTTP proxy the same set of headers is
+sent to the proxy as well by default. While this is by design, it has not
+necessarily been clear nor understood by application programmers.
+
+Such tunneling over a proxy is done for example when using the HTTPS protocol
+- or when explicitly asked for. In this case, the initial connection to the
+proxy is made in clear including any custom headers using the HTTP CONNECT
+method.
+
+While libcurl provides the `CURLOPT_HEADEROPT` option to allow applications to
+tell libcurl if the headers should be sent to host and the proxy or use
+separate lists to the different destinations, it has still defaulted to
+sending the same headers to both parties for the sake of compatibility.
+
+If the application sets a custom HTTP header with sensitive content (e.g.,
+authentication cookies) without changing the default, the proxy, and anyone
+who listens to the traffic between the application and the proxy, might get
+access to those values.
+
+Note: this problem doesn't exist when using the `CURLOPT_COOKIE` option (or the
+'--cookie' option) or the HTTP auth options, which are always sent only to the
+destination server.
+
+INFO
+----
+
+This flaw can also affect the curl command line tool if a similar operation
+series is made with that.
+
+The Common Vulnerabilities and Exposures (CVE) project has assigned the name
+CVE-2015-3153 to this issue.
+
+AFFECTED VERSIONS
+-----------------
+
+This flaw is relevant for applications that use `CURLOPT_HTTPHEADER` to set
+headers with sensitive values and make HTTPS connections to the server via an
+HTTP proxy.
+
+- Affected versions: libcurl 7.1 to and include 7.42.0
+- Not affected versions: libcurl >= 7.42.1
+
+THE SOLUTION
+------------
+
+In version 7.37.0, libcurl introduced new options allowing applications to
+control which headers are sent to the proxy and which are sent only to the
+destination server - `CURLOPT_HEADEROPT & CURLOPT_PROXYHEADER`.
+
+Starting in 7.42.1, the new default for this option will be
+`CURLHEADER_SEPARATE`.  This has the minor drawback to the rare applications
+that truly intend the headers to be sent to both parties, that they need to
+change this option in their application.
+
+curl of version >= 7.37 already sends headers that are set with '--header'
+option only to the destination server iff --proxy-header is also used.
+
+A patch for this problem that changes the default is available at (URL will be
+updated in final advisory):
+
+    http://curl.haxx.se/CVE-2015-3153.patch
+
+RECOMMENDATIONS
+---------------
+
+We suggest you take one of the following actions immediately, in order of
+preference:
+
+ A - Upgrade curl and libcurl to version 7.42.1
+
+ B - Apply the patch to your version and rebuild
+
+ C - Set `CURLOPT_HEADEROPT` to `CURLHEADER_SEPARATE`
+
+TIME LINE
+---------
+
+It was first reported to the curl project on March 12 2015. We contacted
+distros@openwall on XXXX XX.
+
+libcurl 7.42.1 was released on April 29 2015, coordinated with the publication
+of this advisory.
+
+CREDITS
+-------
+
+Reported by Yehezkel Horowitz and Oren Souroujon.
+
+Thanks a lot!
