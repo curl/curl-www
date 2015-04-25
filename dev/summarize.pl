@@ -374,12 +374,14 @@ sub endofsingle {
         $res .= "</td>\n";
     }
     else {
+        $testfine = 0 + $testfine; # to force it numeric
         $totalfine += $testfine;
         if(0 == $testfine) {
             $untestedtotal++;
-        }
-        $testfine = 0 + $testfine; # to force it numeric
-        $res .= "<td class=\"buildfine\">$testfine";
+            $res .= "<td>";
+        } else {
+            $res .= "<td class=\"buildfine\">$testfine";
+	}
 
         if($skipped) {
             #$res .= "+$skipped";
