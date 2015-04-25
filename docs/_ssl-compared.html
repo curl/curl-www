@@ -33,6 +33,7 @@ to use.
 #define FEATURE_P3 <td class="yes">yes [3]</td>
 #define FEATURE_P4 <td class="yes">yes [4]</td>
 #define FEATURE_P5 <td class="yes">yes [5]</td>
+#define FEATURE_P7 <td class="yes">yes [7]</td>
 #define MISSING_P <td class="no">no*</td>
 #define NA <td class="unknown">N/A</td>
 
@@ -196,7 +197,7 @@ to use.
   MISSING
   FEATURE
   MISSING
-  MISSING
+  FEATURE_P7
   MISSING
  ENDLINE
 
@@ -209,7 +210,7 @@ to use.
   MISSING
   MISSING
   MISSING
-  MISSING
+  FEATURE_P7
   MISSING
  ENDLINE
 
@@ -370,7 +371,9 @@ to use.
 <br>
  [5] = Requires IBM i 7.1 TR6 or later
 <br>
- [6] = The same feature set is also provided by LibreSSL and probably by BoringSSL. The latter doesn't build with curl unmodified as of September 2014.
+[6] = The same feature set is also provided by LibreSSL and probably by BoringSSL. The latter doesn't build with curl unmodified as of September 2014.
+<br>
+[7] = support for ALPN and NPN was added in <a href="https://technet.microsoft.com/en-us/library/hh831771.aspx">Windows 8.1 / Server 2012 R2</a>.
 
 SUBTITLE(Glossary of Terms)
 
