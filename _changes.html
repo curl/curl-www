@@ -47,6 +47,21 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_42_1"></a>
+SUBTITLE(Fixed in 7.42.1 - April 29 2015)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="http://curl.haxx.se/docs/adv_20150429.html">CURLOPT_HEADEROPT: default to separate</a>
+ BGF <a href="http://curl.haxx.se/mail/archive-2015-04/0046.html">dist: include {src,lib}/checksrc.whitelist</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=231">connectionexists: fix build without NTLM</a>
+ BGF docs: distribute the <a href="/libcurl/c/CURLOPT_PINNEDPUBLICKEY.html">CURLOPT_PINNEDPUBLICKEY</a> man page, too
+ BGF <a href="https://github.com/bagder/curl/issues/237">curl -z: do not write empty file on unmet condition</a>
+ BGF <a href="https://github.com/bagder/curl/issues/235">openssl: fix serial number output</a>
+ BGF <a href="http://curl.haxx.se/libcurl/c/curl_easy_getinfo.html">curl_easy_getinfo.3</a>: document 'internals' in CURLINFO_TLS_SESSION
+ BGF sws: init http2 state properly
+ BGF curl.1: fix typo
+</ul>
+
 <a name="7_42_0"></a>
 SUBTITLE(Fixed in 7.42.0 - April 22 2015)
 <p> Changes:
