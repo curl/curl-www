@@ -89,7 +89,7 @@ TIME LINE
 ---------
 
 It was first reported to the curl project on March 12 2015. We contacted
-distros@openwall on XXXX XX.
+distros@openwall on April 23.
 
 libcurl 7.42.1 was released on April 29 2015, coordinated with the publication
 of this advisory.
