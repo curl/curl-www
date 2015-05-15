@@ -20,7 +20,7 @@ PAGES = foot.html head.html howto.html summary.html cvshistory.html	\
 	readme-curl_off_t.html readme-curlx.html readme-encoding.html	\
 	readme-hostip.html readme-httpauth.html readme-memoryleak.html	\
 	readme-multi_socket.html readme-pingpong.html			\
-	readme-pipelining.html readme-http2.html security.html		\
+	readme-http2.html security.html		\
 	roadmap.html sourceactivity.html release-procedure.html
 
 all: $(PAGES)
@@ -165,12 +165,6 @@ README.pingpong.dump: $(LIBROOT)/README.pingpong
 	$(TXT2PLAIN) < $< > $@
 
 readme-pingpong.html: _readme-pingpong.html README.pingpong.dump $(MAINPARTS)
-	$(ACTION)
-
-README.pipelining.dump: $(LIBROOT)/README.pipelining
-	$(TXT2PLAIN) < $< > $@
-
-readme-pipelining.html: _readme-pipelining.html README.pipelining.dump $(MAINPARTS)
 	$(ACTION)
 
 full: all
