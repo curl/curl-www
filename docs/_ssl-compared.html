@@ -34,11 +34,17 @@ to use.
 #define FEATURE_P4 <td class="yes">yes [4]</td>
 #define FEATURE_P5 <td class="yes">yes [5]</td>
 #define FEATURE_P7 <td class="yes">yes [7]</td>
+#define FEATURE_P8 <td class="yes">yes [8]</td>
 #define MISSING_P <td class="no">no*</td>
 #define NA <td class="unknown">N/A</td>
 
 #define MANUAL <td class="no">manual</td>
 #define AUTOMATIC <td class="yes">automatic</td>
+
+#define PKCS11 <td class="yes">PKCS<!-- " -->#11<!-- "--></td>
+#define PKCS11_P8 <td class="yes">PKCS<!-- " -->#11<!-- "--> [8]</td>
+#define KEYCHAIN <td class="yes">Keychain</td>
+#define WINCAPI <td class="yes">Microsoft CryptoAPI</td>
 
 #define NEWCOL <td>
 #define ENDCOL </td>
@@ -178,7 +184,7 @@ to use.
  NEWLINE
   FEAT TLS ECC ENDFEAT
   FEATURE
-  MISSING
+  FEATURE
   FEATURE
   FEATURE
   UNKNOWN
@@ -256,8 +262,47 @@ to use.
  NEWLINE
   FEAT Uses Certificate/Key Database ENDFEAT
   MISSING
+  FEATURE
+  FEATURE
+  MISSING
+  UNKNOWN
+  MISSING
   MISSING
   FEATURE
+  FEATURE
+ ENDLINE
+
+ NEWLINE
+  FEAT Crypto module/token support ENDFEAT
+  PKCS11_P8
+  PKCS11
+  PKCS11
+  MISSING
+  UNKNOWN
+  MISSING
+  MISSING
+  WINCAPI
+  KEYCHAIN
+ ENDLINE
+
+ NEWLINE
+  FEAT Select Certificates/Keys with PKCS#11 URI ENDFEAT
+  FEATURE_P8
+  FEATURE
+  MISSING
+  NA
+  UNKNOWN
+  NA
+  NA
+  NA
+  NA
+ ENDLINE
+
+ NEWLINE
+  FEAT Integrates with system token database ENDFEAT
+  FEATURE_P8
+  FEATURE
+  MISSING
   MISSING
   UNKNOWN
   MISSING
@@ -269,7 +314,7 @@ to use.
  NEWLINE
   FEAT FIPS-140 ENDFEAT
   FEATURE
-  MISSING
+  FEATURE
   FEATURE
   MISSING
   MISSING
@@ -334,7 +379,7 @@ to use.
  NEWLINE
   FEAT Version ENDFEAT
   FEAT 1.0.1i ENDFEAT
-  FEAT 3.2.17 ENDFEAT
+  FEAT 3.3.15 ENDFEAT
   FEAT 3.16.4 ENDFEAT
   FEAT 3.1.0 ENDFEAT
   FEAT 7.1 TR6 ENDFEAT
@@ -374,6 +419,8 @@ to use.
 [6] = The same feature set is also provided by LibreSSL and probably by BoringSSL. The latter doesn't build with curl unmodified as of September 2014.
 <br>
 [7] = support for ALPN and NPN was added in <a href="https://technet.microsoft.com/en-us/library/hh831771.aspx">Windows 8.1 / Server 2012 R2</a>.
+<br>
+[8] = Via external <a href="https://github.com/OpenSC/OpenSC/wiki/Engine-pkcs11-quickstart">engine_pkcs11</a>;
 
 SUBTITLE(Glossary of Terms)
 
@@ -453,6 +500,27 @@ framework, use a central database instead of separate files to store
 certificates and keys. Apple's Security framework database, for instance, is
 called the Keychain. For engines that use a database and don't also support
 files, the CURLOPT_CAINFO option is ignored.
+<p>
+
+<b>Crypto module/token support:</b> Support for cryptographic hardware tokens
+and software databases is typically provided via
+<a href="http://en.wikipedia.org/wiki/PKCS_11">; PKCS#11</a> on POSIX platforms,
+and via platform-specific APIs on Windows and Darwin. Examples of PKCS#11
+software tokens include the GNOME keyring, and the NSS "soft token" database.
+<p>
+
+<b>Integrates with system token database:</b> Platforms often have a
+system-wide configuration which specifies which crypto modules/token should
+be visible in which applications. Many Linux distributions have chosen
+to use <a href="http://p11-glue.freedesktop.org/p11-kit.html">p11-kit</a>;
+to provide this configuration, and some now consider it a bug for
+applications <em>not</em> to automatically use the tokens configured therein.
+<p>
+
+<b>Select Certificates/Keys with PKCS#11 URI:</b> <a
+href="https://tools.ietf.org/html/rfc7512">RFC 7512</a> defines a
+standard URI format for specifying objects within PKCS#11
+tokens/databases.
 <p>
 
 <b>FIPS-140:</b> FIPS-140 is a security standard used by the United States and
