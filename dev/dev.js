@@ -233,7 +233,7 @@ function filterLineName() {
         for (var i=0; i<buildRows.length; i++) {
             var buildCells = buildRows[i].getElementsByTagName("td");
             /* Ignore the first row holding the table heading */
-            if (buildCells.length > 5) {
+            if (buildCells.length > 5 && buildCells[5].childNodes[0]) {
                 if (buildCells[5].childNodes[0].data == builderName) {
                     /* Show matching */
                     buildRows[i].style.display = "";
