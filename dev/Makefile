@@ -19,8 +19,8 @@ PAGES = foot.html head.html howto.html summary.html cvshistory.html	\
 	runtests.html source.html readme-ares.html			\
 	readme-curl_off_t.html readme-curlx.html readme-encoding.html	\
 	readme-hostip.html readme-httpauth.html readme-memoryleak.html	\
-	readme-multi_socket.html readme-pingpong.html security.html	\
-	roadmap.html sourceactivity.html release-procedure.html
+	readme-multi_socket.html security.html roadmap.html		\
+	sourceactivity.html release-procedure.html
 
 all: $(PAGES)
 
@@ -152,12 +152,6 @@ README.multi_socket.dump: $(LIBROOT)/README.multi_socket
 	$(TXT2PLAIN) < $< > $@
 
 readme-multi_socket.html: _readme-multi_socket.html README.multi_socket.dump $(MAINPARTS)
-	$(ACTION)
-
-README.pingpong.dump: $(LIBROOT)/README.pingpong
-	$(TXT2PLAIN) < $< > $@
-
-readme-pingpong.html: _readme-pingpong.html README.pingpong.dump $(MAINPARTS)
 	$(ACTION)
 
 full: all
