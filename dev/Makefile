@@ -19,8 +19,7 @@ PAGES = foot.html head.html howto.html summary.html cvshistory.html	\
 	runtests.html source.html readme-ares.html			\
 	readme-curl_off_t.html readme-curlx.html readme-encoding.html	\
 	readme-hostip.html readme-httpauth.html readme-memoryleak.html	\
-	readme-multi_socket.html readme-pingpong.html			\
-	readme-http2.html security.html		\
+	readme-multi_socket.html readme-pingpong.html security.html	\
 	roadmap.html sourceactivity.html release-procedure.html
 
 all: $(PAGES)
@@ -141,12 +140,6 @@ README.httpauth.dump: $(LIBROOT)/README.httpauth
 	$(TXT2PLAIN) < $< > $@
 
 readme-httpauth.html: _readme-httpauth.html README.httpauth.dump $(MAINPARTS)
-	$(ACTION)
-
-README.http2.dump: $(SRCROOT)/docs/HTTP2.md
-	$(MARKDOWN) < $< > $@
-
-readme-http2.html: _readme-http2.html README.http2.dump $(MAINPARTS)
 	$(ACTION)
 
 README.memoryleak.dump: $(LIBROOT)/README.memoryleak

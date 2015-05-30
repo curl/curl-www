@@ -101,6 +101,12 @@ LINK(x, HTTP Scripting)
 VLINK(/docs/httpscripting.html, HTTP Scripting, How to script HTTP with curl)
 #endif
 
+#ifdef DOCS_HTTP2
+LINK(x, HTTP/2)
+#else
+VLINK(/docs/http2.html, HTTP/2, HTTP/2 with curl)
+#endif
+
 #ifdef DOCS_INSTALL
 LINK(x, Install)
 #else
