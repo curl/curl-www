@@ -143,8 +143,8 @@ README.httpauth.dump: $(LIBROOT)/README.httpauth
 readme-httpauth.html: _readme-httpauth.html README.httpauth.dump $(MAINPARTS)
 	$(ACTION)
 
-README.http2.dump: $(LIBROOT)/README.http2
-	$(TXT2PLAIN) < $< > $@
+README.http2.dump: $(SRCROOT)/docs/HTTP2.md
+	$(MARKDOWN) < $< > $@
 
 readme-http2.html: _readme-http2.html README.http2.dump $(MAINPARTS)
 	$(ACTION)
