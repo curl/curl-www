@@ -234,7 +234,7 @@ span.metalink {
   text-decoration: none;
   color: #ffffff;
   white-space: nowrap;
-  padding: 0px 0px 0px 0px;
+  padding: 0px 10px 0px 10px;
   font-family: sans-serif;
 }
 
@@ -244,7 +244,6 @@ span.metalink {
   color: #ffffff;
   background-color: #202080;
   white-space: nowrap;
-  padding: 0px 0px 0px 0px;
   font-family: sans-serif;
 }
 
@@ -256,13 +255,14 @@ span.metalink {
   font-weight: bold;
   color: black;
   white-space: nowrap;
-  padding: 0px 0px 0px 0px;
+  padding: 0px 10px 0px 10px;
 }
 
 .menu {
   padding: 4px 4px 4px 4px;
-  line-height: 140%;
+  line-height: 160%;
   float: left;
+  font-size: 120%;
 }
 
 /* the top part of left-side menu box */
@@ -278,7 +278,6 @@ span.metalink {
   color: #ffffff;
   background-color: #4080ff;
   padding: 4px 4px 4px 4px;
-  line-height: 140%;
 }
 
 /* the toplevel centered links */
@@ -380,8 +379,9 @@ div.yellowbox {
 
 .main {
   clear: right;
-  float: right;
-  width: 86%;
+  float: left;
+  width: 70%;
+  padding-left: 40px;
 }
 
 /* Filtering menus on the autobuild page */
