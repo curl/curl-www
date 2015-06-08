@@ -14,4 +14,11 @@
 
 #include "where.t"
 
+/* define to use after the menu */
+#define START_OF_MAIN \
+<input type="checkbox" id="nav-trigger" class="nav-trigger" /> \
+<label for="nav-trigger"></label> \
+<div class="main"> \
+<div class="contents">
+
 #endif /* ROOT__SETUP_T */
