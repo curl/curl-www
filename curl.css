@@ -389,7 +389,7 @@ div.yellowbox {
 
 .main {
   min-width: 100%;
-  min-height: 100%;
+  min-height: 1000px;
   background-color: #fff;
   position: relative;
   top: 0;
@@ -402,8 +402,8 @@ div.yellowbox {
 
 .contents {
     padding-top: 0px;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 50px;
+    padding-right: 40px;
     padding-bottom: 10%;
 }
 
@@ -431,7 +431,7 @@ div.yellowbox {
 label[for="nav-trigger"] {
     position: fixed;
     top: 20px;
-    left: 15px;
+    left: 5px;
     z-index: 2;
     width: 30px;
     height: 30px;
@@ -445,7 +445,7 @@ label[for="nav-trigger"] {
 }
  
 .nav-trigger:checked ~ .main {
-    left: 200px;
+    left: 205px;
     box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
 }
 
