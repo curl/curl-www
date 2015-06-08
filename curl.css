@@ -380,8 +380,9 @@ div.yellowbox {
 .main {
   clear: right;
   float: left;
-  width: 70%;
+  max-width: 50em;
   padding-left: 40px;
+  padding-right: 40px;
 }
 
 /* Filtering menus on the autobuild page */
