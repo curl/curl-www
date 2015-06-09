@@ -283,6 +283,16 @@ span.metalink {
   padding: 4px 4px 4px 4px;
 }
 
+.topmenu {
+    min-height: 45px;
+    text-align: center;
+    color: #202080;
+    z-index: 2;
+    #box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.5);
+    padding-top: 10px;
+    font-size: 140%;
+}
+
 /* the main curl site left-side menu box */
 .tailmenu {
   color: #ffffff;
@@ -396,7 +406,7 @@ div.yellowbox {
   bottom: 100%;
   left: 0;
   z-index: 1;
-  padding-top: 50px;
+  padding-top: 0px;
   margin-top: 0px;
 }
 
@@ -405,6 +415,7 @@ div.yellowbox {
     padding-left: 50px;
     padding-right: 40px;
     padding-bottom: 10%;
+    max-width: 50em;
 }
 
 /* Filtering menus on the autobuild page */

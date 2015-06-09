@@ -18,6 +18,11 @@
 <input type="checkbox" id="nav-trigger" class="nav-trigger" /> \
 <label for="nav-trigger"></label> \
 <div class="main"> \
-<div class="contents">
+<div class="contents"> \
+<div class="topmenu"> \
+<a href="/download.html">Download</a> &middot;  &middot;  &middot; \
+<a href="/docs/">Documentation</a> \
+</div>
+
 
 #endif /* ROOT__SETUP_T */
