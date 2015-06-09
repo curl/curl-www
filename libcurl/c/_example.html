@@ -10,133 +10,32 @@
 #include "_menu.html"
 #include "setup.t"
 
-WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", Example Source Codes)
+WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", Example Sources)
 
 TITLE(libcurl - small example snippets)
-
-<div style="float: right; border: 1px solid black; width:10em; ">
-SUBTITLE(All Examples)
-Written in C unless specifically mentioned:<p>
-#include "allex.t"
-</div>
-<div style="width: 50em;">
-
-<p>
- We're gathering libcurl example source codes here.  Please submit yours!
-
-<p><strong> NOTE: These files are intended as examples only. In the interest
+<p> These files are intended as examples only. In the interest
 of simplicity and clarity, they might not include proper error handling and
 might produce compiler warnings on some platforms. Real-world applications
-should pay more attention to these issues.  </strong>
+should pay more attention to these issues.
 
 <p>
- <a href="allexamples.zip">allexamples.zip</a> contains all the example
- sources, some 90+ separate stand-alone files.
+ Download <a href="allexamples.zip">allexamples.zip</a>, it contains all the
+ example sources listed here.
 
 <p>
  You can also see a list of all <a href="options-in-examples.html">libcurl
  easy options and which example source codes that use them</a>.
 
-SUBTITLE(Some of the Examples)
 <p>
-<b>simple HTTP</b><br> <a
-href="simple.html">simple.c</a>
-shows how to get a remote web page in only four libcurl function calls.
+ All examples are written in C, unless specifically mentioned.
+
+SUBTITLE(The examples)
+<p>
+#include "allex.t"
 
 <p>
-<b>simple HTTPS</b><br> <a href="https.html">https.c</a> gets a single HTTPS
-page, while <a href="simplessl.html">simplessl.c</a> shows how to get a remote
-https page and a set of various SSL-controlling options.
-
-<p>
-<b>get HTTP with headers separate</b><br> <a
-href="sepheaders.html">sepheader.c</a>
-gets a web page and stores the response-headers in a separate file.
-
-<p>
-<b>simple FTP</b><br> <a
-href="ftpget.html">ftpget.c</a>
-proves that getting a FTP file is just as simple.
-
-<p>
-<b>FTP upload</b><br> <a
-href="ftpupload.html">ftpupload.c</a>
-uploads a local file to a remote FTP server. It also renames the file after
-succcessful transfer.
-
-<p>
-<b>get a remote file in memory only</b><br> <a
-href="getinmemory.html">getinmemory.c</a>
-describes how you can use the callback system to fetch documents into a ram
-buffer with no file writing necessary.
-
-<p>
-<b>HTTP PUT</b><br> <a
-href="httpput.html">httpput.c</a>
-makes PUTs a local file to a HTTP server.
-
-<p>
-<b>HTTP form POST</b><br> <a
-href="postit2.html">postit2.c</a>
-shows how to build a RFC1867-style form post and send it to a HTTP
-server.
-
-<p>
-<b>persistant transfers</b><br><a
-href="persistant.html">persistant.c</a>
-shows that just getting files in a sequential manner will make it use
-persistant connections if the remote server supports it.
-
-<p>
-<b>multithreaded URL fetches</b><br> <a
-href="multithread.html">multithread.c</a>
-starts a number of threads and retrieves one URL in each thread. This requires
-a working thread library.
-
-<p>
-<b>URL fetch with GTK progress bar</b><br> <a
-href="curlgtk.html">curlgtk.c</a>
-uses GTK and the libcurl progress callback to show a GUI progress bar while
-downloading.
-
-<p>
-<b>fopen() URL</b><br> <a
-href="fopen.html">fopen.c</a> shows
-how you could write an fopen()-style emulation layer to easily make your
-program read URLs instead of local files.
-
-<p>
-<b>nonblocking multipart formpost</b><br> <a
-href="multi-post.html">multi-post.c</a>
-makes a multipart formpost using the multi interface, which makes it a
-non-blocking operation.
-
-<p>
-<b>debug callback</b><br> <a
-href="debug.html">debug.c</a> shows
-how you can use the debug callback to get a full trace of all protocol data
-being sent/received (and more).
-
-<p>
-<b>HTML parsing</b><br> <a href="htmltitle.html">htmltitle.cc</a> shows how to
-use libxml to parse HTML retrieved with libcurl.
-
-<p>
-<b>Using CURLOPT_SSL_CTX_FUNCTION</b><br> <a
-href="curlx.html">curlx.c</a> uses
-<a
-href="/libcurl/c/CURLOPT_SSL_CTX_FUNCTION.html">CURLOPT_SSL_CTX_FUNCTION</a>
-to set a custom callback to deal with an OpenSSL SSL_CTX * at SSL handshake
-time.
-
-<p>
-<b>Doing SOAP with libcurl</b><br>
-<a href="http://www.vivtek.com/wftk/doc/code/wftk/action/ACTION_http.html">SOAP example by vivtek.com</a> [offsite]
-
-<p>
- You'll also find these examples in the distribution archive, in the
+ You also find these examples in the distribution archive, in the
  <b>docs/examples directory</b>.
-</div>
 
 #include "_footer.html"
 

@@ -4,7 +4,7 @@
 #include "setup.t"
 
 #ifndef NOBODY
-<BODY bgcolor=BACKGROUND text=TEXTCOLOR link="#0000ff" vlink="#808080" alink="red">
+<body bgcolor="#ffffff" text="#000000">
 #endif
 
 <div class="main">
@@ -29,7 +29,11 @@ VLINK("http://curl.haxx.se/download.html", Download, Get curl packages)
 
 VLINK("http://curl.haxx.se/libcurl/", libcurl, libcurl web site section)
 
+#ifdef CURL_MAIL
+LINK(x, Mailing Lists)
+#else
 VLINK("http://curl.haxx.se/mail/", Mailing Lists, Mailing List info and archives)
+#endif
 
 #ifdef CURL_NEWS
 LINK("http://curl.haxx.se/news.html", News)
