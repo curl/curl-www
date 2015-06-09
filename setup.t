@@ -9,20 +9,12 @@
 #define DATE(date) <b>date</b>
 #define CURLSIZE(size) <i>size</i>
 
-#define LINK(l,t) <div><a href="l" class="itemselect">t</a></div>
-#define VLINK(l,t,itle) <div><a href="l" class="menuitem" title="itle">t</a></div>
+#define LINK(l,t) <a href="l" class="itemselect">t</a>
+#define VLINK(l,t,itle) <a href="l" class="menuitem" title="itle">t</a>
 
 #include "where.t"
 
 #define START_OF_MAIN \
-<input type="checkbox" id="nav-trigger" class="nav-trigger" /> \
-<label for="nav-trigger"></label> \
-<div class="main"> \
-<div class="contents"> \
-<div class="topmenu"> \
-<a href="/download.html">Download</a> &middot;  &middot;  &middot; \
-<a href="/docs/">Documentation</a> \
-</div>
-
+<div class="contents">
 
 #endif /* ROOT__SETUP_T */

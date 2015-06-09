@@ -233,64 +233,36 @@ span.metalink {
 /* a non-selected item in the main menu */
 .menuitem {
   text-decoration: none;
-  color: #ffffff;
   white-space: nowrap;
-  padding: 0px 10px 0px 10px;
+  padding: 0px 5px 0px 5px;
   font-family: sans-serif;
+  color: #ffffff;
 }
 
 /* a non-selected item in the main menu, with the mouse hovering */
 .menuitem:hover {
-  text-decoration: none;
-  color: #ffffff;
-  background-color: #202080;
-  white-space: nowrap;
-  font-family: sans-serif;
+    text-decoration: none;
+    color: #8080ff;
 }
 
 /* a selected item in the main menu */
 .itemselect {
-  font-family: sans-serif;
-  text-decoration: none;
-  background-color: white;
-  font-weight: bold;
-  color: black;
-  white-space: nowrap;
-  padding: 0px 10px 0px 10px;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-weight: bold;
+    color: #ffffff;
 }
 
 .menu {
-  padding: 20px 4px 4px 6px;
-  line-height: 120%;
-  float: left;
-  font-size: 120%;
-  width: 100%;
-  height: 100%;
-  background: #FFF;
-  z-index: 0;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+
 }
 
 /* the top part of left-side menu box */
 .mainmenu {
-  clear: left;
-  color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #4040ff;
-  padding: 4px 4px 4px 4px;
-}
-
-.topmenu {
-    min-height: 45px;
-    text-align: center;
-    color: #202080;
-    z-index: 2;
-    #box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.5);
-    padding-top: 10px;
-    font-size: 140%;
+  text-align: center;
 }
 
 /* the main curl site left-side menu box */
@@ -298,18 +270,6 @@ span.metalink {
   color: #ffffff;
   background-color: #4080ff;
   padding: 4px 4px 4px 4px;
-}
-
-/* the toplevel centered links */
-.ad a {
-  border-color: #c0c0ff;
-  border-style: outset;
-  text-align: center;
-  text-decoration: none;
-  color: #ffffff;
-  background-color: #4040ff;
-  margin: 0px 8px 0px 8px;
-  padding: 0px 3px 0px 3px;
 }
 
 .relatedbox {
@@ -398,24 +358,16 @@ div.yellowbox {
 }
 
 .main {
-  min-width: 100%;
-  min-height: 1000px;
   background-color: #fff;
-  position: relative;
-  top: 0;
-  bottom: 100%;
-  left: 0;
-  z-index: 1;
   padding-top: 0px;
   margin-top: 0px;
+  max-width: 50em;
 }
 
 .contents {
-    padding-top: 0px;
-    padding-left: 50px;
-    padding-right: 40px;
-    padding-bottom: 10%;
-    max-width: 50em;
+  padding-top: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /* Filtering menus on the autobuild page */
@@ -432,34 +384,4 @@ div.yellowbox {
   width: 1.5em;
   /* Opera 12.16 needs this or the option list button is invisible */
   background: #ffffff;
-}
-
-.nav-trigger {
-    position: absolute;
-    clip: rect(0, 0, 0, 0);
-}
-
-label[for="nav-trigger"] {
-    position: fixed;
-    top: 20px;
-    left: 5px;
-    z-index: 2;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
-    background-size: contain;
-}
-
-.nav-trigger:checked + label {
-    left: 215px;
-}
- 
-.nav-trigger:checked ~ .main {
-    left: 205px;
-    box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
-}
-
-.nav-trigger + label, .main {
-    transition: left 0.4s;
 }
