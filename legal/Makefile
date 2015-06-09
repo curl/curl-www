@@ -13,10 +13,10 @@ all: index.html thename.html licmix.html distro-dilemma.html
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
 
-thename.html: _thename.html $(MAINPARTS)
+thename.html: _thename.html ../docs/_menu.html $(MAINPARTS)
 	$(ACTION)
 
-licmix.html: _licmix.html $(MAINPARTS) licmix.t
+licmix.html: _licmix.html ../docs/_menu.html $(MAINPARTS) licmix.t
 	$(ACTION)
 
 distro-dilemma.html: _distro-dilemma.html $(MAINPARTS) distro.t

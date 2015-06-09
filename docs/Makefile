@@ -27,7 +27,8 @@ PAGES = index.html manpage.html faq.html changes.html sslcerts.html	      \
  adv_20140910B.html adv_20141105.html adv_20150108A.html adv_20150108B.html   \
  adv_20150422A.html adv_20150422B.html adv_20001013.html adv_20030803.html    \
  adv_20050221A.html adv_20050221B.html adv_20150422C.html adv_20150422D.html  \
- adv_20150429.html http2.html
+ adv_20150429.html http2.html tooldocs.html projdocs.html reldocs.html \
+ protdocs.html whodocs.html
 
 all: $(PAGES)
 	test -f vuln-make.gen && make -f vuln-make.gen
@@ -40,9 +41,20 @@ clean:
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
 
-index2.html: _index2.html $(MAINPARTS)
+tooldocs.html: _tooldocs.html $(MAINPARTS)
 	$(ACTION)
 
+projdocs.html: _projdocs.html $(MAINPARTS)
+	$(ACTION)
+
+reldocs.html: _reldocs.html $(MAINPARTS)
+	$(ACTION)
+
+protdocs.html: _protdocs.html $(MAINPARTS)
+	$(ACTION)
+
+whodocs.html: _whodocs.html $(MAINPARTS)
+	$(ACTION)
 
 libs.html: _libs.html $(MAINPARTS)
 	$(ACTION)
@@ -121,10 +133,6 @@ httpscript.t: $(DOCROOT)/TheArtOfHttpScripting
 
 httpscripting.html: _httpscripting.shtml $(MAINPARTS) httpscript.t
 	$(ACTION)
-
-#faq.t: $(DOCROOT)/FAQ
-#	$(TXT2HTML)  -H '^ *\d+\. \w+' -H '^ *\d+\.\d+\. \w+' < $(DOCROOT)/FAQ > faq.t
-
 
 features.html: _features.html $(MAINPARTS) features.t
 	$(ACTION)

@@ -1,19 +1,20 @@
 #include "_doctype.html"
 <HTML>
-<HEAD> <TITLE>cURL - VERSIONS</TITLE>
+<HEAD> <TITLE>cURL - Versions</TITLE>
 #include "css.t"
 </HEAD>
 
 #define CURL_DOCS
+#define REL_DOCS
 #define DOCS_VERSIONS
 #define CURL_URL docs/versions.html
 
 #include "_menu.html"
 #include "setup.t"
 
-WHERE2(Docs, "/docs/", VERSIONS)
+WHERE3(Docs, "/docs/", Release Docs, "/docs/reldocs.html", Version numbering)
 
-TITLE(VERSIONS -- the version numbering scheme in curl)
+TITLE(Versions - the version numbering scheme in curl)
 <div class="relatedbox">
 <b>Related:</b>
 <br><a href="/changes.html">Changelog</a>

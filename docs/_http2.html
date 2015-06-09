@@ -5,12 +5,13 @@
 </head>
 
 #define DOCS_HTTP2
+#define PROT_DOCS
 #define CURL_URL docs/http2.html
 
 #include "_menu.html"
 #include "setup.t"
 
-WHERE2(Docs, "/docs/", HTTP/2 with curl)
+WHERE3(Docs, "/docs/", Protocol docs, "/docs/protdocs.html", HTTP/2 with curl)
 
 TITLE(HTTP/2 with curl)
 <p>

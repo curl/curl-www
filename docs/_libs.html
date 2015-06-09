@@ -5,13 +5,14 @@
 </HEAD>
 
 #define CURL_DOCS
+#define PROJ_DOCS
 #define DOCS_LIBS
 #define CURL_URL docs/libs.html
 
 #include "docs/_menu.html"
 #include "setup.t"
 
-WHERE2(Docs, "/docs/", Dependencies)
+WHERE3(Docs, "/docs/", Project Documentation, "/docs/projdocs.html", Dependencies)
 
 TITLE(Dependencies)
 <div class="relatedbox">

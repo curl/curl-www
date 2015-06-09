@@ -6,6 +6,7 @@
 </HEAD>
 
 #define CURL_DOCS
+#define TOOL_DOCS
 #define DOCS_COMPARISON
 #define CURL_URL docs/comparison-table.html
 
@@ -13,7 +14,9 @@
 #include "setup.t"
 #include "release.t"
 
-WHERE2(Docs, "/docs/", Comparison Table)
+WHERE3(Docs, "/docs/",
+Tool Documentation, "/docs/tooldocs.html",
+Comparison Table)
 
 TITLE(Compare cURL Features with Other Download Tools)
 <div class="relatedbox">

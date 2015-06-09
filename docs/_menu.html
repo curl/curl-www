@@ -3,196 +3,296 @@
 
 #include "setup.t"
 
-#define BACKGROUND "#ffffff"
-#define TEXTCOLOR "#000000"
-#define MENUTEXT "#ffffff"
-#define MENUCOLOR "#e0e0ff"
-#define BLACK "#000000"
-
 #ifndef NOBODY
-<BODY bgcolor=BACKGROUND text=TEXTCOLOR link="#0000ff" vlink="#808080" alink="red">
+<body bgcolor="#ffffff" text="#000000">
 #endif
 
 <div class="main">
 <div class="menu">
 
 #ifdef DOCS_INDEX
-LINK(x, Documentation)
+#ifdef DOCS_OVERVIEW
+LINK(x, Docs Overview)
 #else
-VLINK(/docs/, Documentation, Documentation main page)
+VLINK(/docs/, Docs Overview, Documentation Overview)
 #endif
 
+VLINK(/docs/projdocs.html, Project, The project)
+VLINK(/docs/protdocs.html, Protocols, Protocol Documentation)
+VLINK(/docs/reldocs.html, Releases, Release documentation)
+VLINK(/docs/tooldocs.html, Tools, curl tools documentation)
+VLINK(/docs/whodocs.html, Who and Why, Who and Why documentation)
+
+#else
+VLINK(/docs/, Docs Overview, Documentation main page)
+
+#ifdef PROJ_DOCS
 #ifdef DOCS_BUGS
 LINK(x, Bug Report)
 #else
 VLINK(/docs/bugs.html, Bug Report, How to report a problem)
 #endif
+#endif
 
+#ifdef PROT_DOCS
 #ifdef DOCS_CAEXTRACT
 LINK(x, CA Extract)
 #else
 VLINK(/docs/caextract.html, CA Extract, CA cert bundle exatracted from Mozilla)
 #endif
+#endif
 
+#ifdef REL_DOCS
+#ifdef CURL_CHANGES
+LINK(x, Changelog)
+#else
+VLINK(/changes.html, Changelog, Changes done in curl)
+#endif
+#endif
+
+#ifdef WHO_DOCS
 #ifdef DOCS_COMPANIES
 LINK(x, Companies)
 #else
 VLINK(/docs/companies.html, Companies, Commercial users of curl)
 #endif
-
-#ifdef DOCS_COMPARISON
-LINK(x, Comparison)
-#else
-VLINK(/docs/comparison-table.html, Comparison, Compare curl to other tools)
 #endif
 
+#ifdef TOOL_DOCS
+#ifdef DOCS_COMPARISON
+LINK(x, Comparison Table)
+#else
+VLINK(/docs/comparison-table.html, Comparison Table, Compare curl to other tools)
+#endif
+#endif
+
+#ifdef WHO_DOCS
 #ifdef DOCS_COPYRIGHT
 LINK(x, Copyright)
 #else
 VLINK(/docs/copyright.html, Copyright, Copyright and license info)
 #endif
-
-#ifdef DOCS_MANPAGE
-LINK(x, curl Man Page)
-#else
-VLINK(/docs/manpage.html, curl Man Page, Command line option reference)
 #endif
 
+#ifdef PROJ_DOCS
+#ifdef DOCS_DONATION
+LINK(x, Donate)
+#else
+VLINK(/donation.html, Donate, Donate to the cURL project)
+#endif
+#endif
+
+#ifdef TOOL_DOCS
+#ifdef DOCS_MANPAGE
+LINK(x, curl man page)
+#else
+VLINK(/docs/manpage.html, curl man page, Command line option reference)
+#endif
+#endif
+
+#ifdef PROJ_DOCS
 #ifdef DOCS_LIBS
 LINK(x, Dependencies)
 #else
 VLINK(/docs/libs.html, Dependencies, Libraries to use)
 #endif
+#endif
 
+#ifdef TOOL_DOCS
 #ifdef DOCS_FAQ
 LINK(x, FAQ)
 #else
 VLINK(/docs/faq.html, FAQ, Frequently Asked Questions)
 #endif
+#endif
 
+#ifdef PROJ_DOCS
 #ifdef DOCS_FEATURES
 LINK(x, Features)
 #else
 VLINK(/docs/features.html, Features, All features summed up)
 #endif
+#endif
 
+#ifdef PROJ_DOCS
 #ifdef DOCS_HISTORY
 LINK(x, History)
 #else
 VLINK(/docs/history.html, History, A project history overview)
 #endif
+#endif
 
+#ifdef PROT_DOCS
 #ifdef DOCS_HTTP_COOKIES
 LINK(x, HTTP Cookies)
 #else
 VLINK(/docs/http-cookies.html, HTTP Cookies, Description of cookies with curl)
 #endif
+#endif
 
+#ifdef TOOL_DOCS
 #ifdef DOCS_HTTPSCRIPT
 LINK(x, HTTP Scripting)
 #else
 VLINK(/docs/httpscripting.html, HTTP Scripting, How to script HTTP with curl)
 #endif
+#endif
 
+#ifdef PROT_DOCS
 #ifdef DOCS_HTTP2
 LINK(x, HTTP/2)
 #else
 VLINK(/docs/http2.html, HTTP/2, HTTP/2 with curl)
 #endif
+#endif
 
+#ifdef PROJ_DOCS
 #ifdef DOCS_INSTALL
 LINK(x, Install)
 #else
 VLINK(/docs/install.html, Install, Installing curl from source)
 #endif
+#endif
 
+#ifdef PROJ_DOCS
 #ifdef DOCS_KNOWNBUGS
 LINK(x, Known Bugs)
 #else
 VLINK(/docs/knownbugs.html, Known Bugs, Already known problems )
 #endif
+#endif
 
-VLINK(/legal/, Legal &raquo;, A subsection with legal info)
-
+#ifdef TOOL_DOCS
 #ifdef DOCS_MKCABUNDLE
 LINK(x, mk-ca-bundle)
 #else
 VLINK(/docs/mk-ca-bundle.html, mk-ca-bundle, Generate your own CA bundle)
 #endif
+#endif
 
+#ifdef WHO_DOCS
+#ifdef LEGAL_LICMIX
+LINK("", Licence Mixing )
+#else
+VLINK("/legal/licmix.html", License Mixing, About mixing licenses )
+#endif
+#endif
+
+#if 0
+#ifdef WHO_DOCS
 #ifdef DOCS_PROGRAMS
 LINK(x, Programs)
 #else
 VLINK(/docs/programs.html, Programs, List of programs using curl)
 #endif
+#endif
+#endif
 
+#ifdef TOOL_DOCS
 #ifdef DOCS_RELATED_TOOLS
 LINK(x, Related Tools)
 #else
 VLINK(/docs/relatedtools.html, Related Tools, Tools that are related!)
 #endif
+#endif
 
+#ifdef REL_DOCS
 #ifdef DOCS_RELEASES
 LINK(x, Release Table)
 #else
 VLINK(/docs/releases.html, Release Table, All releases with details)
 #endif
+#endif
 
+#ifdef REL_DOCS
 #ifdef DOCS_SECURITY
 LINK(x, Security)
 #else
 VLINK(/docs/security.html, Security, Vulnerabilities and more)
 #endif
+#endif
 
+#ifdef WHO_DOCS
+#ifdef CURL_SPONSORS
+LINK(x, Sponsors)
+#else
+VLINK(/sponsors.html, Sponsors, Project Sponsors)
+#endif
+#endif
+
+#ifdef PROT_DOCS
 #ifdef DOCS_SSLCERTS
 LINK(x, SSL Certs)
 #else
 VLINK(/docs/sslcerts.html, SSL Certs, How curl works with SSL certficates)
 #endif
+#endif
 
+#ifdef PROT_DOCS
 #ifdef DOCS_SSL_COMPARED
 LINK(x, SSL libs compared)
 #else
 VLINK(/docs/ssl-compared.html, SSL libs compared, An SSL library comparison)
 #endif
+#endif
 
+#ifdef WHO_DOCS
 #ifdef DOCS_THANKS
 LINK(x, Thanks)
 #else
 VLINK(/docs/thanks.html, Thanks, Named and listed contributors)
 #endif
+#endif
 
+#ifdef WHO_DOCS
+#ifdef LEGAL_THENAME
+LINK("", The Name)
+#else
+VLINK("/legal/thename.html", The Name, Who owns the name)
+#endif
+#endif
+
+#ifdef PROJ_DOCS
 #ifdef DOCS_TODO
 LINK(x, TODO)
 #else
 VLINK(/docs/todo.html, TODO, Things we might do in the future)
 #endif
+#endif
 
+#ifdef TOOL_DOCS
 #ifdef DOCS_MANUAL
 LINK(x, Tutorial)
 #else
 VLINK(/docs/manual.html, Tutorial, A curl tutorial)
 #endif
+#endif
 
+#ifdef PROJ_DOCS
 #ifdef DOCS_VERSIONS
 LINK(x, Version Nums)
 #else
 VLINK(/docs/versions.html, Version Nums, How curl versioning works)
 #endif
+#endif
 
+#ifdef REL_DOCS
 #ifdef DOCS_VULNTABLE
 LINK(x, Vulnerabilities)
 #else
-VLINK(/docs/vulnerabilities.html, Vulnerabilities, Security problems in old releases)
+VLINK(/docs/vulnerabilities.html, Vulnerabilities, Security problems in releases)
+#endif
 #endif
 
-VLINK("http://curl.haxx.se/about.html", Web Site Info, Infrastructure details)
-
-#ifdef CURL_SEARCH
-LINK("/search.html", Search)
+#ifdef PROJ_DOCS
+#ifdef DOCS_WEBSITE
+LINK(x, Web Site Info)
 #else
-VLINK("/search.html", Search, Search the curl.haxx.se site)
+VLINK("http://curl.haxx.se/about.html", Web Site Info, Infrastructure details)
 #endif
+#endif
+
+#endif /* DOCS_INDEX */
 
 </div>
 

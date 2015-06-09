@@ -6,6 +6,7 @@
 </HEAD>
 
 #define CURL_DOCS
+#define WHO_DOCS
 #define DOCS_THANKS
 #define CURL_URL docs/thanks.html
 
@@ -13,7 +14,7 @@
 #include "setup.t"
 #include "thanksnum.gen"
 
-WHERE2(Docs, "/docs/", Thanks)
+WHERE3(Docs, "/docs/", Who and Why, "/docs/whodocs.html", Thanks)
 
 TITLE(Thanks for Your Contribution to the cURL Project!)
 <div class="relatedbox">

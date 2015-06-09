@@ -5,12 +5,14 @@
 </HEAD>
 
 #define CURL_ABOUT
+#define DOCS_WEBSITE
+#define PROJ_DOCS
 #define CURL_URL about.html
 
-#include "_menu.html"
 #include "setup.t"
+#include "docs/_menu.html"
 
-WHERE2(Docs, "/docs/", About the cURL Web Site)
+WHERE3(Docs, "/docs/", Project Documentation, "/docs/projdocs.html", About the cURL Web Site)
 TITLE(About the cURL Web Site)
 <div class="relatedbox">
 <b>Related:</b>

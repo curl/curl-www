@@ -1,84 +1,73 @@
 #include "_doctype.html"
-<HTML>
-<HEAD> <TITLE>cURL - Index of online documentation</TITLE>
+<html>
+<head> <title>cURL - Documentation Overview</title>
 #include "css.t"
-</HEAD>
+</head>
 
 #define CURL_DOCS
+#define DOCS_OVERVIEW
 #define DOCS_INDEX
 #define CURL_URL docs
 
 #include "_menu.html"
 #include "setup.t"
 
-WHERE1(Documentation)
+WHERE1(Documentation Overview)
 
-TITLE(Documentation)
+TITLE(Documentation Overview)
 <p>
-  Pick your subject in the left-side menu. Some of the available options are
- described further below.
+ The main documentation is sub divided into several categories. Each category
+holds a number of documentation pages.
 
-SUBTITLE(Learning to use the curl tool)
+SUBTITLE(<a href="tooldocs.html">curl tool documentation</a>)
 <p>
-  The <a href="manual.html">tutorial</a> contains a lot of examples and
-  explanations about the concepts behind the command line options etc. Takes
-  you through a lot of things you can do with curl. Perfect start for a
-  beginner.
+  <a href="comparison-table.html">Comparison Table</a>,
+  <a href="manpage.html">curl man page</a>,
+  <a href="faq.html">FAQ</a>,
+  <a href="httpscripting.html">HTTP Scripting</a>,
+  <a href="mk-ca-bundle.html">mk-ca-bundle</a>,
+  <a href="relatedtools.html">Related Tools</a>,
+  <a href="manual.html">Tutorial</a>
 
-<p> The perhaps single most common use for the curl tool is to
- do <a href="httpscripting.html">HTTP scripting using curl</a> and this
- document gives you an initial grip on how you can use curl to emulate a
- browser.
-
+SUBTITLE(<a href="projdocs.html">The project</a>)
 <p>
-  The <a href="faq.html">FAQ</a> is short for Frequently Asked Questions and
-  these ones surely are. If you have a problem you feel is "obvious", look
-  here. This is a good document to check out for all curl users.
-  
-SUBTITLE(Reference documentation)
+<a href="bugs.html">Bug Report</a>, <a href="libs.html">Dependencies</a>,
+<a href="/donation.html">Donate</a>,
+<a href="features.html">Features</a>,
+<a href="history.html">History</a>,
+<a href="install.html">Install</a>,
+<a href="knownbugs.html">Known Bugs</a>,
+<a href="todo.html">TODO</a>,
+<a href="/about.hmtl">Web Site Info</a>
+
+SUBTITLE(<a href="reldocs.html">Releases</a>)
 <p>
-  The huge <a href="manpage.html">man page</a> describes <i>all</i>
-  command-line options and all tiny quirks about how to use curl in a refernce
-  style document. More than 170 options listed.
+<a href="/changes.html">Changelog</a>,
+<a href="releases.html">Release Table</a>,
+<a href="security.hmtl">Security</a>,
+<a href="versions.html">Version Nums</a>.
+<a href="vulnerabilities.html">Vulnerabilities</a>
 
+SUBTITLE(<a href="protdocs.html">Protocols</a>)
 <p>
-  A plain list with all curl's <a href="features.html">features</a> can be
-  found here, they're just listed on top of each other.
-
-SUBTITLE(Installation)
+  <a href="http-cookies.html">HTTP Cookies</a>,
+  <a href="http2.html">HTTP/2</a>,
+  <a href="sslcerts.html">SSL Certs</a>,
+  <a href="caextract.html">CA Extract</a>,
+  <a href="ssl-compared.html">SSL libs compared</a>
+ 
+SUBTITLE(<a href="whodocs.html">Who and Why</a>)
 <p>
-  <a href="install.html">Install</a> clearly describes how to go ahead when
-  you want to compile and install curl <b>from source</b> on your system.
+  <a href="companies.html">Companies</a>,
+  <a href="copyright.html">Copyright</a>,
+  <a href="/legal/licmix.html">License Mixing</a>,
+  <a href="/sponsors.html">Sponsors</a>,
+  <a href="thanks.html">Thanks</a>,
+  <a href="/legal/thename.html">The Name</a>
 
+SUBTITLE(<a href="/libcurl/">libcurl</a>)
 <p>
-  <a href="versions.html">Versions</a> describes how the version numbers of
-  curl and libcurl releases are constructed.
-
-SUBTITLE(Consider other tools?)
-  
-<p> The <a href="comparison-table.html">comparison table</a> shows you how
- curl's features compare against similar available tools.
-
-<p> At times curl is not the tool for you, find the one on the <a
-  href="relatedtools.html">related tools</a> page.
-
-SUBTITLE(Who use curl?)
-
-<p> <a href="companies.html">companies that use curl</a>, <a
-  href="programs.html">programs using curl</a> and <a
-  href="/libcurl/using/apps.html">programs using libcurl</a>
-
-SUBTITLE(Using libcurl)
-<p>
- libcurl is the underlying software library curl uses to do its network
- transfers. All <a href="/libcurl/">libcurl</a> related stuff is in its own
- section of the site.
-
-SUBTITLE(Development)
-<p>
- For details, info and more about hacking on and development of curl and
- libcurl, jump over to the <a href="/dev/">development</a> section of this
- web site.
+  The libcurl sub section of the site is huge!
 
 #include "_footer.html"
 </BODY>

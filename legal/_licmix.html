@@ -5,12 +5,14 @@
 </HEAD>
 
 #define CURL_URL legal/licmix.html
+#define WHO_DOCS
 #define LEGAL_LICMIX
 
-#include "_menu.html"
+#include "../docs/_menu.html"
 #include "setup.t"
 
-WHERE2(Legal, "/legal/", License Mixing)
+WHERE3(Docs Overview, "/docs/", Who and Why, "/docs/whodocs.html",
+License Mixing)
 
 TITLE(License Mixing)
 <div class="relatedbox">

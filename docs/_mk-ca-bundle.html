@@ -1,20 +1,21 @@
 #include "_doctype.html"
-<HTML>
-<HEAD> <TITLE> - How To Use</TITLE>
+<html>
+<head> <title>mk-ca-bundle</title>
 #include "css.t"
 #include "manpage.t"
-</HEAD>
+</head>
 
 #define CURL_DOCS
+#define TOOL_DOCS
 #define DOCS_MKCABUNDLE
 #define CURL_URL docs/mk-ca-bundle.html
 
 #include "_menu.html"
 #include "setup.t"
 
-WHERE2(Docs, "/docs/", Man Page)
+WHERE3(Docs, "/docs/", Tool Documentation, "/docs/tooldocs.html", mk-ca-bundle)
 
-TITLE(curl.1 the man page)
+TITLE(mk-ca-bundle the man page)
 <div class="relatedbox">
 <b>Related:</b>
 <br><a href="manual.html">Manual</a>

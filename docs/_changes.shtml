@@ -5,13 +5,14 @@
 </HEAD>
 
 #define CURL_DOCS
+#define REL_DOCS
 #define DOCS_CHANGES
 #define CURL_URL docs/changes.html
 
-#include "_menu.html"
 #include "setup.t"
+#include "docs/_menu.html"
 
-WHERE2(Docs, "/docs/", Changes)
+WHERE3(Docs, "/docs/", Release Docs, "/docs/reldocs.html", Changes)
 
 TITLE(Changelog -- track all changes)
 <p>

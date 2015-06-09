@@ -36,7 +36,7 @@ all: index.html feedback.html mirrors.html libs.html help.html	      \
 head.html: _head.html $(MAINPARTS)
 	$(ACTION)
 
-donation.html: _donation.html $(MAINPARTS)
+donation.html: _donation.html docs/_menu.html $(MAINPARTS)
 	$(ACTION)
 
 version7.html: _version7.html $(MAINPARTS)
@@ -108,7 +108,7 @@ download2.html: _download2.html $(MAINPARTS) $(RELEASE) dl/files.html
 dl/files.html: dl/data/databas.db
 	cd dl; make
 
-changes.html: _changes.html $(MAINPARTS)
+changes.html: _changes.html docs/_menu.html $(MAINPARTS)
 	$(ACTION)
 
 source.html: _source.html $(MAINPARTS)
@@ -120,10 +120,10 @@ help.html: _help.html $(MAINPARTS)
 mirrors.html: _mirrors.html $(MAINPARTS)
 	$(ACTION)
 
-about.html: _about.html $(MAINPARTS)
+about.html: _about.html docs/_menu.html $(MAINPARTS)
 	$(ACTION)
 
-sponsors.html: _sponsors.html $(MAINPARTS)
+sponsors.html: _sponsors.html docs/_menu.html $(MAINPARTS)
 	$(ACTION)
 
 feedback.html: _feedback.html $(MAINPARTS)

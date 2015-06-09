@@ -6,6 +6,7 @@
 </HEAD>
 
 #define CURL_DOCS
+#define PROT_DOCS
 #define DOCS_SSL_COMPARED
 #define CURL_URL docs/ssl-compared.html
 
@@ -13,7 +14,7 @@
 #include "setup.t"
 #include "release.t"
 
-WHERE2(Docs, "/docs/", SSL libraries compared)
+WHERE3(Docs, "/docs/", Protocol docs, "/docs/protdocs.html", SSL libraries compared)
 
 TITLE(Compare SSL libraries)
 <div class="relatedbox">

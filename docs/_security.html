@@ -6,13 +6,14 @@
 </HEAD>
 
 #define CURL_DOCS
+#define REL_DOCS
 #define DOCS_SECURITY
 #define CURL_URL docs/security.html
 
 #include "setup.t"
 #include "_menu.html"
 
-WHERE2(Docs, "/docs/", Security)
+WHERE3(Docs, "/docs/", Release Docs, "/docs/reldocs.html", Security)
 
 TITLE(curl Security)
 #include "adv-related-box.inc"

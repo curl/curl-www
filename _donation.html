@@ -4,11 +4,12 @@
 #include "css.t"
 </HEAD>
 
-#define CURL_DONATION
+#define PROJ_DOCS
+#define DOCS_DONATION
 #define CURL_URL donation.html
 
-#include "_menu.html"
 #include "setup.t"
+#include "docs/_menu.html"
 
 #define DONATE \
 <center> \
@@ -20,7 +21,8 @@
 <input type="image" src="paypal.png" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!"> \
 </form></center>
 
-WHERE1(Donation)
+WHERE3(Docs, "/docs/", Project Documentation, "/docs/projdocs.html", Donation)
+
 TITLE(Make a Donation to the cURL Project)
 <p>
  DONATE

@@ -1,10 +1,11 @@
 #include "_doctype.html"
-<HTML>
-<HEAD> <TITLE>cURL - Related Tools</TITLE>
+<html>
+<head> <title>Related Tools</title>
 #include "css.t"
-</HEAD>
+</head>
 
 #define CURL_DOCS
+#define TOOL_DOCS
 #define DOCS_RELATED_TOOLS
 #define CURL_URL docs/relatedtools.html
 
@@ -12,7 +13,7 @@
 #include "setup.t"
 #include "table.t"
 
-WHERE2(Docs, "/docs/", Related Tools)
+WHERE3(Docs, "/docs/", Tool Documentation, "/docs/tooldocs.html", Related Tools)
 
 TITLE(List Of Related Tools)
 <div class="relatedbox">

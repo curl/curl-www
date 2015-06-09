@@ -5,6 +5,7 @@
 </HEAD>
 
 #define CURL_DOCS
+#define WHO_DOCS
 #define DOCS_COMPANIES
 #define CURL_URL docs/companies.html
 
@@ -12,7 +13,7 @@
 #include "setup.t"
 #include "table.t"
 
-WHERE2(Docs, "/docs/", Companies Using curl)
+WHERE3(Docs, "/docs/", Who and Why, "/docs/whodocs.html", Companies Using curl)
 
 TITLE(Companies Using curl in Commercial Environments)
 <div class="relatedbox">
