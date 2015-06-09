@@ -253,12 +253,8 @@ span.metalink {
     color: #ffffff;
 }
 
+/* the top menu box */
 .menu {
-
-}
-
-/* the top part of left-side menu box */
-.mainmenu {
   margin-left: auto;
   margin-right: auto;
   background-color: #4040ff;
