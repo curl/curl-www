@@ -16,10 +16,7 @@ MAN2HTML = roffit --bare
 PAGES = foot.html head.html howto.html summary.html cvshistory.html	\
 	missing.html keywords.html builds.html release-notes.html	\
 	index.html contribute.html internals.html testcurl.html		\
-	runtests.html source.html readme-ares.html			\
-	readme-curl_off_t.html readme-curlx.html readme-encoding.html	\
-	readme-hostip.html readme-httpauth.html readme-memoryleak.html	\
-	readme-multi_socket.html security.html roadmap.html		\
+	runtests.html source.html security.html roadmap.html		\
 	sourceactivity.html release-procedure.html
 
 all: $(PAGES)
@@ -59,7 +56,7 @@ internals.html: _internals.html $(MAINPARTS) internals.t
 	$(ACTION)
 
 internals.t: $(DOCROOT)/INTERNALS
-	$(TXT2PLAIN) < $< > $@
+	$(MARKDOWN) < $< > $@
 
 security.html: _security.html $(MAINPARTS) security.gen
 	$(ACTION)
@@ -104,54 +101,6 @@ keywords.html: _keywords.html $(MAINPARTS) _head.html keywords.txt
 	$(ACTION)
 
 builds.html: _builds.html $(MAINPARTS) table.t explainopts.t
-	$(ACTION)
-
-README.ares.dump: $(LIBROOT)/README.ares
-	$(TXT2PLAIN) < $< > $@
-
-readme-ares.html: _readme-ares.html README.ares.dump $(MAINPARTS)
-	$(ACTION)
-
-README.curl_off_t.dump: $(LIBROOT)/README.curl_off_t
-	$(TXT2PLAIN) < $< > $@
-
-readme-curl_off_t.html: _readme-curl_off_t.html README.curl_off_t.dump $(MAINPARTS)
-	$(ACTION)
-
-README.curlx.dump: $(LIBROOT)/README.curlx
-	$(TXT2PLAIN) < $< > $@
-
-readme-curlx.html: _readme-curlx.html README.curlx.dump $(MAINPARTS)
-	$(ACTION)
-
-README.encoding.dump: $(LIBROOT)/README.encoding
-	$(TXT2PLAIN) < $< > $@
-
-readme-encoding.html: _readme-encoding.html README.encoding.dump $(MAINPARTS)
-	$(ACTION)
-
-README.hostip.dump: $(LIBROOT)/README.hostip
-	$(TXT2PLAIN) < $< > $@
-
-readme-hostip.html: _readme-hostip.html README.hostip.dump $(MAINPARTS)
-	$(ACTION)
-
-README.httpauth.dump: $(LIBROOT)/README.httpauth
-	$(TXT2PLAIN) < $< > $@
-
-readme-httpauth.html: _readme-httpauth.html README.httpauth.dump $(MAINPARTS)
-	$(ACTION)
-
-README.memoryleak.dump: $(LIBROOT)/README.memoryleak
-	$(TXT2PLAIN) < $< > $@
-
-readme-memoryleak.html: _readme-memoryleak.html README.memoryleak.dump $(MAINPARTS)
-	$(ACTION)
-
-README.multi_socket.dump: $(LIBROOT)/README.multi_socket
-	$(TXT2PLAIN) < $< > $@
-
-readme-multi_socket.html: _readme-multi_socket.html README.multi_socket.dump $(MAINPARTS)
 	$(ACTION)
 
 full: all

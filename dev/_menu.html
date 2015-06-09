@@ -3,15 +3,9 @@
 
 #include "setup.t"
 
-#define BACKGROUND "#ffffff"
-#define TEXTCOLOR "#000000"
-#define MENUTEXT "#ffffff"
-#define MENUCOLOR "#e0e0ff"
-#define BLACK "#000000"
-
 #ifndef NOBODY
 
-<BODY bgcolor=BACKGROUND text=TEXTCOLOR link="#0000ff" vlink="#808080" alink="red">
+<BODY bgcolor="#ffffff" text="#000000">
 #endif
 
 #define SEP <br>
@@ -33,30 +27,6 @@ LINK(x, Autobuilds)
 #else
 VLINK(/dev/builds.html, Autobuilds, Automated non-stop builds)
 #endif
-
-#ifdef DEVEL_BUILDSTATS
-LINK(x, Autobuild Stats)
-#else
-VLINK(/dev/summary.html, Autobuild Stats, Stats from the autobuilds)
-#endif
-
-#ifdef DEVEL_BUILDHOWTO
-LINK(x, Autobuild HOWTO)
-#else
-VLINK(/dev/howto.html, Autobuild HOWTO, Description on how to run autobuilds)
-#endif
-
-#ifdef DEVEL_RECENT
-LINK(x, Source Activity)
-#else
-VLINK(/dev/sourceactivity.html, Source Activity, Recent activity in the code repo)
-#endif
-
-VLINK(/gitstats/, git stats, Lots of statistics from the git repo)
-
-<br>
-
-VLINK(https://github.com/bagder/curl/issues/, Bugtracker, Github issue tracker)
 
 #ifdef DEVEL_RELEASENOTES
 LINK(x, Release Notes)
@@ -87,7 +57,7 @@ VLINK(/dev/contribute.html, Contribute, How to Contribute)
 #ifdef DEVEL_INTERNALS
 LINK(x, Internals)
 #else
-VLINK(/dev/internals.html, Internals, Internals described)
+VLINK(internals.html, Internals, Internals described)
 #endif
 
 #ifdef DEVEL_ROADMAP
@@ -118,61 +88,6 @@ VLINK(/rfc/, Specifications, Specs and RFSs that concern us)
 LINK(x, Test curl)
 #else
 VLINK(/dev/testcurl.html, Test curl, The automatic curl testing tool)
-#endif
-
-<br>
-#ifdef DEVEL_README_ares
-LINK(x, ares)
-#else
-VLINK(/dev/readme-ares.html, ares, How to build libcurl with ares support)
-#endif
-
-#ifdef DEVEL_README_curl_off_t
-LINK(x, curl_off_t)
-#else
-VLINK(/dev/readme-curl_off_t.html, curl_off_t, curl_off_t explained)
-#endif
-
-#ifdef DEVEL_README_curlx
-LINK(x, curlx)
-#else
-VLINK(/dev/readme-curlx.html, curlx, curlx explained)
-#endif
-
-#ifdef DEVEL_README_encoding
-LINK(x, encoding)
-#else
-VLINK(/dev/readme-encoding.html, encoding, HTTP Content Encoding explained)
-#endif
-
-#ifdef DEVEL_README_hostip
-LINK(x, hostip)
-#else
-VLINK(/dev/readme-hostip.html, hostip, hostip explained)
-#endif
-
-#ifdef DEVEL_README_httpauth
-LINK(x, httpauth)
-#else
-VLINK(/dev/readme-httpauth.html, httpauth, httpauth explained)
-#endif
-
-#ifdef DEVEL_README_memoryleak
-LINK(x, memoryleak)
-#else
-VLINK(/dev/readme-memoryleak.html, memoryleak, How to track down memoryleaks)
-#endif
-
-#ifdef DEVEL_README_multi_socket
-LINK(x, multi_socket)
-#else
-VLINK(/dev/readme-multi_socket.html, multi_socket, multi_socket explained)
-#endif
-
-#ifdef DEVEL_README_pingpong
-LINK(x, pingpong)
-#else
-VLINK(/dev/readme-pingpong.html, pingpong, pingpong explained)
 #endif
 
 </div>
