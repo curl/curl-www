@@ -59,7 +59,7 @@ VLINK("http://curl.haxx.se/libcurl/c/libcurl-share.html", Share Interface, Share
 #endif
 
 #ifdef MENU_EASY
-<hr>
+<br>
 #ifdef DOCS_EASY_ESCAPE
 LINK("http://curl.haxx.se/libcurl/c/curl_easy_escape.html", curl_easy_escape)
 #else
@@ -207,7 +207,7 @@ VLINK("http://curl.haxx.se/libcurl/c/curl_version_info.html", curl_version_info,
 #endif /* MENU_EASY */
 
 #ifdef MENU_MULTI
-<hr>
+<br>
 #ifdef DOCS_MULTI_ADD_HANDLE
 LINK("http://curl.haxx.se/libcurl/c/curl_multi_add_handle.html", curl_multi_add_handle)
 #else
@@ -295,7 +295,7 @@ VLINK("http://curl.haxx.se/libcurl/c/curl_multi_wait.html", curl_multi_wait, cur
 #endif /* MENU_MULTI */
 
 #ifdef MENU_SHARE
-<hr>
+<br>
 #ifdef DOCS_SHARE_CLEANUP
 LINK("http://curl.haxx.se/libcurl/c/curl_share_cleanup.html", curl_share_cleanup)
 #else

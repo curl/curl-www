@@ -10,9 +10,6 @@
 #include "_menu.html"
 #include "setup.t"
 
-<center><img src="/pix/dev-curl.jpg" width="471" height="175" alt="curl
-development"> </center>
-
 WHERE1(Development)
 
 TITLE(Curl Development Overview)
@@ -23,13 +20,7 @@ TITLE(Curl Development Overview)
 <p>
  There is always development going on in the curl project.  To help out the
  development team, we provide these services:
-#if 1
-<div style="float: right; width: 25em; border: outset 2px #8080ff; margin: 8px; background: #ffffff; ">
-<h2>Open issues</h2>
-#include "bugbox.t"
-</div>
-#endif
-<table><tr valign="top"><td>
+
 SUBTITLE(Generated contents)
 <p>
   Build and source information that is updated all the time:
@@ -50,7 +41,6 @@ SUBTITLE(Generated contents)
  <a href="keywords.html">Keywords</a> lists all test case keywords used.
 </ul>
 
-</td><td>
 SUBTITLE(Broadcasted commit info)
 <p>
  Each push to the git repository will be announced over various systems.
@@ -66,9 +56,7 @@ mailing list
 <li> A tweet is sent out by the <a
 href="http://twitter.com/curlcommits">@curlcommits</a> user on twitter
 
-</td></tr></table>
-
-<table><tr valign="top"><td>
+</ul>
 
 SUBTITLE(Documents in progress)
 <p>
@@ -77,11 +65,7 @@ SUBTITLE(Documents in progress)
 <ul>
 <li> <a href="release-notes.html">RELEASE-NOTES</a> is the current work in
  progress document for the next release.
-#if 0
-<li>
- <a href="todo-release.html">TODO-RELEASE</a> lists issues we may work on to
- get fix for the next release, or a future one.
-#endif
+
 <li>
  <a href="source.html">Source code</a> - check out the latest code
  directly from git
@@ -90,8 +74,6 @@ SUBTITLE(Documents in progress)
  Release calendar, pick your format: <a href="https://www.google.com/calendar/feeds/c9u5d64odop9js55oltfarjk6g%40group.calendar.google.com/public/basic">XML</a>, <a href="https://www.google.com/calendar/ical/c9u5d64odop9js55oltfarjk6g%40group.calendar.google.com/public/basic.ics">ICAL</a>, <a href="https://www.google.com/calendar/embed?src=c9u5d64odop9js55oltfarjk6g%40group.calendar.google.com&ctz=Europe/Stockholm">HTML</a>
 
 </ul>
-
-</td><td>
 
 SUBTITLE(Bugs and discussions)
 <ul>
@@ -113,9 +95,7 @@ irc.freenode.net
 
 </ul>
 
-</td></tr></table>
-
-SUBTITLE(Documentation)
+SUBTITLE(Developer Documentation)
 <p>
  Most of these are documents from the source archive converted to web pages
  here for your convenience.
@@ -155,7 +135,7 @@ SUBTITLE(Related Documentation)
 <li>
  C programming language international standardization working group
  <a href="http://www.open-std.org/JTC1/SC22/WG14/">JTC1/SC22/WG14</a>
-
+</ul>
 #include "_footer.html"
 </BODY>
 </HTML>

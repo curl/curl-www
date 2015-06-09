@@ -19,15 +19,8 @@
 #define NOW(text) <b>text</b>
 #define REF(link,text) <a href=link>text</a>
 
+<div class="main">
 <div class="menu">
-
-#include "ad.t"
-
-<div class="mainmenu">
-
-<div><img border="0" src="/pix/left.png" alt="<"> <a href="/" class="menuitem">Front Page</a></div>
-
-<hr>
 
 #ifdef DEVEL_INDEX
 LINK(x, Develop Index)
@@ -59,19 +52,11 @@ LINK(x, Source Activity)
 VLINK(/dev/sourceactivity.html, Source Activity, Recent activity in the code repo)
 #endif
 
-#ifdef DEVEL_GITSTATS
-LINK(x, git stats)
-#else
-VLINK(/gitstats/, git stats &raquo;, Lots of statistics from the git repo)
-#endif
+VLINK(/gitstats/, git stats, Lots of statistics from the git repo)
 
-<hr>
+<br>
 
-#ifdef DEVEL_TRACKER
-LINK(x, Bugtracker)
-#else
-VLINK(https://github.com/bagder/curl/issues/, Bugtracker &raquo;, Github issue tracker)
-#endif
+VLINK(https://github.com/bagder/curl/issues/, Bugtracker, Github issue tracker)
 
 #ifdef DEVEL_RELEASENOTES
 LINK(x, Release Notes)
@@ -91,7 +76,7 @@ LINK(x, Source code)
 VLINK(/dev/source.html, Source code, How to get or view the source code)
 #endif
 
-<hr>
+<br>
 
 #ifdef DEVEL_CONTRIBUTE
 LINK(x, Contribute)
@@ -135,8 +120,6 @@ LINK(x, Test curl)
 VLINK(/dev/testcurl.html, Test curl, The automatic curl testing tool)
 #endif
 
-<hr>
-READMEs:
 <br>
 #ifdef DEVEL_README_ares
 LINK(x, ares)
@@ -193,9 +176,6 @@ VLINK(/dev/readme-pingpong.html, pingpong, pingpong explained)
 #endif
 
 </div>
-#include "sflogo.t"
-</div>
 
 START_OF_MAIN
-
 #endif

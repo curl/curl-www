@@ -9,14 +9,8 @@
 <BODY bgcolor=BACKGROUND text=TEXTCOLOR link="#0000ff" vlink="#808080" alink="red">
 #endif
 
+<div class="main">
 <div class="menu">
-#include "ad.t"
-
-<div class="mainmenu">
-
-<div><img border="0" src="/pix/left.png" alt="<"> <a href="/" class="menuitem">Front Page</a></div>
-
-<hr>
 
 #ifdef LIBCURL_MAIN
 LINK("", libcurl index )
@@ -24,12 +18,7 @@ LINK("", libcurl index )
 VLINK("/libcurl/", libcurl index, Front page of the libcurl section)
 #endif
 
-#ifdef LIBCURL_DOCS
-LINK("", API)
-#else
-VLINK(/libcurl/c/, API &raquo;,
-       Functions provided by libcurl )
-#endif
+VLINK(/libcurl/c/, API, Functions provided by libcurl )
 
 #ifdef LIBCURL_ABI
 LINK("", Binary Interface)
@@ -51,12 +40,8 @@ VLINK("/libcurl/competitors.html", Competitors,
       Figure what competing libraries there are )
 #endif
 
-#ifdef LIBCURL_EXAMPLE
-LINK("", Example Sources )
-#else
-VLINK("/libcurl/c/example.html", Example Sources &raquo;,
+VLINK("/libcurl/c/example.html", Examples,
       Educational snippets of code )
-#endif
 
 #ifdef LIBCURL_FEATURES
 LINK("", Features )
@@ -78,17 +63,9 @@ VLINK("/libcurl/relatedlibs.html", Related Libs,
       Related libraries that you might find useful together with libcurl)
 #endif
 
-#ifdef LIBCURL_USING
-LINK("", Using libcurl )
-#else
-VLINK("/libcurl/using/", Using libcurl &raquo;, How to use libcurl section)
-#endif
+VLINK("/libcurl/using/", Using libcurl, How to use libcurl section)
 
-#ifdef DOCS_TUTORIAL
-LINK(""Tutorial)
-#else
-VLINK("/libcurl/c/libcurl-tutorial.html", Tutorial &raquo;, libcurl programming tutorial)
-#endif
+VLINK("/libcurl/c/libcurl-tutorial.html", Tutorial, libcurl programming tutorial)
 
 #ifdef LIBCURL_THEYSAY
 LINK("", Testimonials )
@@ -101,8 +78,6 @@ LINK("/search.html", Search)
 #else
 VLINK("/search.html", Search, Search the curl web site)
 #endif
-</div>
-#include "sflogo.t"
 </div>
 
 START_OF_MAIN
