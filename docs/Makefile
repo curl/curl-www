@@ -173,7 +173,7 @@ versions.html: _versions.html $(MAINPARTS) versions.t
 	$(ACTION)
 
 versions.t: $(DOCROOT)/VERSIONS
-	$(TXT2HTML) < $(DOCROOT)/VERSIONS > versions.t
+	$(MARKDOWN) < $< >$@
 
 sslcerts.html: _sslcerts.html $(MAINPARTS) sslcerts.t
 	$(ACTION)
