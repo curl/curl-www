@@ -1,9 +1,3 @@
-#ifdef DOCS_INDEX
-LINK("http://curl.haxx.se/libcurl/c/", API)
-#else
-VLINK("http://curl.haxx.se/libcurl/c/", API, API Front page)
-#endif
-
 #ifdef DOCS_OVERVIEW
 LINK("http://curl.haxx.se/libcurl/c/libcurl.html", Overview)
 #else
@@ -58,7 +52,7 @@ LINK("http://curl.haxx.se/libcurl/c/libcurl-share.html", Share Interface)
 VLINK("http://curl.haxx.se/libcurl/c/libcurl-share.html", Share Interface, Share Interface Tutorial)
 #endif
 
-#ifdef MENU_EASY
+#ifdef MENU_EASYx
 <br>
 #ifdef DOCS_EASY_ESCAPE
 LINK("http://curl.haxx.se/libcurl/c/curl_easy_escape.html", curl_easy_escape)
@@ -206,7 +200,7 @@ VLINK("http://curl.haxx.se/libcurl/c/curl_version_info.html", curl_version_info,
 
 #endif /* MENU_EASY */
 
-#ifdef MENU_MULTI
+#ifdef MENU_MULTIx
 <br>
 #ifdef DOCS_MULTI_ADD_HANDLE
 LINK("http://curl.haxx.se/libcurl/c/curl_multi_add_handle.html", curl_multi_add_handle)
@@ -294,7 +288,7 @@ VLINK("http://curl.haxx.se/libcurl/c/curl_multi_wait.html", curl_multi_wait, cur
 
 #endif /* MENU_MULTI */
 
-#ifdef MENU_SHARE
+#ifdef MENU_SHAREx
 <br>
 #ifdef DOCS_SHARE_CLEANUP
 LINK("http://curl.haxx.se/libcurl/c/curl_share_cleanup.html", curl_share_cleanup)
