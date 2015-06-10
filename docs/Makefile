@@ -11,7 +11,7 @@ TXT2HTML= txt2html --extract --hrule 10
 MAN2HTML = roffit --bare
 ADVBOX = adv-related-box.inc
 
-PAGES = index.html manpage.html faq.html changes.html sslcerts.html	      \
+PAGES = index.html manpage.html faq.html sslcerts.html	      \
  companies.html press.html features.html bugs.html install.html readme.html   \
  readme.curl.html copyright.html thanks.html y2k.html todo.html		      \
  httpscripting.html comparison-table.html relatedtools.html osdistribs.html   \
@@ -85,12 +85,6 @@ history.html: _history.html $(MAINPARTS) history.t
 
 history.t: $(DOCROOT)/HISTORY
 	$(MARKDOWN) < $(DOCROOT)/HISTORY > history.t
-
-changes.html: _changes.shtml $(MAINPARTS) changes.t
-	$(ACTION)
-
-changes.t: $(SRCROOT)/CHANGES
-	$(TXT2PLAIN) < $< > $@
 
 companies.html: _companies.html $(MAINPARTS)
 	$(ACTION)
