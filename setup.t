@@ -1,7 +1,7 @@
 #ifndef ROOT__SETUP_T
 #define ROOT__SETUP_T
 
-#define TITLEPRE  <h1 class="pagetitle">
+#define TITLEPRE  <h1>
 #define TITLEPOST </h1>
 #define TITLE(title) TITLEPRE title TITLEPOST
 #define SUBTITLE(title) <h2> title </h2>

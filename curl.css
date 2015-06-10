@@ -18,7 +18,7 @@ a:hover {
   background-color: #4040ff;
 }
 
-/* the curl-style blue main page titles */
+/* the curl-style blue main page titles
 .pagetitle, h1.libtitle, .newstitle {
   border-style: solid;
   border-width: thin;
@@ -33,11 +33,17 @@ a:hover {
   padding: 0px 4px 0px 4px;
 }
 
+*/
+
 .title {
   color: #000000;
   background-color: #f0f0ff; 
   font-family: arial, helvetica, ariel, sans-serif;
   font-size: 120%;
+}
+
+h1 {
+    border-bottom: solid 1px black;
 }
 
 h2 {
@@ -358,6 +364,11 @@ div.yellowbox {
   padding-top: 0px;
   margin-top: 0px;
   max-width: 50em;
+}
+
+/* the "bread crumbs" below the top menu */
+.where {
+    padding-top: 4px;
 }
 
 .contents {
