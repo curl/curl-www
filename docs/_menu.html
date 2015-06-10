@@ -28,7 +28,7 @@ VLINK(/docs/, Docs Overview, Documentation main page)
 
 #ifdef PROJ_DOCS
 #ifdef DOCS_BUGS
-LINK(x, Bug Report)
+LINK(/docs/bugs.html, Bug Report)
 #else
 VLINK(/docs/bugs.html, Bug Report, How to report a problem)
 #endif
@@ -36,7 +36,7 @@ VLINK(/docs/bugs.html, Bug Report, How to report a problem)
 
 #ifdef PROT_DOCS
 #ifdef DOCS_CAEXTRACT
-LINK(x, CA Extract)
+LINK(/docs/caextract.html, CA Extract)
 #else
 VLINK(/docs/caextract.html, CA Extract, CA cert bundle exatracted from Mozilla)
 #endif
@@ -44,7 +44,7 @@ VLINK(/docs/caextract.html, CA Extract, CA cert bundle exatracted from Mozilla)
 
 #ifdef REL_DOCS
 #ifdef CURL_CHANGES
-LINK(x, Changelog)
+LINK(/changes.html, Changelog)
 #else
 VLINK(/changes.html, Changelog, Changes done in curl)
 #endif
@@ -52,7 +52,7 @@ VLINK(/changes.html, Changelog, Changes done in curl)
 
 #ifdef WHO_DOCS
 #ifdef DOCS_COMPANIES
-LINK(x, Companies)
+LINK(/docs/companies.html, Companies)
 #else
 VLINK(/docs/companies.html, Companies, Commercial users of curl)
 #endif
@@ -60,7 +60,7 @@ VLINK(/docs/companies.html, Companies, Commercial users of curl)
 
 #ifdef TOOL_DOCS
 #ifdef DOCS_COMPARISON
-LINK(x, Comparison Table)
+LINK(/docs/comparison-table.html, Comparison Table)
 #else
 VLINK(/docs/comparison-table.html, Comparison Table, Compare curl to other tools)
 #endif
@@ -68,7 +68,7 @@ VLINK(/docs/comparison-table.html, Comparison Table, Compare curl to other tools
 
 #ifdef WHO_DOCS
 #ifdef DOCS_COPYRIGHT
-LINK(x, Copyright)
+LINK(/docs/copyright.html, Copyright)
 #else
 VLINK(/docs/copyright.html, Copyright, Copyright and license info)
 #endif
@@ -76,7 +76,7 @@ VLINK(/docs/copyright.html, Copyright, Copyright and license info)
 
 #ifdef PROJ_DOCS
 #ifdef DOCS_DONATION
-LINK(x, Donate)
+LINK(/donation.html, Donate)
 #else
 VLINK(/donation.html, Donate, Donate to the cURL project)
 #endif
@@ -84,7 +84,7 @@ VLINK(/donation.html, Donate, Donate to the cURL project)
 
 #ifdef TOOL_DOCS
 #ifdef DOCS_MANPAGE
-LINK(x, curl man page)
+LINK(/docs/manpage.html, curl man page)
 #else
 VLINK(/docs/manpage.html, curl man page, Command line option reference)
 #endif
@@ -92,7 +92,7 @@ VLINK(/docs/manpage.html, curl man page, Command line option reference)
 
 #ifdef PROJ_DOCS
 #ifdef DOCS_LIBS
-LINK(x, Dependencies)
+LINK(/docs/libs.html, Dependencies)
 #else
 VLINK(/docs/libs.html, Dependencies, Libraries to use)
 #endif
@@ -100,7 +100,7 @@ VLINK(/docs/libs.html, Dependencies, Libraries to use)
 
 #ifdef TOOL_DOCS
 #ifdef DOCS_FAQ
-LINK(x, FAQ)
+LINK(/docs/faq.html, FAQ)
 #else
 VLINK(/docs/faq.html, FAQ, Frequently Asked Questions)
 #endif
@@ -108,7 +108,7 @@ VLINK(/docs/faq.html, FAQ, Frequently Asked Questions)
 
 #ifdef PROJ_DOCS
 #ifdef DOCS_FEATURES
-LINK(x, Features)
+LINK(/docs/features.html, Features)
 #else
 VLINK(/docs/features.html, Features, All features summed up)
 #endif
@@ -116,7 +116,7 @@ VLINK(/docs/features.html, Features, All features summed up)
 
 #ifdef PROJ_DOCS
 #ifdef DOCS_HISTORY
-LINK(x, History)
+LINK(/docs/history.html, History)
 #else
 VLINK(/docs/history.html, History, A project history overview)
 #endif
@@ -124,7 +124,7 @@ VLINK(/docs/history.html, History, A project history overview)
 
 #ifdef PROT_DOCS
 #ifdef DOCS_HTTP_COOKIES
-LINK(x, HTTP Cookies)
+LINK(/docs/http-cookies.html, HTTP Cookies)
 #else
 VLINK(/docs/http-cookies.html, HTTP Cookies, Description of cookies with curl)
 #endif
@@ -132,7 +132,7 @@ VLINK(/docs/http-cookies.html, HTTP Cookies, Description of cookies with curl)
 
 #ifdef TOOL_DOCS
 #ifdef DOCS_HTTPSCRIPT
-LINK(x, HTTP Scripting)
+LINK(/docs/httpscripting.html, HTTP Scripting)
 #else
 VLINK(/docs/httpscripting.html, HTTP Scripting, How to script HTTP with curl)
 #endif
@@ -140,7 +140,7 @@ VLINK(/docs/httpscripting.html, HTTP Scripting, How to script HTTP with curl)
 
 #ifdef PROT_DOCS
 #ifdef DOCS_HTTP2
-LINK(x, HTTP/2)
+LINK(/docs/http2.html, HTTP/2)
 #else
 VLINK(/docs/http2.html, HTTP/2, HTTP/2 with curl)
 #endif
@@ -148,7 +148,7 @@ VLINK(/docs/http2.html, HTTP/2, HTTP/2 with curl)
 
 #ifdef PROJ_DOCS
 #ifdef DOCS_INSTALL
-LINK(x, Install)
+LINK(/docs/install.html, Install)
 #else
 VLINK(/docs/install.html, Install, Installing curl from source)
 #endif
@@ -156,7 +156,7 @@ VLINK(/docs/install.html, Install, Installing curl from source)
 
 #ifdef PROJ_DOCS
 #ifdef DOCS_KNOWNBUGS
-LINK(x, Known Bugs)
+LINK(/docs/knownbugs.html, Known Bugs)
 #else
 VLINK(/docs/knownbugs.html, Known Bugs, Already known problems )
 #endif
@@ -164,7 +164,7 @@ VLINK(/docs/knownbugs.html, Known Bugs, Already known problems )
 
 #ifdef TOOL_DOCS
 #ifdef DOCS_MKCABUNDLE
-LINK(x, mk-ca-bundle)
+LINK(/docs/mk-ca-bundle.html, mk-ca-bundle)
 #else
 VLINK(/docs/mk-ca-bundle.html, mk-ca-bundle, Generate your own CA bundle)
 #endif
@@ -172,25 +172,15 @@ VLINK(/docs/mk-ca-bundle.html, mk-ca-bundle, Generate your own CA bundle)
 
 #ifdef WHO_DOCS
 #ifdef LEGAL_LICMIX
-LINK("", Licence Mixing )
+LINK(/legal/licmix.html, Licence Mixing )
 #else
-VLINK("/legal/licmix.html", License Mixing, About mixing licenses )
-#endif
-#endif
-
-#if 0
-#ifdef WHO_DOCS
-#ifdef DOCS_PROGRAMS
-LINK(x, Programs)
-#else
-VLINK(/docs/programs.html, Programs, List of programs using curl)
-#endif
+VLINK(/legal/licmix.html, License Mixing, About mixing licenses )
 #endif
 #endif
 
 #ifdef TOOL_DOCS
 #ifdef DOCS_RELATED_TOOLS
-LINK(x, Related Tools)
+LINK(/docs/relatedtools.html, Related Tools)
 #else
 VLINK(/docs/relatedtools.html, Related Tools, Tools that are related!)
 #endif
@@ -198,7 +188,7 @@ VLINK(/docs/relatedtools.html, Related Tools, Tools that are related!)
 
 #ifdef REL_DOCS
 #ifdef DOCS_RELEASES
-LINK(x, Release Table)
+LINK(/docs/releases.html, Release Table)
 #else
 VLINK(/docs/releases.html, Release Table, All releases with details)
 #endif
@@ -206,7 +196,7 @@ VLINK(/docs/releases.html, Release Table, All releases with details)
 
 #ifdef REL_DOCS
 #ifdef DOCS_SECURITY
-LINK(x, Security)
+LINK(/docs/security.html, Security)
 #else
 VLINK(/docs/security.html, Security, Vulnerabilities and more)
 #endif
@@ -214,7 +204,7 @@ VLINK(/docs/security.html, Security, Vulnerabilities and more)
 
 #ifdef WHO_DOCS
 #ifdef CURL_SPONSORS
-LINK(x, Sponsors)
+LINK(/sponsors.html, Sponsors)
 #else
 VLINK(/sponsors.html, Sponsors, Project Sponsors)
 #endif
@@ -222,7 +212,7 @@ VLINK(/sponsors.html, Sponsors, Project Sponsors)
 
 #ifdef PROT_DOCS
 #ifdef DOCS_SSLCERTS
-LINK(x, SSL Certs)
+LINK(/docs/sslcerts.html, SSL Certs)
 #else
 VLINK(/docs/sslcerts.html, SSL Certs, How curl works with SSL certficates)
 #endif
@@ -230,7 +220,7 @@ VLINK(/docs/sslcerts.html, SSL Certs, How curl works with SSL certficates)
 
 #ifdef PROT_DOCS
 #ifdef DOCS_SSL_COMPARED
-LINK(x, SSL libs compared)
+LINK(/docs/ssl-compared.html, SSL libs compared)
 #else
 VLINK(/docs/ssl-compared.html, SSL libs compared, An SSL library comparison)
 #endif
@@ -238,7 +228,7 @@ VLINK(/docs/ssl-compared.html, SSL libs compared, An SSL library comparison)
 
 #ifdef WHO_DOCS
 #ifdef DOCS_THANKS
-LINK(x, Thanks)
+LINK(/docs/thanks.html, Thanks)
 #else
 VLINK(/docs/thanks.html, Thanks, Named and listed contributors)
 #endif
@@ -246,15 +236,15 @@ VLINK(/docs/thanks.html, Thanks, Named and listed contributors)
 
 #ifdef WHO_DOCS
 #ifdef LEGAL_THENAME
-LINK("", The Name)
+LINK(/legal/thename.html, The Name)
 #else
-VLINK("/legal/thename.html", The Name, Who owns the name)
+VLINK(/legal/thename.html, The Name, Who owns the name)
 #endif
 #endif
 
 #ifdef PROJ_DOCS
 #ifdef DOCS_TODO
-LINK(x, TODO)
+LINK(/docs/todo.html, TODO)
 #else
 VLINK(/docs/todo.html, TODO, Things we might do in the future)
 #endif
@@ -262,7 +252,7 @@ VLINK(/docs/todo.html, TODO, Things we might do in the future)
 
 #ifdef TOOL_DOCS
 #ifdef DOCS_MANUAL
-LINK(x, Tutorial)
+LINK(/docs/manual.html, Tutorial)
 #else
 VLINK(/docs/manual.html, Tutorial, A curl tutorial)
 #endif
@@ -270,7 +260,7 @@ VLINK(/docs/manual.html, Tutorial, A curl tutorial)
 
 #ifdef REL_DOCS
 #ifdef DOCS_VERSIONS
-LINK(x, Version Nums)
+LINK(/docs/versions.html, Version Nums)
 #else
 VLINK(/docs/versions.html, Version Nums, How curl versioning works)
 #endif
@@ -278,7 +268,7 @@ VLINK(/docs/versions.html, Version Nums, How curl versioning works)
 
 #ifdef REL_DOCS
 #ifdef DOCS_VULNTABLE
-LINK(x, Vulnerabilities)
+LINK(/docs/vulnerabilities.html, Vulnerabilities)
 #else
 VLINK(/docs/vulnerabilities.html, Vulnerabilities, Security problems in releases)
 #endif
@@ -286,9 +276,9 @@ VLINK(/docs/vulnerabilities.html, Vulnerabilities, Security problems in releases
 
 #ifdef PROJ_DOCS
 #ifdef DOCS_WEBSITE
-LINK(x, Web Site Info)
+LINK(/about.html, Web Site Info)
 #else
-VLINK("http://curl.haxx.se/about.html", Web Site Info, Infrastructure details)
+VLINK(/about.html, Web Site Info, Infrastructure details)
 #endif
 #endif
 
