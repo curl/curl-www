@@ -11,27 +11,27 @@ VLINK("http://curl.haxx.se/libcurl/c/libcurl-tutorial.html", Tutorial, Tutorial)
 #endif
 
 #ifdef DOCS_ERRORS
-LINK("http://curl.haxx.se/libcurl/c/libcurl-errors.html", Error Codes)
+LINK("http://curl.haxx.se/libcurl/c/libcurl-errors.html", Errors)
 #else
-VLINK("http://curl.haxx.se/libcurl/c/libcurl-errors.html", Error Codes, Error Codes)
+VLINK("http://curl.haxx.se/libcurl/c/libcurl-errors.html", Errors, Error Codes)
 #endif
 
 #ifdef LIBCURL_EXAMPLE
-LINK("http://curl.haxx.se/libcurl/c/example.html", Example Sources )
+LINK("http://curl.haxx.se/libcurl/c/example.html", Examples)
 #else
-VLINK("http://curl.haxx.se/libcurl/c/example.html", Example Sources, libcurl C source code examples )
+VLINK("http://curl.haxx.se/libcurl/c/example.html", Examples, libcurl C source code examples )
 #endif
 
 #ifdef DOCS_SYMBOLS
-LINK("http://curl.haxx.se/libcurl/c/symbols-in-versions.html", Symbols In Versions)
+LINK("http://curl.haxx.se/libcurl/c/symbols-in-versions.html", Symbols)
 #else
-VLINK("http://curl.haxx.se/libcurl/c/symbols-in-versions.html", Symbols In Versions, In which versions were which symbols introduced)
+VLINK("http://curl.haxx.se/libcurl/c/symbols-in-versions.html", Symbols, In which versions were which symbols introduced)
 #endif
 
 #ifdef DOCS_ALLFUNCS
-LINK("http://curl.haxx.se/libcurl/c/allfuncs.html", All Functions)
+LINK("http://curl.haxx.se/libcurl/c/allfuncs.html", Index)
 #else
-VLINK("http://curl.haxx.se/libcurl/c/allfuncs.html", All Functions, List of all libcurl functions)
+VLINK("http://curl.haxx.se/libcurl/c/allfuncs.html", Index, List of all libcurl functions)
 #endif
 
 #ifdef DOCS_OVERVIEW_EASY
