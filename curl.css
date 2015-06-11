@@ -44,11 +44,11 @@ a:hover {
 
 h1 {
     border-bottom: solid 1px black;
+    margin-top: 1em;
 }
 
 h2 {
-  font-family: arial, helvetica, ariel, sans-serif;
-  background-color: #f0f0ff;
+    border-bottom: solid 1px black;
 }
 
 .subtitle {
@@ -240,7 +240,7 @@ span.metalink {
 .menuitem {
   text-decoration: none;
   white-space: nowrap;
-  padding: 0px 5px 0px 5px;
+  padding: 0px 1em 0px 0px;
   font-family: sans-serif;
   color: #ffffff;
 }
@@ -255,16 +255,19 @@ span.metalink {
 .itemselect {
     font-family: sans-serif;
     text-decoration: none;
+    padding: 0px 1em 0px 0px;
     font-weight: bold;
     color: #ffffff;
 }
 
 /* the top menu box */
 .menu {
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
   background-color: #4040ff;
   text-align: center;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  line-height: 130%;
 }
 
 /* the main curl site left-side menu box */
@@ -360,23 +363,19 @@ div.yellowbox {
 }
 
 .main {
-  background-color: #fff;
+}
+
+/* the "bread crumbs" below the top menu */
+.where {
+    padding-top: .5em;
+}
+
+.contents {
   padding-top: 0px;
   margin-top: 0px;
   max-width: 50em;
   margin-left: auto;
   margin-right: auto;
-}
-
-/* the "bread crumbs" below the top menu */
-.where {
-    padding-top: 4px;
-}
-
-.contents {
-  padding-top: 0px;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 /* Filtering menus on the autobuild page */
