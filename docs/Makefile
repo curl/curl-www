@@ -62,7 +62,7 @@ libs.html: _libs.html $(MAINPARTS)
 gsoc2008.html: _gsoc2008.html $(MAINPARTS)
 	$(ACTION)
 
-manpage.html: _manpage.html $(MAINPARTS) mandump.t
+manpage.html: _manpage.html $(MAINPARTS) mandump.t $(ROOT)/manpage.t
 	$(ACTION)
 
 mandump.t: $(DOCROOT)/curl.1
