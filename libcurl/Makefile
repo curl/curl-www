@@ -56,6 +56,7 @@ all: index.html mail.html competitors.html comparison-table.html	  \
 	cd vb; make
 	cd wx; make
 	cd xblite; make
+	cd xojo && make
 
 index.html: _index.html $(MAINPARTS) bindingbox.t
 	$(ACTION)
