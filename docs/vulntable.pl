@@ -13,24 +13,24 @@ sub vernum {
 my @vname; # number + HTML links to each vulernability page
 print "<table>";
 sub head {
-    print "<tr class=\"tabletop\"><th>index</th><th>Version</th>";
+    print "<tr class=\"tabletop\"><th>Version</th>";
     my $v=1;
     for(@vuln) {
         my ($id, $start, $stop, $desc, $cve)=split('\|');
         $id =~ s/ //;
         my $num = $#vuln - $v + 2;
-        my $a=sprintf("<a style=\"color: white; text-decoration: none;\" href=\"$id\">%02d</a>", $num);
+        my $a=sprintf("<a style=\"color: white; text-decoration: none;\" href=\"$id\">%02</a>", $num);
         $vhref[$v-1]=$a;
         $vstart[$v-1]=$start;
         $vstop[$v-1]=$stop;
         $vurl[$v-1]= "$id";
         $vulndesc[$v-1]=$desc;
         $cve[$v-1]=$cve;
-        printf("<th title=\"$cve: $desc\">%02d</th>", $num);
+        printf("<th style=\"font-size: 70%%;\" title=\"$cve: $desc\">%02d</th>", $num);
         $v++;
     }
     print "<th>Total</th>\n";
-    print "<th>Release Date</th></tr>\n";
+    print "</tr>\n";
     return $v-1;
 }
 
@@ -155,9 +155,8 @@ for my $str (@releases) {
 
     $anchor =~ s/\./_/g;
 
-    printf("<tr class=\"%s\"><td>%d</td><td><a href=\"vuln-$str.html\">$str</a></td>",
-           $l&1?"even":"odd",
-           $index++);
+    printf("<tr class=\"%s\"><td><a href=\"vuln-$str.html\">$str</a></td>",
+           $l&1?"even":"odd");
     my $col;
     my $sum;
     for my $i (0 .. $total-1 ) {
@@ -171,8 +170,8 @@ for my $str (@releases) {
             }
             if(!$shown[$i]) {
                 # output only once, but use rowspan for the height
-                printf("<td valign=top style=\"background-color: red;\" title=\"%s: %s\" rowspan=%d onclick=\"window.location.href='%s'\">%s</td>",
-                       $cve[$i], $vulndesc[$i], $vercount[$i], $vurl[$i], $vhref[$i]);
+                printf("<td valign=top style=\"background-color: red;\" title=\"%s: %s\" rowspan=%d onclick=\"window.location.href='%s'\">&nbsp;</td>",
+                       $cve[$i], $vulndesc[$i], $vercount[$i], $vurl[$i],);
                 $shown[$i]=1;
             }
             $sum++;
@@ -181,7 +180,7 @@ for my $str (@releases) {
     if($col) {
         printf("<td colspan=%d>&nbsp;</td>", $col);
     }
-    printf "<td>%d</td><td>$date</td></tr>\n", $sum;
+    printf "<td>%d</td></tr>\n", $sum;
 
     single($sum, $str, $date, $this, $vervuln{$str},
            $releases[$l-1], $releases[$l+1]);
