@@ -28,6 +28,18 @@ LINK(/dev/builds.html, Autobuilds)
 VLINK(/dev/builds.html, Autobuilds, Automated non-stop builds)
 #endif
 
+#ifdef DEVEL_CONTRIBUTE
+LINK(/dev/contribute.html, Contribute)
+#else
+VLINK(/dev/contribute.html, Contribute, How to Contribute)
+#endif
+
+#ifdef DEVEL_INTERNALS
+LINK(internals.html, Internals)
+#else
+VLINK(internals.html, Internals, Internals described)
+#endif
+
 #ifdef DEVEL_RELEASENOTES
 LINK(/dev/release-notes.html, Release Notes)
 #else
@@ -44,20 +56,6 @@ VLINK(/dev/release-procedure.html, Release Procedure, How to release and when)
 LINK(/dev/source.html, Source code)
 #else
 VLINK(/dev/source.html, Source code, How to get or view the source code)
-#endif
-
-<br>
-
-#ifdef DEVEL_CONTRIBUTE
-LINK(/dev/contribute.html, Contribute)
-#else
-VLINK(/dev/contribute.html, Contribute, How to Contribute)
-#endif
-
-#ifdef DEVEL_INTERNALS
-LINK(internals.html, Internals)
-#else
-VLINK(internals.html, Internals, Internals described)
 #endif
 
 #ifdef DEVEL_ROADMAP
