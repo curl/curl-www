@@ -7,13 +7,12 @@ include $(ROOT)/setup.mk
 
 MAINPARTS += _menu.html
 
-TXT2HTML= txt2html --extract --hrule 10
 MAN2HTML = roffit --bare
 ADVBOX = adv-related-box.inc
 
 PAGES = index.html manpage.html faq.html sslcerts.html	      \
- companies.html press.html features.html bugs.html install.html readme.html   \
- readme.curl.html copyright.html thanks.html y2k.html todo.html		      \
+ companies.html press.html features.html bugs.html install.html \
+ copyright.html thanks.html y2k.html todo.html		      \
  httpscripting.html comparison-table.html relatedtools.html osdistribs.html   \
  versions.html history.html knownbugs.html manual.html caextract.html	      \
  programs.html security.html libs.html http-cookies.html adv_20051013.html    \
@@ -139,17 +138,6 @@ install.html: _install.html $(MAINPARTS) install.t
 
 install.t: $(DOCROOT)/INSTALL
 	$(TXT2PLAIN) < $< > $@
-
-
-readme.html: _readme.html $(MAINPARTS) readme.t
-	$(ACTION)
-
-readme.t: $(SRCROOT)/README
-	$(TXT2HTML) < $(SRCROOT)/README > readme.t
-
-
-readme.curl.html: _readme.curl.html $(MAINPARTS) manual.t
-	$(ACTION)
 
 manual.html: _manual.html $(MAINPARTS) manual.t
 	$(ACTION)
