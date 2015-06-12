@@ -48,10 +48,7 @@ web-editing.html: _web-editing.html $(MAINPARTS)
 foot.html: _foot.html $(MAINPARTS)
 	$(ACTION)
 
-main.html: _main.html $(MAINPARTS) $(STAT) $(RELEASE)
-	fcpp -WWW -Uunix -DINDEX_HTML -P -H -C -V -LL "$(NOW)" $< $@;
-
-index.html: _main.html $(MAINPARTS)
+index.html: _index.html $(MAINPARTS)
 	$(ACTION)
 
 newslog.html: _newslog.html $(MAINPARTS)
