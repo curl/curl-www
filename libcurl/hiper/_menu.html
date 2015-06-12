@@ -1,25 +1,11 @@
-
-#define BACKGROUND "#ffffff"
-#define TEXTCOLOR "#000000"
-#define MENUTEXT "#ffffff"
-#define MENUCOLOR "#e0c0c0"
+#include "setup.t"
 
 #ifndef NOBODY
-
-<BODY bgcolor=BACKGROUND text=TEXTCOLOR link="#0000ff" vlink="#808080" alink="red">
+<body bgcolor="#ffffff" text="#000000">
 #endif
 
 <div class="main">
-#include "ad.t"
-
-<div class="mainmenu">
-
-<div><a href="/" class="menuitem"><img border="0" src="/pix/left.png"><img
-border="0" src="/pix/left.png">Front Page</a></div>
-<div><a href="../" class="menuitem"><img border="0"
-src="/pix/left.png">libcurl index</a></div>
-
-<hr>
+<div class="menu">
 
 #ifdef HIPER_INDEX
 LINK("/libcurl/hiper/", Hiper index )
@@ -51,6 +37,5 @@ LINK("/libcurl/hiper/app.html", Sample App)
 VLINK("/libcurl/hiper/app.html", Sample App, Sample App)
 #endif
 </div>
-#include "sflogo.t"
-</div>
+
 START_OF_MAIN
