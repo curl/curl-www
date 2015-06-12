@@ -42,7 +42,7 @@ mailheader.html: _mailheader.html $(MAINPARTS)
 mailfooter.html: _mailfooter.html $(MAINPARTS)
 	$(ACTION)
 
-index.html: _index.html _mail.html $(MAINPARTS)
+index.html: _index.html _mail.html $(MAINPARTS) ../recentmail.t
 	$(ACTION)
 
 lost.html: _lost.html $(MAINPARTS)
