@@ -1,8 +1,4 @@
-MAINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t ad.t	\
- css.t sflogo.t
-
-# today's date
-NOW=$(shell date +'-D__TODAY__=%B %e, %Y')
+ROOT=.
 
 # the latest stable version is:
 STABLE= 7.42.1
@@ -17,9 +13,10 @@ STAT = packstat.t
 # generated file with release info (STABLE and RELDATE)
 RELEASE = release.t
 
-ACTION=@echo preprocessing $@; \
-       rm -f $@; \
-       fcpp -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
+include mainparts.mk
+include setup.mk
+
+MAINPARTS += _menu.html
 
 all: index.html feedback.html mirrors.html libs.html help.html	      \
  download.html changes.html about.html support.html newslog.html news.html    \
@@ -51,20 +48,11 @@ web-editing.html: _web-editing.html $(MAINPARTS)
 foot.html: _foot.html $(MAINPARTS)
 	$(ACTION)
 
-main.html: _main.html $(MAINPARTS) $(STAT) $(RELEASE) poll.t recentmail.t
-	@echo preprocessing $@; \
+main.html: _main.html $(MAINPARTS) $(STAT) $(RELEASE)
 	fcpp -WWW -Uunix -DINDEX_HTML -P -H -C -V -LL "$(NOW)" $< $@;
 
-index.html: main.html newslog.html
-	rm -f $@
-	./filter.pl < $< > $@
-
-main2.html: _main2.html $(MAINPARTS) $(STAT) $(RELEASE) poll2.t sflogo2.t
+index.html: _main.html $(MAINPARTS)
 	$(ACTION)
-
-index2.html: main2.html newslog.html
-	rm -f $@
-	./filter.pl < $< > $@
 
 newslog.html: _newslog.html $(MAINPARTS)
 	$(ACTION)
