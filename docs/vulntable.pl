@@ -41,6 +41,7 @@ sub single {
     my @v = split(/ /, $vulns);
     my $vulnhtml;
     my $vulnnum=scalar(@v);
+    my $odd;
 
     if($vulnnum) {
         $vulnhtml = "<table><tr class=\"tabletop\"><th>Flaw</th><th>From version</th><th>To and including</th><th>CVE</th></tr>";
@@ -54,10 +55,12 @@ sub single {
                 $c = "";
             }
             
-            $vulnhtml .= sprintf("<tr><td><a href=\"%s\">%s</a></td><td><a href=\"vuln-%s.html\">%s</a></td><td><a href=\"vuln-%s.html\">%s</a></td><td>$c</td></tr>\n",
+            $vulnhtml .= sprintf("<tr class=\"%s\"><td><a href=\"%s\">%s</a></td><td><a href=\"vuln-%s.html\">%s</a></td><td><a href=\"vuln-%s.html\">%s</a></td><td>$c</td></tr>\n",
+                                 $odd&1?"even":"odd",
                                  $vurl[$i], $vulndesc[$i],
                                  $vstart[$i], $vstart[$i],
-                                 $vstop[$i], $vstop[i]);
+                                 $vstop[$i], $vstop[$i]);
+            $odd++;
         }
         $vulnhtml .= "</table>";
     }
