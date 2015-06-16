@@ -8,7 +8,7 @@ RedirectPermanent /docs/testcurl.html http://curl.haxx.se/dev/testcurl.html
 RedirectPermanent /source.html http://curl.haxx.se/dev/source.html
 RedirectPermanent /bugreport.html http://curl.haxx.se/docs/bugs.html
 RedirectPermanent /cvs.cgi http://curl.haxx.se/dev/source.html
-RedirectPermanent /dev/readme-htt2.html http://curl.haxx.se/docs/http2.html
+RedirectPermanent /dev/readme-http2.html http://curl.haxx.se/docs/http2.html
 
 AddType text/plain .pl
 AddType text/plain .php
