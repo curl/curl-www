@@ -1,5 +1,7 @@
-# page, first vulnerable version, last vulnerable version, CVE, date (YYYYMMDD)
+# page, first vulnerable version, last vulnerable version, name, CVE, date (YYYYMMDD)
 @vuln = (
+    "adv_20150617B.html|7.40.0|7.42.1|SMB send off unrelated memory contents|CVE-2015-3237|20150617",
+    "adv_20150617A.html|7.40.0|7.42.1|lingering HTTP credentials in connection re-use|CVE-2015-3236|20150617",
     "adv_20150429.html|7.1|7.42.0|sensitive HTTP server headers also sent to proxies|CVE-2015-3153|20150429",
     "adv_20150422D.html|7.37.0|7.41.0|host name out of boundary memory access|CVE-2015-3144|20150422",
     "adv_20150422C.html|7.31.0|7.41.0|cookie parser out of boundary memory access|CVE-2015-3145|20150422",
