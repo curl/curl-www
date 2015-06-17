@@ -48,7 +48,7 @@ web-editing.html: _web-editing.html $(MAINPARTS)
 foot.html: _foot.html $(MAINPARTS)
 	$(ACTION)
 
-index.html: _index.html $(MAINPARTS) release.t
+index.html: _index.html $(MAINPARTS) release.t packstat.t
 	$(ACTION)
 
 newslog.html: _newslog.html $(MAINPARTS)
