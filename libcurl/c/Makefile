@@ -78,6 +78,9 @@ multi_setopt_options.html: _multi_setopt_options.html $(MAINPARTS) all-multi.t
 allex.t: $(DOCROOT)/examples/Makefile.inc _example-templ.html
 	perl mkexam.pl
 
+allex-desc.t:
+	perl mkexam.pl
+
 allfuncs.html: _allfuncs.html $(MAINPARTS)
 	$(ACTION)
 
