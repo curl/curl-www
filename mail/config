@@ -15,3 +15,5 @@ dateformat = %Y-%m-%d
 spamprotect = On
 
 deleted = no-header-can-delete-a-mail
+
+require_msgids = 0
