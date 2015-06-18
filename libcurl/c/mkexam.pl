@@ -117,11 +117,46 @@ open(MAK, ">Makefile.examples");
 print MAK @mak;
 close(MAK);
 
+sub desc {
+    my ($file) = @_;
+    my $get=0;
+    my @d;
+
+    print STDERR "scan $file\n";
+    
+    open(F, "<$dir/$file") ||
+        print STDERR "failed to read $file\n";
+    while(<F>) {
+        if($_ =~ /^\/\* \<DESC\>/) {
+            print STDERR "$file desc!\n";
+            $get = 1;
+        }
+        elsif($get && ($_ =~ /^ \* \<\/DESC\>/)) {
+            # done!
+            print STDERR "found desc for $file\n";
+            return join(" ", @d);
+        }
+        elsif($get && ($_ =~ /^ \* (.*)/)) {
+            push @d, $1,
+        }
+    }
+}
+
 open(EX, ">allex.t");
+open(DESC, ">allex-desc.t");
+print DESC "<table>\n";
+my $i=0;
 for my $b (sort @basefiles) {
-    printf EX "<a href=\"%s.html\">%s</a>%s<br>\n", $b, $b,
-    $type{$b} eq "cpp"?" (C&plus;&plus;)":"",
+    my $d = desc("$b.".$type{$b});
+    my $t = $type{$b} eq "cpp"?" (C&plus;&plus;)":"";
+
+    printf EX "<a href=\"%s.html\">%s</a>$t<br>\n", $b, $b,
+    printf DESC ("<tr class=\"%s\"><td><a href=\"%s.html\">%s</a> $t</td><td>%s</td>",
+                 $i&1?"odd":"even",
+                 $b, $b, $d);
+    $i++;
 }
 print EX "\n";
+print DESC "</table>\n";
 close(EX);
-
+close(DESC);
