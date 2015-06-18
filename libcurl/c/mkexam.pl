@@ -122,18 +122,13 @@ sub desc {
     my $get=0;
     my @d;
 
-    print STDERR "scan $file\n";
-    
-    open(F, "<$dir/$file") ||
-        print STDERR "failed to read $file\n";
+    open(F, "<$dir/$file");
     while(<F>) {
         if($_ =~ /^\/\* \<DESC\>/) {
-            print STDERR "$file desc!\n";
             $get = 1;
         }
         elsif($get && ($_ =~ /^ \* \<\/DESC\>/)) {
             # done!
-            print STDERR "found desc for $file\n";
             return join(" ", @d);
         }
         elsif($get && ($_ =~ /^ \* (.*)/)) {
