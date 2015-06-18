@@ -77,14 +77,6 @@ sub curlmain {
 
     &showarchs($num, @dirs);
 
-    if($num <= 0 ) {
-        print "<b>1999</b>\n";
-
-        print " <a href=\"archive_pre_oct_99/\">Aug - Sep</a>\n",
-        " <a href=\"archive/\">Oct - Dec</a>",
-        "\n";
-    }
-
     return "http://cool.haxx.se/mailman/listinfo/curl-users";
 }
 
