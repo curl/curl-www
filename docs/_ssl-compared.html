@@ -243,7 +243,7 @@ to use.
   FEAT IBM i          ENDFEAT
   FEAT POSIX, Windows ENDFEAT
   FEAT POSIX, Windows ENDFEAT
-  FEAT Windows (CE and NT) ENDFEAT
+  FEAT Windows (CE and NT) [9] ENDFEAT
   FEAT Darwin (inc. iOS and Mac OS X) ENDFEAT
  ENDLINE
 
@@ -422,6 +422,8 @@ to use.
 [7] = support for ALPN and NPN was added in <a href="https://technet.microsoft.com/en-us/library/hh831771.aspx">Windows 8.1 / Server 2012 R2</a>.
 <br>
 [8] = Via external <a href="https://github.com/OpenSC/OpenSC/wiki/Engine-pkcs11-quickstart">engine_pkcs11</a>;
+<br>
+[9] = WinSSL in Windows &lt;= XP is not able to connect to servers that no longer support the legacy handshakes and algorithms used by those versions.
 
 SUBTITLE(Glossary of Terms)
 
