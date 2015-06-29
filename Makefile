@@ -78,6 +78,7 @@ $(RELEASE): Makefile
 	@echo "fixing $(RELEASE)"
 	@echo "#define __STABLE $(STABLE)" >$(RELEASE)
 	@echo "#define __RELDATE $(RELDATE)" >>$(RELEASE)
+	@echo "#define __STABLETAG $(STABLE)" | sed 's/\./_/g' >> $(RELEASE)
 
 $(STAT): download.html Makefile
 	@echo "fixing $(STAT)"
