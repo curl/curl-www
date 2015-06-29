@@ -9,6 +9,7 @@ RedirectPermanent /source.html http://curl.haxx.se/dev/source.html
 RedirectPermanent /bugreport.html http://curl.haxx.se/docs/bugs.html
 RedirectPermanent /cvs.cgi http://curl.haxx.se/dev/source.html
 RedirectPermanent /dev/readme-http2.html http://curl.haxx.se/docs/http2.html
+RedirectPermanent /mirrors.html http://curl.haxx.se/mirrors/
 
 AddType text/plain .pl
 AddType text/plain .php
