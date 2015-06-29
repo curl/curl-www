@@ -3,6 +3,9 @@
 Version: __STABLE
 Date: __RELDATE
 Download: http://curl.haxx.se/download/curl-__STABLE.tar.gz
+Download: https://github.com/bagder/curl/releases/download/curl-__STABLETAG/curl-__STABLE.tar.gz
+Changelog: http://curl.haxx.se/changes.html#__STABLETAG
+git tag: curl-__STABLETAG
 Packages: __PACKS
 Up-to-date: __CURR
 Author: Daniel Stenberg <daniel@haxx.se>
