@@ -233,7 +233,6 @@ tr.odd {
 /* used for Metalink download links */
 span.metalink {
   font-weight: bold;
-  font-family: helvetica narrow, arial narrow, sans-serif;
 }
 
 /* a non-selected item in the main menu */
@@ -393,4 +392,13 @@ div.yellowbox {
   width: 1.5em;
   /* Opera 12.16 needs this or the option list button is invisible */
   background: #ffffff;
+}
+
+table.download {
+    margin-left: 1em;
+    font-size: 120%;
+}
+
+td.download {
+    padding-right: 10px;
 }
