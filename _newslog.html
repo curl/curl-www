@@ -34,6 +34,21 @@ TITLE(News in curl and libcurl land)
  NCOLE
 #endif
 
+ NSUBJ([SECURITY NOTICE] libidn with bad UTF8 input)
+ NDATE(June 29 2015)
+ NCOLS
+
+  A recent security review of libcurl showed that a remote attacker can
+  abuse libcurl's support for international domain names to disclose
+  memory of a libcurl application or cause other unintended behaviors by
+  passing in a malformed unicode string in the URL parameter. 
+
+<p>
+  <a href="http://curl.haxx.se/mail/lib-2015-06/0143.html">The entire libidn
+  notice</a>
+
+ NCOLE
+
  NSUBJ(Release archives over HTTPS)
  NDATE(June 29 2015)
  NCOLS
