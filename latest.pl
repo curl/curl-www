@@ -11,6 +11,9 @@ my %mirrors=(
     'http://ngcobalt13.uxnr.de/mirror/curl/' => 'Germany (St. Wendel, Saarland)',
     'https://psh01ams3.uxnr.de/mirror/curl/' => 'Netherlands (Amsterdam)',
     'https://psh02sgp1.uxnr.de/mirror/curl/' => 'Singapore',
+
+    # Marty Anstey runs:
+    'http://curl.mirror.anstey.ca/' => 'Canada (Vancouver)',
     );
 
 sub present {
