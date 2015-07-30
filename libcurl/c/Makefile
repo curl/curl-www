@@ -47,7 +47,7 @@ PAGES = index.html example.html curl_easy_init.html curl_easy_cleanup.html    \
  curl_easy_pause.html curl_easy_recv.html curl_easy_send.html		      \
  curl_multi_socket_action.html curl_multi_wait.html $(EXAMPLES) $(opts)	      \
  easy_setopt_options.html multi_setopt_options.html allexamples.zip	      \
- options-in-examples.html symbols-in-versions.html
+ options-in-examples.html symbols-in-versions.html threadsafe.html
 
 all: $(PAGES)
 
@@ -359,6 +359,12 @@ curl_multi_assign.t: $(MANROOT)/curl_multi_assign.3
 	$(MAN2HTML) < $< >$@
 
 include Makefile.opts
+
+threadsafe.gen: $(MANROOT)/libcurl-thread.3
+	$(MAN2HTML) < $< >$@
+
+threadsafe.html: _threadsafe.html threadsafe.gen $(MAINPARTS)
+	$(ACTION)
 
 allexamples.zip: $(EXAMPLESRCS)
 	rm -f $@; zip -j $@ $(EXAMPLESRCS)

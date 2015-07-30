@@ -61,9 +61,6 @@ all: index.html mail.html competitors.html comparison-table.html	  \
 index.html: _index.html $(MAINPARTS) bindingbox.t
 	$(ACTION)
 
-threadsafe.html: _threadsafe.html $(MAINPARTS)
-	$(ACTION)
-
 abi.html: _abi.html abi.gen $(MAINPARTS)
 	$(ACTION)
 

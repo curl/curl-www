@@ -1,0 +1,26 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>Thread-safe</TITLE>
+#include "css.t"
+</HEAD>
+
+#define LIBCURL_THREADSAFE
+#define CURL_URL libcurl/threadsafe.html
+
+#include "setup.t"
+#include "_menu.html"
+
+WHERE2(libcurl, "/libcurl/", Thread-safe)
+
+TITLE(libcurl thread safety)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="features.html">Features</a>
+</div>
+
+#include "threadsafe.gen"
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
