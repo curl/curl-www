@@ -14,14 +14,15 @@ LINK("", libcurl index )
 VLINK("/libcurl/", libcurl index, Front page of the libcurl section)
 #endif
 
-VLINK(/libcurl/c/, API, Functions provided by libcurl )
-
 #ifdef LIBCURL_ABI
-LINK("", Binary Interface)
+LINK("", ABI)
 #else
-VLINK(/libcurl/abi.html, Binary Interface,
+VLINK(/libcurl/abi.html, ABI,
        ABI guarantees between releases and more )
 #endif
+
+VLINK(/libcurl/c/, API, Functions provided by libcurl )
+
 #ifdef LIBCURL_BINDINGS
 LINK("", Bindings)
 #else
