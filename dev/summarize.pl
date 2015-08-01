@@ -36,6 +36,8 @@ my $filterform = '
 <option value="^.-">Debug disabled</option>
 <option value="^.......G">GSS-API</option>
 <option value="^.......-">GSS-API disabled</option>
+<option value="^...............F">HTTP2</option>
+<option value="^...............-">HTTP2 disabled</option>
 <option value="^...........[^-]">IDNA: any</option>
 <option value="^...........I">IDNA: libidn</option>
 <option value="^...........W">IDNA: WinIDN</option>
@@ -70,8 +72,8 @@ my $filterform = '
 <option value="^....-">SSL disabled</option>
 <option value="^............P">SSPI</option>
 <option value="^............-">SSPI disabled</option>
-<option value="^...............U">Unix Sockets</option>
-<option value="^...............-">Unix Sockets disabled</option>
+<option value="^................U">Unix Sockets</option>
+<option value="^................-">Unix Sockets disabled</option>
 <option value="^...V">Valgrind</option>
 <option value="^...-">Valgrind disabled</option>
 <option value="^......Z">zlib</option>
@@ -419,9 +421,10 @@ sub endofsingle {
     my $showssh = $libssh2 ? "2" : "-";
     my $showmetalink = $libmetalink ? "E" : "-";
     my $showidn = $libidn ? "I" : ($winidn ? "W" : "-");
+    my $showhttp2 = $http2 ? "F" : "-";
     my $showunixsockets = $unixsocketsenabled ? "U" : "-";
 
-    my $o = "$showipv6$showdebug$showtrackmem$showvalgrind$showssl$showres$showzlib$showgssapi$showkrb5$showspnego$showntlm$showidn$showsspi$showssh$showmetalink$showunixsockets";
+    my $o = "$showipv6$showdebug$showtrackmem$showvalgrind$showssl$showres$showzlib$showgssapi$showkrb5$showspnego$showntlm$showidn$showsspi$showssh$showmetalink$showhttp2$showunixsockets";
 
     if(!$desc) {
         $desc = $os;
@@ -484,6 +487,7 @@ sub endofsingle {
     $winidn=0;
     $libz=0;
     $unixsocketsenabled=0;
+    $http2=0;
 
     return $res;
 }
@@ -711,6 +715,10 @@ sub singlefile {
                     $libmetalink = 1;
                 }
 
+                if($feat =~ /HTTP2/i) {
+                    $http2 = 1;
+                }
+
                 if($feat =~ /UnixSockets/i) {
                     $unixsocketsenabled = 1;
                 }
@@ -824,6 +832,10 @@ sub singlefile {
 
                 if($feat =~ /Metalink/i) {
                     $libmetalink = 1;
+                }
+
+                if($feat =~ /HTTP2/i) {
+                    $http2 = 1;
                 }
 
                 if($feat =~ /UnixSockets/i) {
