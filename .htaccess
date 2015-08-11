@@ -8,6 +8,7 @@ RedirectPermanent /docs/testcurl.html http://curl.haxx.se/dev/testcurl.html
 RedirectPermanent /source.html http://curl.haxx.se/dev/source.html
 RedirectPermanent /bugreport.html http://curl.haxx.se/docs/bugs.html
 RedirectPermanent /cvs.cgi http://curl.haxx.se/dev/source.html
+RedirectPermanent /cvs.html http://curl.haxx.se/dev/source.html
 RedirectPermanent /dev/readme-http2.html http://curl.haxx.se/docs/http2.html
 RedirectPermanent /mirrors.html http://curl.haxx.se/mirror/
 RedirectPermanent /libcurl/c/libcurl-thread.html http://curl.haxx.se/libcurl/c/threadsafe.html
