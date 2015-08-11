@@ -47,6 +47,80 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_44_0"></a>
+SUBTITLE(Fixed in 7.44.0 - August 12 2015)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="http://curl.haxx.se/libcurl/c/CURLMOPT_PUSHFUNCTION.html">http2: added CURLMOPT_PUSHFUNCTION and CURLMOPT_PUSHDATA</a>
+ CHG <a href="http://curl.haxx.se/libcurl/c/http2-serverpush.html">examples: added http2-serverpush.c</a>
+ CHG http2: added curl_pushheader_byname() and curl_pushheader_bynum()
+ CHG <a href="https://github.com/bagder/curl/blob/master/docs/CODE_OF_CONDUCT.md">docs: added CODE_OF_CONDUCT.md</a>
+ CHG <a href="https://github.com/bagder/curl/issues/264">curl: Add --ssl-no-revoke to disable certificate revocation checks</a>
+ CHG <a href="http://curl.haxx.se/libcurl/c/CURLOPT_SSL_OPTIONS.html">libcurl: New value CURLSSLOPT_NO_REVOKE for CURLOPT_SSL_OPTIONS</a>
+ CHG makefile: Added support for VC14
+ CHG build: Added Visual Studio 2015 (VC14) project files
+ CHG <a href="https://github.com/bagder/curl/pull/174">build: Added wolfSSL configurations to VC10+ project files</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://github.com/bagder/curl/issues/278">FTP: fix HTTP CONNECT logic regression</a>
+ BGF openssl: Fix build with openssl < ~ 0.9.8f
+ BGF openssl: fix build with BoringSSL
+ BGF curl_easy_setopt.3: option order doesn't matter
+ BGF <a href="https://github.com/bagder/curl/issues/318">openssl: fix use of uninitialized buffer</a>
+ BGF RTSP: removed dead code
+ BGF Makefile.m32: add support for CURL_LDFLAG_EXTRAS
+ BGF curl: always provide negotiate/kerberos options
+ BGF cookie: Fix bug in export if any-domain cookie is present
+ BGF curl_easy_setopt.3: mention CURLOPT_PIPEWAIT
+ BGF INSTALL: Advise use of non-native SSL for Windows <= XP
+ BGF tool_help: fix --tlsv1 help text to use >= for TLSv1
+ BGF <a href="http://curl.haxx.se/mail/lib-2015-06/0122.html">HTTP: POSTFIELDSIZE set after added to multi handle</a>
+ BGF SSL-PROBLEMS: mention WinSSL problems in WinXP
+ BGF setup-vms.h: Symbol case fixups
+ BGF SSL: Pinned public key hash support
+ BGF libtest: call PR_Cleanup() on exit if NSPR is used
+ BGF ntlm_wb: Fix theoretical memory leak
+ BGF runtests: Allow for spaces in curl custom path
+ BGF http2: add stream != NULL checks for reliability
+ BGF schannel: Replace deprecated GetVersion with VerifyVersionInfo
+ BGF http2: verify success of strchr() in http2_send()
+ BGF configure: add --disable-rt option
+ BGF openssl: work around MSVC warning
+ BGF HTTP: ignore "Content-Encoding: compress"
+ BGF configure: check if OpenSSL linking wants -ldl
+ BGF build-openssl.bat: Show syntax if required args are missing
+ BGF test1902: attempt to make the test more reliable
+ BGF libcurl-thread.3: Consolidate thread safety info
+ BGF maketgz: Fixed some VC makefiles missing from the release tarball
+ BGF <a href="https://github.com/bagder/curl/issues/356">libcurl-multi.3: mention curl_multi_wait</a>
+ BGF ABI doc: use secure URL
+ BGF <a href="https://bugzilla.redhat.com/1248389">http: move HTTP/2 cleanup code off http_disconnect()</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2015-07/0149.html">libcurl-thread.3: Warn memory functions must be thread safe</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2015-07/0149.html">curl_global_init_mem.3: Warn threaded resolver needs thread safe funcs</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=360">docs: formpost needs the full size at start of upload</a>
+ BGF curl_gssapi: remove 'const' to fix compiler warnings
+ BGF <a href="http://curl.haxx.se/bug/?i=357">SSH: three state machine fixups</a>
+ BGF <a href="https://github.com/bagder/curl/issues/361">libcurl.3: fix a single typo</a>
+ BGF generate.bat: Only clean prerequisite files when in ALL mode
+ BGF curl_slist_append.3: add error checking to the example
+ BGF buildconf.bat: Added support for file clean-up via -clean
+ BGF generate.bat: Use buildconf.bat for prerequisite file clean-up
+ BGF <a href="https://github.com/bagder/curl/issues/363">NTLM: handle auth for only a single request</a>
+ BGF <a href="https://github.com/bagder/curl/issues/366">curl_multi_remove_handle.3: fix formatting</a>
+ BGF checksrc.bat: Fixed error when [directory] isn't a curl source directory
+ BGF checksrc.bat: Fixed error when missing *.c and *.h files
+ BGF <a href="http://curl.haxx.se/mail/lib-2015-08/0019.html">CURLOPT_RESOLVE.3: Note removal support was added in 7.42</a>
+ BGF test46: update cookie expire time
+ BGF <a href="http://curl.haxx.se/bug/?i=359">SFTP: fix range request off-by-one in size check</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=370">CMake: fix GSSAPI builds</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=371">build: refer to fixed libidn versions</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=372">http2: discard frames with no SessionHandle</a>
+ BGF curl_easy_recv.3: fix formatting
+ BGF <a href="http://curl.haxx.se/bug/?i=374">libcurl-tutorial.3: fix formatting</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=375">curl_formget.3: correct return code</a>
+</ul>
+    
 <a name="7_43_0"></a>
 SUBTITLE(Fixed in 7.43.0 - June 17 2015)
 <p> Changes:
