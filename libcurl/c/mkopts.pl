@@ -92,7 +92,7 @@ for(sort @all) {
     if($_ =~ /^CURLOPT/) {
         print IDXE $l;
     }
-    else if($_ =~ /^CURLMOPT/) {
+    elsif($_ =~ /^CURLMOPT/) {
         print IDXM $l;
     }
 }
