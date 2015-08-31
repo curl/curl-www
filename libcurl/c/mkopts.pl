@@ -75,10 +75,12 @@ open(TG, ">$targets");
 
 open(IDXE, ">all-easy.t");
 open(IDXM, ">all-multi.t");
+open(IDXI, ">all-info.t");
 
 print TG "OPTPAGES = ";
 print IDXE "<table>\n";
 print IDXM "<table>\n";
+print IDXI "<table>\n";
 my $c = 0;
 for(sort @all) {
     if($c) {
@@ -95,11 +97,16 @@ for(sort @all) {
     elsif($_ =~ /^CURLMOPT/) {
         print IDXM $l;
     }
+    elsif($_ =~ /^CURLINFO/) {
+        print IDXI $l;
+    }
 }
 close(TG);
 
 print IDXE "</table>\n";
 print IDXM "</table>\n";
+print IDXI "</table>\n";
 close(IDXE);
 close(IDXM);
+close(IDXI);
 
