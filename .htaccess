@@ -14,8 +14,11 @@ RedirectPermanent /mirrors.html http://curl.haxx.se/mirror/
 RedirectPermanent /libcurl/c/libcurl-thread.html http://curl.haxx.se/libcurl/c/threadsafe.html
 RedirectMatch "^/.git" http://curl.haxx.se/dev/source.html
 
-AddType text/plain .pl
+RemoveHandler .php
+RemoveHandler .pl
+#AddType text/plain .pl
 AddType text/plain .php
 AddType application/octet-stream .rpm
 AddType application/x-bzip2 .bz2
 AddType application/x-tar .tar
+php_flag engine off
