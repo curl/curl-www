@@ -1,3 +1,4 @@
 # robots.txt for curl.haxx.se
 Disallow: /dl/
 Disallow: /.git
+Disallow: /cvssource
