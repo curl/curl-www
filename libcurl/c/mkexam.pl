@@ -64,7 +64,7 @@ for my $f (@samps) {
             }
 
             # find CURLOPT_ and CURLMOPT_ option names
-            if($l =~ /^(.*)((CURLOPT|CURLMOPT)_[A-Z_]*)(.*)/) {
+            if($l =~ /^(.*)((CURLOPT|CURLMOPT|CURLINFO)_[A-Z_]*)(.*)/) {
                 my $cut = $2;
                 my ($pre, $opt, $post) = ($1, $2, $4);
 
