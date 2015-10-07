@@ -47,6 +47,90 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+SUBTITLE(Fixed in 7.45.0 - October 7 2015)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="http://curl.haxx.se/bug/?i=351">added CURLOPT_DEFAULT_PROTOCOL</a>
+ CHG <a href="http://curl.haxx.se/bug/?i=351">added new tool option --proto-default</a>
+ CHG getinfo: added CURLINFO_ACTIVESOCKET
+ CHG turned CURLINFO_* option docs as stand-alone man pages
+ CHG <a href="http://daniel.haxx.se/blog/2015/09/11/unnecessary-use-of-curl-x/">curl: point out unnecessary uses of -X in verbose mode</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="http://curl.haxx.se/mail/lib-2015-08/0016.html">curl_global_init_mem.3: Stronger thread safety warning</a>
+ BGF <a href="https://github.com/bagder/curl/pull/379">buildconf.bat: Fixed issues when ran in directories with special chars</a>
+ BGF cmake: Fix CurlTests check for gethostbyname_r with 5 arguments
+ BGF generate.bat: Fixed issues when ran in directories with special chars
+ BGF generate.bat: Only call buildconf.bat if it exists
+ BGF generate.bat: Added support for generating only the prerequisite files
+ BGF curl.1: Document weaknesses in SSLv2 and SSLv3
+ BGF CURLOPT_HTTP_VERSION.3: connection re-use goes before version
+ BGF docs: Update the redirect protocols disabled by default
+ BGF inet_pton.c: Fix MSVC run-time check failure
+ BGF CURLMOPT_PUSHFUNCTION.3: fix argument types
+ BGF rtsp: support basic/digest authentication
+ BGF rtsp: stop reading empty DESCRIBE responses
+ BGF <a href="http://curl.haxx.se/bug/?i=388">travis: Upgrading to container based build</a>
+ BGF travis.yml: Add OS X testbot
+ BGF FTP: make state machine not get stuck in state
+ BGF <a href="http://curl.haxx.se/bug/?i=392">openssl: handle lack of server cert when strict checking disabled</a>
+ BGF <a href="https://android.googlesource.com/platform/external/curl/+/f551028d5caab">configure: change functions to detect openssl (clones)</a>
+ BGF <a href="https://android.googlesource.com/platform/external/curl/+/f551028d5caab">configure: detect latest boringssl</a>
+ BGF runtests: Allow for spaces in server-verify curl custom path
+ BGF http2: on_frame_recv: get a proper 'conn' for the debug logging
+ BGF ntlm: mark deliberate switch case fall-through
+ BGF http2: remove dead code
+ BGF <a href="http://curl.haxx.se/bug/?i=395">curl_easy_{escape,unescape}.3: "char *" vs. "const char *"</a>
+ BGF curl: point out the conflicting HTTP methods if used
+ BGF <a href="http://curl.haxx.se/bug/?i=399">cmake: added Windows SSL support</a>
+ BGF curl_easy_{escape,setopt}.3: fix example
+ BGF <a href="http://curl.haxx.se/bug/?i=398">curl_easy_escape.3: escape '\n'</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=402">libcurl.m4: Put braces around empty if body</a>
+ BGF buildconf.bat: Fixed double blank line in 'curl manual' warning output
+ BGF sasl: Only define Curl_sasl_digest_get_pair() when CRYPTO_AUTH enabled
+ BGF inet_pton.c: Fix MSVC run-time check failure
+ BGF CURLOPT_FOLLOWLOCATION.3: mention methods for redirects
+ BGF <a href="http://curl.haxx.se/bug/?i=401">http2: don't pass on Connection: headers</a>
+ BGF <a href="https://lists.fedoraproject.org/pipermail/devel/2015-September/214117.html">nss: do not directly access SSL_ImplementedCiphers</a>
+ BGF docs: numerous cleanups and spelling fixes
+ BGF <a href="http://curl.haxx.se/bug/?i=405">FTP: do_more: add check for wait_data_conn in upload case</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=415">parse_proxy: reject illegal port numbers</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=409">cmake: IPv6 : disable Unix header check on Windows platform</a>
+ BGF winbuild: run buildconf.bat if necessary
+ BGF buildconf.bat: fix syntax error
+ BGF <a href="http://curl.haxx.se/bug/?i=411">curl_sspi: fix possibly undefined CRYPT_E_REVOKED</a>
+ BGF <a href="https://bugzilla.mozilla.org/1202264">nss: prevent NSS from incorrectly re-using a session</a>
+ BGF libcurl-errors.3: add two missing error codes
+ BGF openssl: fix build with < 0.9.8
+ BGF <a href="http://curl.haxx.se/bug/?i=427">openssl: refactor certificate parsing to use OpenSSL memory BIO</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=440">openldap: only part of LDAP query results received</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=410">ssl: add server cert's "sha256//" hash to verbose</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=435">NTLM: Reset auth-done when using a fresh connection</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=429">curl: generate easysrc only on --libcurl</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=380">tests: disable 1801 until fixed</a>
+ BGF CURLINFO_TLS_SESSION: always return backend info
+ BGF gnutls: Support CURLOPT_KEYPASSWD
+ BGF gnutls: Report actual GnuTLS error message for certificate errors
+ BGF tests: disable 1510 due to CI-problems on github
+ BGF cmake: Put "winsock2.h" before "windows.h" during configure checks
+ BGF cmake: Ensure discovered include dirs are considered
+ BGF <a href="http://curl.haxx.se/bug/?i=456">configure: Add missing ')' for CURL_CHECK_OPTION_RT</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=457">build: fix failures with -Wcast-align and -Werror</a>
+ BGF FTP: fix uploading ASCII with unknown size
+ BGF readwrite_data: set a max number of loops
+ BGF http2: avoid superfluous Curl_expire() calls
+ BGF <a href="http://curl.haxx.se/mail/lib-2015-09/0097.html">http2: set TCP_NODELAY unconditionally</a>
+ BGF docs: fix unescaped '\n' in man pages
+ BGF <a href="http://curl.haxx.se/bug/?i=447">openssl: Fix algorithm init to make (gost) engines work</a>
+ BGF win32: make recent Borland compilers use long long
+ BGF runtests: Fix pid check in checkdied
+ BGF <a href="http://curl.haxx.se/bug/?i=466">gopher: don't send NUL byte</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=469">tool_setopt: fix c_escape truncated octal</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=471">hiperfifo: fix the pointer passed to WRITEDATA</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=468">getinfo: Fix return code for unknown CURLINFO options</a>
+</ul>
+
 <a name="7_44_0"></a>
 SUBTITLE(Fixed in 7.44.0 - August 12 2015)
 <p> Changes:
