@@ -3,6 +3,9 @@
 require "../latest.pm";
 require "stuff.pm";
 
+# Number of recent versions to check
+my $lastfew = 7;
+
 my $show = $ARGV[0];
 
 # get database
@@ -86,8 +89,8 @@ sub content_length {
     return ($cl, $stat);
 }
 
-sub getlast5versions {
-    my @five;
+sub getlastfewversions {
+    my @few;
     my $per;
     for $per ($db->find_all()) {
         my $val=$$per{'curl'};
@@ -107,20 +110,20 @@ sub getlast5versions {
     
     my $c;
     for(reverse sort sortit keys %hash) {
-        push @five, $_;
-        if($c++ >= 7) {
+        push @few, $_;
+        if($c++ >= $lastfew) {
             last;
         }
     }
-    return @five;
+    return @few;
 }
 
-sub islast5versions {
+sub islastfewversions {
     my ($ver)=@_;
 
-    my @last = getlast5versions();
+    my @few = getlastfewversions();
 
-    for(@last) {
+    for(@few) {
         if($_ eq $ver) {
             # yeps
             return 1;
@@ -231,9 +234,9 @@ for $ref (@all) {
     elsif($churl && ($churl ne "-")) {
         # there's a URL to check
 
-        if(!islast5versions($$ref{'curl'})) {
+        if(!islastfewversions($$ref{'curl'})) {
 
-            # the database version of this is older than the 5 (6?) last
+            # the database version of this is older than the last few
             # versions, slow down the checking of this by aborting this
             # package check in a random matter
 
@@ -345,11 +348,11 @@ for $ref (@all) {
                 # Only scan for older URLs if the $version is part of it
                 #
 
-                my @five = getlast5versions();
-                @five = grep (!/^$version$/, @five); # we already tried the latest
+                my @few = getlastfewversions();
+                @few = grep (!/^$version$/, @few); # we already tried the latest
 
                 # while no data was received, try older versions
-                while(@five && !$st) {
+                while(@few && !$st) {
 
                     if($ver eq $$ref{'curl'}) {
                         # no need to scan for older packages than what
@@ -357,7 +360,7 @@ for $ref (@all) {
                         last;
                     }
 
-                    $ver = shift @five;
+                    $ver = shift @few;
                     $churl = $inurl;
                     $churl =~ s/\$version/$ver/g;
                     $churl =~ s/\$osversion/$osversion/g;
@@ -369,7 +372,7 @@ for $ref (@all) {
             }
 
             if(!$st) {
-                logmsg " <div class=\"buildfail\">None of the 5 latest versions found!</div>\n";
+                logmsg " <div class=\"buildfail\">None of the $lastfew latest versions found!</div>\n";
                 $failedcheck++;
                 next;
             }
