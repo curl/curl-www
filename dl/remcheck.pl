@@ -168,9 +168,17 @@ sub geturl {
     logmsg " \$ $curlcmd \"<a href=\"" . CGI::escapeHTML($url) . "\">" .
            CGI::escapeHTML($url) . "</a>\"\n";
     my @content = `$curlcmd \"$url\"`;
-    if(@content) {
-        # store the content in the hash
-        @{$urlhash{$url}}=@content;
+    if($head) {
+        # Strip header blocks due to redirects, leaving only the final one
+        while($content[0] =~ /^HTTP\/\d.\d 3\d+/) {
+            while((shift @content) !~ /^[\x0A\x0D]*$/ ) {}
+        }
+    } else {
+        # we don't cache HEAD requests
+        if(@content) {
+            # store the content in the hash
+            @{$urlhash{$url}}=@content;
+        }
     }
     return @content;
 }
@@ -227,7 +235,7 @@ for $ref (@all) {
         logmsg " Already at latest version ($version), no need to check\n";
         $uptodate++;
     }
-    elsif($$ref{'file'} !~ /^(http|https|ftp):/) {
+    elsif($$ref{'file'} !~ /^(http|https|ftp|ftps):/) {
         logmsg " Local package, no check needed\n";
         $localpackage++;
     }
