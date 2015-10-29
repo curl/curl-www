@@ -49,7 +49,7 @@ sub showc {
         $desc =~ s/\n\n/<p>/g;
 
 #        printf("<tr class=\"$cl\"><td><a href=\"%s/%s\">%s</a></td><td>%s</td></tr><tr class=\"$cl\"><td>%s</td><td><pre>%s</pre></td></tr>\n",
-#               "http://github.com/bagder/curl/commit",
+#               "https://github.com/bagder/curl/commit",
 #               $c{'commit'},
 #               $fl,
 #               $auth,
@@ -57,10 +57,10 @@ sub showc {
 #               $c{'files'});
 
         printf("<tr class=\"$cl\"><td><a href=\"%s/%s\">%s</a></td><td>%s</td></tr>\n",
-               "http://github.com/bagder/curl/commit",
+               "https://github.com/bagder/curl/commit",
                $c{'commit'},
                $fl, $auth);
-        
+
 
     }
     undef %c;
@@ -91,4 +91,3 @@ sub showlines {
 header();
 showlines();
 footer();
-

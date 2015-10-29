@@ -204,7 +204,7 @@ SUBTITLE(Fixed in 7.44.0 - August 12 2015)
  BGF <a href="http://curl.haxx.se/bug/?i=374">libcurl-tutorial.3: fix formatting</a>
  BGF <a href="http://curl.haxx.se/bug/?i=375">curl_formget.3: correct return code</a>
 </ul>
-    
+
 <a name="7_43_0"></a>
 SUBTITLE(Fixed in 7.43.0 - June 17 2015)
 <p> Changes:
@@ -496,7 +496,7 @@ SUBTITLE(Fixed in 7.41.0 - February 25 2015)
  BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1476">getpass_r: read from stdin, not stdout!</a>
  BGF getpass: protect include with proper #ifdef
  BGF opts: CURLOPT_CAINFO availability depends on SSL engine
- BGF more cleanup of 'CURLcode result' return code 
+ BGF more cleanup of 'CURLcode result' return code
  BGF MD4: replace implementation
  BGF MD5: replace implementation
  BGF <a href="http://curl.haxx.se/mail/lib-2015-02/0034.html">openssl: SSL_SESSION->ssl_version no longer exist</a>
@@ -566,7 +566,7 @@ SUBTITLE(Fixed in 7.40.0 - January 8 2015)
  BGF tool: Removed krb4 from the supported features
  BGF http2: Don't send Upgrade headers when we already do HTTP/2
  BGF <a href="http://curl.haxx.se/mail/lib-2014-11/0221.html">examples: Don't call select() to sleep on windows</a>
- BGF <a href="http://sourceforge.net/p/curl/feature-requests/82/">win32: Updated some legacy APIs to use the newer extended versions</a>
+ BGF <a href="https://sourceforge.net/p/curl/feature-requests/82/">win32: Updated some legacy APIs to use the newer extended versions</a>
  BGF easy.c: Fixed compilation warning when no verbose string support
  BGF connect.c: Fixed compilation warning when no verbose string support
  BGF build: in Makefile.m32 pass -F flag to windres
@@ -1128,11 +1128,11 @@ align="right" alt="Release contains security-related bug fix" border="0">
  BGF usercertinmem: fix memory leaks
  BGF <a href="http://curl.haxx.se/mail/lib-2013-10/0096.html">ssh: Handle successful SSH_USERAUTH_NONE</a>
  BGF <a href="http://curl.haxx.se/mail/lib-2013-10/0113.html">NSS: acknowledge the --no-sessionid/CURLOPT_SSL_SESSIONID_CACHE option</a>
- BGF <a href="http://sourceforge.net/p/curl/bugs/1291">test906: Fixed failing test on some platforms</a>
+ BGF <a href="https://sourceforge.net/p/curl/bugs/1291">test906: Fixed failing test on some platforms</a>
  BGF sasl: initialize NSS before using NTLM crypto
  BGF sasl: Fixed memory leak in OAUTH2 message creation
  BGF imap/pop3/smtp: Fixed QUIT / LOGOUT being sent when SSL connect fails
- BGF <a href="http://sourceforge.net/p/curl/bugs/1292">cmake: unbreak for non-Windows platforms</a>
+ BGF <a href="https://sourceforge.net/p/curl/bugs/1292">cmake: unbreak for non-Windows platforms</a>
  BGF ssh: initialize per-handle data in ssh_connect()
  BGF glob: fix broken URLs
  BGF configure: check for long long when building with cyassl
@@ -1144,10 +1144,10 @@ align="right" alt="Release contains security-related bug fix" border="0">
  BGF glob_range: pass the closing bracket for a-z ranges
  BGF tool_help: Updated --list-only description to include POP3
  BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1295">Curl_ssl_push_certinfo_len: don't %.*s non-zero-terminated string</a>
- BGF <a href="http://sourceforge.net/p/curl/bugs/1064">cmake: fix Windows build with IPv6 support</a>
+ BGF <a href="https://sourceforge.net/p/curl/bugs/1064">cmake: fix Windows build with IPv6 support</a>
  BGF <a href="http://curl.haxx.se/mail/lib-2013-11/0057.html">ares: Fixed compilation under Visual Studio 2012</a>
  BGF <a href="http://curl.haxx.se/bug/?i=83">curl_easy_setopt.3: clarify CURLOPT_SSL_VERIFYHOST documentation</a>
- BGF <a href="http://sourceforge.net/p/curl/bugs/1299">curl.1: mention that -O does no URL decoding</a>
+ BGF <a href="https://sourceforge.net/p/curl/bugs/1299">curl.1: mention that -O does no URL decoding</a>
  BGF <a href="http://curl.haxx.se/mail/lib-2013-11/0076.html">darwinssl: PKCS#12 import feature now requires Lion or later</a>
  BGF darwinssl: check for SSLSetSessionOption() presence when toggling BEAST
  BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1304">configure: Fix test with -Werror=implicit-function-declaration</a>
@@ -1192,7 +1192,7 @@ SUBTITLE(Fixed in 7.33.0 - October 14 2013)
  BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1264">urlglob: better detect unclosed braces, empty lists and overflows</a>
  BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1267">urlglob: error out on range overflow</a>
  BGF <a href="http://curl.haxx.se/mail/lib-2013-08/0136.html">imap: Fixed response check for SEARCH, EXPUNGE, LSUB, UID and NOOP commands</a>
- BGF <a href="http://bugs.debian.org/719856">handle arbitrary-length username and password</a>
+ BGF <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=719856">handle arbitrary-length username and password</a>
  BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1269">TFTP: make the CURLOPT_LOW_SPEED* options work</a>
  BGF <a href="http://curl.haxx.se/bug/?i=76">curl.h: name space pollution by "enum type"</a>
  BGF <a href="http://curl.haxx.se/mail/lib-2013-08/0211.html">multi: move on from STATE_DONE faster</a>
@@ -1305,7 +1305,7 @@ align="right" alt="Release contains security-related bug fix" border="0">
  BGF curl-config: don't output static libs when they are disabled
  BGF <a href="http://curl.haxx.se/mail/lib-2013-04/0294.html">CURL_CHECK_CA_BUNDLE: don't check for paths when cross-compiling</a>
  BGF Various documentation updates
- BGF <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=705783">getinfo.c: reset timecond when clearing session-info variables</a>
+ BGF <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=705783">getinfo.c: reset timecond when clearing session-info variables</a>
  BGF <a href="https://bugzilla.redhat.com/906031">FILE: prevent an artificial timeout event due to stale speed-check data</a>
  BGF <a href="http://curl.haxx.se/bug/view.cgi?id=1218">ftp_state_pasv_resp: connect through proxy also when set by env</a>
  BGF sshserver: disable StrictHostKeyChecking
@@ -1490,7 +1490,7 @@ SUBTITLE(Fixed in 7.28.1 - November 20 2012)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF Fix broken libmetalink-aware OpenSSL build
- BGF <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=690551">gnutls: fix the error is fatal logic</a>
+ BGF <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=690551">gnutls: fix the error is fatal logic</a>
  BGF darwinssl: un-broke iOS build, fix error on server disconnect
  BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3577710">asyn-ares: restore functionality with c-ares < 1.6.1</a>
  BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3578418">tlsauthtype: deal with the string case insensitively</a>
@@ -1559,7 +1559,7 @@ SUBTITLE(Fixed in 7.28.0 - October 10 2012)
  BGF schannel crash on multi and easy handle cleanup
  BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3561305">SOCKS: truly disable it if CURL_DISABLE_PROXY is defined</a>
  BGF <a href="http://curl.haxx.se/mail/lib-2012-09/0019.html">mk-ca-bundle: detect start of trust section better</a>
- BGF <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=685402">gnutls: do not fail on non-fatal handshake errors</a>
+ BGF <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=685402">gnutls: do not fail on non-fatal handshake errors</a>
  BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3564114">SMTP: only send SIZE if supported</a>
  BGF ftpserver: respond with a 250 to SMTP EHLO
  BGF ssh: do not crash if MD5 fingerprint is not provided by libssh2
@@ -1645,7 +1645,7 @@ SUBTITLE(Fixed in 7.26.0 - May 24 2012)
  BGF <a href="http://curl.haxx.se/mail/lib-2012-03/0238.html">mk-ca-bundle: revert the LWP usage</a>
  BGF IPv6 cookie domain: get rid of the first bracket before the second
  BGF connect.c: return changed to CURLE_COULDNT_CONNECT when opensocket fails
- BGF <a href="http://tools.ietf.org/html/rfc6125#section-6.4.3">OpenSSL: Made cert hostname check conform to RFC 6125</a>
+ BGF <a href="https://tools.ietf.org/html/rfc6125#section-6.4.3">OpenSSL: Made cert hostname check conform to RFC 6125</a>
  BGF <a href="http://curl.haxx.se/bug/view.cgi?id=3510057">HTTP: reset expected DL/UL sizes on redirects</a>
  BGF <a href="http://curl.haxx.se/mail/lib-2012-03/0278.html">CMake: fix Windows LDAP/LDAPS option handling</a>
  BGF <a href="http://curl.haxx.se/mail/lib-2012-03/0255.html">CMake: fix MS Visual Studio x64 unsigned long long literal suffix</a>
@@ -1771,7 +1771,7 @@ align="right" alt="Release contains security-related bug fix" border="0">
  BGF Telnet: Remove bogus optimisation of telnet upload
  BGF URL parse: user name with ipv6 numerical address
  BGF polarssl: show cipher suite name correctly with 1.1.0
- BGF polarssl: havege_rand is not present in version 1.1.0 WARNING, we still use the <a href="http://polarssl.org/trac/wiki/SecurityAdvisory201102">old API which is said to be insecure</a>
+ BGF polarssl: havege_rand is not present in version 1.1.0 WARNING, we still use the <a href="https://tls.mbed.org/tech-updates/security-advisories/polarssl-security-advisory-2011-02">old API which is said to be insecure</a>
  BGF <a href="http://curl.haxx.se/mail/lib-2012-01/0225.html">gnutls: enforced use of SSLv3</a>
 </ul>
 
@@ -1854,7 +1854,7 @@ SUBTITLE(Fixed in 7.22.0 - September 13 2011)
    could cause a segfault
  BGF -J fixed for escaped quotes
  BGF -J fixed for file names with semicolons
- BGF progress: reset flags at transfer start to avoid wrong 
+ BGF progress: reset flags at transfer start to avoid wrong
    CURLINFO_CONTENT_LENGTH_DOWNLOAD
  BGF curl_gssapi: Guard files with HAVE_GSSAPI and rename private header
  BGF silence picky compilers: mark unused parameters
@@ -1893,7 +1893,7 @@ align="right" alt="Release contains security-related bug fix" border="0"></a>
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="/docs/adv_20110623.html">SECURITY ADVISORY: inappropriate GSSAPI delegation</a>
-   
+
  BGF NTLM: work with unicode
  BGF fix connect with SOCKS proxy when using the multi interface
  BGF anyauthput.c: stdint.h must not be included unconditionally
@@ -1952,7 +1952,7 @@ SUBTITLE(Fixed in 7.21.5 - April 17 2011)
  BGF ssh_connect: treat libssh2 return code better
  BGF SFTP upload could stall the state machine when the multi_socket API was
    used
- BGF SFTP and SCP could leak memory when used with the multi interface and 
+ BGF SFTP and SCP could leak memory when used with the multi interface and
    the connection was closed
  BGF Added missing file to repair the MSVC makefiles
  BGF Fixed detection of recvfrom arguments on Android/bionic
@@ -2309,7 +2309,7 @@ contains security-related bug fix" border="0"></a>
  BGF HTTP Cookie: headers sort cookies based on specified path lengths
  BGF CURLM_CALL_MULTI_PERFORM fix for multi socket timeout calls
  BGF <a href="http://curl.haxx.se/docs/adv_20100209.html">libcurl data callback excessive length</a>
-   
+
 </ul>
 
 <a name="7_19_7"></a>
@@ -2438,7 +2438,7 @@ SUBTITLE(Fixed in 7.19.5 - May 18 2009)
  BGF Deal with the TFTP OACK packet
  BGF fixed roff mistakes in man pages
  BGF use SOCKS proxy with the multi interface
- BGF fixed the Curl_getoff_all_pipelines SIGSEGV 
+ BGF fixed the Curl_getoff_all_pipelines SIGSEGV
  BGF POST, NTLM and following a redirect hang
  BGF libcurl+NSS endless loop on incorrect password for private key
  BGF gzip decompression memory leak
@@ -2474,7 +2474,7 @@ contains security-related bug fix" border="0"></a>
 <ul class="bugfixes">
  BGF missing ssh.obj in VS makefiles
  BGF FTP ;type=i URLs now work with CURLOPT_PROXY_TRANSFER_MODE in Turkish
-   locale 
+   locale
  BGF realms with quoted quotation marks in HTTP Digest headers
  BGF VC9 makefiles are now really included
  BGF multi interface memory leak with CURLMOPT_MAXCONNECTS set
@@ -2855,7 +2855,7 @@ SUBTITLE(Fixed in 7.17.0 - September 13 2007)
  CHG builds and runs on OS/400
  CHG several error codes and options were marked as obsolete and subject to
    future removal (set CURL_NO_OLDIES to see if your application is using them)
- CHG SFTP errors can return more specific error codes 
+ CHG SFTP errors can return more specific error codes
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
@@ -2993,7 +2993,7 @@ SUBTITLE(Fixed in 7.16.2 - April 11 2007)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF in testsuite, update test cookies expiration from 2007-Feb-1 to year 2035 
+ BGF in testsuite, update test cookies expiration from 2007-Feb-1 to year 2035
  BGF socks5 works
  BGF builds fine with VC2005
  BGF CURLOPT_RANGE set to NULL resets the range for FTP
@@ -3313,7 +3313,7 @@ SUBTITLE(Fixed in 7.14.1 - September 1 2005)
  CHG --ignore-content-length and CURLOPT_IGNORE_CONTENT_LENGTH added
  CHG negotiates data connection SSL earlier when doing FTPS with PASV
  CHG CURLOPT_COOKIELIST and CURLINFO_COOKIELIST
- CHG trailer support for chunked encoded data streams 
+ CHG trailer support for chunked encoded data streams
  CHG -x/CURL_PROXY strings may now contain user+password
  CHG --trace-time now outputs the full microsecond, all 6 digits
 </ul>
@@ -3347,7 +3347,7 @@ SUBTITLE(Fixed in 7.14.1 - September 1 2005)
  BGF fixed the notorious FTP server failure in the test suite
  BGF better checking of text output in the test suite on windows
  BGF FTP servers' TYPE command response check made less strict
- BGF URL-without-slash as in http://somehost?data
+ BGF URL-without-slash as in http://example?data
  BGF strerror_r() configure check for HP-UX 10.20 (and others)
  BGF time parse work-around on HP-UX 10.20 since its gmtime_r() is broken
 </ul>
@@ -3823,7 +3823,7 @@ SUBTITLE(Fixed in 7.11.0 - January 22 2004)
  BGF accessing a proxy that requires Basic auth without password caused a hang
  BGF a free free-twice problem in the server certificate code
  BGF minor memory leak when using ranges on persistant connections
- BGF formpost parts sending files with .html extensions now use "Content-Type: 
+ BGF formpost parts sending files with .html extensions now use "Content-Type:
    text/html"
  BGF formpost parts now default to "Content-Type: application/octet-stream"
  BGF --progress-bar was slightly improved
@@ -3976,7 +3976,7 @@ SUBTITLE(Fixed in 7.10.6 - July 28 2003)
  BGF curl no longer uses setvbuf() due to portability problems
  BGF VMS build fixes
  BGF the curl tool has the -M manual compressed internally if built with libz
- BGF url globbing syntax error could cause segfault 
+ BGF url globbing syntax error could cause segfault
  BGF Huge (>40-60KB) GET requests over HTTPS failed.
  BGF Content-Length now overrides socket-closed as a means of knowing when the
    response body is complete.
@@ -4094,7 +4094,7 @@ SUBTITLE(Fixed in 7.10.3 - January 14 2003)
 <ul class="changes">
  CHG Added CURLOPT_PRIVATE and CURLINFO_PRIVATE
  CHG Added CURLOPT_HTTP200ALIASES
- CHG Added --create-dirs 
+ CHG Added --create-dirs
  CHG libcurl test cases have been added
  CHG configure --enable-maintainer-mode was added
 </ul>
@@ -4360,7 +4360,7 @@ SUBTITLE(Fixed in 7.9.3 - January 23 2002)
  BGF HTTP code 204 is now treated properly
  BGF libcurl now provides the FTP response lines to the header callback
  BGF 64bit-architecture fixes
- BGF bugfixed using proxy specified in an environment variable 
+ BGF bugfixed using proxy specified in an environment variable
  BGF made libcurl support FTP operations without any transfer
  BGF error messages are now stored without newlines
  BGF -T file names get the path stripped before used remotely
@@ -4451,7 +4451,7 @@ SUBTITLE(Fixed in 7.9 - September 23 2001)
  BGF multiple curl_easy_perform() invokes when a previous invoke followed a
    Location: could lead to a crash
  BGF rfc1867-posts are now done including the Expect: 100-continue header.
- BGF flushes the progress meter stream to improve look on windows 
+ BGF flushes the progress meter stream to improve look on windows
  BGF fixed the configure script --with-ssl problem
 </ul>
 
@@ -4579,7 +4579,7 @@ SUBTITLE(Fixed in 7.7 - March 22 2001)
  CHG persistent connection support
 </ul>
 <p> Bugfixes:
-<ul class="bugfixes"> 
+<ul class="bugfixes">
  BGF the .netrc parser finds the home directory better
  BGF fixed a crash that could happen with redirects and authentication
  BGF improved random seeding for SSL connections
@@ -4858,7 +4858,7 @@ SUBTITLE(Fixed in 6.5.1 - March 20 2000)
  BGF curl_unescape() buffer overrun removed
  BGF -w 'http_code' works!
  BGF OS/2 port
- BGF adjusted to compile smoothly with MS VC++ 
+ BGF adjusted to compile smoothly with MS VC++
  BGF -D/--dump-header now only writes the file when needed, and not before
 </ul>
 
@@ -4963,7 +4963,7 @@ SUBTITLE(Fixed in 6.1 - October 17 1999)
  BGF zlib proved not to be as easy to add as I had anticipated. I'll keep
       it on hold for now.
  BGF moved the libcurl include files into a subdir named curl
- BGF #include zlib.h fixes 
+ BGF #include zlib.h fixes
  BGF adjusted the maketgz script to reduce reruns of the configure when
       building
 </ul>
