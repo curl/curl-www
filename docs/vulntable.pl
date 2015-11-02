@@ -2,8 +2,8 @@
 
 # un-preprocessed _changes-file as input
 
-require "vuln.pm";            
-            
+require "vuln.pm";
+
 sub vernum {
     my ($ver)=@_;
     my @v = split('\.', $ver);
@@ -49,12 +49,12 @@ sub single {
         for my $i (@v) {
             my $c = $cve[$i];
             if($c ne "-") {
-                $c = "<a href=\"http://cve.mitre.org/cgi-bin/cvename.cgi?name=$c\">$c</a>";
+                $c = "<a href=\"https://cve.mitre.org/cgi-bin/cvename.cgi?name=$c\">$c</a>";
             }
             else {
                 $c = "";
             }
-            
+
             $vulnhtml .= sprintf("<tr class=\"%s\"><td><a href=\"%s\">%s</a></td><td><a href=\"vuln-%s.html\">%s</a></td><td><a href=\"vuln-%s.html\">%s</a></td><td>$c</td></tr>\n",
                                  $odd&1?"even":"odd",
                                  $vurl[$i], $vulndesc[$i],
@@ -81,7 +81,7 @@ sub single {
         }
         $n .=  "<a href=\"vuln-$nextrel.html\">the subsequent release: $nextrel</a>";
     }
-    
+
     my $anchor = $str;
     $anchor =~ s/\./_/g;
 
@@ -187,7 +187,7 @@ for my $str (@releases) {
 
     single($sum, $str, $date, $this, $vervuln{$str},
            $releases[$l-1], $releases[$l+1]);
-        
+
     ++$l;
 }
 
@@ -207,7 +207,7 @@ include \$(ROOT)/mainparts.mk
 include \$(ROOT)/setup.mk
 
 MAINPARTS += adv-related-box.inc
-    
+
 all: ${allhtml}
 
 clean:

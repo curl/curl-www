@@ -115,7 +115,7 @@ MOO
 if(0) {
 print <<MOO
 
-<div class="quote"><strong> 
+<div class="quote"><strong>
 The download wizard is still to be seen as a beta application. Please send your
 comments and feedback to the curl-users mailing list or to me personally (daniel\@haxx.se).
 
@@ -209,7 +209,7 @@ sub showsteps {
             print $p;
             next;
         }
-    
+
         print "<font color=\"#f0a0a0\">$s</font>\n";
     }
 
@@ -356,7 +356,7 @@ if($pick_type && !$pick_os) {
     }
 
     #print "<p> If you want a curl package for the OS you are currently using, you want a package for <b>$sel_os</b>";
-    
+
     my $c;
     my %os;
     for $e (@all) {
@@ -397,7 +397,7 @@ if($pick_type && !$pick_os) {
             elsif($_ eq "Win32") {
                 $show = "Windows / Win32";
             }
-        
+
             print "<option$s value=\"$_\">$show</option>\n";
         }
         print "</select>",
@@ -409,7 +409,7 @@ if($pick_type && !$pick_os) {
 <p><i> If you miss an operating system in this listing, it is most likely
 because we don\'t know any packages of your selected type for that operating
 system.</i>
-            
+
 MOO
 ;
     }
@@ -428,7 +428,7 @@ if(!$pick_flav && $pick_os && $pick_type) {
     }
 
     my $numflav = scalar(keys %flav);
-    
+
     if($numflav == 0) {
         showsteps();
 
@@ -747,7 +747,7 @@ update. Or get a 'source' package and build a newer one yourself.
 MOO
 ;
     }
-    
+
     my $l=length($show);
     if($l > 50) {
         $show = substr($show, 0, 35)."...".substr($show, $l-15);
@@ -776,37 +776,37 @@ MOO
     }
 
     if($pack eq "zip") {
-        print " Zip is a widely-used file archiving format. <a href=\"http://en.wikipedia.org/wiki/ZIP_file_format\">Wikipedia has more details on zip</a>.";
+        print " Zip is a widely-used file archiving format. <a href=\"https://en.wikipedia.org/wiki/ZIP_file_format\">Wikipedia has more details on zip</a>.";
     }
     elsif($pack eq "tar+xz") {
-        print " This file is tar'ed and then xzipped. <a href=\"http://en.wikipedia.org/wiki/Xz\">Wikipedia has more details on xz</a>.";
+        print " This file is tar'ed and then xzipped. <a href=\"https://en.wikipedia.org/wiki/Xz\">Wikipedia has more details on xz</a>.";
     }
     elsif($pack eq "tar+gz") {
-        print " This file is tar'ed and then gzipped. <a href=\"http://en.wikipedia.org/wiki/Gzip\">Wikipedia has more details on gzip</a>.";
+        print " This file is tar'ed and then gzipped. <a href=\"https://en.wikipedia.org/wiki/Gzip\">Wikipedia has more details on gzip</a>.";
     }
     elsif($pack eq "tar+bz2") {
-        print " This file is tar'ed and then bzip2ed. <a href=\"http://en.wikipedia.org/wiki/Bzip2\">Wikipedia has more details on bzip2</a>.";
+        print " This file is tar'ed and then bzip2ed. <a href=\"https://en.wikipedia.org/wiki/Bzip2\">Wikipedia has more details on bzip2</a>.";
     }
     elsif($pack eq "tar+Z") {
-        print " This file is tar'ed and then compressed. <a href=\"http://en.wikipedia.org/wiki/Compress\">Wikipedia has more details on compress</a>.";
+        print " This file is tar'ed and then compressed. <a href=\"https://en.wikipedia.org/wiki/Compress\">Wikipedia has more details on compress</a>.";
     }
     elsif($pack eq "lha") {
-        print " Lha is a common freeware compression utility on Amiga. <a href=\"http://en.wikipedia.org/wiki/LHA_%28file_format%29\">Wikipedia has more details on lha</a>.";
+        print " Lha is a common freeware compression utility on Amiga. <a href=\"https://en.wikipedia.org/wiki/LHA_%28file_format%29\">Wikipedia has more details on lha</a>.";
     }
     elsif($pack eq "pkg") {
         print " pkg is a file format and tools collection made to handle software installation for your system.";
     }
     elsif($pack eq "RPM") {
-        print " RPM is a file format and tools collection made to handle software installation for a range of different Linux systems. <a href=\"http://en.wikipedia.org/wiki/RPM_Package_Manager\">Wikipedia has more details on RPM</a>";
+        print " RPM is a file format and tools collection made to handle software installation for a range of different Linux systems. <a href=\"https://en.wikipedia.org/wiki/RPM_Package_Manager\">Wikipedia has more details on RPM</a>";
     }
     elsif($pack eq "deb") {
-        print " deb is a file format with accompanying tools collection made to handle software installation for Debian Linux (and derivatives). <a href=\"http://en.wikipedia.org/wiki/Deb_%28file_format%29\">Wikipedia has more details on deb</a>";
+        print " deb is a file format with accompanying tools collection made to handle software installation for Debian Linux (and derivatives). <a href=\"https://en.wikipedia.org/wiki/Deb_%28file_format%29\">Wikipedia has more details on deb</a>";
     }
     elsif($pack eq "7zip") {
-        print " 7zip is a file archiving format. <a href=\"http://en.wikipedia.org/wiki/7-ZIP_file_format\">Wikipedia has more details on 7zip</a>.";
+        print " 7zip is a file archiving format. <a href=\"https://en.wikipedia.org/wiki/7-ZIP_file_format\">Wikipedia has more details on 7zip</a>.";
     }
     elsif($pack eq "ipk") {
-        print " ipkg is a file format and tools collection made to handle software installation for embedded Linux systems. <a href=\"http://en.wikipedia.org/wiki/Ipkg\">Wikipedia has more details on Ipkg</a>.";
+        print " ipkg is a file format and tools collection made to handle software installation for embedded Linux systems. <a href=\"https://en.wikipedia.org/wiki/Ipkg\">Wikipedia has more details on Ipkg</a>.";
     }
 
     print "</div>\n";
@@ -864,12 +864,12 @@ if($pick_os && $pick_flav && $pick_ver && $pick_cpu) {
     printf( "<p>For <b>$fl $os $ver%s %s</b>",
             $pick_cpu ne "-"?" on $pick_cpu":"(CPU Independent)",
             $pick_type ne "*"?" ".$typelonger{$pick_type}:"");
-    
+
     my %got;
     my $type;
     if(scalar(@match) == 0) {
         # no match!
-        
+
         print "<p> Internal error. Found no matching entries.";
     }
 

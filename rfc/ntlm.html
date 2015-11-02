@@ -15,9 +15,9 @@ documentation, and almost certainly inaccuracies.  However, this document
 should at least be able to provide a solid foundation for further research.  The
 information presented herein was used as the basis for the implementation of
 NTLM authentication in the open-source jCIFS library, available at
-<a href="http://jcifs.samba.org">http://jcifs.samba.org</a>.  This
+<a href="https://jcifs.samba.org">https://jcifs.samba.org</a>.  This
 documentation is based on independent research by the author and analysis of
-functionality implemented in the <a href="http://www.samba.org">Samba</a>
+functionality implemented in the <a href="https://www.samba.org">Samba</a>
 software suite.
 <p>
 
@@ -450,7 +450,7 @@ realm of the author's knowledge (which is not by any means absolute).
 <tr valign="top">
     <td><tt>0x00040000</tt></td><td>Target Type Share</td>
     <td>
-        <i>Sent by the server in the Type 2 message to indicate that the 
+        <i>Sent by the server in the Type 2 message to indicate that the
         target authentication realm is a share.  Presumably, this is for
         share-level authentication.  Usage is unclear.</i>
     </td>
@@ -596,7 +596,7 @@ Let's jump in and take a look at the Type 1 message:
 The Type 1 message is sent from the client to the server to initiate NTLM
 authentication.  Its primary purpose is to establish the "ground rules" for
 authentication by indicating supported options via the flags.  Optionally,
-it can also provide the server with the client's workstation name and 
+it can also provide the server with the client's workstation name and
 the domain in which the client workstation has membership; this information
 is used by the server to determine whether the client is eligible for
 local authentication.
@@ -730,7 +730,7 @@ Note that the OS Version structure and the supplied domain/workstation are
 optional fields.  There are three versions of the Type 1 message that have been
 observed in the wild:
 <ol>
-    <li><p>Version 1 -- The Supplied Domain and Workstation security buffers and OS Version structure are omitted completely.  In this case the message ends after the flags field, and is a fixed-length 16-byte structure.  This form is typically seen in older Win9x-based systems, and is roughly documented in the Open Group's ActiveX reference documentation (<a href="http://www.opengroup.org/comsource/techref2/NCH1222X.HTM#ntlm.2.2">Section 11.2.2</a>).</p></li>
+    <li><p>Version 1 -- The Supplied Domain and Workstation security buffers and OS Version structure are omitted completely.  In this case the message ends after the flags field, and is a fixed-length 16-byte structure.  This form is typically seen in older Win9x-based systems, and is roughly documented in the Open Group's ActiveX reference documentation (<a href="https://www.opengroup.org/comsource/techref2/NCH1222X.HTM#ntlm.2.2">Section 11.2.2</a>).</p></li>
     <li><p>Version 2 -- The Supplied Domain and Workstation buffers are present, but the OS Version structure is not.  The data block begins immediately after the security buffer headers, at offset 32.  This form is seen in most out-of-box shipping versions of Windows.</p></li>
     <li><p>Version 3 -- Both the Supplied Domain/Workstation buffers are present, as well as the OS Version structure.  The data block begins after the OS Version structure, at offset 40.  This form was introduced in a relatively recent Service Pack, and is seen on currently-patched versions of Windows 2000, Windows XP, and Windows 2003.</p></li>
 </ol>
@@ -1101,7 +1101,7 @@ The OS Version structure was <a href="#osVersionStructure">described previously<
 As with the Type 1 message, there are a few versions of the Type 2 that have
 been observed:
 <ol>
-    <li><p>Version 1 -- The Context, Target Information, and OS Version structure are all omitted.  The data block (containing only the contents of the Target Name security buffer) begins at offset 32.  This form is seen in older Win9x-based systems, and is roughly documented in the Open Group's ActiveX reference documentation (<a href="http://www.opengroup.org/comsource/techref2/NCH1222X.HTM#ntlm.2.3">Section 11.2.3</a>).</p></li>
+    <li><p>Version 1 -- The Context, Target Information, and OS Version structure are all omitted.  The data block (containing only the contents of the Target Name security buffer) begins at offset 32.  This form is seen in older Win9x-based systems, and is roughly documented in the Open Group's ActiveX reference documentation (<a href="https://www.opengroup.org/comsource/techref2/NCH1222X.HTM#ntlm.2.3">Section 11.2.3</a>).</p></li>
     <li><p>Version 2 -- The Context and Target Information fields are present, but the OS Version structure is not.  The data block begins after the Target Information header, at offset 48.  This form is seen in most out-of-box shipping versions of Windows.</p></li>
     <li><p>Version 3 -- The Context, Target Information, and OS Version structure are all present.  The data block begins after the OS Version structure, at offset 56.  Again, the buffers may be empty (yielding a zero-length data block).  This form was introduced in a relatively recent Service Pack, and is seen on currently-patched versions of Windows 2000, Windows XP, and Windows 2003.</p></li>
 </ol>
@@ -1440,7 +1440,7 @@ The OS Version structure is the same format <a href="#osVersionStructure">descri
 Again, there are a few variations of the Type 3 message:
 <ol>
     <li><p>Version 1 -- The Session Key, flags, and OS Version structure are omitted.  The data block in this case starts after the Workstation Name security buffer header, at offset 52.  This form is seen in older Win9x-based systems.</p></li>
-    <li><p>Version 2 -- The Session Key and flags are included, but the OS Version structure is not.  In this case, the data block begins after the flags field, at offset 64.  This form is seen in most out-of-box shipping versions of Windows, and is roughly documented in the Open Group's ActiveX reference documentation (<a href="http://www.opengroup.org/comsource/techref2/NCH1222X.HTM#ntlm.2.4">Section 11.2.4</a>).</p></li>
+    <li><p>Version 2 -- The Session Key and flags are included, but the OS Version structure is not.  In this case, the data block begins after the flags field, at offset 64.  This form is seen in most out-of-box shipping versions of Windows, and is roughly documented in the Open Group's ActiveX reference documentation (<a href="https://www.opengroup.org/comsource/techref2/NCH1222X.HTM#ntlm.2.4">Section 11.2.4</a>).</p></li>
     <li><p>Version 3 -- The Session Key, flags, and OS Version structure are all present.  The data block begins after the OS Version structure, at offset 72.  This form was introduced in a relatively recent Service Pack, and is seen on currently-patched versions of Windows 2000, Windows XP, and Windows 2003.</p></li>
 </ol>
 
@@ -1810,7 +1810,7 @@ The NTLM response is calculated as follows (see <a href="#getNTLMResponse">Appen
 <ol>
 <li>
 The MD4 message-digest algorithm (described in
-<a href="http://www.ietf.org/rfc/rfc1320.txt">RFC 1320</a>) is applied to the
+<a href="https://www.ietf.org/rfc/rfc1320.txt">RFC 1320</a>) is applied to the
 Unicode mixed-case password.  This results in a 16-byte value - the NTLM hash.
 </li>
 <li>
@@ -1923,14 +1923,14 @@ The NTLM password hash is obtained (as discussed previously, this is the
 MD4 digest of the Unicode mixed-case password).
 </li>
 <li>
-The Unicode uppercase username is concatenated with the Unicode 
+The Unicode uppercase username is concatenated with the Unicode
 authentication target (the domain or server name specified in the Target Name
 field of the Type 3 message).  Note that this calculation always uses
 the Unicode representation, even if OEM encoding has been negotiated; also note
 that the username is converted to uppercase, while the authentication target is
 case-sensitive and must match the case presented in the Target Name field.<br>
 The HMAC-MD5 message authentication code algorithm (described in
-<a href="http://www.ietf.org/rfc/rfc2104.txt">RFC 2104</a>) is applied to this
+<a href="https://www.ietf.org/rfc/rfc2104.txt">RFC 2104</a>) is applied to this
 value using the 16-byte NTLM hash as the key.  This results in a 16-byte
 value - the NTLMv2 hash.
 </li>
@@ -2245,7 +2245,7 @@ nonce to form a session nonce.
 </li>
 <li>
 The MD5 message-digest algorithm (described in
-<a href="http://www.ietf.org/rfc/rfc1321.txt">RFC 1321</a>) is applied to
+<a href="https://www.ietf.org/rfc/rfc1321.txt">RFC 1321</a>) is applied to
 the session nonce, resulting in a 16-byte value.
 </li>
 <li>
@@ -2552,7 +2552,7 @@ match, the user is successfully authenticated.
 <a name="ntlmVersion2">
 <h2>NTLM Version 2</h2>
 <p>
-NTLM version 2 consists of three new response algorithms (NTLMv2, LMv2, 
+NTLM version 2 consists of three new response algorithms (NTLMv2, LMv2,
 and the NTLM2 session response, discussed previously) and a new signing and
 sealing scheme (NTLM2 session security).  NTLM2 session security is negotiated
 via the "Negotiate NTLM2 Key" flag; NTLMv2 authentication, however, is enabled
@@ -2564,7 +2564,7 @@ configuration and planning required to deploy NTLMv2 is that many hosts just
 use the default setting (NTLMv1), and NTLMv2 authentication is underutilized.
 <p>
 Instructions for enabling NTLM version 2 are detailed in
- <a href="http://support.microsoft.com/default.aspx?scid=KB;en-us;239869">Microsoft Knowledge Base Article 239869</a>; briefly, a modification is made to the
+ <a href="https://support.microsoft.com/en-us/kb/239869">Microsoft Knowledge Base Article 239869</a>; briefly, a modification is made to the
  registry value:
 <pre>
     HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\LSA\LMCompatibilityLevel
@@ -2784,7 +2784,7 @@ At this point, we will start to look at how NTLM fits into the "big picture".
 Windows provides a security framework known as SSPI - the Security Support
 Provider interface.  This is the Microsoft equivalent of the GSS-API
 (Generic Security Service Application Program Interface,
-<a href="http://www.ietf.org/rfc/rfc2743.txt">RFC 2743</a>), and allows for a
+<a href="https://www.ietf.org/rfc/rfc2743.txt">RFC 2743</a>), and allows for a
 very high-level, mechanism-independent means of applying authentication,
 integrity, and confidentiality primitives.  SSPI supports several underlying
 providers; one of these is the NTLMSSP (NTLM Security Support Provider), which
@@ -2989,7 +2989,7 @@ token.  Note that the client is still in connection-oriented mode; the Type 3
 message produced will ignore the "Negotiate Datagram Style" flag applied to the
 Type 2 message.  The server, however, is enforcing datagram semantics, and
 will now require the Type 3 flags to be set appropriately.  Adding the
-"Negotiate Datagram Style" flag to the Type 3 message manually before 
+"Negotiate Datagram Style" flag to the Type 3 message manually before
 sending it to the server allows the server to successfully call
 <tt>AcceptSecurityContext</tt> with the modified token.
 <p>
@@ -3167,7 +3167,7 @@ session response).
 </li>
 <li>
 The HMAC-MD5 algorithm is applied to the session nonce, using the NTLM
-User Session Key as the key.  The resulting 16-byte value is the NTLM2 Session 
+User Session Key as the key.  The resulting 16-byte value is the NTLM2 Session
 Response User Session Key.
 </li>
 </ol>
@@ -3388,7 +3388,7 @@ would be "<tt>0x01020304050607a0</tt>".
 <h3>Signing</h3>
 <p>
 Once the key has been negotiated it can be used to produce digital signatures,
-providing message integrity.  Support for signing is indicated by the 
+providing message integrity.  Support for signing is indicated by the
 presence of the "Negotiate Sign" NTLM flag.
 <p>
 NTLM1 signing (as done by the SSPI <tt>MakeSignature</tt> function) is
@@ -3888,9 +3888,9 @@ Note that due to the highly dynamic and transient nature of the Web,
 these may or may not be available.
 <p>
 <dl>
-    <dt><a href="http://jcifs.samba.org/">The jCIFS Project Home Page</a></dt>
+    <dt><a href="https://jcifs.samba.org/">The jCIFS Project Home Page</a></dt>
     <dd>
-    <i>http://jcifs.samba.org/</i>
+    <i>https://jcifs.samba.org/</i>
     <br>
     jCIFS is an open-source Java implementation of CIFS/SMB.  The information
     presented in this article was used as the basis for the jCIFS
@@ -3900,9 +3900,9 @@ these may or may not be available.
     </dd>
 </dl>
 <dl>
-    <dt><a href="http://www.samba.org/">The Samba Home Page</a></dt>
+    <dt><a href="https://www.samba.org/">The Samba Home Page</a></dt>
     <dd>
-    <i>http://www.samba.org/</i>
+    <i>https://www.samba.org/</i>
     <br>
     Samba is an open-source CIFS/SMB server and client.  Implements
     NTLM authentication and session security, and a reference for much of
@@ -3920,18 +3920,18 @@ these may or may not be available.
     </dd>
 </dl>
 <dl>
-    <dt><a href="http://www.opengroup.org/comsource/techref2/NCH1222X.HTM">The Open Group ActiveX Core Technology Reference (Chapter 11, "NTLM")</a></dt>
+    <dt><a href="https://www.opengroup.org/comsource/techref2/NCH1222X.HTM">The Open Group ActiveX Core Technology Reference (Chapter 11, "NTLM")</a></dt>
     <dd>
-    <i>http://www.opengroup.org/comsource/techref2/NCH1222X.HTM</i>
+    <i>https://www.opengroup.org/comsource/techref2/NCH1222X.HTM</i>
     <br>
     Closest thing to an "official" reference on NTLM.  Unfortunately, also
     rather old and not terribly accurate.
     </dd>
 </dl>
 <dl>
-    <dt><a href="http://www.microsoft.com/windows2000/techinfo/howitworks/security/sspi2000.asp">The Security Support Provider Interface</a></dt>
+    <dt><a href="https://www.microsoft.com/windows2000/techinfo/howitworks/security/sspi2000.asp">The Security Support Provider Interface</a></dt>
     <dd>
-    <i>http://www.microsoft.com/windows2000/techinfo/howitworks/security/sspi2000.asp</i>
+    <i>https://www.microsoft.com/windows2000/techinfo/howitworks/security/sspi2000.asp</i>
     <br>
     A whitepaper discussing application development using the SSPI.
     </dd>
@@ -3953,63 +3953,63 @@ these may or may not be available.
     </dd>
 </dl>
 <dl>
-    <dt><a href="http://jakarta.apache.org/commons/httpclient/">Jakarta Commons HttpClient</a></dt>
+    <dt><a href="https://jakarta.apache.org/commons/httpclient/">Jakarta Commons HttpClient</a></dt>
     <dd>
-    <i>http://jakarta.apache.org/commons/httpclient/</i>
+    <i>https://jakarta.apache.org/commons/httpclient/</i>
     <br>
     An open-source Java HTTP client which provides support for the NTLM
     HTTP authentication scheme.
     </dd>
 </dl>
 <dl>
-    <dt><a href="http://www.gnu.org/software/gnu-crypto/">The GNU Crypto Project</a></dt>
+    <dt><a href="https://www.gnu.org/software/gnu-crypto/">The GNU Crypto Project</a></dt>
     <dd>
-    <i>http://www.gnu.org/software/gnu-crypto/</i>
+    <i>https://www.gnu.org/software/gnu-crypto/</i>
     <br>
     An open-source Java Cryptography Extension provider supplying an
     implementation of the MD4 message-digest algorithm.
     </dd>
 </dl>
 <dl>
-    <dt><a href="http://www.ietf.org/rfc/rfc1320.txt">RFC 1320 - The MD4 Message-Digest Algorithm</a></dt>
+    <dt><a href="https://www.ietf.org/rfc/rfc1320.txt">RFC 1320 - The MD4 Message-Digest Algorithm</a></dt>
     <dd>
-    <i>http://www.ietf.org/rfc/rfc1320.txt</i>
+    <i>https://www.ietf.org/rfc/rfc1320.txt</i>
     <br>
     Specification and reference implementation for the MD4 digest (used to
     calculate the NTLM password hash).
     </dd>
 </dl>
 <dl>
-    <dt><a href="http://www.ietf.org/rfc/rfc1321.txt">RFC 1321 - The MD5 Message-Digest Algorithm</a></dt>
+    <dt><a href="https://www.ietf.org/rfc/rfc1321.txt">RFC 1321 - The MD5 Message-Digest Algorithm</a></dt>
     <dd>
-    <i>http://www.ietf.org/rfc/rfc1321.txt</i>
+    <i>https://www.ietf.org/rfc/rfc1321.txt</i>
     <br>
     Specification and reference implementation for the MD5 digest (used to
     calculate the NTLM2 session response).
     </dd>
 </dl>
 <dl>
-    <dt><a href="http://www.ietf.org/rfc/rfc2104.txt">RFC 2104 - HMAC: Keyed-Hashing for Message Authentication</a></dt>
+    <dt><a href="https://www.ietf.org/rfc/rfc2104.txt">RFC 2104 - HMAC: Keyed-Hashing for Message Authentication</a></dt>
     <dd>
-    <i>http://www.ietf.org/rfc/rfc2104.txt</i>
+    <i>https://www.ietf.org/rfc/rfc2104.txt</i>
     <br>
     Specification and reference implementation for the HMAC-MD5 algorithm
     (used in the calculation of the NTLMv2/LMv2 responses).
     </dd>
 </dl>
 <dl>
-    <dt><a href="http://support.microsoft.com/default.aspx?scid=KB;en-us;239869">How to Enable NTLM 2 Authentication</a></dt>
+    <dt><a href="https://support.microsoft.com/default.aspx?scid=KB;en-us;239869">How to Enable NTLM 2 Authentication</a></dt>
     <dd>
-    <i>http://support.microsoft.com/default.aspx?scid=KB;en-us;239869</i>
+    <i>https://support.microsoft.com/default.aspx?scid=KB;en-us;239869</i>
     <br>
     Describes how to enable negotiation of NTLMv2 authentication and enforce
     NTLM security flags.
     </dd>
 </dl>
 <dl>
-    <dt><a href="http://windowssdk.msdn.microsoft.com/en-us/library/ms717571.aspx#sspi_functions">Microsoft SSPI Function Documentation</a></dt>
+    <dt><a href="https://msdn.microsoft.com/en-us/library/bb742535.aspx">Microsoft SSPI Function Documentation</a></dt>
     <dd>
-    <i>http://windowssdk.msdn.microsoft.com/en-us/library/ms717571.aspx#sspi_functions</i>
+    <i>https://msdn.microsoft.com/en-us/library/bb742535.aspx</i>
     <br>
     Provides an overview of the Security Support Provider Interface (SSPI) and
     related functions.
@@ -4156,7 +4156,7 @@ the headers passed between the client and server are identical, except
 Microsoft's Exchange server provides an NTLM authentication mechanism for the
 POP3 protocol.  This is a proprietary extension used with the POP3
 <tt>AUTH</tt> command as documented in
-<a href="http://www.ietf.org/rfc/rfc1734.txt">RFC 1734</a>.  On the client
+<a href="https://www.ietf.org/rfc/rfc1734.txt">RFC 1734</a>.  On the client
 side, this mechanism is supported by Outlook and Outlook Express, and is called
 "Secure Password Authentication".
 <p>
@@ -4241,7 +4241,7 @@ After successful authentication has occurred, the POP3 session enters the
 <p>
 Exchange provides an IMAP authentication mechanism similar in form to the
 POP3 mechanism previously discussed.  IMAP authentication is documented in
-<a href="http://www.ietf.org/rfc/rfc1730.txt">RFC 1730</a>; the NTLM
+<a href="https://www.ietf.org/rfc/rfc1730.txt">RFC 1730</a>; the NTLM
 mechanism is a proprietary extension provided by Exchange and supported
 by the Outlook client family.
 <p>
@@ -4323,7 +4323,7 @@ In addition to the NTLM authentication mechanisms provided for POP3 and IMAP,
 Exchange provides similar functionality for the SMTP protocol.  This allows
 NTLM authentication of users sending outgoing mail messages.  This is a
 proprietary extension used with the SMTP <tt>AUTH</tt> command (documented in
-<a href="http://www.ietf.org/rfc/rfc2554.txt">RFC 2554</a>).
+<a href="https://www.ietf.org/rfc/rfc2554.txt">RFC 2554</a>).
 <p>
 The SMTP NTLM authentication handshake operates as follows:
 <ol>
@@ -6898,7 +6898,7 @@ Listed below is an annotated sample implementation of the various Type 3
 response calculations in Java.  This example requires a JCE provider
 implementing the MD4 message-digest algorithm; the author recommends
 GNU Crypto, available at
-<a href="http://www.gnu.org/software/gnu-crypto/">http://www.gnu.org/software/gnu-crypto/</a>.
+<a href="https://www.gnu.org/software/gnu-crypto/">https://www.gnu.org/software/gnu-crypto/</a>.
 <p>
 <div style="background: #fcfcfc; border: 1px lightgrey dotted; padding: 4px;">
 <pre>
@@ -7261,7 +7261,7 @@ GNU Crypto, available at
 </div>
 
 <hr>
-<a href="http://sourceforge.net"><img align="right" src="http://sourceforge.net/sflogo.php?group_id=78146&amp;type=5" width="210" height="62" border="0" alt="SourceForge.net Logo"></a>
+<a href="https://sourceforge.net"><img align="right" src="https://sourceforge.net/sflogo.php?group_id=78146&amp;type=5" width="210" height="62" border="0" alt="SourceForge.net Logo"></a>
 <small>
     All trademarks mentioned in this document are the property of their
     respective owners.
