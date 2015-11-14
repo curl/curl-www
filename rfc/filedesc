@@ -118,3 +118,4 @@ rfc7232.txt Hypertext Transfer Protocol (HTTP/1.1): Conditional Requests (obsole
 rfc7233.txt Hypertext Transfer Protocol (HTTP/1.1): Range Requests (obsoletes RFC2616)
 rfc7234.txt Hypertext Transfer Protocol (HTTP/1.1): Caching (obsoletes RFC2616)
 rfc7235.txt Hypertext Transfer Protocol (HTTP/1.1): Authentication (obsoletes RFC2616)
+rfc7628.txt A Set of Simple Authentication and Security Layer (SASL) Mechanisms for OAuth
