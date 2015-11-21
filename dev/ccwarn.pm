@@ -24,7 +24,7 @@ sub checkwarn {
     my ($l)=@_;
 
     # gcc warning:
-    if (($l =~ /^..\/([.\/a-zA-Z0-9-_]*)\.[chsy]:([0-9:]*): /) ||
+    if (($l =~ /^/([.\/a-zA-Z0-9-_]*)\.[chsy]:([0-9:]*): /) ||
         # AIX xlc warnings:
         ($l =~ /\"([_.\/a-zA-Z0-9]+)\", line/) ||
         # Tru64 DEC/Compaq C compiler:
