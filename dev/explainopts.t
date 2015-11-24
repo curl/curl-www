@@ -6,7 +6,7 @@ Open(<b>S</b>)SL, Gnu(<b>T</b>)LS, (<b>N</b>)SS, a(<b>X</b>)TLS, P(<b>O</b>)larS
 (<b>G</b>)SS-API, Kerberos (<b>5</b>), SPNEGO (<b>K</b>), NTL(<b>M</b>),
 lib(<b>I</b>)dn, (<b>W</b>)inIDN,
 SS(<b>P</b>)I,
-libssh(<b>2</b>), m(<b>E</b>)talink, HTTP2 (<b>F</b>),
+libssh(<b>2</b>), m(<b>E</b>)talink, PSL (<b>1</b>), HTTP2 (<b>F</b>),
 (<b>U</b>)nix Sockets
 
 <p> Text <span class='buildserverprob'>looking like this</span> is for servers
