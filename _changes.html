@@ -47,6 +47,91 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_46_0"></a>
+SUBTITLE(Fixed in 7.46.0 - December 2 2015)
+<p> Changes:
+<ul class="changes">
+ CHG configure: build silently by default
+ CHG cookies: Add support for Publix Suffix List with libpsl
+ CHG <a href="http://curl.haxx.se/bug/?i=496">vtls: added support for mbedTLS</a>
+ CHG <a href="http://curl.haxx.se/libcurl/c/CURLOPT_STREAM_DEPENDS.html">Added CURLOPT_STREAM_DEPENDS</a>
+ CHG <a href="http://curl.haxx.se/libcurl/c/CURLOPT_STREAM_DEPENDS_E.html">Added CURLOPT_STREAM_DEPENDS_E</a>
+ CHG <a href="http://curl.haxx.se/libcurl/c/CURLOPT_STREAM_WEIGHT.html">Added CURLOPT_STREAM_WEIGHT</a>
+ CHG <a href="http://curl.haxx.se/bug/?i=425">Added CURLFORM_CONTENTLEN</a>
+ CHG oauth2: Added support for OAUTHBEARER SASL mechanism to IMAP, POP3 and SNMP
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF des: Fix header conditional for Curl_des_set_odd_parity
+ BGF <a href="http://curl.haxx.se/bug/?i=478">ntlm: get rid of unconditional use of long long</a>
+ BGF CURLOPT_CERTINFO.3: fix reference to CURLINFO_CERTINFO
+ BGF <a href="http://curl.haxx.se/bug/?i=479">docs: CURLINFO_LASTSOCKET => CURLINFO_ACTIVESOCKET</a>
+ BGF http2: Fix http2_recv to return -1 if recv returned -1
+ BGF curl_global_init_mem: set function pointers before doing init
+ BGF <a href="http://curl.haxx.se/bug/?i=478">ntlm: error out without 64bit support as the code needs it</a>
+ BGF openssl: Fix set up of pkcs12 certificate verification chain
+ BGF <a href="http://curl.haxx.se/mail/lib-2015-10/0035.html">acinclude: remove PKGCONFIG override</a>
+ BGF test1531: case the size to fix the test on non-largefile builds
+ BGF <a href="http://curl.haxx.se/bug/?i=346">fread_func: move callback pointer from set to state struct</a>
+ BGF test1601: fix compilation with --enable-debug and --disable-crypto-auth
+ BGF <a href="http://curl.haxx.se/bug/?i=493">http2: Don't pass unitialized name+len pairs to nghttp2_submit_request</a>
+ BGF curlbuild.h: Fix non-configure compiling to mips and sh4 targets
+ BGF <a href="http://curl.haxx.se/bug/?i=452">tool: Generate easysrc with last cache linked-list</a>
+ BGF cmake: Fix for add_subdirectory(curl) use-case
+ BGF vtls: fix compiler warning for TLS backends without sha256
+ BGF build: fix for MSDOS/djgpp
+ BGF checksrc: add crude // detection
+ BGF http2: on_frame_recv: trust the conn/data input
+ BGF <a href="http://curl.haxx.se/bug/?i=480">ftp: allow CURLOPT_IGNORE_CONTENT_LENGTH to ignore size</a>
+ BGF polarssl/mbedtls: fix name space pollution
+ BGF <a href="https://github.com/bagder/curl/pull/501">build: Fix mingw ssl gdi32 order</a>
+ BGF build: Fix support for PKG_CONFIG
+ BGF MacOSX-Framework: sdk regex fix for sdk 10.10 and later
+ BGF socks: Fix incorrect port numbers in failed connect messages
+ BGF curl.1: -E: s/private certificate/client certificate
+ BGF <a href="http://curl.haxx.se/bug/?i=506">curl.h: s/HTTPPOST_/CURL_HTTPOST_</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=425">curl_formadd: support >2GB files on windows</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=473">http redirects: %-encode bytes outside of ascii range</a>
+ BGF rawstr: Speed up Curl_raw_toupper by 40%
+ BGF curl_ntlm_core: fix 2 curl_off_t constant overflows.
+ BGF getinfo: CURLINFO_ACTIVESOCKET: fix bad socket value
+ BGF tftp tests: verify sent options too
+ BGF imap: Don't call imap_atom() when no mailbox specified in LIST command
+ BGF imap: Fixed double quote in LIST command when mailbox contains spaces
+ BGF <a href="http://curl.haxx.se/bug/?i=486">imap: Don't check for continuation when executing a CUSTOMREQUEST</a>
+ BGF acinclude: Remove check for 16-bit curl_off_t
+ BGF <a href="http://curl.haxx.se/bug/?i=524">BoringSSL: Work with stricter BIO_get_mem_data()</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=523">cmake: Add missing feature macros in config header</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=525">sasl_sspi: fixed unicode build for digest authentication</a>
+ BGF sasl_sspi: fix identity memory leak in digest authentication
+ BGF unit1602: Fixed failure in torture test
+ BGF unit1603: Added unit tests for hash functions
+ BGF vtls/openssl: remove unused traces of yassl ifdefs
+ BGF openssl: remove #ifdefs for < 0.9.7 support
+ BGF typecheck-gcc.h: add some missing options
+ BGF curl: mark two more options strings for --libcurl output
+ BGF <a href="http://curl.haxx.se/bug/?i=526">openssl: Free modules on cleanup</a>
+ BGF CURLMOPT_PUSHFUNCTION.3: *_byname() returns only the first header
+ BGF getconnectinfo: Don't call recv(2) if socket == -1
+ BGF http2: http_done: don't free already-freed push headers
+ BGF <a href="http://curl.haxx.se/bug/?i=532">zsh completion: Preserve single quotes in output</a>
+ BGF os400: Provide options for libssh2 use in compile scripts.
+ BGF <a href="http://curl.haxx.se/bug/?i=535">build: Fix theoretical infinite loops</a>
+ BGF pop3: Differentiate between success and continuation responses
+ BGF examples: Fixed compilation warnings
+ BGF schannel: Use GetVersionEx() when VerifyVersionInfo() isn't available
+ BGF CURLOPT_HEADERFUNCTION.3: fix typo
+ BGF curl: expanded the -XHEAD warning text
+ BGF <a href="http://curl.haxx.se/bug/?i=538">done: make sure the final progress update is made</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=534">build: Install zsh completion</a>
+ BGF <a href="http://stackoverflow.com/questions/33903982/curl-timecond-none-doesnt-work-how-to-remove-if-modified-since-header">RTSP: do not add if-modified-since without timecondition</a>
+ BGF curl: Fixed display of URL index in password prompt for --next
+ BGF <a href="http://curl.haxx.se/mail/lib-2015-11/0088.html">nonblock: fix setting non-blocking mode for Amiga</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=530">http2 push: add missing inits of new stream</a>
+ BGF http2: convert some verbose output into debug-only output
+ BGF <a href="http://curl.haxx.se/bug/?i=546">Curl_read_plain: clean up ifdefs that break statements</a>
+</ul>
+
 SUBTITLE(Fixed in 7.45.0 - October 7 2015)
 <p> Changes:
 <ul class="changes">
