@@ -1,0 +1,83 @@
+local file overwrite in curl tool for Windows
+=============================================
+
+Project cURL Security Advisory, January 27th 2016 -
+[Permalink](http://curl.haxx.se/docs/adv_20160127B.html)
+
+VULNERABILITY
+-------------
+
+The curl command line tool offers a feature that will save the remote file
+identified with a URL locally using the name that the server provides in the
+Content-Disposition: header. This option is activated when both -O and -J are
+used.
+
+When the -J option is used, curl is meant to strip off all path information
+from the suggested file name, and save the downloaded file in the local
+directory only using the file name part the server stated.
+
+The strip-path function didn't properly remove or replace colons from these
+server provided file names, and this flaw would allow a server to send a
+suggested file name starting with a Windows drive letter, possibly leading to
+curl overwriting a local file in a directory different than the
+current. Contrary to expectations and documentation.
+
+We are not aware of any exploit of this flaw.
+
+INFO
+----
+
+This flaw only affects the curl command line tool as this is a feature not
+present or provided by libcurl.
+
+The Common Vulnerabilities and Exposures (CVE) project has assigned the name
+CVE-XXXX-XXXX to this issue.
+
+AFFECTED VERSIONS
+-----------------
+
+This flaw is relevant for
+
+- Affected versions: curl 7.20.0 to and including 7.46.0
+- Not affected versions: curl < 7.20.0 and curl >= 7.47.0
+
+This feature was added in 7.20.0 and didn't exist before then.
+
+THE SOLUTION
+------------
+
+In version 7.47.0, curl replaces all colons in these file names with an
+underscore.
+
+A patch for this problem that changes the default is available at (the URL
+will be updated in final advisory):
+
+    http://curl.haxx.se/strip-colons.patch
+
+RECOMMENDATIONS
+---------------
+
+We suggest you take one of the following actions immediately, in order of
+preference:
+
+ A - Upgrade curl and libcurl to version 7.47.0
+
+ B - Apply the patch to your version and rebuild
+
+ C - Do not use -J on Windows.
+
+TIME LINE
+---------
+
+It was first reported to the curl project on November 30 2015. We contacted
+distros@openwall on January XXX 2016.
+
+curl 7.47.0 was released on January 27 2016, coordinated with the publication
+of this advisory.
+
+CREDITS
+-------
+
+Reported and patched by Ray Satiro.
+
+Thanks a lot!
