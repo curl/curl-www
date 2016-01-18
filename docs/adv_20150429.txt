@@ -68,8 +68,7 @@ change this option in their application.
 curl of version >= 7.37 already sends headers that are set with '--header'
 option only to the destination server iff --proxy-header is also used.
 
-A patch for this problem that changes the default is available at (URL will be
-updated in final advisory):
+A patch for this problem that changes the default is available at:
 
     http://curl.haxx.se/CVE-2015-3153.patch
 

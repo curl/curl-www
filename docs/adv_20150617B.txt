@@ -47,8 +47,7 @@ THE SOLUTION
 In version 7.43.0, libcurl properly range checks the values before they are
 used.
 
-A patch for this problem that changes the default is available at (URL will be
-updated in final advisory):
+A patch for this problem that changes the default is available at:
 
     http://curl.haxx.se/CVE-2015-3237.patch
 

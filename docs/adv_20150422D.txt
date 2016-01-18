@@ -42,7 +42,7 @@ THE SOLUTION
 
 libcurl 7.42.0 better verifies the input string to the affected function.
 
-A patch for this problem is available at [URL will be updated]:
+A patch for this problem is available at:
 
     http://curl.haxx.se/CVE-2015-3144.patch
 

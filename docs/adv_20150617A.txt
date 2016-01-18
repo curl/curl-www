@@ -60,8 +60,7 @@ THE SOLUTION
 In version 7.43.0, libcurl properly clears the credentials and prevents them
 from lingering around.
 
-A patch for this problem that changes the default is available at (URL will be
-updated in final advisory):
+A patch for this problem that changes the default is available at:
 
     http://curl.haxx.se/CVE-2015-3236.patch
 
