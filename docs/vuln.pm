@@ -1,5 +1,7 @@
 # page, first vulnerable version, last vulnerable version, name, CVE, date (YYYYMMDD)
 @vuln = (
+    "adv_20160127B.html|7.20.0|7.46.0|remote file name path traversal in curl tool for Windows|CVE-XXXX-XXXX|20160127",
+    "adv_20160127A.html|7.10.7|7.46.0|NTLM credentials not-checked for proxy connection re-use|CVE-XXXX-XXXX|20160127",
     "adv_20150617B.html|7.40.0|7.42.1|SMB send off unrelated memory contents|CVE-2015-3237|20150617",
     "adv_20150617A.html|7.40.0|7.42.1|lingering HTTP credentials in connection re-use|CVE-2015-3236|20150617",
     "adv_20150429.html|7.1|7.42.0|sensitive HTTP server headers also sent to proxies|CVE-2015-3153|20150429",
