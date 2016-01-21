@@ -1,0 +1,24 @@
+#include "_doctype.html"
+#define FLAWNAME local file overwrite in curl tool for Windows
+
+<HTML>
+<HEAD> <TITLE>cURL - FLAWNAME</TITLE>
+#include "css.t"
+#include "manpage.t"
+</HEAD>
+
+#define CURL_DOCS
+#define CURL_URL docs/adv_20160127B.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(Docs, "/docs/", Security, "/docs/security.html",
+ FLAWNAME)
+
+#include "adv-related-box.inc"
+
+#include "adv_20160127B.gen"
+
+#include "_footer.html"
+</body> </html>
