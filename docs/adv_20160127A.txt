@@ -43,7 +43,7 @@ This flaw can also affect the curl command line tool if a similar operation
 series is made with that.
 
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
-CVE-XXXX-XXXX to this issue.
+CVE-2016-0755 to this issue.
 
 AFFECTED VERSIONS
 -----------------

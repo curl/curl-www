@@ -45,7 +45,7 @@ This flaw only affects the curl command line tool as this is a feature not
 present or provided by libcurl.
 
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
-CVE-XXXX-XXXX to this issue.
+CVE-2016-0754 to this issue.
 
 AFFECTED VERSIONS
 -----------------
