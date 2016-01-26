@@ -61,10 +61,9 @@ THE SOLUTION
 In version 7.47.0, libcurl properly verifies the credentials for NTLM proxies
 and only reuses a connection if there there is a match.
 
-A patch for this problem that changes the default is available at (this URL
-will be changed in the final advisory):
+A patch for this problem that changes the default is available at:
 
-    http://curl.haxx.se/proxy-ntlm-reuse.patch
+    http://curl.haxx.se/CVE-2016-0755.patch
 
 RECOMMENDATIONS
 ---------------
