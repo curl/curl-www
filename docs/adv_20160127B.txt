@@ -69,9 +69,9 @@ Starting in curl 7.47.0 the curl tool in Windows will replace all colons in a
 remote file name with underscores. For example if f:foo::$DATA is the remote
 file name it will be sanitized as f_foo__$DATA .
 
-A patch is available at (this URL will be changed in the final advisory):
+A patch is available at:
 
-    http://curl.haxx.se/curl-strip-colons.patch
+    http://curl.haxx.se/CVE-2016-0754.patch
 
 Exercise judicious use of the -J option. The -J option when combined with -O
 lets the server choose the file name. Do you trust the server you are using
