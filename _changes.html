@@ -47,6 +47,77 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_47_0"></a>
+SUBTITLE(Fixed in 7.47.0 - January 27 2016)
+<p> Changes:
+<ul class="changes">
+ CHG version: Add flag CURL_VERSION_PSL for libpsl
+ CHG <a href="http://curl.haxx.se/libcurl/c/CURLOPT_HTTP_VERSION.html">http: added CURL_HTTP_VERSION_2TLS to do HTTP/2 for HTTPS only</a>
+ CHG curl: use 2TLS by default
+ CHG <a href="http://curl.haxx.se/docs/manpage.html#--expect100-timeout">curl --expect100-timeout: added</a>
+ CHG <a href="http://curl.haxx.se/bug/?i=574">Add .dir-locals and set c-basic-offset to 2 (for emacs)</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="http://curl.haxx.se/docs/adv_20160127B.html">curl: avoid local drive traversal when saving file on Windows</a>
+ BGF <a href="http://curl.haxx.se/docs/adv_20160127A.html">NTLM: do not resuse proxy connections without diff proxy credentials</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2015-12/0003.html">tests: Disable the OAUTHBEARER tests when using a non-default port number</a>
+ BGF curl: remove keepalive #ifdef checks done on libcurl's behalf
+ BGF <a href="https://github.com/bagder/curl/issues/425#issuecomment-154518679">formdata: Check if length is too large for memory</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2015-12/0023.html">lwip: Fix compatibility issues with later versions</a>
+ BGF openssl: BoringSSL doesn't have CONF_modules_free
+ BGF config-win32: Fix warning HAVE_WINSOCK2_H undefined
+ BGF <a href="http://curl.haxx.se/bug/?i=558">build: fix compilation error with CURL_DISABLE_VERBOSE_STRINGS</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2015-11/0103.html">http2: Fix hanging paused stream</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=555">scripts/Makefile: fix GNUism and survive no perl</a>
+ BGF openssl: adapt to 1.1.0+ name changes
+ BGF <a href="http://curl.haxx.se/bug/?i=491">openssl: adapt to openssl >= 1.1.0 X509 opaque structs</a>
+ BGF HTTP2.md: spell fix and remove TODO now implemented
+ BGF <a href="http://curl.haxx.se/bug/?i=565">setstropt: const-correctness</a>
+ BGF cyassl: fix compiler warning on type conversion
+ BGF <a href="http://curl.haxx.se/mail/lib-2015-12/0062.html">gskit: Fix host subject altname verification</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=564">http2: Support trailer fields</a>
+ BGF wolfssl: handle builds without SSLv3 support
+ BGF <a href="http://curl.haxx.se/bug/?i=565">cyassl: deal with lack of *get_peer_certificate</a>
+ BGF sockfilt: do not wait on unreliable file or pipe handle
+ BGF make: build zsh script even in an out-of-tree build
+ BGF test 1326: fix getting stuck on Windows
+ BGF test 87: fix file check on Windows
+ BGF <a href="https://github.com/Alexpux/MINGW-packages/tree/master/mingw-w64-curl">configure: allow static builds on mingw</a>
+ BGF <a href="https://github.com/Alexpux/MINGW-packages/commit/9253d0bf58a1486e91f7efb5316e7fdb48fa4007">configure: detect IPv6 support on Windows</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=575">ConnectionExists: with *PIPEWAIT, wait for connections</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=577">Makefile.inc: s/curl_SOURCES/CURL_FILES</a>
+ BGF test 16: fixed for Windows
+ BGF test 252-255: use datacheck mode text for ASCII-mode LISTings
+ BGF tftpd server: add Windows support by writing files in binary mode
+ BGF ftplistparser: fix handling of file LISTings using Windows EOL
+ BGF tests first.c: fix calculation of sleep timeout on Windows
+ BGF tests (several): use datacheck mode text for ASCII-mode LISTings
+ BGF CURLOPT_RANGE.3: for HTTP servers, range support is optional
+ BGF test 1515: add MSYS support by passing a relative path
+ BGF <a href="http://curl.haxx.se/bug/?i=586">curl_global_init.3: Add Windows-specific info for init via DLL</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=564">http2: Fix client write for trailers on stream close</a>
+ BGF mbedtls: Fix ALPN support
+ BGF <a href="http://curl.haxx.se/bug/?i=592">connection reuse: IDN host names fixed</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=564">http2: Fix PUSH_PROMISE headers being treated as trailers</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2016-01/0031.html">http2: handle the received SETTINGS frame</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=564">http2: Ensure that http2_handle_stream_close is called</a>
+ BGF mbedtls: implement CURLOPT_PINNEDPUBLICKEY
+ BGF runtests: Add mbedTLS to the SSL backends
+ BGF <a href="http://curl.haxx.se/bug/?i=596">IDN host names: Remove the port number before converting to ACE</a>
+ BGF zsh.pl: fail if no curl is found
+ BGF scripts: fix zsh completion generation
+ BGF <a href="http://curl.haxx.se/bug/?i=582">scripts: don't generate and install zsh completion when cross-compiling</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=597">lib: Prefix URLs with lower-case protocol names/schemes</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=584">ConnectionExists: only do pipelining/multiplexing when asked</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=594">configure: assume IPv6 works when cross-compiled</a>
+ BGF openssl: for 1.1.0+ they now provide a SSLeay() macro of their own
+ BGF openssl: improved error detection/reporting
+ BGF <a href="http://curl.haxx.se/mail/lib-2016-01/0072.html">ssh: CURLOPT_SSH_PUBLIC_KEYFILE now treats "" as NULL again</a>
+ BGF <a href="http://curl.haxx.se/bug/?i=601">mbedtls: Fix pinned key return value on fail</a>
+ BGF <a href="http://curl.haxx.se/mail/lib-2016-01/0123.html">maketgz: generate date stamp with LC_TIME=C</a>
+</ul>
+
 <a name="7_46_0"></a>
 SUBTITLE(Fixed in 7.46.0 - December 2 2015)
 <p> Changes:
