@@ -51,7 +51,7 @@ AFFECTED VERSIONS
 -----------------
 
 In the case of using a remote file name provided by the user (-O without -J),
-the feature has existed since inception. <- check this I'm not sure.
+the feature has existed since inception.
 
 - Affected versions (-O): curl <= 7.46.0
 - Not affected versions (-O): curl >= 7.47.0
@@ -66,8 +66,8 @@ THE SOLUTION
 ------------
 
 Starting in curl 7.47.0 the curl tool in Windows will replace all colons in a
-remote file name with underscores. For example if f:foo::$DATA is the remote
-file name it will be sanitized as f_foo__$DATA .
+remote file name with underscores. For example if `f:foo::$DATA` is the remote
+file name it will be sanitized as `f_foo__$DATA` .
 
 A patch is available at:
 
