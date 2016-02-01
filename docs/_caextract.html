@@ -31,9 +31,6 @@ TITLE(Automatically converted CA Certs from mozilla.org)
 <p>
  HTTPS from github: <a href="https://raw.githubusercontent.com/bagder/ca-bundle/master/ca-bundle.crt">ca-bundle.crt</a>
 
-<p>
- HTTP from curl.haxx.se: <a href="http://curl.haxx.se/ca/cacert.pem">cacert.pem</a>
- 
 </ul>
 
 <p>
@@ -63,8 +60,6 @@ SUBTITLE(Changelog)
  cross-signed by Entrust etc). See details
  in <a href="https://sourceforge.net/p/curl/bugs/1178/">bug #1178</a>.
 
-#endif
-
 SUBTITLE(RSA-1024 removed)
 <p>
  Around early September 2014, Mozilla removed the trust bits from the certs in
@@ -77,22 +72,25 @@ SUBTITLE(RSA-1024 removed)
  cleanup: <a href="https://github.com/bagder/ca-bundle/blob/e9175fec5d0c4d42de24ed6d84a06d504d5e5a09/ca-bundle.crt">an
  older ca-bundle from github</a>.
 
+#endif
+
 SUBTITLE(CA cert bundle license)
 <p>
- This new file is only a converted version of the original one and thus it is
- licensed under the same licenses as the Mozilla source file: MPL 1.1, GPL
- v2.0 or LGPL 2.1
+ The PEM file is only a converted version of the original one and thus it is
+ licensed under the same license as the Mozilla source file: MPL 2.0
 
 SUBTITLE(The conversion script mk-ca-bundle)
 <p>
  The <a href="mk-ca-bundle.html">mk-ca-bundle</a> tool
  converts <a href="https://www.mozilla.org/">Mozilla</a>'s cert bundle to PEM
- format, suitable for (lib)curl and others. Writtten by Guenter Knauf.
+ format, suitable for (lib)curl and others.
 
 SUBTITLE(Convert from your local Firefox installation)
 
 <p> You can also extract the ca certs off your Firefox installation, if you
- just have the 'certutil' tool installed and run the <a href="https://github.com/bagder/curl/blob/master/lib/firefox-db2pem.sh">firefox-db2pem.sh</a> script!
+ just have the 'certutil' tool installed and run
+ the <a href="https://github.com/bagder/curl/blob/master/lib/firefox-db2pem.sh">firefox-db2pem.sh</a>
+ script!
 
 </ol>
 
