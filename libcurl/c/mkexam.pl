@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-my $manpage="http://curl.haxx.se/libcurl/c";
+my $manpage="https://curl.haxx.se/libcurl/c";
 
 my $template="_example-templ.html";
 
