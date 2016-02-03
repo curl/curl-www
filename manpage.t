@@ -1,1 +1,1 @@
-<link rel="STYLESHEET" type="text/css" href="http://curl.haxx.se/manpage.css">
+<link rel="STYLESHEET" type="text/css" href="https://curl.haxx.se/manpage.css">
