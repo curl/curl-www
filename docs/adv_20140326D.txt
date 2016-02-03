@@ -39,7 +39,7 @@ http://curl.haxx.se/docs/security.html
 
   A patch for this problem is available at:
 
-    https://github.com/bagder/curl/commit/63fc8ee7be2b71
+    https://github.com/curl/curl/commit/63fc8ee7be2b71
 
   The fix was committed to the public source code repository because the full
   security impact wasn't properly realized until after the fact.

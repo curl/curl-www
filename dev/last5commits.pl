@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-# Copyright (C) 2010-2014, Daniel Stenberg, <daniel@haxx.se>
+# Copyright (C) 2010-2016, Daniel Stenberg, <daniel@haxx.se>
 
 #
 # commit d4cd5411a66d6814adccdfc81ff1d8a80e8c58af
@@ -49,7 +49,7 @@ sub showc {
         $desc =~ s/\n\n/<p>/g;
 
 #        printf("<tr class=\"$cl\"><td><a href=\"%s/%s\">%s</a></td><td>%s</td></tr><tr class=\"$cl\"><td>%s</td><td><pre>%s</pre></td></tr>\n",
-#               "https://github.com/bagder/curl/commit",
+#               "https://github.com/curl/curl/commit",
 #               $c{'commit'},
 #               $fl,
 #               $auth,
@@ -57,7 +57,7 @@ sub showc {
 #               $c{'files'});
 
         printf("<tr class=\"$cl\"><td><a href=\"%s/%s\">%s</a></td><td>%s</td></tr>\n",
-               "https://github.com/bagder/curl/commit",
+               "https://github.com/curl/curl/commit",
                $c{'commit'},
                $fl, $auth);
 

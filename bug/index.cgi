@@ -8,8 +8,8 @@ my $num = CGI::param('i');
 $num =~ s/[^0-9]//g; 
 
 if($num > 1) {
-    print "Location: https://github.com/bagder/curl/issues/$num\n\n";
+    print "Location: https://github.com/curl/curl/issues/$num\n\n";
 }
 else {
-    print "Location: https://github.com/bagder/curl/issues\n\n";
+    print "Location: https://github.com/curl/curl/issues\n\n";
 }
