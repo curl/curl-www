@@ -224,7 +224,7 @@ for $ref (@all) {
         gmtime(time);
     my $t = sprintf ("%02d:%02d:%02d", $hour, $min, $sec);
 
-    logmsg sprintf "<h2>$t $desc <a href=\"http://curl.haxx.se/dl/mod_entry.cgi?__id=%s\">edit</a></h2>", $$ref{'__id'};
+    logmsg sprintf "<h2>$t $desc <a href=\"https://curl.haxx.se/dl/mod_entry.cgi?__id=%s\">edit</a></h2>", $$ref{'__id'};
 
     if($$ref{'hide'} eq "Yes") {
         logmsg "Marked as hidden, skipping the check\n";

@@ -8,8 +8,6 @@
 # Run $CURLDIR/tests/testcurl.pl once manually to generate a file called
 # 'setup' in the build directory.
 
-# $Id$
-
 if [ $1 ]; then
   NOTIFY=$1
 fi
@@ -24,7 +22,7 @@ fi
 # How and where to send the results
 mail="mail -s autobuild curl-autocompile@haxx.se"
 # Where to find the latest source
-URL="http://curl.haxx.se/snapshots/"
+URL="https://curl.haxx.se/snapshots/"
 # Where to find a curl binary to use to download the source code
 CURL=/usr/local/bin/curl
 # Where to run the auto-build
