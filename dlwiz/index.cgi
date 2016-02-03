@@ -706,8 +706,8 @@ sub single {
     my $ssh=$$e{'ssh'} eq "Yes"?"SSH enabled":"";
 
     my $sslenable=$$e{'ssl'} eq "No"?"disabled":"enabled";
-    my $mirror=$$e{'re'} ne "-"?"<a href=\"http://curl.haxx.se/latest.cgi?curl=$$e{'re'}\">mirrored versions</a>":"";
-    my $metalink=$$e{'re'} ne "-"?"<span class=\"metalink\"><a href=\"http://curl.haxx.se/metalink.cgi?curl=$$e{'re'}\"><img src=\"/pix/metalink.png\" border=\"0\" alt=\"\">metalink</a></span>":"";
+    my $mirror=$$e{'re'} ne "-"?"<a href=\"https://curl.haxx.se/latest.cgi?curl=$$e{'re'}\">mirrored versions</a>":"";
+    my $metalink=$$e{'re'} ne "-"?"<span class=\"metalink\"><a href=\"https://curl.haxx.se/metalink.cgi?curl=$$e{'re'}\"><img src=\"/pix/metalink.png\" border=\"0\" alt=\"\">metalink</a></span>":"";
     my $pack=$$e{'pack'};
     my $aboutver;
     my $version=$$e{'curl'};

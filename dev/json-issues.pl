@@ -3,7 +3,7 @@
 use strict;
 use JSON;
 
-json_page("https://api.github.com/repos/bagder/curl/issues");
+json_page("https://api.github.com/repos/curl/curl/issues");
 
 binmode(STDOUT, ":utf8");
 

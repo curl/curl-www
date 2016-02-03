@@ -77,7 +77,7 @@ print <<RELATED
 <b>Related:</b>
 <br><a href="changes.html">Changelog</a>
 <br><a href="download.html">Download</a>
-<br><a href="https://cool.haxx.se/curl-daily/">Daily Snapshot</a>
+<br><a href="https://curl.haxx.se/snapshots/">Daily Snapshot</a>
 <br><a href="https://daniel.haxx.se/address.html">GPG Key</a>
 </div>
 
