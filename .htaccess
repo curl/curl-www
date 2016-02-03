@@ -22,3 +22,11 @@ AddType application/octet-stream .rpm
 AddType application/x-bzip2 .bz2
 AddType application/x-tar .tar
 php_flag engine off
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+</IfModule>
