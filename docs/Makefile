@@ -65,7 +65,7 @@ manpage.html: _manpage.html $(MAINPARTS) mandump.t $(ROOT)/manpage.t
 mandump.t: $(DOCROOT)/curl.1
 	 $(MAN2HTML) < $(DOCROOT)/curl.1 > mandump.t
 
-mk-ca-bundle.html: _mk-ca-bundle.html $(MAINPARTS) mkdump.t
+mk-ca-bundle.html: _mk-ca-bundle.html $(MAINPARTS) mkdump.t $(ROOT)/manpage.t
 	$(ACTION)
 
 mkdump.t: $(DOCROOT)/mk-ca-bundle.1
