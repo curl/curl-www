@@ -52,7 +52,7 @@ for(keys %latest::file) {
            $_, $archive, $latest::size{$_});
 
     printf("DOWNLOAD: %s %s Sweden (Stockholm)\n", $archive,
-           "http://curl.haxx.se/download/$archive");
+           "https://curl.haxx.se/download/$archive");
 
     for(keys %mirrors) {
         my $site=$_;

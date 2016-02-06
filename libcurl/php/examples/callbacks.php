@@ -13,7 +13,7 @@ I wasn't aware these cURL options were available in PHP, but noticed them being
 used by Alan Knowles: <http://docs.akbkhome.com/phpmole/phpmole_webfetch.html>
 
 For more info on CURLOPT_HEADERFUNCTION and CURLOPT_WRITEFUNCTION see:
-<http://curl.haxx.se/libcurl/c/curl_easy_setopt.html>
+<https://curl.haxx.se/libcurl/c/curl_easy_setopt.html>
 */
 
 $ch = curl_init();
@@ -32,7 +32,7 @@ if ($error = curl_error($ch)) {
 
 // define callback functions
 
-// Notes from <http://curl.haxx.se/libcurl/c/curl_easy_setopt.html>:
+// Notes from <https://curl.haxx.se/libcurl/c/curl_easy_setopt.html>:
 // Return the number of bytes actually written or return -1 to signal error to
 // the library (it will  cause it to abort the transfer with a CURLE_WRITE_ERROR
 // return code). (Added in 7.7.2)
@@ -43,7 +43,7 @@ function read_header($ch, $string)
     return $length;
 }
 
-// Notes from <http://curl.haxx.se/libcurl/c/curl_easy_setopt.html>:
+// Notes from <https://curl.haxx.se/libcurl/c/curl_easy_setopt.html>:
 // Return the number of bytes actually taken care of.  If that amount differs
 // from the amount passed to your function, it'll signal an error to the library
 // and it will abort the transfer and return CURLE_WRITE_ERROR.
