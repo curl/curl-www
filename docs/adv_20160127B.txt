@@ -32,7 +32,7 @@ data stream.
 For example if curl -OJ and the server sends filename=f:foo curl will
 incorrectly write foo to the working directory for drive F even if drive F
 isn't the current drive. For a more detailed explanation see the 'MORE
-BACKGROUND AND EXAMPLE' section at the end of this notice.
+BACKGROUND AND EXAMPLE' section towards the end of this advisory.
 
 Though no known exploit is available for this issue, writing one would be
 undemanding and could be serious depending on the name of the file and where
@@ -62,6 +62,9 @@ feature was added in 7.20.0 and didn't exist before then.
 - Affected versions (-OJ): curl 7.20.0 to and including 7.46.0
 - Not affected versions (-OJ): curl < 7.20.0 and curl >= 7.47.0
 
+curl built for Cygwin is partially affected (-O): curl <= 7.47.0. Please refer
+to the CYGWIN addendum at the end of this advisory. (Added 2016-02-07)
+
 THE SOLUTION
 ------------
 
@@ -71,7 +74,13 @@ file name it will be sanitized as `f_foo__$DATA` .
 
 A patch is available at:
 
-    http://curl.haxx.se/CVE-2016-0754.patch
+    https://curl.haxx.se/CVE-2016-0754_v2_curl-7.24.0_to_7.39.0.patch
+    https://curl.haxx.se/CVE-2016-0754_v2_curl-7.40.0_to_7.46.0.patch
+    https://curl.haxx.se/CVE-2016-0754_v2_curl-7.47.0.patch
+
+If you have applied the first version of the patch revert it and then apply v2.
+The patch will not apply to curl < 7.24.0, the only solution in such a case is
+to upgrade.
 
 Exercise judicious use of the -J option. The -J option when combined with -O
 lets the server choose the file name. Do you trust the server you are using
@@ -89,7 +98,7 @@ RECOMMENDATIONS
 We suggest you take one of the following actions immediately, in order of
 preference:
 
- A - Upgrade curl and libcurl to version 7.47.0.
+ A - Upgrade curl and libcurl to version 7.47.1.
 
  B - Apply the patch to your version and rebuild.
 
@@ -109,6 +118,12 @@ distros@openwall on January 21 2016.
 
 curl 7.47.0 was released on January 27 2016, coordinated with the publication
 of this advisory.
+
+curl 7.47.1 was released the week of Feburary 8, 2016 to address
+over-sanitization of an --output path caused by the first revision of the
+patch for this issue; and additionally to not allow curl built for Cygwin to
+write outside the current working directory when a backslash is in the remote
+file name (-O).
 
 CREDITS
 -------
@@ -171,3 +186,31 @@ written only if it does not already exist.
 
 `curl -OJ http://somewhere/somefile` => Server sends filename=c:foo
                                         curl writes output to c:\bar\baz\foo
+
+CYGWIN
+------
+(Added 2016-02-07) Since the original publishing of this advisory it has been
+determined that curl built for Cygwin is partially vulnerable.
+
+By default Cygwin will sanitize colons and other banned filename characters by
+replacing them with Unicode characters. However Cygwin does not do this for the
+backslash and in such a case may not map a colon that precedes a backslash to a
+Unicode character. In curl <= 7.47.0 built for Cygwin it is possible to write
+outside the current working directory by specifying a remote file name with
+backslashes.
+
+For example:
+
+`curl -O 'http://example.com/F:\foo'` will save to F:\foo.
+
+- (Cygwin) Affected versions (-O): curl <= 7.47.0
+- (Cygwin) Not affected versions (-O): curl >= 7.47.1
+
+curl built for Cygwin is not vulnerable to an (-OJ) rogue server attack,
+therefore the scope of this vulnerability as it applies to Cygwin is limited to
+unchecked user input, such as if you have a script that is passing an untrusted
+URL to curl built for Cygwin.
+
+curl 7.47.1 checks for backslashes for all operating systems. A remote file
+name is parsed from the URL by removing anything up to and including the last
+forward slash or back slash of the URL's path segment.
