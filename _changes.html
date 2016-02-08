@@ -47,6 +47,25 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_47_1"></a>
+SUBTITLE(Fixed in 7.47.1 - February 8 2016)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF getredirect.c: fix variable name
+ BGF <a href="https://github.com/curl/curl/pull/616">tool_doswin: silence unused function warning</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=617">cmake: fixed when OpenSSL enabled on Windows and schannel detected</a>
+ BGF curl.1: Explain remote-name behavior if file already exists
+ BGF <a href="https://curl.haxx.se/bug/?i=624">tool_operate: Don't sanitize --output path (Windows)</a>
+ BGF URLs: change all http:// URLs to https:// in documentation & comments
+ BGF <a href="https://github.com/curl/curl/issues/635">sasl_sspi: Fix memory leak in domain populate</a>
+ BGF COPYING: clarify that Daniel is not the sole author
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-02/0017.html">examples/htmltitle: Use _stricmp on Windows</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-02/0016.html">examples/asiohiper: Avoid function name collision on Windows</a>
+ BGF <a href="https://github.com/curl/curl/pull/637">idn_win32: Better error checking</a>
+ BGF <a href="https://github.com/curl/curl/commit/dd1b44c#commitcomment-15913896">openssl: Fix signed/unsigned mismatch warning in X509V3_ext</a>
+ BGF <a href="https://curl.haxx.se/docs/adv_20160127B.html">curl save files: check for backslashes on cygwin</a>
+</ul>
+
 <a name="7_47_0"></a>
 SUBTITLE(Fixed in 7.47.0 - January 27 2016)
 <p> Changes:
