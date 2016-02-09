@@ -15,38 +15,39 @@
 
 WHERE3(Docs, "/docs/", Protocol docs, "/docs/protdocs.html", CA Extract)
 
-TITLE(Automatically converted CA Certs from mozilla.org)
+TITLE(CA certificates extracted from Mozilla)
 <div class="relatedbox">
 <b>Related:</b>
 <br><a href="sslcerts.html">SSL Certs</a>
 </div>
+
 <p>
- We provide automated conversions. The output CA bundle file in PEM format
- (250KB) is available from here over HTTPS:
+ The Mozilla CA certificate store in PEM format (around 250KB uncompressed) is
+ available from here over HTTPS:
 
 <p>
  <big><a href="https://curl.haxx.se/ca/cacert.pem">cacert.pem</a></big>
 
 <p>
- The PEM file contains the datestamp of the conversion and we try to only
- convert if there's a change in either the script or the source file.
+ This PEM file contains the datestamp of the conversion and we only make a new
+ conversion if there's a change in either the script or the source file.
 
-SUBTITLE(CA cert bundle license)
+SUBTITLE(CA certificate store license)
 <p>
  The PEM file is only a converted version of the original one and thus it is
  licensed under the same license as the Mozilla source file: MPL 2.0
 
 SUBTITLE(Automated downloads from here)
 <p>
- We don't mind you downloading the converted file from us in an automated
- fashion, but please only do it once per day. It is only updated once every
- few months anyway.
+ We don't mind you downloading the PEM file from us in an automated fashion,
+ but please don't do it more often than once per day. It is only updated once
+ every few months anyway.
 
 SUBTITLE(The conversion script mk-ca-bundle)
 <p>
  The <a href="mk-ca-bundle.html">mk-ca-bundle</a> tool
- converts <a href="https://www.mozilla.org/">Mozilla</a>'s cert bundle to PEM
- format, suitable for (lib)curl and others.
+ converts <a href="https://www.mozilla.org/">Mozilla</a>'s certificate store
+ to PEM format, suitable for (lib)curl and others.
 
 SUBTITLE(Convert from your local Firefox installation)
 
@@ -56,7 +57,6 @@ SUBTITLE(Convert from your local Firefox installation)
  script!
 
 </ol>
-
 
 #include "_footer.html"
 
