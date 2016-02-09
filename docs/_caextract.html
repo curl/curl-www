@@ -31,47 +31,16 @@ TITLE(Automatically converted CA Certs from mozilla.org)
  The PEM file contains the datestamp of the conversion and we try to only
  convert if there's a change in either the script or the source file.
 
-#if 0
-SUBTITLE(Changelog)
-<p> August 4th, 2013 -
-<br>
- The cacert.pem output now only contains certificates that are explicity
- marked as trusted. The script was updated in
- commit <a href="https://github.com/curl/curl/commit/51f0b798fa">51f0b798fa</a>
- as a response to the
- <a href="http://bonsai.mozilla.org/cvslog.cgi?file=mozilla/security/nss/lib/ckfw/builtins/certdata.txt&rev=HEAD&mark=1.84">1.84
- revision update of certdata.txt</a> from June
- 2012. The <a href="http://p11-glue.freedesktop.org/doc/storing-trust-policy/storing-trust-existing
- .html">certdata.txt format documentation</a>?
-
-<p> January 6th, 2013 -
-<br>
- These ca cert bundles no longer contain
- the <a href="https://en.wikipedia.org/wiki/DigiNotar#Issuance_of_fraudulent_certificates">DigiNotar
- certificates</a> as Mozilla marks them as untrusted and this script knows the
- markup for that, <b>but</b> it may contain related certificates that Mozilla
- (and others) would block using other means. (Like some certs that were
- cross-signed by Entrust etc). See details
- in <a href="https://sourceforge.net/p/curl/bugs/1178/">bug #1178</a>.
-
-SUBTITLE(RSA-1024 removed)
-<p>
- Around early September 2014, Mozilla removed the trust bits from the certs in
- their CA bundle that were still using RSA 1024 bit keys. This may lead to TLS
- libraries having a hard time to verify some sites if the library in question
- doesn't properly support "path discovery" as per RFC 4158. (That includes
- OpenSSL and GnuTLS.)
-<p>
- The last CA bundle we converted from <i>before</i> that
- cleanup: <a href="https://github.com/curl/ca-bundle/blob/e9175fec5d0c4d42de24ed6d84a06d504d5e5a09/ca-bundle.crt">an
- older ca-bundle from github</a>.
-
-#endif
-
 SUBTITLE(CA cert bundle license)
 <p>
  The PEM file is only a converted version of the original one and thus it is
  licensed under the same license as the Mozilla source file: MPL 2.0
+
+SUBTITLE(Automated downloads from here)
+<p>
+ We don't mind you downloading the converted file from us in an automated
+ fashion, but please only do it once per day. It is only updated once every
+ few months anyway.
 
 SUBTITLE(The conversion script mk-ca-bundle)
 <p>
