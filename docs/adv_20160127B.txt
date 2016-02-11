@@ -74,13 +74,16 @@ file name it will be sanitized as `f_foo__$DATA` .
 
 A patch is available at:
 
-    https://curl.haxx.se/CVE-2016-0754_v2_curl-7.24.0_to_7.39.0.patch
-    https://curl.haxx.se/CVE-2016-0754_v2_curl-7.40.0_to_7.46.0.patch
-    https://curl.haxx.se/CVE-2016-0754_v2_curl-7.47.0.patch
+    https://curl.haxx.se/CVE-2016-0754_v3_curl-7.24.0_to_7.39.0.patch
+    https://curl.haxx.se/CVE-2016-0754_v3_curl-7.40.0_to_7.46.0.patch
+    https://curl.haxx.se/CVE-2016-0754_v3_curl-7.47.0.patch
 
-If you have applied the first version of the patch revert it and then apply v2.
-The patch will not apply to curl < 7.24.0, the only solution in such a case is
-to upgrade.
+The patch also includes two fixes not present in 7.47.1 for accessing paths
+using the literal path prefix \\?\ and accessing reserved dos device names
+without using the device prefix \\.\ .
+
+If you have applied an older version of the patch revert it and then apply v3.
+There is no patch for curl < 7.24.0, see RECOMMENDATIONS for alternatives.
 
 Exercise judicious use of the -J option. The -J option when combined with -O
 lets the server choose the file name. Do you trust the server you are using
@@ -211,6 +214,6 @@ therefore the scope of this vulnerability as it applies to Cygwin is limited to
 unchecked user input, such as if you have a script that is passing an untrusted
 URL to curl built for Cygwin.
 
-curl 7.47.1 checks for backslashes for all operating systems. A remote file
+curl 7.47.1 checks for backslashes for all operating systems: A remote file
 name is parsed from the URL by removing anything up to and including the last
 forward slash or back slash of the URL's path segment.
