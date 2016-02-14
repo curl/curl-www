@@ -79,8 +79,8 @@ A patch is available at:
     https://curl.haxx.se/CVE-2016-0754_v3_curl-7.47.0.patch
 
 The patch also includes two fixes not present in 7.47.1 for accessing paths
-using the literal path prefix \\?\ and accessing reserved dos device names
-without using the device prefix \\.\ .
+using the literal path prefix ` \\?\ ` and accessing reserved dos device names
+without using the device prefix ` \\.\ `.
 
 If you have applied an older version of the patch revert it and then apply v3.
 There is no patch for curl < 7.24.0, see RECOMMENDATIONS for alternatives.
