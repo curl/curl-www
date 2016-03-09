@@ -27,6 +27,6 @@ php_flag engine off
 RewriteEngine On
 
 RewriteCond %{HTTPS} off
-RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+RewriteRule (.*) https://curl.haxx.se%{REQUEST_URI} [R=301,L]
 
 </IfModule>
