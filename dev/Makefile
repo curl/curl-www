@@ -17,7 +17,7 @@ PAGES = foot.html head.html howto.html summary.html cvshistory.html	\
 	missing.html keywords.html builds.html release-notes.html	\
 	index.html contribute.html internals.html testcurl.html		\
 	runtests.html source.html security.html roadmap.html		\
-	sourceactivity.html release-procedure.html
+	sourceactivity.html release-procedure.html code-style.html
 
 all: $(PAGES)
 
@@ -32,9 +32,17 @@ source.html: _source.html $(MAINPARTS)
 
 roadmap.html: _roadmap.html roadmap.gen $(MAINPARTS)
 	$(ACTION)
-
 roadmap.gen: $(SRCROOT)/docs/ROADMAP.md
 	$(MARKDOWN) < $< > $@
+
+code-style.html: _code-style.html code-style.gen $(MAINPARTS)
+	$(ACTION)
+code-style.gen: $(SRCROOT)/docs/CODE_STYLE.md
+	$(MARKDOWN) < $< | sed -e 's:*:\&#42;:g' -e 's:#undef:\&#35;undef:g' \
+	-e 's:#define:\&#35;define:g' \
+	-e 's:#else:\&#35;else:g' \
+	-e 's:#endif:\&#35;endif:g' \
+	-e 's:#ifdef:\&#35;ifdef:g' > $@
 
 testcurl.html: _testcurl.html $(MAINPARTS) testcurl.dump
 	$(ACTION)
