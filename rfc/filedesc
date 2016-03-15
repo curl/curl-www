@@ -121,3 +121,4 @@ rfc7235.txt Hypertext Transfer Protocol (HTTP/1.1): Authentication (obsoletes RF
 rfc7628.txt A Set of Simple Authentication and Security Layer (SASL) Mechanisms for OAuth
 rfc2478.txt The Simple and Protected GSS-API Negotiation Mechanism (obsoleted by RFC4178)
 rfc4178.txt The Simple and Protected Generic Security Service Application Program Interface (GSS-API) Negotiation Mechanism (obsoletes RFC2478)
+rfc4559.txt SPNEGO-based Kerberos and NTLM HTTP Authentication in Microsoft Windows
