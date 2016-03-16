@@ -122,3 +122,8 @@ rfc7628.txt A Set of Simple Authentication and Security Layer (SASL) Mechanisms 
 rfc2478.txt The Simple and Protected GSS-API Negotiation Mechanism (obsoleted by RFC4178)
 rfc4178.txt The Simple and Protected Generic Security Service Application Program Interface (GSS-API) Negotiation Mechanism (obsoletes RFC2478)
 rfc4559.txt SPNEGO-based Kerberos and NTLM HTTP Authentication in Microsoft Windows
+rfc1510.txt The Kerberos Network Authentication Service (V5) (obsoleted by RFC4120)
+rfc1964.txt The Kerberos Version 5 GSS-API Mechanism
+rfc3961.txt Encryption and Checksum Specifications for Kerberos 5
+rfc4120.txt The Kerberos Network Authentication Service (V5) (obsoletes RFC1510)
+rfc4121.txt The Kerberos Version 5 Generic Security Service Application Program Interface (GSS-API) Mechanism: Version 2
