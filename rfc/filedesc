@@ -7,9 +7,9 @@ rfc1123.txt Requirements for Internet Hosts
 rfc1350.txt The TFTP Protocol (Revision 2)
 rfc1635.txt How to Use Anonymous FTP
 rfc1639.txt FTP Operation Over Big Address Records (FOOBAR)
-rfc1738.txt Uniform Resource Locators (obsoleted by RFC 2396)
+rfc1738.txt Uniform Resource Locators (updated by RFC2396)
 rfc1777.txt Lightweight Directory Access Protocol
-rfc1808.txt Relative Uniform Resource Locators
+rfc1808.txt Relative Uniform Resource Locators (updated by RFC2396)
 rfc1867.txt Form-based File Upload in HTML
 rfc1884.txt IP Version 6 Addressing Architecture (obsolete)
 rfc1928.txt SOCKS Protocol Version 5
@@ -127,3 +127,4 @@ rfc1964.txt The Kerberos Version 5 GSS-API Mechanism
 rfc3961.txt Encryption and Checksum Specifications for Kerberos 5
 rfc4120.txt The Kerberos Network Authentication Service (V5) (obsoletes RFC1510)
 rfc4121.txt The Kerberos Version 5 Generic Security Service Application Program Interface (GSS-API) Mechanism: Version 2
+rfc2104.txt HMAC: Keyed-Hashing for Message Authentication
