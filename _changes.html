@@ -47,6 +47,95 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_48_0"></a>
+SUBTITLE(Fixed in 7.48.0 - March 23 2016)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="https://curl.haxx.se/bug/?i=569">configure: --with-ca-fallback: use built-in TLS CA fallback</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=481">TFTP: add --tftp-no-options to expose CURLOPT_TFTP_NO_OPTIONS</a>
+ CHG <a href="https://curl.haxx.se/libcurl/c/CURLINFO_TLS_SSL_PTR.html">getinfo: CURLINFO_TLS_SSL_PTR supersedes CURLINFO_TLS_SESSION</a>
+ CHG <a href="https://curl.haxx.se/dev/code-style.html">added CODE_STYLE.md</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/bug/?i=633">Proxy-Connection: stop sending this header by default</a>
+ BGF os400: sync ILE/RPG definitions with latest public header files
+ BGF <a href="https://curl.haxx.se/bug/?i=639">cookies: allow spaces in cookie names, cut of trailing spaces</a>
+ BGF <a href="https://github.com/curl/curl/commit/4520534#commitcomment-15954863">tool_urlglob: Allow reserved dos device names (Windows)</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=640">openssl: remove most BoringSSL #ifdefs</a>
+ BGF tool_doswin: Support for literal path prefix \\?\
+ BGF <a href="https://curl.haxx.se/bug/?i=642">mbedtls: fix ALPN usage segfault</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=626">mbedtls: fix memory leak when destroying SSL connection data</a>
+ BGF nss: do not count enabled cipher-suites
+ BGF examples/cookie_interface.c: add cleanup call
+ BGF examples: adhere to curl code style
+ BGF <a href="https://curl.haxx.se/bug/?i=646">curlx_tvdiff: handle 32bit time_t overflows</a>
+ BGF dist: ship buildconf.bat too
+ BGF <a href="https://bugzilla.redhat.com/1305970">curl.1: --disable-{eprt,epsv} are ignored for IPv6 hosts</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=649">generate.bat: Fix comment bug by removing old comments</a>
+ BGF test1604: Add to Makefile.inc so it gets run
+ BGF <a href="https://curl.haxx.se/bug/?i=651">gtls: fix for builds lacking encrypted key file support</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=451">SCP: use libssh2_scp_recv2 to support > 2GB files on windows</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=653">CURLOPT_CONNECTTIMEOUT_MS.3: Fix example to use milliseconds option</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=658">cookie: do not refuse cookies to localhost</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=650">openssl: avoid direct PKEY access with OpenSSL 1.1.0</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=659">http: Don't break the header into chunks if HTTP/2</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=661">http2: don't decompress gzip decoding automatically</a>
+ BGF curlx.c: i2s_ASN1_IA5STRING() clashes with an openssl function
+ BGF curl.1: add a missing dash
+ BGF <a href="https://curl.haxx.se/bug/?i=666">curl.1: HTTP headers for --cookie must be Set-Cookie style</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=666">CURLOPT_COOKIEFILE.3: HTTP headers must be Set-Cookie style</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=667">curl_sasl: Fix memory leak in digest parser</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=670">src/Makefile.m32: add CURL_{LD,C}FLAGS_EXTRAS support</a>
+ BGF CURLOPT_DEBUGFUNCTION.3: Fix example
+ BGF <a href="https://curl.haxx.se/bug/?i=672">runtests: Fixed usage of %PWD on MinGW64</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=676">tests/sshserver.pl: use RSA instead of DSA for host auth</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-02/0097.html">multi_remove_handle: keep the timeout list until after disconnect</a>
+ BGF Curl_read: check for activated HTTP/1 pipelining, not only requested
+ BGF <a href="https://curl.haxx.se/bug/?i=404">configure: warn on invalid ca bundle or path</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=681">file: try reading from files with no size</a>
+ BGF getinfo: Add support for mbedTLS TLS session info
+ BGF <a href="https://curl.haxx.se/bug/?i=688">formpost: fix memory leaks in AddFormData error branches</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=689">makefile.m32: allow to pass .dll/.exe-specific LDFLAGS</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=690">url: if Curl_done is premature then pipeline not in use</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=695">cookie: remove redundant check</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=697">cookie: Don't expire session cookies in remove_expired</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=692">makefile.m32: fix to allow -ssh2-winssl combination</a>
+ BGF checksrc.bat: Fixed cannot find perl if installed but not in path
+ BGF build-openssl.bat: Fixed cannot find perl if installed but not in path
+ BGF mbedtls: fix user-specified SSL protocol version
+ BGF <a href="https://curl.haxx.se/bug/?i=693">makefile.m32: add missing libs for static -winssl-ssh2 builds</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=697">test46: change cookie expiry date</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=704">pipeline: Sanity check pipeline pointer before accessing it</a>
+ BGF openssl: use the correct OpenSSL/BoringSSL/LibreSSL in messages
+ BGF <a href="https://curl.haxx.se/bug/?i=701">ftp_done: clear tunnel_state when secondary socket closes</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=705">opt-docs: fix heading macros</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=422">imap/pop3/smtp: Fixed connections upgraded with TLS are not reused</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=707">curl_multi_wait: never return -1 in 'numfds'</a>
+ BGF url.c: fix clang warning: no newline at end of file
+ BGF krb5: improved type handling to avoid clang compiler warnings
+ BGF <a href="https://curl.haxx.se/bug/?i=709">cookies: first n/v pair in Set-Cookie: is the cookie, then parameters</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=703">multi: avoid blocking during CURLM_STATE_WAITPROXYCONNECT</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=712">multi hash: ensure modulo performed on curl_socket_t</a>
+ BGF curl: glob_range: no need to check unsigned variable for negative
+ BGF easy: add check to malloc() when running event-based
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-03/0150.html">CURLOPT_SSLENGINE.3: Only for OpenSSL built with engine support</a>
+ BGF version: thread safety
+ BGF openssl: verbose: show matching SAN pattern
+ BGF openssl: adapt to OpenSSL 1.1.0 API breakage in ERR_remove_thread_state()
+ BGF formdata.c: Fixed compilation warning
+ BGF <a href="https://curl.haxx.se/bug/?i=719">configure: use cpp -P when needed</a>
+ BGF imap.c: Fixed compilation warning with /Wall enabled
+ BGF config-w32.h: Fixed compilation warning when /Wall enabled
+ BGF ftp/imap/pop3/smtp: Fixed compilation warning when /Wall enabled
+ BGF build: Added missing Visual Studio filter files for VC10 onwards
+ BGF easy: Remove poll failure check in easy_transfer
+ BGF mbedtls: fix compiler warning
+ BGF build-wolfssl: Update VS properties for wolfSSL v3.9.0
+ BGF Fixed various compilation warnings when verbose strings disabled
+ BGF <a href="https://curl.haxx.se/bug/?i=715">sshserver: remove use of AuthorizedKeysFile2</a>
+</ul>
+    
 <a name="7_47_1"></a>
 SUBTITLE(Fixed in 7.47.1 - February 8 2016)
 <p> Bugfixes:
