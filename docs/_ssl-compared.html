@@ -36,6 +36,7 @@ to use.
 #define FEATURE_P5 <td class="yes">yes [5]</td>
 #define FEATURE_P7 <td class="yes">yes [7]</td>
 #define FEATURE_P8 <td class="yes">yes [8]</td>
+#define FEATURE_P9 <td class="yes">yes [9]</td>
 #define MISSING_P <td class="no">no*</td>
 #define NA <td class="unknown">N/A</td>
 
@@ -67,7 +68,7 @@ to use.
   NICETD OpenSSL[6] NICETDEND
   NICETD GnuTLS NICETDEND
   NICETD NSS NICETDEND
-  NICETD CyaSSL NICETDEND
+  NICETD CyaSSL / wolfSSL NICETDEND
   NICETD QSOSSL NICETDEND
   NICETD PolarSSL NICETDEND
   NICETD axTLS NICETDEND
@@ -200,7 +201,7 @@ to use.
   FEATURE
   FEATURE
   FEATURE
-  MISSING
+  FEATURE_P9
   MISSING
   FEATURE
   MISSING
@@ -422,6 +423,8 @@ to use.
 [7] = support for ALPN and NPN was added in <a href="https://technet.microsoft.com/en-us/library/hh831771.aspx">Windows 8.1 / Server 2012 R2</a>.
 <br>
 [8] = Via external <a href="https://github.com/OpenSC/OpenSC/wiki/Engine-pkcs11-quickstart">engine_pkcs11</a>;
+<br>
+[9] = support for ALPN was added in wolfSSL 3.6.9b.
 
 SUBTITLE(Glossary of Terms)
 
