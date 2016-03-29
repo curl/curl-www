@@ -110,8 +110,8 @@ faq.t: $(DOCROOT)/FAQ faqparse.pl
 http-cookies.html: _http-cookies.html $(MAINPARTS) http-cookies.t
 	$(ACTION)
 
-http-cookies.t: $(DOCROOT)/HTTP-COOKIES faqparse.pl
-	./faqparse.pl < $< > $@
+http-cookies.t: $(DOCROOT)/HTTP-COOKIES.md faqparse.pl
+	$(MARKDOWN) < $< >$@
 
 knownbugs.html: _knownbugs.html $(MAINPARTS) knownbugs.t
 	$(ACTION)
