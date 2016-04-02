@@ -1893,11 +1893,12 @@ SUBTITLE(Fixed in 7.26.0 - May 24 2012)
  CHG added --post303 and the CURL_REDIR_POST_303 option for CURLOPT_POSTREDIR
  CHG smtp: Add support for DIGEST-MD5 authentication
  CHG pop3: Added support for additional pop3 commands
+ CHG curl: -w now supports 'filename_effective'
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF nss: libcurl now uses NSS_InitContext() to prevent collisions if available [1]
- B
+ BGF <a href="https://bugzilla.redhat.com/738456">nss: libcurl now uses NSS_InitContext() to prevent collisions if available</a>
+ BGF <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=670126">URL parse: reject numerical IPv6 addresses outside brackets</a>
  BGF <a href="//curl.haxx.se/mail/lib-2012-04/0246.html">MD5: fix OOM memory leak</a>
  BGF OpenSSL cert: provide more details when cert check fails
  BGF <a href="//curl.haxx.se/mail/archive-2012-04/0060.html">HTTP: empty chunked POST ended up in two zero size chunks</a>
