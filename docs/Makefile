@@ -116,8 +116,8 @@ http-cookies.t: $(DOCROOT)/HTTP-COOKIES.md faqparse.pl
 knownbugs.html: _knownbugs.html $(MAINPARTS) knownbugs.t
 	$(ACTION)
 
-knownbugs.t: $(DOCROOT)/KNOWN_BUGS
-	$(TXT2PLAIN) < $< > $@
+knownbugs.t: $(DOCROOT)/KNOWN_BUGS faqparse.pl
+	./faqparse.pl < $< | sed -e 's:*:\&#42;:g' -e 's:#undef:\&#35;undef:g'> $@
 
 httpscript.t: $(DOCROOT)/TheArtOfHttpScripting
 	./faqparse.pl < $< > $@
