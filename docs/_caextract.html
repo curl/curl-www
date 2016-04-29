@@ -36,7 +36,14 @@ SUBTITLE(Recent CA file revisions per date of apperance)
 <p><ul>
 #include "../ca/pemlist.gen"
 </ul>    
- 
+
+SUBTITLE(Missing Name Constraints)
+<p>
+  The converted PEM file only contains the digital signatures for CAs. Several
+of those CAs have constraints in Firefox (and other browsers) to only be
+allowed for certain domains and other similar additional conditions. Those
+constraints are thus <b>not</b> brought along in this cacert file!
+  
 SUBTITLE(CA certificate store license)
 <p>
  The PEM file is only a converted version of the original one and thus it is
