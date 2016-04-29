@@ -5,5 +5,7 @@ my @pems = grep { /^cacert-.*pem/ } readdir($dh);
 closedir $dh;
 
 foreach my $p (reverse sort @pems) {
-    print "<li> <a href=\"$p\">$p</a>\n";
+    if($p =~ /cacert-(.*).pem/) {
+        print "<li> <a href=\"/ca/$p\">$1</a>\n";
+    }
 }

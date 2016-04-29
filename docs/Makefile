@@ -181,7 +181,7 @@ osdistribs.html: _osdistribs.html $(MAINPARTS)
 y2k.html: _y2k.html $(MAINPARTS)
 	$(ACTION)
 
-caextract.html: _caextract.html $(MAINPARTS)
+caextract.html: _caextract.html $(MAINPARTS) ../ca/pemlist.gen
 	$(ACTION)
 
 programs.html: _programs.html $(MAINPARTS)

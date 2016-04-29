@@ -10,4 +10,5 @@ if test $? -gt "0"; then
     md5sum cacert.pem > check
     bzip2 -c cacert.pem > cacert.pem.bz2
     gzip -c cacert.pem > cacert.pem.gz
+    perl ./listpem.pl > pemlist.gen
 fi
