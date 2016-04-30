@@ -20,6 +20,7 @@ my %where;
 
 my $md5sum="/usr/bin/md5sum";
 my $sha1sum="sha1sum";
+my $sha256sum="sha256sum";
 
 print "Content-Type: text/html\n\n";
 
@@ -182,12 +183,16 @@ if($latest::version{$what}) {
     my $sha1full=`$sha1sum "download/$archive"`;
     my ($sha1, $dummy)=split(" ", $sha1full);
 
+    my $sha256full=`$sha256sum "download/$archive"`;
+    my ($sha256, $dummy2)=split(" ", $sha256full);
+
     print "<h2>$archive</h2>\n";
             
     print "<b>What:</b> $desc\n",
             
-    "<br><b>SHA-1:</b> <tt>".$sha1."</tt>\n",
-    "<br><b>MD5:</b> <tt>".$md5."</tt>\n",
+    "<br><b>SHA-256:</b> <tt>$sha256</tt>\n",
+    "<br><b>SHA-1:</b> <tt>$sha1</tt>\n",
+    "<br><b>MD5:</b> <tt>$md5</tt>\n",
     "<br><b>Size:</b> ".$latest::size{$what}." bytes\n",
     "<br><b>Version:</b> ".$latest::version{$what}."\n";
 
