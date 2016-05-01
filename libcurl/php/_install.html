@@ -7,8 +7,8 @@
 #define PHP_INSTALL
 #define CURL_URL libcurl/php/install.html
 
-#include "_menu.html"
 #include "setup.t"
+#include "_menu.html"
 
 WHERE3(libcurl, "/libcurl/", PHP Binding, "/libcurl/php/", Install)
 
@@ -70,11 +70,11 @@ removing a semicolon from the following line in <tt>php.ini</tt>:
 </pre>
 
 (Mentioned here: <a
-href="http://php.net/manual/install.windows.extensions.php">php.net/manual/install.windows.extensions.php</a>)
+href="https://php.net/manual/install.windows.extensions.php">php.net/manual/install.windows.extensions.php</a>)
 
 <p>
 libcurl is statically linked in, <b>but the SSL libraries are not</b>, thus
-the note to Win32 users on <a href="http://php.net/curl">php.net/curl</a>. The
+the note to Win32 users on <a href="https://php.net/curl">php.net/curl</a>. The
 two SSL-related DLLs from the OpenSSL project (libeay32.dll and ssleay32.dll)
 are bundled with the Windows PHP package.
 <p>

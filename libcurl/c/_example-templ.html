@@ -1,34 +1,24 @@
 #include "_doctype.html"
 <HTML>
-<HEAD> <TITLE>libcurl - %cfile%</TITLE>
+<HEAD> <TITLE>libcurl example - %cfile%</TITLE>
 #include "css.t"
 </HEAD>
 
 #define LIBCURL_EXAMPLE
-#define DOCS_INDEX
 #define CURL_URL libcurl/c/%htmlfile%
 
-#include "_menu.html"
 #include "setup.t"
+#include "_menu.html"
 
-WHERE4(libcurl, "/libcurl/", API, "/libcurl/c/", Example Source Codes,
+WHERE4(libcurl, "/libcurl/", API, "/libcurl/c/", Examples,
        "/libcurl/c/example.html", %cfile%)
 
 TITLE(%cfile%)
 
-<div style="float: right; border: 1px solid black; margin: 4px; padding: 4px; ">
-SUBTITLE(All Examples)
-
-#include "allex.t"
-</div>
 <p>
-<a href="http://github.com/bagder/curl/raw/master/docs/examples/%cfile%">Download %cfile%</a>
+<a href="https://github.com/curl/curl/raw/master/docs/examples/%cfile%">Download %cfile% raw</a>
 
 #include "%rawfile%"
-
-<p>
- You'll also find all examples in the distribution archive, in the
- <b>docs/examples</b> directory.
 
 #include "_footer.html"
 

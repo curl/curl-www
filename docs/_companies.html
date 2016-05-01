@@ -5,6 +5,7 @@
 </HEAD>
 
 #define CURL_DOCS
+#define WHO_DOCS
 #define DOCS_COMPANIES
 #define CURL_URL docs/companies.html
 
@@ -12,7 +13,7 @@
 #include "setup.t"
 #include "table.t"
 
-WHERE2(Docs, "/docs/", Companies Using curl)
+WHERE3(Docs, "/docs/", Who and Why, "/docs/whodocs.html", Companies Using curl)
 
 TITLE(Companies Using curl in Commercial Environments)
 <div class="relatedbox">
@@ -30,17 +31,22 @@ TITLE(Companies Using curl in Commercial Environments)
 
 <ol>
 
-<li> <a href="http://www.16software.com/">16 Software</a>
-offers <a href="http://www.16software.com/icyscreen/">IcyScreen</a>
+<li> <a href="http://www.16software.com/">16 Software</a> offers <a href="http://www.16software.com/icyscreen/">IcyScreen</a>
+
+<li> <a href="http://www.1c.ru/eng/">1C Company</a> uses curl in 1C:Enterprise 8
 
 <li> <a href="http://www.access-company.com/">ACCESS</a> uses libcurl to build
 their <a
 href="http://gl.access-company.com/products/browser/netfrontbrowsernx-2/">Netfront
 Browser NX</a> for embedded systems.
 
+<li> <a href="http://www.actuate.com">Actuate</a> uses libcurl in BIRT Analytics
+
 <li> <a href="http://www.adaranet.com/">Adara Networks</a>
 
-<li> <a href="http://www.adobe.com/">Adobe</a> - <a
+<li> <a href="http://www.addlive.com/">AddLive</a> used libcurl - now purchased by Snapchat
+
+<li> <a href="https://www.adobe.com/">Adobe</a> - <a
 href="ftp://ftp.adobe.com/pub/adobe/reader/unix/7x/7.0/enu/">Acrobat Reader
 7.0 for Linux</a>, Flash Player 9 and 10 for Linux, Mac OS X and Solaris.
 Adobe GoLive, Flash Media Server, Adobe AIR, <a
@@ -54,9 +60,15 @@ more...
 
 <li> <a href="http://alatest.com/">alaTEST</a> - uses libcurl internally
 
-<li> <a href="http://www.aol.co.uk/">AOL UK</a> - <a href="http://daniel.haxx.se/blog/2008/02/28/aol-uk-uses-curl-in-disguise/">uses curl for an "easy installer"</a>
+<li> <a href="https://www.altera.com/">Altera</a> uses libcurl
 
-<li> <a href="http://www.apple.com/">Apple</a> ships curl with Mac OS X 
+<li> Altova uses libcurl
+
+<li> <a href="http://www.ananseproductions.com/home/">Ananse Productions</a> use curl
+
+<li> <a href="http://www.aol.co.uk/">AOL UK</a> - <a href="https://daniel.haxx.se/blog/2008/02/28/aol-uk-uses-curl-in-disguise/">uses curl for an "easy installer"</a>
+
+<li> <a href="https://www.apple.com/">Apple</a> ships curl with Mac OS X, uses it in iOS and in iTunes and various other products.
 
 <li> <a href="http://www.archivas.com">Archivas</a> - Performance and
 Scalability tools
@@ -64,7 +76,17 @@ Scalability tools
 <li> <a href="http://www.atxinc.com/">ATX</a> - We use libcurl in our software
 so that the customer can connect to our server to update the software.
 
+<li> AT&amp;T Connect uses libcurl
+
+<li> <a href="http://www.autodesk.com/">Autodesk</a> uses libcurl in their Infrastructure Map Server
+
+<li> <a href="http://avaya.com">Avaya</a> one-X Deskphone uses libcurl
+
+<li> <a href="http://www.bbc.co.uk/">BBC</a> use libcurl to make parallel service calls in their PAL framework
+
 <li> <a href="http://www.bietfuchs.de/">Bietfuchs</a> - german ebay-Sniping-Service
+
+<li> <a href="https://www.biicode.com/">Biicode</a> is a user
 
 <li> <a href="http://www.bitcartel.com/">Bitcartel</a> - <a
 href="http://www.bitcartel.com/radiolover/">RadioLover</a> on Mac OS X
@@ -82,30 +104,38 @@ href="http://developer.blackberry.com/native/reference/bb10/library_support_at_a
 
 <li> <a href="http://www.bluesecurity.com/">Blue Security</a> - Blue Frog
 
+<li> <a href="http://www.bmw.com/">BMW</a> - in car systems.
+
+<li> <a href="http://www.bosch.com/">Bosch</a> uses libcurl in "Car
+Multimedia" used in a large amount of car brands and products
+
+<li> Broadcom Advanced Control Suite for Linux uses libcurl
+
 <li> <a href="http://www.bwin.com/">bwin</a> uses libcurl
 
 <li> <a href="http://www.candelatech.com/">Candela Technologies</a> -
 LANforge-FIRE
 
 <li> <a href="http://www.canonical.com/">Canonical's</a> <a
-href="http://www.canonical.com/projects/landscape">Landscape</a> uses libcurl.
-
-<li> <a href="http://cascadedatasystems.com/">Cascade Data Systems</a> - <a
-href="http://appgenerator.com/index.php">AppGenerator</a>
+href="http://www.canonical.com/projects/landscape">Landscape</a> uses libcurl
 
 <li> <a href="http://carestreamhealth.com/">Carestream Health</a> uses libcurl
 in <b>VIParchive</b> (storage management platform for medical images and
 information) <i>curl and libcurl are used to post messages to web services
 like the XDS service defined by IHE.</i>
-  
+
+<li> <a href="http://cascadedatasystems.com/">Cascade Data Systems</a> - <a
+href="http://appgenerator.com/index.php">AppGenerator</a>
+
 <li> <a href="http://www.CatchFS.Com/">CatchFIRE Systems</a>
-  
+
 <li> <a href="http://www.cern.ch">CERN</a> - Toolsuite <a href="http://www.quattor.org">quattor</a>
 
-<li> <a href="http://www.zonealarm.com/">CheckPoint ZoneAlarm</a> (on Win-XP)
-uses libcurl and even the curl-ca-bundle.crt file is in the base
-install-directory.
-  
+<li> <a href="https://www.checkpoint.com/">CheckPoint</a> - ZoneAlarm (on
+Win-XP) uses libcurl and so does ClusterXL
+
+<li> Chevrolet includes the curl license in their "2013 Chevrolet Volt Owner Manual"
+
 <li> <a href="http://www.chronosnet.com/">Chronos</a> <i>uses libcurl as a
 WebDAV &amp; CalDAV engine primarily. We also use it to publish, unpublish, and
 subscribe to remote vCal files over FTP, FTPS, and SFTP.</i>
@@ -114,19 +144,31 @@ subscribe to remote vCal files over FTP, FTPS, and SFTP.</i>
 Express) on Linux, Cisco AnyConnect, Cisco Active Directory, Cisco Jabber for
 iPhone and for Windows, Cisco Security Agent, Cisco ACE XML Gateway and more.
 
+<li> <a href="https://citrix.com">Citrix</a> Receiver uses libcurl
+
 <li> <a href="http://www.claas.com/">CLAAS Tractor SAS</a> - uses libcurl in
 an Update "agent" (Windows Update like) for our own tractor diagnostic tool.
 This application runs on Windows.
 
+<li> Comcast uses libcurl in XFINITY TV.
+
 <li> <a href="http://www.contactor.se/">Contactor Data AB</a>
+
+<li> <a href="http://www.counterpath.com">CounterPath</a> uses libcurl in CounterPath Bria 3 for Windows
 
 <li> <a href="http://www.cyber.ee/">Cybernetica AS</a> - <i>in our <a href="http://www.timestamp.cyber.ee/">time-stamping software</a></i>
 
 <li> <a href="http://www.datasphere.ch/">Datasphere S.A.</a> - uses libcurl in
 ongoing developments of banking data transfer products.
 
+<li> <a href="http://datordax.se/">Datordax</a> uses it for their web shop
+
+<li> <a href="http://www.denon.com/">Denon</a> - in the AVR-X4000 Network receiver.
+
 <li> <a href="http://www.designquotes.com.au">DesignQuotes</a> uses libcurl
 for internal API calls and running cron jobs.
+
+<li> <a href="http://www.devicescape.com">Device Scape</a> uses libcurl in their Curator Client.
 
 <li> <a href="http://www.digium.com/">Digium</a> - uses libcurl as part of <a
 href="http://www.asterisk.org/">Asterisk</a>
@@ -147,8 +189,18 @@ Face.
 href="http://www.emsoftltd.com/products/listing/embrowser_content.htm">EmBrowser</a> on
 Linux
 
+<li> Enigma Software uses libcurl in SpyHunter
+
 <li> <a href="http://www.euroling.se/">Euroling</a> uses libcurl for
 web-crawling in their <a href="http://www.siteseeker.se/">SiteSeeker</a>
+
+<li> <a href="http://www.ergon.ch/">Ergon Informatik AG</a> - is using libcurl
+for part of the reverse proxy functionality in its <a
+href="http://www.ergon.ch/en/airlock/">WAF Airlock</a>.
+
+<li> <a href="http://www.esri.com/">ESRI</a> uses libcurl
+
+<li> <a href="http://www.etikett.de/">etikett.de</a>
 
 <li> &quot;At <a href="http://www.expandtalk.se/">www.expandtalk.se</a> we use curl for several projects&quot;
 
@@ -160,9 +212,9 @@ software</a>
 libcurl in our product E2E Bridge since many years to access http, https, ftp,
 sftp, ftps, ldap and ldaps resources.
 
-<li> <a href="http://www.f-secure.com/">F-Secure</a> - Anti Virus on Linux
+<li> <a href="https://www.f-secure.com/">F-Secure</a> - Anti Virus on Linux
 
-<li> <a href="http://www.facebook.com/">Facebook</a> - uses libcurl via pycurl
+<li> <a href="https://www.facebook.com/">Facebook</a> - uses libcurl via pycurl
 in their <a href="http://www.tornadoweb.org/">Tornado web server</a>
 
 <li> <a href="http://www.falconview.org/">FalconView</a> uses libcurl.
@@ -176,10 +228,16 @@ binding
 
 <li> FMWebschool's <a href="http://www.fmwebschool.com/grabit.php">Grab-It</a>
 
+<li> <a href="http://geekdrop.com/">GeekDrop</a> "makes extensive use of cURL
+for all sorts of things, from Social Network sharing to database backing up to
+DropBox, to a plethora of other uses."
+
 <li> <a href="http://www.grin.se/">GRIN</a> uses libcurl in their game <a
 href="http://www.ghostrecon.com/">Ghost Recon</a>
 
 <li> <a href="http://groopex.com/">Groopex</a>
+
+<li> <a href="http://grooveshark.com/">Grooveshark</a> uses it all over the place
 
 <li> <a href="http://www.focuseek.com/">focuseek</a> - <a href="http://www.focuseek.com/en/searchbox/">searchbox</a>
 
@@ -191,14 +249,26 @@ in the <a href="http://en.wikipedia.org/wiki/Warhammer_40,000">Warhammer
 
 <li> <a href="http://www.gipsymedia.com/">GipsyMedia Ltd</a> - <a href="http://www.digiguide.com/">DigiGuide</a> on Windows
 
-<li> <a href="http://www.google.com/">Google </a> - <a
-href="http://earth.google.com/">Google Earth</a>, <a
-href="http://desktop.google.com/">Google Desktop</a>
+<li> <a href="https://www.google.com/">Google </a> - <a
+href="https://www.google.com/earth/">Google Earth</a>, <a
+href="https://desktop.google.com/">Google Desktop</a>, Chrome OS, Google Music
 
 <li> <a href="http://www.haxx.se/">Haxx</a>
 
+<li> <a href="http://www.hpc.com/">HPC</a> uses libcurl in HCP Anywhere Core Software
+
 <li> <a href="http://www.heynow.com/">Heynow Software</a> - uses it on various
 products developed for customers.
+
+<li> Hitachi uses curl in their Hitachi Data Systems’ Products
+
+<li> Honeywell uses libcurl in <a href="https://www.mygdc.com/new/static/docs/open-source-license.txt">GDC</a>
+
+<li> <a href="http://www.hp.com/">HP</a> uses it for "Insight Management", HP Smart Update Manage and more
+
+<li> <a href="http://www.huawei.com/">Huawei</a> uses curl
+
+<li> <a href="http://www.htcinc.net/">HTC</a> uses libcurl in the 3G microcell
 
 <li> <a href="http://www.insors.com/">inSORS</a>
 
@@ -216,14 +286,26 @@ href="http://fabiensanglard.net/doom3/index.php">Doom 3</a>
 
 <li> Infomedia Business Systems Division - <a href="http://www.bsd.infomedia.com.au/autoledgers.htm">AutoLedgers</a>
 
+<li> <a href="http://www.informatica.com/">Informatica</a> PowerCenter uses curl
+
 <li> Information Handling Services - internal file transferring processes
+
+<li> <a href="http://www.insigniaproducts.com/">Insignia</a> uses libcurl in a TC/Blu-ray combo
+
+<li> <a href="https://instagram.com">Instagram</a> uses libcurl
+
+<li> <a href="http://www.intel.com/">Intel</a> uses libcurl in Intel System Management Software
 
 <li> <a href="http://www.iss.net/">Internet Security Systems</a> - Proventia M
 Series
 
 <li> <a href="http://www.intra2net.com">Intra2net AG</a> - <a href="http://www.intranator.com">Intranator</a>
 
+<li> <a href="http://www.iseesystems.com/">isee systems</a>
+
 <li> <a href="http://jajja.com/">Jajja Communications</a> uses it internally
+
+<li> <a href="https://jawbone.com">Jawbone</a>
 
 <li> <a href="http://www.jet.efda.org">JET</a> - <i>"We are using libcurl at
 JET, the nuclear fusion experiment based at Culham Laboratory in the UK. HTTP
@@ -235,11 +317,17 @@ from the systems onto a central data warehouse"</i>
 
 <li> <a href="http://www.kajala.com/">Kajala Group Ltd.</a>
 
+<li> <a href="http://www.kaleidescape.com/">Kaleidescape</a> uses libcurl
+
 <li> <a href="http://www.karelia.com/">Karelia</a> - <a href="http://www.karelia.com/watson/">Watson</a> on Mac OS X
+
+<li> <a href="http://www.kaseya.com/">Kaseya</a> uses libcurl
 
 <li> <a href="http://www.kencast.com/">kencast inc.</a> - <i>"uses libcurl in
 a scripting extension library.  We also use it in our upload/download manager
 module in our product."</i>
+
+<li> <a href="http://www.kerio.com/">Kerio Technologies</a> uses curl in Kerio MailServer
 
 <li> <a href="http://www.spacetec.no/">Kongsberg Spacetec</a> uses libcurl in
 distributed processing and remote file transfer products
@@ -248,7 +336,11 @@ distributed processing and remote file transfer products
 <a href="http://www.lassosoft.com/Products/LassoPro/index.lasso">Lasso
 Professional</a> product.
 
+<li> <a href="https://lastpass.com">lastpass</a> uses libcurl
+
 <li> <a href="http://www.lg.com/">LG</a> uses libcurl in TVs.
+
+<li> <a href="http://www.lifesize.com">LifeSize</a> Software uses libcurl in its Communicator Traversal Server
 
 <li> <a href="http://lindenlab.com/">Linden Lab</a> makes <a href="http://secondlife.com/">Second Life</a>
 
@@ -257,9 +349,19 @@ Professional</a> product.
 <li> <a href="http://macromates.com/">Macromates</a> uses libcurl in their
 Textmate text editor.
 
-<li>  <a href="http://www.macromedia.com">Macromedia</a>: see Adobe 
+<li>  <a href="http://www.macromedia.com">Macromedia</a>: see Adobe
+
+<li> <a href="http://www.mymagictv.co.nz/">Magic TV</a> uses libcurl
+
+<li> <a href="http://www.matrixscience.com/">Matrix Science</a> uses libcurl in <a href="http://www.matrixscience.com/msparser.html">Mascot Parser</a>
+
+<li> Mandiant Memoryze uses libcurl
 
 <li> MandrakeSoft - rpmdrake on Linux
+
+<li> Marantz uses libcurl in their SR7008 AV Surround Receiver and blu-ray players
+
+<li> Mazda - used in several navigation systems
 
 <li> <a href="http://www.networkassociates.com/">McAfee/Network Associates
 Inc</a> - <a
@@ -269,11 +371,23 @@ on Mac OS X
 <li> <a href="http://www.mediaanalys.se/">MediaAnalys</a> uses curl for
 scanning customers' web sites.
 
+<li> <a href="http://www.mellanox.com">Mellanox</a> Switch Management System uses curl
+
 <li> <a href="http://www4.mercedes-benz.com/manual-cars/ba/foss/content/en/assets/FOSS_licences.pdf">Mercedes-Benz</a> uses curl in almost every car model.
+
+<li> <a href="http://www.metaio.com">Metaio</a> - Junaio App uses libcurl
 
 <li> <a href="http://www.micromuse.com/">Micromuse Inc.</a>
 
+<li> <a href="http://www.microsoft.com/">Microsoft</a>
+
+<li> <a href="http://www.miniclip.com/">Miniclip</a>
+
+<li> <a href="http://www.modio.se/">Modio</a>
+
 <li> <a href="http://www.mokafive.com/">MokaFive, Inc</a>
+
+<li> <a href="http://www.momento.com.au/">Momento</a> uses libcurl
 
 <li> <a href="http://www.moodstocks.com">Moodstocks</a> uses libcurl
 internally and as part of the Moodstocks SDK, both to call our API and to
@@ -281,16 +395,32 @@ download static files with libcurl-multi.
 
 <li> <a href="http://www.motorola.com/">Motorola</a> - <i>I am not sure where it is used, but curl tarball is in ClearCase so it must be used somewhere :)</i>
 
+<li> <a href="https://www.mozilla.org/">Mozilla</a> uses libcurl in the Firefox crash reporter and in Firefox OS phones.
+
+<li> <a href="http://www.musicfxlive.com/">Music FX Live</a> uses libcurl
+
 <li> <a href="http://www.phraseexpander.com/nagarsoft/">Nagarsoft</a> uses
 libcurl in their product <a href="http://www.phraseexpander.com/">PhraseExpander</a>
 
 <li> Neptune Labs -  DataShift on Windows
+
+<li> <a href="https://nest.com/">Nest</a> uses libcurl
+
+<li> <a href="http://www.netflix.com/">Netflix</a> uses libcurl
+
+<li> <a href="http://netgear.com/">Netgear</a> uses libcurl at least in their ReadyNAS product.
+
+<li> <a href="http://www.netiq.com/">Netiq</a> uses libcurl
 
 <li> Network Mail
 
 <li> <a href="http://www.neurostechnology.com/">Neuros Technology</a> uses
 libcurl in their <a href="http://www.neurostechnology.com/osd">OSD</a>
 device.
+
+<li> <a href="http://www.nintendo.co.jp/">Nintendo</a> uses it their Nintendo Web Framework
+
+<li> NoDesign's <a href="http://www.parrot.com/dia/fr">DIA Parrot</a> uses libcurl
 
 <li> <a href="http://www.nortel.com/">Nortel</a>'s Rls 6 Telephony
 switch. <i>"NFC (network file copy) API was rewritten for Linux using curl library"</i>
@@ -314,10 +444,12 @@ libcurl</a> in their so called <a
 href="http://www.openlogic.com/products/library.php">Certified Library</a> of
 open source.
 
+<li> <a href="http://opsmate.com">opsmate</a>
+
 <li> <a href="http://www.optimsys.cz">Optimsys</a> uses libcurl to manage HTTP
 and HTTPS traffic in our OptimTalk platform
 
-<li> <a href="http://www.oracle.com/">Oracle</a> uses libcurl in the MySQL Enterprise Monitor
+<li> <a href="http://www.oracle.com/">Oracle</a> uses libcurl in the MySQL Enterprise Monitor, in Endeca amd MySQL Workbench
 
 <li> <a href="http://www.outrider.se/">Outrider</a>
 
@@ -329,9 +461,32 @@ and HTTPS traffic in our OptimTalk platform
 <li> <a href="http://www.pandigital.net">Pandigital</a> uses libcurl
 in their networked digital photo frames
 
-<li> <a href="http://www.philips.com">Philips</a> uses curl in TVs.
+<li> <a href="http://www.parrot.com/dia/en">Parrot</a> uses libcurl in their DIA product
+
+<li> <a href="http://www.passivsystems.com">Passiv Systems</a> uses curl in the PassivHub and PassivController
+
+<li> <a href="http://www.pelco.com/">Pelco</a> uses libcurl
+
+<li> <a href="http://www.philips.com">Philips</a> uses curl in TVs and Blu-ray players.
+
+<li> <a href="http://www.pioneerelectronics.com/">Pioneer</a> uses libcurl in Blu-ray players.
+
+<li> <a href="http://www.plogue.com/">Plogue</a> uses libcurl in Chipspeech
+
+<li> <a href="http://pocketgems.com/">Pocket Gems</a> uses libcurl
 
 <li> Polaroid Corporation, USA - "Curl Uploader Server".
+
+<li> <a href="http://www.polycom.com/">Polycom</a> uses curl in their RealPresence Group Series Software
+
+<li> <a href="http://www.purestorage.com/">Pure Storage</a> uses libcurl in
+their Purity Operating Environment
+
+<li> <a href="http://www.quest.com/">Quest</a> uses it in Big Brother Professional Edition
+
+<li> <a href="http://theqvd.com/">QVD</a> uses libcurl on Android
+
+<li> <a href="http://www.qnx.com/">QNX</a> - QNX CAR 2 uses libcurl
 
 <li> <a href="http://www.rbs.com/">RBS</a>
 
@@ -342,6 +497,11 @@ outsourcing tool <a
 href="http://www.retarus.de/produkte/detail.asp?id=102">Faxolution for
 Windows</a>.
 
+<li> Riverbed uses libcurl in <a href="https://support.riverbed.com/content/support/software/stingray/traffic-manager.html">Stingray Traffic Manager</a>
+
+<li> ROBLOX
+<li> Rockstar Games uses libcurl in Grand Theft Auto, <a href="https://youtu.be/VvuLzUZeC18?t=44m40s">credits video</a>
+
 <li> <a href="http://www.rolltech.co.jp/en/">Rolltech, Inc</a> - commercial
 media player application on Android
 
@@ -349,15 +509,21 @@ media player application on Android
 
 <li> <a href="http://www.rsss.com/">RSSS</a>
 
+<li> <a href="http://www.samsung.com/">Samsung</a> uses libcurl in DVRs and TVs, and is present in their Android build tree for their phones
+
 <li> <a href="http://www.sandisk.com/">SanDisk</a> uses libcurl in their <a
 href="http://www.sandisk.com/Products/Catalog(1249)-SanDisk_Sansa_Connect_MP3_Player.aspx">Sansa
 Connect</a> mp3 player. (<a
 href="http://www.rockbox.org/twiki/bin/view/Main/SansaConnect">Info on
 internals</a>)
 
+<li> <a href="http://www.sap.com/">SAP</a> uses libcurl in their SAP Conversion Agent
+
 <li> <a href="http://www.sas.com/">SAS Institute</a> - <a href="http://www.jmp.com/">JMP</a>
 
 <li> <a href="http://www.seb.se/">SEB</a> uses the <a href="/libcurl/dotnet/">.NET</a> binding.
+
+<li> <a href="http://www.sharpusa.com">Sharp</a> uses libcurl in their Elite LCD TVs
 
 <li> <a href="http://www.siemens.com/">Siemens</a> uses libcurl "as part of a
 big Telco product"
@@ -365,12 +531,24 @@ big Telco product"
 <li> <a href="http://siliconlandmark.com/">Silicon Landmark</a> uses libcurl
 in a variety of internal and customer projects on MacOS X, Linux and FreeBSD
 
+<li> <a href="http://www.sjphone.org/">Sjphone</a> uses libcurl,
+
+<li> <a href="http://www.slingbox.com/">Slingbox</a> uses libcurl
+
+<li> <a href="http://www.smithmicro.com/">SmithMicro</a> uses libcurl in MotionArtist
+
+<li> <a href="https://www.snapchat.com/">Snapchat</a>
+
 <li> <a
 href="http://products.sel.sony.com/opensource/source_bivl.shtml">Sony</a> uses
 curl in their <a href="http://products.sel.sony.com/opensource/">Bravia
 Internet Video Link</a> product, Sony Bravia TVs and Blu-Ray players. And <a href="http://www.scei.co.jp/ps4-license/">Playstation 4</a>
 
+<li> <a href="http://sophos.com">Sophos</a> Anti-Virus for Linux uses libcurl
+
 <li> <a href="http://www.sourceremoting.com/">Source Remoting</a> - VSS Remoting
+
+<li> <a href="http://splunk.com/">Splunk</a> uses libcurl
 
 <li> <a href="http://www.spotify.com/">Spotify</a> - uses libcurl
 
@@ -383,7 +561,9 @@ and win32.
 href="http://onesearch.sun.com/search/onesearch/index.jsp?qt=sun%20explorer">Sun
 Explorer</a> uses curl for HTTPS upload support.
 
-<li> <a href="http://www.swisscom.com/">Swisscom</a> - <i>We use the php
+<li> SurfEasy Inc uses libcurl
+
+<li> <a href="https://www.swisscom.ch/">Swisscom</a> - <i>We use the php
 binding for the php written Application Core where curl is needed to propagate
 outstanding account manipulations to relay servers via https</i>.
 
@@ -391,16 +571,24 @@ outstanding account manipulations to relay servers via https</i>.
 
 <li> System Garden - Habitat
 
+<li> <a href="http://www.tango.me">Tango</a> Mobile Application uses libcurl
+
 <li> <a href="http://tasvideos.org/">tasvideos</a> use libcurl for its search
 and Youtube uploader.
 
+<li> <a href="http://www.tellabs.com">Tellabs</a> 7190 Element Manager and Tellabs 7194 NMS use libcurl
+
 <li> Telstra - uses libcurl in their T-Hub "home phone of the future"
+
+<li> <a href="http://www.telvue.com/">Telvue</a> uses curl
 
 <li> <a href="http://www.thumbtack.com/">Thumbtack</a> - <i>we use curl via
 PHP for connecting to a ton of external APIs, such as Yahoo Boss, Paypal &
 Verisign, and love it.</i>
 
-<li> Tilgin - uses libcurl in their Mood series IPTV settop boxes. 
+<li> Tilgin - uses libcurl in their Mood series IPTV settop boxes.
+
+<li> <a href="http://www.tomtom.com/">Tomtom</a> uses libcurl
 
 <li> <a href="http://www.toolaware.com/">ToolAware</a> makes <a href="http://www.toolaware.com/packageforge.html">PackageForge</a>
 
@@ -414,33 +602,58 @@ scanner.
 <li> <a href="http://www.tribalmedia.com/">Tribalmedia</a> - <a
 href="http://www.tribalmedia.com/products/ishell/">iShell</a>
 
+<li> <a href="http://www.trionworlds.com">Trion Worlds</a>
+
 <li> Tiempo de Espera, S.L. (tds-solutions) tdBOX on Windows XP.
 
-<li> <a href="http://www.ergon.ch/">Ergon Informatik AG</a> - is using libcurl
-for part of the reverse proxy functionality in its <a
-href="http://www.ergon.ch/en/airlock/">WAF Airlock</a>.
+<li> Unisys uses libcurl in ClearPath Libra products and more
+
+<li> <a href="http://www.uniplot.de">UniPlot</a> uses curl
+
+<li> <a href="http://unity3d.com/">Unity3d</a> uses libcurl to implement http
+functionality in the editor and in some games
+
+<li> <a href="http://www.ustream.tv/">ustream</a> uses libcurl in their iOS Broadcaster and Viewer
+
+<li> <a href="http://valve.com/">Valve</a> uses libcurl
+
+<li> <a href="http://www.vetport.com">VETport</a> uses CURL
 
 <li> <a href="http://www.vivisimo.com/">Vivisimo</a> - Content Integrator
 
-<li> <a href="http://www.vmware.com/">Vmware</a> - <a href="http://code.google.com/p/vmware-view-open-client/">VMware View Open Client</a>
+<li> <a href="https://www.vmware.com/">Vmware</a> - <a href="https://code.google.com/p/vmware-view-open-client/">VMware View Open Client</a>
 
 <li> <a href="http://www.voddler.com/">Voddler</a> uses libcurl in their client for streaming video.
 
-<li> <a href="http://www.volition-inc.com/">Volition Inc</a> uses libcurl in their game <a href="http://en.wikipedia.org/wiki/Saints_Row:_The_Third">Saints Row: The Third</a> (see <a href="http://saintsrow.wikia.com/wiki/Saints_Row:_The_Third_credits">credits</a>)
+<li> <a href="http://www.volition-inc.com/">Volition Inc</a> uses libcurl in their game <a href="https://en.wikipedia.org/wiki/Saints_Row:_The_Third">Saints Row: The Third</a> (see <a href="http://saintsrow.wikia.com/wiki/Saints_Row:_The_Third_credits">credits</a>)
+
+<li> <a href="http://vuo.org/">Vuo</a>
 
 <li> <a href="http://www.wump.org/">Wump Research &amp; Company</a> <i>a
 fundamental "hand tool" for moving data</i>
 
+<li> <a href="http://www.xilinx.com/">Xilinx</a> uses curl
+
 <li> <a href="http://www.xonasoftware.com/">XonaSoftware</a>
 
 <li> <a href="http://www.yahoo.com/">Yahoo</a> (via the PHP/CURL binding, see
-<a href="http://public.yahoo.com/~radwin/talks/php-at-yahoo-zend2005.pdf">PHP
-at yahoo</a>), used by http://search.yahoo.com and http://babelfish.yahoo.com
+<a href="https://public.yahoo.com/~radwin/talks/php-at-yahoo-zend2005.pdf">PHP
+at yahoo</a>), used by https://search.yahoo.com and http://babelfish.yahoo.com
+
+<li> <a href="http://www.yamaha.com/">Yamaha</a> uses libcurl in AV Receivers and Blu-ray palyers
+
+<li> <a href="http://xerox.com/">Xerox</a> uses curl in ConnectKey.
+  
+<li> <a href="https://www.yubico.com/">Yubico</a> uses curl in validation servers and clients.
 
 <li> <a href="http://www.zimbra.com/">Zimbra</a> uses libcurl in their Zimbra product.
 
 <li> <a href="http://www.zixcorp.com/">Zixcorp</a>
 <li> <a href="http://www.zonarsystems.com/">Zonar Systems LLC</a> - <a href="http://www.zonarsystems.com/support/software.php">ZonarCom 3</a>
+
+<li> <a href="http://www.zyxel.com/">Zyxel</a> uses curl in their Digital Media Server
+
+<li> <a href="https://z2.com/">Z2</a> uses libcurl in z2live
 
 </ol>
 

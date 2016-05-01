@@ -6,25 +6,18 @@ TESTROOT=$(SRCROOT)/tests
 LIBROOT=$(SRCROOT)/lib
 CURL= $(ROOT)
 
-MAINPARTS= $(ROOT)/_doctype.html $(CURL)/_menu.html $(CURL)/_footer.html \
-  $(CURL)/setup.t $(CURL)/pic.t $(CURL)/where.t $(CURL)/css.t \
-  $(ROOT)/mirrorlinks.t topline.t $(ROOT)/ad.t _menu.html
-NOW=$(shell date +'-D__TODAY__=%B %d, %Y')
-ACTION=echo preprocessing $@; \
- rm -f $@; \
- fcpp -I.. -I. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@;
-TXT2PLAIN = $(ROOT)/docs/txt2plain.pl
+include $(ROOT)/mainparts.mk
+include $(ROOT)/setup.mk
+
+MAINPARTS += _menu.html
+
 MAN2HTML = roffit --bare
 
-PAGES = foot.html head.html howto.html summary.html	     \
-	cvshistory.html							     \
-	missing.html keywords.html builds.html todo-release.html	     \
-	release-notes.html index.html contribute.html internals.html	     \
-	testcurl.html runtests.html source.html readme-ares.html	     \
-	readme-curl_off_t.html readme-curlx.html readme-encoding.html	     \
-	readme-hostip.html readme-httpauth.html readme-memoryleak.html	     \
-	readme-multi_socket.html readme-pingpong.html readme-pipelining.html \
-	readme-http2.html security.html
+PAGES = foot.html head.html howto.html summary.html cvshistory.html	\
+	missing.html keywords.html builds.html release-notes.html	\
+	index.html contribute.html internals.html testcurl.html		\
+	runtests.html source.html security.html roadmap.html		\
+	sourceactivity.html release-procedure.html code-style.html
 
 all: $(PAGES)
 
@@ -36,6 +29,20 @@ index.html: _index.html bugbox.t $(MAINPARTS)
 
 source.html: _source.html $(MAINPARTS)
 	$(ACTION)
+
+roadmap.html: _roadmap.html roadmap.gen $(MAINPARTS)
+	$(ACTION)
+roadmap.gen: $(SRCROOT)/docs/ROADMAP.md
+	$(MARKDOWN) < $< > $@
+
+code-style.html: _code-style.html code-style.gen $(MAINPARTS)
+	$(ACTION)
+code-style.gen: $(SRCROOT)/docs/CODE_STYLE.md
+	$(MARKDOWN) < $< | sed -e 's:*:\&#42;:g' -e 's:#undef:\&#35;undef:g' \
+	-e 's:#define:\&#35;define:g' \
+	-e 's:#else:\&#35;else:g' \
+	-e 's:#endif:\&#35;endif:g' \
+	-e 's:#ifdef:\&#35;ifdef:g' > $@
 
 testcurl.html: _testcurl.html $(MAINPARTS) testcurl.dump
 	$(ACTION)
@@ -57,13 +64,13 @@ internals.html: _internals.html $(MAINPARTS) internals.t
 	$(ACTION)
 
 internals.t: $(DOCROOT)/INTERNALS
-	$(TXT2PLAIN) < $< > $@
+	$(MARKDOWN) < $< > $@
 
-security.html: _security.html $(MAINPARTS) security.t
+security.html: _security.html $(MAINPARTS) security.gen
 	$(ACTION)
 
-security.t: $(DOCROOT)/SECURITY
-	$(TXT2PLAIN) < $< > $@
+security.gen: $(DOCROOT)/SECURITY
+	$(MARKDOWN) < $< > $@
 
 foot.html: _foot.html $(MAINPARTS)
 	$(ACTION)
@@ -74,7 +81,10 @@ head.html: _head.html $(MAINPARTS)
 summary.html: _summary.html $(MAINPARTS) summary.t
 	$(ACTION)
 
-cvshistory.html: _cvshistory.html $(MAINPARTS) cvs.t
+cvshistory.html: _sourceactivity.html $(MAINPARTS) cvs.t
+	$(ACTION)
+
+sourceactivity.html: _sourceactivity.html $(MAINPARTS) cvs.t
 	$(ACTION)
 
 missing.html: _missing.html $(MAINPARTS)
@@ -86,10 +96,10 @@ release-notes.txt: $(SRCROOT)/RELEASE-NOTES
 release-notes.html: _release-notes.html release-notes.txt $(MAINPARTS)
 	$(ACTION)
 
-todo-release.txt: $(SRCROOT)/TODO-RELEASE
-	$(TXT2PLAIN) < $< > $@
+release-procedure.gen: $(DOCROOT)/RELEASE-PROCEDURE
+	$(MARKDOWN) < $< > $@
 
-todo-release.html: _todo-release.html todo-release.txt $(MAINPARTS)
+release-procedure.html: _release-procedure.html release-procedure.gen $(MAINPARTS)
 	$(ACTION)
 
 howto.html: _howto.html $(MAINPARTS) _head.html
@@ -99,72 +109,6 @@ keywords.html: _keywords.html $(MAINPARTS) _head.html keywords.txt
 	$(ACTION)
 
 builds.html: _builds.html $(MAINPARTS) table.t explainopts.t
-	$(ACTION)
-
-README.ares.dump: $(LIBROOT)/README.ares
-	$(TXT2PLAIN) < $< > $@
-
-readme-ares.html: _readme-ares.html README.ares.dump $(MAINPARTS)
-	$(ACTION)
-
-README.curl_off_t.dump: $(LIBROOT)/README.curl_off_t
-	$(TXT2PLAIN) < $< > $@
-
-readme-curl_off_t.html: _readme-curl_off_t.html README.curl_off_t.dump $(MAINPARTS)
-	$(ACTION)
-
-README.curlx.dump: $(LIBROOT)/README.curlx
-	$(TXT2PLAIN) < $< > $@
-
-readme-curlx.html: _readme-curlx.html README.curlx.dump $(MAINPARTS)
-	$(ACTION)
-
-README.encoding.dump: $(LIBROOT)/README.encoding
-	$(TXT2PLAIN) < $< > $@
-
-readme-encoding.html: _readme-encoding.html README.encoding.dump $(MAINPARTS)
-	$(ACTION)
-
-README.hostip.dump: $(LIBROOT)/README.hostip
-	$(TXT2PLAIN) < $< > $@
-
-readme-hostip.html: _readme-hostip.html README.hostip.dump $(MAINPARTS)
-	$(ACTION)
-
-README.httpauth.dump: $(LIBROOT)/README.httpauth
-	$(TXT2PLAIN) < $< > $@
-
-readme-httpauth.html: _readme-httpauth.html README.httpauth.dump $(MAINPARTS)
-	$(ACTION)
-
-README.http2.dump: $(LIBROOT)/README.http2
-	$(TXT2PLAIN) < $< > $@
-
-readme-http2.html: _readme-http2.html README.http2.dump $(MAINPARTS)
-	$(ACTION)
-
-README.memoryleak.dump: $(LIBROOT)/README.memoryleak
-	$(TXT2PLAIN) < $< > $@
-
-readme-memoryleak.html: _readme-memoryleak.html README.memoryleak.dump $(MAINPARTS)
-	$(ACTION)
-
-README.multi_socket.dump: $(LIBROOT)/README.multi_socket
-	$(TXT2PLAIN) < $< > $@
-
-readme-multi_socket.html: _readme-multi_socket.html README.multi_socket.dump $(MAINPARTS)
-	$(ACTION)
-
-README.pingpong.dump: $(LIBROOT)/README.pingpong
-	$(TXT2PLAIN) < $< > $@
-
-readme-pingpong.html: _readme-pingpong.html README.pingpong.dump $(MAINPARTS)
-	$(ACTION)
-
-README.pipelining.dump: $(LIBROOT)/README.pipelining
-	$(TXT2PLAIN) < $< > $@
-
-readme-pipelining.html: _readme-pipelining.html README.pipelining.dump $(MAINPARTS)
 	$(ACTION)
 
 full: all

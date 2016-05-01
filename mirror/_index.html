@@ -9,86 +9,26 @@
 #include "_menu.html"
 #include "setup.t"
 
-WHERE3(Download, "/download.html", Mirrors, "/mirrors.html", How To Mirror)
+WHERE2(Download, "/download.html", How To Mirror)
 
 TITLE(How To Mirror)
 <p>
- We provide the download packages for mirroring using rsync. You can mirror
- the contents at any time, using these command lines:
+ We provide the download packages for easy mirroring using rsync. You can
+ mirror the contents at any time, using these command lines:
 <pre>
-  rsync -t --delete rsync://cool.haxx.se/curldownload curl-web-root/download
+  rsync -t --delete rsync://cool.haxx.se/curldownload
 </pre>
 <p>
- See our <a href="http://curl.haxx.se/latest.cgi">download-from-mirror</a>
- service.
+ We recommend syncing at least daily so that updates take effect swiftly
+ enough.
 
-#if 0
-SUBTITLE(Requirements for curl Official Web Site Mirrors)
 <p>
- To be recognized and advertised as an offcial curl web site mirror, these
- simple requirements must be met:
-<ul>
-
-<li> Mirror the site using rsync, as described above, at least every 24 hours.
-
-<li> Make your local /download.html page links work (either by mirroring the
-download files too, or by making them redirect the user to a working download
-mirror)
-
-<li> Use a host name that starts with "curl". Like
-curl.[yourdomain].[tld]. Examples: curl.haxx.se, curl.tsuren.net,
-curl.cyberservers.net.
-
-<li> Mail your info and provide a contact email address to <a
-href="mailto:curl-web@haxx.se">curl-web</a>.
-
-</ul>
-<p>
- We supervise mirrors automatically to verify that they are up-to-date, and if
- they aren't (and emailing the admin doesn't help) we stop linking to/using
- them.
-
-SUBTITLE(Info for Mirror Admins)
-<p>
- We check the age of your mirror regularly. Should your mirror appear
- out-of-date or non-responding too often we will remove it from the list of
- official mirrors.
-<p>
- If you want to add a small 'hosted by [your orginazation]' link in the top or
- bottom of the HTML pages, it is OK with us and for this purpose we offer two
- strings in the HTML pages that are easily recognizable and
- search-and-replacable. Please use them instead of simply prepending or
- appending stuff so that the output HTML remains as standards compliant as
- possible.
-
-<ul>
-
-<li> &lt;!-- first-line-in-body --&gt; appears in a line above the curl logo
- and ad at the very top of the pages.
-
-<li> &lt;!-- last-line-in-body --&gt; appears below the "about"-box in the
- bottom right end of the pages.
-
-</ul>
-<p>
- Both these markers can be examined on the curl.haxx.se main site live, as
- they are shown unmodified there in all HTML pages.
-
-#endif
-
-#if 0
-SUBTITLE(Your mirror mentioned)
-<p>
- All web mirrors are mentioned on the <a href="/mirrors.html">mirrors.html</a>
- page. We also allow an individual logo there for the organization/company
- that runs/hosts the mirror. Your mirror will also appear on the <a
- href="http://curlm.haxx.se/">curlm.haxx.se service</a> and with the <a
- href="/latest.cgi">latest.cgi</a> download script.
-<p>
- Mirrors are also mentioned with URL in the README file of all curl releases.
-#endif
+ If you decide to run a download mirror for us (or if you decide to no longer
+ run one), please tell us at curl-web at haxx.se so that we can add it to or
+ remove it from the
+ <a href="https://github.com/curl/curl-www/blob/master/latest.pl">latest.pl</a>
+ script on the web site.
 
 #include "_footer.html"
 </BODY>
 </HTML>
-

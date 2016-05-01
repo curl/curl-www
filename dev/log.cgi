@@ -17,7 +17,7 @@ my $day = "";
 
 my $id = $req->param('id');
 # Strip any unsafe log name characters
-$id =~ s/[^-0-9_a-zA-Z]//g;
+$id =~ s/[^-\w]//g;
 
 if($id =~ /^(\d\d\d\d)(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)-(\d+)/) {
     my ($bhour, $bmin, $bsec, $bpid);
@@ -36,9 +36,6 @@ title("Log from $year-$month-$day");
 
 my $build = "inbox/build-$id.log";
 
-my $date;
-my $timestamp;
-my $description;
 
 if(open(my $logfile, "<$build")) {
     #
@@ -58,15 +55,6 @@ if(open(my $logfile, "<$build")) {
             if($line =~ /^testcurl: /) {
                 if($line =~ /^testcurl: ENDING HERE/) {
                     last;
-                }
-                elsif($line =~ /^testcurl: DESC = (.*)/) {
-                    $description = $1;
-                }
-                elsif($line =~ /^testcurl: date = (.*)/) {
-                    $date = $1;
-                }
-                elsif($line =~ /^testcurl: timestamp = (.*)/) {
-                    $timestamp = $1;
                 }
                 elsif($line =~ /^testcurl: EMAIL/) {
                     $line =~ s:\@: /at/ :g;
@@ -95,6 +83,12 @@ if(open(my $logfile, "<$build")) {
                 $num++;
                 my $nx = $num + 1;
                 push @out, "<a name=\"prob$num\"></a><a href=\"#prob$nx\">goto problem $nx</a><div class=\"warning\">" . CGI::escapeHTML($line) . "</div>\n";
+            }
+            elsif($line =~ /^testcurl: NOTES /) {
+                # Make links in NOTES lines clickable
+                $line = CGI::escapeHTML($line);
+                $line =~ s/((http|https|ftp|ftps):\/\/([\w\/.%=?#:@!$&*+,;~-]*[a-z0-9\/]))/<a href=\"$2:\/\/$3\" rel=\"nofollow\">$1<\/a>/g;
+                push @out, $line . "<br>\n";
             }
             else {
                 push @out, CGI::escapeHTML($line) . "<br>\n";
@@ -133,7 +127,7 @@ if(open(my $logfile, "<$build")) {
     #
 }
 else {
-    print "File not found!";
+    print "\nFile not found!";
 }
 
 &catfile("foot.html");

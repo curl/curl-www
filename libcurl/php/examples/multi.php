@@ -1,12 +1,4 @@
 <?php
-/************************************\
-* Multi interface in PHP with curl  *
-* Requires PHP 5.0, Apache 2.0 and  *
-* Curl 				    *
-*************************************
-* Writen By Cyborg 19671897         *
-* Bugfixed by Jeremy Ellman         *
-\***********************************/
 
 $urls = array(
    "http://www.google.com/",
@@ -25,7 +17,12 @@ foreach ($urls as $i => $url) {
        curl_multi_add_handle ($mh,$conn[$i]);
 }
 
-do { $n=curl_multi_exec($mh,$active); } while ($active);
+do {
+  $n=curl_multi_exec($mh,$active);
+
+  /* without this, we will busy-loop here and use 100% CPU */
+  curl_multi_select($mh, 0.7);
+} while ($active);
 
 foreach ($urls as $i => $url) {
        $res[$i]=curl_multi_getcontent($conn[$i]);
@@ -33,7 +30,6 @@ foreach ($urls as $i => $url) {
        curl_close($conn[$i]);
 }
 curl_multi_close($mh);
-
 
 print_r($res);
 

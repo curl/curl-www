@@ -4,7 +4,7 @@
 #include "css.t"
 </head>
 
-#define DEVEL_BUILDHOWTO
+#define DEVEL_BUILDSTATS
 
 #include "_menu.html"
 #include "setup.t"
@@ -21,7 +21,7 @@ SUBTITLE(Get a Fresh Check-out from git)
 <pre>
   $ mkdir someplacenice
   $ cd someplacenice
-  $ git clone git://github.com/bagder/curl.git
+  $ git clone https://github.com/curl/curl.git
   $ ./curl/tests/testcurl.pl
 </pre>
 <p>
@@ -70,7 +70,7 @@ SUBTITLE(Build from daily tarballs)
 <p>
  If you can't checkout or update the sources from git easily, another approach
  to automated testing of the latest sources is made by getting the latest <a
- href="http://cool.haxx.se/curl-daily/">daily tarballs</a> automaticly
+ href="https://curl.haxx.se/snapshots/">daily tarballs</a> automatically
  instead.
 <p>
  This is easily done with the use of the <a href="autocurl.txt">autocurl</a>

@@ -6,22 +6,21 @@
 
 #define CURL_NEWS
 
-#include "_menu.html"
 #include "setup.t"
+#include "_menu.html"
 
 #undef DATE
 
-#define NSUBJ(x) <!-- start !--><div class="newstitle">x
-#define NDATE(x) <span style="float: right">x</span></div>
+#define NSUBJ(subj) <!-- start !--> <h2> subj
+#define NDATE(date) <span style="float: right">date</span></h2>
 
-#define NCOLS <p>
-#define NCOLE </p><!-- stop !-->
+#define NCOLS <div>
+#define NCOLE </div><!-- stop !-->
 
-#define COLRED  <div class="alert">
-#define COLREDE </div><!-- stop !-->
+#define COLRED  <p class="alert">
+#define COLREDE </p><!-- stop !-->
 
 TITLE(News in curl and libcurl land)
-<table class="news">
 
 #if 0
  template:
@@ -35,13 +34,495 @@ TITLE(News in curl and libcurl land)
  NCOLE
 #endif
 
+ NSUBJ(curl and libcurl 7.48.0)
+ NDATE(March 23 2016)
+ NCOLS
+
+ The curl team proudly presents yet another version in the never ending train
+ of curl releases. curl and libcurl <a href="download.html">version 7.48.0</a>
+ is out. Read up on all the changes and bug fixes in
+ the <a href="changes.html#7_48_0">changelog</a>.
+
+ NCOLE
+
+ NSUBJ(curl and libcurl 7.47.1)
+ NDATE(February 8 2016)
+ NCOLS
+
+ The curl team proudly presents curl and
+ libcurl <a href="download.html">version 7.47.1</a>. Read up on all the
+ changes and bug fixes in the <a href="changes.html#7_47_1">changelog</a>.
+
+ NCOLE
+
+ NSUBJ(git repo moved on github)
+ NDATE(February 3 2016)
+ NCOLS
+
+ The git repositories on github for
+ the <a href="https://github.com/curl/curl">source</a> and
+ the <a href="https://github.com/curl/curl-www">web site</a> have now been
+ moved over to its new home there: the <a href="https://github.com/curl">curl
+ organization</a>.
+
+
+ NCOLE
+
+ NSUBJ(web site over HTTPS)
+ NDATE(January 29 2016)
+ NCOLS
+
+  The curl web site is now served over HTTPS and with HTTP/2 - with
+  certificates from Let's Encrypt. Starting February 3, the curl site
+  automatically redirects all http accesses to its https version. No more HTTP
+  accesses to contents.
+
+ NCOLE
+
+ NSUBJ(curl and libcurl 7.47.0)
+ NDATE(January 27 2016)
+ NCOLS
+
+ The curl team proudly presents curl and
+ libcurl <a href="download.html">version 7.47.0</a>. Read up on all the
+ changes and bug fixes in the <a href="changes.html#7_47_0">changelog</a>.
+<p>
+ This release comes bundled with two security
+ advisories: <a href="//curl.haxx.se/docs/adv_20160127B.html">CVE-2016-0754:
+ local drive traversal when saving file on Windows</a>
+ and <a href="//curl.haxx.se/docs/adv_20160127A.html">CVE-2016-0755: NTLM
+ credentials not-checked for proxy connection re-use</a>.
+
+ NCOLE
+
+ NSUBJ(curl and libcurl 7.46.0)
+ NDATE(December 2 2015)
+ NCOLS
+
+ The curl team proudly presents curl and
+ libcurl <a href="download.html">version 7.46.0</a>. Read up on all the
+ changes and bug fixes in the <a href="changes.html#7_46_0">changelog</a>.
+<p>
+ This is the 150th release counted from the beginning!
+
+ NCOLE
+
+NSUBJ(curl and libcurl 7.45.0)
+ NDATE(October 7 2015)
+ NCOLS
+
+ The curl team proudly presents the best release ever: curl and
+ libcurl <a href="download.html">version 7.45.0</a>. Read up on all the
+ changes and bug fixes in the <a href="changes.html#7_45_0">changelog</a>.
+
+ NCOLE
+
+ NSUBJ(curl HTTP cheat sheet)
+ NDATE(September 24 2015)
+ NCOLS
+
+  As a little side-project,
+  a <a href="https://bagder.github.io/curl-cheat-sheet/http-sheet.html">curl
+  cheat sheet</a> is being worked on, as a small page showing the most
+  commonly used curl HTTP options.
+
+<p>
+  Help us improve it! It will most probably move into the curl site umbrella
+  at some point.
+
+ NCOLE
+
+ NSUBJ(curl and libcurl 7.44.0)
+ NDATE(August 12 2015)
+ NCOLS
+
+ The curl team proudly presents curl and
+ libcurl <a href="download.html">version 7.44.0</a>. Read up on all the
+ changes and bug fixes in the <a href="changes.html#7_44_0">changelog</a>.
+
+ NCOLE
+
+ NSUBJ([SECURITY NOTICE] libidn with bad UTF8 input)
+ NDATE(June 29 2015)
+ NCOLS
+
+  A recent security review of libcurl showed that a remote attacker can
+  abuse libcurl's support for international domain names to disclose
+  memory of a libcurl application or cause other unintended behaviors by
+  passing in a malformed unicode string in the URL parameter.
+
+<p>
+  <a href="//curl.haxx.se/mail/lib-2015-06/0143.html">The entire libidn
+  notice</a>
+
+ NCOLE
+
+ NSUBJ(Release archives over HTTPS)
+ NDATE(June 29 2015)
+ NCOLS
+
+ As long as the main curl site is still on HTTP only, we now offer HTTPS
+ downloads of the <a href="/download.html">source archives</a> over HTTPS from
+ github. We also modified the look of the release archives list slightly.
+<p>
+ Enjoy!
+
+ NCOLE
+
+ NSUBJ(ISP blacklisted by Spamhaus)
+ NDATE(June 18 2015)
+ NCOLS
+
+  Right now a large amount of mail servers in the world refuse to accept mails
+  from our primary mail server
+  since <a href="https://www.spamhaus.org/sbl/query/SBL212408">Spamhaus deems
+  our ISP to be irresponsible</a> and blacklists us.
+<p>
+  We have a fixed IP and we've done nothing wrong here, but apparently
+  collective punishment is a method.
+
+ NCOLE
+
+ NSUBJ(daniel weekly 37)
+ NDATE(June 17 2015)
+ NCOLS
+
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/nSojqPVJAjA" frameborder="0" allowfullscreen></iframe>
+
+ NCOLE
+
+ NSUBJ(curl and libcurl 7.43.0)
+ NDATE(June 17 2015)
+ NCOLS
+
+ The curl team proudly presents curl and
+ libcurl <a href="download.html">version 7.43.0</a>. Read up on all the
+ changes and bug fixes in the <a href="changes.html#7_43_0">changelog</a>.
+
+<p>
+ This release comes bundled with two security advisories:
+ <a href="//curl.haxx.se/docs/adv_20150617A.html">CVE-2015-3236:
+ lingering HTTP credentials in connection re-use</a>
+ and <a href="//curl.haxx.se/docs/adv_20150617B.html">CVE-2015-3237: SMB
+ send off unrelated memory contents</a>.
+
+ NCOLE
+
+ NSUBJ(daniel weekly 36)
+ NDATE(June 9 2015)
+ NCOLS
+
+ <iframe width="400" height="225"
+ src="https://www.youtube.com/embed/p2oorXa2f-A" frameborder="0"
+ allowfullscreen></iframe>
+
+ NCOLE
+
+ NSUBJ(daniel weekly 35)
+ NDATE(June 3 2015)
+ NCOLS
+
+ <iframe width="400" height="225"
+ src="https://www.youtube.com/embed/nQFWlAvM4Kw" frameborder="0"
+ allowfullscreen></iframe>
+
+ NCOLE
+
+ NSUBJ(curl user poll 2015 analysis)
+ NDATE(May 26 2015)
+ NCOLS
+
+  The <a href="https://daniel.haxx.se/media/curl%20user%20poll%202015%20analysis.pdf">30
+  page document</a> with all details and analyses of the curl user poll 2015
+  is now available. It shows details of all the questions, most of them with a
+  comparison with last yearâ€™s survey. The write-ins are also full of good
+  advice, wisdom and some signs of ignorance or unawareness.
+
+ NCOLE
+
+ NSUBJ(curl and libcurl 7.42.1)
+ NDATE(April 29 2015)
+ NCOLS
+
+ The curl team proudly presents another curl and libcurl
+ relese: <a href="download.html">version 7.42.1</a>. Read up on all the
+ changes and bug fixes in the <a href="changes.html#7_42_1">changelog</a>.
+
+<p>
+ This release comes bundled another security advisory:
+ <a href="//curl.haxx.se/docs/adv_20150429.html">CVE-2015-3153: sensitive
+ HTTP server headers also sent to proxies</a>.
+
+ NCOLE
+
+ NSUBJ(curl and libcurl 7.42.0)
+ NDATE(April 22 2015)
+ NCOLS
+
+ The curl team proudly presents another curl and libcurl
+ relese: <a href="download.html">version 7.42.0</a>. Read up on all the
+ changes and bug fixes in the <a href="changes.html#7_42_0">changelog</a>.
+
+<p>
+ This release comes bundled with no less than four different security
+ advisories:
+ <ul>
+  <li> <a href="//curl.haxx.se/docs/adv_20150422D.html">host name out of boundary memory access</a>
+  <li> <a href="//curl.haxx.se/docs/adv_20150422C.html">cookie parser out of boundary memory access</a>
+  <li> <a href="//curl.haxx.se/docs/adv_20150422B.html">Negotiate not treated as connection-oriented</a>
+  <li> <a href="//curl.haxx.se/docs/adv_20150422A.html">Re-using authenticated connection when unauthenticated</a>
+ </ul>
+
+ NCOLE
+
+ NSUBJ(becoming more github friendly)
+ NDATE(March 2 2015)
+ NCOLS
+
+  We're trying to lower barriers and friction for newcomers. We have a new
+  positive attitude to pull requests and issues filed directly
+  at <a href="https://github.com/curl/curl">github</a>. Welcome!
+
+<p>
+  Existing hackers: consider clicking 'watch' on that repo to get notified.
+
+ NCOLE
+
+ NSUBJ(curl and libcurl 7.41.0)
+ NDATE(February 25 2015)
+ NCOLS
+
+ The curl team proudly presents another curl and libcurl
+ relese: <a href="download.html">version 7.41.0</a>. Read up on all the
+ changes and bug fixes in the <a href="changes.html#7_41_0">changelog</a>.
+
+ NCOLE
+
+
+ NSUBJ(Enhanced vulnerability overview)
+ NDATE(January 9 2015)
+ NCOLS
+
+  The <a href="/docs/vulnerabilities.html">vulnerability table</a> on the web
+  site has gotten an overhaul. It is the complete list of all published curl
+  vulnerabilities together with which curl versions that are vulnerable.
+<p>
+  The new layout is <i>much</i> smaller HTML, and it now features links to
+  specific summaries for each individual curl release through the
+  history. Each summarizing its own vulnerability situation.
+<p>
+  For example, you can look at the vulnerability situation
+  for <a href="/docs/vuln-7.37.0.html">curl 7.37.0</a> as well as all the
+  others - back to <a href="/docs/vuln-6.0.html">6.0</a>, released in 1999.
+
+ NCOLE
+
+
+ NSUBJ(curl and libcurl 7.40.0)
+ NDATE(January 8 2015)
+ NCOLS
+
+ The curl team proudly presents another curl and libcurl
+ relese: <a href="download.html">version 7.40.0</a>. Read up on all the
+ changes and bug fixes on the <a href="changes.html#7_40_0">changes</a> page.
+
+<p>
+ We also publish two security advisories in association with this
+ release. See <a href="/docs/adv_20150108A.html">CVE-2014-8151</a>
+ and <a href="/docs/adv_20150108B.html">CVE-2014-8150</a> for all the details.
+
+ NCOLE
+
+ NSUBJ(videos on curl front page)
+ NDATE(November 28 2014)
+ NCOLS
+
+ The front page is now slightly modified to provide a fixed slot for the
+ weekly (or so) videos made by Daniel.
+
+ NCOLE
+
+NSUBJ(Thanks page remake)
+ NDATE(November 6 2014)
+ NCOLS
+
+ The <a href="/docs/thanks.html">THANKS</a> page,crediting all the people that
+ have helped out in the project, has just gotten a little overhaul and now
+ features a completely new look. We also made some extra efforts and removed
+ some duplicate names from it, which explains why the amount of names went
+ down somewhat.
+<p>
+ Of course, if you think you are wrongly missing from the list of names,
+ please tell us. We truly believe in <a href="https://daniel.haxx.se/blog/2014/08/25/credits-in-the-curl-project/">giving proper credit</a>!
+
+ NCOLE
+
+ NSUBJ(curl and libcurl 7.39.0)
+ NDATE(November 5 2014)
+ NCOLS
+
+ The curl team proudly presents another curl and libcurl
+ relese: <a href="download.html">version 7.39.0</a>. Read up on all the
+ changes and bug fixes on the <a href="changes.html#7_39_0">changes</a> page.
+
+<p>
+ We also publish a security advisory in association with this
+ release. See <a href="/docs/adv_20141105.html">CVE-2014-3707</a>.
+
+ NCOLE
+
+ NSUBJ(curl is no POODLE)
+ NDATE(October 17 2014)
+ NCOLS
+
+  curl is not affected by the POODLE attack. Described further in Daniel's
+  blog
+  post: <a href="https://daniel.haxx.se/blog/2014/10/17/curl-is-no-poodle/">curl
+  is no POODLE</a>
+
+ NCOLE
+
+ NSUBJ(Random curl info)
+ NDATE(October 10 2014)
+ NCOLS
+
+  Recent posts (off-site) by Daniel about curl and libcurl stuff:
+
+<ul>
+<p>
+ <a href="https://daniel.haxx.se/blog/2014/10/10/internal-timers-and-timeouts-of-libcurl/">internal timers and timeouts of libcurl</a> - It is time to take a deep dive into the libcurl internals and see how it handles timeouts and timers.
+
+<p>
+  <a href="https://daniel.haxx.se/blog/2014/10/09/coverity-scan-defect-density-0-00/">Coverity scan defect density: 0.00</a> - I cleared off all the pending issues and we're now at zero defects left reported.
+<p>
+  <a href="https://daniel.haxx.se/blog/2014/09/29/a-day-in-the-curl-project/">A day in the curl project</a> - An overview and look to what I spend all the time on in the curl project.
+<p>
+  <a href="https://www.youtube.com/watch?v=2cBC5FzJJ1o">Video: daniel.haxx.se episode 5</a> - my continued series of weekly updates of my doings in the open source world.
+
+</ul>
+
+ NCOLE
+
+ NSUBJ(Daniel Youtubes about curl)
+ NDATE(September 15 2014)
+ NCOLS
+
+  Daniel (curl project leader) is doing a <a
+  href="https://www.youtube.com/watch?v=OytGfG9u3Yk">video series</a> about
+  what he's working on at the moment. They are 5-7 minutes each, are posted
+  weekly and include lots of details of what's been happening in the curl
+  project.
+
+ NCOLE
+
+ NSUBJ(curl and libcurl 7.38.0)
+ NDATE(September 10 2014)
+ NCOLS
+
+ The curl team proudly presents a new and shiny curl and libcurl
+ relese: <a href="download.html">version 7.38.0</a>. Read up on all the
+ changes and bug fixes on the <a href="changes.html#7_38_0">changes</a> page.
+
+<p>
+ This time we also publish two HTTP cookie related security advisories in
+ association with this
+ release. See <a href="/docs/adv_20140910A.html">CVE-2014-3613</a>
+ and <a href="/docs/adv_20140910B.html">CVE-2014-3620</a>.
+
+ NCOLE
+
+ NSUBJ(RSA-1024 cacert cleanups)
+ NDATE(September 5 2014)
+ NCOLS
+
+ Mozilla has recently removed weak certs from
+ the <a href="/docs/caextract.html">CA certs bundle</a>. Weak, in the meaning
+ that they used 1024 bit RSA.
+ <p>
+ If you download the latest cacert bundle from the link above right now,
+ you'll see that s3.amazonaws.com sites no longer gets verified fine. I guess
+ that it goes for a few other sites too.
+ <p>
+ <a href="//curl.haxx.se/mail/lib-2014-09/0041.html">Read more</a>.
+
+ NCOLE
+
+ NSUBJ(curl and libcurl 7.37.1)
+ NDATE(July 16 2014)
+ NCOLS
+
+  Another eight week cycle loops and the curl team proudly presents a new and
+  shiny curl and libcurl relese: <a href="download.html">version
+  7.37.1</a>. Read up on all the changes and bug fixes on
+  the <a href="changes.html#7_37_1">changes</a> page.
+
+ NCOLE
+
+ NSUBJ(curl and libcurl survey results)
+ NDATE(June 13 2014)
+ NCOLS
+
+  The <a href="//curl.haxx.se/docs/survey/survey2014.html">results from
+  the 2014 survey</a> is now published.
+
+ <p>
+  These are the "raw" numbers, analysis and conclusions drawn from this are
+  left to do. Join in and tell us what you think this means!
+
+ NCOLE
+
+ NSUBJ(poll: curl and libcurl usage and project details)
+ NDATE(June 2 2014)
+ NCOLS
+
+  The curl project runs the <a href="https://goo.gl/HPswnv">curl and libcurl
+  2014 poll</a>, asking for your input and feedback on a set of questions
+  around the project, its present and its future.
+ <p>
+  Feel free to share this link to others who may have a relevant opinion.
+ <p>
+  The poll is open until midnight June 11th (central european time).
+
+ NCOLE
+
+
+ NSUBJ(curl and libcurl 7.37.0)
+ NDATE(May 21 2014)
+ NCOLS
+
+  The curl team proudly presents another new and shiny curl and libcurl
+  relese: <a href="download.html">version 7.37.0</a>. Read up on all the
+  changes and bug fixes on the <a href="changes.html#7_37_0">changes</a> page.
+
+ NCOLE
+
+ NSUBJ(CA bundle over HTTPS)
+ NDATE(May 8 2014)
+ NCOLS
+
+  Our <a href="/docs/caextract.html">CA extract</a> service is very popular to
+  download Mozilla's CA cert bundle in PEM format. Starting now, we also
+  provide a proper HTTPS download link for users who want to be sure there's
+  no foul play going on during the download.
+
+<p>
+  The HTTPS download is provided via github so it will also provide an
+  alternative hosting site for cases where one or the other has
+  problems. Since there's a chicken-and-egg problem with TLS and CA certs, we
+  still offer the same download URL as before over plain HTTP as well.
+
+<p>
+  Thank you for flying curl.
+
+ NCOLE
+
  NSUBJ(a curl wiki)
  NDATE(April 25 2014)
  NCOLS
 
    To enhance everyone's ability to contribute with docs, examples, good ideas
    and other curl related information we've enabled
-   a <a href="https://github.com/bagder/curl/wiki">curl wiki</a> over at
+   a <a href="https://github.com/curl/curl/wiki">curl wiki</a> over at
    github.
  <p>
    It is a bit of a test. Is there user interest enough to add content and
@@ -54,7 +535,7 @@ TITLE(News in curl and libcurl land)
  NCOLS
 
    curl and libcurl
-   offer <a href="http://daniel.haxx.se/blog/2014/04/04/curl-and-proxy-headers/">options
+   offer <a href="https://daniel.haxx.se/blog/2014/04/04/curl-and-proxy-headers/">options
    to specify HTTP proxy headers separate</a> from origin server headers in
    next version.
 
@@ -83,10 +564,10 @@ TITLE(News in curl and libcurl land)
  NCOLS
 
   A few days ago, Daniel blogged
-  about <a href="http://daniel.haxx.se/blog/2014/03/09/http2-in-curl/">http2
+  about <a href="https://daniel.haxx.se/blog/2014/03/09/http2-in-curl/">http2
   in curl</a>, how it works, what to expect and more. Also, a separate
   explanation of the upcoming
-  new <a href="http://daniel.haxx.se/blog/2014/03/12/whats-next-for-curl/">--next</a>
+  new <a href="https://daniel.haxx.se/blog/2014/03/12/whats-next-for-curl/">--next</a>
   option.
 
  NCOLE
@@ -136,7 +617,7 @@ TITLE(News in curl and libcurl land)
  NCOLS
 
   Apple released Mac OS X Mavericks 10.9 the other day and in that they ship
-  an updated <a href="http://curl.haxx.se/mail/archive-2013-10/0036.html">curl
+  an updated <a href="//curl.haxx.se/mail/archive-2013-10/0036.html">curl
   with some noteworthy changes</a>. Graciously brought to us by Nick Zitzmann.
 
  NCOLE
@@ -167,8 +648,8 @@ TITLE(News in curl and libcurl land)
 
    Daniel posted an article on the upcoming change in libcurl when it will
    start doing <a
-   href="http://daniel.haxx.se/blog/2013/07/30/dotdot-removal-in-libcurl/">dotdot removal</a>. It is a feature of the upcoming libcurl 7.32.0 release.
- 
+   href="https://daniel.haxx.se/blog/2013/07/30/dotdot-removal-in-libcurl/">dotdot removal</a>. It is a feature of the upcoming libcurl 7.32.0 release.
+
  NCOLE
 
  NSUBJ(curl and libcurl 7.31.0)
@@ -206,7 +687,7 @@ TITLE(News in curl and libcurl land)
  NCOLS
 
   Andrei Jakab has provided an update to his popular <a
-  href="http://curl.haxx.se/libcurl/c/Using-libcurl-with-SSH-support-in-Visual-Studio-2010.pdf">Using
+  href="//curl.haxx.se/libcurl/c/Using-libcurl-with-SSH-support-in-Visual-Studio-2010.pdf">Using
   libcurl with SSH support in Visual Studio 2010</a> PDF.
 
  NCOLE
@@ -221,7 +702,7 @@ TITLE(News in curl and libcurl land)
   the reasons why.</i>
 
   <p>
-  <a href="http://daniel.haxx.se/blog/2013/03/23/why-no-curl-8/">Why no curl
+  <a href="https://daniel.haxx.se/blog/2013/03/23/why-no-curl-8/">Why no curl
   8</a> (takes you to Daniel's blog)
 
  NCOLE
@@ -246,7 +727,7 @@ TITLE(News in curl and libcurl land)
  NCOLS
 
   In his blog post, Daniel explains how <a
-  href="http://daniel.haxx.se/blog/2013/01/17/internally-were-all-multi-now/">internally,
+  href="https://daniel.haxx.se/blog/2013/01/17/internally-were-all-multi-now/">internally,
   we're all multi now</a in libcurl. All internals work with and assume
   non-blocking operations!
 
@@ -268,7 +749,7 @@ TITLE(News in curl and libcurl land)
  NCOLS
 
   The <a
-  href="http://daniel.haxx.se/blog/2012/12/23/the-curl-year-2012/">biggest
+  href="https://daniel.haxx.se/blog/2012/12/23/the-curl-year-2012/">biggest
   events in the curl project during the year</a>, summed up by your humble
   maintainer on his blog.
 
@@ -315,7 +796,7 @@ TITLE(News in curl and libcurl land)
  NDATE(August 12 2012)
  NCOLS
 
-  Skip over to the <a href="http://curl.haxx.se/libcurl/c/">libcurl C
+  Skip over to the <a href="//curl.haxx.se/libcurl/c/">libcurl C
   interface</a> page to find the link.
 
  NCOLE
@@ -359,7 +840,7 @@ TITLE(News in curl and libcurl land)
   Windows for ages have died the death of broken hardware and its owner has
   not yet been able to bring it back.
  <p>
-  Some of the <a href="http://curl.haxx.se/gknw.net/win32/">win32 downloads
+  Some of the <a href="//curl.haxx.se/gknw.net/win32/">win32 downloads
   are now hosted by curl.haxx.se</a> as a temporary mirror until Gunter is
   able to bring the site back in all its glory.
  <p>
@@ -377,9 +858,9 @@ TITLE(News in curl and libcurl land)
   href="changes.html#7_24_0">changes</a> page.
 <p>
   Note especially that 7.24.0 fixes <i>two</i> separate security
-  vulnerabilities: <a href="http://curl.haxx.se/docs/adv_20120124.html">data
+  vulnerabilities: <a href="//curl.haxx.se/docs/adv_20120124.html">data
   injection attack for certain protocols</a> and <a
-  href="http://curl.haxx.se/docs/adv_20120124B.html">SSL CBC IV vulnerability
+  href="//curl.haxx.se/docs/adv_20120124B.html">SSL CBC IV vulnerability
   when built to use OpenSSL</a>
 
  NCOLE
@@ -414,10 +895,10 @@ TITLE(News in curl and libcurl land)
   We hope to be having our first ever curl meetup at the big FOSDEM conference
   in Brussels Belgium 4-5 February 2012.
  <p>
-  <a href="http://daniel.haxx.se/blog/2011/09/15/curl-meetup-at-fosdem-2012/">Read the full announcement on Daniel's blog</a>
+  <a href="https://daniel.haxx.se/blog/2011/09/15/curl-meetup-at-fosdem-2012/">Read the full announcement on Daniel's blog</a>
  <p>
   Please speak up if you want to come!
- 
+
  NCOLE
 
  NSUBJ(curl and libcurl 7.22.0)
@@ -460,11 +941,11 @@ TITLE(News in curl and libcurl land)
   It has been confirmed that curl and libcurl 7.21.5 cannot speak HTTPS over a
   HTTP proxy. This bug is a regression since the previous version, and you can
   fix it by patching the source code using a <a
-  href="https://github.com/bagder/curl/commit/c2c89481909de99e37f4aee46c8bc1b1358a5988">diff
+  href="https://github.com/curl/curl/commit/c2c89481909de99e37f4aee46c8bc1b1358a5988">diff
   from commit c2c89481909d</a>
 
  <p>
-  Thanks to Josue Andrade Gomes for <a href="http://curl.haxx.se/mail/lib-2011-04/0134.html">reporting this</a>
+  Thanks to Josue Andrade Gomes for <a href="//curl.haxx.se/mail/lib-2011-04/0134.html">reporting this</a>
 
  NCOLE
 
@@ -613,12 +1094,12 @@ TITLE(News in curl and libcurl land)
 
   The web site curl.haxx.se has been moved to a different server, and you may
   suffer from some glitches due to this until everything has been fixed to
-  work properly at the new location. Please have patience. 
+  work properly at the new location. Please have patience.
 <p>
   Changes:<ul>
    <li> All the stuff under "/lxr/" is no longer working. The <a
-   href="http://curl.haxx.se/libcurl/c/example.html">libcurl examples</a> were
-   the most used links in there but they are now remade differently - and 
+   href="//curl.haxx.se/libcurl/c/example.html">libcurl examples</a> were
+   the most used links in there but they are now remade differently - and
    quite honestly in a nicer way too.
   </ul>
 
@@ -738,7 +1219,7 @@ TITLE(News in curl and libcurl land)
  NCOLS
 
   We were not accepted as a mentor org for <a
-  href="http://code.google.com/soc/2008/">Google's Summer of Code 2008</a>.
+  href="https://developers.google.com/open-source/gsoc/2008/">Google's Summer of Code 2008</a>.
 
  NCOLE
 
@@ -746,7 +1227,7 @@ TITLE(News in curl and libcurl land)
  NDATE(March 2 2008)
  NCOLS
 <p>
-We're planning to apply to <a href="http://code.google.com/soc/2008/">Google's
+We're planning to apply to <a href="https://developers.google.com/open-source/gsoc/2008/">Google's
 Summer of Code</a> on the behalf of the cURL project, to have us participate
 as a mentoring organization 2008.
 <p>
@@ -757,7 +1238,7 @@ students get attracted.
 Check the current list of ideas and mentors <a href="/docs/gsoc2008.html">here</a>.
 <p>
 Please reply to the proper mailing list only if you want to provide further
-ideas or submit yourself as mentor. 
+ideas or submit yourself as mentor.
 
  NCOLE
 
@@ -779,11 +1260,11 @@ ideas or submit yourself as mentor.
  NDATE(January 7 2008)
  NCOLS
 
-  Daniel <a href="http://daniel.haxx.se/blog/">blogs</a> about curl-related
+  Daniel <a href="https://daniel.haxx.se/blog/">blogs</a> about curl-related
   issues every now and then, and the entries that concern this area are found
   using this URL:
 <p>
-  <a href="http://daniel.haxx.se/blog/category/floss/curl/">http://daniel.haxx.se/blog/category/floss/curl/</a>
+  <a href="https://daniel.haxx.se/blog/category/floss/curl/">https://daniel.haxx.se/blog/category/floss/curl/</a>
 
  NCOLE
 
@@ -843,7 +1324,7 @@ ideas or submit yourself as mentor.
  NDATE(15 June 2007)
  NCOLS
 
-  As <a href="http://curl.haxx.se/mail/lib-2007-06/0054.html">previously
+  As <a href="//curl.haxx.se/mail/lib-2007-06/0054.html">previously
   mentioned</a>, the main servers for the curl project will be shut down and
   get new IP addresses between around 15:00 and 20:00 CEST on friday the 15th
   of June 2007.
@@ -860,7 +1341,7 @@ ideas or submit yourself as mentor.
  NCOLS
 
   The upcoming release <a
-  href="http://curl.haxx.se/mail/lib-2007-06/0034.html">has been delayed</a>
+  href="//curl.haxx.se/mail/lib-2007-06/0034.html">has been delayed</a>
   due to a c-ares problem, and possibly more. Feel free to join in and help us
   fix these issues to get the release done!
 
@@ -952,7 +1433,7 @@ ideas or submit yourself as mentor.
  NCOLS
 
   If you feel the support for <a
-  href="http://curl.haxx.se/mail/lib-2006-09/0108.html">FTP third party
+  href="//curl.haxx.se/mail/lib-2006-09/0108.html">FTP third party
   transfers</a> should remain in libcurl, you better speak up before the end
   of the month or it will go...
 
@@ -965,7 +1446,7 @@ ideas or submit yourself as mentor.
 
   If you're subscribed to any <a href="/mail/">mailing list</a> at
   cool.haxx.se using Digest mode, you <a
-  href="http://curl.haxx.se/mail/lib-2006-09/0133.html">don't get any
+  href="//curl.haxx.se/mail/lib-2006-09/0133.html">don't get any
   mails</a> at the moment. Hopefully we'll have this fixed soon.
 
  NCOLE
@@ -1056,7 +1537,7 @@ ideas or submit yourself as mentor.
   Read about the <a href="/libcurl/hiper/schedule.html">hiper development</a>
   which now has completed the phase 1 and moves on to phase 2: *socket() API
   implemetation. Stay tuned and discuss this on the <a
-  href="http://curl.haxx.se/mail/list.cgi?list=curl-library">libcurl mailing
+  href="//curl.haxx.se/mail/list.cgi?list=curl-library">libcurl mailing
   list</a>.
 
  NCOLE
@@ -1096,7 +1577,7 @@ ideas or submit yourself as mentor.
   IIS has approved to fund Daniel with 150000 SEK (~19000 USD) for libcurl
   development.
 <p>
-  <a href="http://curl.haxx.se/mail/lib-2005-10/0136.html">Read more</a>
+  <a href="//curl.haxx.se/mail/lib-2005-10/0136.html">Read more</a>
 
  NCOLE
 
@@ -1196,14 +1677,14 @@ companies buying ads and people referring to our site from all over.
  NCOLS
 
   A <a
-  href="http://lists.debian.org/debian-devel/2005/08/msg00314.html">debian-devel
+  href="https://lists.debian.org/debian-devel/2005/08/msg00314.html">debian-devel
   thread</a> about using OpenSSL or GnuTLS for Debian's libcurl triggered
- 
-  <a href="http://curl.haxx.se/mail/lib-2005-08/0115.html">Daniel's
+
+  <a href="//curl.haxx.se/mail/lib-2005-08/0115.html">Daniel's
   response</a>, which was followed by more <a
-  href="http://lists.debian.org/debian-devel/2005/08/msg00930.html">debian
+  href="https://lists.debian.org/debian-devel/2005/08/msg00930.html">debian
   talks about it</a> and Daniel's <a
-  href="http://curl.haxx.se/mail/lib-2005-08/0169.html">second follow-up</a>.
+  href="//curl.haxx.se/mail/lib-2005-08/0169.html">second follow-up</a>.
 
  NCOLE
 
@@ -1212,7 +1693,7 @@ companies buying ads and people referring to our site from all over.
  NDATE(13 July 2005)
  NCOLS
 
-  As <a href="http://curl.haxx.se/mail/archive-2005-07/0037.html">posted to
+  As <a href="//curl.haxx.se/mail/archive-2005-07/0037.html">posted to
   the lists</a>, all curl-related mailing lists now <b>require</b> that you
   are subscribed before letting any mails through from you.
 
@@ -1222,7 +1703,7 @@ companies buying ads and people referring to our site from all over.
  NDATE(12 July 2005)
  NCOLS
 
-   Over on the <a href="http://cool.haxx.se/curl-daily/">daily snapshots</a>
+   Over on the <a href="https://cool.haxx.se/curl-daily/">daily snapshots</a>
    page, there is now going to appear a windows libcurl build every day built
    straight from CVS. It is built with mingw's -mms-bitfields and should
    therefore be possible to use both with mingw and MSVC. Report your problems
@@ -1245,7 +1726,7 @@ companies buying ads and people referring to our site from all over.
 
   Starting now, we list the <b>curlpp</b> mailing list on the <a
   href="/mail/">mailing list page</a> and we host a <a
-  href="http://curl.haxx.se/mail/list.cgi?list=curlpp">web archive</a> of the
+  href="//curl.haxx.se/mail/list.cgi?list=curlpp">web archive</a> of the
   list. The curlpp mailing list is for discussions of curlpp, the C++ binding
   to libcurl.
 
@@ -1264,9 +1745,9 @@ companies buying ads and people referring to our site from all over.
  NDATE(11 May 2005)
  NCOLS
 
-  Try the <a href="http://curl.haxx.se/beta/">7.14.0 pre-release 2</a> - now
+  Try the <a href="//curl.haxx.se/beta/">7.14.0 pre-release 2</a> - now
   with changed default HTTP request headers. <a
-  href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">in-progress
+  href="//curl.haxx.se/lxr/source/RELEASE-NOTES">in-progress
   RELEASE-NOTES</a>
 
  NCOLE
@@ -1275,7 +1756,7 @@ companies buying ads and people referring to our site from all over.
  NDATE(9 May 2005)
  NCOLS
 
-  Feel brave? Try the <a href="http://curl.haxx.se/beta/">7.14.0 pre-release
+  Feel brave? Try the <a href="//curl.haxx.se/beta/">7.14.0 pre-release
   1</a>. The actual release is due out later this week, if things go right.
 
  NCOLE
@@ -1304,7 +1785,7 @@ companies buying ads and people referring to our site from all over.
  NDATE(14 March 2005)
  NCOLS
 
-  <a href="http://cool.haxx.se/mailman/listinfo/curl-tracker">curl-tracker</a>
+  <a href="https://cool.haxx.se/mailman/listinfo/curl-tracker">curl-tracker</a>
   is a new mailing list that'll receive mails from the sourceforge
   trackers. All new submissions and changes to existing entries will also be
   mailed there.
@@ -1316,9 +1797,9 @@ companies buying ads and people referring to our site from all over.
  NCOLS
 
    Since a couple of days, we provide <a
-   href="http://curl.haxx.se/mail/archive-2005-03/0063.html">daily windows
+   href="//curl.haxx.se/mail/archive-2005-03/0063.html">daily windows
    builds</a> for you bleeding edge people. You find them on the <a
-   href="http://cool.haxx.se/curl-daily/">daily snapshots page</a>.
+   href="https://cool.haxx.se/curl-daily/">daily snapshots page</a>.
 <p>
    They have all the latest features and bugs.
 
@@ -1348,7 +1829,7 @@ companies buying ads and people referring to our site from all over.
 
   As was <a href="http://www.securityfocus.com/archive/1/391042">posted to
   bugtraq</a>, all versions of curl that supports NTLM has this flaw. The <a
-  href="http://cool.haxx.se/cvs.cgi/curl/lib/http_ntlm.c.diff?r1=1.36&amp;r2=1.37">fix</a>. It
+  href="https://cool.haxx.se/cvs.cgi/curl/lib/http_ntlm.c.diff?r1=1.36&amp;r2=1.37">fix</a>. It
   requires a malicious server to send an unexpectedly long NTLM response
   header to trigger. (No, we were not contacted nor notified about this
   problem before they went public.)
@@ -1357,8 +1838,8 @@ companies buying ads and people referring to our site from all over.
   I'll be away for a week now but I'll put together a new release when I get
   back.
 <p>
- <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0490">CAN-2005-0490</a>
- 
+ <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0490">CAN-2005-0490</a>
+
  NCOLE
 
  NSUBJ(curl and libcurl 7.13.0)
@@ -1402,7 +1883,7 @@ companies buying ads and people referring to our site from all over.
  NDATE(4 October 2004)
  NCOLS
 
- The <a href="http://curl.haxx.se/dlwiz/">curl Download Wizard</a> helps you
+ The <a href="//curl.haxx.se/dlwiz/">curl Download Wizard</a> helps you
  find and pick the correct file to download!
 
  NCOLE
@@ -1431,7 +1912,7 @@ companies buying ads and people referring to our site from all over.
  NCOLS
 
   During the rest of July and the beginning of August, Daniel is <a
-  href="http://curl.haxx.se/mail/lib-2004-06/0168.html">on vacation</a> and
+  href="//curl.haxx.se/mail/lib-2004-06/0168.html">on vacation</a> and
   things might run a bit slower than usual in the project.
 
  NCOLE
@@ -1456,7 +1937,7 @@ companies buying ads and people referring to our site from all over.
  NDATE(2 June 2004)
  NCOLS
 
-  Just <a href="http://cool.haxx.se/mailman/listinfo/curl-and-python">go
+  Just <a href="https://cool.haxx.se/mailman/listinfo/curl-and-python">go
   here</a>.
 
  NCOLE
@@ -1466,7 +1947,7 @@ companies buying ads and people referring to our site from all over.
  NCOLS
 
  The curl <a href="/cvs.html">CVS repository</a> moved to another host (again).
- 
+
  NCOLE
 
  NSUBJ(international domain names support)
@@ -1494,10 +1975,10 @@ companies buying ads and people referring to our site from all over.
 
   <p> Recently added mirrors:
   <ul>
-  <li> curl in <a href="http://curl.cofman.dk/">Denmark</a> by <a href="http://www.cofman.com">www.cofman.com</a>
-  <li> curl in <a href="http://curl.netmirror.org/">Germany</a> by <a href="http://netmirror.org/">netmirror.org</a>
-  <li> curl in <a href="http://curl.signal42.com/">USA</a> by <a href="http://signal42.com/">signal42.com</a>
-  <li> curl in <a href="http://curl.wildyou.net/">Estonia</a> by <a href="http://wildyou.net/">wildyou.net</a>
+  <li> curl in <a href="//curl.cofman.dk/">Denmark</a> by <a href="http://www.cofman.com">www.cofman.com</a>
+  <li> curl in <a href="//curl.netmirror.org/">Germany</a> by <a href="http://netmirror.org/">netmirror.org</a>
+  <li> curl in <a href="//curl.signal42.com/">USA</a> by <a href="http://signal42.com/">signal42.com</a>
+  <li> curl in <a href="//curl.wildyou.net/">Estonia</a> by <a href="http://wildyou.net/">wildyou.net</a>
   </ul>
 
  NCOLE
@@ -1516,9 +1997,9 @@ companies buying ads and people referring to our site from all over.
  NDATE(8 March 2004)
  NCOLS
 
-  Try out the <a href="http://curl.haxx.se/beta/">7.11.1 pre-release 1</a>,
+  Try out the <a href="//curl.haxx.se/beta/">7.11.1 pre-release 1</a>,
   and read the upcoming <a
-  href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a>.
+  href="//curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a>.
 
  NCOLE
 
@@ -1527,7 +2008,7 @@ companies buying ads and people referring to our site from all over.
  NCOLS
 
   Here's what the planned <a
-  href="http://curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> looks
+  href="//curl.haxx.se/lxr/source/RELEASE-NOTES">RELEASE-NOTES</a> looks
   like. Do you know anything in particular we should address before the next
   release?
 
@@ -1537,7 +2018,7 @@ companies buying ads and people referring to our site from all over.
  NDATE(2 March 2004)
  NCOLS
 
-  <a href="http://curl.haxx.se/mail/archive-2004-03/0013.html">If you've
+  <a href="//curl.haxx.se/mail/archive-2004-03/0013.html">If you've
   suffered from the issue 12 bug, please try the patch and report!</a>.
 
  NCOLE
@@ -1548,7 +2029,7 @@ companies buying ads and people referring to our site from all over.
  NCOLS
 
    There is now a large number of different platforms for the <a
-   href="http://curl.haxx.se/dev/">automated tests</a>...
+   href="//curl.haxx.se/dev/">automated tests</a>...
 
  NCOLE
 
@@ -1569,13 +2050,13 @@ going.
 <p>
 Subscribe to the new mailing lists here:
 <ul>
-<li> <a href="http://cool.haxx.se/mailman/listinfo/curl-library">curl-library</a>
-<li> <a href="http://cool.haxx.se/mailman/listinfo/curl-users">curl-users</a>
-<li> <a href="http://cool.haxx.se/mailman/listinfo/curl-and-php">curl-and-php</a>
-<li> <a href="http://cool.haxx.se/mailman/listinfo/curl-announce">curl-announce</a>
-<li> <a href="http://cool.haxx.se/mailman/listinfo/curl-commits">curl-commits</a>
-<li> <a href="http://cool.haxx.se/mailman/listinfo/curl-www-commits">curl-www-commits</a>
-</ul>      
+<li> <a href="https://cool.haxx.se/mailman/listinfo/curl-library">curl-library</a>
+<li> <a href="https://cool.haxx.se/mailman/listinfo/curl-users">curl-users</a>
+<li> <a href="https://cool.haxx.se/mailman/listinfo/curl-and-php">curl-and-php</a>
+<li> <a href="https://cool.haxx.se/mailman/listinfo/curl-announce">curl-announce</a>
+<li> <a href="https://cool.haxx.se/mailman/listinfo/curl-commits">curl-commits</a>
+<li> <a href="https://cool.haxx.se/mailman/listinfo/curl-www-commits">curl-www-commits</a>
+</ul>
 
  NCOLE
 
@@ -1593,7 +2074,7 @@ Subscribe to the new mailing lists here:
  NCOLS
 
  We're approaching release time for the upcoming curl 7.11.0, and in good old
- fashion we offer a <a href="http://curl.haxx.se/beta/">pre-release</a> of it.
+ fashion we offer a <a href="//curl.haxx.se/beta/">pre-release</a> of it.
 
  NCOLE
 
@@ -1603,7 +2084,7 @@ Subscribe to the new mailing lists here:
 
   We have but a few final changes left to make before we can put together the
   upcoming 7.11.0 release: <a
-  href="http://curl.haxx.se/lxr/source/TODO-RELEASE">TODO-RELEASE</a>. We have
+  href="//curl.haxx.se/lxr/source/TODO-RELEASE">TODO-RELEASE</a>. We have
   use for your help!
 
  NCOLE
@@ -1622,9 +2103,9 @@ Subscribe to the new mailing lists here:
  NCOLS
 
   If you have a somewhat <a
-  href="http://curl.haxx.se/rfc/draft-murray-auth-ftp-ssl-12.txt">standard-compliant</a>
+  href="//curl.haxx.se/rfc/draft-murray-auth-ftp-ssl-12.txt">standard-compliant</a>
   FTPS-server and feel like helping out the project, <a
-  href="http://curl.haxx.se/mail/lib-2003-11/0075.html">we could use your
+  href="//curl.haxx.se/mail/lib-2003-11/0075.html">we could use your
   help</a>!
 
  NCOLE
@@ -1642,7 +2123,7 @@ Subscribe to the new mailing lists here:
  NCOLS
 
   Over at <a
-  href="http://cool.haxx.se/curl-daily/">cool.haxx.se/curl-daily/</a>, there's
+  href="https://cool.haxx.se/curl-daily/">cool.haxx.se/curl-daily/</a>, there's
   now new curl packages put there every day. The packages are based on the
   latest CVS version at the time.
 
@@ -1663,7 +2144,7 @@ Subscribe to the new mailing lists here:
  NCOLS
 
   The 7.10.8-pre4 release is available on the <a
-  href="http://curl.haxx.se/beta/">beta</a> page. This might be the last
+  href="//curl.haxx.se/beta/">beta</a> page. This might be the last
   pre-release before the upcoming release.
 
  NCOLE
@@ -1672,7 +2153,7 @@ Subscribe to the new mailing lists here:
  NDATE(24 September 2003)
  NCOLS
 
-  The main curl web site at <a href="http://curl.haxx.se/">curl.haxx.se</a>,
+  The main curl web site at <a href="//curl.haxx.se/">curl.haxx.se</a>,
   is changing host and IP. The move is not expected to be noticable, but if
   you do find something that looks weird, please get in touch.
 
@@ -1683,7 +2164,7 @@ Subscribe to the new mailing lists here:
  NCOLS
 
   The 7.10.8-pre2 release is available on the <a
-  href="http://curl.haxx.se/beta/">beta</a> page.
+  href="//curl.haxx.se/beta/">beta</a> page.
 
  NCOLE
 
@@ -1692,7 +2173,7 @@ Subscribe to the new mailing lists here:
  NCOLS
 
   The 7.10.8-pre1 release is now available on the <a
-  href="http://curl.haxx.se/beta/">beta</a> page. You can also read about the
+  href="//curl.haxx.se/beta/">beta</a> page. You can also read about the
   <a href="changes.html">changes</a>.
 
  NCOLE
@@ -1711,7 +2192,7 @@ Subscribe to the new mailing lists here:
  NCOLS
 
   Alex Andrienko of <a href="http://tsuren.net/">Tsuren.net</a> hosts the new
-  <a href="http://curl.tsuren.net/">curl.tsuren.net</a> site. A full curl web
+  <a href="//curl.tsuren.net/">curl.tsuren.net</a> site. A full curl web
   site mirror in Russia.
 
  NCOLE
@@ -1721,7 +2202,7 @@ Subscribe to the new mailing lists here:
  NCOLS
 
   Since pre2 was a little "rough", I decided to upload another <a
-  href="http://curl.haxx.se/beta/">pre-release</a>. Help yourself.
+  href="//curl.haxx.se/beta/">pre-release</a>. Help yourself.
 
  NCOLE
 
@@ -1730,7 +2211,7 @@ Subscribe to the new mailing lists here:
  NCOLS
 
   The 7.10.7-pre2 release now available on the <a
-  href="http://curl.haxx.se/beta/">beta</a> page, is the first package that
+  href="//curl.haxx.se/beta/">beta</a> page, is the first package that
   can be built to do asynchronous name resolves.
 
  NCOLE
@@ -1739,9 +2220,9 @@ Subscribe to the new mailing lists here:
  NDATE(3 August 2003)
  NCOLS
 
-  <a href="http://curl.haxx.se/mail/lib-2003-08/0014.html">curl reveals proxy
+  <a href="//curl.haxx.se/mail/lib-2003-08/0014.html">curl reveals proxy
   authentication</a> when using SSL over a proxy. Fix the problem by applying
-  <a href="http://curl.haxx.se/mail/lib-2003-08/att-0015/flaw.patch">the
+  <a href="//curl.haxx.se/mail/lib-2003-08/att-0015/flaw.patch">the
   patch</a>.
 
  NCOLE
@@ -1751,7 +2232,7 @@ Subscribe to the new mailing lists here:
  NCOLS
 
   Daniel posted his <a
-  href="http://curl.haxx.se/mail/lib-2003-07/0161.html">asynch status
+  href="//curl.haxx.se/mail/lib-2003-07/0161.html">asynch status
   report</a> to the libcurl mailing list. Share your view. Commit is pending.
 
  NCOLE
@@ -1772,7 +2253,7 @@ Subscribe to the new mailing lists here:
  NCOLS
 
   The latest pre-release of 7.10.6 is now available for download on the <a
-  href="http://curl.haxx.se/beta/">beta</a> page.
+  href="//curl.haxx.se/beta/">beta</a> page.
 
  NCOLE
 
@@ -1789,7 +2270,7 @@ Subscribe to the new mailing lists here:
  NDATE(26 June 2003)
  NCOLS
 
-  Thanks to the great people of <a href="http://www.php.net">php.net</a>, the
+  Thanks to the great people of <a href="https://www.php.net">php.net</a>, the
   curl and libcurl CVS repository has now been migrated off from sourceforge
   and it is up and working again.
  <p>
@@ -1807,7 +2288,7 @@ Subscribe to the new mailing lists here:
 
   At times people have expressed a need for better cookie control in libcurl,
   so I posted a <a
-  href="http://curl.haxx.se/mail/lib-2003-06/0102.html">suggested
+  href="//curl.haxx.se/mail/lib-2003-06/0102.html">suggested
   interface</a> to the libcurl list. Share your opinions aobut it.
 
  NCOLE
@@ -1827,7 +2308,7 @@ Subscribe to the new mailing lists here:
 
   Thanks to friendly helpers, the Digest implementation is now added to
   libcurl, and now we're taking on the <a
-  href="http://curl.haxx.se/mail/lib-2003-05/0115.html">NTLM challenge</a>.
+  href="//curl.haxx.se/mail/lib-2003-05/0115.html">NTLM challenge</a>.
  <p>
   Help is appreiciated.
 
@@ -1847,7 +2328,7 @@ Subscribe to the new mailing lists here:
  NCOLS
 
    One way to help out the project is to answer Daniel's <a
-   href="http://curl.haxx.se/mail/lib-2003-05/0081.html">call for help with a
+   href="//curl.haxx.se/mail/lib-2003-05/0081.html">call for help with a
    Digest server</a>.
 
  NCOLE
@@ -1856,7 +2337,7 @@ Subscribe to the new mailing lists here:
  NDATE(6 May 2003)
  NCOLS
 
-  <a href="http://curl.haxx.se/beta/">7.10.5-pre2</a> is out for testing.  See
+  <a href="//curl.haxx.se/beta/">7.10.5-pre2</a> is out for testing.  See
   also the <a href="changes.html">changelog</a>.
 
  NCOLE
@@ -1867,7 +2348,7 @@ Subscribe to the new mailing lists here:
 
   Cris Bailiff announced that the <a href="/libcurl/perl/">perl binding</a> to
   libcurl is now available from <a
-  href="http://search.cpan.org/author/CRISB/WWW-Curl-2.0">CPAN</a>. Now at
+  href="https://metacpan.org/pod/WWW::Curl">CPAN</a>. Now at
   release 2.0, it changed name slightly to WWW::Curl.
 
  NCOLE
@@ -1876,7 +2357,7 @@ Subscribe to the new mailing lists here:
  NDATE(2 Apr 2003)
  NCOLS
 
-  The just recently announced <a href="http://curl.haxx.se/download.html">curl
+  The just recently announced <a href="//curl.haxx.se/download.html">curl
   7.10.4</a> is now available in source code packages. Read about all the
   <a href="changes.html">changes and bugfixes</a>, and have some patience with
   the binary packages that hopefully will appear soon.
@@ -1887,7 +2368,7 @@ Subscribe to the new mailing lists here:
  NDATE(25 Mar 2003)
  NCOLS
 
-  The just uploaded <a href="http://curl.haxx.se/beta/">7.10.4-pre5</a> is
+  The just uploaded <a href="//curl.haxx.se/beta/">7.10.4-pre5</a> is
   hopefully the last pre-release this time. See also the <a
   href="changes.html">changelog</a>.
 
@@ -1897,7 +2378,7 @@ Subscribe to the new mailing lists here:
  NDATE(20 Mar 2003)
  NCOLS
 
-  <a href="http://curl.haxx.se/mail/archive-2003-03/0090.html">curl turned
+  <a href="//curl.haxx.se/mail/archive-2003-03/0090.html">curl turned
   5</a> - he's a big boy now.
 
  NCOLE
@@ -1906,7 +2387,7 @@ Subscribe to the new mailing lists here:
  NDATE(24 Feb 2003)
  NCOLS
 
-  Download <a href="http://curl.haxx.se/beta/">7.10.4-pre2</a>, and read about
+  Download <a href="//curl.haxx.se/beta/">7.10.4-pre2</a>, and read about
   the recent <a href="changes.html">changes</a>.
 
  NCOLE
@@ -1915,7 +2396,7 @@ Subscribe to the new mailing lists here:
  NDATE(3 Feb 2003)
  NCOLS
 
-  <a href="http://curl.haxx.se/beta/">7.10.4-pre1</a>
+  <a href="//curl.haxx.se/beta/">7.10.4-pre1</a>
 
  NCOLE
 
@@ -1924,7 +2405,7 @@ Subscribe to the new mailing lists here:
  NCOLS
 
    We now have a page with the <a
-   href="http://curl.haxx.se/dev/stat.cgi">recent cvs changes</a> table,
+   href="//curl.haxx.se/dev/stat.cgi">recent cvs changes</a> table,
    showing you the most recent activity in the curl CVS repository.
 
  NCOLE
@@ -1975,7 +2456,7 @@ The script is currently available here:
  NDATE(9 Jan 2003)
  NCOLS
 
-  <a href="http://curl.haxx.se/beta/">7.10.3 pre-release 5</a> may be the last
+  <a href="//curl.haxx.se/beta/">7.10.3 pre-release 5</a> may be the last
   pre-release before the next public release.
 
  <p>
@@ -1987,7 +2468,7 @@ The script is currently available here:
  NDATE(7 Jan 2003)
  NCOLS
 
-  The famous O'Reilly book <a href="http://www.oreilly.com/catalog/upt3/">Unix
+  The famous O'Reilly book <a href="https://shop.oreilly.com/product/9780596003302.do">Unix
   Power Tools</a> is out in its 3rd edition (as of October 2002) and curl is
   mentioned. See section 40.8.
 
@@ -1997,7 +2478,7 @@ The script is currently available here:
  NDATE(20 Dec 2002)
  NCOLS
 
-  A brand new <a href="http://curl.haxx.se/beta/">curl 7.10.3-pre3
+  A brand new <a href="//curl.haxx.se/beta/">curl 7.10.3-pre3
   release</a>! Study which <a href="changes.html">changes</a> that have been
   done.
 
@@ -2008,7 +2489,7 @@ The script is currently available here:
  NCOLS
 
    ... was posted to the mailing lists, read it <a
-   href="http://curl.haxx.se/mail/archive-2002-12/0097.html">archived
+   href="//curl.haxx.se/mail/archive-2002-12/0097.html">archived
    here</a>.
 
  NCOLE
@@ -2027,7 +2508,7 @@ The script is currently available here:
  NDATE(29 Nov 2002)
  NCOLS
 
-  <a href="http://curl.haxx.se/beta/">7.10.3-pre1</a> is available now. No
+  <a href="//curl.haxx.se/beta/">7.10.3-pre1</a> is available now. No
   really major <a href="changes.html">changes</a>, but still...
 
  NCOLE
@@ -2052,7 +2533,7 @@ The script is currently available here:
   <a href="download.html">Download it</a>. Read about the <a
   href="changes.html">changes</a>. File <a href="bugreport.html">bug
   reports</a> on errors. Post to the <a
-  href="http://curl.haxx.se/mail/">mailing lists</a> about problems.
+  href="//curl.haxx.se/mail/">mailing lists</a> about problems.
  <p>
   Enjoy.
 
@@ -2071,7 +2552,7 @@ The script is currently available here:
  NDATE(6 Nov 2002)
  NCOLS
 
-  Uploaded <a href="http://curl.haxx.se/beta/">7.10.2-pre4</a> for the public.
+  Uploaded <a href="//curl.haxx.se/beta/">7.10.2-pre4</a> for the public.
 
  NCOLE
 
@@ -2079,7 +2560,7 @@ The script is currently available here:
  NDATE(28 Oct 2002)
  NCOLS
 
-  Uploaded <a href="http://curl.haxx.se/beta/">7.10.2-pre1</a> for the public.
+  Uploaded <a href="//curl.haxx.se/beta/">7.10.2-pre1</a> for the public.
 
  NCOLE
 
@@ -2088,7 +2569,7 @@ The script is currently available here:
  NCOLS
 
   Kjetil Jacobsen's <a href="http://pycurl.sourceforge.net/">pycurl-7.10.1</a>
-  and Andrés García's <a
+  and AndrÃ©s GarcÃ­a's <a
   href="http://personal1.iddeo.es/andresgarci/tclcurl/english/index.html">TclCurl
   0.10.1</a> have been released.
 
@@ -2099,7 +2580,7 @@ The script is currently available here:
  NCOLS
 
   Jason Andrade runs the brand new Australian <a
-  href="http://curl.planetmirror.com/">curl web site mirror</a>. People on
+  href="//curl.planetmirror.com/">curl web site mirror</a>. People on
   that side of the globe might enjoy that. He also mirrors all download
   packages for your pleasure.
 
@@ -2136,7 +2617,7 @@ The script is currently available here:
  NDATE(1 Oct 2002)
  NCOLS
 
-  <a href="http://curl.haxx.se/download.html">Get it</a>. Read about the <a
+  <a href="//curl.haxx.se/download.html">Get it</a>. Read about the <a
    href="changes.html">changes</a>.
  <p>
    More than three months have passed since the previous release. Lots of bugs
@@ -2151,7 +2632,7 @@ The script is currently available here:
  NDATE(26 Sep 2002)
  NCOLS
 
-  <a href="http://curl.haxx.se/beta/">Get it</a>. Read about the <a
+  <a href="//curl.haxx.se/beta/">Get it</a>. Read about the <a
   href="changes.html">changes</a>.
 
  NCOLE
@@ -2159,9 +2640,9 @@ The script is currently available here:
  NSUBJ(Curl::easy 1.35)
  NDATE(22 Sep 2002)
  NCOLS
- 
- Cris Bailiff released Curl::easy v1.35, which lets you use libcurl from perl.  Get it from 
- <a href="http://curl.haxx.se/libcurl/perl/">http://curl.haxx.se/libcurl/perl/</a>. Minor
+
+ Cris Bailiff released Curl::easy v1.35, which lets you use libcurl from perl.  Get it from
+ <a href="//curl.haxx.se/libcurl/perl/">//curl.haxx.se/libcurl/perl/</a>. Minor
  fix to fixup statistics in progress function callback. Also tested with 7.10-pre3!
 
  NCOLE
@@ -2170,7 +2651,7 @@ The script is currently available here:
  NDATE(11 Sep 2002)
  NCOLS
 
-  <a href="http://curl.haxx.se/beta/">Get it</a>. Read about the <a
+  <a href="//curl.haxx.se/beta/">Get it</a>. Read about the <a
   href="changes.html">changes</a>.
 
  NCOLE
@@ -2178,8 +2659,8 @@ The script is currently available here:
  NSUBJ(7.10 pre-release 2)
  NDATE(3 Sep 2002)
  NCOLS
- 
-  <a href="http://curl.haxx.se/beta/">Get it</a>. Details on news and changes
+
+  <a href="//curl.haxx.se/beta/">Get it</a>. Details on news and changes
   will be posted soon.
 
  NCOLE
@@ -2187,7 +2668,7 @@ The script is currently available here:
  NSUBJ(Regarding the recent flow of SSL security flaws)
  NDATE(20 Aug 2002)
  NCOLS
- 
+
    On August 5th, Mike Benham posted his initial <a
    href="http://online.securityfocus.com/archive/1/286290/2002-07-31/2002-08-06/0">IE
    security advisory</a> regarding how IE doesn't properly verify SSL
@@ -2214,9 +2695,9 @@ The script is currently available here:
  NSUBJ(7.9.9 pre-release 1)
  NDATE(12 Aug 2002)
  NCOLS
- 
-  Pick your package <a href="http://curl.haxx.se/">from here</a>. Read about
-  <a href="http://curl.haxx.se/mail/archive-2002-08/0019.html">the changes</a>
+
+  Pick your package <a href="//curl.haxx.se/">from here</a>. Read about
+  <a href="//curl.haxx.se/mail/archive-2002-08/0019.html">the changes</a>
   included.
 
  NCOLE
@@ -2224,9 +2705,9 @@ The script is currently available here:
  NSUBJ(Curl::easy 1.34)
  NDATE(7 Aug 2002)
  NCOLS
- 
- Cris Bailiff released Curl::easy v1.34, which lets you use libcurl from perl.  Get it from 
- <a href="http://curl.haxx.se/libcurl/perl/">http://curl.haxx.se/libcurl/perl/</a>. Another minor
+
+ Cris Bailiff released Curl::easy v1.34, which lets you use libcurl from perl.  Get it from
+ <a href="//curl.haxx.se/libcurl/perl/">//curl.haxx.se/libcurl/perl/</a>. Another minor
  but potentially important bug fix - Doh! A recommended upgrade.
 
  NCOLE
@@ -2235,18 +2716,18 @@ The script is currently available here:
  NDATE(18 July 2002)
  NCOLS
 
- Kjetil Jacobsen released <a href="http://pycurl.sourceforge.net/">Pycurl</a> 
+ Kjetil Jacobsen released <a href="http://pycurl.sourceforge.net/">Pycurl</a>
  7.9.8.3.  Under Python 2.2 or better, Curl and CurlMulti now participate in
  garbage collection with the gc module.
 
  NCOLE
- 
+
  NSUBJ(New release of Curl::easy perl interface)
  NDATE(15 July 2002)
  NCOLS
- 
- Cris Bailiff released Curl::easy v1.30, which lets you use libcurl from perl.  Get it from 
- <a href="http://curl.haxx.se/libcurl/perl/">http://curl.haxx.se/libcurl/perl/</a>.
+
+ Cris Bailiff released Curl::easy v1.30, which lets you use libcurl from perl.  Get it from
+ <a href="//curl.haxx.se/libcurl/perl/">//curl.haxx.se/libcurl/perl/</a>.
  <p>Adds support for OO style programming, and should be ready for perl 5.8.</p>
 
  NCOLE
@@ -2254,8 +2735,8 @@ The script is currently available here:
  NSUBJ(New release of Pycurl)
  NDATE(12 July 2002)
  NCOLS
- 
- Kjetil Jacobsen released Pycurl 7.9.8.2.  Get it from 
+
+ Kjetil Jacobsen released Pycurl 7.9.8.2.  Get it from
  <a href="http://pycurl.sourceforge.net/">http://pycurl.sourceforge.net/</a>.
 
  NCOLE
@@ -2276,7 +2757,7 @@ The script is currently available here:
  NCOLS
 
   So, while Daniel is away on vacation, there's a <a
-  href="http://curl.haxx.se/mail/archive-2002-06/0087.html">bunch of things
+  href="//curl.haxx.se/mail/archive-2002-06/0087.html">bunch of things
   to do to keep Daniel happy</a>.
  <p>
   Let's keep the project afloat and alive even though Daniel is completely
@@ -2298,7 +2779,7 @@ The script is currently available here:
  NDATE(11 June 2002)
  NCOLS
 
-  Get your <a href="http://curl.haxx.se/beta/">7.9.8 pre-release 3</a> now and
+  Get your <a href="//curl.haxx.se/beta/">7.9.8 pre-release 3</a> now and
   let us know how it works.
 
  NCOLE
@@ -2307,7 +2788,7 @@ The script is currently available here:
  NDATE(4 June 2002)
  NCOLS
 
-  Get your <a href="http://curl.haxx.se/beta/">7.9.8 pre-release 2</a> now and
+  Get your <a href="//curl.haxx.se/beta/">7.9.8 pre-release 2</a> now and
   let us know how it works. Yet another public release is close now.
 
  NCOLE
@@ -2337,7 +2818,7 @@ The script is currently available here:
  NDATE(22 May 2002)
  NCOLS
 
-  Download it <a href="http://curl.haxx.se/beta/">from here</a> and check out
+  Download it <a href="//curl.haxx.se/beta/">from here</a> and check out
   the latest <a href="changes.html">changes</a>.
 
  NCOLE
@@ -2357,7 +2838,7 @@ The script is currently available here:
 
  Jeffrey Pohlmeyer announces the second release of CurlPas. (Pascal bindings
  to libcurl.)
-  <p> 
+  <p>
  CurlPas now compiles with FreePascal, Delphi AND Kylix!!!
   <p>
  This version is *almost* a complete rewrite of the
@@ -2398,7 +2879,7 @@ The script is currently available here:
  NDATE(7 May 2002)
  NCOLS
 
-  Download <a href="http://curl.haxx.se/beta/">7.9.7 pre-release 2</a>.
+  Download <a href="//curl.haxx.se/beta/">7.9.7 pre-release 2</a>.
 
  NCOLE
 
@@ -2406,7 +2887,7 @@ The script is currently available here:
  NDATE(6 May 2002)
  NCOLS
 
-  Download from <a href="http://curl.haxx.se/beta/">here</a>.
+  Download from <a href="//curl.haxx.se/beta/">here</a>.
 
  NCOLE
 
@@ -2415,7 +2896,7 @@ The script is currently available here:
  NCOLS
 
   Rosso Salmanzadeh's excellent <a
-  href="http://curl.haxx.se/libcurl/c/visual_studio.pdf">Using libcurl in
+  href="//curl.haxx.se/libcurl/c/visual_studio.pdf">Using libcurl in
   Visual Studio</a> is now available!
 
  NCOLE
@@ -2435,7 +2916,7 @@ The script is currently available here:
  NCOLS
 
   This is a realease-candidate. Get it from <a
-  href="http://curl.haxx.se/beta/">the beta-page</a>, read the summary of <a
+  href="//curl.haxx.se/beta/">the beta-page</a>, read the summary of <a
   href="changes.html">changes</a> and report any problem you experience.
 
  NCOLE
@@ -2446,7 +2927,7 @@ The script is currently available here:
 
   Would you like to see curl and libcurl support transfers over SSH? Then I
   suggest you read the <a
-  href="http://curl.haxx.se/mail/lib-2002-04/0090.html">Grokking ssh</a>
+  href="//curl.haxx.se/mail/lib-2002-04/0090.html">Grokking ssh</a>
   posting and then join in! This will need lots of volounteers to become
   reality....
 
@@ -2458,7 +2939,7 @@ The script is currently available here:
  NCOLS
 
   Bumped pre-release number. Still found <a
-  href="http://curl.haxx.se/beta/">here</a>! ;-)
+  href="//curl.haxx.se/beta/">here</a>! ;-)
 
  NCOLE
 
@@ -2467,7 +2948,7 @@ The script is currently available here:
  NCOLS
 
  <ol>
-  <li> GOTO <a href="http://curl.haxx.se/beta/">beta page</a>
+  <li> GOTO <a href="//curl.haxx.se/beta/">beta page</a>
   <li> DOWNLOAD
   <li> COMPILE
   <li> RUN
@@ -2501,9 +2982,9 @@ The script is currently available here:
  <big>
   The mailing list formerly known as curl-main is now moving to another host.
   To subscribe to the <i>new</i> curl-users list, <a
-  href="http://lists.sourceforge.net/lists/listinfo/curl-users">go here</a>
+  href="https://lists.sourceforge.net/lists/listinfo/curl-users">go here</a>
   and to read all details about this move, read <a
-  href="http://curl.haxx.se/mail/archive-2002-03/0158.html">Daniel's post
+  href="//curl.haxx.se/mail/archive-2002-03/0158.html">Daniel's post
   about it</a>.
  </big>
 
@@ -2514,7 +2995,7 @@ The script is currently available here:
  NDATE(18 March 2002)
  NCOLS
 
- Over on the <a href="http://curl.haxx.se/beta/">beta page</a>, there's now a
+ Over on the <a href="//curl.haxx.se/beta/">beta page</a>, there's now a
  7.9.6 pre-release available. Enjoy!
 
  NCOLE
@@ -2568,7 +3049,7 @@ The script is currently available here:
   Kjetil announced a new version of the <a href="http://pycurl.sf.net/">Python
   binding</a>.
  <p>
-  <a href="http://curl.haxx.se/beta/">7.9.5 pre-release 4</a> is out.
+  <a href="//curl.haxx.se/beta/">7.9.5 pre-release 4</a> is out.
 
  NCOLE
 
@@ -2576,7 +3057,7 @@ The script is currently available here:
  NDATE(21 February 2002)
  NCOLS
 
-  Get a <a href="http://curl.haxx.se/beta/">7.9.5 pre-release 2</a> or study
+  Get a <a href="//curl.haxx.se/beta/">7.9.5 pre-release 2</a> or study
   the latest known libcurl binding, made for <a
   href="/libcurl/postgres/">PostgreSQL</a>.
 
@@ -2596,15 +3077,15 @@ The script is currently available here:
  NCOLS
 
  <ul>
-  <li> Read the <a href="http://curl.haxx.se/q/analysis.html">questionnaire
+  <li> Read the <a href="//curl.haxx.se/q/analysis.html">questionnaire
        Analysis</a>! If you're the least interested in this project, I think
        you're obliged to read the analysis to see what we all think about the
        current situation and about the future. It is quite lengthy as I did
        put some effort into this.
   <li> Help us get the new <a
-       href="http://curl.haxx.se/lxr/source/tests/server/">test HTTP
+       href="//curl.haxx.se/lxr/source/tests/server/">test HTTP
        server</a> compile and run all over.
-  <li> Get a <a href="http://curl.haxx.se/beta/">7.9.5 pre-release</a> and try
+  <li> Get a <a href="//curl.haxx.se/beta/">7.9.5 pre-release</a> and try
        it out!
   <li> Mail my wife and wish her a happy birthday! ;-)
  </ul>
@@ -2638,7 +3119,7 @@ The script is currently available here:
  NCOLS
 
   This time it only took <b>five</b> days after the public release to release
-  the initial <a href="http://curl.haxx.se/beta/">pre-release</a> of the next
+  the initial <a href="//curl.haxx.se/beta/">pre-release</a> of the next
   one. This pre-release includes no less than <b>ten</b> items worthy to
   mention on the <a href="changes.html">changes</a> page.
 
@@ -2688,8 +3169,6 @@ The script is currently available here:
   href="http://www.unixreview.com/">unixreview.com</a>.
 
  NCOLE
-
-</table>
 
 #include "_footer.html"
 </BODY>

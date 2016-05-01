@@ -5,12 +5,13 @@
 </head>
 
 #define DOCS_PROGRAMS
+#define WHO_DOCS
 #define CURL_URL curlprograms.html
 
 #include "_menu.html"
 #include "setup.t"
 
-WHERE2(Docs, "/docs/", Programs using curl)
+WHERE3(Docs, "/docs/", Who and Why, "/docs/whodocs.html", Programs using curl)
 
 TITLE(Programs using curl for file transfers)
 <div class="relatedbox">
@@ -85,8 +86,8 @@ TITLE(Programs using curl for file transfers)
 
   TREVEN
    NEWCOL <a href="http://www.linux.it/~carlo/somehacks/m2m/">Advogato master to master graph</a> </td>
-   NEWCOL A small python script who extracts the "master to master" 
-  graph from advogato and wrote a GML (graph modelling language) file so 
+   NEWCOL A small python script who extracts the "master to master"
+  graph from advogato and wrote a GML (graph modelling language) file so
   you can navigate the 3D graph with tulip or something... </td>
    NEWCOL Carlo Perassi </td>
   TREND
@@ -97,12 +98,6 @@ TITLE(Programs using curl for file transfers)
    NEWCOL A collection of functions/classes all written in PHP for use with Surepay.com's SSL merchant gateway services.
  </td>
    NEWCOL Jon T Stokkeland and Sauen.Com </td>
-  TREND
-
-  TREVEN
-   NEWCOL <a href="http://curl.haxx.se/programs/display.cgi?file=tnord_login.pl">tnord_login</a> </td>
-   NEWCOL automatic login to Telenordia's broadband network </td>
-   NEWCOL Roberth Edberg </td>
   TREND
 
   TRODD
@@ -139,29 +134,11 @@ TITLE(Programs using curl for file transfers)
   TREND
 
   TREVEN
-   NEWCOL <a href="http://curl.haxx.se/programs/get_latest_kernel.txt">get_latest_kernel..pl</a></td>
-   NEWCOL perl script using the libcurl binding to get the latest Linux kernel </td>
-   NEWCOL <a href="mailto:frax_at_axnet.nu">Fredrik Ax</a></td>
-  TREND
-
-  TRODD
-   NEWCOL <a href="http://curl.haxx.se/programs/crawlink.txt">crawlink</a> </td>
-   NEWCOL crawlink is a perl script that crawls an entire site and verifies that all links work </td>
-   NEWCOL <a href="mailto:daniel_at_haxx.se">Daniel Stenberg</a></td>
-  TREND
-
-  TREVEN
    NEWCOL <a href="http://snoopy.sourceforge.net/">Snoopy</a> </td>
    NEWCOL Snoopy is a PHP class that simulates a web browser. It can automate
     the task of retrieving web page content and posting forms, for example, and
     has many configurable parameters. </td>
    NEWCOL <a href="mailto:"></a></td>
-  TREND
-
-  TRODD
-   NEWCOL <a href="http://curl.haxx.se/programs/ftproxy.txt">ftproxy.pl</a> </td>
-   NEWCOL forward standard GET proxy requests to a user@host ftp proxy </td>
-   NEWCOL <a href="mailto:bjorn_at_haxx.se">Björn Stenberg</a></td>
   TREND
 
   TREVEN
@@ -174,18 +151,6 @@ TITLE(Programs using curl for file transfers)
    NEWCOL <a href="http://netpedia.net/hosting/gview/using.html">gView</a></td>
    NEWCOL gnome image displayer </td>
    NEWCOL <a href="mailto:bruces_at_mail.petech.ac.za">Bruce A. Smith</a></td>
-  TREND
-
-  TREVEN
-   NEWCOL <a href="http://curl.haxx.se/programs/comhemlogin.bash">another comhem login</a></td>
-   NEWCOL automatic login to the Swedish cable provider 'comhem' (shell) </td>
-   NEWCOL <a href="mailto:voluspa_at_bigfoot.com">Mats Johannesson</a></td>
-  TREND
-
-  TRODD
-   NEWCOL <a href="http://curl.haxx.se/programs/comhemlogin.txt">comhem login</a></td>
-   NEWCOL automatic login to the Swedish cable provider 'comhem' (updated 18-feb-2001) (perl) </td>
-   NEWCOL <a href="mailto:kjell_at_haxx.se">Kjell Ericson</a></td>
   TREND
 
   TREVEN
@@ -240,63 +205,14 @@ TITLE(Programs using curl for file transfers)
   TREND
 
   TREVEN
-   NEWCOL <a href="http://sourceforge.net/projects/gotmail">GotMail</a></td>
+   NEWCOL <a href="https://sourceforge.net/projects/gotmail">GotMail</a></td>
    NEWCOL Get mail from a hotmail account (perl)</td>
    NEWCOL &nbsp; </td>
   TREND
 
-
   TREVEN
-   NEWCOL <a href="http://curl.haxx.se/programs/checklinks.txt">checklinks.pl</a></td>
-   NEWCOL Check all links of a web page (perl) </td>
-   NEWCOL Daniel Stenberg</td>
-  TREND
-
-  TRODD
-   NEWCOL <a href="http://cool.haxx.se/cvs.cgi/curl/perl/contrib/formfind?rev=HEAD&content-type=text/vnd.viewcvs-markup">formfind</a></td>
-   NEWCOL Find all details about forms in a HTML page.
-   Pretty useful to extract the names etc for using curl to submit the info.
-   (perl) </td>
-   NEWCOL Daniel Stenberg</td>
-  TREND
-
-  TREVEN
-   NEWCOL <a href="http://cool.haxx.se/cvs.cgi/curl/perl/contrib/getlinks.pl.in">getlinks.pl</a></td>
-   NEWCOL Download all files that are linked to from a HTML page and that matches the specified regular expression. (perl) </td>
-
-   NEWCOL Daniel Stenberg</td>
-  TREND
-
-  TRODD
-   NEWCOL <a href="http://cool.haxx.se/cvs.cgi/curl/perl/contrib/recursiveftpget.pl.in">recursiveftpget.pl</a></td>
-   NEWCOL Download files recursively off an ftp site. You can specify an optional max depth. (perl)</td>
-
-   NEWCOL Daniel Stenberg</td>
-  TREND
-
-  TREVEN
-   NEWCOL <a href="http://curl.haxx.se/programs/curlmirror.txt">curlmirror.pl</a></td>
+   NEWCOL <a href="https://github.com/cudeso/tools/blob/master/curlmirror.txt">curlmirror.pl</a></td>
    NEWCOL Uses curl to mirror a web site (perl) </td>
-   NEWCOL <a href="mailto:kjell.ericson_at_haxx.se">Kjell Ericson</a> </td>
-  TREND
-
-  TRODD
-   NEWCOL <a href="http://curl.haxx.se/programs/bushpdf.txt">bushpdf.php3</a></td>
-   NEWCOL Download a whole range of URLs (PHP3) </td>
-   NEWCOL <a href="mailto:alain_at_samoun.com">Alain Samoun</a> </td>
-  TREND
-
-  TREVEN
-   NEWCOL <a
-   href="http://curl.haxx.se/programs/download.txt">download.pl</a></td>
-   NEWCOL
-    Wrapper around curl to ensure:<br>
-    - auto-resume download until it completes<br>
-    - auto save file into correct directory<br>
-    (perl)
-   </td>
-   NEWCOL
-    <a href="mailto:tjtan_at_post1.com">Tan Thor Jen</a> </td>
   TREND
 
   TRODD
@@ -308,7 +224,7 @@ TITLE(Programs using curl for file transfers)
     changed to relative links, and links to active pages get changed to the
     resulting pages. (Tcl) </td>
    NEWCOL
-    <a href="mailto:ornalux_at_redestb.es">Andrés García</a> </td>
+    <a href="mailto:ornalux_at_redestb.es">AndrÃ©s GarcÃ­a</a> </td>
   TREND
 
   TREVEN

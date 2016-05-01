@@ -7,9 +7,26 @@ RedirectPermanent /docs/runtests.html http://curl.haxx.se/dev/runtests.html
 RedirectPermanent /docs/testcurl.html http://curl.haxx.se/dev/testcurl.html
 RedirectPermanent /source.html http://curl.haxx.se/dev/source.html
 RedirectPermanent /bugreport.html http://curl.haxx.se/docs/bugs.html
+RedirectPermanent /cvs.cgi http://curl.haxx.se/dev/source.html
+RedirectPermanent /cvs.html http://curl.haxx.se/dev/source.html
+RedirectPermanent /dev/readme-http2.html http://curl.haxx.se/docs/http2.html
+RedirectPermanent /mirrors.html http://curl.haxx.se/mirror/
+RedirectPermanent /libcurl/c/libcurl-thread.html http://curl.haxx.se/libcurl/c/threadsafe.html
+RedirectMatch "^/.git" http://curl.haxx.se/dev/source.html
 
-AddType text/plain .pl
+RemoveHandler .php
+RemoveHandler .pl
+#AddType text/plain .pl
 AddType text/plain .php
 AddType application/octet-stream .rpm
 AddType application/x-bzip2 .bz2
 AddType application/x-tar .tar
+php_flag engine off
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://curl.haxx.se%{REQUEST_URI} [R=301,L]
+
+</IfModule>

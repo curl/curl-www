@@ -4,7 +4,7 @@ Date: Thu, 19 Jan 2012 20:07:44 +0100
 Subject: [PATCH] OpenSSL: don't disable security work-around
 
 OpenSSL added a work-around for a SSL 3.0/TLS 1.0 CBC vulnerability
-(http://www.openssl.org/~bodo/tls-cbc.txt). In 0.9.6e they added a bit
+(https://www.openssl.org/~bodo/tls-cbc.txt). In 0.9.6e they added a bit
 to SSL_OP_ALL that _disables_ that work-around despite the fact that
 SSL_OP_ALL is documented to do "rather harmless" workarounds.
 
@@ -37,7 +37,7 @@ index af70fe0..d9c0a8f 100644
       enable the feature, one can do this in the SSL callback.
  
 +     OpenSSL added a work-around for a SSL 3.0/TLS 1.0 CBC vulnerability
-+     (http://www.openssl.org/~bodo/tls-cbc.txt). In 0.9.6e they added a bit to
++     (https://www.openssl.org/~bodo/tls-cbc.txt). In 0.9.6e they added a bit to
 +     SSL_OP_ALL that _disables_ that work-around despite the fact that
 +     SSL_OP_ALL is documented to do "rather harmless" workarounds. In order to
 +     keep the secure work-around, the SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS bit

@@ -1,72 +1,78 @@
 #include "_doctype.html"
-<HTML>
-<HEAD> <TITLE>cURL - Index of online documentation</TITLE>
+<html>
+<head> <title>cURL - Documentation Overview</title>
 #include "css.t"
-</HEAD>
+</head>
 
 #define CURL_DOCS
+#define DOCS_OVERVIEW
 #define DOCS_INDEX
 #define CURL_URL docs
 
 #include "_menu.html"
 #include "setup.t"
 
-WHERE1(Documentation Index)
+WHERE1(Documentation Overview)
 
-TITLE(Documentation - Stuff to Read)
-
-SUBTITLE(Using the Curl Tool)
-<ul>
-
- <li>
-  The huge <a href="manpage.html">man page</a> describes all command-line
-  options and all tiny quirks about how to use curl.
-
- <li>
-  <a href="faq.html">FAQ</a> is short for Frequently Asked Questions and these
-  ones surely are...
- <li>
-  A plain list with all curl's <a href="features.html">features</a> can be
-  found here, they're just listed on top of each other.
- <li>
-  <a href="httpscripting.html">Scripting HTTP Requests Using Curl</a> gives
-  you a good initial grip on how you use curl to emulate a browser.
- <li>
-  <a href="install.html">Install</a> clearly describes how to go ahead when
-  you want to compile and install curl <b>from source</b> on your system.
- <li>
-  The <a href="manual.html">manual</a> contains a lot of examples and
-  explanations about the concepts behind the command line options etc. A kind
-  of tutorial.
- <li>
-  <a href="versions.html">Versions</a> describes how the version numbers of
-  curl and libcurl releases are constructed.
-
- <li> The <a href="comparison-table.html">comparison table</a> shows you how
-  curl's features compare against similar available tools.
-
- <li> At times curl is not the tool for you, find the one on the <a
-  href="relatedtools.html">related tools</a> page.
-
- <li> <a href="companies.html">companies that use curl</a>, <a
-  href="programs.html">programs using curl</a> and <a
-  href="/libcurl/using/apps.html">programs using libcurl</a>
-
-</ul>
-
-SUBTITLE(Using libcurl)
+TITLE(Documentation Overview)
 <p>
- All <a href="/libcurl/">libcurl</a> related stuff is in its own section of
- the site.
+ The main documentation is sub divided into several categories. Each category
+holds a number of documentation pages.
 
-SUBTITLE(Hacking on curl/libcurl)
+SUBTITLE(<a href="tooldocs.html">curl tool documentation</a>)
 <p>
+  <a href="comparison-table.html">Comparison Table</a>,
+  <a href="manpage.html">curl man page</a>,
+  <a href="faq.html">FAQ</a>,
+  <a href="httpscripting.html">HTTP Scripting</a>,
+  <a href="mk-ca-bundle.html">mk-ca-bundle</a>,
+  <a href="relatedtools.html">Related Tools</a>,
+  <a href="manual.html">Tutorial</a>
 
- For details, info and more about hacking on and development of curl and
- libcurl, jump over to the <a href="/dev/">development</a> section of this
- web site.
+SUBTITLE(<a href="projdocs.html">The project</a>)
+<p>
+<a href="bugs.html">Bug Report</a>, <a href="libs.html">Dependencies</a>,
+<a href="/donation.html">Donate</a>,
+<a href="features.html">Features</a>,
+<a href="history.html">History</a>,
+<a href="install.html">Install</a>,
+<a href="knownbugs.html">Known Bugs</a>,
+<a href="todo.html">TODO</a>,
+<a href="/about.html">Web Site Info</a>
 
-</ul>
+SUBTITLE(<a href="reldocs.html">Releases</a>)
+<p>
+<a href="/changes.html">Changelog</a>,
+<a href="releases.html">Release Table</a>,
+<a href="security.html">Security</a>,
+<a href="versions.html">Version Nums</a>.
+<a href="vulnerabilities.html">Vulnerabilities</a>
+
+SUBTITLE(<a href="protdocs.html">Protocols</a>)
+<p>
+  <a href="http-cookies.html">HTTP Cookies</a>,
+  <a href="http2.html">HTTP/2</a>,
+  <a href="sslcerts.html">SSL Certs</a>,
+  <a href="https://curl.haxx.se/docs/caextract.html">CA Extract</a>,
+  <a href="ssl-compared.html">SSL libs compared</a>
+ 
+SUBTITLE(<a href="whodocs.html">Who and Why</a>)
+<p>
+  <a href="companies.html">Companies</a>,
+  <a href="copyright.html">Copyright</a>,
+  <a href="/legal/licmix.html">License Mixing</a>,
+  <a href="/sponsors.html">Sponsors</a>,
+  <a href="thanks.html">Thanks</a>,
+  <a href="/legal/thename.html">The Name</a>
+
+SUBTITLE(<a href="/libcurl/">libcurl</a>)
+<p>
+  The libcurl sub section of the site is huge!
+
+SUBTITLE(<a href="/dev/">Development</a>)
+<p>
+  Plenty of documentation and details if you want to work on curl or libcurl
+  themselves.
 
 #include "_footer.html"
 </BODY>

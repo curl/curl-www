@@ -5,13 +5,14 @@
 </HEAD>
 
 #define CURL_DOCS
+#define TOOL_DOCS
 #define DOCS_HTTPSCRIPT
 #define CURL_URL httpscripting.html
 
 #include "_menu.html"
 #include "setup.t"
 
-WHERE2(Docs, "/docs/", Tutorial)
+WHERE3(Docs, "/docs/", Tool Documentation, "/docs/tooldocs.html", HTTP Scripting)
 
 TITLE(Using cURL to automate HTTP jobs)
 <div class="relatedbox">

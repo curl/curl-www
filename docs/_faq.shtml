@@ -6,12 +6,13 @@
 
 #define CURL_DOCS
 #define DOCS_FAQ
+#define TOOL_DOCS
 #define CURL_URL docs/faq.html
 
 #include "_menu.html"
 #include "setup.t"
 
-WHERE2(Docs, "/docs/", FAQ)
+WHERE3(Docs, "/docs/", Tool Documentation, "/docs/tooldocs.html", FAQ)
 
 TITLE(FAQ -- Frequently Asked Questions)
 <div class="relatedbox">

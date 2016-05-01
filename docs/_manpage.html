@@ -7,13 +7,15 @@
 
 #define CURL_DOCS
 #define DOCS_MANPAGE
+#define TOOL_DOCS
 #define CURL_URL docs/manpage.html
-#define AD_BIGGOOGLELEFT
 
 #include "_menu.html"
 #include "setup.t"
 
-WHERE2(Docs, "/docs/", Man Page)
+WHERE3(Docs, "/docs/",
+Tool Documentation, "/docs/tooldocs.html",
+Man Page)
 
 TITLE(curl.1 the man page)
 <div class="relatedbox">

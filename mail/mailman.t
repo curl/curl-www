@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <title><MM-List-Name> Info Page</title>
-<link rel="STYLESHEET" type="text/css" href="http://curl.haxx.se/curl.css">
+<link rel="STYLESHEET" type="text/css" href="https://curl.haxx.se/curl.css">
 </head>
 
 <body>

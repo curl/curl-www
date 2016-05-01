@@ -24,7 +24,7 @@ sub checkwarn {
     my ($l)=@_;
 
     # gcc warning:
-    if (($l =~ /^..\/([.\/a-zA-Z0-9-_]*)\.[chsy]:([0-9:]*): /) ||
+    if (($l =~ /^([a-z]:){0,1}([.\/a-zA-Z0-9-_]*)\.[chsy]:([0-9:]*): /) ||
         # AIX xlc warnings:
         ($l =~ /\"([_.\/a-zA-Z0-9]+)\", line/) ||
         # Tru64 DEC/Compaq C compiler:
@@ -40,7 +40,7 @@ sub checkwarn {
         # MIPS o32 compiler:
         ($l =~ /^cfe: (Warning |Error)(\d*):/) ||
         # MSVC
-        ($l =~ /^[\.\\]*([.\\\/a-zA-Z0-9-_]*)\.[chy]\(([0-9:]*)/) ||
+        ($l =~ /^[\.\\]*([.\\\/a-zA-Z0-9-_]*)\.[chy]\(([0-9:]*)\) *: /) ||
         # Clang warnings not caught elsewhere:
         ($l =~ /^clang: warning: /) ||
         ($l =~ /^warning: unknown warning option /) ||

@@ -1,0 +1,21 @@
+#include "_doctype.html"
+<html>
+<head> <title>HTTP/2 with curl</title>
+#include "css.t"
+</head>
+
+#define DOCS_HTTP2
+#define PROT_DOCS
+#define CURL_URL docs/http2.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(Docs, "/docs/", Protocol docs, "/docs/protdocs.html", HTTP/2 with curl)
+
+#include "http2.gen"
+
+#include "_footer.html"
+
+</BODY>
+</HTML>

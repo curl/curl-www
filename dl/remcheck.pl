@@ -3,6 +3,9 @@
 require "../latest.pm";
 require "stuff.pm";
 
+# Number of recent versions to check
+my $lastfew = 7;
+
 my $show = $ARGV[0];
 
 # get database
@@ -86,8 +89,8 @@ sub content_length {
     return ($cl, $stat);
 }
 
-sub getlast5versions {
-    my @five;
+sub getlastfewversions {
+    my @few;
     my $per;
     for $per ($db->find_all()) {
         my $val=$$per{'curl'};
@@ -107,20 +110,20 @@ sub getlast5versions {
     
     my $c;
     for(reverse sort sortit keys %hash) {
-        push @five, $_;
-        if($c++ >= 5) {
+        push @few, $_;
+        if($c++ >= $lastfew) {
             last;
         }
     }
-    return @five;
+    return @few;
 }
 
-sub islast5versions {
+sub islastfewversions {
     my ($ver)=@_;
 
-    my @last = getlast5versions();
+    my @few = getlastfewversions();
 
-    for(@last) {
+    for(@few) {
         if($_ eq $ver) {
             # yeps
             return 1;
@@ -165,9 +168,17 @@ sub geturl {
     logmsg " \$ $curlcmd \"<a href=\"" . CGI::escapeHTML($url) . "\">" .
            CGI::escapeHTML($url) . "</a>\"\n";
     my @content = `$curlcmd \"$url\"`;
-    if(@content) {
-        # store the content in the hash
-        @{$urlhash{$url}}=@content;
+    if($head) {
+        # Strip header blocks due to redirects, leaving only the final one
+        while($content[0] =~ /^HTTP\/\d.\d 3\d+/) {
+            while((shift @content) !~ /^[\x0A\x0D]*$/ ) {}
+        }
+    } else {
+        # we don't cache HEAD requests
+        if(@content) {
+            # store the content in the hash
+            @{$urlhash{$url}}=@content;
+        }
     }
     return @content;
 }
@@ -213,7 +224,7 @@ for $ref (@all) {
         gmtime(time);
     my $t = sprintf ("%02d:%02d:%02d", $hour, $min, $sec);
 
-    logmsg sprintf "<h2>$t $desc <a href=\"http://curl.haxx.se/dl/mod_entry.cgi?__id=%s\">edit</a></h2>", $$ref{'__id'};
+    logmsg sprintf "<h2>$t $desc <a href=\"https://curl.haxx.se/dl/mod_entry.cgi?__id=%s\">edit</a></h2>", $$ref{'__id'};
 
     if($$ref{'hide'} eq "Yes") {
         logmsg "Marked as hidden, skipping the check\n";
@@ -224,16 +235,16 @@ for $ref (@all) {
         logmsg " Already at latest version ($version), no need to check\n";
         $uptodate++;
     }
-    elsif($$ref{'file'} !~ /^(http|https|ftp):/) {
+    elsif($$ref{'file'} !~ /^(http|https|ftp|ftps):/) {
         logmsg " Local package, no check needed\n";
         $localpackage++;
     }
     elsif($churl && ($churl ne "-")) {
         # there's a URL to check
 
-        if(!islast5versions($$ref{'curl'})) {
+        if(!islastfewversions($$ref{'curl'})) {
 
-            # the database version of this is older than the 5 (6?) last
+            # the database version of this is older than the last few
             # versions, slow down the checking of this by aborting this
             # package check in a random matter
 
@@ -345,11 +356,11 @@ for $ref (@all) {
                 # Only scan for older URLs if the $version is part of it
                 #
 
-                my @five = getlast5versions();
-                @five = grep (!/^$version$/, @five); # we already tried the latest
+                my @few = getlastfewversions();
+                @few = grep (!/^$version$/, @few); # we already tried the latest
 
                 # while no data was received, try older versions
-                while(@five && !$st) {
+                while(@few && !$st) {
 
                     if($ver eq $$ref{'curl'}) {
                         # no need to scan for older packages than what
@@ -357,7 +368,7 @@ for $ref (@all) {
                         last;
                     }
 
-                    $ver = shift @five;
+                    $ver = shift @few;
                     $churl = $inurl;
                     $churl =~ s/\$version/$ver/g;
                     $churl =~ s/\$osversion/$osversion/g;
@@ -369,7 +380,7 @@ for $ref (@all) {
             }
 
             if(!$st) {
-                logmsg " <div class=\"buildfail\">None of the 5 latest versions found!</div>\n";
+                logmsg " <div class=\"buildfail\">None of the $lastfew latest versions found!</div>\n";
                 $failedcheck++;
                 next;
             }

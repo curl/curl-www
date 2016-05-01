@@ -1,0 +1,30 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>curl %version - Single version vulnerability summary </TITLE>
+#include "css.t"
+#include "manpage.t"
+</HEAD>
+
+#define CURL_DOCS
+#define CURL_URL docs/vuln-%version.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(Docs, "/docs/", Vulnerability table, "/docs/vulnerabilities.html", %version vulnerabilities)
+
+TITLE(curl %version - Single version vulnerability summary)
+#include "adv-related-box.inc"
+
+<p> curl version <b>%version</b> was released on <b>%date</b>. The following
+<b>%vulnnum</b> security problems are known to exist in this version.
+
+%vulnerabilities
+
+<p>
+ <a href="/changes.html#%anchor">Changelog for curl %version</a>
+
+%nextprev
+
+#include "_footer.html"
+</body> </html>

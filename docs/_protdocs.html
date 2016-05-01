@@ -1,0 +1,35 @@
+#include "_doctype.html"
+<html>
+<head> <title>cURL - Protocol Documentation</title>
+#include "css.t"
+</head>
+
+#define CURL_DOCS
+#define CURL_URL docs/protdocs.html
+
+#define PROT_DOCS
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Documentation Overview, "/docs/", Protocol Documentation)
+
+TITLE(Protocol Related Documentation)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/docs/">Docs Overview</a>
+<br><a href="projdocs.html">Project docs</a>
+</div>
+<p>
+  Protocol related docs.
+
+<p> Learn how curl deals with <a href="http-cookies.html">HTTP
+  Cookies</a>, <a href="http2.html">HTTP/2</a> and <a href="sslcerts.html">SSL
+  Certs</a>.
+
+<p>
+  Get <a href="caextract.html">CA bundled extracted</a> or learn how
+  the <a href="ssl-compared.html">SSL libs compares</a>.
+
+#include "_footer.html"
+</BODY>
+</HTML>

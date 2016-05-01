@@ -229,8 +229,8 @@ for $per (@sall) {
     my $mirror;
     my $metalink;
     if($$per{'re'} ne "-") {
-        $mirror="<a href=\"http://curl.haxx.se/latest.cgi?curl=$$per{'re'}\" type=\"text/html\" title=\"download mirrors\">";
-        $metalink="<a href=\"http://curl.haxx.se/metalink.cgi?curl=$$per{'re'}\" type=\"application/metalink+xml\">" .
+        $mirror="<a href=\"https://curl.haxx.se/latest.cgi?curl=$$per{'re'}\" type=\"text/html\" title=\"download mirrors\">";
+        $metalink="<a href=\"https://curl.haxx.se/metalink.cgi?curl=$$per{'re'}\" type=\"application/metalink4+xml\">" .
                   "<img src=\"/pix/metalink.png\" border=\"0\" alt=\"metalink\" title=\"metalink\"></a>";
     }
     my $p;

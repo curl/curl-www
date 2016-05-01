@@ -22,6 +22,7 @@
 <a href="lua/">Lua</a><br>
 <a href="mono/">Mono</a><br>
 <a href="dotnet/">.NET</a><br>
+<a href="nodejs/">node.js</a><br>
 <a href="pascal2/">Object-Pascal</a><br>
 <a href="ocaml/">OCaml</a><br>
 <a href="pascal/">Pascal</a><br>
@@ -33,6 +34,7 @@
 <a href="rexx/">Rexx</a><br>
 <a href="ruby/">Ruby</a><br>
 <a href="scheme/">Scheme</a><br>
+<a href="scilab/">Scilab</a><br>
 <a href="slang/">S-Lang</a><br>
 <a href="smalltalk/">Smalltalk</a><br>
 <a href="spf/">SP-Forth</a><br>

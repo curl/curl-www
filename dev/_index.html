@@ -10,47 +10,37 @@
 #include "_menu.html"
 #include "setup.t"
 
-<center><img src="/pix/dev-curl.jpg" width="471" height="175" alt="curl
-development"> </center>
-
 WHERE1(Development)
 
-TITLE(Curl Development Overview)
-<p><strong>
+TITLE(Developing curl)
+<p>
  This is the section of the web site devoted to the development of curl and
  libcurl. If you are just a "user" of curl or libcurl, this may not be where
- you want to hang out.</strong>
+ you want to hang out.
 <p>
  There is always development going on in the curl project.  To help out the
  development team, we provide these services:
 
-<div style="float: right; width: 25em; border: outset 2px #8080ff; margin: 8px; background: #ffffff; ">
-<h2>Open issues</h2>
-#include "bugbox.t"
-</div>
-
-<table><tr valign="top"><td>
 SUBTITLE(Generated contents)
 <p>
   Build and source information that is updated all the time:
 
 <ul>
 
-<li> <a href="http://curl.haxx.se/dev/cvshistory.html">Recent Source
+<li> <a href="sourceactivity.html">Recent Source
  Activity</a> - What happened recently in the source code repository?
 <li>
- <a href="http://curl.haxx.se/dev/builds.html">Automatic Builds</a> - We
- build curl automatically non-stop to verify that it builds and works.
+ <a href="builds.html">Automatic Builds</a> - We
+ build curl automatically non-stop to verify that it builds and works. Learn <a href="howto.html">how to autobuild</a> and read the <a href="summary.html">autobuild stats</a>.
 <li>
- <a href="http://cool.haxx.se/curl-daily/">Daily Snapshot</a> - The latest
+ <a href="/snapshots/">Daily Snapshot</a> - The latest
  version of curl, packaged and provided daily.
 <li>
- <a href="/scans/">Daily scans</a> with the clang source code analyzer. It keeps a 30 day backlog.
+ <a href="/scans/">Daily scans</a> with the clang source code analyzer.
 <li>
- <a href="keywords.html">Keywords</a> lists all test case keywords used.
+  <a href="/gitstats/">git stats</a>, updated daily
 </ul>
 
-</td><td>
 SUBTITLE(Broadcasted commit info)
 <p>
  Each push to the git repository will be announced over various systems.
@@ -58,17 +48,15 @@ SUBTITLE(Broadcasted commit info)
 <ul>
 
 <li> Mail is sent to the <a
-href="http://cool.haxx.se/mailman/listinfo/curl-commits">curl-commits</a>
+href="https://cool.haxx.se/mailman/listinfo/curl-commits">curl-commits</a>
 mailing list
 
 <li> A note is dropped in the #curl IRC channel
 
 <li> A tweet is sent out by the <a
-href="http://twitter.com/curlcommits">@curlcommits</a> user on twitter
+href="https://twitter.com/curlcommits">@curlcommits</a> user on twitter
 
-</td></tr></table>
-
-<table><tr valign="top"><td>
+</ul>
 
 SUBTITLE(Documents in progress)
 <p>
@@ -77,38 +65,37 @@ SUBTITLE(Documents in progress)
 <ul>
 <li> <a href="release-notes.html">RELEASE-NOTES</a> is the current work in
  progress document for the next release.
-<li>
-
- <a href="todo-release.html">TODO-RELEASE</a> lists issues we may work on to
- get fix for the next release, or a future one.
 
 <li>
  <a href="source.html">Source code</a> - check out the latest code
  directly from git
 
-</ul>
+<li>
+ Release calendar, pick your format: <a href="https://www.google.com/calendar/feeds/c9u5d64odop9js55oltfarjk6g%40group.calendar.google.com/public/basic">XML</a>, <a href="https://www.google.com/calendar/ical/c9u5d64odop9js55oltfarjk6g%40group.calendar.google.com/public/basic.ics">ICAL</a>, <a href="https://www.google.com/calendar/embed?src=c9u5d64odop9js55oltfarjk6g%40group.calendar.google.com&ctz=Europe/Stockholm">HTML</a>
 
-</td><td>
+</ul>
 
 SUBTITLE(Bugs and discussions)
 <ul>
 <li>
- <a href="http://sourceforge.net/p/curl/bugs/">Bug tracker</a>
- [sourceforge.net] - submit problems there. See also the <a
+ <a href="https://github.com/curl/curl/issues">Bug tracker</a>
+ [github] - submit problems there. See also the <a
  href="/docs/knownbugs.html">KNOWN_BUGS</a> document.
 
 <li>
- <a href="http://curl.haxx.se/mail/">libcurl mailing list</a> - Development
+ <a href="https://curl.haxx.se/mail/">libcurl mailing list</a> - Development
  talk and thoughts about how the future will become is discussed there.
 
 <li> A few devs and users hang out on IRC, in the #curl channel on
 irc.freenode.net
 
+<li>
+ We also get <a href="https://github.com/curl/curl/pulls">pull requests</a>
+ filed at github.
+
 </ul>
 
-</td></tr></table>
-
-SUBTITLE(Documentation)
+SUBTITLE(Developer Documentation)
 <p>
  Most of these are documents from the source archive converted to web pages
  here for your convenience.
@@ -124,10 +111,6 @@ SUBTITLE(Documentation)
   project.
 
 <li>
-  <a href="/docs/copyright.html">Copyright</a> details the copyright and
-  licensing for curl and libcurl.
-
-<li>
   <a href="internals.html">Internals</a> describes how things work
   internally in curl, for code hackers, bug fixers and generally interested
   parties.
@@ -138,40 +121,8 @@ SUBTITLE(Documentation)
   <a href="/docs/thanks.html">Thanks to these people</a>, curl exists as it is
   today!
 
-<li>
- <a href="/rfc/">List of specifications</a>, that we use as basis for the
- protocols we support
-
-<li> The <a href="runtests.html">runtests</a> man page
-
-<li> The <a href="testcurl.html">testcurl</a> docs
 </ul>
-
-<p>
-  The README documentation files from the curl/lib directory:
-<ul>
-<li> <a href="readme-ares.html">README.ares</a>
-<li> <a href="readme-curl_off_t.html">README.curl_off_t</a>
-<li> <a href="readme-curlx.html">README.curlx</a>
-<li> <a href="readme-encoding.html">README.encoding</a>
-<li> <a href="readme-hostip.html">README.hostip</a>
-<li> <a href="readme-httpauth.html">README.httpauth</a>
-<li> <a href="readme-memoryleak.html">README.memoryleak</a>
-<li> <a href="readme-multi_socket.html">README.multi_socket</a>
-<li> <a href="readme-pingpong.html">README.pingpong</a>
-<li> <a href="readme-pipelining.html">README.pipelining</a>
-</ul>
-
-SUBTITLE(Related Documentation)
-<ul>
-<li>
- You'll find answers to many questions regarding <b>SSL and OpenSSL</b> in the
- <a href="http://www.openssl.org/support/faq.html">OpenSSL FAQ</a>.
-<li>
- C programming language international standardization working group
- <a href="http://www.open-std.org/JTC1/SC22/WG14/">JTC1/SC22/WG14</a>
 
 #include "_footer.html"
 </BODY>
 </HTML>
-

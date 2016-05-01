@@ -1,35 +1,54 @@
 #!/usr/bin/perl
 
+# This hash contains two or three digit prefixes that should be split in the
+# output and use one additional letter.
+my %cramped = ("al" => 1,
+               "an" => 1,
+               "ch" => 1,
+               "da" => 1,
+               "ja" => 1,
+               "je" => 1,
+               "jo" => 1,
+               "ma" => 1,
+               "mi" => 1,
+               "pa" => 1,
+               "ro" => 1,
+               "st" => 1,
+               "to" => 1,
+               "mar" => 1,
+               "dav" => 1,
+               "and" => 1);
+             
 while(<STDIN>) {
-    push @names, $_;
+    chomp;
+    my $n=$_;
+
+    # this matches A-z names
+    if($n =~ /^([A-Za-z][A-Za-z. ])/i) {
+        my $l=lc($1);
+
+        if($cramped{$l}) {
+            if($n =~ /^([A-Za-z][A-Za-z. ][A-Za-z.])/i) {
+                $l=lc($1);
+                if($cramped{$l}) {
+                    if($n =~ /^([A-Za-z][A-Za-z. ][A-Za-z. ][A-Za-z.])/i) {
+                        $l=lc($1);
+                    }
+                }
+            }
+        }
+        
+        $letter{$l} .= "$n, ";
+    }
+    elsif($n) {
+        $letter{"rest"} .= "$n, ";
+    }
 }
 
-sub showcol {
-    my ($c) = @_; # 0, 1, 2 or 3
-    my $max = $#names;
-    my $single = $max/4;
-    my $start = $c*$single;
-    my $end = ($start+$single);
-
-    if($c == 3) {
-        $end = $max; # prevent rounding errors
-    }
-    if($c) {
-        $start++;
-    }
-
-    for($start .. $end) {
-        print $names[$_]."<br>\n";
-    }
+# Output them all
+for my $l (sort keys %letter) {
+    printf "<a name=\"%s\"></a><h2>%s</h2>", $l, ucfirst($l);
+    print $letter{$l}."\n";
 }
-
-# Put them all in three columns
-print "<table><tr valign=\"top\"><td>\n";
-showcol(0);
-print "</td><td>\n";
-showcol(1);
-print "</td><td>\n";
-showcol(2);
-print "</td><td>\n";
-showcol(3);
-print "</td></tr></table>\n";
+print "<h2>Non A-Z names</h2>\n";
+print $letter{"rest"};

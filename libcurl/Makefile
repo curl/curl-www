@@ -1,75 +1,71 @@
 ROOT = ..
 CVSROOT= ../cvssource
-TXT2PLAIN= $(ROOT/docs/txt2plain.pl
 
-MAINPARTS= $(ROOT)/_doctype.html _menu.html _links.html $(ROOT)/setup.t pic.t \
- $(ROOT)/where.t download.t $(ROOT)/mirrorlinks.t $(ROOT)/ad.t $(ROOT)/css.t  \
- $(ROOT)/sflogo.html $(ROOT)/_footer.html
-NOW=$(shell date +'-D__TODAY__=%B %d, %Y')
+include $(ROOT)/mainparts.mk
+include $(ROOT)/setup.mk
+
+MAINPARTS += _menu.html
 TXT2HTML= txt2html --extract --hrule 10
-ACTION=@echo preprocessing $@; \
-	rm -f $@; \
-	fcpp -I.. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
-	chmod a-w+r $@
 
 all: index.html mail.html competitors.html comparison-table.html	  \
      relatedlibs.html features.html wininet.html libwww.html libsoup.html \
      theysay.html bindings.html abi.html neon.html
 	cd c; make
+	cd ada95; make
+	cd basic; make
+	cd ch; make
+	cd cocoa; make
+	cd cplusplus; make
+	cd d; make
+	cd dotnet; make
+	cd dylan; make
+	cd eiffel; make
+	cd euphoria; make
+	cd falcon && make
+	cd ferite; make
+	cd foxpro; make
+	cd gambas; make
+	cd glib; make
+	cd haskell; make
+	cd hiper; make
+	cd ilerpg; make
+	cd java; make
+	cd lisp; make
+	cd lua; make
+	cd mono; make
+	cd nodejs; make
+	cd ocaml; make
+	cd pascal2; make
+	cd pascal; make
 	cd perl; make
 	cd php; make
-	cd ruby; make
-	cd java; make
-	cd tcl; make
-	cd python; make
-	cd dylan; make
-	cd rexx; make
-	cd cocoa; make
-	cd scheme; make
-	cd using; make
-	cd cplusplus; make
 	cd postgres; make
-	cd pascal; make
-	cd basic; make
-	cd lua; make
-	cd pascal2; make
-	cd euphoria; make
-	cd ocaml; make
-	cd ada95; make
-	cd ferite; make
-	cd d; make
+	cd python; make
 	cd q; make
-	cd gambas; make
-	cd wx; make
-	cd ch; make
-	cd glib; make
-	cd dotnet; make
 	cd r; make
-	cd mono; make
-	cd vb; make
-	cd lisp; make
+	cd rexx; make
+	cd ruby; make
+	cd scheme; make
+	cd scilab; make
 	cd slang; make
-	cd hiper; make
-	cd xblite; make
-	cd spl; make
 	cd smalltalk; make
-	cd foxpro; make
-	cd ilerpg; make
-	cd haskell; make
-	cd eiffel; make
-	cd falcon && make
+	cd spf; make
+	cd spl; make
+	cd tcl; make
+	cd using; make
+	cd vb; make
+	cd wx; make
+	cd xblite; make
+	cd xojo && make
 
 index.html: _index.html $(MAINPARTS) bindingbox.t
 	$(ACTION)
 
-threadsafe.html: _threadsafe.html $(MAINPARTS)
+abi.html: _abi.html abi.gen $(MAINPARTS)
 	$(ACTION)
 
-abi.html: _abi.html abi.t $(MAINPARTS)
-	$(ACTION)
-
-abi.t: $(CVSROOT)/docs/libcurl/ABI
-	$(TXT2PLAIN) < $< > $@
+abi.gen: $(CVSROOT)/docs/libcurl/ABI
+	$(MARKDOWN) < $< > $@
 
 features.html: _features.html $(MAINPARTS)
 	$(ACTION)

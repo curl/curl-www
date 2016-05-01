@@ -1,0 +1,42 @@
+#include "_doctype.html"
+<html>
+<head> <title>cURL - Release Documentation</title>
+#include "css.t"
+</head>
+
+#define CURL_DOCS
+#define CURL_URL docs/reldocs.html
+
+#define REL_DOCS
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Documentation Overview, "/docs/", Release Documentation)
+
+TITLE(Release Documentation)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/docs/">Docs Overview</a>
+<br><a href="projdocs.html">Project docs</a>
+</div>
+<p>
+  Information about and related to curl releases.
+<p>
+  The <a href="/changes.html">changelog</a> details all changes in every version
+  since many years back.
+<p>
+  The <a href="releases.html">Release Table</a> lists all releases, with
+  release date, number of bug fixes and so on.
+<p>
+  On the <a href="security.html">security</a> page, you'll find all publicized
+  security problems listed and thoroughly described and
+  the <a href="vulnerabilities.html">vulnerabilities</a> table shows which
+  versions that are vulnerable to each problem.
+  
+<p>
+  Also: <a href="versions.html">version numbering</a> is described.
+
+  
+#include "_footer.html"
+</BODY>
+</HTML>

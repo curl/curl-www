@@ -1,0 +1,66 @@
+                         libcurl cookie leak for TLDs
+                         ============================
+
+Project cURL Security Advisory, September 10th 2014
+http://curl.haxx.se/docs/security.html
+
+1. VULNERABILITY
+
+  libcurl wrongly allows cookies to be set for Top Level Domains (TLDs), thus
+  making them apply broader than cookies are allowed. This can allow arbitrary
+  sites to set cookies that then would get sent to a different and unrelated
+  site or domain.
+
+2. INFO
+
+  Cookie parsing and use is opt-in by applications and is not enabled by
+  default.
+
+  libcurl's cookie parser has no Public Suffix awareness, so apart from
+  rejecting TLDs from being allowed it might still allow cookies for domains
+  that are otherwise widely rejected by ordinary browsers. See
+  https://publicsuffix.org/ for details.
+
+  The Common Vulnerabilities and Exposures (CVE) project has assigned the name
+  CVE-2014-3620 to this issue.
+
+3. AFFECTED VERSIONS
+
+  Affected versions: from libcurl 7.31.0 to and including 7.37.1
+  Not affected versions: libcurl < 7.31.0 and libcurl >= 7.38.0
+
+  libcurl is used by many applications, but not always advertised as such!
+
+4. THE SOLUTION
+
+  libcurl 7.38.0 doesn't accept cookies set for just a TLD. Note that it does
+  not add any public suffix awareness apart from that.
+
+  A patch for this problem is available at:
+
+    http://curl.haxx.se/CVE-2014-3620.patch
+
+5. RECOMMENDATIONS
+
+  We suggest you take one of the following actions immediately, in order of
+  preference:
+
+  A - Upgrade to curl and libcurl 7.38.0
+
+  B - Apply the patch and rebuild libcurl
+
+  C - Avoid using cookies in your application
+
+6. TIME LINE
+
+  It was reported to the curl project on August 15th 2014. We contacted
+  distros@openwall on September 1st.
+
+  libcurl 7.38.0 was released on September 10th 2014, coordinated with the
+  publication of this advisory.
+
+7. CREDITS
+
+  Reported by Tim Ruehsen. Patch written by Daniel Stenberg.
+
+  Thanks a lot!

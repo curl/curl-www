@@ -1,0 +1,29 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>cURL - Release procedure and release schedule</TITLE>
+#include "css.t"
+</HEAD>
+
+#define DEVEL_RELEASEPROC
+#define CURL_URL release-procedure.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Development, "/dev/", Release Procedure)
+
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/changes.html">changelog</a>
+<br><a href="/docs/manpage.html">curl man page</a>
+<br><a href="/docs/manual.html">Manual</a>
+<br><a href="/docs/faq.html">FAQ</a>
+</div>
+
+#include "release-procedure.gen"
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
+

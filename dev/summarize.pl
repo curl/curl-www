@@ -10,6 +10,7 @@ BEGIN {
 require "CGI.pm";
 require "../curl.pm";
 require "ccwarn.pm";
+use String::CRC32;
 
 opendir(DIR, "inbox");
 my @logs = grep { /^build.*log$/ } readdir(DIR);
@@ -21,35 +22,48 @@ my $tprefix ="tmptable";
 my %combo;
 my $buildnum;
 
-my $onlydo = 600; # limit the amount of log parsings to this amount
+my $onlydo = 1200; # limit the amount of builds to show to this amount
 
 my $file = "${tprefix}.t";
 
 open(TABLE, ">$file");
 
 my $filterform = '
-<form class="filteroptions" style="display: none;">
-<select name="filter" class="filterinput" onChange="filterBuilds(this);">
+<form class="filtermenu" style="display: none;">
+<select name="filter" class="inputbox filterinput">
 <option value="" selected>All</option>
 <option value="^.D">Debug</option>
 <option value="^.-">Debug disabled</option>
-<option value="^.......G">GSS</option>
-<option value="^.......-">GSS disabled</option>
-<option value="^........I">IDNA</option>
-<option value="^........-">IDNA disabled</option>
+<option value="^.......G">GSS-API</option>
+<option value="^.......-">GSS-API disabled</option>
+<option value="^................F">HTTP2</option>
+<option value="^................-">HTTP2 disabled</option>
+<option value="^...........[^-]">IDNA: any</option>
+<option value="^...........I">IDNA: libidn</option>
+<option value="^...........W">IDNA: WinIDN</option>
+<option value="^...........-">IDNA disabled</option>
 <option value="^6">IPv6</option>
 <option value="^-">IPv6 disabled</option>
-<option value="^..M">Memory tracking</option>
+<option value="^........5">Kerberos</option>
+<option value="^........-">Kerberos disabled</option>
+<option value="^..Y">Memory tracking</option>
 <option value="^..-">Memory tracking disabled</option>
-<option value="^...........E">Metalink</option>
-<option value="^...........-">Metalink disabled</option>
+<option value="^..............E">Metalink</option>
+<option value="^..............-">Metalink disabled</option>
+<option value="^..........M">NTLM</option>
+<option value="^..........-">NTLM disabled</option>
+<option value="^...............1">PSL</option>
+<option value="^...............-">PSL disabled</option>
 <option value="^.....-">Resolver: standard</option>
 <option value="^.....A">Resolver: c-ares</option>
 <option value="^.....H">Resolver: threaded</option>
-<option value="^..........2">SSH</option>
-<option value="^..........-">SSH disabled</option>
+<option value="^.........K">SPNEGO</option>
+<option value="^.........-">SPNEGO disabled</option>
+<option value="^.............2">SSH</option>
+<option value="^.............-">SSH disabled</option>
 <option value="^....[^-]">SSL: any</option>
 <option value="^....X">SSL: axTLS</option>
+<option value="^....B">SSL: BoringSSL</option>
 <option value="^....C">SSL: CyaSSL</option>
 <option value="^....T">SSL: GnuTLS</option>
 <option value="^....N">SSL: NSS</option>
@@ -58,8 +72,10 @@ my $filterform = '
 <option value="^....R">SSL: SecureTransport</option>
 <option value="^....L">SSL: WinSSL</option>
 <option value="^....-">SSL disabled</option>
-<option value="^.........P">SSPI</option>
-<option value="^.........-">SSPI disabled</option>
+<option value="^............P">SSPI</option>
+<option value="^............-">SSPI disabled</option>
+<option value="^.................U">Unix Sockets</option>
+<option value="^.................-">Unix Sockets disabled</option>
 <option value="^...V">Valgrind</option>
 <option value="^...-">Valgrind disabled</option>
 <option value="^......Z">zlib</option>
@@ -67,6 +83,8 @@ my $filterform = '
 </select>
 </form>
 ';
+
+my $systemform;
 
 sub tabletop {
     my ($date)=@_;
@@ -76,19 +94,19 @@ sub tabletop {
     }
 
     print TABLE stitle("$year-$month-$day");
-    print TABLE '
-<table cellspacing="0" class="compile" width="100%">
+    print TABLE "
+<table cellspacing=\"0\" class=\"compile\" width=\"100%\">
 <tr>
-<th title="UTC time at which the build was started">Time</th>
-<th title="Number of tests which succeeded (green) or failed (red)">Test</th>
-<th title="Number of warnings which occurred during the build">Warn</th>
-<th title="Which build options were enabled during the build (see above for key)">Options',
-$filterform,
-'</th>
-<th title="Description of the build">Description</th>
-<th title="Name of the person responsible for the build">Name</th>
+<th title=\"UTC time at which the build was started\">Time</th>
+<th title=\"Number of tests which succeeded (green) or failed (red)\">Test</th>
+<th title=\"Number of warnings which occurred during the build\">Warn</th>
+<th title=\"Which build options were enabled during the build (see above for key)\" style=\"width: 15%\">Options$filterform
+</th>
+<th title=\"Description of the build\">Description$systemform
+</th>
+<th title=\"Name of the person responsible for the build\" style=\"width: 15%\">Name</th>
 </tr>
-';
+";
 }
 
 sub tablebot() {
@@ -183,6 +201,29 @@ else {
 
     @data = @more;
 
+    # Iterate through all builds & extract the first word of each Description
+    # to come up with a list to populate the drop-down box.
+    # This is typically used by people to specify a system type.
+    my %systemtypes;
+    for(@data) {
+        if(/<td class="descrip">(\w+)/) {
+            $systemtypes{$1}++;
+        }
+    }
+    # Systems are de-duped in the hash table; now sort them & create a form
+    my @systems = sort keys %systemtypes;
+    $systemform = '
+<form class="filtermenu" style="display: none;">
+<select name="filter" class="inputbox systeminput">
+<option value="" selected>All</option>
+';
+    for(@systems) {
+        $systemform .= "<option value=\"$_\">$_</option>\n"
+    }
+    $systemform .= '</select>
+</form>
+';
+
     my $prevdate;
     if(@data) {
         my $i;
@@ -190,7 +231,7 @@ else {
             my ($lyear, $lmonth, $lday);
             my $l = $_;
             my $class= $i&1?"even":"odd";
-            if(s/<tr>/<tr class=\"$class\">/) {
+            if(s/<tr( class=\"(.*)\")?>/<tr class=\"$class $2\">/) {
                 $i++;
             }
             if($l =~ /\<\!-- (\d\d\d\d)(\d\d)(\d\d)/) {
@@ -228,49 +269,51 @@ my $warning=0;
 sub endofsingle {
     my ($file) = @_; # the single build file name
 
-    my $escname = CGI::escape($name);
-    my $escdate = CGI::escape($date);
-
     my $libver;
-    my $sslver;
+    my $opensslver;
     my $zlibver;
-    my $ipv6="-";
-    my $zlib="-";
-    my $gss="-";
-    my $idn="-";
+    my $caresver;
+    my $libidnver;
+    my $libssh2ver;
 
+    # Detect third-party libraries and their respective versions
     if($libcurl =~ /libcurl\/([^ ]*)/) {
-        $libver = $1;
+        $libver = CGI::escapeHTML($1);
     }
+
     if($libcurl =~ /OpenSSL\/([^ ]*)/i) {
         $openssl = 1;
-        $sslver = $1;
-        $ssl = 1;
+        $opensslver = CGI::escapeHTML($1)
     }
-    if($libcurl =~ /WinSSL/i) {
+    elsif($libcurl =~ /WinSSL/i) {
         $schannel = 1;
-        $ssl = 1;
     }
+    elsif($libcurl =~ /BoringSSL/i) {
+        $boringssl = 1;
+    }
+
     if($libcurl =~ /zlib\/([^ ]*)/i) {
-        $zlibver = $1;
+        $zlibver = CGI::escapeHTML($1);
     }
+
+    if($libcurl =~ /c-ares\/([^ ]*)/i) {
+        $asynch = 1;
+        $ares = 1;
+        $caresver = CGI::escapeHTML($1);
+    }
+
     if($libcurl =~ /libidn\/([^ ]*)/i) {
-        $libidn = $1;
+        $libidn = 1;
+        $libidnver = CGI::escapeHTML($1);
     }
+
+    if($libcurl =~ /WinIDN/i) {
+        $winidn = 1;
+    }
+
     if($libcurl =~ /libssh2\/([^ ]*)/i) {
-        $libssh2 = $1;
-    }
-    if($ipv6enabled) {
-        $ipv6 = "6";
-    }
-    if($gssapi) {
-        $gss = "G";
-    }
-    if($libidn) {
-        $idn = "I";
-    }
-    if($zlibver || $libz) {
-        $zlib = "Z";
+        $libssh2 = 1;
+        $libssh2ver = CGI::escapeHTML($1);
     }
 
     $showdate = $date;
@@ -302,7 +345,7 @@ sub endofsingle {
     }
 
     my $res = join("",
-                   "<!-- $lyear$lmonth$lday $showdate --><tr>\n",
+                   "<!-- $lyear$lmonth$lday $showdate --><tr class=\"buildcode-$buildcode\">\n",
                    "<td>$a$showdate</a></td>\n");
     if($fail || !$linkfine || !$fine || $nospaceleft) {
         $res .= "<td class=\"buildfail\">";
@@ -310,8 +353,8 @@ sub endofsingle {
             $res .= "no&nbsp;space";
         }
         elsif(!$linkfine) {
-            if($cvsfail) {
-                $res .= "CVS";
+            if($gitfail) {
+                $res .= "git";
             }
             elsif(!$buildconf) {
                 $res .= "buildconf";
@@ -335,12 +378,14 @@ sub endofsingle {
         $res .= "</td>\n";
     }
     else {
+        $testfine = 0 + $testfine; # to force it numeric
         $totalfine += $testfine;
         if(0 == $testfine) {
             $untestedtotal++;
-        }
-        $testfine = 0 + $testfine; # to force it numeric
-        $res .= "<td class=\"buildfine\">$testfine";
+            $res .= "<td>";
+        } else {
+            $res .= "<td class=\"buildfine\">$testfine";
+	}
 
         if($skipped) {
             #$res .= "+$skipped";
@@ -363,20 +408,32 @@ sub endofsingle {
     }
     undef %serverfail;
 
-    $showdebug=($debug?"D":"-").($trackmem?"M":"-").($valgrind?"V":"-");
-    $https=($openssl)?"S":($gnutls?"T":($nss?"N":($polarssl?"O":($axtls?"X":($schannel?"L":($darwinssl?"R":($cyassl?"C":"-")))))));
-    my $showres=($asynch)?($ares?"A":"H"):"-";
-    $sspi=$sspi?"P":"-";
-    my $ssh=$libssh2?"2":"-";
-    my $metalink=$libmetalink?"E":"-";
+    my $showipv6 = $ipv6enabled ? "6" : "-";
+    my $showdebug = $debug ? "D" : "-";
+    my $showtrackmem = $trackmem ? "Y" : "-";
+    my $showvalgrind = $valgrind ? "V" : "-";
+    my $showssl = $openssl ? "S" : ($gnutls ? "T" : ($nss ? "N" : ($polarssl ? "O" : ($axtls ? "X" : ($schannel ? "L" : ($darwinssl ? "R" : ($cyassl ? "C" : ($boringssl ? "B" : "-"))))))));
+    my $showres = $asynch ? ($ares ? "A" : "H") : "-";
+    my $showzlib = ($zlibver || $libz) ? "Z" : "-";
+    my $showgssapi = $gssapi ? "G" : "-";
+    my $showkrb5 = $krb5enabled ? "5" : "-";
+    my $showspnego = $spnegoenabled ? "K" : "-";
+    my $showntlm = $ntlmenabled ? "M" : "-";
+    my $showsspi = $sspi ? "P" : "-";
+    my $showssh = $libssh2 ? "2" : "-";
+    my $showmetalink = $libmetalink ? "E" : "-";
+    my $showpsl = $libpsl ? "1" : "-";
+    my $showidn = $libidn ? "I" : ($winidn ? "W" : "-");
+    my $showhttp2 = $http2 ? "F" : "-";
+    my $showunixsockets = $unixsocketsenabled ? "U" : "-";
 
-    my $o = "$ipv6$showdebug$https$showres$zlib$gss$idn$sspi$ssh$metalink";
+    my $o = "$showipv6$showdebug$showtrackmem$showvalgrind$showssl$showres$showzlib$showgssapi$showkrb5$showspnego$showntlm$showidn$showsspi$showssh$showmetalink$showpsl$showhttp2$showunixsockets";
 
     if(!$desc) {
         $desc = $os;
     }
 
-    $res .= "<td class=\"mini\">$o</td>\n<td>$desc $sfail</td>\n<td>$name</td></tr>\n";
+    $res .= "<td class=\"mini\">$o</td>\n<td class=\"descrip\">$desc $sfail</td>\n<td>$name</td></tr>\n";
 
     $combo{$o}++;
     $desc{$desc}++;
@@ -409,13 +466,15 @@ sub endofsingle {
     $debug=0;
     $trackmem=0;
     $valgrind=0;
+    $buildcode=0;
 
-    $openssl=$gnutls=$nss=$axtls=$polarssl=$schannel=$darwinssl=$cyassl=0;
+    $openssl=$gnutls=$nss=$axtls=$polarssl=$schannel=$darwinssl=$cyassl=$boringssl=0;
 
     $libmetalink=0;
+    $libpsl=0;
     $libssh2=0;
     $ssl=0;
-    $cvsfail=0;
+    $gitfail=0;
     $nospaceleft=0;
     $asynch=0;
     $ares=0;
@@ -424,9 +483,15 @@ sub endofsingle {
     $failamount=0;
     $ipv6enabled=0;
     $gssapi=0;
+    $krb5enabled=0;
+    $spnegoenabled=0;
+    $ntlmenabled=0;
     $os="";
     $libidn=0;
+    $winidn=0;
     $libz=0;
+    $unixsocketsenabled=0;
+    $http2=0;
 
     return $res;
 }
@@ -466,32 +531,88 @@ sub singlefile {
             push @data, endofsingle($file);
             $state = 0;
         }
-        elsif((2 == $state)) {
+        elsif($state >= 2) {
+            if($state == 2) {
+                if($line =~ /^testcurl: version /) {
+                    # This is the end of the fixed portion of the test header
+                    $state = 3;
+                }
+                elsif($line =~ /^testcurl: NOTES =/) {
+                    # Don't include this line in the build code. It doesn't
+                    # affect the build in any way, and it allows the builder to
+                    # include varying information (e.g. local build ID or link)
+                    # as additional debugging info while maintaining the same
+                    # build code.
+                }
+                else {
+                  # Hash a unique code for this particular daily build
+                  # based on the specific fixed headers at the beginning
+                  # of the test log
+                  $buildcode = crc32($line, $buildcode);
+                }
+            }
+            elsif($state == 3) {
+                if($line =~ /^testcurl: configure created \(dummy message\)/) {
+                    # This isn't an autoconf build at all--we need to include
+                    # the contents of the config header files to make
+                    # a unique buildcode. This is more brittle as it is
+                    # sensitive to changes to the config file headers, but
+                    # is necessary to make a unique buildcode when the
+                    # configuration inputs are invisible.
+                    $state = 4;
+                }
+            }
+            elsif($state == 4) {
+                if($line =~ /^testcurl: display include\/curl\/curlbuild.h/) {
+                    $state = 5;
+                }
+            }
+            elsif($state == 5) {
+                if($line =~ /^testcurl: display lib\//) {
+                    # This is the start of curl_config.h or config-win32.h
+                    $state = 6;
+                }
+                else {
+                  # Include curlbuild.h in the hash
+                  $buildcode = crc32($line, $buildcode);
+                }
+            }
+            elsif($state == 6) {
+                if($line =~ /^testcurl: /) {
+                    # This is the end of curl_config.h or config-win32.h
+                    $state = 7;
+                }
+                else {
+                  # Include curl_config.h in the hash
+                  $buildcode = crc32($line, $buildcode);
+                }
+            }
+
             # this is testcurl output
             if($line =~ /^testcurl: NAME = (.*)/) {
-                $name = $1;
+                $name = CGI::escapeHTML($1);
             }
             elsif($line =~ /^testcurl: EMAIL = (.*)/) {
-                $email = $1;
+                $email = CGI::escapeHTML($1);
             }
             elsif($line =~ /^testcurl: DESC = (.*)/) {
-                $desc = $1;
+                $desc = CGI::escapeHTML($1);
             }
             elsif($line =~ /^testcurl: CONFOPTS = (.*)/) {
-                my $confopts = $1;
+                my $confopts = CGI::escapeHTML($1);
                 if($confopts =~ /--enable-debug/) {
                     $debug=1;
                 }
             }
             elsif($line =~ /^testcurl: date = (.*)/) {
-                $date = $1;
+                $date = CGI::escapeHTML($1);
             }
             elsif($line =~ /^NOTICE:.*cross-compiling/) {
                 $fail = 0;
                 $fine = 1;
             }
             elsif($line =~ /^TESTFAIL: These test cases failed: (.*)/) {
-                $fail = $1;
+                $fail = CGI::escapeHTML($1);
             }
             elsif($line =~ /^TESTDONE: (\d*) tests out of (\d*)/) {
                 $testfine = 0 + $1;
@@ -513,7 +634,7 @@ sub singlefile {
                 $skipped = $1;
             }
             elsif($line =~ /\) (libcurl\/.*)/) {
-                $libcurl = $1;
+                $libcurl = CGI::escapeHTML($1);
             }
             elsif($line =~ /SKIPPED: failed starting (.*) server/) {
                 $serverfail{$1}++;
@@ -526,8 +647,8 @@ sub singlefile {
             elsif(checkwarn($line)) {
                 $warning++;
             }
-            elsif($line =~ /^testcurl: failed to update from CVS/) {
-                $cvsfail=1;
+            elsif($line =~ /^testcurl: failed to update from curl git/) {
+                $gitfail=1;
             }
             elsif($line =~ /^testcurl: configure created/) {
                 $buildconf=1;
@@ -543,7 +664,7 @@ sub singlefile {
                 $trackmem = ($2 eq "ON") ? 1 : 0;
             }
             elsif($line =~ /^\* System: *(.*)/) {
-                $uname = $1;
+                $uname = CGI::escapeHTML($1);
             }
             elsif($line =~ /^\* Server SSL: *(ON|OFF) *libcurl SSL: *(ON|OFF)/) {
                 $ssl = ($2 eq "ON") ? 1 : 0;
@@ -551,8 +672,64 @@ sub singlefile {
             elsif($line =~ /^\* valgrind: *(ON|OFF) *HTTP IPv6 *(ON|OFF)/) {
                 $valgrind = ($1 eq "ON") ? 1 : 0;
             }
-            elsif($line =~ /^supported_features(.*)AsynchDNS/) {
-                $asynch = 1;
+            elsif($line =~ /^supported_features=\"(.*)\"/) {
+                my $feat = CGI::escapeHTML($1);
+
+                if($feat =~ /Debug/i) {
+                    $debug = 1;
+                }
+
+                if($feat =~ /AsynchDNS/i) {
+                    $asynch = 1;
+                }
+
+                if($feat =~ /GSS-API/i) {
+                    $gssapi = 1;
+                }
+
+                if($feat =~ /IPv6/i) {
+                    $ipv6enabled = 1;
+                }
+
+                if($feat =~ /Kerberos/i) {
+                    $krb5enabled = 1;
+                }
+
+                if($feat =~ /SPNEGO/i) {
+                    $spnegoenabled = 1;
+                }
+
+                if($feat =~ /NTLM/i) {
+                    $ntlmenabled = 1;
+                }
+
+                if($feat =~ /SSPI/i) {
+                    $sspi = 1;
+                }
+
+                if($feat =~ /SSL/i) {
+                    $ssl = 1;
+                }
+
+                if($feat =~ /libz/i) {
+                    $libz = 1;
+                }
+
+                if($feat =~ /Metalink/i) {
+                    $libmetalink = 1;
+                }
+
+                if($feat =~ /PSL/i) {
+                    $libpsl = 1;
+                }
+
+                if($feat =~ /HTTP2/i) {
+                    $http2 = 1;
+                }
+
+                if($feat =~ /UnixSockets/i) {
+                    $unixsocketsenabled = 1;
+                }
             }
             elsif($line =~ /^\#define USE_ARES 1/) {
                 $asynch = 1;
@@ -560,9 +737,13 @@ sub singlefile {
             }
             elsif($line =~ /^\#define USE_WINDOWS_SSPI 1/) {
                 $sspi = 1;
+                # this implies $krb5enabled, $spnegoenabled and $ntlmenabled but
+                # not if crypto auth disabled
             }
             elsif($line =~ /^\#define USE_SSLEAY 1/) {
-                $openssl = 1;
+                if(!$boringssl) {
+                  $openssl = 1;
+                }
             }
             elsif($line =~ /^\#define USE_GNUTLS 1/) {
                 $gnutls = 1;
@@ -591,11 +772,19 @@ sub singlefile {
             elsif($line =~ /^\#define USE_METALINK 1/) {
                 $libmetalink = 1;
             }
+            elsif($line =~ /^\#define USE_LIBPSL 1/) {
+                $libpsl = 1;
+            }
+            elsif($line =~ /^\#define USE_UNIX_SOCKETS 1/) {
+                $unixsocketsenabled = 1;
+            }
             elsif($line =~ /^\#define ENABLE_IPV6 1/) {
                 $ipv6enabled = 1;
             }
             elsif($line =~ /^\#define HAVE_GSSAPI 1/) {
                 $gssapi=1;
+                # this implies $krb5enabled and $spnegoenabled but not if
+                # crypto auth disabled
             }
             elsif($line =~ /^\#define HAVE_LIBIDN 1/) {
                 $libidn=1;
@@ -603,39 +792,76 @@ sub singlefile {
             elsif($line =~ /^\#define HAVE_LIBZ 1/) {
                 $libz=1;
             }
+            elsif($line =~ /^\#define HAVE_BORINGSSL 1/) {
+                $boringssl = 1;
+            }
             elsif($line =~ /^\#define OS \"([^\"]*)\"/) {
-                $os=$1;
+                $os=CGI::escapeHTML($1);
             }
             elsif($line =~ /^Features: (.*)/) {
-                my $feat = $1;
+                my $feat = CGI::escapeHTML($1);
+
                 if($feat =~ /Debug/i) {
                     $debug = 1;
                 }
+
                 if($feat =~ /AsynchDNS/i) {
                     $asynch = 1;
                 }
-                if($feat =~ /GSS-Negotiate/i) {
+
+                if($feat =~ /GSS-API/i) {
                     $gssapi = 1;
                 }
-                if($feat =~ /IDN/i) {
-                    $libidn = $1;
-                }
+
                 if($feat =~ /IPv6/i) {
                     $ipv6enabled = 1;
                 }
+
+                if($feat =~ /Kerberos/i) {
+                    $krb5enabled = 1;
+                }
+
+                if($feat =~ /SPNEGO/i) {
+                    $spnegoenabled = 1;
+                }
+
+                if($feat =~ /NTLM/i) {
+                    $ntlmenabled = 1;
+                }
+
                 if($feat =~ /SSPI/i) {
                     $sspi = 1;
                 }
+
+                if($feat =~ /SSL/i) {
+                    $ssl = 1;
+                }
+
                 if($feat =~ /libz/i) {
                     $libz = 1;
                 }
+
                 if($feat =~ /Metalink/i) {
                     $libmetalink = 1;
                 }
+
+                if($feat =~ /PSL/i) {
+                    $libpsl = 1;
+                }
+
+                if($feat =~ /HTTP2/i) {
+                    $http2 = 1;
+                }
+
+                if($feat =~ /UnixSockets/i) {
+                    $unixsocketsenabled = 1;
+                }
             }
+
             if($line =~ / -DDEBUGBUILD /) {
                 $debug=1;
             }
+
             if($line =~ / -DCURLDEBUG /) {
                 $trackmem=1;
             }

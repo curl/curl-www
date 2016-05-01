@@ -1,0 +1,40 @@
+#include "_doctype.html"
+#define FLAWNAME FTP Server Response Buffer Overflow
+
+<HTML>
+<HEAD> <TITLE>cURL - FLAWNAME</TITLE>
+#include "css.t"
+#include "manpage.t"
+</HEAD>
+
+#define CURL_DOCS
+#define CURL_URL docs/adv_20001013.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(Docs, "/docs/", Security, "/docs/security.html",
+ FLAWNAME)
+
+TITLE(FLAWNAME)
+#include "adv-related-box.inc"
+
+SUBTITLE(FTP Server Response Buffer Overflow)
+<o>
+<table class="secbox">
+  <tr><td>Date:</td><td>October 13, 2000</td></tr>
+  <tr><td>ID</td><td> <a href="http://www.securityfocus.com/bid/1804">BID
+  1804</a> <a
+  href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0973">CVE-2000-0973</a> </td></tr>
+  <tr><td>Affected versions</td><td>6.0 (and possibly earlier) to and including 7.4</td></tr>
+  <tr><td>Not affected versions</td><td>7.4.1 and later</td></tr>
+</table>
+<p>
+  When storing an FTP server's error message on failure, there was no check
+  for input length and thus a malicious FTP server could overflow curl's stack
+  based buffer. <a
+  href="http://www.securityfocus.com/bid/1804/exploit/">securityfocus lists
+  two exploits</a>
+
+#include "_footer.html"
+</body> </html>

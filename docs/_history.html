@@ -5,18 +5,19 @@
 </HEAD>
 
 #define CURL_DOCS
+#define PROJ_DOCS
 #define DOCS_HISTORY
 #define CURL_URL docs/history.html
 
 #include "_menu.html"
 #include "setup.t"
 
-WHERE2(Docs, "/docs/", History of curl)
+WHERE3(Docs, "/docs/", Project Documentation, "/docs/projdocs.html", History of curl)
 
 TITLE(HISTORY -- how did this happen)
 <div class="relatedbox">
 <b>Related:</b>
-<br><a href="loc.html">Lines of Code</a>
+<br><a href="/changes.html">Changelog</a>
 <br><a href="todo.html">TODO</a>
 </div>
 

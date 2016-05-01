@@ -1,7 +1,7 @@
 
 require "CGI.pm";
 
-our $root="/sites/curl2.haxx.se";
+our $root="/sites/curl.haxx.se";
 
 sub stitle {
     my ($title)=@_;
@@ -23,9 +23,9 @@ sub where {
     my @args = @_;
     my $name;
     my $link;
-    my $pic="<img alt=\">\" src=\"/arrow.png\">";
+    my $pic="/";
 
-    print "<a href=\"/\">cURL</a> $pic";
+    print "<div class=\"where\"><a href=\"/\">cURL</a> $pic";
     while(1) {
         $name = shift @args;
         $link = shift @args;
@@ -42,6 +42,7 @@ sub where {
             last; # get out of loop
         }
     }
+    print "</div>\n";
 }
 
 # catfile assumes a HTML-encoded file!

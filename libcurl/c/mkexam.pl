@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-my $manpage="http://curl.haxx.se/libcurl/c";
+my $manpage="https://curl.haxx.se/libcurl/c";
 
 my $template="_example-templ.html";
 
@@ -63,13 +63,13 @@ for my $f (@samps) {
                 $l = "$1<a href=\"$manpage/$2.html\">$2</a>$3\n";
             }
 
-            # find CURLOPT_ uses
-            if($l =~ /^(.*)(CURLOPT_[A-Z_]*)(.*)/) {
+            # find CURLOPT_ and CURLMOPT_ option names
+            if($l =~ /^(.*)((CURLOPT|CURLMOPT|CURLINFO)_[A-Z_]*)(.*)/) {
                 my $cut = $2;
-                my ($pre, $opt, $post) = ($1, $2, $3);
-                
-                $cut =~ s/_//g;
-                $l = "$pre<a href=\"$manpage/curl_easy_setopt.html#$cut\">$opt</a>$post\n";
+                my ($pre, $opt, $post) = ($1, $2, $4);
+
+                # a dedicated web page exists for this option, link to that
+                $l = "$pre<a href=\"$manpage/$opt.html\">$opt</a>$post\n";
             }
 
             # replace backslashes
@@ -96,7 +96,7 @@ for my $f (@samps) {
 
     push @mak, "$htmlfile: $rawfile \$(MAINPARTS)\n\t\$(ACTION)\n\n";
 
-    push @mak, "$rawfile: $dir/$cfile\n\tperl mkexam.pl\n\n";
+    push @mak, "$rawfile: $dir/$cfile mkexam.pl\n\tperl mkexam.pl\n\n";
 }
 
 open(MAK, ">Makefile.exhtml");
@@ -117,11 +117,41 @@ open(MAK, ">Makefile.examples");
 print MAK @mak;
 close(MAK);
 
+sub desc {
+    my ($file) = @_;
+    my $get=0;
+    my @d;
+
+    open(F, "<$dir/$file");
+    while(<F>) {
+        if($_ =~ /^\/\* \<DESC\>/) {
+            $get = 1;
+        }
+        elsif($get && ($_ =~ /^ \* \<\/DESC\>/)) {
+            # done!
+            return join(" ", @d);
+        }
+        elsif($get && ($_ =~ /^ \* (.*)/)) {
+            push @d, $1,
+        }
+    }
+}
+
 open(EX, ">allex.t");
+open(DESC, ">allex-desc.t");
+print DESC "<table>\n";
+my $i=0;
 for my $b (sort @basefiles) {
-    printf EX "<a href=\"%s.html\">%s</a>%s<br>\n", $b, $b,
-    $type{$b} eq "cpp"?" (C&plus;&plus;)":"",
+    my $d = desc("$b.".$type{$b});
+    my $t = $type{$b} eq "cpp"?" (C&plus;&plus;)":"";
+
+    printf EX "<a href=\"%s.html\">%s</a>$t<br>\n", $b, $b,
+    printf DESC ("<tr class=\"%s\"><td><a href=\"%s.html\">%s</a> $t</td><td>%s</td>",
+                 $i&1?"odd":"even",
+                 $b, $b, $d);
+    $i++;
 }
 print EX "\n";
+print DESC "</table>\n";
 close(EX);
-
+close(DESC);

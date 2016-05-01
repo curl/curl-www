@@ -1,10 +1,11 @@
 #include "_doctype.html"
 <HTML>
-<HEAD> <TITLE>cURL - Details on Server SSL Certificates</TITLE>
+<HEAD> <TITLE>cURL - SSL CA Certificates</TITLE>
 #include "css.t"
 </HEAD>
 
 #define CURL_DOCS
+#define PROT_DOCS
 #define DOCS_SSLCERTS
 
 #define CURL_URL docs/sslcerts.html
@@ -12,18 +13,13 @@
 #include "_menu.html"
 #include "setup.t"
 
-WHERE2(Docs, "/docs/", SSL Certificates)
+WHERE3(Docs, "/docs/", Protocol docs, "/docs/protdocs.html", SSL Certificates)
 
-TITLE(Details on Server SSL Certificates)
 <div class="relatedbox">
 <b>Related:</b>
 <br><a href="caextract.html">CA extract</a>
 </div>
-
-<pre>
 #include "sslcerts.t"
-</pre>
-
 #include "_footer.html"
 
 </BODY>

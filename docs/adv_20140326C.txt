@@ -80,6 +80,6 @@ http://curl.haxx.se/docs/security.html
   done independently from and without informing the curl project.
 
   [1] = https://www.imperialviolet.org/2014/02/22/applebug.html
-  [2] = http://support.apple.com/kb/HT6150
+  [2] = https://support.apple.com/en-us/HT202932
 
   Thanks a lot!

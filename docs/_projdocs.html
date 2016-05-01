@@ -1,0 +1,42 @@
+#include "_doctype.html"
+<html>
+<head> <title>cURL - Project Documentation</title>
+#include "css.t"
+</head>
+
+#define CURL_DOCS
+#define CURL_URL docs/projdocs.html
+
+#define PROJ_DOCS
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Documentation Overview, "/docs/", Project Documentation)
+
+TITLE(Project Documentation)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/docs/">Docs Overview</a>
+<br><a href="reldocs.html">Release docs</a>
+</div>
+<p>
+  This section is for documentation associated to the project to some degree.
+
+<p>
+  If a problem isn't already a <a href="knownbugs.html">known bug</a> or
+  something mentioned in the <a href="todo.html">TODO</a>, you
+  can <a href="bugs.html">report the bug</a>.
+<p>
+  Learn about the <a href="libs.html">dependencies</a> libcurl can use,
+  which <a href="features.html">features</a> it has or how
+  to <a href="install.html">install</a> it.
+
+<p>
+  Meta info:
+  Project <a href="history.html">history</a>, <a href="/about.html">web site
+  info</a>, <a href="/donation.html">how to donate</a>.
+
+
+#include "_footer.html"
+</BODY>
+</HTML>

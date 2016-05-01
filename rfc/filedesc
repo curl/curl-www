@@ -7,9 +7,9 @@ rfc1123.txt Requirements for Internet Hosts
 rfc1350.txt The TFTP Protocol (Revision 2)
 rfc1635.txt How to Use Anonymous FTP
 rfc1639.txt FTP Operation Over Big Address Records (FOOBAR)
-rfc1738.txt Uniform Resource Locators (obsoleted by RFC 2396)
+rfc1738.txt Uniform Resource Locators (updated by RFC2396)
 rfc1777.txt Lightweight Directory Access Protocol
-rfc1808.txt Relative Uniform Resource Locators
+rfc1808.txt Relative Uniform Resource Locators (updated by RFC2396)
 rfc1867.txt Form-based File Upload in HTML
 rfc1884.txt IP Version 6 Addressing Architecture (obsolete)
 rfc1928.txt SOCKS Protocol Version 5
@@ -23,7 +23,7 @@ rfc2046.txt (MIME) Part Two: Media Types
 rfc2047.txt (MIME) Part Three: Message Header Extensions for Non-ASCII Text
 rfc2048.txt (MIME) Part Four: Registration Procedures
 rfc2049.txt (MIME) Part Five: Conformance Criteria and Examples
-rfc2068.txt HTTP 1.1 (obsoleted by RFC 2616)
+rfc2068.txt Hypertext Transfer Protocol -- HTTP 1.1 (obsoleted by RFC 2616)
 rfc2109.txt HTTP State Management Mechanism (obsoleted by RFC 2964)
 rfc2183.txt The Content-Disposition Header Field
 rfc2184.txt MIME Parameter Value and Encoded Word Extensions
@@ -41,7 +41,7 @@ rfc2428.txt FTP Extensions for IPv6 and NATs
 rfc2459.txt Internet X.509 Public Key Infrastructure Certificate and CRL Profile
 rfc2518.txt HTTP Extensions for Distributed Authoring -- WEBDAV
 rfc2577.txt FTP Security Considerations
-rfc2616.txt HTTP 1.1, the latest
+rfc2616.txt Hypertext Transfer Protocol -- HTTP 1.1 (obsoleted by RFC7230)
 rfc2617.txt HTTP Authentication
 rfc2640.txt Internationalization of FTP
 rfc2718.txt Guidelines for new URL Schemes
@@ -111,3 +111,20 @@ rfc4616.txt The PLAIN Simple Authentication and Security Layer (SASL) Mechanism
 rfc5849.txt The OAuth 1.0 Protocol (obsoleted by RFC6749)
 rfc6749.txt The OAuth 2.0 Authorization Framework (obsoletes RFC5849)
 draft-murchison-sasl-login-00.txt The LOGIN SASL Mechanism (expired)
+rfc2145.txt Use and Interpretation of HTTP Version Numbers (obsoleted by RFC7230)
+rfc7230.txt Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing (obsoletes RFC2145, RFC2616)
+rfc7231.txt Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content (obsoletes RFC2616)
+rfc7232.txt Hypertext Transfer Protocol (HTTP/1.1): Conditional Requests (obsoletes RFC2616)
+rfc7233.txt Hypertext Transfer Protocol (HTTP/1.1): Range Requests (obsoletes RFC2616)
+rfc7234.txt Hypertext Transfer Protocol (HTTP/1.1): Caching (obsoletes RFC2616)
+rfc7235.txt Hypertext Transfer Protocol (HTTP/1.1): Authentication (obsoletes RFC2616)
+rfc7628.txt A Set of Simple Authentication and Security Layer (SASL) Mechanisms for OAuth
+rfc2478.txt The Simple and Protected GSS-API Negotiation Mechanism (obsoleted by RFC4178)
+rfc4178.txt The Simple and Protected Generic Security Service Application Program Interface (GSS-API) Negotiation Mechanism (obsoletes RFC2478)
+rfc4559.txt SPNEGO-based Kerberos and NTLM HTTP Authentication in Microsoft Windows
+rfc1510.txt The Kerberos Network Authentication Service (V5) (obsoleted by RFC4120)
+rfc1964.txt The Kerberos Version 5 GSS-API Mechanism
+rfc3961.txt Encryption and Checksum Specifications for Kerberos 5
+rfc4120.txt The Kerberos Network Authentication Service (V5) (obsoletes RFC1510)
+rfc4121.txt The Kerberos Version 5 Generic Security Service Application Program Interface (GSS-API) Mechanism: Version 2
+rfc2104.txt HMAC: Keyed-Hashing for Message Authentication

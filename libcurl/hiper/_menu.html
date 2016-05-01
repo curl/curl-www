@@ -1,66 +1,41 @@
-
-#define BACKGROUND "#ffffff"
-#define TEXTCOLOR "#000000"
-#define MENUTEXT "#ffffff"
-#define MENUCOLOR "#e0c0c0"
+#include "setup.t"
 
 #ifndef NOBODY
-
-<BODY bgcolor=BACKGROUND text=TEXTCOLOR LINK="#0000ff" VLINK="#808080" ALINK="red">
+<body bgcolor="#ffffff" text="#000000">
 #endif
 
-#undef LINK
-#define LINK(l,t) <div class="libselect">t</div>
-
-#undef VLINK
-#define VLINK(l,t) <div><a href=l class="libitem">t</a></div>
-
-<table cellspacing=0 cellpadding=5><tr><td valign=top align=left>
-#include "ad.t"
-
-<div class="libmenu">
-
-<div><a href="/" class="menuitem"><img border="0" src="/pix/left.png"><img
-border="0" src="/pix/left.png">Front Page</a></div>
-<div><a href="../" class="menuitem"><img border="0"
-src="/pix/left.png">libcurl index</a></div>
-
-<hr>
+<div class="main">
+<div class="menu">
 
 #ifdef HIPER_INDEX
 LINK("/libcurl/hiper/", Hiper index )
 #else
-VLINK("/libcurl/hiper/", Hiper index )
+VLINK("/libcurl/hiper/", Hiper index, Hiper section index )
 #endif
 
 #ifdef HIPER_SCHEDULE
 LINK("/libcurl/hiper/schedule.html", Schedule)
 #else
-VLINK("/libcurl/hiper/schedule.html", Schedule)
+VLINK("/libcurl/hiper/schedule.html", Schedule, Project schedule)
 #endif
 
 #ifdef HIPER_ROADMAP
 LINK("/libcurl/hiper/roadmap.html", Roadmap)
 #else
-VLINK("/libcurl/hiper/roadmap.html", Roadmap)
+VLINK("/libcurl/hiper/roadmap.html", Roadmap, Project roadmap)
 #endif
 
 #ifdef HIPER_API
 LINK("/libcurl/hiper/api.html", API)
 #else
-VLINK("/libcurl/hiper/api.html", API)
+VLINK("/libcurl/hiper/api.html", API, API)
 #endif
 
 #ifdef HIPER_APP
 LINK("/libcurl/hiper/app.html", Sample App)
 #else
-VLINK("/libcurl/hiper/app.html", Sample App)
+VLINK("/libcurl/hiper/app.html", Sample App, Sample App)
 #endif
-
-
 </div>
 
-<p>
-#include "sflogo.html"
-
-</td><td valign=top align=left class="main">
+START_OF_MAIN

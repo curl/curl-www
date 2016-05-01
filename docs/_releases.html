@@ -6,13 +6,14 @@
 </HEAD>
 
 #define CURL_DOCS
+#define REL_DOCS
 #define DOCS_RELEASES
 #define CURL_URL docs/releases.html
 
 #include "_menu.html"
 #include "setup.t"
 
-WHERE2(Docs, "/docs/", Release Table)
+WHERE3(Docs, "/docs/", Release Docs, "/docs/reldocs.html", Release Table)
 
 TITLE(curl releases)
 <div class="relatedbox">
@@ -35,9 +36,7 @@ TITLE(curl releases)
  <b>Days</b> shows number of days since the previous release, <b>index</b> is
  just an index counting all releases starting at 0 for the most recent.
 
-<pre>
 #include "rel.txt"
-</pre>
 
 <p>
  All this data, as a <a href="releases.csv">raw CSV</a>

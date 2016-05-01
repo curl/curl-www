@@ -1,0 +1,38 @@
+#include "_doctype.html"
+#define FLAWNAME Proxy Authentication Header Information Leakage
+
+<HTML>
+<HEAD> <TITLE>cURL - FLAWNAME</TITLE>
+#include "css.t"
+#include "manpage.t"
+</HEAD>
+
+#define CURL_DOCS
+#define CURL_URL docs/adv_20030803.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(Docs, "/docs/", Security, "/docs/security.html",
+ FLAWNAME)
+
+TITLE(FLAWNAME)
+#include "adv-related-box.inc"
+
+<a name="BID8432"></a>
+SUBTITLE(Proxy Authentication Header Information Leakage)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>August 3, 2003</td></tr>
+  <tr><td>ID</td><td><a href="http://www.securityfocus.com/bid/8432">BID 8432</a> </td></tr>
+  <tr><td>Affected versions</td><td>7.1 to and including 7.10.6</td></tr>
+  <tr><td>Not affected versions</td><td>7.10.7 and later</td></tr>
+</table>
+<p>
+  When curl connected to a site via an HTTP proxy with the CONNECT request, the
+  user and password used for the proxy connection was also sent off to the
+  remote server.
+
+
+#include "_footer.html"
+</body> </html>

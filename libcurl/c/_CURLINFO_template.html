@@ -1,0 +1,34 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>@template@</TITLE>
+#include "css.t"
+#include "manpage.t"
+</HEAD>
+
+#define MENU_EASY
+#define LIBCURL_DOCS
+#define DOCS_OPTS_@template@
+#define CURL_URL libcurl/c/@template@.html
+
+#include "setup.t"
+#include "_menu.html"
+
+WHERE4(libcurl, "/libcurl/",
+       API, "/libcurl/c/",
+       curl_easy_getinfo, "/libcurl/c/curl_easy_getinfo.html", @template@)
+
+TITLE(@template@ explained)
+
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="easy_getinfo_options.html">info options</a>
+<br><a href="easy_setopt_options.html">easy options</a>
+<br><a href="multi_setopt_options.html">multi options</a>
+<br><a href="./">API</a>
+</div>
+
+#include "@template@.t"
+
+#include "_footer.html"
+</BODY>
+</HTML>

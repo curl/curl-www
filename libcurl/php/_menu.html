@@ -1,4 +1,6 @@
 
+#include "setup.t"
+
 #define BACKGROUND "#ffffff"
 #define TEXTCOLOR "#000000"
 #define MENUTEXT "#ffffff"
@@ -6,65 +8,45 @@
 
 #ifndef NOBODY
 
-<BODY bgcolor=BACKGROUND text=TEXTCOLOR LINK="#0000ff" VLINK="#808080" ALINK="red">
+<BODY bgcolor=BACKGROUND text=TEXTCOLOR link="#0000ff" vlink="#808080" alink="red">
 #endif
 
 #define SEP <br>
 
-#undef LINK
-#define LINK(l,t) <div class="libselect">t</div>
-
-#undef VLINK
-#define VLINK(l,t) <div><a href=l class="libitem">t</a></div>
-
-<table cellspacing="0" cellpadding="5"><tr><td valign="top" align="left">
-#include "ad.t"
-<div class="libmenu">
-
-<div><a href="/" class="menuitem"><img border="0" src="/pix/left.png" alt="<"><img border="0" src="/pix/left.png" alt="<">Front Page</a></div>
-<div><a href="/libcurl/" class="menuitem"><img border="0" src="/pix/left.png" alt="<">libcurl index</a></div>
-
-<hr>
+<div class="main">
+<div class="menu">
 
 #ifdef PHP_INDEX
 LINK("/libcurl/php/", PHP/CURL )
 #else
-VLINK("/libcurl/php/", PHP/CURL )
+VLINK("/libcurl/php/", PHP/CURL, PHP/CURL index page)
 #endif
 
 #ifdef PHP_INSTALL
 LINK("/libcurl/php/install.html", Installing )
 #else
-VLINK("/libcurl/php/install.html", Installing )
+VLINK("/libcurl/php/install.html", Installing, How to install)
 #endif
 
 #ifdef PHP_IIS
 LINK("/libcurl/php/iis.html", IIS )
 #else
-VLINK("/libcurl/php/iis.html", IIS )
+VLINK("/libcurl/php/iis.html", IIS, Using the IIS server )
 #endif
 
 #ifdef PHP_APPS
 LINK("/libcurl/php/apps.html", Apps )
 #else
-VLINK("/libcurl/php/apps.html", Apps )
+VLINK("/libcurl/php/apps.html", Apps, Some PHP/CURL applications )
 #endif
 
 #ifdef PHP_EXAMPLES
 LINK("/libcurl/php/examples/", Examples )
 #else
-VLINK("/libcurl/php/examples/", Examples)
-#endif
-
-#ifdef PHP_HOSTING
-LINK("/libcurl/php/hosting.html", Hosting )
-#else
-VLINK("/libcurl/php/hosting.html", Hosting )
+VLINK("/libcurl/php/examples/", Examples, PHP/CURL examples)
 #endif
 
 </div>
 
-<p>
-#include "sflogo.html"
 
-</td><td valign="top" align="left" class="main">
+START_OF_MAIN

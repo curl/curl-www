@@ -1,0 +1,40 @@
+#include "_doctype.html"
+<html>
+<head> <title>cURL - Tool Documentation</title>
+#include "css.t"
+</head>
+
+#define CURL_DOCS
+#define CURL_URL docs/tooldocs.html
+
+#define TOOL_DOCS
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Documentation Overview, "/docs/", Tool Documentation)
+
+TITLE(Tool Documentation)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/docs/">Docs Overview</a>
+<br><a href="projdocs.html">Project docs</a>
+</div>
+<p>
+  The main tool to know and learn here is of course curl. Read the full
+  reference <a href="manpage.html">man page</a>, read
+  the <a href="manual.html">tutorial</a> or learn how to
+  do <a href="httpscripting.html">HTTP scripting</a> with curl.
+<p>
+  The most common questions are collected in the <a href="faq.html">FAQ</a>.
+  
+<p>
+  See how <a href="comparison-table.html">curl compares to alternative tools</a> and
+  find out about <a href="relatedtools.html">related tools</a>.
+
+<p>
+  <a href="mk-ca-bundle.html">mk-ca-bundle</a> is a sperate tool, used to get
+  a CA bundle.
+
+#include "_footer.html"
+</BODY>
+</HTML>

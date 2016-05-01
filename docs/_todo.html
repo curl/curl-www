@@ -5,13 +5,14 @@
 </HEAD>
 
 #define CURL_DOCS
+#define PROJ_DOCS
 #define DOCS_TODO
 #define CURL_URL docs/todo.html
 
 #include "_menu.html"
 #include "setup.t"
 
-WHERE2(Docs, "/docs/", TODO)
+WHERE3(Docs, "/docs/", Project Documentation, "/docs/projdocs.html", TODO)
 
 TITLE(TODO -- what to expect of the curl future)
 <div class="relatedbox">

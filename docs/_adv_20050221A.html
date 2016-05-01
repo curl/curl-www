@@ -1,0 +1,48 @@
+#include "_doctype.html"
+#define FLAWNAME Kerberos Authentication Buffer Overflow
+
+<HTML>
+<HEAD> <TITLE>cURL - FLAWNAME</TITLE>
+#include "css.t"
+#include "manpage.t"
+</HEAD>
+
+#define CURL_DOCS
+#define CURL_URL docs/adv_20050221A.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(Docs, "/docs/", Security, "/docs/security.html",
+ FLAWNAME)
+
+TITLE(FLAWNAME)
+#include "adv-related-box.inc"
+
+<a name="BID12616"></a><a name="CAN-2005-0490"></a>
+SUBTITLE(Kerberos Authentication Buffer Overflow)
+<p>
+<table class="secbox">
+  <tr><td>Date:</td><td>February 21, 2005</td></tr>
+  <tr><td>ID</td><td><a href="http://www.securityfocus.com/bid/12616">BID
+  12616</a> <a
+  href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0490">CAN-2005-0490</a> </td></tr>
+  <tr><td>Affected versions</td><td>7.3 to and including 7.13.0</td></tr>
+  <tr><td>Not affected versions</td><td>7.13.1 and later</td></tr>
+  <tr><td>Advisories</td><td><a
+  href="http://www.idefense.com/application/poi/display?id=203">iDEFENSE's
+  advisory</a></td></tr>
+</table>
+
+<p>
+  Due to bad usage of the base64 decode function to a
+  stack-based buffer without checking the data length, it was possible for a
+  malicious FTP server to overflow the client during krb4 negotiation. I don't
+  know of any single user that uses krb4-ftp and I'm not even sure it still
+  works 100%. The <a
+  href="http://www.idefense.com/application/poi/display?id=203">announcement</a>
+  was done without contacting us.
+
+
+#include "_footer.html"
+</body> </html>

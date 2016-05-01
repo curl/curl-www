@@ -1,0 +1,33 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>libcurl binding for Xojo</TITLE>
+#include "css.t"
+</HEAD>
+
+#define LIBCURL_XOJO
+#define CURL_URL libcurl/xojo
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(libcurl, "/libcurl/", Xojo Binding)
+
+TITLE(accessing libcurl from Xojo)
+<p>
+  This binding wraps libcURL's API in an object-oriented, event-driven,
+Xojo-flavored syntax. It fully supports Xojo-style threads (i.e.  cooperative
+fibers), and is capable of both synchronous and asynchronous transfers using
+any supported protocol.
+<p>
+  <b>RB-libcURL</b> <a href="https://github.com/charonn0/RB-libcURL">project page</a> and <a href="https://github.com/charonn0/RB-libcURL/wiki">documentation</a>
+
+SUBTITLE(Credits)
+The Xojo binding was written by Andrew Lambert
+
+SUBTITLE(What is Xojo?)
+ <a href="https://www.xojo.com/">Official Xojo web page</a>.
+
+#include "_footer.html"
+
+</BODY>
+</HTML>

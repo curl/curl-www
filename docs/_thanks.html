@@ -6,13 +6,15 @@
 </HEAD>
 
 #define CURL_DOCS
+#define WHO_DOCS
 #define DOCS_THANKS
 #define CURL_URL docs/thanks.html
 
 #include "_menu.html"
 #include "setup.t"
+#include "thanksnum.gen"
 
-WHERE2(Docs, "/docs/", Thanks)
+WHERE3(Docs, "/docs/", Who and Why, "/docs/whodocs.html", Thanks)
 
 TITLE(Thanks for Your Contribution to the cURL Project!)
 <div class="relatedbox">
@@ -20,14 +22,21 @@ TITLE(Thanks for Your Contribution to the cURL Project!)
 <br><a href="/dev/contribute.html">Contribute</a>
 <br><a href="/docs/bugs.html">Report Bugs</a>
 </div>
-<p>
-This project has been alive for many years. __NUM__ persons have provided
-code, feedback, advice etc that have improved curl. curl and libcurl would not
-be what they are today without the help of friendly people like this:
 
 <p>
+ This project has been alive for many years. At least __THANKSNUM__ persons
+have provided code, feedback, advice etc that have improved curl. curl and
+libcurl would not be what they are today without the help of friendly people
+like this.
 
-#include "thanks2.t"
+<p>
+ If you have helped out but are missing in this list,
+ please <a href="mailto:curl-web@haxx.se">tell us</a>! Note that this list may
+ not include contributors who have used obvious fake names or strange aliases.
+ 
+<p>
+
+#include "thanks.gen"
 
 #include "_footer.html"
 

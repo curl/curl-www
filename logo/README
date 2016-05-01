@@ -1,0 +1,24 @@
+                                  _   _ ____  _
+                              ___| | | |  _ \| |
+                             / __| | | | |_) | |
+                            | (__| |_| |  _ <| |___
+                             \___|\___/|_| \_\_____|
+
+curl-logo
+=========
+
+URL: http://curl.haxx.se/logo/
+
+These versions of the official cURL logo are hi resolution remakes of the
+original one[1], made and (c) by Daniel Stenberg.
+
+You are free to use these logos for purposes of showing your use of curl, your
+product's use of curl, general or specific curl information, curl advocacy and
+similar.
+
+You are allowed to resize the images and host them yourself as you see fit.
+
+The curl-logo.xcf is the canonical source version of the logo, the other
+versions are generated using the Gimp image program.
+
+[1] = http://curl.haxx.se/pix/curl-refined.jpg

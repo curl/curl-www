@@ -20,6 +20,7 @@ my %where;
 
 my $md5sum="/usr/bin/md5sum";
 my $sha1sum="sha1sum";
+my $sha256sum="sha256sum";
 
 print "Content-Type: text/html\n\n";
 
@@ -77,8 +78,8 @@ print <<RELATED
 <b>Related:</b>
 <br><a href="changes.html">Changelog</a>
 <br><a href="download.html">Download</a>
-<br><a href="http://cool.haxx.se/curl-daily/">Daily Snapshot</a>
-<br><a href="http://daniel.haxx.se/address.html">GPG Key</a>
+<br><a href="https://curl.haxx.se/snapshots/">Daily Snapshot</a>
+<br><a href="https://daniel.haxx.se/address.html">GPG Key</a>
 </div>
 
 RELATED
@@ -106,10 +107,10 @@ while(<DATA>) {
 
         my $proto = uc($curl);
 
-        $proto =~ s/^(FTP|HTTP).*/$1/g;
+        $proto =~ s/^(FTP|HTTPS|HTTP).*/$1/g;
 
         my $host = $curl;
-        $host =~ s/^(FTP|HTTP):\/\/([^\/]*).*/$2/ig;
+        $host =~ s/^(FTP|HTTPS|HTTP):\/\/([^\/]*).*/$2/ig;
 
         $download{$archive} .= "$curl|||";
         $proto{$curl}=$proto;
@@ -182,12 +183,16 @@ if($latest::version{$what}) {
     my $sha1full=`$sha1sum "download/$archive"`;
     my ($sha1, $dummy)=split(" ", $sha1full);
 
+    my $sha256full=`$sha256sum "download/$archive"`;
+    my ($sha256, $dummy2)=split(" ", $sha256full);
+
     print "<h2>$archive</h2>\n";
             
     print "<b>What:</b> $desc\n",
             
-    "<br><b>SHA-1:</b> <tt>".$sha1."</tt>\n",
-    "<br><b>MD5:</b> <tt>".$md5."</tt>\n",
+    "<br><b>SHA-256:</b> <tt>$sha256</tt>\n",
+    "<br><b>SHA-1:</b> <tt>$sha1</tt>\n",
+    "<br><b>MD5:</b> <tt>$md5</tt>\n",
     "<br><b>Size:</b> ".$latest::size{$what}." bytes\n",
     "<br><b>Version:</b> ".$latest::version{$what}."\n";
 
@@ -195,7 +200,7 @@ if($latest::version{$what}) {
         print "<br><b>GPG signature:</b> <a href=\"download/$archive.asc\">$archive.asc</a>";
     }
 
-    print "<br><br>Download this file with a <span class=\"metalink\"><a href=\"metalink.cgi?curl=$whate\" type=\"application/metalink+xml\">",
+    print "<br><br>Download this file with a <span class=\"metalink\"><a href=\"metalink.cgi?curl=$whate\" type=\"application/metalink4+xml\">",
     	  "<img src=\"/pix/metalink.png\" border=\"0\" alt=\"\">metalink</a></span>.<br>\n";
 
     if($#dl > 10 ) {
@@ -332,16 +337,11 @@ MOO
 print <<MOO
 <p>
 This service automatically and frequently scans through known <a
-href="mirrors.html">mirrors</a> and builds links to the latest versions of
+href="/mirror/">mirrors</a> and builds links to the latest versions of
 many different curl archives. This page is fine to bookmark!
 The above <a href="http://www.metalinker.org/">Metalink</a> lets you download
 this file faster by downloading from several of these mirrors simultaneously,
 using the appropriate software.
-
-<p> The <a href="http://daniel.haxx.se/projects/ipwhere/">ipwhere tool</a>
-tries to detect your location using data from <a
-href="http://hostip.info/">hostip.info</a>. If it seems to do wrong, please go
-there and update the info about your IP!
 
 <h2>Verification of Packages</h2>
 <a name="verified"></a>

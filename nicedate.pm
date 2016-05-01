@@ -2,8 +2,8 @@ use POSIX qw/strftime/;
 
 my @mname = ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
              'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' );
-my @dname = ('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday',
-             'Saturday','Sunday');
+my @dname = ('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri',
+             'Sat', 'Sun');
 my @ord = ( "th", "st", "nd", "rd", "th",
             "th", "th", "th", "th", "th",
             "th", "th", "th", "th", "th",

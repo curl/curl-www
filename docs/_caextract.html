@@ -5,6 +5,7 @@
 </HEAD>
 
 #define CURL_DOCS
+#define PROT_DOCS
 #define DOCS_CAEXTRACT
 
 #define CURL_URL docs/caextract.html
@@ -12,98 +13,64 @@
 #include "_menu.html"
 #include "setup.t"
 
-WHERE2(Docs, "/docs/", CA Extract)
+WHERE3(Docs, "/docs/", Protocol docs, "/docs/protdocs.html", CA Extract)
 
-TITLE(Automatically converted CA Certs from mozilla.org)
+TITLE(CA certificates extracted from Mozilla)
 <div class="relatedbox">
 <b>Related:</b>
 <br><a href="sslcerts.html">SSL Certs</a>
 </div>
+
 <p>
- We provide automated conversions. The output CA bundle file in PEM format is
- available from here:
+ The Mozilla CA certificate store in PEM format (around 250KB uncompressed) is
+ available from here over HTTPS:
 
- <ul>
- <li> <a
- href="http://curl.haxx.se/ca/cacert.pem">cacert.pem</a> (~250KB)
- <li> <a
- href="http://curl.haxx.se/ca/cacert.pem.gz">cacert.pem.gz</a> (~130 KB)
- <li> <a
- href="http://curl.haxx.se/ca/cacert.pem.bz2">cacert.pem.bz2</a> (130 KB)
-</ul>
 <p>
- The PEM file contains the datestamp of the conversion and we try to only
- convert if there's a change in either the script or the source file.
+ <big><a href="https://curl.haxx.se/ca/cacert.pem">cacert.pem</a></big>
 
-SUBTITLE(Changelog)
-<p> August 4th, 2013 -
-<br>
- The cacert.pem output now only contains certificates that are explicity
- marked as trusted. The script was updated in
- commit <a href="https://github.com/bagder/curl/commit/51f0b798fa">51f0b798fa</a>
- as a response to the
- <a href="http://bonsai.mozilla.org/cvslog.cgi?file=mozilla/security/nss/lib/ckfw/builtins/certdata.txt&rev=HEAD&mark=1.84">1.84
- revision update of certdata.txt</a> from June
- 2012. The <a href="http://p11-glue.freedesktop.org/doc/storing-trust-policy/storing-trust-existing
- .html">certdata.txt format documentation</a>?
-
-<p> January 6th, 2013 -
-<br>
- These ca cert bundles no longer contain
- the <a href="http://en.wikipedia.org/wiki/DigiNotar#Issuance_of_fraudulent_certificates">DigiNotar
- certificates</a> as Mozilla marks them as untrusted and this script knows the
- markup for that, <b>but</b> it may contain related certificates that Mozilla
- (and others) would block using other means. (Like some certs that were
- cross-signed by Entrust etc). See details
- in <a href="https://sourceforge.net/p/curl/bugs/1178/">bug #1178</a>.
-
-SUBTITLE(The mk-ca-bundle.pl script)
 <p>
- The <a href="mk-ca-bundle.html">mk-ca-bundle</a> tool converts <a
- href="http://www.mozilla.org/">Mozilla</a>'s <a
- href="http://mxr.mozilla.org/mozilla/source/security/nss/lib/ckfw/builtins/certdata.txt">CA
- cert bundle</a> to PEM format, suitable for (lib)curl and others. Writtten by
- Guenter Knauf.
+ This PEM file contains the datestamp of the conversion and we only make a new
+ conversion if there's a change in either the script or the source file.
 
-SUBTITLE(Requirements)
-<o>
- It is a perl script.  The script uses the 'openssl' tool and it requires the
- version that comes with the 0.9.7 series or later.
-<p>
- The exact Mozilla file needed for this job is found within that script.
+SUBTITLE(Recent CA file revisions per date of apperance)
+<p><ul>
+#include "../ca/pemlist.gen"
+</ul>    
 
-SUBTITLE(CA bundle license)
+SUBTITLE(Missing Name Constraints)
 <p>
- This new file is only a converted version of the original one and thus it is
- licensed under the same licenses as the Mozilla source file: MPL 1.1, GPL
- v2.0 or LGPL 2.1
+  The converted PEM file only contains the digital signatures for CAs. Several
+of those CAs have constraints in Firefox (and other browsers) to only be
+allowed for certain domains and other similar additional conditions. Those
+constraints are thus <b>not</b> brought along in this cacert file!
+  
+SUBTITLE(CA certificate store license)
+<p>
+ The PEM file is only a converted version of the original one and thus it is
+ licensed under the same license as the Mozilla source file: MPL 2.0
+
+SUBTITLE(Automated downloads from here)
+<p>
+ We don't mind you downloading the PEM file from us in an automated fashion,
+ but please don't do it more often than once per day. It is only updated once
+ every few months anyway.
+
+SUBTITLE(The conversion script mk-ca-bundle)
+<p>
+ The <a href="mk-ca-bundle.html">mk-ca-bundle</a> tool
+ converts <a href="https://www.mozilla.org/">Mozilla</a>'s certificate store
+ to PEM format, suitable for (lib)curl and others.
 
 SUBTITLE(Convert from your local Firefox installation)
 
 <p> You can also extract the ca certs off your Firefox installation, if you
- just have the 'certutil' tool installed and run the <a href="http://github.com/bagder/curl/blob/master/lib/firefox-db2pem.sh">firefox-db2pem.sh</a> script!
-
-SUBTITLE(What - no HTTPS?)
-
-<p>
- Yes, pointing out that this contents is not hosted on a HTTPS site is a
- popular thing to do but really it doesn't help anyone, nor does it bring
- any news.
-
-<ol>
-<li> If you don't trust the data or want to be more certain: run the script yourself
-
-<li> Offering the data over HTTPS would give you a chicken-and-egg problem as which CAs would you trust when you download the bundle?
-
-<li> You're free to run your own caextract service on a HTTPS site to redeem
-this. The scripts and everything we use to offer data on this page are
-available in the curl source code tree.
+ just have the 'certutil' tool installed and run
+ the <a href="https://github.com/curl/curl/blob/master/lib/firefox-db2pem.sh">firefox-db2pem.sh</a>
+ script!
 
 </ol>
-
 
 #include "_footer.html"
 
 </BODY>
 </HTML>
-

@@ -1,35 +1,38 @@
 #include "_doctype.html"
 <HTML>
-<HEAD> <TITLE>cURL - Vulernability Table</TITLE>
+<HEAD> <TITLE>cURL - Vulnerability Table</TITLE>
 #include "css.t"
 #include "manpage.t"
 </HEAD>
 
 #define CURL_DOCS
+#define REL_DOCS
 #define DOCS_VULNTABLE
 #define CURL_URL docs/vulnerabilities.html
 
 #include "_menu.html"
 #include "setup.t"
 
-WHERE3(Docs, "/docs/", Security, "/docs/security.html", Vulnerabilities)
+WHERE3(Docs, "/docs/", Release Docs, "/docs/reldocs.html", Vulnerabilities)
 
 TITLE(curl and libcurl Vulnerabilities Table Overview)
 <div class="relatedbox">
 <b>Related:</b>
 <br><a href="security.html">Security</a>
-<br><a href="manual.html">Manual</a>
+<br><a href="/dev/security.html">Security process</a>
 <br><a href="faq.html">FAQ</a>
 <br><a href="/changes.html">Changelog</a>
 <br><a href="releases.html">Releaselog</a>
 </div>
 <p>
- This is an overview that displays what (lib)curl versions that are vulnerable
- to what publicly disclosed <a href="security.html">vulnerabilities</a>!
-
-<pre>
+ This is the exhaustive list of all curl versions and which releases that are
+ vulnerable to each publicly
+ disclosed <a href="security.html">vulnerability</a>!
+<p>
+ Each version number link shows a vulnerability summary for that specific
+ release.
+<p>
 #include "vuln.txt"
-</pre>
 
 #include "_footer.html"
 </body> </html>

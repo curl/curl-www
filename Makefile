@@ -1,12 +1,8 @@
-MAINPARTS= _doctype.html _menu.html _footer.html setup.t pic.t where.t	\
-libcurl/_links.html ad.t css.t
-
-# today's date
-NOW=$(shell date +'-D__TODAY__=%B %e, %Y')
+ROOT=.
 
 # the latest stable version is:
-STABLE= 7.36.0
-RELDATE = "26th of March 2014"
+STABLE= 7.48.0
+RELDATE = "23rd of March 2016"
 
 # name of the dir to tempoary unpack and build zip files in:
 TEMPDIR=tempzip
@@ -17,26 +13,27 @@ STAT = packstat.t
 # generated file with release info (STABLE and RELDATE)
 RELEASE = release.t
 
-ACTION=@echo preprocessing $@; \
-       rm -f $@; \
-       fcpp -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; \
+include mainparts.mk
+include setup.mk
 
-all: index.html feedback.html mirrors.html cvs.html libs.html help.html	      \
+MAINPARTS += _menu.html
+
+all: index.html feedback.html mirrors.html libs.html help.html	      \
  download.html changes.html about.html support.html newslog.html news.html    \
  head.html foot.html oldnews.html info web-editing.html ad.html donation.html \
- devel.html search.html sflogo.html sponsors.html source.html
+ search.html sflogo.html sponsors.html source.html
 	cd docs && make
 	cd libcurl && make
 	cd mail && make
 	cd mirror && make
 	cd legal && make
 	cd rfc && make
-	@echo done 
+	cd dev && make
 
-head.html: _head.html $(MAINPARTS) css.t
+head.html: _head.html $(MAINPARTS)
 	$(ACTION)
 
-donation.html: _donation.html $(MAINPARTS)
+donation.html: _donation.html docs/_menu.html $(MAINPARTS)
 	$(ACTION)
 
 version7.html: _version7.html $(MAINPARTS)
@@ -51,20 +48,8 @@ web-editing.html: _web-editing.html $(MAINPARTS)
 foot.html: _foot.html $(MAINPARTS)
 	$(ACTION)
 
-main.html: _main.html $(MAINPARTS) $(STAT) $(RELEASE) poll.t recentmail.t
-	@echo preprocessing $@; \
-	fcpp -WWW -Uunix -DINDEX_HTML -P -H -C -V -LL "$(NOW)" $< $@;
-
-index.html: main.html newslog.html
-	rm -f $@
-	./filter.pl < $< > $@
-
-main2.html: _main2.html $(MAINPARTS) $(STAT) $(RELEASE) poll2.t sflogo2.t
+index.html: _index.html $(MAINPARTS) release.t packstat.t
 	$(ACTION)
-
-index2.html: main2.html newslog.html
-	rm -f $@
-	./filter.pl < $< > $@
 
 newslog.html: _newslog.html $(MAINPARTS)
 	$(ACTION)
@@ -93,6 +78,7 @@ $(RELEASE): Makefile
 	@echo "fixing $(RELEASE)"
 	@echo "#define __STABLE $(STABLE)" >$(RELEASE)
 	@echo "#define __RELDATE $(RELDATE)" >>$(RELEASE)
+	@echo "#define __STABLETAG $(STABLE)" | sed 's/\./_/g' >> $(RELEASE)
 
 $(STAT): download.html Makefile
 	@echo "fixing $(STAT)"
@@ -108,13 +94,7 @@ download2.html: _download2.html $(MAINPARTS) $(RELEASE) dl/files.html
 dl/files.html: dl/data/databas.db
 	cd dl; make
 
-changes.html: _changes.html $(MAINPARTS)
-	$(ACTION)
-
-devel.html: _devel.html $(MAINPARTS)
-	$(ACTION)
-
-cvs.html: _cvs.html $(MAINPARTS)
+changes.html: _changes.html docs/_menu.html $(MAINPARTS)
 	$(ACTION)
 
 source.html: _source.html $(MAINPARTS)
@@ -126,10 +106,10 @@ help.html: _help.html $(MAINPARTS)
 mirrors.html: _mirrors.html $(MAINPARTS)
 	$(ACTION)
 
-about.html: _about.html $(MAINPARTS)
+about.html: _about.html docs/_menu.html $(MAINPARTS)
 	$(ACTION)
 
-sponsors.html: _sponsors.html $(MAINPARTS)
+sponsors.html: _sponsors.html docs/_menu.html $(MAINPARTS)
 	$(ACTION)
 
 feedback.html: _feedback.html $(MAINPARTS)

@@ -1,0 +1,23 @@
+#include "_doctype.html"
+<html>
+<head> <title>cURL - Source Code Activity</title>
+#include "css.t"
+</head>
+
+#define DEVEL_RECENT
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Development, "/dev/", Source Code Activity)
+TITLE(Recent Activity in the repo)
+
+#include "setup.t"
+
+<p> Recent commits done in curl's <a href="source.html">source code
+repository</a> in reversed chronological order!
+<p>
+#include "cvs.t"
+
+#include "_footer.html"
+</body> </html>

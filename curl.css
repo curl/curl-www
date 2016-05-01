@@ -4,9 +4,21 @@ BODY {
   color: black;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
-/* the curl-style blue main page titles */
+a {
+  text-decoration: none;
+  color: #4040ff;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #4040ff;
+}
+
+/* the curl-style blue main page titles
 .pagetitle, h1.libtitle, .newstitle {
   border-style: solid;
   border-width: thin;
@@ -21,6 +33,8 @@ BODY {
   padding: 0px 4px 0px 4px;
 }
 
+*/
+
 .title {
   color: #000000;
   background-color: #f0f0ff; 
@@ -28,9 +42,13 @@ BODY {
   font-size: 120%;
 }
 
+h1 {
+    border-bottom: solid 1px black;
+    margin-top: 1em;
+}
+
 h2 {
-  font-family: arial, helvetica, ariel, sans-serif;
-  background-color: #f0f0ff;
+    border-bottom: solid 1px black;
 }
 
 .subtitle {
@@ -38,10 +56,8 @@ h2 {
 }
 
 tr.tabletop {
-  font-size: 120%;
-  font-family: sans-serif;
-  color: #ffffff;
-  background-color: #0000ff;
+  color: #000000;
+  background-color: #f0f0ff;
 }
 
 .tabletop a {
@@ -217,72 +233,48 @@ tr.odd {
 /* used for Metalink download links */
 span.metalink {
   font-weight: bold;
-  font-family: helvetica narrow, arial narrow, sans-serif;
 }
 
 /* a non-selected item in the main menu */
-.menuitem, .libitem {
+.menuitem {
   text-decoration: none;
-  color: #ffffff;
-  background-color: #4040ff;
   white-space: nowrap;
-  padding: 0px 0px 0px 0px;
+  padding: 0px 1em 0px 0px;
   font-family: sans-serif;
+  color: #ffffff;
 }
 
 /* a non-selected item in the main menu, with the mouse hovering */
-.menuitem:hover, .libitem:hover {
-  text-decoration: none;
-  color: #ffffff;
-  background-color: #202080;
-  white-space: nowrap;
-  padding: 0px 0px 0px 0px;
-  font-family: sans-serif;
+.menuitem:hover {
+    text-decoration: none;
+    color: #8080ff;
 }
 
 /* a selected item in the main menu */
-.itemselect, .libselect {
-  font-family: sans-serif;
-  text-decoration: none;
-  background-color: white;
-  font-weight: bold;
-  color: black;
-  white-space: nowrap;
-  padding: 0px 2px 0px 2px;
+.itemselect {
+    font-family: sans-serif;
+    text-decoration: none;
+    padding: 0px 1em 0px 0px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* the top menu box */
+.menu {
+  width: 100%;
+  background-color: #4040ff;
+  text-align: center;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  line-height: 130%;
+  font-size: 130%;
 }
 
 /* the main curl site left-side menu box */
-.mainmenu, .libmenu {
+.tailmenu {
   color: #ffffff;
-  background-color: #4040ff;
-  padding: 8px 4px 8px 2px;
-  line-height: 140%;
-}
-
-/* the about infobox in the right-bottom */
-.aboutbox {
-  border-color: black;
-  border-width: 2px;
-  border-style: solid;
-  background-color: #e0e0ff;
-  color: #000000;
-  font-size: 80%;
-  float: right;
-  text-align: left;
-  width: 15em;
-  padding: 2px 2px 2px 2px;
-}
-
-/* the toplevel centered links */
-.ad a {
-  border-color: #c0c0ff;
-  border-style: outset;
-  text-align: center;
-  text-decoration: none;
-  color: #ffffff;
-  background-color: #4040ff;
-  margin: 0px 8px 0px 8px;
-  padding: 0px 3px 0px 3px;
+  background-color: #4080ff;
+  padding: 4px 4px 4px 4px;
 }
 
 .relatedbox {
@@ -370,21 +362,43 @@ div.yellowbox {
   margin-right: auto;
 }
 
-td.main {
-  width: 100%;
+.main {
 }
 
-/* Options filtering menu on the autobuild page */
-.filteroptions {
+/* the "bread crumbs" below the top menu */
+.where {
+    padding-top: .5em;
+}
+
+.contents {
+  padding-top: 0px;
+  margin-top: 0px;
+  max-width: 50em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Filtering menus on the autobuild page */
+.filtermenu {
   /* Position select box to the right of the text */
   display: inline;
 }
 
-.filterinput {
+/* Input elements in the filtering menus */
+.inputbox {
   /* Reduce the input box to the tiniest clickable size. Unfortunately, this
    seems to make all the form entries too small in FF 26 and IE11.
    TODO: fix this on these browsers. */
   width: 1.5em;
   /* Opera 12.16 needs this or the option list button is invisible */
   background: #ffffff;
+}
+
+table.download {
+    margin-left: 1em;
+    font-size: 120%;
+}
+
+td.download {
+    padding-right: 10px;
 }

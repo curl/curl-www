@@ -1,209 +1,293 @@
 #ifndef __MENU
 #define __MENU
 
-#define BACKGROUND "#ffffff"
-#define TEXTCOLOR "#000000"
-#define MENUTEXT "#ffffff"
-#define MENUCOLOR "#e0e0ff"
-#define BLACK "#000000"
+#ifndef ROOT__SETUP_T
+#include "setup.t"
+#endif
 
 #ifndef NOBODY
-
-<BODY bgcolor=BACKGROUND text=TEXTCOLOR LINK="#0000ff" VLINK="#808080" ALINK="red">
+<body bgcolor="#ffffff" text="#000000">
 #endif
 
-#define SEP <br>
-
-#define NOW(text) <b>text</b>
-#define REF(link,text) <a href=link>text</a>
-
-<table cellspacing=0 cellpadding=5><tr><td valign=top align=left>
-
-#include "ad.t"
-
-#define LINK(l,t) <div class="itemselect">t</div>
-#define VLINK(l,t) <div><a href="l" class="menuitem">t</a></div>
-
-<div class="mainmenu">
-
-#define HERE LINK
-#define DOCREF VLINK
-
-<div><img border="0" src="/pix/left.png" alt="<"> <a href="/" class="menuitem">Front Page</a></div>
-
-<hr>
+<div class="main">
+<div class="menu">
 
 #ifdef DOCS_INDEX
-HERE(x, Docs Index)
+#ifdef DOCS_OVERVIEW
+LINK(/docs/, Docs Overview)
 #else
-DOCREF(/docs/, Docs Index)
+VLINK(/docs/, Docs Overview, Documentation Overview)
 #endif
 
+VLINK(/docs/projdocs.html, Project, The project)
+VLINK(/docs/protdocs.html, Protocols, Protocol Documentation)
+VLINK(/docs/reldocs.html, Releases, Release documentation)
+VLINK(/docs/tooldocs.html, Tools, curl tools documentation)
+VLINK(/docs/whodocs.html, Who and Why, Who and Why documentation)
+
+#else
+VLINK(/docs/, Docs Overview, Documentation main page)
+
+#ifdef PROJ_DOCS
 #ifdef DOCS_BUGS
-HERE(x, Bug Report)
+LINK(/docs/bugs.html, Bug Report)
 #else
-DOCREF(/docs/bugs.html, Bug Report)
+VLINK(/docs/bugs.html, Bug Report, How to report a problem)
+#endif
 #endif
 
+#ifdef PROT_DOCS
 #ifdef DOCS_CAEXTRACT
-HERE(x, CA Extract)
+LINK(https://curl.haxx.se/docs/caextract.html, CA Extract)
 #else
-DOCREF(/docs/caextract.html, CA Extract)
+VLINK(https://curl.haxx.se/docs/caextract.html, CA Extract, CA cert bundle exatracted from Mozilla)
+#endif
 #endif
 
+#ifdef REL_DOCS
+#ifdef CURL_CHANGES
+LINK(/changes.html, Changelog)
+#else
+VLINK(/changes.html, Changelog, Changes done in curl)
+#endif
+#endif
+
+#ifdef WHO_DOCS
 #ifdef DOCS_COMPANIES
-HERE(x, Companies)
+LINK(/docs/companies.html, Companies)
 #else
-DOCREF(/docs/companies.html, Companies)
+VLINK(/docs/companies.html, Companies, Commercial users of curl)
+#endif
 #endif
 
+#ifdef TOOL_DOCS
 #ifdef DOCS_COMPARISON
-HERE(x, Comparison)
+LINK(/docs/comparison-table.html, Comparison Table)
 #else
-DOCREF(/docs/comparison-table.html, Comparison)
+VLINK(/docs/comparison-table.html, Comparison Table, Compare curl to other tools)
+#endif
 #endif
 
+#ifdef WHO_DOCS
 #ifdef DOCS_COPYRIGHT
-HERE(x, Copyright)
+LINK(/docs/copyright.html, Copyright)
 #else
-DOCREF(/docs/copyright.html, Copyright)
+VLINK(/docs/copyright.html, Copyright, Copyright and license info)
+#endif
 #endif
 
+#ifdef PROJ_DOCS
+#ifdef DOCS_DONATION
+LINK(/donation.html, Donate)
+#else
+VLINK(/donation.html, Donate, Donate to the cURL project)
+#endif
+#endif
+
+#ifdef TOOL_DOCS
 #ifdef DOCS_MANPAGE
-HERE(x, curl Man Page)
+LINK(/docs/manpage.html, curl man page)
 #else
-DOCREF(/docs/manpage.html, curl Man Page)
+VLINK(/docs/manpage.html, curl man page, Command line option reference)
+#endif
 #endif
 
+#ifdef PROJ_DOCS
 #ifdef DOCS_LIBS
-HERE(x, Dependencies)
+LINK(/docs/libs.html, Dependencies)
 #else
-DOCREF(/docs/libs.html, Dependencies)
+VLINK(/docs/libs.html, Dependencies, Libraries to use)
+#endif
 #endif
 
-DOCREF(/donation.html, Donate!)
-
+#ifdef TOOL_DOCS
 #ifdef DOCS_FAQ
-HERE(x, FAQ)
+LINK(/docs/faq.html, FAQ)
 #else
-DOCREF(/docs/faq.html, FAQ)
+VLINK(/docs/faq.html, FAQ, Frequently Asked Questions)
+#endif
 #endif
 
+#ifdef PROJ_DOCS
 #ifdef DOCS_FEATURES
-HERE(x, Features)
+LINK(/docs/features.html, Features)
 #else
-DOCREF(/docs/features.html, Features)
+VLINK(/docs/features.html, Features, All features summed up)
+#endif
 #endif
 
+#ifdef PROJ_DOCS
 #ifdef DOCS_HISTORY
-HERE(x, History)
+LINK(/docs/history.html, History)
 #else
-DOCREF(/docs/history.html, History)
+VLINK(/docs/history.html, History, A project history overview)
+#endif
 #endif
 
+#ifdef PROT_DOCS
 #ifdef DOCS_HTTP_COOKIES
-HERE(x, HTTP Cookies)
+LINK(/docs/http-cookies.html, HTTP Cookies)
 #else
-DOCREF(/docs/http-cookies.html, HTTP Cookies)
+VLINK(/docs/http-cookies.html, HTTP Cookies, Description of cookies with curl)
+#endif
 #endif
 
+#ifdef TOOL_DOCS
 #ifdef DOCS_HTTPSCRIPT
-HERE(x, HTTP Scripting)
+LINK(/docs/httpscripting.html, HTTP Scripting)
 #else
-DOCREF(/docs/httpscripting.html, HTTP Scripting)
+VLINK(/docs/httpscripting.html, HTTP Scripting, How to script HTTP with curl)
+#endif
 #endif
 
+#ifdef PROT_DOCS
+#ifdef DOCS_HTTP2
+LINK(/docs/http2.html, HTTP/2)
+#else
+VLINK(/docs/http2.html, HTTP/2, HTTP/2 with curl)
+#endif
+#endif
+
+#ifdef PROJ_DOCS
 #ifdef DOCS_INSTALL
-HERE(x, Install)
+LINK(/docs/install.html, Install)
 #else
-DOCREF(/docs/install.html, Install)
+VLINK(/docs/install.html, Install, Installing curl from source)
+#endif
 #endif
 
+#ifdef PROJ_DOCS
 #ifdef DOCS_KNOWNBUGS
-HERE(x, Known Bugs)
+LINK(/docs/knownbugs.html, Known Bugs)
 #else
-DOCREF(/docs/knownbugs.html, Known Bugs)
+VLINK(/docs/knownbugs.html, Known Bugs, Already known problems )
+#endif
 #endif
 
-DOCREF(/legal/, Legal &raquo;)
-
-#ifdef DOCS_MANUAL
-HERE(x, Manual)
-#else
-DOCREF(/docs/manual.html, Manual)
-#endif
-
+#ifdef TOOL_DOCS
 #ifdef DOCS_MKCABUNDLE
-HERE(x, mk-ca-bundle)
+LINK(/docs/mk-ca-bundle.html, mk-ca-bundle)
 #else
-DOCREF(/docs/mk-ca-bundle.html, mk-ca-bundle)
+VLINK(/docs/mk-ca-bundle.html, mk-ca-bundle, Generate your own CA bundle)
+#endif
 #endif
 
-#ifdef DOCS_PROGRAMS
-HERE(x, Programs)
+#ifdef WHO_DOCS
+#ifdef LEGAL_LICMIX
+LINK(/legal/licmix.html, Licence Mixing )
 #else
-DOCREF(/docs/programs.html, Programs)
+VLINK(/legal/licmix.html, License Mixing, About mixing licenses )
+#endif
 #endif
 
+#ifdef TOOL_DOCS
 #ifdef DOCS_RELATED_TOOLS
-HERE(x, Related Tools)
+LINK(/docs/relatedtools.html, Related Tools)
 #else
-DOCREF(/docs/relatedtools.html, Related Tools)
+VLINK(/docs/relatedtools.html, Related Tools, Tools that are related!)
+#endif
 #endif
 
+#ifdef REL_DOCS
 #ifdef DOCS_RELEASES
-HERE(x, Release Table)
+LINK(/docs/releases.html, Release Table)
 #else
-DOCREF(/docs/releases.html, Release Table)
+VLINK(/docs/releases.html, Release Table, All releases with details)
+#endif
 #endif
 
+#ifdef REL_DOCS
 #ifdef DOCS_SECURITY
-HERE(x, Security)
+LINK(/docs/security.html, Security)
 #else
-DOCREF(/docs/security.html, Security)
+VLINK(/docs/security.html, Security, Vulnerabilities and more)
+#endif
 #endif
 
+#ifdef WHO_DOCS
+#ifdef CURL_SPONSORS
+LINK(/sponsors.html, Sponsors)
+#else
+VLINK(/sponsors.html, Sponsors, Project Sponsors)
+#endif
+#endif
+
+#ifdef PROT_DOCS
 #ifdef DOCS_SSLCERTS
-HERE(x, SSL Certs)
+LINK(/docs/sslcerts.html, SSL Certs)
 #else
-DOCREF(/docs/sslcerts.html, SSL Certs)
+VLINK(/docs/sslcerts.html, SSL Certs, How curl works with SSL certficates)
+#endif
 #endif
 
+#ifdef PROT_DOCS
+#ifdef DOCS_SSL_COMPARED
+LINK(/docs/ssl-compared.html, SSL libs compared)
+#else
+VLINK(/docs/ssl-compared.html, SSL libs compared, An SSL library comparison)
+#endif
+#endif
+
+#ifdef WHO_DOCS
 #ifdef DOCS_THANKS
-HERE(x, Thanks)
+LINK(/docs/thanks.html, Thanks)
 #else
-DOCREF(/docs/thanks.html, Thanks)
+VLINK(/docs/thanks.html, Thanks, Named and listed contributors)
+#endif
 #endif
 
+#ifdef WHO_DOCS
+#ifdef LEGAL_THENAME
+LINK(/legal/thename.html, The Name)
+#else
+VLINK(/legal/thename.html, The Name, Who owns the name)
+#endif
+#endif
+
+#ifdef PROJ_DOCS
 #ifdef DOCS_TODO
-HERE(x, TODO)
+LINK(/docs/todo.html, TODO)
 #else
-DOCREF(/docs/todo.html, TODO)
+VLINK(/docs/todo.html, TODO, Things we might do in the future)
+#endif
 #endif
 
+#ifdef TOOL_DOCS
+#ifdef DOCS_MANUAL
+LINK(/docs/manual.html, Tutorial)
+#else
+VLINK(/docs/manual.html, Tutorial, A curl tutorial)
+#endif
+#endif
+
+#ifdef REL_DOCS
 #ifdef DOCS_VERSIONS
-HERE(x, Version Nums)
+LINK(/docs/versions.html, Version Nums)
 #else
-DOCREF(/docs/versions.html, Version Nums)
+VLINK(/docs/versions.html, Version Nums, How curl versioning works)
+#endif
 #endif
 
+#ifdef REL_DOCS
 #ifdef DOCS_VULNTABLE
-HERE(x, Vulnerabilities)
+LINK(/docs/vulnerabilities.html, Vulnerabilities)
 #else
-DOCREF(/docs/vulnerabilities.html, Vulnerabilities)
+VLINK(/docs/vulnerabilities.html, Vulnerabilities, Security problems in releases)
+#endif
 #endif
 
-#ifdef CURL_SEARCH
-LINK("/search.html", Search)
+#ifdef PROJ_DOCS
+#ifdef DOCS_WEBSITE
+LINK(/about.html, Web Site Info)
 #else
-VLINK("/search.html", Search)
+VLINK(/about.html, Web Site Info, Infrastructure details)
 #endif
+#endif
+
+#endif /* DOCS_INDEX */
 
 </div>
 
-<p>
-#include "sflogo.html"
-
-</td><td valign=top align=left class="main">
+START_OF_MAIN
 
 #endif

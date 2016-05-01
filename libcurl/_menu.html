@@ -1,116 +1,76 @@
 
-#define BACKGROUND "#ffffff"
-#define TEXTCOLOR "#000000"
+#include "setup.t"
 
 #ifndef NOBODY
-
-<BODY bgcolor=BACKGROUND text=TEXTCOLOR LINK="#0000ff" VLINK="#808080" ALINK="red">
+<body bgcolor="#ffffff" text="#000000">
 #endif
 
-#undef LINK
-#define LINK(l,t) <div class="libselect">t</div>
-
-#undef VLINK
-#define VLINK(l,t) <div><a href="l" class="libitem">t</a></div>
-#define TLINK(l,t,itle) <div><a href="l" class="libitem" title="itle">t</a></div>
-
-<table cellspacing="0" cellpadding="5"><tr><td valign="top" align="left">
-#include "ad.t"
-
-<div class="libmenu">
-
-<div><img border="0" src="/pix/left.png" alt="<"> <a href="/" class="menuitem">Front Page</a></div>
-
-<hr>
+<div class="main">
+<div class="menu">
 
 #ifdef LIBCURL_MAIN
 LINK("", libcurl index )
 #else
-TLINK("/libcurl/", libcurl index, Front page of the libcurl section)
-#endif
-
-#ifdef LIBCURL_DOCS
-LINK("", API)
-#else
-TLINK(/libcurl/c/, API &raquo;,
-       Functions provided by libcurl )
+VLINK("/libcurl/", libcurl index, Front page of the libcurl section)
 #endif
 
 #ifdef LIBCURL_ABI
-LINK("", Binary Interface)
+LINK("", ABI)
 #else
-TLINK(/libcurl/abi.html, Binary Interface,
+VLINK(/libcurl/abi.html, ABI,
        ABI guarantees between releases and more )
 #endif
+
+VLINK(/libcurl/c/, API, Functions provided by libcurl )
+
 #ifdef LIBCURL_BINDINGS
 LINK("", Bindings)
 #else
-TLINK(/libcurl/bindings.html, Bindings,
+VLINK(/libcurl/bindings.html, Bindings,
       Using libcurl powers within your language of choice! )
 #endif
 
 #ifdef LIBCURL_COMPETITORS
 LINK("", Competitors )
 #else
-TLINK("/libcurl/competitors.html", Competitors,
+VLINK("/libcurl/competitors.html", Competitors,
       Figure what competing libraries there are )
 #endif
 
-#ifdef LIBCURL_EXAMPLE
-LINK("", Example Sources )
-#else
-TLINK("/libcurl/c/example.html", Example Sources &raquo;,
+VLINK("/libcurl/c/example.html", Examples,
       Educational snippets of code )
-#endif
 
 #ifdef LIBCURL_FEATURES
 LINK("", Features )
 #else
-TLINK("/libcurl/features.html", Features, What makes libcurl special )
+VLINK("/libcurl/features.html", Features, What makes libcurl special )
 #endif
 
 #ifdef LIBCURL_MAIL
 LINK("", Mailing List )
 #else
-TLINK("/mail/list.cgi?list=curl-library", Mailing List,
+VLINK("/mail/list.cgi?list=curl-library", Mailing List,
       curl-library mailing list info and archives)
 #endif
 
 #ifdef LIBCURL_RELATEDLIBS
 LINK("", Related Libs )
 #else
-TLINK("/libcurl/relatedlibs.html", Related Libs,
+VLINK("/libcurl/relatedlibs.html", Related Libs,
       Related libraries that you might find useful together with libcurl)
 #endif
 
-#ifdef LIBCURL_USING
-LINK("", Using libcurl )
-#else
-TLINK("/libcurl/using/", Using libcurl &raquo;, How to use libcurl section)
-#endif
+VLINK("/libcurl/using/", Using libcurl, How to use libcurl section)
 
-#ifdef DOCS_TUTORIAL
-LINK(""Tutorial)
-#else
-TLINK("/libcurl/c/libcurl-tutorial.html", Tutorial &raquo;, libcurl programming tutorial)
-#endif
+VLINK("/libcurl/c/libcurl-tutorial.html", Tutorial, libcurl programming tutorial)
 
 #ifdef LIBCURL_THEYSAY
 LINK("", Testimonials )
 #else
-TLINK("/libcurl/theysay.html", Testimonials, What developers using libcurl say about it)
+VLINK("/libcurl/theysay.html", Testimonials, What developers using libcurl say about it)
 #endif
-
-#ifdef CURL_SEARCH
-LINK("/search.html", Search)
-#else
-TLINK("/search.html", Search, Search the curl web site)
-#endif
-
 
 </div>
 
-<p>
-#include "sflogo.html"
+START_OF_MAIN
 
-</td><td valign="top" align="left" class="main">

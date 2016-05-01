@@ -5,13 +5,14 @@
 </head>
 
 #define CURL_DOCS
+#define TOOL_DOCS
 #define DOCS_MANUAL
 #define CURL_URL docs/manual.html
 
 #include "_menu.html"
 #include "setup.t"
 
-WHERE2(Docs, "/docs/", Manual)
+WHERE3(Docs, "/docs/", Tool Documentation, "/docs/tooldocs.html", Manual)
 
 TITLE(Manual -- curl usage explained)
 <div class="relatedbox">

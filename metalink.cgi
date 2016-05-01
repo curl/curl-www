@@ -1,7 +1,8 @@
 #!/usr/bin/perl
 # Generate a metalink download file
 # See http://www.metalinker.org/
-# Based on latest.cgi by Dan Fandrich
+# Based on latest.cgi
+# by Dan Fandrich
 
 require "CGI.pm";
 require "ipwhere.pm";
@@ -20,9 +21,9 @@ my %archtype;
 my %where;
 
 my $md5sum="md5sum";
-my $sha1sum="sha1sum";
+my $sha256sum="sha256sum";
 
-print "Content-Type: application/metalink+xml\n\n";
+print "Content-Type: application/metalink4+xml\n\n";
 
 my $req = new CGI;
 
@@ -37,15 +38,13 @@ if($what eq "") {
 }
 
 use POSIX qw(strftime);
-my $now_string = strftime "%a, %e %b %Y %H:%M:%S GMT", gmtime;
+my $now_string = strftime "%Y-%m-%dT%H:%M:%SZ", gmtime;
 print <<EOF
 <?xml version="1.0" encoding="utf-8"?>
-<metalink version="3.0" generator="curl Metalink Generator" xmlns="http://www.metalinker.org/"
-type="dynamic" refreshdate="$now_string">
-<publisher>
-<name>curl</name>
-<url>http://curl.haxx.se/</url>
-</publisher>
+<metalink xmlns="urn:ietf:params:xml:ns:metalink">
+<origin dynamic="true">https://curl.haxx.se/metalink.cgi?curl=$what</origin>
+<updated>$now_string</updated>
+<generator>curl Metalink Generator</generator>
 EOF
 ;
 
@@ -116,19 +115,29 @@ if($latest::version{$what}) {
     my $md5full=`$md5sum "download/$archive"`;
     my ($md5, $file)=split(" ", $md5full);
 
-    my $sha1full=`$sha1sum "download/$archive"`;
-    my ($sha1, $dummy)=split(" ", $sha1full);
+    my $sha256full=`$sha256sum "download/$archive"`;
+    my ($sha256, $dummy)=split(" ", $sha256full);
 
-    print "<description>curl $desc</description>\n",
-    	  "<files><file name=\"$archive\">\n",
-    	  "<version>".$latest::version{$what}."</version>\n",
-    	  "<size>".$latest::size{$what}."</size>\n",
-    	  "<verification>\n",
-    	  "<hash type=\"md5\">".$md5."</hash>\n",
-    	  "<hash type=\"sha1\">".$sha1."</hash>\n";
+    my $mtime = (stat("download/$archive"))[9];
+    my $mtime_string = strftime "%Y-%m-%dT%H:%M:%SZ", gmtime($mtime);
+
+    print <<EOF
+<published>$mtime_string</published>
+<file name="$archive">
+<publisher>
+ <name>curl</name>
+ <url>https://curl.haxx.se/</url>
+</publisher>
+<description>curl $desc</description>
+<version>$latest::version{$what}</version>
+<size>$latest::size{$what}</size>
+<hash type="md5">$md5</hash>
+<hash type="sha-256">$sha256</hash>
+EOF
+;
 
     if( -r "download/$archive.asc" ) {
-        print "<signature type=\"pgp\" file=\"$archive.asc\">\n";
+        print "<signature mediatype=\"application/pgp-signature\">\n";
 	open(SIG, "<download/$archive.asc");
 	while(<SIG>) {
 	   print CGI::escapeHTML($_);
@@ -136,7 +145,6 @@ if($latest::version{$what}) {
 	close(SIG);
     	print "</signature>\n";
     }
-    print "</verification>\n";
 
     my $myip = $ENV{'REMOTE_ADDR'} || "193.15.23.28";
 
@@ -153,37 +161,33 @@ if($latest::version{$what}) {
     }
     print "<!-- resource preferences are for use in $mycountry -->\n";
 
-    print "<resources>\n";
-
     if($alert) {
-        print "<url type=\"http\" location=\"se\">http://curl.haxx.se/download/$archive</url>\n";
+        print "<url location=\"se\">https://curl.haxx.se/download/$archive</url>\n";
     }
     else {
 
         my $i=0;
-        my $pref;
+        my $prio;
         for(sort {$where{$a} cmp $where{$b}} @dl) {
             my $url=$_;
 
             if(country2tld($where{$url}) eq lc($mytld)) {
-                $pref = 90;
+                $prio = 10;
             }
             elsif(tld2continent( country2tld($where{$url})) eq $mycontinent) {
-                $pref = 70;
+                $prio = 20;
             } else {
-                $pref = 30;
+                $prio = 30;
             }
 
             $i++;
-            printf "<url type=\"%s\" location=\"%s\" preference=\"%d\">%s</url>\n",
-		    lc($proto{$url}),
+            printf "<url location=\"%s\" priority=\"%d\">%s</url>\n",
 		    gettld($where{$url}),
-		    $pref,
+		    $prio,
 		    CGI::escapeHTML($url);
         }
     }
-    print "</resources>\n";
-    print "</file></files>\n";
+    print "</file>\n";
 }
 elsif($what) {
     print "<!-- The recent-version-off-a-mirror system has no info about ",

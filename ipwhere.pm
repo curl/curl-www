@@ -488,7 +488,8 @@ my %tld2cntr =
 "er" => "Eritria",
  );
 
-sub mycountry {
+# Use ipwhere to do IP geolocation lookup
+sub mycountry_ipwhere {
     my ($ip)=@_;
     my @o=`/home/dast/bin/ipwhere $ip`;
     my ($tld, $area, $full);
@@ -505,6 +506,21 @@ sub mycountry {
     }
 
     return ($tld, $area, $full);
+}
+
+# Use geoip to do IP geolocation lookup
+sub mycountry {
+    my ($ip)=@_;
+    my @o;
+    if($ip =~ /:/) {
+      @o=`/usr/bin/geoiplookup6 $ip`;
+    } else {
+      @o=`/usr/bin/geoiplookup $ip`;
+    }
+    $o[0] =~ /^.*: ([^,]*), ([^,]*?)\s*$/;
+    my ($tld,$ctry) = ($1,$2);
+    $tld = "UK" if ($tld eq "GB");  # TLD is uk, not gb
+    return ($tld, tld2continent($tld), $ctry);
 }
 
 # convert a two-letter TLD to a full text continent string

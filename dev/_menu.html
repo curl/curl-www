@@ -1,15 +1,11 @@
 #ifndef __MENU
 #define __MENU
 
-#define BACKGROUND "#ffffff"
-#define TEXTCOLOR "#000000"
-#define MENUTEXT "#ffffff"
-#define MENUCOLOR "#e0e0ff"
-#define BLACK "#000000"
+#include "setup.t"
 
 #ifndef NOBODY
 
-<BODY bgcolor=BACKGROUND text=TEXTCOLOR LINK="#0000ff" VLINK="#808080" ALINK="red">
+<BODY bgcolor="#ffffff" text="#000000">
 #endif
 
 #define SEP <br>
@@ -17,194 +13,82 @@
 #define NOW(text) <b>text</b>
 #define REF(link,text) <a href=link>text</a>
 
-<table cellspacing=0 cellpadding=5><tr><td valign=top align=left>
-#include "ad.t"
-
-#define LINK(l,t) <div class="itemselect">t</div>
-#define VLINK(l,t,itle) <div><a href="l" class="menuitem" title="itle">t</a></div>
-
-<div class="mainmenu">
-
-#define HERE LINK
-
-<div><img border="0" src="/pix/left.png" alt="<"> <a href="/" class="menuitem">Front Page</a></div>
-
-<hr>
+<div class="main">
+<div class="menu">
 
 #ifdef DEVEL_INDEX
-HERE(x, Develop Index)
+LINK(/dev/, Develop Index)
 #else
 VLINK(/dev/, Develop Index, Development section front page)
 #endif
 
 #ifdef DEVEL_BUILDS
-HERE(x, Autobuilds)
+LINK(/dev/builds.html, Autobuilds)
 #else
 VLINK(/dev/builds.html, Autobuilds, Automated non-stop builds)
 #endif
 
-#ifdef DEVEL_BUILDSTATS
-HERE(x, Autobuild Stats)
-#else
-VLINK(/dev/summary.html, Autobuild Stats, Stats from the autobuilds)
-#endif
-
-#ifdef DEVEL_BUILDHOWTO
-HERE(x, Autobuild HOWTO)
-#else
-VLINK(/dev/howto.html, Autobuild HOWTO, Description on how to run autobuilds)
-#endif
-
-#ifdef DEVEL_RECENT
-HERE(x, Source Activity)
-#else
-VLINK(/dev/cvshistory.html, Source Activity, Recent Activity in the git repo)
-#endif
-
-#ifdef DEVEL_GITSTATS
-HERE(x, git stats)
-#else
-VLINK(/gitstats/, git stats &raquo;, Lots of statistics from the git repo)
-#endif
-
-<hr>
-
-#ifdef DEVEL_TRACKER
-HERE(x, Bugtracker)
-#else
-VLINK(https://sourceforge.net/p/curl/bugs/, Bugtracker &raquo;, Sourceforge bug tracker)
-#endif
-
-#ifdef DEVEL_RELEASENOTES
-HERE(x, Release Notes)
-#else
-VLINK(/dev/release-notes.html, Release Notes, The pending RELEASE-NOTES)
-#endif
-
-#ifdef DEVEL_TODORELEASE
-HERE(x, TODO Release)
-#else
-VLINK(/dev/todo-release.html, TODO Release, The pending TODO-RELEASE)
-#endif
-
-#ifdef DEVEL_SOURCE
-HERE(x, Source code)
-#else
-VLINK(/dev/source.html, Source code, How to get or view the source code)
-#endif
-
-<hr>
-
 #ifdef DEVEL_CONTRIBUTE
-HERE(x, Contribute)
+LINK(/dev/contribute.html, Contribute)
 #else
 VLINK(/dev/contribute.html, Contribute, How to Contribute)
 #endif
 
 #ifdef DEVEL_INTERNALS
-HERE(x, Internals)
+LINK(internals.html, Internals)
 #else
-VLINK(/dev/internals.html, Internals, Internals described)
+VLINK(internals.html, Internals, Internals described)
+#endif
+
+#ifdef DEVEL_RELEASENOTES
+LINK(/dev/release-notes.html, Release Notes)
+#else
+VLINK(/dev/release-notes.html, Release Notes, The pending RELEASE-NOTES)
+#endif
+
+#ifdef DEVEL_RELEASEPROC
+LINK(/dev/release-procedure.html, Release Procedure)
+#else
+VLINK(/dev/release-procedure.html, Release Procedure, How to release and when)
+#endif
+
+#ifdef DEVEL_SOURCE
+LINK(/dev/source.html, Source code)
+#else
+VLINK(/dev/source.html, Source code, How to get or view the source code)
+#endif
+
+#ifdef DEVEL_ROADMAP
+LINK(/dev/roadmap.html, Roadmap)
+#else
+VLINK(/dev/roadmap.html, Roadmap, Roadmap for the nearest future)
 #endif
 
 #ifdef DEVEL_RUNTESTS
-HERE(x, Run Tests)
+LINK(/dev/runtests.html, Run Tests)
 #else
 VLINK(/dev/runtests.html, Run Tests, How to run the test suite)
 #endif
 
 #ifdef DEVEL_SECURITY
-HERE(x, Security)
+LINK(/dev/security.html, Security)
 #else
 VLINK(/dev/security.html, Security, Security for curl developers)
 #endif
 
 #ifdef DEVEL_SPECS
-HERE(x, Specifications)
+LINK(/rfc/, Specifications)
 #else
 VLINK(/rfc/, Specifications, Specs and RFSs that concern us)
 #endif
 
 #ifdef DEVEL_TESTCURL
-HERE(x, Test curl)
+LINK(/dev/testcurl.html, Test curl)
 #else
 VLINK(/dev/testcurl.html, Test curl, The automatic curl testing tool)
 #endif
 
-<hr>
-READMEs:
-<br>
-#ifdef DEVEL_README_ares
-HERE(x, ares)
-#else
-VLINK(/dev/readme-ares.html, ares, How to build libcurl with ares support)
-#endif
-
-#ifdef DEVEL_README_curl_off_t
-HERE(x, curl_off_t)
-#else
-VLINK(/dev/readme-curl_off_t.html, curl_off_t, curl_off_t explained)
-#endif
-
-#ifdef DEVEL_README_curlx
-HERE(x, curlx)
-#else
-VLINK(/dev/readme-curlx.html, curlx, curlx explained)
-#endif
-
-#ifdef DEVEL_README_encoding
-HERE(x, encoding)
-#else
-VLINK(/dev/readme-encoding.html, encoding, HTTP Content Encoding explained)
-#endif
-
-#ifdef DEVEL_README_hostip
-HERE(x, hostip)
-#else
-VLINK(/dev/readme-hostip.html, hostip, hostip explained)
-#endif
-
-#ifdef DEVEL_README_httpauth
-HERE(x, httpauth)
-#else
-VLINK(/dev/readme-httpauth.html, httpauth, httpauth explained)
-#endif
-
-#ifdef DEVEL_README_http2
-HERE(x, http2)
-#else
-VLINK(/dev/readme-http2.html, http2, http2 explained)
-#endif
-
-#ifdef DEVEL_README_memoryleak
-HERE(x, memoryleak)
-#else
-VLINK(/dev/readme-memoryleak.html, memoryleak, How to track down memoryleaks)
-#endif
-
-#ifdef DEVEL_README_multi_socket
-HERE(x, multi_socket)
-#else
-VLINK(/dev/readme-multi_socket.html, multi_socket, multi_socket explained)
-#endif
-
-#ifdef DEVEL_README_pingpong
-HERE(x, pingpong)
-#else
-VLINK(/dev/readme-pingpong.html, pingpong, pingpong explained)
-#endif
-
-#ifdef DEVEL_README_pipelining
-HERE(x, pipelining)
-#else
-VLINK(/dev/readme-pipelining.html, pipelining, pipelining explained)
-#endif
-
 </div>
 
-<p>
-#include "sflogo.html"
-
-</td><td valign=top align=left class="main">
-
+START_OF_MAIN
 #endif

@@ -1,61 +1,34 @@
+#include "setup.t"
 
 #define BACKGROUND "#ffffff"
 #define TEXTCOLOR "#000000"
 
 #ifndef NOBODY
 
-<BODY bgcolor=BACKGROUND text=TEXTCOLOR LINK="#0000ff" VLINK="#808080" ALINK="red">
+<BODY bgcolor=BACKGROUND text=TEXTCOLOR link="#0000ff" vlink="#808080" alinkq="red">
 #endif
 
-#undef LINK
-#define LINK(l,t) <div class="libselect">t</div>
-
-#undef VLINK
-#define VLINK(l,t) <div><a href="l" class="libitem">t</a></div>
-
-<table cellspacing="0" cellpadding="5"><tr><td valign="top" align="left">
-#include "ad.t"
-
-<div class="libmenu">
-
-<div><a href="/" class="menuitem"><img border="0" src="/pix/left.png" alt="<">Front Page</a></div>
-
-<hr>
-
-#ifdef LEGAL_MAIN
-LINK("", Legal Index )
-#else
-VLINK("/legal/", Legal Index )
-#endif
+<div class="main">
+<div class="menu">
 
 #ifdef LEGAL_COPYRIGHT
 LINK("", Copyright )
 #else
-VLINK("/docs/copyright.html", Copyright &raquo;)
-#endif
-
-#ifdef LEGAL_DISTRO_DILEMMA
-LINK("", Distro Dilemma )
-#else
-VLINK("/legal/distro-dilemma.html", Distro Dilemma)
+VLINK("/docs/copyright.html", Copyright &raquo;, The copyright blurb)
 #endif
 
 #ifdef LEGAL_LICMIX
 LINK("", Licence Mixing )
 #else
-VLINK("/legal/licmix.html", License Mixing )
+VLINK("/legal/licmix.html", License Mixing, About mixing licenses )
 #endif
 
 #ifdef LEGAL_THENAME
 LINK("", The Name)
 #else
-VLINK("/legal/thename.html", The Name)
+VLINK("/legal/thename.html", The Name, Who owns the name)
 #endif
-
-
 </div>
 
-<p>
-#include "sflogo.html"
 
-</td><td valign="top" align="left" class="main">
+START_OF_MAIN

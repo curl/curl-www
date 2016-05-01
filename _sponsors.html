@@ -5,12 +5,13 @@
 </HEAD>
 
 #define CURL_SPONSORS
+#define WHO_DOCS
 #define CURL_URL sponsors.html
 
-#include "_menu.html"
 #include "setup.t"
+#include "docs/_menu.html"
 
-WHERE1(Project Sponsors)
+WHERE3(Docs, "/docs/", Who and Why, "/docs/whodocs.html", Project Sponsors)
 TITLE(Project Sponsors)
 <div class="relatedbox">
 <b>Related:</b>
@@ -18,13 +19,30 @@ TITLE(Project Sponsors)
 </div>
 
 <p>
- <a href="http://www.haxx.se/"><img src="http://www.haxx.se/pics/haxxlogo.png" border="0"></a><p>
- <a href="http://www.haxx.se/">Haxx</a> is the primary sponsor of the cURL project.
+ <a href="https://www.haxx.se/"><img src="https://www.haxx.se/pics/haxxlogo.png" border="0"></a><p>
+ <a href="https://www.haxx.se/">Haxx</a> is the primary sponsor of the cURL project.
+
+<p>
+ <a href="https://www.mozilla.com/"><img src="pix/mozilla.png" width="445" height="162"></a>
+<p>
+ Mozilla employs <a href="https://daniel.haxx.se/">Daniel</a> and lets him spend parts of his paid work hours on curl.
 
 SUBTITLE(Join in and Sponsor!)
 <p>
  Please consider sponsoring the project. Maintaining, bug tracking, hosting
  and supporting this project requires resources. You can help!
+
+<p>
+ We do not consider single-shot donations as "sponsorships". Those are
+ donations and while welcome, they will not be honored by a mention
+ here. Sponsors mentioned here keep supporting the project long-term by
+ covering some sort of notable cost to the benefit of the project and its
+ users.
+
+<p>
+ The <b>best way to sponsor</b> this project is to allow a paid engineer or
+ two to spend work hours on curl. Responding to email and writing curl
+ improvements.
 
 #include "_footer.html"
 </BODY>

@@ -6,10 +6,10 @@ CURL= $(ROOT)
 
 MAINPARTS= $(ROOT)/_doctype.html $(CURL)/_menu.html $(CURL)/_footer.html \
  $(CURL)/setup.t $(CURL)/pic.t $(CURL)/where.t $(CURL)/mirrorlinks.t \
- $(ROOT)/ad.t $(ROOT)/sflogo.html
+ $(ROOT)/ad.t $(ROOT)/sflogo.t $(ROOT)/css.t
 
 NOW=$(shell date +'-D__TODAY__=%B %d, %Y')
-ACTION=@echo preprocessing $@; rm -f $@; fcpp -I.. -I. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@; chmod a-w+r $@
+ACTION=@echo preprocessing $@; rm -f $@; fcpp -I.. -I. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@;
 
 all: subscribe.html mail.html etiquette.html index.html indexheader.html \
  indexfooter.html mailheader.html mailfooter.html lost.html mailman.html \
@@ -18,12 +18,11 @@ all: subscribe.html mail.html etiquette.html index.html indexheader.html \
 subscribe.html: _subscribe.html $(MAINPARTS)
 	$(ACTION)
 
-etiquette.html: _etiquette.html $(MAINPARTS) etiquette.t
+etiquette.html: _etiquette.html $(MAINPARTS) etiquette.gen
 	$(ACTION)
 
-etiquette.t: $(DOCROOT)/MAIL-ETIQUETTE $(ROOT)/docs/faqparse.pl
+etiquette.gen: $(DOCROOT)/MAIL-ETIQUETTE $(ROOT)/docs/faqparse.pl
 	$(ROOT)/docs/faqparse.pl < $< > $@
-
 
 activity.html: _activity.html $(MAINPARTS)
 	$(ACTION)
@@ -43,7 +42,7 @@ mailheader.html: _mailheader.html $(MAINPARTS)
 mailfooter.html: _mailfooter.html $(MAINPARTS)
 	$(ACTION)
 
-index.html: _index.html _mail.html $(MAINPARTS)
+index.html: _index.html _mail.html $(MAINPARTS) ../recentmail.t
 	$(ACTION)
 
 lost.html: _lost.html $(MAINPARTS)

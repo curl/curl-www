@@ -1,347 +1,317 @@
-#ifdef DOCS_INDEX
-THIS(API)
+#ifdef DOCS_OVERVIEW
+LINK("https://curl.haxx.se/libcurl/c/libcurl.html", Overview)
 #else
-DOC(API, .)
+VLINK("https://curl.haxx.se/libcurl/c/libcurl.html", Overview, Overview)
 #endif
 
 #ifdef DOCS_TUTORIAL
-THIS(Tutorial)
+LINK("https://curl.haxx.se/libcurl/c/libcurl-tutorial.html", Tutorial)
 #else
-DOC(Tutorial, libcurl-tutorial.html)
+VLINK("https://curl.haxx.se/libcurl/c/libcurl-tutorial.html", Tutorial, Tutorial)
 #endif
 
 #ifdef DOCS_ERRORS
-THIS(Error Codes)
+LINK("https://curl.haxx.se/libcurl/c/libcurl-errors.html", Errors)
 #else
-DOC(Error Codes, libcurl-errors.html)
+VLINK("https://curl.haxx.se/libcurl/c/libcurl-errors.html", Errors, Error Codes)
+#endif
+
+#ifdef LIBCURL_EXAMPLE
+LINK("https://curl.haxx.se/libcurl/c/example.html", Examples)
+#else
+VLINK("https://curl.haxx.se/libcurl/c/example.html", Examples, libcurl C source code examples )
 #endif
 
 #ifdef DOCS_SYMBOLS
-THIS(Symbols In Versions)
+LINK("https://curl.haxx.se/libcurl/c/symbols-in-versions.html", Symbols)
 #else
-DOC(Symbols In Versions, symbols-in-versions.html)
+VLINK("https://curl.haxx.se/libcurl/c/symbols-in-versions.html", Symbols, In which versions were which symbols introduced)
 #endif
 
 #ifdef DOCS_ALLFUNCS
-THIS(All Functions)
+LINK("https://curl.haxx.se/libcurl/c/allfuncs.html", Index)
 #else
-DOC(All Functions, allfuncs.html)
+VLINK("https://curl.haxx.se/libcurl/c/allfuncs.html", Index, List of all libcurl functions)
 #endif
 
 #ifdef DOCS_OVERVIEW_EASY
-THIS(easy Interface)
+LINK("https://curl.haxx.se/libcurl/c/libcurl-easy.html", Easy Interface)
 #else
-DOC(easy Interface, libcurl-easy.html)
+VLINK("https://curl.haxx.se/libcurl/c/libcurl-easy.html", Easy Interface, Easy interface tutorial)
 #endif
 
 #ifdef DOCS_OVERVIEW_MULTI
-THIS(multi Overview)
+LINK("https://curl.haxx.se/libcurl/c/libcurl-multi.html", Multi Interface)
 #else
-DOC(multi Interface, libcurl-multi.html)
+VLINK("https://curl.haxx.se/libcurl/c/libcurl-multi.html", Multi Interface, Multi Interface tutorial)
 #endif
 
 #ifdef DOCS_OVERVIEW_SHARE
-THIS(share Interface)
+LINK("https://curl.haxx.se/libcurl/c/libcurl-share.html", Share Interface)
 #else
-DOC(share Interface, libcurl-share.html)
+VLINK("https://curl.haxx.se/libcurl/c/libcurl-share.html", Share Interface, Share Interface Tutorial)
 #endif
 
-#ifdef MENU_EASY
-<hr>
+#ifdef MENU_EASYx
+<br>
 #ifdef DOCS_EASY_ESCAPE
-THIS(curl_easy_escape)
+LINK("https://curl.haxx.se/libcurl/c/curl_easy_escape.html", curl_easy_escape)
 #else
-DOC(curl_easy_escape, curl_easy_escape.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_easy_escape.html", curl_easy_escape, curl_easy_escape)
 #endif
 
 #ifdef DOCS_EASY_INIT
-THIS(curl_easy_init)
+LINK("https://curl.haxx.se/libcurl/c/curl_easy_init.html", curl_easy_init)
 #else
-DOC(curl_easy_init, curl_easy_init.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_easy_init.html", curl_easy_init, curl_easy_init)
 #endif
 
 #ifdef DOCS_EASY_CLEANUP
-THIS(curl_easy_cleanup)
+LINK("https://curl.haxx.se/libcurl/c/curl_easy_cleanup.html", curl_easy_cleanup)
 #else
-DOC(curl_easy_cleanup, curl_easy_cleanup.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_easy_cleanup.html", curl_easy_cleanup, curl_easy_cleanup)
 #endif
 
 #ifdef DOCS_EASY_DUPHANDLE
-THIS(curl_easy_duphandle)
+LINK("https://curl.haxx.se/libcurl/c/curl_easy_duphandle.html", curl_easy_duphandle)
 #else
-DOC(curl_easy_duphandle, curl_easy_duphandle.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_easy_duphandle.html", curl_easy_duphandle, curl_easy_duphandle)
 #endif
 
 #ifdef DOCS_EASY_GETINFO
-THIS(curl_easy_getinfo)
+LINK("https://curl.haxx.se/libcurl/c/curl_easy_getinfo.html", curl_easy_getinfo)
 #else
-DOC(curl_easy_getinfo, curl_easy_getinfo.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_easy_getinfo.html", curl_easy_getinfo, curl_easy_getinfo)
 #endif
 
 #ifdef DOCS_EASY_PAUSE
-THIS(curl_easy_pause)
+LINK("https://curl.haxx.se/libcurl/c/curl_easy_pause.html", curl_easy_pause)
 #else
-DOC(curl_easy_pause, curl_easy_pause.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_easy_pause.html", curl_easy_pause, curl_easy_pause)
 #endif
 
 #ifdef DOCS_EASY_PERFORM
-THIS(curl_easy_perform)
+LINK("https://curl.haxx.se/libcurl/c/curl_easy_perform.html", curl_easy_perform)
 #else
-DOC(curl_easy_perform, curl_easy_perform.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_easy_perform.html", curl_easy_perform, curl_easy_perform)
 #endif
 
 #ifdef DOCS_EASY_RECV
-THIS(curl_easy_recv)
+LINK("https://curl.haxx.se/libcurl/c/curl_easy_recv.html", curl_easy_recv)
 #else
-DOC(curl_easy_recv, curl_easy_recv.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_easy_recv.html", curl_easy_recv, curl_easy_recv)
 #endif
 
 #ifdef DOCS_EASY_RESET
-THIS(curl_easy_reset)
+LINK("https://curl.haxx.se/libcurl/c/curl_easy_reset.html", curl_easy_reset)
 #else
-DOC(curl_easy_reset, curl_easy_reset.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_easy_reset.html", curl_easy_reset, curl_easy_reset)
 #endif
 
 #ifdef DOCS_EASY_SEND
-THIS(curl_easy_send)
+LINK("https://curl.haxx.se/libcurl/c/curl_easy_send.html", curl_easy_send)
 #else
-DOC(curl_easy_send, curl_easy_send.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_easy_send.html", curl_easy_send, curl_easy_send)
 #endif
 
 #ifdef DOCS_EASY_SETOPT
-THIS(curl_easy_setopt)
+LINK("https://curl.haxx.se/libcurl/c/curl_easy_setopt.html", curl_easy_setopt)
 #else
-DOC(curl_easy_setopt, curl_easy_setopt.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_easy_setopt.html", curl_easy_setopt, curl_easy_setopt)
 #endif
 
 #ifdef DOCS_EASY_STRERROR
-THIS(curl_easy_strerror)
+LINK("https://curl.haxx.se/libcurl/c/curl_easy_strerror.html", curl_easy_strerror)
 #else
-DOC(curl_easy_strerror, curl_easy_strerror.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_easy_strerror.html", curl_easy_strerror, curl_easy_strerror)
 #endif
 
 #ifdef DOCS_EASY_UNESCAPE
-THIS(curl_easy_unescape)
+LINK("https://curl.haxx.se/libcurl/c/curl_easy_unescape.html", curl_easy_unescape)
 #else
-DOC(curl_easy_unescape, curl_easy_unescape.html)
-#endif
-
-#ifdef DOCS_ESCAPE
-THIS(curl_escape)
-#else
-DOC(curl_escape, curl_escape.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_easy_unescape.html", curl_easy_unescape, curl_easy_unescape)
 #endif
 
 #ifdef DOCS_FORMADD
-THIS(curl_formadd)
+LINK("https://curl.haxx.se/libcurl/c/curl_formadd.html", curl_formadd)
 #else
-DOC(curl_formadd, curl_formadd.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_formadd.html", curl_formadd, curl_formadd)
 #endif
 
 #ifdef DOCS_FORMFREE
-THIS(curl_formfree)
+LINK("https://curl.haxx.se/libcurl/c/curl_formfree.html", curl_formfree)
 #else
-DOC(curl_formfree, curl_formfree.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_formfree.html", curl_formfree, curl_formfree)
 #endif
 
 #ifdef DOCS_FREE
-THIS(curl_free)
+LINK("https://curl.haxx.se/libcurl/c/curl_free.html", curl_free)
 #else
-DOC(curl_free, curl_free.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_free.html", curl_free, curl_free)
 #endif
 
 #ifdef DOCS_GETDATE
-THIS(curl_getdate)
+LINK("https://curl.haxx.se/libcurl/c/curl_getdate.html", curl_getdate)
 #else
-DOC(curl_getdate, curl_getdate.html)
-#endif
-
-#if 0
-#ifdef DOCS_GETENV
-THIS(curl_getenv)
-#else
-DOC(curl_getenv, curl_getenv.html)
-#endif
+VLINK("https://curl.haxx.se/libcurl/c/curl_getdate.html", curl_getdate, curl_getdate)
 #endif
 
 #ifdef DOCS_GLOBAL_CLEANUP
-THIS(curl_global_cleanup)
+LINK("https://curl.haxx.se/libcurl/c/curl_global_cleanup.html", curl_global_cleanup)
 #else
-DOC(curl_global_cleanup, curl_global_cleanup.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_global_cleanup.html", curl_global_cleanup, curl_global_cleanup)
 #endif
 
 #ifdef DOCS_GLOBAL_INIT
-THIS(curl_global_init)
+LINK("https://curl.haxx.se/libcurl/c/curl_global_init.html", curl_global_init)
 #else
-DOC(curl_global_init, curl_global_init.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_global_init.html", curl_global_init, curl_global_init)
 #endif
 
 #ifdef DOCS_GLOBAL_INIT_MEM
-THIS(curl_global_init_mem)
+LINK("https://curl.haxx.se/libcurl/c/curl_global_init_mem.html", curl_global_init_mem)
 #else
-DOC(curl_global_init_mem, curl_global_init_mem.html)
-#endif
-
-#if 0
-#ifdef DOCS_MPRINTF
-THIS(curl_mprintf)
-#else
-DOC(curl_mprintf, curl_mprintf.html)
-#endif
+VLINK("https://curl.haxx.se/libcurl/c/curl_global_init_mem.html", curl_global_init_mem, curl_global_init_mem)
 #endif
 
 #ifdef DOCS_SLIST_APPEND
-THIS(curl_slist_append)
+LINK("https://curl.haxx.se/libcurl/c/curl_slist_append.html", curl_slist_append)
 #else
-DOC(curl_slist_append, curl_slist_append.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_slist_append.html", curl_slist_append, curl_slist_append)
 #endif
 
 #ifdef DOCS_SLIST_FREE_ALL
-THIS(curl_slist_free_all)
+LINK("https://curl.haxx.se/libcurl/c/curl_slist_free_all.html", curl_slist_free_all)
 #else
-DOC(curl_slist_free_all, curl_slist_free_all.html)
-#endif
-
-#if 0
-#ifdef DOCS_STREQUAL
-THIS(curl_strequal)
-#else
-DOC(curl_strequal, curl_strequal.html)
-#endif
-#endif
-
-#ifdef DOCS_UNESCAPE
-THIS(curl_unescape)
-#else
-DOC(curl_unescape, curl_unescape.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_slist_free_all.html", curl_slist_free_all, curl_slist_free_all)
 #endif
 
 #ifdef DOCS_VERSION
-THIS(curl_version)
+LINK("https://curl.haxx.se/libcurl/c/curl_version.html", curl_version)
 #else
-DOC(curl_version, curl_version.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_version.html", curl_version, curl_version)
 #endif
 
 #ifdef DOCS_VERSION_INFO
-THIS(curl_version_info)
+LINK("https://curl.haxx.se/libcurl/c/curl_version_info.html", curl_version_info)
 #else
-DOC(curl_version_info, curl_version_info.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_version_info.html", curl_version_info, curl_version_info)
 #endif
 
 #endif /* MENU_EASY */
 
-#ifdef MENU_MULTI
-<hr>
+#ifdef MENU_MULTIx
+<br>
 #ifdef DOCS_MULTI_ADD_HANDLE
-THIS(curl_multi_add_handle)
+LINK("https://curl.haxx.se/libcurl/c/curl_multi_add_handle.html", curl_multi_add_handle)
 #else
-DOC(curl_multi_add_handle, curl_multi_add_handle.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_multi_add_handle.html", curl_multi_add_handle, curl_multi_add_handle)
 #endif
 
 #ifdef DOCS_MULTI_ASSIGN
-THIS(curl_multi_assign)
+LINK("https://curl.haxx.se/libcurl/c/curl_multi_assign.html", curl_multi_assign)
 #else
-DOC(curl_multi_assign, curl_multi_assign.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_multi_assign.html", curl_multi_assign, curl_multi_assign)
 #endif
 
 #ifdef DOCS_MULTI_CLEANUP
-THIS(curl_multi_cleanup)
+LINK("https://curl.haxx.se/libcurl/c/curl_multi_cleanup.html", curl_multi_cleanup)
 #else
-DOC(curl_multi_cleanup, curl_multi_cleanup.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_multi_cleanup.html", curl_multi_cleanup, curl_multi_cleanup)
 #endif
 
 #ifdef DOCS_MULTI_FDSET
-THIS(curl_multi_fdset)
+LINK("https://curl.haxx.se/libcurl/c/curl_multi_fdset.html", curl_multi_fdset)
 #else
-DOC(curl_multi_fdset, curl_multi_fdset.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_multi_fdset.html", curl_multi_fdset, curl_multi_fdset)
 #endif
 
 #ifdef DOCS_MULTI_INFO_READ
-THIS(curl_multi_info_read)
+LINK("https://curl.haxx.se/libcurl/c/curl_multi_info_read.html", curl_multi_info_read)
 #else
-DOC(curl_multi_info_read, curl_multi_info_read.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_multi_info_read.html", curl_multi_info_read, curl_multi_info_read)
 #endif
 
 #ifdef DOCS_MULTI_INIT
-THIS(curl_multi_init)
+LINK("https://curl.haxx.se/libcurl/c/curl_multi_init.html", curl_multi_init)
 #else
-DOC(curl_multi_init, curl_multi_init.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_multi_init.html", curl_multi_init, curl_multi_init)
 #endif
 
 #ifdef DOCS_MULTI_PERFORM
-THIS(curl_multi_perform)
+LINK("https://curl.haxx.se/libcurl/c/curl_multi_perform.html", curl_multi_perform)
 #else
-DOC(curl_multi_perform, curl_multi_perform.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_multi_perform.html", curl_multi_perform, curl_multi_perform)
 #endif
 
 #ifdef DOCS_MULTI_REMOVE_HANDLE
-THIS(curl_multi_remove_handle)
+LINK("https://curl.haxx.se/libcurl/c/curl_multi_remove_handle.html", curl_multi_remove_handle)
 #else
-DOC(curl_multi_remove_handle, curl_multi_remove_handle.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_multi_remove_handle.html", curl_multi_remove_handle, curl_multi_remove_handle)
 #endif
 
 #ifdef DOCS_MULTI_SETOPT
-THIS(curl_multi_setopt)
+LINK("https://curl.haxx.se/libcurl/c/curl_multi_setopt.html", curl_multi_setopt)
 #else
-DOC(curl_multi_setopt, curl_multi_setopt.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_multi_setopt.html", curl_multi_setopt, curl_multi_setopt)
 #endif
 
 #ifdef DOCS_MULTI_SOCKET
-THIS(curl_multi_socket)
+LINK("https://curl.haxx.se/libcurl/c/curl_multi_socket.html", curl_multi_socket)
 #else
-DOC(curl_multi_socket, curl_multi_socket.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_multi_socket.html", curl_multi_socket, curl_multi_socket)
 #endif
 
 #ifdef DOCS_MULTI_SOCKET_ACTION
-THIS(curl_multi_socket_action)
+LINK("https://curl.haxx.se/libcurl/c/curl_multi_socket_action.html", curl_multi_socket_action)
 #else
-DOC(curl_multi_socket_action, curl_multi_socket_action.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_multi_socket_action.html", curl_multi_socket_action, curl_multi_socket_action)
 #endif
 
 #ifdef DOCS_MULTI_STRERROR
-THIS(curl_multi_strerror)
+LINK("https://curl.haxx.se/libcurl/c/curl_multi_strerror.html", curl_multi_strerror)
 #else
-DOC(curl_multi_strerror, curl_multi_strerror.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_multi_strerror.html", curl_multi_strerror, curl_multi_strerror)
 #endif
 
 #ifdef DOCS_MULTI_TIMEOUT
-THIS(curl_multi_timeout)
+LINK("https://curl.haxx.se/libcurl/c/curl_multi_timeout.html", curl_multi_timeout)
 #else
-DOC(curl_multi_timeout, curl_multi_timeout.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_multi_timeout.html", curl_multi_timeout, curl_multi_timeout)
 #endif
 
 #ifdef DOCS_MULTI_WAIT
-THIS(curl_multi_wait)
+LINK("https://curl.haxx.se/libcurl/c/curl_multi_wait.html", curl_multi_wait)
 #else
-DOC(curl_multi_wait, curl_multi_wait.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_multi_wait.html", curl_multi_wait, curl_multi_wait)
 #endif
 
 #endif /* MENU_MULTI */
 
-#ifdef MENU_SHARE
-<hr>
+#ifdef MENU_SHAREx
+<br>
 #ifdef DOCS_SHARE_CLEANUP
-THIS(curl_share_cleanup)
+LINK("https://curl.haxx.se/libcurl/c/curl_share_cleanup.html", curl_share_cleanup)
 #else
-DOC(curl_share_cleanup, curl_share_cleanup.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_share_cleanup.html", curl_share_cleanup, curl_share_cleanup)
 #endif
 
 #ifdef DOCS_SHARE_INIT
-THIS(curl_share_init)
+LINK("https://curl.haxx.se/libcurl/c/curl_share_init.html", curl_share_init)
 #else
-DOC(curl_share_init, curl_share_init.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_share_init.html", curl_share_init, curl_share_init)
 #endif
 
 #ifdef DOCS_SHARE_SETOPT
-THIS(curl_share_setopt)
+LINK("https://curl.haxx.se/libcurl/c/curl_share_setopt.html", curl_share_setopt)
 #else
-DOC(curl_share_setopt, curl_share_setopt.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_share_setopt.html", curl_share_setopt, curl_share_setopt)
 #endif
 
 #ifdef DOCS_SHARE_STRERROR
-THIS(curl_share_strerror)
+LINK("https://curl.haxx.se/libcurl/c/curl_share_strerror.html", curl_share_strerror)
 #else
-DOC(curl_share_strerror, curl_share_strerror.html)
+VLINK("https://curl.haxx.se/libcurl/c/curl_share_strerror.html", curl_share_strerr, curl_share_strerr)
 #endif
 
 
