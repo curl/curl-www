@@ -1,5 +1,6 @@
 # page, first vulnerable version, last vulnerable version, name, CVE, date (YYYYMMDD)
 @vuln = (
+    "adv_20160518.html|7.21.0|7.48.0|TLS certificate check bypass with mbedTLS/PolarSSL|CVE-2016-3739|20160518",
     "adv_20160127B.html|7.20.0|7.46.0|remote file name path traversal in curl tool for Windows|CVE-2016-0754|20160127",
     "adv_20160127A.html|7.10.7|7.46.0|NTLM credentials not-checked for proxy connection re-use|CVE-2016-0755|20160127",
     "adv_20150617B.html|7.40.0|7.42.1|SMB send off unrelated memory contents|CVE-2015-3237|20150617",
