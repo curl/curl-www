@@ -1,0 +1,121 @@
+Windows DLL hijacking
+=====================
+
+Project cURL Security Advisory, May 30th 2016 -
+[Permalink](https://curl.haxx.se/docs/adv_20160530.html)
+
+VULNERABILITY
+-------------
+
+libcurl would load Windows system DLLs in a manner that may make it vulnerable
+to a DLL hijacking (aka binary planting) attack in certain configurations.
+
+libcurl has a unified code base that builds and runs on a multitude of
+different versions of Windows. To make that possible, when libcurl is built
+with SSPI or telnet is used, it dynamically loads some of the necessary system
+DLLs at run-time by calling LoadLibrary(). No path is specified for these
+DLLs.
+
+To find a DLL when no path is specified LoadLibrary() follows [DLL search
+order](https://msdn.microsoft.com/en-us/library/windows/desktop/ms682586.aspx#search_order_for_desktop_applications)
+to load it. If it is a "known DLL" no searching is done, the system copy is
+used. If it is not a "known DLL": The application directory is searched first.
+The current directory is searched next, if DLL safe search mode isn't enabled.
+The system directory is searched next.
+
+The 3 system DLLs libcurl loads dynamically are security.dll, secur32.dll and
+ws2_32.dll (a "known DLL" when installed). These DLLs may not be present on
+some versions of Windows, which is why they are loaded dynamically. Depending
+on a number of factors outlined in the DLL search order document it may be
+possible for an attacker to plant a DLL of the same name in the user's current
+directory, application directory or other directory in the DLL search order,
+thereby possibly causing it to be loaded first.
+
+**Recent versions of Windows include all 3 of those dynamically loaded system
+DLLs and also enable safe DLL search mode by default. Therefore in such a case
+ws2_32.dll could not be planted, and security.dll or secur32.dll could only be
+planted in the application directory.**
+
+To address this issue we have changed libcurl so that any system DLL it
+dynamically loads in Windows is done in the most secure way available.
+
+Note if an attacker has the ability to write new files to your application
+directory they can likely still plant DLLs to be loaded in any case, load-time
+or run-time. This is by design in Windows DLL loading (refer the the DLL
+search order doc). For example it may be possible to override DLL search paths
+by planting an app.exe.local file or possibly a fake manifest. There is
+nothing we can do to prevent against this. We advise you to guard write
+permissions on your application directory.
+
+**Also note it is may still be possible for planting attacks to be done
+against load-time DLLs used by libcurl and the curl tool. This is because
+Windows loads those DLLs and their dependencies without specifying a
+path. There is nothing we can do to fix this, it is endemic in the design of
+Windows. We advise you to guard write permissions on your application
+directory.**
+
+We are not aware of any exploit of this flaw.
+
+INFO
+----
+
+This flaw also affects the curl command line tool.
+
+The Common Vulnerabilities and Exposures (CVE) project has assigned the name
+CVE-2016-4802 to this issue.
+
+AFFECTED VERSIONS
+-----------------
+
+This flaw is relevant for all versions of curl and libcurl on Windows that
+support SSPI or Telnet.
+
+- Affected versions: libcurl 7.11.1 to and including 7.49.0
+- Not affected versions: libcurl < 7.11.1 and libcurl >= 7.49.1
+
+libcurl is used by many applications, but not always advertised as such!
+
+THE SOLUTION
+------------
+
+In version 7.49.1, libcurl loads DLLs from the Windows system directory,
+either via LoadLibraryEx() and LOAD_LIBRARY_SEARCH_SYSTEM32, where supported,
+or by explicitly finding the system directory.
+
+A [patch for CVE-2016-4802](https://curl.haxx.se/CVE-2016-4802.patch) is available.
+
+RECOMMENDATIONS
+---------------
+
+We suggest you take one of the following actions immediately, in order of
+preference:
+
+ A - Upgrade curl and libcurl to version 7.49.1
+
+ B - Apply the patch to your version and rebuild
+
+ C - Build your libcurl without SSPI and Telnet support enabled
+
+Additionally in any case you should secure write permissions to your
+application directory and if you are using the curl tool exercise judicious
+use of `--remote-header-name` (also usable as `-J`). The `-J` option when
+combined with `-O` lets the server choose the file name. A rogue server could
+send you the name of a DLL or other file that could be used in a planting
+attack.
+
+TIME LINE
+---------
+
+It was first reported to the curl project on May 7th 2016. We contacted MITRE
+on May 13.
+
+libcurl 7.49.1 was released on May 30 2016, coordinated with the publication
+of this advisory.
+
+CREDITS
+-------
+
+Reported by Guohui from Huawei WeiRan Labs. Patch by Steve Holme. Stefan
+Kanthak and Jay Satiro brought valuable feedback.
+
+Thanks a lot!
