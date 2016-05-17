@@ -47,6 +47,108 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+SUBTITLE(Fixed in 7.49.0 - May 18 2016)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="https://curl.haxx.se/bug/?i=724">schannel: Add ALPN support</a>
+ CHG SSH: support CURLINFO_FILETIME
+ CHG <a href="https://curl.haxx.se/bug/?i=677">SSH: new CURLOPT_QUOTE command "statvfs"</a>
+ CHG <a href="https://curl.haxx.se/docs/http2.html">wolfssl: Add ALPN support</a>
+ CHG <a href="https://curl.haxx.se/docs/manpage.html#--http2-prior-knowledge">http2: added --http2-prior-knowledge</a>
+ CHG <a href="https://curl.haxx.se/libcurl/c/CURLOPT_HTTP_VERSION.html">http2: added CURL_HTTP_VERSION_2_PRIOR_KNOWLEDGE</a>
+ CHG <a href="https://curl.haxx.se/libcurl/c/CURLOPT_CONNECT_TO.html">libcurl: added CURLOPT_CONNECT_TO</a>
+ CHG <a href="https://curl.haxx.se/docs/manpage.html#--connect-to">curl: added --connect-to</a>
+ CHG <a href="https://curl.haxx.se/libcurl/c/CURLOPT_TCP_FASTOPEN.html">libcurl: added CURLOPT_TCP_FASTOPEN</a>
+ CHG <a href="https://curl.haxx.se/docs/manpage.html#--tcp-fastopen">curl: added --tcp-fastopen</a>
+ CHG curl: remove support for --ftpport, -http-request and --socks
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/docs/adv_20160518.html">CVE-2016-3739: TLS certificate check bypass with mbedTLS/PolarSSL</a>
+ BGF checksrc.bat: Updated the help to be consistent with generate.bat
+ BGF checksrc.bat: Added support for scanning the tests and examples
+ BGF <a href="https://twitter.com/xtraemeat/status/712564874098917376">openssl: fix ERR_remove_thread_state() for boringssl/libressl</a>
+ BGF openssl: boringssl provides the same numbering as openssl
+ BGF <a href="https://curl.haxx.se/bug/?i=619">multi: fix "Operation timed out after" timer</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=731">url: don't use bad offset in tld_check_name to show error</a>
+ BGF sshserver.pl: use quotes for given options
+ BGF <a href="https://curl.haxx.se/bug/?i=620">Makefile.am: skip the scripts dir</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=492">curl: warn for --capath use if not supported by libcurl</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=736">http2: fix connection reuse</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=738">GSS: make Curl_gss_log_error more verbose</a>
+ BGF build-wolfssl: Allow a broader range of ciphers (Visual Studio)
+ BGF <a href="https://github.com/wolfSSL/wolfssl/issues/366">wolfssl: Use ECC supported curves extension</a>
+ BGF openssl: Fix compilation warnings
+ BGF Curl_add_buffer_send: avoid possible NULL dereference
+ BGF SOCKS5_gssapi_negotiate: don't assume little-endian ints
+ BGF <a href="https://curl.haxx.se/bug/?i=744">strerror: don't bit shift a signed integer</a>
+ BGF url: Corrected get protocol family for FTP and LDAP
+ BGF curl/mprintf.h: remove support for _MPRINTF_REPLACE
+ BGF <a href="https://curl.haxx.se/bug/?i=741">upload: missing rewind call could make libcurl hang</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=747">IMAP: check pointer before dereferencing it</a>
+ BGF build: Changed the Visual Studio projects warning level from 3 to 4
+ BGF checksrc: now stricter, wider checks, code cleaned up
+ BGF checksrc: added docs/CHECKSRC.md
+ BGF <a href="https://curl.haxx.se/bug/?i=745">curl_sasl: Fixed potential null pointer utilisation</a>
+ BGF krb5: Fixed missing client response when mutual authentication enabled
+ BGF krb5: Only process challenge when present
+ BGF krb5: Only generate a SPN when its not known
+ BGF formdata: use appropriate fopen() macros
+ BGF curl.1: -w filename_effective was introduced in 7.26.0
+ BGF <a href="https://curl.haxx.se/bug/?i=722">http2: make use of the nghttp2 error callback</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=750">http2: fix connection reuse when PING comes after last DATA</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=752">curl.1: change example for -F</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=755">HTTP2: Add a space character after the status code</a>
+ BGF curl.1: use example.com more
+ BGF mbedtls.c: changed private prefix to mbed_
+ BGF <a href="https://curl.haxx.se/bug/?i=737">mbedtls: implement and provide *_data_pending() to avoid hang</a>
+ BGF mbedtls: fix MBEDTLS_DEBUG builds
+ BGF ftp/imap/pop3/smtp: Allow the service name to be overridden
+ BGF CURLOPT_SOCKS5_GSSAPI_SERVICE: Merged with CURLOPT_PROXY_SERVICE_NAME
+ BGF build: include scripts/ in the dist
+ BGF <a href="https://curl.haxx.se/bug/?i=663">http2: Add handling stream level error</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=663">http2: Improve header parsing</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=769">makefile.vc6: use d suffix on debug object</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=770">configure: remove check for libresolve</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=771">scripts/make: use $(EXEEXT) for executables</a>
+ BGF checksrc: got rid of the whitelist files
+ BGF <a href="https://curl.haxx.se/bug/?i=657">sendf: added ability to call recv() before send() as workaround</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=765">NTLM: check for NULL pointer before dereferencing</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=763">openssl: builds with OpenSSL 1.1.0-pre5</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=766">configure: ac_cv_ -> curl_cv_ for all cached vars</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=606">winbuild: add mbedtls support</a>
+ BGF <a href="https://curl.haxx.se/mail/archive-2016-04/0021.html">curl: make --ftp-create-dirs retry on failure</a>
+ BGF PolarSSL: implement public key pinning
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-04/0084.html">multi: accidentally used resolved host name instead of proxy</a>
+ BGF CURLINFO_TLS_SESSION.3: clarify TLS library support before 7.48.0
+ BGF <a href="https://curl.haxx.se/bug/?i=655">CONNECT_ONLY: don't close connection on GSS 401/407 reponses</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=779">opts: Fix some syntax errors in example code fragments</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-04/0095.html">mbedtls: Fix session resume</a>
+ BGF test1139: verifies libcurl option man page presence
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-04/0126.html">CURLINFO_TLS_SSL_PTR.3: Clarify SSL pointer availability</a>
+ BGF curl: make --disable work as long form of -q
+ BGF curl: use --telnet-option as documented
+ BGF curl.1: document --ftp-ssl-reqd, --krb4 and --ntlm-wb
+ BGF curl: -h output lacked --proxy-header and --ntlm-wb
+ BGF <a href="https://curl.haxx.se/bug/?i=760">curl -J: make it work even without http:// scheme on URL</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=743">lib: include curl_printf.h as one of the last headers</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=675">tests: handle path properly on Msys/Cygwin</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=784">curl.1: --mail-rcpt can be used multiple times</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=785">CURLOPT_ACCEPT_ENCODING.3: clarified</a>
+ BGF docs: fixed lots of broken man page references
+ BGF <a href="https://curl.haxx.se/bug/?i=781">tls: make setting pinnedkey option fail if not supported</a>
+ BGF test1140: run nroff-scan to verify man pages
+ BGF <a href="https://curl.haxx.se/bug/?i=785">http: make sure a blank header overrides accept_decoding</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=648">connections: do not reuse non-HTTP proxies on different ports</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=794">connect: fix invalid "Network is unreachable" errors</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=789">TLS: move the ALPN/NPN enable bits to the connection</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=795">TLS: SSL_peek is not a const operation</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=797">http2: Add space between colon and header value</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=802">darwinssl: fix certificate verification disable on OS X 10.8</a>
+ BGF mprintf: Fix processing of width and prec args
+ BGF <a href="https://curl.haxx.se/bug/?i=800">ftp wildcard: segfault due to init only in multi_perform</a>
+</ul>
+
 <a name="7_48_0"></a>
 SUBTITLE(Fixed in 7.48.0 - March 23 2016)
 <p> Changes:

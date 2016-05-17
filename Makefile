@@ -1,8 +1,8 @@
 ROOT=.
 
 # the latest stable version is:
-STABLE= 7.48.0
-RELDATE = "23rd of March 2016"
+STABLE= 7.49.0
+RELDATE = "18th of May 2016"
 
 # name of the dir to tempoary unpack and build zip files in:
 TEMPDIR=tempzip
