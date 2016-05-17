@@ -2,7 +2,7 @@ TLS certificate check bypass with mbedTLS/PolarSSL
 ==================================================
 
 Project cURL Security Advisory, May 18th 2016 -
-[Permalink](https://curl.haxx.se/docs/adv_20160518A.html)
+[Permalink](https://curl.haxx.se/docs/adv_20160518.html)
 
 VULNERABILITY
 -------------
