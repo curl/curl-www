@@ -115,12 +115,10 @@ while(<STDIN>) {
         $reldate{$str}=$date;
         $vernum{$str}=$this;
 
-        my $i;
+        my $i=0;
         # Count how many versions each vuln applies to
         for(@vuln) {
             my ($id, $start, $stop)=split('\|');
-
-            #print "CHECK $start <= $this <= $stop\n";
 
             if(($this >= vernum($start)) &&
                ($this <= vernum($stop))) {
@@ -136,7 +134,7 @@ while(<STDIN>) {
 $versions = scalar(@releases);
 
 for my $str (@releases) {
-    my $date=$reldate{$str};
+    my $date = $reldate{$str};
     my $this = $vernum{$str};
 
     my @v;
@@ -144,8 +142,6 @@ for my $str (@releases) {
     my $i;
     for(@vuln) {
         my ($id, $start, $stop)=split('\|');
-
-        #print "CHECK $start <= $this <= $stop\n";
 
         if(($this >= vernum($start)) &&
            ($this <= vernum($stop))) {
