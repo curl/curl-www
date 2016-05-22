@@ -4,7 +4,6 @@ use strict;
 use latest;
 
 my %mirrors=(
-    'ftp://ftp.sunet.se/pub/www/utilities/curl/' => 'Sweden (Uppsala)',
     'http://curl.askapache.com/download/' => 'US (Indiana)',
     'http://www.execve.net/curl/' => 'Singapore',
     'https://dl.uxnr.de/mirror/curl/' => 'Germany (St. Wendel, Saarland)',
