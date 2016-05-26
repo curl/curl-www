@@ -6,8 +6,10 @@ use latest;
 my %mirrors=(
     'http://curl.askapache.com/download/' => 'US (Indiana)',
     'http://www.execve.net/curl/' => 'Singapore',
+
+    # Marc Hoersken runs:
     'https://dl.uxnr.de/mirror/curl/' => 'Germany (St. Wendel, Saarland)',
-    'http://ngcobalt13.uxnr.de/mirror/curl/' => 'Germany (St. Wendel, Saarland)',
+    'http://dl.uxnr.de/mirror/curl/' => 'Germany (St. Wendel, Saarland)',
 
     # Marty Anstey runs:
     'http://curl.mirror.anstey.ca/' => 'Canada (Vancouver)',
