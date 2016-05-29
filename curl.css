@@ -15,7 +15,7 @@ a {
 a:hover {
   text-decoration: none;
   color: #ffffff;
-  background-color: #4040ff;
+  background-color: #093754;
 }
 
 /* the curl-style blue main page titles
@@ -262,7 +262,7 @@ span.metalink {
 /* the top menu box */
 .menu {
   width: 100%;
-  background-color: #4040ff;
+  background-color: #093754;
   text-align: center;
   padding-top: .5em;
   padding-bottom: .5em;
