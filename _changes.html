@@ -47,6 +47,29 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_49_1"></a>
+SUBTITLE(Fixed in 7.49.1 - May 30 2016)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/docs/adv_20160527.html">Windows: prevent DLL hijacking, CVE-2016-4802</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-05/0113.html">dist: include manpage-scan.pl, nroff-scan.pl and CHECKSRC.md</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=812">schannel: fix compile break with MSVC XP toolset</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=813">curlbuild.h.dist: check __LP64__ as well to fix MIPS build</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=816">dist: include curl_multi_socket_all.3</a>
+ BGF http2: use HTTP/2 in the HTTP/1.1-alike response
+ BGF openssl: ERR_remove_thread_state() is deprecated in latest 1.1.0
+ BGF <a href="https://curl.haxx.se/bug/?i=819">CURLOPT_CONNECT_TO.3: user must not free the list prematurely</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=821">libcurl.m4: Avoid obsolete warning</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=818">winbuild/Makefile.vc: Fix check on SSL, MBEDTLS, WINSSL exclusivity</a>
+ BGF curl_multibyte: fix compiler error
+ BGF <a href="https://curl.haxx.se/bug/?i=817">openssl: cleanup must free compression methods (memory leak)</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-05/0196.html">mbedtls: fix includes so snprintf() works</a>
+ BGF checksrc.pl: Added variants of strcat() & strncat() to banned function list
+ BGF <a href="https://curl.haxx.se/bug/?i=824">contributors.sh: better grep pattern and show GitHub username</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=831">ssh: fix build for libssh2 before 1.2.6</a>
+ BGF <a href="https://github.com/curl/curl/issues/826">curl_share_setopt.3: Add min ver needed for ssl session lock</a>
+</ul>
+
 <a name="7_49_0"></a>
 SUBTITLE(Fixed in 7.49.0 - May 18 2016)
 <p> Changes:
