@@ -79,7 +79,7 @@ THE SOLUTION
 ------------
 
 In version 7.49.1, libcurl loads DLLs from the Windows system directory,
-either via LoadLibraryEx() and LOAD_LIBRARY_SEARCH_SYSTEM32, where supported,
+either via LoadLibraryEx() and `LOAD_LIBRARY_SEARCH_SYSTEM32`, where supported,
 or by explicitly finding the system directory.
 
 A [patch for CVE-2016-4802](https://curl.haxx.se/CVE-2016-4802.patch) is available.
