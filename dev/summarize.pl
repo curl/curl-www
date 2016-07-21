@@ -805,6 +805,10 @@ sub singlefile {
                     $debug = 1;
                 }
 
+                if($feat =~ /TrackMemory/i) {
+                    $trackmem = 1;
+                }
+
                 if($feat =~ /AsynchDNS/i) {
                     $asynch = 1;
                 }
