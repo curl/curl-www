@@ -47,6 +47,52 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_50_0"></a>
+SUBTITLE(Fixed in 7.50.0 - July 21 2016)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="https://curl.haxx.se/bug/?i=799">http: add CURLINFO_HTTP_VERSION and %{http_version}</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/bug/?i=828">memdebug: fix MSVC crash with -DMEMDEBUG_LOG_SYNC</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=836">openssl: fix build with OPENSSL_NO_COMP</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=838">mbedtls: removed unused variables</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=837">cmake: Added missing mbedTLS support</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=791">URL parser: allow URLs to use one, two or three slashes</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=842">curl: fix -q [regression]</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=844">openssl: Use correct buffer sizes for error messages</a>
+ BGF <a href="https://bugzilla.redhat.com/1340757">curl: fix SIGSEGV while parsing URL with too many globs</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=822">schannel: add CURLOPT_CERTINFO support</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=815">vtls: fix ssl session cache race condition</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=855">http: Fix HTTP/2 connection reuse [regression]</a>
+ BGF checksrc: Add LoadLibrary to the banned functions list
+ BGF <a href="https://curl.haxx.se/bug/?i=840">schannel: Disable ALPN on Windows < 8.1</a>
+ BGF configure: occasional ignorance of --enable-symbol-hiding with GCC
+ BGF http2: test17xx are the first real HTTP/2 tests
+ BGF <a href="https://curl.haxx.se/bug/?i=863">resolve: add support for IPv6 DNS64/NAT64 Networks on OS X + iOS</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=865">curl_multi_socket_action.3: rewording</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=862">CURLOPT_POSTFIELDS.3: Clarify what happens when set empty</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=874">cmake: Fix build with winldap</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=875">openssl: fix cert check with non-DNS name fields present</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=883">curl.1: mention the units for the progress meter</a>
+ BGF openssl: use more 'const' to fix build warnings with 1.1.0 branch
+ BGF <a href="https://curl.haxx.se/bug/?i=882">cmake: now using BUILD_TESTING=ON/OFF</a>
+ BGF vtls: Only call add/getsession if session id is enabled
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-06/0100.html">headers: forward declare CURL, CURLM and CURLSH as structs</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=894">configure: improve detection of CA bundle path on FreeBSD</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-06/0052.html">SFTP: set a generic error when no SFTP one exists</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-06/0136.html">curl_global_init.3: expand on the SSL and WIN32 bits purpose</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-06/0139.html">conn: don't free easy handle data in handler->disconnect</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=911">cookie.c: Fix misleading indentation</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=913">library: Fix memory leaks found during static analysis</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=914">CURLMOPT_SOCKETFUNCTION.3: fix typo</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=915">curl_global_init: moved the "IPv6 works" check here</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=907">connect: disable TFO on Linux when using SSL</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-07/0054.html">vauth: Fixed memory leak due to function returning without free</a>
+ BGF winbuild: fix embedded manifest option
+</ul>
+
 <a name="7_49_1"></a>
 SUBTITLE(Fixed in 7.49.1 - May 30 2016)
 <p> Bugfixes:
