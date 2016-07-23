@@ -10,11 +10,11 @@ VULNERABILITY
 libcurl did not check the server certificate of TLS connections done to a host
 specified as an IP address, or when explicitly asked to use SSLv3.
 
-This flaw only exists when libcurl is built to use mbedTLS or PolarSSL as TLS
-backend.
+This flaw only exists when libcurl is built to use mbedTLS or PolarSSL as the
+TLS backend.
 
 The documentation for mbedTLS and PolarSSL (wrongly) says that the API
-function *ssl_set_hostname() is used only for setting the name for the TLS
+function `ssl_set_hostname()` is used only for setting the name for the TLS
 extension SNI. The set string is however even more importantly used by the
 libraries to verify the server certificate, and if no "hostname" is set it
 will just skip the check and successfully continue with the handshake.
