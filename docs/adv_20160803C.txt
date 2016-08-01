@@ -40,27 +40,25 @@ component to do something completely different and unintended.
 
 Pseudo code for a bad application
 
-~~~
-  easy = curl_easy_init();
-  curl_easy_setopt(easy, CURLOPT_URL, "http://example.com/");
+    easy = curl_easy_init();
+    curl_easy_setopt(easy, CURLOPT_URL, "http://example.com/");
 
-  // --- start of code to confuse libcurl ---
-  multi = curl_multi_init();
-  curl_multi_add_handle(multi, easy);
-  curl_multi_perform(multi, &still_running);
-  curl_multi_cleanup(multi);
+    // --- start of code to confuse libcurl ---
+    multi = curl_multi_init();
+    curl_multi_add_handle(multi, easy);
+    curl_multi_perform(multi, &still_running);
+    curl_multi_cleanup(multi);
 
-  // --- attack code
-  allocate_fake_connection_struct()
-  fill_in_fake_connection_struct()
+    // --- attack code
+    allocate_fake_connection_struct()
+    fill_in_fake_connection_struct()
 
-  // ---- end of confusion code
+    // ---- end of confusion code
 
-  // now this is called, it will not use example.com at all even if the option
-  // above asks for it...
+    // now this is called, it will not use example.com at all even if the
+    // option above asks for it...
 
-  curl_easy_perform(easy);
-~~~
+    curl_easy_perform(easy);
 
 This flaw can also be exploited using libcurl bindings in other languages.
 
@@ -88,7 +86,8 @@ THE SOLUTION
 In version 7.50.1, curl clears the memory pointer immediately after free thus
 removing this vulnerability.
 
-A [patch for CVE-2016-5421](https://curl.haxx.se/CVE-C.patch) is available.
+A [patch for CVE-2016-5421](https://curl.haxx.se/CVE-2016-5421.patch) is
+available.
 
 RECOMMENDATIONS
 ---------------
