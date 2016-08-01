@@ -46,7 +46,7 @@ In version 7.50.1, TLS session resumption is disabled when a client certificate
 is used so that a subsequent connection attempt to the same server cannot risk
 getting a previously authenticated session resumed.
 
-A [patch for CVE-2016-5419](https://curl.haxx.se/CVE-A.patch) is
+A [patch for CVE-2016-5419](https://curl.haxx.se/CVE-2016-5419.patch) is
 available.
 
 RECOMMENDATIONS
@@ -59,7 +59,7 @@ preference:
 
  B - Apply the patch to your version and rebuild
 
- C - Set CURLOPT_SSL_SESSIONID_CACHE to 0L when using client certificates
+ C - Set `CURLOPT_SSL_SESSIONID_CACHE` to 0L when using client certificates
 
 TIME LINE
 ---------
