@@ -51,9 +51,10 @@ THE SOLUTION
 In version 7.50.1, curl will check that re-used connections have the correct
 client certificate (file name) before used.
 
-A [patch for CVE-2016-5420](https://curl.haxx.se/CVE-B.patch) is
-available. This patch relies on the adv_20160803A patch already having been
-applied.
+A [patch for CVE-2016-5420](https://curl.haxx.se/CVE-2016-5420.patch) is
+available. This patch relies on the
+[CVE-2016-5419](https://curl.haxx.se/docs/adv_20160803A.html) patch already
+having been applied.
 
 RECOMMENDATIONS
 ---------------
