@@ -1,0 +1,22 @@
+#include "_doctype.html"
+#define FLAWNAME use of connection struct after free
+
+<HTML>
+<HEAD> <TITLE>cURL - FLAWNAME</TITLE>
+#include "css.t"
+#include "manpage.t"
+</HEAD>
+
+#define CURL_DOCS
+#define CURL_URL docs/adv_20160803C.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(Docs, "/docs/", Security, "/docs/security.html",
+ FLAWNAME)
+
+#include "adv-related-box.inc"
+#include "adv_20160803C.gen"
+#include "_footer.html"
+</body> </html>
