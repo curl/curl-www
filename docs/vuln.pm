@@ -1,5 +1,8 @@
 # page, first vulnerable version, last vulnerable version, name, CVE, date (YYYYMMDD)
 @vuln = (
+    "adv_20160803A.html|7.1|7.50.0|TLS session resumption client cert bypass|CVE-2016-5419|20160803",
+    "adv_20160803B.html|7.1|7.50.0|Re-using connections with wrong client cert|CVE-2016-5420|20160803",
+    "adv_20160803C.html|7.32.0|7.50.0|use of connection struct after free|CVE-2016-5421|20160803",
     "adv_20160530.html|7.11.1|7.49.0|Windows DLL hijacking|CVE-2016-4802|20160530",
     "adv_20160518.html|7.21.0|7.48.0|TLS certificate check bypass with mbedTLS/PolarSSL|CVE-2016-3739|20160518",
     "adv_20160127B.html|7.20.0|7.46.0|remote file name path traversal in curl tool for Windows|CVE-2016-0754|20160127",
