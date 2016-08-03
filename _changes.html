@@ -47,6 +47,25 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_50_1"></a>
+SUBTITLE(Fixed in 7.50.1 - August 3 2016)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/docs/adv_20160803A.html">TLS: switch off SSL session id when client cert is used</a>
+ BGF <a href="https://curl.haxx.se/docs/adv_20160803B.html">TLS: only reuse connections with the same client cert</a>
+ BGF <a href="https://curl.haxx.se/docs/adv_20160803C.html">curl_multi_cleanup: clear connection pointer for easy handles</a>
+ BGF include the <a href="https://curl.haxx.se/libcurl/c/CURLINFO_HTTP_VERSION.html">CURLINFO_HTTP_VERSION man page</a> into the release tarball
+ BGF include the http2-server.pl script in the release tarball
+ BGF test558: fix test by stripping file paths from FD lines
+ BGF spnego: Corrected miss-placed * in Curl_auth_spnego_cleanup() declaration
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-07/0070.html">tests: Fix for http/2 feature</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=917">cmake: Fix for schannel support</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=926">curl.h: make public types void * again</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=938">win32: fix a potential memory leak in Curl_load_library</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=939">travis: fix OSX build by re-installing libtool</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-08/0001.html">mbedtls: Fix debug function name</a>
+</ul>
+
 <a name="7_50_0"></a>
 SUBTITLE(Fixed in 7.50.0 - July 21 2016)
 <p> Changes:
