@@ -10,7 +10,7 @@ VULNERABILITY
 libcurl is vulnerable to a use-after-free flaw.
 
 libcurl works with easy handles using the type 'CURL *' that are objects the
-application creates using curl_easy_init(). They are the handles that are all
+application creates using `curl_easy_init()`. They are the handles that are all
 each associated with a single transfer at a time. libcurl also has an internal
 struct that represents and holds most state that is related to a single
 connection. An easy handle can hold references to one or many such connection
@@ -22,15 +22,15 @@ those transfers in parallel.
 
 Due to a flaw, libcurl could leave a pointer to a freed connection struct
 dangling in an easy handle that was previously added to a multi handle when
-curl_multi_cleanup() is called with an easy handle still added to it. This
+`curl_multi_cleanup()` is called with an easy handle still added to it. This
 does not seem to cause any notable harm if the handle is then closed properly.
 
 However, if the easy handle would instead get used again with the easy
-interface and curl_easy_perform() to do another transfer, it would blindly use
-the connection struct pointer now pointing to freed memory.
+interface and `curl_easy_perform()` to do another transfer, it would blindly
+use the connection struct pointer now pointing to freed memory.
 
 An application could be made to allocate its own fake version of the connect
-struct, fill in some data and then have the curl_easy_perform() call do
+struct, fill in some data and then have the `curl_easy_perform()` call do
 something that clearly was not intended by the original code.
 
 For example, this could be an application using a component or library that
