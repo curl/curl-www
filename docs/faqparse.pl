@@ -145,3 +145,9 @@ while(<STDIN>) {
         }
     }
 }
+if($pre[0]) {
+    print "<pre>\n";
+    print @pre;
+    print "</pre>\n";
+    undef @pre;
+}
