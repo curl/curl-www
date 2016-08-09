@@ -54,10 +54,10 @@ runtests.html: _runtests.html $(MAINPARTS) runtests.dump
 runtests.dump: $(TESTROOT)/runtests.1
 	$(MAN2HTML) < $< > $@
 
-contribute.html: _contribute.html $(MAINPARTS) contribute.t
+contribute.html: _contribute.html $(MAINPARTS) contribute.gen
 	$(ACTION)
 
-contribute.t: $(DOCROOT)/CONTRIBUTE $(ROOT)/docs/faqparse.pl
+contribute.gen: $(DOCROOT)/CONTRIBUTE $(ROOT)/docs/faqparse.pl
 	$(ROOT)/docs/faqparse.pl < $< > $@
 
 internals.html: _internals.html $(MAINPARTS) internals.t
