@@ -28,10 +28,16 @@ LINK(/dev/builds.html, Autobuilds)
 VLINK(/dev/builds.html, Autobuilds, Automated non-stop builds)
 #endif
 
-#ifdef DEVEL_CONTRIBUTE
-LINK(/dev/contribute.html, Contribute)
+#ifdef DEVEL_CODE_STYLE
+LINK(code-style.html, Code style)
 #else
-VLINK(/dev/contribute.html, Contribute, How to Contribute)
+VLINK(code-style.html, Code style, Code style guideline)
+#endif
+
+#ifdef DEVEL_CONTRIBUTE
+LINK(contribute.html, Contribute)
+#else
+VLINK(contribute.html, Contribute, How to Contribute)
 #endif
 
 #ifdef DEVEL_INTERNALS
