@@ -16,11 +16,11 @@ index.html: _index.html $(MAINPARTS)
 thename.html: _thename.html ../docs/_menu.html $(MAINPARTS)
 	$(ACTION)
 
-licmix.html: _licmix.html ../docs/_menu.html $(MAINPARTS) licmix.t
+licmix.html: _licmix.html ../docs/_menu.html $(MAINPARTS) licmix.gen
 	$(ACTION)
 
-licmix.t: $(DOCROOT)/LICENSE-MIXING
-	$(TXT2PLAIN) < $< > $@
+licmix.gen: $(DOCROOT)/LICENSE-MIXING.md
+	$(MARKDOWN) < $< >$@
 
 full: all
 
