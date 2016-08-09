@@ -69,7 +69,7 @@ internals.t: $(DOCROOT)/INTERNALS.md
 security.html: _security.html $(MAINPARTS) security.gen
 	$(ACTION)
 
-security.gen: $(DOCROOT)/SECURITY
+security.gen: $(DOCROOT)/SECURITY.md
 	$(MARKDOWN) < $< > $@
 
 foot.html: _foot.html $(MAINPARTS)
