@@ -57,8 +57,8 @@ runtests.dump: $(TESTROOT)/runtests.1
 contribute.html: _contribute.html $(MAINPARTS) contribute.gen
 	$(ACTION)
 
-contribute.gen: $(DOCROOT)/CONTRIBUTE $(ROOT)/docs/faqparse.pl
-	$(ROOT)/docs/faqparse.pl < $< > $@
+contribute.gen: $(DOCROOT)/CONTRIBUTE.md $(ROOT)/docs/faqparse.pl
+	$(MARKDOWN) < $< > $@
 
 internals.html: _internals.html $(MAINPARTS) internals.t
 	$(ACTION)
