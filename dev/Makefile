@@ -63,7 +63,7 @@ contribute.gen: $(DOCROOT)/CONTRIBUTE.md $(ROOT)/docs/faqparse.pl
 internals.html: _internals.html $(MAINPARTS) internals.t
 	$(ACTION)
 
-internals.t: $(DOCROOT)/INTERNALS
+internals.t: $(DOCROOT)/INTERNALS.md
 	$(MARKDOWN) < $< > $@
 
 security.html: _security.html $(MAINPARTS) security.gen

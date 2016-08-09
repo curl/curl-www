@@ -81,8 +81,8 @@ bugs.t: $(DOCROOT)/BUGS faqparse.pl
 history.html: _history.html $(MAINPARTS) history.t
 	$(ACTION)
 
-history.t: $(DOCROOT)/HISTORY
-	$(MARKDOWN) < $(DOCROOT)/HISTORY > history.t
+history.t: $(DOCROOT)/HISTORY.md
+	$(MARKDOWN) < $(DOCROOT)/HISTORY.md > history.t
 
 companies.html: _companies.html $(MAINPARTS)
 	$(ACTION)
@@ -159,7 +159,7 @@ versions.t: $(DOCROOT)/VERSIONS
 sslcerts.html: _sslcerts.html $(MAINPARTS) sslcerts.t
 	$(ACTION)
 
-sslcerts.t: $(DOCROOT)/SSLCERTS
+sslcerts.t: $(DOCROOT)/SSLCERTS.md
 	$(MARKDOWN) < $< > $@
 
 copyright.html: _copyright.html $(MAINPARTS) copying.t
