@@ -9,7 +9,7 @@ Date:   Thu Sep 16 23:11:48 2010 +0200
     separators probably want that path removed for convenience.
     
     This flaw is considered a security problem, see the curl security
-    vulnerability http://curl.haxx.se/docs/adv_20101013.html
+    vulnerability https://curl.haxx.se/docs/adv_20101013.html
 
 diff --git a/src/main.c b/src/main.c
 index 8572328..95b47ea 100644

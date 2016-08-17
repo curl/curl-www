@@ -2,7 +2,7 @@
                   ==========================================
 
 Project cURL Security Advisory, February 6th 2013
-http://curl.haxx.se/docs/security.html
+https://curl.haxx.se/docs/security.html
 
 1. VULNERABILITY
 
@@ -53,7 +53,7 @@ http://curl.haxx.se/docs/security.html
 
   B - Apply this patch and rebuild libcurl
 
-      http://curl.haxx.se/curl-sasl.patch
+      https://curl.haxx.se/curl-sasl.patch
 
   C - Rebuild curl with support for vulnerable protocols IMAP, POP3 and SMTP
       disabled.   

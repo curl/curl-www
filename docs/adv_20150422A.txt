@@ -2,7 +2,7 @@ Re-using authenticated connection when unauthenticated
 ======================================================
 
 Project cURL Security Advisory, April 22nd 2015 -
-[Permalink](http://curl.haxx.se/docs/adv_20150422A.html)
+[Permalink](https://curl.haxx.se/docs/adv_20150422A.html)
 
 VULNERABILITY
 -------------
@@ -29,7 +29,7 @@ authenticated due to how NTLM works, the subsequent request could then get
 sent over the wrong connection appearing as the initial user.
 
 This problem is very similar to the previous problem known as
-[CVE-2014-0015](http://curl.haxx.se/docs/adv_20140129.html). The main
+[CVE-2014-0015](https://curl.haxx.se/docs/adv_20140129.html). The main
 difference this time is that the subsequent request that wrongly re-use a
 connection doesn't ask for NTLM authentication.
 
@@ -61,7 +61,7 @@ NTLM.
 
 A patch for this problem is available at:
 
-    http://curl.haxx.se/CVE-2015-3143.patch
+    https://curl.haxx.se/CVE-2015-3143.patch
 
 RECOMMENDATIONS
 ---------------

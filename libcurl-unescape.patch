@@ -13,7 +13,7 @@ read in the buffer by two, making the counter wrap. Continuing this, the
 function would go on reading beyond the buffer and soon writing beyond
 the allocated target buffer...
 
-Bug: http://curl.haxx.se/docs/adv_20130622.html
+Bug: https://curl.haxx.se/docs/adv_20130622.html
 Reported-by: Timo Sirainen
 ---
  lib/escape.c |    5 +++--

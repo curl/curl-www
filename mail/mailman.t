@@ -10,9 +10,9 @@
  <h1 class="pagetitle"><MM-List-Name> -- <MM-List-Description></h1>
 <div class="relatedbox">
 <b>Related:</b>
-<br><a href="http://curl.haxx.se/">curl web site</a>
-<br><a href="http://curl.haxx.se/mail/list.cgi?list=<MM-List-Name>"><MM-List-Name> archives</a>
-<br><a href="http://curl.haxx.se/mail/">Mailing Lists</a>
+<br><a href="https://curl.haxx.se/">curl web site</a>
+<br><a href="https://curl.haxx.se/mail/list.cgi?list=<MM-List-Name>"><MM-List-Name> archives</a>
+<br><a href="https://curl.haxx.se/mail/">Mailing Lists</a>
 </div>
 
 <P class="ingres"> <MM-List-Info>
@@ -20,7 +20,7 @@
 <h2>Using <MM-List-Name></h2>
 
 <p> Before you consider sending any mails to this list, take a moment and
- study our <a href="http://curl.haxx.se/mail/etiquette.html">Mailing List
+ study our <a href="https://curl.haxx.se/mail/etiquette.html">Mailing List
  Etiquette</a> guidelines.
 
 <p> To post a message to all the <MM-List-Name> list members, send email to <A

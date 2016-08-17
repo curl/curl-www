@@ -9,7 +9,7 @@ SMTP, SCP, SFTP and LDAP require a new connection when different log-in
 credentials are specified. Fixed the detection logic to include these
 other protocols.
 
-Bug: http://curl.haxx.se/docs/adv_20140326A.html
+Bug: https://curl.haxx.se/docs/adv_20140326A.html
 ---
  lib/http.c    | 2 +-
  lib/url.c     | 7 ++++---

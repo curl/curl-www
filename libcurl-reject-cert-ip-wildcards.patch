@@ -7,7 +7,7 @@ There are server certificates used with IP address in the CN field, but
 we MUST not allow wild cart certs for hostnames given as IP addresses
 only. Therefore we must make Curl_cert_hostcheck() fail such attempts.
 
-Bug: http://curl.haxx.se/docs/adv_20140326B.html
+Bug: https://curl.haxx.se/docs/adv_20140326B.html
 Reported-by: Richard Moore
 ---
  lib/hostcheck.c | 13 +++++++++++++

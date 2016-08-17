@@ -2,7 +2,7 @@ SMB send off unrelated memory contents
 ======================================
 
 Project cURL Security Advisory, June 17th 2015 -
-[Permalink](http://curl.haxx.se/docs/adv_20150617B.html)
+[Permalink](https://curl.haxx.se/docs/adv_20150617B.html)
 
 VULNERABILITY
 -------------
@@ -49,7 +49,7 @@ used.
 
 A patch for this problem that changes the default is available at:
 
-    http://curl.haxx.se/CVE-2015-3237.patch
+    https://curl.haxx.se/CVE-2015-3237.patch
 
 RECOMMENDATIONS
 ---------------

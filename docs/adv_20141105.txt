@@ -2,13 +2,13 @@ libcurl duphandle read out of bounds
 ====================================
 
 Project cURL Security Advisory, November 5th 2014 -
-[Permalink](http://curl.haxx.se/docs/adv_20141105.html)
+[Permalink](https://curl.haxx.se/docs/adv_20141105.html)
 
 VULNERABILITY
 -------------
 
 libcurl's function
-[`curl_easy_duphandle()`](http://curl.haxx.se/libcurl/c/curl_easy_duphandle.html)
+[`curl_easy_duphandle()`](https://curl.haxx.se/libcurl/c/curl_easy_duphandle.html)
 has a bug that can lead to libcurl eventually sending off sensitive data that
 was not intended for sending.
 
@@ -82,7 +82,7 @@ be binary.
 
 A patch for this problem is available at:
 
-    http://curl.haxx.se/CVE-2014-3707.patch
+    https://curl.haxx.se/CVE-2014-3707.patch
 
 RECOMMENDATIONS
 ---------------

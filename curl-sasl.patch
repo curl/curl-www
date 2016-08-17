@@ -14,7 +14,7 @@ IMAP. For applications that accept user provided URLs, it is also
 thinkable that a malicious user would feed an application with a URL to
 a server hosting code targetting this flaw.
 
-Bug: http://curl.haxx.se/docs/adv_20130206.html
+Bug: https://curl.haxx.se/docs/adv_20130206.html
 ---
  lib/curl_sasl.c |   23 ++++++-----------------
  1 file changed, 6 insertions(+), 17 deletions(-)

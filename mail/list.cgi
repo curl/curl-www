@@ -146,7 +146,7 @@ if($list) {
 
     &header("The $list archive");
 
-    &where("Mailing Lists", "http://curl.haxx.se/mail/", "$list archive");
+    &where("Mailing Lists", "https://curl.haxx.se/mail/", "$list archive");
 
     &title("The $list archive");
 

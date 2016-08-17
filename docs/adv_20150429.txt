@@ -2,7 +2,7 @@ sensitive HTTP server headers also sent to proxies
 ==================================================
 
 Project cURL Security Advisory, April 29th 2015 -
-[Permalink](http://curl.haxx.se/docs/adv_20150429.html)
+[Permalink](https://curl.haxx.se/docs/adv_20150429.html)
 
 VULNERABILITY
 -------------
@@ -70,7 +70,7 @@ option only to the destination server iff --proxy-header is also used.
 
 A patch for this problem that changes the default is available at:
 
-    http://curl.haxx.se/CVE-2015-3153.patch
+    https://curl.haxx.se/CVE-2015-3153.patch
 
 RECOMMENDATIONS
 ---------------

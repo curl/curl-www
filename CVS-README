@@ -2,7 +2,7 @@ You read this because you got all these web pages from the curl CVS repository.
 
 Have a look at this web page for some editing guidelines:
 
-        http://curl.haxx.se/web-editing.html
+        https://curl.haxx.se/web-editing.html
 
 To build actual good-looking HTML pages from these source files, you will need
 the following tools:

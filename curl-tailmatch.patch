@@ -8,7 +8,7 @@ to the 'bexample.com' (ie with a prefix to the first domain name).
 
 This is a security vulnerabilty, CVE-2013-1944.
 
-Bug: http://curl.haxx.se/docs/adv_20130412.html
+Bug: https://curl.haxx.se/docs/adv_20130412.html
 ---
  lib/cookie.c |   24 +++++++++++++++++++-----
  1 file changed, 19 insertions(+), 5 deletions(-)

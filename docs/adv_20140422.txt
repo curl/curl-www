@@ -2,7 +2,7 @@ Re-using authenticated connection when unauthenticated
 ======================================================
 
 Project cURL Security Advisory, April 22nd 2015 -
-[Permalink](http://curl.haxx.se/docs/adv_20150422.html)
+[Permalink](https://curl.haxx.se/docs/adv_20150422.html)
 
 VULNERABILITY
 -------------
@@ -57,7 +57,7 @@ unchecked TLS connections.
 
 A patch for this problem is available at:
 
-    http://curl.haxx.se/CVE-2015-XXXX.patch
+    https://curl.haxx.se/CVE-2015-XXXX.patch
 
 RECOMMENDATIONS
 ---------------

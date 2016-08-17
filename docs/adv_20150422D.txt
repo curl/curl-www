@@ -2,7 +2,7 @@ host name out of boundary memory access
 =======================================
 
 Project cURL Security Advisory, April 22nd 2015 -
-[Permalink](http://curl.haxx.se/docs/adv_20150422D.html)
+[Permalink](https://curl.haxx.se/docs/adv_20150422D.html)
 
 VULNERABILITY
 -------------
@@ -44,7 +44,7 @@ libcurl 7.42.0 better verifies the input string to the affected function.
 
 A patch for this problem is available at:
 
-    http://curl.haxx.se/CVE-2015-3144.patch
+    https://curl.haxx.se/CVE-2015-3144.patch
 
 RECOMMENDATIONS
 ---------------

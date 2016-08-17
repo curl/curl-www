@@ -16,7 +16,7 @@ a mail and instead this would delete one.
 
 This flaw is considered a security vulnerability: CVE-2012-0036
 
-Security advisory at: http://curl.haxx.se/docs/adv_20120124.html
+Security advisory at: https://curl.haxx.se/docs/adv_20120124.html
 
 Reported by: Dan Fandrich
 ---

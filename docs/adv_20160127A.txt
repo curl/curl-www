@@ -2,7 +2,7 @@ NTLM credentials not-checked for proxy connection re-use
 ========================================================
 
 Project cURL Security Advisory, January 27th 2016 -
-[Permalink](http://curl.haxx.se/docs/adv_20160127A.html)
+[Permalink](https://curl.haxx.se/docs/adv_20160127A.html)
 
 VULNERABILITY
 -------------
@@ -31,7 +31,7 @@ connection using the previously used credentials and thus it could be given to
 or prevented access from resources that it wasn't intended to.
 
 This problem is very similar to
-[CVE-2014-0015][http://curl.haxx.se/docs/adv_20140129.html], which was for
+[CVE-2014-0015][https://curl.haxx.se/docs/adv_20140129.html], which was for
 direct server connections while this is for proxy connections.
 
 We are not aware of any exploit of this flaw.
@@ -63,7 +63,7 @@ and only reuses a connection if there there is a match.
 
 A patch for this problem that changes the default is available at:
 
-    http://curl.haxx.se/CVE-2016-0755.patch
+    https://curl.haxx.se/CVE-2016-0755.patch
 
 RECOMMENDATIONS
 ---------------

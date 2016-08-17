@@ -2,7 +2,7 @@ Negotiate not treated as connection-oriented
 ============================================
 
 Project cURL Security Advisory, April 22nd 2015 -
-[Permalink](http://curl.haxx.se/docs/adv_20150422B.html)
+[Permalink](https://curl.haxx.se/docs/adv_20150422B.html)
 
 VULNERABILITY
 -------------
@@ -50,7 +50,7 @@ avoid this current problem and then continue to work on a better fix.
 
 A patch for this problem is available at:
 
-    http://curl.haxx.se/CVE-2015-3148.patch
+    https://curl.haxx.se/CVE-2015-3148.patch
 
 RECOMMENDATIONS
 ---------------

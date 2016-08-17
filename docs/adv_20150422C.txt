@@ -2,7 +2,7 @@ cookie parser out of boundary memory access
 ===========================================
 
 Project cURL Security Advisory, April 22nd 2015 -
-[Permalink](http://curl.haxx.se/docs/adv_20150422C.html)
+[Permalink](https://curl.haxx.se/docs/adv_20150422C.html)
 
 VULNERABILITY
 -------------
@@ -52,7 +52,7 @@ libcurl 7.42.0 better verifies the input string.
 
 A patch for this problem is available at:
 
-    http://curl.haxx.se/CVE-2015-3145.patch
+    https://curl.haxx.se/CVE-2015-3145.patch
 
 RECOMMENDATIONS
 ---------------

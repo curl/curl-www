@@ -2,7 +2,7 @@ URL request injection
 =====================
 
 Project cURL Security Advisory, January 8th 2015 -
-[Permalink](http://curl.haxx.se/docs/adv_20150108B.html)
+[Permalink](https://curl.haxx.se/docs/adv_20150108B.html)
 
 VULNERABILITY
 -------------
@@ -47,7 +47,7 @@ neither carriage returns nor line feeds characters.
 
 A patch for this problem is available at:
 
-    http://curl.haxx.se/CVE-2014-8150.patch
+    https://curl.haxx.se/CVE-2014-8150.patch
 
 RECOMMENDATIONS
 ---------------

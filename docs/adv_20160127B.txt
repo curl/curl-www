@@ -2,7 +2,7 @@ remote file name path traversal in curl tool for Windows
 ========================================================
 
 Project cURL Security Advisory, January 27th 2016 -
-[Permalink](http://curl.haxx.se/docs/adv_20160127B.html)
+[Permalink](https://curl.haxx.se/docs/adv_20160127B.html)
 
 VULNERABILITY
 -------------
