@@ -113,7 +113,7 @@ for(reverse sort { $log{$a} cmp $log{$b} } keys %log) {
 
         my $list=file2list($_);
         my $listdesc = listname2desc($list);
-        my $listurl="http://curl.haxx.se/mail/list.cgi?list=".$listrealname{$list};
+        my $listurl="https://curl.haxx.se/mail/list.cgi?list=".$listrealname{$list};
 
         my $infoline=sprintf("<td>%s</td><td>%s</td><td><a href=\"%s\">%s</a></td></tr>\n",
                              $stamp,
@@ -135,7 +135,7 @@ print "</table>\n";
 
 sub file2url {
     my ($file)=@_;
-    $file =~ s!^$tree!http://curl.haxx.se/mail/!;
+    $file =~ s!^$tree!https://curl.haxx.se/mail/!;
     return $file;
 }
 
