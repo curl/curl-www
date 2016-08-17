@@ -77,7 +77,7 @@ sub curlmain {
 
     &showarchs($num, @dirs);
 
-    return "http://cool.haxx.se/mailman/listinfo/curl-users";
+    return "https://cool.haxx.se/mailman/listinfo/curl-users";
 }
 
 
@@ -92,7 +92,7 @@ sub libcurl {
     &showarchs($num, @dirs);
 
     # return subscription URL
-    return "http://cool.haxx.se/mailman/listinfo/curl-library";
+    return "https://cool.haxx.se/mailman/listinfo/curl-library";
 }
 
 sub curlphp {
@@ -107,7 +107,7 @@ sub curlphp {
     &showarchs($num, @dirs);
 
     # return subscription URL
-    return "http://cool.haxx.se/mailman/listinfo/curl-and-php";
+    return "https://cool.haxx.se/mailman/listinfo/curl-and-php";
 }
 
 sub curlpython {
@@ -122,7 +122,7 @@ sub curlpython {
     &showarchs($num, @dirs);
 
     # return subscription URL
-    return "http://cool.haxx.se/mailman/listinfo/curl-and-python";
+    return "https://cool.haxx.se/mailman/listinfo/curl-and-python";
 }
 
 sub curltracker {
@@ -137,7 +137,7 @@ sub curltracker {
     &showarchs($num, @dirs);
 
     # return subscription URL
-    return "http://cool.haxx.se/mailman/listinfo/curl-tracker";
+    return "https://cool.haxx.se/mailman/listinfo/curl-tracker";
 }
 
 if($list) {
@@ -177,7 +177,7 @@ MOO
     elsif(($list eq "curl-announce") ||
           ($list eq "curl-www-commits") ||
           ($list eq "curl-commits")) {
-        $subscr = "http://cool.haxx.se/cgi-bin/mailman/listinfo/$list";
+        $subscr = "https://cool.haxx.se/cgi-bin/mailman/listinfo/$list";
         print "There is no archive of this list.";
         $none=1;
     }
