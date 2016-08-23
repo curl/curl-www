@@ -55,6 +55,12 @@ SUBTITLE(Automated downloads from here)
  but please don't do it more often than once per day. It is only updated once
  every few months anyway.
 
+<p>
+ A suitable curl command line to only download it when it has changed:
+<pre>
+  curl <a href="https://curl.haxx.se/docs/manpage.html#-O">--remote-name</a> <a href="https://curl.haxx.se/docs/manpage.html#-z">--time-cond</a> cacert.pem https://curl.haxx.se/ca/cacert.pem
+</pre>
+
 SUBTITLE(The conversion script mk-ca-bundle)
 <p>
  The <a href="mk-ca-bundle.html">mk-ca-bundle</a> tool
