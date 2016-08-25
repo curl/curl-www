@@ -12,8 +12,7 @@ NOW=$(shell date +'-D__TODAY__=%B %d, %Y')
 ACTION=@echo preprocessing $@; rm -f $@; fcpp -I.. -I. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@;
 
 all: subscribe.html mail.html etiquette.html index.html indexheader.html \
- indexfooter.html mailheader.html mailfooter.html lost.html mailman.html \
- activity.html 
+ indexfooter.html mailheader.html mailfooter.html lost.html mailman.html
 
 subscribe.html: _subscribe.html $(MAINPARTS)
 	$(ACTION)
@@ -23,9 +22,6 @@ etiquette.html: _etiquette.html $(MAINPARTS) etiquette.gen
 
 etiquette.gen: $(DOCROOT)/MAIL-ETIQUETTE $(ROOT)/docs/faqparse.pl
 	$(ROOT)/docs/faqparse.pl < $< > $@
-
-activity.html: _activity.html $(MAINPARTS)
-	$(ACTION)
 
 mail.html: _mail.html $(MAINPARTS)
 	$(ACTION)
