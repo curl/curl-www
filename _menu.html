@@ -11,34 +11,98 @@
 
 <div class="menu">
 
-#ifdef CURL_CHANGES
-LINK("https://curl.haxx.se/changes.html", Changelog)
-#else
-VLINK("https://curl.haxx.se/changes.html", Changelog, The changes done in releases)
-#endif
+<div class="dropdown">
+  <a class="dropbtn" href="download.html">Download</a>
+  <div class="dropdown-content">
+    <a href="https://github.com/curl/curl">Browse source</a>
+    <a href="changes.html">Changelog</a>
+  </div>
+</div>
 
-VLINK("https://curl.haxx.se/dev/", Development, Resources for development and developers)
+<div class="dropdown">
+  <a class="dropbtn" href="docs/">Documentation</a>
+  <div class="dropdown-content">
+    <a href="docs/projdocs.html">Project</a>
+      <small>
+      <a href="docs/knownbugs.html">&nbsp; Known bugs</a>
+      <a href="docs/todo.html">&nbsp; TODO</a>
+      </small>
+    <a href="docs/protdocs.html">Protocols</a>
+      <small>
+      <a href="docs/caextract.html">&nbsp; CA bundle</a>
+      <a href="docs/http-cookies.html">&nbsp; HTTP Cookies</a>
+      <a href="docs/http2.html">&nbsp; HTTP/2</a>
+      <a href="docs/sslcerts.html">&nbsp; SSL Certs</a>
+      </small>
+    <a href="docs/reldocs.html">Releases</a>
+      <small>
+      <a href="docs/versions.html">&nbsp; Version numbers</a>
+      </small>
+    <a href="docs/tooldocs.html">curl tool</a>
+      <small>
+      <a href="docs/manpage.html">&nbsp; man page</a>
+      <a href="docs/manual.html">&nbsp; Tutorial</a>
+      <a href="docs/httpscripting.html">&nbsp; HTTP scripting</a>
+      </small>
+    <a href="docs/whodocs.html">Who and Why</a>
+  </div>
+</div>
 
-VLINK("https://curl.haxx.se/docs/", Documentation, curl documentation)
+<div class="dropdown">
+  <a class="dropbtn" href="libcurl/">libcurl</a>
+  <div class="dropdown-content">
+    <a href="libcurl/c/">API</a>
+    <a href="libcurl/bindings.html">Bindings</a>
+    <a href="libcurl/competitors.html">Competitors</a>
+    <a href="libcurl/c/example.html">Examples</a>
+    <a href="libcurl/features.html">Features</a>
+    <a href="/mail/list.cgi?list=curl-library">Mailing list</a>
+    <a href="libcurl/relatedlibs.html">Related libs</a>
+    <a href="libcurl/using/">Using libcurl</a>
+    <a href="libcurl/c/libcurl-tutorial.html">Tutorial</a>
+    <a href="libcurl/theysay.html">Testimonials</a>
+  </div>
+</div>
 
-#ifdef CURL_DOWNLOAD
-LINK("https://curl.haxx.se/download.html", Download)
-#else
-VLINK("https://curl.haxx.se/download.html", Download, Get curl packages)
-#endif
+<div class="dropdown">
+  <a class="dropbtn" href="mail/">Mailling Lists</a>
+  <div class="dropdown-content">
+    <a href="https://cool.haxx.se/mailman/listinfo/curl-library">curl-library</a>
+    <a href="https://cool.haxx.se/mailman/listinfo/curl-users">curl-users</a>
+    <a href="https://cool.haxx.se/mailman/listinfo/curl-announce">curl-announce</a>
+    <a href="https://cool.haxx.se/mailman/listinfo/curl-commits">curl-commits</a>
 
-VLINK("https://curl.haxx.se/libcurl/", libcurl, libcurl web site section)
+    <a href="mail/etiquette.html">Etiquette</a>
+  </div>
+</div>
 
-#ifdef CURL_MAIL
-LINK(/mail/, Mailing Lists)
-#else
-VLINK("https://curl.haxx.se/mail/", Mailing Lists, Mailing List info and archives)
-#endif
+<div class="dropdown">
+  <a class="dropbtn" href="dev/">Development</a>
+  <div class="dropdown-content">
+    <a href="dev/builds.html">Autobuilds</a>
+    <a href="dev/code-style.html">Code Style</a>
+    <a href="dev/contribute.html">Contribute</a>
+    <a href="dev/internals.html">Internals</a>
+    <a href="dev/release-notes.html">Release Notes</a>
+    <a href="dev/release-procedure.html">Release Procedure</a>
+    <a href="dev/roadmap.html">Roadmap</a>
+    <a href="dev/runtests.html">Run Tests</a>
+    <a href="dev/security.html">Security</a>
+    <a href="rfc/">Specifications</a>
+    <a href="dev/testcurl.html">Test curl</a>
+  </div>
+</div>
 
-#ifdef CURL_NEWS
-LINK("https://curl.haxx.se/news.html", News)
-#else
-VLINK("https://curl.haxx.se/news.html", News, Recent events and news in the project)
+<div class="dropdown">
+  <a class="dropbtn" href="news.html">News</a>
+  <div class="dropdown-content">
+    <a href="changes.html">Changelog</a>
+    <a href="docs/releases.html">Release table</a>
+  </div>
+</div>
+
+#ifdef DEVMENU
+#include "dev/_submenu.html"
 #endif
 
 </div>
