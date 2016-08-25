@@ -23,6 +23,8 @@ AddType application/x-bzip2 .bz2
 AddType application/x-tar .tar
 php_flag engine off
 
+Header always append X-Frame-Options SAMEORIGIN
+
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
