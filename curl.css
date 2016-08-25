@@ -278,15 +278,14 @@ span.metalink {
 }
 
 .relatedbox {
-  border-color: black;
-  border-width: 1px;
-  border-style: solid;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   color: #000000;
   float: right;
   text-align: left;
-  padding: 2px 2px 2px 2px;
-  margin: 4px 4px 4px 4px;
+  padding: 4px 4px 4px 4px;
+  margin: 0px 0px 0px 0px;
   background: white;
+  font-size: 18px;
 }
 
 div.oslinks {
