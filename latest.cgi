@@ -18,7 +18,6 @@ my %host;
 my %archtype;
 my %where;
 
-my $md5sum="/usr/bin/md5sum";
 my $sha1sum="sha1sum";
 my $sha256sum="sha256sum";
 
@@ -177,9 +176,6 @@ if($latest::version{$what}) {
         $alert = 1;
         $size{$_} = $latest::size{$what};
     }
-    my $md5full=`$md5sum "$latest::dir/$archive"`;
-    my ($md5, $file)=split(" ", $md5full);
-
     my $sha1full=`$sha1sum "download/$archive"`;
     my ($sha1, $dummy)=split(" ", $sha1full);
 
@@ -192,7 +188,6 @@ if($latest::version{$what}) {
             
     "<br><b>SHA-256:</b> <tt>$sha256</tt>\n",
     "<br><b>SHA-1:</b> <tt>$sha1</tt>\n",
-    "<br><b>MD5:</b> <tt>$md5</tt>\n",
     "<br><b>Size:</b> ".$latest::size{$what}." bytes\n",
     "<br><b>Version:</b> ".$latest::version{$what}."\n";
 
@@ -350,9 +345,8 @@ The script that "verifies" mirrored files only checks if they are present or
 not, to verify that you can download them.
 <p>
 
-To be really sure and safe that the contents of the files are correct, you
-should use the SHA-1 checksum, the MD5 checksum and GPG signature to verify
-downloads yourself!
+To be really sure that the contents of the files are correct, you should use
+the checksums and GPG signature to verify downloads!
 
 MOO
 ;
