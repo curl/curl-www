@@ -55,7 +55,7 @@ https://curl.haxx.se/docs/security.html
 
   A - Upgrade to curl and libcurl 7.33.0
 
-  B - Apply (https://github.com/bagder/curl/commit/3c3622b6) and rebuild
+  B - Apply (https://github.com/curl/curl/commit/3c3622b6) and rebuild
       libcurl
 
   C - Make sure CURLOPT_SSL_VERIFYPEER is not disabled
