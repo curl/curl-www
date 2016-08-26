@@ -23,6 +23,7 @@ AddType application/x-bzip2 .bz2
 AddType application/x-tar .tar
 php_flag engine off
 
+Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 Header always append X-Frame-Options SAMEORIGIN
 
 <IfModule mod_rewrite.c>
