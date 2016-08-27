@@ -1,4 +1,9 @@
-# robots.txt for curl.haxx.se
+# stuff not meant for browsing
 Disallow: /dl/
 Disallow: /.git
 Disallow: /cvssource
+
+# no point in indexing these
+Disallow: /dev/log.cgi
+# old dev stuff ignore those:
+Disallow: /auto/
