@@ -44,6 +44,60 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_50_2"></a>
+SUBTITLE(Fixed in 7.50.2 - September 7 2016)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF mbedtls: Added support for NTLM
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-07/0057.html">SSH: fixed SFTP/SCP transfer problems</a>
+ BGF multi: make Curl_expire() work with 0 ms timeouts
+ BGF <a href="https://curl.haxx.se/bug/?i=937">mk-ca-bundle.pl: -m keeps ca cert meta data in output</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=857">TFTP: Fix upload problem with piped input</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-06/0143.html">CURLOPT_TCP_NODELAY: now enabled by default</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-08/0017.html">mbedtls: set verbose TLS debug when MBEDTLS_DEBUG is defined</a>
+ BGF http2: always wait for readable socket
+ BGF cmake: Enable win32 large file support by default
+ BGF cmake: Enable win32 threaded resolver by default
+ BGF <a href="https://curl.haxx.se/bug/?i=949">winbuild: Avoid setting redundant CFLAGS to compile commands</a>
+ BGF curl.h: make CURL_NO_OLDIES define CURL_STRICTER
+ BGF docs: make more markdown files use .md extension
+ BGF docs: CONTRIBUTE and LICENSE-MIXING were converted to markdown
+ BGF <a href="https://curl.haxx.se/bug/?i=952">winbuild: Allow changing C compiler via environment variable CC</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-08/0076.html">rtsp: accept any RTSP session id</a>
+ BGF HTTP: retry failed HEAD requests on reused connections too
+ BGF <a href="https://curl.haxx.se/bug/?i=956">configure: add zlib search with pkg-config</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=959">openssl: accept subjectAltName iPAddress if no dNSName match</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=962">MANUAL: Remove invalid link to LDAP documentation</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=944">socks: improved connection procedure</a>
+ BGF proxy: reject attempts to use unsupported proxy schemes
+ BGF <a href="https://curl.haxx.se/bug/?i=954">proxy: bring back use of "Proxy-Connection:"</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-08/0122.html">curl: allow "pkcs11:" prefix for client certificates</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=970">spnego_sspi: fix memory leak in case *outlen is zero</a>
+ BGF SOCKS: improve verbose output of SOCKS5 connection sequence
+ BGF SOCKS: display the hostname returned by the SOCKS5 proxy server
+ BGF http/sasl: Query authentication mechanism supported by SSPI before using
+ BGF <a href="https://curl.haxx.se/bug/?i=718">sasl: Don't use GSSAPI authentication when domain name not specified</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=820">win: Basic support for Universal Windows Platform apps</a>
+ BGF nss: fix incorrect use of a previously loaded certificate from file
+ BGF <a href="https://bugzilla.mozilla.org/1297397">nss: work around race condition in PK11_FindSlotByName()</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=978">ftp: fix wrong poll on the secondary socket</a>
+ BGF openssl: build warning-free with 1.1.0 (again)
+ BGF <a href="https://curl.haxx.se/bug/?i=899">HTTP: stop parsing headers when switching to unknown protocols</a>
+ BGF test219: Add http as a required feature
+ BGF TLS: random file/egd doesn't have to match for conn reuse
+ BGF <a href="https://curl.haxx.se/bug/?i=983">schannel: Disable ALPN for Wine since it is causing problems</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=941">http2: make sure stream errors don't needlessly close the connection</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=986">http2: return CURLE_HTTP2_STREAM for unexpected stream close</a>
+ BGF darwinssl: --cainfo is intended for backward compatibility only
+ BGF <a href="https://curl.haxx.se/bug/?i=971">speed caps: not based on average speeds anymore</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=958">configure: make the cpp -P detection not clobber CPPFLAGS</a>
+ BGF http2: use named define instead of magic constant in read callback
+ BGF http2: skip the content-length parsing, detect unknown size
+ BGF <a href="https://curl.haxx.se/bug/?i=982">http2: return EOF when done uploading without known size</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=993">darwinssl: test for errSecSuccess in PKCS12 import rather than noErr</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=995">openssl: fix CURLINFO_SSL_VERIFYRESULT</a>
+</ul>
+    
 <a name="7_50_1"></a>
 SUBTITLE(Fixed in 7.50.1 - August 3 2016)
 <p> Bugfixes:
