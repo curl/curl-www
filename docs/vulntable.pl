@@ -2,7 +2,7 @@
 
 # un-preprocessed _changes-file as input
 
-require "vuln.pm";
+require "./vuln.pm";
 
 sub vernum {
     my ($ver)=@_;
