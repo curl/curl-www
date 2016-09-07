@@ -23,6 +23,7 @@ VLINK(/docs/, Docs Overview, Documentation Overview)
   <a class="dropbtn" href="https://curl.haxx.se/docs/projdocs.html">Project</a>
   <div class="dropdown-content">
     <a href="https://curl.haxx.se/docs/bugs.html">Bug Report</a>
+    <a href="https://curl.haxx.se/docs/code-of-conduct.html">Code of conduct</a>
     <a href="https://curl.haxx.se/docs/libs.html">Dependencies</a>
     <a href="https://curl.haxx.se/donation.html">Donate</a>
     <a href="https://curl.haxx.se/docs/features.html">Features</a>
@@ -89,6 +90,12 @@ VLINK(/docs/, Docs Overview, Documentation main page)
 LINK(/docs/bugs.html, Bug Report)
 #else
 VLINK(/docs/bugs.html, Bug Report, How to report a problem)
+#endif
+
+#ifdef DOCS_CODE_OF_CONDUCT
+LINK(/docs/code-of-conduct.html, Code of conduct)
+#else
+VLINK(/docs/code-of-conduct.html, Code of conduct, We expect people to behave)
 #endif
 #endif
 
