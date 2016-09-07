@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-require "vuln.pm";
+require "./vuln.pm";
 require "../date.pm";
 
 print "<table>\n";
