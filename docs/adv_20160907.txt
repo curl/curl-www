@@ -40,7 +40,7 @@ THE SOLUTION
 ------------
 
 A fix for this flaw is included in libcurl 7.50.2 via
-[commit curl-7_50_2~32](https://github.com/curl/curl/commit/curl-7_50_2~32).
+[commit `curl-7_50_2~32`](https://github.com/curl/curl/commit/curl-7_50_2~32).
 For older releases of libcurl there is a
 [patch for CVE-2016-7141](https://curl.haxx.se/CVE-2016-7141.patch).
 
