@@ -1,5 +1,6 @@
 # page, first vulnerable version, last vulnerable version, name, CVE, date (YYYYMMDD)
 @vuln = (
+    "adv_20160914.html|7.11.1|7.50.2|curl escape and unescape integer overflows|CVE-2016-7167|20160914",
     "adv_20160907.html|7.19.6|7.50.1|Incorrect reuse of client certificates|CVE-2016-7141|20160907",
     "adv_20160803A.html|7.1|7.50.0|TLS session resumption client cert bypass|CVE-2016-5419|20160803",
     "adv_20160803B.html|7.1|7.50.0|Re-using connections with wrong client cert|CVE-2016-5420|20160803",

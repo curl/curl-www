@@ -30,7 +30,7 @@ PAGES = index.html manpage.html faq.html sslcerts.html	      \
  protdocs.html whodocs.html adv_20150617A.html adv_20150617B.html \
  adv_20160127A.html adv_20160127B.html adv_20160518.html adv_20160530.html \
  adv_20160803A.html adv_20160803B.html adv_20160803C.html adv_20160907.html \
- code-of-conduct.html
+ code-of-conduct.html adv_20160914.html
 
 all: $(PAGES)
 	test -f vuln-make.gen && make -f vuln-make.gen
@@ -419,6 +419,11 @@ adv_20160803C.gen: adv_20160803C.txt
 adv_20160907.html: _adv_20160907.html adv_20160907.gen $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 adv_20160907.gen: adv_20160907.txt
+	$(MARKDOWN) < $< > $@
+
+adv_20160914.html: _adv_20160914.html adv_20160914.gen $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_20160914.gen: adv_20160914.txt
 	$(MARKDOWN) < $< > $@
 
 adv_20001013.html: _adv_20001013.html $(MAINPARTS) $(ADVBOX)
