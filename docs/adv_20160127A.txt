@@ -31,7 +31,7 @@ connection using the previously used credentials and thus it could be given to
 or prevented access from resources that it wasn't intended to.
 
 This problem is very similar to
-[CVE-2014-0015][https://curl.haxx.se/docs/adv_20140129.html], which was for
+[CVE-2014-0015](https://curl.haxx.se/docs/adv_20140129.html), which was for
 direct server connections while this is for proxy connections.
 
 We are not aware of any exploit of this flaw.
