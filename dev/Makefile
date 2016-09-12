@@ -38,7 +38,7 @@ roadmap.gen: $(SRCROOT)/docs/ROADMAP.md
 code-style.html: _code-style.html code-style.gen $(MAINPARTS)
 	$(ACTION)
 code-style.gen: $(SRCROOT)/docs/CODE_STYLE.md
-	$(MARKDOWN) < $< | sed -e 's:*:\&#42;:g' -e 's:#undef:\&#35;undef:g' \
+	$(GITHUB) $< | sed -e 's:*:\&#42;:g' -e 's:#undef:\&#35;undef:g' \
 	-e 's:#define:\&#35;define:g' \
 	-e 's:#else:\&#35;else:g' \
 	-e 's:#endif:\&#35;endif:g' \
