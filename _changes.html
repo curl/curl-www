@@ -44,6 +44,23 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_50_3"></a>
+SUBTITLE(Fixed in 7.50.3 - September 14 2016)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/docs/adv_20160914.html">CVE-2016-7167: escape and unescape integer overflows</a>
+ BGF mk-ca-bundle.pl: use SHA256 instead of SHA1
+ BGF checksrc: detect strtok() use
+ BGF <a href="https://curl.haxx.se/bug/?i=975">errors: new alias CURLE_WEIRD_SERVER_REPLY</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=996">http2: support > 64bit sized uploads</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1005">openssl: fix bad memory free (regression)</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=981">CMake: hide private library symbols</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=973">http: refuse to pass on response body with NO_NODY was set</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=841">cmake: fix curl-config --static-libs</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1004">mbedtls: switch off NTLM in build if md4 isn't available</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1007">curl: --create-dirs on windows groks both forward and backward slashes</a>
+</ul>
+    
 <a name="7_50_2"></a>
 SUBTITLE(Fixed in 7.50.2 - September 7 2016)
 <p> Bugfixes:
