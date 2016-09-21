@@ -144,7 +144,7 @@ MOO
                'curl-library',
                'curl-and-php',
                'curl-and-python',
-               'curl-tracker');
+               'curl-meet');
 
     my $n;
     for(@archs) {
