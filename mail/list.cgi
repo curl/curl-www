@@ -12,15 +12,9 @@ my $full = $req->param('full');
 print "Content-Type: text/html\n\n";
 
 sub showarchs {
-    my ($num, @dirs) = @_;
+    my (@dirs) = @_;
 
     my %years;
-
-    if($num > 0) {
-        while(scalar(@dirs) > $num) {
-            shift @dirs;
-        }
-    }
 
     for(@dirs) {
         if($_ =~ /(\d\d\d\d)-(\d\d)/) {
@@ -67,77 +61,17 @@ sub showarchs {
 
 }
 
-sub curlmain {
-    my ($num)=@_;
+sub listarchives {
+    my ($prefix, $listname)=@_;
 
     my $some_dir=".";
     opendir(DIR, $some_dir) || die "can't opendir $some_dir: $!";
-    my @dirs = sort {$a cmp $b} grep { /^archive-/ && -d "$some_dir/$_" } readdir(DIR);
+    my @dirs = sort {$a cmp $b} grep { /^$prefix-/ && -d "$some_dir/$_" } readdir(DIR);
     closedir DIR;
 
-    &showarchs($num, @dirs);
+    &showarchs(@dirs);
 
-    return "https://cool.haxx.se/mailman/listinfo/curl-users";
-}
-
-
-sub libcurl {
-    my ($num)=@_;
-
-    my $some_dir=".";
-    opendir(DIR, $some_dir) || die "can't opendir $some_dir: $!";
-    my @dirs = sort {$a cmp $b} grep { /^lib-/ && -d "$some_dir/$_" } readdir(DIR);
-    closedir DIR;
-
-    &showarchs($num, @dirs);
-
-    # return subscription URL
-    return "https://cool.haxx.se/mailman/listinfo/curl-library";
-}
-
-sub curlphp {
-
-    my ($num)=@_;
-
-    my $some_dir=".";
-    opendir(DIR, $some_dir) || die "can't opendir $some_dir: $!";
-    my @dirs = sort {$a cmp $b} grep { /^curlphp-/ && -d "$some_dir/$_" } readdir(DIR);
-    closedir DIR;
-
-    &showarchs($num, @dirs);
-
-    # return subscription URL
-    return "https://cool.haxx.se/mailman/listinfo/curl-and-php";
-}
-
-sub curlpython {
-
-    my ($num)=@_;
-
-    my $some_dir=".";
-    opendir(DIR, $some_dir) || die "can't opendir $some_dir: $!";
-    my @dirs = sort {$a cmp $b} grep { /^curlpython-/ && -d "$some_dir/$_" } readdir(DIR);
-    closedir DIR;
-
-    &showarchs($num, @dirs);
-
-    # return subscription URL
-    return "https://cool.haxx.se/mailman/listinfo/curl-and-python";
-}
-
-sub curltracker {
-
-    my ($num)=@_;
-
-    my $some_dir=".";
-    opendir(DIR, $some_dir) || die "can't opendir $some_dir: $!";
-    my @dirs = sort {$a cmp $b} grep { /^tracker-/ && -d "$some_dir/$_" } readdir(DIR);
-    closedir DIR;
-
-    &showarchs($num, @dirs);
-
-    # return subscription URL
-    return "https://cool.haxx.se/mailman/listinfo/curl-tracker";
+    return "https://cool.haxx.se/mailman/listinfo/$listname";
 }
 
 if($list) {
@@ -160,19 +94,22 @@ MOO
     ;
 
     if($list eq "curl-users") {
-        $subscr = curlmain();
+        $subscr = listarchives("archive", "curl-users");
     }
     elsif($list eq "curl-library") {
-        $subscr = libcurl();
+        $subscr = listarchives("lib", "curl-library");
     }
     elsif($list eq "curl-and-php") {
-        $subscr = curlphp();
+        $subscr = listarchives("curlphp", "curl-and-php");
     }
     elsif($list eq "curl-and-python") {
-        $subscr = curlpython();
+        $subscr = listarchives("curlpython", "curl-and-python");
     }
     elsif($list eq "curl-tracker") {
-        $subscr = curltracker();
+        $subscr = listarchives("tracker", "curl-tracker");
+    }
+    elsif($list eq "curl-meet") {
+        $subscr = listarchives("meet", "curl-meet");
     }
     elsif(($list eq "curl-announce") ||
           ($list eq "curl-www-commits") ||
