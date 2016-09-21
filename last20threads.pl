@@ -11,6 +11,7 @@ my %listnames = ('archive' => 'curl-users',
                  'curlphp' => 'PHP/CURL',
                  'curlpython' => 'pycurl',
                  'tracker' => 'Bugs',
+                 'meet' => 'meet',
                  'curlpp' => 'curlpp',
                  'curlppdev' => 'curlpp-devel');
 
@@ -19,6 +20,7 @@ my %listrealname = ('archive' => 'curl-users',
                     'curlphp' => 'curl-and-php',
                     'curlpython' => 'curl-and-python',
                     'tracker' => 'curl-tracker',
+                    'meet' => 'curl-meet',
                     'curlpp' => 'curlpp',
                     'curlppdev' => 'curlpp-devel');
 
