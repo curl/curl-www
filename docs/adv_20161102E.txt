@@ -1,0 +1,75 @@
+double-free in krb5 code
+========================
+
+Project cURL Security Advisory, November 2, 2016 -
+[Permalink](https://curl.haxx.se/docs/adv_20161102E.html)
+
+VULNERABILITY
+-------------
+
+In curl's implementation of the Kerberos authentication mechanism, the
+function `read_data()` in security.c is used to fill the necessary krb5
+structures. When reading one of the length fields from the socket, it fails to
+ensure that the length parameter passed to realloc() is not set to 0.
+
+This would lead to realloc() getting called with a zero size and when doing so
+realloc() returns NULL *and* frees the memory - in contrary to normal
+realloc() fails where it only returns NULL - causing libcurl to free the
+memory *again* in the error path.
+
+This flaw could be triggered by a malicious or just otherwise ill-behaving
+server.
+
+We are not aware of any exploit of this flaw.
+
+INFO
+----
+
+The Common Vulnerabilities and Exposures (CVE) project has assigned the name
+CVE-2016-XXXX to this issue.
+
+AFFECTED VERSIONS
+-----------------
+
+This flaw exists in the following curl versions
+
+- Affected versions: curl 7.3 to and including 7.50.3
+- Not affected versions: curl < 7.3 and curl >= 7.51.0
+
+libcurl is used by many applications, but not always advertised as such!
+
+THE SOLUTION
+------------
+
+In version 7.51.0, the function reading data will consider reading a zero size
+to be an error and bail out.
+
+A [patch for CVE-2016-XXXX](https://curl.haxx.se/s3c/E.patch) is available.
+
+RECOMMENDATIONS
+---------------
+
+We suggest you take one of the following actions immediately, in order of
+preference:
+
+ A - Upgrade curl and libcurl to version 7.51.0
+
+ B - Apply the patch to your version and rebuild
+
+ C - Do not use KRB5
+
+TIME LINE
+---------
+
+It was first reported to the curl project on September 23 by Cure53.
+
+We contacted distros@openwall on October 19.
+
+curl 7.51.0 was released on November 2 2016, coordinated with the publication
+of this advisory.
+
+CREDITS
+-------
+
+This vulnerability was found during a Secure Open Source audit performed by
+Cure53.
