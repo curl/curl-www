@@ -10,14 +10,13 @@ MAINPARTS += _menu.html
 MAN2HTML = roffit --bare
 ADVBOX = adv-related-box.inc
 
-PAGES = index.html manpage.html faq.html sslcerts.html	      \
- companies.html features.html bugs.html install.html \
- copyright.html thanks.html todo.html		      \
- httpscripting.html comparison-table.html relatedtools.html   \
- versions.html history.html knownbugs.html manual.html caextract.html	      \
- programs.html security.html libs.html http-cookies.html adv_20051013.html    \
+PAGES = index.html manpage.html faq.html sslcerts.html companies.html	      \
+ features.html bugs.html install.html copyright.html thanks.html todo.html    \
+ httpscripting.html comparison-table.html relatedtools.html versions.html     \
+ history.html knownbugs.html manual.html caextract.html programs.html	      \
+ security.html libs.html http-cookies.html adv_20051013.html		      \
  adv_20051207.html adv_20060320.html vulnerabilities.html adv_20070710.html   \
- releases.html adv_20090303.html releases.csv adv_20090812.html \
+ releases.html adv_20090303.html releases.csv adv_20090812.html		      \
  adv_20100209.html adv_20101013.html adv_20110623.html ssl-compared.html      \
  adv_20120124.html adv_20120124B.html mk-ca-bundle.html adv_20130206.html     \
  adv_20130412.html adv_20130622.html adv_20131115.html adv_20131217.html      \
@@ -26,19 +25,24 @@ PAGES = index.html manpage.html faq.html sslcerts.html	      \
  adv_20140910B.html adv_20141105.html adv_20150108A.html adv_20150108B.html   \
  adv_20150422A.html adv_20150422B.html adv_20001013.html adv_20030803.html    \
  adv_20050221A.html adv_20050221B.html adv_20150422C.html adv_20150422D.html  \
- adv_20150429.html http2.html tooldocs.html projdocs.html reldocs.html \
- protdocs.html whodocs.html adv_20150617A.html adv_20150617B.html \
- adv_20160127A.html adv_20160127B.html adv_20160518.html adv_20160530.html \
- adv_20160803A.html adv_20160803B.html adv_20160803C.html adv_20160907.html \
- code-of-conduct.html adv_20160914.html
+ adv_20150429.html http2.html tooldocs.html projdocs.html reldocs.html	      \
+ protdocs.html whodocs.html adv_20150617A.html adv_20150617B.html	      \
+ adv_20160127A.html adv_20160127B.html adv_20160518.html adv_20160530.html    \
+ adv_20160803A.html adv_20160803B.html adv_20160803C.html adv_20160907.html   \
+ code-of-conduct.html adv_20160914.html adv_20161102A.html adv_20161102B.html \
+ adv_20161102C.html adv_20161102D.html adv_20161102E.html adv_20161102F.html  \
+ adv_20161102G.html adv_20161102H.html adv_20161102I.html adv_20161102J.html  \
+ adv_20161102K.html
 
-all: $(PAGES)
-	test -f vuln-make.gen && make -f vuln-make.gen
+all: $(PAGES) vuln-make.gen
+	-test -f vuln-make.gen && make -f vuln-make.gen
 	@echo done 
 
 clean:
 	-test -f vuln-make.gen && make -f vuln-make.gen clean
 	rm -f $(PAGES) *.gen *.t
+
+vuln-make.gen: vuln.gen
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
@@ -429,6 +433,61 @@ adv_20050221A.html: _adv_20050221A.html $(MAINPARTS) $(ADVBOX)
 
 adv_20050221B.html: _adv_20050221B.html $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
+
+adv_20161102A.html: _adv_20161102A.html adv_20161102A.gen $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_20161102A.gen: adv_20161102A.txt
+	$(MARKDOWN) < $< > $@
+
+adv_20161102B.html: _adv_20161102B.html adv_20161102B.gen $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_20161102B.gen: adv_20161102B.txt
+	$(MARKDOWN) < $< > $@
+
+adv_20161102C.html: _adv_20161102C.html adv_20161102C.gen $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_20161102C.gen: adv_20161102C.txt
+	$(MARKDOWN) < $< > $@
+
+adv_20161102D.html: _adv_20161102D.html adv_20161102D.gen $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_20161102D.gen: adv_20161102D.txt
+	$(MARKDOWN) < $< > $@
+
+adv_20161102E.html: _adv_20161102E.html adv_20161102E.gen $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_20161102E.gen: adv_20161102E.txt
+	$(MARKDOWN) < $< > $@
+
+adv_20161102F.html: _adv_20161102F.html adv_20161102F.gen $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_20161102F.gen: adv_20161102F.txt
+	$(MARKDOWN) < $< > $@
+
+adv_20161102G.html: _adv_20161102G.html adv_20161102G.gen $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_20161102G.gen: adv_20161102G.txt
+	$(MARKDOWN) < $< > $@
+
+adv_20161102H.html: _adv_20161102H.html adv_20161102H.gen $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_20161102H.gen: adv_20161102H.txt
+	$(MARKDOWN) < $< > $@
+
+adv_20161102I.html: _adv_20161102I.html adv_20161102I.gen $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_20161102I.gen: adv_20161102I.txt
+	$(MARKDOWN) < $< > $@
+
+adv_20161102J.html: _adv_20161102J.html adv_20161102J.gen $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_20161102J.gen: adv_20161102J.txt
+	$(MARKDOWN) < $< > $@
+
+adv_20161102K.html: _adv_20161102K.html adv_20161102K.gen $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_20161102K.gen: adv_20161102K.txt
+	$(MARKDOWN) < $< > $@
 
 vulnerabilities.html: _vulnerabilities.html vuln.gen $(MAINPARTS)
 	$(ACTION)

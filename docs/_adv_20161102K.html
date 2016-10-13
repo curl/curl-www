@@ -1,0 +1,22 @@
+#include "_doctype.html"
+#define FLAWNAME IDNA 2003 makes curl use wrong 
+
+<HTML>
+<HEAD> <TITLE>cURL - FLAWNAME</TITLE>
+#include "css.t"
+#include "manpage.t"
+</HEAD>
+
+#define CURL_DOCS
+#define CURL_URL docs/adv_20161102K.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(Docs, "/docs/", Security, "/docs/security.html",
+ FLAWNAME)
+
+#include "adv-related-box.inc"
+#include "adv_20161102K.gen"
+#include "_footer.html"
+</body> </html>

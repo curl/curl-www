@@ -1,0 +1,22 @@
+#include "_doctype.html"
+#define FLAWNAME curl_getdate read out of bounds
+
+<HTML>
+<HEAD> <TITLE>cURL - FLAWNAME</TITLE>
+#include "css.t"
+#include "manpage.t"
+</HEAD>
+
+#define CURL_DOCS
+#define CURL_URL docs/adv_20161102G.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(Docs, "/docs/", Security, "/docs/security.html",
+ FLAWNAME)
+
+#include "adv-related-box.inc"
+#include "adv_20161102G.gen"
+#include "_footer.html"
+</body> </html>
