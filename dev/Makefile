@@ -10,7 +10,7 @@ include $(ROOT)/mainparts.mk
 include $(ROOT)/setup.mk
 
 MAINPARTS += _menu.html
-
+MKRELNOTES = ./mk-release-notes.pl
 MAN2HTML = roffit --bare
 
 PAGES = foot.html head.html howto.html summary.html cvshistory.html	\
@@ -90,10 +90,10 @@ sourceactivity.html: _sourceactivity.html $(MAINPARTS) cvs.t
 missing.html: _missing.html $(MAINPARTS)
 	$(ACTION)
 
-release-notes.txt: $(SRCROOT)/RELEASE-NOTES
-	$(TXT2PLAIN) < $< > $@
+release-notes.gen: $(SRCROOT)/RELEASE-NOTES $(MKRELNOTES)
+	$(MKRELNOTES) < $< > $@
 
-release-notes.html: _release-notes.html release-notes.txt $(MAINPARTS)
+release-notes.html: _release-notes.html release-notes.gen $(MAINPARTS)
 	$(ACTION)
 
 release-procedure.gen: $(DOCROOT)/RELEASE-PROCEDURE
