@@ -21,7 +21,7 @@ MAINPARTS += _menu.html
 all: index.html mirrors.html libs.html help.html	      \
  download.html changes.html about.html support.html newslog.html news.html    \
  head.html foot.html oldnews.html info web-editing.html donation.html \
- search.html sponsors.html source.html
+ search.html sponsors.html source.html 404.html
 	cd docs && make
 	cd libcurl && make
 	cd mail && make
@@ -31,6 +31,9 @@ all: index.html mirrors.html libs.html help.html	      \
 	cd dev && make
 
 head.html: _head.html $(MAINPARTS)
+	$(ACTION)
+
+404.html: _404.html $(MAINPARTS)
 	$(ACTION)
 
 donation.html: _donation.html docs/_menu.html $(MAINPARTS)
