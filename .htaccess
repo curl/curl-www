@@ -1,4 +1,4 @@
-
+ErrorDocument 404 /404.html
 RedirectPermanent /devel.html http://curl.haxx.se/dev/
 RedirectPermanent /auto/ http://curl.haxx.se/dev/
 RedirectPermanent /docs/internals.html http://curl.haxx.se/dev/internals.html
