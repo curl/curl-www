@@ -18,7 +18,6 @@ sub subtitle {
     print "<h2>".CGI::escapeHTML($title)."</h2>";
 }
 
-# WHERE2(Feedback, "/feedback/", Bug Report)
 sub where {
     my @args = @_;
     my $name;

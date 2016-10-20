@@ -18,10 +18,10 @@ include setup.mk
 
 MAINPARTS += _menu.html
 
-all: index.html feedback.html mirrors.html libs.html help.html	      \
+all: index.html mirrors.html libs.html help.html	      \
  download.html changes.html about.html support.html newslog.html news.html    \
- head.html foot.html oldnews.html info web-editing.html ad.html donation.html \
- search.html sflogo.html sponsors.html source.html
+ head.html foot.html oldnews.html info web-editing.html donation.html \
+ search.html sponsors.html source.html
 	cd docs && make
 	cd libcurl && make
 	cd mail && make
@@ -112,19 +112,10 @@ about.html: _about.html docs/_menu.html $(MAINPARTS)
 sponsors.html: _sponsors.html docs/_menu.html $(MAINPARTS)
 	$(ACTION)
 
-feedback.html: _feedback.html $(MAINPARTS)
-	$(ACTION)
-
 libs.html: _libs.html $(MAINPARTS)
 	$(ACTION)
 
 support.html: _support.html $(MAINPARTS)
-	$(ACTION)
-
-ad.html: _ad.html ad.t
-	$(ACTION)
-
-sflogo.html : sflogo.t
 	$(ACTION)
 
 full: all
