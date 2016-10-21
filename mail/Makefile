@@ -5,7 +5,7 @@ DOCROOT=$(SRCROOT)/docs
 CURL= $(ROOT)
 
 MAINPARTS= $(ROOT)/_doctype.html $(CURL)/_menu.html $(CURL)/_footer.html \
- $(CURL)/setup.t $(CURL)/pic.t $(CURL)/where.t $(ROOT)/css.t
+ $(CURL)/setup.t $(CURL)/where.t $(ROOT)/css.t
 
 NOW=$(shell date +'-D__TODAY__=%B %d, %Y')
 ACTION=@echo preprocessing $@; rm -f $@; fcpp -I.. -I. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@;
