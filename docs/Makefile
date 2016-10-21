@@ -11,9 +11,9 @@ MAN2HTML = roffit --bare
 ADVBOX = adv-related-box.inc
 
 PAGES = index.html manpage.html faq.html sslcerts.html	      \
- companies.html press.html features.html bugs.html install.html \
- copyright.html thanks.html y2k.html todo.html		      \
- httpscripting.html comparison-table.html relatedtools.html osdistribs.html   \
+ companies.html features.html bugs.html install.html \
+ copyright.html thanks.html todo.html		      \
+ httpscripting.html comparison-table.html relatedtools.html   \
  versions.html history.html knownbugs.html manual.html caextract.html	      \
  programs.html security.html libs.html http-cookies.html adv_20051013.html    \
  adv_20051207.html adv_20060320.html vulnerabilities.html adv_20070710.html   \
@@ -92,9 +92,6 @@ coc.gen: $(DOCROOT)/CODE_OF_CONDUCT.md
 	$(MARKDOWN) < $< > $@
 
 companies.html: _companies.html $(MAINPARTS)
-	$(ACTION)
-
-press.html: _press.html $(MAINPARTS)
 	$(ACTION)
 
 survey/survey2014.html: survey/_survey2014.html $(MAINPARTS)
@@ -181,12 +178,6 @@ ssl-compared.html: _ssl-compared.html $(MAINPARTS)
 	$(ACTION)
 
 relatedtools.html: _relatedtools.html $(MAINPARTS)
-	$(ACTION)
-
-osdistribs.html: _osdistribs.html $(MAINPARTS)
-	$(ACTION)
-
-y2k.html: _y2k.html $(MAINPARTS)
 	$(ACTION)
 
 caextract.html: _caextract.html $(MAINPARTS) ../ca/pemlist.gen
