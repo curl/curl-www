@@ -139,8 +139,8 @@ features.gen: $(DOCROOT)/FEATURES
 install.html: _install.html $(MAINPARTS) install.gen
 	$(ACTION)
 
-install.gen: $(DOCROOT)/INSTALL
-	$(TXT2PLAIN) < $< > $@
+install.gen: $(DOCROOT)/INSTALL.md
+	$(MARKDOWN) < $< > $@
 
 manual.html: _manual.html $(MAINPARTS) manual.gen
 	$(ACTION)
@@ -386,6 +386,7 @@ adv_20160127B.gen: adv_20160127B.txt
 adv_20160518.html: _adv_20160518.html adv_20160518.gen $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 adv_20160518.gen: adv_20160518.txt
+	$(MARKDOWN) < $< > $@
 
 adv_20160530.html: _adv_20160530.html adv_20160530.gen $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
