@@ -38,7 +38,7 @@ all: $(PAGES)
 
 clean:
 	test -f vuln-make.gen && make -f vuln-make.gen clean
-	rm -f $(PAGES)
+	rm -f $(PAGES) *.gen *.t
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
