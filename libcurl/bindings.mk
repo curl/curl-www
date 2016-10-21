@@ -1,1 +1,0 @@
-MAINPARTS += ../_menu.html
