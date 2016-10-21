@@ -21,9 +21,6 @@ PAGES = foot.html head.html howto.html summary.html cvshistory.html	\
 
 all: $(PAGES)
 
-bugbox.t:
-	perl rssbugs.pl > bugbox.t
-
 index.html: _index.html bugbox.t $(MAINPARTS)
 	$(ACTION)
 
