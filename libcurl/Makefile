@@ -7,9 +7,11 @@ include $(ROOT)/setup.mk
 MAINPARTS += _menu.html
 TXT2HTML= txt2html --extract --hrule 10
 
-all: index.html mail.html competitors.html comparison-table.html	  \
+PAGES= index.html mail.html competitors.html comparison-table.html	  \
      relatedlibs.html features.html wininet.html libwww.html libsoup.html \
      theysay.html bindings.html abi.html neon.html
+
+all: $(PAGES)
 	cd c; make
 
 index.html: _index.html $(MAINPARTS) bindingbox.t
@@ -66,3 +68,6 @@ theysay.html: _theysay.html $(MAINPARTS)
 bindings.html: _bindings.html $(MAINPARTS) bindingbox.t
 	$(ACTION)
 
+clean:
+	rm -f $(PAGES) *.gen
+	cd c && make clean

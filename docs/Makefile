@@ -37,7 +37,7 @@ all: $(PAGES)
 	@echo done 
 
 clean:
-	test -f vuln-make.gen && make -f vuln-make.gen clean
+	-test -f vuln-make.gen && make -f vuln-make.gen clean
 	rm -f $(PAGES) *.gen *.t
 
 index.html: _index.html $(MAINPARTS)
@@ -452,8 +452,4 @@ releases.csv: $(ROOT)/_changes.html ./relinfo.pl vuln.pm
 	./relinfo.pl --raw < $< > $@
 
 
-#archive/index.html: mail
-#	./fixit
-
-full: all
 

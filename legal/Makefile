@@ -8,7 +8,9 @@ include $(ROOT)/setup.mk
 
 MAINPARTS += _menu.html
 
-all: index.html thename.html licmix.html
+PAGES=index.html thename.html licmix.html
+
+all: $(PAGES)
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
@@ -22,5 +24,5 @@ licmix.html: _licmix.html ../docs/_menu.html $(MAINPARTS) licmix.gen
 licmix.gen: $(DOCROOT)/LICENSE-MIXING.md
 	$(MARKDOWN) < $< >$@
 
-full: all
-
+clean:
+	rm -f $(PAGES) *.gen

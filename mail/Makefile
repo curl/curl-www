@@ -10,8 +10,10 @@ MAINPARTS= $(ROOT)/_doctype.html $(CURL)/_menu.html $(CURL)/_footer.html \
 NOW=$(shell date +'-D__TODAY__=%B %d, %Y')
 ACTION=@echo preprocessing $@; rm -f $@; fcpp -I.. -I. -WWW -Uunix -P -H -C -V -LL "$(NOW)" $< $@;
 
-all: subscribe.html mail.html etiquette.html index.html indexheader.html \
+PAGES = subscribe.html mail.html etiquette.html index.html indexheader.html \
  indexfooter.html mailheader.html mailfooter.html lost.html mailman.html
+
+all: $(PAGES)
 
 subscribe.html: _subscribe.html $(MAINPARTS)
 	$(ACTION)
@@ -47,5 +49,5 @@ lost.html: _lost.html $(MAINPARTS)
 mailman.html: _mailman.html $(MAINPARTS)
 	$(ACTION)
 
-full: all
-
+clean:
+	rm -f $(PAGES)

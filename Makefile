@@ -18,10 +18,12 @@ include setup.mk
 
 MAINPARTS += _menu.html
 
-all: index.html mirrors.html libs.html help.html	      \
- download.html changes.html about.html support.html newslog.html news.html    \
- head.html foot.html oldnews.html info web-editing.html donation.html \
- search.html sponsors.html source.html 404.html
+PAGES= index.html mirrors.html libs.html help.html download.html changes.html \
+ about.html support.html newslog.html news.html head.html foot.html	      \
+ oldnews.html info web-editing.html donation.html search.html sponsors.html   \
+ source.html 404.html
+
+all: $(PAGES)
 	cd docs && make
 	cd libcurl && make
 	cd mail && make
@@ -129,4 +131,11 @@ release:
 	@echo done
 
 clean:
-	rm -f *~
+	rm -f *~ $(PAGES)
+	cd docs && make clean
+	cd libcurl && make clean
+	cd mail && make clean
+	cd mirror && make clean
+	cd legal && make clean
+	cd rfc && make clean
+	cd dev && make clean
