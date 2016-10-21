@@ -22,7 +22,7 @@ TITLE(Using cURL to automate HTTP jobs)
 <br><a href="faq.html">FAQ</a>
 </div>
 
-#include "httpscript.t"
+#include "httpscript.gen"
 
 #include "_footer.html"
 

@@ -61,29 +61,29 @@ whodocs.html: _whodocs.html $(MAINPARTS)
 libs.html: _libs.html $(MAINPARTS)
 	$(ACTION)
 
-manpage.html: _manpage.html $(MAINPARTS) mandump.t $(ROOT)/manpage.t
+manpage.html: _manpage.html $(MAINPARTS) mandump.gen $(ROOT)/manpage.t
 	$(ACTION)
 
-mandump.t: $(DOCROOT)/curl.1
-	 $(MAN2HTML) < $(DOCROOT)/curl.1 > mandump.t
+mandump.gen: $(DOCROOT)/curl.1
+	 $(MAN2HTML) < $(DOCROOT)/curl.1 > mandump.gen
 
-mk-ca-bundle.html: _mk-ca-bundle.html $(MAINPARTS) mkdump.t $(ROOT)/manpage.t
+mk-ca-bundle.html: _mk-ca-bundle.html $(MAINPARTS) mkdump.gen $(ROOT)/manpage.t
 	$(ACTION)
 
-mkdump.t: $(DOCROOT)/mk-ca-bundle.1
-	 $(MAN2HTML) < $(DOCROOT)/mk-ca-bundle.1 > mkdump.t
+mkdump.gen: $(DOCROOT)/mk-ca-bundle.1
+	 $(MAN2HTML) < $(DOCROOT)/mk-ca-bundle.1 > mkdump.gen
 
-bugs.html: _bugs.html $(MAINPARTS) bugs.t
+bugs.html: _bugs.html $(MAINPARTS) bugs.gen
 	$(ACTION)
 
-bugs.t: $(DOCROOT)/BUGS faqparse.pl
+bugs.gen: $(DOCROOT)/BUGS faqparse.pl
 	./faqparse.pl < $< > $@
 
-history.html: _history.html $(MAINPARTS) history.t
+history.html: _history.html $(MAINPARTS) history.gen
 	$(ACTION)
 
-history.t: $(DOCROOT)/HISTORY.md
-	$(MARKDOWN) < $(DOCROOT)/HISTORY.md > history.t
+history.gen: $(DOCROOT)/HISTORY.md
+	$(MARKDOWN) < $(DOCROOT)/HISTORY.md > $@
 
 code-of-conduct.html: _code-of-conduct.html $(MAINPARTS) coc.gen
 	$(ACTION)
@@ -106,69 +106,69 @@ thanksnum.gen: $(DOCROOT)/THANKS
 thanks.gen: $(DOCROOT)/THANKS thanks.pl
 	egrep '^[^ $$]' $< | ./thanks.pl > $@
 
-faq.html: _faq.shtml $(MAINPARTS) faq.t
+faq.html: _faq.shtml $(MAINPARTS) faq.gen
 	$(ACTION)
 
-faq.t: $(DOCROOT)/FAQ faqparse.pl
+faq.gen: $(DOCROOT)/FAQ faqparse.pl
 	./faqparse.pl < $< > $@
 
-http-cookies.html: _http-cookies.html $(MAINPARTS) http-cookies.t
+http-cookies.html: _http-cookies.html $(MAINPARTS) http-cookies.gen
 	$(ACTION)
 
-http-cookies.t: $(DOCROOT)/HTTP-COOKIES.md faqparse.pl
+http-cookies.gen: $(DOCROOT)/HTTP-COOKIES.md faqparse.pl
 	$(MARKDOWN) < $< >$@
 
-knownbugs.html: _knownbugs.html $(MAINPARTS) knownbugs.t
+knownbugs.html: _knownbugs.html $(MAINPARTS) knownbugs.gen
 	$(ACTION)
 
-knownbugs.t: $(DOCROOT)/KNOWN_BUGS faqparse.pl
+knownbugs.gen: $(DOCROOT)/KNOWN_BUGS faqparse.pl
 	./faqparse.pl < $< | sed -e 's:*:\&#42;:g' -e 's:#undef:\&#35;undef:g'> $@
 
-httpscript.t: $(DOCROOT)/TheArtOfHttpScripting
+httpscript.gen: $(DOCROOT)/TheArtOfHttpScripting
 	./faqparse.pl < $< > $@
 
-httpscripting.html: _httpscripting.shtml $(MAINPARTS) httpscript.t
+httpscripting.html: _httpscripting.shtml $(MAINPARTS) httpscript.gen
 	$(ACTION)
 
-features.html: _features.html $(MAINPARTS) features.t
+features.html: _features.html $(MAINPARTS) features.gen
 	$(ACTION)
 
-features.t: $(DOCROOT)/FEATURES
+features.gen: $(DOCROOT)/FEATURES
 	$(TXT2PLAIN) < $<  > $@
 
-install.html: _install.html $(MAINPARTS) install.t
+install.html: _install.html $(MAINPARTS) install.gen
 	$(ACTION)
 
-install.t: $(DOCROOT)/INSTALL
+install.gen: $(DOCROOT)/INSTALL
 	$(TXT2PLAIN) < $< > $@
 
-manual.html: _manual.html $(MAINPARTS) manual.t
+manual.html: _manual.html $(MAINPARTS) manual.gen
 	$(ACTION)
 
-manual.t: $(DOCROOT)/MANUAL
+manual.gen: $(DOCROOT)/MANUAL
 	$(TXT2PLAIN) < $< >$@
 
-todo.html: _todo.html $(MAINPARTS) todo.t
+todo.html: _todo.html $(MAINPARTS) todo.gen
 	$(ACTION)
 
-todo.t: $(DOCROOT)/TODO faqparse.pl
+todo.gen: $(DOCROOT)/TODO faqparse.pl
 	./faqparse.pl < $< | sed -e 's:*:\&#42;:g' -e 's:#undef:\&#35;undef:g'> $@
 
-versions.html: _versions.html $(MAINPARTS) versions.t
+versions.html: _versions.html $(MAINPARTS) versions.gen
 	$(ACTION)
 
-versions.t: $(DOCROOT)/VERSIONS
+versions.gen: $(DOCROOT)/VERSIONS
 	$(MARKDOWN) < $< >$@
 
-sslcerts.html: _sslcerts.html $(MAINPARTS) sslcerts.t
+sslcerts.html: _sslcerts.html $(MAINPARTS) sslcerts.gen
 	$(ACTION)
 
-sslcerts.t: $(DOCROOT)/SSLCERTS.md
+sslcerts.gen: $(DOCROOT)/SSLCERTS.md
 	$(MARKDOWN) < $< > $@
 
-copyright.html: _copyright.html $(MAINPARTS) copying.t
+copyright.html: _copyright.html $(MAINPARTS) copying.gen
 	$(ACTION)
-copying.t: $(SRCROOT)/COPYING
+copying.gen: $(SRCROOT)/COPYING
 	$(MARKDOWN) < $< > $@
 
 comparison-table.html: _comparison-table.html $(MAINPARTS)  $(ROOT)/release.t
@@ -429,10 +429,10 @@ adv_20050221A.html: _adv_20050221A.html $(MAINPARTS) $(ADVBOX)
 adv_20050221B.html: _adv_20050221B.html $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 
-vulnerabilities.html: _vulnerabilities.html vuln.txt $(MAINPARTS)
+vulnerabilities.html: _vulnerabilities.html vuln.gen $(MAINPARTS)
 	$(ACTION)
 
-vuln.txt: $(ROOT)/_changes.html ./vulntable.pl vuln.pm _singlevuln.templ
+vuln.gen: $(ROOT)/_changes.html ./vulntable.pl vuln.pm _singlevuln.templ
 	./vulntable.pl < $< > $@
 
 http2.gen: $(SRCROOT)/docs/HTTP2.md
@@ -441,10 +441,10 @@ http2.gen: $(SRCROOT)/docs/HTTP2.md
 http2.html: _http2.html http2.gen $(MAINPARTS)
 	$(ACTION)
 
-releases.html: _releases.html rel.txt $(MAINPARTS)
+releases.html: _releases.html rel.gen $(MAINPARTS)
 	$(ACTION)
 
-rel.txt: $(ROOT)/_changes.html ./relinfo.pl vuln.pm
+rel.gen: $(ROOT)/_changes.html ./relinfo.pl vuln.pm
 	./relinfo.pl < $< > $@
 
 releases.csv: $(ROOT)/_changes.html ./relinfo.pl vuln.pm

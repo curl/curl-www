@@ -22,7 +22,7 @@ TITLE(FAQ -- Frequently Asked Questions)
 <br><a href="httpscripting.html">HTTP Scripting</a>
 </div>
 
-#include "faq.t"
+#include "faq.gen"
 
 #include "_footer.html"
 
