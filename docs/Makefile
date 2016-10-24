@@ -122,7 +122,7 @@ knownbugs.html: _knownbugs.html $(MAINPARTS) knownbugs.gen
 	$(ACTION)
 
 knownbugs.gen: $(DOCROOT)/KNOWN_BUGS faqparse.pl
-	./faqparse.pl < $< | sed -e 's:*:\&#42;:g' -e 's:#undef:\&#35;undef:g'> $@
+	./faqparse.pl < $< > $@
 
 httpscript.gen: $(DOCROOT)/TheArtOfHttpScripting
 	./faqparse.pl < $< > $@
@@ -152,7 +152,7 @@ todo.html: _todo.html $(MAINPARTS) todo.gen
 	$(ACTION)
 
 todo.gen: $(DOCROOT)/TODO faqparse.pl
-	./faqparse.pl < $< | sed -e 's:*:\&#42;:g' -e 's:#undef:\&#35;undef:g'> $@
+	./faqparse.pl < $< > $@
 
 versions.html: _versions.html $(MAINPARTS) versions.gen
 	$(ACTION)
