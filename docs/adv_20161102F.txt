@@ -31,7 +31,7 @@ INFO
 ----
 
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
-CVE-2016-XXXX to this issue.
+CVE-2016-8620 to this issue.
 
 AFFECTED VERSIONS
 -----------------
@@ -49,7 +49,8 @@ THE SOLUTION
 In version 7.51.0, the function reading data will consider reading a zero size
 to be an error and bail out.
 
-A [patch for CVE-2016-XXXX](https://curl.haxx.se/s3c/F.patch) is available.
+A [patch for CVE-2016-8620](https://curl.haxx.se/CVE-2016-8620.patch) is
+available.
 
 RECOMMENDATIONS
 ---------------

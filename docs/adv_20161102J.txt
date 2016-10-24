@@ -10,7 +10,7 @@ VULNERABILITY
 curl doesn't parse the authority component of the URL correctly when the host
 name part ends with a '#' character, and could instead be tricked into
 connecting to a different host. This may have security implications if you for
-example use an URL parser that follows the RFC to check for allowed domains
+example use a URL parser that follows the RFC to check for allowed domains
 before using curl to request them.
 
 Passing in `http://example.com#@evil.com/x.txt` would wrongly make curl send a
@@ -25,7 +25,7 @@ INFO
 ----
 
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
-CVE-2016-XXXX to this issue.
+CVE-2016-8624 to this issue.
 
 AFFECTED VERSIONS
 -----------------
@@ -42,7 +42,8 @@ THE SOLUTION
 
 In version 7.51.0, the parser function is fixed.
 
-A [patch for CVE-2016-XXXX](https://curl.haxx.se/s3c/J.patch) is available.
+A [patch for CVE-2016-8624](https://curl.haxx.se/CVE-2016-8624.patch) is
+available.
 
 RECOMMENDATIONS
 ---------------

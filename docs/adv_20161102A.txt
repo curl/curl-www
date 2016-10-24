@@ -26,7 +26,7 @@ INFO
 ----
 
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
-CVE-2016-XXXX to this issue.
+CVE-2016-8615 to this issue.
 
 AFFECTED VERSIONS
 -----------------
@@ -44,7 +44,7 @@ THE SOLUTION
 In version 7.51.0, these functions will deny negative string lengths from
 being used.
 
-A [patch for CVE-2016-XXXX](https://curl.haxx.se/s3c/A.patch) is
+A [patch for CVE-2016-8615](https://curl.haxx.se/CVE-2016-8615.patch) is
 available.
 
 RECOMMENDATIONS

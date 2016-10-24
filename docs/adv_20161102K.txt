@@ -34,7 +34,7 @@ INFO
 ----
 
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
-CVE-2016-XXXX to this issue.
+CVE-2016-8625 to this issue.
 
 AFFECTED VERSIONS
 -----------------
@@ -51,7 +51,8 @@ THE SOLUTION
 
 In version 7.51.0, the parser function is fixed.
 
-A [patch for CVE-2016-XXXX](https://curl.haxx.se/s3c/K.patch) is available.
+A [patch for CVE-2016-8625](https://curl.haxx.se/CVE-2016-8625.patch) is
+available.
 
 RECOMMENDATIONS
 ---------------

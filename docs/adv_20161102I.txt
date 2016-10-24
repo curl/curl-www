@@ -25,7 +25,7 @@ INFO
 ----
 
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
-CVE-2016-XXXX to this issue.
+CVE-2016-8623 to this issue.
 
 AFFECTED VERSIONS
 -----------------
@@ -42,7 +42,8 @@ THE SOLUTION
 
 In version 7.51.0, the function returning the cookies make deep copies.
 
-A [patch for CVE-2016-XXXX](https://curl.haxx.se/s3c/I.patch) is available.
+A [patch for CVE-2016-8623](https://curl.haxx.se/CVE-2016-8623.patch) is
+available.
 
 RECOMMENDATIONS
 ---------------
