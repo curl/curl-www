@@ -100,6 +100,15 @@ while(<STDIN>) {
             s/&/&amp;/g;
             s/\</&lt;/g;
             s/\>/&gt;/g;
+            s/\#include/\&#35;include/g;
+            s/\#undef/\&#35;undef/g;
+            s/\#ifdef/\&#35;ifdef/g;
+            s/\#ifndef/\&#35;ifndef/g;
+            s/\#if/\&#35;if/g;
+            s/\#else/\&#35;else/g;
+            s/\#endif/\&#35;endif/g;
+            s/\/\*/\/\&#42;/g;
+            s/\*\//\&#42;\//g;
             # Emphasize _underlined_ words
             s/\b_([[:alnum:]]+)_\b/<em>$1<\/em>/g;
 
