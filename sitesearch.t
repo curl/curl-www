@@ -1,10 +1,12 @@
-<div id="cse" style="width: 100%;">Loading</div>
-<script src="https://www.google.com/jsapi" type="text/javascript"></script>
-<script type="text/javascript">
-  google.load('search', '1', {language : 'en', style : google.loader.themes.DEFAULT});
-  google.setOnLoadCallback(function() {
-    var customSearchControl = new google.search.CustomSearchControl('011822591736674932359:hjyomzjfopc');
-    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-    customSearchControl.draw('cse');
-  }, true);
+<script style="a:hover {background-color: #ffffff;}" >
+  (function() {
+    var cx = '011822591736674932359:hjyomzjfopc';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
 </script>
+<gcse:search></gcse:search>
