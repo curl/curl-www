@@ -1,11 +1,10 @@
 ROOT = ..
-CVSROOT= ../cvssource
+SRCROOT= ../cvssource
 
 include $(ROOT)/mainparts.mk
 include $(ROOT)/setup.mk
 
 MAINPARTS += _menu.html
-TXT2HTML= txt2html --extract --hrule 10
 
 PAGES= index.html mail.html competitors.html comparison-table.html	  \
      relatedlibs.html features.html wininet.html libwww.html libsoup.html \
@@ -14,13 +13,13 @@ PAGES= index.html mail.html competitors.html comparison-table.html	  \
 all: $(PAGES)
 	cd c; make
 
-index.html: _index.html $(MAINPARTS) bindingbox.t
+index.html: _index.html $(MAINPARTS)
 	$(ACTION)
 
 abi.html: _abi.html abi.gen $(MAINPARTS)
 	$(ACTION)
 
-abi.gen: $(CVSROOT)/docs/libcurl/ABI
+abi.gen: $(SRCROOT)/docs/libcurl/ABI
 	$(MARKDOWN) < $< > $@
 
 features.html: _features.html $(MAINPARTS)
@@ -65,8 +64,10 @@ neon.html: _neon.html $(MAINPARTS)
 theysay.html: _theysay.html $(MAINPARTS)
 	$(ACTION)
 
-bindings.html: _bindings.html $(MAINPARTS) bindingbox.t
+bindings.html: _bindings.html $(MAINPARTS) bindings.gen
 	$(ACTION)
+bindings.gen: $(SRCROOT)/docs/BINDINGS.md
+	$(MARKDOWN) < $< > $@
 
 clean:
 	rm -f $(PAGES) *.gen
