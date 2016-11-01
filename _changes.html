@@ -44,6 +44,77 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_51_0"></a>
+SUBTITLE(Fixed in 7.51.0 - November 2 2016)
+<p> Changes:
+<ul class="changes">
+ CHG nss: additional cipher suites are now accepted by CURLOPT_SSL_CIPHER_LIST
+ CHG <a href="https://curl.haxx.se/libcurl/c/CURLOPT_KEEP_SENDING_ON_ERROR.html">New option: CURLOPT_KEEP_SENDING_ON_ERROR</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/docs/adv_20161102A.html">CVE-2016-8615: cookie injection for other servers</a>
+ BGF <a href="https://curl.haxx.se/docs/adv_20161102B.html">CVE-2016-8616: case insensitive password comparison</a>
+ BGF <a href="https://curl.haxx.se/docs/adv_20161102C.html">CVE-2016-8617: OOB write via unchecked multiplication</a>
+ BGF <a href="https://curl.haxx.se/docs/adv_20161102D.html">CVE-2016-8618: double-free in curl_maprintf</a>
+ BGF <a href="https://curl.haxx.se/docs/adv_20161102E.html">CVE-2016-8619: double-free in krb5 code</a>
+ BGF <a href="https://curl.haxx.se/docs/adv_20161102F.html">CVE-2016-8620: glob parser write/read out of bounds</a>
+ BGF <a href="https://curl.haxx.se/docs/adv_20161102G.html">CVE-2016-8621: curl_getdate read out of bounds</a>
+ BGF <a href="https://curl.haxx.se/docs/adv_20161102H.html">CVE-2016-8622: URL unescape heap overflow via integer truncation</a>
+ BGF <a href="https://curl.haxx.se/docs/adv_20161102I.html">CVE-2016-8623: Use-after-free via shared cookies</a>
+ BGF <a href="https://curl.haxx.se/docs/adv_20161102J.html">CVE-2016-8624: invalid URL parsing with '#'</a>
+ BGF <a href="https://curl.haxx.se/docs/adv_20161102K.html">CVE-2016-8625: IDNA 2003 makes curl use wrong host</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=964">openssl: fix per-thread memory leak using 1.0.1 or 1.0.2</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1013">http: accept "Transfer-Encoding: chunked" for HTTP/2 as well</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1019">LICENSE-MIXING.md: update with mbedTLS dual licensing</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1011">examples/imap-append: Set size of data to be uploaded</a>
+ BGF test2048: fix url
+ BGF darwinssl: disable RC4 cipher-suite support
+ BGF CURLOPT_PINNEDPUBLICKEY.3: fix the AVAILABILITY formatting
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-09/0045.html">openssl: don’t call CRYTPO_cleanup_all_ex_data</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1029">libressl: fix version output</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1017">easy: Reset all statistical session info in curl_easy_reset</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=997">curl_global_cleanup.3: don't unload the lib with sub threads running</a>
+ BGF dist: add CurlSymbolHiding.cmake to the tarball
+ BGF <a href="https://curl.haxx.se/bug/?i=1031">docs: Remove that --proto is just used for initial retrieval</a>
+ BGF configure: Fixed builds with libssh2 in a custom location
+ BGF curl.1: --trace supports % for sending to stderr!
+ BGF <a href="https://curl.haxx.se/bug/?i=1050">cookies: same domain handling changed to match browser behavior</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1053">formpost: trying to attach a directory no longer crashes</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1056">CURLOPT_DEBUGFUNCTION.3: fixed unused argument warning</a>
+ BGF formpost: avoid silent snprintf() truncation
+ BGF ftp: fix Curl_ftpsendf
+ BGF mprintf: return error on too many arguments
+ BGF <a href="https://curl.haxx.se/bug/?i=1052">smb: properly check incoming packet boundaries</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1049">GIT-INFO: remove the Mac 10.1-specific details</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1066">resolve: add error message when resolving using SIGALRM</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=922">cmake: add nghttp2 support</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-10/0040.html">dist: remove PDF and HTML converted docs from the releases</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1057">configure: disable poll() in macOS builds</a>
+ BGF vtls: only re-use session-ids using the same scheme
+ BGF <a href="https://curl.haxx.se/bug/?i=1075">pipelining: skip to-be-closed connections when pipelining</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1048">win: fix Universal Windows Platform build</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1042">curl: do not set CURLOPT_SSLENGINE to DEFAULT automatically</a>
+ BGF maketgz: make it support "only" generating version info
+ BGF Curl_socket_check: add extra check to avoid integer overflow
+ BGF gopher: properly return error for poll failures
+ BGF curl: set INTERLEAVEDATA too
+ BGF polarssl: clear thread array at init
+ BGF polarssl: fix unaligned SSL session-id lock
+ BGF polarssl: reduce #ifdef madness with a macro
+ BGF <a href="https://curl.haxx.se/bug/?i=739">curl_multi_add_handle: set timeouts in closure handles</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1069">configure: set min version flags for builds on mac</a>
+ BGF INSTALL: converted to markdown => INSTALL.md
+ BGF <a href="https://curl.haxx.se/bug/?i=1083">curl_multi_remove_handle: fix a double-free</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-10/0011.html">multi: fix inifinte loop in curl_multi_cleanup()</a>
+ BGF <a href="https://bugzilla.redhat.com/1388162">nss: fix tight loop in non-blocking TLS handhsake over proxy</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1012">mk-ca-bundle: Change URL retrieval to HTTPS-only by default</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1087">mbedtls: stop using deprecated include file</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1088">docs: fix req->data in multi-uv example</a>
+ BGF configure: Fix test syntax for monotonic clock_gettime
+ BGF <a href="https://curl.haxx.se/bug/?i=1059">CURLMOPT_MAX_PIPELINE_LENGTH.3: Clarify it's not for HTTP/2</a>
+</ul>
+    
 <a name="7_50_3"></a>
 SUBTITLE(Fixed in 7.50.3 - September 14 2016)
 <p> Bugfixes:
