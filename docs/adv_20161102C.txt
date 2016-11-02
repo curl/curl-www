@@ -46,8 +46,7 @@ libcurl is used by many applications, but not always advertised as such!
 THE SOLUTION
 ------------
 
-In version 7.51.0, these functions will deny negative string lengths from
-being used.
+In version 7.51.0, the overflow is avoided.
 
 A [patch for CVE-2016-8617](https://curl.haxx.se/CVE-2016-8617.patch) is
 available.

@@ -36,8 +36,7 @@ libcurl is used by many applications, but not always advertised as such!
 THE SOLUTION
 ------------
 
-In version 7.51.0, these functions will deny negative string lengths from
-being used.
+In version 7.51.0, the comparisons are done case sensitively.
 
 A [patch for CVE-2016-8616](https://curl.haxx.se/CVE-2016-8616.patch) is
 available.
