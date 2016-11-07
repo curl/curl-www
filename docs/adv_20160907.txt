@@ -1,7 +1,7 @@
 Incorrect reuse of client certificates 
 ======================================
 
-Project cURL Security Advisory, September 7th 2016 -
+Project curl Security Advisory, September 7th 2016 -
 [Permalink](https://curl.haxx.se/docs/adv_20160907.html)
 
 VULNERABILITY

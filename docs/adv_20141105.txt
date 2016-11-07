@@ -1,7 +1,7 @@
 libcurl duphandle read out of bounds
 ====================================
 
-Project cURL Security Advisory, November 5th 2014 -
+Project curl Security Advisory, November 5th 2014 -
 [Permalink](https://curl.haxx.se/docs/adv_20141105.html)
 
 VULNERABILITY

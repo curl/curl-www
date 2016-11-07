@@ -1,7 +1,7 @@
 SMB send off unrelated memory contents
 ======================================
 
-Project cURL Security Advisory, June 17th 2015 -
+Project curl Security Advisory, June 17th 2015 -
 [Permalink](https://curl.haxx.se/docs/adv_20150617B.html)
 
 VULNERABILITY

@@ -20,7 +20,7 @@ Enter bug report number:
 <input type="submit" name="view">
 </form>
 
-The number is one of those in the <a href="https://sourceforge.net/bugs/?group_id=976">sourceforge bug tracker</a> for the cURL project.
+The number is one of those in the <a href="https://sourceforge.net/bugs/?group_id=976">sourceforge bug tracker</a> for the curl project.
 MOO
 
 ;

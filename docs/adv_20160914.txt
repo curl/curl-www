@@ -1,7 +1,7 @@
 curl escape and unescape integer overflows
 ==========================================
 
-Project cURL Security Advisory, September 14, 2016 -
+Project curl Security Advisory, September 14, 2016 -
 [Permalink](https://curl.haxx.se/docs/adv_20160914.html)
 
 VULNERABILITY

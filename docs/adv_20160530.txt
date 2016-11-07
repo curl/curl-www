@@ -1,7 +1,7 @@
 Windows DLL hijacking
 =====================
 
-Project cURL Security Advisory, May 30th 2016 -
+Project curl Security Advisory, May 30th 2016 -
 [Permalink](https://curl.haxx.se/docs/adv_20160530.html)
 
 VULNERABILITY

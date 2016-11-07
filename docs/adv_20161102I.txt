@@ -1,7 +1,7 @@
 Use-after-free via shared cookies
 =================================
 
-Project cURL Security Advisory, November 2, 2016 -
+Project curl Security Advisory, November 2, 2016 -
 [Permalink](https://curl.haxx.se/docs/adv_20161102I.html)
 
 VULNERABILITY

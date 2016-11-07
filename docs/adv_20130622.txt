@@ -1,7 +1,7 @@
                    libcurl URL decode buffer boundary flaw
                    =======================================
 
-Project cURL Security Advisory, June 22nd 2013
+Project curl Security Advisory, June 22nd 2013
 https://curl.haxx.se/docs/security.html
 
 1. VULNERABILITY

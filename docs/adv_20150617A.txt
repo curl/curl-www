@@ -1,7 +1,7 @@
 lingering HTTP credentials in connection re-use
 ===============================================
 
-Project cURL Security Advisory, June 17th 2015 -
+Project curl Security Advisory, June 17th 2015 -
 [Permalink](https://curl.haxx.se/docs/adv_20150617A.html)
 
 VULNERABILITY

@@ -1,7 +1,7 @@
 host name out of boundary memory access 
 =======================================
 
-Project cURL Security Advisory, April 22nd 2015 -
+Project curl Security Advisory, April 22nd 2015 -
 [Permalink](https://curl.haxx.se/docs/adv_20150422D.html)
 
 VULNERABILITY

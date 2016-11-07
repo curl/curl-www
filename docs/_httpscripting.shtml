@@ -1,6 +1,6 @@
 #include "_doctype.html"
 <HTML>
-<HEAD> <TITLE>cURL - Tutorial</TITLE>
+<HEAD> <TITLE>curl - Tutorial</TITLE>
 #include "css.t"
 </HEAD>
 
@@ -14,7 +14,7 @@
 
 WHERE3(Docs, "/docs/", Tool Documentation, "/docs/tooldocs.html", HTTP Scripting)
 
-TITLE(Using cURL to automate HTTP jobs)
+TITLE(Using curl to automate HTTP jobs)
 <div class="relatedbox">
 <b>Related:</b>
 <br><a href="manpage.html">curl man page</a>

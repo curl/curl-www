@@ -1,7 +1,7 @@
 use of connection struct after free
 ===================================
 
-Project cURL Security Advisory, August 3rd 2016 -
+Project curl Security Advisory, August 3rd 2016 -
 [Permalink](https://curl.haxx.se/docs/adv_20160803C.html)
 
 VULNERABILITY

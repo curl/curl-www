@@ -1,7 +1,7 @@
          libcurl GnuTLS insufficient cert verification Vulnerability
          ===========================================================
 
-Project cURL Security Advisory, July 10th 2007
+Project curl Security Advisory, July 10th 2007
 https://curl.haxx.se/docs/security.html
 
 1. VULNERABILITY

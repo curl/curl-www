@@ -24,7 +24,7 @@ sub where {
     my $link;
     my $pic="/";
 
-    print "<div class=\"where\"><a href=\"/\">cURL</a> $pic";
+    print "<div class=\"where\"><a href=\"/\">curl</a> $pic";
     while(1) {
         $name = shift @args;
         $link = shift @args;
@@ -70,7 +70,7 @@ sub header {
 
     open(HEAD, "<$root/head.html");
     while(<HEAD>) {
-        $_ =~ s/\<title\>cURL\<\/title\>/<title>cURL: $head<\/title>/;
+        $_ =~ s/\<title\>curl\<\/title\>/<title>curl: $head<\/title>/;
         print $_;
     }
     close(HEAD);

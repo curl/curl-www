@@ -206,7 +206,7 @@ sub getthreads {
 
         # Here's a special to strip off the subject prefix of the curlpp
         # mailing list:
-        $s =~ s/\[cURLpp\] *//g;
+        $s =~ s/\[curlpp\] *//g;
 
         $s =~ s/^((Sv|Réf[. ]*|Re *|RE\.|Fwd|AW|FW|Re\[(\d+)\]): *)*//ig;
         $s =~ s/[ \t\n]+/ /g;

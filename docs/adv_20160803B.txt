@@ -1,7 +1,7 @@
 Re-using connections with wrong client cert
 ===========================================
 
-Project cURL Security Advisory, August 3rd 2016 -
+Project curl Security Advisory, August 3rd 2016 -
 [Permalink](https://curl.haxx.se/docs/adv_20160803B.html)
 
 VULNERABILITY
