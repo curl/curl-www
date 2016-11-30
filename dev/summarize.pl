@@ -666,10 +666,10 @@ sub singlefile {
             elsif($line =~ /^\* System: *(.*)/) {
                 $uname = CGI::escapeHTML($1);
             }
-            elsif($line =~ /^\* Server SSL: *(ON|OFF) *libcurl SSL: *(ON|OFF)/) {
-                $ssl = ($2 eq "ON") ? 1 : 0;
+            elsif($line =~ /^\* Servers: SSL/) {
+                $ssl = 1;
             }
-            elsif($line =~ /^\* valgrind: *(ON|OFF) *HTTP IPv6 *(ON|OFF)/) {
+            elsif($line =~ /^\* Env: Valgrind/) {
                 $valgrind = ($1 eq "ON") ? 1 : 0;
             }
             elsif($line =~ /^supported_features=\"(.*)\"/) {
