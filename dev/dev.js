@@ -1,7 +1,7 @@
 /*
 COPYRIGHT AND PERMISSION NOTICE
 
-Copyright (c) 2014, Daniel Fandrich, <dan@coneharvesters.com>.
+Copyright (c) 2014-2016, Daniel Fandrich, <dan@coneharvesters.com>.
 
 All rights reserved.
 
@@ -48,6 +48,22 @@ function showFilter() {
     }
 }
 
+/* Set all the input selection forms the way we want them */
+function setFilterForms(filterinput, systeminput) {
+    /* Select the chosen option on all filter forms on the page */
+    var selects = document.getElementsByClassName("filterinput");
+    for (var i=0; i<selects.length; i++) {
+       selects[i].selectedIndex = filterinput;
+    }
+
+    /* Invalidate all system filter forms on the page. This allows the user to
+     * use the system filter form later and get the results he expects. */
+    var selects = document.getElementsByClassName("systeminput");
+    for (var i=0; i<selects.length; i++) {
+       selects[i].selectedIndex = systeminput;
+    }
+}
+
 var linefilter = "";
 var linefiltername = "";
 
@@ -57,24 +73,14 @@ function filterBuilds() {
     linefilter = "";
     linefiltername = "";
 
-    /* Select the chosen option on all filter forms on the page */
-    var selects = document.getElementsByClassName("filterinput");
-    for (var i=0; i<selects.length; i++) {
-       selects[i].selectedIndex = this.selectedIndex;
-    }
-
     /* If All is chosen, set all the forms to All */
     var selected = this.selectedIndex;
     if (selected != 0) {
         selected = -1;
     }
 
-    /* Invalidate all system filter forms on the page. This allows the user to
-     * use the system filter form later and get the results he expects. */
-    var selects = document.getElementsByClassName("systeminput");
-    for (var i=0; i<selects.length; i++) {
-       selects[i].selectedIndex = selected;
-    }
+    /* Make all inputs consistent */
+    setFilterForms(this.selectedIndex, selected);
 
     /* Get the regular expression with which to filter */
     var filter = this.options[this.selectedIndex].value;
@@ -106,24 +112,14 @@ function filterSystemBuilds() {
     linefilter = "";
     linefiltername = "";
 
-    /* Select the chosen option on all filter forms on the page */
-    var selects = document.getElementsByClassName("systeminput");
-    for (var i=0; i<selects.length; i++) {
-       selects[i].selectedIndex = this.selectedIndex;
-    }
-
     /* If All is chosen, set all the forms to All */
     var selected = this.selectedIndex;
     if (selected != 0) {
         selected = -1;
     }
 
-    /* Invalidate all build filter forms on the page. This allows the user to
-     * use the build filter form later and get the results he expects. */
-    var selects = document.getElementsByClassName("filterinput");
-    for (var i=0; i<selects.length; i++) {
-        selects[i].selectedIndex = selected;
-    }
+    /* Make all inputs consistent */
+    setFilterForms(selected, this.selectedIndex);
 
     /* Get the regular expression with which to filter */
     var filter = this.options[this.selectedIndex].value;
@@ -144,6 +140,7 @@ function filterSystemBuilds() {
 
 function filterLine() {
     var selected;
+    linefiltername = ""
 
     /* Alternate between showing all and showing just this build */
     if (linefilter) {
@@ -154,21 +151,10 @@ function filterLine() {
         linefilter = "none";
         selected = -1;  /* invalid */
     }
-    linefiltername = ""
 
     /* Invalidate all filter forms on the page (or set to All,
        as appropriate). */
-    var selects = document.getElementsByClassName("filterinput");
-    for (var i=0; i<selects.length; i++) {
-       selects[i].selectedIndex = selected;
-    }
-
-    /* Invalidate all system forms on the page (or set to All,
-       as appropriate). */
-    selects = document.getElementsByClassName("systeminput");
-    for (var i=0; i<selects.length; i++) {
-       selects[i].selectedIndex = selected;
-    }
+    setFilterForms(selected, selected);
 
     /* Start by hiding everything */
     var rows = document.getElementsByClassName("even");
@@ -197,8 +183,9 @@ function filterLine() {
 
 function filterLineName() {
     var selected;
+    linefilter = ""
 
-    /* Alternate between showing all and showing just this build */
+    /* Alternate between showing all and showing just this builder */
     if (linefiltername) {
         linefiltername = "";
         selected = 0;   /* All */
@@ -207,21 +194,10 @@ function filterLineName() {
         linefiltername = "none";
         selected = -1;  /* invalid */
     }
-    linefilter = ""
 
     /* Invalidate all filter forms on the page (or set to All,
        as appropriate). */
-    var selects = document.getElementsByClassName("filterinput");
-    for (var i=0; i<selects.length; i++) {
-       selects[i].selectedIndex = selected;
-    }
-
-    /* Invalidate all system forms on the page (or set to All,
-       as appropriate). */
-    selects = document.getElementsByClassName("systeminput");
-    for (var i=0; i<selects.length; i++) {
-       selects[i].selectedIndex = selected;
-    }
+    setFilterForms(selected, selected);
 
     /* Get this line's builder name */
     var builderName = this.childNodes[0].data;
