@@ -12,4 +12,5 @@ libssh(<b>2</b>), m(<b>E</b>)talink, PSL (<b>1</b>), HTTP2 (<b>F</b>),
 <p> Text <span class='buildserverprob'>looking like this</span> is for servers
 that couldn't be started for the test round.
 Use the pop-up menu next to Options or Description or click directly on a build
-Description or Name to see only matching builds (requires Javascript).
+Description or Name to see only matching builds<noscript> (requires
+Javascript)</noscript>.
