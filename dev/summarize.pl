@@ -670,7 +670,7 @@ sub singlefile {
                 $ssl = 1;
             }
             elsif($line =~ /^\* Env: Valgrind/) {
-                $valgrind = ($1 eq "ON") ? 1 : 0;
+                $valgrind = 1;
             }
             elsif($line =~ /^supported_features=\"(.*)\"/) {
                 my $feat = CGI::escapeHTML($1);
