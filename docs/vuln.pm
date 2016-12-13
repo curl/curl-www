@@ -1,5 +1,8 @@
 # page, first vulnerable version, last vulnerable version, name, CVE, date (YYYYMMDD)
 @vuln = (
+    "adv_20161221A.html|7.1|7.51.0|printf floating point buffer overflow|CVE-2016-9586|20161221",
+    "adv_20161221B.html|7.30.0|7.51.0|Win CE schannel cert wildcard matches too much|CVE-2016-9952|20161221",
+    "adv_20161221C.html|7.30.0|7.51.0|Win CE schannel cert name out of buffer read|CVE-2016-9953|20161221",
     "adv_20161102A.html|7.1|7.50.3|cookie injection for other servers|CVE-2016-8615|20161102",
     "adv_20161102B.html|7.7|7.50.3|case insensitive password comparison|CVE-2016-8616|20161102",
     "adv_20161102C.html|7.1|7.50.3|OOB write via unchecked multiplication|CVE-2016-8617|20161102",

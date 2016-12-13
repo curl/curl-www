@@ -34,7 +34,8 @@ PAGES = index.html manpage.html faq.html sslcerts.html companies.html	      \
  code-of-conduct.html adv_20160914.html adv_20161102A.html adv_20161102B.html \
  adv_20161102C.html adv_20161102D.html adv_20161102E.html adv_20161102F.html  \
  adv_20161102G.html adv_20161102H.html adv_20161102I.html adv_20161102J.html  \
- adv_20161102K.html ssl-ciphers.html
+ adv_20161102K.html ssl-ciphers.html \
+ adv_20161221A.html adv_20161221B.html adv_20161221C.html
 
 all: $(PAGES) vuln-make.gen
 	-test -f vuln-make.gen && make -f vuln-make.gen
@@ -494,6 +495,21 @@ adv_20161102J.gen: adv_20161102J.txt
 adv_20161102K.html: _adv_20161102K.html adv_20161102K.gen $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 adv_20161102K.gen: adv_20161102K.txt
+	$(ADVCONV)
+
+adv_20161221A.html: _adv_20161221A.html adv_20161221A.gen $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_20161221A.gen: adv_20161221A.txt
+	$(ADVCONV)
+
+adv_20161221B.html: _adv_20161221B.html adv_20161221B.gen $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_20161221B.gen: adv_20161221B.txt
+	$(ADVCONV)
+
+adv_20161221C.html: _adv_20161221C.html adv_20161221C.gen $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_20161221C.gen: adv_20161221C.txt
 	$(ADVCONV)
 
 vulnerabilities.html: _vulnerabilities.html vuln.gen $(MAINPARTS)
