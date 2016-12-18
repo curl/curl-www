@@ -34,7 +34,7 @@ PAGES = index.html manpage.html faq.html sslcerts.html companies.html	      \
  code-of-conduct.html adv_20160914.html adv_20161102A.html adv_20161102B.html \
  adv_20161102C.html adv_20161102D.html adv_20161102E.html adv_20161102F.html  \
  adv_20161102G.html adv_20161102H.html adv_20161102I.html adv_20161102J.html  \
- adv_20161102K.html
+ adv_20161102K.html ssl-ciphers.html
 
 all: $(PAGES) vuln-make.gen
 	-test -f vuln-make.gen && make -f vuln-make.gen
@@ -181,6 +181,11 @@ comparison-table.html: _comparison-table.html $(MAINPARTS)  $(ROOT)/release.t
 	$(ACTION)
 
 ssl-compared.html: _ssl-compared.html $(MAINPARTS)
+	$(ACTION)
+
+ciphers.gen: $(SRCROOT)/docs/CIPHERS.md
+	$(MARKDOWN) < $< > $@
+ssl-ciphers.html: _ssl-ciphers.html $(MAINPARTS) ciphers.gen
 	$(ACTION)
 
 relatedtools.html: _relatedtools.html $(MAINPARTS)
