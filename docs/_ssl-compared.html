@@ -36,6 +36,7 @@ to use.
 #define FEATURE_P7 <td class="yes">yes [7]</td>
 #define FEATURE_P8 <td class="yes">yes [8]</td>
 #define MISSING_P <td class="no">no*</td>
+#define MISSING_P9 <td class="no">no [9]</td>
 #define NA <td class="unknown">N/A</td>
 
 #define MANUAL <td class="no">manual</td>
@@ -78,7 +79,7 @@ to use.
  <tbody>
 
  NEWLINE
-  FEAT Native name check ENDFEAT
+  FEAT Native cert check ENDFEAT
   MISSING
   FEATURE
   FEATURE
@@ -168,6 +169,20 @@ to use.
   FEATURE_P2
  ENDLINE
 
+ NEWLINE
+  FEAT TLSv1.3 ENDFEAT
+  MISSING_P9
+  MISSING
+  FEATURE
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  MISSING
+  
+ ENDLINE
+ 
  NEWLINE
   FEAT TLS SRP ENDFEAT
   FEATURE
@@ -416,15 +431,17 @@ to use.
 <br>
  [5] = Requires IBM i 7.1 TR6 or later
 <br>
-[6] = The same feature set is also provided by LibreSSL and BoringSSL.
+[6] = Mostly the same feature set is also provided by LibreSSL and BoringSSL.
 <br>
 [7] = support for ALPN and NPN was added in <a href="https://technet.microsoft.com/en-us/library/hh831771.aspx">Windows 8.1 / Server 2012 R2</a>.
 <br>
 [8] = Via external <a href="https://github.com/OpenSC/OpenSC/wiki/Engine-pkcs11-quickstart">engine_pkcs11</a>;
+<br>
+[9] = the BoringSSL fork supports TLS1.3
 
 SUBTITLE(Glossary of Terms)
 
-<b>Native name Check:</b> If yes, then this means that the engine will
+<b>Native cert check:</b> If yes, then this means that the engine will
  automatically check the domain name in the server's certificate against the
  domain name used to connect to the server, unless CURLOPT_VERIFYHOST was
  manually disabled. If no, then libcurl will perform this check manually.
@@ -475,6 +492,10 @@ difficult to crack. Unfortunately TLSv1.2 is not widely used on the public
 Internet yet for the same reasons that v1.1 support is scarce.
 <p>
 
+<b>TLSv1.3:</b> TLSv1.3 provides even better security than TLSv1.2, with more
+data encrypted in the handshake etc. It also offers less roundtrip handshakes.
+<p>
+  
 <b>TLS SRP:</b> SRP means "Secure Remote Password" and it is a method of
 performing client-side authentication with a TLS server by using a user name
 and password, sometimes coupled with a certificate. It is not yet widely
