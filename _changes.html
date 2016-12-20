@@ -44,6 +44,68 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_52_0"></a>
+SUBTITLE(Fixed in 7.52.0 - December 21 2016)
+<p> Changes:
+<ul class="changes">
+ CHG nss: map CURL_SSLVERSION_DEFAULT to NSS default
+ CHG vtls: support TLS 1.3 via CURL_SSLVERSION_TLSv1_3
+ CHG curl: introduce the --tlsv1.3 option to force TLS 1.3
+ CHG <a href="https://curl.haxx.se/bug/?i=1064">curl: Add --retry-connrefused</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=1127">proxy: Support HTTPS proxy and SOCKS+HTTP(s)</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=1137">add CURLINFO_SCHEME, CURLINFO_PROTOCOL, and %{scheme}</a>
+ CHG <a href="https://curl.haxx.se/mail/archive-2016-11/0038.html">curl: add --fail-early</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/docs/adv_20161221A.html">CVE-2016-9586: printf floating point buffer overflow</a>
+ BGF <a href="https://curl.haxx.se/docs/adv_20161221B.html">CVE-2016-9952: Win CE schannel cert wildcard matches too much</a>
+ BGF <a href="https://curl.haxx.se/docs/adv_20161221C.html">CVE-2016-9953: Win CE schannel cert name out of buffer read</a>
+ BGF msvc: removed a straggling reference to strequal.c
+ BGF <a href="https://curl.haxx.se/bug/?i=1098">winbuild: remove strcase.obj from curl build</a>
+ BGF examples: bugfixed multi-uv.c
+ BGF <a href="https://curl.haxx.se/bug/?i=1104">configure: verify that compiler groks -Werror=partial-availability</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1087">mbedtls: fix build with mbedtls versions < 2.4.0</a>
+ BGF dist: add unit test CMakeLists.txt to the tarball
+ BGF <a href="https://curl.haxx.se/bug/?i=1106">curl -w: added more decimal digits to timing counters</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1103">easy: Initialize info variables on easy init and duphandle</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1089">cmake: disable poll for macOS</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1092">http2: Don't send header fields prohibited by HTTP/2 spec</a>
+ BGF <a href="https://github.com/curl/curl/commit/ce8d09483eea2fcb1b50e323e1a8ed1f3613b2e3#commitcomment-19666146">ssh: check md5 fingerprints case insensitively (regression)</a>
+ BGF openssl: initial TLS 1.3 adaptions
+ BGF curl_formadd.3: *_FILECONTENT and *_FILE need the file to be kept
+ BGF <a href="https://curl.haxx.se/bug/?i=1113">printf: fix ".*f" handling</a>
+ BGF examples/fileupload.c: fclose the file as well
+ BGF <a href="https://curl.haxx.se/bug/?i=1115">SPNEGO: Fix memory leak when authentication fails</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-11/0087.html">realloc: use Curl_saferealloc to avoid common mistakes</a>
+ BGF openssl: make sure to fail in the unlikely event that PRNG seeding fails
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-11/0104.html">URL-parser: for file://[host]/ URLs, the [host] must be localhost</a>
+ BGF timeval: prefer time_t to hold seconds instead of long
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-11/0119.html">Curl_rand: fixed and moved to rand.c</a>
+ BGF <a href="https://github.com/curl/curl/commit/ee4f76606cfa4ee068bf28edd37c8dae7e8db317#commitcomment-19823146">glob: fix [a-c] globbing regression</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1105">darwinssl: fix SSL client certificate not found on MacOS Sierra</a>
+ BGF curl.1: Clarify --dump-header only writes received headers
+ BGF http2: Fix address sanitizer memcpy warning
+ BGF <a href="https://curl.haxx.se/bug/?i=1102">http2: Use huge HTTP/2 windows</a>
+ BGF connects: Don't mix unix domain sockets with regular ones
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-11/0137.html">url: Fix conn reuse for local ports and interfaces</a>
+ BGF x509: Limit ASN.1 structure sizes to 256K
+ BGF checksrc: add more checks
+ BGF <a href="https://curl.haxx.se/bug/?i=1141">winbuild: add config option ENABLE_NGHTTP2</a>
+ BGF <a href="https://github.com/curl/curl/commit/a4d8888#commitcomment-19985676">http2: check nghttp2_session_set_local_window_size exists</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1125">http2: Fix crashes when parent stream gets aborted</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1148">CURLOPT_CONNECT_TO: Skip non-matching "connect-to" entries</a>
+ BGF URL parser: reject non-numerical port numbers
+ BGF CONNECT: reject TE or CL in 2xx responses
+ BGF <a href="https://curl.haxx.se/bug/?i=1132">CONNECT: read responses one byte at a time</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1152">curl: support zero-length argument strings in config files</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1157">openssl: don't use OpenSSL's ERR_PACK</a>
+ BGF <a href="https://github.com/curl/curl/blob/master/docs/cmdline-opts/MANPAGE.md">curl.1: generated with the new man page system</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1134">curl_easy_recv: Improve documentation and example program</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1134">Curl_getconnectinfo: avoid checking if the connection is closed</a>
+ BGF <a href="https://curl.haxx.se/docs/ssl-ciphers.html">CIPHERS.md: attempt to document TLS cipher names</a>
+</ul>
+
 <a name="7_51_0"></a>
 SUBTITLE(Fixed in 7.51.0 - November 2 2016)
 <p> Changes:
