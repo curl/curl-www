@@ -1,5 +1,6 @@
 # page, first vulnerable version, last vulnerable version, name, CVE, date (YYYYMMDD)
 @vuln = (
+    "adv_20161223.html|7.52.0|7.52.0|unititialized random|CVE-2016-9594|20161223",
     "adv_20161221A.html|7.1|7.51.0|printf floating point buffer overflow|CVE-2016-9586|20161221",
     "adv_20161221B.html|7.30.0|7.51.0|Win CE schannel cert wildcard matches too much|CVE-2016-9952|20161221",
     "adv_20161221C.html|7.30.0|7.51.0|Win CE schannel cert name out of buffer read|CVE-2016-9953|20161221",
