@@ -26,7 +26,7 @@ We are not aware of any exploit of this flaw.
 INFO
 ----
 
-This mistake managed to slipped in because:
+This mistake managed to slip in because:
 
  1. It wasn't detected by manual code reviews
 
