@@ -45,6 +45,11 @@ In version 7.51.0, the parser function is fixed.
 A [patch for CVE-2016-8624](https://curl.haxx.se/CVE-2016-8624.patch) is
 available.
 
+As a side-effect of this fix, using the `#` character as part of the user or
+password fields in the URL is no longer supported. According to [RFC 3986
+section 2.3](https://tools.ietf.org/html/rfc3986#section-2.3) it isn't
+allowed. See [issue #1216](https://github.com/curl/curl/issues/1216)
+
 RECOMMENDATIONS
 ---------------
 
