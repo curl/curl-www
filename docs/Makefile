@@ -74,6 +74,9 @@ manpage.html: _manpage.html $(MAINPARTS) mandump.gen $(ROOT)/manpage.t
 mandump.gen: $(DOCROOT)/curl.1
 	 $(MAN2HTML) < $(DOCROOT)/curl.1 > mandump.gen
 
+$(DOCROOT)/curl.1:
+	make -C $(DOCROOT) curl.1
+
 mk-ca-bundle.html: _mk-ca-bundle.html $(MAINPARTS) mkdump.gen $(ROOT)/manpage.t
 	$(ACTION)
 
