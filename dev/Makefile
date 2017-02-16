@@ -21,7 +21,7 @@ PAGES = foot.html head.html howto.html summary.html cvshistory.html	\
 
 all: $(PAGES)
 
-index.html: _index.html bugbox.t $(MAINPARTS)
+index.html: _index.html bugbox.t $(MAINPARTS) ../release.t
 	$(ACTION)
 
 source.html: _source.html $(MAINPARTS)

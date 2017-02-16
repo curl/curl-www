@@ -3,6 +3,8 @@ ROOT=.
 # the latest stable version is:
 STABLE= 7.52.1
 RELDATE = "23rd of December 2016"
+# The planned *next* release is:
+NEXTDATE = "22nd of February 2017"
 
 # name of the dir to tempoary unpack and build zip files in:
 TEMPDIR=tempzip
@@ -83,6 +85,7 @@ $(RELEASE): Makefile
 	@echo "fixing $(RELEASE)"
 	@echo "#define __STABLE $(STABLE)" >$(RELEASE)
 	@echo "#define __RELDATE $(RELDATE)" >>$(RELEASE)
+	@echo "#define __NEXTDATE $(NEXTDATE)" >>$(RELEASE)
 	@echo "#define __STABLETAG $(STABLE)" | sed 's/\./_/g' >> $(RELEASE)
 
 $(STAT): download.html Makefile
