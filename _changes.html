@@ -44,6 +44,111 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+SUBTITLE(Fixed in 7.53.0 - February 22 2017)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="https://curl.haxx.se/bug/?i=1197">unix_socket: added --abstract-unix-socket and CURLOPT_ABSTRACT_UNIX_SOCKET</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=1222">CURLOPT_BUFFERSIZE: support enlarging receive buffer</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/docs/adv_20170222.html">CVE-2017-2629: make SSL_VERIFYSTATUS work again</a>
+ BGF gnutls-random: check return code for failed random
+ BGF openssl-random: check return code when asking for random
+ BGF http: remove "Curl_http_done: called premature" message
+ BGF cyassl: use time_t instead of long for timeout
+ BGF build-wolfssl: Sync config with wolfSSL 3.10
+ BGF ftp-gss: check for init before use
+ BGF <a href="https://curl.haxx.se/mail/lib-2016-12/0110.html">configure: accept --with-libidn2 instead</a>
+ BGF ftp: failure to resolve proxy should return that error code
+ BGF curl.1: add three more exit codes
+ BGF docs/ciphers: link to our own new page about ciphers
+ BGF <a href="https://curl.haxx.se/bug/?i=1174">vtls: s/SSLEAY/OPENSSL - fixes multi_socket timeouts with openssl</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1172">darwinssl: fix iOS build</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1173">darwinssl: fix CFArrayRef leak</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1147">cmake: use crypt32.lib when building with OpenSSL on windows</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1013">curl_formadd.3: CURLFORM_CONTENTSLENGTH not needed when chunked</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1180">digest_sspi: copy terminating NUL as well</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1121">curl: fix --remote-time incorrect times on Windows</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1190">curl.1: several updates and corrections</a>
+ BGF content_encoding: change return code on a failure
+ BGF curl.h: CURLE_FUNCTION_NOT_FOUND is no longer in use
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-01/0000.html">docs: TCP_KEEPALIVE start and interval default to 60</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1184">darwinssl: --insecure overrides --cacert if both settings are in use</a>
+ BGF TheArtOfHttpScripting: grammar
+ BGF CIPHERS.md: document GSKit ciphers
+ BGF wolfssl: support setting cipher list
+ BGF wolfssl: display negotiated SSL version and cipher
+ BGF <a href="https://curl.haxx.se/bug/?i=1196">lib506: fix build for Open Watcom</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1191">asiohiper: improved socket handling</a>
+ BGF examples: make the C++ examples follow our code style too
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-01/0009.html">tests/sws: retry send() on EWOULDBLOCK</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1195">cmake: Fix passing _WINSOCKAPI_ macro to compiler</a>
+ BGF smtp: Fix STARTTLS denied error message
+ BGF <a href="https://curl.haxx.se/bug/?i=1203">imap/pop3: don't print response character in STARTTLS denied messages</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-01/0055.html">rand: make it work without TLS backing</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1124">url: fix parsing for when 'file' is the default protocol</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1187">url: allow file://X:/path URLs on windows again</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1204">gnutls: check for alpn and ocsp in configure</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1207">IDN: Use TR46 'non-transitional' for toASCII translations</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1140">url: Fix NO_PROXY env var to work properly with --proxy option</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1169">CURLOPT_PREQUOTE.3: takes a struct curl_slist*, not a char*</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1169">docs: Add note about libcurl copying strings to CURLOPT_* manpages</a>
+ BGF curl: reset the easy handle at --next
+ BGF --next docs: --trace and --trace-ascii are also global
+ BGF --write-out docs: 'time_total' is not always shown with ms precision
+ BGF http: print correct HTTP string in verbose output when using HTTP/2
+ BGF <a href="https://curl.haxx.se/bug/?i=1211">docs: improved language in README.md HISTORY.md CONTRIBUTE.md</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1160">http2: disable server push if not requested</a>
+ BGF nss: use the correct lock in nss_find_slot_by_name()
+ BGF usercertinmem.c: improve the short description
+ BGF CURLOPT_CONNECT_TO: Fix compile warnings
+ BGF docs: non-blocking SSL handshake is now supported with NSS
+ BGF <a href="https://curl.haxx.se/bug/?i=1217">*.rc: escape non-ASCII/non-UTF-8 character for clarity</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1223">mbedTLS: fix multi interface non-blocking handshake</a>
+ BGF <a href="https://github.com/curl/curl/issues/1174#issuecomment-274018791">PolarSSL: fix multi interface non-blocking handshake</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1215">VC: remove the makefile.vc6 build infra</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1225">telnet: fix windows compiler warnings</a>
+ BGF cookies: do not assume a valid domain has a dot
+ BGF polarssl: fix hangs
+ BGF <a href="https://curl.haxx.se/bug/?i=1109">gnutls: disable TLS session tickets</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1109">mbedtls: disable TLS session tickets</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1227">mbedtls: implement CTR-DRBG and HAVEGE random generators</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1236">openssl: Don't use certificate after transferring ownership</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1176">cmake: Support curl --xattr when built with cmake</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1237">OS400: Fix symbols</a>
+ BGF <a href="https://github.com/curl/curl/commit/cb4e2be">docs: Add more HTTPS proxy documentation</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1247">docs: use more HTTPS links</a>
+ BGF cmdline-opts: Fixed build and test in out of source tree builds
+ BGF CHANGES.0: removed
+ BGF <a href="https://curl.haxx.se/bug/?i=1240">schannel: Remove incorrect SNI disabled message</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1246">darwinssl: Avoid parsing certificates when not in verbose mode</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1245">test552: Fix typos</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1245">telnet: Fix typos</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1243">transfer: only retry nobody-requests for HTTP</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1249">http2: reset push header counter fixes crash</a>
+ BGF <a href="https://bugzilla.redhat.com/1420327">nss: make FTPS work with --proxytunnel</a>
+ BGF test1139: Added the --manual keyword since the manual is required
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-02/0032.html">polarssl, mbedtls: Fix detection of pending data</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1255">http_proxy: Fix tiny memory leak upon edge case connecting to proxy</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1252">URL: only accept ";options" in SMTP/POP3/IMAP URL schemes</a>
+ BGF curl.1: ftp.sunet.se is no longer an FTP mirror
+ BGF <a href="https://curl.haxx.se/bug/?i=1258">tool_operate: Show HTTPS-Proxy options on CURLE_SSL_CACERT</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1229">http2: fix memory-leak when denying push streams</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1260">configure: Allow disabling pthreads, fall back on Win32 threads</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1263">curl: fix typo in time condition warning message</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1220">axtls: adapt to API changes</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1238">tool_urlglob: Allow a glob range with the same start and stop</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1265">winbuild: add note on auto-detection of MACHINE in Makefile.vc</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1242">http: fix missing 'Content-Length: 0' while negotiating auth</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1248">proxy: fix hostname resolution and IDN conversion</a>
+ BGF docs: fix timeout handling in multi-uv example
+ BGF <a href="https://curl.haxx.se/bug/?i=1251">digest_sspi: Fix nonce-count generation in HTTP digest</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1269">sftp: improved checks for create dir failures</a>
+ BGF <a href="https://github.com/Microsoft/vcpkg/blob/7676b8780db1e1e591c4fc7eba4f96f73c428cb4/ports/curl/0002_fix_uwp.patch">smb: use getpid replacement for windows UWP builds</a>
+ BGF <a href="https://github.com/curl/curl/issues/928">digest_sspi: Handle 'stale=TRUE' directive in HTTP digest</a>
+</ul>
+
 <a name="7_52_1"></a>
 SUBTITLE(Fixed in 7.52.1 - December 23 2016)
 <p> Bugfixes:
