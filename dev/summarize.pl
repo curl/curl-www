@@ -39,7 +39,7 @@ my $filterform = '
 <option value="^................F">HTTP2</option>
 <option value="^................-">HTTP2 disabled</option>
 <option value="^...........[^-]">IDNA: any</option>
-<option value="^...........I">IDNA: libidn</option>
+<option value="^...........I">IDNA: libidn2</option>
 <option value="^...........W">IDNA: WinIDN</option>
 <option value="^...........-">IDNA disabled</option>
 <option value="^6">IPv6</option>
@@ -302,7 +302,7 @@ sub endofsingle {
         $caresver = CGI::escapeHTML($1);
     }
 
-    if($libcurl =~ /libidn\/([^ ]*)/i) {
+    if($libcurl =~ /libidn2\/([^ ]*)/i) {
         $libidn = 1;
         $libidnver = CGI::escapeHTML($1);
     }
@@ -786,7 +786,7 @@ sub singlefile {
                 # this implies $krb5enabled and $spnegoenabled but not if
                 # crypto auth disabled
             }
-            elsif($line =~ /^\#define HAVE_LIBIDN 1/) {
+            elsif($line =~ /^\#define HAVE_LIBIDN2 1/) {
                 $libidn=1;
             }
             elsif($line =~ /^\#define HAVE_LIBZ 1/) {
