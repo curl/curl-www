@@ -65,6 +65,7 @@ my $filterform = '
 <option value="^....X">SSL: axTLS</option>
 <option value="^....B">SSL: BoringSSL</option>
 <option value="^....T">SSL: GnuTLS</option>
+<option value="^....J">SSL: LibreSSL</option>
 <option value="^....N">SSL: NSS</option>
 <option value="^....S">SSL: OpenSSL</option>
 <option value="^....O">SSL: PolarSSL</option>
@@ -291,6 +292,9 @@ sub endofsingle {
     elsif($libcurl =~ /BoringSSL/i) {
         $boringssl = 1;
     }
+    elsif($libcurl =~ /LibreSSL/i) {
+        $libressl = 1;
+    }
 
     if($libcurl =~ /zlib\/([^ ]*)/i) {
         $zlibver = CGI::escapeHTML($1);
@@ -412,7 +416,7 @@ sub endofsingle {
     my $showdebug = $debug ? "D" : "-";
     my $showtrackmem = $trackmem ? "Y" : "-";
     my $showvalgrind = $valgrind ? "V" : "-";
-    my $showssl = $openssl ? "S" : ($gnutls ? "T" : ($nss ? "N" : ($polarssl ? "O" : ($axtls ? "X" : ($schannel ? "L" : ($darwinssl ? "R" : ($cyassl ? "C" : ($boringssl ? "B" : "-"))))))));
+    my $showssl = $openssl ? "S" : ($gnutls ? "T" : ($nss ? "N" : ($polarssl ? "O" : ($axtls ? "X" : ($schannel ? "L" : ($darwinssl ? "R" : ($cyassl ? "C" : ($boringssl ? "B" : ($libressl ? "J" : "-")))))))));
     my $showres = $asynch ? ($ares ? "A" : "H") : "-";
     my $showzlib = ($zlibver || $libz) ? "Z" : "-";
     my $showgssapi = $gssapi ? "G" : "-";
@@ -468,7 +472,7 @@ sub endofsingle {
     $valgrind=0;
     $buildcode=0;
 
-    $openssl=$gnutls=$nss=$axtls=$polarssl=$schannel=$darwinssl=$cyassl=$boringssl=0;
+    $openssl=$gnutls=$nss=$axtls=$polarssl=$schannel=$darwinssl=$cyassl=$boringssl=$libressl=0;
 
     $libmetalink=0;
     $libpsl=0;
@@ -766,6 +770,12 @@ sub singlefile {
             elsif($line =~ /^\#define USE_CYASSL 1/) {
                 $cyassl = 1;
             }
+            elsif($line =~ /^\#define HAVE_BORINGSSL 1/) {
+                $boringssl = 1;
+            }
+            elsif($line =~ /^\#define USE_LIBRESSL 1/) {
+                $libressl = 1;
+            }
             elsif($line =~ /^\#define USE_LIBSSH2 1/) {
                 $libssh2 = 1;
             }
@@ -791,9 +801,6 @@ sub singlefile {
             }
             elsif($line =~ /^\#define HAVE_LIBZ 1/) {
                 $libz=1;
-            }
-            elsif($line =~ /^\#define HAVE_BORINGSSL 1/) {
-                $boringssl = 1;
             }
             elsif($line =~ /^\#define OS \"([^\"]*)\"/) {
                 $os=CGI::escapeHTML($1);
