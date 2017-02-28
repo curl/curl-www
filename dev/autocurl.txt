@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Auto-build the daily CVS extract of curl.  Parameters are: 
+# Auto-build the daily git extract of curl.  Parameters are:
 #  1: email address to notify when this script runs
 #  2: proxy url (if required)
 #  3: proxy userid (if required)
@@ -24,7 +24,7 @@ mail="mail -s autobuild curl-autocompile@haxx.se"
 # Where to find the latest source
 URL="https://curl.haxx.se/snapshots/"
 # Where to find a curl binary to use to download the source code
-CURL=/usr/local/bin/curl
+CURL=curl
 # Where to run the auto-build
 BUILD="`dirname $0`"
 # A bunch of standard options, to start with...
@@ -45,7 +45,7 @@ notify () {
   fi
 }
 
-# The new file is ready just after 0200h UTC
+# The new file is ready around 0200h UTC
 TODAY=`env TZ=Etc/GMT+2 date +%Y%m%d`
 
 cd "$BUILD"
