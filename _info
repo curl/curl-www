@@ -7,6 +7,7 @@ Changelog: https://curl.haxx.se/changes.html#__STABLETAG
 git tag: curl-__STABLETAG
 Packages: __PACKS
 Up-to-date: __CURR
+Next release: __NEXTDATE
 Author: Daniel Stenberg <daniel@haxx.se>
 License: MIT
 WWW: https://curl.haxx.se
