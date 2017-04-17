@@ -30,7 +30,7 @@ foreach my $l (@release) {
         }
     }
     elsif($l =~ /^Curl and libcurl (.*)/) {
-        print "SUBTITLE(Fixed in $1 - [future])\n";
+        print "SUBTITLE(Fixed in $1 - [not yet released])\n";
     }
     elsif($l =~ /^This release includes the following (.*):/) {
         if($prefix) {
