@@ -87,7 +87,7 @@ sourceactivity.html: _sourceactivity.html $(MAINPARTS) cvs.t
 missing.html: _missing.html $(MAINPARTS)
 	$(ACTION)
 
-release-notes.gen: $(SRCROOT)/RELEASE-NOTES $(MKRELNOTES)
+release-notes.gen: $(SRCROOT)/RELEASE-NOTES $(MKRELNOTES) $(ROOT)/release.t
 	$(MKRELNOTES) < $< > $@
 
 release-notes.html: _release-notes.html release-notes.gen $(MAINPARTS)
