@@ -44,6 +44,135 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+SUBTITLE(Fixed in 7.54.0 - April 19 2017)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="https://curl.haxx.se/bug/?i=1166">Add CURL_SSLVERSION_MAX_* constants to CURLOPT_SSLVERSION</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=1166">Add --max-tls</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=783">Add CURLOPT_SUPPRESS_CONNECT_HEADERS</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=783">Add --suppress-connect-headers</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/docs/adv_20170419.html">CVE-2017-7468: switch off SSL session id when client cert is used</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1275">cmake: Replace invalid UTF-8 byte sequence</a>
+ BGF tests: use consistent environment variables for setting charset
+ BGF proxy: fixed a memory leak on OOM
+ BGF ftp: removed an erroneous free in an OOM path
+ BGF <a href="https://curl.haxx.se/bug/?i=1287">docs: de-duplicate file lists in the Makefiles</a>
+ BGF ftp: fixed a NULL pointer dereference on OOM
+ BGF gopher: fixed detection of an error condition from Curl_urldecode
+ BGF <a href="https://curl.haxx.se/bug/?i=1289">url: fix unix-socket support for proxy-disabled builds</a>
+ BGF test1139: allow for the possibility that the man page is not rebuilt
+ BGF cyassl: get library version string at runtime
+ BGF digest_sspi: fix compilation warning
+ BGF tests: enable HTTP/2 tests to run with non-default port numbers
+ BGF warnless: suppress compiler warning
+ BGF <a href="https://curl.haxx.se/bug/?i=1240">darwinssl: Warn that disabling host verify also disables SNI</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1295">configure: fix for --enable-pthreads</a>
+ BGF checksrc.bat: Ignore curl_config.h.in, curl_config.h
+ BGF <a href="https://curl.haxx.se/bug/?i=1301">no-keepalive.d: fix typo</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1292">configure: fix --with-zlib when a path is specified</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1297">build: fix gcc7 implicit fallthrough warnings</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1304">fix potential use of uninitialized variables</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1290">CURLOPT_SSL_CTX_FUNCTION.3: Fix EXAMPLE formatting errors</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1228">CMake: Reorganize SSL support, separate WinSSL and SSPI</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1228">CMake: Add DarwinSSL support</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1228">CMake: Add mbedTLS support</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-03/0004.html">ares: return error at once if timed out before name resolve starts</a>
+ BGF BINDINGS: added C++, perl, go and Scilab bindings
+ BGF URL: return error on malformed URLs with junk after port number
+ BGF <a href="https://curl.haxx.se/bug/?i=1308">KNOWN_BUGS: Add DarwinSSL won't import PKCS#12 without a password</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1286">http2: Fix assertion error on redirect with CL=0</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1058">updatemanpages.pl: Update man pages to use current date and versions</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-03/0002.html">--insecure: clarify that this option is for server connections</a>
+ BGF mkhelp: simplified the gzip code
+ BGF build: fixed making man page in out-of-tree tarball builds
+ BGF tests: disabled 1903 due to flakiness
+ BGF openssl: add two /* FALLTHROUGH */ to satisfy coverity
+ BGF cmdline-opts: fixed a few typos
+ BGF <a href="https://curl.haxx.se/bug/?i=1095">authneg: clear auth.multi flag at http_done</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1095">curl_easy_reset: Also reset the authentication state</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1239">proxy: skip SSL initialization for closed connections</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1317">http_proxy: ignore TE and CL in CONNECT 2xx responses</a>
+ BGF tool_writeout: fixed a buffer read overrun on --write-out
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-03/0017.html">make: regenerate docs/curl.1 by running make in docs</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1322">winbuild: add basic support for OpenSSL 1.1.x</a>
+ BGF build: removed redundant DEPENDENCIES from makefiles
+ BGF CURLINFO_LOCAL_PORT.3: added example
+ BGF <a href="https://curl.haxx.se/bug/?i=1331">curl: show HTTPS-Proxy options on CURLE_SSL_CACERT</a>
+ BGF tests: strip more options from non-HTTP --libcurl tests
+ BGF tests: fixed the documented test server port numbers
+ BGF runtests.pl: fixed display of the Gopher IPv6 port number
+ BGF <a href="https://curl.haxx.se/bug/?i=1329">multi: fix streamclose() crash in debug mode</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1288">cmake: build manual pages</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1288">cmake: add support for building HTML and PDF docs</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1272">mbedtls: add support for CURLOPT_SSL_CTX_FUNCTION</a>
+ BGF make: introduce 'test-nonflaky' target
+ BGF CURLINFO_PRIMARY_IP.3: add example
+ BGF <a href="https://curl.haxx.se/bug/?i=1342">tests/README: mention nroff for --manual tests</a>
+ BGF mkhelp: disable compression if the perl gzip module is unavailable
+ BGF <a href="https://curl.haxx.se/bug/?i=1348">openssl: fall back on SSL_ERROR_* string when no error detail</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1318">asiohiper: make sure socket is open in event_cb</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1352">tests/README: make "Run" section foolproof</a>
+ BGF curl: check for end of input in writeout backslash handling
+ BGF <a href="https://curl.haxx.se/bug/?i=1344">.gitattributes: turn off CRLF for *.am</a>
+ BGF multi: fix MinGW-w64 compiler warnings
+ BGF schannel: fix variable shadowing warning
+ BGF <a href="https://curl.haxx.se/bug/?i=1361">openssl: exclude DSA code when OPENSSL_NO_DSA is defined</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1350">http: Fix proxy connection reuse with basic-auth</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1354">pause: handle mixed types of data when paused</a>
+ BGF http: do not treat FTPS over CONNECT as HTTPS
+ BGF <a href="https://curl.haxx.se/bug/?i=1365">conncache: make hashkey avoid malloc</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1366">make: use the variable MAKE for recursive calls</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-03/0116.html">curl: fix callback argument inconsistency</a>
+ BGF <a href="https://github.com/curl/curl/pull/1367">NTLM: check for features with #ifdef instead of #if</a>
+ BGF cmake: add several missing files to the dist
+ BGF <a href="https://curl.haxx.se/bug/?i=1362">select: use correct SIZEOF_ constant</a>
+ BGF connect: fix unreferenced parameter warning
+ BGF schannel: fix unused variable warning
+ BGF <a href="https://curl.haxx.se/bug/?i=1371">gcc7: fix ‘*’ in boolean context</a>
+ BGF http2: silence unused parameter warnings
+ BGF ssh: fix narrowing conversion warning
+ BGF <a href="https://github.com/curl/curl/issues/1225#issuecomment-290340890">telnet: (win32) fix read callback return variable</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1375">docs: Explain --fail-early does not imply --fail</a>
+ BGF docs: added examples for CURLINFO_FILETIME.3 and CURLOPT_FILETIME.3
+ BGF <a href="https://curl.haxx.se/bug/?i=1379">tests/server/util: remove in6addr_any for recent MinGW</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1377">multi: make curl_multi_wait avoid malloc in the typical case</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1373">include: curl/system.h is a run-time version of curlbuild.h</a>
+ BGF easy: silence compiler warning
+ BGF <a href="https://curl.haxx.se/bug/?i=1381">llist: replace Curl_llist_alloc with Curl_llist_init</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1376">hash: move key into hash struct to reduce mallocs</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1380">url: don't free postponed data on connection reuse</a>
+ BGF curl_sasl: declare mechtable static
+ BGF curl: fix Windows Unicode build
+ BGF <a href="https://curl.haxx.se/bug/?i=1358">multi: fix queueing of pending easy handles</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1378">tool_operate: fix MinGW compiler warning</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1390">low_speed_limit: improved function for longer time periods</a>
+ BGF gtls: fix compiler warning
+ BGF <a href="https://curl.haxx.se/bug/?i=1395">sspi: print out InitializeSecurityContext() error message</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1394">schannel: fix compiler warnings</a>
+ BGF vtls: fix unreferenced variable warnings
+ BGF INSTALL.md: fix secure transport configure arguments
+ BGF CURLINFO_SCHEME.3: fix variable type
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-04/0044.html">libcurl-thread.3: also mention threaded-resolver</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=851">nss: load CA certificates even with --insecure</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1402">openssl: fix this statement may fall through</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1406">poll: prefer <poll.h> over <sys/poll.h></a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1401">polarssl: unbreak build with versions < 1.3.8</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-04/0030.html">Curl_expire_latest: ignore already expired timers</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1409">configure: turn implicit function declarations into errors</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1417">mbedtls: fix memory leak in error path</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1416">http2: fix handle leak in error path</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1422">.gitattributes: force shell scripts to LF</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1422">configure.ac: ignore CR after version numbers</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1422">extern-scan.pl: strip trailing CR</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1424">openssl: make SSL_ERROR_to_str more future-proof</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1424">openssl: fix thread-safety bugs in error-handling</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1425">openssl: don't try to print nonexistant peer private keys</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1393">nss: fix MinGW compiler warnings</a>
+</ul>
+
 SUBTITLE(Fixed in 7.53.1 - February 24 2017)
 <p> Bugfixes:
 <ul class="bugfixes">
