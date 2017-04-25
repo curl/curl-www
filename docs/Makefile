@@ -15,7 +15,7 @@ ADVCONV= $(MARKDOWN) < $< | perl curlver-to-vulnlink.pl > $@
 PAGES = index.html manpage.html faq.html sslcerts.html companies.html	      \
  features.html bugs.html install.html copyright.html thanks.html todo.html    \
  httpscripting.html comparison-table.html relatedtools.html versions.html     \
- history.html knownbugs.html manual.html caextract.html programs.html	      \
+ history.html knownbugs.html manual.html caextract.html     	              \
  security.html libs.html http-cookies.html adv_20051013.html		      \
  adv_20051207.html adv_20060320.html vulnerabilities.html adv_20070710.html   \
  releases.html adv_20090303.html releases.csv adv_20090812.html		      \
@@ -197,9 +197,6 @@ relatedtools.html: _relatedtools.html $(MAINPARTS)
 	$(ACTION)
 
 caextract.html: _caextract.html $(MAINPARTS) ../ca/pemlist.gen
-	$(ACTION)
-
-programs.html: _programs.html $(MAINPARTS)
 	$(ACTION)
 
 security.html: _security.html seclist.gen $(MAINPARTS) $(ADVBOX)
