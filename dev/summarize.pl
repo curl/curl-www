@@ -66,6 +66,7 @@ my $filterform = '
 <option value="^....B">SSL: BoringSSL</option>
 <option value="^....T">SSL: GnuTLS</option>
 <option value="^....J">SSL: LibreSSL</option>
+<option value="^....Q">SSL: mbedTLS</option>
 <option value="^....N">SSL: NSS</option>
 <option value="^....S">SSL: OpenSSL</option>
 <option value="^....O">SSL: PolarSSL</option>
@@ -295,6 +296,9 @@ sub endofsingle {
     elsif($libcurl =~ /LibreSSL/i) {
         $libressl = 1;
     }
+    elsif($libcurl =~ /mbedTLS/i) {
+        $mbedtls = 1;
+    }
 
     if($libcurl =~ /zlib\/([^ ]*)/i) {
         $zlibver = CGI::escapeHTML($1);
@@ -416,7 +420,7 @@ sub endofsingle {
     my $showdebug = $debug ? "D" : "-";
     my $showtrackmem = $trackmem ? "Y" : "-";
     my $showvalgrind = $valgrind ? "V" : "-";
-    my $showssl = $openssl ? "S" : ($gnutls ? "T" : ($nss ? "N" : ($polarssl ? "O" : ($axtls ? "X" : ($schannel ? "L" : ($darwinssl ? "R" : ($cyassl ? "C" : ($boringssl ? "B" : ($libressl ? "J" : "-")))))))));
+    my $showssl = $openssl ? "S" : ($gnutls ? "T" : ($nss ? "N" : ($mbedtls ? "Q" : ($polarssl ? "O" : ($axtls ? "X" : ($schannel ? "L" : ($darwinssl ? "R" : ($cyassl ? "C" : ($boringssl ? "B" : ($libressl ? "J" : "-"))))))))));
     my $showres = $asynch ? ($ares ? "A" : "H") : "-";
     my $showzlib = ($zlibver || $libz) ? "Z" : "-";
     my $showgssapi = $gssapi ? "G" : "-";
@@ -472,7 +476,7 @@ sub endofsingle {
     $valgrind=0;
     $buildcode=0;
 
-    $openssl=$gnutls=$nss=$axtls=$polarssl=$schannel=$darwinssl=$cyassl=$boringssl=$libressl=0;
+    $openssl=$gnutls=$nss=$axtls=$mbedtls=$polarssl=$schannel=$darwinssl=$cyassl=$boringssl=$libressl=0;
 
     $libmetalink=0;
     $libpsl=0;
@@ -754,6 +758,9 @@ sub singlefile {
             }
             elsif($line =~ /^\#define USE_AXTLS 1/) {
                 $axtls = 1;
+            }
+            elsif($line =~ /^\#define USE_MBEDTLS 1/) {
+                $mbedtls = 1;
             }
             elsif($line =~ /^\#define USE_POLARSSL 1/) {
                 $polarssl = 1;
