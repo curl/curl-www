@@ -296,7 +296,9 @@ sub endofsingle {
     elsif($libcurl =~ /LibreSSL/i) {
         $libressl = 1;
     }
-    elsif($libcurl =~ /mbedTLS/i) {
+    # PolarSSL confusingly renamed itself during the 1.x time frame
+    # so don't be fooled
+    elsif($libcurl =~ /mbedTLS\/(?!1\.)/i) {
         $mbedtls = 1;
     }
 
