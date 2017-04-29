@@ -169,7 +169,7 @@ if(!@logs) {
     print TABLE "No build logs available at this time";
 }
 else {
-    @data = "";
+    undef(@data);
     for(reverse sort @logs) {
         my $f="inbox/$_";
         print STDERR "Parse $f ($onlydo left)\n";
@@ -194,7 +194,7 @@ else {
             close(OUT);
         }
         push @more, @data;
-        @data = "";
+        undef(@data);
         if(!$onlydo--) {
             last;
         }
@@ -270,6 +270,11 @@ my $warning=0;
 
 sub endofsingle {
     my ($file) = @_; # the single build file name
+
+    if ($skipbuild) {
+        print STDERR "Skipping $file\n";
+        return qw();
+    }
 
     my $libver;
     my $opensslver;
@@ -465,7 +470,17 @@ sub endofsingle {
 
     $buildnum++;
 
+    return $res;
+}
+
+my $state =0;
+sub singlefile {
+    my ($file) = @_;
+
+    # Initialize global flags that are set for each build in singlefile()
+    # or endofsingle()
     $fail=$name=$email=$desc=$date=$libcurl=$uname="";
+    $skipbuild=0;
     $fine=0;
     $testfine=0;
     $linkfine=0;
@@ -502,13 +517,6 @@ sub endofsingle {
     $libz=0;
     $unixsocketsenabled=0;
     $http2=0;
-
-    return $res;
-}
-
-my $state =0;
-sub singlefile {
-    my ($file) = @_;
 
     if($file =~ /.*(\d\d\d\d)-(\d\d)-(\d\d)/) {
         ($year, $month, $day) = ($1, $2, $3);
@@ -884,6 +892,13 @@ sub singlefile {
 
             if($line =~ / -DCURLDEBUG /) {
                 $trackmem=1;
+            }
+
+            if($line =~ /don't know how to make 'vc-(x64-)?winssl/) {
+                # This is a completely misconfigured autobuild that is using an
+                # outdated build target, making it impossible to build. Don't
+                # pollute the autobuilds page by even displaying it.
+                $skipbuild = 1;
             }
         }
     }
