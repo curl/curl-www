@@ -51,4 +51,5 @@ ExpiresByType application/x-gzip "access plus 1 year"
 ExpiresByType application/x-bzip2 "access plus 1 year"
 ExpiresByType application/zip "access plus 1 year"
 ExpiresByType application/x-tar "access plus 1 year"
+ExpiresByType application/x-pem-file "access plus 12 hours"
 </ifmodule>
