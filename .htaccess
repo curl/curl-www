@@ -21,6 +21,7 @@ AddType text/plain .php
 AddType application/octet-stream .rpm
 AddType application/x-bzip2 .bz2
 AddType application/x-tar .tar
+AddType application/x-pem-file .pem
 php_flag engine off
 
 Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
