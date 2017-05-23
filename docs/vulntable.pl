@@ -10,6 +10,9 @@ sub vernum {
     return ($v[0] << 16) | ($v[1] << 8) | $v[2];
 }
 
+my $allvulns="allvulns.gen";
+unlink($allvulns);
+
 my @vname; # number + HTML links to each vulernability page
 print "<table>";
 sub head {
@@ -98,6 +101,10 @@ sub single {
     }
     close(T);
     close(O);
+
+    open(A, ">>$allvulns");
+    print A "$str: $vulnnum\n";
+    close(A);
 }
 
 my $total = head();

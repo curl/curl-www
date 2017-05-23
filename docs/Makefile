@@ -548,7 +548,7 @@ http2.html: _http2.html http2.gen $(MAINPARTS)
 releases.html: _releases.html rel.gen $(MAINPARTS)
 	$(ACTION)
 
-rel.gen: $(ROOT)/_changes.html ./relinfo.pl vuln.pm
+rel.gen: $(ROOT)/_changes.html ./relinfo.pl vuln.pm allvulns.gen
 	./relinfo.pl < $< > $@
 
 releases.csv: $(ROOT)/_changes.html ./relinfo.pl vuln.pm

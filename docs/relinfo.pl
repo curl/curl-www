@@ -18,12 +18,22 @@ sub head {
         return;
     }
     print "<tr class=\"tabletop\"><th rowspan=2>index</th><th rowspan=2>Version</th>";
-    printf("<th rowspan=2>Date</th><th rowspan=2>Since %s</th><th colspan=3>Delta</th><th colspan=3>Accumulated</th></tr>\n");
-    printf("<tr class=\"tabletop\"><th>Days</th><th>Bugfixes</th><th>Changes</th><th>Days</th><th>Bugfixes</th><th>Changes</th></tr>\n",
+    printf("<th rowspan=2>Date</th><th rowspan=2>Since %s</th><th colspan=3>Delta</th><th colspan=4>Accumulated</th></tr>\n");
+    printf("<tr class=\"tabletop\"><th>Days</th><th>Bugfixes</th><th>Changes</th><th>Days</th><th>Bugfixes</th><th>Changes</th><th>Vulns</a></tr>\n",
            $releases[0]);
 }
 
 my $l;
+
+# made by vulntable.pl
+open(A, "<allvulns.gen");
+my %vulns;
+while(<A>) {
+    if($_ =~ /^([^:]*): (\d+)/) {
+        $vulns{$1} = $2;
+    }
+}
+close(A);
 
 my $str;
 while(<STDIN>) {
@@ -152,7 +162,7 @@ for my $str (@releases) {
     if($date =~ /([A-Za-z]+) (\d+) (\d\d\d\d)/) {
         if(length($1)>3) {
             # a long month name, use the shorter version
-            $date = substr($1, 0, 3)." $2 $3";
+            $date = substr($1, 0, 3)."&nbsp;$2&nbsp;$3";
         }
     }
     $totalchanges += $changes{$str};
@@ -171,7 +181,8 @@ for my $str (@releases) {
                $changes{$str}, $totalchanges);
     }
     else {
-        printf("<td>$date</td><td>$age</td><td>$deltadays</td><td>%d</td><td>%d</td><td>$totaldays</td><td>%d</td><td>%d</td></tr>\n",
+        $v = sprintf("<a href=\"vuln-$str.html\">%d</a>", $vulns{$str});
+        printf("<td>$date</td><td>$age</td><td>$deltadays</td><td>%d</td><td>%d</td><td>$totaldays</td><td>%d</td><td>%d</td><td>$v</td></tr>\n",
                $bugfixes{$str}, $changes{$str},
                $totalbugs, $totalchanges);
     }
