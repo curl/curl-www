@@ -17,8 +17,9 @@ sub head {
     if($raw) {
         return;
     }
-    print "<tr class=\"tabletop\"><th>index</th><th>Version</th>";
-    printf("<th>Date</th><th>Since %s</th><th>Days</th><th>Bugfixes</th><th>Changes</th></tr>\n",
+    print "<tr class=\"tabletop\"><th rowspan=2>index</th><th rowspan=2>Version</th>";
+    printf("<th rowspan=2>Date</th><th rowspan=2>Since %s</th><th colspan=3>Delta</th><th colspan=3>Accumulated</th></tr>\n");
+    printf("<tr class=\"tabletop\"><th>Days</th><th>Bugfixes</th><th>Changes</th><th>Days</th><th>Bugfixes</th><th>Changes</th></tr>\n",
            $releases[0]);
 }
 
@@ -80,7 +81,7 @@ for my $str (@releases) {
         # store the first date
         $prevsecs = $datesecs;
         $prevdays = 0;
-        $age="most recent";
+        $age="&dash;";
     }
     $since{$str}=$age;
     $delta{$str}=$deltadays;
@@ -170,9 +171,9 @@ for my $str (@releases) {
                $changes{$str}, $totalchanges);
     }
     else {
-        printf("<td>$date</td><td>$age</td><td>$deltadays ($totaldays)</td><td>%d (%d)</td><td>%d (%d)</td></tr>\n",
-               $bugfixes{$str}, $totalbugs,
-               $changes{$str}, $totalchanges);
+        printf("<td>$date</td><td>$age</td><td>$deltadays</td><td>%d</td><td>%d</td><td>$totaldays</td><td>%d</td><td>%d</td></tr>\n",
+               $bugfixes{$str}, $changes{$str},
+               $totalbugs, $totalchanges);
     }
  
     ++$l;
