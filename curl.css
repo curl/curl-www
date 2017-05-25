@@ -114,10 +114,13 @@ td.newsdate {
 
 /* like used for important news items */
 .alert {
-  font-size: 120%;
   color: #ffffff;
   background-color: #f00000;
   padding: 4px 4px 4px 4px;
+}
+
+a.alert {
+    text-decoration: underline;
 }
 
 /* the one in the download database */
