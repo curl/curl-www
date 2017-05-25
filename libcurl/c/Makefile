@@ -9,7 +9,8 @@ OPTMAN=$(DOCROOT)/libcurl/opts
 include $(ROOT)/mainparts.mk
 include $(ROOT)/setup.mk
 
-MAINPARTS += _menu.html doclinks.t Makefile $(ROOT)/manpage.t
+MAINPARTS += _menu.html doclinks.t Makefile $(ROOT)/manpage.t $(ROOT)/alert.t
+FCPP_OPTS = -DSHOW_ALERT
 
 # the files the opts pages depend on
 MANPARTS = $(MAINPARTS)

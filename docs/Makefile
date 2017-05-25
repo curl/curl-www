@@ -5,8 +5,9 @@ DOCROOT=$(SRCROOT)/docs
 include $(ROOT)/mainparts.mk
 include $(ROOT)/setup.mk
 
-MAINPARTS += _menu.html
+MAINPARTS += _menu.html ../alert.t
 
+FCPP_OPTS = -DSHOW_ALERT
 MAN2HTML = roffit --bare
 ADVBOX = adv-related-box.inc
 

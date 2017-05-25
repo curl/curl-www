@@ -4,7 +4,8 @@ SRCROOT= ../cvssource
 include $(ROOT)/mainparts.mk
 include $(ROOT)/setup.mk
 
-MAINPARTS += _menu.html
+MAINPARTS += _menu.html ../alert.t
+FCPP_OPTS = -DSHOW_ALERT
 
 PAGES= index.html mail.html competitors.html comparison-table.html	  \
      relatedlibs.html features.html wininet.html libwww.html libsoup.html \
