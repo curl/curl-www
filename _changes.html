@@ -44,6 +44,130 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+SUBTITLE(Fixed in 7.54.1 - June 14 2017)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="https://curl.haxx.se/bug/?i=1474">curl: show the libcurl release date in --version output</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/docs/adv_20170614.html">CVE-2017-9502: default protocol drive letter buffer overflow</a>
+ BGF openssl: fix memory leak in servercert
+ BGF tests: remove the html and PDF versions from the tarball
+ BGF mbedtls: enable NTLM (& SMB) even if MD4 support is unavailable
+ BGF <a href="https://curl.haxx.se/bug/?i=1403">typecheck-gcc: handle function pointers properly</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1435">llist: no longer uses malloc</a>
+ BGF gnutls: removed some code when --disable-verbose is configured
+ BGF lib: fix maybe-uninitialized warnings
+ BGF <a href="https://curl.haxx.se/bug/?i=1439">multi: clarify condition in curl_multi_wait</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1392">schannel: Don't treat encrypted partial record as pending data</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1427">configure: fix the -ldl check for openssl, add -lpthread check</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1440">configure: accept -Og and -Ofast GCC flags</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1432">Makefile: avoid use of GNU-specific form of $<</a>
+ BGF if2ip: fix -Wcast-align warning
+ BGF <a href="https://curl.haxx.se/bug/?i=1420">configure: stop prepending to LDFLAGS, CPPFLAGS</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1446">curl: set a 100K buffer size by default</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1447">typecheck-gcc: fix _curl_is_slist_info</a>
+ BGF <a href="https://bugzilla.redhat.com/1444860">nss: do not leak PKCS #11 slot while loading a key</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1414">nss: load libnssckbi.so if no other trust is specified</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1451">examples: ftpuploadfrommem.c</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-04/0127.html">url: declare get_protocol_family() static</a>
+ BGF examples/cookie_interface.c: changed to example.com
+ BGF test1443: test --remote-time
+ BGF curl: use utimes instead of obsolescent utime when available
+ BGF url: fixed a memory leak on OOM while setting CURLOPT_BUFFERSIZE
+ BGF curl_rtmp: fix missing-variable-declarations warnings
+ BGF tests: fixed OOM handling of unit tests to abort test
+ BGF <a href="https://github.com/curl/curl/issues/1441#issuecomment-297689856">curl_setup: Ensure no more than one IDN lib is enabled</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1460">tool: Fix missing prototype warnings for CURL_DOES_CONVERSIONS</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1449">CURLOPT_BUFFERSIZE: 1024 bytes is now the minimum size</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1453">curl: non-boolean command line args reject --no- prefixes</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1389">telnet: Write full buffer instead of byte-by-byte</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1452">typecheck-gcc: add missing string options</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1452">typecheck-gcc: add support for CURLINFO_SOCKET</a>
+ BGF opt man pages: they all have examples now
+ BGF <a href="https://curl.haxx.se/bug/?i=1464">curl_setup_once: use SEND_QUAL_ARG2 for swrite</a>
+ BGF test557: set a known good numeric locale
+ BGF schannel: return a more specific error code for SEC_E_UNTRUSTED_ROOT
+ BGF tests/server: make string literals const
+ BGF <a href="https://curl.haxx.se/bug/?i=1466">runtests: use -R for random order</a>
+ BGF unit1305: fix compiler warning
+ BGF curl_slist_append.3: clarify a NULL input creates a new list
+ BGF tests/server: run checksrc by default in debug-builds
+ BGF tests: fix -Wcast-qual warnings
+ BGF runtests.pl: simplify the datacheck read section
+ BGF <a href="https://curl.haxx.se/bug/?i=1463">curl: remove --environment and tool_writeenv.c</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1471">buildconf: fix hang on IRIX</a>
+ BGF tftp: silence bad-function-cast warning
+ BGF asyn-thread: fix unused macro warnings
+ BGF tool_parsecfg: fix -Wcast-qual warning
+ BGF sendrecv: fix MinGW-w64 warning
+ BGF <a href="https://curl.haxx.se/bug/?i=1469">test537: use correct variable type</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1315">rand: treat fake entropy the same regardless of endianness</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1465">curl: generate the --help output</a>
+ BGF tests: removed redundant --trace-ascii arguments
+ BGF multi: assign IDs to all timers and make each timer singleton
+ BGF <a href="https://curl.haxx.se/bug/?i=1472">multi: use a fixed array of timers instead of malloc</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1475">mbedtls: Support server renegotiation request</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1481">pipeline: fix mistakenly trying to pipeline POSTs</a>
+ BGF lib510: don't write past the end of the buffer if it's too small
+ BGF CURLOPT_HTTPPROXYTUNNEL.3: clarify, add example
+ BGF <a href="https://curl.haxx.se/bug/?i=1400">SecureTransport/DarwinSSL: Implement public key pinning</a>
+ BGF curl.1: clarify --config
+ BGF <a href="https://curl.haxx.se/bug/?i=1487">curl_sasl: fix build error with CURL_DISABLE_CRYPTO_AUTH + USE_NTLM</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1450">darwinssl: Fix exception when processing a client-side certificate</a>
+ BGF curl.1: mention --oauth2-bearer's <token> argument
+ BGF <a href="https://curl.haxx.se/bug/?i=1490">mkhelp.pl: do not add current time into curl binary</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1253">asiohiper.cpp / evhiperfifo.c: deal with negative timerfunction input</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1479">ssh: fix memory leak in disconnect due to timeout</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1488">tests: stabilize test 1034</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1461">cmake: auto detection of CURL_CA_BUNDLE/CURL_CA_PATH</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1504">assert: avoid, use DEBUGASSERT instead</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=878">LDAP: using ldap_bind_s on Windows with methods</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1489">redirect: store the "would redirect to" URL when max redirs is reached</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1321">winbuild: fix the nghttp2 build</a>
+ BGF examples: fix -Wimplicit-fallthrough warnings
+ BGF <a href="https://curl.haxx.se/bug/?i=1499">time: fix type conversions and compiler warnings</a>
+ BGF mbedtls: fix variable shadow warning
+ BGF <a href="https://curl.haxx.se/bug/?i=1516">test557: fix ubsan runtime error due to int left shift</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1294">transfer: init the infilesize from the postfields</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1208">docs: clarify NO_PROXY further</a>
+ BGF build-wolfssl: Sync config with wolfSSL 3.11
+ BGF <a href="https://curl.haxx.se/bug/?i=1516">curl-compilers.m4: enable -Wshift-sign-overflow for clang</a>
+ BGF example/externalsocket.c: make it use CLOSESOCKETFUNCTION too
+ BGF lib574.c: use correct callback proto
+ BGF lib583: fix compiler warning
+ BGF <a href="https://curl.haxx.se/bug/?i=1522">curl-compilers.m4: fix compiler_num for clang</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1524">typecheck-gcc.h: separate getinfo slist checks from other pointers</a>
+ BGF typecheck-gcc.h: check CURLINFO_TLS_SSL_PTR and CURLINFO_TLS_SESSION
+ BGF <a href="https://curl.haxx.se/bug/?i=846">typecheck-gcc.h: check CURLINFO_CERTINFO</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1528">build: provide easy code coverage measuring</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1530">test1537: dedicated tests of the URL (un)escape API calls</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1529">curl_endian: remove unused functions</a>
+ BGF test1538: verify the libcurl strerror API calls
+ BGF MD(4|5): silence cast-align clang warning
+ BGF <a href="https://curl.haxx.se/bug/?i=1532">dedotdot: fixed output for ".." and "." only input</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1536">cyassl: define build macros before including ssl.h</a>
+ BGF updatemanpages.pl: error out on too old git version
+ BGF curl_sasl: fix unused-variable warning
+ BGF x509asn1: fix implicit-fallthrough warning with GCC 7
+ BGF libtest: fix implicit-fallthrough warnings with GCC 7
+ BGF <a href="https://curl.haxx.se/bug/?i=1539">BINDINGS: add Ring binding</a>
+ BGF curl_ntlm_core: pass unsigned char to toupper
+ BGF test1262: verify ftp download with -z for "if older than this"
+ BGF <a href="https://curl.haxx.se/bug/?i=1543">test1521: test all curl_easy_setopt options</a>
+ BGF typecheck-gcc: allow CURLOPT_STDERR to be NULL too
+ BGF metalink: remove unused printf() argument
+ BGF <a href="https://curl.haxx.se/bug/?i=1550">file: make speedcheck use current time for checks</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-06/0017.html">configure: fix link with librtmp when specifying path</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1557">examples/multi-uv.c: fix deprecated symbol</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1541">cmake: Fix inconsistency regarding mbed TLS include directory</a>
+ BGF setopt: check CURLOPT_ADDRESS_SCOPE option range
+ BGF <a href="https://curl.haxx.se/bug/?i=1561">gitignore: ignore all vim swap files</a>
+ BGF urlglob: fix division by zero
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-06/0038.html">libressl: OCSP and intermediate certs workaround no longer needed</a>
+</ul>
+
 SUBTITLE(Fixed in 7.54.0 - April 19 2017)
 <p> Changes:
 <ul class="changes">
