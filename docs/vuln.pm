@@ -1,5 +1,8 @@
 # page, first vulnerable version, last vulnerable version, name, CVE, date (YYYYMMDD)
 @vuln = (
+    "adv_20170809A.html|7.34.0|7.54.1|URL globbing out of bounds read|CVE-2017-1000101|20170809",
+    "adv_20170809B.html|7.15.0|7.54.1|TFTP sends more than buffer size|CVE-2017-1000100|20170809",
+    "adv_20170809C.html|7.54.1|7.54.1|FILE buffer read out of bounds|CVE-2017-1000099|20170809",
     "adv_20170614.html|7.53.0|7.54.0|URL file scheme drive letter buffer overflow|CVE-2017-9502|20170614",
     "adv_20170419.html|7.52.0|7.53.1|TLS session resumption client cert bypass (again)|CVE-2017-7468|20170419",
     "adv_20170403.html|6.5|7.53.1|--write-out out of buffer read|CVE-2017-7407|20170403",
