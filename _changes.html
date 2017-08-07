@@ -44,6 +44,136 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_55_0"></a>
+SUBTITLE(Fixed in 7.55.0 - August 9 2017)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="https://curl.haxx.se/bug/?i=1486">curl: allow --header and --proxy-header read from file</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=1511">getinfo: provide sizes as curl_off_t</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=1512">curl: prevent binary output spewed to terminal</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=1593">curl: added --request-target</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=1593">libcurl: added CURLOPT_REQUEST_TARGET</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=1454">curl: added --socks5-{basic,gssapi}: control socks5 auth</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=1454">libcurl: added CURLOPT_SOCKS5_AUTH</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/docs/adv_20170809A.html">glob: do not parse after a strtoul() overflow range (CVE-2017-1000101)</a>
+ BGF <a href="https://curl.haxx.se/docs/adv_20170809B.html">tftp: reject file name lengths that don't fit (CVE-2017-1000100)</a>
+ BGF <a href="https://curl.haxx.se/docs/adv_20170809C.html">file: output the correct buffer to the user (CVE-2017-1000099)</a>
+ BGF <a href="https://daniel.haxx.se/blog/2017/06/15/target-independent-libcurl-headers/">includes: remove curl/curlbuild.h and curl/curlrules.h</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1565">dist: make the hugehelp.c not get regenerated unnecessarily</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1531">timers: store internal time stamps as time_t instead of doubles</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1556">progress: let "current speed" be UL + DL speeds combined</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1547">http-proxy: do the HTTP CONNECT process entirely non-blocking</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1538">lib/curl_setup.h: remove CURL_WANTS_CA_BUNDLE_ENV</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1476">fuzz: bring oss-fuzz initial code converted to C89</a>
+ BGF configure: disable nghttp2 too if HTTP has been disabled
+ BGF <a href="https://curl.haxx.se/bug/?i=1577">mk-ca-bundle.pl: Check curl's exit code after certdata download</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1569">test1148: verify the -# progressbar</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1576">tests: stabilize test 2032 and 2033</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1546">HTTPS-Proxy: don't offer h2 for https proxy connections</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1505">http-proxy: only attempt FTP over HTTP proxy</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1578">curl-compilers.m4: enable vla warning for clang</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1578">curl-compilers.m4: enable double-promotion warning</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1578">curl-compilers.m4: enable missing-variable-declarations clang warning</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1578">curl-compilers.m4: enable comma clang warning</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1578">Makefile.m32: enable -W for MinGW32 build</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1514">CURLOPT_PREQUOTE: not supported for SFTP</a>
+ BGF http2: fix OOM crash
+ BGF <a href="https://curl.haxx.se/bug/?i=1584">PIPELINING_SERVER_BL: cleanup the internal list use</a>
+ BGF mkhelp.pl: fix script name in usage text
+ BGF lib1521: add curl_easy_getinfo calls to the test set
+ BGF travis: do the distcheck test build out-of-tree as well
+ BGF if2ip: fix compiler warning in ISO C90 mode
+ BGF <a href="https://github.com/curl/curl/commit/73a2fcea0b4adea6ba342cd7ed1149782c214ae3#commitcomment-22655993">lib: fix the djgpp build</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1592">typecheck-gcc: add support for CURLINFO_OFF_T</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1595">travis: enable typecheck-gcc warnings</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1604">maketgz: switch to xz instead of lzma</a>
+ BGF CURLINFO_REDIRECT_URL.3: mention the CURLOPT_MAXREDIRS case
+ BGF <a href="https://curl.haxx.se/bug/?i=1606">curl-compilers.m4: fix unknown-warning-option on Apple clang</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1610">winbuild: fix boringssl build</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1598">curl/system.h: add check for XTENSA for 32bit gcc</a>
+ BGF test1537: fixed memory leak on OOM
+ BGF <a href="https://curl.haxx.se/bug/?i=1611">test1521: fix compiler warnings</a>
+ BGF <a href="https://github.com/curl/curl/pull/1486#issuecomment-310926872">curl: fix memory leak on test 1147 OOM</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1614">libtest/make: generate lib1521.c dynamically at build-time</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1623">curl_strequal.3: fix typo in SYNOPSIS</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1616">progress: prevent resetting t_starttransfer</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1620">openssl: improve fallback seed of PRNG with a time based hash</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1521">http2: improved PING frame handling</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1615">test1450: add simple testing for DICT</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1591">make: build the docs subdir only from within src</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1621">cmake: Added compatibility options for older Windows versions</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1617">gtls: fix build when sizeof(long) < sizeof(void *)</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1631">url: make the original string get used on subsequent transfers</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-07/0003.html">timeval.c: Use long long constant type for timeval assignment</a>
+ BGF tool_sleep: typecast to avoid macos compiler warning
+ BGF <a href="https://curl.haxx.se/bug/?i=1637">travis.yml: use --enable-werror on debug builds</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1630">test1451: add SMB support to the testbed</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1638">configure: remove checks for 5 functions never used</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1619">configure: try ldap/lber in reversed order first</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-07/0005.html">smb: fix build for djgpp/MSDOS</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1642">travis: install nghttp2 on linux builds</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-07/0005.html">smb: add support for CURLOPT_FILETIME</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1640">cmake: fix send/recv argument scanner for windows</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1639">inet_pton: fix include on windows to get prototype</a>
+ BGF select.h: avoid macro redefinition harder
+ BGF cmake: if inet_pton is used, bump _WIN32_WINNT
+ BGF asyn-thread.c: fix unused variable warnings on macOS
+ BGF runtests: support "threaded-resolver" as a feature
+ BGF test506: skip if threaded-resolver
+ BGF <a href="https://curl.haxx.se/bug/?i=1552">cmake: remove spurious "-l" from linker flags</a>
+ BGF cmake: add CURL_WERROR for enabling "warning as errors"
+ BGF <a href="https://github.com/curl/curl/issues/828#issuecomment-313475151">memdebug: don't setbuf() if the file open failed</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1612">curl_easy_escape.3: mention the (lack of) encoding</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1645">test1452: add telnet negotiation</a>
+ BGF CURLOPT_POSTFIELDS.3: explain the 100-continue magic better
+ BGF <a href="https://curl.haxx.se/bug/?i=1649">cmake: offer CMAKE_DEBUG_POSTFIX when building with MSVC</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1653">tests/valgrind.supp: supress OpenSSL false positive seen on travis</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1589">curl_setup_once: Remove ERRNO/SET_ERRNO macros</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1665">curl-compilers.m4: disable warning spam with Cygwin's clang</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1664">ldap: fix MinGW compiler warning</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1591">make: fix docs build on OpenBSD</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1672">curl_setup: always define WIN32_LEAN_AND_MEAN on Windows</a>
+ BGF system.h: include winsock2.h before windows.h
+ BGF <a href="https://curl.haxx.se/bug/?i=1667">winbuild: build with warning level 4</a>
+ BGF rtspd: fix MSVC level 4 warning
+ BGF sockfilt: suppress conversion warning with explicit cast
+ BGF libtest: fix MSVC warning C4706
+ BGF <a href="https://github.com/curl/curl/commit/eb16305#commitcomment-23035670">darwinssl: fix pinnedpubkey build error</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1682">tests/server/resolve.c: fix deprecation warning</a>
+ BGF <a href="https://bugzilla.redhat.com/1436158">nss: fix a possible use-after-free in SelectClientCert()</a>
+ BGF checksrc: escape open brace in regex
+ BGF <a href="https://curl.haxx.se/bug/?i=1683">multi: mention integer overflow risk if using > 500 million sockets</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1703">darwinssl: fix --tlsv1.2 regression</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1693">timeval: struct curltime is a struct timeval replacement</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1652">curl_rtmp: fix a compiler warning</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1704">include.d: clarify that it concerns the response headers</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1674">cmake: support make uninstall</a>
+ BGF <a href="https://github.com/curl/curl/commit/de6de94#commitcomment-23370851">include.d: clarify --include is only for response headers</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1688">libcurl: Stop using error codes defined under CURL_NO_OLDIES</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1714">http: fix response code parser to avoid integer overflow</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1669">configure: fix the check for IdnToUnicode</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-07/0033.html">multi: fix request timer management</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1717">curl_threads: fix MSVC compiler warning</a>
+ BGF travis: build on osx with openssl
+ BGF travis: build on osx with libressl
+ BGF CURLOPT_NETRC.3: mention the file name on windows
+ BGF <a href="https://curl.haxx.se/bug/?i=1711">cmake: set MSVC warning level to 4</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-08/0008.html">netrc: skip lines starting with '#'</a>
+ BGF darwinssl: fix curlssl_sha256sum() compiler warnings on first argument
+ BGF BUILD.WINDOWS: mention buildconf.bat for builds off git
+ BGF <a href="https://curl.haxx.se/bug/?i=1722">darwinssl: silence compiler warnings</a>
+ BGF travis: build on osx with darwinssl
+ BGF <a href="https://curl.haxx.se/bug/?i=1718">FTP: skip unnecessary CWD when in nocwd mode</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1733">gssapi: fix memory leak of output token in multi round context</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1728">getparameter: avoid returning uninitialized 'usedarg'</a>
+ BGF curl (debug build) easy_events: make event data static
+ BGF <a href="https://curl.haxx.se/bug/?i=1730">curl: detect and bail out early on parameter integer overflows</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1738">configure: fix recv/send/select detection on Android</a>
+</ul>
+
 <a name="7_54_1"></a>
 SUBTITLE(Fixed in 7.54.1 - June 14 2017)
 <p> Changes:
