@@ -16,6 +16,8 @@ my $mode; # 0 - normal, 1 - known bugs, 2 - References
 my $contr;
 
 foreach my $l (@release) {
+    $l =~ s/\/\*/\/&#42;/g; # replace /*
+    $l =~ s/\*\//&#42;\//g; # replace */
     if($mode == 1 ) {
         if($l =~ /^  ([^ \(].*)/) {
             $contr .= "$1 ";
