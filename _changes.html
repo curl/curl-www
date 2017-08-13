@@ -44,6 +44,39 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_55_1"></a>
+SUBTITLE(Fixed in 7.55.1 - August 14 2017)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF build: fix 'make install' with configure, install docs/libcurl/&#42; too
+ BGF make install: add 8 missing man pages to the installation
+ BGF <a href="https://curl.haxx.se/bug/?i=1750">curl: do bounds check using a double comparison</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1744">dist: Add dictserver.py/negtelnetserver.py to release</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1742">digest_sspi: Don't reuse context if the user/passwd has changed</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1746">gitignore: ignore top-level .vs folder</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1746">build: check out *.sln files with Windows line endings</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1753">travis: verify "make install"</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1755">dist: fix the cmake build by shipping cmake_uninstall.cmake.in too</a>
+ BGF metalink: fix error: ‘*’ in boolean context, suggest ‘&&’ instead
+ BGF <a href="https://curl.haxx.se/bug/?i=1647">configure: use the threaded resolver backend by default if possible</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1743">mkhelp.pl: allow executing this script directly</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-08/0050.html">maketgz: remove old *.dist files before making the tarball</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1759">openssl: remove CONST_ASN1_BIT_STRING</a>
+ BGF openssl: fix "error: this statement may fall through"
+ BGF <a href="https://curl.haxx.se/bug/?i=1761">proxy: fix memory leak in case of invalid proxy server name</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1766">curl/system.h: support more architectures (OpenRISC, ARC)</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1770">docs: fix typos</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1752">curl/system.h: add Oracle Solaris Studio</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1769">CURLINFO_TOTAL_TIME: could wrongly return 4200 seconds</a>
+ BGF docs: --connect-to clarified
+ BGF <a href="https://curl.haxx.se/bug/?i=1763">cmake: allow user to override CMAKE_DEBUG_POSTFIX</a>
+ BGF travis: test cmake build on tarball too
+ BGF <a href="https://curl.haxx.se/bug/?i=1762">redirect: make it handle absolute redirects to IDN names</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1774">curl/system.h: fix for gcc on PowerPC</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1764">curl --interface: fixed for IPV6 unique local addresses</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1719">cmake: threads detection improvements</a>
+</ul>
+
 <a name="7_55_0"></a>
 SUBTITLE(Fixed in 7.55.0 - August 9 2017)
 <p> Changes:
