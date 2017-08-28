@@ -49,7 +49,7 @@ PAGES = index.html example.html curl_easy_init.html curl_easy_cleanup.html    \
  curl_multi_socket_action.html curl_multi_wait.html $(EXAMPLES) $(opts)	      \
  easy_setopt_options.html easy_getinfo_options.html multi_setopt_options.html \
  allexamples.zip options-in-examples.html symbols-in-versions.html	      \
- threadsafe.html
+ threadsafe.html curl_global_sslset.html
 
 all: $(PAGES)
 
@@ -219,6 +219,11 @@ curl_global_init_mem.t: $(MANROOT)/curl_global_init_mem.3
 curl_global_cleanup.html: _curl_global_cleanup.html $(MAINPARTS) curl_global_cleanup.t
 	$(ACTION)
 curl_global_cleanup.t: $(MANROOT)/curl_global_cleanup.3
+	$(MAN2HTML) < $< >$@
+
+curl_global_sslset.html: _curl_global_sslset.html $(MAINPARTS) curl_global_sslset.t
+	$(ACTION)
+curl_global_sslset.t: $(MANROOT)/curl_global_sslset.3
 	$(MAN2HTML) < $< >$@
 
 libcurl.html: _libcurl.html $(MAINPARTS) libcurl.t
