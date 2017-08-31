@@ -62,9 +62,6 @@ index.html: _index.html $(MAINPARTS) release.t packstat.t
 newslog.html: _newslog.html $(MAINPARTS)
 	$(ACTION)
 
-press.html: _press.html $(MAINPARTS)
-	$(ACTION)
-
 news2.html: _news2.html $(MAINPARTS)
 	$(ACTION)
 
