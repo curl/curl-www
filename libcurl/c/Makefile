@@ -379,11 +379,11 @@ threadsafe.html: _threadsafe.html threadsafe.gen $(MAINPARTS)
 allexamples.zip: $(EXAMPLESRCS)
 	rm -f $@; zip -j $@ $(EXAMPLESRCS)
 
-options-in-examples.html: _options-in-examples.html $(MAINPARTS) allex.t options-in-examples.t
+options-in-examples.html: _options-in-examples.html $(MAINPARTS) allex.t options-in-examples.gen
 	$(ACTION)
 
-options-in-examples.t: allex.t options-used-in-examples.pl
-	perl options-used-in-examples.pl > options-in-examples.t
+options-in-examples.gen: allex.t options-used-in-examples.pl
+	perl options-used-in-examples.pl > options-in-examples.gen
 
 symbols-in-versions.t: $(MANROOT)/symbols-in-versions
 	$(TXT2PLAIN) < $< > $@

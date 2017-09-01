@@ -15,8 +15,10 @@ sub scanexample {
         my $l = $_;
         chomp $l;
         if($l =~ /^(.*)(CURLOPT_[A-Z_0-9]*)(.*)/) {
-            $usedinexample{$2}++;
-            $optinexample{$2}.="$file ";
+            my $n = $usedinexample{$2}++;
+            if($n <= 5) {
+                $optinexample{$2}.="$file ";
+            }
         }
     }
     close(F);
@@ -28,7 +30,7 @@ sub scancurlh {
         my $l = $_;
         chomp $l;
         if($l =~ /^  CINIT\(([A-Z_0-9]*)(.*)/) {
-            if($2 =~ /DEPRECATED/) {
+            if($2 =~ /(DEPRECATED|OBSOLETE)/) {
                 # ignore deprecated options
                 next;
             }
