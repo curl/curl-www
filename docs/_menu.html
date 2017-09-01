@@ -179,6 +179,14 @@ VLINK(/docs/features.html, Features, All features summed up)
 #endif
 
 #ifdef PROJ_DOCS
+#ifdef DOCS_HELP_US
+LINK(/docs/help-us.html, Help us)
+#else
+VLINK(/docs/help-us.html, Help us, How to start contributing)
+#endif
+#endif
+
+#ifdef PROJ_DOCS
 #ifdef DOCS_HISTORY
 LINK(/docs/history.html, History)
 #else

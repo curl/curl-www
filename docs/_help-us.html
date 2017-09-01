@@ -1,0 +1,30 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>curl - Help us!</TITLE>
+#include "css.t"
+</HEAD>
+
+#define CURL_DOCS
+#define PROJ_DOCS
+#define DOCS_HELP_US
+#define CURL_URL docs/help-us.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Docs, "/docs/", Help us)
+
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/dev/contribute.html">Contribute</a>
+<br><a href="/mail/">Mailing Lists</a>
+<br><a href="/dev/internals.html">Internals</a>
+</div>
+
+#include "help-us.gen"
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
+

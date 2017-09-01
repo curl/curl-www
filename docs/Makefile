@@ -15,7 +15,7 @@ ADVCONV= $(MARKDOWN) < $< | perl curlver-to-vulnlink.pl > $@
 
 PAGES = index.html manpage.html faq.html sslcerts.html companies.html	      \
  features.html bugs.html install.html copyright.html thanks.html todo.html    \
- httpscripting.html comparison-table.html versions.html     \
+ httpscripting.html comparison-table.html versions.html help-us.html          \
  history.html knownbugs.html manual.html caextract.html     	              \
  security.html libs.html http-cookies.html adv_20051013.html		      \
  adv_20051207.html adv_20060320.html vulnerabilities.html adv_20070710.html   \
@@ -94,6 +94,11 @@ history.html: _history.html $(MAINPARTS) history.gen
 
 history.gen: $(DOCROOT)/HISTORY.md
 	$(MARKDOWN) < $(DOCROOT)/HISTORY.md > $@
+
+help-us.html: _help-us.html $(MAINPARTS) help-us.gen
+	$(ACTION)
+help-us.gen: $(DOCROOT)/HELP-US.md
+	$(MARKDOWN) < $(DOCROOT)/HELP-US.md > $@
 
 code-of-conduct.html: _code-of-conduct.html $(MAINPARTS) coc.gen
 	$(ACTION)
