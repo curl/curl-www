@@ -4,9 +4,7 @@
 Makefile.examples
 Makefile.exhtml
 allexamples.zip
-CURLOPT_*.gen
-CURLMOPT_*.gen
-CURLINFO_*.gen
+*.gen
 Makefile.opts
 Makefile.opttargets
-threadsafe.gen
+

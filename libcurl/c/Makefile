@@ -29,6 +29,11 @@ include Makefile.opttargets
 
 opts = $(OPTPAGES)
 
+MIME = curl_mime_init.html curl_mime_free.html curl_mime_addpart.html	\
+ curl_mime_name.html curl_mime_data.html curl_mime_data_cb.html		\
+ curl_mime_filedata.html curl_mime_filename.html			\
+ curl_mime_subparts.html curl_mime_type.html curl_mime_headers.html
+
 PAGES = index.html example.html curl_easy_init.html curl_easy_cleanup.html    \
  curl_easy_setopt.html curl_easy_perform.html curl_version.html		      \
  curl_version_info.html curl_getenv.html curl_free.html			      \
@@ -49,7 +54,7 @@ PAGES = index.html example.html curl_easy_init.html curl_easy_cleanup.html    \
  curl_multi_socket_action.html curl_multi_wait.html $(EXAMPLES) $(opts)	      \
  easy_setopt_options.html easy_getinfo_options.html multi_setopt_options.html \
  allexamples.zip options-in-examples.html symbols-in-versions.html	      \
- threadsafe.html curl_global_sslset.html
+ threadsafe.html curl_global_sslset.html $(MIME)
 
 all: $(PAGES)
 
@@ -390,6 +395,63 @@ symbols-in-versions.t: $(MANROOT)/symbols-in-versions
 
 symbols-in-versions.html: _symbols-in-versions.html $(MAINPARTS) symbols-in-versions.t
 	$(ACTION)
+
+curl_mime_init.html: _curl_mime_init.html $(MAINPARTS) curl_mime_init.gen
+	$(ACTION)
+curl_mime_init.gen: $(MANROOT)/curl_mime_init.3
+	$(MAN2HTML) < $< >$@
+
+curl_mime_free.html: _curl_mime_free.html $(MAINPARTS) curl_mime_free.gen
+	$(ACTION)
+curl_mime_free.gen: $(MANROOT)/curl_mime_free.3
+	$(MAN2HTML) < $< >$@
+
+curl_mime_addpart.html: _curl_mime_addpart.html $(MAINPARTS) curl_mime_addpart.gen
+	$(ACTION)
+curl_mime_addpart.gen: $(MANROOT)/curl_mime_addpart.3
+	$(MAN2HTML) < $< >$@
+
+curl_mime_name.html: _curl_mime_name.html $(MAINPARTS) curl_mime_name.gen
+	$(ACTION)
+curl_mime_name.gen: $(MANROOT)/curl_mime_name.3
+	$(MAN2HTML) < $< >$@
+
+curl_mime_data.html: _curl_mime_data.html $(MAINPARTS) curl_mime_data.gen
+	$(ACTION)
+curl_mime_data.gen: $(MANROOT)/curl_mime_data.3
+	$(MAN2HTML) < $< >$@
+
+curl_mime_data_cb.html: _curl_mime_data_cb.html $(MAINPARTS) curl_mime_data_cb.gen
+	$(ACTION)
+curl_mime_data_cb.gen: $(MANROOT)/curl_mime_data_cb.3
+	$(MAN2HTML) < $< >$@
+
+curl_mime_filedata.html: _curl_mime_filedata.html $(MAINPARTS) curl_mime_filedata.gen
+	$(ACTION)
+curl_mime_filedata.gen: $(MANROOT)/curl_mime_filedata.3
+	$(MAN2HTML) < $< >$@
+
+curl_mime_filename.html: _curl_mime_filename.html $(MAINPARTS) curl_mime_filename.gen
+	$(ACTION)
+curl_mime_filename.gen: $(MANROOT)/curl_mime_filename.3
+	$(MAN2HTML) < $< >$@
+
+curl_mime_subparts.html: _curl_mime_subparts.html $(MAINPARTS) curl_mime_subparts.gen
+	$(ACTION)
+curl_mime_subparts.gen: $(MANROOT)/curl_mime_subparts.3
+	$(MAN2HTML) < $< >$@
+
+curl_mime_type.html: _curl_mime_type.html $(MAINPARTS) curl_mime_type.gen
+	$(ACTION)
+curl_mime_type.gen: $(MANROOT)/curl_mime_type.3
+	$(MAN2HTML) < $< >$@
+
+curl_mime_headers.html: _curl_mime_headers.html $(MAINPARTS) curl_mime_headers.gen
+	$(ACTION)
+curl_mime_headers.gen: $(MANROOT)/curl_mime_headers.3
+	$(MAN2HTML) < $< >$@
+
+
 
 include Makefile.examples
 
