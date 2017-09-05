@@ -83,10 +83,8 @@ print IDXM "<table>\n";
 print IDXI "<table>\n";
 my $c = 0;
 for(sort @all) {
-    if($c) {
-        print TG " \\\n";
-    }
-    print TG "  $_.html";
+    printf TG "%s$_.html", $c?" \\\n ":"";
+    $c++;
 
     my $l = sprintf ("<tr><td><a href=\"$_.html\">$_</a></td><td>%s</td></tr>\n",
                      $desc{$_});
