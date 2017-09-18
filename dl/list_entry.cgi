@@ -47,7 +47,7 @@ for $h (('Package',
          'SSH',
          'Who',
          'Pic',
-         'Check')) {
+         'Check', 'Comment')) {
     print "<th>$h</th>\n";
 }
 print "</tr>\n";
@@ -151,6 +151,9 @@ for $per (@sall) {
 
     printf("<td>%s</td>",
            $here?"-":($churl?since($$per{'remcheck'}):"manual"));
+    if($$per{'file'} =~ /^(http|ftp):/) {
+        print "<td> UNSAFE URL</td>\n";
+    }
     print "</tr>\n";
     $i++;
 }
