@@ -78,6 +78,7 @@ my $i=0;
 my $utd=0; # up to date
 my $auto=0; # auto or local
 my $hidden=0; # hidden
+my $unsafe=0; # unsafe URLs
 for $per (@sall) {
     my $cl;
     if($stable eq $$per{'curl'}) {
@@ -153,12 +154,13 @@ for $per (@sall) {
            $here?"-":($churl?since($$per{'remcheck'}):"manual"));
     if($$per{'file'} =~ /^(http|ftp):/) {
         print "<td> UNSAFE URL</td>\n";
+        $unsafe++;
     }
     print "</tr>\n";
     $i++;
 }
 print "</table>",
-    "<p> $i entries, $utd is up-to-date, $auto is auto or local, $hidden are hidden\n";
+    "<p> $i entries, $utd is up-to-date, $auto is auto or local, $hidden are hidden, $unsafe unsafe URLs\n";
 
 # Skriv ut sidfoten
 lfooter();
