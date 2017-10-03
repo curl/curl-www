@@ -44,6 +44,109 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_56_0"></a>
+SUBTITLE(Fixed in 7.56.0 - October 4 2017)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="https://curl.haxx.se/bug/?i=1735">curl: enable compression for SCP/SFTP with --compressed-ssh</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=1735">libcurl: enable compression for SCP/SFTP with CURLOPT_SSH_COMPRESSION</a>
+ CHG <a href="https://curl.haxx.se/libcurl/c/curl_global_sslset.html">vtls: added dynamic changing SSL backend with curl_global_sslset()</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=1839">new MIME API, curl_mime_init() and friends</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=1866">openssl: initial SSLKEYLOGFILE implementation</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/docs/adv_20171004.html">FTP: zero terminate the entry path even on bad input</a>
+ BGF examples/ftpuploadresume.c: use portable code
+ BGF runtests: match keywords case insensitively
+ BGF <a href="https://curl.haxx.se/bug/?i=1777">travis: build the examples too</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1758">strtoofft: reduce integer overflow risks globally</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1779">zsh.pl: produce a working completion script again</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1785">cmake: remove dead code for CURL_DISABLE_RTMP</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1602">progress: Track total times following redirects</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1784">configure: fix --disable-threaded-resolver</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1786">cmake: remove dead code for DISABLED_THREADSAFE</a>
+ BGF configure: fix clang version detection
+ BGF darwinssi: fix error: variable length array used
+ BGF <a href="https://curl.haxx.se/bug/?i=1790">travis: add metalink to some osx builds</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1788">configure: check for __builtin_available() availability</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1793">http_proxy: fix build error for CURL_DOES_CONVERSIONS</a>
+ BGF examples/ftpuploadresume: checksrc compliance
+ BGF <a href="https://curl.haxx.se/bug/?i=1782">ftp: fix CWD when doing multicwd then nocwd on same connection</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1767">system.h: remove all CURL_SIZEOF_* defines</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1803">http: Don't wait on CONNECT when there is no proxy</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1797">system.h: check for __ppc__ as well</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1021">http2_recv: return error better on fatal h2 errors</a>
+ BGF scripts/contri*sh: use "git log --use-mailmap"
+ BGF <a href="https://curl.haxx.se/bug/?i=1808">tftp: fix memory leak on too long filename</a>
+ BGF <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=872502#10">system.h: fix build for hppa</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1799">cmake: enable picky compiler options with clang and gcc</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1815">makefile.m32: add support for libidn2</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1751">curl: turn off MinGW CRT's globbing</a>
+ BGF request-target.d: mention added in 7.55.0
+ BGF <a href="https://curl.haxx.se/bug/?i=1810">curl: shorten and clean up CA cert verification error message</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1818">imap: support PREAUTH</a>
+ BGF CURLOPT_USERPWD.3: see also CURLOPT_PROXYUSERPWD
+ BGF examples/threaded-ssl: mention that this is for openssl before 1.1
+ BGF <a href="https://curl.haxx.se/bug/?i=1832">winbuild: fix embedded manifest option</a>
+ BGF tests: Make sure libtests & unittests call curl_global_cleanup()
+ BGF <a href="https://curl.haxx.se/bug/?i=1828">system.h: include sys/poll.h for AIX</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1823">darwinssl: handle long strings in TLS certs</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1829">strtooff: fix build for systems with long long but no strtoll</a>
+ BGF asyn-thread: Improved cleanup after OOM situations
+ BGF <a href="https://curl.haxx.se/bug/?i=1837">HELP-US.md: "How to get started helping out in the curl project"</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-08/0120.html">curl.h: CURLSSLBACKEND_WOLFSSL used wrong value</a>
+ BGF unit1301: fix error message on first test
+ BGF <a href="https://curl.haxx.se/bug/?i=1842">ossfuzz: moving towards the ideal integration</a>
+ BGF http: fix a memory leakage in checkrtspprefix()
+ BGF examples/post-callback: stop returning one byte at a time
+ BGF <a href="https://curl.haxx.se/bug/?i=1858">schannel: return CURLE_SSL_CACERT on failed verification</a>
+ BGF MAIL-ETIQUETTE: added "1.9 Your emails are public"
+ BGF <a href="https://curl.haxx.se/bug/?i=1859">http-proxy: treat all 2xx as CONNECT success</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1846">openssl: use OpenSSL's default ciphers by default</a>
+ BGF runtests.pl: support attribute "nonewline" in part verify/upload
+ BGF <a href="https://curl.haxx.se/bug/?i=1861">configure: remove --enable-soname-bump and SONAME_BUMP</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1868">travis: add c-ares enabled builds linux + osx</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1865">vtls: fix WolfSSL 3.12 build problems</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1853">http-proxy: when not doing CONNECT, that phase is done immediately</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1870">configure: fix curl_off_t check's include order</a>
+ BGF configure: use -Wno-varargs on clang 3.9[.X] debug builds
+ BGF <a href="https://curl.haxx.se/bug/?i=1874">rtsp: do not call fwrite() with NULL pointer FILE *</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1877">mbedtls: enable CA path processing</a>
+ BGF travis: add build without HTTP/SMTP/IMAP
+ BGF <a href="https://curl.haxx.se/bug/?i=1878">checksrc: verify more code style rules</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1887">HTTP proxy: on connection re-use, still use the new remote port</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1687">tests: add initial gssapi test using stub implementation</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1880">rtsp: Segfault when using WRITEDATA</a>
+ BGF docs: clarify the CURLOPT_INTERLEAVE* options behavior
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-09/0031.html">non-ascii: use iconv() with 'char **' argument</a>
+ BGF server/getpart: provide dummy function to build conversion enabled
+ BGF conversions: fix several compiler warnings
+ BGF <a href="https://curl.haxx.se/bug/?i=1891">openssl: add missing includes</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1890">schannel: Support partial send for when data is too large</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1892">socks: fix incorrect port number in SOCKS4 error message</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1893">curl: fix integer overflow in timeout options</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1895">travis: on mac, don't install openssl or libidn</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1894">cookies: reject oversized cookies instead of truncating</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1896">cookies: use lock when using CURLINFO_COOKIELIST</a>
+ BGF curl: check fseek() return code and bail on error
+ BGF examples/post-callback: use long for CURLOPT_POSTFIELDSIZE
+ BGF <a href="https://curl.haxx.se/bug/?i=1904">openssl: only verify RSA private key if supported</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1902">tests: make the imap server not verify user+password</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1902">imap: quote atoms properly when escaping characters</a>
+ BGF tests: fix a compiler warning in test 643
+ BGF <a href="https://curl.haxx.se/bug/?i=1908">file_range: avoid integer overflow when figuring out byte range</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1925">curl.h: include <sys/select.h> on cygwin too</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1918">reuse_conn: don't copy flags that are known to be equal</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1920">http: fix adding custom empty headers to repeated requests</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1921">docs: clarify the use of environment variables for proxy</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1922">docs: link CURLOPT_CONNECTTIMEOUT and CURLOPT_CONNECTTIMEOUT_MS</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1928">connect: fix race condition with happy eyeballs timeout</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1932">cookie: fix memory leak if path was set twice in header</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1917">vtls: compare and clone ssl configs properly</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1919">proxy: read the "no_proxy" variable only if necessary</a>
+</ul>
+
 <a name="7_55_1"></a>
 SUBTITLE(Fixed in 7.55.1 - August 14 2017)
 <p> Bugfixes:
