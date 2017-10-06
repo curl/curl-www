@@ -109,7 +109,7 @@ for $per (@sall) {
 
     my $fi = $$per{'file'};
     my $here;
-    if($fi !~ /^(http|ftp):/) {
+    if($fi !~ /^(http|https|ftp|ftps):/) {
         $fi = "/download/$fi";
         $here=1; # a local file, no need to auto
     }
