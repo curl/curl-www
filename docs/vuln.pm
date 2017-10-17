@@ -1,6 +1,7 @@
 # page, first vulnerable version, last vulnerable version, name, CVE,
 # announce date (YYYYMMDD), report to the project date
 @vuln = (
+    "adv_20171023.html|7.20.0|7.56.0|IMAP FETCH response out of bounds read|CVE-2017-1000257|20171012|20171006",
     "adv_20171004.html|7.7|7.55.1|FTP PWD response parser out of bounds read|CVE-2017-1000254|20171004|20170924",
     "adv_20170809A.html|7.34.0|7.54.1|URL globbing out of bounds read|CVE-2017-1000101|20170809|20170614",
     "adv_20170809B.html|7.15.0|7.54.1|TFTP sends more than buffer size|CVE-2017-1000100|20170809|20170711",
