@@ -32,7 +32,8 @@ opts = $(OPTPAGES)
 MIME = curl_mime_init.html curl_mime_free.html curl_mime_addpart.html	\
  curl_mime_name.html curl_mime_data.html curl_mime_data_cb.html		\
  curl_mime_filedata.html curl_mime_filename.html			\
- curl_mime_subparts.html curl_mime_type.html curl_mime_headers.html
+ curl_mime_subparts.html curl_mime_type.html curl_mime_headers.html	\
+ curl_mime_encoder.html
 
 PAGES = index.html example.html curl_easy_init.html curl_easy_cleanup.html    \
  curl_easy_setopt.html curl_easy_perform.html curl_version.html		      \
@@ -451,7 +452,10 @@ curl_mime_headers.html: _curl_mime_headers.html $(MAINPARTS) curl_mime_headers.g
 curl_mime_headers.gen: $(MANROOT)/curl_mime_headers.3
 	$(MAN2HTML) < $< >$@
 
-
+curl_mime_encoder.html: _curl_mime_encoder.html $(MAINPARTS) curl_mime_encoder.gen
+	$(ACTION)
+curl_mime_encoder.gen: $(MANROOT)/curl_mime_encoder.3
+	$(MAN2HTML) < $< >$@
 
 include Makefile.examples
 
