@@ -63,9 +63,9 @@ SUBTITLE(Fixed in 7.56.1 - October 23 2017)
  BGF tests: added flaky keyword to tests 587 and 644
  BGF <a href="https://curl.haxx.se/bug/?i=1953">pingpong: return error when trying to send without connection</a>
  BGF <a href="https://curl.haxx.se/bug/?i=1960">remove_handle: call multi_done() first, then clear dns cache pointer</a>
- BGF mime: be tolerant about setting twice the same header list in a part.
- BGF mime: improve unbinding top multipart from easy handle.
- BGF mime: avoid resetting a part's encoder when part's contents change.
+ BGF mime: be tolerant about setting the same header list twice in a part
+ BGF mime: improve unbinding top multipart from easy handle
+ BGF mime: avoid resetting a part's encoder when part's contents change
  BGF <a href="https://curl.haxx.se/bug/?i=1962">mime: refuse to add subparts to one of their own descendants</a>
  BGF <a href="https://curl.haxx.se/bug/?i=1969">RTSP: avoid integer overflow on funny RTSP responses</a>
  BGF <a href="https://curl.haxx.se/bug/?i=1964">curl: don't pass semicolons when parsing Content-Disposition</a>
@@ -96,6 +96,8 @@ SUBTITLE(Fixed in 7.56.1 - October 23 2017)
  BGF vtls: change struct Curl_ssl `close' field name to `close_one'
  BGF os400: add missing symbols in config file
  BGF mime: limit bas64-encoded lines length to 76 characters
+ BGF <a href="https://curl.haxx.se/bug/?i=1998">mk-ca-bundle: Remove URL for aurora</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1998">mk-ca-bundle: Fix URL for NSS</a>
 </ul>
 
 <a name="7_56_0"></a>
