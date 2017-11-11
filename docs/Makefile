@@ -39,7 +39,7 @@ PAGES = index.html manpage.html faq.html sslcerts.html companies.html	      \
  adv_20161221A.html adv_20161221B.html adv_20161221C.html adv_20161223.html   \
  adv_20170222.html adv_20170403.html adv_20170419.html adv_20170614.html      \
  adv_20170809A.html adv_20170809B.html adv_20170809C.html adv_20171004.html   \
- adv_20171023.html
+ adv_20171023.html adv_2017-11e7.html adv_2017-ae72.html adv_2017-af0a.html
 
 all: $(PAGES) vuln-make.gen
 	-test -f vuln-make.gen && make -f vuln-make.gen
@@ -559,6 +559,18 @@ adv_20171004.gen: adv_20171004.md
 adv_20171023.html: _adv_20171023.html adv_20171023.gen $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 adv_20171023.gen: adv_20171023.md
+	$(ADVCONV)
+adv_2017-11e7.html: _adv_2017-11e7.html adv_2017-11e7.gen $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_2017-11e7.gen: adv_2017-11e7.md
+	$(ADVCONV)
+adv_2017-ae72.html: _adv_2017-ae72.html adv_2017-ae72.gen $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_2017-ae72.gen: adv_2017-ae72.md
+	$(ADVCONV)
+adv_2017-af0a.html: _adv_2017-af0a.html adv_2017-af0a.gen $(MAINPARTS) $(ADVBOX)
+	$(ACTION)
+adv_2017-af0a.gen: adv_2017-af0a.md
 	$(ADVCONV)
 
 vulnerabilities.html: _vulnerabilities.html vuln.gen $(MAINPARTS)

@@ -1,0 +1,22 @@
+#include "_doctype.html"
+#define FLAWNAME SSL out of buffer access
+
+<HTML>
+<HEAD> <TITLE>curl - FLAWNAME</TITLE>
+#include "css.t"
+#include "manpage.t"
+</HEAD>
+
+#define CURL_DOCS
+#define CURL_URL docs/adv_2017-af0a.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(Docs, "/docs/", Security, "/docs/security.html",
+ FLAWNAME)
+
+#include "adv-related-box.inc"
+#include "adv_2017-af0a.gen"
+#include "_footer.html"
+</body> </html>
