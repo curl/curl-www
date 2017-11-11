@@ -159,7 +159,7 @@ for my $str (@releases) {
     }
 
     if($date =~ /([A-Za-z]+) (\d+) (\d\d\d\d)/) {
-        if(length($1)>3) {
+        if(!$raw && length($1)>3) {
             # a long month name, use the shorter version
             $date = substr($1, 0, 3)."&nbsp;$2&nbsp;$3";
         }
