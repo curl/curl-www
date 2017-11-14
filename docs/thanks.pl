@@ -41,7 +41,7 @@ while(<STDIN>) {
         $letter{$l} .= "$n, ";
     }
     elsif($n) {
-        $letter{"rest"} .= "$n, ";
+        $nletter .= "$n, ";
     }
 }
 
@@ -51,4 +51,4 @@ for my $l (sort keys %letter) {
     print $letter{$l}."\n";
 }
 print "<h2>Non A-Z names</h2>\n";
-print $letter{"rest"};
+print $nletter;
