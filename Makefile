@@ -27,6 +27,7 @@ PAGES= index.html mirrors.html libs.html help.html download.html changes.html \
  source.html 404.html
 
 all: $(PAGES)
+	cd ca && make
 	cd docs && make
 	cd libcurl && make
 	cd mail && make

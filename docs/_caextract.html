@@ -12,6 +12,7 @@
 
 #include "_menu.html"
 #include "setup.t"
+#include "../ca/cadate.t"
 
 WHERE3(Docs, "/docs/", Protocol docs, "/docs/protdocs.html", CA Extract)
 
@@ -27,6 +28,9 @@ TITLE(CA certificates extracted from Mozilla)
 <p>
  <big><a href="../ca/cacert.pem">cacert.pem</a></big>
 
+<p>
+  This bundle was generated at <b> CA_DATE </b>.
+ 
 <p>
  This PEM file contains the datestamp of the conversion and we only make a new
  conversion if there's a change in either the script or the source file. This

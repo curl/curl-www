@@ -11,4 +11,5 @@ if test $? -gt "0"; then
     bzip2 -c cacert.pem > cacert.pem.bz2
     gzip -c cacert.pem > cacert.pem.gz
     perl ./listpem.pl > pemlist.gen
+    make
 fi
