@@ -303,32 +303,6 @@ print <<MOO
 MOO
     ;
 
-if(!$inmycontinent && $mycontinent) {
-print <<MOO
-<p>
-
- There is currently <b>no download mirrors in your continent</b> holding this
- package. If this is a new package, there might appear one later on, or we
- hope that <i>you</i> <a href="/mirror/">start hosting a mirror</a> in
- $mycontinent!
-
-MOO
-;
-}
-
-elsif(!$inmycountry && $mycountry) {
-print <<MOO
-<p>
-
- There is currently <b>no download mirrors in your country</b> holding this
- package. If this is a new package, there might appear one later on, or we
- hope that <i>you</i> <a href="/mirror/">start hosting a mirror</a> in
- $mycountry!
-
-MOO
-;
-}
-
 print <<MOO
 <p>
 This service automatically and frequently scans through known <a
