@@ -27,7 +27,7 @@ sub present {
         $res >>= 8;
     }
     else {
-        $code = `$latest::curl -f -m 10 -I ${site}${file} -s | egrep "(HTTP/1.1 200 OK|Content-Length:)" | wc -l`;
+        $code = `$latest::curl -f -m 10 -I ${site}${file} -s | egrep -i "(HTTP/([012.]*) 200|Content-Length:)" | wc -l`;
         # the above should match two lines and thus result in '2' if fine I
         # check for Content-Length: too since too many dead/parked servers
         # return 200 for everything.
