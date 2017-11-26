@@ -28,7 +28,7 @@ my $req = new CGI;
 my $what=$req->param('curl');
 my $whate=CGI::escapeHTML($what);
 
-my $showall=$req->param('all'); # override geographic checks
+my $showall=1; #$req->param('all'); # override geographic checks
 
 my ($mytld, $mycontinent, $mycountry);
 my $inmycountry;
@@ -242,7 +242,7 @@ if($latest::version{$what}) {
         "(<a href=\"#verified\">verified</a> ".&time_ago.")\n";
 
         if($showall && ($inmycontinent || $inmycountry)) {
-            print "<p> <a href=\"$script?curl=$whate\">Show my closest mirrors</a>";
+            #print "<p> <a href=\"$script?curl=$whate\">Show my closest mirrors</a>";
         }
         elsif($inmycountry) {
             print "<p>$inmycountry of these mirrors are located in ".ucfirst(lc($mycountry))." where it looks like you are located. <a href=\"$script?curl=$whate&amp;all=yes\">Show all mirrors</a>\n";
