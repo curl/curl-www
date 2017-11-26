@@ -1,10 +1,10 @@
 ROOT=.
 
 # the latest stable version is:
-STABLE= 7.56.1
-RELDATE = "23rd of October 2017"
+STABLE= 7.57.0
+RELDATE = "29th of November 2017"
 # The planned *next* release is:
-NEXTDATE = "29th of November 2017"
+NEXTDATE = "24th of January 2018"
 
 # name of the dir to tempoary unpack and build zip files in:
 TEMPDIR=tempzip

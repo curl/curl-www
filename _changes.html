@@ -44,6 +44,87 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_57_0"></a>
+SUBTITLE(Fixed in 7.57.0 - November 29 2017)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="https://curl.haxx.se/bug/?i=1934">auth: add support for RFC7616 - HTTP Digest access authentication</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=2043">share: add support for sharing the connection cache</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=2045">HTTP: implement Brotli content encoding</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/docs/adv_2017-11e7.html">CVE-2017-8816: NTLM buffer overflow via integer overflow</a>
+ BGF <a href="https://curl.haxx.se/docs/adv_2017-ae72.html">CVE-2017-8817: FTP wildcard out of bounds read</a>
+ BGF <a href="https://curl.haxx.se/docs/adv_2017-af0a.html">CVE-2017-8818: SSL out of buffer access</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2008">curl_mime_filedata.3: fix typos</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2006">libtest: Add required test libraries for lib1552 and lib1553</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2004">fix time diffs for systems using unsigned time_t</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2013">ftplistparser: memory leak fix: free temporary memory always</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1982">multi: allow table handle sizes to be overridden</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2016">wildcards: don't use with non-supported protocols</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2015">curl_fnmatch: return error on illegal wildcard pattern</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2001">transfer: Fix chunked-encoding upload too early exit</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2025">curl_setup: Improve detection of CURL_WINDOWS_APP</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2023">resolvers: only include anything if needed</a>
+ BGF setopt: fix CURLOPT_SSH_AUTH_TYPES option read
+ BGF appveyor: add a win32 build
+ BGF <a href="https://curl.haxx.se/bug/?i=2021">Curl_timeleft: change return type to timediff_t</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1879">cmake: Export libcurl and curl targets to use by other cmake projects</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2022">curl: in -F option arg, comma is a delimiter for files only</a>
+ BGF curl: improved ";type=" handling in -F option arguments
+ BGF <a href="https://curl.haxx.se/bug/?i=2033">timeval: use mach_absolute_time() on MacOS</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2034">curlx: the timeval functions are no longer provided as curlx_*</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2026">mkhelp.pl: do not generate comment with current date</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2031">memdebug: use send/recv signature for curl_dosend/curl_dorecv</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2032">cookie: avoid NULL dereference</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-11/0000.html">url: fix CURLOPT_POSTFIELDSIZE arg value check to allow -1</a>
+ BGF include: remove conncache.h inclusion from where its not needed
+ BGF <a href="https://curl.haxx.se/bug/?i=2038">CURLOPT_MAXREDIRS: allow -1 as a value</a>
+ BGF tests: Fixed torture tests on tests 556 and 650
+ BGF http2: Fixed OOM handling in upgrade request
+ BGF url: fix CURLOPT_DNS_CACHE_TIMEOUT arg value check to allow -1
+ BGF <a href="https://curl.haxx.se/bug/?i=2047">CURLOPT_INFILESIZE: accept -1</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2044">curl: pass through [] in URLs instead of calling globbing error</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1959">curl: speed up handling of many URLs</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2054">ntlm: avoid malloc(0) for zero length passwords</a>
+ BGF <a href="https://github.com/curl/curl/commit/f121575#commitcomment-25347120">url: remove faulty arg value check from CURLOPT_SSH_AUTH_TYPES</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2002">HTTP: support multiple Content-Encodings</a>
+ BGF travis: add a job with brotli enabled
+ BGF url: remove unncessary NULL-check
+ BGF fnmatch: remove dead code
+ BGF <a href="https://curl.haxx.se/bug/?i=2053">connect: store IPv6 connection status after valid connection</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2061">imap: deal with commands case insensitively</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2024">--interface: add support for Linux VRF</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2060">content_encoding: fix inflate_stream for no bytes available</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2064">cmake: Correctly include curl.rc in Windows builds</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2067">cmake: Add missing setmode check</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2071">connect.c: remove executable bit on file</a>
+ BGF SMB: fix uninitialized local variable
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-11/0032.html">zlib/brotli: only include header files in modules needing them</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2072">URL: return error on malformed URLs with junk after IPv6 bracket</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2079">openssl: fix too broad use of HAVE_OPAQUE_EVP_PKEY</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2080">macOS: Fix missing connectx function with Xcode version older than 9.0</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2087">--resolve: allow IP address within [] brackets</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2096">examples/curlx: Fix code style</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2098">ntlm: remove unnecessary NULL-check to please scan-build</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2098">Curl_llist_remove: fix potential NULL pointer deref</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2098">mime: fix "Value stored to 'sz' is never read" scan-build error</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2098">openssl: fix "Value stored to 'rc' is never read" scan-build error</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2098">http2: fix "Value stored to 'hdbuf' is never read" scan-build error</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2098">http2: fix "Value stored to 'end' is never read" scan-build error</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2098">Curl_open: fix OOM return error correctly</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2073">url: reject ASCII control characters and space in host names</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2106">examples/rtsp: clear RANGE again after use</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2104">connect: improve the bind error message</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2097">make: fix "make distclean"</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2056">connect: add support for new TCP Fast Open API on Linux</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2109">metalink: fix memory-leak and NULL pointer dereference</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2110">URL: update "file:" URL handling</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2111">ssh: remove check for a NULL pointer</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2083">global_init: ignore CURL_GLOBAL_SSL's absense</a>
+</ul>
+
 <a name="7_56_1"></a>
 SUBTITLE(Fixed in 7.56.1 - October 23 2017)
 <p> Bugfixes:
