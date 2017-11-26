@@ -52,7 +52,7 @@ for(keys %latest::file) {
     printf("ARCHIVE: %s: %s %d\n",
            $_, $archive, $latest::size{$_});
 
-    printf("DOWNLOAD: %s %s Sweden (Stockholm)\n", $archive,
+    printf("DOWNLOAD: %s %s Fastly (worldwide)\n", $archive,
            "https://curl.haxx.se/download/$archive");
 
     for(keys %mirrors) {
