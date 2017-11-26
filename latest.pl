@@ -4,15 +4,17 @@ use strict;
 use latest;
 
 my %mirrors=(
-    'http://curl.askapache.com/download/' => 'US (Indiana)',
-    'https://execve.home.kg/curl/' => 'Singapore',
+    #'http://curl.askapache.com/download/' => 'US (Indiana)',
+
+    # Gautam Mani runs
+    'https://execve.net/mirror/curl/' => 'Singapore',
 
     # Marc Hoersken runs:
     'https://dl.uxnr.de/mirror/curl/' => 'Germany (St. Wendel, Saarland)',
-    'http://dl.uxnr.de/mirror/curl/' => 'Germany (St. Wendel, Saarland)',
+    #'http://dl.uxnr.de/mirror/curl/' => 'Germany (St. Wendel, Saarland)',
 
     # Marty Anstey runs:
-    'http://curl.mirror.anstey.ca/' => 'Canada (Vancouver)',
+    #'http://curl.mirror.anstey.ca/' => 'Canada (Vancouver)',
     );
 
 sub present {
