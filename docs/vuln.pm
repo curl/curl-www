@@ -3,7 +3,7 @@
 @vuln = (
     "adv_2017-af0a.html|7.56.0|7.56.1|SSL out of buffer access|CVE-2017-8818|20171129|20171118",
     "adv_2017-ae72.html|7.21.0|7.56.1|FTP wildcard out of bounds read|CVE-2017-8817|20171129|20171110",
-    "adv_2017-11e7.html|7.36.0|7.56.1|NTLM buffer overflow via integer overflow|CVE-2017-8816|20171129|20171106",
+    "adv_2017-12e7.html|7.36.0|7.56.1|NTLM buffer overflow via integer overflow|CVE-2017-8816|20171129|20171106",
     "adv_20171023.html|7.20.0|7.56.0|IMAP FETCH response out of bounds read|CVE-2017-1000257|20171012|20171006",
     "adv_20171004.html|7.7|7.55.1|FTP PWD response parser out of bounds read|CVE-2017-1000254|20171004|20170924",
     "adv_20170809A.html|7.34.0|7.54.1|URL globbing out of bounds read|CVE-2017-1000101|20170809|20170614",
