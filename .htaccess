@@ -1,18 +1,19 @@
 ErrorDocument 404 /404.html
-RedirectPermanent /devel.html http://curl.haxx.se/dev/
-RedirectPermanent /auto/ http://curl.haxx.se/dev/
-RedirectPermanent /docs/internals.html http://curl.haxx.se/dev/internals.html
-RedirectPermanent /docs/contribute.html http://curl.haxx.se/dev/contribute.html
-RedirectPermanent /docs/runtests.html http://curl.haxx.se/dev/runtests.html
-RedirectPermanent /docs/testcurl.html http://curl.haxx.se/dev/testcurl.html
-RedirectPermanent /source.html http://curl.haxx.se/dev/source.html
-RedirectPermanent /bugreport.html http://curl.haxx.se/docs/bugs.html
-RedirectPermanent /cvs.cgi http://curl.haxx.se/dev/source.html
-RedirectPermanent /cvs.html http://curl.haxx.se/dev/source.html
-RedirectPermanent /dev/readme-http2.html http://curl.haxx.se/docs/http2.html
-RedirectPermanent /mirrors.html http://curl.haxx.se/mirror/
-RedirectPermanent /libcurl/c/libcurl-thread.html http://curl.haxx.se/libcurl/c/threadsafe.html
-RedirectMatch "^/.git" http://curl.haxx.se/dev/source.html
+RedirectPermanent /devel.html https://curl.haxx.se/dev/
+RedirectPermanent /auto/ https://curl.haxx.se/dev/
+RedirectPermanent /docs/internals.html https://curl.haxx.se/dev/internals.html
+RedirectPermanent /docs/contribute.html https://curl.haxx.se/dev/contribute.html
+RedirectPermanent /docs/runtests.html https://curl.haxx.se/dev/runtests.html
+RedirectPermanent /docs/testcurl.html https://curl.haxx.se/dev/testcurl.html
+RedirectPermanent /source.html https://curl.haxx.se/dev/source.html
+RedirectPermanent /bugreport.html https://curl.haxx.se/docs/bugs.html
+RedirectPermanent /cvs.cgi https://curl.haxx.se/dev/source.html
+RedirectPermanent /cvs.html https://curl.haxx.se/dev/source.html
+RedirectPermanent /dev/readme-http2.html https://curl.haxx.se/docs/http2.html
+RedirectPermanent /mirrors.html https://curl.haxx.se/mirror/
+RedirectPermanent /libcurl/c/libcurl-thread.html https://curl.haxx.se/libcurl/c/threadsafe.html
+RedirectMatch "^/.git" https://curl.haxx.se/dev/source.html
+RedirectPermanent /docs/adv_2017-11e7.html https://curl.haxx.se/docs/adv_2017-12e7.html
 
 RemoveHandler .php
 RemoveHandler .pl
