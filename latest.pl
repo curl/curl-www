@@ -14,7 +14,7 @@ my %mirrors=(
     #'http://dl.uxnr.de/mirror/curl/' => 'Germany (St. Wendel, Saarland)',
 
     # Marty Anstey runs:
-    #'http://curl.mirror.anstey.ca/' => 'Canada (Vancouver)',
+    'https://curl.mirror.anstey.ca/' => 'Canada (Vancouver)',
     );
 
 sub present {
