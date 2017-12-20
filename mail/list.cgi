@@ -9,6 +9,9 @@ $req = new CGI;
 my $list = $req->param('list');
 my $full = $req->param('full');
 
+# only keep legit list name letters
+$list =~ s/([^a-z-]+)//g;
+
 print "Content-Type: text/html\n\n";
 
 sub showarchs {
