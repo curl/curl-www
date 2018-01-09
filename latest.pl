@@ -4,7 +4,7 @@ use strict;
 use latest;
 
 my %mirrors=(
-    #'http://curl.askapache.com/download/' => 'US (Indiana)',
+    'https://curl.askapache.com/' => 'US (Indiana)',
 
     # Gautam Mani runs
     'https://execve.net/mirror/curl/' => 'Singapore',
