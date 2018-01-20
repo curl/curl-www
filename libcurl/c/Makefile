@@ -55,7 +55,7 @@ PAGES = index.html example.html curl_easy_init.html curl_easy_cleanup.html    \
  curl_multi_socket_action.html curl_multi_wait.html $(EXAMPLES) $(opts)	      \
  easy_setopt_options.html easy_getinfo_options.html multi_setopt_options.html \
  allexamples.zip options-in-examples.html symbols-in-versions.html	      \
- threadsafe.html curl_global_sslset.html $(MIME)
+ threadsafe.html curl_global_sslset.html libcurl-env.html $(MIME)
 
 all: $(PAGES)
 
@@ -255,6 +255,11 @@ libcurl-multi.t: $(MANROOT)/libcurl-multi.3
 libcurl-easy.html: _libcurl-easy.html $(MAINPARTS) libcurl-easy.t
 	$(ACTION)
 libcurl-easy.t: $(MANROOT)/libcurl-easy.3
+	$(MAN2HTML) < $< >$@
+
+libcurl-env.html: _libcurl-env.html $(MAINPARTS) libcurl-env.gen
+	$(ACTION)
+libcurl-env.gen: $(MANROOT)/libcurl-env.3
 	$(MAN2HTML) < $< >$@
 
 libcurl-share.html: _libcurl-share.html $(MAINPARTS) libcurl-share.t
