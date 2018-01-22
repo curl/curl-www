@@ -44,6 +44,99 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_58_0"></a>
+SUBTITLE(Fixed in 7.58.0 - January 24 2018)
+<p> Changes:
+<ul class="changes">
+ CHG new libssh-powered SSH SCP/SFTP back-end
+ CHG <a href="https://curl.haxx.se/bug/?i=2128">curl-config: add --ssl-backends</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/docs/adv_2018-824a.html">http2: fix incorrect trailer buffer size</a>
+ BGF <a href="https://curl.haxx.se/docs/adv_2018-b3bf.html">http: prevent custom Authorization headers in redirects</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2118">travis: add boringssl build</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-12/0000.html">examples/xmlstream.c: don't switch off CURL_GLOBAL_SSL</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2119">SSL: Avoid magic allocation of SSL backend specific data</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2127">lib: don't export all symbols, just everything curl_*</a>
+ BGF libssh2: send the correct CURLE error code on scp file not found
+ BGF libssh2: return CURLE_UPLOAD_FAILED on failure to upload
+ BGF <a href="https://curl.haxx.se/bug/?i=2134">openssl: enable pkcs12 in boringssl builds</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2143">libssh2: remove dead code from SSH_SFTP_QUOTE</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2150">sasl_getmesssage: make sure we have a long enough string to pass</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2132">conncache: fix several lock issues</a>
+ BGF threaded-shared-conn.c: new example
+ BGF <a href="https://curl.haxx.se/bug/?i=2152">conncache: only allow multiplexing within same multi handle</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2146">configure: check for netinet/in6.h</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2154">URL: tolerate backslash after drive letter for FILE:</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2159">openldap: add commented out debug possibilities</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2160">include: get netinet/in.h before linux/tcp.h</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2088">CONNECT: keep close connection flag in http_connect_state struct</a>
+ BGF BINDINGS: another PostgreSQL client
+ BGF <a href="https://curl.haxx.se/bug/?i=2158">curl: limit -# update frequency for unknown total size</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2076">configure: add AX_CODE_COVERAGE only if using gcc</a>
+ BGF curl.h: remove incorrect comment about ERRORBUFFER
+ BGF <a href="https://curl.haxx.se/bug/?i=1916">openssl: improve data-pending check for https proxy</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2166">curl: remove __EMX__ #ifdefs</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2168">CURLOPT_PRIVATE.3: fix grammar</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1900">sftp: allow quoted commands to use relative paths</a>
+ BGF CURLOPT_DNS_CACHE_TIMEOUT.3: see also CURLOPT_RESOLVE
+ BGF RESOLVE: output verbose text when trying to set a duplicate name
+ BGF <a href="https://github.com/curl/curl/pull/1346#issuecomment-350530901">openssl: Disable file buffering for Win32 SSLKEYLOGFILE</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2169">multi_done: prune DNS cache</a>
+ BGF tests: update .gitignore for libtests
+ BGF tests: mark data files as non-executable in git
+ BGF CURLOPT_DNS_LOCAL_IP4.3: fixed the "SEE ALSO" to not self-reference
+ BGF curl.1: documented two missing valid exit codes
+ BGF curl.1: mention http:// and https:// as valid proxy prefixes
+ BGF <a href="https://curl.haxx.se/bug/?i=2171">vtls: replaced getenv() with curl_getenv()</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2173">setopt: less *or equal* than INT_MAX/1000 should be fine</a>
+ BGF examples/smtp-mail.c: use separate defines for options and mail
+ BGF <a href="https://curl.haxx.se/bug/?i=2174">curl: support >256 bytes warning messsages</a>
+ BGF conncache: fix a return code
+ BGF krb5: fix a potential access of uninitialized memory
+ BGF rand: add a clang-analyzer work-around
+ BGF <a href="https://curl.haxx.se/bug/?i=2175">CURLOPT_READFUNCTION.3: refer to argument with correct name</a>
+ BGF brotli: allow compiling with version 0.6.0
+ BGF <a href="https://curl.haxx.se/bug/?i=2068">content_encoding: rework zlib_inflate</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-12/0060.html">curl_easy_reset: release mime-related data</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2185">examples/rtsp: fix error handling macros</a>
+ BGF build-openssl.bat: Added support for VC15
+ BGF build-wolfssl.bat: Added support for VC15
+ BGF build: Added Visual Studio 2017 project files
+ BGF winbuild: Added support for VC15
+ BGF <a href="https://curl.haxx.se/bug/?i=2179">curl: Support size modifiers for --max-filesize</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-12/0057.html">examples/cacertinmem: ignore cert-already-exists error</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2194">brotli: data at the end of content can be lost</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2017-12/0074.html">curl_version_info.3: call the argument 'age'</a>
+ BGF openssl: fix memory leak of SSLKEYLOGFILE filename
+ BGF <a href="https://curl.haxx.se/bug/?i=2215">build: remove HAVE_LIMITS_H check</a>
+ BGF --mail-rcpt: fix short-text description
+ BGF <a href="https://curl.haxx.se/bug/?i=2222">scripts: allow all perl scripts to be run directly</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2200">progress: calculate transfer speed on milliseconds if possible</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2216">system.h: check __LONG_MAX__ for defining curl_off_t</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2217">easy: fix connection ownership in curl_easy_pause</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2230">setopt: reintroduce non-static Curl_vsetopt() for OS400 support</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2225">setopt: fix SSLVERSION to allow CURL_SSLVERSION_MAX_ values</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2234">configure.ac: append extra linker flags instead of prepending them</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2212">HTTP: bail out on negative Content-Length: values</a>
+ BGF docs: comment about CURLE_READ_ERROR returned by curl_mime_filedata
+ BGF <a href="https://curl.haxx.se/bug/?i=2235">mime: clone mime tree upon easy handle duplication</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2210">openssl: enable SSLKEYLOGFILE support by default</a>
+ BGF <a href="https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=5206">smtp/pop3/imap_get_message: decrease the data length too...</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2239">CURLOPT_TCP_NODELAY.3: fix typo</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2211">SMB: fix numeric constant suffix and variable types</a>
+ BGF <a href="https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=5251">ftp-wildcard: fix matching an empty string with "*[^a]"</a>
+ BGF curl_fnmatch: only allow 5 '*' sections in a single pattern
+ BGF openssl: fix potential memory leak in SSLKEYLOGFILE logic
+ BGF <a href="https://curl.haxx.se/bug/?i=2248">SSH: Fix state machine for ssh-agent authentication</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2245">examples/url2file.c: add missing curl_global_cleanup() call</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2237">http2: don't close connection when single transfer is stopped</a>
+ BGF libcurl-env.3: first version
+ BGF <a href="https://curl.haxx.se/bug/?i=2242">curl: progress bar refresh, get width using ioctl()</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2018-01/0087.html">CONNECT_TO: fail attempt to set an IPv6 numerical without IPv6 support</a>
+</ul>
+
 <a name="7_57_0"></a>
 SUBTITLE(Fixed in 7.57.0 - November 29 2017)
 <p> Changes:
