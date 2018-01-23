@@ -17,6 +17,12 @@ VLINK("https://curl.haxx.se/libcurl/c/libcurl-errors.html", Errors, Error Codes)
 #endif
 
 #ifdef LIBCURL_EXAMPLE
+LINK("https://curl.haxx.se/libcurl/c/libcurl-env.html", Environment)
+#else
+VLINK("https://curl.haxx.se/libcurl/c/libcurl-env.html", Environment, Environment variables )
+#endif
+
+#ifdef LIBCURL_EXAMPLE
 LINK("https://curl.haxx.se/libcurl/c/example.html", Examples)
 #else
 VLINK("https://curl.haxx.se/libcurl/c/example.html", Examples, libcurl C source code examples )
