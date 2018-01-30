@@ -7,9 +7,9 @@ Project curl Security Advisory, January 24th 2018 -
 VULNERABILITY
 -------------
 
-libcurl might leak authentication data to third parties.
+curl might leak authentication data to third parties.
 
-When asked to send custom headers in its HTTP requests, libcurl will send that
+When asked to send custom headers in its HTTP requests, curl will send that
 set of headers first to the host in the initial URL but also, if asked to
 follow redirects and a 30X HTTP response code is returned, to the host
 mentioned in URL in the `Location:` response header value.
@@ -17,7 +17,7 @@ mentioned in URL in the `Location:` response header value.
 Sending the same set of headers to subsequest hosts is in particular a problem
 for applications that pass on custom `Authorization:` headers, as this header
 often contains privacy sensitive information or data that could allow others
-to impersonate the libcurl-using client's request.
+to impersonate the curl-using client's request.
 
 We are not aware of any exploit of this flaw.
 
@@ -33,18 +33,18 @@ CVE-2018-1000007 to this issue.
 AFFECTED VERSIONS
 -----------------
 
-- Affected versions: libcurl 7.1 to and including 7.57.0
-- Not affected versions: libcurl >= 7.58.0
+- Affected versions: curl 6.0 to and including 7.57.0
+- Not affected versions: curl >= 7.58.0
 
 libcurl is used by many applications, but not always advertised as such.
 
 THE SOLUTION
 ------------
 
-In libcurl version 7.58.0, custom `Authorization:` headers will be limited the
-same way other such headers is controlled within libcurl: they will only be
-sent to the host used in the original URL unless libcurl is told that it is ok
-to pass on to others using the `CURLOPT_UNRESTRICTED_AUTH` option.
+In curl version 7.58.0, custom `Authorization:` headers will be limited the
+same way other such headers is controlled within curl: they will only be sent
+to the host used in the original URL unless curl is told that it is ok to pass
+on to others using the `CURLOPT_UNRESTRICTED_AUTH` option.
 
 **NOTE**: this solution creates a slight change in behavior. Users who
 actually want to pass on the header to other hosts now need to give curl that
