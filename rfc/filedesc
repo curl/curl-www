@@ -34,7 +34,7 @@ rfc2246.txt The TLS Protocol
 rfc2255.txt LDAP URL Format (obsoleted by RFC 4516)
 rfc2326.txt Real Time Streaming Protocol (RTSP)
 rfc2373.txt IP Version 6 Addressing Architecture (obsolete)
-rfc2388.txt Returning Values from Forms: multipart/form-data
+rfc2388.txt Returning Values from Forms: multipart/form-data (Obsoleted by RFC7578)
 rfc2389.txt Feature negotiation mechanism for FTP
 rfc2396.txt Uniform Resource Identifiers: Generic Syntax (see RFC3986)
 rfc2428.txt FTP Extensions for IPv6 and NATs
@@ -128,3 +128,4 @@ rfc3961.txt Encryption and Checksum Specifications for Kerberos 5
 rfc4120.txt The Kerberos Network Authentication Service (V5) (obsoletes RFC1510)
 rfc4121.txt The Kerberos Version 5 Generic Security Service Application Program Interface (GSS-API) Mechanism: Version 2
 rfc2104.txt HMAC: Keyed-Hashing for Message Authentication
+rfc7578.txt Returning Values from Forms: multipart/form-data (obsoletes RFC2388)
