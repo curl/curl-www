@@ -62,6 +62,12 @@ VLINK("/libcurl/relatedlibs.html", Related Libs,
 
 VLINK("/libcurl/using/", Using libcurl, How to use libcurl section)
 
+#ifdef LIBCURL_SECURITY
+LINK("", Security )
+#else
+VLINK("/libcurl/c/libcurl-security.html", Security, libcurl security considerations)
+#endif
+
 VLINK("/libcurl/c/libcurl-tutorial.html", Tutorial, libcurl programming tutorial)
 
 #ifdef LIBCURL_THEYSAY
