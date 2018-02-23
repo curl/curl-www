@@ -3,7 +3,7 @@
 my $dir="../../cvssource/docs/libcurl/opts";
 
 opendir(DIR, $dir) || die "can't opendir $dir: $!";
-my @opts = grep { /C.*\.3\z/ && -f "$dir/$_" } readdir(DIR);
+my @opts = grep { /^C.*\.3\z/ && -f "$dir/$_" } readdir(DIR);
 closedir DIR;
 
 my $actions = "Makefile.opts";
