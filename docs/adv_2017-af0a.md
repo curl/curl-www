@@ -39,6 +39,8 @@ This bug was introduced in commit
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
 CVE-2017-8818 to this issue.
 
+CWE-125: Out-of-bounds Read
+
 AFFECTED VERSIONS
 -----------------
 

@@ -30,6 +30,8 @@ have recorded in the project.
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
 CVE-2018-1000007 to this issue.
 
+CWE-522: Insufficiently Protected Credentials
+
 AFFECTED VERSIONS
 -----------------
 
