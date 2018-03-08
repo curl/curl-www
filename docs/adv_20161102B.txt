@@ -23,6 +23,8 @@ INFO
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
 CVE-2016-8616 to this issue.
 
+CWE-178: Improper Handling of Case Sensitivity
+
 AFFECTED VERSIONS
 -----------------
 

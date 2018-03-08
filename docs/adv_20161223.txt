@@ -40,6 +40,8 @@ This mistake managed to slip in because:
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
 CVE-2016-9594 to this issue.
 
+CWE-330: Use of Insufficiently Random Values
+
 AFFECTED VERSIONS
 -----------------
 

@@ -33,6 +33,8 @@ INFO
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
 CVE-2016-8617 to this issue.
 
+CWE-131: Incorrect Calculation of Buffer Size
+
 AFFECTED VERSIONS
 -----------------
 

@@ -32,6 +32,8 @@ schannel TLS backend.
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
 CVE-2016-9952 to this issue.
 
+CWE-295: Improper Certificate Validation
+
 AFFECTED VERSIONS
 -----------------
 

@@ -33,6 +33,8 @@ INFO
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
 CVE-2016-9586 to this issue.
 
+CWE-121: Stack-based Buffer Overflow
+
 AFFECTED VERSIONS
 -----------------
 
