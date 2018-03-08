@@ -13,13 +13,14 @@ print <<HEAD
 <th>First</th>
 <th>Last</th>
 <th>CVE</th>
+<th>CWE</th>
 </tr>
 HEAD
     ;
 
 my $num = $#vuln + 1;
 for(@vuln) {
-    my ($id, $start, $stop, $desc, $cve, $date)=split('\|');
+    my ($id, $start, $stop, $desc, $cve, $date, $project, $cwe)=split('\|');
     my $year, $mon, $day;
     my $monn;
 
@@ -43,6 +44,7 @@ for(@vuln) {
 <td><a href="vuln-$start.html">$start</a></td>
 <td><a href="vuln-$stop.html">$stop</a></td>
 <td>$cvestr</td>
+<td>$cwe</td>
 </tr>
 VUL
 ;

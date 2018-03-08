@@ -19,7 +19,7 @@ sub head {
     print "<tr class=\"tabletop\"><th>Version</th>";
     my $v=1;
     for(@vuln) {
-        my ($id, $start, $stop, $desc, $cve)=split('\|');
+        my ($id, $start, $stop, $desc, $cve, $announce, $report, $cwe)=split('\|');
         $id =~ s/ //;
         my $num = $#vuln - $v + 2;
         my $a=sprintf("<a style=\"color: white; text-decoration: none;\" href=\"$id\">%02</a>", $num);
@@ -29,6 +29,7 @@ sub head {
         $vurl[$v-1]= "$id";
         $vulndesc[$v-1]=$desc;
         $cve[$v-1]=$cve;
+        $cwe[$v-1]=$cwe;
         printf("<th style=\"font-size: 70%%;\" title=\"$cve: $desc\">%02d</th>", $num);
         $v++;
     }
@@ -47,7 +48,7 @@ sub single {
     my $odd;
 
     if($vulnnum) {
-        $vulnhtml = "<table><tr class=\"tabletop\"><th>Flaw</th><th>From version</th><th>To and including</th><th>CVE</th></tr>";
+        $vulnhtml = "<table><tr class=\"tabletop\"><th>Flaw</th><th>From version</th><th>To and including</th><th>CVE</th><th>CWE</th></tr>";
 
         for my $i (@v) {
             my $c = $cve[$i];
@@ -58,11 +59,12 @@ sub single {
                 $c = "";
             }
 
-            $vulnhtml .= sprintf("<tr class=\"%s\"><td><a href=\"%s\">%s</a></td><td><a href=\"vuln-%s.html\">%s</a></td><td><a href=\"vuln-%s.html\">%s</a></td><td>$c</td></tr>\n",
+            $vulnhtml .= sprintf("<tr class=\"%s\"><td><a href=\"%s\">%s</a></td><td><a href=\"vuln-%s.html\">%s</a></td><td><a href=\"vuln-%s.html\">%s</a></td><td>$c</td><td>%s</td></tr>\n",
                                  $odd&1?"even":"odd",
                                  $vurl[$i], $vulndesc[$i],
                                  $vstart[$i], $vstart[$i],
-                                 $vstop[$i], $vstop[$i]);
+                                 $vstop[$i], $vstop[$i],
+                                 $cwe[$i]);
             $odd++;
         }
         $vulnhtml .= "</table>";
