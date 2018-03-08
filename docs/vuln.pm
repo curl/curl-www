@@ -1,12 +1,15 @@
 # page, first vulnerable version, last vulnerable version, name, CVE,
-# announce date (YYYYMMDD), report to the project date
+# announce date (YYYYMMDD), report to the project date, CWE
+#
+# List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
-    "adv_2018-b3bf.html|6.0|7.57.0|HTTP authentication leak in redirects|CVE-2018-1000007|20180124|20180118",
-    "adv_2018-824a.html|7.49.0|7.57.0|HTTP/2 trailer out-of-bounds read|CVE-2018-1000005|20180124|20180110",
-    "adv_2017-af0a.html|7.56.0|7.56.1|SSL out of buffer access|CVE-2017-8818|20171129|20171118",
-    "adv_2017-ae72.html|7.21.0|7.56.1|FTP wildcard out of bounds read|CVE-2017-8817|20171129|20171110",
-    "adv_2017-12e7.html|7.36.0|7.56.1|NTLM buffer overflow via integer overflow|CVE-2017-8816|20171129|20171106",
-    "adv_20171023.html|7.20.0|7.56.0|IMAP FETCH response out of bounds read|CVE-2017-1000257|20171012|20171006",
+    "adv_2018-b3bf.html|6.0|7.57.0|HTTP authentication leak in redirects|CVE-2018-1000007|20180124|20180118
+|CWE-522: Insufficiently Protected Credentials",
+    "adv_2018-824a.html|7.49.0|7.57.0|HTTP/2 trailer out-of-bounds read|CVE-2018-1000005|20180124|20180110|CWE-126: Buffer Over-read",
+    "adv_2017-af0a.html|7.56.0|7.56.1|SSL out of buffer access|CVE-2017-8818|20171129|20171118|CWE-125: Out-of-bounds Read",
+    "adv_2017-ae72.html|7.21.0|7.56.1|FTP wildcard out of bounds read|CVE-2017-8817|20171129|20171110|CWE-126: Buffer Over-read",
+    "adv_2017-12e7.html|7.36.0|7.56.1|NTLM buffer overflow via integer overflow|CVE-2017-8816|20171129|20171106|CWE-131: Incorrect Calculation of Buffer Size",
+    "adv_20171023.html|7.20.0|7.56.0|IMAP FETCH response out of bounds read|CVE-2017-1000257|20171012|20171006|CWE-126: Buffer Over-read",
     "adv_20171004.html|7.7|7.55.1|FTP PWD response parser out of bounds read|CVE-2017-1000254|20171004|20170924",
     "adv_20170809A.html|7.34.0|7.54.1|URL globbing out of bounds read|CVE-2017-1000101|20170809|20170614",
     "adv_20170809B.html|7.15.0|7.54.1|TFTP sends more than buffer size|CVE-2017-1000100|20170809|20170711",
