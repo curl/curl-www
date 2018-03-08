@@ -58,13 +58,21 @@ sub single {
             else {
                 $c = "";
             }
+            my $cstr="";
+            if($cwe[$i]) {
+                my $n = $cwe[$i];
+                if($n =~ /^CWE-(\d+)/) {
+                    $n = $1;
+                }
+                $cstr = "<a href=\"https://cwe.mitre.org/data/definitions/$n.html\">$cwe[$i]</a>";
+            }
 
             $vulnhtml .= sprintf("<tr class=\"%s\"><td><a href=\"%s\">%s</a></td><td><a href=\"vuln-%s.html\">%s</a></td><td><a href=\"vuln-%s.html\">%s</a></td><td>$c</td><td>%s</td></tr>\n",
                                  $odd&1?"even":"odd",
                                  $vurl[$i], $vulndesc[$i],
                                  $vstart[$i], $vstart[$i],
                                  $vstop[$i], $vstop[$i],
-                                 $cwe[$i]);
+                                 $cstr);
             $odd++;
         }
         $vulnhtml .= "</table>";
