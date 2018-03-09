@@ -31,6 +31,8 @@ series is made with that.
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
 CVE-2014-8150 to this issue.
 
+CWE-444: Inconsistent Interpretation of HTTP Requests ('HTTP Request Smuggling')
+
 AFFECTED VERSIONS
 -----------------
 

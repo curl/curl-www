@@ -43,6 +43,8 @@ series is made with that.
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
 CVE-2015-3153 to this issue.
 
+CWE-201: Information Exposure Through Sent Data
+
 AFFECTED VERSIONS
 -----------------
 

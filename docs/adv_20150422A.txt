@@ -44,6 +44,8 @@ series is made with that.
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
 CVE-2015-3143 to this issue.
 
+CWE-305: Authentication Bypass by Primary Weakness
+
 AFFECTED VERSIONS
 -----------------
 

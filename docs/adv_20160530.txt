@@ -64,6 +64,8 @@ This flaw also affects the curl command line tool.
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
 CVE-2016-4802 to this issue.
 
+CWE-94: Improper Control of Generation of Code ('Code Injection')
+
 AFFECTED VERSIONS
 -----------------
 

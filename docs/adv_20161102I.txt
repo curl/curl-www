@@ -27,6 +27,8 @@ INFO
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
 CVE-2016-8623 to this issue.
 
+CWE-416: Use After Free
+
 AFFECTED VERSIONS
 -----------------
 

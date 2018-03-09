@@ -1,5 +1,5 @@
-libcurl/darwinssl certificate check bypass
-==========================================
+darwinssl certificate check bypass
+==================================
 
 Project curl Security Advisory, January 8th 2015 -
 [Permalink](https://curl.haxx.se/docs/adv_20150108A.html)
@@ -41,6 +41,8 @@ series is made with that.
 
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
 CVE-2014-8151 to this issue.
+
+CWE-305: Authentication Bypass by Primary Weakness
 
 AFFECTED VERSIONS
 -----------------

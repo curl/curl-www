@@ -29,6 +29,8 @@ This flaw can also be triggered with the curl command line tool.
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
 CVE-2015-3144 to this issue.
 
+CWE-124: Buffer Underwrite ('Buffer Underflow')
+
 AFFECTED VERSIONS
 -----------------
 

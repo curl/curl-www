@@ -10,7 +10,7 @@ VULNERABILITY
 libcurl supports HTTP "cookies" as documented in RFC 6265. Together with each
 individual cookie there are several different properties, but for this
 vulnerability we focus on the associated "path" element. It tells information
-about for which path on a given host the cookies is valid.
+about for which path on a given host the cookie is valid.
 
 The internal libcurl function called `sanitize_cookie_path()` that cleans up
 the path element as given to it from a remote site or when read from a file,
@@ -36,6 +36,8 @@ series is made with that.
 
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
 CVE-2015-3145 to this issue.
+
+CWE-124: Buffer Underwrite ('Buffer Underflow')
 
 AFFECTED VERSIONS
 -----------------

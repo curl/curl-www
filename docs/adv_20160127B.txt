@@ -47,6 +47,8 @@ present or provided by libcurl.
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
 CVE-2016-0754 to this issue.
 
+CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')
+
 AFFECTED VERSIONS
 -----------------
 
