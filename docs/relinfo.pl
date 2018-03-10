@@ -17,7 +17,7 @@ sub head {
     if($raw) {
         return;
     }
-    print "<tr class=\"tabletop\"><th rowspan=2>index</th><th rowspan=2>Version</th>";
+    print "<tr class=\"tabletop\"><th rowspan=2>#</th><th rowspan=2>Version</th>";
     printf("<th rowspan=2>Date</th><th rowspan=2>Since %s</th><th colspan=3>Delta</th><th colspan=4>Accumulated</th></tr>\n", $releases[0]);
     print "<tr class=\"tabletop\"><th>Days</th><th>Bugfixes</th><th>Changes</th><th>Days</th><th>Bugfixes</th><th>Changes</th><th>Vulns</a></tr>\n";
 }
@@ -55,6 +55,9 @@ while(<STDIN>) {
         $changes{$str}++;
     }
 }
+
+# we add 30 since curl 6.0 was the 30th release and the first listed in _changes.html
+my $numreleases = $#releases + 30;
 
 # do a loop to fix dates
 for my $str (@releases) {
@@ -140,7 +143,7 @@ for my $str (@releases) {
     else {
         printf("<tr class=\"%s\"><td>%d</td><td><a href=\"/changes.html#$anchor\">$str</a></td>",
                $l&1?"even":"odd",
-               $index);
+               $numreleases - $index);
     }
     $index++;
     my $vulc=0;
