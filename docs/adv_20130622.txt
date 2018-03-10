@@ -41,6 +41,8 @@ https://curl.haxx.se/docs/security.html
   The Common Vulnerabilities and Exposures (CVE) project has assigned the name
   CVE-2013-2174 to this issue.
 
+  CWE-126: Buffer Over-read
+
 2. AFFECTED VERSIONS
 
   Affected versions: from libcurl 7.7 to and including 7.30.0

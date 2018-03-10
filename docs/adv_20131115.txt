@@ -30,6 +30,8 @@ https://curl.haxx.se/docs/security.html
   The Common Vulnerabilities and Exposures (CVE) project has assigned the name
   CVE-2013-4545 to this issue.
 
+  CWE-305: Authentication Bypass by Primary Weakness
+
 2. AFFECTED VERSIONS
 
   This flaw only exists in the TLS backend that uses OpenSSL. If libcurl is

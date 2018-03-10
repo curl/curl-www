@@ -1,5 +1,5 @@
-                     curl URL sanitization vulnerability
-                     ===================================
+                     URL sanitization vulnerability
+                     ==============================
 
 Project curl Security Advisory, January 24th 2012
 https://curl.haxx.se/docs/security.html
@@ -38,6 +38,8 @@ https://curl.haxx.se/docs/security.html
 
   The Common Vulnerabilities and Exposures (CVE) project has assigned the name
   CVE-2012-0036 to this issue.
+
+  CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')
 
 2. AFFECTED VERSIONS
 

@@ -26,6 +26,8 @@ https://curl.haxx.se/docs/security.html
   The Common Vulnerabilities and Exposures (CVE) project has assigned the name
   CVE-2013-1944 to this issue.
 
+  CWE-201: Information Exposure Through Sent Data
+
 2. AFFECTED VERSIONS
 
   Affected versions: all versions to and including 7.29.0

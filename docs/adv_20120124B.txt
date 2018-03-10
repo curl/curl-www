@@ -9,10 +9,10 @@ https://curl.haxx.se/docs/security.html
   curl is vulnerable to a SSL CBC IV vulnerability when built to use OpenSSL
   for the SSL/TLS layer.
 
-  This vulernability has been identified (CVE-2011-3389) and is addressed by
-  OpenSSL already as they have made a work-around to mitigate the problem.
-  When doing so, they figured out that some servers didn't work with the
-  work-around and offered a way to disable it.
+  This vulernability has been identified (CVE-2011-3389 aka the "BEAST"
+  attack) and is addressed by OpenSSL already as they have made a work-around
+  to mitigate the problem.  When doing so, they figured out that some servers
+  didn't work with the work-around and offered a way to disable it.
 
   The bit used to disable the workaround was then added to the generic
   SSL_OP_ALL bitmask that SSL clients may use to enable work-arounds for
@@ -22,6 +22,8 @@ https://curl.haxx.se/docs/security.html
   does in this case effectively enable this security vulnerability again.
 
   There is no known exploit for this problem.
+
+  CWE-924: Improper Enforcement of Message Integrity During Transmission in a Communication Channel
 
 2. AFFECTED VERSIONS
 

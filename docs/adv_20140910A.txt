@@ -36,6 +36,8 @@ https://curl.haxx.se/docs/security.html
   The Common Vulnerabilities and Exposures (CVE) project has assigned the name
   CVE-2014-3613 to this issue.
 
+  CWE-201: Information Exposure Through Sent Data
+
 3. AFFECTED VERSIONS
 
   The IP address flaw has existed ever since libcurl started to support
