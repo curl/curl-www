@@ -14,6 +14,7 @@ RedirectPermanent /mirrors.html https://curl.haxx.se/mirror/
 RedirectPermanent /libcurl/c/libcurl-thread.html https://curl.haxx.se/libcurl/c/threadsafe.html
 RedirectMatch "^/.git" https://curl.haxx.se/dev/source.html
 RedirectPermanent /docs/adv_2017-11e7.html https://curl.haxx.se/docs/adv_2017-12e7.html
+RedirectPermanent /dev/security.html https://curl.haxx.se/dev/secprocess.html
 
 RemoveHandler .php
 RemoveHandler .pl

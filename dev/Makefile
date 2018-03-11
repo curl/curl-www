@@ -16,7 +16,7 @@ MAN2HTML = roffit --bare
 PAGES = foot.html head.html howto.html summary.html cvshistory.html	\
 	missing.html keywords.html builds.html release-notes.html	\
 	index.html contribute.html internals.html testcurl.html		\
-	runtests.html source.html security.html roadmap.html		\
+	runtests.html source.html secprocess.html roadmap.html		\
 	sourceactivity.html release-procedure.html code-style.html
 
 all: $(PAGES)
@@ -63,10 +63,10 @@ internals.html: _internals.html $(MAINPARTS) internals.t
 internals.t: $(DOCROOT)/INTERNALS.md
 	$(MARKDOWN) < $< > $@
 
-security.html: _security.html $(MAINPARTS) security.gen
+secprocess.html: _security.html $(MAINPARTS) security.gen
 	$(ACTION)
 
-security.gen: $(DOCROOT)/SECURITY.md
+security.gen: $(DOCROOT)/SECURITY-PROCESS.md
 	$(MARKDOWN) < $< > $@
 
 foot.html: _foot.html $(MAINPARTS)
