@@ -90,4 +90,4 @@ https://curl.haxx.se/docs/security.html
 
   Thanks a lot!
 
-  [1] = http://www.westpoint.ltd.uk/advisories/wp-10-0001.txt
+  [1] = https://www.westpoint.ltd.uk/advisories/wp-10-0001.txt

@@ -11,7 +11,6 @@ my %mirrors=(
 
     # Marc Hoersken runs:
     'https://dl.uxnr.de/mirror/curl/' => 'Germany (St. Wendel, Saarland)',
-    #'http://dl.uxnr.de/mirror/curl/' => 'Germany (St. Wendel, Saarland)',
 
     # Marty Anstey runs:
     'https://curl.mirror.anstey.ca/' => 'Canada (Vancouver)',

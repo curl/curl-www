@@ -27,7 +27,7 @@ TITLE(Project Hiper Schedule and Dates)
  I'll try to add info here as I proceed. If you want to comment on anything
  here, or provide some other kind of feedback on the Hiper work, please post
  all such to the <a
- href="http://curl.haxx.se/mail/list.cgi?list=curl-library">curl-library
+ href="https://curl.haxx.se/mail/list.cgi?list=curl-library">curl-library
  mailing list</a>! Oh, and I hang out on IRC, channel #curl on
  irc.freenode.net while working.
 
@@ -75,24 +75,24 @@ MARKDATE(April 10 2006) Recent changes broke the hiper patches several times
  Moved on to commit the public header file changes.
 <p>
  Committed the lot during the evening. Posted an <a
- href="http://curl.haxx.se/mail/lib-2006-04/0070.html">info mail about it</a>.
+ href="https://curl.haxx.se/mail/lib-2006-04/0070.html">info mail about it</a>.
 
 STOP
 
 MARKDATE(Feb 19 2006) The recently committed CONNECT_ONLY feature broke the
 previous patch again. <a
-href="http://curl.haxx.se/libcurl/hiper/hiper-9.patch">hiper-9.patch</a> is
+href="https://curl.haxx.se/libcurl/hiper/hiper-9.patch">hiper-9.patch</a> is
 now against the current CVS.
 
 STOP
 
 MARKDATE(Feb 2 2006) Hm, the previous patch doesn't apply cleanly anymore so I
 uploaded <a
-href="http://curl.haxx.se/libcurl/hiper/hiper-8.patch">hiper-8.patch</a>.
+href="https://curl.haxx.se/libcurl/hiper/hiper-8.patch">hiper-8.patch</a>.
 STOP
 
 MARKDATE(Jan 16 2006) <a
-href="http://curl.haxx.se/libcurl/hiper/hiper-7.patch">hiper-7.patch</a>
+href="https://curl.haxx.se/libcurl/hiper/hiper-7.patch">hiper-7.patch</a>
 introduces <a href="../c/curl_multi_setopt.html">curl_multi_setopt</a> to set
 the socket callback, to allow other functions than just the *multi_socket()
 ones to cause the callback to get called.
@@ -119,16 +119,16 @@ MARKDATE(Jan 6 2006)
  <a href="hiper-6.patch">hiper-6.patch</a> is 88K and now contains the test
  case files I've been using.
 <p>
- Some <a href="http://curl.haxx.se/mail/lib-2006-01/0028.html">shortcomings in
+ Some <a href="https://curl.haxx.se/mail/lib-2006-01/0028.html">shortcomings in
  the API</a> have been pointed out, and I have a <a
- href="http://curl.haxx.se/mail/lib-2006-01/0033.html">suggestion</a> on how
+ href="https://curl.haxx.se/mail/lib-2006-01/0033.html">suggestion</a> on how
  to solve the problems!
 
 STOP
 
 MARKDATE(Jan 5 2006)
 
- <a href="http://curl.haxx.se/mail/lib-2006-01/0021.html">Status Report</a>
+ <a href="https://curl.haxx.se/mail/lib-2006-01/0021.html">Status Report</a>
  posted to curl-library. I'm not sure when this work will continue full-time
  again, but possibly around March/April or so.
 
@@ -202,7 +202,7 @@ end of the week, as I'm not sure when I'll get back to this work again
 (hopefully sometime this spring).
 
 <p> Removed the timeout argument from the socket callback now, as I mentioned
-before and in <a href="http://curl.haxx.se/mail/lib-2006-01/0004.html">this
+before and in <a href="https://curl.haxx.se/mail/lib-2006-01/0004.html">this
 mail</a>.
 
 <p> Started working on curl_multi_timeout() now. I need to make a sorted list
@@ -256,7 +256,7 @@ MARKDATE(Dec 22 2005) I can now properly run tests with several hundred
  of my work, to make it easier to point out web versions of the docs for the
  new functions. See <a
  href="/libcurl/c/curl_multi_socket.html">curl_multi_socket()</a> and <a
- href="http://daniel.haxx.se/projects/c-ares/ares_getsock.html">ares_getsock()</a>.
+ href="https://daniel.haxx.se/projects/c-ares/ares_getsock.html">ares_getsock()</a>.
 
 STOP
 
@@ -284,7 +284,7 @@ MARKDATE(Dec 20 2005) Time to sum up what we have:
  try out if you feel brave and want something to do. Define
  HAVE_CURL_MULTI_SOCKET in your build to make it all go smooth. This change
  also includes the new <a
- href="http://daniel.haxx.se/projects/c-ares/mail/c-ares-archive-2005-12/0002.shtml">ares_getsocks()</a>
+ href="https://daniel.haxx.se/projects/c-ares/mail/c-ares-archive-2005-12/0002.shtml">ares_getsocks()</a>
  function.
 <p>
  Internally, we now report back plain sockets everywhere instead of the
@@ -425,7 +425,7 @@ file descritors. Working to smooth them out to be able to run tests using
 STOP
 
 MARKDATE(Dec 6 2005) I committed my currently used code to CVS: <a
-href="http://cool.haxx.se/cvs.cgi/curl/hiper/">cool.haxx.se/cvs.cgi/curl/hiper/</a>
+href="https://cool.haxx.se/cvs.cgi/curl/hiper/">cool.haxx.se/cvs.cgi/curl/hiper/</a>
 - not terribly much to see but I wanted to added it to make it easier for me
 to keep older versions around. This doesn't include the (minor) changes to
 libcurl I've done so far but none of those changes are required for this to
@@ -443,7 +443,7 @@ run/work.
  I found this little benchmark on select() performance compared to other event
  systems:
  <br>
- <a href="http://monkey.org/~provos/libevent/libevent-benchmark.jpg"><img border="0" src="bench.jpg" alt="graph comparing event systems' performances"></a>
+ <a href="https://monkey.org/~provos/libevent/libevent-benchmark.jpg"><img border="0" src="bench.jpg" alt="graph comparing event systems' performances"></a>
 <p>
  I've been struggling to get a test program that can be used
  to measure and show the current overhead/speed in a good way. I've been quite
@@ -536,12 +536,12 @@ STOP
 STOP
 
  MARKDATE(Nov 28 2005) Discussing how the "zero copy" interface for
- libcurl could work. On the <a href="http://curl.haxx.se/mail/list.cgi?list=curl-library">curl-library</a> mailing list.
+ libcurl could work. On the <a href="https://curl.haxx.se/mail/list.cgi?list=curl-library">curl-library</a> mailing list.
 
 STOP
 
  MARKDATE(Nov 9 2005) Discussing possible Windows-adjustments to the hiper
- concept on the <a href="http://curl.haxx.se/mail/list.cgi?list=curl-library">curl-library</a> mailing list.
+ concept on the <a href="https://curl.haxx.se/mail/list.cgi?list=curl-library">curl-library</a> mailing list.
 STOP
 
  MARKDATE(Nov 4 2005) Added the <a href="api.html">API</a> and <a
@@ -554,7 +554,7 @@ STOP
 
  MARKDATE(Oct 24 2005) Daniel visited the "Internetdagarna" conference in
  Stockholm, Sweden and receives a diploma, a flower and some sturdy handshakes
- when the <a href="http://www.iis.se/">IIS</a> foundation announced that
+ when the <a href="https://www.iis.se/">IIS</a> foundation announced that
  Daniel will receive 150,000 SEK from their fund. Daniel was notified about
  their decision roughly one week before this.
 STOP
