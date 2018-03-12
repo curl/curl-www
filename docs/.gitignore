@@ -1,4 +1,3 @@
-*.t
 [^_]*.html
 rel.txt
 releases.csv
