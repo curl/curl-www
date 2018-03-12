@@ -7,9 +7,12 @@ include $(ROOT)/setup.mk
 
 MAINPARTS += _menu.html ../alert.t
 
+# For each individual advisory page
+ADVBOX = adv-related-box.inc
+ADVPARTS = $(MAINPARTS) advisory.t $(ADVBOX)
+
 FCPP_OPTS = -DSHOW_ALERT
 MAN2HTML = roffit --bare
-ADVBOX = adv-related-box.inc
 
 ADVCONV= $(MARKDOWN) < $< | perl curlver-to-vulnlink.pl > $@
 
@@ -207,377 +210,362 @@ security.html: _security.html seclist.gen $(MAINPARTS) $(ADVBOX)
 seclist.gen: vuln.pm listvulns.pl
 	./listvulns.pl > seclist.gen
 
-adv_20051013.html: _adv_20051013.html adv_20051013.t $(MAINPARTS) $(ADVBOX)
+adv_20051013.html: _adv_20051013.html adv_20051013.gen $(ADVPARTS)
 	$(ACTION)
+adv_20051013.gen: adv_20051013.txt
+	$(ADVCONV)
 
-adv_20051013.t: adv_20051013.txt
-	$(TXT2PLAIN) < $< > $@
-
-adv_20051207.html: _adv_20051207.html adv_20051207.t $(MAINPARTS) $(ADVBOX)
+adv_20051207.html: _adv_20051207.html adv_20051207.gen $(ADVPARTS)
 	$(ACTION)
+adv_20051207.gen: adv_20051207.txt
+	$(ADVCONV)
 
-adv_20051207.t: adv_20051207.txt
-	$(TXT2PLAIN) < $< > $@
-
-adv_20060320.html: _adv_20060320.html adv_20060320.t $(MAINPARTS) $(ADVBOX)
+adv_20060320.html: _adv_20060320.html adv_20060320.gen $(ADVPARTS)
 	$(ACTION)
+adv_20060320.gen: adv_20060320.txt
+	$(ADVCONV)
 
-adv_20060320.t: adv_20060320.txt
-	$(TXT2PLAIN) < $< > $@
-
-adv_20070710.html: _adv_20070710.html adv_20070710.t $(MAINPARTS) $(ADVBOX)
+adv_20070710.html: _adv_20070710.html adv_20070710.gen $(ADVPARTS)
 	$(ACTION)
+adv_20070710.gen: adv_20070710.txt
+	$(ADVCONV)
 
-adv_20070710.t: adv_20070710.txt
-	$(TXT2PLAIN) < $< > $@
-
-adv_20090303.html: _adv_20090303.html adv_20090303.t $(MAINPARTS) $(ADVBOX)
+adv_20090303.html: _adv_20090303.html adv_20090303.gen $(ADVPARTS)
 	$(ACTION)
+adv_20090303.gen: adv_20090303.txt
+	$(ADVCONV)
 
-adv_20090303.t: adv_20090303.txt
-	$(TXT2PLAIN) < $< > $@
-
-adv_20090812.html: _adv_20090812.html adv_20090812.t $(MAINPARTS) $(ADVBOX)
+adv_20090812.html: _adv_20090812.html adv_20090812.gen $(ADVPARTS)
 	$(ACTION)
+adv_20090812.gen: adv_20090812.txt
+	$(ADVCONV)
 
-adv_20090812.t: adv_20090812.txt
-	$(TXT2PLAIN) < $< > $@
-
-adv_20100209.html: _adv_20100209.html adv_20100209.t $(MAINPARTS) $(ADVBOX)
+adv_20100209.html: _adv_20100209.html adv_20100209.gen $(ADVPARTS)
 	$(ACTION)
+adv_20100209.gen: adv_20100209.txt
+	$(ADVCONV)
 
-adv_20100209.t: adv_20100209.txt
-	$(TXT2PLAIN) < $< > $@
-
-adv_20101013.html: _adv_20101013.html adv_20101013.t $(MAINPARTS) $(ADVBOX)
+adv_20101013.html: _adv_20101013.html adv_20101013.gen $(ADVPARTS)
 	$(ACTION)
+adv_20101013.gen: adv_20101013.txt
+	$(ADVCONV)
 
-adv_20101013.t: adv_20101013.txt
-	$(TXT2PLAIN) < $< > $@
-
-adv_20110623.html: _adv_20110623.html adv_20110623.t $(MAINPARTS) $(ADVBOX)
+adv_20110623.html: _adv_20110623.html adv_20110623.gen $(ADVPARTS)
 	$(ACTION)
+adv_20110623.gen: adv_20110623.txt
+	$(ADVCONV)
 
-adv_20110623.t: adv_20110623.txt
-	$(TXT2PLAIN) < $< > $@
-
-adv_20120124.html: _adv_20120124.html adv_20120124.t $(MAINPARTS) $(ADVBOX)
+adv_20120124.html: _adv_20120124.html adv_20120124.t $(ADVPARTS)
 	$(ACTION)
-
 adv_20120124.t: adv_20120124.txt
 	$(TXT2PLAIN) < $< > $@
 
-adv_20120124B.html: _adv_20120124B.html adv_20120124B.t $(MAINPARTS) $(ADVBOX)
+adv_20120124B.html: _adv_20120124B.html adv_20120124B.t $(ADVPARTS)
 	$(ACTION)
-
 adv_20120124B.t: adv_20120124B.txt
 	$(TXT2PLAIN) < $< > $@
 
-adv_20130206.html: _adv_20130206.html adv_20130206.t $(MAINPARTS) $(ADVBOX)
+adv_20130206.html: _adv_20130206.html adv_20130206.t $(ADVPARTS)
 	$(ACTION)
-
 adv_20130206.t: adv_20130206.txt
 	$(TXT2PLAIN) < $< > $@
 
-adv_20130412.html: _adv_20130412.html adv_20130412.t $(MAINPARTS) $(ADVBOX)
+adv_20130412.html: _adv_20130412.html adv_20130412.t $(ADVPARTS)
 	$(ACTION)
-
 adv_20130412.t: adv_20130412.txt
 	$(TXT2PLAIN) < $< > $@
 
-adv_20130622.html: _adv_20130622.html adv_20130622.t $(MAINPARTS) $(ADVBOX)
+adv_20130622.html: _adv_20130622.html adv_20130622.t $(ADVPARTS)
 	$(ACTION)
-
 adv_20130622.t: adv_20130622.txt
 	$(TXT2PLAIN) < $< > $@
 
-adv_20131115.html: _adv_20131115.html adv_20131115.t $(MAINPARTS) $(ADVBOX)
+adv_20131115.html: _adv_20131115.html adv_20131115.t $(ADVPARTS)
 	$(ACTION)
-
 adv_20131115.t: adv_20131115.txt
 	$(TXT2PLAIN) < $< > $@
 
-adv_20131217.html: _adv_20131217.html adv_20131217.t $(MAINPARTS) $(ADVBOX)
+adv_20131217.html: _adv_20131217.html adv_20131217.t $(ADVPARTS)
 	$(ACTION)
-
 adv_20131217.t: adv_20131217.txt
 	$(TXT2PLAIN) < $< > $@
 
-adv_20140129.html: _adv_20140129.html adv_20140129.t $(MAINPARTS) $(ADVBOX)
+adv_20140129.html: _adv_20140129.html adv_20140129.gen $(ADVPARTS)
 	$(ACTION)
+adv_20140129.gen: adv_20140129.txt
+	$(ADVCONV)
 
-adv_20140129.t: adv_20140129.txt
-	$(TXT2PLAIN) < $< > $@
-
-adv_20140326A.html: _adv_20140326A.html adv_20140326A.t $(MAINPARTS) $(ADVBOX)
+adv_20140326A.html: _adv_20140326A.html adv_20140326A.gen $(ADVPARTS)
 	$(ACTION)
-adv_20140326A.t: adv_20140326A.txt
-	$(TXT2PLAIN) < $< > $@
+adv_20140326A.gen: adv_20140326A.txt
+	$(ADVCONV)
 
-adv_20140326B.html: _adv_20140326B.html adv_20140326B.t $(MAINPARTS) $(ADVBOX)
+adv_20140326B.html: _adv_20140326B.html adv_20140326B.gen $(ADVPARTS)
 	$(ACTION)
-adv_20140326B.t: adv_20140326B.txt
-	$(TXT2PLAIN) < $< > $@
+adv_20140326B.gen: adv_20140326B.txt
+	$(ADVCONV)
 
-adv_20140326C.html: _adv_20140326C.html adv_20140326C.t $(MAINPARTS) $(ADVBOX)
+adv_20140326C.html: _adv_20140326C.html adv_20140326C.gen $(ADVPARTS)
 	$(ACTION)
-adv_20140326C.t: adv_20140326C.txt
-	$(TXT2PLAIN) < $< > $@
+adv_20140326C.gen: adv_20140326C.txt
+	$(ADVCONV)
 
-adv_20140326D.html: _adv_20140326D.html adv_20140326D.t $(MAINPARTS) $(ADVBOX)
+adv_20140326D.html: _adv_20140326D.html adv_20140326D.gen $(ADVPARTS)
 	$(ACTION)
-adv_20140326D.t: adv_20140326D.txt
-	$(TXT2PLAIN) < $< > $@
+adv_20140326D.gen: adv_20140326D.txt
+	$(ADVCONV)
 
-adv_20140910A.html: _adv_20140910A.html adv_20140910A.t $(MAINPARTS) $(ADVBOX)
+adv_20140910A.html: _adv_20140910A.html adv_20140910A.gen $(ADVPARTS)
 	$(ACTION)
-adv_20140910A.t: adv_20140910A.txt
-	$(TXT2PLAIN) < $< > $@
+adv_20140910A.gen: adv_20140910A.txt
+	$(ADVCONV)
 
-adv_20140910B.html: _adv_20140910B.html adv_20140910B.t $(MAINPARTS) $(ADVBOX)
+adv_20140910B.html: _adv_20140910B.html adv_20140910B.gen $(ADVPARTS)
 	$(ACTION)
-adv_20140910B.t: adv_20140910B.txt
-	$(TXT2PLAIN) < $< > $@
+adv_20140910B.gen: adv_20140910B.txt
+	$(ADVCONV)
 
-adv_20141105.html: _adv_20141105.html adv_20141105.gen $(MAINPARTS) $(ADVBOX)
+adv_20141105.html: _adv_20141105.html adv_20141105.gen $(ADVPARTS)
 	$(ACTION)
 adv_20141105.gen: adv_20141105.txt
 	$(ADVCONV)
 
-adv_20150108A.html: _adv_20150108A.html adv_20150108A.gen $(MAINPARTS) $(ADVBOX)
+adv_20150108A.html: _adv_20150108A.html adv_20150108A.gen $(ADVPARTS)
 	$(ACTION)
 adv_20150108A.gen: adv_20150108A.txt
 	$(ADVCONV)
 
-adv_20150108B.html: _adv_20150108B.html adv_20150108B.gen $(MAINPARTS) $(ADVBOX)
+adv_20150108B.html: _adv_20150108B.html adv_20150108B.gen $(ADVPARTS)
 	$(ACTION)
 adv_20150108B.gen: adv_20150108B.txt
 	$(ADVCONV)
 
-adv_20150422A.html: _adv_20150422A.html adv_20150422A.gen $(MAINPARTS) $(ADVBOX)
+adv_20150422A.html: _adv_20150422A.html adv_20150422A.gen $(ADVPARTS)
 	$(ACTION)
 adv_20150422A.gen: adv_20150422A.txt
 	$(ADVCONV)
 
-adv_20150422B.html: _adv_20150422B.html adv_20150422B.gen $(MAINPARTS) $(ADVBOX)
+adv_20150422B.html: _adv_20150422B.html adv_20150422B.gen $(ADVPARTS)
 	$(ACTION)
 adv_20150422B.gen: adv_20150422B.txt
 	$(ADVCONV)
 
-adv_20150422C.html: _adv_20150422C.html adv_20150422C.gen $(MAINPARTS) $(ADVBOX)
+adv_20150422C.html: _adv_20150422C.html adv_20150422C.gen $(ADVPARTS)
 	$(ACTION)
 adv_20150422C.gen: adv_20150422C.txt
 	$(ADVCONV)
 
-adv_20150422D.html: _adv_20150422D.html adv_20150422D.gen $(MAINPARTS) $(ADVBOX)
+adv_20150422D.html: _adv_20150422D.html adv_20150422D.gen $(ADVPARTS)
 	$(ACTION)
 adv_20150422D.gen: adv_20150422D.txt
 	$(ADVCONV)
 
-adv_20150429.html: _adv_20150429.html adv_20150429.gen $(MAINPARTS) $(ADVBOX)
+adv_20150429.html: _adv_20150429.html adv_20150429.gen $(ADVPARTS)
 	$(ACTION)
 adv_20150429.gen: adv_20150429.txt
 	$(ADVCONV)
 
-adv_20150617A.html: _adv_20150617A.html adv_20150617A.gen $(MAINPARTS) $(ADVBOX)
+adv_20150617A.html: _adv_20150617A.html adv_20150617A.gen $(ADVPARTS)
 	$(ACTION)
 adv_20150617A.gen: adv_20150617A.txt
 	$(ADVCONV)
 
-adv_20150617B.html: _adv_20150617B.html adv_20150617B.gen $(MAINPARTS) $(ADVBOX)
+adv_20150617B.html: _adv_20150617B.html adv_20150617B.gen $(ADVPARTS)
 	$(ACTION)
 adv_20150617B.gen: adv_20150617B.txt
 	$(ADVCONV)
 
-adv_20160127A.html: _adv_20160127A.html adv_20160127A.gen $(MAINPARTS) $(ADVBOX)
+adv_20160127A.html: _adv_20160127A.html adv_20160127A.gen $(ADVPARTS)
 	$(ACTION)
 adv_20160127A.gen: adv_20160127A.txt
 	$(ADVCONV)
 
-adv_20160127B.html: _adv_20160127B.html adv_20160127B.gen $(MAINPARTS) $(ADVBOX)
+adv_20160127B.html: _adv_20160127B.html adv_20160127B.gen $(ADVPARTS)
 	$(ACTION)
 adv_20160127B.gen: adv_20160127B.txt
 	$(ADVCONV)
 
-adv_20160518.html: _adv_20160518.html adv_20160518.gen $(MAINPARTS) $(ADVBOX)
+adv_20160518.html: _adv_20160518.html adv_20160518.gen $(ADVPARTS)
 	$(ACTION)
 adv_20160518.gen: adv_20160518.txt
 	$(ADVCONV)
 
-adv_20160530.html: _adv_20160530.html adv_20160530.gen $(MAINPARTS) $(ADVBOX)
+adv_20160530.html: _adv_20160530.html adv_20160530.gen $(ADVPARTS)
 	$(ACTION)
 adv_20160530.gen: adv_20160530.txt
 	$(ADVCONV)
 
-adv_20160803A.html: _adv_20160803A.html adv_20160803A.gen $(MAINPARTS) $(ADVBOX)
+adv_20160803A.html: _adv_20160803A.html adv_20160803A.gen $(ADVPARTS)
 	$(ACTION)
 adv_20160803A.gen: adv_20160803A.txt
 	$(ADVCONV)
 
-adv_20160803B.html: _adv_20160803B.html adv_20160803B.gen $(MAINPARTS) $(ADVBOX)
+adv_20160803B.html: _adv_20160803B.html adv_20160803B.gen $(ADVPARTS)
 	$(ACTION)
 adv_20160803B.gen: adv_20160803B.txt
 	$(ADVCONV)
 
-adv_20160803C.html: _adv_20160803C.html adv_20160803C.gen $(MAINPARTS) $(ADVBOX)
+adv_20160803C.html: _adv_20160803C.html adv_20160803C.gen $(ADVPARTS)
 	$(ACTION)
 adv_20160803C.gen: adv_20160803C.txt
 	$(ADVCONV)
 
-adv_20160907.html: _adv_20160907.html adv_20160907.gen $(MAINPARTS) $(ADVBOX)
+adv_20160907.html: _adv_20160907.html adv_20160907.gen $(ADVPARTS)
 	$(ACTION)
 adv_20160907.gen: adv_20160907.txt
 	$(ADVCONV)
 
-adv_20160914.html: _adv_20160914.html adv_20160914.gen $(MAINPARTS) $(ADVBOX)
+adv_20160914.html: _adv_20160914.html adv_20160914.gen $(ADVPARTS)
 	$(ACTION)
 adv_20160914.gen: adv_20160914.txt
 	$(ADVCONV)
 
-adv_20001013.html: _adv_20001013.html $(MAINPARTS) $(ADVBOX)
+adv_20001013.html: _adv_20001013.html adv_20001013.gen $(ADVPARTS)
+	$(ACTION)
+adv_20001013.gen: adv_20001013.md
+	$(ADVCONV)
+
+adv_20030803.html: _adv_20030803.html $(ADVPARTS)
 	$(ACTION)
 
-adv_20030803.html: _adv_20030803.html $(MAINPARTS) $(ADVBOX)
+adv_20050221A.html: _adv_20050221A.html $(ADVPARTS)
 	$(ACTION)
 
-adv_20050221A.html: _adv_20050221A.html $(MAINPARTS) $(ADVBOX)
+adv_20050221B.html: _adv_20050221B.html $(ADVPARTS)
 	$(ACTION)
 
-adv_20050221B.html: _adv_20050221B.html $(MAINPARTS) $(ADVBOX)
-	$(ACTION)
-
-adv_20161102A.html: _adv_20161102A.html adv_20161102A.gen $(MAINPARTS) $(ADVBOX)
+adv_20161102A.html: _adv_20161102A.html adv_20161102A.gen $(ADVPARTS)
 	$(ACTION)
 adv_20161102A.gen: adv_20161102A.txt
 	$(ADVCONV)
 
-adv_20161102B.html: _adv_20161102B.html adv_20161102B.gen $(MAINPARTS) $(ADVBOX)
+adv_20161102B.html: _adv_20161102B.html adv_20161102B.gen $(ADVPARTS)
 	$(ACTION)
 adv_20161102B.gen: adv_20161102B.txt
 	$(ADVCONV)
 
-adv_20161102C.html: _adv_20161102C.html adv_20161102C.gen $(MAINPARTS) $(ADVBOX)
+adv_20161102C.html: _adv_20161102C.html adv_20161102C.gen $(ADVPARTS)
 	$(ACTION)
 adv_20161102C.gen: adv_20161102C.txt
 	$(ADVCONV)
 
-adv_20161102D.html: _adv_20161102D.html adv_20161102D.gen $(MAINPARTS) $(ADVBOX)
+adv_20161102D.html: _adv_20161102D.html adv_20161102D.gen $(ADVPARTS)
 	$(ACTION)
 adv_20161102D.gen: adv_20161102D.txt
 	$(ADVCONV)
 
-adv_20161102E.html: _adv_20161102E.html adv_20161102E.gen $(MAINPARTS) $(ADVBOX)
+adv_20161102E.html: _adv_20161102E.html adv_20161102E.gen $(ADVPARTS)
 	$(ACTION)
 adv_20161102E.gen: adv_20161102E.txt
 	$(ADVCONV)
 
-adv_20161102F.html: _adv_20161102F.html adv_20161102F.gen $(MAINPARTS) $(ADVBOX)
+adv_20161102F.html: _adv_20161102F.html adv_20161102F.gen $(ADVPARTS)
 	$(ACTION)
 adv_20161102F.gen: adv_20161102F.txt
 	$(ADVCONV)
 
-adv_20161102G.html: _adv_20161102G.html adv_20161102G.gen $(MAINPARTS) $(ADVBOX)
+adv_20161102G.html: _adv_20161102G.html adv_20161102G.gen $(ADVPARTS)
 	$(ACTION)
 adv_20161102G.gen: adv_20161102G.txt
 	$(ADVCONV)
 
-adv_20161102H.html: _adv_20161102H.html adv_20161102H.gen $(MAINPARTS) $(ADVBOX)
+adv_20161102H.html: _adv_20161102H.html adv_20161102H.gen $(ADVPARTS)
 	$(ACTION)
 adv_20161102H.gen: adv_20161102H.txt
 	$(ADVCONV)
 
-adv_20161102I.html: _adv_20161102I.html adv_20161102I.gen $(MAINPARTS) $(ADVBOX)
+adv_20161102I.html: _adv_20161102I.html adv_20161102I.gen $(ADVPARTS)
 	$(ACTION)
 adv_20161102I.gen: adv_20161102I.txt
 	$(ADVCONV)
 
-adv_20161102J.html: _adv_20161102J.html adv_20161102J.gen $(MAINPARTS) $(ADVBOX)
+adv_20161102J.html: _adv_20161102J.html adv_20161102J.gen $(ADVPARTS)
 	$(ACTION)
 adv_20161102J.gen: adv_20161102J.txt
 	$(ADVCONV)
 
-adv_20161102K.html: _adv_20161102K.html adv_20161102K.gen $(MAINPARTS) $(ADVBOX)
+adv_20161102K.html: _adv_20161102K.html adv_20161102K.gen $(ADVPARTS)
 	$(ACTION)
 adv_20161102K.gen: adv_20161102K.txt
 	$(ADVCONV)
 
-adv_20161221A.html: _adv_20161221A.html adv_20161221A.gen $(MAINPARTS) $(ADVBOX)
+adv_20161221A.html: _adv_20161221A.html adv_20161221A.gen $(ADVPARTS)
 	$(ACTION)
 adv_20161221A.gen: adv_20161221A.txt
 	$(ADVCONV)
 
-adv_20161221B.html: _adv_20161221B.html adv_20161221B.gen $(MAINPARTS) $(ADVBOX)
+adv_20161221B.html: _adv_20161221B.html adv_20161221B.gen $(ADVPARTS)
 	$(ACTION)
 adv_20161221B.gen: adv_20161221B.txt
 	$(ADVCONV)
 
-adv_20161221C.html: _adv_20161221C.html adv_20161221C.gen $(MAINPARTS) $(ADVBOX)
+adv_20161221C.html: _adv_20161221C.html adv_20161221C.gen $(ADVPARTS)
 	$(ACTION)
 adv_20161221C.gen: adv_20161221C.txt
 	$(ADVCONV)
 
-adv_20161223.html: _adv_20161223.html adv_20161223.gen $(MAINPARTS) $(ADVBOX)
+adv_20161223.html: _adv_20161223.html adv_20161223.gen $(ADVPARTS)
 	$(ACTION)
 adv_20161223.gen: adv_20161223.txt
 	$(ADVCONV)
 
-adv_20170222.html: _adv_20170222.html adv_20170222.gen $(MAINPARTS) $(ADVBOX)
+adv_20170222.html: _adv_20170222.html adv_20170222.gen $(ADVPARTS)
 	$(ACTION)
 adv_20170222.gen: adv_20170222.md
 	$(ADVCONV)
 
-adv_20170403.html: _adv_20170403.html adv_20170403.gen $(MAINPARTS) $(ADVBOX)
+adv_20170403.html: _adv_20170403.html adv_20170403.gen $(ADVPARTS)
 	$(ACTION)
 adv_20170403.gen: adv_20170403.md
 	$(ADVCONV)
 
-adv_20170419.html: _adv_20170419.html adv_20170419.gen $(MAINPARTS) $(ADVBOX)
+adv_20170419.html: _adv_20170419.html adv_20170419.gen $(ADVPARTS)
 	$(ACTION)
 adv_20170419.gen: adv_20170419.md
 	$(ADVCONV)
 
-adv_20170614.html: _adv_20170614.html adv_20170614.gen $(MAINPARTS) $(ADVBOX)
+adv_20170614.html: _adv_20170614.html adv_20170614.gen $(ADVPARTS)
 	$(ACTION)
 adv_20170614.gen: adv_20170614.md
 	$(ADVCONV)
 
-adv_20170809A.html: _adv_20170809A.html adv_20170809A.gen $(MAINPARTS) $(ADVBOX)
+adv_20170809A.html: _adv_20170809A.html adv_20170809A.gen $(ADVPARTS)
 	$(ACTION)
 adv_20170809A.gen: adv_20170809A.md
 	$(ADVCONV)
-adv_20170809B.html: _adv_20170809B.html adv_20170809B.gen $(MAINPARTS) $(ADVBOX)
+adv_20170809B.html: _adv_20170809B.html adv_20170809B.gen $(ADVPARTS)
 	$(ACTION)
 adv_20170809B.gen: adv_20170809B.md
 	$(ADVCONV)
-adv_20170809C.html: _adv_20170809C.html adv_20170809C.gen $(MAINPARTS) $(ADVBOX)
+adv_20170809C.html: _adv_20170809C.html adv_20170809C.gen $(ADVPARTS)
 	$(ACTION)
 adv_20170809C.gen: adv_20170809C.md
 	$(ADVCONV)
-adv_20171004.html: _adv_20171004.html adv_20171004.gen $(MAINPARTS) $(ADVBOX)
+adv_20171004.html: _adv_20171004.html adv_20171004.gen $(ADVPARTS)
 	$(ACTION)
 adv_20171004.gen: adv_20171004.md
 	$(ADVCONV)
-adv_20171023.html: _adv_20171023.html adv_20171023.gen $(MAINPARTS) $(ADVBOX)
+adv_20171023.html: _adv_20171023.html adv_20171023.gen $(ADVPARTS)
 	$(ACTION)
 adv_20171023.gen: adv_20171023.md
 	$(ADVCONV)
-adv_2017-12e7.html: _adv_2017-12e7.html adv_2017-12e7.gen $(MAINPARTS) $(ADVBOX)
+adv_2017-12e7.html: _adv_2017-12e7.html adv_2017-12e7.gen $(ADVPARTS)
 	$(ACTION)
 adv_2017-12e7.gen: adv_2017-12e7.md
 	$(ADVCONV)
-adv_2017-ae72.html: _adv_2017-ae72.html adv_2017-ae72.gen $(MAINPARTS) $(ADVBOX)
+adv_2017-ae72.html: _adv_2017-ae72.html adv_2017-ae72.gen $(ADVPARTS)
 	$(ACTION)
 adv_2017-ae72.gen: adv_2017-ae72.md
 	$(ADVCONV)
-adv_2017-af0a.html: _adv_2017-af0a.html adv_2017-af0a.gen $(MAINPARTS) $(ADVBOX)
+adv_2017-af0a.html: _adv_2017-af0a.html adv_2017-af0a.gen $(ADVPARTS)
 	$(ACTION)
 adv_2017-af0a.gen: adv_2017-af0a.md
 	$(ADVCONV)
-adv_2018-b3bf.html: _adv_2018-b3bf.html adv_2018-b3bf.gen $(MAINPARTS) $(ADVBOX)
+adv_2018-b3bf.html: _adv_2018-b3bf.html adv_2018-b3bf.gen $(ADVPARTS)
 	$(ACTION)
 adv_2018-b3bf.gen: adv_2018-b3bf.md
 	$(ADVCONV)
-adv_2018-824a.html: _adv_2018-824a.html adv_2018-824a.gen $(MAINPARTS) $(ADVBOX)
+adv_2018-824a.html: _adv_2018-824a.html adv_2018-824a.gen $(ADVPARTS)
 	$(ACTION)
 adv_2018-824a.gen: adv_2018-824a.md
 	$(ADVCONV)

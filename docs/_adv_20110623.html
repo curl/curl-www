@@ -1,6 +1,7 @@
 #include "_doctype.html"
+#define FLAWNAME inappropriate GSSAPI delegation
 <HTML>
-<HEAD> <TITLE>curl - Security Advisory (June 23, 2011)</TITLE>
+<HEAD> <TITLE>curl - FLAWNAME</TITLE>
 #include "css.t"
 #include "manpage.t"
 </HEAD>
@@ -10,16 +11,11 @@
 
 #include "_menu.html"
 #include "setup.t"
+#include "advisory.t"
 
-WHERE3(Docs, "/docs/", Security, "/docs/security.html",
- Security Advisory June 23 2011)
+ADVISORY_WHERE
 
-TITLE(Security Advisory June 23 2011)
 #include "adv-related-box.inc"
-
-<pre>
-#include "adv_20110623.t"
-</pre>
-
+#include "adv_20110623.gen"
 #include "_footer.html"
 </body> </html>

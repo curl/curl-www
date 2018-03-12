@@ -10,15 +10,11 @@
 
 #include "_menu.html"
 #include "setup.t"
+#include "advisory.t"
 
-WHERE3(Docs, "/docs/", Security, "/docs/security.html", Advisory)
+ADVISORY_WHERE
 
-TITLE(Security Advisory March 20 2006)
 #include "adv-related-box.inc"
-
-<pre>
-#include "adv_20060320.t"
-</pre>
-
+#include "adv_20060320.gen"
 #include "_footer.html"
 </body> </html>

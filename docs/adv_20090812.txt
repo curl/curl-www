@@ -1,98 +1,106 @@
-                      libcurl embedded zero in cert name
-                      ==================================
+embedded zero in cert name
+==================================
 
 Project curl Security Advisory, August 12th 2009
-https://curl.haxx.se/docs/security.html
+[permalink](https://curl.haxx.se/docs/adv_20090812.html)
 
-1. VULNERABILITY
+VULNERABILITY
+-------------
 
-  SSL and TLS Server certificates contain one or more fields with server name
-  or otherwise matching patterns. These strings are stored as content and
-  length within the certificate, and thus there is no particular terminating
-  character.
+SSL and TLS Server certificates contain one or more fields with server name
+or otherwise matching patterns. These strings are stored as content and
+length within the certificate, and thus there is no particular terminating
+character.
 
-  curl's OpenSSL interfacing code did faulty assumptions about those names and
-  patterns being zero terminated, allowing itself to be fooled in case a
-  certificate would get a zero byte embedded into one of the name fields. To
-  illustrate, a name that would show this vulnerability could look like:
+curl's OpenSSL interfacing code did faulty assumptions about those names and
+patterns being zero terminated, allowing itself to be fooled in case a
+certificate would get a zero byte embedded into one of the name fields. To
+illustrate, a name that would show this vulnerability could look like:
 
-    "example.com\0.haxx.se"
+  "example.com\0.haxx.se"
 
-  This cert is thus made for "haxx.se" but curl would erroneously verify it
-  with no complaints for "example.com".
+This cert is thus made for "haxx.se" but curl would erroneously verify it
+with no complaints for "example.com".
 
-  According to a recently published presentation, this kind of zero embedding
-  has been proven to be possible with at least one CA.
+According to a recently published presentation, this kind of zero embedding
+has been proven to be possible with at least one CA.
 
-  The Common Vulnerabilities and Exposures (CVE) project has assigned the name
-  CVE-2009-2417 to this issue.
+The Common Vulnerabilities and Exposures (CVE) project has assigned the name
+CVE-2009-2417 to this issue.
 
-2. AFFECTED VERSIONS
+AFFECTED VERSIONS
+-----------------
 
-  Affected versions: curl and libcurl 7.4 to and including 7.19.5
-  Not affected versions: curl and libcurl 7.19.6 and later
+- Affected versions: curl and libcurl 7.4 to and including 7.19.5
+- Not affected versions: curl and libcurl 7.19.6 and later
 
-  This vulnerability is only present in OpenSSL-specific parts of the code.
-  If you build curl or libcurl to use GnuTLS or NSS instead, you must instead
-  make sure you use a secure version of those libraries. They have both
-  recently also been found vulnerable to this same flaw.
+This vulnerability is only present in OpenSSL-specific parts of the code.
+If you build curl or libcurl to use GnuTLS or NSS instead, you must instead
+make sure you use a secure version of those libraries. They have both
+recently also been found vulnerable to this same flaw.
 
-  Also note that (lib)curl is used by many applications, and not always
-  advertised as such.
+Also note that (lib)curl is used by many applications, and not always
+advertised as such.
 
-  We have not researched curl versions earlier than 7.4 but we estimate that
-  usage of such old versions is very rare.
+We have not researched curl versions earlier than 7.4 but we estimate that
+usage of such old versions is very rare.
 
-3. THE SOLUTION
+SOLUTION
+--------
 
-  libcurl 7.19.6 makes sure that the length from the cert is used for
-  verification and not the zero terminating byte.
+libcurl 7.19.6 makes sure that the length from the cert is used for
+verification and not the zero terminating byte.
 
-4. RECOMMENDATIONS
+Available patches:
 
-  We suggest you take one of the following actions immediately, in order of
-  preference:
+- https://curl.haxx.se/CVE-2009-2417/curl-7.19.5-CVE-2009-2417.patch
+- https://curl.haxx.se/CVE-2009-2417/curl-7.19.0-CVE-2009-2417.patch
+- https://curl.haxx.se/CVE-2009-2417/curl-7.18.1-CVE-2009-2417.patch
+- https://curl.haxx.se/CVE-2009-2417/curl-7.16.4-CVE-2009-2417.patch
+- https://curl.haxx.se/CVE-2009-2417/curl-7.15.5-CVE-2009-2417.patch
+- https://curl.haxx.se/CVE-2009-2417/curl-7.15.1-CVE-2009-2417.patch
+- https://curl.haxx.se/CVE-2009-2417/curl-7.12.1-CVE-2009-2417.patch
+- https://curl.haxx.se/CVE-2009-2417/curl-7.11.0-CVE-2009-2417.patch
+- https://curl.haxx.se/CVE-2009-2417/curl-7.10.6-CVE-2009-2417.patch
 
-  A - Upgrade to curl and libcurl 7.19.6
+RECOMMENDATIONS
+---------------
 
-  B - Apply the suitable patch and rebuild
+We suggest you take one of the following actions immediately, in order of
+preference:
 
-      https://curl.haxx.se/CVE-2009-2417/curl-7.19.5-CVE-2009-2417.patch
-      https://curl.haxx.se/CVE-2009-2417/curl-7.19.0-CVE-2009-2417.patch
-      https://curl.haxx.se/CVE-2009-2417/curl-7.18.1-CVE-2009-2417.patch
-      https://curl.haxx.se/CVE-2009-2417/curl-7.16.4-CVE-2009-2417.patch
-      https://curl.haxx.se/CVE-2009-2417/curl-7.15.5-CVE-2009-2417.patch
-      https://curl.haxx.se/CVE-2009-2417/curl-7.15.1-CVE-2009-2417.patch
-      https://curl.haxx.se/CVE-2009-2417/curl-7.12.1-CVE-2009-2417.patch
-      https://curl.haxx.se/CVE-2009-2417/curl-7.11.0-CVE-2009-2417.patch
-      https://curl.haxx.se/CVE-2009-2417/curl-7.10.6-CVE-2009-2417.patch
+ A - Upgrade to curl and libcurl 7.19.6
 
-  C - Rebuild curl with a safe version of GnuTLS or NSS
+ B - Apply the suitable patch and rebuild
 
-      Note that both GnuTLS and NSS also suffered from this same vulnerability
-      so a "safe version" thus implies a version with this flaw already fixed!
+ C - Rebuild curl with a safe version of GnuTLS or NSS
 
-5. TIME LINE
+Note that both GnuTLS and NSS also suffered from this same vulnerability so a
+"safe version" thus implies a version with this flaw already fixed!
 
-  We were notified by Scott Cantor on July 30th, 2009.
+TIME LINE
+---------
 
-  We discussed solutions and a first patch was written and tested on July
-  31st.
+We were notified by Scott Cantor on July 30th, 2009.
 
-  Vendor-sec was contacted on August 3, 2009.
+We discussed solutions and a first patch was written and tested on July
+31st.
 
-  We agreed on and coordinated the synchronous disclosure of this problem
-  together with the curl 7.19.6 release.
+Vendor-sec was contacted on August 3, 2009.
 
-  curl 7.19.6 was released on August 12th 2009, just before this flaw was
-  publicly disclosed.
+We agreed on and coordinated the synchronous disclosure of this problem
+together with the curl 7.19.6 release.
 
-6. CREDITS
+curl 7.19.6 was released on August 12th 2009, just before this flaw was
+publicly disclosed.
 
-  Reported to us by Scott Cantor. Thanks a lot!
+CREDITS
+-------
 
-  Daniel Stenberg wrote the primary patch and this advisory
+Reported to us by Scott Cantor. Thanks a lot!
 
-  Peter Sylvester for test case work and patch feedback
+Daniel Stenberg wrote the primary patch and this advisory
 
-  Michal Marek and Kamil Dudka provided the backported patches
+Peter Sylvester for test case work and patch feedback
+
+Michal Marek and Kamil Dudka provided the backported patches

@@ -11,16 +11,10 @@
 #define CURL_URL docs/adv_20140326C.html
 
 #include "_menu.html"
+#include "advisory.t"
 
-WHERE3(Docs, "/docs/", Security, "/docs/security.html",
- FLAWNAME)
-
-TITLE(FLAWNAME)
+ADVISORY_WHERE
 #include "adv-related-box.inc"
-
-<pre>
-#include "adv_20140326C.t"
-</pre>
-
+#include "adv_20140326C.gen"
 #include "_footer.html"
 </body> </html>

@@ -1,74 +1,80 @@
-                   libcurl inappropriate GSSAPI delegation
-                   =======================================
+inappropriate GSSAPI delegation
+===============================
 
 Project curl Security Advisory, June 23rd 2011
-https://curl.haxx.se/docs/security.html
+[permalink](https://curl.haxx.se/docs/adv_20110623.html)
 
-1. VULNERABILITY
+VULNERABILITY
+-------------
 
-  When doing GSSAPI authentication, libcurl unconditionally performs
-  credential delegation. This hands the server a copy of the client's security
-  credentials, allowing the server to impersonate the client to any other
-  using the same GSSAPI mechanism. This is obviously a very sensitive
-  operation, which should only be done when the user explicitly so directs.
+When doing GSSAPI authentication, libcurl unconditionally performs
+credential delegation. This hands the server a copy of the client's security
+credentials, allowing the server to impersonate the client to any other
+using the same GSSAPI mechanism. This is obviously a very sensitive
+operation, which should only be done when the user explicitly so directs.
 
-  The GSS/Negotiate feature is only used by libcurl for HTTP authentication if
-  told to, and only if libcurl was built with a library that provides the
-  GSSAPI. Many builds of libcurl don't have GSS enabled.
+The GSS/Negotiate feature is only used by libcurl for HTTP authentication if
+told to, and only if libcurl was built with a library that provides the
+GSSAPI. Many builds of libcurl don't have GSS enabled.
 
-  There is no known exploit for this problem.
+There is no known exploit for this problem.
 
-  The Common Vulnerabilities and Exposures (CVE) project has assigned the name
-  CVE-2011-2192 to this issue.
+The Common Vulnerabilities and Exposures (CVE) project has assigned the name
+CVE-2011-2192 to this issue.
 
-2. AFFECTED VERSIONS
+AFFECTED VERSIONS
+-----------------
 
-  Affected versions: curl 7.10.6 to and including 7.21.6
-  Not affected versions: curl < 7.10.6 and >= 7.21.7
+- Affected versions: curl 7.10.6 to and including 7.21.6
+-  Not affected versions: curl < 7.10.6 and >= 7.21.7
 
-  Also note that libcurl is used by many applications, and not always
-  advertised as such.
+Note that libcurl is used by many applications, and not always advertised as
+such.
 
-3. THE SOLUTION
+SOLUTION
+--------
 
-  libcurl 7.21.7 avoids setting the option that selects delegation.
+libcurl 7.21.7 avoids setting the option that selects delegation.
 
-4. RECOMMENDATIONS
+A [patch](https://curl.haxx.se/curl-gssapi-delegation.patch) is available.
 
-  We suggest you take one of the following actions immediately, in order of
-  preference:
+RECOMMENDATIONS
+---------------
 
-  A - Upgrade to curl and libcurl 7.21.7
+We suggest you take one of the following actions immediately, in order of
+preference:
 
-  B - Apply this patch and rebuild libcurl
+ A - Upgrade to curl and libcurl 7.21.7
 
-      https://curl.haxx.se/curl-gssapi-delegation.patch
+ B - Apply patch and rebuild libcurl
 
-  C - Disable credential forwarding. Assuming the GSSAPI mechanism is
-      Kerberos, users can acquire an initial credential (TGT) which is not
-      forwardable. On Unix platforms, both the MIT and Heimdal versions of
-      kinit use the -F flag for this (note the capital "F"; -f does the
-      opposite!). You can also set this as a global default in /etc/krb5.conf
-      (or wherever that file lives in a particular installation):
+ C - Disable credential forwarding. Assuming the GSSAPI mechanism is
+     Kerberos, users can acquire an initial credential (TGT) which is not
+     forwardable. On Unix platforms, both the MIT and Heimdal versions of
+     kinit use the -F flag for this (note the capital "F"; -f does the
+     opposite!). You can also set this as a global default in /etc/krb5.conf
+     (or wherever that file lives in a particular installation):
 
-      [libdefaults]
-      forwardable = no
+     [libdefaults]
+     forwardable = no
 
-  D - Stop using GSS/Negotiate
+ D - Stop using GSS/Negotiate
 
-5. TIME LINE
+TIME LINE
+---------
 
-  Richard Silverman realized the problem exists and reported it to us on June
-  6th 2011.
+Richard Silverman realized the problem exists and reported it to us on June
+6th 2011.
 
-  We discussed solutions and a first patch was written on June 8th.
+We discussed solutions and a first patch was written on June 8th.
 
-  curl 7.21.7 was released on June 23rd 2011, coordinated with the publication
-  of this this flaw.
+curl 7.21.7 was released on June 23rd 2011, coordinated with the publication
+of this this flaw.
 
-6. CREDITS
+CREDITS
+-------
 
-  Reported to us by Richard Silverman. Thanks a lot!
+Reported to us by Richard Silverman. Thanks a lot!
 
-  Daniel Stenberg wrote the primary patch and this advisory. Additional
-  help and valuable feedback provided by Dan Fandrich and Julien Chaffraix.
+Daniel Stenberg wrote the primary patch and this advisory. Additional help and
+valuable feedback provided by Dan Fandrich and Julien Chaffraix.

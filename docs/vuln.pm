@@ -78,5 +78,5 @@
     "adv_20050221A.html|7.3|7.13.0|Kerberos Authentication Buffer Overflow|CVE-2005-0490|20050221|-",
     "adv_20050221B.html|7.10.6|7.13.0|NTLM Authentication Buffer Overflow|CVE-2005-0490|20050221|-",
     "adv_20030803.html|7.1|7.10.6|Proxy Authentication Header Information Leakage|-|20030803|-",
-    "adv_20001013.html|6.0|7.4|FTP Server Response Buffer Overflow|-|20001013|-",
+    "adv_20001013.html|6.0|7.4|FTP Server Response Buffer Overflow|CVE-2000-0973|20001013|-",
     );

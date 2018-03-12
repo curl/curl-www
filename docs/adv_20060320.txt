@@ -1,10 +1,11 @@
-              libcurl TFTP Packet Buffer Overflow Vulnerability
-              =================================================
+TFTP Packet Buffer Overflow Vulnerability
+=========================================
 
 Project curl Security Advisory, March 20th 2006
-https://curl.haxx.se/docs/security.html
+[permalink](https://curl.haxx.se/docs/adv_20060320.html)
 
-1. VULNERABILITY
+VULNERABILITY
+-------------
 
 libcurl uses the given file part of a TFTP URL in a manner that allows a
 malicious user to overflow a heap-based memory buffer due to the lack of
@@ -22,10 +23,11 @@ There is no known exploit at the time of this writing.
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
 CVE-2006-1061 to this issue.
 
-2. AFFECTED VERSIONS
+AFFECTED VERSIONS
+-----------------
 
-Affected versions: curl and libcurl 7.15.0 to and including 7.15.2
-Not affected versions: curl and libcurl 7.14.1 and earlier, 7.15.3 and later
+- Affected versions: curl and libcurl 7.15.0 to and including 7.15.2
+- Not affected versions: curl and libcurl 7.14.1 and earlier, 7.15.3 and later
 
 libcurl 7.15.1 and 7.15.2 contain code that prevents this code from being
 executed on architecures where a struct is not of the same assumed packed size
@@ -35,18 +37,20 @@ review the code and patch.
 Also note that (lib)curl is used by many applications, and not always
 advertised as such.
 
-3. RECOMMENDATIONS
+RECOMMENDATIONS
+---------------
 
 We suggest you take one of the following actions immediately:
 
- I - Upgrade to curl and libcurl 7.15.3
+ A - Upgrade to curl and libcurl 7.15.3
 
- II - Apply the patch https://curl.haxx.se/libcurl-tftp.patch to your
-      libcurl version and install this
+ B - Apply the patch https://curl.haxx.se/libcurl-tftp.patch to your
+     libcurl version and install this
 
- III - Build curl with TFTP disabled with configure --disable-tftp
+ C - Build curl with TFTP disabled with configure --disable-tftp
 
-4. TIME LINE
+TIME LINE
+---------
 
 We were notified by Ulf Harnhammar on March 10th, 2006. His notification email
 contained a valid patch.
@@ -56,6 +60,7 @@ Daniel didn't read the mail until the 12th due to vacations.
 curl 7.15.3 was released on March 20 2006, just before this flaw was
 publicly disclosed.
 
-5. CREDITS
+CREDITS
+-------
 
 Reported to us by Ulf Harnhammar. Thanks a lot!

@@ -1,84 +1,90 @@
-                libcurl cookie leak with IP address as domain
-                =============================================
+cookie leak with IP address as domain
+=====================================
 
 Project curl Security Advisory, September 10th 2014
-https://curl.haxx.se/docs/security.html
+[Permalink](https://curl.haxx.se/docs/adv_20140910A.html)
 
-1. VULNERABILITY
+VULNERABILITY
+-------------
 
-  By not detecting and rejecting domain names for partial literal IP addresses
-  properly when parsing received HTTP cookies, libcurl can be fooled to both
-  sending cookies to wrong sites and into allowing arbitrary sites to set
-  cookies for others.
+By not detecting and rejecting domain names for partial literal IP addresses
+properly when parsing received HTTP cookies, libcurl can be fooled to both
+sending cookies to wrong sites and into allowing arbitrary sites to set
+cookies for others.
 
-  For this problem to trigger, the client application must use the numerical
-  IP address in the URL to access the site and the site must send back cookies
-  to the site using domain= and a partial IP address.
+For this problem to trigger, the client application must use the numerical
+IP address in the URL to access the site and the site must send back cookies
+to the site using domain= and a partial IP address.
 
-  Since libcurl wrongly approaches the IP address like it was a normal domain
-  name, a site at IP address 192.168.0.1 can set cookies for anything ending
-  with .168.0.1 thus fooling libcurl to send them also to for example
-  127.168.0.1.
+Since libcurl wrongly approaches the IP address like it was a normal domain
+name, a site at IP address `192.168.0.1` can set cookies for anything ending
+with `.168.0.1` thus fooling libcurl to send them also to for example
+`129.168.0.1`.
 
-  The flaw requires dots to be present in the IP address, which restricts the
-  flaw to IPv4 literal addresses or IPv6 addresses using the somewhat unusual
-  "dotted-quad" style: "::ffff:192.0.2.128"
+The flaw requires dots to be present in the IP address, which restricts the
+flaw to IPv4 literal addresses or IPv6 addresses using the somewhat unusual
+"dotted-quad" style: `::ffff:192.0.2.128`.
 
-  This is not believed to be done by typical sites as this is not supported by
-  clients that adhere to the rules of the RFC 6265, and many sites are written
-  to explicitly use their own specific named domain when sending cookies.
+This is not believed to be done by typical sites as this is not supported by
+clients that adhere to the rules of the RFC 6265, and many sites are written
+to explicitly use their own specific named domain when sending cookies.
 
-2. INFO
+INFO
+----
 
-  Cookie parsing and use is opt-in by applications and is not enabled by
-  default.
+Cookie parsing and use is opt-in by applications and is not enabled by
+default.
 
-  The Common Vulnerabilities and Exposures (CVE) project has assigned the name
-  CVE-2014-3613 to this issue.
+The Common Vulnerabilities and Exposures (CVE) project has assigned the name
+CVE-2014-3613 to this issue.
 
-  CWE-201: Information Exposure Through Sent Data
+CWE-201: Information Exposure Through Sent Data
 
-3. AFFECTED VERSIONS
+AFFECTED VERSIONS
+-----------------
 
-  The IP address flaw has existed ever since libcurl started to support
-  cookies.
+The IP address flaw has existed ever since libcurl started to support
+ cookies.
 
-  Affected versions: from libcurl 7.1 to and including 7.37.1
-  Not affected versions: libcurl >= 7.38.0
+- Affected versions: from libcurl 7.1 to and including 7.37.1
+- Not affected versions: libcurl >= 7.38.0
 
-  libcurl is used by many applications, but not always advertised as such!
+libcurl is used by many applications, but not always advertised as such!
 
-4. THE SOLUTION
+THE SOLUTION
+------------
 
-  libcurl 7.38.0 makes sure that when connected to a site specified with a
-  literal IP address, only exact matches are considered for cookies.
+libcurl 7.38.0 makes sure that when connected to a site specified with a
+literal IP address, only exact matches are considered for cookies.
 
-  A patch for this problem is available at:
+A patch for this problem is
+[available](https://curl.haxx.se/CVE-2014-3613.patch)
 
-    https://curl.haxx.se/CVE-2014-3613.patch
+RECOMMENDATIONS
+---------------
 
-5. RECOMMENDATIONS
+We suggest you take one of the following actions immediately, in order of
+preference:
 
-  We suggest you take one of the following actions immediately, in order of
-  preference:
+ A - Upgrade to curl and libcurl 7.38.0
 
-  A - Upgrade to curl and libcurl 7.38.0
+ B - Apply the patch and rebuild libcurl
 
-  B - Apply the patch and rebuild libcurl
+ C - Avoid using cookies in your application if you ever use URLs involving
+     literal IP addresses.
 
-  C - Avoid using cookies in your application if you ever use URLs involving
-      literal IP addresses.
+TIME LINE
+---------
 
-6. TIME LINE
+It was reported to the curl project on August 15th 2014. We contacted
+distros@openwall on September 1st.
 
-  It was reported to the curl project on August 15th 2014. We contacted
-  distros@openwall on September 1st.
+libcurl 7.38.0 was released on September 10th 2014, coordinated with the
+publication of this advisory.
 
-  libcurl 7.38.0 was released on September 10th 2014, coordinated with the
-  publication of this advisory.
+CREDITS
+-------
 
-7. CREDITS
+Reported by Tim Ruehsen. Patch written by Tim Ruehsen.
 
-  Reported by Tim Ruehsen. Patch written by Tim Ruehsen.
-
-  Thanks a lot!
+Thanks a lot!

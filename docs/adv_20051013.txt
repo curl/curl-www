@@ -1,10 +1,11 @@
-                  libcurl NTLM Buffer Overflow Vulnerability
-                  ==========================================
+NTLM Buffer Overflow Vulnerability
+==================================
 
 Project curl Security Advisory, October 13th 2005
-https://curl.haxx.se/docs/security.html
+[permalink](https://curl.haxx.se/docs/adv_20051013.html)
 
-1. VULNERABILITY
+VULNERABILITY
+-------------
 
 libcurl's NTLM function can overflow a stack-based buffer if given a too long
 user name or domain name. This would happen if you enable NTLM authentication
@@ -22,7 +23,8 @@ There is no known exploit at the time of this writing.
 The Common Vulnerabilities and Exposures (CVE) project has assigned the name
 CAN-2005-3185 to this issue.
 
-2. AFFECTED VERSIONS
+AFFECTED VERSIONS
+-----------------
 
 All versions of libcurl ever released with NTLM capabilities enabled are
 vulnerable to this flaw.
@@ -40,19 +42,21 @@ Not affected versions: curl and libcurl 7.10.5 and earlier, 7.15.0 and later
 Also note that (lib)curl is used by many applications, and not always
 advertised as such.
 
-3. RECOMMENDATIONS
+RECOMMENDATIONS
+---------------
 
 We *strongly* suggest you take one of the following actions immediately:
 
- I - Upgrade to curl and libcurl 7.15.0
+ A - Upgrade to curl and libcurl 7.15.0
 
- II - Apply the patch https://curl.haxx.se/libcurl-ntlmbuf.patch to your
-      libcurl version and install this.
+ B - Apply the patch https://curl.haxx.se/libcurl-ntlmbuf.patch to your
+     libcurl version and install this.
 
- III - Disable NTLM either by not enabling the command line option (to curl)
-       or by not using the NTLM-enabling options with libcurl.
+ C - Disable NTLM either by not enabling the command line option (to curl)
+     or by not using the NTLM-enabling options with libcurl.
 
-4. TIME LINE
+TIME LINE
+---------
 
 We were notified by iDEFENSE at 22:15 local time October 12th 2005.
 
@@ -75,6 +79,7 @@ At 10:50 October 13th, the advisory was posted to the curl-users and
 curl-library mailing list and then curl 7.15.0 was already relased and
 available for download.
 
-5. CREDITS
+CREDITS
+-------
 
 Reported to us by iDEFENSE, original discoverer is anonymous

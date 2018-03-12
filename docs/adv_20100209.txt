@@ -1,83 +1,86 @@
-                    libcurl data callback excessive length
-                    ======================================
+data callback excessive length
+==============================
 
 Project curl Security Advisory, February 9th 2010
-https://curl.haxx.se/docs/security.html
+[permalink](https://curl.haxx.se/docs/adv_20100209.html)
 
-1. VULNERABILITY
+VULNERABILITY
+-------------
 
-  When downloading data, libcurl hands it over to the application using a
-  callback that is registered by the client software. libcurl will then call
-  that function repeatedly with data until the transfer is complete. The
-  callback is documented to receive a maximum data size of 16K
-  (CURL_MAX_WRITE_SIZE).
+When downloading data, libcurl hands it over to the application using a
+callback that is registered by the client software. libcurl will then call
+that function repeatedly with data until the transfer is complete. The
+callback is documented to receive a maximum data size of 16K
+(`CURL_MAX_WRITE_SIZE`).
 
-  Using the affected libcurl version to download compressed content over HTTP,
-  an application can ask libcurl to automatically uncompress data. When doing
-  so, libcurl can wrongly send data up to 64K in size to the callback which
-  thus is much larger than the documented maximum size. An application that
-  blindly trusts libcurl's max limit for a fixed buffer size or similar is
-  then a possible target for a buffer overflow vulnerability.
+Using the affected libcurl version to download compressed content over HTTP,
+an application can ask libcurl to automatically uncompress data. When doing
+so, libcurl can wrongly send data up to 64K in size to the callback which
+thus is much larger than the documented maximum size. An application that
+blindly trusts libcurl's max limit for a fixed buffer size or similar is
+then a possible target for a buffer overflow vulnerability.
 
-  This error is only present in zlib-enabled builds of libcurl and only if
-  automatic decompression has been explicitly enabled by the application - it
-  is disabled by default.
+This error is only present in zlib-enabled builds of libcurl and only if
+automatic decompression has been explicitly enabled by the application - it
+is disabled by default.
 
-  There is no known exploit for this problem and we have not found any libcurl
-  client software that is vulnerable to this flaw - but we acknowledge that
-  there may still be vulnerable software in existence.
+There is no known exploit for this problem and we have not found any libcurl
+client software that is vulnerable to this flaw - but we acknowledge that
+there may still be vulnerable software in existence.
 
-  The Common Vulnerabilities and Exposures (CVE) project has assigned the name
-  CVE-2010-0734 to this issue.
+The Common Vulnerabilities and Exposures (CVE) project has assigned the name
+CVE-2010-0734 to this issue.
 
-2. AFFECTED VERSIONS
+AFFECTED VERSIONS
+-----------------
 
-  Affected versions: curl and libcurl 7.10.5 to and including 7.19.7
-  Not affected versions: curl and libcurl <= 7.10.4 and >= 7.20.0
+- Affected versions: curl and libcurl 7.10.5 to and including 7.19.7
+- Not affected versions: curl and libcurl <= 7.10.4 and >= 7.20.0
 
-  If you build curl or libcurl to not use zlib or make your app not tell
-  libcurl to do this magic, you are not affected.
+If you build curl or libcurl to not use zlib or make your app not tell libcurl
+to do this magic, you are not affected.
 
-  Also note that (lib)curl is used by many applications, and not always
-  advertised as such.
+Also note that (lib)curl is used by many applications, and not always
+advertised as such.
 
-3. THE SOLUTION
+SOLUTION
+--------
 
-  libcurl 7.20.0 makes sure that the length argument in the callback never
-  exceeds the documented max length.
+libcurl 7.20.0 makes sure that the length argument in the callback never
+exceeds the documented max length.
 
-4. RECOMMENDATIONS
+RECOMMENDATIONS
+---------------
 
-  We suggest you take one of the following actions immediately, in order of
-  preference:
+We suggest you take one of the following actions immediately, in order of
+preference:
 
-  A - Upgrade to curl and libcurl 7.20.0
+ A - Upgrade to curl and libcurl 7.20.0
 
-  B - Apply this patch and rebuild
+ B - Apply [this patch](https://curl.haxx.se/libcurl-contentencoding.patch) and rebuild
 
-      https://curl.haxx.se/libcurl-contentencoding.patch
+ C - Disable automatic content encoding decompression in your application
 
-  C - Disable automatic content encoding decompression in your application
+ D - Rebuild curl without zlib support
 
-  D - Rebuild curl without zlib support
+ E - change your code to use `4 * CURL_MAX_WRITE_SIZE` for buffer sizes
 
-  E - change your code to use 4*CURL_MAX_WRITE_SIZE for buffer sizes
+TIME LINE
+---------
 
+We were notified by Wesley Miaw on January 9th, 2010.
 
-5. TIME LINE
+We discussed solutions and a first patch was written and tested on January
+9th.
 
-  We were notified by Wesley Miaw on January 9th, 2010.
+Vendor-sec was informed on January 10th, 2010.
 
-  We discussed solutions and a first patch was written and tested on January
-  9th.
+curl 7.20.0 was released on February 9th 2010, just before this flaw was
+publicly disclosed.
 
-  Vendor-sec was informed on January 10th, 2010.
+CREDITS
+-------
 
-  curl 7.20.0 was released on February 9th 2010, just before this flaw was
-  publicly disclosed.
+Reported to us by Wesley Miaw. Thanks a lot!
 
-6. CREDITS
-
-  Reported to us by Wesley Miaw. Thanks a lot!
-
-  Daniel Stenberg wrote the primary patch and this advisory
+Daniel Stenberg wrote the primary patch and this advisory

@@ -1,75 +1,81 @@
-                           curl local file overwrite
-                           =========================
+local file overwrite
+====================
 
 Project curl Security Advisory, October 13th 2010
-https://curl.haxx.se/docs/security.html
+[permalink](https://curl.haxx.se/docs/adv_20101013.html)
 
-1. VULNERABILITY
+VULNERABILITY
+-------------
 
-  curl offers a command line option --remote-header-name (also usable as -J)
-  which will use the file name of the Content-disposition: header when it
-  saves the downloaded data locally.
+curl offers a command line option --remote-header-name (also usable as -J)
+which will use the file name of the Content-disposition: header when it
+saves the downloaded data locally.
 
-  curl attempts to cut off the directory parts from any given file name in the
-  header to only store files in the current directory. It will overwrite a
-  local file using the same name as the header specifies.
+curl attempts to cut off the directory parts from any given file name in the
+header to only store files in the current directory. It will overwrite a
+local file using the same name as the header specifies.
 
-  The stripping of the directory did not take backslashes into account. On
-  some operating systems, backslashes are used to separate directories and
-  file names. This allows a rogue server to send back a response that
-  overwrites a file name in the local machine that the user is allowed to
-  write, potentially a system file, a command or a known executable.
+The stripping of the directory did not take backslashes into account. On
+some operating systems, backslashes are used to separate directories and
+file names. This allows a rogue server to send back a response that
+overwrites a file name in the local machine that the user is allowed to
+write, potentially a system file, a command or a known executable.
 
-  Operating systems affected include Windows, Netware, MSDOS, OS/2 and
-  Symbian.
+Operating systems affected include Windows, Netware, MSDOS, OS/2 and
+Symbian.
 
-  This error is only present in the curl command line tool, it is NOT a
-  problem of the library libcurl.
+This error is only present in the curl command line tool, it is NOT a
+problem of the library libcurl.
 
-  There is no known exploit for this problem.
+There is no known exploit for this problem.
 
-  The Common Vulnerabilities and Exposures (CVE) project has assigned the name
-  CVE-2010-3842 to this issue.
+The Common Vulnerabilities and Exposures (CVE) project has assigned the name
+CVE-2010-3842 to this issue.
 
-2. AFFECTED VERSIONS
+AFFECTED VERSIONS
+-----------------
 
-  Affected versions: curl 7.20.0 to and including 7.21.1
-  Not affected versions: curl < 7.20.0 and >= 7.21.2
+- Affected versions: curl 7.20.0 to and including 7.21.1
+- Not affected versions: curl < 7.20.0 and >= 7.21.2
 
-  Also note that curl is used by many applications, and not always advertised
-  as such.
+Also note that curl is used by many applications, and not always advertised as
+such.
 
-3. THE SOLUTION
+SOLUTION
+--------
 
-  libcurl 7.21.2 makes sure that it will also strip off paths specified using
-  backslashes as path separator.
+libcurl 7.21.2 makes sure that it will also strip off paths specified using
+backslashes as path separator.
 
-4. RECOMMENDATIONS
+A [patch](https://curl.haxx.se/curl-content-disposition.patch) is available.
 
-  We suggest you take one of the following actions immediately, in order of
-  preference:
+RECOMMENDATIONS
+---------------
 
-  A - Upgrade to curl and libcurl 7.21.2
+We suggest you take one of the following actions immediately, in order of
+preference:
 
-  B - Apply this patch and rebuild
+ A - Upgrade to curl and libcurl 7.21.2
 
-      https://curl.haxx.se/curl-content-disposition.patch
+ B - Apply patch and rebuild
 
-  C - Stop using the --remote-header-name/-J option
+ C - Stop using the --remote-header-name/-J option
 
-5. TIME LINE
+TIME LINE
+---------
 
-  Dan Fandrich realized the problem exists and reported to the rest of the
-  team on September 3 2010.
+Dan Fandrich realized the problem exists and reported to the rest of the
+team on September 3 2010.
 
-  We discussed solutions and a first patch was written and tested on September
-  4th.
+We discussed solutions and a first patch was written and tested on September
+4th.
 
-  curl 7.21.2 was released on October 13th 2010, just before this flaw was
-  publicly disclosed.
+curl 7.21.2 was released on October 13th 2010, just before this flaw was
+publicly disclosed.
 
-6. CREDITS
+CREDITS
+-------
 
-  Reported to us by Dan Fandrich. Thanks a lot!
+Reported to us by Dan Fandrich. Thanks a lot!
 
-  Daniel Stenberg wrote the primary patch and this advisory
+Daniel Stenberg wrote the primary patch and this advisory

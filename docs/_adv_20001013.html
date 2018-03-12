@@ -12,29 +12,11 @@
 
 #include "_menu.html"
 #include "setup.t"
+#include "advisory.t"
 
-WHERE3(Docs, "/docs/", Security, "/docs/security.html",
- FLAWNAME)
+ADVISORY_WHERE
 
-TITLE(FLAWNAME)
 #include "adv-related-box.inc"
-
-SUBTITLE(FTP Server Response Buffer Overflow)
-<o>
-<table class="secbox">
-  <tr><td>Date:</td><td>October 13, 2000</td></tr>
-  <tr><td>ID</td><td> <a href="https://www.securityfocus.com/bid/1804">BID
-  1804</a> <a
-  href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0973">CVE-2000-0973</a> </td></tr>
-  <tr><td>Affected versions</td><td>6.0 (and possibly earlier) to and including 7.4</td></tr>
-  <tr><td>Not affected versions</td><td>7.4.1 and later</td></tr>
-</table>
-<p>
-  When storing an FTP server's error message on failure, there was no check
-  for input length and thus a malicious FTP server could overflow curl's stack
-  based buffer. <a
-  href="https://www.securityfocus.com/bid/1804/exploit/">securityfocus lists
-  two exploits</a>
-
+#include "adv_20001013.gen"
 #include "_footer.html"
 </body> </html>
