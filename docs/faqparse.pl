@@ -113,7 +113,7 @@ while(<STDIN>) {
             s/\b_([[:alnum:]]+)_\b/<em>$1<\/em>/g;
 
             # linkify URLs
-            s/((http|https|ftp):\/\/([\w.\/%-?]*[a-z0-9\/]))/<a href=\"$2:\/\/$3\">$1<\/a>/g;
+            s/((http|https|ftp):\/\/([\w.\/%-?]*[a-z0-9\/]))/<a href=\"$2:\/\/$3\">$1<\/a>/ig;
             if($_ =~ /^     /) {
                 # five or more initial spaces, use <pre>
 
