@@ -93,7 +93,7 @@ for my $str (@releases) {
         # store the first date
         $prevsecs = $datesecs;
         $prevdays = 0;
-        $age="&dash;";
+        $age=$raw?"0":"&dash;";
     }
     $since{$str}=$age;
     $delta{$str}=$deltadays;
