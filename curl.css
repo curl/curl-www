@@ -130,28 +130,6 @@ td.desc {
 }
 
 /* used in the download table for a single OS */
-.ostitleleft {
-  color: #000000;
-  background-color: #ffffff; 
-  font-family: arial, helvetica, ariel, sans-serif;
-  font-size: 120%;
-  font-weight: bold;
-  padding: 4px 4px 4px 4px;
-  border-top: 1px solid black;
-  border-left: 1px solid black;
-  border-right: none;
-}
-.ostitleright {
-  color: #000000;
-  background-color: #ffffff; 
-  font-family: arial, helvetica, ariel, sans-serif;
-  font-size: 120%;
-  font-weight: bold;
-  padding: 4px 4px 4px 4px;
-  border-top: 1px solid black;
-  border-right: 1px solid black;
-  border-left: none;
-}
 td.ostitle {
   color: #000000;
   background-color: #ffffff; 
