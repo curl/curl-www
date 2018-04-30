@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-require "stuff.pm";
+require "./stuff.pm";
 
 # Ladda databasen
 $db=new pbase;
@@ -106,10 +106,7 @@ print "\n<p><table class=\"download2\" cellpadding=\"0\" cellspacing=\"0\">\n";
     for $h (('Package',
              'Version',
              'Type',
-             'SSL',
-             'SSH',
-             'Provider',
-             'Size')) {
+             'Provider')) {
         print "<th>$h</th>\n";
     }
     print "</tr>\n";
@@ -199,7 +196,7 @@ for $per (@sall) {
             my $alt = "$os";
             $alt =~ s/-//g;
             $alt =~ s/  / /g;
-            $img="<img width=\"200\" height=\"30\" alt=\"$alt\" src=\"/pix/".$$per{'img'}."\" border=\"0\" align=\"right\">";
+            $img="<img width=\"200\" height=\"30\" alt=\"$alt\" src=\"pix/".$$per{'img'}."\" border=\"0\" align=\"right\">";
         }
         if($numflav>1) {
             my $show = $os;
@@ -274,11 +271,7 @@ for $per (@sall) {
            $fi, $contenttype, $$per{'curl'});
     printf("<td class=\"col3\">%s</td>\n",
            show($typelong{$$per{'type'}}));
-    printf("<td class=\"col4\">%s</td>\n",
-           $$per{'ssl'}eq"Yes"?"SSL":"&nbsp;");
 
-    printf("<td class=\"col5\">%s</td>\n",
-           $$per{'ssh'}eq"Yes"?"SSH":"&nbsp;");
     my $em = show($$per{'email'});
     if($em =~ /:\/\//) {
         # email is a plain URL
@@ -293,16 +286,8 @@ for $per (@sall) {
            $em?"<a href=\"$em\">":"",
            show($$per{'name'}),
            $em?"</a>":"");
-    my $size = show($$per{'size'});
-    $size = int($size/1024);
-    my $szstr="&nbsp;";
-    if($size && ($size < 999)) {
-        $szstr = "$size KB";
-    }
-    elsif($size > 0) {
-        $szstr = sprintf("%.2f MB", $size/1024);
-    }
-    print "<td class=\"col7\">$szstr</td></tr>\n";
+
+    print "</tr>\n";
     $i++;
 }
 bot();
