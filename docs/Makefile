@@ -45,7 +45,7 @@ PAGES = index.html manpage.html faq.html sslcerts.html companies.html	      \
  adv_20170809A.html adv_20170809B.html adv_20170809C.html adv_20171004.html   \
  adv_20171023.html adv_2017-12e7.html adv_2017-ae72.html adv_2017-af0a.html \
  adv_2018-b3bf.html adv_2018-824a.html adv_2018-97a2.html adv_2018-9cd6.html \
- adv_2018-b047.html
+ adv_2018-b047.html adv_2018-82c2.html adv_2018-b138.html
 
 all: $(PAGES) vuln-make.gen
 	-test -f vuln-make.gen && make -f vuln-make.gen
@@ -367,6 +367,10 @@ adv_2018-97a2.html: adv_2018-97a2.md $(ADVPARTS)
 adv_2018-9cd6.html: adv_2018-9cd6.md $(ADVPARTS)
 	$(ADV_ACTION)
 adv_2018-b047.html: adv_2018-b047.md $(ADVPARTS)
+	$(ADV_ACTION)
+adv_2018-82c2.html: adv_2018-82c2.md $(ADVPARTS)
+	$(ADV_ACTION)
+adv_2018-b138.html: adv_2018-b138.md $(ADVPARTS)
 	$(ADV_ACTION)
 
 vulnerabilities.html: _vulnerabilities.html vuln.gen $(MAINPARTS)
