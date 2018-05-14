@@ -68,7 +68,8 @@ for my $str (@releases) {
     
     if($prevsecs) {
         # number of seconds between two releases!
-        my $reltime = $prevsecs - $datesecs;
+        # (plus one hour to make DST switches not reduce days)
+        my $reltime = $prevsecs - $datesecs + 3600;
 
         # convert to days
         $daysbetween = int($reltime/(3600*24));
