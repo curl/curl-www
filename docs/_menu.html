@@ -179,6 +179,14 @@ VLINK(/docs/features.html, Features, All features summed up)
 #endif
 
 #ifdef PROJ_DOCS
+#ifdef DOCS_GOVERNANCE
+LINK(/docs/governance.html, Governance)
+#else
+VLINK(/docs/governance.html, Governance, How we make decisions)
+#endif
+#endif
+
+#ifdef PROJ_DOCS
 #ifdef DOCS_HELP_US
 LINK(/docs/help-us.html, Help us)
 #else

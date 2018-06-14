@@ -1,0 +1,28 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>curl - Governance</TITLE>
+#include "css.t"
+</HEAD>
+
+#define CURL_DOCS
+#define PROJ_DOCS
+#define DOCS_GOVERNANCE
+#define CURL_URL docs/governance.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(Docs, "/docs/", Project Documentation, "/docs/projdocs.html", Governance)
+
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="code-of-conduct.html">Code of Conduct</a>
+<br><a href="knownbugs.html">Known Bugs</a>
+<br><a href="bugs.html">How To Report Bugs</a>
+</div>
+
+#include "governance.gen"
+#include "_footer.html"
+
+</BODY>
+</HTML>
