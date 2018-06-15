@@ -93,7 +93,7 @@ release-notes.gen: $(SRCROOT)/RELEASE-NOTES $(MKRELNOTES) $(ROOT)/release.t
 release-notes.html: _release-notes.html release-notes.gen $(MAINPARTS)
 	$(ACTION)
 
-release-procedure.gen: $(DOCROOT)/RELEASE-PROCEDURE
+release-procedure.gen: $(DOCROOT)/RELEASE-PROCEDURE.md
 	$(MARKDOWN) < $< > $@
 
 release-procedure.html: _release-procedure.html release-procedure.gen $(MAINPARTS)
