@@ -17,35 +17,125 @@ MAN2HTML = roffit --bare
 ADVCONV= $(MARKDOWN) < $< | perl curlver-to-vulnlink.pl > $@
 ADV_ACTION = $(MARKDOWN) < $< | perl curlver-to-vulnlink.pl | ./mk-adv-template.pl $@ | fcpp $(FCPP_OPTS) -I$(ROOT) -WWW -Uunix -P -H -C -V -LL - > $@
 
-PAGES = index.html manpage.html faq.html sslcerts.html companies.html	      \
- features.html bugs.html install.html copyright.html thanks.html todo.html    \
- httpscripting.html comparison-table.html versions.html help-us.html          \
- history.html knownbugs.html manual.html caextract.html     	              \
- security.html libs.html http-cookies.html adv_20051013.html		      \
- adv_20051207.html adv_20060320.html vulnerabilities.html adv_20070710.html   \
- releases.html adv_20090303.html releases.csv adv_20090812.html		      \
- adv_20100209.html adv_20101013.html adv_20110623.html ssl-compared.html      \
- adv_20120124.html adv_20120124B.html mk-ca-bundle.html adv_20130206.html     \
- adv_20130412.html adv_20130622.html adv_20131115.html adv_20131217.html      \
- adv_20140129.html adv_20140326A.html adv_20140326B.html adv_20140326C.html   \
- adv_20140326D.html survey/survey2014.html adv_20140910A.html		      \
- adv_20140910B.html adv_20141105.html adv_20150108A.html adv_20150108B.html   \
- adv_20150422A.html adv_20150422B.html adv_20001013.html adv_20030803.html    \
- adv_20050221A.html adv_20050221B.html adv_20150422C.html adv_20150422D.html  \
- adv_20150429.html http2.html tooldocs.html projdocs.html reldocs.html	      \
- protdocs.html whodocs.html adv_20150617A.html adv_20150617B.html	      \
- adv_20160127A.html adv_20160127B.html adv_20160518.html adv_20160530.html    \
- adv_20160803A.html adv_20160803B.html adv_20160803C.html adv_20160907.html   \
- code-of-conduct.html adv_20160914.html adv_20161102A.html adv_20161102B.html \
- adv_20161102C.html adv_20161102D.html adv_20161102E.html adv_20161102F.html  \
- adv_20161102G.html adv_20161102H.html adv_20161102I.html adv_20161102J.html  \
- adv_20161102K.html ssl-ciphers.html \
- adv_20161221A.html adv_20161221B.html adv_20161221C.html adv_20161223.html   \
- adv_20170222.html adv_20170403.html adv_20170419.html adv_20170614.html      \
- adv_20170809A.html adv_20170809B.html adv_20170809C.html adv_20171004.html   \
- adv_20171023.html adv_2017-12e7.html adv_2017-ae72.html adv_2017-af0a.html \
- adv_2018-b3bf.html adv_2018-824a.html adv_2018-97a2.html adv_2018-9cd6.html \
- adv_2018-b047.html adv_2018-82c2.html adv_2018-b138.html governance.html
+PAGES =						\
+ adv_20001013.html				\
+ adv_20030803.html				\
+ adv_20050221A.html				\
+ adv_20050221B.html				\
+ adv_20051013.html				\
+ adv_20051207.html				\
+ adv_20060320.html				\
+ adv_20070710.html				\
+ adv_20090303.html				\
+ adv_20090812.html				\
+ adv_20100209.html				\
+ adv_20101013.html				\
+ adv_20110623.html				\
+ adv_20120124.html				\
+ adv_20120124B.html				\
+ adv_20130206.html				\
+ adv_20130412.html				\
+ adv_20130622.html				\
+ adv_20131115.html				\
+ adv_20131217.html				\
+ adv_20140129.html				\
+ adv_20140326A.html				\
+ adv_20140326B.html				\
+ adv_20140326C.html				\
+ adv_20140326D.html				\
+ adv_20140910A.html				\
+ adv_20140910B.html				\
+ adv_20141105.html				\
+ adv_20150108A.html				\
+ adv_20150108B.html				\
+ adv_20150422A.html				\
+ adv_20150422B.html				\
+ adv_20150422C.html				\
+ adv_20150422D.html				\
+ adv_20150429.html				\
+ adv_20150617A.html				\
+ adv_20150617B.html				\
+ adv_20160127A.html				\
+ adv_20160127B.html				\
+ adv_20160518.html				\
+ adv_20160530.html				\
+ adv_20160803A.html				\
+ adv_20160803B.html				\
+ adv_20160803C.html				\
+ adv_20160907.html				\
+ adv_20160914.html				\
+ adv_20161102A.html				\
+ adv_20161102B.html				\
+ adv_20161102C.html				\
+ adv_20161102D.html				\
+ adv_20161102E.html				\
+ adv_20161102F.html				\
+ adv_20161102G.html				\
+ adv_20161102H.html				\
+ adv_20161102I.html				\
+ adv_20161102J.html				\
+ adv_20161102K.html				\
+ adv_20161221A.html				\
+ adv_20161221B.html				\
+ adv_20161221C.html				\
+ adv_20161223.html				\
+ adv_2017-12e7.html				\
+ adv_2017-ae72.html				\
+ adv_2017-af0a.html				\
+ adv_20170222.html				\
+ adv_20170403.html				\
+ adv_20170419.html				\
+ adv_20170614.html				\
+ adv_20170809A.html				\
+ adv_20170809B.html				\
+ adv_20170809C.html				\
+ adv_20171004.html				\
+ adv_20171023.html				\
+ adv_2018-70a2.html                             \
+ adv_2018-824a.html				\
+ adv_2018-82c2.html				\
+ adv_2018-97a2.html				\
+ adv_2018-9cd6.html				\
+ adv_2018-b047.html				\
+ adv_2018-b138.html				\
+ adv_2018-b3bf.html				\
+ bugs.html					\
+ caextract.html					\
+ code-of-conduct.html				\
+ companies.html					\
+ comparison-table.html				\
+ copyright.html					\
+ faq.html					\
+ features.html					\
+ governance.html				\
+ help-us.html					\
+ history.html					\
+ http-cookies.html				\
+ http2.html					\
+ httpscripting.html				\
+ index.html					\
+ install.html					\
+ knownbugs.html					\
+ libs.html					\
+ manpage.html					\
+ manual.html					\
+ mk-ca-bundle.html				\
+ projdocs.html					\
+ protdocs.html					\
+ reldocs.html					\
+ releases.csv					\
+ releases.html					\
+ security.html					\
+ ssl-ciphers.html				\
+ ssl-compared.html				\
+ sslcerts.html					\
+ survey/survey2014.html				\
+ thanks.html					\
+ todo.html					\
+ tooldocs.html					\
+ versions.html					\
+ vulnerabilities.html				\
+ whodocs.html
 
 all: $(PAGES) vuln-make.gen
 	-test -f vuln-make.gen && make -f vuln-make.gen
@@ -377,6 +467,8 @@ adv_2018-b047.html: adv_2018-b047.md $(ADVPARTS)
 adv_2018-82c2.html: adv_2018-82c2.md $(ADVPARTS)
 	$(ADV_ACTION)
 adv_2018-b138.html: adv_2018-b138.md $(ADVPARTS)
+	$(ADV_ACTION)
+adv_2018-70a2.html: adv_2018-70a2.md $(ADVPARTS)
 	$(ADV_ACTION)
 
 vulnerabilities.html: _vulnerabilities.html vuln.gen $(MAINPARTS)
