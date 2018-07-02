@@ -40,6 +40,12 @@ LINK(/dev/contribute.html, Contribute)
 VLINK(/dev/contribute.html, Contribute, How to Contribute)
 #endif
 
+#ifdef DEVEL_DEPRECATE
+LINK(/dev/deprecate.html, Deprecate)
+#else
+VLINK(/dev/deprecate.html, Deprecate, Items to be removed)
+#endif
+
 #ifdef DEVEL_INTERNALS
 LINK(/dev/internals.html, Internals)
 #else

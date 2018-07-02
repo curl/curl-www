@@ -17,7 +17,8 @@ PAGES = foot.html head.html howto.html summary.html cvshistory.html	\
 	missing.html keywords.html builds.html release-notes.html	\
 	index.html contribute.html internals.html testcurl.html		\
 	runtests.html source.html secprocess.html roadmap.html		\
-	sourceactivity.html release-procedure.html code-style.html
+	sourceactivity.html release-procedure.html code-style.html      \
+        deprecate.html
 
 all: $(PAGES)
 
@@ -41,31 +42,33 @@ code-style.gen: $(SRCROOT)/docs/CODE_STYLE.md
 	-e 's:#endif:\&#35;endif:g' \
 	-e 's:#ifdef:\&#35;ifdef:g' > $@
 
-testcurl.html: _testcurl.html $(MAINPARTS) testcurl.dump
+testcurl.html: _testcurl.html $(MAINPARTS) testcurl.gen
 	$(ACTION)
-testcurl.dump: $(TESTROOT)/testcurl.1
+testcurl.gen: $(TESTROOT)/testcurl.1
 	$(MAN2HTML) < $< > $@
 
-runtests.html: _runtests.html $(MAINPARTS) runtests.dump
+runtests.html: _runtests.html $(MAINPARTS) runtests.gen
 	$(ACTION)
-runtests.dump: $(TESTROOT)/runtests.1
+runtests.gen: $(TESTROOT)/runtests.1
 	$(MAN2HTML) < $< > $@
 
 contribute.html: _contribute.html $(MAINPARTS) contribute.gen
 	$(ACTION)
-
-contribute.gen: $(DOCROOT)/CONTRIBUTE.md $(ROOT)/docs/faqparse.pl
+contribute.gen: $(DOCROOT)/CONTRIBUTE.md
 	$(MARKDOWN) < $< > $@
 
-internals.html: _internals.html $(MAINPARTS) internals.t
+deprecate.html: _deprecate.html $(MAINPARTS) deprecate.gen
 	$(ACTION)
+deprecate.gen: $(DOCROOT)/DEPRECATE.md
+	$(MARKDOWN) < $< > $@
 
-internals.t: $(DOCROOT)/INTERNALS.md
+internals.html: _internals.html $(MAINPARTS) internals.gen
+	$(ACTION)
+internals.gen: $(DOCROOT)/INTERNALS.md
 	$(MARKDOWN) < $< > $@
 
 secprocess.html: _security.html $(MAINPARTS) security.gen
 	$(ACTION)
-
 security.gen: $(DOCROOT)/SECURITY-PROCESS.md
 	$(MARKDOWN) < $< > $@
 
