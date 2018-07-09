@@ -44,6 +44,110 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_61_0"></a>
+SUBTITLE(Fixed in 7.61.0 - July 11 2018)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="https://curl.haxx.se/bug/?i=2495">getinfo: add microsecond precise timers for seven intervals</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=2538">curl: show headers in bold, switch off with --no-styled-output</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=2102">httpauth: add support for Bearer tokens</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=2435">Add CURLOPT_TLS13_CIPHERS and CURLOPT_PROXY_TLS13_CIPHERS</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=2435">curl: --tls13-ciphers and --proxy-tls13-ciphers</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=2340">Add CURLOPT_DISALLOW_USERNAME_IN_URL</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=2340">curl: --disallow-username-in-url</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/docs/adv_2018-70a2.html">CVE-2018-0500: smtp: fix SMTP send buffer overflow</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2522">schannel: disable client cert option if APIs not available</a>
+ BGF schannel: disable manual verify if APIs not available
+ BGF <a href="https://curl.haxx.se/bug/?i=2576">tests/libtest/Makefile: Do not unconditionally add gcc-specific flags</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2571">openssl: acknowledge --tls-max for default version too</a>
+ BGF stub_gssapi: fix 'unused parameter' warnings
+ BGF <a href="https://curl.haxx.se/bug/?i=2584">examples/progressfunc: make it build on both new and old libcurls</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2579">docs: mention it is HA Proxy protocol "version 1"</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2587">curl_fnmatch: only allow two asterisks for matching</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2590">docs: clarify CURLOPT_HTTPGET</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2586">configure: replace a AC_TRY_RUN with CURL_RUN_IFELSE</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2586">configure: do compile-time SIZEOF checks instead of run-time</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2563">checksrc: make sure sizeof() is used *with* parentheses</a>
+ BGF CURLOPT_ACCEPT_ENCODING.3: add brotli and clarify a bit
+ BGF <a href="https://curl.haxx.se/bug/?i=2592">schannel: make CAinfo parsing resilient to CR/LF</a>
+ BGF tftp: make sure error is zero terminated before printfing it
+ BGF <a href="https://curl.haxx.se/bug/?i=1163">http resume: skip body if http code 416 (range error) is ignored</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2580">configure: add basic test of --with-ssl prefix</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2121">cmake: set -d postfix for debug builds</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2018-05/0062.html">multi: provide a socket to wait for in Curl_protocol_getsock</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2606">content_encoding: handle zlib versions too old for Z_BLOCK</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2602">winbuild: only delete OUTFILE if it exists</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2603">winbuild: In MakefileBuild.vc fix typo DISTDIR->DIRDIST</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2604">schannel: add failf calls for client certificate failures</a>
+ BGF cmake: Fix the test for fsetxattr and strerror_r
+ BGF <a href="https://curl.haxx.se/bug/?i=2612">curl.1: Fix cmdline-opts reference errors</a>
+ BGF cmdline-opts/gen.pl: warn if mutexes: or see-also: list non-existing options
+ BGF <a href="https://curl.haxx.se/bug/?i=2609">cmake: check for getpwuid_r</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2613">configure: fix ssh2 linking when built with a static mbedtls</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2553">psl: use latest psl and refresh it periodically</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2614">fnmatch: insist on escaped bracket to match</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2618">KNOWN_BUGS: restore text regarding #2101</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2615">INSTALL: LDFLAGS=-Wl,-R/usr/local/ssl/lib</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2617">configure: override AR_FLAGS to silence warning</a>
+ BGF os400: implement mime api EBCDIC wrappers
+ BGF <a href="https://curl.haxx.se/bug/?i=1221">curl.rc: embed manifest for correct Windows version detection</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2623">strictness: correct {infof, failf} format specifiers</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2624">tests: update .gitignore for libtests</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2609">configure: check for declaration of getpwuid_r</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2626">fnmatch: use the system one if available</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2622">CURLOPT_RESOLVE: always purge old entry first</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2627">multi: remove a potentially bad DEBUGF()</a>
+ BGF curl_addrinfo: use same #ifdef conditions in source as header
+ BGF <a href="https://curl.haxx.se/bug/?i=2629">build: remove the Borland specific makefiles</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2628">axTLS: not considered fit for use</a>
+ BGF cmdline-opts/cert-type.d: mention "p12" as a recognized type
+ BGF <a href="https://curl.haxx.se/bug/?i=2637">system.h: add support for IBM xlc C compiler</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2633">tests/libtest: Add lib1521 to nodist_SOURCES</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2640">mk-ca-bundle.pl: leave certificate name untouched</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2634">boringssl + schannel: undef X509_NAME in lib/schannel.h</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2641">openssl: assume engine support in 1.0.1 or later</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2631">cppcheck: fix warnings</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2646">test 46: make test pass after year 2025</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2630">schannel: support selecting ciphers</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2647">Curl_debug: remove dead printhost code</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2649">test 1455: unflakified</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2653">Curl_init_do: handle NULL connection pointer passed in</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2654">progress: remove a set of unused defines</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2655">mk-ca-bundle.pl: make -u delete certdata.txt if found not changed</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2657">GOVERNANCE.md: explains how this project is run</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2203">configure: use pkg-config for c-ares detection</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2199">configure: enhance ability to build with static openssl</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2660">maketgz: fix sed issues on OSX</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1968">multi: fix memory leak when stopped during name resolve</a>
+ BGF CURLOPT_INTERFACE.3: interface names not supported on Windows
+ BGF <a href="https://curl.haxx.se/bug/?i=2669">url: fix dangling conn->data pointer</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2665">cmake: allow multiple SSL backends</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2018-06/0100.html">system.h: fix for gcc on 32 bit OpenServer</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2674">ConnectionExists: make sure conn->data is set when "taking" a connection</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2677">multi: fix crash due to dangling entry in connect-pending list</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2673">CURLOPT_SSL_VERIFYPEER.3: Add performance note</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2676">netrc: use a larger buffer to support longer passwords</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2681">url: check Curl_conncache_add_conn return code</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2684">configure: Add dependent libraries after crypto</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2685">easy_perform: faster local name resolves by using *multi_timeout()</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2687">getnameinfo: not used, removed all configure checks</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2689">travis: add a build using the synchronous name resolver</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2690">CURLINFO_TLS_SSL_PTR.3: improve the example</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2692">openssl: allow TLS 1.3 by default</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2691">openssl: make the requested TLS version the *minimum* wanted</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2698">openssl: Remove some dead code</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2696">telnet: fix clang warnings</a>
+ BGF <a href="https://curl.haxx.se/dev/deprecate.html">DEPRECATE: new doc describing planned item removals</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2706">example/crawler.c: simple crawler based on libxml2</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2708">libssh: goto DISCONNECT state on error, not SESSION_FREE</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2711">CMake: Remove unused functions</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2656">darwinssl: allow High Sierra users to build the code using GCC</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2718">scripts: include _curl as part of CLEANFILES</a>
+</ul>
+    
 <a name="7_60_0"></a>
 SUBTITLE(Fixed in 7.60.0 - May 16 2018)
 <p> Changes:
