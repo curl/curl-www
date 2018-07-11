@@ -3,7 +3,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
-    "adv_2018-70a2.html|7.54.1|7.60.0|SMTP send heap buffer overflow|CVE-2018-XXXXXXX|20180711|20180611|CWE-122: Heap-based Buffer Overflow",
+    "adv_2018-70a2.html|7.54.1|7.60.0|SMTP send heap buffer overflow|CVE-2018-0500|20180711|20180611|CWE-122: Heap-based Buffer Overflow",
     "adv_2018-82c2.html|7.54.1|7.59.0|FTP shutdown response buffer overflow|CVE-2018-1000300|20180516|20180322|CWE-122: Heap-based Buffer Overflow",
     "adv_2018-b138.html|7.20.0|7.59.0|RTSP bad headers buffer over-read|CVE-2018-1000301|20180516|20180324|CWE-126: Buffer Over-read",
     "adv_2018-b047.html|7.20.0|7.58.0|RTSP RTP buffer over-read|CVE-2018-1000122|20180314|20180220|CWE-126: Buffer Over-read",
