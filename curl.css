@@ -1,6 +1,7 @@
 BODY {
   background-color: white; 
   font-family: arial, helvetica, ariel, sans-serif;
+  font-size: 20px;
   color: black;
   margin: 0;
   padding: 0;
@@ -101,13 +102,8 @@ td.newsdate {
   text-align: right;
 }
 
-.mini {
-  font-size: 8pt;
-  font-family: monospace;
-}
-
 .warning {
-  font-size: 9pt;
+  font-size: 14pt;
   color: #000000;
   background-color: #ff8080;
 }
@@ -248,7 +244,7 @@ span.metalink {
   padding-top: .5em;
   padding-bottom: .5em;
   line-height: 130%;
-  font-size: 22px;
+  font-size: 26px;
 }
 
 /* the main curl site left-side menu box */
@@ -266,7 +262,7 @@ span.metalink {
   padding: 4px 4px 4px 4px;
   margin: 0px 10px 0px 0px;
   background: white;
-  font-size: 18px;
+  font-size: 24px;
 }
 
 div.oslinks {
