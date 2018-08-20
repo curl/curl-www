@@ -133,13 +133,13 @@ PAGES =						\
  vulnerabilities.html				\
  whodocs.html
 
-all: $(PAGES) vuln-make.gen
+all: vuln.gen $(PAGES) vuln-make.gen
 	-test -f vuln-make.gen && make -f vuln-make.gen
 	@echo done 
 
 clean:
 	-test -f vuln-make.gen && make -f vuln-make.gen clean
-	rm -f $(PAGES)
+	rm -f $(PAGES) *.gen
 
 vuln-make.gen: vuln.gen
 
