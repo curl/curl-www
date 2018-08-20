@@ -94,7 +94,7 @@ RedirectPermanent /docs/adv_20051207.html https://curl.haxx.se/docs/CVE-2005-407
 RedirectPermanent /docs/adv_20051013.html https://curl.haxx.se/docs/CVE-2005-3185.html
 RedirectPermanent /docs/adv_20050221A.html https://curl.haxx.se/docs/CVE-2005-0490.html
 RedirectPermanent /docs/adv_20050221B.html https://curl.haxx.se/docs/CVE-2005-0490.html
-RedirectPermanent /docs/adv_20030803.html https://curl.haxx.se/docs/CVE-2003-XXXX.html
+RedirectPermanent /docs/adv_20030803.html https://curl.haxx.se/docs/CVE-2003-1605.html
 RedirectPermanent /docs/adv_20001013.html https://curl.haxx.se/docs/CVE-2000-0973.html
 
 RemoveHandler .php

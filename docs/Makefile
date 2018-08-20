@@ -15,7 +15,7 @@ MAN2HTML = roffit --bare
 
 PAGES =						\
  CVE-2000-0973.html				\
- CVE-2003-XXXX.html				\
+ CVE-2003-1605.html				\
  CVE-2005-0490.html				\
  CVE-2005-0490.html				\
  CVE-2005-3185.html				\
