@@ -25,12 +25,13 @@ for(@vuln) {
         print <<TEMPLATE
 #include "_doctype.html"
 #define FLAWNAME $desc
+#define FLAWCVE $cve
 
-<HTML>
-<HEAD> <TITLE>curl - FLAWNAME</TITLE>
+<html>
+<head> <title>curl - FLAWNAME - FLAWCVE</title>
 #include "css.t"
 #include "manpage.t"
-</HEAD>
+</head>
 
 #define CURL_DOCS
 #define CURL_URL docs/$want
