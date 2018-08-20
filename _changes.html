@@ -58,7 +58,7 @@ SUBTITLE(Fixed in 7.61.0 - July 11 2018)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_2018-70a2.html">CVE-2018-0500: smtp: fix SMTP send buffer overflow</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2018-0500.html">CVE-2018-0500: smtp: fix SMTP send buffer overflow</a>
  BGF <a href="https://curl.haxx.se/bug/?i=2522">schannel: disable client cert option if APIs not available</a>
  BGF schannel: disable manual verify if APIs not available
  BGF <a href="https://curl.haxx.se/bug/?i=2576">tests/libtest/Makefile: Do not unconditionally add gcc-specific flags</a>
@@ -158,8 +158,8 @@ SUBTITLE(Fixed in 7.60.0 - May 16 2018)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_2018-82c2.html">FTP: shutdown response buffer overflow CVE-2018-1000300</a>
- BGF <a href="https://curl.haxx.se/docs/adv_2018-b138.html">RTSP: bad headers buffer over-read CVE-2018-1000301</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2018-1000300.html">FTP: shutdown response buffer overflow CVE-2018-1000300</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2018-1000301.html">RTSP: bad headers buffer over-read CVE-2018-1000301</a>
  BGF <a href="https://curl.haxx.se/bug/?i=2380">FTP: fix typo in recursive callback detection for seeking</a>
  BGF test1208: marked flaky
  BGF <a href="https://curl.haxx.se/bug/?i=2382">HTTP: make header-less responses still count correct body size</a>
@@ -284,9 +284,9 @@ SUBTITLE(Fixed in 7.59.0 - March 14 2018)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_2018-97a2.html">openldap: check ldap_get_attribute_ber() results for NULL before using</a>
- BGF <a href="https://curl.haxx.se/docs/adv_2018-9cd6.html">FTP: reject path components with control codes</a>
- BGF <a href="https://curl.haxx.se/docs/adv_2018-b047.html">readwrite: make sure excess reads don't go beyond buffer end</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2018-1000121.html">openldap: check ldap_get_attribute_ber() results for NULL before using</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2018-1000120.html">FTP: reject path components with control codes</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2018-1000122.html">readwrite: make sure excess reads don't go beyond buffer end</a>
  BGF <a href="https://curl.haxx.se/bug/?i=1872">lib555: drop text conversion and encode data as ascii codes</a>
  BGF lib517: make variable static to avoid compiler warning
  BGF <a href="https://curl.haxx.se/bug/?i=1872">lib544: sync ascii code data with textual data</a>
@@ -373,8 +373,8 @@ SUBTITLE(Fixed in 7.58.0 - January 24 2018)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_2018-824a.html">http2: fix incorrect trailer buffer size</a>
- BGF <a href="https://curl.haxx.se/docs/adv_2018-b3bf.html">http: prevent custom Authorization headers in redirects</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2018-1000005.html">http2: fix incorrect trailer buffer size</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2018-1000007.html">http: prevent custom Authorization headers in redirects</a>
  BGF <a href="https://curl.haxx.se/bug/?i=2118">travis: add boringssl build</a>
  BGF <a href="https://curl.haxx.se/mail/lib-2017-12/0000.html">examples/xmlstream.c: don't switch off CURL_GLOBAL_SSL</a>
  BGF <a href="https://curl.haxx.se/bug/?i=2119">SSL: Avoid magic allocation of SSL backend specific data</a>
@@ -467,9 +467,9 @@ SUBTITLE(Fixed in 7.57.0 - November 29 2017)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_2017-12e7.html">CVE-2017-8816: NTLM buffer overflow via integer overflow</a>
- BGF <a href="https://curl.haxx.se/docs/adv_2017-ae72.html">CVE-2017-8817: FTP wildcard out of bounds read</a>
- BGF <a href="https://curl.haxx.se/docs/adv_2017-af0a.html">CVE-2017-8818: SSL out of buffer access</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2017-8816.html">CVE-2017-8816: NTLM buffer overflow via integer overflow</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2017-8817.html">CVE-2017-8817: FTP wildcard out of bounds read</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2017-8818.html">CVE-2017-8818: SSL out of buffer access</a>
  BGF <a href="https://curl.haxx.se/bug/?i=2008">curl_mime_filedata.3: fix typos</a>
  BGF <a href="https://curl.haxx.se/bug/?i=2006">libtest: Add required test libraries for lib1552 and lib1553</a>
  BGF <a href="https://curl.haxx.se/bug/?i=2004">fix time diffs for systems using unsigned time_t</a>
@@ -542,7 +542,7 @@ SUBTITLE(Fixed in 7.57.0 - November 29 2017)
 SUBTITLE(Fixed in 7.56.1 - October 23 2017)
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20171023.html">imap: if a FETCH response has no size, don't call write callback</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2017-1000257.html">imap: if a FETCH response has no size, don't call write callback</a>
  BGF <a href="https://curl.haxx.se/bug/?i=1939">ftp: UBsan fixup 'pointer index expression overflowed</a>
  BGF <a href="https://curl.haxx.se/bug/?i=1936">failf: skip the sprintf() if there are no consumers</a>
  BGF <a href="https://curl.haxx.se/bug/?i=1923">fuzzer: move to using external curl-fuzzer</a>
@@ -606,7 +606,7 @@ SUBTITLE(Fixed in 7.56.0 - October 4 2017)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20171004.html">FTP: zero terminate the entry path even on bad input</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2017-1000254.html">FTP: zero terminate the entry path even on bad input</a>
  BGF examples/ftpuploadresume.c: use portable code
  BGF runtests: match keywords case insensitively
  BGF <a href="https://curl.haxx.se/bug/?i=1777">travis: build the examples too</a>
@@ -744,9 +744,9 @@ SUBTITLE(Fixed in 7.55.0 - August 9 2017)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20170809A.html">glob: do not parse after a strtoul() overflow range (CVE-2017-1000101)</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20170809B.html">tftp: reject file name lengths that don't fit (CVE-2017-1000100)</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20170809C.html">file: output the correct buffer to the user (CVE-2017-1000099)</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2017-1000101.html">glob: do not parse after a strtoul() overflow range (CVE-2017-1000101)</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2017-1000100.html">tftp: reject file name lengths that don't fit (CVE-2017-1000100)</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2017-1000099.html">file: output the correct buffer to the user (CVE-2017-1000099)</a>
  BGF <a href="https://daniel.haxx.se/blog/2017/06/15/target-independent-libcurl-headers/">includes: remove curl/curlbuild.h and curl/curlrules.h</a>
  BGF <a href="https://curl.haxx.se/bug/?i=1565">dist: make the hugehelp.c not get regenerated unnecessarily</a>
  BGF <a href="https://curl.haxx.se/bug/?i=1531">timers: store internal time stamps as time_t instead of doubles</a>
@@ -868,7 +868,7 @@ SUBTITLE(Fixed in 7.54.1 - June 14 2017)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20170614.html">CVE-2017-9502: default protocol drive letter buffer overflow</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2017-9502.html">CVE-2017-9502: default protocol drive letter buffer overflow</a>
  BGF openssl: fix memory leak in servercert
  BGF tests: remove the html and PDF versions from the tarball
  BGF mbedtls: enable NTLM (& SMB) even if MD4 support is unavailable
@@ -996,7 +996,7 @@ SUBTITLE(Fixed in 7.54.0 - April 19 2017)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20170419.html">CVE-2017-7468: switch off SSL session id when client cert is used</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2017-7468.html">CVE-2017-7468: switch off SSL session id when client cert is used</a>
  BGF <a href="https://curl.haxx.se/bug/?i=1275">cmake: Replace invalid UTF-8 byte sequence</a>
  BGF tests: use consistent environment variables for setting charset
  BGF proxy: fixed a memory leak on OOM
@@ -1137,7 +1137,7 @@ SUBTITLE(Fixed in 7.53.0 - February 22 2017)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20170222.html">CVE-2017-2629: make SSL_VERIFYSTATUS work again</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2017-2629.html">CVE-2017-2629: make SSL_VERIFYSTATUS work again</a>
  BGF gnutls-random: check return code for failed random
  BGF openssl-random: check return code when asking for random
  BGF http: remove "Curl_http_done: called premature" message
@@ -1238,7 +1238,7 @@ SUBTITLE(Fixed in 7.53.0 - February 22 2017)
 SUBTITLE(Fixed in 7.52.1 - December 23 2016)
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20161223.html">CVE-2016-9594: unititialized random</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-9594.html">CVE-2016-9594: unititialized random</a>
  BGF lib557: fix checksrc warnings
  BGF lib: fix MSVC compiler warnings
  BGF <a href="https://curl.haxx.se/mail/lib-2016-12/0098.html">lib557.c: use a shorter MAXIMIZE representation</a>
@@ -1259,9 +1259,9 @@ SUBTITLE(Fixed in 7.52.0 - December 21 2016)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20161221A.html">CVE-2016-9586: printf floating point buffer overflow</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20161221B.html">CVE-2016-9952: Win CE schannel cert wildcard matches too much</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20161221C.html">CVE-2016-9953: Win CE schannel cert name out of buffer read</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-9586.html">CVE-2016-9586: printf floating point buffer overflow</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-9952.html">CVE-2016-9952: Win CE schannel cert wildcard matches too much</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-9953.html">CVE-2016-9953: Win CE schannel cert name out of buffer read</a>
  BGF msvc: removed a straggling reference to strequal.c
  BGF <a href="https://curl.haxx.se/bug/?i=1098">winbuild: remove strcase.obj from curl build</a>
  BGF examples: bugfixed multi-uv.c
@@ -1316,17 +1316,17 @@ SUBTITLE(Fixed in 7.51.0 - November 2 2016)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20161102A.html">CVE-2016-8615: cookie injection for other servers</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20161102B.html">CVE-2016-8616: case insensitive password comparison</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20161102C.html">CVE-2016-8617: OOB write via unchecked multiplication</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20161102D.html">CVE-2016-8618: double-free in curl_maprintf</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20161102E.html">CVE-2016-8619: double-free in krb5 code</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20161102F.html">CVE-2016-8620: glob parser write/read out of bounds</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20161102G.html">CVE-2016-8621: curl_getdate read out of bounds</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20161102H.html">CVE-2016-8622: URL unescape heap overflow via integer truncation</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20161102I.html">CVE-2016-8623: Use-after-free via shared cookies</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20161102J.html">CVE-2016-8624: invalid URL parsing with '#'</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20161102K.html">CVE-2016-8625: IDNA 2003 makes curl use wrong host</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-8615.html">CVE-2016-8615: cookie injection for other servers</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-8616.html">CVE-2016-8616: case insensitive password comparison</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-8617.html">CVE-2016-8617: OOB write via unchecked multiplication</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-8618.html">CVE-2016-8618: double-free in curl_maprintf</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-8619.html">CVE-2016-8619: double-free in krb5 code</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-8620.html">CVE-2016-8620: glob parser write/read out of bounds</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-8621.html">CVE-2016-8621: curl_getdate read out of bounds</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-8622.html">CVE-2016-8622: URL unescape heap overflow via integer truncation</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-8623.html">CVE-2016-8623: Use-after-free via shared cookies</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-8624.html">CVE-2016-8624: invalid URL parsing with '#'</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-8625.html">CVE-2016-8625: IDNA 2003 makes curl use wrong host</a>
  BGF <a href="https://curl.haxx.se/bug/?i=964">openssl: fix per-thread memory leak using 1.0.1 or 1.0.2</a>
  BGF <a href="https://curl.haxx.se/bug/?i=1013">http: accept "Transfer-Encoding: chunked" for HTTP/2 as well</a>
  BGF <a href="https://curl.haxx.se/bug/?i=1019">LICENSE-MIXING.md: update with mbedTLS dual licensing</a>
@@ -1382,7 +1382,7 @@ SUBTITLE(Fixed in 7.51.0 - November 2 2016)
 SUBTITLE(Fixed in 7.50.3 - September 14 2016)
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20160914.html">CVE-2016-7167: escape and unescape integer overflows</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-7167.html">CVE-2016-7167: escape and unescape integer overflows</a>
  BGF mk-ca-bundle.pl: use SHA256 instead of SHA1
  BGF checksrc: detect strtok() use
  BGF <a href="https://curl.haxx.se/bug/?i=975">errors: new alias CURLE_WEIRD_SERVER_REPLY</a>
@@ -1453,9 +1453,9 @@ SUBTITLE(Fixed in 7.50.2 - September 7 2016)
 SUBTITLE(Fixed in 7.50.1 - August 3 2016)
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20160803A.html">TLS: switch off SSL session id when client cert is used</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20160803B.html">TLS: only reuse connections with the same client cert</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20160803C.html">curl_multi_cleanup: clear connection pointer for easy handles</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-5419.html">TLS: switch off SSL session id when client cert is used</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-5420.html">TLS: only reuse connections with the same client cert</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-5421.html">curl_multi_cleanup: clear connection pointer for easy handles</a>
  BGF include the <a href="https://curl.haxx.se/libcurl/c/CURLINFO_HTTP_VERSION.html">CURLINFO_HTTP_VERSION man page</a> into the release tarball
  BGF include the http2-server.pl script in the release tarball
  BGF test558: fix test by stripping file paths from FD lines
@@ -1518,7 +1518,7 @@ SUBTITLE(Fixed in 7.50.0 - July 21 2016)
 SUBTITLE(Fixed in 7.49.1 - May 30 2016)
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20160530.html">Windows: prevent DLL hijacking, CVE-2016-4802</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-4802.html">Windows: prevent DLL hijacking, CVE-2016-4802</a>
  BGF <a href="https://curl.haxx.se/mail/lib-2016-05/0113.html">dist: include manpage-scan.pl, nroff-scan.pl and CHECKSRC.md</a>
  BGF <a href="https://curl.haxx.se/bug/?i=812">schannel: fix compile break with MSVC XP toolset</a>
  BGF <a href="https://curl.haxx.se/bug/?i=813">curlbuild.h.dist: check __LP64__ as well to fix MIPS build</a>
@@ -1555,7 +1555,7 @@ SUBTITLE(Fixed in 7.49.0 - May 18 2016)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20160518.html">CVE-2016-3739: TLS certificate check bypass with mbedTLS/PolarSSL</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-3739.html">CVE-2016-3739: TLS certificate check bypass with mbedTLS/PolarSSL</a>
  BGF checksrc.bat: Updated the help to be consistent with generate.bat
  BGF checksrc.bat: Added support for scanning the tests and examples
  BGF <a href="https://twitter.com/xtraemeat/status/712564874098917376">openssl: fix ERR_remove_thread_state() for boringssl/libressl</a>
@@ -1745,7 +1745,7 @@ SUBTITLE(Fixed in 7.47.1 - February 8 2016)
  BGF <a href="https://curl.haxx.se/mail/lib-2016-02/0016.html">examples/asiohiper: Avoid function name collision on Windows</a>
  BGF <a href="https://github.com/curl/curl/pull/637">idn_win32: Better error checking</a>
  BGF <a href="https://github.com/curl/curl/commit/dd1b44c#commitcomment-15913896">openssl: Fix signed/unsigned mismatch warning in X509V3_ext</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20160127B.html">curl save files: check for backslashes on cygwin</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-0754.html">curl save files: check for backslashes on cygwin</a>
 </ul>
 
 <a name="7_47_0"></a>
@@ -1760,8 +1760,8 @@ SUBTITLE(Fixed in 7.47.0 - January 27 2016)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20160127B.html">curl: avoid local drive traversal when saving file on Windows</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20160127A.html">NTLM: do not resuse proxy connections without diff proxy credentials</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-0754.html">curl: avoid local drive traversal when saving file on Windows</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2016-0755.html">NTLM: do not resuse proxy connections without diff proxy credentials</a>
  BGF <a href="https://curl.haxx.se/mail/lib-2015-12/0003.html">tests: Disable the OAUTHBEARER tests when using a non-default port number</a>
  BGF curl: remove keepalive #ifdef checks done on libcurl's behalf
  BGF <a href="https://github.com/curl/curl/issues/425#issuecomment-154518679">formdata: Check if length is too large for memory</a>
@@ -2080,8 +2080,8 @@ SUBTITLE(Fixed in 7.43.0 - June 17 2015)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20150617A.html">CVE-2015-3236: lingering HTTP credentials in connection re-use</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20150617B.html">CVE-2015-3237: SMB send off unrelated memory contents</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2015-3236.html">CVE-2015-3236: lingering HTTP credentials in connection re-use</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2015-3237.html">CVE-2015-3237: SMB send off unrelated memory contents</a>
  BGF <a href="https://curl.haxx.se/mail/lib-2015-04/0095.html">nss: fix compilation failure with old versions of NSS</a>
  BGF curl_easy_getinfo.3: document 'internals' in CURLINFO_TLS_SESSION
  BGF schannel.c: Fix possible SEC_E_BUFFER_TOO_SMALL error
@@ -2151,7 +2151,7 @@ SUBTITLE(Fixed in 7.43.0 - June 17 2015)
 SUBTITLE(Fixed in 7.42.1 - April 29 2015)
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20150429.html">CURLOPT_HEADEROPT: default to separate</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2015-3153.html">CURLOPT_HEADEROPT: default to separate</a>
  BGF <a href="https://curl.haxx.se/mail/archive-2015-04/0046.html">dist: include {src,lib}/checksrc.whitelist</a>
  BGF <a href="https://curl.haxx.se/bug/?i=231">connectionexists: fix build without NTLM</a>
  BGF docs: distribute the <a href="/libcurl/c/CURLOPT_PINNEDPUBLICKEY.html">CURLOPT_PINNEDPUBLICKEY</a> man page, too
@@ -2176,10 +2176,10 @@ SUBTITLE(Fixed in 7.42.0 - April 22 2015)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20150422A.html">ConnectionExists: for NTLM re-use, require credentials to match</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20150422C.html">cookie: cookie parser out of boundary memory access</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20150422D.html">fix_hostname: zero length host name caused -1 index offset</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20150422B.html">http_done: close Negotiate connections when done</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2015-3143.html">ConnectionExists: for NTLM re-use, require credentials to match</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2015-3145.html">cookie: cookie parser out of boundary memory access</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2015-3144.html">fix_hostname: zero length host name caused -1 index offset</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2015-3148.html">http_done: close Negotiate connections when done</a>
  BGF sws: timeout idle CONNECT connections
  BGF nss: improve error handling in Curl_nss_random()
  BGF nss: do not skip Curl_nss_seed() if data is NULL
@@ -2395,8 +2395,8 @@ SUBTITLE(Fixed in 7.40.0 - January 8 2015)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20150108A.html">darwinssl: fix session ID keys to only reuse identical sessions</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20150108B.html">url-parsing: reject CRLFs within URLs</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2014-8151.html">darwinssl: fix session ID keys to only reuse identical sessions</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2014-8150.html">url-parsing: reject CRLFs within URLs</a>
  BGF OS400: Adjust specific support to last release
  BGF THANKS: Remove duplicate names
  BGF url.c: Fixed compilation warning
@@ -2537,7 +2537,7 @@ SUBTITLE(Fixed in 7.39.0 - November 5 2014)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20141105.html">curl_easy_duphandle: CURLOPT_COPYPOSTFIELDS read out of bounds</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2014-3707.html">curl_easy_duphandle: CURLOPT_COPYPOSTFIELDS read out of bounds</a>
  BGF <a href="https://curl.haxx.se/mail/lib-2014-09/0064.html">openssl: build fix for versions < 0.9.8e</a>
  BGF <a href="https://curl.haxx.se/mail/lib-2014-09/0075.html">newlines: fix mixed newlines to LF-only</a>
  BGF <a href="https://curl.haxx.se/mail/lib-2014-08/0273.html">ntlm: Fixed HTTP proxy authentication when using Windows SSPI</a>
@@ -2618,8 +2618,8 @@ SUBTITLE(Fixed in 7.38.0 - September 10 2014)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="/docs/adv_20140910A.html">SECURITY ADVISORY: cookie leak with IP address as domain</a>
- BGF <a href="/docs/adv_20140910B.html">SECURITY ADVISORY: cookie leak for TLDs</a>
+ BGF <a href="/docs/CVE-2014-3613.html">SECURITY ADVISORY: cookie leak with IP address as domain</a>
+ BGF <a href="/docs/CVE-2014-3620.html">SECURITY ADVISORY: cookie leak for TLDs</a>
  BGF <a href="https://curl.haxx.se/mail/lib-2014-07/0209.html">fix a build failure on Debian when NSS support is enabled</a>
  BGF <a href="https://curl.haxx.se/mail/lib-2014-07/0202.html">HTTP/2: fixed compiler warnings when built disabled</a>
  BGF cyassl: return the correct error code on no CA cert
@@ -2847,10 +2847,10 @@ align="right" alt="Release contains security-related bug fixes" border="0">
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20140326A.html">SECURITY ADVISORY: wrong re-use of connections</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20140326B.html">SECURITY ADVISORY: IP address wildcard certificate validation</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20140326C.html">SECURITY ADVISORY: not verifying certs for TLS to IP address / Darwinssl</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20140326D.html">SECURITY ADVISORY: not verifying certs for TLS to IP address / Winssl</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2014-0138.html">SECURITY ADVISORY: wrong re-use of connections</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2014-0139.html">SECURITY ADVISORY: IP address wildcard certificate validation</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2014-1263.html">SECURITY ADVISORY: not verifying certs for TLS to IP address / Darwinssl</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2014-2522.html">SECURITY ADVISORY: not verifying certs for TLS to IP address / Winssl</a>
  BGF <a href="https://bugzilla.redhat.com/1058776">nss: allow to use ECC ciphers if NSS implements them</a>
  BGF netrc: Fixed a memory leak in an OOM condition
  BGF ftp: fixed a memory leak on wildcard error path
@@ -2914,7 +2914,7 @@ align="right" alt="Release contains security-related bug fix" border="0">
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20140129.html">SECURITY ADVISORY: re-use of wrong HTTP NTLM connection</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2014-0015.html">SECURITY ADVISORY: re-use of wrong HTTP NTLM connection</a>
  BGF <a href="https://curl.haxx.se/bug/view.cgi?id=1313">curl_easy_setopt: Fixed OAuth 2.0 Bearer option name</a>
  BGF pop3: Fixed APOP being determined by CAPA response rather than by timestamp
  BGF <a href="https://curl.haxx.se/mail/lib-2013-12/0113.html">Curl_pp_readresp: zero terminate line</a>
@@ -2980,7 +2980,7 @@ align="right" alt="Release contains security-related bug fix" border="0">
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20131217.html">SECURITY VULNERABILITY: libcurl cert name check ignore with GnuTLS</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2013-6422.html">SECURITY VULNERABILITY: libcurl cert name check ignore with GnuTLS</a>
  BGF darwinssl: un-break iOS build after PKCS#12 feature added
  BGF <a href="https://curl.haxx.se/mail/lib-2013-10/0089.html">tool: use XFERFUNCTION to save some casts</a>
  BGF usercertinmem: fix memory leaks
@@ -3156,7 +3156,7 @@ align="right" alt="Release contains security-related bug fix" border="0">
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20130622.html">SECURITY VULNERABILITY: curl_easy_unescape() may parse data beyond the end of the input buffer</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2013-2174.html">SECURITY VULNERABILITY: curl_easy_unescape() may parse data beyond the end of the input buffer</a>
  BGF <a href="https://curl.haxx.se/mail/lib-2013-04/0142.html">FTP: access files in root dir correctly</a>
  BGF <a href="https://curl.haxx.se/bug/view.cgi?id=1216">configure: try pthread_create without -lpthread</a>
  BGF <a href="https://curl.haxx.se/mail/lib-2013-02/0102.html">FTP: handle a 230 welcome response</a>
@@ -3228,7 +3228,7 @@ align="right" alt="Release contains security-related bug fix" border="0">
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20130412.html">SECURITY ADVISORY: cookie tailmatching to avoid cross-domain leakage</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2013-1944.html">SECURITY ADVISORY: cookie tailmatching to avoid cross-domain leakage</a>
  BGF darwinssl: Fix build under Leopard
  BGF <a href="https://curl.haxx.se/bug/view.cgi?id=1184">DONE: consider callback-aborted transfers premature</a>
  BGF ntlm: Fixed memory leaks
@@ -3299,7 +3299,7 @@ align="right" alt="Release contains security-related bug fix" border="0">
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="/docs/adv_20130206.html">SECURITY ADVISORY: SASL buffer overflow vulnerability</a>
+ BGF <a href="/docs/CVE-2013-0249.html">SECURITY ADVISORY: SASL buffer overflow vulnerability</a>
 
  BGF nss: prevent NSS from crashing on client auth hook failure
  BGF darwinssl: Fixed inability to disable peer verification on Snow Leopard and Lion
@@ -3577,8 +3577,8 @@ align="right" alt="Release contains security-related bug fix" border="0">
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20120124.html">curl was vulnerable to a data injection attack for certain protocols</a> <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-0036">CVE-2012-0036</a>
- BGF <a href="https://curl.haxx.se/docs/adv_20120124B.html">curl was vulnerable to a SSL CBC IV vulnerability when built to use OpenSSL</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2012-0036.html">curl was vulnerable to a data injection attack for certain protocols</a> <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-0036">CVE-2012-0036</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2011-3389.html">curl was vulnerable to a SSL CBC IV vulnerability when built to use OpenSSL</a>
 
  BGF <a href="https://curl.haxx.se/mail/lib-2011-11/0116.html">SSL session share: move the age counter to the share object</a>
  BGF <a href="https://curl.haxx.se/mail/archive-2011-11/0030.htm">-J -O: use -O name if no Content-Disposition header comes!</a>
@@ -3741,7 +3741,7 @@ SUBTITLE(Fixed in 7.22.0 - September 13 2011)
 </ul>
 <a name="7_21_7"></a>
 SUBTITLE(Fixed in 7.21.7 - June 23 2011)
-<a href="https://curl.haxx.se/docs/adv_20110623.html"><img src="/pix/alert.png"
+<a href="https://curl.haxx.se/docs/CVE-2011-2192.html"><img src="/pix/alert.png"
 align="right" alt="Release contains security-related bug fix" border="0"></a>
 <p> Changes:
 <ul class="changes">
@@ -3751,7 +3751,7 @@ align="right" alt="Release contains security-related bug fix" border="0"></a>
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="/docs/adv_20110623.html">SECURITY ADVISORY: inappropriate GSSAPI delegation</a>
+ BGF <a href="/docs/CVE-2011-2192.html">SECURITY ADVISORY: inappropriate GSSAPI delegation</a>
 
  BGF NTLM: work with unicode
  BGF fix connect with SOCKS proxy when using the multi interface
@@ -3938,7 +3938,7 @@ SUBTITLE(Fixed in 7.21.3 - December 15 2010)
 
 <a name="7_21_2"></a>
 SUBTITLE(Fixed in 7.21.2 - October 13 2010)
-<a href="https://curl.haxx.se/docs/adv_20101013.html"><img src="/pix/alert.png"
+<a href="https://curl.haxx.se/docs/CVE-2010-3842.html"><img src="/pix/alert.png"
 align="right" alt="Release contains security-related bug fix" border="0"></a>
 <p> Changes:
 <ul class="changes">
@@ -3949,7 +3949,7 @@ align="right" alt="Release contains security-related bug fix" border="0"></a>
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20101013.html">--remote-header-name security vulnerability fixed</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2010-3842.html">--remote-header-name security vulnerability fixed</a>
  BGF multi: support the timeouts correctly, fixes known bug #62
  BGF multi: use timeouts properly for MAX_RECV/SEND_SPEED
  BGF negotiation: Wrong proxy authorization
@@ -4119,7 +4119,7 @@ SUBTITLE(Fixed in 7.20.1 - April 14 2010)
 
 <a name="7_20_0"></a>
 SUBTITLE(Fixed in 7.20.0 - February 9 2010)
-<a href="https://curl.haxx.se/docs/adv_20100209.html"><img src="/pix/alert.png"
+<a href="https://curl.haxx.se/docs/CVE-2010-0734.html"><img src="/pix/alert.png"
 align="right" title="Release contains security-related bug fix" alt="Release
 contains security-related bug fix" border="0"></a>
 <p> Changes:
@@ -4167,7 +4167,7 @@ contains security-related bug fix" border="0"></a>
  BGF FTP file size checks with ASCII transfers
  BGF HTTP Cookie: headers sort cookies based on specified path lengths
  BGF CURLM_CALL_MULTI_PERFORM fix for multi socket timeout calls
- BGF <a href="https://curl.haxx.se/docs/adv_20100209.html">libcurl data callback excessive length</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2010-0734.html">libcurl data callback excessive length</a>
 
 </ul>
 
@@ -4216,7 +4216,7 @@ SUBTITLE(Fixed in 7.19.7 - November 4 2009)
 
 <a name="7_19_6"></a>
 SUBTITLE(Fixed in 7.19.6 - August 12 2009)
-<a href="https://curl.haxx.se/docs/adv_20090812.html"><img src="/pix/alert.png"
+<a href="https://curl.haxx.se/docs/CVE-2009-2417.html"><img src="/pix/alert.png"
 align="right" title="Release contains security-related bug fix" alt="Release
 contains security-related bug fix" border="0"></a>
 <p> Changes:
@@ -4306,7 +4306,7 @@ SUBTITLE(Fixed in 7.19.5 - May 18 2009)
 
 <a name="7_19_4"></a>
 SUBTITLE(Fixed in 7.19.4 - March 3 2009)
-<a href="https://curl.haxx.se/docs/adv_20090303.html"><img src="/pix/alert.png"
+<a href="https://curl.haxx.se/docs/CVE-2009-0037.html"><img src="/pix/alert.png"
 align="right" title="Release contains security-related bug fix" alt="Release
 contains security-related bug fix" border="0"></a>
 
@@ -4327,7 +4327,7 @@ contains security-related bug fix" border="0"></a>
  CHG CURLOPT_FTP_CREATE_MISSING_DIRS can now be set to 2 to retry the CWD even
    when MKD fails
  CHG GnuTLS initing moved to curl_global_init()
- CHG Added CURLOPT_REDIR_PROTOCOLS and CURLOPT_PROTOCOLS, see also the <a href="https://curl.haxx.se/docs/adv_20090303.html">security advisory</a>
+ CHG Added CURLOPT_REDIR_PROTOCOLS and CURLOPT_PROTOCOLS, see also the <a href="https://curl.haxx.se/docs/CVE-2009-0037.html">security advisory</a>
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
@@ -4751,7 +4751,7 @@ SUBTITLE(Fixed in 7.17.0 - September 13 2007)
 
 <a name="7_16_4"></a>
 SUBTITLE(Fixed in 7.16.4 - July 10 2007)
-<a href="https://curl.haxx.se/docs/adv_20070710.html"><img src="/pix/alert.png"
+<a href="https://curl.haxx.se/docs/CVE-2007-3564.html"><img src="/pix/alert.png"
 align="right" title="Release contains security-related bug fix" alt="Release
 contains security-related bug fix" border="0"></a>
 
@@ -4768,7 +4768,7 @@ contains security-related bug fix" border="0"></a>
  BGF fixed the 10-at-a-time.c example
  BGF FTP over SOCKS proxy
  BGF improved error messages on SCP upload failures
- BGF <a href="https://curl.haxx.se/docs/adv_20070710.html">security flaw</a> in which libcurl
+ BGF <a href="https://curl.haxx.se/docs/CVE-2007-3564.html">security flaw</a> in which libcurl
    failed to properly reject some outdated or not yet valid server certificates
    when built with GnuTLS
 </ul>
@@ -5048,7 +5048,7 @@ SUBTITLE(Fixed in 7.15.4 - June 12 2006)
 
 <a name="7_15_3"></a>
 SUBTITLE(Fixed in 7.15.3 - March 20 2006)
-<a href="https://curl.haxx.se/docs/adv_20060320.html"><img src="/pix/alert.png"
+<a href="https://curl.haxx.se/docs/CVE-2006-1061.html"><img src="/pix/alert.png"
 align="right" alt="Release contains security-related bug fix" border="0"></a>
 <p> Changes:
 <ul class="changes">
@@ -5056,7 +5056,7 @@ align="right" alt="Release contains security-related bug fix" border="0"></a>
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20060320.html">TFTP Packet Buffer Overflow Vulnerability</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2006-1061.html">TFTP Packet Buffer Overflow Vulnerability</a>
  BGF properly detecting problems with sending the FTP command USER
  BGF wrong error message shown when certificate verification failed
  BGF multi-part formpost with multi interface crash
@@ -5111,7 +5111,7 @@ SUBTITLE(Fixed in 7.15.2 - February 27 2006)
 
 <a name="7_15_1"></a>
 SUBTITLE(Fixed in 7.15.1 - December 7 2005)
-<a href="https://curl.haxx.se/docs/adv_20051207.html"><img src="/pix/alert.png" align="right" alt="Release contains security-related bug fix" border="0"></a>
+<a href="https://curl.haxx.se/docs/CVE-2005-4077.html"><img src="/pix/alert.png" align="right" alt="Release contains security-related bug fix" border="0"></a>
 <p> Changes:
 <ul class="changes">
  CHG the libcurl.pc pkgconfig file now gets installed on make install
@@ -5122,7 +5122,7 @@ SUBTITLE(Fixed in 7.15.1 - December 7 2005)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.haxx.se/docs/adv_20051207.html">URL buffer overflow problem</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2005-4077.html">URL buffer overflow problem</a>
  BGF using file:// on non-existing files are properly handled
  BGF builds fine on DJGPP
  BGF CURLOPT_ERRORBUFFER is now always filled in on errors
@@ -5145,7 +5145,7 @@ SUBTITLE(Fixed in 7.15.1 - December 7 2005)
 
 <a name="7_15_0"></a>
 SUBTITLE(Fixed in 7.15.0 - October 13 2005)
-<a href="https://curl.haxx.se/docs/adv_20051013.html"><img src="/pix/alert.png" align="right" alt="Release contains security-related bug fix" border="0"></a>
+<a href="https://curl.haxx.se/docs/CVE-2005-3185.html"><img src="/pix/alert.png" align="right" alt="Release contains security-related bug fix" border="0"></a>
 <p> Changes:
 <ul class="changes">
  CHG --ftp-skip-pasv-ip / CURLOPT_FTP_SKIP_PASV_IP (sponsored by CU*Answers)
@@ -5153,7 +5153,7 @@ SUBTITLE(Fixed in 7.15.0 - October 13 2005)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF user+domain name <a href="https://curl.haxx.se/docs/adv_20051013.html">buffer overflow</a> in the NTLM code (security flaw)
+ BGF user+domain name <a href="https://curl.haxx.se/docs/CVE-2005-3185.html">buffer overflow</a> in the NTLM code (security flaw)
  BGF -z over FTP now considers equal timestamps "not modified since"
  BGF Weird characters removed from the configure script
  BGF Fixed time zone offsets for MEST and CEST for the time parser
