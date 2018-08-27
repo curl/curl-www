@@ -200,10 +200,6 @@ for $per (@sall) {
         }
         if($numflav>1) {
             my $show = $os;
-            
-            if($f eq "-") {
-                $show = "$s - Generic";
-            }
             top($show, $aname, $img);
         }
         else {
