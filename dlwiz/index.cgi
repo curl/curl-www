@@ -63,6 +63,12 @@ my %typelonger = ('bin' => 'curl executable',
 
 #print "<h1>" . CGI::escapeHTML($ua) . "</h1>\n";
 
+sub vernum {
+    my ($v)=@_;
+    my @a = split(/\./, $v);
+    return ($a[0]<<16) | ($a[1] << 8) | $a[2];
+}
+
 &header("Download Wizard");
 &where("Download", "/download.html", "Download Wizard");
 &title("curl Download Wizard");
@@ -818,7 +824,10 @@ MOO
 sub sortent {
     my $ret = $$a{'type'} cmp $$b{'type'};
     if(!$ret) {
-        $ret = $$b{'curl'} cmp $$a{'curl'};
+        $ret = vernum($$b{'curl'}) <=> vernum($$a{'curl'});
+    }
+    if(!$ret) {
+        $ret = (0+$$b{'prio'}) <=> (0 + $$a{'prio'});
     }
     return $ret;
 }
