@@ -56,8 +56,17 @@ sub sortent {
 
 my $shownprev;
 sub top {
-    my ($os, $aname, $img)=@_;
+    my ($os, $flav, $aname, $img)=@_;
 
+    my %osmap = ('Win32' => 'Windows 32 bit',
+                 'Win64' => 'Windows 64 bit');
+    my $r= $osmap{$os};
+    if($r) {
+        $os = $r;
+    }
+    if($flav) {
+        $os .= " - $flav";
+    }
     print "<tr class=\"os\"><td class=\"ostitle\" colspan=\"7\">";
     if($img) {
         print "$img$aname$os</td></tr>\n";
@@ -151,11 +160,20 @@ for $per (@sall) {
     if($s eq "-") {
         next;
     }
-    my $f = $$per{'flav'};
-    my $os = "$origs - $f";
+    my $f;
+    my $flav = $$per{'flav'};
+    my $os = $origs;
+    $f = $flav;
+    my $sortos = $origs;
+    if($flav eq "-") {
+        $flav = "";
+    }
+    elsif($flav) {
+        $sortos = "$origs - $flav";
+    }
     my $aname;
 
-    if($os ne $prevos) {
+    if($sortos ne $prevos) {
         if($prevos) {
             bot();
         }
@@ -183,7 +201,7 @@ for $per (@sall) {
             $shown{$s}=$anch;
         }
         my $c = "${s}${f}";
-        if($f && ($f ne "-")) {
+        if($flav) {
             if(!$shown{"$c"}) {
                 my $anch="$c";
                 $anch =~ s/[^a-zA-Z0-9]//g;
@@ -198,14 +216,8 @@ for $per (@sall) {
             $alt =~ s/  / /g;
             $img="<img width=\"200\" height=\"30\" alt=\"$alt\" src=\"pix/".$$per{'img'}."\" border=\"0\" align=\"right\">";
         }
-        if($numflav>1) {
-            my $show = $os;
-            top($show, $aname, $img);
-        }
-        else {
-            top($s, $aname, $img);
-        }
-        $prevos = $os;
+        top($s, $flav, $aname, $img);
+        $prevos = $sortos;
     }
 
     $s = $origs;
@@ -231,10 +243,6 @@ for $per (@sall) {
         $p=sprintf(" %s", show($$per{'pack'}));
     }
 
-    my $flav = $$per{'flav'};
-    if($flav eq "-") {
-        $flav = "$s";
-    }
     printf("<td class=\"col1\">%s%s %s %s $p%s%s</td>\n",
            $mirror?$mirror:"",
            $numflav>1?$flav:$s,
