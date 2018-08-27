@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:ns1="http://sozi.baierouge.fr" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg2" sodipodi:docname="New document 1" viewBox="0 0 204.35 204.35" version="1.1" inkscape:version="0.48.1 r9760">
+  <defs id="defs4">
+    <filter id="filter3769" height="1.3795" width="1.3795" color-interpolation-filters="sRGB" y="-.18974" x="-.18974" inkscape:collect="always">
+      <feGaussianBlur id="feGaussianBlur3771" stdDeviation="51.501833" inkscape:collect="always"/>
+    </filter>
+    <filter id="filter3816" inkscape:collect="always" color-interpolation-filters="sRGB">
+      <feGaussianBlur id="feGaussianBlur3818" stdDeviation="5.8882305" inkscape:collect="always"/>
+    </filter>
+  </defs>
+  <sodipodi:namedview id="base" bordercolor="#666666" inkscape:pageshadow="2" inkscape:window-y="24" fit-margin-left="0" pagecolor="#ffffff" fit-margin-top="0" inkscape:window-maximized="1" inkscape:zoom="0.35" inkscape:window-x="50" inkscape:window-height="776" showgrid="false" borderopacity="1.0" inkscape:current-layer="layer1" inkscape:cx="-111.39557" inkscape:cy="-307.82412" fit-margin-right="0" fit-margin-bottom="0" inkscape:window-width="1230" inkscape:pageopacity="0.0" inkscape:document-units="px"/>
+  <g id="layer1" inkscape:label="Layer 1" inkscape:groupmode="layer" transform="translate(-4.967 -20.186)">
+    <g id="g3822" transform="matrix(.22740 0 0 .22740 29.826 11.048)">
+      <path id="path2987" sodipodi:rx="325.71429" sodipodi:ry="325.71429" style="filter:url(#filter3769);fill:#000000" sodipodi:type="arc" d="m777.14 649.51c0 179.89-145.83 325.71-325.71 325.71-179.89 0-325.71-145.83-325.71-325.71 0-179.89 145.83-325.71 325.71-325.71 179.89 0 325.71 145.83 325.71 325.71z" transform="translate(-111.43 -160)" sodipodi:cy="649.50507" sodipodi:cx="451.42856"/>
+      <path id="path2985" sodipodi:rx="325.71429" sodipodi:ry="325.71429" style="fill:#ffffff" sodipodi:type="arc" d="m777.14 649.51c0 179.89-145.83 325.71-325.71 325.71-179.89 0-325.71-145.83-325.71-325.71 0-179.89 145.83-325.71 325.71-325.71 179.89 0 325.71 145.83 325.71 325.71z" transform="translate(-111.43 -160)" sodipodi:cy="649.50507" sodipodi:cx="451.42856"/>
+      <path id="path3814" style="filter:url(#filter3816);stroke:#000000;stroke-width:10.2;fill:#008000" inkscape:connector-curvature="0" d="m288.87 240.94v301.01l-75.123-0.9551 64.85 93.466 64.822 93.488 68.505-91.778 68.505-91.8-75.123-0.9551v-302.48h-116.44z"/>
+      <path id="rect3773" d="m288.87 240.94v301.01l-75.123-0.9551 64.85 93.466 64.822 93.488 68.505-91.778 68.505-91.8-75.123-0.9551v-302.48h-116.44z" style="fill:#008000" inkscape:connector-curvature="0"/>
+      <path id="path3820" sodipodi:nodetypes="cccccccccc" inkscape:connector-curvature="0" style="opacity:.14545;fill:#ffffff" d="m295.11 258.08v291.62l-67.075-0.85278 57.902 83.453 57.878 83.472 61.166-81.945 61.166-81.965-67.075-0.85277-2.8571-295.78z"/>
+    </g>
+  </g>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>Download icon</dc:title>
+        <dc:date>2011-05-01T14:15:01</dc:date>
+        <dc:description>Download button</dc:description>
+        <dc:source>https://openclipart.org/detail/134977/download-icon-by-gsagri04-134977</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>gsagri04</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>Download</rdf:li>
+            <rdf:li>arrow</rdf:li>
+            <rdf:li>computer</rdf:li>
+            <rdf:li>down</rdf:li>
+            <rdf:li>icon</rdf:li>
+            <rdf:li>inkscape</rdf:li>
+            <rdf:li>software</rdf:li>
+            <rdf:li>symbol</rdf:li>
+            <rdf:li>web</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

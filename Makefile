@@ -35,6 +35,7 @@ all: $(PAGES)
 	cd legal && make
 	cd rfc && make
 	cd dev && make
+	cd windows && make
 
 head.html: _head.html $(MAINPARTS)
 	$(ACTION)

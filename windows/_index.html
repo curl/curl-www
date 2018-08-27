@@ -1,0 +1,85 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>curl for Windows</TITLE>
+#include "css.t"
+<style>
+a.windl {
+  font-size: 200%;
+}
+p.windl {
+  //padding-left: 2em;
+}
+</style>
+</HEAD>
+
+#define CURL_URL /windows
+#define WINDOWS_MAIN
+
+#include "_menu.html"
+#include "setup.t"
+#include "files.gen"
+
+WHERE2(Download, "/download.html/", Windows downloads)
+
+TITLE(curl DEP_CURL for Windows)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/changes.html">Changelog</a>
+<br><a href="/download.html">Downloads</a>
+<br><a href="/docs/faq.html">FAQ</a>
+<br><a href="/docs/copyright.html">License</a>
+<br><a href="/docs/manpage.html">Manual</a>
+</div>
+<p>
+ These are the latest and most up to date <b>official</b> curl binary builds
+ for Microsoft Windows.
+
+<p>
+<!-- version: DEP_CURL -->
+ <b>curl version</b>: DEP_CURL <br>
+ <b>Build</b>: CURL_WINDOWS_VERSION <br>
+ <b>Date</b>: CURL_WIN64_ZIP_DATE <br>
+ <b>Changes</b>: <a href="/changes.html#DEPU_CURL">DEP_CURL changelog</a>
+   
+SUBTITLE(Packages)
+<p class="windl">
+  <a href="CURL_WIN64_ZIP"><img src="/pix/GS-Download-icon.svg" width="90" height="90" style="float:left;"></a>
+     
+<a href="CURL_WIN64_ZIP" class="windl">curl for 64 bit</a> <br>
+Size: CURL_WIN64_ZIP_SIZE<br>
+sha256: SHA256_CURL_WIN64
+ 
+<p class="windl">
+ <a href="CURL_WIN32_ZIP"><img src="/pix/GS-Download-icon.svg" width="90" height="90" style="float:left;"></a>
+ <a href="CURL_WIN32_ZIP" class="windl">curl for 32 bit</a> <br>
+Size: CURL_WIN32_ZIP_SIZE<br>
+sha256: SHA256_CURL_WIN32
+
+SUBTITLE(Specifications)
+<p>
+  curl CURL_WINDOWS_VERSION was built and statically linked with
+  <ul>
+    <li> OpenSSL DEP_OPENSSL [<a href=DL_OPENSSL_WIN64>64bit</a>/<a href=DL_OPENSSL_WIN32>32bit</a>]
+    <li> brotli DEP_BROTLI [<a href=DL_BROTLI_WIN64>64bit</a>/<a href=DL_BROTLI_WIN32>32bit</a>]
+    <li> libssh2 DEP_LIBSSH2 [<a href=DL_LIBSSH2_WIN64>64bit</a>/<a href=DL_LIBSSH2_WIN32>32bit</a>]
+    <li> nghttp2 DEP_NGHTTP2 [<a href=DL_NGHTTP2_WIN64>64bit</a>/<a href=DL_NGHTTP2_WIN32>32bit</a>]
+    <li> zlib DEP_ZLIB [<a href=DL_ZLIB_WIN64>64bit</a>/<a href=DL_ZLIB_WIN32>32bit</a>]
+  </ul>
+
+<p>
+  The following tools/compilers were used in the build process:
+<ul>
+DEP_TOOLS
+</ul>
+
+<p>
+ The <a href="BUILD_LOGURL">log from the build</a>.
+
+<p>
+ Get further details about these curl builds in
+ the <a href="https://github.com/curl/curl-for-win">curl-for-win github
+ repo</a>
+  
+#include "_footer.html"
+</BODY>
+</HTML>
