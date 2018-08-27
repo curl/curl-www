@@ -762,9 +762,8 @@ MOO
 
     print <<MOO
 <p>
-<div class="quote">
 <div class="yellowbox">
-<a href="$file"><img align="right" src="download.gif" border="0" width="100" height="30"></a>
+<a href="$file"><img src="/pix/GS-Download-icon.svg" width="90" height="90" style="float:left;"></a>
 curl version: $version - SSL $sslenable $ssh
 <br>URL:&nbsp;<a href="$file">$show</a> $mirror $metalink
 $provided
@@ -811,8 +810,6 @@ MOO
     elsif($pack eq "ipk") {
         print " ipkg is a file format and tools collection made to handle software installation for embedded Linux systems. <a href=\"https://en.wikipedia.org/wiki/Ipkg\">Wikipedia has more details on Ipkg</a>.";
     }
-
-    print "</div>\n";
 
     return $t;
 }
