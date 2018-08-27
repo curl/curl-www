@@ -395,7 +395,10 @@ if($pick_type && !$pick_os) {
                 $show = "Platform Independent";
             }
             elsif($_ eq "Win32") {
-                $show = "Windows / Win32";
+                $show = "Windows 32 bit";
+            }
+            elsif($_ eq "Win64") {
+                $show = "Windows 64 bit";
             }
 
             print "<option$s value=\"$_\">$show</option>\n";
