@@ -18,6 +18,12 @@ close(FILE);
 
 @all = $db->find_all("typ"=>"^entry\$");
 
+sub vernum {
+    my ($v)=@_;
+    my @a = split(/\./, $v);
+    return ($a[0]<<16) | ($a[1] << 8) | $a[2];
+}
+
 sub sortent {
     # OS name
     my $r = lc($$a{'os'}) cmp lc($$b{'os'});
@@ -35,7 +41,11 @@ sub sortent {
     }
     if(!$r) {
         # curl version
-        $r = lc($$a{'curl'}) cmp lc($$b{'curl'});
+        $r = vernum($$b{'curl'}) <=> vernum($$a{'curl'});
+    }
+    if(!$r) {
+        # sort prio when on same version
+        $r = (0+$$b{'prio'}) <=> (0 + $$a{'prio'});
     }
     if(!$r) {
         # type (bin/devel/source/lib)

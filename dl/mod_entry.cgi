@@ -179,6 +179,9 @@ sub my_show_form()
     alternative("Package Format", "pack",
                 "RPM / deb / tar / tar+gz / OTHER");
 
+    alternative("Importance", "prio",
+                "A higher number to get sorted higher when other things equal.");
+
     alternative("File/URL", "file", "file name / URL", 50);
 
     alternative("curl version", "curl",
