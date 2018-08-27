@@ -12,6 +12,7 @@ require "stuff.pm";
        "ssh"=>CGI::param("ssh"),
        "type"=>CGI::param("type"),
        "pack"=>CGI::param("pack"),
+       "prio"=>CGI::param("prio"),
        "file"=>CGI::param("file"),
        "curl"=>CGI::param("curl"),
        "date"=>CGI::param("date"),
