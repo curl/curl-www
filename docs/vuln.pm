@@ -3,6 +3,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2018-14618.html|7.15.4|7.61.0|NTLM password overflow via integer overflow|CVE-2018-14618|20180905|20180718|CWE-131: Incorrect Calculation of Buffer Size",
     "CVE-2018-0500.html|7.54.1|7.60.0|SMTP send heap buffer overflow|CVE-2018-0500|20180711|20180611|CWE-122: Heap-based Buffer Overflow",
     "CVE-2018-1000300.html|7.54.1|7.59.0|FTP shutdown response buffer overflow|CVE-2018-1000300|20180516|20180322|CWE-122: Heap-based Buffer Overflow",
     "CVE-2018-1000301.html|7.20.0|7.59.0|RTSP bad headers buffer over-read|CVE-2018-1000301|20180516|20180324|CWE-126: Buffer Over-read",
