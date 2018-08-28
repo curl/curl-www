@@ -64,12 +64,12 @@ sub sortent {
 
 @sall = sort sortent @all;
 
+my %osmap = ('Win32' => 'Windows 32 bit',
+             'Win64' => 'Windows 64 bit');
 my $shownprev;
 sub top {
     my ($os, $flav, $aname, $img)=@_;
 
-    my %osmap = ('Win32' => 'Windows 32 bit',
-                 'Win64' => 'Windows 64 bit');
     my $r= $osmap{$os};
     if($r) {
         $os = $r;
@@ -241,25 +241,14 @@ for $per (@sall) {
     }
     print "<tr class=\"$cl\">\n";
 
-    my $mirror;
-    my $metalink;
-    if($$per{'re'} ne "-") {
-        $mirror="<a href=\"https://curl.haxx.se/latest.cgi?curl=$$per{'re'}\" type=\"text/html\" title=\"download mirrors\">";
-        $metalink="<a href=\"https://curl.haxx.se/metalink.cgi?curl=$$per{'re'}\" type=\"application/metalink4+xml\">" .
-                  "<img src=\"/pix/metalink.png\" border=\"0\" alt=\"metalink\" title=\"metalink\"></a>";
+    my $sh = $osmap{$s};
+    if($sh) {
+        $s = $sh;
     }
-    my $p;
-    if($numpack>1) {
-        $p=sprintf(" %s", show($$per{'pack'}));
-    }
-
-    printf("<td class=\"col1\">%s%s %s %s $p%s%s</td>\n",
-           $mirror?$mirror:"",
-           $numflav>1?$flav:$s,
+    printf("<td class=\"col1\">%s %s %s %s</td>\n",
+           $s, $flav,
            show($$per{'osver'}),
-           $numcpu>1?show($$per{'cpu'}):"",
-           $mirror?"</a> ":"",
-           $metalink);
+           $numcpu>1?show($$per{'cpu'}):"");
 
     my $fi = $$per{'file'};
     if($fi !~ /^(http|https|ftp|javascript):/) {
@@ -272,7 +261,7 @@ for $per (@sall) {
     }
 
     my $contenttype;
-    if ($mirror || ($$per{'size'} > 0)) {
+    if ($$per{'size'} > 0) {
         # If the file is served locally, or if it's a remote binary file
         # (which a known size indicates), include its content type in the link
         $contenttype=$formats{$$per{'pack'}};
