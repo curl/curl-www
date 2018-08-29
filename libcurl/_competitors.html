@@ -30,68 +30,68 @@ has done something very similar already.
 <p>
 
 <b><a href="https://www.boost.org/doc/libs/1_66_0/libs/beast/doc/html/index.html">Beast</a></b> (Boost)
-<ul>
+<ul><li>
   Beast is a C++ header-only library serving as a foundation for writing
   interoperable networking libraries by providing low-level HTTP/1, WebSocket,
   and networking protocol vocabulary types and algorithms using the consistent
   asynchronous model of Boost.Asio.
-</ul>
+</li></ul>
 
 <b><a href="https://whoshuu.github.io/cpr/">CPR</a></b> (MIT)
-<ul>
+<ul><li>
   C++ Requests: Curl for People, a spiritual port of Python Requests. (based on libcurl)
-</ul>
+</li></ul>
 
 <b><a href="http://kasablanca.berlios.de/ftplibpp/">ftplib++</a></b> (GPL)
-<ul>
+<ul><li>
  A C++ library for "easy FTP client functionality. It features resuming of up-
  and downloads, FXP support, SSL/TLS encryption, and logging functionality."
-</ul>
+</li></ul>
 
 <b><a href="http://www.gnetlibrary.org/">gnetlibrary</a></b> (LGPL)
-<ul>
+<ul><li>
   <i>"a simple network library. It is written in C, object-oriented, and built
   upon GLib. It is intended to be easy to use and port"</i>. Features a HTTP
   component. It uses glib, and integrates very well within Gtk+ applications,
   which require event-driven programming.
-</ul>
+</li></ul>
 
 <b><a href="https://www.gnu.org/software/commoncpp/">GNU Common C++ library</a></b>
-<ul>
+<ul><li>
 Has a URLStream class. This C++ class allow you to download a file using HTTP.
 See demo/urlfetch.cpp in commoncpp2-1.3.19.tar.gz
-</ul>
+</li></ul>
 
 <b><a href="https://http-fetcher.sourceforge.io/">HTTP Fetcher</a></b>
 (LGPL)<br>
-<ul>
+<ul><li>
   "<i>a small, robust, flexible library for downloading files via HTTP using
     the GET method.</i>"
-</ul>
+</li></ul>
 
 <b><a href="http://www.demailly.com/~dl/wwwtools.html#http-tiny">http-tiny</a></b> (Artistic License)<br>
-<ul>
+<ul><li>
 "<i>a very small C library to make http queries (GET, HEAD, PUT, DELETE, etc.) easily portable and embeddable</i>"
-</ul>
+</li></ul>
 
 <b><a href="https://svnweb.freebsd.org/base/head/lib/libfetch/">libfetch</a></b> (BSD)<br>
-<ul>
+<ul><li>
  Does HTTP and FTP transfers (both ways), supports file: URLs, and an API for
  URL parsing. The utility <i>fetch</i> that is built on libfetch is an
  integral part of the <a href="https://www.freebsd.org/">FreeBSD</a> operating
  system.
-</ul>
+</li></ul>
 
 <b><a href="https://www.w3.org/Library/">libwww</a></b> (<a href="https://www.w3.org/Consortium/Legal/2002/copyright-software-20021231">W3C license</a>) <a href="libwww.html">comparison with libcurl</a> <br>
-<ul>
+<ul><li>
   (Not widely used anymore) More complex and harder to use than libcurl
   is. Includes everything from multi-threading to HTML parsing. The most
   notable transfer-related feature that libcurl does not offer but libwww
   does, is caching.
-</ul>
+</li></ul>
 
 <b><a href="https://live.gnome.org/LibSoup">libsoup</a></b> (LGPL)  <a href="libsoup.html">comparison with libcurl</a><br>
-<ul>
+<ul><li>
 
  Part of glib (GNOME). Supports: HTTP 1.1, Persistent connections,
  Asynchronous DNS and transfers, Connection cache, Redirects, Basic, Digest,
@@ -99,69 +99,70 @@ See demo/urlfetch.cpp in commoncpp2-1.3.19.tar.gz
  data. Not portable. Lacks: cookie support, NTLM for proxies, GSS, gzip
  encoding, trailers in chunked responses, portability and more.
 
-</ul>
+</li></ul>
 
 <b><a href="https://web.archive.org/web/20070925040920/www.webdav.org/neon/">neon</a></b> (LGPL) <a href="neon.html">comparison with neon</a> <br>
-<ul>
+<ul><li>
   An HTTP and WebDAV client library, with a C interface. I've mainly heard
   and seen people use this with WebDAV as their main interest. This is one
   of the two alternatives used by the Subversion project.
-</ul>
+</li></ul>
 
 <b><a href="https://pocoproject.org/docs/">POCO C++ Libraries</a></b> (Boost)
-<ul>
+<ul><li>
   a collection of open source C++ class libraries that simplify and accelerate
   the development of network-centric, portable applications in C++.
-</ul>
+</li></ul>
 
 <b><a href="http://www.qdecoder.org/">qDecoder</a></b> (BSD)
-<ul>
+<ul><li>
   qDecoder is a development kit for C/C++ network programming includes
   simple <a href="http://www.qdecoder.org/reference/qHttpClient_8c.html">HTTP client API</a>.
-</ul>
+</li></ul>
 
 <b><a href="https://doc.qt.io/qt-5.10/qtnetwork-programming.html">Qt Networking</a></b> (GPL/LGPL)<br>
-<ul>
+<ul><li>
   The Qt Network module offers classes that allow you to write TCP/IP clients
   and servers, including "High Level" network operations for HTTP and FTP.
-</ul>
+</li></ul>
 
 <b><a href="https://code.google.com/p/serf/">Serf</a></b> (Apache License)
-<ul>
+<ul><li>
   <i>"The serf library is a C-based HTTP client library built upon the Apache
   Portable Runtime (APR) library. It multiplexes connections, running the
   read/write communication asynchronously."</i>  This is one
   of the two alternatives used by the Subversion project.
-</ul>
+</li></ul>
 
 <b><a href="https://www.gnu.org/software/wget/">wget</a></b> (GPL)<br>
-<ul>
+<ul><li>
   While not a library at all, I've been told that people sometimes extract the
   network code from it and base their own hacks from there.
-</ul>
+</li></ul>
 
 <b><a
 href="https://msdn.microsoft.com/en-us/library/aa385483.aspx">wininet</a></b> <a
 href="wininet.html">comparison with libcurl</a><br>
 
-<ul>
+<ul><li>
   <i>"The Windows Internet (WinINet) application programming interface (API)
   enables applications to interact with Gopher, FTP, and HTTP protocols to
   access Internet resources."</i>
-</ul>
+</li></ul>
 
 <b><a href="https://msdn.microsoft.com/library/en-us/xmlsdk30/htm/xmobjxmlhttprequest.asp">XMLHTTP Object</a></b> also known as IXMLHTTPRequest (part of MSXML 3.0)<br>
-<ul>
+<ul><li>
  (Windows) Provides client-side protocol support for communication with HTTP
  servers. A client computer can use the XMLHTTP object to send an arbitrary
  HTTP request, receive the response, and have the Microsoft® XML Document
  Object Model (DOM) parse that response.
-</ul>
+</li></ul>
 
 <p>
  Have <b>you</b> tried programming with one of the other libs and care share
 your experiences? We'd love to make this collection more complete and feature
 lengthier comments about each lib.
+</p>
 
 #include "_footer.html"
 
