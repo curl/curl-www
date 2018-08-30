@@ -19,7 +19,7 @@ sub head {
     }
     print "<tr class=\"tabletop\"><th rowspan=2>#</th><th rowspan=2>Version</th>";
     printf("<th rowspan=2>Date</th><th rowspan=2>Since %s</th><th colspan=3>Delta</th><th colspan=4>Accumulated</th></tr>\n", $releases[0]);
-    print "<tr class=\"tabletop\"><th>Days</th><th>Bugfixes</th><th>Changes</th><th>Days</th><th>Bugfixes</th><th>Changes</th><th>Vulns</a></tr>\n";
+    print "<tr class=\"tabletop\"><th>Days</th><th>Bugfixes</th><th>Changes</th><th>Days</th><th>Bugfixes</th><th>Changes</th><th>Vulns</th></tr>\n";
 }
 
 my $l;
@@ -94,7 +94,7 @@ for my $str (@releases) {
         # store the first date
         $prevsecs = $datesecs;
         $prevdays = 0;
-        $age=$raw?"0":"&dash;";
+        $age=$raw?"0":"&ndash;";
     }
     $since{$str}=$age;
     $delta{$str}=$deltadays;
