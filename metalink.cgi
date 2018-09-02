@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 # Generate a metalink download file
-# See http://www.metalinker.org/
+# See https://www.metalinker.org/
 # Based on latest.cgi
 # by Dan Fandrich
 

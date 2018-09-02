@@ -308,7 +308,7 @@ print <<MOO
 This service automatically and frequently scans through known <a
 href="/mirror/">mirrors</a> and builds links to the latest versions of
 many different curl archives. This page is fine to bookmark!
-The above <a href="http://www.metalinker.org/">Metalink</a> lets you download
+The above <a href="https://www.metalinker.org/">Metalink</a> lets you download
 this file faster by downloading from several of these mirrors simultaneously,
 using the appropriate software.
 
