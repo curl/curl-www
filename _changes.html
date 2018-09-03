@@ -383,7 +383,7 @@ SUBTITLE(Fixed in 7.58.0 - January 24 2018)
  BGF libssh2: return CURLE_UPLOAD_FAILED on failure to upload
  BGF <a href="https://curl.haxx.se/bug/?i=2134">openssl: enable pkcs12 in boringssl builds</a>
  BGF <a href="https://curl.haxx.se/bug/?i=2143">libssh2: remove dead code from SSH_SFTP_QUOTE</a>
- BGF <a href="https://curl.haxx.se/bug/?i=2150">sasl_getmesssage: make sure we have a long enough string to pass</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2150">sasl_getmessage: make sure we have a long enough string to pass</a>
  BGF <a href="https://curl.haxx.se/bug/?i=2132">conncache: fix several lock issues</a>
  BGF threaded-shared-conn.c: new example
  BGF <a href="https://curl.haxx.se/bug/?i=2152">conncache: only allow multiplexing within same multi handle</a>
@@ -412,7 +412,7 @@ SUBTITLE(Fixed in 7.58.0 - January 24 2018)
  BGF <a href="https://curl.haxx.se/bug/?i=2171">vtls: replaced getenv() with curl_getenv()</a>
  BGF <a href="https://curl.haxx.se/bug/?i=2173">setopt: less *or equal* than INT_MAX/1000 should be fine</a>
  BGF examples/smtp-mail.c: use separate defines for options and mail
- BGF <a href="https://curl.haxx.se/bug/?i=2174">curl: support >256 bytes warning messsages</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2174">curl: support >256 bytes warning messages</a>
  BGF conncache: fix a return code
  BGF krb5: fix a potential access of uninitialized memory
  BGF rand: add a clang-analyzer work-around
@@ -504,7 +504,7 @@ SUBTITLE(Fixed in 7.57.0 - November 29 2017)
  BGF <a href="https://github.com/curl/curl/commit/f121575#commitcomment-25347120">url: remove faulty arg value check from CURLOPT_SSH_AUTH_TYPES</a>
  BGF <a href="https://curl.haxx.se/bug/?i=2002">HTTP: support multiple Content-Encodings</a>
  BGF travis: add a job with brotli enabled
- BGF url: remove unncessary NULL-check
+ BGF url: remove unnecessary NULL-check
  BGF fnmatch: remove dead code
  BGF <a href="https://curl.haxx.se/bug/?i=2053">connect: store IPv6 connection status after valid connection</a>
  BGF <a href="https://curl.haxx.se/bug/?i=2061">imap: deal with commands case insensitively</a>
@@ -535,7 +535,7 @@ SUBTITLE(Fixed in 7.57.0 - November 29 2017)
  BGF <a href="https://curl.haxx.se/bug/?i=2109">metalink: fix memory-leak and NULL pointer dereference</a>
  BGF <a href="https://curl.haxx.se/bug/?i=2110">URL: update "file:" URL handling</a>
  BGF <a href="https://curl.haxx.se/bug/?i=2111">ssh: remove check for a NULL pointer</a>
- BGF <a href="https://curl.haxx.se/bug/?i=2083">global_init: ignore CURL_GLOBAL_SSL's absense</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2083">global_init: ignore CURL_GLOBAL_SSL's absence</a>
 </ul>
 
 <a name="7_56_1"></a>
@@ -816,7 +816,7 @@ SUBTITLE(Fixed in 7.55.0 - August 9 2017)
  BGF <a href="https://curl.haxx.se/bug/?i=1645">test1452: add telnet negotiation</a>
  BGF CURLOPT_POSTFIELDS.3: explain the 100-continue magic better
  BGF <a href="https://curl.haxx.se/bug/?i=1649">cmake: offer CMAKE_DEBUG_POSTFIX when building with MSVC</a>
- BGF <a href="https://curl.haxx.se/bug/?i=1653">tests/valgrind.supp: supress OpenSSL false positive seen on travis</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1653">tests/valgrind.supp: suppress OpenSSL false positive seen on travis</a>
  BGF <a href="https://curl.haxx.se/bug/?i=1589">curl_setup_once: Remove ERRNO/SET_ERRNO macros</a>
  BGF <a href="https://curl.haxx.se/bug/?i=1665">curl-compilers.m4: disable warning spam with Cygwin's clang</a>
  BGF <a href="https://curl.haxx.se/bug/?i=1664">ldap: fix MinGW compiler warning</a>
@@ -1111,7 +1111,7 @@ SUBTITLE(Fixed in 7.54.0 - April 19 2017)
  BGF <a href="https://curl.haxx.se/bug/?i=1422">extern-scan.pl: strip trailing CR</a>
  BGF <a href="https://curl.haxx.se/bug/?i=1424">openssl: make SSL_ERROR_to_str more future-proof</a>
  BGF <a href="https://curl.haxx.se/bug/?i=1424">openssl: fix thread-safety bugs in error-handling</a>
- BGF <a href="https://curl.haxx.se/bug/?i=1425">openssl: don't try to print nonexistant peer private keys</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1425">openssl: don't try to print nonexistent peer private keys</a>
  BGF <a href="https://curl.haxx.se/bug/?i=1393">nss: fix MinGW compiler warnings</a>
 </ul>
 
@@ -1612,7 +1612,7 @@ SUBTITLE(Fixed in 7.49.0 - May 18 2016)
  BGF PolarSSL: implement public key pinning
  BGF <a href="https://curl.haxx.se/mail/lib-2016-04/0084.html">multi: accidentally used resolved host name instead of proxy</a>
  BGF CURLINFO_TLS_SESSION.3: clarify TLS library support before 7.48.0
- BGF <a href="https://curl.haxx.se/bug/?i=655">CONNECT_ONLY: don't close connection on GSS 401/407 reponses</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=655">CONNECT_ONLY: don't close connection on GSS 401/407 responses</a>
  BGF <a href="https://curl.haxx.se/bug/?i=779">opts: Fix some syntax errors in example code fragments</a>
  BGF <a href="https://curl.haxx.se/mail/lib-2016-04/0095.html">mbedtls: Fix session resume</a>
  BGF test1139: verifies libcurl option man page presence
@@ -1846,7 +1846,7 @@ SUBTITLE(Fixed in 7.46.0 - December 2 2015)
  BGF test1531: case the size to fix the test on non-largefile builds
  BGF <a href="https://curl.haxx.se/bug/?i=346">fread_func: move callback pointer from set to state struct</a>
  BGF test1601: fix compilation with --enable-debug and --disable-crypto-auth
- BGF <a href="https://curl.haxx.se/bug/?i=493">http2: Don't pass unitialized name+len pairs to nghttp2_submit_request</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=493">http2: Don't pass uninitialized name+len pairs to nghttp2_submit_request</a>
  BGF curlbuild.h: Fix non-configure compiling to mips and sh4 targets
  BGF <a href="https://curl.haxx.se/bug/?i=452">tool: Generate easysrc with last cache linked-list</a>
  BGF cmake: Fix for add_subdirectory(curl) use-case
@@ -2215,7 +2215,7 @@ SUBTITLE(Fixed in 7.42.0 - April 22 2015)
  BGF <a href="https://curl.haxx.se/bug/view.cgi?id=1491">http: always send Host: header as first header</a>
  BGF <a href="https://curl.haxx.se/bug/view.cgi?id=1487">openssl: sort ciphers to use based on strength</a>
  BGF openssl: use colons properly in the ciphers list
- BGF <a href="https://curl.haxx.se/bug/?i=166">http2: detect premature close without data transfered</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=166">http2: detect premature close without data transferred</a>
  BGF hostip: Fix signal race in Curl_resolv_timeout
  BGF <a href="https://curl.haxx.se/bug/view.cgi?id=1493">closesocket: call multi socket cb on close even with custom close</a>
  BGF mksymbolsmanpage.pl: use std header and generate better nroff header
@@ -2569,7 +2569,7 @@ SUBTITLE(Fixed in 7.39.0 - November 5 2014)
  BGF cmake: add SUPPORT_FEATURES and SUPPORT_PROTOCOLS
  BGF cmake: use LIBCURL_VERSION from curlver.h
  BGF cmake: generate pkg-config and curl-config
- BGF fixed several superfluous variable assignements identified by cppcheck
+ BGF fixed several superfluous variable assignments identified by cppcheck
  BGF cleanup of 'CURLcode result' return code
  BGF pipelining: only output "is not blacklisted" in debug builds
  BGF SSL: Remove SSLv3 from SSL default due to POODLE attack
@@ -2752,7 +2752,7 @@ SUBTITLE(Fixed in 7.37.0 - May 21 2014)
  CHG CURLOPT_HEADEROPT: added
  CHG curl: add --proxy-header
  CHG sasl: Added support for DIGEST-MD5 via Windows SSPI
- CHG sasl: Added DIGEST-MD5 qop-option validation in native challange handling
+ CHG sasl: Added DIGEST-MD5 qop-option validation in native challenge handling
  CHG <a href="https://curl.haxx.se/mail/lib-2014-04/0067.html">imap: Expanded mailbox SEARCH support to use URL query strings</a>
  CHG <a href="https://curl.haxx.se/mail/lib-2014-04/0067.html">imap: Extended FETCH support to include PARTIAL URL specifier</a>
  CHG nss: implement non-blocking SSL handshake
@@ -3700,7 +3700,7 @@ SUBTITLE(Fixed in 7.22.0 - September 13 2011)
  CHG OpenSSL: Use SSL_MODE_RELEASE_BUFFERS if available
  CHG --delegation was added to set CURLOPT_GSSAPI_DELEGATION
  CHG nss: start with no database if the selected database is broken
- CHG telnet: allow programatic use on Windows
+ CHG telnet: allow programmatic use on Windows
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
@@ -4086,7 +4086,7 @@ SUBTITLE(Fixed in 7.20.1 - April 14 2010)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF VMS builder bad behavior when used in a batch job
- BGF multiple recepients with SMTP
+ BGF multiple recipients with SMTP
  BGF fixed the CURL_FORMAT_* defines when building with cmake
  BGF missing quote in libcurl.m4
  BGF SMTP: now waits for 250 after the DATA transfer
@@ -4793,7 +4793,7 @@ SUBTITLE(Fixed in 7.16.3 - June 25 2007)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF if2up too long interface name memory leak
- BGF test case 534 started to fail 2007-04-13 due to the existance of a
+ BGF test case 534 started to fail 2007-04-13 due to the existence of a
    new host on the net with the same silly domain the test was using
    for a host which was supposed not to exist.
  BGF test suite SSL certificate works better with newer stunnel
@@ -4949,7 +4949,7 @@ SUBTITLE(Fixed in 7.16.0 - October 30 2006)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF (HTTP) CURLOPT_FAILONERROR (curl -f) covers a few more reponse cases
+ BGF (HTTP) CURLOPT_FAILONERROR (curl -f) covers a few more response cases
  BGF curl_multi_socket() and the LOW_SPEED options
  BGF curl_multi_socket() expire timer during c-ares name resolves
  BGF curl_multi_add_handle on an already added handle now fails gracefully
@@ -5633,7 +5633,7 @@ SUBTITLE(Fixed in 7.11.1 - March 19 2004)
  BGF upload using chunked transfer-encoding now sends the last chunk properly
    teriminated with an extra CRLF
  BGF Fixed the progress meter display for files >2GB
- BGF persistant connections over a proxy messed up the proxy name/password
+ BGF persistent connections over a proxy messed up the proxy name/password
  BGF the socks5 code segfaulted if no username/password was set
  BGF the *_LARGE options now take curl_off_t types as parameters and this will
    make it possible to handle large files on windows too
@@ -5677,11 +5677,11 @@ SUBTITLE(Fixed in 7.11.0 - January 22 2004)
  BGF resolve bug caused socks5 to fail
  BGF Content-Length: is ignored when getting chunked Transfer-Encoding
  BGF POST over proxy to https server failed
- BGF improved how libcurl deals with persistant connections over FTP when a
+ BGF improved how libcurl deals with persistent connections over FTP when a
    transfer fails
  BGF accessing a proxy that requires Basic auth without password caused a hang
  BGF a free free-twice problem in the server certificate code
- BGF minor memory leak when using ranges on persistant connections
+ BGF minor memory leak when using ranges on persistent connections
  BGF formpost parts sending files with .html extensions now use "Content-Type:
    text/html"
  BGF formpost parts now default to "Content-Type: application/octet-stream"
@@ -5717,12 +5717,12 @@ SUBTITLE(Fixed in 7.10.8 - November 1 2003)
  CHG SPNEGO support added, if libcurl is built with the FBopenssl libraries,
    curl_version_info() can return a feature bit for it and curl -V displays
    SPNEGO as a feature if libcurl is built with it enabled
- CHG easy handles added to a multi handle now share DNS cache automaticly
+ CHG easy handles added to a multi handle now share DNS cache automatically
  CHG CURLINFO_HTTPAUTH_AVAIL and CURLINFO_PROXYAUTH_AVAIL were added
  CHG CURLOPT_FTP_RESPONSE_TIMEOUT was added
  CHG NTLM, Digest and GSS-Negotiate authentications also work for HTTPS over
    proxies
- CHG curl supports multiple -T flags to allow serveral uploaded files using
+ CHG curl supports multiple -T flags to allow several uploaded files using
    a single command line
  CHG CURLINFO_RESPONSE_CODE can return the last FTP response code
 </ul>
@@ -5783,7 +5783,7 @@ SUBTITLE(Fixed in 7.10.7 - August 15 2003)
  CHG --ftp-create-dirs and CURLOPT_FTP_CREATE_MISSING_DIRS were added
  CHG optional and still experimetal asynch name resolve support
  CHG getting headers-only and no-body from FTP can now reply "Accept-Ranges"
-   if the server seems to suppport REST.
+   if the server seems to support REST.
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
@@ -5860,7 +5860,7 @@ SUBTITLE(Fixed in 7.10.5 - May 19 2003)
  CHG support for Content-Encoding: gzip was added
  CHG test cases modified to include server requirement in each test case file
  CHG CURLOPT_FTP_USE_EPRT was added, --disable-eprt with the tool
- CHG setting CURLOPT_ENCODING to "" automaticly enables all supported encodings
+ CHG setting CURLOPT_ENCODING to "" automatically enables all supported encodings
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
@@ -5996,7 +5996,7 @@ SUBTITLE(Fixed in 7.10.2 - November 18 2002)
  BGF the follow location code could crash occasionally
  BGF multi interface and FOLLOWLOCATION didn't work properly
  BGF curl -j (CURLOPT_COOKIESESSION) didn't work properly
- BGF config file parser could crash on the presense of CRLF newlines
+ BGF config file parser could crash on the presence of CRLF newlines
  BGF downloading HTTP without headers sometimes corrupted the data
  BGF connecting to a bad port number with the multi interface did wrong
 </ul>
@@ -6131,7 +6131,7 @@ SUBTITLE(Fixed in 7.9.6 - April 14 2002)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF libcurl skips preceeding white spaces in cookie contents
+ BGF libcurl skips preceding white spaces in cookie contents
  BGF CURLINFO_CONNECT_TIME is now set even when connect fails
  BGF -x didn't use the documented default port
  BGF RISC OS version now offers --environment
@@ -6197,7 +6197,7 @@ SUBTITLE(Fixed in 7.9.4 - March 4 2002)
  BGF curl_getdate() is now fully reentrant
  BGF The header length counter is now reset in each curl_easy_perform()
  BGF Normal HTTP POSTs no longer append an extra set of CRLF
- BGF Location: following on persistant connections work
+ BGF Location: following on persistent connections work
  BGF No longer installs the multi examples on make install.
 </ul>
 
@@ -6239,7 +6239,7 @@ SUBTITLE(Fixed in 7.9.2 - December 5 2001)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF compiles and builds on the good old Mac OS (in addition to Mac OS X)
- BGF bugfixed persistant connections over proxy with multiple protocols
+ BGF bugfixed persistent connections over proxy with multiple protocols
  BGF bugfixed verbose ftp output on Tru64 unix
  BGF passive ftp download works with IPv6
  BGF always return proper error code on failed connects
@@ -6526,7 +6526,7 @@ SUBTITLE(Fixed in 7.5 - December 1 2000)
 <ul class="bugfixes">
  BGF the shared libcurl library gets a proper version number now
  BGF the MSVC++ makefiles are updated to work
- BGF the test suite is much extened and enhanced
+ BGF the test suite is much extended and enhanced
  BGF supports any URL lengths
  BGF ftp CWD could use wrong directory name (with trailing slash)
  BGF ftp transfer failure could leak memory
@@ -6556,7 +6556,7 @@ SUBTITLE(Fixed in 7.4.2 - November 15 2000)
  BGF ftp --head now sets type first, as some servers report different sizes for different types
  BGF ftp upload resume could hang if the whole file was already uploaded
  BGF another cookie parser fix
- BGF added possibilty to replace the internal 'enter password' function (libcurl)
+ BGF added possibility to replace the internal 'enter password' function (libcurl)
  BGF encoded username/password in URL is now supported
  BGF username in http-URL bugfix
  BGF fixed the timers when location: headers were followed
@@ -6666,7 +6666,7 @@ SUBTITLE(Fixed in 7.1 - August 7 2000)
   Location: is followed to another host
  BGF FTP command response reading now times out properly, even on win32
  BGF rfc1867 form-posting was extended for use with large text posts
- BGF FTP transfering (converted) ASCII could make curl wrongly believe the
+ BGF FTP transferring (converted) ASCII could make curl wrongly believe the
   transfer was only partial, there is no way can tell the expected size of
   a file downloaded in FTP ASCII
  BGF various manual corrections
