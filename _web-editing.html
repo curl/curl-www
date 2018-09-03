@@ -12,62 +12,79 @@ TITLE(Web Site Editing Guidelines)
  <b>This document is intended for the curl web site editors only.</b>
 
 <p>
- You need an account on sourceforge.net and that account needs to be a member
- in project curl. You check out the entire curl web site with:
+ Check out the entire curl web site with:
 <pre>
-cvs -d:ext:[user]@cvs.curl.sourceforge.net:/cvsroot/curl checkout www
+  git clone https://github.com/curl/curl-www.git
 </pre>
 
 <p>
- When you've checked out the web pages from CVS, there's a file named
- 'CVS-README' present which contains some hard technical facts about
- things. Read that first.
+  On the first checkout, run the bootstrap script:
+<pre>
+  sh bootstrap.sh
+</pre>
 
 <p>
- To think of:
-<ul>
- <li> The pages are preprocessed before they are finalized. The preprocessor
-      is a simple C-style one, but please take care so that #if and #ifdefs
-      have an ending #endif and so on.
+  <a href="https://github.com/curl/curl-www">web site github repo</a>
 
- <li> The web site is updated from CVS every 20 minutes. Even if you fix a
-      mistake, it will stay that way at least until next update.  Don't panic!
+SUBTITLE(To think of)
+<p> The pages are preprocessed before they are finalized. The preprocessor
+  is a simple C-style one, but please take care so that #if and #ifdefs
+  have an ending #endif and so on.
 
- <li> The same contents appear on several different hosts, with one main site.
-      Include the host name 'curl.haxx.se' only when linking to pages/contents
-      that are not mirrored. See list below.
-</ul>
+<p> The web site contents is updated automatically from git every 20
+  minutes. Even if you fix a mistake, it will stay that way at least until
+  next update.  Don't panic!
 
+<p> The site is hosted by CDN front-ends that fetch content from the master
+  server and cache it. It makes some updates to the content to take a while
+  until truly visible to end users.
+
+SUBTITLE(What to edit/update)
+<p> Add news items whenever you have interesting "news" you think the curl
+  community might enjoy. The news section also serves a purpose of making it
+  apparent that the site is living. Try to follow the tradition and style of
+  previous news items. Note the use of the macros.
+
+<p> The download page is maintained at <a href="/dl">dl</a> and needs
+  special access rights.
+
+<p> Edit bad language use, bad spelling or confusing use of words.
+
+<p> If the problem is in a page out of control from the web site, chances
+  are that the page is generated automatically from a file in the source code
+  archive and then <i>that</i> file could be corrected instead.
+
+SUBTITLE(Build prerequisites)
 <p>
- What to edit/update?
-<ul>
- <li> Add news items whenever you have interesting "news" you think the curl
-      community might enjoy. The news section also serves a purpose of making
-      it apparent that the site is living. Try to follow the tradition and
-      style of previous news items. Note the use of the macros.
+  The web site is a on old custom made setup that mostly builds static HTML
+  files from a set of source files. The sources files are preprocessed with
+  what is basically a souped-up C preprocessor
+  called <a href="https://daniel.haxx.se/projects/fcpp/">fcpp</a> and a set of
+  perl scripts. The man pages get converted to HTML
+  with <a href="https://daniel.haxx.se/projects/roffit/">roffit</a>. Make sure
+  fcpp, perl, roffit, make and curl are all in your $PATH. Markdown files are
+  converted
+  by... <a href="http://daringfireball.net/projects/markdown/">markdown</a>
+  (<tt>apt install markdown</tt>).
 
- <li> Try to keep the download page up-to-date. If new versions of packages
-      mentioned on the site is available, try to make the page reflect that
-      fact. Do note the use of the 'TRCURRENT' and 'TRNCURRENT' (N is for NOT)
-      macros.
+SUBTITLE(Build process)
+<p>
+  Once you've cloned the git repo the first time, invoke `sh bootstrap.sh` once
+  to get a symlink and some some initial local files setup, and then you can
+  build the web site locally by invoking make in the source root tree.
+<p>
+  Note that this doesn't make you a complete web site mirror, as some scripts
+  and files are only available on the real actual site, but should give you
+  enough to let you load most HTML pages locally.
 
- <li> Edit bad language use, bad spelling or confusing use of words.
-
- <li> If the problem is in a page out of control from the web site, chances are
-      that the page is generated automatically from a file in the source code
-      archive and then <i>that</i> file could be corrected instead.
-</ul>
-
+SUBTITLE(Not in the git repo)
 <p>
  Site content that is not mirrored and thus only available from <a
  href="//curl.haxx.se/">curl.haxx.se</a>:
 <ul>
 <li> <tt>/mail/</tt> Mailing list archives
 <li> <tt>/download/</tt> Curl release archives/packages
-<li> <tt>/beta/</tt> Curl pre-releases and beta archives
-<li> <tt>/search/</tt> Site content search 
 <li> <tt>/latest.cgi</tt> script for display curl archive status on mirrors
-<li> <tt>/dev/</tt> development notes
 </ul>
 
 #include "_footer.html"

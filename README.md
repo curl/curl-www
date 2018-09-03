@@ -20,3 +20,7 @@ build the web site locally by invoking make in the source root tree.
 Note that this doesn't make you a complete web site mirror, as some scripts
 and files are only available on the real actual site, but should give you
 enough to let you load most HTML pages locally.
+
+# Edit the web
+
+[Web editing guidelines](https://curl.haxx.se/web-editing.html)
