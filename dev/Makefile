@@ -13,7 +13,7 @@ MAINPARTS += _menu.html
 MKRELNOTES = ./mk-release-notes.pl
 MAN2HTML = roffit --bare
 
-PAGES = foot.html head.html howto.html summary.html cvshistory.html	\
+PAGES = foot.html head.html howto.html summary.html \
 	missing.html keywords.html builds.html release-notes.html	\
 	index.html contribute.html internals.html testcurl.html		\
 	runtests.html source.html secprocess.html roadmap.html		\
@@ -81,10 +81,7 @@ head.html: _head.html $(MAINPARTS)
 summary.html: _summary.html $(MAINPARTS) summary.t
 	$(ACTION)
 
-cvshistory.html: _sourceactivity.html $(MAINPARTS) cvs.t
-	$(ACTION)
-
-sourceactivity.html: _sourceactivity.html $(MAINPARTS) cvs.t
+sourceactivity.html: _sourceactivity.html $(MAINPARTS)
 	$(ACTION)
 
 missing.html: _missing.html $(MAINPARTS)

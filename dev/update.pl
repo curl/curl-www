@@ -52,11 +52,6 @@ if($new) {
     system("./summarize.pl");
 }
 
-# get latest cvs data
-my $cwd=`pwd`; 
-chomp $cwd;
-system("$cwd/last5commits.pl > $cwd/cvs.t");
-
 chdir "tests";
 system("./keywords.pl > $cwd/keywords.t 2>/dev/null");
 chdir "$cwd";
