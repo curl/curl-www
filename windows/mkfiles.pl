@@ -97,8 +97,8 @@ my $dl = latest();
 my @files = getdl($dl);
 for(@files) {
     my $file = $_;
-    if($file =~ /^curl-([0-9.]*_[0-9]*)-(\S+)-(\S+)\.(\S+)/) {
-        my ($version, $arch, $env, $ext)=($1, $2, $3, $4);
+    if($file =~ /^curl-([0-9.]*(|_[0-9]*))-(\S+)-(\S+)\.(zip)/) {
+        my ($version, $arch, $env, $ext)=($1, $3, $4, $5);
         $exts{$version}.="$ext,";
         $archs{$version.$ext}.="$arch,";
         $allext{$ext}++;
@@ -135,11 +135,16 @@ for my $version (reverse sort @versions) {
 }
 depversions($dl);
 
+my $gensuff="";
+if($gen) {
+    $gensuff = sprintf "_%d", $gen;
+}
+
 # generate downlowd links for deps
 for(@alldeps) {
     for my $arch ('win32', 'win64') {
-        printf "#define DL_%s_%s %s/%s-%s_%d-%s-mingw.zip\n",
-        uc($_), uc($arch), $dl, $_, $depver{$_}, $gen, $arch;
+        printf "#define DL_%s_%s %s/%s-%s%s-%s-mingw.zip\n",
+        uc($_), uc($arch), $dl, $_, $depver{$_}, $gensuff, $arch;
     }
 }
 
