@@ -55,7 +55,8 @@ PAGES = index.html example.html curl_easy_init.html curl_easy_cleanup.html    \
  curl_multi_socket_action.html curl_multi_wait.html $(EXAMPLES) $(opts)	      \
  easy_setopt_options.html easy_getinfo_options.html multi_setopt_options.html \
  allexamples.zip options-in-examples.html symbols-in-versions.html	      \
- threadsafe.html curl_global_sslset.html libcurl-env.html $(MIME)
+ threadsafe.html curl_global_sslset.html libcurl-env.html $(MIME) 	      \
+ curl_easy_upkeep.html
 
 all: $(PAGES)
 
@@ -175,6 +176,11 @@ curl_easy_escape.t: $(MANROOT)/curl_easy_escape.3
 curl_easy_unescape.html: _curl_easy_unescape.html $(MAINPARTS) curl_easy_unescape.t
 	$(ACTION)
 curl_easy_unescape.t: $(MANROOT)/curl_easy_unescape.3
+	$(MAN2HTML) < $< >$@
+
+curl_easy_upkeep.html: _curl_easy_upkeep.html $(MAINPARTS) curl_easy_upkeep.t
+	$(ACTION)
+curl_easy_upkeep.t: $(MANROOT)/curl_easy_upkeep.3
 	$(MAN2HTML) < $< >$@
 
 curl_getenv.html: _curl_getenv.html $(MAINPARTS) curl_getenv.t
