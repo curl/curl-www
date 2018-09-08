@@ -35,6 +35,9 @@ MIME = curl_mime_init.html curl_mime_free.html curl_mime_addpart.html	\
  curl_mime_subparts.html curl_mime_type.html curl_mime_headers.html	\
  curl_mime_encoder.html
 
+URLAPI = curl_url.html curl_url_cleanup.html curl_url_dup.html	\
+ curl_url_get.html curl_url_set.html
+
 PAGES = index.html example.html curl_easy_init.html curl_easy_cleanup.html    \
  curl_easy_setopt.html curl_easy_perform.html curl_version.html		      \
  curl_version_info.html curl_getenv.html curl_free.html			      \
@@ -56,7 +59,7 @@ PAGES = index.html example.html curl_easy_init.html curl_easy_cleanup.html    \
  easy_setopt_options.html easy_getinfo_options.html multi_setopt_options.html \
  allexamples.zip options-in-examples.html symbols-in-versions.html	      \
  threadsafe.html curl_global_sslset.html libcurl-env.html $(MIME) 	      \
- curl_easy_upkeep.html
+ curl_easy_upkeep.html $(URLAPI)
 
 all: $(PAGES)
 
@@ -466,6 +469,31 @@ curl_mime_headers.gen: $(MANROOT)/curl_mime_headers.3
 curl_mime_encoder.html: _curl_mime_encoder.html $(MAINPARTS) curl_mime_encoder.gen
 	$(ACTION)
 curl_mime_encoder.gen: $(MANROOT)/curl_mime_encoder.3
+	$(MAN2HTML) < $< >$@
+
+curl_url.html: _curl_url.html $(MAINPARTS) curl_url.gen
+	$(ACTION)
+curl_url.gen: $(MANROOT)/curl_url.3
+	$(MAN2HTML) < $< >$@
+
+curl_url_cleanup.html: _curl_url_cleanup.html $(MAINPARTS) curl_url_cleanup.gen
+	$(ACTION)
+curl_url_cleanup.gen: $(MANROOT)/curl_url_cleanup.3
+	$(MAN2HTML) < $< >$@
+
+curl_url_dup.html: _curl_url_dup.html $(MAINPARTS) curl_url_dup.gen
+	$(ACTION)
+curl_url_dup.gen: $(MANROOT)/curl_url_dup.3
+	$(MAN2HTML) < $< >$@
+
+curl_url_get.html: _curl_url_get.html $(MAINPARTS) curl_url_get.gen
+	$(ACTION)
+curl_url_get.gen: $(MANROOT)/curl_url_get.3
+	$(MAN2HTML) < $< >$@
+
+curl_url_set.html: _curl_url_set.html $(MAINPARTS) curl_url_set.gen
+	$(ACTION)
+curl_url_set.gen: $(MANROOT)/curl_url_set.3
 	$(MAN2HTML) < $< >$@
 
 include Makefile.examples
