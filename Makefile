@@ -24,7 +24,7 @@ FCPP_OPTS = -DSHOW_ALERT
 PAGES= index.html mirrors.html libs.html help.html download.html changes.html \
  about.html support.html newslog.html news.html head.html foot.html	      \
  oldnews.html info web-editing.html donation.html search.html sponsors.html   \
- source.html 404.html
+ source.html 404.html book.html
 
 all: $(PAGES)
 	cd ca && make
@@ -44,9 +44,6 @@ head.html: _head.html $(MAINPARTS)
 	$(ACTION)
 
 donation.html: _donation.html docs/_menu.html $(MAINPARTS)
-	$(ACTION)
-
-version7.html: _version7.html $(MAINPARTS)
 	$(ACTION)
 
 search.html: _search.html $(MAINPARTS) sitesearch.t
@@ -109,6 +106,9 @@ source.html: _source.html $(MAINPARTS)
 	$(ACTION)
 
 help.html: _help.html $(MAINPARTS)
+	$(ACTION)
+
+book.html: _book.html $(MAINPARTS)
 	$(ACTION)
 
 mirrors.html: _mirrors.html $(MAINPARTS)
