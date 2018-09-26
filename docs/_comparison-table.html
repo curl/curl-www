@@ -18,7 +18,7 @@ WHERE3(Docs, "/docs/",
 Tool Documentation, "/docs/tooldocs.html",
 Comparison Table)
 
-TITLE(Compare curl Features with Other Download Tools)
+TITLE(Compare curl with other download tools)
 <div class="relatedbox">
 <b>Related:</b>
 <br><a href="features.html">List of Features</a>
@@ -29,7 +29,7 @@ TITLE(Compare curl Features with Other Download Tools)
 </div>
 
 <p> This comparison only involves entirely free and open source
- software that supports both FTP and HTTP transfers.
+ software.
 
 #define YES <td class="yes">yes</td>
 #define no_ <td class="no">no</td>
@@ -57,246 +57,261 @@ TITLE(Compare curl Features with Other Download Tools)
   NICETD curl NICETDEND
   NICETD snarf NICETDEND
   NICETD wget NICETDEND
+  NICETD wget2 NICETDEND
   NICETD pavuk NICETDEND
   NICETD fget NICETDEND
   NICETD fetch NICETDEND
   NICETD lftp NICETDEND
   NICETD aria2 NICETDEND
   NICETD HTTrack NICETDEND
+  NICETD HTTPie NICETDEND
  ENDLINE
  </thead>
 
  <tbody>
   FEAT Multiple URLs ENDFEAT
 
-  YES YES YES YES no_ YES no_ YES no_ ENDLINE
+  YES YES YES YES YES no_ YES no_ YES no_ no_ ENDLINE
 
-  FEAT Parallel Downloads ENDFEAT
+  FEAT Parallel transfers ENDFEAT
 
-  no__P no_ no_ YES no_ no_ YES YES YES  ENDLINE
+  no__P no_ no_ no_ YES no_ no_ YES YES YES no_ ENDLINE
 
   FEAT Username/Password ENDFEAT
 
-  YES YES YES YES YES YES YES YES YES ENDLINE
+  YES YES YES YES YES YES YES YES YES YES YES ENDLINE
 
-  FEAT IPv6 Support ENDFEAT
+  FEAT IPv6 ENDFEAT
 
-  YES no_ YES YES YES YES YES YES_P YES ENDLINE
+  YES no_ YES YES YES YES YES YES YES_P YES YES ENDLINE
 
-  FEAT Recursive Download ENDFEAT
+  FEAT Recursive downloads ENDFEAT
 
-  no_ no_ YES YES no_ no_ YES no_ YES ENDLINE
+  no_ no_ YES YES YES no_ no_ YES no_ YES no_ ENDLINE
 
-  FEAT Retry Failed Download ENDFEAT
+  FEAT Retry failed downloads ENDFEAT
 
-  YES no_ YES YES no_ YES YES YES YES ENDLINE
+  YES no_ YES YES YES no_ YES YES YES YES no_ ENDLINE
 
-  FEAT URL Globbing/Sequences ENDFEAT
+  FEAT URL globbing/sequences ENDFEAT
 
-  YES no_ YES YES no_ no_ no_ YES no_ ENDLINE
+  YES no_ YES YES YES no_ no_ no_ YES no_ no_ ENDLINE
 
   FEAT Tiny Executable ENDFEAT
 
-  no_ YES no_ no_ YES YES no_ no_ no_ ENDLINE
+  no_ YES no_ no_ no_ YES YES no_ no_ no_ no_ ENDLINE
 
   FEAT Native Win32 Port ENDFEAT
 
-  YES no_ YES no_ no_ no_ no_ YES YES ENDLINE
+  YES no_ YES YES no_ no_ no_ no_ YES YES YES_P ENDLINE
 
-  FEAT Large File Support ENDFEAT
+  FEAT Large File support ENDFEAT
 
-  YES no_ YES no_ no_ YES YES YES no_ ENDLINE
+  YES no_ YES YES no_ no_ YES YES YES no_ YES ENDLINE
 
-  FEAT GnuTLS Support ENDFEAT
+  FEAT GnuTLS ENDFEAT
 
-  YES no_ YES no_ no_ no_ YES YES no_ ENDLINE
+  YES no_ YES YES no_ no_ no_ YES YES no_ YES_P ENDLINE
 
-  FEAT DarwinSSL Support ENDFEAT
+  FEAT DarwinSSL ENDFEAT
 
-  YES no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
+  YES no_ no_ no_ no_ no_ no_ no_ no_ no_ YES_P ENDLINE
 
-  FEAT Schannel Support ENDFEAT
+  FEAT Schannel ENDFEAT
 
-  YES no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
+  YES no_ no_ no_ no_ no_ no_ no_ no_ no_ YES_P ENDLINE
 
-  FEAT WolfSSL Support ENDFEAT
+  FEAT WolfSSL ENDFEAT
 
-  YES no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
+  YES no_ no_ no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
 
-  FEAT mbedTLS Support ENDFEAT
+  FEAT mbedTLS ENDFEAT
 
-  YES no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
+  YES no_ no_ no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
 
-  FEAT AxTLS Support ENDFEAT
+  FEAT NSS ENDFEAT
 
-  YES no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
+  YES no_ no_ no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
 
-  FEAT SSL Session ID Caching ENDFEAT
+  FEAT MesaLink ENDFEAT
 
-  YES no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
+  YES no_ no_ no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
 
-  FEAT SSL Private Certificates ENDFEAT
+  FEAT SSL Session ID caching ENDFEAT
 
-  YES no_ YES no_ no_ no_ no_ no_ no_ ENDLINE
+  YES no_ no_ YES no_ no_ no_ no_ no_ no_ no_ ENDLINE
 
-  FEAT .netrc Support ENDFEAT
+  FEAT SSL Client certificates ENDFEAT
 
-  YES no_ YES no_ no_ YES YES YES no_ ENDLINE
+  YES no_ YES YES no_ no_ no_ no_ no_ no_ no_ ENDLINE
 
-  FEAT <a href="http://metalinker.org/">Metalink</a> Support ENDFEAT
+  FEAT .netrc ENDFEAT
 
-  YES no_ YES no_ no_ no_ no_ YES no_ ENDLINE
+  YES no_ YES YES no_ no_ YES YES YES no_ no_ ENDLINE
 
-  FEAT IDN Support ENDFEAT
+  FEAT Metalink ENDFEAT
 
-  YES no_ YES no_ no_ no_ no_ no_ no_ ENDLINE
+  YES no_ YES YES no_ no_ no_ no_ YES no_ no_ ENDLINE
+
+  FEAT IDN hostnames ENDFEAT
+
+  YES no_ YES YES no_ no_ no_ no_ no_ no_ YES ENDLINE
 
   FEAT Multilingual Messages ENDFEAT
 
-  no_ no_ YES YES no_ no_ YES YES no_ ENDLINE
+  no_ no_ YES YES YES no_ no_ YES YES no_ no_ ENDLINE
 
   FEAT Bandwidth Limiting ENDFEAT
 
-  YES no_ YES YES no_ no_ YES YES YES ENDLINE
+  YES no_ YES YES YES no_ no_ YES YES YES no_ ENDLINE
 
   FEAT Happy Eyeballs ENDFEAT
 
-  YES no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
+  YES no_ no_ no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
 
   FEAT SOCKS ENDFEAT
 
-  YES YES YES YES no_ no_ YES no_ no_ ENDLINE
+  YES YES no_ no_ YES no_ no_ YES no_ no_ no_ ENDLINE
 
   FEAT TFTP ENDFEAT
 
-  YES no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
+  YES no_ no_ no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
 
   FEAT SCP upload/download ENDFEAT
 
-  YES no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
+  YES no_ no_ no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
 
   FEAT SFTP upload/download ENDFEAT
 
-  YES no_ no_ no_ no_ no_ YES no_ no_ ENDLINE
+  YES no_ no_ no_ no_ no_ no_ YES no_ no_ no_ ENDLINE
 
   FEAT HTTP Proxy ENDFEAT
 
-  YES YES YES YES YES YES YES YES YES ENDLINE
+  YES YES YES YES YES YES YES YES YES YES YES ENDLINE
 
   FEAT HTTPS Proxy ENDFEAT
 
-  YES no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
+  YES no_ no_ no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
 
   FEAT HTTP Resume ENDFEAT
 
-  YES YES YES YES no_ YES YES YES no_ ENDLINE
+  YES YES YES YES YES no_ YES YES YES no_ no_ ENDLINE
 
   FEAT HTTP Ranges ENDFEAT
 
-  YES no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
+  YES no_ no_ no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
 
   FEAT Follow HTTP Redirects ENDFEAT
 
-  YES YES YES YES no_ YES no_ YES no_ ENDLINE
+  YES YES YES YES YES no_ YES no_ YES no_ YES ENDLINE
 
   FEAT HTTP POST ENDFEAT
 
-  YES no_ YES YES no_ no_ YES no_ no_ ENDLINE
+  YES no_ YES YES YES no_ no_ YES no_ no_ YES ENDLINE
 
   FEAT HTTP POST Chunked ENDFEAT
 
-  YES no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
-
-  FEAT HTTP PUT ENDFEAT
-
-  YES no_ no_ no_ no_ no_ YES no_ no_ ENDLINE
-
-  FEAT Cookie Support ENDFEAT
-
-  YES no_ YES YES no_ no_ YES YES YES ENDLINE
-
-  FEAT HTTP 1.1 ENDFEAT
-
-  YES no_ YES YES no_ YES YES YES YES ENDLINE
-
-  FEAT HTTP 2 (plain-text Upgrade) ENDFEAT
-
-  YES no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
-
-  FEAT HTTP 2 (TLS ALPN) ENDFEAT
-
-  YES no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
-
-  FEAT HTTP 2 (TLS NPN) ENDFEAT
-
-  YES no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
-
-  FEAT HTTP Persistent Connections ENDFEAT
-
-  YES no_ YES YES no_ no_ YES YES no_ ENDLINE
-
-  FEAT HTTPS ENDFEAT
-
-  YES no_ YES YES no_ YES YES YES YES ENDLINE
-
-  FEAT HTTP Digest Auth ENDFEAT
-
-  YES no_ YES YES no_ YES no_ no_ no_ ENDLINE
-
-  FEAT HTTP NTLM Auth ENDFEAT
-
-  YES no_ YES YES no_ no_ no_ no_ no_ ENDLINE
-
-  FEAT HTTP Negotiate (SPNEGO) Auth ENDFEAT
-
-  YES no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
+  YES no_ no_ no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
 
   FEAT HTTP Multipart POST ENDFEAT
 
-  YES no_ no_ YES no_ no_ no_ no_ no_ ENDLINE
+  YES no_ no_ no_ YES no_ no_ no_ no_ no_ no_ ENDLINE
+
+  FEAT HTTP PUT ENDFEAT
+
+  YES no_ no_ no_ no_ no_ no_ YES no_ no_ no_ ENDLINE
+
+  FEAT Cookies ENDFEAT
+
+  YES no_ YES YES YES no_ no_ YES YES YES YES ENDLINE
+
+  FEAT HTTP/1.1 ENDFEAT
+
+  YES no_ YES YES YES no_ YES YES YES YES YES ENDLINE
+
+  FEAT HTTP/2 (plain-text Upgrade) ENDFEAT
+
+  YES no_ no_ YES no_ no_ no_ no_ no_ no_ no_ ENDLINE
+
+  FEAT HTTP/2 (TLS ALPN) ENDFEAT
+
+  YES no_ no_ YES no_ no_ no_ no_ no_ no_ no_ ENDLINE
+
+  FEAT HTTP/2 (TLS NPN) ENDFEAT
+
+  YES no_ no_ no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
+
+  FEAT HTTP Persistent Connections ENDFEAT
+
+  YES no_ YES YES YES no_ no_ YES YES no_ no_ ENDLINE
+
+  FEAT HTTPS ENDFEAT
+
+  YES no_ YES YES YES no_ YES YES YES YES YES ENDLINE
+
+  FEAT HSTS ENDFEAT
+
+  no_ no_ no_ YES no_ no_ no_ no_ no_ no_ no_ ENDLINE
+  
+  FEAT HTTP Digest Auth ENDFEAT
+
+  YES no_ YES YES YES no_ YES no_ no_ no_ YES ENDLINE
+
+  FEAT HTTP NTLM Auth ENDFEAT
+
+  YES no_ YES YES YES no_ no_ no_ no_ no_ YES ENDLINE
+
+  FEAT HTTP Negotiate (SPNEGO) Auth ENDFEAT
+
+  YES no_ no_ no_ no_ no_ no_ no_ no_ no_ YES ENDLINE
 
   FEAT HTTP deflate/gzip ENDFEAT
 
-  YES no_ no_ YES no_ no_ no_ YES YES ENDLINE
+  YES no_ no_ YES YES no_ no_ no_ YES YES YES ENDLINE
 
   FEAT FTP Resume ENDFEAT
 
-  YES YES YES YES no_ YES YES YES no_ ENDLINE
+  YES YES YES YES YES no_ YES YES YES no_ no_ ENDLINE
 
   FEAT FTP Ranges ENDFEAT
 
-  YES no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
+  YES no_ no_ no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
 
   FEAT FTP Active Mode ENDFEAT
 
-  YES YES YES YES no_ YES YES YES no_ ENDLINE
+  YES YES YES YES YES no_ YES YES YES no_ no_ ENDLINE
 
   FEAT FTP SSL ENDFEAT
 
-  YES no_ no_ YES no_ no_ YES no_ no_ ENDLINE
+  YES no_ no_ no_ YES no_ no_ YES no_ no_ no_ ENDLINE
 
   FEAT FTP Upload ENDFEAT
 
-  YES no_ no_ no_ no_ no_ YES no_ no_ ENDLINE
+  YES no_ no_ no_ no_ no_ no_ YES no_ no_ no_ ENDLINE
 
   FEAT FTP Kerberos ENDFEAT
 
-  YES no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
+  YES no_ no_ no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
 
   FEAT FTP Connection Re-use ENDFEAT
 
-  YES no_ no_ YES no_ YES YES YES no_ ENDLINE
+  YES no_ no_ no_ YES no_ YES YES YES no_ no_ ENDLINE
 
   FEAT FTP 3rd Party Transfer ENDFEAT
 
-  no_ no_ no_ no_ no_ no_ YES no_ no_ ENDLINE
+  no_ no_ no_ no_ no_ no_ no_ YES no_ no_ no_ ENDLINE
 
   FEAT GOPHER ENDFEAT
 
-  YES YES no_ YES no_ no_ YES no_ no_ ENDLINE
+  YES YES no_ no_ YES no_ no_ YES no_ no_ no_ ENDLINE
+
+  FEAT DNS-over-HTTPS ENDFEAT
+
+  YES no_ no_ no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
 
  FEAT License ENDFEAT
   NEWCOL MIT ENDCOL
+  NEWCOL GPL ENDCOL
   NEWCOL GPL ENDCOL
   NEWCOL GPL ENDCOL
   NEWCOL GPL ENDCOL
@@ -311,6 +326,7 @@ TITLE(Compare curl Features with Other Download Tools)
   NEWCOL __STABLE ENDCOL
   NEWCOL 7.0 ENDCOL
   NEWCOL 1.17 ENDCOL
+  NEWCOL ? ENDCOL
   NEWCOL 0.9.34 ENDCOL
   NEWCOL 0.4.1 ENDCOL
   NEWCOL 4.7 ENDCOL
@@ -324,12 +340,13 @@ TITLE(Compare curl Features with Other Download Tools)
 
 <p>
  The mentioned tools: <a href="https://www.xach.com/snarf/">snarf</a>, <a
- href="https://www.gnu.org/software/wget/">wget</a>, <a
+ href="https://www.gnu.org/software/wget/">wget</a>,  <a
+ href="https://gitlab.com/gnuwget/wget2">wget2</a>, <a
  href="http://www.pavuk.org/">pavuk</a>, <a
  href="https://www.fefe.de/fget/">fget</a>, <a
  href="https://lftp.yar.ru/">lftp</a>, <a
  href="https://aria2.sourceforge.io/">aria2</a>,
- <a href="https://www.httrack.com/">httrack</a>
+ <a href="https://www.httrack.com/">httrack</a>, <a href="https://httpie.org/">HTTPie</a>
 
 <p>
  'Fetch' is an integral part of the <a
@@ -340,11 +357,14 @@ TITLE(Compare curl Features with Other Download Tools)
 libcurl does.
 <p>
 * aria2 supports IPv6 only in HTTP(S) download
-
 <p>
- Please <a href="mailto:curl-web@haxx.se">mail us</a> corrections if this
- table is incorrect, or tell us other features we should compare! Or
- file <a href="https://github.com/curl/curl-www/issues">a bug report</a>.
+* HTTPie is written in Python + Requests and thus carry their
+ portability and features
+  
+<p>
+ Please file <a href="https://github.com/curl/curl-www/issues">a bug
+ report</a> if this table is incorrect, or tell us other features we
+ should compare!
 
 #include "_footer.html"
 </BODY>
