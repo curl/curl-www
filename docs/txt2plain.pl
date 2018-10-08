@@ -11,7 +11,7 @@ while(<STDIN>) {
     # trailing backslashes become \&nbsp;
     $_ =~ s/\\$/\\&nbsp;/;
 
-    # convert the begining of a "C comment" to a html code to prevent the
+    # convert the beginning of a "C comment" to a html code to prevent the
     # cpp to barf
     $_ =~ s/\/\*/&\#47;*/g;
 

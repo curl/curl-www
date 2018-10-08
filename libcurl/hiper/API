@@ -38,7 +38,7 @@
  *          given time period starts when the callback is called) until you
  *          should call curl_multi_socket() with the timeout stuff mentioned
  *          above. If "actions" happens on the socket before the timeout
- *          happens, remember that the timout timer keeps ticking until told
+ *          happens, remember that the timeout timer keeps ticking until told
  *          otherwise.
  *
  *          The "what" argument has one of five values:

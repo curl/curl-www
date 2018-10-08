@@ -138,7 +138,7 @@ MOO
 
     if($subscr) {
         &subtitle("Subscribe to $list");
-        print "<p> <a href=\"$subscr\">subcribe to $list</a>";
+        print "<p> <a href=\"$subscr\">subscribe to $list</a>";
     }
 
     &title("More Mailing Lists");

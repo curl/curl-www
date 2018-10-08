@@ -342,7 +342,7 @@ for $ref (@all) {
         }
         else {
             # since there's no regex, just do a head request to verify the
-            # file's mere existance
+            # file's mere existence
             @data = geturl($churl, 1);
 
             # store version as of now

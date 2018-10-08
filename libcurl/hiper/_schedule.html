@@ -247,8 +247,8 @@ MARKDATE(Dec 22 2005) I can now properly run tests with several hundred
  more than one socket for a single easy handle and I'd then rather just call
  curl_multi_socket() once and have that sort out what sockets to use. At the
  same time it seems that libevent has its timeouts on a per-socket basis (not
- surprisingly really) so if I don't do them per-socket, how are we gonna use
- libevent (etc) efficiently? Then of course, there's a separate timer
+ surprisingly really) so if I don't do them per-socket, how are we going to
+ use libevent (etc) efficiently? Then of course, there's a separate timer
  mechanism in libevent that might be useful.
 <p>
  <a href="hiper-3.patch">hiper-3.patch</a> is now at 60K. Make sure you apply
@@ -324,7 +324,7 @@ fd_sets and the old test code seems to work still! I need to write up a proper
 client that can actually use the new API now to be able to start squashing
 bugs.
 <p>
-As a little side-note I added another little measurement ot the existing test
+As a little side-note I added another little measurement of the existing test
 app that is quite revealing. If I still read only one byte per read() and I
 measure the amount of usec spent for each byte read when having 0 idle and 1
 active compared to 2000/1, the spent time per byte goes from 5usec to

@@ -64,7 +64,7 @@ sub shortdesc {
 
 for (@opts) {
     my $f = $_;
-    $f =~ s/\.3//; # cut off the extention to get the symbol name
+    $f =~ s/\.3//; # cut off the extension to get the symbol name
     push @all, $f;
     single($f);
     makeit($f);
