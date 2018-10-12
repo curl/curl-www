@@ -46,6 +46,7 @@ sub single {
     my $vulnhtml;
     my $vulnnum=scalar(@v);
     my $odd;
+    my $vulnplural;
 
     if($vulnnum) {
         $vulnhtml = "<table><tr class=\"tabletop\"><th>Flaw</th><th>From version</th><th>To and including</th><th>CVE</th><th>CWE</th></tr>";
@@ -98,6 +99,16 @@ sub single {
     my $anchor = $str;
     $anchor =~ s/\./_/g;
 
+    if($vulnnum == 0) {
+      $vulnplural = '';
+    }
+    elsif($vulnnum > 1) {
+      $vulnplural = 's are';
+    }
+    else {
+      $vulnplural = ' is';
+    }
+
     open(T, "<_singlevuln.templ");
     open(O, ">vuln-$str.gen");
     while(<T>) {
@@ -105,6 +116,7 @@ sub single {
         $_ =~ s/%vulnerabilities/$vulnhtml/g;
         $_ =~ s/%date/$date/g;
         $_ =~ s/%vulnnum/$vulnnum/g;
+        $_ =~ s/%vulnplural/$vulnplural/g;
         $_ =~ s/%anchor/$anchor/g;
         $_ =~ s/%nextprev/$n/g;
         print O $_;
