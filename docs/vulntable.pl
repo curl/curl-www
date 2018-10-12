@@ -13,7 +13,7 @@ sub vernum {
 my $allvulns="allvulns.gen";
 unlink($allvulns);
 
-my @vname; # number + HTML links to each vulernability page
+my @vname; # number + HTML links to each vulnerability page
 print "<table>";
 sub head {
     print "<tr class=\"tabletop\"><th>Version</th>";
