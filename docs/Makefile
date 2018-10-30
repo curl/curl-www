@@ -98,6 +98,7 @@ PAGES =						\
  CVE-2018-14618.html				\
  CVE-2018-16839.html 				\
  CVE-2018-16840.html 				\
+ CVE-2018-16842.html 				\
  bugs.html					\
  caextract.html					\
  code-of-conduct.html				\
