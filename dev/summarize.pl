@@ -72,6 +72,7 @@ my $filterform = '
 <option value="^....R">SSL: SecureTransport</option>
 <option value="^....L">SSL: WinSSL</option>
 <option value="^....C">SSL: WolfSSL</option>
+<option value="^....4">SSL: MesaLink</option>
 <option value="^....-">SSL disabled</option>
 <option value="^............P">SSPI</option>
 <option value="^............-">SSPI disabled</option>
@@ -305,6 +306,9 @@ sub endofsingle {
     elsif($libcurl =~ /mbedTLS\/(?!1\.)/i) {
         $mbedtls = 1;
     }
+    elsif($libcurl =~ /MesaLink/i) {
+        $mesalink = 1;
+    }
 
     if($libcurl =~ /zlib\/([^ ]*)/i) {
         $zlibver = CGI::escapeHTML($1);
@@ -426,7 +430,7 @@ sub endofsingle {
     my $showdebug = $debug ? "D" : "-";
     my $showtrackmem = $trackmem ? "Y" : "-";
     my $showvalgrind = $valgrind ? "V" : "-";
-    my $showssl = $openssl ? "S" : ($gnutls ? "T" : ($nss ? "N" : ($mbedtls ? "Q" : ($polarssl ? "O" : ($schannel ? "L" : ($darwinssl ? "R" : ($cyassl ? "C" : ($boringssl ? "B" : ($libressl ? "J" : "-")))))))));
+    my $showssl = $openssl ? "S" : ($gnutls ? "T" : ($nss ? "N" : ($mbedtls ? "Q" : ($polarssl ? "O" : ($schannel ? "L" : ($darwinssl ? "R" : ($cyassl ? "C" : ($boringssl ? "B" : ($libressl ? "J" : "-" : ($mesalink ? "4" : "-"))))))))));
     my $showres = $asynch ? ($ares ? "A" : "H") : "-";
     my $showzlib = ($zlibver || $libz) ? "Z" : "-";
     my $showgssapi = $gssapi ? "G" : "-";
@@ -492,7 +496,7 @@ sub singlefile {
     $valgrind=0;
     $buildcode=0;
 
-    $openssl=$gnutls=$nss=$mbedtls=$polarssl=$schannel=$darwinssl=$cyassl=$boringssl=$libressl=0;
+    $openssl=$gnutls=$nss=$mbedtls=$polarssl=$schannel=$darwinssl=$cyassl=$boringssl=$libressl=$mesalink=0;
 
     $libmetalink=0;
     $libpsl=0;
@@ -788,6 +792,9 @@ sub singlefile {
             }
             elsif($line =~ /^\#define USE_LIBRESSL 1/) {
                 $libressl = 1;
+            }
+            elsif($line =~ /^\#define USE_MESALINK 1/) {
+                $mesalink = 1;
             }
             elsif($line =~ /^\#define USE_LIBSSH2 1/) {
                 $libssh2 = 1;
