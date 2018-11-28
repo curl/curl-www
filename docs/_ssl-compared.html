@@ -32,7 +32,6 @@ to use.
 #define FEATURE_P2 <td class="yes">yes [2]</td>
 #define FEATURE_P3 <td class="yes">yes [3]</td>
 #define FEATURE_P4 <td class="yes">yes [4]</td>
-#define FEATURE_P5 <td class="yes">yes [5]</td>
 #define FEATURE_P6 <td class="yes">yes [6]</td>
 #define FEATURE_P7 <td class="yes">yes [7]</td>
 #define FEATURE_P8 <td class="yes">yes [8]</td>
@@ -69,9 +68,7 @@ to use.
   NICETD GnuTLS NICETDEND
   NICETD NSS NICETDEND
   NICETD WolfSSL NICETDEND
-  NICETD QSOSSL NICETDEND
   NICETD PolarSSL / mbedTLS NICETDEND
-  NICETD axTLS NICETDEND
   NICETD Secure Channel (&quot;WinSSL&quot;) NICETDEND
   NICETD Secure Transport (&quot;DarwinSSL&quot;) NICETDEND
  ENDLINE
@@ -88,8 +85,6 @@ to use.
   FEATURE
   FEATURE
   FEATURE
-  FEATURE
-  FEATURE
  ENDLINE
 
  NEWLINE
@@ -98,9 +93,7 @@ to use.
   MANUAL
   AUTOMATIC
   AUTOMATIC
-  MISSING
   MANUAL
-  MISSING
   AUTOMATIC
   AUTOMATIC
  ENDLINE
@@ -111,9 +104,7 @@ to use.
   MISSING
   FEATURE
   MISSING
-  MISSING
   FEATURE
-  MISSING
   FEATURE
   FEATURE
  ENDLINE
@@ -126,15 +117,11 @@ to use.
   FEATURE
   FEATURE
   FEATURE
-  MISSING
-  FEATURE
   FEATURE
  ENDLINE
 
  NEWLINE
   FEAT TLSv1.0 ENDFEAT
-  FEATURE
-  FEATURE
   FEATURE
   FEATURE
   FEATURE
@@ -150,8 +137,6 @@ to use.
   FEATURE
   FEATURE
   FEATURE
-  FEATURE_P5
-  FEATURE
   FEATURE
   FEATURE
   FEATURE_P2
@@ -162,8 +147,6 @@ to use.
   FEATURE
   FEATURE
   FEATURE
-  FEATURE
-  FEATURE_P5
   FEATURE
   FEATURE
   FEATURE_P4
@@ -178,18 +161,13 @@ to use.
   FEATURE
   MISSING
   MISSING
-  MISSING
-  MISSING
   FEATURE_P6
-  
  ENDLINE
  
  NEWLINE
   FEAT TLS SRP ENDFEAT
   FEATURE
   FEATURE
-  MISSING
-  MISSING
   MISSING
   MISSING
   MISSING
@@ -203,9 +181,7 @@ to use.
   FEATURE
   FEATURE
   FEATURE
-  UNKNOWN
   FEATURE
-  MISSING
   FEATURE_P3
   FEATURE_P2
  ENDLINE
@@ -216,9 +192,7 @@ to use.
   FEATURE
   FEATURE
   FEATURE
-  MISSING
   FEATURE
-  MISSING
   FEATURE_P7
   MISSING
  ENDLINE
@@ -228,8 +202,6 @@ to use.
   FEATURE
   MISSING
   FEATURE
-  MISSING
-  MISSING
   MISSING
   MISSING
   FEATURE_P7
@@ -242,8 +214,6 @@ to use.
   MISSING
   MISSING
   FEATURE
-  NA
-  FEATURE
   FEATURE
   NA
   NA
@@ -254,8 +224,6 @@ to use.
   FEAT POSIX, Windows, VMS ENDFEAT
   FEAT POSIX, Windows ENDFEAT
   FEAT POSIX, Windows ENDFEAT
-  FEAT POSIX, Windows ENDFEAT
-  FEAT IBM i          ENDFEAT
   FEAT POSIX, Windows ENDFEAT
   FEAT POSIX, Windows ENDFEAT
   FEAT Windows (CE and NT) ENDFEAT
@@ -268,8 +236,6 @@ to use.
   FEATURE
   FEATURE
   FEATURE
-  UNKNOWN
-  FEATURE
   FEATURE
   MISSING
   MISSING
@@ -280,8 +246,6 @@ to use.
   MISSING
   FEATURE
   FEATURE
-  MISSING
-  UNKNOWN
   MISSING
   MISSING
   FEATURE
@@ -294,8 +258,6 @@ to use.
   PKCS11
   PKCS11
   MISSING
-  UNKNOWN
-  MISSING
   MISSING
   WINCAPI
   KEYCHAIN
@@ -307,8 +269,6 @@ to use.
   FEATURE
   MISSING
   NA
-  UNKNOWN
-  NA
   NA
   NA
   NA
@@ -319,8 +279,6 @@ to use.
   FEATURE_P8
   FEATURE
   MISSING
-  MISSING
-  UNKNOWN
   MISSING
   MISSING
   FEATURE
@@ -334,8 +292,6 @@ to use.
   FEATURE
   MISSING
   MISSING
-  MISSING
-  MISSING
   FEATURE
   FEATURE
  ENDLINE
@@ -346,9 +302,7 @@ to use.
   FEAT limited ENDFEAT
   FEAT separate ENDFEAT
   FEATURE
-  FEAT limited ENDFEAT
   MISSING
-  FEAT limited ENDFEAT
   MISSING
   FEAT digests only ENDFEAT
  ENDLINE
@@ -359,9 +313,7 @@ to use.
   FEAT <a href="https://www.gnu.org/">Free Software Foundation</a> ENDFEAT
   FEAT <a href="https://www.mozilla.org/">Mozilla Foundation</a> ENDFEAT
   FEAT <a href="https://www.wolfssl.com/">wolfSSL</a> ENDFEAT
-  FEAT <a href="https://www.ibm.com/">IBM Corporation</a> ENDFEAT
   FEAT <a href="https://tls.mbed.org/">mbed TLS</a> ENDFEAT
-  FEAT <a href="https://axtls.sourceforge.io/">Cameron Rich</a> ENDFEAT
   FEAT <a href="https://www.microsoft.com/">Microsoft Corporation</a> ENDFEAT
   FEAT <a href="https://apple.com/">Apple Inc.</a> ENDFEAT
  ENDLINE
@@ -372,9 +324,7 @@ to use.
   FEAT LGPL ENDFEAT
   FEAT MPL/LGPL/GPL ENDFEAT
   FEAT GPLv2 / prop ENDFEAT
-  UNKNOWN
   FEAT Apache 2.0 license / GPLv2 ENDFEAT
-  FEAT BSD ENDFEAT
   FEAT Proprietary ENDFEAT
   FEAT APSL 2.0 ENDFEAT
  ENDLINE
@@ -383,8 +333,6 @@ to use.
   FEAT First release ENDFEAT
   NEWCOL 1998 ENDCOL
   NEWCOL 2004? ENDCOL
-  NEWCOL ? ENDCOL
-  NEWCOL 2006 ENDCOL
   NEWCOL ? ENDCOL
   NEWCOL 2006 ENDCOL
   NEWCOL 2006 ENDCOL
@@ -399,9 +347,7 @@ to use.
   FEAT 3.3.15 ENDFEAT
   FEAT 3.16.4 ENDFEAT
   FEAT 3.1.0 ENDFEAT
-  FEAT 7.1 TR6 ENDFEAT
   FEAT 1.3.8 ENDFEAT
-  FEAT 1.4.9 ENDFEAT
   FEAT 6.3.9600 ENDFEAT
   FEAT 55471.14 ENDFEAT
  ENDLINE
@@ -413,9 +359,7 @@ to use.
   FEAT GNOME ENDFEAT
   FEAT Mozilla Firefox ENDFEAT
   FEAT MySQL ENDFEAT
-  FEAT IBM HTTPD ENDFEAT
   FEAT Hiawatha HTTPD ENDFEAT
-  FEAT ? ENDFEAT
   FEAT Microsoft Internet Explorer ENDFEAT
   FEAT Apple Safari ENDFEAT
  ENDLINE
@@ -431,8 +375,6 @@ to use.
  [3] = Requires Windows Vista or later
 <br>
  [4] = Requires Windows 7 or later
-<br>
- [5] = Requires IBM i 7.1 TR6 or later
 <br>
  [6] = Requires iOS 11 or macOS 10.13
 <br>
@@ -566,7 +508,7 @@ SUBTITLE(More reading)
  href="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS">NSS</a>, <a
  href="https://www.wolfssl.com/">wolfSSL</a>, <a
  href="https://tls.mbed.org">mbed TLS</a>, <a
- href="https://axtls.sourceforge.io/">axTLS</a>, <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms678421(v=vs.85).aspx">Secure Channel</a>, <a href="https://developer.apple.com/documentation/security/Reference/secureTransportRef/">Secure Transport</a>.
+ href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms678421(v=vs.85).aspx">Secure Channel</a>, <a href="https://developer.apple.com/documentation/security/Reference/secureTransportRef/">Secure Transport</a>.
 
 <p> More comparisons in the extensive <a
 href="https://en.wikipedia.org/wiki/Comparison_of_TLS_Implementations">feature-by-feature
