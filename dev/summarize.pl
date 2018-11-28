@@ -62,7 +62,6 @@ my $filterform = '
 <option value="^.............2">SSH</option>
 <option value="^.............-">SSH disabled</option>
 <option value="^....[^-]">SSL: any</option>
-<option value="^....X">SSL: axTLS</option>
 <option value="^....B">SSL: BoringSSL</option>
 <option value="^....T">SSL: GnuTLS</option>
 <option value="^....J">SSL: LibreSSL</option>
@@ -427,7 +426,7 @@ sub endofsingle {
     my $showdebug = $debug ? "D" : "-";
     my $showtrackmem = $trackmem ? "Y" : "-";
     my $showvalgrind = $valgrind ? "V" : "-";
-    my $showssl = $openssl ? "S" : ($gnutls ? "T" : ($nss ? "N" : ($mbedtls ? "Q" : ($polarssl ? "O" : ($axtls ? "X" : ($schannel ? "L" : ($darwinssl ? "R" : ($cyassl ? "C" : ($boringssl ? "B" : ($libressl ? "J" : "-"))))))))));
+    my $showssl = $openssl ? "S" : ($gnutls ? "T" : ($nss ? "N" : ($mbedtls ? "Q" : ($polarssl ? "O" : ($schannel ? "L" : ($darwinssl ? "R" : ($cyassl ? "C" : ($boringssl ? "B" : ($libressl ? "J" : "-")))))))));
     my $showres = $asynch ? ($ares ? "A" : "H") : "-";
     my $showzlib = ($zlibver || $libz) ? "Z" : "-";
     my $showgssapi = $gssapi ? "G" : "-";
@@ -493,7 +492,7 @@ sub singlefile {
     $valgrind=0;
     $buildcode=0;
 
-    $openssl=$gnutls=$nss=$axtls=$mbedtls=$polarssl=$schannel=$darwinssl=$cyassl=$boringssl=$libressl=0;
+    $openssl=$gnutls=$nss=$mbedtls=$polarssl=$schannel=$darwinssl=$cyassl=$boringssl=$libressl=0;
 
     $libmetalink=0;
     $libpsl=0;
@@ -765,9 +764,6 @@ sub singlefile {
             }
             elsif($line =~ /^\#define USE_GNUTLS 1/) {
                 $gnutls = 1;
-            }
-            elsif($line =~ /^\#define USE_AXTLS 1/) {
-                $axtls = 1;
             }
             elsif($line =~ /^\#define USE_MBEDTLS 1/) {
                 $mbedtls = 1;
