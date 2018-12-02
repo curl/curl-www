@@ -430,7 +430,7 @@ sub endofsingle {
     my $showdebug = $debug ? "D" : "-";
     my $showtrackmem = $trackmem ? "Y" : "-";
     my $showvalgrind = $valgrind ? "V" : "-";
-    my $showssl = $openssl ? "S" : ($gnutls ? "T" : ($nss ? "N" : ($mbedtls ? "Q" : ($polarssl ? "O" : ($schannel ? "L" : ($darwinssl ? "R" : ($cyassl ? "C" : ($boringssl ? "B" : ($libressl ? "J" : "-" : ($mesalink ? "4" : "-"))))))))));
+    my $showssl = $openssl ? "S" : ($gnutls ? "T" : ($nss ? "N" : ($mbedtls ? "Q" : ($polarssl ? "O" : ($schannel ? "L" : ($darwinssl ? "R" : ($cyassl ? "C" : ($boringssl ? "B" : ($libressl ? "J" : ($mesalink ? "4" : "-"))))))))));
     my $showres = $asynch ? ($ares ? "A" : "H") : "-";
     my $showzlib = ($zlibver || $libz) ? "Z" : "-";
     my $showgssapi = $gssapi ? "G" : "-";
