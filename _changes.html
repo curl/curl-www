@@ -43,6 +43,97 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_63_0"></a>
+SUBTITLE(Fixed in 7.63.0 - December 12 2018)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="https://curl.haxx.se/bug/?i=3115">curl: add %{stderr} and %{stdout} for --write-out</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=3208">curl: add undocumented option --dump-module-paths for win32</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=3227">setopt: add CURLOPT_CURLU</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/bug/?i=3348">(lib)curl.rc: fixup for minor bugs</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3340">CURLINFO_REDIRECT_URL: extract the Location: header field unvalidated</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3295">CURLOPT_HEADERFUNCTION.3: match 'nitems' name in synopsis and description</a>
+ BGF CURLOPT_WRITEFUNCTION.3: spell out that it gets called many times
+ BGF <a href="https://curl.haxx.se/bug/?i=3210">Curl_follow: accept non-supported schemes for "fake" redirects</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=876">KNOWN_BUGS: add --proxy-any connection issue</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3269">NTLM: Remove redundant ifdef USE_OPENSSL</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3345">NTLM: force the connection to HTTP/1.1</a>
+ BGF OS400: add URL API ccsid wrappers and sync ILE/RPG bindings
+ BGF <a href="https://curl.haxx.se/bug/?i=3311">SECURITY-PROCESS: bountygraph shuts down again</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3232">TODO: Have the URL API offer IDN decoding</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3238">ares: remove fd from multi fd set when ares is about to close the fd</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3194">axtls: removed</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3303">checksrc: add COPYRIGHTYEAR check</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3316">cmake: fix MIT/Heimdal Kerberos detection</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3193">configure: include all libraries in ssl-libs fetch</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3207">configure: show CFLAGS, LDFLAGS etc in summary</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3323">connect: fix building for recent versions of Minix</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3299">cookies: create the cookiejar even if no cookies to save</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3351">cookies: expire "Max-Age=0" immediately</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3251">curl: --local-port range was not "including"</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3242">curl: fix --local-port integer overflow</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3322">curl: fix memory leak reading --writeout from file</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3211">curl: fixed UTF-8 in current console code page (Windows)</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3305">curl_easy_perform: fix timeout handling</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3346">curl_global_sslset(): id == -1 is not necessarily an error</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3209">curl_multibyte: fix a malloc overcalculation</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3291">curle: move deprecated error code to ifndef block</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3361">docs: curl_formadd field and file names are now escaped</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3246">docs: escape "\n" codes</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3342">doh: fix memory leak in OOM situation</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3325">doh: make it work for h2-disabled builds too</a>
+ BGF examples/ephiperfifo: report error when epoll_ctl fails
+ BGF <a href="https://curl.haxx.se/bug/?i=3225">ftp: avoid two unsigned int overflows in FTP listing parser</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3022">host names: allow trailing dot in name resolve, then strip it</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3349">http2: Upon HTTP_1_1_REQUIRED, retry the request with HTTP/1.1</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3359">http: don't set CURLINFO_CONDITION_UNMET for http status code 204</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3353">http: fix HTTP Digest auth to include query in URI</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3275">http_negotiate: do not close connection until negotiation is completed</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3276">impacket: add LICENSE</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3216">infof: clearly indicate truncation</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3362">ldap: fix LDAP URL parsing regressions</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3240">libcurl: stop reading from paused transfers</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3184">mprintf: avoid unsigned integer overflow warning</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3213">netrc: don't ignore the login name specified with "--user"</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3261">nss: Fall back to latest supported SSL version</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3337">nss: Fix compatibility with nss versions 3.14 to 3.15</a>
+ BGF nss: fix fallthrough comment to fix picky compiler warning
+ BGF <a href="https://curl.haxx.se/bug/?i=3262">nss: remove version selecting dead code</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3261">nss: set default max-tls to 1.3/1.2</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3270">openssl: Remove SSLEAY leftovers</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3281">openssl: do not log excess "TLS app data" lines for TLS 1.3</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3339">openssl: do not use file BIOs if not requested</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3337">openssl: fix unused variable compiler warning with old openssl</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3202">openssl: support session resume with TLS 1.3</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3217">openvms: fix example name</a>
+ BGF os400: Add curl_easy_conn_upkeep() to ILE/RPG binding
+ BGF os400: add CURLOPT_CURLU to ILE/RPG binding
+ BGF os400: fix return type of curl_easy_pause() in ILE/RPG binding
+ BGF <a href="https://curl.haxx.se/bug/?i=3331">packages: remove old leftover files and dirs</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3278">pop3: only do APOP with a valid timestamp</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2018-10/0118.html">runtests: use the local curl for verifying</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3243">schannel: be consistent in Schannel capitalization</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3197">schannel: better CURLOPT_CERTINFO support</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3201">schannel: use Curl_ prefix for global private symbols</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3296">snprintf: renamed and we now only use msnprintf()</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3266">ssl: fix compilation with OpenSSL 0.9.7</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3291">ssl: replace all internal uses of CURLE_SSL_CACERT</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3226">symbols-in-versions: add missing CURLU_ symbols</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3317">test328: verify Content-Encoding: none</a>
+ BGF tests: disable SO_EXCLUSIVEADDRUSE for stunnel on Windows
+ BGF <a href="https://curl.haxx.se/bug/?i=3204">tests: drop http_pipe.py script no longer used</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3263">tool_cb_wrt: Silence function cast compiler warning</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3254">tool_doswin: Fix uninitialized field warning</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3190">travis: build with clang sanitizers</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3198">travis: remove curl before a normal build</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3220">url: a short host name + port is not a scheme</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3218">url: fix IPv6 numeral address parser</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3231">urlapi: only skip encoding the first '=' with APPENDQUERY set</a>
+</ul>
+
 <a name="7_62_0"></a>
 SUBTITLE(Fixed in 7.62.0 - October 31 2018)
 <p> Changes:
