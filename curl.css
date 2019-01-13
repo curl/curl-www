@@ -350,6 +350,18 @@ div.yellowbox {
   margin-right: auto;
 }
 
+@media screen and (max-width: 640px) {
+    .contents {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    img.scale {
+        max-width: 30%;
+    }
+}
+
+
+
 /* Filtering menus on the autobuild page */
 .filtermenu {
   /* Position select box to the right of the text */
