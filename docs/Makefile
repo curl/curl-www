@@ -13,7 +13,7 @@ ADVBOX = adv-related-box.inc
 FCPP_OPTS = -DSHOW_ALERT
 MAN2HTML = roffit --bare
 
-PAGES =						\
+CVELIST =					\
  CVE-2000-0973.html				\
  CVE-2003-1605.html				\
  CVE-2005-0490.html				\
@@ -98,7 +98,13 @@ PAGES =						\
  CVE-2018-14618.html				\
  CVE-2018-16839.html 				\
  CVE-2018-16840.html 				\
- CVE-2018-16842.html 				\
+ CVE-2018-16842.html				\
+ CVE-2018-16890.html				\
+ CVE-2019-3822.html				\
+ CVE-2019-3823.html
+
+PAGES =						\
+ $(CVELIST)					\
  bugs.html					\
  caextract.html					\
  code-of-conduct.html				\

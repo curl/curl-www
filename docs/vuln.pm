@@ -3,6 +3,9 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2018-16890.html|7.36.0|7.63.0|NTLM type-2 out-of-bounds buffer read|CVE-2018-16890|20190206|20181230|CWE-125: Out-of-bounds Read",
+    "CVE-2019-3822.html|7.36.0|7.63.0|NTLMv2 type-3 header stack buffer overflow|CVE-2019-3822|20190206|20181230|CWE-121: Stack-based Buffer Overflow",
+    "CVE-2019-3823.html|7.34.0|7.63.0|SMTP end-of-response out-of-bounds read|CVE-2019-3823|20190206|20190118|CWE-125: Out-of-bounds Read",
     "CVE-2018-16842.html|7.14.1|7.61.1|warning message out-of-buffer read|CVE-2018-16842|20181031|20181027|CWE-125: Out-of-bounds Read",
     "CVE-2018-16840.html|7.59.0|7.61.1|use-after-free in handle close|CVE-2018-16840|20181031|20181014|CWE-416: Use After Free",
     "CVE-2018-16839.html|7.33.0|7.61.1|SASL password overflow via integer overflow|CVE-2018-16839|20181031|20180906|CWE-131: Incorrect Calculation of Buffer Size",
