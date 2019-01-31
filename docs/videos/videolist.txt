@@ -277,3 +277,15 @@ WHO Igor Chubin
 DESC How to build console oriented web services and why
 ENDOFVIDEO
 
+VIDEO How Red Hat distributes curl
+EVENT curl-up 2018
+URL https://curl.haxx.se/video/curlup-2018/2018-04-14_Kamil-Dudka-redhat-distributes-curl.webm
+SLIDES https://curl.haxx.se/video/curlup-2018/2018-04-14_Kamil-Dudka-redhat-distributes-curl.pdf
+THUMB redhat-distributes-curl-2018.jpg
+THUMBSIZE width="250" height="173"
+DURATION 18 minutes
+DATE 2018-04-14
+WHO Kamil Dudka
+DESC How Red Hat distributes curl. What has c hanged since curl up 2017
+ENDOFVIDEO
+
