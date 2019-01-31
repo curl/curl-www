@@ -94,7 +94,7 @@ WHO Kamil Dudka
 DESC How Red Hat builds and distributes curl
 ENDOFVIDEO
 
-VIDEO Advanced HTTP scritpting with curl
+VIDEO Advanced HTTP scripting with curl
 EVENT curl-up 2017
 URL https://curl.haxx.se/video/curlup-2017/2017-03-19_01_Dan_Fandrich_Advanced_HTTP_Scripting_with_curl.mp4
 THUMB advanced-http-scripting-2017.jpg
@@ -147,7 +147,7 @@ THUMBSIZE width="250" height="188"
 DURATION 16 minutes
 DATE 2017-03-19
 WHO Michael Kaufmann
-DESC Why and how curl could support websockets
+DESC Why and how curl could support Websockets
 ENDOFVIDEO
 
 VIDEO Staying up to date on a legacy platform
@@ -297,7 +297,7 @@ THUMBSIZE width="250" height="141"
 DURATION 16 minutes
 DATE 2018-04-14
 WHO Stefan Eissing
-DESC libcurl is buing used by the Apache httpd
+DESC libcurl is being used by Apache httpd
 ENDOFVIDEO
 
 VIDEO google and proxies
@@ -345,7 +345,7 @@ THUMBSIZE width="250" height="141"
 DURATION 43 minutes
 DATE 2018-04-15
 WHO Daniel Stenberg
-DESC Explaing QUIC and how curl can be made to support it
+DESC Explaining QUIC and how curl can be made to support it
 ENDOFVIDEO
 
 VIDEO curl and a day in my life
@@ -369,7 +369,7 @@ THUMBSIZE width="250" height="141"
 DURATION 35 minutes
 DATE 2018-04-15
 WHO Lucas Pardue
-DESC Why there's an Alt-Svc header, how it works and how it changes evertything
+DESC Why there's an Alt-Svc header, how it works and how it changes everything
 ENDOFVIDEO
 
 VIDEO Fuzzing curl
