@@ -17,5 +17,8 @@ all: $(PAGES)
 clean:
 	rm -f $(PAGES) *.gen
 
-index.html: _index.html $(MAINPARTS)
+index.html: _index.html $(MAINPARTS) videos.gen
 	$(ACTION)
+
+videos.gen: videolist.txt mkvideos.pl
+	perl ./mkvideos.pl < $< > $@

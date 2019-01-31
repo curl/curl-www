@@ -1,0 +1,208 @@
+VIDEO curl now and then
+EVENT curl-up 2017
+URL https://curl.haxx.se/video/curlup-2017/2017-03-18_01_Daniel_Stenberg_Curl_now_and_then_keynote.mp4
+THUMB curl-now-and-then-2017.jpg
+THUMBSIZE width="250" height="156"
+DURATION 41 minutes
+DATE 2017-03-18
+SLIDES https://curl.haxx.se/video/curlup-2017/2017-03-18_01_Daniel_Stenberg_Curl_now_and_then_keynote.pdf
+WHO Daniel Stenberg
+TAGS curl, curl project
+DESC Welcome to curl up 2017 and talk about the curl project and where it is right now
+ENDOFVIDEO
+
+VIDEO curl for network debugging
+EVENT curl-up 2017
+URL https://curl.haxx.se/video/curlup-2017/2017-03-18_02_Aleksandar_Lazic_curl_for_network_debugging.mp4
+THUMB curl-for-network-debugger-2017.jpg
+THUMBSIZE width="250" height="188"
+DURATION 7 minutes
+DATE 2017-03-18
+SLIDES https://curl.haxx.se/video/curlup-2017/2017-03-18_02_Aleksandar_Lazic_curl_for_network_debugging.pdf
+WHO Aleksandar Lazic
+TAGS debug, command line
+DESC How to use curl to debug networks
+ENDOFVIDEO
+
+VIDEO The curl test suite
+EVENT curl-up 2017
+URL https://curl.haxx.se/video/curlup-2017/2017-03-18_03_Dan_Fandrich_curl_test_suite.mp4
+THUMB curl-test-suite-2017.jpg
+THUMBSIZE width="250" height="188"
+DURATION 54 minutes
+DATE 2017-03-18
+SLIDES https://curl.haxx.se/video/curlup-2017/2017-03-18_03_Dan_Fandrich_curl_test_suite.pdf
+WHO Dan Fandrich
+TAGS test suite, testing
+DESC The curl test suite and how testing is done in the project
+ENDOFVIDEO
+
+VIDEO Creating console oriented web sites
+EVENT curl-up 2017
+URL https://curl.haxx.se/video/curlup-2017/2017-03-18_04_Igor_Chubin_creating_console_oriented_web_sites.mp4
+THUMB creating-console-websites-2017.jpg
+THUMBSIZE width="250" height="188"
+DURATION 42 minutes
+DATE 2017-03-18
+WHO Igor Chubin
+DESC Console oriented web services, suitable for curl
+ENDOFVIDEO
+
+VIDEO Wrapping curl
+EVENT curl-up 2017
+URL https://curl.haxx.se/video/curlup-2017/2017-03-18_05_Christian_Schmitz_Wrapping_curl.mp4
+THUMB wrapping-curl-2017.jpg
+THUMBSIZE width="250" height="188"
+DURATION 11 minutes
+DATE 2017-03-18
+WHO Christian Schmitz
+DESC Experiences in writing a libcurl wrapper
+ENDOFVIDEO
+
+VIDEO The curl web site
+EVENT curl-up 2017
+URL https://curl.haxx.se/video/curlup-2017/2017-03-18_06_Dan_Fandrich_Daniel_Stenberg_curl_website.mp4
+THUMB curl-website-2017.jpg
+THUMBSIZE width="250" height="188"
+DURATION 29 minutes
+DATE 2017-03-18
+WHO Dan Fandrich and Daniel Stenberg
+DESC The curl web site and infrastructure
+ENDOFVIDEO
+
+VIDEO How Google uses curl
+EVENT curl-up 2017
+URL https://curl.haxx.se/video/curlup-2017/2017-03-18_07_Tony_Aiuto_How_Google_uses_curl.mp4
+THUMB how-google-uses-curl-2017.jpg
+THUMBSIZE width="250" height="188"
+DURATION 20 minutes
+DATE 2017-03-18
+SLIDES https://curl.haxx.se/video/curlup-2017/2017-03-18_07_Tony_Aiuto_How_Google_uses_curl.pdf
+WHO Tony Aiuto
+DESC How Google builds, runs, tests and uses curl
+ENDOFVIDEO
+
+VIDEO Life of a distro hacker
+EVENT curl-up 2017
+URL https://curl.haxx.se/video/curlup-2017/2017-03-18_08_Kamil_Dudka_Life_of_a_distro_hacker.mp4
+THUMB life-of-a-distro-hacker-2017.jpg
+THUMBSIZE width="250" height="188"
+DURATION 30 minutes
+DATE 2017-03-18
+SLIDES https://curl.haxx.se/video/curlup-2017/2017-03-18_08_Kamil_Dudka_Life_of_a_distro_hacker.pdf
+WHO Kamil Dudka
+DESC How Red Hat builds and distributes curl
+ENDOFVIDEO
+
+VIDEO Advanced HTTP scritpting with curl
+EVENT curl-up 2017
+URL https://curl.haxx.se/video/curlup-2017/2017-03-19_01_Dan_Fandrich_Advanced_HTTP_Scripting_with_curl.mp4
+THUMB advanced-http-scripting-2017.jpg
+THUMBSIZE width="250" height="188"
+DURATION 33 minutes
+DATE 2017-03-19
+WHO Dan Fandrich
+DESC How to use curl to do HTTP tricks
+ENDOFVIDEO
+
+VIDEO The curl book
+EVENT curl-up 2017
+URL https://curl.haxx.se/video/curlup-2017/2017-03-19_02_Daniel_Stenberg_curlbook.mp4
+THUMB the-curl-book-2017.jpg
+THUMBSIZE width="250" height="156"
+DURATION 8 minutes
+DATE 2017-03-19
+WHO Daniel Stenberg
+DESC Everything curl, the book
+ENDOFVIDEO
+
+VIDEO Web transport, today and tomorrow
+EVENT curl-up 2017
+URL https://curl.haxx.se/video/curlup-2017/2017-03-19_03_Daniel_Stenberg_web_transport.mp4
+THUMB web-transport-2017.jpg
+THUMBSIZE width="250" height="156"
+DURATION 58 minutes
+DATE 2017-03-19
+WHO Daniel Stenberg
+DESC Current and coming web transport standards and changes
+ENDOFVIDEO
+
+VIDEO Why Red Hat switched to NSS and still uses it
+EVENT curl-up 2017
+URL https://curl.haxx.se/video/curlup-2017/2017-03-19_04_Kamil_Dudka_Why_Red_Hat_switched_to_NSS_and_still_uses_it.mp4
+THUMB why-redhat-switched-to-nss-2017.jpg
+THUMBSIZE width="250" height="188"
+DURATION 23 minutes
+DATE 2017-03-19
+SLIDES https://curl.haxx.se/video/curlup-2017/2017-03-19_04_Kamil_Dudka_Why_Red_Hat_switched_to_NSS_and_still_uses_it.pdf
+WHO Kamil Dudka
+DESC About Red Hat's decision to use NSS for curl and others
+ENDOFVIDEO
+
+VIDEO Websocket support for curl
+EVENT curl-up 2017
+URL https://curl.haxx.se/video/curlup-2017/2017-03-19_05_Michael_Kaufmann_Websocket_support_for_curl.mp4
+THUMB websocket-support-2017.jpg
+THUMBSIZE width="250" height="188"
+DURATION 16 minutes
+DATE 2017-03-19
+WHO Michael Kaufmann
+DESC Why and how curl could support websockets
+ENDOFVIDEO
+
+VIDEO Staying up to date on a legacy platform
+EVENT curl-up 2017
+URL https://curl.haxx.se/video/curlup-2017/2017-03-19_06_Dagobert_Michelsen_Staying_up_to_date_on_a_legacy_platform.mp4
+THUMB up-to-date-legacy-2017.jpg
+THUMBSIZE width="250" height="188"
+DURATION 19 minutes
+DATE 2017-03-19
+WHO Dagobert Michelsen
+DESC About maintaining curl for Solaris
+ENDOFVIDEO
+
+VIDEO Apache HTTP/2 testing
+EVENT curl-up 2017
+URL https://curl.haxx.se/video/curlup-2017/2017-03-19_07_Stefan_Eissing_Apache_HTTP2_testing.mp4
+THUMB apache-http2-testing.jpg
+THUMBSIZE width="250" height="188"
+DURATION 20 minutes
+DATE 2017-03-19
+WHO Stefan Eissing
+DESC How he uses curl to test Apache's HTTP/2 support
+ENDOFVIDEO
+
+VIDEO Doing HTTP/2 with curl
+EVENT curl-up 2017
+URL https://curl.haxx.se/video/curlup-2017/2017-03-19_08_Daniel_Stenberg_http2_curl.mp4
+THUMB http2-curl.jpg
+THUMBSIZE width="250" height="156"
+DURATION 39 minutes
+DATE 2017-03-19
+WHO Daniel Stenberg
+DESC How to do HTTP/2 with curl (missing the first part)
+ENDOFVIDEO
+
+VIDEO SPNEGO, Kerberos, GSS-API and Negotiate support and how to make them better
+EVENT curl-up 2017
+URL https://curl.haxx.se/video/curlup-2017/2017-03-19_09_Isaac_Boukris_SPNEGO_KERBEROS_GSS-API_and_Negotiate_support.mp4
+THUMB negotiate-support.jpg
+THUMBSIZE width="250" height="188"
+DURATION 33 minutes
+DATE 2017-03-19
+WHO Isaac Boukris
+DESC Kerberos and Negotiate support
+ENDOFVIDEO
+
+VIDEO Containerized curl testing
+EVENT curl-up 2018
+URL https://curl.haxx.se/video/curlup-2018/2018-04-14_Dan-Fandrich-containerized-curl-testing.webm
+SLIDES https://curl.haxx.se/video/curlup-2018/2018-04-14_Dan-Fandrich-containerized-curl-testing.pdf
+THUMB containerized-curl-testing-2018.jpg
+THUMBSIZE width="250" height="188"
+DURATION 54 minutes
+DATE 2018-04-14
+WHO Dan Fandrich
+DESC Efforts to enhance the test architecture
+ENDOFVIDEO
+
