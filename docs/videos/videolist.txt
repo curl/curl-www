@@ -244,6 +244,7 @@ ENDOFVIDEO
 VIDEO You know what's cool? Running on billions of devices
 EVENT FOSDEM 2017
 URL https://youtu.be/T31GvxCtrL8
+SLIDES FOSDEM-2017-curl.pdf
 THUMB you-know-whats-cool-2017.jpg
 THUMBSIZE width="250" height="141"
 DURATION 50 minutes
