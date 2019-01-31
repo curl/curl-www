@@ -323,3 +323,15 @@ DATE 2018-04-15
 WHO Daniel Stenberg
 DESC DNS-over-HTTPS and how curl will do it
 ENDOFVIDEO
+
+VIDEO URLs
+EVENT curl-up 2018
+URL https://curl.haxx.se/video/curlup-2018/2018-04-15_Daniel-Stenberg-urls.webm
+SLIDES https://curl.haxx.se/video/curlup-2018/2018-04-15_Daniel-Stenberg-urls.pdf
+THUMB urls-2018.jpg
+THUMBSIZE width="250" height="141"
+DURATION 44 minutes
+DATE 2018-04-15
+WHO Daniel Stenberg
+DESC Discuss the lack of proper URL specifications and where that takes curl
+ENDOFVIDEO
