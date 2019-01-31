@@ -14,12 +14,17 @@ sub onevideo {
     my $desc = $video{"DESC"};
     my $who = $video{"WHO"};
     my $slides;
+    my $e = $video{"EVENT"};
+    my $event;
     if($s) {
         $slides = " [<a href=\"$s\">slides</a>]";
     }
+    if($e) {
+        $event = sprintf(" at %s", $e);
+    }
     print <<STOP
 <div class="video"> <a href="$url"> <img src="t/$thumb" $size> </a> <br>
-  <b>$video</b> <p> $duration, $date$slides <p> $desc by $who </div>
+  <b>$video</b> <p> $duration, $date$slides <p> $desc by $who$event</div>
 STOP
         ;
 
