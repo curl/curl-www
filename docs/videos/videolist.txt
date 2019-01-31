@@ -265,3 +265,15 @@ DATE 2015-02-01
 WHO Daniel Stenberg
 DESC libcurl is the world's most used and most popular internet transfer library, already used in every imaginable sort of embedded device out there. How did this happen and how do you use libcurl to transfer data to or from your device?
 ENDOFVIDEO
+
+VIDEO Console oriented web services
+EVENT curl-up 2018
+URL https://curl.haxx.se/video/curlup-2018/2018-04-14_Igor-Chublin-console-oriented-services.webm
+THUMB console-services-2018.jpg
+THUMBSIZE width="250" height="141"
+DURATION 41 minutes
+DATE 2018-04-14
+WHO Igor Chubin
+DESC How to build console oriented web services and why
+ENDOFVIDEO
+
