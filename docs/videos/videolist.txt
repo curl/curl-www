@@ -371,3 +371,15 @@ DATE 2018-04-15
 WHO Lucas Pardue
 DESC Why there's an Alt-Svc header, how it works and how it changes evertything
 ENDOFVIDEO
+
+VIDEO Fuzzing curl
+EVENT curl-up 2018
+URL https://curl.haxx.se/video/curlup-2018/2018-04-15_Max-Dymond-fuzzing-curl.webm
+SLIDES https://curl.haxx.se/video/curlup-2018/2018-04-15_Max-Dymond-fuzzing-curl.pdf
+THUMB fuzzing-curl-2018.jpg
+THUMBSIZE width="250" height="141"
+DURATION 31 minutes
+DATE 2018-04-15
+WHO Max Dymond
+DESC How we fuzz curl
+ENDOFVIDEO
