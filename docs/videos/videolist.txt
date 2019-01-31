@@ -206,3 +206,26 @@ WHO Dan Fandrich
 DESC Efforts to enhance the test architecture
 ENDOFVIDEO
 
+VIDEO curl CI
+EVENT curl-up 2018
+URL https://curl.haxx.se/video/curlup-2018/2018-04-14_Daniel-Stenberg-curl-ci.webm
+SLIDES https://curl.haxx.se/video/curlup-2018/2018-04-14_Daniel-Stenberg-curl-ci.pdf
+THUMB curl-ci-2018.jpg
+THUMBSIZE width="250" height="141"
+DURATION 22 minutes
+DATE 2018-04-14
+WHO Daniel Stenberg
+DESC The curl CI setup and how it works
+ENDOFVIDEO
+
+VIDEO Welcome to curl up
+EVENT curl-up 2018
+URL https://curl.haxx.se/video/curlup-2018/2018-04-14_Daniel-Stenberg-welcome-to-curlup.webm
+SLIDES https://curl.haxx.se/video/curlup-2018/2018-04-14_Daniel-Stenberg-welcome-to-curlup.pdf
+THUMB welcome-to-curlup-2018.jpg
+THUMBSIZE width="250" height="141"
+DURATION 1h25
+DATE 2018-04-14
+WHO Daniel Stenberg
+DESC The state of the curl project 2018
+ENDOFVIDEO
