@@ -289,3 +289,14 @@ WHO Kamil Dudka
 DESC How Red Hat distributes curl. What has c hanged since curl up 2017
 ENDOFVIDEO
 
+VIDEO libcurl in Apache: the culprit
+EVENT curl-up 2018
+URL https://curl.haxx.se/video/curlup-2018/2018-04-14_Stefan-Eissing-libcurl-in-apache.webm
+THUMB libcurl-in-apache.jpg
+THUMBSIZE width="250" height="141"
+DURATION 16 minutes
+DATE 2018-04-14
+WHO Stenberg Eissing
+DESC libcurl is buing used by the Apache httpd
+ENDOFVIDEO
+
