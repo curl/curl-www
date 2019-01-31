@@ -233,6 +233,7 @@ ENDOFVIDEO
 VIDEO curl - a hobby project with a billion users
 EVENT Google Tech Talk Meetup, Aug 26th 2015
 URL https://youtu.be/Lq2ksox21Eg
+SLIDES 2015-curl-hobby-billion-users-Google.pdf
 THUMB hobby-project-with-a-billion.jpg
 THUMBSIZE width="250" height="140"
 DURATION 1h11
