@@ -296,7 +296,7 @@ THUMB libcurl-in-apache.jpg
 THUMBSIZE width="250" height="141"
 DURATION 16 minutes
 DATE 2018-04-14
-WHO Stenberg Eissing
+WHO Stefan Eissing
 DESC libcurl is buing used by the Apache httpd
 ENDOFVIDEO
 
