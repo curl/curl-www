@@ -359,3 +359,15 @@ DATE 2018-04-15
 WHO Fernando Bitti Loureiro
 DESC How I use curl every day
 ENDOFVIDEO
+
+VIDEO alt-svc for the people
+EVENT curl-up 2018
+URL https://curl.haxx.se/video/curlup-2018/2018-04-15_Lucas_Pardue-altsvc-for-the-people.webm
+SLIDES https://curl.haxx.se/video/curlup-2018/2018-04-15_Lucas_Pardue-altsvc-for-the-people.pdf
+THUMB altsvc-for-the-people-2018.jpg
+THUMBSIZE width="250" height="141"
+DURATION 35 minutes
+DATE 2018-04-15
+WHO Lucas Pardue
+DESC Why there's an Alt-Svc header, how it works and how it changes evertything
+ENDOFVIDEO
