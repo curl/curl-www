@@ -139,7 +139,7 @@ PAGES =						\
 
 all: vuln.gen $(PAGES) vuln-make.gen
 	-test -f vuln-make.gen && make -f vuln-make.gen
-	@echo done 
+	cd videos && make
 
 clean:
 	-test -f vuln-make.gen && make -f vuln-make.gen clean
