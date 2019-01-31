@@ -348,3 +348,14 @@ WHO Daniel Stenberg
 DESC Explaing QUIC and how curl can be made to support it
 ENDOFVIDEO
 
+VIDEO curl and a day in my life
+EVENT curl-up 2018
+URL https://curl.haxx.se/video/curlup-2018/2018-04-15_Fernando-Bitti-Loureiro-a-day-in-my-life.webm
+SLIDES https://curl.haxx.se/video/curlup-2018/2018-04-15_Fernando-Bitti-Loureiro-a-day-in-my-life.pdf
+THUMB a-day-in-my-life-2018.jpg
+THUMBSIZE width="250" height="141"
+DURATION 35 minutes
+DATE 2018-04-15
+WHO Fernando Bitti Loureiro
+DESC How I use curl every day
+ENDOFVIDEO
