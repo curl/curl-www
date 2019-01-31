@@ -300,3 +300,14 @@ WHO Stenberg Eissing
 DESC libcurl is buing used by the Apache httpd
 ENDOFVIDEO
 
+VIDEO google and proxies
+EVENT curl-up 2018
+URL https://curl.haxx.se/video/curlup-2018/2018-04-14_Tony-Aiuto-google-and-proxies.webm
+SLIDES https://curl.haxx.se/video/curlup-2018/2018-04-14_Tony-Aiuto-google-and-proxies.pdf
+THUMB google-and-proxies-2018.jpg
+THUMBSIZE width="250" height="141"
+DURATION 23 minutes
+DATE 2018-04-14
+WHO Tony Aiuto
+DESC How Google uses proxies with curl
+ENDOFVIDEO
