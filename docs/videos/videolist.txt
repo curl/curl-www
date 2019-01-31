@@ -229,3 +229,25 @@ DATE 2018-04-14
 WHO Daniel Stenberg
 DESC The state of the curl project 2018
 ENDOFVIDEO
+
+VIDEO curl - a hobby project with a billion users
+EVENT Google Tech Talk Meetup, Aug 26th 2015
+URL https://youtu.be/Lq2ksox21Eg
+THUMB hobby-project-with-a-billion.jpg
+THUMBSIZE width="250" height="140"
+DURATION 1h11
+DATE 2015-08-26
+WHO Daniel Stenberg
+DESC curl is like a swiss army-knife for HTTP and internet transfers. For over 17 years the project has been run by volunteers and now counts perhaps more than one billion users. Daniel takes us through how it started, how it works and why it never gets done
+ENDOFVIDEO
+
+VIDEO You know what's cool? Running on billions of devices
+EVENT FOSDEM 2017
+URL https://youtu.be/T31GvxCtrL8
+THUMB you-know-whats-cool-2017.jpg
+THUMBSIZE width="250" height="141"
+DURATION 50 minutes
+WHO Daniel Stenberg
+DESC All about curl, from inception to being everywhere
+ENDOFVIDEO
+
