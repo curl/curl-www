@@ -311,3 +311,15 @@ DATE 2018-04-14
 WHO Tony Aiuto
 DESC How Google uses proxies with curl
 ENDOFVIDEO
+
+VIDEO curl and DoH
+EVENT curl-up 2018
+URL https://curl.haxx.se/video/curlup-2018/2018-04-15_Daniel-Stenberg-curl-doh.webm
+SLIDES https://curl.haxx.se/video/curlup-2018/2018-04-15_Daniel-Stenberg-curl-doh.pdf
+THUMB curl-doh-2018.jpg
+THUMBSIZE width="250" height="141"
+DURATION 47 minutes
+DATE 2018-04-15
+WHO Daniel Stenberg
+DESC DNS-over-HTTPS and how curl will do it
+ENDOFVIDEO
