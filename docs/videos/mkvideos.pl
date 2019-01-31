@@ -22,14 +22,12 @@ sub onevideo {
     if($e) {
         $event = sprintf(" at %s", $e);
     }
-    print <<STOP
-<div class="video"> <a href="$url"> <img src="t/$thumb" $size> </a> <br>
-  <b>$video</b> <p> $duration, $date$slides <p> $desc by $who$event</div>
-STOP
-        ;
-
+    return "<!-- $date -->".
+        "<div class=\"video\"> <a href=\"$url\"> <img src=\"t/$thumb\" $size> </a> <br>".
+        "<b>$video</b> <p> $duration, $date$slides <p> $desc by $who$event</div>";
 }
 
+my @o;
 while(<V>) {
     my $l=$_;
     chomp $l;
@@ -39,8 +37,11 @@ while(<V>) {
     }
     elsif($l eq "ENDOFVIDEO") {
         if($video{"VIDEO"}) {
-            onevideo();
+            push @o, onevideo();
         }
         undef %video;
     }
+}
+for (reverse sort @o) {
+    print "$_\n";
 }
