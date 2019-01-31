@@ -239,7 +239,7 @@ THUMBSIZE width="250" height="140"
 DURATION 1h11
 DATE 2015-08-26
 WHO Daniel Stenberg
-DESC curl is like a swiss army-knife for HTTP and internet transfers. For over 17 years the project has been run by volunteers and now counts perhaps more than one billion users. Daniel takes us through how it started, how it works and why it never gets done
+DESC curl is like a swiss army-knife for HTTP and internet transfers. Daniel takes us through how it started, how it works and why it never gets done
 ENDOFVIDEO
 
 VIDEO You know what's cool? Running on billions of devices
@@ -263,7 +263,7 @@ THUMBSIZE width="250" height="141"
 DURATION 26 minutes
 DATE 2015-02-01
 WHO Daniel Stenberg
-DESC libcurl is the world's most used and most popular internet transfer library, already used in every imaginable sort of embedded device out there. How did this happen and how do you use libcurl to transfer data to or from your device?
+DESC libcurl is the world's most used and most popular internet transfer library, already used in every imaginable sort of embedded device out there.
 ENDOFVIDEO
 
 VIDEO Console oriented web services
@@ -335,3 +335,16 @@ DATE 2018-04-15
 WHO Daniel Stenberg
 DESC Discuss the lack of proper URL specifications and where that takes curl
 ENDOFVIDEO
+
+VIDEO QUIC and curl
+EVENT curl-up 2018
+URL https://curl.haxx.se/video/curlup-2018/2018-04-15_Daniel_Stenberg-curl-quic.webm
+SLIDES https://curl.haxx.se/video/curlup-2018/2018-04-15_Daniel_Stenberg-curl-quic.pdf
+THUMB curl-quic-2018.jpg
+THUMBSIZE width="250" height="141"
+DURATION 43 minutes
+DATE 2018-04-15
+WHO Daniel Stenberg
+DESC Explaing QUIC and how curl can be made to support it
+ENDOFVIDEO
+
