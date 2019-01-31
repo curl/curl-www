@@ -172,7 +172,7 @@ WHO Stefan Eissing
 DESC How he uses curl to test Apache's HTTP/2 support
 ENDOFVIDEO
 
-VIDEO Doing HTTP/2 with curl
+VIDEO Doing HTTP/2 with libcurl
 EVENT curl-up 2017
 URL https://curl.haxx.se/video/curlup-2017/2017-03-19_08_Daniel_Stenberg_http2_curl.mp4
 THUMB http2-curl.jpg
@@ -180,7 +180,7 @@ THUMBSIZE width="250" height="156"
 DURATION 39 minutes
 DATE 2017-03-19
 WHO Daniel Stenberg
-DESC How to do HTTP/2 with curl (missing the first part)
+DESC How to do HTTP/2 requests with libcurl (missing the first part)
 ENDOFVIDEO
 
 VIDEO SPNEGO, Kerberos, GSS-API and Negotiate support and how to make them better
@@ -231,7 +231,7 @@ DESC The state of the curl project 2018
 ENDOFVIDEO
 
 VIDEO curl - a hobby project with a billion users
-EVENT Google Tech Talk Meetup, Aug 26th 2015
+EVENT Google Tech Talk Meetup
 URL https://youtu.be/Lq2ksox21Eg
 SLIDES 2015-curl-hobby-billion-users-Google.pdf
 THUMB hobby-project-with-a-billion.jpg
