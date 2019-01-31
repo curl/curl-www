@@ -249,7 +249,19 @@ SLIDES FOSDEM-2017-curl.pdf
 THUMB you-know-whats-cool-2017.jpg
 THUMBSIZE width="250" height="141"
 DURATION 50 minutes
+DATE 2017-02-04
 WHO Daniel Stenberg
 DESC All about curl, from inception to being everywhere
 ENDOFVIDEO
 
+VIDEO Internet all the things - using curl in your device
+EVENT FOSDEM 2015
+URL https://mirrors.dotsrc.org/fosdem/2015/devroom-embedded/curl_device.mp4
+SLIDES 2015-curl-FOSDEM-internet-all-the-things.pdf
+THUMB internet-all-the-things-2015.jpg
+THUMBSIZE width="250" height="141"
+DURATION 26 minutes
+DATE 2015-02-01
+WHO Daniel Stenberg
+DESC libcurl is the world's most used and most popular internet transfer library, already used in every imaginable sort of embedded device out there. How did this happen and how do you use libcurl to transfer data to or from your device?
+ENDOFVIDEO
