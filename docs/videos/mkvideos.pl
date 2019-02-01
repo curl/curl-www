@@ -23,7 +23,7 @@ sub onevideo {
         $event = sprintf(" at %s", $e);
     }
     return "<!-- $date -->".
-        "<div class=\"video\"> <a href=\"$url\"> <img src=\"t/$thumb\" $size> </a> <br>".
+        "<div class=\"video\"> <a href=\"$url\"> <img alt=\"$video\" src=\"t/$thumb\" $size> </a> <br>".
         "<b>$video</b> <p> $duration, $date$slides <p> $desc by $who$event</div>";
 }
 
