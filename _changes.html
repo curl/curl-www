@@ -43,6 +43,96 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_64_0"></a>
+SUBTITLE(Fixed in 7.64.0 - February 6 2019)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="https://curl.haxx.se/bug/?i=2956">cookies: leave secure cookies alone</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=3406">hostip: support wildcard hosts</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=3350">http: Implement trailing headers for chunked transfers</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=2873">http: added options for allowing HTTP/0.9 responses</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=3318">timeval: Use high resolution timestamps on Windows</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/docs/CVE-2018-16890.html">CVE-2018-16890: NTLM type-2 out-of-bounds buffer read</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2019-3822.html">CVE-2019-3822: NTLMv2 type-3 header stack buffer overflow</a>
+ BGF <a href="https://curl.haxx.se/docs/CVE-2019-3823.html">CVE-2019-3823: SMTP end-of-response out-of-bounds read</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3410">FAQ: remove mention of sourceforge for github</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3372">OS400: handle memory error in list conversion</a>
+ BGF OS400: upgrade ILE/RPG binding.
+ BGF README: add codacy code quality badge
+ BGF <a href="https://curl.haxx.se/bug/?i=3384">Revert http_negotiate: do not close connection</a>
+ BGF THANKS: added several missing names from year <= 2000
+ BGF build: make 'tidy' target work for metalink builds
+ BGF <a href="https://curl.haxx.se/bug/?i=3459">cmake: added checks for variadic macros</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3292">cmake: updated check for HAVE_POLL_FINE to match autotools</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3196">cmake: use lowercase for function name like the rest of the code</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3474">configure: detect xlclang separately from clang</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3484">configure: fix recv/send/select detection on Android</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3497">configure: rewrite --enable-code-coverage</a>
+ BGF conncache_unlock: avoid indirection by changing input argument type
+ BGF <a href="https://curl.haxx.se/bug/?i=3469">cookie: fix comment typo</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3445">cookies: allow secure override when done over HTTPS</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2964">cookies: extend domain checks to non psl builds</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3417">cookies: skip custom cookies when redirecting cross-site</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3423">curl --xattr: strip credentials from any URL that is stored</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3380">curl -J: refuse to append to the destination file</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3438">curl/urlapi.h: include "curl.h" first</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3371">curl_multi_remove_handle() don't block terminating c-ares requests</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3367">darwinssl: accept setting max-tls with default min-tls</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3400">disconnect: separate connections and easy handles better</a>
+ BGF disconnect: set conn->data for protocol disconnect
+ BGF <a href="https://curl.haxx.se/bug/?i=3432">docs/version.d: mention MultiSSL</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3368">docs: fix the --tls-max description</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3518">docs: use $(INSTALL_DATA) to install man page</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3513">docs: use meaningless port number in CURLOPT_LOCALPORT example</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3369">gopher: always include the entire gopher-path in request</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3392">http2: clear pause stream id if it gets closed</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3401">if2ip: remove unused function Curl_if_is_interface_name</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3491">libssh: do not let libssh create socket</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3493">libssh: enable CURLOPT_SSH_KNOWNHOSTS and CURLOPT_SSH_KEYFUNCTION for libssh</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3402">libssh: free sftp_canonicalize_path() data correctly</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2019-01/0000.html">libtest/stub_gssapi: use "real" snprintf</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3376">mbedtls: use VERIFYHOST</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3436">multi: multiplexing improvements</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2019-01/0073.html">multi: set the EXPIRE_*TIMEOUT timers at TIMER_STARTSINGLE time</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3286">ntlm: fix NTMLv2 compliance</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3280">ntlm_sspi: add support for channel binding</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3462">openssl: adapt to 3.0.0, OpenSSL_version_num() is deprecated</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3477">openssl: fix the SSL_get_tlsext_status_ocsp_resp call</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3407">openvms: fix OpenSSL discovery on VAX</a>
+ BGF openvms: fix typos in documentation
+ BGF <a href="https://curl.haxx.se/bug/?i=3453">os400: add a missing closing bracket</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3453">os400: fix extra parameter syntax error</a>
+ BGF pingpong: change default response timeout to 120 seconds
+ BGF <a href="https://curl.haxx.se/bug/?i=3264">pingpong: ignore regular timeout in disconnect phase</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3426">printf: fix format specifiers</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3496">runtests.pl: Fix perl call to include srcdir</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3435">schannel: fix compiler warning</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3480">schannel: preserve original certificate path parameter</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3504">schannel: stop calling it "winssl"</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3502">sigpipe: if mbedTLS is used, ignore SIGPIPE</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3388">smb: fix incorrect path in request if connection reused</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3481">ssh: log the libssh2 error message when ssh session startup fails</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3447">test1558: verify CURLINFO_PROTOCOL on file:// transfer</a>
+ BGF test1561: improve test name
+ BGF test1653: make it survive torture tests
+ BGF <a href="https://curl.haxx.se/bug/?i=3443">tests: allow tests to pass by 2037-02-12</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3470">tests: move objnames-* from lib into tests</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3449">timediff: fix math for unsigned time_t</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3437">timeval: Disable MSVC Analyzer GetTickCount warning</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3456">tool_cb_prg: avoid integer overflow</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3468">travis: added cmake build for osx</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3365">urlapi: Fix port parsing of eol colon</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3369">urlapi: distinguish possibly empty query</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3411">urlapi: fix parsing ipv6 with zone index</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3442">urldata: rename easy_conn to just conn</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3133">winbuild: conditionally use /DZLIB_WINAPI</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3395">wolfssl: fix memory-leak in threaded use</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3503">spnego_sspi: add support for channel binding</a>
+</ul>
+
 <a name="7_63_0"></a>
 SUBTITLE(Fixed in 7.63.0 - December 12 2018)
 <p> Changes:
