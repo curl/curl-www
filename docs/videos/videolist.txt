@@ -383,3 +383,13 @@ DATE 2018-04-15
 WHO Max Dymond
 DESC How we fuzz curl
 ENDOFVIDEO
+
+VIDEO twenty years of curl development - by gource
+URL https://youtu.be/Un73TaG3reg
+THUMB gource-2019.jpg
+THUMBSIZE width="250" height="141"
+DURATION 23 minutes
+DATE 2019-02-08
+WHO Daniel Stenberg
+DESC This is the curl and libcurl source tree development visualized with the gource tool. From December 1999 to February 7 2019.
+ENDOFVIDEO
