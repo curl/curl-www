@@ -224,16 +224,17 @@ span.metalink {
 /* a non-selected item in the main menu, with the mouse hovering */
 .menuitem:hover {
     text-decoration: none;
-    color: #8080ff;
+    color: #d0d0d0;
 }
 
 /* a selected item in the main menu */
 .itemselect {
     font-family: sans-serif;
+    font-size: 110%;
     text-decoration: none;
     padding: 0px 1em 0px 0px;
     font-weight: bold;
-    color: #ffff80;
+    color: #eaeaea;
 }
 
 /* the top menu box */
@@ -420,5 +421,5 @@ td.download {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-    color: #8080ff;
+    color: #c0c0c0;
 }
