@@ -9,10 +9,15 @@ sub onevideo {
     my $thumb = $video{"THUMB"};
     my $size = $video{"THUMBSIZE"};
     my $duration = $video{"DURATION"};
+    # This converts "5 minutes" or "1h3" into "PT5M" or "PT1HM"
+    my $isoduration = "PT" . uc($duration);
+    $isoduration =~ s/( minutes)?$/M/i;
     my $date = $video{"DATE"};
     my $s = $video{"SLIDES"};
     my $desc = $video{"DESC"};
     my $who = $video{"WHO"};
+    my $tags = $video{"TAGS"};
+    my $keywords = "<meta itemprop=\"keywords\" content=\"curl, $tags\" />" if $tags;
     my $slides;
     my $e = $video{"EVENT"};
     my $event;
@@ -23,8 +28,11 @@ sub onevideo {
         $event = sprintf(" at %s", $e);
     }
     return "<!-- $date -->".
-        "<div class=\"video\"> <a href=\"$url\"> <img alt=\"$video\" src=\"t/$thumb\" $size> </a> <br>".
-        "<b>$video</b> <p> $duration, $date$slides <p> $desc by $who$event</div>";
+        "<div itemprop=\"video\" itemscope itemtype=\"http://schema.org/VideoObject\">".
+        "<div class=\"video\"> <meta itemprop=\"contentUrl\" content=\"$url\" /><a href=\"$url\"> <img alt=\"$video\" src=\"t/$thumb\" $size> </a><meta itemprop=\"thumbnailUrl\" content=\"https://curl.haxx.se/docs/videos/t/$thumb\" /><br>\n".
+        "<b><span itemprop=\"name\">$video</span></b> <p> <meta itemprop=\"duration\" content=\"$isoduration\" />$duration, <span itemprop=\"dateCreated uploadDate\">$date</span>$slides <p>\n".
+        "<span itemprop=\"description\">$desc by <span itemprop=\"actor\">$who</span>$event</span>$keywords</div>".
+        "</div>";
 }
 
 my @o;
