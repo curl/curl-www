@@ -180,7 +180,7 @@ THUMBSIZE width="250" height="156"
 DURATION 39 minutes
 DATE 2017-03-19
 WHO Daniel Stenberg
-DESC How to do HTTP/2 requests with libcurl (missing the first part)
+DESC How to do HTTP/2 requests with libcurl (missing the first part of the talk)
 ENDOFVIDEO
 
 VIDEO SPNEGO, Kerberos, GSS-API and Negotiate support and how to make them better
@@ -286,7 +286,7 @@ THUMBSIZE width="250" height="173"
 DURATION 18 minutes
 DATE 2018-04-14
 WHO Kamil Dudka
-DESC How Red Hat distributes curl. What has c hanged since curl up 2017
+DESC How Red Hat distributes curl. What has changed since curl up 2017
 ENDOFVIDEO
 
 VIDEO libcurl in Apache: the culprit
