@@ -10,7 +10,7 @@ my %mirrors=(
     'https://execve.net/mirror/curl/' => 'Singapore',
 
     # Marc Hoersken runs:
-    'https://dl.uxnr.de/mirror/curl/' => 'Germany (St. Wendel, Saarland)',
+    'https://dl.uxnr.de/mirror/curl/' => 'Germany (Nuremberg, Bavaria)',
 
     # Marty Anstey runs:
     'https://curl.mirror.anstey.ca/' => 'Canada (Vancouver)',
