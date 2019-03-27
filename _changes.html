@@ -43,6 +43,133 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_64_1"></a>
+SUBTITLE(Fixed in 7.64.1 - March 27 2019)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="https://curl.haxx.se/bug/?i=3498">alt-svc: experiemental support added</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=3677">configure: add --with-amissl</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/bug/?i=3623">AppVeyor: add MinGW-w64 and classic Mingw builds</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3606">AppVeyor: switch VS 2015 builds to VS 2017 image</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3641">CURLU: fix NULL dereference when used over proxy</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3626">Curl_easy: remove req.maxfd - never used!</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3572">Curl_now: figure out windows version in win32_init:</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3562">Curl_resolv: fix a gcc -Werror=maybe-uninitialized warning</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3660">DoH: inherit some SSL options from user's easy handle</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3619">Secure Transport: no more "darwinssl"</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3689">Secure Transport: tvOS 11 is required for ALPN support</a>
+ BGF cirrus: Added FreeBSD builds using Cirrus CI
+ BGF <a href="https://curl.haxx.se/bug/?i=3538">cleanup: make local functions static</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3532">cli tool: do not use mime.h private structures</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3658">cmdline-opts/proxytunnel.d: the option tunnnels all protocols</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3595">configure: add additional libraries to check for LDAP support</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3600">configure: remove the unused fdopen macro</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3569">configure: show features as well in the final summary</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3686">conncache: use conn->data to know if a transfer owns it</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2019-02/0064.html">connection: never reuse CONNECT_ONLY connections</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3542">connection_check: restore original conn->data after the check</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3541">connection_check: set ->data to the transfer doing the check</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3554">cookie: Add support for cookie prefixes</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3649">cookies: dotless names can set cookies again</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3613">cookies: fix NULL dereference if flushing cookies with no CookieInfo set</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3680">curl.1: --user and --proxy-user are hidden from ps output</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3682">curl.1: mark the argument to --cookie as <data|filename></a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3616">curl.h: use __has_declspec_attribute for shared builds</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3611">curl: display --version features sorted alphabetically</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3550">curl: fix FreeBSD compiler warning in the --xattr code</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3587">curl: remove MANUAL from -M output</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3592">curl_easy_duphandle.3: clarify that a duped handle has no shares</a>
+ BGF curl_multi_remove_handle.3: use at any time, just not from within callbacks
+ BGF curl_url.3: this API is not experimental anymore
+ BGF <a href="https://curl.haxx.se/bug/?i=3516">dns: release sharelock as soon as possible</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3631">docs: update max-redirs.d phrasing</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3313">easy: fix win32 init to work without CURL_GLOBAL_WIN32</a>
+ BGF examples/10-at-a-time.c: improve readability and simplify
+ BGF <a href="https://curl.haxx.se/bug/?i=3421">examples/cacertinmem.c: use multiple certificates for loading CA-chain</a>
+ BGF examples/crawler: Fix the Accept-Encoding setting
+ BGF <a href="https://curl.haxx.se/bug/?i=3632">examples/ephiperfifo.c: various fixes</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3663">examples/externalsocket: add missing close socket calls</a>
+ BGF examples/http2-download: cleaned up
+ BGF <a href="https://curl.haxx.se/bug/?i=3580">examples/http2-serverpush: add some sensible error checks</a>
+ BGF examples/http2-upload: cleaned up
+ BGF examples/httpcustomheader: Value stored to 'res' is never read
+ BGF examples/postinmemory: Potential leak of memory pointed to by 'chunk.memory'
+ BGF examples/sftpuploadresume: Value stored to 'result' is never read
+ BGF <a href="https://curl.haxx.se/bug/?i=3645">examples: only include <curl/curl.h></a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3537">examples: remove recursive calls to curl_multi_socket_action</a>
+ BGF examples: remove superfluous null-pointer checks
+ BGF <a href="https://curl.haxx.se/bug/?i=3672">file: fix "Checking if unsigned variable 'readcount' is less than zero."</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3551">fnmatch: disable if FTP is disabled</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3636">gnutls: remove call to deprecated gnutls_compression_get_name</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3617">gopher: remove check for path == NULL</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3566">gssapi: fix deprecated header warnings</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3544">hostip: make create_hostcache_id avoid alloc + free</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3557">http2: multi_connchanged() moved from multi.c, only used for h2</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3577">http2: verify :athority in push promise requests</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3578">http: make adding a blank header thread-safe</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2431">http: send payload when (proxy) authentication is done</a>
+ BGF <a href="https://curl.haxx.se/mail/archive-2019-02/0023.html">http: set state.infilesize when sending multipart formposts</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3681">makefile: make checksrc and hugefile commands "silent"</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3553">mbedtls: make it build even if MBEDTLS_VERSION_C isn't set</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3574">mbedtls: release sessionid resources on error</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3671">memdebug: log pointer before freeing its data</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3656">memdebug: make debug-specific functions use curl_dbg_ prefix</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3561">mime: put the boundary buffer into the curl_mime struct</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3602">multi: call multi_done on connect timeouts, fixes CURLINFO_TOTAL_TIME</a>
+ BGF <a href="https://curl.haxx.se/mail/archive-2019-02/0013.html">multi: remove verbose "Expire in" ... messages</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3666">multi: removed unused code for request retries</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3618">multi: support verbose conncache closure handle</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=1261">negotiate: fix for HTTP POST with Negotiate</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3591">openssl: add support for TLS ASYNC state</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3692">openssl: if cert type is ENG and no key specified, key is ENG too</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3548">pretransfer: don't strlen() POSTFIELDS set for GET requests</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3584">rand: Fix a mismatch between comments in source and header</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3609">runtests: detect "schannel" as an alias for "winssl"</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3552">schannel: be quiet - remove verbose output</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3412">schannel: close TLS before removing conn from cache</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3608">schannel: support CALG_ECDH_EPHEM algorithm</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3545">scripts/completion.pl: also generate fish completion file</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3585">singlesocket: fix the 'sincebefore' placement</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3546">source: fix two 'nread' may be used uninitialized warnings</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3628">ssh: fix Condition '!status' is always true</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3506">ssh: loop the state machine if not done and not blocking</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3612">strerror: make the strerror function use local buffers</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3625">system_win32: move win32_init here from easy.c</a>
+ BGF test578: make it read data from the correct test
+ BGF tests: Fixed XML validation errors in some test files
+ BGF <a href="https://curl.haxx.se/bug/?i=3536">tests: add stderr comparison to the test suite</a>
+ BGF tests: fix multiple may be used uninitialized warnings
+ BGF <a href="https://curl.haxx.se/bug/?i=3629">threaded-resolver: shutdown the resolver thread without error message</a>
+ BGF <a href="https://github.com/curl/curl/issues/3175#issuecomment-439068724">tool_cb_wrt: fix writing to Windows null device NUL</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3677">tool_getpass: termios.h is present on AmigaOS 3, but no tcgetattr/tcsetattr</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3677">tool_operate: build on AmigaOS</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3534">tool_operate: fix typecheck warning</a>
+ BGF transfer.c: do not compute length of undefined hex buffer
+ BGF <a href="">travis: add build using gnutls</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3564">travis: add scan-build</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3697">travis: bump the used wolfSSL version to 4.0.0</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3571">travis: enable valgrind for the iconv tests</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3670">travis: use updated compiler versions: clang 7 and gcc 8</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3565">unit1307: require FTP support</a>
+ BGF unit1651: survive curl_easy_init() fails
+ BGF <a href="https://curl.haxx.se/bug/?i=3539">url/idnconvert: remove scan for <= 32 ascii values</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2019-02/0101.html">url: change conn shutdown order to ensure SOCKETFUNCTION callbacks</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3540">urlapi: reduce variable scope, remove unreachable 'break'</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3610">urldata: convert bools to bitfields and move to end</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3627">urldata: simplify bytecounters</a>
+ BGF urlglob: Argument with 'nonnull' attribute passed null
+ BGF version.c: silent scan-build even when librtmp is not enabled
+ BGF <a href="https://curl.haxx.se/bug/?i=3677">vtls: rename some of the SSL functions</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3599">wolfssl: stop custom-adding curves</a>
+ BGF x509asn1: "Dereference of null pointer"
+ BGF <a href="https://curl.haxx.se/bug/?i=3582">x509asn1: cleanup and unify code layout</a>
+ BGF <a href="https://bugs.debian.org/921452">zsh.pl: escape ':' character</a>
+ BGF <a href="https://bugs.debian.org/921452">zsh.pl: update regex to better match curl -h output</a>
+</ul>
+
 <a name="7_64_0"></a>
 SUBTITLE(Fixed in 7.64.0 - February 6 2019)
 <p> Changes:

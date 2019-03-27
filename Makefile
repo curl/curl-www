@@ -1,13 +1,10 @@
 ROOT=.
 
 # the latest stable version is:
-STABLE= 7.64.0
-RELDATE = "6th of February 2019"
+STABLE= 7.64.1
+RELDATE = "27th of March 2019"
 # The planned *next* release is:
-NEXTDATE = "27th of March 2019"
-
-# name of the dir to tempoary unpack and build zip files in:
-TEMPDIR=tempzip
+NEXTDATE = "22nd of May 2019"
 
 # generated file with binary package stats
 STAT = packstat.t
