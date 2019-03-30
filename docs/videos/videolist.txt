@@ -393,3 +393,15 @@ DATE 2019-02-08
 WHO Daniel Stenberg
 DESC This is the curl and libcurl source tree development visualized with the gource tool. From December 1999 to February 7 2019.
 ENDOFVIDEO
+
+VIDEO The curl test suite
+EVENT curl-up 2019
+URL https://curl.haxx.se/video/curlup-2019/2019-03-30_Dan-Fandrich-writing-an-effective-curl-test.webm
+THUMB effective-test-case-2019.jpg
+THUMBSIZE width="250" height="188"
+DURATION 40 minutes
+DATE 2019-03-30
+WHO Dan Fandrich
+TAGS test suite, testing
+DESC How to decide on the kind of test case to write for the curl project that is both effective and matches your goals
+ENDOFVIDEO
