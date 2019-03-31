@@ -394,7 +394,7 @@ WHO Daniel Stenberg
 DESC This is the curl and libcurl source tree development visualized with the gource tool. From December 1999 to February 7 2019.
 ENDOFVIDEO
 
-VIDEO The curl test suite
+VIDEO Writing an effective curl test
 EVENT curl-up 2019
 URL https://curl.haxx.se/video/curlup-2019/2019-03-30_Dan-Fandrich-writing-an-effective-curl-test.webm
 SLIDES https://curl.haxx.se/video/curlup-2019/2019-03-30_Dan-Fandrich-writing-an-effective-curl-test.pdf
@@ -428,7 +428,7 @@ THUMBSIZE width="250" height="140"
 DURATION 12 minutes
 DATE 2019-03-30
 WHO Daniel Stenberg
-DESC How to deprecat things, what we're deprecating and how we introduce experimental features.
+DESC How to deprecate things, what we're deprecating and how we introduce experimental features.
 ENDOFVIDEO
 
 VIDEO Governance and money 
@@ -443,7 +443,7 @@ WHO Daniel Stenberg
 DESC Governance and money in the project. Joining SFC, sponsors etc.
 ENDOFVIDEO
 
-VIDEO curlator: a framwork for console services
+VIDEO curlator: a framework for console services
 EVENT curl-up 2019
 URL https://youtu.be/XZBvzyhapHM
 THUMB curlator-2019.jpg
