@@ -397,6 +397,7 @@ ENDOFVIDEO
 VIDEO The curl test suite
 EVENT curl-up 2019
 URL https://curl.haxx.se/video/curlup-2019/2019-03-30_Dan-Fandrich-writing-an-effective-curl-test.webm
+SLIDES https://curl.haxx.se/video/curlup-2019/2019-03-30_Dan-Fandrich-writing-an-effective-curl-test.pdf
 THUMB effective-test-case-2019.jpg
 THUMBSIZE width="250" height="188"
 DURATION 40 minutes
@@ -404,4 +405,51 @@ DATE 2019-03-30
 WHO Dan Fandrich
 TAGS test suite, testing
 DESC How to decide on the kind of test case to write for the curl project that is both effective and matches your goals
+ENDOFVIDEO
+
+VIDEO The state of curl 2019
+EVENT curl-up 2019
+URL https://youtu.be/1y07i0jkAII
+SLIDES https://curl.haxx.se/video/curlup-2019/2019-03-30-state-of-curl.pdf
+THUMB state-of-curl-2019-jpg
+THUMBSIZE width="250" height="140"
+DURATION 1h50
+DATE 2019-03-30
+WHO Daniel Stenberg
+DESC The state of the curl project 2019. Stats, numbers and status checks.
+ENDOFVIDEO
+
+VIDEO Deprecating legacy crap
+EVENT curl-up 2019
+URL https://youtu.be/d9Yc3UNZjfs
+SLIDES https://curl.haxx.se/video/curlup-2019/2019-03-30-depcrecating-legacy.pdf
+THUMB deprecating-legacy.jpg
+THUMBSIZE width="250" height="140"
+DURATION 12 minutes
+DATE 2019-03-30
+WHO Daniel Stenberg
+DESC How to deprecat things, what we're deprecating and how we introduce experimental features.
+ENDOFVIDEO
+
+VIDEO Governance and money 
+EVENT curl-up 2019
+URL https://youtu.be/a9UpMuYTTrs
+SLIDES https://curl.haxx.se/video/curlup-2019/2019-03-30-governance.pdf
+THUMB governance-2019.jpg
+THUMBSIZE width="250" height="142"
+DURATION 18 minutes
+DATE 2019-03-30
+WHO Daniel Stenberg
+DESC Governance and money in the project. Joining SFC, sponsors etc.
+ENDOFVIDEO
+
+VIDEO curlator: a framwork for console services
+EVENT curl-up 2019
+URL https://youtu.be/XZBvzyhapHM
+THUMB curlator-2019.jpg
+THUMBSIZE width="250" height="141"
+DURATION 20 minutes
+DATE 2019-03-30
+WHO Igor Chubin
+DESC Create console-friendly web services with curlator!
 ENDOFVIDEO
