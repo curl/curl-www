@@ -453,3 +453,15 @@ DATE 2019-03-30
 WHO Igor Chubin
 DESC Create console-friendly web services with curlator!
 ENDOFVIDEO
+
+VIDEO HTTP/3 (QUIC): the details
+EVENT curl-up 2019
+URL https://youtu.be/mDc2kHPtavE
+SLIDES https://curl.haxx.se/video/curlup-2019/2019-03-31-Robin-Marx-QUIC-details.pdf
+THUMB quic-details-2019.jpg
+THUMBSIZE width="250" height="141"
+DURATION 1h03
+DATE 2019-03-31
+WHO Robin Marx
+DESC In-depth description of QUIC details and the HTTP/3 protocol.
+ENDOFVIDEO
