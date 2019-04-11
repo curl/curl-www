@@ -129,3 +129,4 @@ rfc4120.txt The Kerberos Network Authentication Service (V5) (obsoletes RFC1510)
 rfc4121.txt The Kerberos Version 5 Generic Security Service Application Program Interface (GSS-API) Mechanism: Version 2
 rfc2104.txt HMAC: Keyed-Hashing for Message Authentication
 rfc7578.txt Returning Values from Forms: multipart/form-data (obsoletes RFC2388)
+rfc8314.txt Cleartext Considered Obsolete: Use of Transport Layer Security (TLS) for Email Submission and Access
