@@ -465,3 +465,15 @@ DATE 2019-03-31
 WHO Robin Marx
 DESC In-depth description of QUIC details and the HTTP/3 protocol.
 ENDOFVIDEO
+
+VIDEO HTTP/3 in curl
+EVENT curl-up 2019
+URL https://youtu.be/WfeXVJAF2jc
+SLIDES https://curl.haxx.se/video/curlup-2019/2019-03-31-Daniel-Stenberg-http3-in-curl.pdf
+THUMB http3-in-curl-2019.jpg
+THUMBSIZE width="250" height="135"
+DURATION 24 minutes
+DATE 2019-03-31
+WHO Daniel Stenberg
+DESC The current status and plan on how to support HTTP/3 in curl.
+ENDOFVIDEO
