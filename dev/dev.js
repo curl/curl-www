@@ -140,7 +140,7 @@ function filterSystemBuilds() {
 
 function filterLine() {
     var selected;
-    linefiltername = ""
+    linefiltername = "";
 
     /* Alternate between showing all and showing just this build */
     if (linefilter) {
@@ -183,7 +183,7 @@ function filterLine() {
 
 function filterLineName() {
     var selected;
-    linefilter = ""
+    linefilter = "";
 
     /* Alternate between showing all and showing just this builder */
     if (linefiltername) {
