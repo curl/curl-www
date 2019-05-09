@@ -105,6 +105,7 @@ CVELIST =					\
 
 PAGES =						\
  $(CVELIST)					\
+ bugbounty.html					\
  bugs.html					\
  caextract.html					\
  code-of-conduct.html				\
@@ -191,6 +192,11 @@ bugs.html: _bugs.html $(MAINPARTS) bugs.gen
 
 bugs.gen: $(DOCROOT)/BUGS faqparse.pl
 	./faqparse.pl < $< > $@
+
+bugbounty.html: _bugbounty.html $(MAINPARTS) bugbounty.gen
+	$(ACTION)
+bugbounty.gen: $(DOCROOT)/BUG-BOUNTY.md
+	$(MARKDOWN) < $(DOCROOT)/BUG-BOUNTY.md > $@
 
 history.html: _history.html $(MAINPARTS) history.gen
 	$(ACTION)

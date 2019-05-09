@@ -1,0 +1,30 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>curl - Bug Bounty</TITLE>
+#include "css.t"
+</HEAD>
+
+#define CURL_DOCS
+#define PROJ_DOCS
+#define DOCS_BUGBOUNTY
+#define CURL_URL docs/bugbounty.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(Docs, "/docs/", Project Documentation, "/docs/projdocs.html", Bug Bounty)
+
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="manpage.html">curl man page</a>
+<br><a href="manual.html">Manual</a>
+<br><a href="knownbugs.html">Known bugs</a>
+</div>
+
+#include "bugbounty.gen"
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
+

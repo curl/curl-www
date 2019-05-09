@@ -22,6 +22,7 @@ VLINK(/docs/, Docs Overview, Documentation Overview)
 <div class="dropdown">
   <a class="dropbtn" href="https://curl.haxx.se/docs/projdocs.html">Project</a>
   <div class="dropdown-content">
+    <a href="https://curl.haxx.se/docs/bugbounty.html">Bug Bounty</a>
     <a href="https://curl.haxx.se/docs/bugs.html">Bug Report</a>
     <a href="https://curl.haxx.se/docs/code-of-conduct.html">Code of conduct</a>
     <a href="https://curl.haxx.se/docs/libs.html">Dependencies</a>
@@ -85,10 +86,18 @@ VLINK(/docs/, Docs Overview, Documentation Overview)
 VLINK(/docs/, Docs Overview, Documentation main page)
 
 #ifdef PROJ_DOCS
+#ifdef DOCS_BUGBOUNTY
+LINK(/docs/bugbounty.html, Bug Bounty)
+#else
+VLINK(/docs/bugbounty.html, Bug Bounty, Get rewards for finding security problems)
+#endif
+
+#ifdef PROJ_DOCS
 #ifdef DOCS_BUGS
 LINK(/docs/bugs.html, Bug Report)
 #else
 VLINK(/docs/bugs.html, Bug Report, How to report a problem)
+#endif
 #endif
 
 #ifdef DOCS_CODE_OF_CONDUCT
