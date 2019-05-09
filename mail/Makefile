@@ -27,19 +27,19 @@ etiquette.gen: $(DOCROOT)/MAIL-ETIQUETTE $(ROOT)/docs/faqparse.pl
 mail.html: _mail.html $(MAINPARTS)
 	$(ACTION)
 
-indexheader.html: _indexheader.html $(MAINPARTS)
+indexheader.html: _indexheader.html $(MAINPARTS) support.t
 	$(ACTION)
 
 indexfooter.html: _indexfooter.html $(MAINPARTS)
 	$(ACTION)
 
-mailheader.html: _mailheader.html $(MAINPARTS)
+mailheader.html: _mailheader.html $(MAINPARTS) support.t
 	$(ACTION)
 
 mailfooter.html: _mailfooter.html $(MAINPARTS)
 	$(ACTION)
 
-index.html: _index.html _mail.html $(MAINPARTS) ../recentmail.t
+index.html: _index.html _mail.html $(MAINPARTS) support.t
 	$(ACTION)
 
 lost.html: _lost.html $(MAINPARTS)
