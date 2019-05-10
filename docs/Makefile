@@ -193,7 +193,7 @@ bugs.html: _bugs.html $(MAINPARTS) bugs.gen
 bugs.gen: $(DOCROOT)/BUGS faqparse.pl
 	./faqparse.pl < $< > $@
 
-bugbounty.html: _bugbounty.html $(MAINPARTS) bugbounty.gen
+bugbounty.html: _bugbounty.html $(MAINPARTS) bugbounty.gen $(ADVBOX)
 	$(ACTION)
 bugbounty.gen: $(DOCROOT)/BUG-BOUNTY.md
 	$(MARKDOWN) < $(DOCROOT)/BUG-BOUNTY.md > $@
