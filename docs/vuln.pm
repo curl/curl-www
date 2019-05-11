@@ -3,6 +3,8 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2019-5436.html|7.19.4|7.64.1|TFTP receive buffer overflow|CVE-2019-5436|20190522|20190429|CWE-122: Heap-based Buffer Overflow|200 USD",
+    "CVE-2019-5435.html|7.62.0|7.64.1|Integer overflows in curl_url_set|CVE-2019-5435|20190522|20190424|CWE-131: Incorrect Calculation of Buffer Size|150 USD",
     "CVE-2018-16890.html|7.36.0|7.63.0|NTLM type-2 out-of-bounds buffer read|CVE-2018-16890|20190206|20181230|CWE-125: Out-of-bounds Read",
     "CVE-2019-3822.html|7.36.0|7.63.0|NTLMv2 type-3 header stack buffer overflow|CVE-2019-3822|20190206|20181230|CWE-121: Stack-based Buffer Overflow",
     "CVE-2019-3823.html|7.34.0|7.63.0|SMTP end-of-response out-of-bounds read|CVE-2019-3823|20190206|20190118|CWE-125: Out-of-bounds Read",
