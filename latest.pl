@@ -13,7 +13,7 @@ my %mirrors=(
     'https://dl.uxnr.de/mirror/curl/' => 'Germany (Nuremberg, Bavaria)',
 
     # Marty Anstey runs:
-    'https://curl.mirror.anstey.ca/' => 'Canada (Vancouver)',
+    #'https://curl.mirror.anstey.ca/' => 'Canada (Vancouver)',
     );
 
 sub present {
