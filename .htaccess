@@ -107,6 +107,7 @@ AddType application/x-tar .tar
 AddType application/x-pem-file .pem
 php_flag engine off
 
+Header set X-Content-Type-Options: "nosniff"
 Header set Content-Security-Policy: "default-src 'self' www.fastly-insights.com"
 Header set Strict-Transport-Security "max-age=31536000; includeSubDomains;"
 Header always append X-Frame-Options SAMEORIGIN
