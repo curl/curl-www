@@ -43,6 +43,47 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_65_1"></a>
+SUBTITLE(Fixed in 7.65.1 - June 5 2019)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/bug/?i=3927">CURLOPT_LOW_SPEED_* repaired</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3972">NTLM: reset proxy "multipass" state when CONNECT request is done</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3888">PolarSSL: deprecate support step 1. Removed from configure</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3941">appveyor: add Visual Studio solution build</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3917">cmake: check for if_nametoindex()</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3945">cmake: support CMAKE_OSX_ARCHITECTURES when detecting SIZEOF variables</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3923">config-win32: add support for if_nametoindex and getsockname</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3962">conncache: Remove the DEBUGASSERT on length check</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3951">conncache: make "bundles" per host name when doing proxy tunnels</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3939">curl-win32.h: Enable Unix Domain Sockets based on the Windows SDK version</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2019-06/0009.html">curl_share_setopt.3: improve wording</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3964">dump-header.d: spell out that no headers == empty file</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3919">example/http2-download: fix format specifier</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3919">examples: cleanups and compiler warning fixes</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3966">http2: Stop drain from being permanently set</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3968">http: don't parse body-related headers in bodyless responses</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3921">md4: build correctly with openssl without MD4</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3922">md4: include the mbedtls config.h to get the MD4 info</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3952">multi: track users of a socket better</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3916">nss: allow to specify TLS 1.3 ciphers if supported by NSS</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3959">parse_proxy: make sure portptr is initialized</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3482">parse_proxy: use the IPv6 zone id if given</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3932">sectransp: handle errSSLPeerAuthCompleted from SSLRead()</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3970">singlesocket: use separate variable for inner loop</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3985">ssl: Update outdated "openssl-only" comments for supported backends</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3949">tests: add HAProxy keywords</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3290">tests: add support to test against OpenSSH for Windows</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3948">tests: make test 1420 and 1406 work with rtsp-disabled libcurl</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3938">tls13-docs: mention it is only for OpenSSL >= 1.1.1</a>
+ BGF tool_parse_cfg: Avoid 2 fopen() for WIN32
+ BGF <a href="https://curl.haxx.se/bug/?i=3926">tool_setopt: for builds with disabled-proxy, skip all proxy setopts()</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3960">url: Load if_nametoindex() dynamically from iphlpapi.dll on Windows</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3924">url: fix bad feature-disable #ifdef</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3956">url: use correct port in ConnectionExists()</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3930">winbuild: Use two space indentation</a>
+</ul>
+
 <a name="7_65_0"></a>
 SUBTITLE(Fixed in 7.65.0 - May 22 2019)
 <p> Changes:
