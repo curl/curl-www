@@ -272,8 +272,8 @@ install.gen: $(DOCROOT)/INSTALL.md
 manual.html: _manual.html $(MAINPARTS) manual.gen
 	$(ACTION)
 
-manual.gen: $(DOCROOT)/MANUAL
-	$(TXT2PLAIN) < $< >$@
+manual.gen: $(DOCROOT)/MANUAL.md
+	$(MARKDOWN) < $< >$@
 
 todo.html: _todo.html $(MAINPARTS) todo.gen
 	$(ACTION)

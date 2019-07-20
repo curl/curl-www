@@ -1,12 +1,23 @@
 #include "_doctype.html"
 <html>
-<head> <TITLE>curl - Manual</TITLE>
+<head> <TITLE>curl - Tutorial</TITLE>
 #include "css.t"
+
+<style>
+pre {
+    margin-left: 2em;
+    padding-left: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: #093754;
+    color: #ffffff;
+}
+</style>
 </head>
 
 #define CURL_DOCS
 #define TOOL_DOCS
-#define DOCS_MANUAL
+#define DOCS_TUTORIAL
 #define CURL_URL docs/manual.html
 
 #include "_menu.html"
@@ -14,7 +25,6 @@
 
 WHERE3(Docs, "/docs/", Tool Documentation, "/docs/tooldocs.html", Manual)
 
-TITLE(Manual -- curl usage explained)
 <div class="relatedbox">
 <b>Related:</b>
 <br><a href="manpage.html">Man Page</a>
@@ -23,9 +33,8 @@ TITLE(Manual -- curl usage explained)
 
 #undef DATE
 #undef SIZE
-<pre>
+
 #include "manual.gen"
-</pre>
 
 #include "_footer.html"
 
