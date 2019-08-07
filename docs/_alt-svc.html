@@ -1,0 +1,30 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>curl - Alt-Svc cache</TITLE>
+#include "css.t"
+</HEAD>
+
+#define CURL_DOCS
+#define PROT_DOCS
+#define DOCS_ALT_SVC
+#define CURL_URL docs/alt-svc.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(Docs, "/docs/", Protocol docs, "/docs/protdocs.html", Alt-Svc cache)
+
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="manpage.html">curl man page</a>
+<br><a href="manual.html">Manual</a>
+<br><a href="httpscripting.html">HTTP Scripting</a>
+</div>
+
+#include "alt-svc.gen"
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
+

@@ -108,6 +108,7 @@ CVELIST =					\
 
 PAGES =						\
  $(CVELIST)					\
+ alt-svc.html					\
  bugbounty.html					\
  bugs.html					\
  caextract.html					\
@@ -239,10 +240,15 @@ faq.html: _faq.shtml $(MAINPARTS) faq.gen
 faq.gen: $(DOCROOT)/FAQ faqparse.pl
 	./faqparse.pl < $< > $@
 
+alt-svc.html: _alt-svc.html $(MAINPARTS) alt-svc.gen
+	$(ACTION)
+alt-svc.gen: $(DOCROOT)/ALTSVC.md
+	$(MARKDOWN) < $< >$@
+
 http-cookies.html: _http-cookies.html $(MAINPARTS) http-cookies.gen
 	$(ACTION)
 
-http-cookies.gen: $(DOCROOT)/HTTP-COOKIES.md faqparse.pl
+http-cookies.gen: $(DOCROOT)/HTTP-COOKIES.md
 	$(MARKDOWN) < $< >$@
 
 knownbugs.html: _knownbugs.html $(MAINPARTS) knownbugs.gen
