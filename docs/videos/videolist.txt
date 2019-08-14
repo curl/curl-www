@@ -477,3 +477,13 @@ DATE 2019-03-31
 WHO Daniel Stenberg
 DESC The current status and plan on how to support HTTP/3 in curl.
 ENDOFVIDEO
+
+VIDEO HTTP/3 in curl
+URL https://youtu.be/dKT3vlIw6bQ
+THUMB http3-in-curl.jpg
+THUMBSIZE width="250" height="140"
+DURATION 2h18 minutes
+DATE 2019-08-14
+WHO Daniel Stenberg
+DESC How to do, build and use HTTP/3 with curl
+ENDOFVIDEO
