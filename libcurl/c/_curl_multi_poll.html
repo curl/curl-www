@@ -1,0 +1,25 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>curl_multi_poll</TITLE>
+#include "css.t"
+#include "manpage.t"
+</HEAD>
+
+#define MENU_MULTI
+#define LIBCURL_DOCS
+#define DOCS_MULTI_POLL
+#define CURL_URL libcurl/c/curl_multi_poll.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", libcurl)
+
+TITLE(curl_multi_poll - polls on all easy handles in a multi handle)
+
+#include "curl_multi_poll.t"
+
+#include "_footer.html"
+
+</BODY>
+</HTML>
