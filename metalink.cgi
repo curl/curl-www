@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/perl -I.
 # Generate a metalink download file
 # See https://www.metalinker.org/
 # Based on latest.cgi
