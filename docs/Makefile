@@ -104,7 +104,9 @@ CVELIST =					\
  CVE-2019-3823.html				\
  CVE-2019-5435.html				\
  CVE-2019-5436.html				\
- CVE-2019-5443.html
+ CVE-2019-5443.html				\
+ CVE-2019-5481.html				\
+ CVE-2019-5482.html
 
 PAGES =						\
  $(CVELIST)					\
