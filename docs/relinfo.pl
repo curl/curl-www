@@ -147,19 +147,9 @@ for my $str (@releases) {
                $numreleases - $index);
     }
     $index++;
-    my $vulc=0;
 
-#   my $vulstr;
-#    for my $i (0 .. scalar(@vuln)-1 ) {
-#        if($v[$i]) {
-#            $vulstr .= sprintf("<a href=\"%s\" title=\"%s - %s\">#%d</a> ",
-#                               $vulnurl[$i+1], $vulntitle[$i+1], $vulnid[$i+1],
-#                               $i+1);
-#            $vulc++;
-#        }
-#    }
     if($raw) {
-        printf "%d;", $vulc;
+        printf "%d;", $vulns{$str};
     }
 
     if($date =~ /([A-Za-z]+) (\d+) (\d\d\d\d)/) {
