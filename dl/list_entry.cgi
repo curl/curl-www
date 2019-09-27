@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/perl -I
 
 require "stuff.pm";
 require "dtime.pm";
