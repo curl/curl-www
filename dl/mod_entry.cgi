@@ -1,4 +1,4 @@
-#!/usr/bin/perl -I
+#!/usr/bin/perl -I.
 
 require "stuff.pm";
 
