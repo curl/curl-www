@@ -18,10 +18,28 @@ include setup.mk
 MAINPARTS += _menu.html alert.t
 FCPP_OPTS = -DSHOW_ALERT
 
-PAGES= index.html mirrors.html libs.html help.html download.html changes.html \
- about.html support.html newslog.html news.html head.html foot.html	      \
- oldnews.html info web-editing.html donation.html search.html sponsors.html   \
- source.html 404.html book.html gethelp.html
+PAGES=						\
+ 404.html					\
+ about.html					\
+ book.html					\
+ changes.html					\
+ donation.html					\
+ download.html					\
+ foot.html					\
+ gethelp.html					\
+ head.html					\
+ index.html					\
+ info						\
+ libs.html					\
+ mirrors.html					\
+ news.html					\
+ newslog.html					\
+ oldnews.html					\
+ search.html					\
+ source.html					\
+ sponsors.html					\
+ support.html					\
+ web-editing.html
 
 all: $(PAGES)
 	cd ca && make
@@ -100,9 +118,6 @@ changes.html: _changes.html docs/_menu.html $(MAINPARTS)
 	$(ACTION)
 
 source.html: _source.html $(MAINPARTS)
-	$(ACTION)
-
-help.html: _help.html $(MAINPARTS)
 	$(ACTION)
 
 gethelp.html: _gethelp.html $(MAINPARTS)
