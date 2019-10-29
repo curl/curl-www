@@ -21,8 +21,7 @@
     "CVE-2018-1000122.html|7.20.0|7.58.0|RTSP RTP buffer over-read|CVE-2018-1000122|20180314|20180220|CWE-126: Buffer Over-read",
     "CVE-2018-1000121.html|7.21.0|7.58.0|LDAP NULL pointer dereference|CVE-2018-1000121|20180314|20180306|CWE-476: NULL Pointer Dereference",
     "CVE-2018-1000120.html|7.12.3|7.58.0|FTP path trickery leads to NIL byte out of bounds write|CVE-2018-1000120|20180314|20180129|CWE-122: Heap-based Buffer Overflow",
-    "CVE-2018-1000007.html|6.0|7.57.0|HTTP authentication leak in redirects|CVE-2018-1000007|20180124|20180118
-|CWE-522: Insufficiently Protected Credentials",
+    "CVE-2018-1000007.html|6.0|7.57.0|HTTP authentication leak in redirects|CVE-2018-1000007|20180124|20180118|CWE-522: Insufficiently Protected Credentials",
     "CVE-2018-1000005.html|7.49.0|7.57.0|HTTP/2 trailer out-of-bounds read|CVE-2018-1000005|20180124|20180110|CWE-126: Buffer Over-read",
     "CVE-2017-8818.html|7.56.0|7.56.1|SSL out of buffer access|CVE-2017-8818|20171129|20171118|CWE-125: Out-of-bounds Read",
     "CVE-2017-8817.html|7.21.0|7.56.1|FTP wildcard out of bounds read|CVE-2017-8817|20171129|20171110|CWE-126: Buffer Over-read",
