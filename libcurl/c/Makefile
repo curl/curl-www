@@ -59,7 +59,7 @@ PAGES = index.html example.html curl_easy_init.html curl_easy_cleanup.html    \
  easy_setopt_options.html easy_getinfo_options.html multi_setopt_options.html \
  allexamples.zip options-in-examples.html symbols-in-versions.html	      \
  threadsafe.html curl_global_sslset.html libcurl-env.html $(MIME) 	      \
- curl_easy_upkeep.html $(URLAPI) curl_multi_poll.html
+ curl_easy_upkeep.html $(URLAPI) curl_multi_poll.html curl_multi_wakeup.html
 
 all: $(PAGES)
 
@@ -319,6 +319,11 @@ curl_multi_wait.t: $(MANROOT)/curl_multi_wait.3
 curl_multi_poll.html: _curl_multi_poll.html $(MAINPARTS) curl_multi_poll.t
 	$(ACTION)
 curl_multi_poll.t: $(MANROOT)/curl_multi_poll.3
+	$(MAN2HTML) < $< >$@
+
+curl_multi_wakeup.html: _curl_multi_wakeup.html $(MAINPARTS) curl_multi_wakeup.t
+	$(ACTION)
+curl_multi_wakeup.t: $(MANROOT)/curl_multi_wakeup.3
 	$(MAN2HTML) < $< >$@
 
 curl_multi_perform.html: _curl_multi_perform.html $(MAINPARTS) curl_multi_perform.t
