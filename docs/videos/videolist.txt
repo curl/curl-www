@@ -495,6 +495,7 @@ THUMBSIZE width="250" height="141"
 DATE 2019-11-01
 SLIDES curl-driving-it-2019.pdf
 DURATION 52 minutes
+EVENT Driving IT 2019
 WHO Daniel Stenberg
 DESC From a few hundered lines of code in the 90s, to running in all Internet- connected devices on the globe. This is the story of how curl conquered the world.
 ENDOFVIDEO
