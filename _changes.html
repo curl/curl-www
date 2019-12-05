@@ -235,7 +235,7 @@ SUBTITLE(Fixed in 7.66.0 - September 11 2019)
  BGF <a href="https://curl.haxx.se/bug/?i=4121">curl_version_info: provide nghttp2 details</a>
  BGF <a href="https://curl.haxx.se/bug/?i=4254">defines: avoid underscore-prefixed defines</a>
  BGF <a href="https://curl.haxx.se/bug/?i=4198">docs/ALTSVC: remove what works and the experimental explanation</a>
- BGF docs/EXPERIMENTAL: explain what it means and what's experimental now
+ BGF docs/EXPERIMENTAL: explain what it means and what is experimental now
  BGF <a href="https://curl.haxx.se/bug/?i=4131">docs/MANUAL.md: converted to markdown from plain text</a>
  BGF <a href="https://curl.haxx.se/bug/?i=4248">docs/examples/curlx: fix errors</a>
  BGF <a href="https://curl.haxx.se/bug/?i=3794">docs: s/curl_debug/curl_dbg_debug in comments and docs</a>
@@ -7430,36 +7430,36 @@ SUBTITLE(Fixed in 7.8 - June 7 2001)
 <a name="7_7_3"></a>
 SUBTITLE(Fixed in 7.7.3 - May 4 2001)
 <p> Bugfixes:
-<ul class="changes">
- CHG we've discovered that TELNET does not work under win32
- CHG HTTP Content-Length: 0 works better
- CHG HTTP 304-replies are better treated
- CHG persistent connections with mixed chunked and non-chunked transfers
+<ul class="bugfixes">
+ BGF we've discovered that TELNET does not work under win32
+ BGF HTTP Content-Length: 0 works better
+ BGF HTTP 304-replies are better treated
+ BGF persistent connections with mixed chunked and non-chunked transfers
      work now
- CHG connection re-use for non-proxy connections on non-default ports work
- CHG corrected the OpenSSL version string output
+ BGF connection re-use for non-proxy connections on non-default ports work
+ BGF corrected the OpenSSL version string output
 </ul>
 
 <a name="7_7_2"></a>
 SUBTITLE(Fixed in 7.7.2 - April 22 2001)
 <p> Changes:
-<ul class="bugfixes">
- BGF 'curl-config' was added to help applications use libcurl
- BGF A <a href="/libcurl/tcl/">Tcl interface</a> has been written
- BGF A <a href="/libcurl/java/">Java interface</a> has been written
- BGF A <a href="/libcurl/ruby/">Ruby interface</a> was announced
+<ul class="changes">
+ CHG 'curl-config' was added to help applications use libcurl
+ CHG A <a href="/libcurl/tcl/">Tcl interface</a> has been written
+ CHG A <a href="/libcurl/java/">Java interface</a> has been written
+ CHG A <a href="/libcurl/ruby/">Ruby interface</a> was announced
 </ul>
 <p> Bugfixes:
-<ul class="changes">
- CHG The <a href="/libcurl/perl/">Perl interface</a> is improved a lot
- CHG Fixed download resumes on persistent connections
- CHG connection timeouts work in windows
- CHG HTTP_PROXY in uppercase is no longer used
- CHG curl_escape() with a 0 length argument works now
- CHG the MSVC projects files were updated
- CHG the Borland makefiles were updated
- CHG displays OpenSSL 0.9.6a properly in the version string
- CHG The Host: headers could get wrong on persistent connections
+<ul class="bugfixes">
+ BGF The <a href="/libcurl/perl/">Perl interface</a> is improved a lot
+ BGF Fixed download resumes on persistent connections
+ BGF connection timeouts work in windows
+ BGF HTTP_PROXY in uppercase is no longer used
+ BGF curl_escape() with a 0 length argument works now
+ BGF the MSVC projects files were updated
+ BGF the Borland makefiles were updated
+ BGF displays OpenSSL 0.9.6a properly in the version string
+ BGF The Host: headers could get wrong on persistent connections
 </ul>
 
 <a name="7_7_1"></a>
