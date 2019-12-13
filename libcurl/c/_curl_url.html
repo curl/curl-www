@@ -5,6 +5,8 @@
 #include "manpage.t"
 </HEAD>
 
+#define RAW_FILE curl_url.3
+#define BUG_TITLE curl_url%20man%20page:
 #define MENU_URL
 #define LIBCURL_DOCS
 #define DOCS_URL
@@ -14,8 +16,8 @@
 #include "setup.t"
 
 WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", curl_url)
-
 TITLE(curl_url - create a new CURLU handle)
+#include "libcurl-related.t"
 #include "curl_url.gen"
 #include "_footer.html"
 

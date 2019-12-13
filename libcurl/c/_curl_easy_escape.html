@@ -5,6 +5,8 @@
 #include "manpage.t"
 </HEAD>
 
+#define RAW_FILE curl_easy_escape.3
+#define BUG_TITLE curl_easy_escape%20man%20page:
 #define MENU_EASY
 #define LIBCURL_DOCS
 #define DOCS_EASY_ESCAPE
@@ -16,7 +18,8 @@
 WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", curl_easy_escape)
 
 TITLE(curl_easy_escape - URL encode the given string)
-#include "curl_easy_escape.t"
+#include "libcurl-related.t"
+#include "curl_easy_escape.gen"
 #include "_footer.html"
 
 </BODY>

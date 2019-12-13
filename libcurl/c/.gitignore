@@ -1,5 +1,4 @@
 [^_]*.html
-*.t
 *.et
 Makefile.examples
 Makefile.exhtml

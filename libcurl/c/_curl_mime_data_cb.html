@@ -5,6 +5,8 @@
 #include "manpage.t"
 </HEAD>
 
+#define RAW_FILE curl_mime_data_cb.3
+#define BUG_TITLE curl_mime_data_cb%20man%20page:
 #define MENU_MIME
 #define LIBCURL_DOCS
 #define DOCS_MIME_DATA_CB
@@ -16,9 +18,8 @@
 WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", curl_mime_data_cb)
 
 TITLE(curl_mime_data_cb - set a callback-based data source for a mime part body)
-
+#include "libcurl-related.t"
 #include "curl_mime_data_cb.gen"
-
 #include "_footer.html"
 
 </BODY>

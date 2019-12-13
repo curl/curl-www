@@ -5,6 +5,8 @@
 #include "manpage.t"
 </HEAD>
 
+#define RAW_FILE curl_easy_strerror.3
+#define BUG_TITLE curl_easy_strerror%20man%20page:
 #define MENU_EASY
 #define LIBCURL_DOCS
 #define DOCS_EASY_STRERROR
@@ -16,7 +18,8 @@
 WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", curl_easy_strerror)
 
 TITLE(curl_easy_strerror - return string for error code)
-#include "curl_easy_strerror.t"
+#include "libcurl-related.t"
+#include "curl_easy_strerror.gen"
 #include "_footer.html"
 
 </BODY>

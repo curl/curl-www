@@ -5,6 +5,8 @@
 #include "manpage.t"
 </HEAD>
 
+#define RAW_FILE curl_free.3
+#define BUG_TITLE curl_free%20man%20page:
 #define MENU_EASY
 #define LIBCURL_DOCS
 #define DOCS_FREE
@@ -16,7 +18,8 @@
 WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", curl_free)
 
 TITLE(curl_free - reclaim memory that has been obtained through a libcurl call)
-#include "curl_free.t"
+#include "libcurl-related.t"
+#include "curl_free.gen"
 #include "_footer.html"
 
 </BODY>

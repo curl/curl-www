@@ -5,6 +5,8 @@
 #include "manpage.t"
 </HEAD>
 
+#define RAW_FILE curl_easy_getinfo.3
+#define BUG_TITLE curl_easy_getinfo%20man%20page:
 #define MENU_EASY
 #define LIBCURL_DOCS
 #define DOCS_EASY_GETINFO
@@ -16,15 +18,8 @@
 WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", curl_easy_getinfo)
 
 TITLE(curl_easy_getinfo - extract information from a curl handle)
-<div class="relatedbox">
-<b>Related:</b>
-<br><a href="easy_getinfo_options.html">info options</a>
-<br><a href="multi_setopt_options.html">multi options</a>
-<br><a href="./">API</a>
-</div>
-
-#include "curl_easy_getinfo.t"
-
+#include "libcurl-related.t"
+#include "curl_easy_getinfo.gen"
 #include "_footer.html"
 
 </BODY>

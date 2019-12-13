@@ -5,6 +5,8 @@
 #include "manpage.t"
 </HEAD>
 
+#define RAW_FILE curl_easy_upkeep.3
+#define BUG_TITLE curl_easy_upkeep%20man%20page:
 #define MENU_EASY
 #define LIBCURL_DOCS
 #define DOCS_EASY_UPKEEP
@@ -16,7 +18,8 @@
 WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", curl_easy_upkeep)
 
 TITLE(curl_easy_upkeep - perform connection upkeep checks)
-#include "curl_easy_upkeep.t"
+#include "libcurl-related.t"
+#include "curl_easy_upkeep.gen"
 #include "_footer.html"
 
 </BODY>

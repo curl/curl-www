@@ -5,6 +5,8 @@
 #include "manpage.t"
 </HEAD>
 
+#define RAW_FILE curl_easy_cleanup.3
+#define BUG_TITLE curl_easy_cleanup%20man%20page:
 #define MENU_EASY
 #define LIBCURL_DOCS
 #define DOCS_EASY_CLEANUP
@@ -14,7 +16,7 @@
 #include "setup.t"
 
 WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", curl_easy_cleanup)
-
 TITLE(curl_easy_cleanup - end a libcurl easy handle)
-#include "curl_easy_cleanup.t"
+#include "libcurl-related.t"
+#include "curl_easy_cleanup.gen"
 #include "_foot.html"
