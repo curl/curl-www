@@ -5,6 +5,8 @@
 #include "manpage.t"
 </HEAD>
 
+#define RAW_FILE curl_formget.3
+#define BUG_TITLE curl_formget%20man%20page:
 #define LIBCURL_DOCS
 #define DOCS_FORMGET
 #define CURL_URL libcurl/c/curl_formget.html
@@ -13,11 +15,9 @@
 #include "setup.t"
 
 WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", curl_formget)
-
 TITLE(curl_formget - serialize a multipart/formdata HTTP POST chain)
-
-#include "curl_formget.t"
-
+#include "libcurl-related.t"
+#include "curl_formget.gen"
 #include "_footer.html"
 
 </BODY>

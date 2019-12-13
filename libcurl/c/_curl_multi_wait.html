@@ -5,6 +5,8 @@
 #include "manpage.t"
 </HEAD>
 
+#define RAW_FILE curl_multi_wait.3
+#define BUG_TITLE curl_multi_wait%20man%20page:
 #define MENU_MULTI
 #define LIBCURL_DOCS
 #define DOCS_MULTI_WAIT
@@ -14,11 +16,9 @@
 #include "setup.t"
 
 WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", libcurl)
-
 TITLE(curl_multi_wait - polls on all easy handles in a multi handle)
-
-#include "curl_multi_wait.t"
-
+#include "libcurl-related.t"
+#include "curl_multi_wait.gen"
 #include "_footer.html"
 
 </BODY>

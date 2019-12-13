@@ -5,6 +5,8 @@
 #include "manpage.t"
 </HEAD>
 
+#define RAW_FILE curl_share_cleanup.3
+#define BUG_TITLE curl_share_cleanup%20man%20page:
 #define MENU_SHARE
 #define LIBCURL_DOCS
 #define DOCS_SHARE_CLEANUP
@@ -16,9 +18,8 @@
 WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", curl_share_cleanup)
 
 TITLE(curl_share_cleanup - clean up a shared object)
-
-#include "curl_share_cleanup.t"
-
+#include "libcurl-related.t"
+#include "curl_share_cleanup.gen"
 #include "_footer.html"
 
 </BODY>

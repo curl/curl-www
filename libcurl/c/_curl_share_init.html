@@ -5,6 +5,8 @@
 #include "manpage.t"
 </HEAD>
 
+#define RAW_FILE curl_share_init.3
+#define BUG_TITLE curl_share_init%20man%20page:
 #define MENU_SHARE
 #define LIBCURL_DOCS
 #define DOCS_SHARE_INIT
@@ -14,11 +16,9 @@
 #include "setup.t"
 
 WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", curl_share_init)
-
 TITLE(curl_share_init - create a shared object)
-
-#include "curl_share_init.t"
-
+#include "libcurl-related.t"
+#include "curl_share_init.gen"
 #include "_footer.html"
 
 </BODY>

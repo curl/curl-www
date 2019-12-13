@@ -35,9 +35,9 @@ sub makeit {
 
     open(M, ">>$actions");
     print M <<moo
-${name}.html: $name.gen \$(MANPARTS) $name.t
+${name}.html: $name.gen \$(MANPARTS) $name.gen
 	\$(ACTION)
-$name.t: \$(MANROOT)/opts/$name.3
+$name.gen: \$(MANROOT)/opts/$name.3
 	\$(MAN2HTML) <\$< >\$@
 
 moo
@@ -73,9 +73,9 @@ for (@opts) {
 
 open(TG, ">$targets");
 
-open(IDXE, ">all-easy.t");
-open(IDXM, ">all-multi.t");
-open(IDXI, ">all-info.t");
+open(IDXE, ">all-easy.gen");
+open(IDXM, ">all-multi.gen");
+open(IDXI, ">all-info.gen");
 
 print TG "OPTPAGES = ";
 print IDXE "<table>\n";

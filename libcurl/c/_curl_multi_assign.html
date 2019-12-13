@@ -5,6 +5,8 @@
 #include "manpage.t"
 </HEAD>
 
+#define RAW_FILE curl_multi_assign.3
+#define BUG_TITLE curl_multi_assign%20man%20page:
 #define MENU_MULTI
 #define LIBCURL_DOCS
 #define DOCS_MULTI_ASSIGN
@@ -16,7 +18,8 @@
 WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", libcurl)
 
 TITLE(curl_multi_assign - set association with an internal socket)
-#include "curl_multi_assign.t"
+#include "libcurl-related.t"
+#include "curl_multi_assign.gen"
 #include "_footer.html"
 
 </BODY>

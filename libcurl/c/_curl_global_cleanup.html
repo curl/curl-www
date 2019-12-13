@@ -5,6 +5,8 @@
 #include "manpage.t"
 </HEAD>
 
+#define RAW_FILE curl_global_cleanup.3
+#define BUG_TITLE curl_global_cleanup%20man%20page:
 #define MENU_EASY
 #define LIBCURL_DOCS
 #define DOCS_GLOBAL_CLEANUP
@@ -14,11 +16,9 @@
 #include "setup.t"
 
 WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", curl_global_cleanup)
-
 TITLE(curl_global_cleanup - global libcurl cleanup)
-
-#include "curl_global_cleanup.t"
-
+#include "libcurl-related.t"
+#include "curl_global_cleanup.gen"
 #include "_footer.html"
 
 </BODY>

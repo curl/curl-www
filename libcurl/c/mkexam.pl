@@ -25,7 +25,7 @@ for my $f (@samps) {
     }
     my $cfile = "$base.$ext";
     my $encfile = "$base.et";
-    my $rawfile = "$base.t";
+    my $rawfile = "$base.gen";
     my $htmlfile = "$base.html";
 
     my $cmd = sprintf("enscript %s -w html -o - --color -Ec -q ",
@@ -137,8 +137,8 @@ sub desc {
     }
 }
 
-open(EX, ">allex.t");
-open(DESC, ">allex-desc.t");
+open(EX, ">allex.gen");
+open(DESC, ">allex-desc.gen");
 print DESC "<table>\n";
 my $i=0;
 for my $b (sort @basefiles) {

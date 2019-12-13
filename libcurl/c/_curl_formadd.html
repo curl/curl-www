@@ -5,6 +5,8 @@
 #include "manpage.t"
 </HEAD>
 
+#define RAW_FILE curl_formadd.3
+#define BUG_TITLE curl_formadd%20man%20page:
 #define MENU_EASY
 #define LIBCURL_DOCS
 #define DOCS_FORMADD
@@ -12,12 +14,11 @@
 
 #include "_menu.html"
 #include "setup.t"
+
 WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", curl_formadd)
-
 TITLE(curl_formadd - add a section to a multipart/formdata HTTP POST)
-
-#include "curl_formadd.t"
-
+#include "libcurl-related.t"
+#include "curl_formadd.gen"
 #include "_footer.html"
 
 </BODY>
