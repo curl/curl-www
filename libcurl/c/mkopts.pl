@@ -21,7 +21,7 @@ sub single {
     }
 
     open(F, "<_${prefix}_template.html");
-    open(T, ">$name.gen");
+    open(T, ">$name.html.gen");
     while(<F>) {
         $_ =~ s/\@template\@/$name/g;
         print T $_;
@@ -35,7 +35,7 @@ sub makeit {
 
     open(M, ">>$actions");
     print M <<moo
-${name}.html: $name.gen \$(MANPARTS) $name.gen
+${name}.html: $name.html.gen \$(MANPARTS) $name.gen
 	\$(ACTION)
 $name.gen: \$(MANROOT)/opts/$name.3
 	\$(MAN2HTML) <\$< >\$@
