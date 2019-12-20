@@ -14,9 +14,13 @@ WHERE4(libcurl, "/libcurl/", API, "/libcurl/c/", Examples,
        "/libcurl/c/example.html", %cfile%)
 
 TITLE(%cfile%)
-
-<p>
-<a href="https://github.com/curl/curl/raw/master/docs/examples/%cfile%">Download %cfile% raw</a>
+<div class="relatedbox" style="background-color: rgba(255,255,255,1); opacity: 1;">
+<b>Related:</b>
+<br><a href="https://github.com/curl/curl/issues/new?title=%cfile%%20example&amp;labels=documentation" target="_new">File a bug about %cfile%</a>
+<br><a href="https://github.com/curl/curl/blob/master/docs/examples/%cfile%" target="_new">View %cfile% in git</a>
+<br><a href="https://github.com/curl/curl/raw/master/docs/examples/%cfile%">Download %cfile% raw</a>
+</div>
+<div style="clear: both"/>
 
 #include "%rawfile%"
 
