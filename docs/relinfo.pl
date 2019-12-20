@@ -56,8 +56,7 @@ while(<STDIN>) {
     }
 }
 
-# we add 30 since curl 6.0 was the 30th release and the first listed in _changes.html
-my $numreleases = $#releases + 30;
+my $numreleases = $#releases + 1;
 
 # do a loop to fix dates
 for my $str (@releases) {
@@ -178,7 +177,12 @@ for my $str (@releases) {
                $changes{$str}, $totalchanges);
     }
     else {
-        $v = sprintf("<a href=\"vuln-$str.html\">%d</a>", $vulns{$str});
+        if(vernum($str) < 0x060000) {
+            $v = "0";
+        }
+        else {
+            $v = sprintf("<a href=\"vuln-$str.html\">%d</a>", $vulns{$str});
+        }
         printf("<td>$date</td><td>$age</td><td>$deltadays</td><td>%d</td><td>%d</td><td>$totaldays</td><td>%d</td><td>%d</td><td>$v</td></tr>\n",
                $bugfixes{$str}, $changes{$str},
                $totalbugs, $totalchanges);

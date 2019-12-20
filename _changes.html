@@ -7905,7 +7905,600 @@ SUBTITLE(Fixed in 6.0 - September 13 1999)
  BGF enabled "custom" http requests (like DELETE or TRACE)
 </ul>
 
-<p> Earlier changes elsewhere
+<a name="5_11"></a>
+SUBTITLE(Fixed in 5.11 - August 25 1999)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF Fixed a bug in the header-line realloc() system in download.c.
+ BGF I added lib/file.[ch] to offer a first, simple, file:// support.
+ BGF Made the release archives get a Makefile in the root dir
+ BGF Another Location: bug. Curl didn't do proper relative locations if the
+   original URL had cgi-parameters that contained a slash. Nusu's page
+   again.
+ BGF Corrected the NO_PROXY usage. It is a list of substrings that if one of
+   them matches the tail of the host name it should connect to, curl should
+   not use a proxy to connect there.
+ BGF Fixed a memory bug with http-servers that sent Location: to a Location:
+   page.
+ BGF Made cookies work a lot better. Setting the same cookie name several times
+   used to add more cookies instead of replacing the former one which it
+   should've.
+ BGF Brought new .spec files as well as a patch for configure.in that lets the
+   configure script find the openssl files better, even when the include
+   files are in /usr/include/openssl
+</ul>
+
+<a name="5_10"></a>
+SUBTITLE(Fixed in 5.10 - August 13 1999)
+<p> Changes:
+<ul class="changes">
+ CHG Added -#/--progress-bar
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF SSL_CTX_set_default_passwd_cb() has been modified in the 0.9.4 version of
+   OpenSSL. Now why couldn't they simply add a *new* function instead of
+   modifying the parameters of an already existing function?
+ BGF Made curl output the SSL version number get displayed properly with 0.9.4.
+ BGF Added MingW32 (GCC-2.95) support under Win32. The INSTALL file was also
+   a bit rearranged.
+ BGF I had to copy a good <arpa/telnet.h> include file into the curl source
+   tree to enable the silly win32 systems to compile. The distribution rights
+   allows us to do that as long as the file remains unmodified.
+ BGF I corrected a few minor things that made the compiler complain when
+   -Wall -pedantic was used.
+ BGF Moving the official curl web page to http://curl.haxx.nu.
+ BGF Another correction for NROFF in the configure.in that is supposed to be
+   better for IRIX users.
+ BGF Albert Chin-A-Young helped with some stupid Makefile things, as well as
+   some fiddling with the getdate.c stuff that he had problems with under
+   HP-UX v10.
+ BGF Stefan Kanthak reported a few problems in the configure script which he
+   discovered when trying to make curl compile and build under Siemens SINIX-Z
+   V5.42B2004!
+ BGF Marcus Klein very accurately informed me that src/version.h was not present
+   in the CVS repository.
+ BGF Linus Nielsen rewrote the telnet:// part and now curl offers limited telnet
+   support.
+ BGF David Sanderson reported that FORCE_ALLOCA_H or HAVE_ALLOCA_H must be
+   defined for getdate.c to compile properly on HP-UX 11.0.
+ BGF I finally got to understand Marcus Klein's ftp download resume problem,
+   which turns out to be due to different outputs from different ftp
+   servers.
+ BGF Added text about file transfer resuming to README.curl.
+ BGF It breaks with segfault when 1) curl is using .netrc to obtain
+   username/password (option '-n'), and 2) is auto-matically redirected to
+   another location (option '-L').
+</ul>
+
+<a name="5_9_1"></a>
+SUBTITLE(Fixed in 5.9.1 - July 30 1999)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF Memory leak in the formdata functions. I added a FormFree() function that
+   is now used and supposed to correct this flaw.
+ BGF 'curl -L https://www.cwa.com.au/' core dumps.  I managed to cure this by
+   correcting the cleanup procedure.
+ BGF Now supports longer URLs when following Location:
+ BGF Fixed a problem in the upload/POST department: It turned out that http.c
+   accidentaly cleared the pointer instead of the byte counter when supposed
+   to.
+ BGF If you had a server at a non-standard port that redirected to an URL using
+   a standard port number, curl still used that first port number.
+ BGF When using both CONF_FOLLOWLOCATION and CONF_FAILONERROR
+   simultaneously. Since the CONF_FAILONERROR exits on the 302-code that the
+   follow location header outputs it will never show any html on location:
+   pages. I have now made it look for >=400 codes if CONF_FOLLOWLOCATION is
+   set.
+ BGF 'struct slist' is now renamed to 'struct curl_slist'
+ BGF The latest OpenSSL package now have moved the standard include path. It is
+   now in /usr/local/ssl/include/openssl and I have now modified the
+   --enable-ssl option for the configure script to use that as the primary
+   path, and I leave the former path too to work with older packages of
+   OpenSSL too.
+ BGF I finally understood the IRIX problem and now it seem to compile on it!
+ BGF I adjusted the FTP reply 227 parser to make the PASV command work better
+   with more ftp servers.
+ BGF Rearranged. README is new, the old one is now README.curl and I added a
+   README.libcurl
+ BGF I also updated the INSTALL text.
+ BGF curl didn't properly deal with form posting where the variable shouldn't
+   have any content, as in curl -F "form=" www.site.com. It was now fixed.
+</ul>
+
+<a name="5_9"></a>
+SUBTITLE(Fixed in 5.9 - May 22 1999)
+<p> Changes:
+<ul class="changes">
+ CHG Added -S / --show-error to force curl to display the error message in case
+   of an error, even if -s/--silent was used.
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF Problems with -L under FreeBSD 3.0. I made the allocation of the new url
+   string a bit faster and different
+ BGF Made the cookie parser deal with CRLF newlines too.
+ BGF Download() didn't properly deal with failing return codes from the
+   sread() function
+ BGF --dump-header didn't work anymore!
+ BGF I moved the code concerning HTTP, DICT and TELNET it their own source
+   files
+ BGF Made it compile on cygwin too.
+ BGF Made curl compile smoothly on MSVC++ 6 again!
+ BGF Changed the #ifdef HAVE_STRFTIME placement for the -z code so that it will
+   be easier to discover systems that don't have that function and thus can't
+   use -z successfully. Made the strftime() get used if WIN32 is defined too.
+</ul>
+
+<a name="5_8"></a>
+SUBTITLE(Fixed in 5.8 - May 5 1999)
+<p> Changes:
+<ul class="changes">
+ CHG curl can now send "If-Modified-Since" headers. Try -z <expression> where
+   expression is a full GNU date expression or a file name to get the date
+   from!
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF mkhelp.pl has been doing badly lately. I corrected a case problem in
+   the regexes.
+ BGF I've now remade the -o option to not touch the file unless it needs to.
+ BGF Corrected a bug in the SSLv2/v3 selection.
+ BGF Problem with the src/Makefile for FreeBSD. The RM variable isn't set and
+   causes the make to fail.
+ BGF The curl version number was not set properly. Hasn't been since 5.6. This
+   was due to a bug in my maketgz script!
+ BGF Found a bug in cookies.c that made it crash at times.
+</ul>
+
+<a name="5_7_1"></a>
+SUBTITLE(Fixed in 5.7.1 - April 23 1999)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF Corrected include/stdcheaders.h
+ BGF Added a paragraph about compiling with the US-version of openssl to the
+   INSTALL file.
+ BGF New mailing list address. Info updated on the web page as well as in the
+   README file
+ BGF hostip.c didn't compile properly on SunOS 5.5.1. It needs an #include <sys/types.h>
+</ul>
+
+<a name="5_7"></a>
+SUBTITLE(Fixed in 5.7 - April 20 1999)
+<ul class="changes">
+ CHG I've separated the version number of libcurl and curl now.
+ CHG Removed the 'enable-no-pass' from configure, I doubt anyone wanted
+   that.
+ CHG -D or --dump-header is now storing HTTP headers separately in the specified
+   file.
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF Made curl support any-length HTTP headers. The destination buffer is now
+   simply enlarged every time it turns out to be too small!
+ BGF Added the FAQ file to the archive. Still a bit smallish, but it is a
+   start.
+ BGF Made -D accept '-' instead of filename to write to stdout.
+ BGF Changed two #ifdef WIN32 to better #ifdef <errorcode> when connect()ing
+   in url.c and ftp.c. Makes cygwin32 deal with them better too.
+ BGF The old -3/--crlf option is now ONLY --crlf!
+ BGF I changed the "SSL fix" to a more lame one, but that doesn't remove as
+   much functionality. Now I've enabled the lib to select what SSL version it
+   should try first.
+ BGF Corrected the math for the "Curr.Speed" progress meter.
+ BGF Made '-K -' read a config file from stdin.
+ BGF I found out we didn't close the file properly before so I added it!
+ BGF FTP download resume didn't work at all!
+ BGF Corrected the version string part generated for the SSL version.
+ BGF I found a way to make some other SSL page work with openssl 0.9.1+ that
+   previously didn't (ssleay 0.8.0 works with it though!).
+ BGF Finally have curl more cookie "aware".
+ BGF Added a paragraph in the TODO file about the SSL problems recently
+   reported.
+ BGF Better "Location:" following.
+ BGF A subsecond display patch.
+ BGF Made lots of tiny adjustments to compile smoothly with cygwin under
+   win32.
+ BGF Beginning experiments with downloading multiple document from a http
+   server while remaining connected.
+ BGF Added new text to INSTALL on what to do to build this on win32 now.
+ BGF Prefix the shared #include files in the sources with "../include/" to
+   please VC++...
+ BGF Split the url.c source into many tiny sources for better readability
+   and smaller size.
+ BGF Started to change stuff for a move to make libcurl and a more separate
+   curl application that uses the libcurl. Made the libcurl sources into
+   the new lib directory while the curl application will remain in src as
+   before. New makefiles, adjusted configure script and so.
+ BGF Finally made configure accept --with-ssl to look for SSL libs and includes
+   in the "standard" place /usr/local/ssl...
+ BGF Verified that curl linked fine with OpenSSL 0.9.1c which seems to be
+   the most recent.
+</ul>
+
+<a name="5_5_1"></a>
+SUBTITLE(Fixed in 5.5.1 - January 27 1999)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF Corrected problems in Download().
+ BGF A few flaws prevented it from compile warning free with the native compiler
+   under Digital Unix v4.0d.
+</ul>
+
+<a name="5_5"></a>
+SUBTITLE(Fixed in 5.5 - January 15 1999)
+<p> Changes:
+<ul class="changes">
+ CHG a simple addition for the DICT protocol (RFC 2229)
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF Added Bjorn's small text to the README about the DICT protocol.
+ BGF The win32-version: "Doesn't use ALL_PROXY environment variable". Turned out
+   to be because of the static- buffer nature of the win32 environment
+   variable calls!
+ BGF Corrected the progress meter for files larger than 20MB.
+ BGF Corrected the -t and -T help texts. They claimed to be FTP only.
+</ul>
+
+<a name="5_4"></a>
+SUBTITLE(Fixed in 5.4 - January 7 1999)
+<p> Changes:
+<ul class="changes">
+ CHG If you use -t or -T now on a http or https server, PUT will
+   be used for file upload.
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF curl -s didn't always supress the progress reporting. It was the form post
+   that autoamtically always switched it on again.
+ BGF Corrected a width bug in the mprintf() function.
+ BGF curl accepted very limited URL sizes. It should now accept path parts that are
+   up to at least 4096 bytes.
+ BGF Somehow I screwed up when applying an AIX fix, so I redid that now.
+ BGF Corrected a win32 bug in the environment variable part. (the 5.3a win-only release)
+</ul>
+
+<a name="5_3"></a>
+SUBTITLE(Fixed in 5.3 - December 21 1998)
+<p> Changes:
+<ul class="changes">
+ CHG Implemented the "quote" function of FTP clients. It allows you to
+   send arbitrary commands to the remote FTP server. I chose the -Q/--quote
+   command-line arguments.
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF Made it compile smoothly on AIX.
+ BGF Brought an MVS patch: -3/--mvs, for ftp upload to the MVS ftp server.
+ BGF Brought a correction that fixes the win32 curl bug.
+ BGF A bug caused curl to crash on the -A flag
+ BGF Added a few defines to make directories/file names get build nicer (with _
+   instead of . and \ instead of / in win32).
+ BGF Fixed an FTP bug that occured if the ftp server response line had a
+   parenthesis on the line before the (size) info.
+</ul>
+
+<a name="5_2_1"></a>
+SUBTITLE(Fixed in 5.2.1 - December 14 1998)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF Corrected a crash in 5.2 due to bad treatment of the environment variables.
+</ul>
+
+<a name="5_2"></a>
+SUBTITLE(Fixed in 5.2 - December 14 1998)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF Rewrote the mkhelp script and now, the mkhelp.pl script generates the
+   hugehelp.c file from the README *and* the man page file curl.1.
+ BGF gcc2.8.1 with the -Wall flag complaints a lot on subscript has type `char'
+   if I don't explicitly typecast the argument to isdigit() or isspace() to
+   int.
+ BGF Added checks for 'long double' and 'long long' in the configure script.
+</ul>
+
+<a name="5_0"></a>
+SUBTITLE(Fixed in 5.0 - December 1 1998)
+<p> Changes:
+<ul class="changes">
+ CHG Introducing the new -F flag for HTTP POST. It supports multipart/form-data
+   which means it is gonna be possible to upload files etc through HTTP POST.
+ CHG Added a 'configure' script
+ CHG Use -H/--header for custom HTTP-headers. Lets you pass on your own
+   specified headers to the remote server.
+ CHG Use -B/--ftp-ascii to force ftp to use ASCII mode when transfering files.
+ CHG Use -q AS THE FIRST OPTION specified to prevent .curlrc from being read.
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF Corrected getpass.c and main.c to compile warning and error free with the
+   Win32 VC++ crap.
+ BGF I changed the TAG-system. If you ever used urlget() from this package in
+   another product, you need to recompile with the new headers.
+ BGF Win32 compiled with a silly error. Corrected now.
+ BGF Yet another problem in multiline FTP responses.
+ BGF Improved the 'maketgz' to create a temporary directory tree which it makes
+   an archive from instead of the previous renaming of the current one.
+ BGF Mailing list opened (see README).
+ BGF Made -v more verbose on the PASV section of ftp transfers. Now it tells
+   host name and IP of the new host (and port number). I also added a section
+   about PORT vs PASV in the README.
+ BGF Introduced automake stuff.
+ BGF Just made a successful GET of a document from an SSL-server using my own
+   private certificate for authentication!
+ BGF Corrected another bug in the long parameter name parser.
+ BGF Modified getpass.c
+ BGF We may have removed the silly warnings from url.c when compiled under IRIX.
+ BGF Wrote formfind.pl which is a new perl script intended to help you find out
+   how a FORM submission should be done.
+ BGF Made the HTTP header-checker accept white spaces before the HTTP/1.? line.
+   Appearantly some proxies/sites add such at times (my test proxy did when I
+   downloaded a gopher page with it)!
+ BGF Moved the former -h to -M and made -h show the short help text instead. I
+   had to enable a forced help text option. Now an even shorter help text will
+   be presented when an unknown option and similar, is used.
+ BGF stdcheaders.h didn't work with IRIX 6.4 native cc compiler. I hope my
+   changes don't make other versions go nuts instead.
+ BGF Added a check in the configure script to check for the silly AIX
+   warnings about my #define strcasecmp() stuff. I do that define to prevent
+   me and other contributors to accidentaly use that function name instead
+   of strequal()...
+ BGF I bugfixed Angus's getpass.c very little.
+ BGF Fixed the verbose flag names to getopt-style, i.e 'curl --loc' will be
+   sufficient instead of --location as "loc" is a unique prefix.
+ BGF Another getopt-adjust; curl now accepts flags after the URL on the command
+   line. 'curl www.foo.com -O' is perfectly valid.
+ BGF Corrected the .curlrc parser so that strtok() is no longer used and I
+   believe it works better. Even URLs can be specified in it now.
+ BGF Replaced getpass.c with a newly written one, not under GPL license
+ BGF Changed OS to a #define in config.h instead of compiler flag
+ BGF Makefile now uses -DHAVE_CONFIG_H
+ BGF Expanded the tgz-target to update the version string on each occation
+   I build a release archive!
+ BGF Remade the parameter parser to be more getopt compliant. Curl now supports "merged"
+   flags as in "curl -lsv ftp.site.com"
+ BGF I've changed the headers in all files that are subject to the MozPL
+   license, as they are supposed to look like when conforming.
+ BGF Made the configure script make the config.h. The former config.h is now
+   setup.h.
+ BGF The RESOURCES and TODO files have been added to the archive.
+ BGF Fixed getpass.c and various configure stuff
+ BGF Corrected the 'getlinks.pl' script
+ BGF SSLeay versions prior to 0.8 will *not* work with curl!
+ BGF Fixed a bug that occurred since curl did not properly use CRLF when issuing ftp
+   commands.
+ BGF Rearranged the order config files are read. .curlrc is now *always* read
+   first and before the command line flags. -K config files then act as
+   additional config items.
+ BGF You can now disable a proxy by using -x "". Useful if the .curlrc file
+   specifies a proxy and you wanna fetch something without going through
+   that.
+ BGF I'm thinking of dropping the -p support. Its really not useful since ports
+   could (and should?) be specified as :<port> appended on the host name
+   instead, both in URLs and to proxy host names.
+ BGF curl -L bugs under Windows NT (test with URL http://come.to/scsde).
+   This bug is not present in this version anymore.
+ BGF Added support for the weird FTP URL type= thing. You can download a file
+   using ASCII transfer by appending ";type=A" to the right of it. Other
+   available types are type=D for dir-list (NLST) and type=I for binary
+   transfer.
+ BGF A bug in my getenv("HOME") usage for win32 systems.
+ BGF Building curl with SSL under FreeBSD should work better and automatically now.
+ BGF Cleaned up in the port number mess in the source. No longer stores and uses
+   proxy port number separate from normal port number.
+ BGF The 5beta (and 4.10) under win32 failed if the HOME variable wasn't set.
+ BGF When using a proxy, curl now guesses and uses the protocol part in cases
+   like: "curl -x proxy:80 www.site.com". Proxies normally go nuts unless
+   http:// is prepended to the host name, so if curl is used like this, it
+   guesses protocol and appends the protocol string before passing it to the
+   proxy. It already did this when used without proxy.
+ BGF Better port usage with SSL through proxy now. If you specified a different
+   https-port when accessing through a proxy, it didn't use that number
+   correctly. I also rewrote the code that parses the stuff read from the
+   proxy when you wanna connect through it with SSL.
+ BGF Work-around one of the compiler warnings on IRIX native cc compiles.
+</ul>
+
+<a name="4_10"></a>
+SUBTITLE(Fixed in 4.10 - October 26 1998)
+<p> Changes:
+<ul class="changes">
+ CHG Introduced the -K/--config flag
+ CHG Removed the -k option
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF Now "make irix" should build curl successfully on non-gcc SGI machines
+ BGF Single switches now toggle behaviours
+</ul>
+
+<a name="4_9"></a>
+SUBTITLE(Fixed in 4.9 - October 7 1998)
+<p> Changes:
+<ul class="changes">
+ CHG no longer released under the GPL license.  I have now updated the LEGAL
+   file etc and now this is released using the Mozilla Public License
+ CHG Added -b/--cookie to read cookies
+ CHG Added -c for HTTP resume
+ CHG Added checklinks.pl to the archive
+ CHG Added -L/--location
+ CHG Added getlinks.pl to the archive.
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF Rearranged the archive hierarchy a little. Build the executable in the
+     src/ dir from now on!
+ BGF Curl did not like HTTP servers that sent no headers at all on a GET request
+</ul>
+
+<a name="4_8_4"></a>
+SUBTITLE(Fixed in 4.8.4 - September 20 1998)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF As Julian Romero Nieto reported, curl reported wrong
+   version number.
+ BGF As Teemu Yli-Elsila pointed out,
+   the win32 version of 4.8 (and probably all other versions for win32)
+   didn't work with binary files since I'm too used to the UNIX style
+   fopen() where binary and text don't differ...
+ BGF Ralph Beckmann brought me some changes that lets
+   curl compile error and warning free with -Wall -pedantic with
+   g++. I also took the opportunity to clean off some unused variables
+   and similar.
+ BGF Ralph Beckmann made me aware of a really odd bug
+   now corrected. When curl read a set of headers from a HTTP server, divided
+   into more than one read and the first read showed a full line *exactly*
+   (i.e ending with a newline), curl did not behave well.
+</ul>
+
+<a name="4_8_3"></a>
+SUBTITLE(Fixed in 4.8.3 - September 7 1998)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF I was too quick to release 4.8.2 with too little testing. One of the
+   changes is now reverted slightly to the 4.8.1 way since 4.8.2 couldn't
+   upload files. I still think both problems corrected in 4.8.2 remain
+   corrected.
+</ul>
+
+<a name="4_8_2"></a>
+SUBTITLE(Fixed in 4.8.2 - August 14 1998)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF Bernhard Iselborn reported two FTP protocol
+   errors curl did. They're now corrected. Both appeared when getting files
+   from a MS FTP server! :-)
+</ul>
+
+<a name="4_8_1"></a>
+SUBTITLE(Fixed in 4.8.1 - August 7 1998)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF Added a last update of the progress meter when the transfer is done. The
+   final output on the screen didn't have to be the final size transfered
+   which made it sometimes look odd.
+ BGF Thanks to David Long I got rid of a silly
+   bug that happened if a HTTP-page had nothing but header. Appearantly
+   Solaris deals with negative sizes in fwrite() calls a lot better than
+   Linux does...
+</ul>
+
+<a name="4_8"></a>
+SUBTITLE(Fixed in 4.8 - July 30  1998)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF Continue FTP file transfer. -c is the switch.
+ BGF recursiveftpget.pl now features a maximum recursive level argument.
+</ul>
+
+<a name="4_7"></a>
+SUBTITLE(Fixed in 4.7 - July 20 1998)
+<p> Changes:
+<ul class="changes">
+ CHG Wrote a perl script 'recursiveftpget.pl'
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF Added support to abort a download if the speed is below a certain amount
+   (speed-limit) bytes per second for a certain (speed-time) time.
+</ul>
+
+<a name="4_6"></a>
+SUBTITLE(Fixed in 4.6 - July 3 1998)
+<p> Changes:
+<ul class="changes">
+ CHG Added a first attempt to optionally parse the .netrc file for login user
+   and password. If used with http, it enables user authentication. -n is
+   the new switch.
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF Removed the extra newlines on the default user-agent string.
+ BGF Corrected the missing ftp upload error messages when it failed without the
+   verbose flag set. Gary W. Swearingen found it.
+ BGF Now using alarm() to enable second-precision timeout even on the name
+   resolving/connecting phase. The timeout is although reset after that first
+   sequence. (This should be corrected.) Gary W. Swearingen <swear@aa.net>
+   reported.
+ BGF Now spells "Unknown" properly, as in "Unknown option 'z'"... :-)
+ BGF Added bug report email address in the README.
+ BGF Added a "current speed" field to the progress meter. It shows the average
+   speed the last 5 seconds. The other speed field shows the average speed of
+   the entire transfer so far.
+</ul>
+
+<a name="4_5_1"></a>
+SUBTITLE(Fixed in 4.5.1 - June 12 1998)
+<p> Changes:
+<ul class="changes">
+ CHG Added -A to allow User-Agent: changes
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF SSL through proxy fix
+ BGF Made the -A work when SSL-through-proxy.
+</ul>
+
+<a name="4_5"></a>
+SUBTITLE(Fixed in 4.5 - May 30 1998)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF More SSL corrections
+ BGF Added a port to AIX.
+ BGF Running SSL through a proxy causes a chunk of code to be executred twice.
+   one of those blocks needs to be deleted.
+ BGF Made -i and -I work again
+</ul>
+
+<a name="4_4"></a>
+SUBTITLE(Fixed in 4.4 - May 13 1998)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF -x can now also specify proxyport when used as in 'proxyhost:proxyport'
+ BGF SSL fixes
+</ul>
+
+<a name="4_3"></a>
+SUBTITLE(Fixed in 4.3 - April 30 1998)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF Adjusted to compile under win32 (VisualC++ 5). The -P switch does not
+   support network interface names in win32. I couldn't figure out how!
+</ul>
+
+<a name="4_2"></a>
+SUBTITLE(Fixed in 4.2 - April 15 1998)
+<p> Changes:
+<ul class="changes">
+ CHG Added SSL / SSLeay support (https://)
+ CHG Added the -T usage for HTTP POST
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF Bugfixed the SSL implementation
+ BGF Made -P a lot better to use other IP addresses
+ BGF The Makefile is now ready to compile for solaris, sunos4 and linux right
+   out of the box
+ BGF Better generated version string seen with 'curl -V'
+</ul>
+
+<a name="4_1"></a>
+SUBTITLE(Fixed in 4.1 - April 3 1998)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF The IP number returned by the ftp server as a reply to PASV does no longer
+   have to DNS resolve. In fact, no IP-number-only addresses have to anymore.
+ BGF Binds better to available port when -P is used.
+ BGF Now LISTs ./ instead of / when used as in ftp://ftp.funet.fi/. The reason
+   for this is that exactly that site, ftp.funet.fi, does not allow LIST /
+   while LIST ./ is fine. Any objections?
+</ul>
+
+<a name="4_0"></a>
+SUBTITLE(Fixed in 4.0 - March 20 1998)
+<p>
+ The first curl release. The tool was named urlget before this. And httpget before that.
 
 #include "_footer.html"
 </BODY>
