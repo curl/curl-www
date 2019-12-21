@@ -63,6 +63,8 @@ my $numreleases = $#releases + 30;
 for my $str (@releases) {
     my $date = $reldate{$str};
     my $datesecs=`date -d "$date" +%s`;
+    my $dateymd=`date -d "$date" +%F`;
+    chomp $dateymd;
     my $daysbetween;
     my $deltadays=0;
     
@@ -98,6 +100,7 @@ for my $str (@releases) {
     }
     $since{$str}=$age;
     $delta{$str}=$deltadays;
+    $ymd{$str}=$dateymd;
 
     # the newer release
     $newer{$str}=$prevstr;
@@ -117,7 +120,8 @@ my $totalbugs;
 my $totalchanges;
 for my $str (@releases) {
     my $this = vernum($str);
-    my $date = $reldate{$str}; 
+    my $date = $reldate{$str};
+    my $dateymd = $ymd{$str};
 
     my @v;
     my $vnum;
@@ -153,7 +157,7 @@ for my $str (@releases) {
     }
 
     if($date =~ /([A-Za-z]+) (\d+) (\d\d\d\d)/) {
-        if(!$raw && length($1)>3) {
+        if(!$raw) {
             # a long month name, use the shorter version
             $date = substr($1, 0, 3)."&nbsp;$2&nbsp;$3";
         }
@@ -168,7 +172,7 @@ for my $str (@releases) {
     $totaldays += $deltadays;
 
     if($raw) {
-        printf("$date;$age;%d;$totaldays;%d;%d;%d;%d;\n",
+        printf("$dateymd;$age;%d;$totaldays;%d;%d;%d;%d;\n",
                $deltadays,
                $bugfixes{$str}, $totalbugs,
                $changes{$str}, $totalchanges);
