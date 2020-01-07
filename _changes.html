@@ -43,6 +43,145 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_68_0"></a>
+SUBTITLE(Fixed in 7.68.0 - January 8 2020)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="https://curl.haxx.se/bug/?i=4597">TLS: add BearSSL vtls implementation</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=4599">XFERINFOFUNCTION: support CURL_PROGRESSFUNC_CONTINUE</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=4543">curl: add --etag-compare and --etag-save</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=4500">curl: add --parallel-immediate</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=4418">multi: add curl_multi_wakeup()</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=4665">openssl: CURLSSLOPT_NO_PARTIALCHAIN can disable partial cert chains</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/docs/CVE-2019-15601.html">CVE-2019-15601: file: on Windows, refuse paths that start with \\</a>
+ BGF Azure Pipelines: add several builds
+ BGF <a href="https://curl.haxx.se/bug/?i=4663">CMake: add support for building with the NSS vtls backend</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4545">CURL-DISABLE: initial docs for the CURL_DISABLE_* defines</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4758">CURLOPT_HEADERFUNCTION.3: Document that size is always 1</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4736">CURLOPT_QUOTE.3: fix typos</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4787">CURLOPT_READFUNCTION.3: fix the example</a>
+ BGF CURLOPT_URL.3: "curl supports SMB version 1 (only)"
+ BGF CURLOPT_VERBOSE.3: see also ERRORBUFFER
+ BGF HISTORY: added cmake, HTTP/3 and parallel downloads with curl
+ BGF HISTORY: the SMB(S) support landed in 2014
+ BGF <a href="https://curl.haxx.se/bug/?i=4606">INSTALL.md: provide Android build instructions</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4296">KNOWN_BUGS: Connection information when using TCP Fast Open</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4261">KNOWN_BUGS: LDAP on Windows doesn't work correctly</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4301">KNOWN_BUGS: TLS session cache doesn't work with TFO</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2019-12/0007.html">OPENSOCKETFUNCTION.3: correct the purpose description</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4788">TrackMemory tests: always remove CR before LF</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4604">altsvc: bump to h3-24</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4707">altsvc: make the save function ignore NULL filenames</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4658">build: Disable Visual Studio warning "conditional expression is constant"</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4565">build: fix for CURL_DISABLE_DOH</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4607">checksrc.bat: Add a check for vquic and vssh directories</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4549">checksrc: repair the copyrightyear check</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4557">cirrus-ci: enable clang sanitizers on freebsd 13</a>
+ BGF cirrus: Drop the FreeBSD 10.4 build
+ BGF <a href="https://curl.haxx.se/bug/?i=4590">config-win32: cpu-machine-OS for Windows on ARM</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4567">configure: avoid unportable `==' test(1) operator</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4662">configure: enable IPv6 support without `getaddrinfo`</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4570">configure: fix typo in help text</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4369">conncache: CONNECT_ONLY connections assumed always in-use</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4544">conncache: fix multi-thread use of shared connection cache</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4549">copyrights: fix copyright year range</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4732">create_conn: prefer multiplexing to using new connections</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4786">curl -w: handle a blank input file correctly</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4739">curl.h: add two missing defines for "pre ISO C" compilers</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4731">curl/parseconfig: fix mem-leak</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4730">curl/parseconfig: use curl_free() to free memory allocated by libcurl</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4772">curl: cleanup multi handle on failure</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2051">curl: fix --upload-file . hangs if delay in STDIN</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4588">curl: fix -T globbing</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4705">curl: improved cleanup in upload error path</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4771">curl: make a few char pointers point to const char instead</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4781">curl: properly free mimepost data</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4644">curl: show better error message when no homedir is found</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4785">curl: show error for --http3 if libcurl lacks support</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4649">curl_setup_once: consistently use WHILE_FALSE in macros</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4725">define: remove HAVE_ENGINE_LOAD_BUILTIN_ENGINES, not used anymore</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4618">docs: Change 'experiemental' to 'experimental'</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4262">docs: TLS SRP doesn't work with TLS 1.3</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4680">docs: fix several typos</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4783">docs: mention CURL_MAX_INPUT_LENGTH restrictions</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4598">doh: improved both encoding and decoding</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4704">doh: make it behave when built without proxy support</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4751">examples/postinmemory.c: Call curl_global_cleanup always</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4745">examples/url2file.c: corrected erroneous comment</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4596">examples: add multi-poll.c</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4636">global_init: undo the "intialized" bump in case of failure</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4692">hostip: suppress compiler warning</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3935">http_ntlm: Remove duplicate NSS initialisation</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4609">lib: Move lib/ssh.h -> lib/vssh/ssh.h</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4775">lib: fix compiler warnings with `CURL_DISABLE_VERBOSE_STRINGS`</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4756">lib: fix warnings found when porting to NuttX</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4683">lib: remove ASSIGNWITHINCONDITION exceptions, use our code style</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4756">lib: remove erroneous +x file permission on some c files</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4714">libssh2: add support for ECDSA and ed25519 knownhost keys</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4790">multi.h: remove INITIAL_MAX_CONCURRENT_STREAMS from public header</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4713">multi: free sockhash on OOM</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4594">multi_poll: avoid busy-loop when called without easy handles attached</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4735">ngtcp2: Support the latest update key callback type</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4645">ngtcp2: fix thread-safety bug in error-handling</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4614">ngtcp2: free used resources on disconnect</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4612">ngtcp2: handle key updates as ngtcp2 master branch tells us</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4600">ngtcp2: increase QUIC window size when data is consumed</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4525">ngtcp2: use overflow buffer for extra HTTP/3 data</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3704">ntlm: USE_WIN32_CRYPTO check removed to get USE_NTLM2SESSION set</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4710">ntlm_wb: fix double-free in OOM</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4624">openssl: Revert to less sensitivity for SYSCALL errors</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4593">openssl: improve error message for SYSCALL during connect</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4585">openssl: prevent recursive function calls from ctx callbacks</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=2425">openssl: retrieve reported LibreSSL version at runtime</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2019-11/0094.html">openssl: set X509_V_FLAG_PARTIAL_CHAIN by default</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4152">parsedate: offer a getdate_capped() alternative</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4563">pause: avoid updating socket if done was already called</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4492">projects: Fix Visual Studio projects SSH builds</a>
+ BGF projects: Fix Visual Studio wolfSSL configurations
+ BGF <a href="https://curl.haxx.se/bug/?i=4571">quiche: reject HTTP/3 headers in the wrong order</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4575">remove_handle: clear expire timers after multi_done()</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4715">runtests: --repeat=[num] to repeat tests</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4699">runtests: introduce --shallow to reduce huge torture tests</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4633">schannel: fix --tls-max for when min is --tlsv1 or default</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4668">setopt: Fix ALPN / NPN user option when built without HTTP2</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4550">strerror: Add Curl_winapi_strerror for Win API specific errors</a>
+ BGF strerror: Fix an error looking up some Windows error strings
+ BGF <a href="https://github.com/curl/curl/commit/5b22e1a#r36458547">strerror: Fix compiler warning "empty expression"</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4576">system.h: fix for MCST lcc compiler</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4744">test/sws: search for "Testno:" header unconditionally if no testno</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4628">test1175: verify symbols-in-versions and libcurl-errors.3 in sync</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4728">test1270: a basic -w redirect_url test</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4733">test1456: remove the use of a fixed local port number</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4554">test1558: use double slash after file:</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4556">test1560: require IPv6 for IPv6 aware URL parsing</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4709">tests/lib1557: fix mem-leak in OOM</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4709">tests/lib1559: fix mem-leak in OOM</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4720">tests/lib1591: free memory properly on OOM, in the trailers callback</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4709">tests/unit1607: fix mem-leak in OOM</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4709">tests/unit1609: fix mem-leak in OOM</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4709">tests/unit1620: fix bad free in OOM</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4768">tests: Change NTLM tests to require SSL</a>
+ BGF <a href="https://github.com/curl/curl/pull/4717#issuecomment-570240785">tests: Fix bounce requests with truncated writes</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4692">tests: fix build with `CURL_DISABLE_DOH`</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3899">tests: fix permissions of ssh keys in WSL</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3899">tests: make it possible to set executable extensions</a>
+ BGF tests: make sure checksrc runs on header files too
+ BGF <a href="https://curl.haxx.se/bug/?i=4738">tests: set LC_ALL=en_US.UTF-8 instead of blank in several tests</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4692">tests: use DoH feature for DoH tests</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3899">tests: use \r\n for log messages in WSL</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4767">tool_operate: fix mem leak when failed config parse</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=3730">travis: Fix error detection</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4694">travis: abandon coveralls, it is not reliable</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4646">travis: build ngtcp2 with --enable-lib-only</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4637">travis: export the CC/CXX variables when set</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4698">vtls: make BearSSL possible to set with CURL_SSL_BACKEND</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4688">winbuild: Define CARES_STATICLIB when WITH_CARES=static</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4721">winbuild: Document CURL_STATICLIB requirement for static libcurl</a>
+</ul>
+
 <a name="7_67_0"></a>
 SUBTITLE(Fixed in 7.67.0 - November 6 2019)
 <p> Changes:
