@@ -14,7 +14,7 @@ PAGES= index.html mail.html competitors.html comparison-table.html	  \
      relatedlibs.html features.html wininet.html libwww.html libsoup.html \
      theysay.html bindings.html abi.html neon.html security.html
 
-MAN2HTMLBASIC = roffit --bare --mandir=$(MANROOT) --mandir=$(OPTMAN) --mandir=$(DOCROOT)
+MAN2HTMLBASIC = roffit --bare --mandir=$(MANROOT) --mandir=$(OPTMAN) --mandir=$(DOCROOT) --hrefdir=c
 # postprocess the roffit HTML to add links to curl error codes
 MAN2HTML= ( $(MAN2HTMLBASIC) | perl -0x20 -pe '/(CURL(E|M|SHE)_\w*)/; $$err=$$erra=$$1; $$erra =~ s/_//g; s@CURL(E|M|SHE)_\w*@<a href="libcurl-errors.html\#$$erra">$$err</a>@;' )
 
