@@ -130,3 +130,9 @@ rfc4121.txt The Kerberos Version 5 Generic Security Service Application Program 
 rfc2104.txt HMAC: Keyed-Hashing for Message Authentication
 rfc7578.txt Returning Values from Forms: multipart/form-data (obsoletes RFC2388)
 rfc8314.txt Cleartext Considered Obsolete: Use of Transport Layer Security (TLS) for Email Submission and Access
+rfc3490.txt Internationalized Domain Names for Applications (IDNA) (obsoleted by RFC5890)
+rfc5336.txt SMTP Extension for Internationalized Email Addresses (obsoleted by RFC6531)
+rfc5335.txt Internationalized Email Headers (obsoleted by RFC6532)
+rfc5890.txt Internationalized Domain Names for Applications (IDNA) (obsoletes RFC3490)
+rfc6531.txt SMTP Extension for Internationalized Email (obsoletes RFC5336)
+rfc6532.txt Internationalized Email Headers (obsoletes RFC5335)
