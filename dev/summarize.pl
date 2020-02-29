@@ -306,6 +306,9 @@ sub endofsingle {
     elsif($libcurl =~ /mbedTLS\/(?!1\.)/i) {
         $mbedtls = 1;
     }
+    elsif($libcurl =~ /WolfSSL\/(?!1\.)/i) {
+        $wolfssl = 1;
+    }
     elsif($libcurl =~ /MesaLink/i) {
         $mesalink = 1;
     }
@@ -430,7 +433,7 @@ sub endofsingle {
     my $showdebug = $debug ? "D" : "-";
     my $showtrackmem = $trackmem ? "Y" : "-";
     my $showvalgrind = $valgrind ? "V" : "-";
-    my $showssl = $openssl ? "S" : ($gnutls ? "T" : ($nss ? "N" : ($mbedtls ? "Q" : ($polarssl ? "O" : ($schannel ? "L" : ($darwinssl ? "R" : ($cyassl ? "C" : ($boringssl ? "B" : ($libressl ? "J" : ($mesalink ? "4" : "-"))))))))));
+    my $showssl = $openssl ? "S" : ($gnutls ? "T" : ($nss ? "N" : ($mbedtls ? "Q" : ($polarssl ? "O" : ($schannel ? "L" : ($darwinssl ? "R" : ($wolfssl ? "C" : ($boringssl ? "B" : ($libressl ? "J" : ($mesalink ? "4" : "-"))))))))));
     my $showres = $asynch ? ($ares ? "A" : "H") : "-";
     my $showzlib = ($zlibver || $libz) ? "Z" : "-";
     my $showgssapi = $gssapi ? "G" : "-";
@@ -496,7 +499,7 @@ sub singlefile {
     $valgrind=0;
     $buildcode=0;
 
-    $openssl=$gnutls=$nss=$mbedtls=$polarssl=$schannel=$darwinssl=$cyassl=$boringssl=$libressl=$mesalink=0;
+    $openssl=$gnutls=$nss=$mbedtls=$polarssl=$schannel=$darwinssl=$wolfssl=$boringssl=$libressl=$mesalink=0;
 
     $libmetalink=0;
     $libpsl=0;
@@ -785,7 +788,10 @@ sub singlefile {
                 $darwinssl = 1;
             }
             elsif($line =~ /^\#define USE_CYASSL 1/) {
-                $cyassl = 1;
+                $wolfssl = 1;
+            }
+            elsif($line =~ /^\#define USE_WOLFSSL 1/) {
+                $wolfssl = 1;
             }
             elsif($line =~ /^\#define HAVE_BORINGSSL 1/) {
                 $boringssl = 1;
