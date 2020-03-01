@@ -1,10 +1,10 @@
 ROOT=.
 
 # the latest stable version is:
-STABLE= 7.68.0
-RELDATE = "8th of January 2020"
+STABLE= 7.69.0
+RELDATE = "4th of March 2020"
 # The planned *next* release is:
-NEXTDATE = "4th of March 2020"
+NEXTDATE = "29th of April 2020"
 
 # generated file with binary package stats
 STAT = packstat.t
