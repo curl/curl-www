@@ -43,6 +43,39 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_69_1"></a>
+SUBTITLE(Fixed in 7.69.1 - March 11 2020)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/bug/?i=4893">ares: store dns parameters for duphandle</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5028">cirrus-ci: disable the FreeBSD 13 builds</a>
+ BGF <a href="https://curl.haxx.se/mail/lib-2020-03/0019.html">curl_share_setopt.3: Note sharing cookies doesn't enable the engine</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5037">lib1564: reduce number of mid-wait wakeup calls</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4971">libssh: Fix matching user-specified MD5 hex key</a>
+ BGF MANUAL: update a dict-using command line
+ BGF <a href="https://curl.haxx.se/bug/?i=4826">mime: do not perform more than one read in a row</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4860">mime: fix the binary encoder to handle large data properly</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=4813">mime: latch last read callback status</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5047">multi: skip EINTR check on wakeup socket if it was closed</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5050">pause: bail out on bad input</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5049">pause: force a connection recheck after unpausing (take 2)</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5026">pause: return early for calls that don't change pause state</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5033">runtests.1: rephrase how to specify what tests to run</a>
+ BGF runtests: fix missing use of exe_ext helper function
+ BGF <a href="https://curl.haxx.se/bug/?i=5055">seek: fix fall back for missing ftruncate on Windows</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5041">sftp: fix segfault regression introduced by #4747 in 7.69.0</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5030">sha256: Added SecureTransport implementation</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5030">sha256: Added WinCrypt implementation</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5061">socks4: fix host resolve regression</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5053">socks5: host name resolv regression fix</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5064">tests/server: fix missing use of exe_ext helper function</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5065">tests: fix static ip:port instead of dynamic values being used</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5035">tests: make sleeping portable by avoiding select</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5024">unit1612: fix the inclusion and compilation of the HMAC unit test</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5046">urldata: remove the 'stream_was_rewound' connectdata struct member</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5010">version: make curl_version* thread-safe without using global context</a>
+</ul>
+
 <a name="7_69_0"></a>
 SUBTITLE(Fixed in 7.69.0 - March 4 2020)
 <p> Changes:
