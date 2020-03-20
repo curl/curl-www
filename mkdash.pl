@@ -13,6 +13,8 @@ while(<S>) {
 close(S);
 
 for my $s (keys %svg) {
-    printf "<a id=\"%s\" href=\"dashboard1.html#%s\"><img class=\"dash\" src=\"$dir/%s\"></a>\n",
-        $s, $s, $svg{$s};
+    my $alt = $s;
+    $alt =~ s/-/ /g;
+    printf "<a id=\"%s\" href=\"dashboard1.html#%s\"><img alt=\"%s\" class=\"dash\" src=\"$dir/%s\"></a>\n",
+        $s, $s, $alt, $svg{$s};
 }
