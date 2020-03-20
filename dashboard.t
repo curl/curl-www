@@ -10,10 +10,6 @@
 img.dash {
   max-width: 30%;
 }
-#elif defined(COL2)
-img.dash {
-  max-width: 48%;
-}
 #elif defined(COL5)
 img.dash {
   max-width: 18%;
@@ -38,7 +34,21 @@ TITLE(Dashboard)
 <p>
   Daily updated graphs showing the state of the curl project in as much detail as possible. Click the images
   for full resolution.<br>
-  [<a href="dashboard1.html">1 column</a>][<a href="dashboard.html">3 columns</a>][<a href="dashboard5.html">5 columns</a>]
+#ifndef COL1
+  [<a href="dashboard1.html">1 column</a>]
+#else
+  [1 column]
+#endif
+#ifndef COL3
+  [<a href="dashboard.html">3 columns</a>]
+#else
+  [3 columns]
+#endif
+#ifndef COL5
+  [<a href="dashboard5.html">5 columns</a>]
+#else
+  [5 columns]
+#endif
 <p>
 #include "dash.gen"
 
