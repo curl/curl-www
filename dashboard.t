@@ -33,6 +33,7 @@ TITLE(Dashboard)
 <div class="relatedbox">
 <b>Related:</b>
 <br><a href="/docs/">Online Docs</a>
+<br><a href="/gitstats/">gitstats</a>
 </div>
 <p>
   Daily updated graphs showing the state of the curl project in as much detail as possible. Click the images
