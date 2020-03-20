@@ -1,4 +1,8 @@
 #!/bin/sh
+
+# meant to be updated by mkdash.pl
+touch dash.gen
+
 mkdir -p dl/data
 touch dl/data/databas.db
 

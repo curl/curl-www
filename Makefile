@@ -23,6 +23,9 @@ PAGES=						\
  about.html					\
  book.html					\
  changes.html					\
+ dashboard.html					\
+ dashboard5.html				\
+ dashboard1.html				\
  donation.html					\
  download.html					\
  foot.html					\
@@ -133,6 +136,15 @@ about.html: _about.html docs/_menu.html $(MAINPARTS)
 	$(ACTION)
 
 sponsors.html: _sponsors.html docs/_menu.html $(MAINPARTS)
+	$(ACTION)
+
+dashboard.html: _dashboard.html dash.gen dashboard.t $(MAINPARTS)
+	$(ACTION)
+
+dashboard5.html: _dashboard5.html dash.gen dashboard.t $(MAINPARTS)
+	$(ACTION)
+
+dashboard1.html: _dashboard1.html dash.gen dashboard.t $(MAINPARTS)
 	$(ACTION)
 
 libs.html: _libs.html $(MAINPARTS)
