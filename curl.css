@@ -19,6 +19,9 @@ a:hover {
   background-color: #093754;
 }
 
+img:hover {
+  background-color: #ffffff;
+}
 /* the curl-style blue main page titles
 .pagetitle, h1.libtitle, .newstitle {
   border-style: solid;
