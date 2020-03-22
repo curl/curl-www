@@ -34,6 +34,8 @@ header("Autobuilds - single log");
 where("Autobuilds", "/dev/builds.html", "Log From $year-$month-$day");
 title("Log from $year-$month-$day");
 
+print "<p>[<a href=\"inbox/build-$id.log\">raw log download</a>]<p>\n";
+
 my $build = "inbox/build-$id.log";
 
 
