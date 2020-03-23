@@ -12,6 +12,7 @@ RedirectPermanent /cvs.html https://curl.haxx.se/dev/source.html
 RedirectPermanent /dev/readme-http2.html https://curl.haxx.se/docs/http2.html
 RedirectPermanent /mirrors.html https://curl.haxx.se/mirror/
 RedirectPermanent /libcurl/c/libcurl-thread.html https://curl.haxx.se/libcurl/c/threadsafe.html
+RedirectPermanent /libcurl/c/curl-config.html https://curl.haxx.se/libcurl/using/curl-config.html
 RedirectMatch "^/.git" https://curl.haxx.se/dev/source.html
 RedirectPermanent /dev/security.html https://curl.haxx.se/dev/secprocess.html
 # old advisory pages
