@@ -29,3 +29,6 @@ cd $orgdir
 
 ./mkdash.pl > dash.gen
 make
+
+# remove old SVG images
+find $dir -type d -name "svg-*" -ctime +7 | xargs rm -rf
