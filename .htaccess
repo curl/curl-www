@@ -1,3 +1,8 @@
+# bad spiders
+SetEnvIfNoCase User-agent QQGameHall blocked=1
+
+deny from env=blocked
+
 ErrorDocument 404 /404.html
 RedirectPermanent /devel.html https://curl.haxx.se/dev/
 RedirectPermanent /auto/ https://curl.haxx.se/dev/
