@@ -403,16 +403,11 @@ CURLOPT_CRL option. If no, then the CURLOPT_CRL option will be ignored.
 
 <b>SSLv2:</b> This was the first public release of the SSL protocol. It is
 deprecated and really should no longer be used, because it has a number of
-serious security problems. Even if your engine supports it, libcurl will never
-default to allowing SSLv2 when performing a TLS handshake. Support for SSLv2
-is only provided here if you need to connect to a very old (circa 1995) SSL
-server that does not support a newer version of the protocol.
+serious security problems.
 <p>
 
-<b>SSLv3:</b> This version of SSL fixed all of the major weaknesses in
-SSLv2. It is still widely supported on the public Internet, mainly because
-Microsoft Internet Explorer 6 does not support TLS by default, although TLS is
-a preferred protocol.
+<b>SSLv3:</b> It is deprecated and should no longer be used, because it has a
+number of serious security problems.
 <p>
 
 <b>TLSv1.0:</b> TLS is a slight variation on SSLv3 that was the first version
