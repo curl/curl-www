@@ -39,17 +39,29 @@ TITLE(Dashboard)
 #else
   [1 column]
 #endif
-#ifndef COL3
+#if !defined(COL3) || defined(DASHDATA)
   [<a href="dashboard.html">3 columns</a>]
 #else
   [3 columns]
 #endif
-#ifndef COL5
+#if !defined(COL5) || defined(DASHDATA)
   [<a href="dashboard5.html">5 columns</a>]
 #else
   [5 columns]
 #endif
+#ifndef DASHDATA
+  [<a href="dashboardd.html">data view</a>]
+#else
+  [data view]
+#endif
 <p>
+
+#ifdef DASHDATA
+
+Each image below links to the corresponding CSV file with recently updated
+source data. The first lines of data is shown on the right.
+
+#endif
 #include "dash.gen"
 
 <p>
