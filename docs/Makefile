@@ -148,6 +148,7 @@ PAGES =						\
  todo.html					\
  tooldocs.html					\
  versions.html					\
+ vuln.csv					\
  vulnerabilities.html				\
  whodocs.html
 
@@ -340,6 +341,9 @@ vulnerabilities.html: _vulnerabilities.html vuln.gen $(MAINPARTS)
 
 vuln.gen: $(ROOT)/_changes.html ./vulntable.pl vuln.pm _singlevuln.templ
 	./vulntable.pl < $< > $@
+
+vuln.csv: vuln.pm
+	./vuln2csv.pl > $@
 
 http2.gen: $(SRCROOT)/docs/HTTP2.md
 	$(MARKDOWN) < $< > $@
