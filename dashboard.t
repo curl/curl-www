@@ -32,8 +32,13 @@ TITLE(Dashboard)
 <br><a href="/gitstats/">gitstats</a>
 </div>
 <p>
-  Daily updated graphs showing the state of the curl project in as much detail as possible. Click the images
-  for full resolution.<br>
+  Daily updated graphs showing the state of the curl project in as much detail as possible.
+
+#if !defined(DASHDATA) && !defined(COL1)
+Click the images for full resolution.
+#endif
+
+<br>
 #ifndef COL1
   [<a href="dashboard1.html">1 column</a>]
 #else
