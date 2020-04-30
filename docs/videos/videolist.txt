@@ -499,3 +499,14 @@ EVENT Driving IT 2019
 WHO Daniel Stenberg
 DESC From a few hundered lines of code in the 90s, to running in all Internet- connected devices on the globe. This is the story of how curl conquered the world.
 ENDOFVIDEO
+
+VIDEO The state of curl 2020
+URL https://youtu.be/6ueyZGhtj1Q
+THUMB the-state-of-curl-2020.jpg
+THUMBSIZE width="250" height="141"
+DATE 2020-04-30
+SLIDES the-state-of-curl-2020.pdf
+DURATION 1h53
+WHO Daniel Stenberg
+DESC The state of the curl project 2020. Stats, numbers and status checks.
+ENDOFVIDEO
