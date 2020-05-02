@@ -300,7 +300,7 @@ governance.gen: $(DOCROOT)/GOVERNANCE.md
 versions.html: _versions.html $(MAINPARTS) versions.gen
 	$(ACTION)
 
-versions.gen: $(DOCROOT)/VERSIONS
+versions.gen: $(DOCROOT)/VERSIONS.md
 	$(MARKDOWN) < $< >$@
 
 sslcerts.html: _sslcerts.html $(MAINPARTS) sslcerts.gen
