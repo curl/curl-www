@@ -500,7 +500,55 @@ WHO Daniel Stenberg
 DESC From a few hundered lines of code in the 90s, to running in all Internet- connected devices on the globe. This is the story of how curl conquered the world.
 ENDOFVIDEO
 
+VIDEO --help me if you can
+EVENT curl-up 2020
+URL https://curl.haxx.se/video/curlup-2020/help%2520me%2520if%2520you%2520can.webm
+SLIDES https://curl.haxx.se/video/curlup-2020/help%2520me%2520if%2520you%2520can.pdf
+THUMB help-me-if-you-can-2020.jpg
+THUMBSIZE width="250" height="188"
+DURATION 26 minutes
+DATE 2020-05-09
+WHO Dan Fandrich
+TAGS curl, command line, UI, help, documentation
+DESC Helping people find what they need from hundreds of command-line options.
+ENDOFVIDEO
+
+VIDEO 5 years of libcurl bindings for R
+EVENT curl-up 2020
+URL https://www.youtube.com/watch?v=jGv5pugYpN0
+THUMB libcurl-for-r.jpg
+THUMBSIZE width="250" height="140"
+DURATION 22 minutes
+DATE 2020-05-08
+WHO Jeroen Ooms
+DESC 5 years of libcurl bindings for R
+ENDOFVIDEO
+
+VIDEO curl-docker
+EVENT curl-up 2020
+URL https://youtu.be/ccM7CrkNBpY
+THUMB curl-docker.jpg
+THUMBSIZE width="250" height="140"
+DURATION 22 minutes
+DATE 2020-05-08
+WHO James Fuller
+DESC Presentation on the official curl docker image (http://github.com/curl/curl-docker).
+ENDOFVIDEO
+
+VIDEO HTTP/3 in curl
+EVENT curl-up 2020
+URL https://youtu.be/nk1cxGwMrUk
+SLIDES https://www.slideshare.net/bagder/http3-in-curl-2020
+THUMB http3-in-curl-2020.jpg
+THUMBSIZE width="250" height="140"
+DURATION 56 minutes
+DATE 2020-05-05
+WHO Daniel Stenberg
+DESC How to do, build and use HTTP/3 with curl
+ENDOFVIDEO
+
 VIDEO The state of curl 2020
+EVENT curl-up 2020
 URL https://youtu.be/6ueyZGhtj1Q
 THUMB the-state-of-curl-2020.jpg
 THUMBSIZE width="250" height="141"
