@@ -3,6 +3,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2020-8169.html|7.62.0|7.71.0|Partial password leak over DNS on HTTP redirect|CVE-2020-8169|20200624|20200515|CWE-200: Exposure of Sensitive Information to an Unauthorized Actor|400",
     # CVE-2019-15601 is no longer considered a security problem so it shouldn't
     # be listed here: https://daniel.haxx.se/blog/2020/03/16/warning-curl-users-on-windows-using-file/
     #"CVE-2019-15601.html|6.0|7.67.0|SMB access smuggling via FILE URL on Windows|CVE-2019-15601|20200108|20191031|CWE-20: Improper Input Validation|400",
