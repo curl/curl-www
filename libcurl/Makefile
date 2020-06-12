@@ -27,7 +27,7 @@ index.html: _index.html $(MAINPARTS)
 abi.html: _abi.html abi.gen $(MAINPARTS)
 	$(ACTION)
 
-abi.gen: $(SRCROOT)/docs/libcurl/ABI
+abi.gen: $(SRCROOT)/docs/libcurl/ABI.md
 	$(MARKDOWN) < $< > $@
 
 features.html: _features.html $(MAINPARTS)
