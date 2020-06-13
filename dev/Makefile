@@ -18,7 +18,7 @@ PAGES = foot.html head.html howto.html summary.html \
 	index.html contribute.html internals.html testcurl.html		\
 	runtests.html source.html secprocess.html roadmap.html		\
 	sourceactivity.html release-procedure.html code-style.html      \
-        deprecate.html
+        deprecate.html code-review.html
 
 all: $(PAGES)
 
@@ -51,6 +51,11 @@ runtests.html: _runtests.html $(MAINPARTS) runtests.gen
 	$(ACTION)
 runtests.gen: $(TESTROOT)/runtests.1
 	$(MAN2HTML) < $< > $@
+
+code-review.html: _code-review.html $(MAINPARTS) code-review.gen
+	$(ACTION)
+code-review.gen: $(DOCROOT)/CODE_REVIEW.md
+	$(MARKDOWN) < $< > $@
 
 contribute.html: _contribute.html $(MAINPARTS) contribute.gen
 	$(ACTION)

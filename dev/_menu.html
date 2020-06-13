@@ -28,6 +28,12 @@ LINK(/dev/builds.html, Autobuilds)
 VLINK(/dev/builds.html, Autobuilds, Automated non-stop builds)
 #endif
 
+#ifdef DEVEL_CODE_REVIEW
+LINK(/dev/code-review.html, Code review)
+#else
+VLINK(/dev/code-review.html, Code review, How to code review)
+#endif
+
 #ifdef DEVEL_CODE_STYLE
 LINK(/dev/code-style.html, Code style)
 #else
