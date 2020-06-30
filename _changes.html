@@ -43,6 +43,30 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_71_1"></a>
+SUBTITLE(Fixed in 7.71.1 - July 1 2020)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/bug/?i=5628">cirrus-ci: disable FreeBSD 13 (again)</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5412">Curl_inet_ntop: always check the return code</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5607">CURLOPT_READFUNCTION.3: provide the upload data size up front</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5599">DYNBUF.md: fix a typo: trail => tail</a>
+ BGF escape: make the URL decode able to reject only %00-bytes
+ BGF <a href="https://curl.haxx.se/bug/?i=5601">escape: zero length input should return a zero length output</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5622">examples/multithread.c: call curl_global_cleanup()</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5589">http2: set the correct URL in pushed transfers</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5613">http: fix proxy auth with blank password</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5615">mbedtls: fix build with disabled proxy support</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5624">ngtcp2: sync with current master</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5606">openssl: Fix compilation on Windows when ngtcp2 is enabled</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5631">Revert "multi: implement wait using winsock events"</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5594">sendf: improve the message on client write errors</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5598">terminology: call them null-terminated strings</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5612">tool_cb_hdr: Fix etag warning output and return code</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5582">url: allow user + password to contain "control codes" for HTTP(S)</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5617">vtls: compare cert blob when finding a connection to reuse</a>
+</ul>
+
 <a name="7_71_0"></a>
 SUBTITLE(Fixed in 7.71.0 - June 24 2020)
 <p> Changes:
