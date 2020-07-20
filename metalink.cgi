@@ -15,8 +15,6 @@ require "curl.pm";
 my %name;
 my %size;
 my %download;
-my %proto;
-my %host;
 my %archtype;
 my %where;
 
@@ -68,16 +66,7 @@ while(<DATA>) {
     elsif($_ =~ /^DOWNLOAD: ([^ ]*) ([^ ]*) (.*)/) {
         my ($archive, $curl, $where)=($1, $2, $3);
 
-        my $proto = uc($curl);
-
-        $proto =~ s/^(FTP|HTTP).*/$1/g;
-
-        my $host = $curl;
-        $host =~ s/^(FTP|HTTP):\/\/([^\/]*).*/$2/ig;
-
         $download{$archive} .= "$curl|||";
-        $proto{$curl}=$proto;
-        $host{$curl}=$host;
         $where{$curl}=$where;
     }
       
