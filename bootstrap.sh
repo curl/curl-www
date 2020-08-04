@@ -12,6 +12,12 @@ if test ! -d cvssource; then
   ln -sf $code cvssource
 fi
 
+touch ca/cacert.pem
+touch ca/pemlist.gen
+
+# This links to a *built* curl.1 file
+ln -rsf cvssource/docs/curl.1 docs/curl.1
+
 cd libcurl/c
 perl mkopts.pl
 perl mkexam.pl
