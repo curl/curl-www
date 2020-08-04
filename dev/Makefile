@@ -22,7 +22,7 @@ PAGES = foot.html head.html howto.html summary.html \
 
 all: $(PAGES)
 
-index.html: _index.html bugbox.t $(MAINPARTS) ../release.t
+index.html: _index.html $(MAINPARTS) ../release.t
 	$(ACTION)
 
 source.html: _source.html $(MAINPARTS)
