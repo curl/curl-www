@@ -7,7 +7,7 @@ my $url="/windows/";
 
 sub getdl {
     my ($dir)=@_; # where the download files are
-    opendir(DIR, $dir) || die "can't opendir $dir: $!";
+    opendir(DIR, $dir) || return "";
     my @files = readdir(DIR);
     closedir DIR;
     return @files;
@@ -58,8 +58,7 @@ sub depversions {
 }
 
 sub latest {
-    open(F, "<latest.txt") ||
-        die "no 'latest.txt' present!";
+    open(F, "<latest.txt") || return "";
     my @f = <F>;
     close(F);
     chomp $f[0];
@@ -68,8 +67,7 @@ sub latest {
 
 sub gethashes {
     my ($dir)=@_; # where the download files are
-    open(H, "$dir/hashes.txt") ||
-        die "no hashes!";
+    open(H, "$dir/hashes.txt") || return;
     while(<H>) {
         if($_ =~ /^SHA256\(([^)]*)\)= (.*)/) {
             my ($file, $hash)=($1, $2);
