@@ -1,7 +1,6 @@
-# Hjälpfunktioner för formulärinmatningar.
 
 require "CGI.pm";
-require "pbase.pm";
+require "./pbase.pm";
 require "../curl.pm";
 
 $databasefilename = "data/databas.db";

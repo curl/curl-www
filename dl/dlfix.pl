@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 require "../latest.pm";
-require "stuff.pm";
+require "./stuff.pm";
 
 # Ladda databasen
 $db=new pbase;
