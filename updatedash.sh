@@ -18,6 +18,9 @@ cd $dir
 # update the local curl git repo
 git up -q
 
+# update the github issue cache
+(cd stats && ./github-cache.pl)
+
 # update the stats scripts
 (cd stats && git up -q)
 
