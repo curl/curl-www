@@ -152,6 +152,7 @@ PAGES =						\
  versions.html					\
  vuln.csv					\
  vulnerabilities.html				\
+ vulnall.html					\
  whodocs.html
 
 all: vuln.gen $(PAGES) vuln-make.gen
@@ -340,8 +341,12 @@ CVE-%.html: CVE-%.md $(MAINPARTS) advisory.t $(ADVBOX)
 
 vulnerabilities.html: _vulnerabilities.html vuln.gen $(MAINPARTS)
 	$(ACTION)
+vulnall.html: _vulnall.html vuln0.gen $(MAINPARTS)
+	$(ACTION)
 
 vuln.gen: $(ROOT)/_changes.html ./vulntable.pl vuln.pm _singlevuln.templ
+	./vulntable.pl 25 < $< > $@
+vuln0.gen: $(ROOT)/_changes.html ./vulntable.pl vuln.pm _singlevuln.templ
 	./vulntable.pl < $< > $@
 
 vuln.csv: vuln.pm

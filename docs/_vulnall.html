@@ -3,6 +3,12 @@
 <HEAD> <TITLE>curl - Vulnerability Table</TITLE>
 #include "css.t"
 
+<style type="text/css">
+.contents {
+  max-width: 95%;
+  overflow: auto;
+}
+</style>
 </HEAD>
 
 #define CURL_DOCS
@@ -26,18 +32,15 @@ TITLE(curl and libcurl vulnerabilities)
 </div>
 
 <p>
- This table shows the <b>25</b> most recent curl versions and which releases
- that are vulnerable to which publicly
- disclosed <a href="security.html">vulnerability</a>! Click each red bar to
- read up on the corresponding advisory.
+ This is the exhaustive list of *all* curl versions ever released and which
+ releases that are vulnerable to each publicly
+ disclosed <a href="security.html">vulnerability</a>!
 <p>
  Each version number link shows a vulnerability summary for that specific
- release.
+ release. <a href="vulnerabilities.html">View only the 25 most recent
+ releases</a>.
 <p>
-#include "vuln.gen"
-
-<p>
- See also the <a href="vulnall.html">vulnerability table for <i>all</i> curl releases</a>.
+#include "vuln0.gen"
 
 #include "_footer.html"
 </body> </html>

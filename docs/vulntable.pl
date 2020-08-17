@@ -4,6 +4,13 @@
 
 require "./vuln.pm";
 
+# The amount of releases to include (0 == all)
+my $lastfew = $ARGV[0];
+if($lastfew < 1) {
+    $lastfew = -1;
+}
+my $lastshow; # if $lastfew, this is the final release shown in the table
+
 sub vernum {
     my ($ver)=@_;
     my @v = split('\.', $ver);
@@ -20,6 +27,12 @@ sub head {
     my $v=1;
     for(@vuln) {
         my ($id, $start, $stop, $desc, $cve, $announce, $report, $cwe)=split('\|');
+
+        if($lastshow &&
+           !(($lastshow >= vernum($start)) && ($lastshow <= vernum($stop)))) {
+            # not a match!
+            next;
+        }
         $id =~ s/ //;
         my $num = $#vuln - $v + 2;
         my $a=sprintf("<a style=\"color: white; text-decoration: none;\" href=\"$id\">%02</a>", $num);
@@ -126,11 +139,7 @@ sub single {
     close(A);
 }
 
-my $total = head();
-
 my $l;
-my $index;
-
 
 while(<STDIN>) {
     if($_ =~ /^SUBTITLE\(Fixed in ([0-9.]*) - (.*)\)/) {
@@ -142,7 +151,7 @@ while(<STDIN>) {
             # ignore all before 6.0
             last;
         }
-        
+
         push @releases, $str;
         $reldate{$str}=$date;
         $vernum{$str}=$this;
@@ -160,8 +169,14 @@ while(<STDIN>) {
             }
             $i++;
         }
+        if($#releases == $lastfew) {
+            $lastshow = $this;
+            last;
+        }
     }
 }
+
+my $total = head();
 
 $versions = scalar(@releases);
 
