@@ -43,6 +43,118 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+<a name="7_72_0"></a>
+SUBTITLE(Fixed in 7.72.0 - August 19 2020)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="https://curl.haxx.se/bug/?i=5453">content_encoding: add zstd decoding support</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=5636">CURL_PUSH_ERROROUT: allow the push callback to fail the parent stream</a>
+ CHG <a href="https://curl.haxx.se/bug/?i=5511">CURLINFO_EFFECTIVE_METHOD: added</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.haxx.se/docs/CVE-2020-8231.html">CVE-2020-8231: libcurl: wrong connect-only connection</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5659">appveyor: collect libcurl.dll variants with prefix or suffix</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5812">asyn-ares: correct some bad comments</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5666">bearssl: fix build with disabled proxy support</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5701">buildconf: avoid array concatenation in die()</a>
+ BGF buildconf: retire ares buildconf invocation
+ BGF <a href="https://curl.haxx.se/bug/?i=5732">checksrc: ban gmtime/localtime</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5715">checksrc: invoke script with -D to find .checksrc proper</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5721">CI/azure: install libssh2 for use with msys2-based builds</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5706">CI/azure: unconditionally enable warnings-as-errors with autotools</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5716">CI/macos: enable warnings as errors for CMake builds</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5723">CI/macos: set minimum macOS version</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5694">CI/macos: unconditionally enable warnings-as-errors with autotools</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5772">CI: Add muse CI analyzer</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5668">cirrus-ci: upgrade 11-STABLE to 11.4</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5817">CMake: don't complain about missing nroff</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5714">CMake: fix test for warning suppressions</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5662">cmake: fix windows xp build</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5656">configure.ac: Sort features name in summary</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5689">configure: allow disabling warnings</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5605">configure: cleanup wolfssl + pkg-config conflicts when cross compiling.</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5720">configure: show zstd "no" in summary when built without it</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5708">connect: remove redundant message about connect failure</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5793">curl-config: ignore REQUIRE_LIB_DEPS in --libs output</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5777">curl.1: add a few missing valid exit codes</a>
+ BGF curl: add %{method} to the -w variables
+ BGF <a href="https://hackerone.com/reports/926638">curl: improve the existing file check with -J</a>
+ BGF <a href="https://github.com/curl/curl/commit/61a08508f6a458fe21bbb18cd2a9bac2f039452b#commitcomment-40941232">curl_multi_setopt: fix compiler warning "result is always false"</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5642">curl_version_info.3: CURL_VERSION_KERBEROS4 is deprecated</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5655">CURLINFO_CERTINFO.3: fix typo</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5729">CURLOPT_NOBODY.3: clarify what setting to 0 means</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5744">docs: add date of 7.20 to CURLM_CALL_MULTI_PERFORM mentions</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5811">docs: Add video link to docs/CONTRIBUTE.md</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5822">docs: change "web site" to "website"</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5788">docs: clarify MAX_SEND/RECV_SPEED functionality</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5688">docs: Update a few leftover mentions of DarwinSSL</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5704">doh: remove redundant cast</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5683">file2memory: use a define instead of -1 unsigned value</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5797">ftp: don't do ssl_shutdown instead of ssl_close</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5639">ftpserver: don't verify SMTP MAIL FROM names</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5661">getinfo: reset retry-after value in initinfo</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5645">gnutls: repair the build with `CURL_DISABLE_PROXY`</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5778">gtls: survive not being able to get name/issuer</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5663">h2: repair trailer handling</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5643">http2: close the http2 connection when no more requests may be sent</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5641">http2: fix nghttp2_strerror -> nghttp2_http2_strerror in debug messages</a>
+ BGF <a href="https://github.com/curl/curl/commit/7370b4e39f1390e701f5b68d910c619151daf72b#r41334700">libssh2: s/ssherr/sftperr/</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5819">libtest/Makefile.am: add -no-undefined for libstubgss for Cygwin</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5695">md(4|5): don't use deprecated macOS functions</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5722">mprintf: Fix dollar string handling</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5722">mprintf: Fix stack overflows</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5759">multi: Condition 'extrawait' is always true</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5805">multi: Remove 10-year old out-commented code</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5676">multi: remove two checks always true</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5737">multi: update comment to say easyp list is linear</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5749">multi_remove_handle: close unused connect-only connections</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5786">ngtcp2: adapt to error code rename</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5690">ngtcp2: adjust to recent sockaddr updates</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5675">ngtcp2: update to modified qlog callback prototype</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5667">nss: fix build with disabled proxy support</a>
+ BGF <a href="https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=24379">ntlm: free target_info before (re-)malloc</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5757">openssl: fix build with LibreSSL < 2.9.1</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5679">page-header: provide protocol details in the curl.1 man page</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5726">quiche: handle calling disconnect twice</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5762">runtests.pl: treat LibreSSL and BoringSSL as OpenSSL</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5778">runtests: move the gnutls-serv tests to a dynamic port</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5782">runtests: move the smbserver to use a dynamic port number</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5785">runtests: move the TELNET server to a dynamic port</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5783">runtests: run the DICT server on a random port number</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5779">runtests: run the http2 tests on a random port number</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5761">runtests: support dynamicly base64 encoded sections in tests</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5725">setopt: unset NOBODY switches to GET if still HEAD</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5792">smtp_parse_address: handle blank input string properly</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5654">socks: use size_t for size variable</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5697">strdup: remove the odd strlen check</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5644">test1119: verify stdout in the test</a>
+ BGF test1139: make it display the difference on test failures
+ BGF <a href="https://curl.haxx.se/bug/?i=5814">test1140: compare stdout</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5767">test1908: treat file as text</a>
+ BGF tests/FILEFORMAT.md: mention %HTTP2PORT
+ BGF tests/sshserver.pl: fix compatibility with OpenSSH for Windows
+ BGF <a href="https://curl.haxx.se/bug/?i=5795">TLS naming: fix more Winssl and Darwinssl leftovers</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5764">tls-max.d: this option is only for TLS-using connections</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5764">tlsv1.3.d. only for TLS-using connections</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5754">tool_doswin: Simplify Windows version detection</a>
+ BGF <a href="https://bugzilla.redhat.com/1833193">tool_getparam: make --krb option work again</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5767">TrackMemory tests: ignore realloc and free in getenv.c</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5734">transfer: fix data_pending for builds with both h2 and h3 enabled</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5665">transfer: fix memory-leak with CURLOPT_CURLU in a duped handle</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5794">transfer: move retrycount from connect struct to easy handle</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5773">travis/script.sh: fix use of `-n' with unquoted envvar</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5752">travis: add ppc64le and s390x builds</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5691">travis: update quiche builds for new boringssl layout</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5709">url: fix CURLU and location following</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5638">url: silence MSVC warning</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5695">util: silence conversion warnings</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5754">win32: Add Curl_verify_windows_version() to curlx</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5658">WIN32: stop forcing narrow-character API</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5491">windows: add unicode to feature list</a>
+ BGF <a href="https://curl.haxx.se/bug/?i=5674">windows: disable Unix Sockets for old mingw</a>
+</ul>
+
 <a name="7_71_1"></a>
 SUBTITLE(Fixed in 7.71.1 - July 1 2020)
 <p> Bugfixes:
