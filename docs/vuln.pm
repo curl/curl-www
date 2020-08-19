@@ -3,6 +3,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2020-8231.html|7.29.0|7.71.1|wrong connect-only connection|CVE-2020-8231|20200819|20200731|CWE-825: Expired Pointer Dereference|500",
     "CVE-2020-8177.html|7.20.0|7.70.0|curl overwrite local file with -J|CVE-2020-8177|20200624|20200530|CWE-641: Improper Restriction of Names for Files and Other Resources|700",
     "CVE-2020-8169.html|7.62.0|7.70.0|Partial password leak over DNS on HTTP redirect|CVE-2020-8169|20200624|20200515|CWE-200: Exposure of Sensitive Information to an Unauthorized Actor|400",
     # CVE-2019-15601 is no longer considered a security problem so it shouldn't
