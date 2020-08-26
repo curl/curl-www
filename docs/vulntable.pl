@@ -43,7 +43,8 @@ sub head {
         $vulndesc[$v-1]=$desc;
         $cve[$v-1]=$cve;
         $cwe[$v-1]=$cwe;
-        printf("<th style=\"font-size: 70%%;\" title=\"$cve: $desc\">%02d</th>", $num);
+        printf("<th><a class=vuln title=\"$cve: $desc\" href=\"%s\">%02d</a></th>",
+               $id, $num);
         $v++;
     }
     print "<th>Total</th>\n";
