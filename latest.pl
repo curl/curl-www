@@ -13,9 +13,9 @@ my %mirrors=(
     'https://dl.uxnr.de/mirror/curl/' => 'Germany (Nuremberg, Bavaria)',
 
     # Get Hosted Online
-    'https://mirrors.gethosted.online/curl-haxx' => 'UK (London)',
-    'http://mirrors.gethosted.online/curl-haxx' => 'UK (London)',
-    'ftp://mirrors.gethosted.online/curl-haxx' => 'UK (London)',
+    'https://mirrors.gethosted.online/curl-haxx/' => 'UK (London)',
+    'http://mirrors.gethosted.online/curl-haxx/' => 'UK (London)',
+    'ftp://mirrors.gethosted.online/curl-haxx/' => 'UK (London)',
     );
 
 sub present {
