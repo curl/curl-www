@@ -1,0 +1,61 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>tiny-curl</TITLE>
+#include "css.t"
+</HEAD>
+
+#define DEVEL_INDEX
+#define CURL_URL tiny/
+
+#include "../_menu.html"
+#include "setup.t"
+
+WHERE1(tiny-curl)
+
+TITLE(tiny-curl)
+<p>
+  <b>tiny-curl is curl for smaller systems</b>.
+
+  <ul>
+    <li> focused on providing a library for HTTP(S) GET
+    <li> provides the familiar and known libcurl API
+    <li> targets RTOSes and systems that's "too small to run regular Linux"
+    <li> provides ports to RTOSes that "real curl" don't support
+    <li> GPLv3 licensed
+  </ul>
+
+<p>
+  All features that tiny-curl disables by default are possible to enable,
+  piecemeal, but might increase footprint and memory requirements.
+
+<p>
+  As many as possible of the mechanisms that are done to shrink the footprint
+  for tiny-curl are backported and merged into real curl.
+  
+SUBTITLE(Size requirements)
+<p>
+  The goal of tiny-curl is to offer HTTPS GET powers within <b>100K of storage
+  size</b> (on a 32 bit system), and that includes wolfSSL.
+<p>
+  tiny-curl itself requires about <b>20K of dynamic memory</b> (but using more
+  may speed up transfers).
+
+SUBTITLE(License)
+<p>
+  tiny-curl is licensed under GPLv3. Note that this is different than the
+  regular curl, which is MIT licensed.
+<p>
+  You can also get <a href="https://www.wolfssl.com/contact/">tiny-curl under
+  a commercial license from wolfSSL</a>.
+
+SUBTITLE(Download)
+<p>
+  <a href="tiny-curl-7.72.0.tar.gz">tiny-curl 7.72.0</a>
+  (<a href="tiny-curl-7.72.0.tar.gz.asc">gpg</a>)
+<p>
+  tiny-curl 7.72.0 was relased on October 27, 2020.
+
+
+#include "_footer.html"
+</BODY>
+</HTML>

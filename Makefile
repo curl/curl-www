@@ -55,6 +55,7 @@ all: $(PAGES)
 	cd rfc && make
 	cd dev && make
 	cd windows && make
+	cd tiny && make
 
 head.html: _head.html $(MAINPARTS)
 	$(ACTION)
@@ -173,3 +174,4 @@ clean:
 	cd legal && make clean
 	cd rfc && make clean
 	cd dev && make clean
+	cd tiny && make clean
