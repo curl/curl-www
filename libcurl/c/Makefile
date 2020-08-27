@@ -39,6 +39,10 @@ MIME = curl_mime_init.html curl_mime_free.html curl_mime_addpart.html	\
 URLAPI = curl_url.html curl_url_cleanup.html curl_url_dup.html	\
  curl_url_get.html curl_url_set.html
 
+EASY_OPTION = curl_easy_option_by_id.html \
+ curl_easy_option_by_name.html \
+ curl_easy_option_next.html
+
 PAGES = index.html example.html curl_easy_init.html curl_easy_cleanup.html    \
  curl_easy_setopt.html curl_easy_perform.html curl_version.html		      \
  curl_version_info.html curl_getenv.html curl_free.html			      \
@@ -60,7 +64,8 @@ PAGES = index.html example.html curl_easy_init.html curl_easy_cleanup.html    \
  easy_setopt_options.html easy_getinfo_options.html multi_setopt_options.html \
  allexamples.zip options-in-examples.html symbols-in-versions.html	      \
  threadsafe.html curl_global_sslset.html libcurl-env.html $(MIME) 	      \
- curl_easy_upkeep.html $(URLAPI) curl_multi_poll.html curl_multi_wakeup.html
+ curl_easy_upkeep.html $(URLAPI) curl_multi_poll.html curl_multi_wakeup.html  \
+ $(EASY_OPTION)
 
 all: $(PAGES)
 
@@ -501,6 +506,21 @@ curl_url_get.gen: $(MANROOT)/curl_url_get.3
 curl_url_set.html: _curl_url_set.html $(MAINPARTS_CAPI) curl_url_set.gen
 	$(ACTION)
 curl_url_set.gen: $(MANROOT)/curl_url_set.3
+	$(MAN2HTML) < $< >$@
+
+curl_easy_option_by_id.html: _curl_easy_option_by_id.html $(MAINPARTS_CAPI) curl_easy_option_by_id.gen
+	$(ACTION)
+curl_easy_option_by_id.gen: $(MANROOT)/curl_easy_option_by_id.3
+	$(MAN2HTML) < $< >$@
+
+curl_easy_option_by_name.html: _curl_easy_option_by_name.html $(MAINPARTS_CAPI) curl_easy_option_by_name.gen
+	$(ACTION)
+curl_easy_option_by_name.gen: $(MANROOT)/curl_easy_option_by_name.3
+	$(MAN2HTML) < $< >$@
+
+curl_easy_option_next.html: _curl_easy_option_next.html $(MAINPARTS_CAPI) curl_easy_option_next.gen
+	$(ACTION)
+curl_easy_option_next.gen: $(MANROOT)/curl_easy_option_next.3
 	$(MAN2HTML) < $< >$@
 
 include Makefile.examples
