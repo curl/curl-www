@@ -44,11 +44,18 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
+#define RELEASEVIDEO(desc)                                       \
+  <div style="height: 3em; line-height: 3em; font-size: 120%;">  \
+  <a href="https://youtu.be/yVZ8Q3fTv40">                        \
+  <img src="pix/play.svg" height="100%" style="float: left; margin-right: 1em;"> desc </a> \
+  </div>
+
 <a name="7_72_0"></a>
 SUBTITLE(Fixed in 7.72.0 - August 19 2020)
 <p>
- <a href="https://youtu.be/yVZ8Q3fTv40">curl 7.72.0 release video on YouTube</a>
-<p> Changes:
+  RELEASEVIDEO(curl 7.72.0 release video)
+
+<p style="clear: both;"> Changes:
 <ul class="changes">
  CHG <a href="https://curl.haxx.se/bug/?i=5453">content_encoding: add zstd decoding support</a>
  CHG <a href="https://curl.haxx.se/bug/?i=5636">CURL_PUSH_ERROROUT: allow the push callback to fail the parent stream</a>

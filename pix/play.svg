@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="800" version="1.1" viewBox="0 0 800.00001 800.00001" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient id="c" x1="318.59" x2="60.456" y1="484.84" y2="668.69" gradientUnits="userSpaceOnUse">
+   <stop offset="0"/>
+   <stop stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <mask id="b" maskUnits="userSpaceOnUse">
+   <ellipse cx="400" cy="652.36" rx="399.96" ry="399.96" color="#000000" color-rendering="auto" fill="#fff" image-rendering="auto" shape-rendering="auto" solid-color="#000000" stroke="#273b50" stroke-width=".072721" style="isolation:auto;mix-blend-mode:normal"/>
+  </mask>
+  <mask id="a" maskUnits="userSpaceOnUse">
+   <ellipse cx="400" cy="400" rx="399.96" ry="399.96" color="#000000" color-rendering="auto" fill="#fff" image-rendering="auto" shape-rendering="auto" solid-color="#000000" stroke="#273b50" stroke-width=".072721" style="isolation:auto;mix-blend-mode:normal"/>
+  </mask>
+ </defs>
+ <g transform="translate(0 -252.36)">
+  <ellipse cx="400" cy="652.36" rx="399.96" ry="399.96" color="#000000" color-rendering="auto" fill="#1c8adb" image-rendering="auto" shape-rendering="auto" solid-color="#000000" stroke="#273b50" stroke-width=".072721" style="isolation:auto;mix-blend-mode:normal"/>
+  <path transform="translate(0 252.36)" d="m247.86 224.44-244.76 244.76c26.906 170.43 59.174 229.47 194.76 330.8l400-400z" fill="url(#c)" mask="url(#a)" opacity=".42"/>
+  <path d="m247.86 827.92v-351.12l350 175.56-350 175.56z" fill="#fff" mask="url(#b)"/>
+ </g>
+</svg>
