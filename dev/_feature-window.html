@@ -1,0 +1,39 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>curl - Feature window status</TITLE>
+#include "css.t"
+</HEAD>
+
+#define DEVEL_FEATURE_WINDOW
+#define CURL_URL /dev/feature-window.html
+
+#include "_menu.html"
+#include "setup.t"
+#include "../release.t"
+#include "featurewindow.t"
+
+WHERE2(Development, "/dev/", feature window)
+
+TITLE(The feature window is now)
+#if FEATUREWINDOW
+  <img src="../pix/open-sign.svg">
+#else
+  <img src="../pix/closed-sign.png" width="100%">
+#endif
+
+<p>
+  While the feature window is <b>open</b>, we allow merging new features and
+  changes. Normally, the feature window is open from the Monday following a
+  release until the Wednesday four weeks before a pending release.
+
+<p>
+  While the feature window is <b>closed</b>, we do not allow merging new
+  features or changes and only merge bug-fixes.
+
+<p>
+  You can still submit pull-requests for new features when the window is closed,
+  but they will not be merged until the window opens again.
+
+#include "_footer.html"
+</BODY>
+</HTML>

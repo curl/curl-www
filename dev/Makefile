@@ -18,11 +18,14 @@ PAGES = foot.html head.html howto.html summary.html \
 	index.html contribute.html internals.html testcurl.html		\
 	runtests.html source.html secprocess.html roadmap.html		\
 	sourceactivity.html release-procedure.html code-style.html      \
-        deprecate.html code-review.html
+        deprecate.html code-review.html feature-window.html
 
 all: $(PAGES)
 
 index.html: _index.html $(MAINPARTS) ../release.t featurewindow.t
+	$(ACTION)
+
+feature-window.html: _feature-window.html $(MAINPARTS) featurewindow.t
 	$(ACTION)
 
 source.html: _source.html $(MAINPARTS)
