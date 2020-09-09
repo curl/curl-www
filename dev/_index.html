@@ -10,10 +10,20 @@
 #include "_menu.html"
 #include "setup.t"
 #include "../release.t"
+#include "featurewindow.t"
 
 WHERE1(Development)
 
 TITLE(Developing curl)
+<div style="float: right; width: 10em; margin-left: 20px;">
+  The <b>Feature window</b> is now<br>
+#if FEATUREWINDOW
+  <img src="../pix/open-sign.svg" 
+#else
+  <img src="../pix/closed-sign.png"
+#endif
+        style="width: 15em;">
+</div>
 <p>
  This is the section of the web site devoted to the development of curl and
  libcurl. If you are just a "user" of curl or libcurl, this may not be where
@@ -21,7 +31,7 @@ TITLE(Developing curl)
 <p>
  There is always development going on in the curl project.  To help out the
  development team, we provide these services:
-
+ 
 SUBTITLE(Generated contents)
 <p>
   Build and source information that is updated all the time:
