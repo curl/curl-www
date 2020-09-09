@@ -9,7 +9,7 @@ OPTMAN=$(DOCROOT)/libcurl/opts
 include $(ROOT)/mainparts.mk
 include $(ROOT)/setup.mk
 
-MAINPARTS += _menu.html doclinks.t Makefile $(ROOT)/manpage.t $(ROOT)/alert.t
+MAINPARTS += _menu.html Makefile $(ROOT)/manpage.t $(ROOT)/alert.t
 FCPP_OPTS = -DSHOW_ALERT
 MAINPARTS_CAPI = $(MAINPARTS) libcurl-related.t
 
