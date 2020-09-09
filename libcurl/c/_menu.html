@@ -7,7 +7,29 @@
 
 <div class="main">
 <div class="menu">
-#include "doclinks.t"
+
+#ifdef DOCS_OVERVIEW
+LINK("https://curl.haxx.se/libcurl/c/libcurl.html", API Overview)
+#else
+VLINK("https://curl.haxx.se/libcurl/c/libcurl.html", API Overview, Overview)
+#endif
+
+<div class="dropdown">
+  <a class="dropbtn" href="https://curl.haxx.se/libcurl/c/">Docs</a>
+  <div class="dropdown-content">
+    <a href="allfuncs.html">All functions</a>
+    <a href="libcurl-easy.html">Easy interface</a>
+    <a href="libcurl-env.html">Environment</a>
+    <a href="libcurl-errors.html">Errors</a>
+    <a href="example.html">Examples</a>
+    <a href="libcurl-multi.html">Multi interface</a>
+    <a href="libcurl-share.html">Share interface</a>
+    <a href="symbols-in-vesoins.html">Symbols</a>
+    <a href="tutorial.html">Tutorial</a>
+  </div>
+</div>
+
+
 </div>
 
 #ifdef SHOW_ALERT
