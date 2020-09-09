@@ -16,95 +16,36 @@
 <div class="main">
 <div class="menu">
 
-#ifdef DEVEL_INDEX
-LINK(/dev/, Develop Index)
-#else
-VLINK(/dev/, Develop Index, Development section front page)
-#endif
-
-#ifdef DEVEL_BUILDS
-LINK(/dev/builds.html, Autobuilds)
-#else
-VLINK(/dev/builds.html, Autobuilds, Automated non-stop builds)
-#endif
-
-#ifdef DEVEL_CODE_REVIEW
-LINK(/dev/code-review.html, Code review)
-#else
-VLINK(/dev/code-review.html, Code review, How to code review)
-#endif
-
-#ifdef DEVEL_CODE_STYLE
-LINK(/dev/code-style.html, Code style)
-#else
-VLINK(/dev/code-style.html, Code style, Code style guideline)
-#endif
-
-#ifdef DEVEL_CONTRIBUTE
-LINK(/dev/contribute.html, Contribute)
-#else
-VLINK(/dev/contribute.html, Contribute, How to Contribute)
-#endif
-
-#ifdef DEVEL_DEPRECATE
-LINK(/dev/deprecate.html, Deprecate)
-#else
-VLINK(/dev/deprecate.html, Deprecate, Items to be removed)
-#endif
-
-#ifdef DEVEL_INTERNALS
-LINK(/dev/internals.html, Internals)
-#else
-VLINK(/dev/internals.html, Internals, Internals described)
-#endif
-
-#ifdef DEVEL_RELEASENOTES
-LINK(/dev/release-notes.html, Release Notes)
-#else
-VLINK(/dev/release-notes.html, Release Notes, The pending RELEASE-NOTES)
-#endif
-
-#ifdef DEVEL_RELEASEPROC
-LINK(/dev/release-procedure.html, Release Procedure)
-#else
-VLINK(/dev/release-procedure.html, Release Procedure, How to release and when)
-#endif
-
-#ifdef DEVEL_SOURCE
-LINK(/dev/source.html, Source code)
-#else
-VLINK(/dev/source.html, Source code, How to get or view the source code)
-#endif
-
-#ifdef DEVEL_ROADMAP
-LINK(/dev/roadmap.html, Roadmap)
-#else
-VLINK(/dev/roadmap.html, Roadmap, Roadmap for the nearest future)
-#endif
-
-#ifdef DEVEL_RUNTESTS
-LINK(/dev/runtests.html, Run Tests)
-#else
-VLINK(/dev/runtests.html, Run Tests, How to run the test suite)
-#endif
-
-#ifdef DEVEL_SECURITY
-LINK(/dev/secprocess.html, Security Process)
-#else
-VLINK(/dev/secprocess.html, Security Process, Security for curl developers)
-#endif
-
-#ifdef DEVEL_SPECS
-LINK(/rfc/, Specifications)
-#else
-VLINK(/rfc/, Specifications, Specs and RFSs that concern us)
-#endif
-
-#ifdef DEVEL_TESTCURL
-LINK(/dev/testcurl.html, Test curl)
-#else
-VLINK(/dev/testcurl.html, Test curl, The automatic curl testing tool)
-#endif
+<div class="dropdown">
+  <a class="dropbtn" href="./">Dev-related docs</a>
+  <div class="dropdown-content">
+    <a href="code-review.html">Code Review</a>
+    <a href="code-style.html">Code Style</a>
+    <a href="contribute.html">Contribute</a>
+    <a href="deprecate.html">Deprecate</a>
+    <a href="internals.html">Internals</a>
+    <a href="release-procedure.html">Release procedure</a>
+    <a href="roadmap.html">Roadmap</a>
+    <a href="runtests.html">Run tests</a>
+    <a href="source.html">Source code</a>
+    <a href="secprocess.html">Security process</a>
+    <a href="/rfc/">Specifications</a>
+    <a href="testcurl.html">Test curl</a>
+  </div>
+</div>
+<div class="dropdown">
+  <a class="dropbtn" href="./">Current status</a>
+  <div class="dropdown-content">
+    <a href="builds.html">Autobuilds</a>
+    <a href="/snapshots/">Daily snapshots</a>
+    <a href="/scans/">Daily scans</a>
+    <a href="/dashboard.html">Dashboard</a>
+    <a href="feature-window.html">Feature window</a>
+    <a href="https://github.com/curl/curl/issues" target="_blank">Issues (github)</a>
+    <a href="https://github.com/curl/curl/pulls" target="_blank">Pull requests (github)</a>
+    <a href="release-notes.html">Release Notes</a>
+  </div>
+</div>
 
 </div>
 
