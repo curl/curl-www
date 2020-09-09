@@ -9,72 +9,28 @@
 <div class="menu">
 
 #ifdef LIBCURL_MAIN
-LINK("", libcurl index )
+LINK("", libcurl )
 #else
-VLINK("/libcurl/", libcurl index, Front page of the libcurl section)
+VLINK("/libcurl/", libcurl, Front page of the libcurl section)
 #endif
 
-#ifdef LIBCURL_ABI
-LINK("", ABI)
-#else
-VLINK(/libcurl/abi.html, ABI,
-       ABI guarantees between releases and more )
-#endif
-
-VLINK(/libcurl/c/, API, Functions provided by libcurl )
-
-#ifdef LIBCURL_BINDINGS
-LINK("", Bindings)
-#else
-VLINK(/libcurl/bindings.html, Bindings,
-      Using libcurl powers within your language of choice! )
-#endif
-
-#ifdef LIBCURL_COMPETITORS
-LINK("", Competitors )
-#else
-VLINK("/libcurl/competitors.html", Competitors,
-      Figure what competing libraries there are )
-#endif
-
-VLINK("/libcurl/c/example.html", Examples,
-      Educational snippets of code )
-
-#ifdef LIBCURL_FEATURES
-LINK("", Features )
-#else
-VLINK("/libcurl/features.html", Features, What makes libcurl special )
-#endif
-
-#ifdef LIBCURL_MAIL
-LINK("", Mailing List )
-#else
-VLINK("/mail/list.cgi?list=curl-library", Mailing List,
-      curl-library mailing list info and archives)
-#endif
-
-#ifdef LIBCURL_RELATEDLIBS
-LINK("", Related Libs )
-#else
-VLINK("/libcurl/relatedlibs.html", Related Libs,
-      Related libraries that you might find useful together with libcurl)
-#endif
-
-VLINK("/libcurl/using/", Using libcurl, How to use libcurl section)
-
-#ifdef LIBCURL_SECURITY
-LINK("", Security )
-#else
-VLINK("/libcurl/security.html", Security, libcurl security considerations)
-#endif
-
-VLINK("/libcurl/c/libcurl-tutorial.html", Tutorial, libcurl programming tutorial)
-
-#ifdef LIBCURL_THEYSAY
-LINK("", Testimonials )
-#else
-VLINK("/libcurl/theysay.html", Testimonials, What developers using libcurl say about it)
-#endif
+<div class="dropdown">
+  <a class="dropbtn" href="https://curl.haxx.se/libcurl/">Docs</a>
+  <div class="dropdown-content">
+    <a href="abi.html">ABI</a>
+    <a href="c/">API</a>
+    <a href="bindings.html">Bindings</a>
+    <a href="competitors.html">Competitors</a>
+    <a href="c/example.html">Examples</a>
+    <a href="features.html">Features</a>
+    <a href="/mail/list.cgi?list=curl-library.html">Mailist list</a>
+    <a href="relatedlibs.html">Related libs</a>
+    <a href="using/">Using libcurl</a>
+    <a href="security.html">Security</a>
+    <a href="c/tutorial.html">Tutorial</a>
+    <a href="theysay.html">Testimonials</a>
+  </div>
+</div>
 
 </div>
 
