@@ -12,7 +12,6 @@
 <div class="main">
 <div class="menu">
 
-#ifdef DOCS_INDEX
 #ifdef DOCS_OVERVIEW
 LINK(/docs/, Docs Overview)
 #else
@@ -20,350 +19,67 @@ VLINK(/docs/, Docs Overview, Documentation Overview)
 #endif
 
 <div class="dropdown">
-  <a class="dropbtn" href="https://curl.haxx.se/docs/projdocs.html">Project</a>
+  <a class="dropbtn" href="projdocs.html">Project</a>
   <div class="dropdown-content">
-    <a href="https://curl.haxx.se/docs/bugbounty.html">Bug Bounty</a>
-    <a href="https://curl.haxx.se/docs/bugs.html">Bug Report</a>
-    <a href="https://curl.haxx.se/docs/code-of-conduct.html">Code of conduct</a>
-    <a href="https://curl.haxx.se/docs/libs.html">Dependencies</a>
+    <a href="bugbounty.html">Bug Bounty</a>
+    <a href="bugs.html">Bug Report</a>
+    <a href="code-of-conduct.html">Code of conduct</a>
+    <a href="libs.html">Dependencies</a>
     <a href="https://curl.haxx.se/donation.html">Donate</a>
-    <a href="https://curl.haxx.se/docs/features.html">Features</a>
-    <a href="https://curl.haxx.se/docs/history.html">History</a>
-    <a href="https://curl.haxx.se/docs/install.html">Install</a>
-    <a href="https://curl.haxx.se/docs/knownbugs.html">Known Bugs</a>
-    <a href="https://curl.haxx.se/docs/todo.html">TODO</a>
+    <a href="features.html">Features</a>
+    <a href="history.html">History</a>
+    <a href="install.html">Install</a>
+    <a href="knownbugs.html">Known Bugs</a>
+    <a href="todo.html">TODO</a>
     <a href="https://curl.haxx.se/about.html">Web Site Info</a>
   </div>
 </div>
 
 <div class="dropdown">
-  <a class="dropbtn" href="https://curl.haxx.se/docs/protdocs.html">Protocols</a>
+  <a class="dropbtn" href="protdocs.html">Protocols</a>
   <div class="dropdown-content">
-    <a href="https://curl.haxx.se/docs/http-cookies.html">HTTP cookies</a>
-    <a href="https://curl.haxx.se/docs/http2.html">HTTP/2</a>
-    <a href="https://curl.haxx.se/docs/sslcerts.html">SSL certs</a>
-    <a href="https://curl.haxx.se/docs/caextract.html">CA Extract</a>
-    <a href="https://curl.haxx.se/docs/ssl-compared.html">SSL libs compared</a>
+    <a href="http-cookies.html">HTTP cookies</a>
+    <a href="http2.html">HTTP/2</a>
+    <a href="sslcerts.html">SSL certs</a>
+    <a href="caextract.html">CA Extract</a>
+    <a href="ssl-compared.html">SSL libs compared</a>
   </div>
 </div>
 
 <div class="dropdown">
-  <a class="dropbtn" href="https://curl.haxx.se/docs/reldocs.html">Releases</a>
+  <a class="dropbtn" href="reldocs.html">Releases</a>
   <div class="dropdown-content">
     <a href="https://curl.haxx.se/changes.html">Changelog</a>
-    <a href="https://curl.haxx.se/docs/releases.html">Release Table</a>
-    <a href="https://curl.haxx.se/docs/security.html">Security Problems</a>
-    <a href="https://curl.haxx.se/docs/versions.html">Version Nums</a>
-    <a href="https://curl.haxx.se/docs/vulnerabilities.html">Vulnerabilities</a>
+    <a href="releases.html">Release Table</a>
+    <a href="security.html">Security Problems</a>
+    <a href="versions.html">Version Nums</a>
+    <a href="vulnerabilities.html">Vulnerabilities</a>
   </div>
 </div>
 
 <div class="dropdown">
-  <a class="dropbtn" href="https://curl.haxx.se/docs/tooldocs.html">Tools</a>
+  <a class="dropbtn" href="tooldocs.html">Tools</a>
   <div class="dropdown-content">
-    <a href="https://curl.haxx.se/docs/comparison-table.html">Comparison Table</a>
-    <a href="https://curl.haxx.se/docs/manpage.html">curl man page</a>
-    <a href="https://curl.haxx.se/docs/faq.html">FAQ</a>
-    <a href="https://curl.haxx.se/docs/httpscripting.html">HTTP Scripting</a>
-    <a href="https://curl.haxx.se/docs/mk-ca-bundle.html">mk-ca-bundle</a>
-    <a href="https://curl.haxx.se/docs/manual.html">Tutorial</a>
+    <a href="comparison-table.html">Comparison Table</a>
+    <a href="manpage.html">curl man page</a>
+    <a href="faq.html">FAQ</a>
+    <a href="httpscripting.html">HTTP Scripting</a>
+    <a href="mk-ca-bundle.html">mk-ca-bundle</a>
+    <a href="manual.html">Tutorial</a>
   </div>
 </div>
 
 <div class="dropdown">
-  <a class="dropbtn" href="https://curl.haxx.se/docs/whodocs.html">Who and Why</a>
+  <a class="dropbtn" href="whodocs.html">Who and Why</a>
   <div class="dropdown-content">
-    <a href="https://curl.haxx.se/docs/companies.html">Companies</a>
-    <a href="https://curl.haxx.se/docs/copyright.html">Copyright</a>
+    <a href="companies.html">Companies</a>
+    <a href="copyright.html">Copyright</a>
     <a href="https://curl.haxx.se/legal/licmix.html">License Mixing</a>
     <a href="https://curl.haxx.se/sponsors.html">Sponsors</a>
-    <a href="https://curl.haxx.se/docs/thanks.html">Thanks</a>
+    <a href="thanks.html">Thanks</a>
     <a href="https://curl.haxx.se/legal/thename.html">The Name</a>
   </div>
 </div>
-
-#else
-VLINK(/docs/, Docs Overview, Documentation main page)
-
-#ifdef PROJ_DOCS
-#ifdef DOCS_BUGBOUNTY
-LINK(/docs/bugbounty.html, Bug Bounty)
-#else
-VLINK(/docs/bugbounty.html, Bug Bounty, Get rewards for finding security problems)
-#endif
-
-#ifdef PROJ_DOCS
-#ifdef DOCS_BUGS
-LINK(/docs/bugs.html, Bug Report)
-#else
-VLINK(/docs/bugs.html, Bug Report, How to report a problem)
-#endif
-#endif
-
-#ifdef DOCS_CODE_OF_CONDUCT
-LINK(/docs/code-of-conduct.html, Code of conduct)
-#else
-VLINK(/docs/code-of-conduct.html, Code of conduct, We expect people to behave)
-#endif
-#endif
-
-#ifdef PROT_DOCS
-#ifdef DOCS_CAEXTRACT
-LINK(https://curl.haxx.se/docs/caextract.html, CA Extract)
-#else
-VLINK(https://curl.haxx.se/docs/caextract.html, CA Extract, CA cert bundle exatracted from Mozilla)
-#endif
-#endif
-
-#ifdef REL_DOCS
-#ifdef CURL_CHANGES
-LINK(/changes.html, Changelog)
-#else
-VLINK(/changes.html, Changelog, Changes done in curl)
-#endif
-#endif
-
-#ifdef WHO_DOCS
-#ifdef DOCS_COMPANIES
-LINK(/docs/companies.html, Companies)
-#else
-VLINK(/docs/companies.html, Companies, Commercial users of curl)
-#endif
-#endif
-
-#ifdef TOOL_DOCS
-#ifdef DOCS_COMPARISON
-LINK(/docs/comparison-table.html, Comparison Table)
-#else
-VLINK(/docs/comparison-table.html, Comparison Table, Compare curl to other tools)
-#endif
-#endif
-
-#ifdef WHO_DOCS
-#ifdef DOCS_COPYRIGHT
-LINK(/docs/copyright.html, Copyright)
-#else
-VLINK(/docs/copyright.html, Copyright, Copyright and license info)
-#endif
-#endif
-
-#ifdef PROJ_DOCS
-#ifdef DOCS_DONATION
-LINK(/donation.html, Donate)
-#else
-VLINK(/donation.html, Donate, Donate to the curl project)
-#endif
-#endif
-
-#ifdef TOOL_DOCS
-#ifdef DOCS_MANPAGE
-LINK(/docs/manpage.html, curl man page)
-#else
-VLINK(/docs/manpage.html, curl man page, Command line option reference)
-#endif
-#endif
-
-#ifdef PROJ_DOCS
-#ifdef DOCS_LIBS
-LINK(/docs/libs.html, Dependencies)
-#else
-VLINK(/docs/libs.html, Dependencies, Libraries to use)
-#endif
-#endif
-
-#ifdef TOOL_DOCS
-#ifdef DOCS_FAQ
-LINK(/docs/faq.html, FAQ)
-#else
-VLINK(/docs/faq.html, FAQ, Frequently Asked Questions)
-#endif
-#endif
-
-#ifdef PROJ_DOCS
-#ifdef DOCS_FEATURES
-LINK(/docs/features.html, Features)
-#else
-VLINK(/docs/features.html, Features, All features summed up)
-#endif
-#endif
-
-#ifdef PROJ_DOCS
-#ifdef DOCS_GOVERNANCE
-LINK(/docs/governance.html, Governance)
-#else
-VLINK(/docs/governance.html, Governance, How we make decisions)
-#endif
-#endif
-
-#ifdef PROJ_DOCS
-#ifdef DOCS_HELP_US
-LINK(/docs/help-us.html, Help us)
-#else
-VLINK(/docs/help-us.html, Help us, How to start contributing)
-#endif
-#endif
-
-#ifdef PROJ_DOCS
-#ifdef DOCS_HISTORY
-LINK(/docs/history.html, History)
-#else
-VLINK(/docs/history.html, History, A project history overview)
-#endif
-#endif
-
-#ifdef PROT_DOCS
-#ifdef DOCS_HTTP_COOKIES
-LINK(/docs/http-cookies.html, HTTP Cookies)
-#else
-VLINK(/docs/http-cookies.html, HTTP Cookies, Description of cookies with curl)
-#endif
-#endif
-
-#ifdef TOOL_DOCS
-#ifdef DOCS_HTTPSCRIPT
-LINK(/docs/httpscripting.html, HTTP Scripting)
-#else
-VLINK(/docs/httpscripting.html, HTTP Scripting, How to script HTTP with curl)
-#endif
-#endif
-
-#ifdef PROT_DOCS
-#ifdef DOCS_HTTP2
-LINK(/docs/http2.html, HTTP/2)
-#else
-VLINK(/docs/http2.html, HTTP/2, HTTP/2 with curl)
-#endif
-#endif
-
-#ifdef PROJ_DOCS
-#ifdef DOCS_INSTALL
-LINK(/docs/install.html, Install)
-#else
-VLINK(/docs/install.html, Install, Installing curl from source)
-#endif
-#endif
-
-#ifdef PROJ_DOCS
-#ifdef DOCS_KNOWNBUGS
-LINK(/docs/knownbugs.html, Known Bugs)
-#else
-VLINK(/docs/knownbugs.html, Known Bugs, Already known problems )
-#endif
-#endif
-
-#ifdef TOOL_DOCS
-#ifdef DOCS_MKCABUNDLE
-LINK(/docs/mk-ca-bundle.html, mk-ca-bundle)
-#else
-VLINK(/docs/mk-ca-bundle.html, mk-ca-bundle, Generate your own CA bundle)
-#endif
-#endif
-
-#ifdef WHO_DOCS
-#ifdef LEGAL_LICMIX
-LINK(/legal/licmix.html, Licence Mixing )
-#else
-VLINK(/legal/licmix.html, License Mixing, About mixing licenses )
-#endif
-#endif
-
-#ifdef REL_DOCS
-#ifdef DOCS_RELEASES
-LINK(/docs/releases.html, Release Table)
-#else
-VLINK(/docs/releases.html, Release Table, All releases with details)
-#endif
-#endif
-
-#ifdef REL_DOCS
-#ifdef DOCS_SECURITY
-LINK(/docs/security.html, Security Problems)
-#else
-VLINK(/docs/security.html, Security Problems, Vulnerabilities and more)
-#endif
-#endif
-
-#ifdef WHO_DOCS
-#ifdef CURL_SPONSORS
-LINK(/sponsors.html, Sponsors)
-#else
-VLINK(/sponsors.html, Sponsors, Project Sponsors)
-#endif
-#endif
-
-#ifdef PROT_DOCS
-#ifdef DOCS_SSLCERTS
-LINK(/docs/sslcerts.html, SSL Certs)
-#else
-VLINK(/docs/sslcerts.html, SSL Certs, How curl works with SSL certificates)
-#endif
-#endif
-
-#ifdef PROT_DOCS
-#ifdef DOCS_SSL_COMPARED
-LINK(/docs/ssl-compared.html, SSL libs compared)
-#else
-VLINK(/docs/ssl-compared.html, SSL libs compared, An SSL library comparison)
-#endif
-#endif
-
-#ifdef WHO_DOCS
-#ifdef DOCS_THANKS
-LINK(/docs/thanks.html, Thanks)
-#else
-VLINK(/docs/thanks.html, Thanks, Named and listed contributors)
-#endif
-#endif
-
-#ifdef WHO_DOCS
-#ifdef LEGAL_THENAME
-LINK(/legal/thename.html, The Name)
-#else
-VLINK(/legal/thename.html, The Name, Who owns the name)
-#endif
-#endif
-
-#ifdef PROJ_DOCS
-#ifdef DOCS_TODO
-LINK(/docs/todo.html, TODO)
-#else
-VLINK(/docs/todo.html, TODO, Things we might do in the future)
-#endif
-#endif
-
-#ifdef TOOL_DOCS
-#ifdef DOCS_TUTORIAL
-LINK(/docs/manual.html, Tutorial)
-#else
-VLINK(/docs/manual.html, Tutorial, A curl tutorial)
-#endif
-#endif
-
-#ifdef REL_DOCS
-#ifdef DOCS_VERSIONS
-LINK(/docs/versions.html, Version Nums)
-#else
-VLINK(/docs/versions.html, Version Nums, How curl versioning works)
-#endif
-#endif
-
-#ifdef REL_DOCS
-#ifdef DOCS_VULNTABLE
-LINK(/docs/vulnerabilities.html, Vulnerabilities)
-#else
-VLINK(/docs/vulnerabilities.html, Vulnerabilities, Security problems in releases)
-#endif
-#endif
-
-#ifdef PROJ_DOCS
-#ifdef DOCS_WEBSITE
-LINK(/about.html, Web Site Info)
-#else
-VLINK(/about.html, Web Site Info, Infrastructure details)
-#endif
-#endif
-
-#endif /* DOCS_INDEX */
 
 </div>
 
