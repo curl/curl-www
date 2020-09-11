@@ -148,6 +148,7 @@ PAGES =						\
  sslcerts.html					\
  survey/survey2014.html				\
  thanks.html					\
+ thename.html					\
  todo.html					\
  tooldocs.html					\
  versions.html					\
@@ -368,5 +369,5 @@ rel.gen: $(ROOT)/_changes.html ./relinfo.pl vuln.pm allvulns.gen
 releases.csv: $(ROOT)/_changes.html ./relinfo.pl vuln.pm
 	./relinfo.pl --raw < $< > $@
 
-
-
+thename.html: _thename.html $(MAINPARTS)
+	$(ACTION)

@@ -1,14 +1,15 @@
 #include "_doctype.html"
 <html>
-<head> <title>curl - naming issues</title>
+<head> <title>curl - the name</title>
 #include "css.t"
 </head>
 
-#define CURL_URL legal/thename.html
+#define CURL_DOCS
 #define WHO_DOCS
-#define LEGAL_THENAME
+#define DOCS_THENAME
+#define CURL_URL docs/thename.html
 
-#include "../docs/_menu.html"
+#include "_menu.html"
 #include "setup.t"
 
 WHERE3(Legal, "/legal/", Who and Why, "/docs/whodocs.html", The Name Curl)
@@ -16,8 +17,8 @@ WHERE3(Legal, "/legal/", Who and Why, "/docs/whodocs.html", The Name Curl)
 TITLE(Who Owns the Name Curl?)
 <div class="relatedbox">
 <b>Related:</b>
-<br><a href="/docs/copyright.html">Copyright</a>
-<br><a href="/docs/faq.html">FAQ</a>
+<br><a href="copyright.html">Copyright</a>
+<br><a href="faq.html">FAQ</a>
 </div>
 <p>
  The tool 'curl' was released on <b>March 20 1998</b> for the first
