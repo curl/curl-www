@@ -51,7 +51,6 @@ all: $(PAGES)
 	cd libcurl && make
 	cd mail && make
 	cd mirror && make
-	cd legal && make
 	cd rfc && make
 	cd dev && make
 	cd windows && make
@@ -171,7 +170,6 @@ clean:
 	cd libcurl && make clean
 	cd mail && make clean
 	cd mirror && make clean
-	cd legal && make clean
 	cd rfc && make clean
 	cd dev && make clean
 	cd tiny && make clean
