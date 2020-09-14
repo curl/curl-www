@@ -77,6 +77,10 @@ TITLE(Compare curl with other download tools)
 
   YES no_ no_ no_ YES no_ no_ YES YES YES no_ ENDLINE
 
+  FEAT Same file multi connect ENDFEAT
+
+  no_ no_ no_ YES no_ no_ no_ no_ YES no_ no_ ENDLINE
+
   FEAT Username/Password ENDFEAT
 
   YES YES YES YES YES YES YES YES YES YES YES ENDLINE
@@ -241,6 +245,10 @@ TITLE(Compare curl with other download tools)
 
   YES no_ no_ no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
 
+  FEAT alt-svc ENDFEAT
+
+  YES no_ no_ no_ no_ no_ no_ no_ no_ no_ no_ ENDLINE
+
   FEAT HTTP Persistent Connections ENDFEAT
 
   YES no_ YES YES YES no_ no_ YES YES no_ no_ ENDLINE
@@ -251,7 +259,7 @@ TITLE(Compare curl with other download tools)
 
   FEAT HSTS ENDFEAT
 
-  no_ no_ YES YES no_ no_ no_ no_ no_ no_ no_ ENDLINE
+  no__P no_ YES YES no_ no_ no_ no_ no_ no_ no_ ENDLINE
 
   FEAT HTTP Digest Auth ENDFEAT
 
@@ -265,14 +273,18 @@ TITLE(Compare curl with other download tools)
 
   YES no_ no_ no_ no_ no_ no_ no_ no_ no_ YES ENDLINE
 
-  FEAT HTTP deflate/gzip ENDFEAT
+  FEAT HTTP gzip ENDFEAT
 
   YES no_ no_ YES YES no_ no_ no_ YES YES YES ENDLINE
 
-  FEAT HTTP brotil ENDFEAT
+  FEAT HTTP brotli ENDFEAT
 
   YES no_ no_ YES no_ no_ no_ no_ no_ no_ no_ ENDLINE
   
+  FEAT HTTP zstd ENDFEAT
+
+  YES no_ no_ YES no_ no_ no_ no_ no_ no_ no_ ENDLINE
+
   FEAT FTP Resume ENDFEAT
 
   YES YES YES YES YES no_ YES YES YES no_ no_ ENDLINE
@@ -367,6 +379,8 @@ TITLE(Compare curl with other download tools)
 <p>
 * HTTPie is written in Python + Requests and thus carry their
  portability and features
+<p>
+* HSTS is coming to curl in a future release
 
 <p>
  Please file <a href="https://github.com/curl/curl-www/issues">a bug
