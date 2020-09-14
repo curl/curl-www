@@ -29,12 +29,12 @@ sub scancurlh {
     while(<F>) {
         my $l = $_;
         chomp $l;
-        if($l =~ /^  CINIT\(([A-Z_0-9]*)(.*)/) {
+        if($l =~ /^  CURLOPT\(([A-Z_0-9]*)(.*)/) {
             if($2 =~ /(DEPRECATED|OBSOLETE)/) {
                 # ignore deprecated options
                 next;
             }
-            $usedinheader{"CURLOPT_$1"}++;
+            $usedinheader{"$1"}++;
         }
     }
     close(F);
