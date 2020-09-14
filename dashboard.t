@@ -24,7 +24,7 @@ img.dash {
 #include "setup.t"
 #include "_menu.html"
 
-WHERE1(Project status dashboard)
+WHERE2(Development, "/dev/", Project status dashboard)
 TITLE(Dashboard)
 <div class="relatedbox">
 <b>Related:</b>
