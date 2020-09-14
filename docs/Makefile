@@ -129,6 +129,7 @@ PAGES =						\
  history.html					\
  http-cookies.html				\
  http2.html					\
+ http3.html					\
  httpscripting.html				\
  index.html					\
  install.html					\
@@ -358,6 +359,12 @@ http2.gen: $(SRCROOT)/docs/HTTP2.md
 	$(MARKDOWN) < $< > $@
 
 http2.html: _http2.html http2.gen $(MAINPARTS)
+	$(ACTION)
+
+http3.gen: $(SRCROOT)/docs/HTTP3.md
+	$(MARKDOWN) < $< > $@
+
+http3.html: _http3.html http3.gen $(MAINPARTS)
 	$(ACTION)
 
 releases.html: _releases.html rel.gen $(MAINPARTS)
