@@ -204,8 +204,8 @@ mkdump.gen: $(DOCROOT)/mk-ca-bundle.1
 bugs.html: _bugs.html $(MAINPARTS) bugs.gen
 	$(ACTION)
 
-bugs.gen: $(DOCROOT)/BUGS faqparse.pl
-	./faqparse.pl < $< > $@
+bugs.gen: $(DOCROOT)/BUGS.md faqparse.pl
+	$(MARKDOWN) < $< > $@
 
 bugbounty.html: _bugbounty.html $(MAINPARTS) bugbounty.gen $(ADVBOX)
 	$(ACTION)
@@ -267,8 +267,8 @@ knownbugs.html: _knownbugs.html $(MAINPARTS) knownbugs.gen
 knownbugs.gen: $(DOCROOT)/KNOWN_BUGS faqparse.pl
 	./faqparse.pl < $< > $@
 
-httpscript.gen: $(DOCROOT)/TheArtOfHttpScripting
-	./faqparse.pl < $< > $@
+httpscript.gen: $(DOCROOT)/TheArtOfHttpScripting.md
+	$(MARKDOWN) < $< > $@
 
 httpscripting.html: _httpscripting.shtml $(MAINPARTS) httpscript.gen
 	$(ACTION)

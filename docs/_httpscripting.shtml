@@ -14,7 +14,6 @@
 
 WHERE3(Docs, "/docs/", Tool, "/docs/tooldocs.html", HTTP Scripting)
 
-TITLE(Using curl to automate HTTP jobs)
 <div class="relatedbox">
 <b>Related:</b>
 <br><a href="manpage.html">curl man page</a>
