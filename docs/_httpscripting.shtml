@@ -12,7 +12,7 @@
 #include "_menu.html"
 #include "setup.t"
 
-WHERE3(Docs, "/docs/", Tool Documentation, "/docs/tooldocs.html", HTTP Scripting)
+WHERE3(Docs, "/docs/", Tool, "/docs/tooldocs.html", HTTP Scripting)
 
 TITLE(Using curl to automate HTTP jobs)
 <div class="relatedbox">
