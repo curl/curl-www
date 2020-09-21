@@ -138,6 +138,7 @@ PAGES =						\
  manpage.html					\
  manual.html					\
  mk-ca-bundle.html				\
+ mqtt.html					\
  projdocs.html					\
  protdocs.html					\
  reldocs.html					\
@@ -365,6 +366,12 @@ http3.gen: $(SRCROOT)/docs/HTTP3.md
 	$(MARKDOWN) < $< > $@
 
 http3.html: _http3.html http3.gen $(MAINPARTS)
+	$(ACTION)
+
+mqtt.gen: $(SRCROOT)/docs/MQTT.md
+	$(MARKDOWN) < $< > $@
+
+mqtt.html: _mqtt.html mqtt.gen $(MAINPARTS)
 	$(ACTION)
 
 releases.html: _releases.html rel.gen $(MAINPARTS)
