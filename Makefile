@@ -40,7 +40,6 @@ PAGES=						\
  newslog.html					\
  oldnews.html					\
  search.html					\
- source.html					\
  sponsors.html					\
  support.html					\
  web-editing.html
@@ -119,9 +118,6 @@ dl/files.html: dl/data/databas.db
 	cd dl; make
 
 changes.html: _changes.html docs/_menu.html $(MAINPARTS)
-	$(ACTION)
-
-source.html: _source.html $(MAINPARTS)
 	$(ACTION)
 
 gethelp.html: _gethelp.html $(MAINPARTS)
