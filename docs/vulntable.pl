@@ -28,8 +28,7 @@ sub head {
     for(@vuln) {
         my ($id, $start, $stop, $desc, $cve, $announce, $report, $cwe)=split('\|');
 
-        if($lastshow &&
-           !(($lastshow >= vernum($start)) && ($lastshow <= vernum($stop)))) {
+        if($lastshow && ($lastshow > vernum($stop))) {
             # not a match!
             next;
         }
