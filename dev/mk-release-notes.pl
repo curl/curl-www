@@ -18,6 +18,10 @@ my $contr;
 foreach my $l (@release) {
     $l =~ s/\/\*/\/&#42;/g; # replace /*
     $l =~ s/\*\//&#42;\//g; # replace */
+    $l =~ s/\</&lt;/g; # replace <
+    $l =~ s/\>/&gt;/g; # replace >
+    $l =~ s/\"/&quot;/g; # replace "
+    $l =~ s/\'/&apos;/g; # replace '
     if($mode == 1 ) {
         if($l =~ /^  ([^ \(].*)/) {
             $contr .= "$1 ";
