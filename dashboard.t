@@ -28,6 +28,7 @@ WHERE2(Development, "/dev/", Project status dashboard)
 TITLE(Dashboard)
 <div class="relatedbox">
 <b>Related:</b>
+<br><a href="https://github.com/curl/stats/issues/new?title=bug%20in%20graph" target="_new">File a bug about a graph</a>
 <br><a href="/docs/">Online Docs</a>
 <br><a href="/gitstats/">gitstats</a>
 </div>
