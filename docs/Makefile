@@ -277,8 +277,8 @@ httpscripting.html: _httpscripting.shtml $(MAINPARTS) httpscript.gen
 features.html: _features.html $(MAINPARTS) features.gen
 	$(ACTION)
 
-features.gen: $(DOCROOT)/FEATURES
-	$(TXT2PLAIN) < $<  > $@
+features.gen: $(DOCROOT)/FEATURES.md
+	$(MARKDOWN) < $<  > $@
 
 install.html: _install.html $(MAINPARTS) install.gen
 	$(ACTION)
