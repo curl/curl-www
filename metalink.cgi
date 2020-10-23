@@ -26,7 +26,7 @@ print "Content-Type: application/metalink4+xml\n\n";
 my $req = new CGI;
 
 # CGI::escapeHTML here should effectively be a no-op, but improves security when output
-my $what=CGI::escapeHTML($req->param('curl'));
+my $what=CGI::escapeHTML(scalar $req->param('curl'));
 
 my ($mytld, $mycontinent, $mycountry);
 

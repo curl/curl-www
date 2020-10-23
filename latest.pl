@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 use strict;
-use latest;
+require "./latest.pm";
 
 my %mirrors=(
     'https://curl.askapache.com/' => 'US (Houston, Texas)',

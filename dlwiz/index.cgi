@@ -100,11 +100,11 @@ MOO
 
 # CGI::escapeHTML() should be the identity function for the data types we
 # expect here, but it prevents XSS attacks when we print them out
-my $pick_os = CGI::escapeHTML(CGI::param('os'));
-my $pick_flav = CGI::escapeHTML(CGI::param('flav'));
-my $pick_ver = CGI::escapeHTML(CGI::param('ver'));
-my $pick_cpu = CGI::escapeHTML(CGI::param('cpu'));
-my $pick_type = CGI::escapeHTML(CGI::param('type'));
+my $pick_os = CGI::escapeHTML(scalar CGI::param('os'));
+my $pick_flav = CGI::escapeHTML(scalar CGI::param('flav'));
+my $pick_ver = CGI::escapeHTML(scalar CGI::param('ver'));
+my $pick_cpu = CGI::escapeHTML(scalar CGI::param('cpu'));
+my $pick_type = CGI::escapeHTML(scalar CGI::param('type'));
 
 my $fl = $pick_flav;
 if($pick_flav eq "-") {
