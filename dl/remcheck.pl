@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 require "../latest.pm";
-require "stuff.pm";
+require "./stuff.pm";
 
 # Number of recent versions to check
 my $lastfew = 7;
