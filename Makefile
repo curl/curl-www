@@ -42,7 +42,8 @@ PAGES=						\
  search.html					\
  sponsors.html					\
  support.html					\
- web-editing.html
+ web-editing.html				\
+ download/index.html
 
 all: $(PAGES)
 	cd ca && make
@@ -75,6 +76,9 @@ foot.html: _foot.html $(MAINPARTS)
 
 index.html: _index.html $(MAINPARTS) release.t packstat.t
 	$(ACTION)
+
+download/index.html: release.t mk-download.pl
+	./mk-download.pl > $@
 
 newslog.html: _newslog.html $(MAINPARTS)
 	$(ACTION)
@@ -155,10 +159,6 @@ support.html: _support.html $(MAINPARTS)
 
 full: all
 	@cd libcurl; make
-
-release:
-	cd download; ls -1 *curl* >curldist.txt;
-	@echo done
 
 clean:
 	rm -f *~ $(PAGES)
