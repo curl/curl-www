@@ -1,7 +1,7 @@
 
 require "CGI.pm";
 
-our $root="/home/dast/c";
+our $root="/var/www/html";
 
 sub stitle {
     my ($title)=@_;
