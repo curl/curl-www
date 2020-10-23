@@ -4,7 +4,7 @@
 package latest;
 
 # only used when run in the site
-our $dir="/sites/curl.haxx.se/download";
+our $dir="/home/dast/c/download";
 our $curl="curl";
 
 # they're all hashed on 'type'
