@@ -4,7 +4,9 @@
 package latest;
 
 # only used when run in the site
-our $dir="/var/www/html/download";
+our $wwwdir="/var/www/html/download";
+# when used in cronjob
+our $dldir="../download";
 our $curl="curl";
 
 # they're all hashed on 'type'
@@ -259,6 +261,7 @@ sub gettype {
 }
 
 sub scanstatus {
+    my ($dir)=@_;
 
     opendir(DIR, $dir) || die "can't opendir $dir: $!";
     my @curls = grep { /^(lib|)curl/ && -f "$dir/$_" } readdir(DIR);

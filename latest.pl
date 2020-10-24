@@ -45,7 +45,7 @@ sub present {
     }
 }
 
-&latest::scanstatus();
+&latest::scanstatus($dldir);
 
 for(keys %latest::file) {
 
