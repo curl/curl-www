@@ -9,7 +9,7 @@ BEGIN {
 
 require "CGI.pm";
 require "../curl.pm";
-require "ccwarn.pm";
+require "./ccwarn.pm";
 use String::CRC32;
 
 opendir(DIR, "inbox");
