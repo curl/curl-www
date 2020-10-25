@@ -85,7 +85,7 @@ RELATED
     ;
 
 # check what's available right *now*
-&latest::scanstatus($wwwdir);
+&latest::scanstatus($latewwwdir);
 
 open(DATA, "<latest.curl");
 while(<DATA>) {

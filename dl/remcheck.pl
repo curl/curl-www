@@ -36,7 +36,7 @@ sub timestamp {
                     $year+1900, $mon+1, $mday, $hour, $min, $sec);
 }
 
-&latest::scanstatus();
+&latest::scanstatus($latest::dldir);
 
 @all = $db->find_all("typ"=>"^entry\$");
 
