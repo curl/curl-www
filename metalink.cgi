@@ -48,7 +48,7 @@ EOF
 
 
 # check what's available right *now*
-&latest::scanstatus();
+&latest::scanstatus($latest::wwwdir);
 
 open(DATA, "<latest.curl");
 while(<DATA>) {
