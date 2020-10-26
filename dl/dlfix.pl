@@ -7,7 +7,7 @@ require "./stuff.pm";
 $db=new pbase;
 $db->open($databasefilename);
 
-&latest::scanstatus();
+&latest::scanstatus($latest::dldir);
 
 my $mod; # number of changes made
 
