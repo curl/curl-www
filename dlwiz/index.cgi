@@ -723,7 +723,7 @@ sub single {
     my $provided = $$e{'name'} ne "-"?"<br>Provided by: $$e{'name'}":"";
 
     # check what's available right *now*
-    &latest::scanstatus();
+    &latest::scanstatus($latest::wwwdir);
 
     if($latest::headver ne $version) {
         my $premail;
