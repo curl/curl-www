@@ -63,7 +63,7 @@ code-review.gen: $(DOCROOT)/CODE_REVIEW.md
 contribute.html: _contribute.html $(MAINPARTS) contribute.gen
 	$(ACTION)
 contribute.gen: $(DOCROOT)/CONTRIBUTE.md
-	$(MARKDOWN) < $< > $@
+	$(GITHUB) $< > $@
 
 deprecate.html: _deprecate.html $(MAINPARTS) deprecate.gen
 	$(ACTION)
