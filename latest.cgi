@@ -77,7 +77,7 @@ print <<RELATED
 <b>Related:</b>
 <br><a href="changes.html">Changelog</a>
 <br><a href="download.html">Download</a>
-<br><a href="https://curl.haxx.se/snapshots/">Daily Snapshot</a>
+<br><a href="https://www.curl.se/snapshots/">Daily Snapshot</a>
 <br><a href="https://daniel.haxx.se/address.html">GPG Key</a>
 </div>
 
@@ -232,7 +232,7 @@ if($latest::version{$what}) {
     print "<p><b><tt>$archive</tt></b> is available from\n";
     if($alert) {
         print "(<a href=\"#verified\">verified</a> now):<ul>",
-        "<li> <b>HTTP</b> from <b>curl.haxx.se</b> => ",
+        "<li> <b>HTTP</b> from <b>www.curl.se</b> => ",
         "<a href=\"download/$archive\">$archive</a></ul>\n";
     }
     else {

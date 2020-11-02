@@ -35,7 +35,7 @@ for(@files) {
 
 open(HEAD, "<head.html");
 while(<HEAD>) {
-    $_ =~  s/<title>curl<\/title>/<title>curl downloads<\/title>\n<base href=\"https:\/\/curl.haxx.se\">/;
+    $_ =~  s/<title>curl<\/title>/<title>curl downloads<\/title>\n<base href=\"https:\/\/www.curl.se\">/;
     print $_;
 }
 close(HEAD);
@@ -48,14 +48,14 @@ for(keys %allext) {
 }
 
 print <<MOO
-<div class="where"><a href="https://curl.haxx.se/">curl</a> / <b>download archive</b></div>
+<div class="where"><a href="https://www.curl.se/">curl</a> / <b>download archive</b></div>
 <h1>curl download archive</h1>
 
 <div class="relatedbox">
 <b>Related:</b>
-<br><a href="https://curl.haxx.se/changes.html">Changelog</a>
-<br><a href="https://curl.haxx.se/download.html">Download page</a>
-<br><a href="https://curl.haxx.se/docs/releases.html">Release table</a>
+<br><a href="https://www.curl.se/changes.html">Changelog</a>
+<br><a href="https://www.curl.se/download.html">Download page</a>
+<br><a href="https://www.curl.se/docs/releases.html">Release table</a>
 </div>
 <p>
 <table class="daily" cellspacing="0" cellpadding="3">

@@ -1,6 +1,6 @@
 # curl-www
 
-This is (most of) the curl.haxx.se web site contents. It mostly builds static
+This is (most of) the www.curl.se web site contents. It mostly builds static
 HTML files that are preprocessed.
 
 ## Prerequisites
@@ -23,4 +23,4 @@ enough to let you load most HTML pages locally.
 
 # Edit the web
 
-[Web editing guidelines](https://curl.haxx.se/web-editing.html)
+[Web editing guidelines](https://www.curl.se/web-editing.html)

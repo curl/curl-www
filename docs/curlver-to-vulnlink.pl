@@ -9,6 +9,6 @@ while(<STDIN>) {
     else {
         $_ =~ s/(7\.[1-9])[^0-9\.]/<a href="vuln-$1.html">$1<\/a>/g;
     }
-    $_ =~ s/(CURLOPT_([A-Z0-9_]+))/<a href="https:\/\/curl.haxx.se\/libcurl\/c\/$1.html">$1<\/a>/g;
+    $_ =~ s/(CURLOPT_([A-Z0-9_]+))/<a href="https:\/\/www.curl.se\/libcurl\/c\/$1.html">$1<\/a>/g;
     print $_;
 }
