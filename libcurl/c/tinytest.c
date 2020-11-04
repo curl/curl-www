@@ -16,7 +16,7 @@ int main(int argc, char **argv)
   curl = curl_easy_init();
   if(curl) {
     /* what call to write: */
-    curl_easy_setopt(curl, CURLOPT_URL, "www.curl.se");
+    curl_easy_setopt(curl, CURLOPT_URL, "curl.se");
     curl_easy_setopt(curl, CURLOPT_WRITEHEADER, headerfile);
     res = curl_easy_perform(curl);
 

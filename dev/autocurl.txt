@@ -22,7 +22,7 @@ fi
 # How and where to send the results
 mail="mail -s autobuild curl-autocompile@haxx.se"
 # Where to find the latest source
-URL="https://www.curl.se/snapshots/"
+URL="https://curl.se/snapshots/"
 # Where to find a curl binary to use to download the source code
 CURL=curl
 # Where to run the auto-build

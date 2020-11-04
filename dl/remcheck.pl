@@ -137,7 +137,7 @@ sub islastfewversions {
 my %urlhash;
 sub geturl {
     my ($url, $head) = @_;
-    my $curlcmd="curl -Lfsm120 -A \"Mozilla/www.curl.se dl-package-check-probe\" --ftp-method singlecwd";
+    my $curlcmd="curl -Lfsm120 -A \"Mozilla/curl.se dl-package-check-probe\" --ftp-method singlecwd";
 
     if(!$head) {
         my $t = time();
@@ -224,7 +224,7 @@ for $ref (@all) {
         gmtime(time);
     my $t = sprintf ("%02d:%02d:%02d", $hour, $min, $sec);
 
-    logmsg sprintf "<h2>$t $desc <a href=\"https://www.curl.se/dl/mod_entry.cgi?__id=%s\">edit</a></h2>", $$ref{'__id'};
+    logmsg sprintf "<h2>$t $desc <a href=\"https://curl.se/dl/mod_entry.cgi?__id=%s\">edit</a></h2>", $$ref{'__id'};
 
     if($$ref{'hide'} eq "Yes") {
         logmsg "Marked as hidden, skipping the check\n";

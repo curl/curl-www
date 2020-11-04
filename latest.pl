@@ -54,7 +54,7 @@ for(keys %latest::file) {
            $_, $archive, $latest::size{$_});
 
     printf("DOWNLOAD: %s %s Fastly (worldwide)\n", $archive,
-           "https://www.curl.se/download/$archive");
+           "https://curl.se/download/$archive");
 
     for(keys %mirrors) {
         my $site=$_;

@@ -2,12 +2,12 @@
 #include "release.t"
 Version: __STABLE
 Date: __RELDATE
-Download: https://www.curl.se/download/curl-__STABLE.tar.gz
-Changelog: https://www.curl.se/changes.html#__STABLETAG
+Download: https://curl.se/download/curl-__STABLE.tar.gz
+Changelog: https://curl.se/changes.html#__STABLETAG
 git tag: curl-__STABLETAG
 Packages: __PACKS
 Up-to-date: __CURR
 Next release: __NEXTDATE
 Author: Daniel Stenberg <daniel@haxx.se>
 License: MIT
-WWW: https://www.curl.se
+WWW: https://curl.se

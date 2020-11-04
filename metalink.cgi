@@ -40,7 +40,7 @@ my $now_string = strftime "%Y-%m-%dT%H:%M:%SZ", gmtime;
 print <<EOF
 <?xml version="1.0" encoding="utf-8"?>
 <metalink xmlns="urn:ietf:params:xml:ns:metalink">
-<origin dynamic="true">https://www.curl.se/metalink.cgi?curl=$what</origin>
+<origin dynamic="true">https://curl.se/metalink.cgi?curl=$what</origin>
 <updated>$now_string</updated>
 <generator>curl Metalink Generator</generator>
 EOF
@@ -115,7 +115,7 @@ if($latest::version{$what}) {
 <file name="$archive">
 <publisher>
  <name>curl</name>
- <url>https://www.curl.se/</url>
+ <url>https://curl.se/</url>
 </publisher>
 <description>curl $desc</description>
 <version>$latest::version{$what}</version>
@@ -151,7 +151,7 @@ EOF
     print "<!-- resource preferences are for use in $mycountry -->\n";
 
     if($alert) {
-        print "<url location=\"se\">https://www.curl.se/download/$archive</url>\n";
+        print "<url location=\"se\">https://curl.se/download/$archive</url>\n";
     }
     else {
 

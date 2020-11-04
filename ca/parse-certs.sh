@@ -60,7 +60,7 @@ rm -rf $tmprb
 echo "##" > $tmpfile
 echo "##  ca-bundle.crt -- Bundle of CA Root Certificates" >> $tmpfile
 echo "##  Converted by the service run by Daniel Stenberg" >> $tmpfile
-echo "##  URL: https://www.curl.se/docs/caextract.html" >> $tmpfile
+echo "##  URL: https://curl.se/docs/caextract.html" >> $tmpfile
 echo "##  Converted at: `date -u`" >> $tmpfile
 
 # insert the version string from the Mozilla source file:

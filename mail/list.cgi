@@ -83,7 +83,7 @@ if($list) {
 
     &header("The $list archive");
 
-    &where("Mailing Lists", "https://www.curl.se/mail/", "$list archive");
+    &where("Mailing Lists", "https://curl.se/mail/", "$list archive");
 
     &title("The $list archive");
 

@@ -67,7 +67,7 @@ for(sort keys %usedinheader) {
     }
 
     $anchor = $opt;
-    $docs = "https://www.curl.se/libcurl/c/$anchor.html";
+    $docs = "https://curl.se/libcurl/c/$anchor.html";
     printf("<a name=\"%s\"></a><tr><td><a href=\"%s\">%s</a></td><td>%s</td></tr>\n",
            $_, $docs, $_, $ex);
     $total++;
