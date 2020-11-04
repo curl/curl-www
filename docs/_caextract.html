@@ -37,6 +37,12 @@ TITLE(CA certificates extracted from Mozilla)
  service checks for updates every day. Here's
  the <a href="../ca/cacert.pem.sha256">sha256sum</a> of the current PEM file.
 
+SUBTITLE(File name)
+<p>
+ Some programs will expect this file to be named <tt>ca-bundle.crt</tt> (in
+ the correct path). curl on windows has a system to find it if
+ named <tt>curl-ca-bundle.crt</tt>.
+ 
 SUBTITLE(Older CA file revisions per date of appearance)
 <p><ul>
 #include "../ca/pemlist.gen"
