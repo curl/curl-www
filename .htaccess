@@ -139,3 +139,12 @@ ExpiresByType application/zip "access plus 1 year"
 ExpiresByType application/x-tar "access plus 1 year"
 ExpiresByType application/x-pem-file "access plus 12 hours"
 </ifmodule>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+RewriteCond expr "! %{HTTP_HOST} -strmatch 'curl.se'"
+RewriteCond expr "! %{REQUEST_URI} =~ /(ca|download)/"
+RewriteRule (.*) https://curl.se%{REQUEST_URI} [R=301,L]
+
+</IfModule>
