@@ -9,7 +9,8 @@ The web site is a on old custom made setup that mostly builds static HTML
 files from a set of source files. The sources files are preprocessed with what
 is basically a souped-up C preprocessor called `fcpp` and a set of perl
 scripts. The man pages get converted to HTML with roffit. Make sure fcpp,
-perl, roffit, make and curl are all in your $PATH.
+perl, roffit, make and curl are all in your $PATH. Also be sure to use
+GNU coreutils and GNU make when building.
 
 # Build
 
