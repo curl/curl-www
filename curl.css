@@ -1,5 +1,5 @@
 BODY {
-  background-color: white; 
+  background-color: white;
   font-family: arial, helvetica, ariel, sans-serif;
   font-size: 20px;
   color: black;
@@ -28,7 +28,7 @@ img:hover {
   border-width: thin;
   border-color: black;
 
-  background-color: #e0e0ff; 
+  background-color: #e0e0ff;
   font-family: arial, helvetica, ariel, sans-serif;
   color: #0000ff;
 
@@ -41,7 +41,7 @@ img:hover {
 
 .title {
   color: #000000;
-  background-color: #f0f0ff; 
+  background-color: #f0f0ff;
   font-family: arial, helvetica, ariel, sans-serif;
   font-size: 120%;
 }
@@ -131,7 +131,7 @@ td.desc {
 /* used in the download table for a single OS */
 td.ostitle {
   color: #000000;
-  background-color: #ffffff; 
+  background-color: #ffffff;
   font-family: arial, helvetica, ariel, sans-serif;
   font-size: 120%;
   font-weight: bold;
@@ -309,7 +309,7 @@ div.quote {
   border-color: black;
   padding: 2px 2px 2px 2px;
 
-  background-color: #f0f0ff; 
+  background-color: #f0f0ff;
   width: 90%;
   margin-left: 5%;
   margin-right: 5%;
@@ -320,19 +320,19 @@ div.yellowbox {
   border-width: 3px;
   border-color: black;
   padding: 2px 2px 2px 2px;
-  background-color: #fffff0; 
+  background-color: #fffff0;
 }
 
 .bindingbox {
   float: right;
   border: solid 1px #000000;
-  background-color: #ffffff; 
+  background-color: #ffffff;
   padding: 2px 2px 2px 2px;
 }
 
 .bottomad {
   border: solid 1px #000000;
-  background-color: #e0e0e0; 
+  background-color: #e0e0e0;
   padding: 5px 5px 5px 5px;
   margin-left: auto;
   margin-right: auto;
