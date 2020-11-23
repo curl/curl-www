@@ -53,17 +53,34 @@ for my $s (keys %svg) {
     printf "<h2 style=\"clear: both;\">%s data</h2><a id=\"%s\" href=\"dash/%s\"><img alt=\"%s\" class=\"dash\" src=\"$dir/%s\" style=\"float: left;\"></a>\n",
         $s, $s, $data{$s}, $alt, $svg{$s};
 
-    print "<pre>\n";
+    print "<pre style=\"float: left;\">\n";
     open(C, "<dash/$data{$s}");
     my $c=0;
+    my @end;
+    my $foot = 0;
     while(<C>) {
-        print $_;
-        if($c++ >= 8) {
-            last;
+        if($foot) {
+            push @end, $_;
+            if(scalar(@end) > 5) {
+                shift @end;
+            }
+        }
+        else {
+            print $_;
+            if($c++ >= 4) {
+                print "...\n";
+                $foot = 1;
+            }
         }
     }
     close(C);
+    print @end;
     print "</pre>\n";
+
+    open(F, "<$dir/stats/$s.txt");
+    my @h = <F>;
+    close(F);
+    print "<div style=\"float: left; margin-left: 10px; width: 30%;\">".join("", @h)."</div>\n";
 }
 
 print <<BOTTOM
@@ -71,4 +88,4 @@ print <<BOTTOM
 BOTTOM
     ;
 
-print "<br> Updated ".now()."\n";
+print "<br style=\"clear: both;\"> Updated ".now()."\n";

@@ -65,7 +65,7 @@ Click the images for full resolution.
 #ifdef DASHDATA
 
 Each image below links to the corresponding CSV file with recently updated
-source data. The first lines of data is shown on the right.
+source data. The first and last lines of data is shown on the right.
 
 #endif
 #include "dash.gen"
