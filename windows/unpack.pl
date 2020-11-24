@@ -29,7 +29,7 @@ if($n = $sul[0]) {
         my $when = filetime($f);
         printf "Uploaded: %s\n", $f;
         printf "Stamp: %s\n", $stamp;
-        system "(mkdir $extract-$stamp && cd $extract-$stamp && unzip -q $f)";
+        system "(mkdir -p $extract-$stamp && cd $extract-$stamp && unzip -q $f)";
         system "echo $stamp > latest.txt";
     }
 }
