@@ -18,7 +18,8 @@ PAGES = foot.html head.html howto.html summary.html \
 	index.html contribute.html internals.html testcurl.html		\
 	runtests.html source.html secprocess.html roadmap.html		\
 	sourceactivity.html release-procedure.html code-style.html      \
-        deprecate.html code-review.html feature-window.html
+        deprecate.html code-review.html feature-window.html		\
+	new-protocol.html
 
 all: $(PAGES)
 
@@ -27,6 +28,11 @@ index.html: _index.html $(MAINPARTS) ../release.t featurewindow.t
 
 feature-window.html: _feature-window.html $(MAINPARTS) featurewindow.t
 	$(ACTION)
+
+new-protocol.html: _new-protocol.html $(MAINPARTS) new-protocol.gen
+	$(ACTION)
+new-protocol.gen: $(SRCROOT)/docs/NEW-PROTOCOL.md
+	$(MARKDOWN) < $< > $@
 
 source.html: _source.html $(MAINPARTS)
 	$(ACTION)

@@ -1,0 +1,28 @@
+#include "_doctype.html"
+<HTML>
+<HEAD> <TITLE>Add a new protocol to curl</TITLE>
+#include "css.t"
+</HEAD>
+
+#define DEVEL_NEW_PROTOCOL
+#define CURL_URL dev/new-protocol.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Development, "/dev/", new protocol)
+
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/libcurl/abi.html">ABI</a>
+<br><a href="code-style.html">Code style</a>
+<br><a href="contribute.html">Contribute</a>
+<br><a href="/mail/">Mailing Lists</a>
+<br><a href="internals.html">Internals</a>
+</div>
+
+#include "new-protocol.gen"
+#include "_footer.html"
+
+</BODY>
+</HTML>
