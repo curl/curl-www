@@ -95,7 +95,7 @@ my $dl = latest();
 my @files = getdl($dl);
 for(@files) {
     my $file = $_;
-    if($file =~ /^curl-([0-9.]*(|_[0-9]*))-(\S+)-(\S+)\.(zip)/) {
+    if($file =~ /^curl-([0-9.]*(|_[0-9]*))-(\S+)-(\S+)\.(zip)$/) {
         my ($version, $arch, $env, $ext)=($1, $3, $4, $5);
         $exts{$version}.="$ext,";
         $archs{$version.$ext}.="$arch,";
