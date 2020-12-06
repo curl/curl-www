@@ -1,26 +1,25 @@
 #include "_doctype.html"
 <HTML>
-<HEAD> <TITLE>curl - Automatic Test</TITLE>
+<HEAD> <TITLE>curl - test case file format</TITLE>
 #include "css.t"
 #include "manpage.t"
 </HEAD>
 
-#define DEVEL_TESTCURL
-#define CURL_URL dev/testcurl.html
+#define DEVEL_RUNTESTS
+#define CURL_URL dev/test-fileformat.html
 
 #include "_menu.html"
 #include "setup.t"
 
-WHERE2(Development, "/dev/", testcurl.pl)
+WHERE2(Development, "/dev/", test-fileformat.pl)
 
-TITLE(testcurl.1 the man page)
 <div class="relatedbox">
 <b>Related:</b>
+<br><a href="/docs/manpage.html">man page</a>
 <br><a href="runtests.html">runtests.1</a>
-<br><a href="/docs/manual.html">Manual</a>
 </div>
 
-#include "testcurl.gen"
+#include "fileformat.gen"
 
 #include "_footer.html"
 
