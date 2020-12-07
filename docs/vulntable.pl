@@ -4,10 +4,13 @@
 
 require "./vuln.pm";
 
+my $allvulns="allvulns.gen";
+
 # The amount of releases to include (0 == all)
 my $lastfew = $ARGV[0];
 if($lastfew < 1) {
     $lastfew = -1;
+    unlink($allvulns);
 }
 my $lastshow; # if $lastfew, this is the final release shown in the table
 
@@ -16,9 +19,6 @@ sub vernum {
     my @v = split('\.', $ver);
     return ($v[0] << 16) | ($v[1] << 8) | $v[2];
 }
-
-my $allvulns="allvulns.gen";
-unlink($allvulns);
 
 my @vname; # number + HTML links to each vulnerability page
 print "<table>";
@@ -134,9 +134,12 @@ sub single {
     close(T);
     close(O);
 
-    open(A, ">>$allvulns");
-    print A "$str: $vulnnum\n";
-    close(A);
+    if($lastfew == -1) {
+        # only create "all vulns" if we actually list all
+        open(A, ">>$allvulns");
+        print A "$str: $vulnnum\n";
+        close(A);
+    }
 }
 
 my $l;
