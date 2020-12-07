@@ -353,6 +353,9 @@ vuln.gen: $(ROOT)/_changes.html ./vulntable.pl vuln.pm _singlevuln.templ
 vuln0.gen: $(ROOT)/_changes.html ./vulntable.pl vuln.pm _singlevuln.templ
 	./vulntable.pl < $< > $@
 
+allvulns.gen: $(ROOT)/_changes.html ./vulntable.pl vuln.pm _singlevuln.templ
+	./vulntable.pl < $< > $@
+
 vuln.csv: vuln.pm
 	./vuln2csv.pl > $@
 
