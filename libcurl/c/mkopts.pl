@@ -35,7 +35,7 @@ sub makeit {
 
     open(M, ">>$actions");
     print M <<moo
-${name}.html: $name.html.gen \$(MANPARTS) $name.gen
+${name}.html: all-easy.gen $name.html.gen \$(MANPARTS) $name.gen
 	\$(ACTION)
 $name.gen: \$(MANROOT)/opts/$name.3
 	\$(MAN2HTML) <\$< >\$@
