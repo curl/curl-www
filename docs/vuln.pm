@@ -3,6 +3,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2020-8285.html|7.21.0|7.73.0|FTP wildcard stack overflow|CVE-2020-8285|20201127|20201209|CWE-674: Uncontrolled Recursion|0",
     "CVE-2020-8284.html|4.0|7.73.0|trusting FTP PASV responses|CVE-2020-8284|20201121|20201209|CWE-200: Exposure of Sensitive Information to an Unauthorized Actor|700",
     "CVE-2020-8231.html|7.29.0|7.71.1|wrong connect-only connection|CVE-2020-8231|20200819|20200731|CWE-825: Expired Pointer Dereference|500",
     "CVE-2020-8177.html|7.20.0|7.70.0|curl overwrite local file with -J|CVE-2020-8177|20200624|20200530|CWE-641: Improper Restriction of Names for Files and Other Resources|700",
