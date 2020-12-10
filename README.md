@@ -6,10 +6,21 @@ HTML files that are preprocessed.
 ## Prerequisites
 
 The web site is a on old custom made setup that mostly builds static HTML
-files from a set of source files. The sources files are preprocessed with what
-is basically a souped-up C preprocessor called `fcpp` and a set of perl
-scripts. The man pages get converted to HTML with roffit. Make sure fcpp,
-perl, roffit, make and curl are all in your $PATH.
+files from a set of source files using (GNU) `make`. The sources files are
+preprocessed with what is basically a souped-up C preprocessor called `fcpp`
+and a set of `perl` scripts. The man pages get converted to HTML with
+`roffit`.
+
+Markdown is converted to HTML with `pandoc`.
+
+Make sure the following tools are in your $PATH.
+
+ - curl
+ - fcpp
+ - make
+ - pandoc
+ - perl
+ - roffit
 
 # Build
 
