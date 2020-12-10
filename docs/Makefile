@@ -263,7 +263,7 @@ http-cookies.html: _http-cookies.html $(MAINPARTS) http-cookies.gen
 	$(ACTION)
 
 http-cookies.gen: $(DOCROOT)/HTTP-COOKIES.md
-	$(GHMARKDOWN) $< >$@
+	$(GITHUB) $< >$@
 
 knownbugs.html: _knownbugs.html $(MAINPARTS) knownbugs.gen
 	$(ACTION)

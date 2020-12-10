@@ -17,7 +17,7 @@ PAGES = index.html
 all: $(PAGES)
 
 index.html: README.md $(MAINPARTS)
-	$(GHMARKDOWN) $< > $@
+	$(GITHUB) $< > $@
 
 full: all
 
