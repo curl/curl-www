@@ -156,6 +156,7 @@ PAGES =						\
  thename.html					\
  todo.html					\
  tooldocs.html					\
+ url-syntax.html				\
  versions.html					\
  vuln.csv					\
  vulnerabilities.html				\
@@ -229,9 +230,13 @@ help-us.gen: $(DOCROOT)/HELP-US.md
 
 code-of-conduct.html: _code-of-conduct.html $(MAINPARTS) coc.gen
 	$(ACTION)
-
 coc.gen: $(DOCROOT)/CODE_OF_CONDUCT.md
 	$(MARKDOWN) < $< > $@
+
+url-syntax.html: _url-syntax.html $(MAINPARTS) url-syntax.gen
+	$(ACTION)
+url-syntax.gen: $(DOCROOT)/URL-SYNTAX.md
+	$(MARKDOWN) < $(DOCROOT)/URL-SYNTAX.md > $@
 
 companies.html: _companies.html $(MAINPARTS)
 	$(ACTION)
