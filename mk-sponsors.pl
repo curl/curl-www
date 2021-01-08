@@ -3,13 +3,14 @@
 ## Silver sponsors
 
 my %silver = (
+    "https://filmen.nu" => 'Filmen.png',
     "https://streamat.se" => 'streamat.jpg',
     "https://nysportsjournal.com" => 'NYSJ.png',
     "https://followerspromotion.com/" => 'FPlogo.png',
     "https://buy.fineproxy.org/eng/" => 'fineproxy.png',
     "https://www.rabattkalas.se" => 'rabattkalas.png',
     "https://unscramblex.com/" => 'Unscramblex-black.png',
-    "https://www.romab.com" => '', # none
+    "https://www.romab.com" => '[none]',
     "https://www.premium-minds.com" => 'premium-minds.png',
     "https://www.partitionwizard.com" => 'partitionwizard.jpg',
     "https://www.crosswordsolver.com" => 'CrosswordSolver.png',
@@ -28,7 +29,11 @@ for my $u (reverse @urls) {
         my $url = $1;
         my $img = $silver{$url};
 
-        if($img) {
+        if(!$img) {
+            print STDERR "\n*** Missing image: for $url\n";
+        }
+        $found{$url}=1;
+        if($img ne '[none]') {
             my $alt = $img;
             $alt =~ s/(.*)\..../$1/;
             print <<SPONSOR
@@ -44,5 +49,23 @@ SPONSOR
         $count++;
     }
 }
+
+my $sec;
+open(SP, "<_sponsors.html");
+while(<SP>) {
+    if($_ =~ /^<div class="silver"><p> <a href="([^"]*)/) {
+        my $exist=$1;
+        if(!$found{$exist}) {
+            print STDERR "$exist is not a sponsor anymore\n";
+        }
+        $sec++;
+    }
+}
+close(SP);
+
+if($sec != $images) {
+    print STDERR "_sponsors.html count ($sec) doesn't match online count: $count ($images with images)\n";
+}
+
 
 print STDERR "$count sponsors, $images images\n";
