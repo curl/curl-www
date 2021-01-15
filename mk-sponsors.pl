@@ -5,6 +5,7 @@
 my %silver = (
     "https://filmen.nu" => 'Filmen.png',
     "https://streamat.se" => 'streamat.jpg',
+    "https://streamet.dk" => 'Streamet.png',
     "https://nysportsjournal.com" => 'NYSJ.png',
     "https://followerspromotion.com/" => 'FPlogo.png',
     "https://buy.fineproxy.org/eng/" => 'fineproxy.png',
