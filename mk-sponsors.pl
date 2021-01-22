@@ -19,6 +19,10 @@ my %silver = (
     "https://www.maid2clean.co.uk/domestic-cleaning/" => 'maid2clean.png',
     "https://icons8.com" => 'icons8.png'
     );
+my %modurl = (
+    "https://followerspromotion.com/" =>
+    'https://followerspromotion.com/buy-instagram-likes/',
+    );
 
 # the URLs
 open(S, "curl https://rest.opencollective.com/v2/curl/tier/silver-sponsor/orders/active -s | jq '.nodes[].fromAccount.website'|");
@@ -36,9 +40,14 @@ for my $u (reverse @urls) {
         $found{$url}=1;
         if($img ne '[none]') {
             my $alt = $img;
+            my $href = $url;
             $alt =~ s/(.*)\..../$1/;
+            if($modurl{$url}) {
+                $href=$modurl{$url};
+                $found{$href}=1;
+            }
             print <<SPONSOR
-<div class="silver"><p> <a href="$url" rel="sponsored"><img src="pix/silver/$img" alt="$alt"></a></div>
+<div class="silver"><p> <a href="$href" rel="sponsored"><img src="pix/silver/$img" alt="$alt"></a></div>
 SPONSOR
                 ;
             if(! -f "pix/silver/$img") {
