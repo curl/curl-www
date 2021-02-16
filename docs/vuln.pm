@@ -12,6 +12,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2021-22876.html|7.1.1|7.75.0|Automatic referer leaks credentials|CVE-2021-22876|20210331|20210212|CWE-359: Exposure of Private Personal Information to an Unauthorized Actor|800|HTTP|-",
     "CVE-2020-8286.html|7.41.0|7.73.0|Inferior OCSP verification|CVE-2020-8286|20201209|20201202|CWE-299: Improper Check for Certificate Revocation|900|TLS|-",
     "CVE-2020-8285.html|7.21.0|7.73.0|FTP wildcard stack overflow|CVE-2020-8285|20201209|20201127|CWE-674: Uncontrolled Recursion|0|FTP|-",
     "CVE-2020-8284.html|4.0|7.73.0|trusting FTP PASV responses|CVE-2020-8284|20201209|20201121|CWE-200: Exposure of Sensitive Information to an Unauthorized Actor|700|FTP|-",
