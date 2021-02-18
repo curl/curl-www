@@ -3,15 +3,13 @@
 ## Silver sponsors
 
 my %silver = (
-    "https://filmen.nu" => 'Filmen.png',
-    "https://streamat.se" => 'streamat.jpg',
-    "https://streamet.dk" => 'Streamet.png',
-    "https://nysportsjournal.com" => 'NYSJ.png',
+    "https://awise.se/link-building/" => 'awise.png',
     "https://followerspromotion.com/" => 'FPlogo.png',
     "https://buy.fineproxy.org/eng/" => 'fineproxy.png',
     "https://www.rabattkalas.se" => 'rabattkalas.png',
     "https://unscramblex.com/" => 'Unscramblex-black.png',
     "https://www.romab.com" => '[none]',
+    "https://www.airbnb.com/" => '[none]',
     "https://www.premium-minds.com" => 'premium-minds.png',
     "https://www.partitionwizard.com" => 'partitionwizard.jpg',
     "https://www.crosswordsolver.com" => 'CrosswordSolver.png',
