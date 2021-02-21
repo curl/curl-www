@@ -37,7 +37,7 @@ MIME = curl_mime_init.html curl_mime_free.html curl_mime_addpart.html	\
  curl_mime_encoder.html
 
 URLAPI = curl_url.html curl_url_cleanup.html curl_url_dup.html	\
- curl_url_get.html curl_url_set.html
+ curl_url_get.html curl_url_set.html libcurl-url.html
 
 EASY_OPTION = curl_easy_option_by_id.html \
  curl_easy_option_by_name.html \
@@ -288,6 +288,11 @@ libcurl-errors.gen: $(MANROOT)/libcurl-errors.3
 libcurl-tutorial.html: _libcurl-tutorial.html $(MAINPARTS) libcurl-tutorial.gen
 	$(ACTION)
 libcurl-tutorial.gen: $(MANROOT)/libcurl-tutorial.3
+	$(MAN2HTML) < $< >$@
+
+libcurl-url.html: _libcurl-url.html $(MAINPARTS) libcurl-url.gen
+	$(ACTION)
+libcurl-url.gen: $(MANROOT)/libcurl-url.3
 	$(MAN2HTML) < $< >$@
 
 curl_multi_add_handle.html: _curl_multi_add_handle.html $(MAINPARTS_CAPI) curl_multi_add_handle.gen
