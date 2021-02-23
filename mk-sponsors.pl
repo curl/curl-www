@@ -3,7 +3,7 @@
 ## Silver sponsors
 
 my %silver = (
-    "https://awise.se/link-building/" => 'awise.png',
+    "https://awisee.com" => 'awise.png',
     "https://followerspromotion.com/" => 'FPlogo.png',
     "https://buy.fineproxy.org/eng/" => 'fineproxy.png',
     "https://www.rabattkalas.se" => 'rabattkalas.png',
