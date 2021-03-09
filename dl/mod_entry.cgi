@@ -134,7 +134,7 @@ sub alternative {
     if ($len > 20) {
       print "<button type=\"button\" class=\"copybutton\">&rightarrow;</button>\n"
     }
-    print "<input type=text size=\"$len\" name=\"$short\" value=\"";
+    print "<input type=\"text\" size=\"$len\" name=\"$short\" value=\"";
     if(!$found) {
         print CGI::escapeHTML($$ref{$short});
     }
@@ -156,7 +156,7 @@ sub my_show_form()
         print $$ref{"modify_time"},"\">\n";
     }
 
-    print "<table class=\"mod_entry\">";
+    print "<table class=\"mod_entry\" summary=\"Edit information for a download entry\">";
 
 ##### Textinmatning
 
