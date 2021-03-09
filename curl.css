@@ -433,3 +433,8 @@ td.download {
 .dropdown:hover .dropbtn {
     color: #c0c0c0;
 }
+
+/* Download edit page copy button */
+.copybutton {
+  font-size: large;
+}

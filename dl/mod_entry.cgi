@@ -130,8 +130,9 @@ sub alternative {
 
     # Button to copy the current value into the text box
     # Only do this for the few entries where it makes sense to avoid clutter
+    # Javascript code is attached in installButtons()
     if ($len > 20) {
-      print "<button type=\"button\" style=\"font-size: large\" onclick=\"document.getElementsByName('$short')[0].value = document.getElementsByName('pre-$short')[0].value\">&rightarrow;</button>\n"
+      print "<button type=\"button\" class=\"copybutton\">&rightarrow;</button>\n"
     }
     print "<input type=text size=\"$len\" name=\"$short\" value=\"";
     if(!$found) {
