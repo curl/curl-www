@@ -110,7 +110,7 @@ sub alternative {
             my $val = $_;#CGI::escapeHTML($_);
 
             # while we continue to have a few unescaped things in the
-            # database, we scan for a few known villain and run escape on the
+            # database, we scan for a few known villains and run escape on the
             # string then.
             if($val =~ /[<>]/) {
                 $val = CGI::escapeHTML($val);
@@ -126,6 +126,12 @@ sub alternative {
 
     if(!$len) {
         $len=20;
+    }
+
+    # Button to copy the current value into the text box
+    # Only do this for the few entries where it makes sense to avoid clutter
+    if ($len > 20) {
+      print "<button type=\"button\" style=\"font-size: large\" onclick=\"document.getElementsByName('$short')[0].value = document.getElementsByName('pre-$short')[0].value\">&rightarrow;</button>\n"
     }
     print "<input type=text size=\"$len\" name=\"$short\" value=\"";
     if(!$found) {
