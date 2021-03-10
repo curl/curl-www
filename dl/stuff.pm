@@ -6,7 +6,8 @@ require "../curl.pm";
 $databasefilename = "data/databas.db";
 
 sub getheader {
-    my ($title)=@_;
+    my ($title)=$_[0];
+    my ($header)=$_[1];
     my @head;
 
     if ($title eq "") {
@@ -27,7 +28,7 @@ sub getheader {
 <html><head><title>$title</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="/curl.css">
-</head>
+$header</head>
 <body>
 <a href="/dl/list_entry.cgi">[List Entries]</a>
 <a href="/dl/mod_entry.cgi">[New Entry]</a>

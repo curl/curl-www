@@ -45,7 +45,7 @@ else {
     $title="Add Entry";
 }
 # Skriv ut huvudet
-lheader($title);
+lheader($title, "<script type=\"text/javascript\" src=\"mod.js\"></script>\n");
 
 if (CGI::param("action")) {
     # get the pre- values if they're set instead of the "original" ones
