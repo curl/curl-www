@@ -39,6 +39,10 @@ TITLE(Compare curl with other download tools)
 #define NEWCOL <td>
 #define ENDCOL </td>
 
+#define L_MIT NEWCOL MIT ENDCOL
+#define L_GPL NEWCOL GPL ENDCOL
+#define L_BSD NEWCOL BSD ENDCOL
+
 #define FEAT(x) NEWLINE <td> x </td>
 
 #define NEWLINE <tr valign=top>
@@ -144,23 +148,12 @@ TITLE(Compare curl with other download tools)
   FEAT( URL globbing/sequences ) YES__ YES__ YES__ YES__ no___ no___ YES__ no___ no___ ENDLINE
   FEAT( Username/Password )      YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
   FEAT( Windows Port )           YES__ YES__ YES__ no___ no___ no___ YES__ YES__ YES_P ENDLINE
-  
- FEAT( License )
-  NEWCOL MIT ENDCOL
-  NEWCOL GPL ENDCOL
-  NEWCOL GPL ENDCOL
-  NEWCOL GPL ENDCOL
-  NEWCOL BSD ENDCOL
-  NEWCOL GPL ENDCOL
-  NEWCOL GPL ENDCOL
-  NEWCOL GPL ENDCOL
-  NEWCOL BSD ENDCOL
- ENDLINE
+  FEAT( License )                L_MIT L_GPL L_GPL L_GPL L_BSD L_GPL L_GPL L_GPL L_BSD ENDLINE
 
   FEAT( Version )
   NEWCOL __STABLE ENDCOL
   NEWCOL 1.21 ENDCOL
-  NEWCOL ? ENDCOL
+  NEWCOL 1.99.2 ENDCOL
   NEWCOL 0.9.34 ENDCOL
   NEWCOL 4.7 ENDCOL
   NEWCOL 3.5.0 ENDCOL
