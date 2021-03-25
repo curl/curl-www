@@ -65,7 +65,9 @@ TITLE(Compare curl with other download tools)
   NICETD HTTPie NICETDEND
  ENDLINE
  </thead>
-
+#if 0
+                                 curl  snarf wget  wget2 pavuk fget  fetch lftp  aria2 httra httpie
+#endif
  <tbody>
   FEAT( .netrc )                 YES__ no___ YES__ YES__ no___ no___ YES__ YES__ YES__ no___ YES__ ENDLINE
   FEAT( Bandwidth Limiting )     YES__ no___ YES__ YES__ YES__ no___ no___ YES__ YES__ YES__ no___ ENDLINE
@@ -122,7 +124,7 @@ TITLE(Compare curl with other download tools)
   FEAT( Retry failed downloads)  YES__ no___ YES__ YES__ YES__ no___ YES__ YES__ YES__ YES__ no___ ENDLINE
   FEAT( RTMP )                   YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
   FEAT( RTSP )                   YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( Same file multi connect) no___ no___ no___ YES__ no___ no___ no___ no___ YES__ no___ no___ ENDLINE
+  FEAT( Same file multi connect) no___ no___ no___ YES__ no___ no___ no___ YES__ YES__ no___ no___ ENDLINE
   FEAT( SCP )                    YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
   FEAT( SFTP )                   YES__ no___ no___ no___ no___ no___ no___ YES__ no___ no___ no___ ENDLINE
   FEAT( SMB )                    YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
