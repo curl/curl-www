@@ -53,11 +53,9 @@ TITLE(Compare curl with other download tools)
  <tr class="tabletop">
   NICETD Feature NICETDEND
   NICETD curl NICETDEND
-  NICETD snarf NICETDEND
   NICETD wget NICETDEND
   NICETD wget2 NICETDEND
   NICETD pavuk NICETDEND
-  NICETD fget NICETDEND
   NICETD fetch NICETDEND
   NICETD lftp NICETDEND
   NICETD aria2 NICETDEND
@@ -66,94 +64,92 @@ TITLE(Compare curl with other download tools)
  ENDLINE
  </thead>
 #if 0
-                                 curl  snarf wget  wget2 pavuk fget  fetch lftp  aria2 httra httpie
+                                 curl  wget  wget2 pavuk fetch lftp  aria2 httra httpie
 #endif
  <tbody>
-  FEAT( .netrc )                 YES__ no___ YES__ YES__ no___ no___ YES__ YES__ YES__ no___ YES__ ENDLINE
-  FEAT( Bandwidth Limiting )     YES__ no___ YES__ YES__ YES__ no___ no___ YES__ YES__ YES__ no___ ENDLINE
-  FEAT( Commercial support )     YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( DNS-over-HTTPS )         YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( FTP 3rd Party Transfer)  no___ no___ no___ no___ no___ no___ no___ YES__ no___ no___ no___ ENDLINE
-  FEAT( FTP Active Mode )        YES__ YES__ YES__ YES__ YES__ no___ YES__ YES__ YES__ no___ no___ ENDLINE
-  FEAT( FTP Connection Re-use )  YES__ no___ no___ no___ YES__ no___ YES__ YES__ YES__ no___ no___ ENDLINE
-  FEAT( FTP Kerberos )           YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( FTP Ranges )             YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( FTP Resume )             YES__ YES__ YES__ YES__ YES__ no___ YES__ YES__ YES__ no___ no___ ENDLINE
-  FEAT( FTP Upload )             YES__ no___ no___ no___ no___ no___ no___ YES__ no___ no___ no___ ENDLINE
-  FEAT( FTPS )                   YES__ no___ no___ no___ YES__ no___ no___ YES__ no___ no___ no___ ENDLINE
-  FEAT( GOPHER )                 YES__ YES__ no___ no___ YES__ no___ no___ YES__ no___ no___ no___ ENDLINE
-  FEAT( Happy Eyeballs )         YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( HSTS )                   YES_P no___ YES__ YES__ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( HTTP alt-svc )           YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( HTTP brotli )            YES__ no___ no___ YES__ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( HTTP Cookies )           YES__ no___ YES__ YES__ YES__ no___ no___ YES__ YES__ YES__ YES__ ENDLINE
-  FEAT( HTTP Digest Auth )       YES__ no___ YES__ YES__ YES__ no___ YES__ no___ no___ no___ YES__ ENDLINE
-  FEAT( HTTP etags )             YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( HTTP gzip )              YES__ no___ no___ YES__ YES__ no___ no___ no___ YES__ YES__ YES__ ENDLINE
-  FEAT( HTTP Multipart POST )    YES__ no___ no___ no___ YES__ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( HTTP Negotiate Auth )    YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ YES__ ENDLINE
-  FEAT( HTTP NTLM Auth )         YES__ no___ YES__ YES__ YES__ no___ no___ no___ no___ no___ YES__ ENDLINE
-  FEAT( HTTP Persistent Conns )  YES__ no___ YES__ YES__ YES__ no___ no___ YES__ YES__ no___ no___ ENDLINE
-  FEAT( HTTP POST )              YES__ no___ YES__ YES__ YES__ no___ no___ YES__ no___ no___ YES__ ENDLINE
-  FEAT( HTTP POST Chunked )      YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( HTTP Proxy )             YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
-  FEAT( HTTP PUT )               YES__ no___ no___ no___ no___ no___ no___ YES__ no___ no___ no___ ENDLINE
-  FEAT( HTTP Ranges )            YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( HTTP Redirects )         YES__ YES__ YES__ YES__ YES__ no___ YES__ no___ YES__ no___ YES__ ENDLINE
-  FEAT( HTTP Resume )            YES__ YES__ YES__ YES__ YES__ no___ YES__ YES__ YES__ no___ YES__ ENDLINE
-  FEAT( HTTP time conditions )   YES__ no___ YES__ YES__ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( HTTP zstd )              YES__ no___ no___ YES__ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( HTTP/1.1 )               YES__ no___ YES__ YES__ YES__ no___ YES__ YES__ YES__ YES__ YES__ ENDLINE
-  FEAT( HTTP/2 ALPN )            YES__ no___ no___ YES__ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( HTTP/2 h2c upgrade)      YES__ no___ no___ YES__ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( HTTP/2 NPN )             YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( HTTP/3 )                 YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( HTTPS )                  YES__ no___ YES__ YES__ YES__ no___ YES__ YES__ YES__ YES__ YES__ ENDLINE
-  FEAT( HTTPS Proxy )            YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( IDN hostnames )          YES__ no___ YES__ YES__ no___ no___ no___ no___ no___ no___ YES__ ENDLINE
-  FEAT( IMAP )                   YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( IPv6 )                   YES__ no___ YES__ YES__ YES__ YES__ YES__ YES__ YES_P YES__ YES__ ENDLINE
-  FEAT( LDAP )                   YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( Metalink )               YES__ no___ YES__ YES__ no___ no___ no___ no___ YES__ no___ no___ ENDLINE
-  FEAT( MQTT )                   YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( Multilingual Messages )  no___ no___ YES__ YES__ YES__ no___ no___ YES__ YES__ no___ no___ ENDLINE
-  FEAT( Multiple URLs )          YES__ YES__ YES__ YES__ YES__ no___ YES__ no___ YES__ no___ no___ ENDLINE
-  FEAT( Parallel transfers )     YES__ no___ no___ no___ YES__ no___ no___ YES__ YES__ YES__ no___ ENDLINE
-  FEAT( POP3 )                   YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( Recursive downloads )    no___ no___ YES__ YES__ YES__ no___ no___ YES__ no___ YES__ no___ ENDLINE
-  FEAT( Retry failed downloads)  YES__ no___ YES__ YES__ YES__ no___ YES__ YES__ YES__ YES__ no___ ENDLINE
-  FEAT( RTMP )                   YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( RTSP )                   YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( Same file multi connect) no___ no___ no___ YES__ no___ no___ no___ YES__ YES__ no___ no___ ENDLINE
-  FEAT( SCP )                    YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( SFTP )                   YES__ no___ no___ no___ no___ no___ no___ YES__ no___ no___ no___ ENDLINE
-  FEAT( SMB )                    YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( SMTP )                   YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( SOCKS proxy )            YES__ YES__ no___ no___ YES__ no___ no___ YES__ no___ no___ YES__ ENDLINE
-  FEAT( TELNET )                 YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( TFTP )                   YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( Tiny Executable )        no___ YES__ no___ no___ no___ YES__ YES__ no___ no___ no___ no___ ENDLINE
-  FEAT( TLS: BearSSL )           YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( TLS: Client certs )      YES__ no___ YES__ YES__ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( TLS: GnuTLS )            YES__ no___ YES__ YES__ no___ no___ no___ YES__ YES__ no___ YES_P ENDLINE
-  FEAT( TLS: mbedTLS )           YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( TLS: MesaLink )          YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( TLS: NSS )               YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( TLS: Schannel )          YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ YES_P ENDLINE
-  FEAT( TLS: Secure Transport )  YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ YES_P ENDLINE
-  FEAT( TLS: Session ID cache )  YES__ no___ no___ YES__ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( TLS: WolfSSL )           YES__ no___ no___ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( URL globbing/sequences ) YES__ no___ YES__ YES__ YES__ no___ no___ no___ YES__ no___ no___ ENDLINE
-  FEAT( Username/Password )      YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
-  FEAT( Windows Port )           YES__ no___ YES__ YES__ no___ no___ no___ no___ YES__ YES__ YES_P ENDLINE
+  FEAT( .netrc )                 YES__ YES__ YES__ no___ YES__ YES__ YES__ no___ YES__ ENDLINE
+  FEAT( Bandwidth Limiting )     YES__ YES__ YES__ YES__ no___ YES__ YES__ YES__ no___ ENDLINE
+  FEAT( Commercial support )     YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( DNS-over-HTTPS )         YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( FTP 3rd Party Transfer)  no___ no___ no___ no___ no___ YES__ no___ no___ no___ ENDLINE
+  FEAT( FTP Active Mode )        YES__ YES__ YES__ YES__ YES__ YES__ YES__ no___ no___ ENDLINE
+  FEAT( FTP Connection Re-use )  YES__ no___ no___ YES__ YES__ YES__ YES__ no___ no___ ENDLINE
+  FEAT( FTP Kerberos )           YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( FTP Ranges )             YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( FTP Resume )             YES__ YES__ YES__ YES__ YES__ YES__ YES__ no___ no___ ENDLINE
+  FEAT( FTP Upload )             YES__ no___ no___ no___ no___ YES__ no___ no___ no___ ENDLINE
+  FEAT( FTPS )                   YES__ no___ no___ YES__ no___ YES__ no___ no___ no___ ENDLINE
+  FEAT( GOPHER )                 YES__ no___ no___ YES__ no___ YES__ no___ no___ no___ ENDLINE
+  FEAT( Happy Eyeballs )         YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( HSTS )                   YES_P YES__ YES__ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( HTTP alt-svc )           YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( HTTP brotli )            YES__ no___ YES__ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( HTTP Cookies )           YES__ YES__ YES__ YES__ no___ YES__ YES__ YES__ YES__ ENDLINE
+  FEAT( HTTP Digest Auth )       YES__ YES__ YES__ YES__ YES__ no___ no___ no___ YES__ ENDLINE
+  FEAT( HTTP etags )             YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( HTTP gzip )              YES__ no___ YES__ YES__ no___ no___ YES__ YES__ YES__ ENDLINE
+  FEAT( HTTP Multipart POST )    YES__ no___ no___ YES__ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( HTTP Negotiate Auth )    YES__ no___ no___ no___ no___ no___ no___ no___ YES__ ENDLINE
+  FEAT( HTTP NTLM Auth )         YES__ YES__ YES__ YES__ no___ no___ no___ no___ YES__ ENDLINE
+  FEAT( HTTP Persistent Conns )  YES__ YES__ YES__ YES__ no___ YES__ YES__ no___ no___ ENDLINE
+  FEAT( HTTP POST )              YES__ YES__ YES__ YES__ no___ YES__ no___ no___ YES__ ENDLINE
+  FEAT( HTTP POST Chunked )      YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( HTTP Proxy )             YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+  FEAT( HTTP PUT )               YES__ no___ no___ no___ no___ YES__ no___ no___ no___ ENDLINE
+  FEAT( HTTP Ranges )            YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( HTTP Redirects )         YES__ YES__ YES__ YES__ YES__ no___ YES__ no___ YES__ ENDLINE
+  FEAT( HTTP Resume )            YES__ YES__ YES__ YES__ YES__ YES__ YES__ no___ YES__ ENDLINE
+  FEAT( HTTP time conditions )   YES__ YES__ YES__ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( HTTP zstd )              YES__ no___ YES__ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( HTTP/1.1 )               YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+  FEAT( HTTP/2 ALPN )            YES__ no___ YES__ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( HTTP/2 h2c upgrade)      YES__ no___ YES__ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( HTTP/2 NPN )             YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( HTTP/3 )                 YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( HTTPS )                  YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+  FEAT( HTTPS Proxy )            YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( IDN hostnames )          YES__ YES__ YES__ no___ no___ no___ no___ no___ YES__ ENDLINE
+  FEAT( IMAP )                   YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( IPv6 )                   YES__ YES__ YES__ YES__ YES__ YES__ YES_P YES__ YES__ ENDLINE
+  FEAT( LDAP )                   YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( Metalink )               YES__ YES__ YES__ no___ no___ no___ YES__ no___ no___ ENDLINE
+  FEAT( MQTT )                   YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( Multilingual Messages )  no___ YES__ YES__ YES__ no___ YES__ YES__ no___ no___ ENDLINE
+  FEAT( Multiple URLs )          YES__ YES__ YES__ YES__ YES__ no___ YES__ no___ no___ ENDLINE
+  FEAT( Parallel transfers )     YES__ no___ no___ YES__ no___ YES__ YES__ YES__ no___ ENDLINE
+  FEAT( POP3 )                   YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( Recursive downloads )    no___ YES__ YES__ YES__ no___ YES__ no___ YES__ no___ ENDLINE
+  FEAT( Retry failed downloads)  YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ no___ ENDLINE
+  FEAT( RTMP )                   YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( RTSP )                   YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( Same file multi connect) no___ no___ YES__ no___ no___ YES__ YES__ no___ no___ ENDLINE
+  FEAT( SCP )                    YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( SFTP )                   YES__ no___ no___ no___ no___ YES__ no___ no___ no___ ENDLINE
+  FEAT( SMB )                    YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( SMTP )                   YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( SOCKS proxy )            YES__ no___ no___ YES__ no___ YES__ no___ no___ YES__ ENDLINE
+  FEAT( TELNET )                 YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( TFTP )                   YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( Tiny Executable )        no___ no___ no___ no___ YES__ no___ no___ no___ no___ ENDLINE
+  FEAT( TLS: BearSSL )           YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( TLS: Client certs )      YES__ YES__ YES__ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( TLS: GnuTLS )            YES__ YES__ YES__ no___ no___ YES__ YES__ no___ YES_P ENDLINE
+  FEAT( TLS: mbedTLS )           YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( TLS: MesaLink )          YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( TLS: NSS )               YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( TLS: Schannel )          YES__ no___ no___ no___ no___ no___ no___ no___ YES_P ENDLINE
+  FEAT( TLS: Secure Transport )  YES__ no___ no___ no___ no___ no___ no___ no___ YES_P ENDLINE
+  FEAT( TLS: Session ID cache )  YES__ no___ YES__ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( TLS: WolfSSL )           YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( URL globbing/sequences ) YES__ YES__ YES__ YES__ no___ no___ YES__ no___ no___ ENDLINE
+  FEAT( Username/Password )      YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+  FEAT( Windows Port )           YES__ YES__ YES__ no___ no___ no___ YES__ YES__ YES_P ENDLINE
   
  FEAT( License )
   NEWCOL MIT ENDCOL
   NEWCOL GPL ENDCOL
   NEWCOL GPL ENDCOL
   NEWCOL GPL ENDCOL
-  NEWCOL GPL ENDCOL
-  UNKNOWN
   NEWCOL BSD ENDCOL
   NEWCOL GPL ENDCOL
   NEWCOL GPL ENDCOL
@@ -163,11 +159,9 @@ TITLE(Compare curl with other download tools)
 
   FEAT( Version )
   NEWCOL __STABLE ENDCOL
-  NEWCOL 7.0 ENDCOL
-  NEWCOL 1.17 ENDCOL
+  NEWCOL 1.21 ENDCOL
   NEWCOL ? ENDCOL
   NEWCOL 0.9.34 ENDCOL
-  NEWCOL 0.4.1 ENDCOL
   NEWCOL 4.7 ENDCOL
   NEWCOL 3.5.0 ENDCOL
   NEWCOL 1.8.3 ENDCOL
@@ -179,11 +173,10 @@ TITLE(Compare curl with other download tools)
 </table>
 
 <p>
- The mentioned tools: <a href="https://www.xach.com/snarf/">snarf</a>, <a
+ The mentioned tools: <a
  href="https://www.gnu.org/software/wget/">wget</a>,  <a
  href="https://gitlab.com/gnuwget/wget2">wget2</a>, <a
  href="http://www.pavuk.org/">pavuk</a>, <a
- href="https://www.fefe.de/fget/">fget</a>, <a
  href="https://lftp.yar.ru/">lftp</a>, <a
  href="https://aria2.sourceforge.io/">aria2</a>,
  <a href="https://www.httrack.com/">httrack</a>, <a href="https://httpie.org/">HTTPie</a>
