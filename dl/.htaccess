@@ -1,1 +1,13 @@
+deny from all
+AuthName curl
+AuthType Basic
+AuthUserFile /var/www/html/dl/curlusers
+require valid-user
+satisfy any
+
+<ifmodule mod_expires.c>
+ExpiresActive Off
+</ifmodule>
+
+Header always append Cache-Control: private
 Header set Content-Security-Policy: "default-src 'self' www.curl.se curl.se;"
