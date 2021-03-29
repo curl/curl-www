@@ -104,6 +104,7 @@ RedirectPermanent /docs/adv_20030803.html https://curl.se/docs/CVE-2003-1605.htm
 RedirectPermanent /docs/adv_20001013.html https://curl.se/docs/CVE-2000-0973.html
 RedirectPermanent /help.html https://curl.se/docs/help-us.html
 RedirectPermanent /legal/thename.html https://curl.se/docs/thename.html
+RedirectPermanent /support https://curl.se/support.html
 
 RemoveHandler .php
 RemoveHandler .pl
