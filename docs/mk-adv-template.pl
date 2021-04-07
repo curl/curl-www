@@ -7,6 +7,7 @@ if(!$want) {
 }
 
 require "./vuln.pm";
+require "./novuln.pm";
 
 my %md;
 while(<stdin>) {
@@ -17,6 +18,9 @@ if($#md < 10) {
     print stderr "suspiciously small markdown!\n";
     exit;
 }
+
+# add the retracted ones too
+push @vuln, @novuln;
 
 for(@vuln) {
     my ($id, $start, $stop, $desc, $cve, $announce, $report, $cwe)=split('\|');
