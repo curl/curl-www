@@ -1,9 +1,11 @@
 #!/usr/bin/perl
 
+# https://rest.opencollective.com/v2/curl/tier/silver-sponsor/orders/active
+
 ## Silver sponsors
 
 my %silver = (
-    "https://awisee.com" => 'AWISEE.png',
+    'https://ostriching.se' => 'Ostriching.se.jpg',
     "https://followerspromotion.com/" => 'FPlogo.png',
     "https://buy.fineproxy.org/eng/" => 'fineproxy.png',
     "https://www.rabattkalas.se" => 'rabattkalas.png',
