@@ -17,16 +17,13 @@ TITLE(Changelog)
 
 <div class="relatedbox">
 <b>Related:</b>
-
 <br><a href="/snapshots/">Daily Snapshots</a>
 <br><a href="/source.html">Source repo</a>
 <br><a href="/docs/security.html">Security</a>
 <br><a href="/docs/vulnerabilities.html">Vulnerabilities</a>
 <br><a href="/docs/releases.html">Releaselog</a>
 <br><a href="/dev/release-notes.html">Pending Release Notes</a>
-
 </div>
-
 
 #if 0
 <a name="9_19_19"></a>
@@ -49,6 +46,33 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
   <a href=video>                        \
   <img src="pix/play.svg" alt="Play video" height="100%" style="float: left; margin-right: 1em;"> desc </a> \
   </div>
+
+<a name="7_76_1"></a>
+SUBTITLE(Fixed in 7.76.1 - April 14 2021)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.se/bug/?i=6838">configure: disable min version set for Darwin</a>
+ BGF <a href="https://curl.se/bug/?i=6859">configure: include &lt;time.h&gt; unconditionally</a>
+ BGF <a href="https://curl.se/bug/?i=6861">configure: remove use of RETSIGTYPE</a>
+ BGF <a href="https://curl.se/bug/?i=6857">docs/HTTP3.md: update the build instruction using gnutls</a>
+ BGF <a href="https://curl.se/bug/?i=6876">examples/hiperfifo.c: check event_initialized before delete</a>
+ BGF <a href="https://curl.se/bug/?i=6845">file: support GETing directories again</a>
+ BGF <a href="https://curl.se/bug/?i=6815">github/workflow: add &quot;security-extended&quot; to codeql-analysis.yml</a>
+ BGF <a href="https://curl.se/bug/?i=6852">h2: allow 100 streams by default</a>
+ BGF <a href="https://curl.se/bug/?i=6831">hostip: fix builds that disable all asynchronous DNS</a>
+ BGF <a href="https://curl.se/bug/?i=6828">http_proxy: only loop on 407 + close if we have credentials</a>
+ BGF <a href="https://curl.se/bug/?i=6860">install: add instructions for Apple Darwin platforms</a>
+ BGF <a href="https://curl.se/bug/?i=6867">lib: remove unused HAVE_INET_NTOA_R* defines</a>
+ BGF <a href="https://curl.se/bug/?i=6829">libssh: get rid of PATH_MAX</a>
+ BGF <a href="https://curl.se/bug/?i=6824">ngtcp2+gnutls: clear credentials when freed</a>
+ BGF <a href="https://curl.se/bug/?i=6864">ngtcp2: Use ALPN h3-29 for now</a>
+ BGF <a href="https://curl.se/bug/?i=6813">ntlm: fix negotiated flags usage</a>
+ BGF <a href="https://curl.se/bug/?i=6849">ntlm: support version 2 on 32-bit platforms</a>
+ BGF <a href="https://curl.se/bug/?i=6816">openssl: fix CURLOPT_SSLCERT_BLOB without CURLOPT_SSLCERT_KEY</a>
+ BGF <a href="https://curl.se/bug/?i=6825">TLS: fix HTTP/2 selection</a>
+ BGF <a href="https://curl.se/bug/?i=6840">tool_progress: fix progress meter final update in parallel mode</a>
+ BGF <a href="https://curl.se/bug/?i=6818">typecheck-gcc: make the ssl-ctx-cb check use SSL_CTX pointers</a>
+</ul>
 
 <a name="7_76_0"></a>
 SUBTITLE(Fixed in 7.76.0 - March 31 2021)
