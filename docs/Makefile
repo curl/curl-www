@@ -138,6 +138,7 @@ PAGES =						\
  httpscripting.html				\
  index.html					\
  install.html					\
+ irc.html					\
  knownbugs.html					\
  libs.html					\
  manpage.html					\
@@ -271,6 +272,9 @@ http-cookies.html: _http-cookies.html $(MAINPARTS) http-cookies.gen
 
 http-cookies.gen: $(DOCROOT)/HTTP-COOKIES.md
 	$(GITHUB) $< >$@
+
+irc.html: _irc.html $(MAINPARTS)
+	$(ACTION)
 
 knownbugs.html: _knownbugs.html $(MAINPARTS) knownbugs.gen
 	$(ACTION)
