@@ -2,7 +2,7 @@ ROOT=.
 
 # the latest stable version is:
 STABLE= 7.76.1
-DELDATE = "14th of April 2021"
+RELDATE = "14th of April 2021"
 # The planned *next* release is:
 NEXTDATE = "26th of May 2021"
 
