@@ -438,3 +438,13 @@ td.download {
 .copybutton {
   font-size: large;
 }
+
+/* Commercial support box */
+.commbox {
+  border: 3px dotted green; padding: 5px 5px 5px 5px;
+}
+
+/* Search box */
+a.sitesearch:hover {
+  background-color: #ffffff;
+}

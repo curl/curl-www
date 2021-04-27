@@ -1,4 +1,4 @@
-<script style="a:hover {background-color: #ffffff;}" >
+<script class="sitesearch">
   (function() {
     var cx = '011822591736674932359:hjyomzjfopc';
     var gcse = document.createElement('script');

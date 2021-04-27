@@ -1,4 +1,4 @@
-<div style="border: 3px dotted green; padding: 5px 5px 5px 5px;">
+<div class="commbox">
 
  Buy commercial curl support from <a
  href="https://www.wolfssl.com/products/curl/">WolfSSL</a>. We help you work
