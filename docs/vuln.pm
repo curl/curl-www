@@ -12,6 +12,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2021-22897.html|7.61.0|7.76.1|schannel cipher selection surprise|CVE-2021-22897|20210526|20210423|CWE-488: Exposure of Data Element to Wrong Session|TLS|-",
     "CVE-2021-22890.html|7.63.0|7.75.0|TLS 1.3 session ticket proxy host mixup|CVE-2021-22890|20210331|20210317|CWE-290: Authentication Bypass by Spoofing|0|TLS|-",
     "CVE-2021-22876.html|7.1.1|7.75.0|Automatic referer leaks credentials|CVE-2021-22876|20210331|20210212|CWE-359: Exposure of Private Personal Information to an Unauthorized Actor|800|HTTP|-",
     "CVE-2020-8286.html|7.41.0|7.73.0|Inferior OCSP verification|CVE-2020-8286|20201209|20201202|CWE-299: Improper Check for Certificate Revocation|900|TLS|-",
