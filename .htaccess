@@ -118,7 +118,7 @@ php_flag engine off
 
 Header set X-Content-Type-Options: "nosniff"
 # Hash is for sitesearch.t
-Header set Content-Security-Policy: "default-src 'self' curl.haxx.se www.curl.se curl.se www.fastly-insights.com fastly-insights.com; style-src 'unsafe-inline' 'self' curl.haxx.se www.curl.se curl.se; script-src 'self' curl.se www.fastly-insights.com fastly-insights.com 'sha256-n9QfETfN26toA8vPrDtfLIC9jm4B8HE2KsS/pOkgPJ4=';"
+Header set Content-Security-Policy: "default-src 'self' curl.haxx.se www.curl.se curl.se www.fastly-insights.com fastly-insights.com cse.google.com www.google.com www.googleapis.com clients1.google.com; style-src 'unsafe-inline' 'self' curl.haxx.se www.curl.se curl.se www.google.com; script-src 'self' curl.se www.fastly-insights.com fastly-insights.com cse.google.com 'sha256-n9QfETfN26toA8vPrDtfLIC9jm4B8HE2KsS/pOkgPJ4=';"
 Header always append X-Frame-Options SAMEORIGIN
 
 <ifmodule mod_expires.c>

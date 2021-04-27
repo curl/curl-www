@@ -1,2 +1,0 @@
-# Hash is for sitesearch.t
-Header set Content-Security-Policy: "default-src 'self' curl.se www.fastly-insights.com fastly-insights.com; script-src 'self' curl.se www.fastly-insights.com fastly-insights.com 'sha256-n9QfETfN26toA8vPrDtfLIC9jm4B8HE2KsS/pOkgPJ4=';"
