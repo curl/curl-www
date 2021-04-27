@@ -74,6 +74,10 @@ for my $f (@samps) {
 
             # replace backslashes
             $l =~ s/\\\n/\\&nbsp;\n/g;
+            # convert /* to hide from the C preprocessor
+            $l =~ s/\/\*/\/\&\#x2a;/g;
+            # convert */ as well
+            $l =~ s/\*\//\&\#x2a;\//g;
 
             if($l eq "\n") {
                 print ET "&nbsp;\n";
