@@ -13,6 +13,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2021-22901.html|7.75.0|7.76.1|TLS session caching disaster|CVE-2021-22901|20210526|20210429|CWE-416: Use After Free|TLS|USE_AFTER_FREE",
     "CVE-2021-22898.html|7.7|7.76.1|TELNET stack contents disclosure|CVE-2021-22898|20210526|20210427|CWE-457: Use of Uninitialized Variable|TELNET|UNINIT",
     "CVE-2021-22897.html|7.61.0|7.76.1|schannel cipher selection surprise|CVE-2021-22897|20210526|20210423|CWE-488: Exposure of Data Element to Wrong Session|TLS|-",
     "CVE-2021-22890.html|7.63.0|7.75.0|TLS 1.3 session ticket proxy host mixup|CVE-2021-22890|20210331|20210317|CWE-290: Authentication Bypass by Spoofing|0|TLS|-",
