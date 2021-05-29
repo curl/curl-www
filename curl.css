@@ -434,6 +434,12 @@ td.download {
     color: #c0c0c0;
 }
 
+/* Search background removal */
+.gsc-control-cse {
+    background-color: inherit !important;
+    border: 0 !important;
+}
+
 /* Download edit page copy button */
 .copybutton {
   font-size: large;
@@ -447,4 +453,96 @@ td.download {
 /* Search box */
 a.sitesearch:hover {
   background-color: #ffffff;
+}
+
+/* Large notify header */
+.badge
+{
+    text-align: center;
+    font-size: 140%;
+    padding: 8px;
+    background: #ffffe0;
+}
+
+/* DARK MODE PROPERTIES */
+/* These will override all settings above */
+@media (prefers-color-scheme: dark) {
+    BODY {
+        background-color: #212121;
+        /* Try to keep it a bit light but not too grey,
+           so it doesn't impact people with accessibility needs */
+        color: #fbfbfb;
+    }
+
+    .badge
+    {
+        background: #40403c
+    }
+
+    img[alt="curl logo"] {
+        filter: brightness(1.75);
+    }
+
+    a {
+        color: #0096fa;
+    }
+
+    img:hover {
+        background-color: #2c2c2c;
+    }
+
+    .dropdown-content {
+        background-color: #4c4c4c;
+    }
+
+    .dropdown-content a {
+        color: #fafafa;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #606060;
+    }
+
+    .relatedbox {
+        background-color: #313131;
+        color: white;
+    }
+
+    tr.tabletop {
+        background-color: #252525;
+        color: white;
+    }
+    
+    td.desc {
+        background-color: #6A6A79;
+        color: white;
+    }
+
+    td.ostitle {
+        color: white;
+        background-color: #212121;
+    }
+
+    /* Search fix hacks */
+    .gsc-webResult.gsc-result, .gsc-results .gsc-imageResult {
+        background-color: #212121 !important;
+    }
+
+    .gsc-webResult.gsc-result {
+        border: 0 !important;
+    }
+
+    .gsc-results {
+        background-color: #252525 !important;
+        
+    }
+
+    .gsc-above-wrapper-area {
+        border: 0 !important;
+    }
+
+    .gsc-results .gsc-cursor-box .gsc-cursor-page {
+        color: white !important;
+        background-color: #252525 !important;
+    }
 }
