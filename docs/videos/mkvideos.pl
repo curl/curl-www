@@ -1,11 +1,19 @@
 #!/usr/bin/perl
 
+use HTML::Entities;
+
 open(V, "<videolist.txt") || die;
+
+# Only escape these minimal characters
+sub enc {
+    my $encoded = encode_entities(@_, '<>&"');
+    return $encoded;
+}
 
 my %video;
 sub onevideo {
-    my $video = $video{"VIDEO"};
-    my $url = $video{"URL"};
+    my $video = enc($video{"VIDEO"});
+    my $url = enc($video{"URL"});
     my $thumb = $video{"THUMB"};
     my $size = $video{"THUMBSIZE"};
     my $duration = $video{"DURATION"};
@@ -13,10 +21,10 @@ sub onevideo {
     my $isoduration = "PT" . uc($duration);
     $isoduration =~ s/( minutes)?$/M/i;
     my $date = $video{"DATE"};
-    my $s = $video{"SLIDES"};
-    my $desc = $video{"DESC"};
-    my $who = $video{"WHO"};
-    my $tags = $video{"TAGS"};
+    my $s = enc($video{"SLIDES"});
+    my $desc = enc($video{"DESC"});
+    my $who = enc($video{"WHO"});
+    my $tags = enc($video{"TAGS"});
     my $keywords = "<meta itemprop=\"keywords\" content=\"curl, $tags\" />" if $tags;
     my $slides;
     my $e = $video{"EVENT"};

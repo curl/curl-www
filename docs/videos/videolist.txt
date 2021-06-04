@@ -594,3 +594,58 @@ DURATION 45 minutes
 WHO Daniel Stenberg
 DESC How we develop secure and safe software in the curl project
 ENDOFVIDEO
+
+VIDEO The state of curl 2021
+EVENT curl-up 2021
+URL https://youtu.be/PrWqNSj0Rpo
+THUMB the-state-of-curl-2021.jpg
+THUMBSIZE width="250" height="140"
+DATE 2021-04-28
+DURATION 1h23
+WHO Daniel Stenberg
+DESC The state of the curl project 2021. Stats, numbers and status checks.
+ENDOFVIDEO
+
+VIDEO curl security 2021
+EVENT curl-up 2021
+URL https://www.youtube.com/watch?v=LkdoC6r5Clg
+THUMB curl-security-2021.jpg
+THUMBSIZE width="250" height="140"
+DATE 2021-04-29
+DURATION 44 minutes
+WHO Daniel Stenberg
+DESC Vulnerabilities, mitigation, curl security team, memory-safe backends, bug-bounty and more.
+ENDOFVIDEO
+
+VIDEO libcurl under the Hood
+EVENT curl-up 2021
+URL https://youtu.be/T7Pv5lQ1dAc
+THUMB libcurl-under-hood.jpg
+THUMBSIZE width="250" height="140"
+DATE 2021-04-30
+DURATION 1h8
+WHO Daniel Stenberg
+DESC How libcurl works underneath the API and how transfers, connections etc are tied together with protocol handlers and the state machine.
+ENDOFVIDEO
+
+VIDEO Interfacing Rust
+EVENT curl-up 2021
+URL https://www.youtube.com/watch?v=0qkecU8AQkc
+THUMB interfacing-rust.jpg
+THUMBSIZE width="250" height="141"
+DATE 2021-05-01
+DURATION 35 minutes
+WHO Stefan Eissing
+DESC My experiences interfacing rust code in the ongoing mod_tls project.
+ENDOFVIDEO
+
+VIDEO Curl performance (er…application profiling)
+EVENT curl-up 2021
+URL https://www.youtube.com/watch?v=suyQblfo3NQ
+THUMB curl-performance-tools.jpg
+THUMBSIZE width="250" height="141"
+DATE 2021-05-04
+DURATION 21 minutes
+WHO Jim Fuller
+DESC Presenting a series of tools for characterising the performance of curl.
+ENDOFVIDEO

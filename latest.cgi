@@ -194,9 +194,6 @@ if($latest::version{$what}) {
         print "<br><b>GPG signature:</b> <a href=\"download/$archive.asc\">$archive.asc</a>";
     }
 
-    print "<br><br>Download this file with a <span class=\"metalink\"><a href=\"metalink.cgi?curl=$whate\" type=\"application/metalink4+xml\">",
-    	  "<img src=\"/pix/metalink.png\" border=\"0\" alt=\"\">metalink</a></span>.<br>\n";
-
     if($#dl > 10 ) {
         # so many mirrors we show this above them as well
         otherarchive();
@@ -307,9 +304,6 @@ print <<MOO
 This service automatically and frequently scans through known <a
 href="/mirror/">mirrors</a> and builds links to the latest versions of
 many different curl archives. This page is fine to bookmark!
-The above <a href="https://www.metalinker.org/">Metalink</a> lets you download
-this file faster by downloading from several of these mirrors simultaneously,
-using the appropriate software.
 
 <h2>Verification of Packages</h2>
 <a name="verified"></a>

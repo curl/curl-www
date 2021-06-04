@@ -716,7 +716,6 @@ sub single {
 
     my $sslenable=$$e{'ssl'} eq "No"?"disabled":"enabled";
     my $mirror=$$e{'re'} ne "-"?"<a href=\"https://curl.se/latest.cgi?curl=$$e{'re'}\">mirrored versions</a>":"";
-    my $metalink=$$e{'re'} ne "-"?"<span class=\"metalink\"><a href=\"https://curl.se/metalink.cgi?curl=$$e{'re'}\"><img src=\"/pix/metalink.png\" border=\"0\" alt=\"\">metalink</a></span>":"";
     my $pack=$$e{'pack'};
     my $aboutver;
     my $version=$$e{'curl'};
@@ -771,7 +770,7 @@ MOO
 <div class="yellowbox">
 <a href="$file"><img src="/pix/GS-Download-icon.svg" width="90" height="90" style="float:left;"></a>
 curl version: $version - SSL $sslenable $ssh
-<br>URL:&nbsp;<a href="$file">$show</a> $mirror $metalink
+<br>URL:&nbsp;<a href="$file">$show</a> $mirror
 $provided
 </div>
 MOO
