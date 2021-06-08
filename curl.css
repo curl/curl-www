@@ -512,7 +512,7 @@ a.sitesearch:hover {
         background-color: #252525;
         color: white;
     }
-    
+
     td.desc {
         background-color: #6A6A79;
         color: white;
@@ -521,6 +521,19 @@ a.sitesearch:hover {
     td.ostitle {
         color: white;
         background-color: #212121;
+    }
+
+    .download2 {
+        background-color: #2c2c2c;
+    }
+
+    .older2 {
+        color: white;
+        background-color: #212121;
+    }
+
+    div.oslinks {
+        background: #2c2c2c;
     }
 
     /* Search fix hacks */
@@ -534,7 +547,6 @@ a.sitesearch:hover {
 
     .gsc-results {
         background-color: #252525 !important;
-        
     }
 
     .gsc-above-wrapper-area {
