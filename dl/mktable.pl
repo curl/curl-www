@@ -64,8 +64,10 @@ sub sortent {
 
 @sall = sort sortent @all;
 
-my %osmap = ('Win32' => 'Windows 32 bit',
-             'Win64' => 'Windows 64 bit');
+my %osmap = ('Win32'    => 'Windows 32 bit',
+             'Win64'    => 'Windows 64 bit',
+             'Mac OS X' => 'macOS');
+
 my $shownprev;
 sub top {
     my ($os, $flav, $aname, $img)=@_;
@@ -77,9 +79,9 @@ sub top {
     if($flav) {
         $os .= " - $flav";
     }
-    print "<tr class=\"os\"><td class=\"ostitle\" colspan=\"7\">";
+    print "<tr class=\"os\"><td class=\"ostitle\" colspan=\"3\">";
     if($img) {
-        print "$img$aname$os</td></tr>\n";
+        print "$aname$os</td><td class=\"oslogo\">$img</td></tr>\n";
     }
     else {
         print "$aname$os</td></tr>\n";
@@ -139,7 +141,7 @@ my %shown;
 my %typelong=('bin' => '<b>binary</b>',
               'devel' => 'devel',
               'source' => 'source',
-              'lib', => 'libcurl');
+              'lib' => 'libcurl');
 
 my %formats=(   'RPM' => 'application/x-rpm',
                 'deb' => 'application/x-debian-package',
@@ -204,8 +206,9 @@ for $per (@sall) {
         $numpack = scalar(keys %pack);
         $numflav = scalar(keys %fla);
 
+        my $anch;
         if(!$shown{$s}) {
-            my $anch=$s;
+            $anch=$s;
             $anch =~ s/[^a-zA-Z0-9]//g;
             $aname= "<a name=\"$anch\"></a>";
             $shown{$s}=$anch;
@@ -213,18 +216,37 @@ for $per (@sall) {
         my $c = "${s}${f}";
         if($flav) {
             if(!$shown{"$c"}) {
-                my $anch="$c";
+                $anch="$c";
                 $anch =~ s/[^a-zA-Z0-9]//g;
                 $aname .= "<a name=\"$anch\"></a>";
                 $shown{"$c"}=$anch;
             }
         }
         my $img;
-        if($$per{'img'}) {
+        if($$per{'img'} && -f "../pix/".$$per{'img'}) {
             my $alt = "$os";
             $alt =~ s/-//g;
             $alt =~ s/  / /g;
-            $img="<img width=\"200\" height=\"30\" alt=\"$alt\" src=\"pix/".$$per{'img'}."\" border=\"0\" align=\"right\">";
+            $img="<img alt=\"$alt\" src=\"pix/".$$per{'img'}."\">";
+        }
+        # If not set explicitly or missing, find logos automatically by using
+        # the flavour or os name as the image filename.
+        else {
+            my $imgid;
+            if($flav) {
+                $imgid=$flav;
+            }
+            else {
+                $imgid=$s;
+            }
+            $imgid =~ s/[^a-zA-Z0-9]//g;
+            $imgid=lc $imgid;
+            if(   -f "../pix/".$imgid.".svg") {
+                $img="<img alt=\"$anch\" src=\"pix/".$imgid.".svg\">";
+            }
+            elsif(-f "../pix/".$imgid.".png") {
+                $img="<img alt=\"$anch\" src=\"pix/".$imgid.".png\">";
+            }
         }
         top($s, $flav, $aname, $img);
         $prevos = $sortos;
