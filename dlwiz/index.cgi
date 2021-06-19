@@ -139,7 +139,7 @@ sub showsteps {
     my @step=('Package Type', 'OS', 'Flavour',
               'OS Version', 'CPU');
     my $r;
-    my $img = " <img alt=\">\" src=\"/arrow.png\"> ";
+    my $img = " &rarr; ";
     my $escos=CGI::escape($pick_os);
 
     print "<p>";
