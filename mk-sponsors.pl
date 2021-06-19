@@ -4,24 +4,23 @@
 
 ## Silver sponsors
 
+# URLs must match exactly the one retrieved from opencollective.com
 my %silver = (
-    'https://ostriching.se' => 'Ostriching.se.jpg',
-    "https://followerspromotion.com/" => 'FPlogo.png',
-    "https://buy.fineproxy.org/eng/" => 'fineproxy.png',
-    "https://www.rabattkalas.se" => 'rabattkalas.png',
-    "https://unscramblex.com/" => 'Unscramblex-black.png',
+    "https://ostriching.se" => 'Ostriching.se.jpg',
+    "https://www.rabattkalas.se" => 'rabattkalas.svg',
+    "https://unscramblex.com/" => 'unscramblex.svg',
     "https://www.romab.com" => '[none]',
     "https://www.airbnb.com/" => '[none]',
-    "https://www.premium-minds.com" => 'premium-minds.png',
+    "https://www.premium-minds.com" => 'premium-minds.svg',
     "https://www.partitionwizard.com" => 'partitionwizard.jpg',
-    "https://www.crosswordsolver.com" => 'CrosswordSolver.png',
+    "https://www.crosswordsolver.com" => 'CrosswordSolver.svg',
     "https://www.minitool.com" => 'minitool.png',
     "https://www.maid2clean.co.uk/domestic-cleaning/" => 'maid2clean.png',
     "https://icons8.com" => 'icons8.png'
     );
 my %modurl = (
     "https://followerspromotion.com/" =>
-    'https://followerspromotion.com/buy-instagram-likes/',
+    "https://followerspromotion.com/buy-instagram-likes/",
     );
 
 # the URLs
