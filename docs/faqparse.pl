@@ -21,7 +21,7 @@ while(<STDIN>) {
         if($_ =~ /^===========/) {
             # output the TOC with links to question-anchors
             $state = 3;
-            
+
             my $s=0;
             my $o=0;
             for(@toc) {
@@ -40,7 +40,7 @@ while(<STDIN>) {
             }
 
             print "<hr>\n";
-            
+
             next;
         }
         if($_ =~ /([0-9.]+\.[0-9]+) (.*)/) {
@@ -128,7 +128,7 @@ while(<STDIN>) {
                     print "</pre>\n";
                     undef @pre;
                 }
-                
+
                 # prevent many blanks
                 my $show = $_;
                 my $pref=0;
@@ -144,7 +144,7 @@ while(<STDIN>) {
                     $line++;
                 }
                 if($oldpref == $pref) {
-                    print " $show " if($blank < 2);                    
+                    print " $show " if($blank < 2);
                 }
                 elsif($line) {
                     print "<p>$show";

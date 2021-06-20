@@ -66,7 +66,7 @@ for my $str (@releases) {
     chomp $dateymd;
     my $daysbetween;
     my $deltadays=0;
-    
+
     if($prevsecs) {
         # number of seconds between two releases!
         # (plus one hour to make DST switches not reduce days)
@@ -77,7 +77,7 @@ for my $str (@releases) {
 
         # deltadays is the number of days between two releases
         $deltadays = abs($prevdays - $daysbetween);
-        
+
         if($daysbetween < 100) {
             $age = "$daysbetween days";
         }
@@ -110,7 +110,7 @@ for my $str (@releases) {
     }
 
     $prevstr=$str;
-}    
+}
 
 
 head();
@@ -138,7 +138,7 @@ for my $str (@releases) {
         $i++;
     }
     my $anchor = $str;
-    
+
     $anchor =~ s/\./_/g;
 
     if($raw) {
@@ -187,7 +187,7 @@ for my $str (@releases) {
                $bugfixes{$str}, $changes{$str},
                $totalbugs, $totalchanges);
     }
- 
+
     ++$l;
 }
 

@@ -57,4 +57,3 @@ system("(cd ../cvssource/tests && ./keywords.pl) > keywords.t 2>/dev/null");
 
 # rebuild the HTML
 system("make -k >/dev/null 2>&1");
-

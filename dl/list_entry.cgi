@@ -38,7 +38,7 @@ sub sortent {
 @sall = sort sortent @all;
 
 print "<table cellpadding=\"1\" cellspacing=\"0\"><tr class=\"tabletop\">\n";
-    
+
 for $h (('Package',
          'Version',
          'Update',
@@ -124,7 +124,7 @@ for $per (@sall) {
     if($churl eq "-") {
         $churl = "";
     }
-        
+
     printf("%s</td>", $here?"Local":($churl?"Auto":""));
 
     if($here || $$per{'churl'}) {
@@ -164,4 +164,3 @@ print "</table>",
 
 # Skriv ut sidfoten
 lfooter();
-

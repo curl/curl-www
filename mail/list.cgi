@@ -26,7 +26,7 @@ sub showarchs {
     }
 
     @syears = sort { $b <=> $a } keys %years;
-    
+
     print "<table cellspacing=\"3\">\n";
 
     my $i=0;
@@ -171,4 +171,3 @@ MOO
 
 &catfile("mail.html");
 &catfile("../foot.html");
-
