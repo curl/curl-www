@@ -1,8 +1,8 @@
 #include "_doctype.html"
-<HTML>
-<HEAD> <TITLE>curl - Internal Design</TITLE>
+<html>
+<head> <title>curl - Internal Design</title>
 #include "css.t"
-</HEAD>
+</head>
 
 #define CURL_DOCS
 #define DOCS_INTERNALS
@@ -22,6 +22,5 @@ TITLE(INTERNALS -- how things work inside)
 
 #include "_footer.html"
 
-</BODY>
-</HTML>
-
+</body>
+</html>

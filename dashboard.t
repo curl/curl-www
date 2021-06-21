@@ -1,6 +1,6 @@
 #include "_doctype.html"
-<HTML>
-<HEAD> <TITLE>curl - Project status dashboard</TITLE>
+<html>
+<head> <title>curl - Project status dashboard</title>
 #include "css.t"
 <style type="text/css">
 .contents {
@@ -16,7 +16,7 @@ img.dash {
 }
 #endif
 </style>
-</HEAD>
+</head>
 
 #define CURL_DASHBOARD
 #define CURL_URL dashboard.html
@@ -76,5 +76,5 @@ source data. The first and last lines of data is shown on the right.
  at <a href="https://github.com/curl/stats">github.com/curl/stats</a>.
 
 #include "_footer.html"
-</BODY>
-</HTML>
+</body>
+</html>

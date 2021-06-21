@@ -1,7 +1,5 @@
 #!/usr/bin/perl
 
-# $Id$
-
 use strict;
 
 require "CGI.pm";

@@ -8,7 +8,7 @@ my @ord = ( "th", "st", "nd", "rd", "th",
             "th", "th", "th", "th", "th",
             "th", "th", "th", "th", "th",
             "th", "th", "th", "th", "th" );
- 
+
 my %mnum = ( Jan => 0, Feb => 1, Mar => 2, Apr => 3, May => 4, Jun => 5,
              Jul => 6, Aug => 7, Sep => 8, Oct => 9, Nov => 10, Dec => 11 );
 
@@ -28,7 +28,7 @@ sub reltime {
     }
     elsif ( $diff > 5*86400 ) {
         # not last week
-        $str = sprintf( "%d%s %s %02d:%02d", 
+        $str = sprintf( "%d%s %s %02d:%02d",
                         $mday, $ord[ $mday % 20 ], $mname[$mon],
                         $hour, $min);
     }
@@ -36,7 +36,7 @@ sub reltime {
         # last week
         $str = sprintf( "%s %02d:%02d", $dname[$wday], $hour, $min );
     }
-    
+
     return $str;
 }
 
@@ -77,7 +77,7 @@ sub reldate {
         # same day
         $str = "today";
     }
-    
+
     return $str;
 }
 

@@ -1,11 +1,16 @@
-ROOT = ../..
+ROOT=../..
 
 include $(ROOT)/mainparts.mk
 include $(ROOT)/setup.mk
 
 MAINPARTS += _menu.html
 
-all: index.html schedule.html roadmap.html api.html app.html
+all: \
+ index.html \
+ schedule.html \
+ roadmap.html \
+ api.html \
+ app.html
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)

@@ -1,4 +1,4 @@
-ROOT = ..
+ROOT=..
 
 SRCROOT=$(ROOT)/cvssource
 DOCROOT=$(SRCROOT)/docs

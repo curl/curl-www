@@ -1,8 +1,8 @@
 #include "_doctype.html"
-<HTML>
-<HEAD> <TITLE>curl - the latest packages!</TITLE>
+<html>
+<head> <title>curl - the latest packages!</title>
 #include "css.t"
-</HEAD>
+</head>
 
 #define CURL_LATEST
 
@@ -16,5 +16,5 @@ TITLE(The Latest Packages from Here or Mirrors)
 <!--#include virtual="/latest.t" -->
 
 #include "_footer.html"
-</BODY>
-</HTML>
+</body>
+</html>
