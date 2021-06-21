@@ -61,7 +61,7 @@
 # Lines beginning with # or whitespace are ignored
 # -----------------------------------
 #
-#  Large database files can be parsed with the parse-funktions.
+#  Large database files can be parsed with the parse-functions.
 #
 #  A database file is locked when opened, and unlocked when closed. So only one
 # user can access a database.  Remember to keep your actions small and fast.
