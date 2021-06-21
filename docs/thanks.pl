@@ -18,7 +18,7 @@ my %cramped = ("al" => 1,
                "mar" => 1,
                "dav" => 1,
                "and" => 1);
-             
+
 while(<STDIN>) {
     chomp;
     my $n=$_;
@@ -37,7 +37,7 @@ while(<STDIN>) {
                 }
             }
         }
-        
+
         $letter{$l} .= "$n, ";
     }
     elsif($n) {

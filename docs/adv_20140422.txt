@@ -8,7 +8,7 @@ VULNERABILITY
 -------------
 
 libcurl keeps a pool of its last few connections around after use to
-fascilitate easy, conventient and completely transparent connection re-use for
+fascilitate easy, convenient and completely transparent connection re-use for
 applications.
 
 When doing HTTP requests NTLM authenticated, the entire connection becomes

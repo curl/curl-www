@@ -115,7 +115,7 @@ while(<DATA>) {
         $host{$curl}=$host;
         $where{$curl}=$where;
     }
-      
+
 }
 close(DATA);
 
@@ -161,12 +161,12 @@ sub time_ago {
 
 if($latest::version{$what}) {
     my $archive=$name{$what};
-            
+
     my @dl =split('\|\|\|', $download{$archive});
-            
+
     # set to 1 if the local file is newer than the mirrors!
     my $alert=0;
-    
+
     my $desc=$latest::desc{$what};
 
     if($latest::file{$what} ne $archive) {
@@ -182,9 +182,9 @@ if($latest::version{$what}) {
     my ($sha256, $dummy2)=split(" ", $sha256full);
 
     print "<h2>$archive</h2>\n";
-            
+
     print "<b>What:</b> $desc\n",
-            
+
     "<br><b>SHA-256:</b> <tt>$sha256</tt>\n",
     "<br><b>SHA-1:</b> <tt>$sha1</tt>\n",
     "<br><b>Size:</b> ".$latest::size{$what}." bytes\n",
@@ -207,7 +207,7 @@ if($latest::version{$what}) {
     $mycountry = ucfirst(lc($mycountry));
 
     # print "<p>ME: $tld in $cont\n";
-    
+
     for(@dl) {
         my $url=$_;
         my $flag = country2tld($where{$url});
@@ -233,7 +233,7 @@ if($latest::version{$what}) {
         "<a href=\"download/$archive\">$archive</a></ul>\n";
     }
     else {
-        
+
         print " ".($#dl+1)." known sites ",
         "(<a href=\"#verified\">verified</a> ".&time_ago.")\n";
 
@@ -246,7 +246,7 @@ if($latest::version{$what}) {
         elsif($inmycontinent) {
             print "<p>$inmycontinent of these mirrors are located in ".ucfirst(lc($mycontinent))." where it looks like you are located. Showing those mirrors only! <a href=\"$script?curl=$whate&amp;all=yes\">Show all mirrors</a>\n";
         }
-        
+
         print "<table summary=\"List of curl download mirror locations\"><thead><tr class=\"tabletop\">";
         for(('&nbsp;', 'Location', 'Download', 'Proto', 'Host')) {
             print "<th>$_</th>";
@@ -319,5 +319,3 @@ MOO
 ;
 
 &footer();
-
-

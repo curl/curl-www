@@ -67,4 +67,3 @@ else {
     logdnld_file_not_found();
     exit(0);
 }
-

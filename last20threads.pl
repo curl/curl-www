@@ -72,7 +72,7 @@ my $c;
 my %shown;
 
 print <<MOO
-<table align="center" class="latestmail" cellpadding="2" cellspacing="0" 
+<table align="center" class="latestmail" cellpadding="2" cellspacing="0"
  summary="lists several recent curl mailing list postings">
 <caption>Recent discussions on the mailing lists</caption>
 <tr class="tabletop">

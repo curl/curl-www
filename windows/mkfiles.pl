@@ -138,7 +138,7 @@ if($gen) {
     $gensuff = sprintf "_%d", $gen;
 }
 
-# generate downlowd links for deps
+# generate download links for deps
 for(@alldeps) {
     for my $arch ('win32', 'win64') {
         printf "#define DL_%s_%s %s/%s-%s%s-%s-mingw.zip\n",

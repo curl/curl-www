@@ -302,7 +302,7 @@ if($pick_type && !$pick_os) {
     elsif($ua =~ /RISC OS|NetSurf/i) {
         $sel_os = "RISC OS";
     }
-    elsif($ua =~ /Symbian|EPOC/i) {	# EPOC is on from the old Psions
+    elsif($ua =~ /Symbian|EPOC/i) {     # EPOC is on from the old Psions
         $sel_os = "Symbian OS";
     }
     elsif($ua =~ /OSF1/i) {
@@ -323,16 +323,16 @@ if($pick_type && !$pick_os) {
     elsif($ua =~ /Palm/i) {
         $sel_os = "Palm OS";
     }
-    elsif($ua =~ /Embedix/i) {	# Embedded Linux distro from Lineo
+    elsif($ua =~ /Embedix/i) {  # Embedded Linux distro from Lineo
         $sel_os = "Linux";
     }
-    elsif($ua =~ /Qtopia/i) {	# Linux-based GUI
+    elsif($ua =~ /Qtopia/i) {   # Linux-based GUI
         $sel_os = "Linux";
     }
-    elsif($ua =~ /MOT-E2/i) {	# Motorola ROKR E2 phone device
+    elsif($ua =~ /MOT-E2/i) {   # Motorola ROKR E2 phone device
         $sel_os = "Linux";
     }
-    elsif($ua =~ /P800|P900/i) {	# Sony Ericsson P800/P900 phone
+    elsif($ua =~ /P800|P900/i) {        # Sony Ericsson P800/P900 phone
         $sel_os = "Symbian OS";
     }
     elsif($ua =~ /Indy Library|Microsoft/i) {     # Windows-only client library
@@ -489,7 +489,7 @@ if(!$pick_flav && $pick_os && $pick_type) {
             $sel_flav = "Android";
         }
 
-	# Non-Linux flavours
+        # Non-Linux flavours
         elsif($ua=~ /cygwin/i) {
             $sel_flav = "cygwin";
         }

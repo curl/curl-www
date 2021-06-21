@@ -3,14 +3,14 @@
 # | '_ \| '_ \ / _` / __|/ _ \
 # | |_) | |_) | (_| \__ \  __/
 # | .__/|_.__/ \__,_|___/\___|
-# |_| 
+# |_|
 #
 # A simple database in pure perl.
-# 
+#
 # Main author: Kjell.Ericson@haxx.se
 #
-# Non-commercial use: Do whatever you want with it. If you add something 
-# usefull then send me a copy of it so I can replace the current version.
+# Non-commercial use: Do whatever you want with it. If you add something
+# useful then send me a copy of it so I can replace the current version.
 #
 # Commercial use: Send me an email and tell me that you use it.
 #
@@ -25,7 +25,7 @@
 # to one row of a database table.  Each field of a database table corresponds
 # to an item of the hash-array.
 #  The database is loaded only once.  The user can decide to select parts of
-# the database into selections.  You can always get back an old selection if 
+# the database into selections.  You can always get back an old selection if
 # you've stored the current selection with the "clone_selection"-function.
 #  Every function (except delete) only acts on the current selection.
 #
@@ -84,8 +84,8 @@
 #                                    than, using "<" or ">" (see "-").
 # v1.3 2000-Jan-24  Kjell Ericson - Added find()
 # v1.4 2000-Jan-24  Kjell Ericson - sort("-...") didn't work.
-# v1.5 2000-Feb-29  Björn Stenberg - removed some warnings.
-# v1.6 2000-Mar-02  Kjell Ericson - removed more warnings (not all). 
+# v1.5 2000-Feb-29  BjÃ¶rn Stenberg - removed some warnings.
+# v1.6 2000-Mar-02  Kjell Ericson - removed more warnings (not all).
 # v1.7 2000-Mar-11  Kjell Ericson - Adding more comments.
 # v1.8 2000-Jun-28  Kjell Ericson - Added "<" at open()-calls
 # v1.9 2001-Nov-19  Kjell Ericson - Fixed save-append
@@ -102,9 +102,9 @@
 # |  __/>  < (_| | | | | | | |_) | |  __|__ \
 #  \___/_/\_\__,_|_| |_| |_| .__/|_|\___|___/
 #                          |_|
-# I let these example talk for themselfes.
+# I let these example talk for themselves.
 #
-# ## First a little example how to open and print a whole database. 
+# ## First a little example how to open and print a whole database.
 #
 # $db=new pbase;
 # $db->open("databasename");
@@ -169,7 +169,7 @@ return 1;
 # Output: id of the created row
 # Example:
 #   $db->add("name", "kjell", "sex", "male");
-#   
+#
 #
 sub add
 {
@@ -203,7 +203,7 @@ sub add
 # Output: id we used
 #
 # Note: If id is "", then the ID is taken from the data.
-# Note: An add() will be perfomed if he id is nonvalid
+# Note: An add() will be performed if the id is invalid
 # Examples:
 #   $db->change("id", 123456, "name", "kjell", "sex", "male");
 #   $db->change("pos", 0, "name", "Willy");
@@ -382,13 +382,13 @@ sub error_log
 }
 
 #>find
-#   __ _           _ 
+#   __ _           _
 #  / _(_)_ __   __| |
 # | |_| | '_ \ / _` |
 # |  _| | | | | (_| |
 # |_| |_|_| |_|\__,_|
-# Find first row of the current selection that fit the criterias
-# Input: Hasharray containing the field-name and a regex-pattern that it must 
+# Find first row of the current selection that fit the criteria
+# Input: Hasharray containing the field-name and a regex-pattern that it must
 #        match. A minus-sign in front of a field name will negate the match
 # Output: reference to a hash-array containing the row or -1 for error
 # Example:
@@ -423,13 +423,13 @@ sub find
 }
 
 #>find_all
-#   __ _           _ 
+#   __ _           _
 #  / _(_)_ __   __| |
 # | |_| | '_ \ / _` |
 # |  _| | | | | (_| |
 # |_| |_|_| |_|\__,_|
-# Find first row of the current selection that fit the criterias
-# Input: Hasharray containing the field-name and a regex-pattern that it must 
+# Find first row of the current selection that fit the criteria
+# Input: Hasharray containing the field-name and a regex-pattern that it must
 #        match. A minus-sign in front of a field name will negate the match
 # Output: array of references to a hash-array-rows
 # Example:
@@ -472,7 +472,7 @@ sub find_all
 # |  _| | | | | (_| |   | | (_| |
 # |_| |_|_| |_|\__,_|___|_|\__,_|
 #                  |_____|
-# Find the array-position of an row-ID so you know whats above and below.
+# Find the array-position of an row-ID so you know what's above and below.
 # Input: id - ID to find the array-position of
 # Output: array-position or -1 for error
 # Example:
@@ -513,7 +513,7 @@ sub find_id_in_database
 # | (_| |  __/ |_
 #  \__, |\___|\__|
 #  |___/
-# Get a row 
+# Get a row
 # Input: row position to get
 # Output: reference to a hash-array containing the row
 # Example: $ref=$db->get(10);
@@ -592,7 +592,7 @@ sub get_id
 # Get the type of a fieldname.
 # Returns 'string', 'int' or 'bin' if the field exist.
 # Returns an empty string ("") if the field doesn't exist.
-# 
+#
 # Input: fieldname
 # Output: typename
 #
@@ -648,7 +648,7 @@ sub internal_sort_function
 # | |/ _ \ / _` |/ _` |
 # | | (_) | (_| | (_| |
 # |_|\___/ \__,_|\__,_|
-# backward compability - so far...  See open()
+# backward compatility - so far...  See open()
 # Will produce a row in the pbase_error.log file.
 # Input: filename
 # Output: Database size or -1 for error
@@ -717,7 +717,7 @@ sub load_template
 #        data - hasharray to add
 # Output: Used id
 #
-# Note: An add() will be perfomed if he id is nonvalid
+# Note: An add() will be performed if the id is invalid
 # Example: modify($id, "name", "kjell", "sex", "male");
 #
 sub modify
@@ -894,7 +894,7 @@ sub parse_close
 sub parse_eof
 {
     my($self)=@_;
-    
+
     return eof($self->{parse_file});
 }
 
@@ -1071,8 +1071,8 @@ sub save
 # / __|/ _ \ |/ _ \/ __| __|
 # \__ \  __/ |  __/ (__| |_
 # |___/\___|_|\___|\___|\__|
-# Remove rows of the current selection that doesn't fit the criterias
-# Input: Hasharray containing the field-name and a regex-pattern that it must 
+# Remove rows of the current selection that doesn't fit the criteria
+# Input: Hasharray containing the field-name and a regex-pattern that it must
 #        match. A minus-sign in front of a field name will negate the match
 # Output: Size of the current selection
 #
@@ -1165,7 +1165,7 @@ sub set_selection
 #            |_____|  |___/|_|
 #
 # Define what kind of type a fieldname is ('string', 'int' or 'bin').
-# 
+#
 # Input: fieldname
 #        type ('string', 'int' or 'bin')
 # Output: nothing
@@ -1212,9 +1212,9 @@ sub sort
     my ($self)=@_;
     shift @_;
     @{$self->{sort_args}}=@_;
-    @{$self->{selectionlist}[$self->{selection}]} = 
-        sort { 
-            $self->internal_sort_function($a, $b) 
+    @{$self->{selectionlist}[$self->{selection}]} =
+        sort {
+            $self->internal_sort_function($a, $b)
             } @{$self->{selectionlist}[$self->{selection}]};
 }
 
@@ -1226,7 +1226,7 @@ sub sort
 # |___/\___/|_|   \__|___\___|_.__/
 #                   |_____|
 # Sort the current selection with an own defined callback function
-# Input: Reference to a callback function taking reference to two 
+# Input: Reference to a callback function taking reference to two
 #        hash-array and returning -1, 0 or 1 depending on their relation.
 # Output: nothing
 #
@@ -1235,13 +1235,13 @@ sub sort
 #            local ($ref1, $ref2)=@_;
 #            return ( $$ref1{"name"} cmp $$ref2{"name"});
 #          }
-#      
+#
 sub sort_cb
 {
     my($self, $subroutine)=@_;
 
-    @{$self->{selectionlist}[$self->{selection}]} = 
-        sort {&$subroutine(\%{$self->{Database}[$a]}, 
+    @{$self->{selectionlist}[$self->{selection}]} =
+        sort {&$subroutine(\%{$self->{Database}[$a]},
                             \%{$self->{Database}[$b]}) } @{$self->{selectionlist}[$self->{selection}]};
 }
 
@@ -1255,5 +1255,3 @@ sub version
 {
     return $version;
 }
-
-

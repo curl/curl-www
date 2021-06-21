@@ -16,5 +16,5 @@ if(open(my $logfile, "<$log")) {
             print "WARN: $line";
         }
     }
-    close($logfile);    
+    close($logfile);
 }

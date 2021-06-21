@@ -257,7 +257,7 @@ sub gettype {
         return($1, "win32-devel-ssl",
                "Windows libcurl devel SSL-enabled");
     }
-    
+
 }
 
 sub scanstatus {

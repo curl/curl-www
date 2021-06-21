@@ -242,16 +242,16 @@ else {
             else {
                 next;
             }
-            
+
             if("$lyear$lmonth$lday" ne $prevdate) {
                 if($prevdate) {
                     tablebot();
                 }
                 tabletop("$lyear$lmonth$lday");
             }
-            
+
             $prevdate ="$lyear$lmonth$lday";
-            
+
             print TABLE $_;
         }
         tablebot();
@@ -406,7 +406,7 @@ sub endofsingle {
             $res .= "<td>";
         } else {
             $res .= "<td class=\"buildfine\">$testfine";
-	}
+        }
 
         if($skipped) {
             #$res .= "+$skipped";

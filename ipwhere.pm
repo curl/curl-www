@@ -542,18 +542,18 @@ sub country2tld {
     my ($cntr)=@_;
 
     if ($cntr =~ /^Great Britain/) {
-    	return "uk";	# TLD is uk, not gb
+        return "uk";    # TLD is uk, not gb
     }
 
     for (keys(%tld2cntr)) {
         if ($cntr =~ /^$tld2cntr{$_}/) {
-        	return $_;
+            return $_;
         }
     }
 
     # This is a pretty vague regex, so match it only as a last resort
     if ($cntr =~ /US/) {
-    	return "us";
+        return "us";
     }
     return "";
 }

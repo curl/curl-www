@@ -121,7 +121,7 @@ for(sort keys %os) {
 print "</div>\n";
 
 print "\n<p><table class=\"download2\" cellpadding=\"0\" cellspacing=\"0\">\n";
-    print "<tr>\n";    
+    print "<tr>\n";
     for $h (('Package',
              'Version',
              'Type',
@@ -141,17 +141,17 @@ my %typelong=('bin' => '<b>binary</b>',
               'source' => 'source',
               'lib', => 'libcurl');
 
-my %formats=(	'RPM' => 'application/x-rpm',
-		'deb' => 'application/x-debian-package',
-		'ipk' => 'application/octet-stream',
-		'iso' => 'application/octet-stream',
-		'lha' => 'application/octet-stream',
-		'pkg' => 'application/octet-stream',
-		'tar' => 'application/x-tar',
-		'tar+Z' => 'application/x-compress',
-		'tar+bz2' => 'application/x-bzip2',
-		'tar+gz' => 'application/x-gzip',
-		'zip' => 'application/zip');
+my %formats=(   'RPM' => 'application/x-rpm',
+                'deb' => 'application/x-debian-package',
+                'ipk' => 'application/octet-stream',
+                'iso' => 'application/octet-stream',
+                'lha' => 'application/octet-stream',
+                'pkg' => 'application/octet-stream',
+                'tar' => 'application/x-tar',
+                'tar+Z' => 'application/x-compress',
+                'tar+bz2' => 'application/x-bzip2',
+                'tar+gz' => 'application/x-gzip',
+                'zip' => 'application/zip');
 
 my $numcpu; # for this particular OS
 my $numpack; # for this particular OS
@@ -279,7 +279,7 @@ for $per (@sall) {
     if($em =~ /:\/\//) {
         # email is a plain URL
     }
-    elsif($em =~ /@/) { 
+    elsif($em =~ /@/) {
         $em =~ s/\@/%20at%20/g;
         $em =~ s/\./%20dot%20/g;
         $em = "mailto:$em";
@@ -296,4 +296,3 @@ for $per (@sall) {
 bot();
 
 print "</table>";
-
