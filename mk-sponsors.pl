@@ -19,8 +19,6 @@ my %silver = (
     "https://icons8.com" => 'icons8.png'
     );
 my %modurl = (
-    "https://followerspromotion.com/" =>
-    "https://followerspromotion.com/buy-instagram-likes/",
     );
 
 # the URLs
