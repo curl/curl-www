@@ -864,7 +864,7 @@ if($pick_os && $pick_flav && $pick_ver && $pick_cpu) {
     }
 
     if($img) {
-        printf("<img src=\"/pix/%s\" align=\"right\">", $img);
+        printf("<img class=\"oslogo\" src=\"/pix/%s\" align=\"right\">", $img);
     }
     if($fl eq "-") {
         $fl = "";
