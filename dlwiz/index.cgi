@@ -407,6 +407,9 @@ if($pick_type && !$pick_os) {
             elsif($_ eq "Win64") {
                 $show = "Windows 64 bit";
             }
+            elsif($_ eq "Mac OS X") {
+                $show = "macOS";
+            }
 
             print "<option$s value=\"$_\">$show</option>\n";
         }
