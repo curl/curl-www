@@ -139,7 +139,17 @@ td.ostitle {
   margin: 0px 0px 0px 0px;
   border-top: 1px solid black;
   border-left: 1px solid black;
-  border-right: 1px solid black;
+}
+
+td.oslogo {
+  padding: 4px;
+  margin: 0px;
+  background-color: white;
+  border-top: 1px solid black;
+}
+
+td.oslogo img {
+  height: 30px;
 }
 
 /* download page */
@@ -164,13 +174,6 @@ td.ostitle {
 .col1 {
   border-left: 1px solid black;
   margin: 0px 0px 0px 0px;
-  border-bottom: none;
-  border-top: none;
-}
-
-.col7 {
-  margin: 0px 0px 0px 0px;
-  border-right: 1px solid black;
   border-bottom: none;
   border-top: none;
 }
@@ -530,6 +533,10 @@ a.sitesearch:hover {
     .older2 {
         color: white;
         background-color: #212121;
+    }
+
+    td.oslogo {
+        background-color: white;
     }
 
     div.oslinks {
