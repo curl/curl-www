@@ -68,6 +68,12 @@ my %osmap = ('Win32'    => 'Windows 32 bit',
              'Win64'    => 'Windows 64 bit',
              'Mac OS X' => 'macOS');
 
+# Manually associate os-flavour pair with a pix filename (without extension)
+my %autoimgmap = (
+    'HurdArch' => 'archhurd',
+    'Win64'    => 'win32',
+);
+
 my $shownprev;
 sub top {
     my ($os, $flav, $aname, $img)=@_;
@@ -233,7 +239,10 @@ for $per (@sall) {
         # the flavour or os name as the image filename.
         else {
             my $imgid;
-            if($flav) {
+            if($autoimgmap{$anch}) {
+                $imgid=$autoimgmap{$anch}
+            }
+            elsif($flav) {
                 $imgid=$flav;
             }
             else {
