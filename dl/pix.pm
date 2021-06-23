@@ -1,7 +1,8 @@
 # Manually associate os-flavour pair with a pix filename (without extension)
 my %autoimgmap = (
-    'HurdArch' => 'archhurd',
-    'Win64'    => 'win32',
+    'AtariMint' => 'atarimint',
+    'HurdArch'  => 'archhurd',
+    'Win64'     => 'win32',
 );
 
 # Input: requested image name, os, flavour
