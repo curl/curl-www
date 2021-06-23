@@ -223,10 +223,10 @@ for $per (@sall) {
             }
         }
         my $img;
+        my $alt = "$os";
+        $alt =~ s/-//g;
+        $alt =~ s/  / /g;
         if($$per{'img'} && -f "../pix/".$$per{'img'}) {
-            my $alt = "$os";
-            $alt =~ s/-//g;
-            $alt =~ s/  / /g;
             $img="<img alt=\"$alt\" src=\"pix/".$$per{'img'}."\">";
         }
         # If not set explicitly or missing, find logos automatically by using
@@ -242,10 +242,13 @@ for $per (@sall) {
             $imgid =~ s/[^a-zA-Z0-9]//g;
             $imgid=lc $imgid;
             if(   -f "../pix/".$imgid.".svg") {
-                $img="<img alt=\"$anch\" src=\"pix/".$imgid.".svg\">";
+                $img="<img alt=\"$alt\" src=\"pix/".$imgid.".svg\">";
             }
             elsif(-f "../pix/".$imgid.".png") {
-                $img="<img alt=\"$anch\" src=\"pix/".$imgid.".png\">";
+                $img="<img alt=\"$alt\" src=\"pix/".$imgid.".png\">";
+            }
+            elsif(-f "../pix/".$imgid.".jpg") {
+                $img="<img alt=\"$alt\" src=\"pix/".$imgid.".jpg\">";
             }
         }
         top($s, $flav, $aname, $img);
