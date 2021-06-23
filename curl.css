@@ -141,14 +141,14 @@ td.ostitle {
   border-left: 1px solid black;
 }
 
-td.oslogo {
+.oslogo {
   padding: 4px;
   margin: 0px;
   background-color: white;
   border-top: 1px solid black;
 }
 
-td.oslogo img {
+td.oslogo img, img.oslogo {
   height: 30px;
 }
 
