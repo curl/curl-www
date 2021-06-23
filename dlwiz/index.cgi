@@ -2,6 +2,7 @@
 
 require "../date.pm";
 require "../dl/pbase.pm";
+require "../dl/pix.pm";
 require "../curl.pm";
 require CGI;
 
@@ -857,9 +858,7 @@ if($pick_os && $pick_flav && $pick_ver && $pick_cpu) {
 
             push @match, $e;
 
-            if($$e{'img'}) {
-                $img = $$e{'img'};
-            }
+            $img = dlpix($$e{'img'}, $$e{'os'}, $$e{'flav'});
         }
     }
 

@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 
 require "./stuff.pm";
+require "./pix.pm";
 
 # Ladda databasen
 $db=new pbase;
@@ -67,12 +68,6 @@ sub sortent {
 my %osmap = ('Win32'    => 'Windows 32 bit',
              'Win64'    => 'Windows 64 bit',
              'Mac OS X' => 'macOS');
-
-# Manually associate os-flavour pair with a pix filename (without extension)
-my %autoimgmap = (
-    'HurdArch' => 'archhurd',
-    'Win64'    => 'win32',
-);
 
 my $shownprev;
 sub top {
@@ -228,37 +223,12 @@ for $per (@sall) {
                 $shown{"$c"}=$anch;
             }
         }
-        my $img;
-        my $alt = "$os";
-        $alt =~ s/-//g;
-        $alt =~ s/  / /g;
-        if($$per{'img'} && -f "../pix/".$$per{'img'}) {
-            $img="<img alt=\"$alt\" src=\"pix/".$$per{'img'}."\">";
-        }
-        # If not set explicitly or missing, find logos automatically by using
-        # the flavour or os name as the image filename.
-        else {
-            my $imgid;
-            if($autoimgmap{$anch}) {
-                $imgid=$autoimgmap{$anch}
-            }
-            elsif($flav) {
-                $imgid=$flav;
-            }
-            else {
-                $imgid=$s;
-            }
-            $imgid =~ s/[^a-zA-Z0-9]//g;
-            $imgid=lc $imgid;
-            if(   -f "../pix/".$imgid.".svg") {
-                $img="<img alt=\"$alt\" src=\"pix/".$imgid.".svg\">";
-            }
-            elsif(-f "../pix/".$imgid.".png") {
-                $img="<img alt=\"$alt\" src=\"pix/".$imgid.".png\">";
-            }
-            elsif(-f "../pix/".$imgid.".jpg") {
-                $img="<img alt=\"$alt\" src=\"pix/".$imgid.".jpg\">";
-            }
+        my $img = dlpix($$per{'img'}, $s, $flav);
+        if($img) {
+            my $alt = "$os";
+            $alt =~ s/-//g;
+            $alt =~ s/  / /g;
+            $img="<img alt=\"$alt\" src=\"pix/".$img."\">";
         }
         top($s, $flav, $aname, $img);
         $prevos = $sortos;
