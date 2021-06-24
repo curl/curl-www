@@ -431,7 +431,7 @@ WHO Daniel Stenberg
 DESC How to deprecate things, what we're deprecating and how we introduce experimental features.
 ENDOFVIDEO
 
-VIDEO Governance and money 
+VIDEO Governance and money
 EVENT curl-up 2019
 URL https://youtu.be/a9UpMuYTTrs
 SLIDES https://curl.se/video/curlup-2019/2019-03-30-governance.pdf
@@ -515,7 +515,7 @@ ENDOFVIDEO
 
 VIDEO 5 years of libcurl bindings for R
 EVENT curl-up 2020
-URL https://www.youtube.com/watch?v=jGv5pugYpN0
+URL https://youtu.be/jGv5pugYpN0
 THUMB libcurl-for-r.jpg
 THUMBSIZE width="250" height="140"
 DURATION 22 minutes
@@ -532,7 +532,7 @@ THUMBSIZE width="250" height="140"
 DURATION 22 minutes
 DATE 2020-05-08
 WHO James Fuller
-DESC Presentation on the official curl docker image (http://github.com/curl/curl-docker).
+DESC Presentation on the official curl docker image (https://github.com/curl/curl-docker).
 ENDOFVIDEO
 
 VIDEO HTTP/3 in curl
@@ -608,7 +608,7 @@ ENDOFVIDEO
 
 VIDEO curl security 2021
 EVENT curl-up 2021
-URL https://www.youtube.com/watch?v=LkdoC6r5Clg
+URL https://youtu.be/LkdoC6r5Clg
 THUMB curl-security-2021.jpg
 THUMBSIZE width="250" height="140"
 DATE 2021-04-29
@@ -630,7 +630,7 @@ ENDOFVIDEO
 
 VIDEO Interfacing Rust
 EVENT curl-up 2021
-URL https://www.youtube.com/watch?v=0qkecU8AQkc
+URL https://youtu.be/0qkecU8AQkc
 THUMB interfacing-rust.jpg
 THUMBSIZE width="250" height="141"
 DATE 2021-05-01
@@ -641,7 +641,7 @@ ENDOFVIDEO
 
 VIDEO Curl performance (er…application profiling)
 EVENT curl-up 2021
-URL https://www.youtube.com/watch?v=suyQblfo3NQ
+URL https://youtu.be/suyQblfo3NQ
 THUMB curl-performance-tools.jpg
 THUMBSIZE width="250" height="141"
 DATE 2021-05-04

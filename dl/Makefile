@@ -1,4 +1,3 @@
-
 TARGET = files.html
 
 all: $(TARGET)

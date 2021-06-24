@@ -2,7 +2,7 @@
 <html lang="en">
 <head> <title>curl - Changes</title>
 #include "css.t"
-</HEAD>
+</head>
 
 #define CURL_CHANGES
 #define CURL_URL changes.html
@@ -41,9 +41,9 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
-#define RELEASEVIDEO(desc,video)                                       \
-  <div style="height: 3em; line-height: 3em; font-size: 120%;">  \
-  <a href=video>                        \
+#define RELEASEVIDEO(desc,video)  \
+  <div style="height: 3em; line-height: 3em; font-size: 120%;"> \
+  <a href=video> \
   <img src="pix/play.svg" alt="Play video" height="100%" style="float: left; margin-right: 1em;"> desc </a> \
   </div>
 
@@ -371,7 +371,7 @@ SUBTITLE(Fixed in 7.76.0 - March 31 2021)
  BGF <a href="https://curl.se/bug/?i=6677">version.d: Add missing features to the features list</a>
  BGF <a href="https://curl.se/bug/?i=6616">wolfssl: don&apos;t store a NULL sessionid</a>
 </ul>
-  
+
 <a name="7_75_0"></a>
 SUBTITLE(Fixed in 7.75.0 - February 3 2021)
 <p>
@@ -775,7 +775,7 @@ SUBTITLE(Fixed in 7.73.0 - October 14 2020)
  BGF <a href="https://curl.se/bug/?i=5854">win32: drop support for WinSock version 1, require version 2</a>
  BGF <a href="https://curl.se/bug/?i=5861">winbuild: convert the instruction text to README.md</a>
 </ul>
-  
+
 <a name="7_72_0"></a>
 SUBTITLE(Fixed in 7.72.0 - August 19 2020)
 <p>
@@ -1760,7 +1760,7 @@ SUBTITLE(Fixed in 7.66.0 - September 11 2019)
  BGF <a href="https://curl.se/bug/?i=4290">urldata: avoid &#39;generic&#39;, use dedicated pointers</a>
  BGF <a href="https://curl.se/bug/?i=3848">vauth: Use CURLE_AUTH_ERROR for auth function errors</a>
 </ul>
-    
+
 <a name="7_65_3"></a>
 SUBTITLE(Fixed in 7.65.3 - July 19 2019)
 <p> Bugfixes:
@@ -2683,7 +2683,7 @@ SUBTITLE(Fixed in 7.61.0 - July 11 2018)
  BGF <a href="https://curl.se/bug/?i=2656">darwinssl: allow High Sierra users to build the code using GCC</a>
  BGF <a href="https://curl.se/bug/?i=2718">scripts: include _curl as part of CLEANFILES</a>
 </ul>
-    
+
 <a name="7_60_0"></a>
 SUBTITLE(Fixed in 7.60.0 - May 16 2018)
 <p> Changes:
@@ -3913,7 +3913,7 @@ SUBTITLE(Fixed in 7.51.0 - November 2 2016)
  BGF configure: Fix test syntax for monotonic clock_gettime
  BGF <a href="https://curl.se/bug/?i=1059">CURLMOPT_MAX_PIPELINE_LENGTH.3: Clarify it&#39;s not for HTTP/2</a>
 </ul>
-    
+
 <a name="7_50_3"></a>
 SUBTITLE(Fixed in 7.50.3 - September 14 2016)
 <p> Bugfixes:
@@ -3930,7 +3930,7 @@ SUBTITLE(Fixed in 7.50.3 - September 14 2016)
  BGF <a href="https://curl.se/bug/?i=1004">mbedtls: switch off NTLM in build if md4 isn&#39;t available</a>
  BGF <a href="https://curl.se/bug/?i=1007">curl: --create-dirs on windows groks both forward and backward slashes</a>
 </ul>
-    
+
 <a name="7_50_2"></a>
 SUBTITLE(Fixed in 7.50.2 - September 7 2016)
 <p> Bugfixes:
@@ -3984,7 +3984,7 @@ SUBTITLE(Fixed in 7.50.2 - September 7 2016)
  BGF <a href="https://curl.se/bug/?i=993">darwinssl: test for errSecSuccess in PKCS12 import rather than noErr</a>
  BGF <a href="https://curl.se/bug/?i=995">openssl: fix CURLINFO_SSL_VERIFYRESULT</a>
 </ul>
-    
+
 <a name="7_50_1"></a>
 SUBTITLE(Fixed in 7.50.1 - August 3 2016)
 <p> Bugfixes:
@@ -4264,7 +4264,7 @@ SUBTITLE(Fixed in 7.48.0 - March 23 2016)
  BGF Fixed various compilation warnings when verbose strings disabled
  BGF <a href="https://curl.se/bug/?i=715">sshserver: remove use of AuthorizedKeysFile2</a>
 </ul>
-    
+
 <a name="7_47_1"></a>
 SUBTITLE(Fixed in 7.47.1 - February 8 2016)
 <p> Bugfixes:
@@ -9986,5 +9986,5 @@ SUBTITLE(Fixed in 4.0 - March 20 1998)
  The first curl release. The tool was named urlget before this. And httpget before that.
 
 #include "_footer.html"
-</BODY>
-</HTML>
+</body>
+</html>

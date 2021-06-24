@@ -46,7 +46,7 @@ for my $f (@samps) {
 
     # now run enscript and extract the PRE part and linkify some of the libcurl
     # stuff
-    # 
+    #
     open(ET, ">$encfile");
     open(CMD, "$cmd|");
     my $show=0;

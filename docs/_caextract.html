@@ -1,8 +1,8 @@
 #include "_doctype.html"
-<HTML>
-<HEAD> <TITLE>curl - Extract CA Certs from Mozilla</TITLE>
+<html>
+<head> <title>curl - Extract CA Certs from Mozilla</title>
 #include "css.t"
-</HEAD>
+</head>
 
 #define CURL_DOCS
 #define PROT_DOCS
@@ -30,7 +30,7 @@ TITLE(CA certificates extracted from Mozilla)
 
 <p>
   This bundle was generated at <b> CA_DATE </b>.
- 
+
 <p>
  This PEM file contains the datestamp of the conversion and we only make a new
  conversion if there's a change in either the script or the source file. This
@@ -42,11 +42,11 @@ SUBTITLE(File name)
  Some programs will expect this file to be named <tt>ca-bundle.crt</tt> (in
  the correct path). curl on windows has a system to find it if
  named <tt>curl-ca-bundle.crt</tt>.
- 
+
 SUBTITLE(Older CA file revisions per date of appearance)
 <p><ul>
 #include "../ca/pemlist.gen"
-</ul>    
+</ul>
 
 SUBTITLE(Missing Name Constraints)
 <p>
@@ -54,7 +54,7 @@ SUBTITLE(Missing Name Constraints)
 of those CAs have constraints in Firefox (and other browsers) to only be
 allowed for certain domains and other similar additional conditions. Those
 constraints are thus <b>not</b> brought along in this cacert file!
-  
+
 SUBTITLE(CA certificate store license)
 <p>
  The PEM file is only a converted version of the original one and thus it is
@@ -89,5 +89,5 @@ SUBTITLE(Convert from your local Firefox installation)
 
 #include "_footer.html"
 
-</BODY>
-</HTML>
+</body>
+</html>

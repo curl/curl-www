@@ -85,4 +85,3 @@ CURLMcode curl_multi_socket_all(CURLM *multi_handle,
  * Returns: CURLM error code.
  */
 CURLMcode curl_multi_timeout(CURLM *multi_handle, long *milliseconds);
-

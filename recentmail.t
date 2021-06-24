@@ -1,4 +1,4 @@
-<table align="center" class="latestmail" cellpadding="2" cellspacing="0" 
+<table align="center" class="latestmail" cellpadding="2" cellspacing="0"
  summary="lists several recent curl mailing list postings">
 <caption>Recent Mails on the Mailing Lists</caption>
 <tr class="tabletop">

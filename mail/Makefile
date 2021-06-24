@@ -1,16 +1,30 @@
-ROOT = ..
+ROOT=..
 
 SRCROOT=$(ROOT)/cvssource
 DOCROOT=$(SRCROOT)/docs
-CURL= $(ROOT)
+CURL=$(ROOT)
 
-MAINPARTS= $(ROOT)/_doctype.html $(CURL)/_menu.html $(CURL)/_footer.html \
- $(CURL)/setup.t $(CURL)/where.t $(ROOT)/css.t
+MAINPARTS= \
+ $(ROOT)/_doctype.html \
+ $(CURL)/_menu.html \
+ $(CURL)/_footer.html \
+ $(CURL)/setup.t \
+ $(CURL)/where.t \
+ $(ROOT)/css.t
 
 ACTION=@echo preprocessing $@; rm -f $@; fcpp -I.. -I. -WWW -Uunix -P -H -C -V -LL $< $@;
 
-PAGES = subscribe.html mail.html etiquette.html index.html indexheader.html \
- indexfooter.html mailheader.html mailfooter.html lost.html mailman.html
+PAGES = \
+ subscribe.html \
+ mail.html \
+ etiquette.html \
+ index.html \
+ indexheader.html \
+ indexfooter.html \
+ mailheader.html \
+ mailfooter.html \
+ lost.html \
+ mailman.html
 
 all: $(PAGES)
 

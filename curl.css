@@ -1,4 +1,4 @@
-BODY {
+body {
   background-color: white;
   font-family: arial, helvetica, ariel, sans-serif;
   font-size: 20px;
@@ -470,7 +470,7 @@ a.sitesearch:hover {
 /* DARK MODE PROPERTIES */
 /* These will override all settings above */
 @media (prefers-color-scheme: dark) {
-    BODY {
+    body {
         background-color: #212121;
         /* Try to keep it a bit light but not too grey,
            so it doesn't impact people with accessibility needs */

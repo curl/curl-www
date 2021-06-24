@@ -1,7 +1,5 @@
 #!/usr/bin/perl -I.
 
-# $Id$
-
 use strict;
 use HTTP::Date;
 

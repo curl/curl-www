@@ -1,4 +1,3 @@
-
 require "CGI.pm";
 
 our $root="/var/www/html";

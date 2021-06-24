@@ -7,4 +7,3 @@
 #define TRODD  <tr class="odd">
 
 #define TREND </tr>
-

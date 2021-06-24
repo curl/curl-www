@@ -1,5 +1,5 @@
-ROOT = ..
-SRCROOT= ../cvssource
+ROOT=..
+SRCROOT=../cvssource
 DOCROOT=$(SRCROOT)/docs
 MANROOT=$(DOCROOT)/libcurl
 OPTMAN=$(DOCROOT)/libcurl/opts
@@ -10,9 +10,21 @@ include $(ROOT)/setup.mk
 MAINPARTS += _menu.html ../alert.t
 FCPP_OPTS = -DSHOW_ALERT
 
-PAGES= index.html mail.html competitors.html comparison-table.html	  \
-     relatedlibs.html features.html wininet.html libwww.html libsoup.html \
-     theysay.html bindings.html abi.html neon.html security.html
+PAGES= \
+ index.html \
+ mail.html \
+ competitors.html \
+ comparison-table.html \
+ relatedlibs.html \
+ features.html \
+ wininet.html \
+ libwww.html \
+ libsoup.html \
+ theysay.html \
+ bindings.html \
+ abi.html \
+ neon.html \
+ security.html
 
 MAN2HTMLBASIC = roffit --bare --mandir=$(MANROOT) --mandir=$(OPTMAN) --mandir=$(DOCROOT) --hrefdir=c
 # postprocess the roffit HTML to add links to curl error codes
@@ -20,6 +32,7 @@ MAN2HTML= ( $(MAN2HTMLBASIC) | perl -0x20 -pe '/(CURL(E|M|SHE)_\w*)/; $$err=$$er
 
 all: $(PAGES)
 	cd c; make
+	cd using; make
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)

@@ -40,7 +40,7 @@ ${name}.html: $name.html.gen \$(MANPARTS) $name.gen
 $name.gen: \$(MANROOT)/opts/$name.3
 	\$(MAN2HTML) <\$< >\$@
 $name.html.gen: all-easy.gen
-        
+
 moo
     ;
     close(M);
@@ -89,7 +89,7 @@ for(sort @all) {
 
     my $l = sprintf ("<tr><td><a href=\"$_.html\">$_</a></td><td>%s</td></tr>\n",
                      $desc{$_});
-    
+
     if($_ =~ /^CURLOPT/) {
         print IDXE $l;
     }
@@ -108,4 +108,3 @@ print IDXI "</table>\n";
 close(IDXE);
 close(IDXM);
 close(IDXI);
-

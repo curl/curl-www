@@ -1,10 +1,10 @@
-ROOT = ..
+ROOT=..
 
 SRCROOT=$(ROOT)/cvssource
 DOCROOT=$(SRCROOT)/docs
 TESTROOT=$(SRCROOT)/tests
 LIBROOT=$(SRCROOT)/lib
-CURL= $(ROOT)
+CURL=$(ROOT)
 
 include $(ROOT)/mainparts.mk
 include $(ROOT)/setup.mk

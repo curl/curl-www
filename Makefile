@@ -18,31 +18,31 @@ include setup.mk
 MAINPARTS += _menu.html alert.t
 FCPP_OPTS = -DSHOW_ALERT
 
-PAGES=						\
- 404.html					\
- about.html					\
- book.html					\
- changes.html					\
- dashboard.html					\
- dashboardd.html				\
- dashboard5.html				\
- dashboard1.html				\
- donation.html					\
- download.html					\
- foot.html					\
- gethelp.html					\
- head.html					\
- index.html					\
- info						\
- libs.html					\
- mirrors.html					\
- news.html					\
- newslog.html					\
- oldnews.html					\
- search.html					\
- sponsors.html					\
- support.html					\
- web-editing.html				\
+PAGES= \
+ 404.html \
+ about.html \
+ book.html \
+ changes.html \
+ dashboard.html \
+ dashboardd.html \
+ dashboard5.html \
+ dashboard1.html \
+ donation.html \
+ download.html \
+ foot.html \
+ gethelp.html \
+ head.html \
+ index.html \
+ info \
+ libs.html \
+ mirrors.html \
+ news.html \
+ newslog.html \
+ oldnews.html \
+ search.html \
+ sponsors.html \
+ support.html \
+ web-editing.html \
  download/index.html
 
 all: $(PAGES)
