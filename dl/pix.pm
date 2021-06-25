@@ -21,14 +21,16 @@ sub dlpix {
         if($autoimgmap{"$os$flav"}) {
             $imgid=$autoimgmap{"$os$flav"};
         }
-        elsif($flav) {
-            $imgid=$flav;
-        }
         else {
-            $imgid=$os;
+            if($flav) {
+                $imgid=$flav;
+            }
+            else {
+                $imgid=$os;
+            }
+            $imgid =~ s/[^a-zA-Z0-9]//g;
+            $imgid=lc $imgid;
         }
-        $imgid =~ s/[^a-zA-Z0-9]//g;
-        $imgid=lc $imgid;
         if(   -f '../pix/'.$imgid.'.svg') {
             $img=$imgid.'.svg';
         }
