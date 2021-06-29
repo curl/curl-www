@@ -521,18 +521,13 @@ a.sitesearch:hover {
         color: white;
     }
 
-    td.ostitle {
+    td.ostitle, .older2 {
         color: white;
         background-color: #212121;
     }
 
-    .download2 {
+    .download2, div.quote {
         background-color: #2c2c2c;
-    }
-
-    .older2 {
-        color: white;
-        background-color: #212121;
     }
 
     td.oslogo {
