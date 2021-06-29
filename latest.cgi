@@ -37,7 +37,7 @@ my $inmycontinent;
 sub otherarchive {
 
     print "<form method=\"GET\" action=\"$script\">\n";
-    print "<p> Select another archive: \n";
+    print "<p> Select another archive:\n";
     print "<select name=\"curl\">\n";
     for(sort {$latest::desc{$a} cmp $latest::desc{$b}} keys %latest::desc) {
         my $def;
@@ -129,7 +129,7 @@ sub flag {
     my $tld = country2tld($country);
 
     if($tld) {
-        return "<img src=\"/pix/flags/$tld.png\" alt=\"$tld\">";
+        return "<img height=\"14\" src=\"/pix/flags/$tld.svg\" alt=\"$tld\">";
     }
 
     return "&nbsp;";
