@@ -1,6 +1,7 @@
 # Manually associate os-flavour pair with a pix filename (without extension)
 my %autoimgmap = (
     'LinuxUnslung' => 'unslung2',
+    'SerenityOS'   => 'serenityos2',
     'HurdArch'     => 'archhurd',
     'Win32'        => 'win32-2',
     'Win64'        => 'win32-2',
