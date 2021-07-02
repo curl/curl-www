@@ -538,6 +538,14 @@ a.sitesearch:hover {
         background: #2c2c2c;
     }
 
+    .dash {
+        filter: invert(0.86) hue-rotate(100deg);
+    }
+    .dash:hover {
+        /* becomes a dark color with the filter above applied */
+        background-color: #f8f8f8;
+    }
+
     /* Search fix hacks */
     .gsc-webResult.gsc-result, .gsc-results .gsc-imageResult {
         background-color: #212121 !important;
