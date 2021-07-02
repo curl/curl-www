@@ -1,6 +1,5 @@
 #!/usr/bin/perl
 
-require "../latest.pm";
 require "./stuff.pm";
 
 # Ladda databasen

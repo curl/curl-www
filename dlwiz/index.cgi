@@ -6,10 +6,6 @@ require "../dl/pix.pm";
 require "../curl.pm";
 require CGI;
 
-require "../latest.pm";
-
-#$req = new CGI;
-
 print "Content-Type: text/html; charset=UTF-8\n\n";
 
 my $ua = $ENV{'HTTP_USER_AGENT'};
@@ -719,7 +715,6 @@ sub single {
     my $ssh=$$e{'ssh'} eq "Yes"?"SSH enabled":"";
 
     my $sslenable=$$e{'ssl'} eq "No"?"disabled":"enabled";
-    my $mirror=$$e{'re'} ne "-"?"<a href=\"https://curl.se/latest.cgi?curl=$$e{'re'}\">mirrored versions</a>":"";
     my $pack=$$e{'pack'};
     my $aboutver;
     my $version=$$e{'curl'};
@@ -774,7 +769,7 @@ MOO
 <div class="yellowbox">
 <a href="$file"><img src="/pix/GS-Download-icon.svg" width="90" height="90" style="float:left;"></a>
 curl version: $version - SSL $sslenable $ssh
-<br>URL:&nbsp;<a href="$file">$show</a> $mirror
+<br>URL:&nbsp;<a href="$file">$show</a> 
 $provided
 </div>
 MOO
