@@ -7,7 +7,6 @@
 # URLs must match exactly the one retrieved from opencollective.com
 my %silver = (
     "https://ipinfo.io/" => 'ipinfo.svg',
-    "https://ostriching.se" => 'Ostriching.se.jpg',
     "https://www.rabattkalas.se" => 'rabattkalas.svg',
     "https://unscramblex.com/" => 'unscramblex.svg',
     "https://www.romab.com" => '[none]',
