@@ -39,3 +39,8 @@ You are allowed to resize the images and host them yourself as you see fit.
 |------|------|------------|---------|
 | [curl-up.png](curl-up.png) | 70K | 2573 x 707 | PNG |
 | [curl-up.svg](curl-up.svg) | 5.8K | vector | SVG |
+
+## Colors
+
+curl blue: `#0a3754`
+curl green: `#0f574c`
