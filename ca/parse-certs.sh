@@ -15,7 +15,7 @@ fi
 tmpfile=mytmpfile.txt
 header="header"
 
-echo "Processing $1" 
+echo "Processing $1"
 
 tmprb=tmprb.rb
 
@@ -89,4 +89,3 @@ done
 mv $tmpfile $2
 
 echo "Done.."
-

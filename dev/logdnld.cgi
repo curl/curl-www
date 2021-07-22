@@ -1,7 +1,5 @@
 #!/usr/bin/perl
 
-# $Id$
-
 use strict;
 
 require "CGI.pm";
@@ -67,4 +65,3 @@ else {
     logdnld_file_not_found();
     exit(0);
 }
-

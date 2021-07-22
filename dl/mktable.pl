@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 
 require "./stuff.pm";
+require "./pix.pm";
 
 # Ladda databasen
 $db=new pbase;
@@ -64,8 +65,10 @@ sub sortent {
 
 @sall = sort sortent @all;
 
-my %osmap = ('Win32' => 'Windows 32 bit',
-             'Win64' => 'Windows 64 bit');
+my %osmap = ('Win32'    => 'Windows 32 bit',
+             'Win64'    => 'Windows 64 bit',
+             'Mac OS X' => 'macOS');
+
 my $shownprev;
 sub top {
     my ($os, $flav, $aname, $img)=@_;
@@ -77,9 +80,9 @@ sub top {
     if($flav) {
         $os .= " - $flav";
     }
-    print "<tr class=\"os\"><td class=\"ostitle\" colspan=\"7\">";
+    print "<tr class=\"os\"><td class=\"ostitle\" colspan=\"3\">";
     if($img) {
-        print "$img$aname$os</td></tr>\n";
+        print "$aname$os</td><td class=\"oslogo\">$img</td></tr>\n";
     }
     else {
         print "$aname$os</td></tr>\n";
@@ -121,7 +124,7 @@ for(sort keys %os) {
 print "</div>\n";
 
 print "\n<p><table class=\"download2\" cellpadding=\"0\" cellspacing=\"0\">\n";
-    print "<tr>\n";    
+    print "<tr>\n";
     for $h (('Package',
              'Version',
              'Type',
@@ -139,19 +142,19 @@ my %shown;
 my %typelong=('bin' => '<b>binary</b>',
               'devel' => 'devel',
               'source' => 'source',
-              'lib', => 'libcurl');
+              'lib' => 'libcurl');
 
-my %formats=(	'RPM' => 'application/x-rpm',
-		'deb' => 'application/x-debian-package',
-		'ipk' => 'application/octet-stream',
-		'iso' => 'application/octet-stream',
-		'lha' => 'application/octet-stream',
-		'pkg' => 'application/octet-stream',
-		'tar' => 'application/x-tar',
-		'tar+Z' => 'application/x-compress',
-		'tar+bz2' => 'application/x-bzip2',
-		'tar+gz' => 'application/x-gzip',
-		'zip' => 'application/zip');
+my %formats=(   'RPM' => 'application/x-rpm',
+                'deb' => 'application/x-debian-package',
+                'ipk' => 'application/octet-stream',
+                'iso' => 'application/octet-stream',
+                'lha' => 'application/octet-stream',
+                'pkg' => 'application/octet-stream',
+                'tar' => 'application/x-tar',
+                'tar+Z' => 'application/x-compress',
+                'tar+bz2' => 'application/x-bzip2',
+                'tar+gz' => 'application/x-gzip',
+                'zip' => 'application/zip');
 
 my $numcpu; # for this particular OS
 my $numpack; # for this particular OS
@@ -204,8 +207,9 @@ for $per (@sall) {
         $numpack = scalar(keys %pack);
         $numflav = scalar(keys %fla);
 
+        my $anch;
         if(!$shown{$s}) {
-            my $anch=$s;
+            $anch=$s;
             $anch =~ s/[^a-zA-Z0-9]//g;
             $aname= "<a name=\"$anch\"></a>";
             $shown{$s}=$anch;
@@ -213,18 +217,18 @@ for $per (@sall) {
         my $c = "${s}${f}";
         if($flav) {
             if(!$shown{"$c"}) {
-                my $anch="$c";
+                $anch="$c";
                 $anch =~ s/[^a-zA-Z0-9]//g;
                 $aname .= "<a name=\"$anch\"></a>";
                 $shown{"$c"}=$anch;
             }
         }
-        my $img;
-        if($$per{'img'}) {
+        my $img = dlpix($$per{'img'}, $s, $flav);
+        if($img) {
             my $alt = "$os";
             $alt =~ s/-//g;
             $alt =~ s/  / /g;
-            $img="<img width=\"200\" height=\"30\" alt=\"$alt\" src=\"pix/".$$per{'img'}."\" border=\"0\" align=\"right\">";
+            $img="<img alt=\"$alt\" src=\"pix/".$img."\">";
         }
         top($s, $flav, $aname, $img);
         $prevos = $sortos;
@@ -279,7 +283,7 @@ for $per (@sall) {
     if($em =~ /:\/\//) {
         # email is a plain URL
     }
-    elsif($em =~ /@/) { 
+    elsif($em =~ /@/) {
         $em =~ s/\@/%20at%20/g;
         $em =~ s/\./%20dot%20/g;
         $em = "mailto:$em";
@@ -296,4 +300,3 @@ for $per (@sall) {
 bot();
 
 print "</table>";
-

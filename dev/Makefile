@@ -1,10 +1,10 @@
-ROOT = ..
+ROOT=..
 
 SRCROOT=$(ROOT)/cvssource
 DOCROOT=$(SRCROOT)/docs
 TESTROOT=$(SRCROOT)/tests
 LIBROOT=$(SRCROOT)/lib
-CURL= $(ROOT)
+CURL=$(ROOT)
 
 include $(ROOT)/mainparts.mk
 include $(ROOT)/setup.mk
@@ -13,13 +13,31 @@ MAINPARTS += _menu.html
 MKRELNOTES = ./mk-release-notes.pl
 MAN2HTML = roffit --bare
 
-PAGES = foot.html head.html howto.html summary.html \
-	missing.html keywords.html builds.html release-notes.html	\
-	index.html contribute.html internals.html testcurl.html		\
-	runtests.html source.html secprocess.html roadmap.html		\
-	sourceactivity.html release-procedure.html code-style.html      \
-        deprecate.html code-review.html feature-window.html		\
-	new-protocol.html test-fileformat.html
+PAGES = \
+ foot.html \
+ head.html \
+ howto.html \
+ summary.html \
+ missing.html \
+ keywords.html \
+ builds.html \
+ release-notes.html \
+ index.html \
+ contribute.html \
+ internals.html \
+ testcurl.html \
+ runtests.html \
+ source.html \
+ secprocess.html \
+ roadmap.html \
+ sourceactivity.html \
+ release-procedure.html \
+ code-style.html \
+ deprecate.html \
+ code-review.html \
+ feature-window.html \
+ new-protocol.html \
+ test-fileformat.html
 
 all: $(PAGES)
 

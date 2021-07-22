@@ -2,7 +2,7 @@
 <html lang="en">
 <head> <title>curl - Changes</title>
 #include "css.t"
-</HEAD>
+</head>
 
 #define CURL_CHANGES
 #define CURL_URL changes.html
@@ -41,11 +41,204 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
-#define RELEASEVIDEO(desc,video)                                       \
-  <div style="height: 3em; line-height: 3em; font-size: 120%;">  \
-  <a href=video>                        \
+#define RELEASEVIDEO(desc,video)  \
+  <div style="height: 3em; line-height: 3em; font-size: 120%;"> \
+  <a href=video> \
   <img src="pix/play.svg" alt="Play video" height="100%" style="float: left; margin-right: 1em;"> desc </a> \
   </div>
+
+<a name="7_78_0"></a>
+SUBTITLE(Fixed in 7.78.0 - July 21 2021)
+<p>
+  RELEASEVIDEO(curl 7.78.0 release video, "https://youtu.be/XHaJGFj6wVg")
+<p> Changes:
+<ul class="changes">
+ CHG <a href="https://curl.se/bug/?i=7073">curl_url_set: reject spaces in URLs w/o CURLU_ALLOW_SPACE</a>
+ CHG <a href="https://curl.se/bug/?i=7175">CURLE_SETOPT_OPTION_SYNTAX: new error name for wrong setopt syntax</a>
+ CHG <a href="https://curl.se/bug/?i=7039">hostip: make &apos;localhost&apos; return fixed values</a>
+ CHG <a href="https://curl.se/bug/?i=7157">mbedtls: add support for cert and key blob options</a>
+ CHG <a href="https://curl.se/bug/?i=7176">metalink: remove all support for it</a>
+ CHG <a href="https://curl.se/bug/?i=7243">mqtt: add support for username and password</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.se/bug/?i=7273">--socks4[a]: clarify where the host name is resolved</a>
+ BGF <a href="https://curl.se/mail/lib-2021-06/0003.html">ares: always store IPv6 addresses first</a>
+ BGF <a href="https://curl.se/bug/?i=7248">asyn-ares: remove check for &apos;data&apos; in Curl_resolver_cancel</a>
+ BGF <a href="https://curl.se/bug/?i=7133">bearssl: explicitly initialize all fields of Curl_ssl</a>
+ BGF <a href="https://curl.se/bug/?i=7133">bearssl: remove incorrect const on variable that is modified</a>
+ BGF <a href="https://curl.se/bug/?i=7377">build: fix compiler warnings when CURL_DISABLE_VERBOSE_STRINGS</a>
+ BGF <a href="https://curl.se/bug/?i=493">c-hyper: abort CONNECT response reading early on non 2xx responses</a>
+ BGF <a href="https://curl.se/bug/?i=7348">c-hyper: add support for transfer-encoding in the request</a>
+ BGF <a href="https://curl.se/bug/?i=7350">c-hyper: bail on too long response headers</a>
+ BGF <a href="https://curl.se/bug/?i=7139">c-hyper: clear NTLM auth buffer when request is issued</a>
+ BGF <a href="https://curl.se/bug/?i=7141">c-hyper: convert HYPERE_INVALID_PEER_MESSAGE to CURLE_UNSUPPORTED_PROTOCOL</a>
+ BGF <a href="https://curl.se/bug/?i=7154">c-hyper: fix NTLM on closed connection tested with test159</a>
+ BGF <a href="https://curl.se/bug/?i=7209">c-hyper: fix the uploaded field in progress callbacks</a>
+ BGF <a href="https://curl.se/bug/?i=7143">c-hyper: handle NULL from hyper_buf_copy()</a>
+ BGF <a href="https://curl.se/bug/?i=7204">c-hyper: support CURLINFO_STARTTRANSFER_TIME</a>
+ BGF <a href="https://curl.se/bug/?i=7204">c-hyper: support CURLOPT_HEADER</a>
+ BGF <a href="https://curl.se/bug/?i=7134">ccsidcurl: fix the compile errors</a>
+ BGF <a href="https://curl.se/bug/?i=7418">CI/cirrus: install impacket from PyPI instead of FreeBSD packages</a>
+ BGF <a href="https://curl.se/bug/?i=7133">CI: add bearssl build</a>
+ BGF <a href="https://curl.se/bug/?i=7239">CI: add Circle CI</a>
+ BGF <a href="https://curl.se/bug/?i=7245">CI: add jobs using Zuul</a>
+ BGF <a href="https://curl.se/bug/?i=7167">CI: delete --enable-hsts option (it is the default now)</a>
+ BGF <a href="https://curl.se/bug/?i=7313">CI: remove travis details</a>
+ BGF <a href="https://curl.se/bug/?i=7413">cleanup: spell DoH with a lowercase o</a>
+ BGF <a href="https://curl.se/bug/?i=7028">cmake: add CURL_DISABLE_NTLM option</a>
+ BGF <a href="https://curl.se/bug/?i=7152">cmake: avoid leaking absolute paths into exported config</a>
+ BGF <a href="https://curl.se/bug/?i=7375">cmake: fix IoctlSocket FIONBIO check</a>
+ BGF <a href="https://curl.se/bug/?i=7034">cmake: fix support for UnixSockets feature on Win32</a>
+ BGF <a href="https://curl.se/bug/?i=7343">cmake: remove libssh2 feature checks</a>
+ BGF <a href="https://curl.se/bug/?i=7158">cmake: try well-known send/recv signature for Apple</a>
+ BGF <a href="https://curl.se/bug/?i=7272">configure.ac: make non-executable</a>
+ BGF <a href="https://curl.se/bug/?i=7276">configure/cmake: remove checks for many unused functions</a>
+ BGF <a href="https://curl.se/bug/?i=7028">configure: add --disable-ntlm option</a>
+ BGF <a href="https://curl.se/bug/?i=7209">configure: disable RTSP when hyper is selected</a>
+ BGF <a href="https://curl.se/bug/?i=7216">configure: do not strip out debug flags</a>
+ BGF <a href="https://curl.se/bug/?i=7367">configure: fix nghttp2 library name for static builds</a>
+ BGF <a href="https://curl.se/bug/?i=7295">configure: inhibit the implicit-fallthrough warning on gcc-12</a>
+ BGF <a href="https://curl.se/bug/?i=7211">configure: rename get-easy-option configure option to get-easy-options</a>
+ BGF <a href="https://curl.se/bug/?i=7236">conn_shutdown: if closed during CONNECT cleanup properly</a>
+ BGF <a href="https://curl.se/bug/?i=7159">conncache: lowercase the hash key for better match</a>
+ BGF <a href="https://curl.se/bug/?i=7172">cookies: track expiration in jar to optimize removals</a>
+ BGF <a href="https://curl.se/bug/?i=7314">copyright: add boiler-plate headers to CI config files</a>
+ BGF <a href="https://curl.se/bug/?i=7297">crustls: bump crustls version and use new URL</a>
+ BGF <a href="https://curl.se/bug/?i=7285">curl.h: &lt;sys/select.h&gt; is supported by VxWorks7</a>
+ BGF <a href="https://curl.se/bug/?i=7287">curl.h: include sys/select.h for NuttX RTOS</a>
+ BGF <a href="https://curl.se/bug/?i=7218">curl: ignore blank --output-dir</a>
+ BGF <a href="https://curl.se/bug/?i=7280">curl_endian: remove the unused Curl_write64_le function</a>
+ BGF <a href="https://curl.se/bug/?i=7257">curl_multibyte: Remove local encoding fallbacks</a>
+ BGF <a href="https://curl.se/bug/?i=7164">Curl_ntlm_core_mk_nt_hash: fix OOM in error path</a>
+ BGF <a href="https://curl.se/bug/?i=7148">Curl_ssl_getsessionid: fail if no session cache exists</a>
+ BGF <a href="https://curl.se/bug/?i=7219">CURLOPT_WRITEFUNCTION.3: minor update of the example</a>
+ BGF <a href="https://curl.se/bug/?i=7301">docs/BINDINGS: fix outdated links</a>
+ BGF <a href="https://curl.se/bug/?i=7352">docs/examples: use curl_multi_poll() in multi examples</a>
+ BGF <a href="https://curl.se/mail/lib-2021-06/0008.html">docs/INSTALL: remove mentions of configure --with-darwin-ssl</a>
+ BGF <a href="https://curl.se/bug/?i=7382">docs: document missing arguments to commands</a>
+ BGF <a href="https://curl.se/bug/?i=7391">docs: fix inconsistencies in EGDSOCKET documentation</a>
+ BGF <a href="https://curl.se/bug/?i=7383">docs: fix incorrect argument name reference</a>
+ BGF <a href="https://curl.se/bug/?i=7370">docs: Fix typos</a>
+ BGF <a href="https://curl.se/bug/?i=7429">docs: make docs for --etag-save match the program behaviour</a>
+ BGF <a href="https://curl.se/bug/?i=7130">docs: use --max-redirs instead of --max-redir</a>
+ BGF doh: (void)-prefix call to curl_easy_setopt
+ BGF <a href="https://curl.se/bug/?i=7227">doh: fix wrong DEBUGASSERT for doh private_data</a>
+ BGF <a href="https://curl.se/bug/?i=7386">easy: during upkeep, attach Curl_easy to connections in the cache</a>
+ BGF <a href="https://curl.se/bug/?i=7360">examples/multi-single: fix scan-build warning</a>
+ BGF <a href="https://curl.se/bug/?i=7293">examples: length-limit two sscanf() uses of %s</a>
+ BGF <a href="https://curl.se/bug/?i=7330">examples: safer and more proper read callback logic</a>
+ BGF <a href="https://curl.se/bug/?i=7179">filecheck: quietly remove test-place/&#42;~</a>
+ BGF <a href="https://curl.se/bug/?i=7328">formdata: avoid &quot;Argument cannot be negative&quot; warning</a>
+ BGF <a href="https://curl.se/bug/?i=7327">formdata: correct typecast in curl_mime_data call</a>
+ BGF <a href="https://curl.se/bug/?i=7206">GHA: add a linux-hyper job</a>
+ BGF GHA: add several libcurl tests to the hyper job
+ BGF <a href="https://curl.se/bug/?i=7205">GHA: run the newly fixed tests with hyper</a>
+ BGF <a href="https://curl.se/bug/?i=7173">github: timeout jobs on macOS after 90 minutes</a>
+ BGF <a href="https://curl.se/bug/?i=7324">glob: pass an &apos;int&apos; as len when using printf&apos;s %*s</a>
+ BGF <a href="https://curl.se/bug/?i=7277">gnutls: set the preferred TLS versions in correct order</a>
+ BGF <a href="https://curl.se/bug/?i=7151">GOVERNANCE: add &apos;user&apos;, &apos;committer&apos; and &apos;contributor&apos;</a>
+ BGF <a href="https://curl.se/bug/?i=7265">hostip: (macOS) free returned memory of SCDynamicStoreCopyProxies</a>
+ BGF <a href="https://curl.se/bug/?i=7170">hostip: bad CURLOPT_RESOLVE syntax now returns error</a>
+ BGF <a href="https://curl.se/bug/?i=7146">hsts: ignore numberical IP address hosts</a>
+ BGF HSTS: not experimental anymore
+ BGF <a href="https://github.com/curl/curl/discussions/7255">http2: clarify &apos;Using HTTP2&apos; verbose message</a>
+ BGF <a href="https://curl.se/bug/?i=7153">http2: init recvbuf struct for pushed streams</a>
+ BGF <a href="https://curl.se/mail/lib-2021-06/0001.html">http2_connisdead: handle trailing GOAWAY better</a>
+ BGF <a href="https://curl.se/bug/?i=7308">http: fix crash in rate-limited upload</a>
+ BGF <a href="https://curl.se/bug/?i=7290">http: make the haproxy support work with unix domain sockets</a>
+ BGF <a href="https://curl.se/bug/?i=7141">http_proxy: deal with non-200 CONNECT response with Hyper</a>
+ BGF <a href="https://curl.se/bug/?i=7266">hyper: propagate errors back up from read callbacks</a>
+ BGF HYPER: remove mentions of deprecated development branch
+ BGF <a href="https://curl.se/bug/?i=7228">idn: fix libidn2 with windows unicode builds</a>
+ BGF <a href="https://curl.se/bug/?i=7357">infof: remove newline from format strings, always append it</a>
+ BGF <a href="https://curl.se/bug/?i=7240">lib: don&apos;t compare fd to FD_SETSIZE when using poll</a>
+ BGF <a href="https://curl.se/bug/?i=7423">lib: fix compiler warnings with CURL_DISABLE_NETRC</a>
+ BGF <a href="https://curl.se/bug/?i=7326">lib: fix type of len passed to *printf&apos;s %*s</a>
+ BGF <a href="https://curl.se/bug/?i=7329">lib: more %u for port and int for %*s fixes</a>
+ BGF <a href="https://curl.se/bug/?i=7325">lib: use %u instead of %ld for port number printf</a>
+ BGF <a href="https://curl.se/bug/?i=7270">libcurl-security.3: mention file descriptors and forks</a>
+ BGF <a href="https://curl.se/bug/?i=7271">libssh2: limit time a disconnect can take to 1 second</a>
+ BGF <a href="https://curl.se/bug/?i=7162">mbedtls: make mbedtls_strerror always work</a>
+ BGF <a href="https://curl.se/bug/?i=7419">mbedtls: Remove unnecessary include</a>
+ BGF <a href="https://curl.se/bug/?i=7166">mqtt: detect illegal and too large file size</a>
+ BGF <a href="https://curl.se/bug/?i=7316">mqtt: extend the error message for no topic</a>
+ BGF <a href="https://curl.se/bug/?i=7361">msnprintf: return number of printed characters excluding null byte</a>
+ BGF <a href="https://curl.se/bug/?i=7248">multi: add scan-build-6 work-around in curl_multi_fdset</a>
+ BGF <a href="https://curl.se/bug/?i=7178">multi: alter transfer timeout ordering</a>
+ BGF <a href="https://curl.se/mail/lib-2021-06/0024.html">multi: do not switch off connect_only flag when closing</a>
+ BGF <a href="https://curl.se/bug/?i=7379">multi: fix crash in curl_multi_wait / curl_multi_poll</a>
+ BGF <a href="https://curl.se/bug/?i=7238">netrc: skip &apos;macdef&apos; definitions</a>
+ BGF <a href="https://curl.se/bug/?i=6896">ngtcp2: disable TLSv1.3 compatible mode when using GnuTLS</a>
+ BGF <a href="https://curl.se/bug/?i=7296">openssl: avoid static variable for seed flag</a>
+ BGF <a href="https://curl.se/bug/?i=7222">openssl: don&apos;t remove session id entry in disassociate</a>
+ BGF <a href="https://curl.se/bug/?i=7340">pinnedpubkey.d: fix formatting for version support lists</a>
+ BGF <a href="https://curl.se/bug/?i=7341">proto.d: fix formatting for paragraphs after margin changes</a>
+ BGF <a href="https://curl.se/bug/?i=7260">quiche: use send() instead of sendto() to avoid macOS issue</a>
+ BGF <a href="https://curl.se/bug/?i=7122">Revert &quot;c-hyper: handle body on HYPER_TASK_EMPTY&quot;</a>
+ BGF <a href="https://curl.se/mail/lib-2021-07/0025.html">Revert &quot;ftp: Expression &apos;ftpc-&gt;wait_data_conn&apos; is always false&quot;</a>
+ BGF <a href="https://curl.se/bug/?i=7209">runtests: also find the last test in Makefile.inc</a>
+ BGF <a href="https://curl.se/bug/?i=7185">runtests: enable &apos;hyper mode&apos; only for HTTP tests</a>
+ BGF runtests: init $VERSION to avoid warnings when using -l
+ BGF <a href="https://curl.se/bug/?i=7177">runtests: parse data/Makefile.inc instead of using make</a>
+ BGF <a href="https://curl.se/bug/?i=7212">runtests: skip disabled tests unless -f is used</a>
+ BGF <a href="https://curl.se/bug/?i=7250">rustls: remove native_roots fallback</a>
+ BGF <a href="https://curl.se/bug/?i=7138">schannel: set ALPN length correctly for HTTP/2</a>
+ BGF <a href="https://curl.se/bug/?i=7398">SChannel: Use &apos;_tcsncmp()&apos; instead</a>
+ BGF <a href="https://curl.se/docs/CVE-2021-22926.html">sectransp: check for client certs by name first, then file</a>
+ BGF <a href="https://curl.se/bug/?i=7157">setopt: fix incorrect comments</a>
+ BGF <a href="https://curl.se/bug/?i=7144">socketpair: fix potential hangs</a>
+ BGF <a href="https://curl.se/bug/?i=7345">socks4: scan for the IPv4 address in resolve results</a>
+ BGF <a href="https://curl.se/bug/?i=7095">ssl: read pending close notify alert before closing the connection</a>
+ BGF <a href="https://curl.se/mail/lib-2021-06/0018.html">sws: malloc request struct instead of using stack</a>
+ BGF <a href="https://curl.se/docs/CVE-2021-22925.html">telnet: fix option parser to not send uninitialized contents</a>
+ BGF <a href="https://curl.se/bug/?i=7344">test1116: hyper doesn&apos;t pass through &quot;surprise-trailers&quot;</a>
+ BGF <a href="https://curl.se/bug/?i=7349">test1147: hyper doesn&apos;t allow &quot;crazy&quot; request headers like built-in</a>
+ BGF <a href="https://curl.se/bug/?i=7350">test1151: added missing CRLF to work with hyper</a>
+ BGF <a href="https://curl.se/bug/?i=7209">test1216: adjusted for hyper mode</a>
+ BGF <a href="https://curl.se/bug/?i=7209">test1218: adjusted for hyper mode</a>
+ BGF <a href="https://curl.se/bug/?i=7209">test1230: adjust to work in hyper mode</a>
+ BGF <a href="https://curl.se/bug/?i=7209">test1340/1341: adjusted for hyper mode</a>
+ BGF <a href="https://curl.se/bug/?i=7209">test1438/1457: add HTTP keyword to make hyper mode work</a>
+ BGF <a href="https://curl.se/bug/?i=7334">test1514: add a CRLF to the response to make it correct</a>
+ BGF <a href="https://curl.se/bug/?i=7333">test1518: adjusted to work with hyper</a>
+ BGF <a href="https://curl.se/bug/?i=7333">test1519: adjusted to work with hyper</a>
+ BGF <a href="https://curl.se/bug/?i=7209">test1594/1595/1596: fix to work in hyper mode</a>
+ BGF <a href="https://curl.se/bug/?i=7184">test269: disable for hyper</a>
+ BGF <a href="https://curl.se/bug/?i=7209">test3010: work with hyper mode</a>
+ BGF <a href="https://curl.se/bug/?i=7203">test328: avoid a header-looking body to make hyper mode work</a>
+ BGF <a href="https://curl.se/bug/?i=7205">test339: CRLFify better to work in hyper mode</a>
+ BGF <a href="https://curl.se/bug/?i=7205">test347: CRLFify to work in hyper mode</a>
+ BGF <a href="https://curl.se/bug/?i=7205">test393: make Content-Length fit within 64 bit for hyper</a>
+ BGF <a href="https://curl.se/bug/?i=7205">test394: hyper returns a different error</a>
+ BGF <a href="https://curl.se/bug/?i=7205">test395: hyper cannot work around &gt; 64 bit content-lengths like built-in</a>
+ BGF <a href="https://curl.se/bug/?i=7205">test433: adjust for hyper mode</a>
+ BGF <a href="https://curl.se/bug/?i=7209">test434: add HTTP keyword</a>
+ BGF test500: adjust to work with hyper mode
+ BGF <a href="https://curl.se/bug/?i=7209">test566: adjust to work with hyper mode</a>
+ BGF <a href="https://curl.se/bug/?i=7209">test599: adjusted to work in hyper mode</a>
+ BGF <a href="https://curl.se/bug/?i=7208">test644: remove as duplicate of test 587</a>
+ BGF <a href="https://curl.se/bug/?i=7169">tests: fix Accept-Encoding strips to work with Hyper builds</a>
+ BGF <a href="https://curl.se/bug/?i=7271">TLS: prevent shutdown loops to get stuck</a>
+ BGF <a href="https://curl.se/bug/?i=7397">tool: make _lseeki64() macro work with the PellesC compiler</a>
+ BGF <a href="https://curl.se/bug/?i=7378">tool_help: document that --tlspassword takes a password</a>
+ BGF <a href="https://curl.se/bug/?i=7380">tool_help: remove unused define</a>
+ BGF <a href="https://curl.se/bug/?i=7248">url.c: remove two variable assigns that are never read</a>
+ BGF <a href="https://curl.se/bug/?i=7320">url: (void)-prefix a curl_url_get() call</a>
+ BGF <a href="https://curl.se/bug/?i=7183">url: bad CURLOPT_CONNECT_TO syntax now returns error</a>
+ BGF <a href="https://curl.se/bug/?i=7319">version: turn version number functions into returning void</a>
+ BGF <a href="https://curl.se/bug/?i=7165">vtls: exit addsessionid if no cache is inited</a>
+ BGF <a href="https://curl.se/docs/CVE-2021-22924.html">vtls: fix connection reuse checks for issuer cert and case sensitivity</a>
+ BGF <a href="https://curl.se/bug/?i=7274">vtls: only store TIMER_APPCONNECT for non-proxy connect</a>
+ BGF <a href="https://curl.se/bug/?i=7318">vtls: use free() not curl_free()</a>
+ BGF <a href="https://curl.se/bug/?i=7181">warnless: simplify type size handling</a>
+ BGF Win32: fix build with Watt-32
+ BGF <a href="https://curl.se/bug/?i=7253">winbuild/README: VC should be set to 6 &apos;or larger&apos;</a>
+ BGF <a href="https://curl.se/bug/?i=7446">winbuild: support alternate nghttp2 static lib name</a>
+ BGF <a href="https://curl.se/bug/?i=7358">wolfssl: failing to set a session id is not reason to error out</a>
+ BGF <a href="https://curl.se/bug/?i=7342">write-out.d: clarify urlnum is not unique for de-globbed URLs</a>
+ BGF <a href="https://curl.se/bug/?i=7311">zuul: use the new rustls directory name</a>
+</ul>
 
 <a name="7_77_0"></a>
 SUBTITLE(Fixed in 7.77.0 - May 26 2021)
@@ -371,7 +564,7 @@ SUBTITLE(Fixed in 7.76.0 - March 31 2021)
  BGF <a href="https://curl.se/bug/?i=6677">version.d: Add missing features to the features list</a>
  BGF <a href="https://curl.se/bug/?i=6616">wolfssl: don&apos;t store a NULL sessionid</a>
 </ul>
-  
+
 <a name="7_75_0"></a>
 SUBTITLE(Fixed in 7.75.0 - February 3 2021)
 <p>
@@ -775,7 +968,7 @@ SUBTITLE(Fixed in 7.73.0 - October 14 2020)
  BGF <a href="https://curl.se/bug/?i=5854">win32: drop support for WinSock version 1, require version 2</a>
  BGF <a href="https://curl.se/bug/?i=5861">winbuild: convert the instruction text to README.md</a>
 </ul>
-  
+
 <a name="7_72_0"></a>
 SUBTITLE(Fixed in 7.72.0 - August 19 2020)
 <p>
@@ -1760,7 +1953,7 @@ SUBTITLE(Fixed in 7.66.0 - September 11 2019)
  BGF <a href="https://curl.se/bug/?i=4290">urldata: avoid &#39;generic&#39;, use dedicated pointers</a>
  BGF <a href="https://curl.se/bug/?i=3848">vauth: Use CURLE_AUTH_ERROR for auth function errors</a>
 </ul>
-    
+
 <a name="7_65_3"></a>
 SUBTITLE(Fixed in 7.65.3 - July 19 2019)
 <p> Bugfixes:
@@ -2683,7 +2876,7 @@ SUBTITLE(Fixed in 7.61.0 - July 11 2018)
  BGF <a href="https://curl.se/bug/?i=2656">darwinssl: allow High Sierra users to build the code using GCC</a>
  BGF <a href="https://curl.se/bug/?i=2718">scripts: include _curl as part of CLEANFILES</a>
 </ul>
-    
+
 <a name="7_60_0"></a>
 SUBTITLE(Fixed in 7.60.0 - May 16 2018)
 <p> Changes:
@@ -3913,7 +4106,7 @@ SUBTITLE(Fixed in 7.51.0 - November 2 2016)
  BGF configure: Fix test syntax for monotonic clock_gettime
  BGF <a href="https://curl.se/bug/?i=1059">CURLMOPT_MAX_PIPELINE_LENGTH.3: Clarify it&#39;s not for HTTP/2</a>
 </ul>
-    
+
 <a name="7_50_3"></a>
 SUBTITLE(Fixed in 7.50.3 - September 14 2016)
 <p> Bugfixes:
@@ -3930,7 +4123,7 @@ SUBTITLE(Fixed in 7.50.3 - September 14 2016)
  BGF <a href="https://curl.se/bug/?i=1004">mbedtls: switch off NTLM in build if md4 isn&#39;t available</a>
  BGF <a href="https://curl.se/bug/?i=1007">curl: --create-dirs on windows groks both forward and backward slashes</a>
 </ul>
-    
+
 <a name="7_50_2"></a>
 SUBTITLE(Fixed in 7.50.2 - September 7 2016)
 <p> Bugfixes:
@@ -3984,7 +4177,7 @@ SUBTITLE(Fixed in 7.50.2 - September 7 2016)
  BGF <a href="https://curl.se/bug/?i=993">darwinssl: test for errSecSuccess in PKCS12 import rather than noErr</a>
  BGF <a href="https://curl.se/bug/?i=995">openssl: fix CURLINFO_SSL_VERIFYRESULT</a>
 </ul>
-    
+
 <a name="7_50_1"></a>
 SUBTITLE(Fixed in 7.50.1 - August 3 2016)
 <p> Bugfixes:
@@ -4264,7 +4457,7 @@ SUBTITLE(Fixed in 7.48.0 - March 23 2016)
  BGF Fixed various compilation warnings when verbose strings disabled
  BGF <a href="https://curl.se/bug/?i=715">sshserver: remove use of AuthorizedKeysFile2</a>
 </ul>
-    
+
 <a name="7_47_1"></a>
 SUBTITLE(Fixed in 7.47.1 - February 8 2016)
 <p> Bugfixes:
@@ -5361,7 +5554,7 @@ SUBTITLE(Fixed in 7.37.0 - May 21 2014)
 
 <a name="7_36_0"></a>
 SUBTITLE(Fixed in 7.36.0 - March 26 2014)
-<img src="/pix/alert.png"
+<img src="/pix/alert.svg"
 align="right" alt="Release contains security-related bug fixes" border="0">
 <p> Changes:
 <ul class="changes">
@@ -5438,7 +5631,7 @@ align="right" alt="Release contains security-related bug fixes" border="0">
 
 <a name="7_35_0"></a>
 SUBTITLE(Fixed in 7.35.0 - January 29 2014)
-<img src="/pix/alert.png"
+<img src="/pix/alert.svg"
 align="right" alt="Release contains security-related bug fix" border="0">
 <p> Changes:
 <ul class="changes">
@@ -5499,7 +5692,7 @@ align="right" alt="Release contains security-related bug fix" border="0">
 
 <a name="7_34_0"></a>
 SUBTITLE(Fixed in 7.34.0 - December 17 2013)
-<img src="/pix/alert.png"
+<img src="/pix/alert.svg"
 align="right" alt="Release contains security-related bug fix" border="0">
 <p> Changes:
 <ul class="changes">
@@ -5677,7 +5870,7 @@ SUBTITLE(Fixed in 7.32.0 - August 12 2013)
 
 <a name="7_31_0"></a>
 SUBTITLE(Fixed in 7.31.0 - June 22 2013)
-<img src="/pix/alert.png"
+<img src="/pix/alert.svg"
 align="right" alt="Release contains security-related bug fix" border="0">
 <p> Changes:
 <ul class="changes">
@@ -5735,7 +5928,7 @@ align="right" alt="Release contains security-related bug fix" border="0">
 
 <a name="7_30_0"></a>
 SUBTITLE(Fixed in 7.30.0 - April 12 2013)
-<img src="/pix/alert.png"
+<img src="/pix/alert.svg"
 align="right" alt="Release contains security-related bug fix" border="0">
 <p> Changes:
 <ul class="changes">
@@ -5818,7 +6011,7 @@ align="right" alt="Release contains security-related bug fix" border="0">
 
 <a name="7_29_0"></a>
 SUBTITLE(Fixed in 7.29.0 - February 6 2013)
-<img src="/pix/alert.png"
+<img src="/pix/alert.svg"
 align="right" alt="Release contains security-related bug fix" border="0">
 <p> Changes:
 <ul class="changes">
@@ -6100,7 +6293,7 @@ SUBTITLE(Fixed in 7.25.0 - March 22 2012)
 
 <a name="7_24_0"></a>
 SUBTITLE(Fixed in 7.24.0 - January 24 2012)
-<img src="/pix/alert.png"
+<img src="/pix/alert.svg"
 align="right" alt="Release contains security-related bug fix" border="0">
 <p> Changes:
 <ul class="changes">
@@ -6277,7 +6470,7 @@ SUBTITLE(Fixed in 7.22.0 - September 13 2011)
 </ul>
 <a name="7_21_7"></a>
 SUBTITLE(Fixed in 7.21.7 - June 23 2011)
-<a href="https://curl.se/docs/CVE-2011-2192.html"><img src="/pix/alert.png"
+<a href="https://curl.se/docs/CVE-2011-2192.html"><img src="/pix/alert.svg"
 align="right" alt="Release contains security-related bug fix" border="0"></a>
 <p> Changes:
 <ul class="changes">
@@ -6474,7 +6667,7 @@ SUBTITLE(Fixed in 7.21.3 - December 15 2010)
 
 <a name="7_21_2"></a>
 SUBTITLE(Fixed in 7.21.2 - October 13 2010)
-<a href="https://curl.se/docs/CVE-2010-3842.html"><img src="/pix/alert.png"
+<a href="https://curl.se/docs/CVE-2010-3842.html"><img src="/pix/alert.svg"
 align="right" alt="Release contains security-related bug fix" border="0"></a>
 <p> Changes:
 <ul class="changes">
@@ -6655,7 +6848,7 @@ SUBTITLE(Fixed in 7.20.1 - April 14 2010)
 
 <a name="7_20_0"></a>
 SUBTITLE(Fixed in 7.20.0 - February 9 2010)
-<a href="https://curl.se/docs/CVE-2010-0734.html"><img src="/pix/alert.png"
+<a href="https://curl.se/docs/CVE-2010-0734.html"><img src="/pix/alert.svg"
 align="right" title="Release contains security-related bug fix" alt="Release
 contains security-related bug fix" border="0"></a>
 <p> Changes:
@@ -6752,7 +6945,7 @@ SUBTITLE(Fixed in 7.19.7 - November 4 2009)
 
 <a name="7_19_6"></a>
 SUBTITLE(Fixed in 7.19.6 - August 12 2009)
-<a href="https://curl.se/docs/CVE-2009-2417.html"><img src="/pix/alert.png"
+<a href="https://curl.se/docs/CVE-2009-2417.html"><img src="/pix/alert.svg"
 align="right" title="Release contains security-related bug fix" alt="Release
 contains security-related bug fix" border="0"></a>
 <p> Changes:
@@ -6842,7 +7035,7 @@ SUBTITLE(Fixed in 7.19.5 - May 18 2009)
 
 <a name="7_19_4"></a>
 SUBTITLE(Fixed in 7.19.4 - March 3 2009)
-<a href="https://curl.se/docs/CVE-2009-0037.html"><img src="/pix/alert.png"
+<a href="https://curl.se/docs/CVE-2009-0037.html"><img src="/pix/alert.svg"
 align="right" title="Release contains security-related bug fix" alt="Release
 contains security-related bug fix" border="0"></a>
 
@@ -7287,7 +7480,7 @@ SUBTITLE(Fixed in 7.17.0 - September 13 2007)
 
 <a name="7_16_4"></a>
 SUBTITLE(Fixed in 7.16.4 - July 10 2007)
-<a href="https://curl.se/docs/CVE-2007-3564.html"><img src="/pix/alert.png"
+<a href="https://curl.se/docs/CVE-2007-3564.html"><img src="/pix/alert.svg"
 align="right" title="Release contains security-related bug fix" alt="Release
 contains security-related bug fix" border="0"></a>
 
@@ -7584,7 +7777,7 @@ SUBTITLE(Fixed in 7.15.4 - June 12 2006)
 
 <a name="7_15_3"></a>
 SUBTITLE(Fixed in 7.15.3 - March 20 2006)
-<a href="https://curl.se/docs/CVE-2006-1061.html"><img src="/pix/alert.png"
+<a href="https://curl.se/docs/CVE-2006-1061.html"><img src="/pix/alert.svg"
 align="right" alt="Release contains security-related bug fix" border="0"></a>
 <p> Changes:
 <ul class="changes">
@@ -7647,7 +7840,7 @@ SUBTITLE(Fixed in 7.15.2 - February 27 2006)
 
 <a name="7_15_1"></a>
 SUBTITLE(Fixed in 7.15.1 - December 7 2005)
-<a href="https://curl.se/docs/CVE-2005-4077.html"><img src="/pix/alert.png" align="right" alt="Release contains security-related bug fix" border="0"></a>
+<a href="https://curl.se/docs/CVE-2005-4077.html"><img src="/pix/alert.svg" align="right" alt="Release contains security-related bug fix" border="0"></a>
 <p> Changes:
 <ul class="changes">
  CHG the libcurl.pc pkgconfig file now gets installed on make install
@@ -7681,7 +7874,7 @@ SUBTITLE(Fixed in 7.15.1 - December 7 2005)
 
 <a name="7_15_0"></a>
 SUBTITLE(Fixed in 7.15.0 - October 13 2005)
-<a href="https://curl.se/docs/CVE-2005-3185.html"><img src="/pix/alert.png" align="right" alt="Release contains security-related bug fix" border="0"></a>
+<a href="https://curl.se/docs/CVE-2005-3185.html"><img src="/pix/alert.svg" align="right" alt="Release contains security-related bug fix" border="0"></a>
 <p> Changes:
 <ul class="changes">
  CHG --ftp-skip-pasv-ip / CURLOPT_FTP_SKIP_PASV_IP (sponsored by CU*Answers)
@@ -7811,7 +8004,7 @@ SUBTITLE(Fixed in 7.13.2 - April 4 2005)
 
 <a name="7_13_1"></a>
 SUBTITLE(Fixed in 7.13.1 - March 4 2005)
-<a href="/docs/security.html#BID12615"><img src="/pix/alert.png" align="right" alt="Release contains security-related bug fix" border="0"></a>
+<a href="/docs/security.html#BID12615"><img src="/pix/alert.svg" align="right" alt="Release contains security-related bug fix" border="0"></a>
 <p> Changes:
 <ul class="changes">
  CHG CURLOPT_COOKIEFILE set to "" is now activating the cookie engine
@@ -9986,5 +10179,5 @@ SUBTITLE(Fixed in 4.0 - March 20 1998)
  The first curl release. The tool was named urlget before this. And httpget before that.
 
 #include "_footer.html"
-</BODY>
-</HTML>
+</body>
+</html>

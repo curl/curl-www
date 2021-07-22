@@ -1,8 +1,8 @@
 #include "_doctype.html"
-<HTML>
-<HEAD> <TITLE>curl - Frequently Asked Questions</TITLE>
+<html>
+<head> <title>curl - Frequently Asked Questions</title>
 #include "css.t"
-</HEAD>
+</head>
 
 #define CURL_DOCS
 #define DOCS_FAQ
@@ -26,6 +26,5 @@ TITLE(FAQ -- Frequently Asked Questions)
 
 #include "_footer.html"
 
-</BODY>
-</HTML>
-
+</body>
+</html>

@@ -13,6 +13,11 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2021-22926.html|7.33.0|7.77.0|CURLOPT_SSLCERT mixup with Secure Transport|CVE-2021-22926|20210721|20210615|CWE-295: Improper Certificate Validation|1000|TLS|-",
+    "CVE-2021-22925.html|7.7|7.77.0|TELNET stack contents disclosure again|CVE-2021-22925|20210721|20210611|CWE-457: Use of Uninitialized Variable|800|TELNET|UNINIT",
+    "CVE-2021-22924.html|7.10.4|7.77.0|Bad connection reuse due to flawed path name checks|CVE-2021-22924|20210721|20210611|CWE-295: Improper Certificate Validation|1200|TLS|-",
+    "CVE-2021-22923.html|7.27.0|7.77.0|Metalink download sends credentials|CVE-2021-22923|20210721|20210530|CWE-522: Insufficiently Protected Credentials|700|Metalink|-",
+    "CVE-2021-22922.html|7.27.0|7.77.0|Wrong content via metalink not discarded|CVE-2021-22922|20210721|20210530|CWE-20: Improper Input Validation|700|Metalink|-",
     "CVE-2021-22901.html|7.75.0|7.76.1|TLS session caching disaster|CVE-2021-22901|20210526|20210429|CWE-416: Use After Free|2000|TLS|USE_AFTER_FREE",
     "CVE-2021-22898.html|7.7|7.76.1|TELNET stack contents disclosure|CVE-2021-22898|20210526|20210427|CWE-457: Use of Uninitialized Variable|1000|TELNET|UNINIT",
     "CVE-2021-22897.html|7.61.0|7.76.1|schannel cipher selection surprise|CVE-2021-22897|20210526|20210423|CWE-488: Exposure of Data Element to Wrong Session|800|TLS|-",

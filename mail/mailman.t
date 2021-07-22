@@ -15,7 +15,7 @@
 <br><a href="https://curl.se/mail/">Mailing Lists</a>
 </div>
 
-<P class="ingres"> <MM-List-Info>
+<p class="ingres"> <MM-List-Info>
 <p>
 <h2>Using <MM-List-Name></h2>
 
@@ -23,8 +23,8 @@
  study our <a href="https://curl.se/mail/etiquette.html">Mailing List
  Etiquette</a> guidelines.
 
-<p> To post a message to all the <MM-List-Name> list members, send email to <A
- HREF="mailto:<MM-Posting-Addr>"><MM-Posting-Addr></A>. You <b>must</b> be
+<p> To post a message to all the <MM-List-Name> list members, send email to
+ <a href="mailto:<MM-Posting-Addr>"><MM-Posting-Addr></a>. You <b>must</b> be
  subscribed before you post, as otherwise your mail will simply be silently
  discarded.
 
@@ -36,30 +36,30 @@
 
 <h2>Subscribing to <MM-List-Name></h2>
 
-<P> Subscribe to <MM-List-Name> by filling out the following form.  You will
+<p> Subscribe to <MM-List-Name> by filling out the following form.  You will
  be sent email requesting confirmation. The list of members is only visible to
  admins.
 
 <p>
  <MM-Subscribe-Form-Start>
- <TABLE BORDER="0" CELLSPACING="2" CELLPADDING="2">
- <TR>
-   <TD BGCOLOR="#dddddd">Your email address:</TD>
-   <TD><MM-Subscribe-Box></TD>
- </TR>
+ <table border="0" cellspacing="2" cellpadding="2">
+ <tr>
+   <td bgcolor="#dddddd">Your email address:</td>
+   <td><MM-Subscribe-Box></td>
+ </tr>
    <tr>
    <td bgcolor="#dddddd">Your name (optional):</td>
    <td><mm-fullname-box></td>
    </tr>
 
- <TR>
-   <TD BGCOLOR="#dddddd">Pick a password:</TD>
-   <TD><MM-New-Password-Box></TD>
- </TR>
- <TR> 
-   <TD BGCOLOR="#dddddd">Reenter password to confirm:</TD>
-   <TD><MM-Confirm-Password></TD>
- </TR>
+ <tr>
+   <td bgcolor="#dddddd">Pick a password:</td>
+   <td><MM-New-Password-Box></td>
+ </tr>
+ <tr>
+   <td bgcolor="#dddddd">Reenter password to confirm:</td>
+   <td><MM-Confirm-Password></td>
+ </tr>
 
  <mm-digest-question-start>
  <tr>
@@ -74,7 +74,7 @@
    <center><MM-Subscribe-Button></center>
    </td>
  </tr>
- </TABLE>
+ </table>
  <MM-Form-End>
 
  <a name="subscribers"></a>
@@ -84,5 +84,5 @@
  <MM-Form-End>
 <p>
 <a href="/cgi-bin/mailman/admin/<MM-List-Name>">admin interface</a>
-</BODY>
-</HTML>
+</body>
+</html>

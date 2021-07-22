@@ -68,7 +68,7 @@ if (CGI::param("action")) {
 
 &my_show_form();
 
-#### Formul‰rfot
+#### Formul√§rfot
 &inputstuff::form_footer();
 
 # Skriv ut sidfoten
@@ -147,7 +147,7 @@ sub alternative {
 sub my_show_form()
 {
 #####################################################3
-##### Visa formul‰ret
+##### Visa formul√§ret
     print "<form action=\"$cgi\" method=\"post\">\n";
 ##### Dolda saker
     if ($id ne "") {
@@ -207,9 +207,6 @@ sub my_show_form()
     alternative("Packager Email/URL", "email",
                 "name\@somewhere.com or URL");
 
-    alternative("Regex-name", "re",
-                "name of the package regex, see latest.cgi");
-
     alternative("Uploader", "resp",
                 "username of the person responsible for this package");
 
@@ -229,4 +226,3 @@ sub my_show_form()
 ###slut
     print "</table>\n";
 }
-

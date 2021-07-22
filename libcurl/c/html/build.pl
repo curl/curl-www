@@ -29,5 +29,5 @@ $date = sprintf("%04d%02d%02d", $year, $mon, $mday);
 # remove older archives:
 system("rm curl-html-docs-*.tar.gz");
 
-# make a copy with the current time/date 
+# make a copy with the current time/date
 system("cp curl-html-docs.tar.gz curl-html-docs-$date.tar.gz");

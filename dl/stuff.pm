@@ -54,7 +54,7 @@ FOOT
 }
 
 
-sub inputstuff::save_input 
+sub inputstuff::save_input
 {
     my %data=(@_);
     $data{"modify_time"}=time();       # stundens sekund
@@ -117,7 +117,7 @@ sub inputstuff::save_input
 
 ############
 # Skriv ut informationstext
-sub inputstuff::show_extra_messages 
+sub inputstuff::show_extra_messages
 {
     if ($warning_message ne "") {
         print "<p class=\"alert\">$warning_message</p>\n";
@@ -129,11 +129,11 @@ sub inputstuff::show_extra_messages
 
 
 
-#### Formul‰rfot
+#### Formul√§rfot
 sub inputstuff::form_footer()
 {
     print "<input type=\"submit\" name=\"action\" value=\"Save\"><br>\n";
-        
+
     if ($id) {
         print "<input type=\"submit\" name=\"action\" value=\"Save As New Entry\"><br>";
 
@@ -141,10 +141,10 @@ sub inputstuff::form_footer()
         "&nbsp;confirm:<input type=checkbox ",
         "name=\"remove_check\" value=\"1\">\n";
     }
-    
+
     print "</form>\n";
 
-################Slut pÂ formul‰r
+################Slut p√• formul√§r
 }
 
 1;

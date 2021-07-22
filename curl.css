@@ -1,4 +1,4 @@
-BODY {
+body {
   background-color: white;
   font-family: arial, helvetica, ariel, sans-serif;
   font-size: 20px;
@@ -139,7 +139,17 @@ td.ostitle {
   margin: 0px 0px 0px 0px;
   border-top: 1px solid black;
   border-left: 1px solid black;
-  border-right: 1px solid black;
+}
+
+.oslogo {
+  padding: 4px;
+  margin: 0px;
+  background-color: white;
+  border-top: 1px solid black;
+}
+
+td.oslogo img, img.oslogo {
+  height: 30px;
 }
 
 /* download page */
@@ -164,13 +174,6 @@ td.ostitle {
 .col1 {
   border-left: 1px solid black;
   margin: 0px 0px 0px 0px;
-  border-bottom: none;
-  border-top: none;
-}
-
-.col7 {
-  margin: 0px 0px 0px 0px;
-  border-right: 1px solid black;
   border-bottom: none;
   border-top: none;
 }
@@ -208,11 +211,6 @@ span.whodate {
 tr.odd {
   color: #000000;
   background-color: #e0e0e0;
-}
-
-/* used for Metalink download links */
-span.metalink {
-  font-weight: bold;
 }
 
 /* a non-selected item in the main menu */
@@ -467,7 +465,7 @@ a.sitesearch:hover {
 /* DARK MODE PROPERTIES */
 /* These will override all settings above */
 @media (prefers-color-scheme: dark) {
-    BODY {
+    body {
         background-color: #212121;
         /* Try to keep it a bit light but not too grey,
            so it doesn't impact people with accessibility needs */
@@ -518,22 +516,29 @@ a.sitesearch:hover {
         color: white;
     }
 
-    td.ostitle {
+    td.ostitle, .older2 {
         color: white;
         background-color: #212121;
     }
 
-    .download2 {
+    .download2, div.quote {
         background-color: #2c2c2c;
     }
 
-    .older2 {
-        color: white;
-        background-color: #212121;
+    td.oslogo {
+        background-color: white;
     }
 
     div.oslinks {
         background: #2c2c2c;
+    }
+
+    .dash {
+        filter: invert(0.86) hue-rotate(100deg);
+    }
+    .dash:hover {
+        /* becomes a dark color with the filter above applied */
+        background-color: #f8f8f8;
     }
 
     /* Search fix hacks */

@@ -2,12 +2,9 @@
 
 require "../date.pm";
 require "../dl/pbase.pm";
+require "../dl/pix.pm";
 require "../curl.pm";
 require CGI;
-
-require "../latest.pm";
-
-#$req = new CGI;
 
 print "Content-Type: text/html; charset=UTF-8\n\n";
 
@@ -139,7 +136,7 @@ sub showsteps {
     my @step=('Package Type', 'OS', 'Flavour',
               'OS Version', 'CPU');
     my $r;
-    my $img = " <img alt=\">\" src=\"/arrow.png\"> ";
+    my $img = " &rarr; ";
     my $escos=CGI::escape($pick_os);
 
     print "<p>";
@@ -302,7 +299,7 @@ if($pick_type && !$pick_os) {
     elsif($ua =~ /RISC OS|NetSurf/i) {
         $sel_os = "RISC OS";
     }
-    elsif($ua =~ /Symbian|EPOC/i) {	# EPOC is on from the old Psions
+    elsif($ua =~ /Symbian|EPOC/i) {     # EPOC is on from the old Psions
         $sel_os = "Symbian OS";
     }
     elsif($ua =~ /OSF1/i) {
@@ -323,16 +320,16 @@ if($pick_type && !$pick_os) {
     elsif($ua =~ /Palm/i) {
         $sel_os = "Palm OS";
     }
-    elsif($ua =~ /Embedix/i) {	# Embedded Linux distro from Lineo
+    elsif($ua =~ /Embedix/i) {  # Embedded Linux distro from Lineo
         $sel_os = "Linux";
     }
-    elsif($ua =~ /Qtopia/i) {	# Linux-based GUI
+    elsif($ua =~ /Qtopia/i) {   # Linux-based GUI
         $sel_os = "Linux";
     }
-    elsif($ua =~ /MOT-E2/i) {	# Motorola ROKR E2 phone device
+    elsif($ua =~ /MOT-E2/i) {   # Motorola ROKR E2 phone device
         $sel_os = "Linux";
     }
-    elsif($ua =~ /P800|P900/i) {	# Sony Ericsson P800/P900 phone
+    elsif($ua =~ /P800|P900/i) {        # Sony Ericsson P800/P900 phone
         $sel_os = "Symbian OS";
     }
     elsif($ua =~ /Indy Library|Microsoft/i) {     # Windows-only client library
@@ -405,6 +402,9 @@ if($pick_type && !$pick_os) {
             }
             elsif($_ eq "Win64") {
                 $show = "Windows 64 bit";
+            }
+            elsif($_ eq "Mac OS X") {
+                $show = "macOS";
             }
 
             print "<option$s value=\"$_\">$show</option>\n";
@@ -489,7 +489,7 @@ if(!$pick_flav && $pick_os && $pick_type) {
             $sel_flav = "Android";
         }
 
-	# Non-Linux flavours
+        # Non-Linux flavours
         elsif($ua=~ /cygwin/i) {
             $sel_flav = "cygwin";
         }
@@ -715,7 +715,6 @@ sub single {
     my $ssh=$$e{'ssh'} eq "Yes"?"SSH enabled":"";
 
     my $sslenable=$$e{'ssl'} eq "No"?"disabled":"enabled";
-    my $mirror=$$e{'re'} ne "-"?"<a href=\"https://curl.se/latest.cgi?curl=$$e{'re'}\">mirrored versions</a>":"";
     my $pack=$$e{'pack'};
     my $aboutver;
     my $version=$$e{'curl'};
@@ -770,7 +769,7 @@ MOO
 <div class="yellowbox">
 <a href="$file"><img src="/pix/GS-Download-icon.svg" width="90" height="90" style="float:left;"></a>
 curl version: $version - SSL $sslenable $ssh
-<br>URL:&nbsp;<a href="$file">$show</a> $mirror
+<br>URL:&nbsp;<a href="$file">$show</a> 
 $provided
 </div>
 MOO
@@ -857,14 +856,12 @@ if($pick_os && $pick_flav && $pick_ver && $pick_cpu) {
 
             push @match, $e;
 
-            if($$e{'img'}) {
-                $img = $$e{'img'};
-            }
+            $img = dlpix($$e{'img'}, $$e{'os'}, $$e{'flav'});
         }
     }
 
     if($img) {
-        printf("<img src=\"/pix/%s\" align=\"right\">", $img);
+        printf("<img class=\"oslogo\" src=\"/pix/%s\" align=\"right\">", $img);
     }
     if($fl eq "-") {
         $fl = "";

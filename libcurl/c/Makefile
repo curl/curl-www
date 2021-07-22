@@ -1,5 +1,4 @@
-
-ROOT= ../..
+ROOT=../..
 
 SRCROOT=$(ROOT)/cvssource
 DOCROOT=$(SRCROOT)/docs
@@ -30,41 +29,107 @@ include Makefile.opttargets
 
 opts = $(OPTPAGES)
 
-MIME = curl_mime_init.html curl_mime_free.html curl_mime_addpart.html	\
- curl_mime_name.html curl_mime_data.html curl_mime_data_cb.html		\
- curl_mime_filedata.html curl_mime_filename.html			\
- curl_mime_subparts.html curl_mime_type.html curl_mime_headers.html	\
+MIME = \
+ curl_mime_init.html \
+ curl_mime_free.html \
+ curl_mime_addpart.html \
+ curl_mime_name.html \
+ curl_mime_data.html \
+ curl_mime_data_cb.html \
+ curl_mime_filedata.html \
+ curl_mime_filename.html \
+ curl_mime_subparts.html \
+ curl_mime_type.html \
+ curl_mime_headers.html \
  curl_mime_encoder.html
 
-URLAPI = curl_url.html curl_url_cleanup.html curl_url_dup.html	\
- curl_url_get.html curl_url_set.html libcurl-url.html
+URLAPI = \
+ curl_url.html \
+ curl_url_cleanup.html \
+ curl_url_dup.html \
+ curl_url_get.html \
+ curl_url_set.html \
+ libcurl-url.html
 
-EASY_OPTION = curl_easy_option_by_id.html \
+EASY_OPTION = \
+ curl_easy_option_by_id.html \
  curl_easy_option_by_name.html \
  curl_easy_option_next.html
 
-PAGES = index.html example.html curl_easy_init.html curl_easy_cleanup.html    \
- curl_easy_setopt.html curl_easy_perform.html curl_version.html		      \
- curl_version_info.html curl_getenv.html curl_free.html			      \
- curl_slist_append.html curl_slist_free_all.html curl_formadd.html	      \
- curl_getdate.html curl_easy_getinfo.html curl_formfree.html curl_escape.html \
- curl_unescape.html curl_strequal.html curl_mprintf.html libcurl.html	      \
- curl_global_init.html curl_global_init_mem.html curl_global_cleanup.html     \
- libcurl-errors.html curl_multi_add_handle.html curl_multi_init.html	      \
- curl_multi_cleanup.html curl_multi_perform.html curl_multi_fdset.html	      \
- curl_multi_remove_handle.html curl_multi_info_read.html libcurl-multi.html   \
- libcurl-easy.html libcurl-share.html allfuncs.html curl_share_cleanup.html   \
- curl_share_init.html curl_share_setopt.html curl_easy_duphandle.html	      \
- curl_easy_strerror.html curl_multi_strerror.html curl_share_strerror.html    \
- libcurl-tutorial.html curl_easy_reset.html curl_multi_socket.html	      \
- curl_multi_timeout.html curl_multi_setopt.html curl_easy_escape.html	      \
- curl_easy_unescape.html curl_multi_assign.html curl_formget.html	      \
- curl_easy_pause.html curl_easy_recv.html curl_easy_send.html		      \
- curl_multi_socket_action.html curl_multi_wait.html $(EXAMPLES) $(opts)	      \
- easy_setopt_options.html easy_getinfo_options.html multi_setopt_options.html \
- allexamples.zip options-in-examples.html symbols-in-versions.html	      \
- threadsafe.html curl_global_sslset.html libcurl-env.html $(MIME) 	      \
- curl_easy_upkeep.html $(URLAPI) curl_multi_poll.html curl_multi_wakeup.html  \
+PAGES = \
+ index.html \
+ example.html \
+ curl_easy_init.html \
+ curl_easy_cleanup.html \
+ curl_easy_setopt.html \
+ curl_easy_perform.html \
+ curl_version.html \
+ curl_version_info.html \
+ curl_getenv.html \
+ curl_free.html \
+ curl_slist_append.html \
+ curl_slist_free_all.html \
+ curl_formadd.html \
+ curl_getdate.html \
+ curl_easy_getinfo.html \
+ curl_formfree.html \
+ curl_escape.html \
+ curl_unescape.html \
+ curl_strequal.html \
+ curl_mprintf.html \
+ libcurl.html \
+ curl_global_init.html \
+ curl_global_init_mem.html \
+ curl_global_cleanup.html \
+ libcurl-errors.html \
+ curl_multi_add_handle.html \
+ curl_multi_init.html \
+ curl_multi_cleanup.html \
+ curl_multi_perform.html \
+ curl_multi_fdset.html \
+ curl_multi_remove_handle.html \
+ curl_multi_info_read.html \
+ libcurl-multi.html \
+ libcurl-easy.html \
+ libcurl-share.html \
+ allfuncs.html \
+ curl_share_cleanup.html \
+ curl_share_init.html \
+ curl_share_setopt.html \
+ curl_easy_duphandle.html \
+ curl_easy_strerror.html \
+ curl_multi_strerror.html \
+ curl_share_strerror.html \
+ libcurl-tutorial.html \
+ curl_easy_reset.html \
+ curl_multi_socket.html \
+ curl_multi_timeout.html \
+ curl_multi_setopt.html \
+ curl_easy_escape.html \
+ curl_easy_unescape.html \
+ curl_multi_assign.html \
+ curl_formget.html \
+ curl_easy_pause.html \
+ curl_easy_recv.html \
+ curl_easy_send.html \
+ curl_multi_socket_action.html \
+ curl_multi_wait.html \
+ $(EXAMPLES) \
+ $(opts) \
+ easy_setopt_options.html \
+ easy_getinfo_options.html \
+ multi_setopt_options.html \
+ allexamples.zip \
+ options-in-examples.html \
+ symbols-in-versions.html \
+ threadsafe.html \
+ curl_global_sslset.html \
+ libcurl-env.html \
+ $(MIME) \
+ curl_easy_upkeep.html \
+ $(URLAPI) \
+ curl_multi_poll.html \
+ curl_multi_wakeup.html \
  $(EASY_OPTION)
 
 all: $(PAGES)
@@ -531,4 +596,3 @@ curl_easy_option_next.gen: $(MANROOT)/curl_easy_option_next.3
 include Makefile.examples
 
 full: all
-

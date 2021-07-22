@@ -96,18 +96,18 @@ sub getlastfewversions {
         my $val=$$per{'curl'};
         $hash{$val}=1;
     }
-    
+
     sub numit {
         my ($str)=@_;
         my @p=split(/\./, $str);
-        
+
         return $p[0]*1000 + $p[1]*100 + $p[2];
     }
-    
+
     sub sortit {
         return numit($a) <=> numit($b);
     }
-    
+
     my $c;
     for(reverse sort sortit keys %hash) {
         push @few, $_;
@@ -141,7 +141,7 @@ sub geturl {
 
     if(!$head) {
         my $t = time();
-    
+
         # six weeks ago
         $t -= (24*3600)*7*6;
 
@@ -212,14 +212,14 @@ for $ref (@all) {
                        show($$ref{'cpu'}),
                        show($$ref{'flav'}),
                        show($$ref{'pack'}),
-                       show($$ref{'type'}),                       
+                       show($$ref{'type'}),
                        $$ref{'name'},
                        $$ref{'curl'});
 
     if($show && ($desc !~ /$show/i)) {
         next;
     }
-    
+
     my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) =
         gmtime(time);
     my $t = sprintf ("%02d:%02d:%02d", $hour, $min, $sec);
@@ -230,7 +230,7 @@ for $ref (@all) {
         logmsg "Marked as hidden, skipping the check\n";
         $hidden++;
     }
-    
+
     elsif($$ref{'curl'} eq $version) {
         logmsg " Already at latest version ($version), no need to check\n";
         $uptodate++;
@@ -373,7 +373,7 @@ for $ref (@all) {
                     $churl =~ s/\$version/$ver/g;
                     $churl =~ s/\$osversion/$osversion/g;
                     $churl =~ s/\$cpu/$cpu/g;
-                    
+
                     @data = geturl($churl, 1);
                     ($cl, $st) = content_length(@data);
                 }
@@ -434,4 +434,3 @@ if($missing) {
 $db->save();
 
 logmsg "<div class=\"latest2\">$update package versions updated</div>\n";
-

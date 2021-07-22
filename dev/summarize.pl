@@ -48,8 +48,6 @@ my $filterform = '
 <option value="^........-">Kerberos disabled</option>
 <option value="^..Y">Memory tracking</option>
 <option value="^..-">Memory tracking disabled</option>
-<option value="^..............E">Metalink</option>
-<option value="^..............-">Metalink disabled</option>
 <option value="^..........M">NTLM</option>
 <option value="^..........-">NTLM disabled</option>
 <option value="^...............1">PSL</option>
@@ -242,16 +240,16 @@ else {
             else {
                 next;
             }
-            
+
             if("$lyear$lmonth$lday" ne $prevdate) {
                 if($prevdate) {
                     tablebot();
                 }
                 tabletop("$lyear$lmonth$lday");
             }
-            
+
             $prevdate ="$lyear$lmonth$lday";
-            
+
             print TABLE $_;
         }
         tablebot();
@@ -406,7 +404,7 @@ sub endofsingle {
             $res .= "<td>";
         } else {
             $res .= "<td class=\"buildfine\">$testfine";
-	}
+        }
 
         if($skipped) {
             #$res .= "+$skipped";
@@ -442,13 +440,12 @@ sub endofsingle {
     my $showntlm = $ntlmenabled ? "M" : "-";
     my $showsspi = $sspi ? "P" : "-";
     my $showssh = $libssh2 ? "2" : "-";
-    my $showmetalink = $libmetalink ? "E" : "-";
     my $showpsl = $libpsl ? "1" : "-";
     my $showidn = $libidn ? "I" : ($winidn ? "W" : "-");
     my $showhttp2 = $http2 ? "F" : "-";
     my $showunixsockets = $unixsocketsenabled ? "U" : "-";
 
-    my $o = "$showipv6$showdebug$showtrackmem$showvalgrind$showssl$showres$showzlib$showgssapi$showkrb5$showspnego$showntlm$showidn$showsspi$showssh$showmetalink$showpsl$showhttp2$showunixsockets";
+    my $o = "$showipv6$showdebug$showtrackmem$showvalgrind$showssl$showres$showzlib$showgssapi$showkrb5$showspnego$showntlm$showidn$showsspi$showssh$showpsl$showhttp2$showunixsockets";
 
     if(!$desc) {
         $desc = $os;
@@ -501,7 +498,6 @@ sub singlefile {
 
     $openssl=$gnutls=$nss=$mbedtls=$polarssl=$schannel=$darwinssl=$wolfssl=$boringssl=$libressl=$mesalink=0;
 
-    $libmetalink=0;
     $libpsl=0;
     $libssh2=0;
     $ssl=0;
@@ -739,10 +735,6 @@ sub singlefile {
                     $libz = 1;
                 }
 
-                if($feat =~ /Metalink/i) {
-                    $libmetalink = 1;
-                }
-
                 if($feat =~ /PSL/i) {
                     $libpsl = 1;
                 }
@@ -804,9 +796,6 @@ sub singlefile {
             }
             elsif($line =~ /^\#define USE_LIBSSH2 1/) {
                 $libssh2 = 1;
-            }
-            elsif($line =~ /^\#define USE_METALINK 1/) {
-                $libmetalink = 1;
             }
             elsif($line =~ /^\#define USE_LIBPSL 1/) {
                 $libpsl = 1;
@@ -876,10 +865,6 @@ sub singlefile {
 
                 if($feat =~ /libz/i) {
                     $libz = 1;
-                }
-
-                if($feat =~ /Metalink/i) {
-                    $libmetalink = 1;
                 }
 
                 if($feat =~ /PSL/i) {

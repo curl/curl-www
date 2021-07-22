@@ -18,7 +18,7 @@ sub json_page
 
   my $json = new JSON;
   my $json_text = $json->decode($content);
-  
+
   # iterate over each issue
   my $bugs = 0;
   my @out;
@@ -30,7 +30,7 @@ sub json_page
       my $num = $ref->{'number'};
       push @out, sprintf("<tr valign=top><td>#%d</td><td><a href=\"%s\">%s</a></td></tr>\n",
                          $num, $link, $title);
-      $bugs++; 
+      $bugs++;
   }
   push @out, "</table>\n";
   print @out;

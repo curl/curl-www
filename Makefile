@@ -1,10 +1,10 @@
 ROOT=.
 
 # the latest stable version is:
-STABLE= 7.77.0
-RELDATE = "26th of May 2021"
+STABLE= 7.78.0
+RELDATE = "21st of July 2021"
 # The planned *next* release is:
-NEXTDATE = "21st of July 2021"
+NEXTDATE = "15th of September 2021"
 
 # generated file with binary package stats
 STAT = packstat.t
@@ -18,31 +18,31 @@ include setup.mk
 MAINPARTS += _menu.html alert.t
 FCPP_OPTS = -DSHOW_ALERT
 
-PAGES=						\
- 404.html					\
- about.html					\
- book.html					\
- changes.html					\
- dashboard.html					\
- dashboardd.html				\
- dashboard5.html				\
- dashboard1.html				\
- donation.html					\
- download.html					\
- foot.html					\
- gethelp.html					\
- head.html					\
- index.html					\
- info						\
- libs.html					\
- mirrors.html					\
- news.html					\
- newslog.html					\
- oldnews.html					\
- search.html					\
- sponsors.html					\
- support.html					\
- web-editing.html				\
+PAGES= \
+ 404.html \
+ about.html \
+ book.html \
+ changes.html \
+ dashboard.html \
+ dashboardd.html \
+ dashboard5.html \
+ dashboard1.html \
+ donation.html \
+ download.html \
+ foot.html \
+ gethelp.html \
+ head.html \
+ index.html \
+ info \
+ libs.html \
+ mirrors.html \
+ news.html \
+ newslog.html \
+ oldnews.html \
+ search.html \
+ sponsors.html \
+ support.html \
+ web-editing.html \
  download/index.html
 
 all: $(PAGES)

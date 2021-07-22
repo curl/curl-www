@@ -33,7 +33,7 @@ void *curl_thread(void *ptr)
   CURLcode res;
   FILE *outfile;
   gchar *url = ptr;
-  
+
   curl = curl_easy_init();
   if(curl)
   {
@@ -44,7 +44,7 @@ void *curl_thread(void *ptr)
     curl_easy_setopt(curl, CURLOPT_READFUNCTION, my_read_func);
     curl_easy_setopt(curl, CURLOPT_PROGRESSFUNCTION, my_progress_func);
     curl_easy_setopt(curl, CURLOPT_PROGRESSDATA, Bar);
-    
+
     res = curl_easy_perform(curl);
 
     fclose(outfile);
@@ -62,7 +62,7 @@ int main(int argc, char **argv)
 
   /* Init thread */
   g_thread_init(NULL);
-  
+
   gtk_init(&argc, &argv);
   Window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
   Frame = gtk_frame_new(NULL);
@@ -78,10 +78,9 @@ int main(int argc, char **argv)
   gtk_widget_show_all(Window);
 
   pthread_create(&curl_tid, NULL, curl_thread, argv[1]);
-    
+
   gdk_threads_enter();
   gtk_main();
   gdk_threads_leave();
   return 0;
 }
-
