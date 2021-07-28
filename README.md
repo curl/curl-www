@@ -17,7 +17,7 @@ Make sure the following tools are in your $PATH.
 
  - curl
  - [fcpp](https://daniel.haxx.se/projects/fcpp/)
- - make
+ - GNU make
  - pandoc
  - perl (with CPAN packages: CGI, HTML::Entities)
  - roffit
