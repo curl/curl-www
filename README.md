@@ -26,7 +26,7 @@ Make sure the following tools are in your $PATH.
 
 # Build
 
-Once you've cloned the git repo the first time, invoke `sh bootstrap.sh` once
+Once you've cloned the Git repo the first time, invoke `sh bootstrap.sh` once
 to get a symlink and some some initial local files setup, and then you can
 build the web site locally by invoking make in the source root tree.
 
