@@ -16,7 +16,7 @@ my %silver = (
     "https://www.crosswordsolver.com" => 'CrosswordSolver.svg',
     "https://www.minitool.com" => 'minitool.png',
     "https://www.maid2clean.co.uk/domestic-cleaning/" => 'maid2clean.png',
-    "https://icons8.com" => 'icons8.png',
+    "https://icons8.com" => 'icons8.svg',
     );
 my %modurl = (
     );
