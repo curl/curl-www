@@ -15,7 +15,7 @@ my %silver = (
     "https://www.partitionwizard.com" => 'partitionwizard.svg',
     "https://www.crosswordsolver.com" => 'CrosswordSolver.svg',
     "https://www.minitool.com" => 'minitool.svg',
-    "https://www.maid2clean.co.uk/domestic-cleaning/" => 'maid2clean.png',
+    "https://www.maid2clean.co.uk/domestic-cleaning/" => 'maid2clean.svg',
     "https://icons8.com" => 'icons8.svg',
     );
 my %modurl = (
