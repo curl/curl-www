@@ -16,6 +16,17 @@ my $q=0;
 my $sec = 0;
 my $blank=0;
 
+sub section2name {
+    my ($ti) = @_;
+    # cut off the number
+    $ti =~ s/^\s*([0-9]+)\. //;
+    # remove "special" letters
+    $ti =~ s/[^A-Za-z0-9_ ]//;
+    # make dashes for spaces
+    $ti =~ s/ /-/g;
+    return $ti;
+}
+
 while(<STDIN>) {
     if($state == 1) {
         if($_ =~ /^===========/) {
@@ -31,7 +42,8 @@ while(<STDIN>) {
                     my $ti = $section[$s];
                     chomp $ti;
                     $ti =~ s/^ *(.*) */$1/;
-                    subtitle($ti);
+                    printf "<h2><a href=\"#%s\">$ti</a></h2>\n",
+                        section2name($ti);
                     print "\n<p>\n";
                     $o = $s;
                 }
@@ -78,8 +90,9 @@ while(<STDIN>) {
             my $ti = $l;
             chomp $ti;
             $ti =~ s/^ *(.*) */$1/;
+            # anchor the section
+            printf "<a name=\"%s\"></a>\n", section2name($ti);
             subtitle($ti);
-
             $sec++;
         }
 
