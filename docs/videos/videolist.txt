@@ -411,7 +411,7 @@ VIDEO The state of curl 2019
 EVENT curl-up 2019
 URL https://youtu.be/1y07i0jkAII
 SLIDES https://curl.se/video/curlup-2019/2019-03-30-state-of-curl.pdf
-THUMB state-of-curl-2019-jpg
+THUMB state-of-curl-2019.png
 THUMBSIZE width="250" height="140"
 DURATION 1h50
 DATE 2019-03-30
