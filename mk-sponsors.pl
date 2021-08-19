@@ -12,9 +12,9 @@ my %silver = (
     "https://www.romab.com" => '[none]',
     "https://www.airbnb.com/" => 'airbnb.svg',
     "https://www.premium-minds.com" => 'premium-minds.svg',
-    "https://www.partitionwizard.com" => 'partitionwizard.svg',
+    "https://www.partitionwizard.com" => 'partitionwizard-2.svg',
     "https://www.crosswordsolver.com" => 'CrosswordSolver.svg',
-    "https://www.minitool.com" => 'minitool.svg',
+    "https://www.minitool.com" => 'minitool-2.svg',
     "https://www.maid2clean.co.uk/domestic-cleaning/" => 'maid2clean.svg',
     "https://icons8.com" => 'icons8.svg',
     );
