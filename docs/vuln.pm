@@ -13,6 +13,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2021-22945.html|7.73.0|7.78.0|UAF and double-free in MQTT sending|CVE-2021-22945|20210915|20210719|CWE-415: Double Free|1000|MQTT|DOUBLE_FREE",
     "CVE-2021-22926.html|7.33.0|7.77.0|CURLOPT_SSLCERT mixup with Secure Transport|CVE-2021-22926|20210721|20210615|CWE-295: Improper Certificate Validation|1000|TLS|-",
     "CVE-2021-22925.html|7.7|7.77.0|TELNET stack contents disclosure again|CVE-2021-22925|20210721|20210611|CWE-457: Use of Uninitialized Variable|800|TELNET|UNINIT",
     "CVE-2021-22924.html|7.10.4|7.77.0|Bad connection reuse due to flawed path name checks|CVE-2021-22924|20210721|20210611|CWE-295: Improper Certificate Validation|1200|TLS|-",
