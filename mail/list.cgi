@@ -74,7 +74,7 @@ sub listarchives {
 
     &showarchs(@dirs);
 
-    return "https://cool.haxx.se/mailman/listinfo/$listname";
+    return "https://lists.haxx.se/listinfo/$listname";
 }
 
 if($list) {
@@ -117,7 +117,7 @@ MOO
     elsif(($list eq "curl-announce") ||
           ($list eq "curl-www-commits") ||
           ($list eq "curl-commits")) {
-        $subscr = "https://cool.haxx.se/cgi-bin/mailman/listinfo/$list";
+        $subscr = "https://lists.haxx.se/listinfo/$list";
         print "There is no archive of this list.";
         $none=1;
     }
