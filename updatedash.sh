@@ -24,6 +24,9 @@ git up -q
 # update the stats scripts
 (cd stats && git up -q)
 
+# debug git shortlog
+git shortlog -s > tmp/git-shortlog.txt
+
 # generate us a bunch of updated SVG files
 sh stats/mksvg.sh ..
 
