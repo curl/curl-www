@@ -83,6 +83,6 @@
  <MM-Editing-Options>
  <MM-Form-End>
 <p>
-<a href="/cgi-bin/mailman/admin/<MM-List-Name>">admin interface</a>
+<a href="/admin/<MM-List-Name>">admin interface</a>
 </body>
 </html>
