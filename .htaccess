@@ -114,7 +114,6 @@ AddType application/octet-stream .rpm
 AddType application/x-bzip2 .bz2
 AddType application/x-tar .tar
 AddType application/x-pem-file .pem
-php_flag engine off
 
 Header set X-Content-Type-Options: "nosniff"
 Header set Content-Security-Policy: "default-src 'self' curl.haxx.se www.curl.se curl.se www.fastly-insights.com fastly-insights.com; style-src 'unsafe-inline' 'self' curl.haxx.se www.curl.se curl.se"
