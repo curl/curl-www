@@ -19,8 +19,9 @@
   max-width: 400px;
 }
 
-.silver img[src$=".svg"] {
+.silver img[src$=".svg"], .silver svg {
   width: 400px;
+  height: auto;
 }
 
 .gold {
@@ -29,6 +30,10 @@
     padding-right: 10px;
     padding-bottom: 10px;
     text-align: center;
+}
+
+a:hover, svg:hover, img:hover {
+    background-color: transparent;
 }
 </style>
 </head>
@@ -98,7 +103,9 @@ SUBTITLE(Silver sponsors)
 <div class="silver"><p> <a href="https://ipinfo.io/" rel="sponsored"><img src="pix/silver/ipinfo.svg" alt="ipinfo"></a></div>
 <!-- Silver via other means -->
  <div class="silver"><p> <a href="https://www.airlock.com/" rel="sponsored"><img src="pix/silver/airlock.svg" alt="Airlock"></a></div>
- <div class="silver"><p> <a href="https://www.babiel.com/" rel="sponsored"><img src="pix/silver/babiel.svg" alt="Babiel"></a></div>
+ <div class="silver"><p> <a href="https://www.babiel.com/" rel="sponsored" aria-label="Babiel">
+#include "pix/silver/babiel.svg"
+</a></div>
 
 <!---- Silver end ----->
 <div style="clear: both;"></div>
