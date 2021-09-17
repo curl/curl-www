@@ -137,7 +137,7 @@ sub islastfewversions {
 my %urlhash;
 sub geturl {
     my ($url, $head) = @_;
-    my $curlcmd="curl -Lfsm120 -A \"Mozilla/curl.se dl-package-check-probe\" --ftp-method singlecwd";
+    my $curlcmd="curl -Lfsm120 -A \"Mozilla/curl.se dl-package-check-probe\" --ftp-method singlecwd --ssl";
 
     if(!$head) {
         my $t = time();
@@ -147,11 +147,11 @@ sub geturl {
 
         my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) =
             gmtime($t);
-        my $twoweeksago = sprintf("%04d%02d%02d %02d:%02d:%02d",
+        my $weeksago = sprintf("%04d%02d%02d %02d:%02d:%02d",
                                   $year+1900, $mon+1, $mday,
                                   $hour, $min, $sec);
 
-        #$curlcmd .= " -z \"$twoweeksago\"";
+        #$curlcmd .= " -z \"$weeksago\"";
         $curlcmd .= " --compressed";
     }
 
