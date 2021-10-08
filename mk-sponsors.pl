@@ -45,7 +45,7 @@ for my $u (reverse @urls) {
                 $found{$href}=1;
             }
             print <<SPONSOR
-<div class="silver"><p> <a href="$href" rel="sponsored"><img src="pix/silver/$img" alt="$alt"></a></div>
+<div class="silver"><p> <a class="x" href="$href" rel="sponsored"><img src="pix/silver/$img" alt="$alt"></a></div>
 SPONSOR
                 ;
             if(! -f "pix/silver/$img") {
@@ -61,7 +61,7 @@ SPONSOR
 my $sec;
 open(SP, "<_sponsors.html");
 while(<SP>) {
-    if($_ =~ /^<div class="silver"><p> <a href="([^"]*)/) {
+    if($_ =~ /^<div class="silver"><p> <a class=\"x\" href="([^"]*)/) {
         my $exist=$1;
         if(!$found{$exist}) {
             print STDERR "$exist is not a sponsor anymore\n";
