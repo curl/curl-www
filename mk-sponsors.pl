@@ -17,6 +17,7 @@ my %silver = (
     "https://www.minitool.com" => 'minitool-2.svg',
     "https://www.maid2clean.co.uk/domestic-cleaning/" => 'maid2clean.svg',
     "https://icons8.com" => 'icons8.svg',
+    "https://serpapi.com" => 'serpapi.png',
     );
 my %modurl = (
     );
