@@ -5,9 +5,8 @@
 #include "css.t"
 <style type="text/css">
 .sponsors {
-    float: right;
     max-width: 120px;
-    margin: 0px 0px 0px 20px;
+    padding: 5px 5px 5px 5px;
 }
 .logo {
     max-width: 100px;
@@ -50,6 +49,8 @@ library</b>
 </div>
 #endif
 
+<div style="float: right; max-width: 10em; margin-left: 20px;">
+
 <div class="sponsors">
  <b>Top&nbsp;Sponsors</b><p>
  <a href="sponsors.html">
@@ -58,6 +59,28 @@ library</b>
  <img class="logo" src="pix/fastly.svg" alt="Fastly">
  <img class="logo" src="pix/teamviewer.svg" alt="Teamviewer">
  </a>
+</div>
+
+<div style="padding: 5px 5px 5px 5px;
+ margin-bottom: 20px;
+ font-size: 130%;
+ border: 1px black solid;">
+ Time to <a href="/donation.html">donate</a> to the curl project?
+</div>
+
+<div style="padding: 5px 5px 5px 5px;
+ margin-bottom: 20px;
+ font-size: 130%;
+ border: 1px black solid;">
+ <a href="/support.html">Commercial support</a> available!
+</div>
+
+<div style="padding: 5px 5px 5px 5px;
+ border: 1px black solid;">
+  <a href="/book.html">Everything curl</a> is a detailed and
+  totally free book that explains basically everything there is to know about
+  curl, libcurl and the associated project.
+</div>
 </div>
 
 <p><b>Supports...</b>
@@ -95,46 +118,10 @@ can <a href="docs/help-us.html">help us</a> improve!
 The most recent stable version is <b>__STABLE</b>, released on __RELDATE.
 Currently, __CURR of the listed <a href="download.html" title="Binary download packages for your platform!">downloads</a> are of the latest version.
 
-<div style="float: right;
- max-width: 10em;
- margin-left: 10px;
- padding: 5px 5px 5px 5px;
- font-size: 130%;
- border: 1px black solid;">
- Time to <a href="/donation.html">donate</a> to the curl project?
-</div>
-
-<div style="float: right;
- max-width: 10em;
- margin-left: 10px;
- padding: 5px 5px 5px 5px;
- font-size: 130%;
- border: 1px black solid;">
- <a href="/support.html">Commercial support</a> available!
-</div>
-
 <p><b>Where's the code?</b>
 <p>
- Check out the latest <a href="https://github.com/curl/curl" title="git clone the curl code">source code
- from github</a>.
-
-TITLE(Everything curl)
-<a href="https://curl.se/book.html">
-<img style="margin: 0px 0px 10px 10px;" align="right" width="305" height="400" class="scale" border="0" src="pix/everything-curl.jpg" alt="Everything curl"></a>
-<p>
-  <a href="https://curl.se/book.html">Everything curl</a> is a detailed
-  and totally free book available in several formats, that explains basically
-  everything there is to know about curl, libcurl and the associated project.
-
-<p>
-  Learn how to use curl. How to use libcurl. How to build them from source or
-  perhaps how the curl project accepts contributions. There's something for
-  everyone in this, from the casual first-time users to the experienced
-  libcurl hackers.
-
-<p>
-  <a href="https://curl.se/book.html">Everything curl</a> is itself an
-  open project that accepts your contributions and help.
+ Check out the latest <a href="https://github.com/curl/curl" title="git clone
+ the curl code">source code from GitHub</a>.
 
 #include "_footer.html"
 </body>
