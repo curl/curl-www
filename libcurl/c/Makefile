@@ -49,6 +49,7 @@ URLAPI = \
  curl_url_dup.html \
  curl_url_get.html \
  curl_url_set.html \
+ curl_url_strerror.html \
  libcurl-url.html
 
 EASY_OPTION = \
@@ -576,6 +577,11 @@ curl_url_get.gen: $(MANROOT)/curl_url_get.3
 curl_url_set.html: _curl_url_set.html $(MAINPARTS_CAPI) curl_url_set.gen
 	$(ACTION)
 curl_url_set.gen: $(MANROOT)/curl_url_set.3
+	$(MAN2HTML) < $< >$@
+
+curl_url_strerror.html: _curl_url_strerror.html $(MAINPARTS_CAPI) curl_url_strerror.gen
+	$(ACTION)
+curl_url_strerror.gen: $(MANROOT)/curl_url_strerror.3
 	$(MAN2HTML) < $< >$@
 
 curl_easy_option_by_id.html: _curl_easy_option_by_id.html $(MAINPARTS_CAPI) curl_easy_option_by_id.gen
