@@ -62,14 +62,17 @@ SUBTITLE(CA certificate store license)
 
 SUBTITLE(Automated downloads from here)
 <p>
- We don't mind you downloading the PEM file from us in an automated fashion,
- but please don't do it more often than once per day. It is only updated once
- every few months anyway.
+ We don't mind you downloading the PEM file from us in an automated fashion.
 
 <p>
  A suitable curl command line to only download it when it has changed:
 <pre>
-  curl <a href="https://curl.se/docs/manpage.html#-O">--remote-name</a> <a href="https://curl.se/docs/manpage.html#-z">--time-cond</a> cacert.pem https://curl.se/ca/cacert.pem
+ curl <a href="/docs/manpage.html#--etag-compare">--etag-compare</a> etag.txt <a href="/docs/manpage.html#--etag-save">--etag-save</a> etag.txt <a href="/docs/manpage.html#-O">--remote-name</a> https://curl.se/ca/cacert.pem
+</pre>
+
+Or if you use an ancient curl version that doesn't suport etags:
+<pre>
+  curl <a href="/docs/manpage.html#-O">--remote-name</a> <a href="/docs/manpage.html#-z">--time-cond</a> cacert.pem https://curl.se/ca/cacert.pem
 </pre>
 
 SUBTITLE(The conversion script mk-ca-bundle)
