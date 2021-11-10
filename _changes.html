@@ -47,6 +47,138 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
   <img src="pix/play.svg" alt="Play video" height="100%" style="float: left; margin-right: 1em;"> desc </a> \
   </div>
 
+<a name="7_80_0"></a>
+SUBTITLE(Fixed in 7.80.0 - November 10 2021)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="https://curl.se/mail/lib-2021-09/0058.html">CURLOPT_MAXLIFETIME_CONN: maximum allowed lifetime for conn reuse</a>
+ CHG <a href="https://curl.se/bug/?i=7477">CURLOPT_PREREQFUNCTION: add new callback</a>
+ CHG <a href="https://curl.se/bug/?i=7646">libssh2: add SHA256 fingerprint support</a>
+ CHG <a href="https://curl.se/bug/?i=7605">urlapi: add curl_url_strerror()</a>
+ CHG <a href="https://curl.se/bug/?i=7366">urlapi: support UNC paths in file: URLs on Windows</a>
+ CHG <a href="https://curl.se/bug/?i=7728">wolfssl: allow setting of groups/curves</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.se/bug/?i=7955">.github: retry macos &quot;brew install&quot; command on failure</a>
+ BGF <a href="https://curl.se/bug/?i=7844">aws-sigv4: make signature work when post data is binary</a>
+ BGF <a href="https://curl.se/bug/?i=7809">BINDINGS: URL updates</a>
+ BGF <a href="https://curl.se/bug/?i=7778">build: remove checks for WinSock 1</a>
+ BGF <a href="https://curl.se/bug/?i=7889">c-hyper: don&apos;t abort CONNECT responses early when auth-in-progress</a>
+ BGF <a href="https://curl.se/bug/?i=7851">c-hyper: make Curl_http propagate errors better</a>
+ BGF <a href="https://curl.se/bug/?i=7905">c-hyper: make CURLOPT_SUPPRESS_CONNECT_HEADERS work</a>
+ BGF <a href="https://curl.se/bug/?i=7889">c-hyper: make test 217 run</a>
+ BGF <a href="https://curl.se/bug/?i=7679">c-hyper: use hyper_request_set_uri_parts to make h2 better</a>
+ BGF <a href="https://curl.se/bug/?i=7863">checksrc: ignore preprocessor lines</a>
+ BGF <a href="https://curl.se/bug/?i=7785">CI/makefiles: introduce dedicated test target</a>
+ BGF <a href="https://curl.se/bug/?i=7761">ci: update Lift config to match requirements of curl build</a>
+ BGF <a href="https://curl.se/bug/?i=7869">cirrus: remove FreeBSD 11.4 from the matrix</a>
+ BGF <a href="https://curl.se/bug/?i=7868">cirrus: switch to openldap24-client</a>
+ BGF <a href="https://curl.se/bug/?i=7759">cleanup: constify unmodified static structs</a>
+ BGF <a href="https://curl.se/bug/?i=7822">cmake: add CURL_ENABLE_SSL option</a>
+ BGF <a href="https://curl.se/bug/?i=7885">cmake: fix error getting LOCATION property on non-imported target</a>
+ BGF <a href="https://curl.se/bug/?i=7501">CMake: restore support for SecureTransport on iOS</a>
+ BGF <a href="https://curl.se/bug/?i=7767">cmake: with OpenSSL, define OPENSSL_SUPPRESS_DEPRECATED</a>
+ BGF <a href="https://curl.se/bug/?i=7786">cmdline-opts: made the &apos;Added:&apos; field mandatory</a>
+ BGF <a href="https://curl.se/bug/?i=7916">configure.ac: replace krb5-config with pkg-config</a>
+ BGF <a href="https://curl.se/bug/?i=7908">configure: when hyper is selected, deselect nghttp2</a>
+ BGF <a href="https://curl.se/bug/?i=7737">connect: use sysaddr_un from sys/un.h or custom-defined for windows</a>
+ BGF <a href="https://curl.se/bug/?i=7891">curl-confopts.m4:  remove --enable/disable-hidden-symbols</a>
+ BGF <a href="https://curl.se/bug/?i=7826">curl-openssl.m4: modify library order for openssl linking</a>
+ BGF <a href="https://curl.se/bug/?i=7758">curl-openssl: pass argument to sed single-quoted</a>
+ BGF <a href="https://curl.se/bug/?i=7786">curl.1: remove mentions of really old version changes</a>
+ BGF <a href="https://curl.se/bug/?i=7837">curl: actually append &quot;-&quot; to --range without number only</a>
+ BGF <a href="https://curl.se/bug/?i=7802">curl: correct grammar in generated libcurl code</a>
+ BGF <a href="https://curl.se/bug/?i=7792">curl: print help descriptions in an aligned right column</a>
+ BGF <a href="https://curl.se/bug/?i=7657">curl_gssapi: fix link error on macOS Monterey</a>
+ BGF <a href="https://curl.se/bug/?i=7901">curl_multi_socket_action.3: add a &quot;RETURN VALUE&quot; section</a>
+ BGF <a href="https://curl.se/bug/?i=7808">curl_ntlm_core: use OpenSSL only if DES is available</a>
+ BGF <a href="https://curl.se/bug/?i=7939">Curl_updateconninfo: store addresses for QUIC connections too</a>
+ BGF <a href="https://curl.se/bug/?i=7957">CURLOPT_ALTSVC_CTRL.3: mention conn reuse is preferred</a>
+ BGF <a href="https://curl.se/bug/?i=7923">CURLOPT_HSTSWRITEFUNCTION.3: using CURLOPT_HSTS_CTRL is required</a>
+ BGF <a href="https://curl.se/bug/?i=7829">CURLOPT_HTTPHEADER.3: add descripion for specific headers</a>
+ BGF <a href="https://curl.se/bug/?i=7842">docs/HTTP3: improve build instructions</a>
+ BGF <a href="https://curl.se/bug/?i=7853">docs/Makefile.am: repair &apos;make html&apos;</a>
+ BGF <a href="https://curl.se/bug/?i=7910">docs: fix typo in CURLOPT_TRAILERFUNCTION example</a>
+ BGF <a href="https://curl.se/bug/?i=7902">docs: provide &quot;RETURN VALUE&quot; section for more func manpages</a>
+ BGF <a href="https://curl.se/bug/?i=7936">docs: reduce use of &quot;very&quot;</a>
+ BGF <a href="https://curl.se/bug/?i=7870">doh: remove experimental code for DoH with GET</a>
+ BGF <a href="https://curl.se/bug/?i=7860">examples/htmltidy: correct wrong printf() use</a>
+ BGF <a href="https://curl.se/bug/?i=7774">examples/imap-append: fix end-of-data check</a>
+ BGF <a href="https://curl.se/bug/?i=7967">ftp: make the MKD retry to retry once per directory</a>
+ BGF <a href="https://curl.se/bug/?i=7782">gen.pl: insert the current date and version in generated man page</a>
+ BGF <a href="https://curl.se/bug/?i=7933">gen.pl: replace leading single quotes with \(aq</a>
+ BGF <a href="https://curl.se/bug/?i=7821">http2: make getsock not wait for write if there&apos;s no remote window</a>
+ BGF <a href="https://curl.se/bug/?i=7813">HTTP3: fix the HTTP/3 Explained book link</a>
+ BGF <a href="https://curl.se/bug/?i=7819">http: fix Basic auth with empty name field in URL</a>
+ BGF <a href="https://curl.se/bug/?i=7909">http: reject HTTP response codes &lt; 100</a>
+ BGF <a href="https://curl.se/bug/?i=7852">http: remove assert that breaks hyper</a>
+ BGF <a href="https://github.com/curl/curl/commit/8a16e54#r57374914">http: set content length earlier</a>
+ BGF <a href="https://curl.se/bug/?i=7825">http_proxy: make hyper CONNECT() return the correct error code</a>
+ BGF <a href="https://curl.se/bug/?i=7888">http_proxy: multiple CONNECT with hyper done better</a>
+ BGF <a href="https://curl.se/bug/?i=7905">hyper: disable test 1294 since hyper doesn&apos;t allow such crazy headers</a>
+ BGF <a href="https://curl.se/bug/?i=7889">hyper: does not support disabling CURLOPT_HTTP_TRANSFER_DECODING</a>
+ BGF <a href="https://curl.se/bug/?i=7887">hyper: pass the CONNECT line to the debug callback</a>
+ BGF <a href="https://curl.se/bug/?i=6973">imap: display quota information</a>
+ BGF <a href="https://curl.se/bug/?i=7890">INSTALL: update symbol hiding option</a>
+ BGF <a href="https://curl.se/bug/?i=7801">lib/mk-ca-bundle.pl: skip certs passed Not Valid After date</a>
+ BGF <a href="https://curl.se/bug/?i=7322">lib: avoid fallthrough cases in switch statements</a>
+ BGF <a href="https://curl.se/bug/?i=7765">libcurl.rc: switch out the copyright symbol for plain ASCII</a>
+ BGF <a href="https://curl.se/bug/?i=7768">libssh2: Get the version at runtime if possible</a>
+ BGF <a href="https://curl.se/bug/?i=7970">limit-rate.d: this is average over several seconds</a>
+ BGF <a href="https://curl.se/bug/?i=7770">llist: remove redundant code, branch will not be executed</a>
+ BGF <a href="https://curl.se/bug/?i=7895">Makefile.m32: fix to not require OpenSSL with -libssh2 or -rtmp options</a>
+ BGF maketgz: redirect updatemanpages.pl output to /dev/null
+ BGF <a href="https://curl.se/bug/?i=7904">man pages: require all to use the same section header order</a>
+ BGF <a href="https://curl.se/bug/?i=7884">manpage: adjust the asterisk in some SYNOPSIS sections</a>
+ BGF <a href="https://curl.se/bug/?i=7808">md5: fix compilation with OpenSSL 3.0 API</a>
+ BGF <a href="https://curl.se/bug/?i=7812">misc: fix a few issues on MidnightBSD</a>
+ BGF <a href="https://curl.se/bug/?i=7747">misc: fix typos in docs and comments</a>
+ BGF <a href="https://curl.se/bug/?i=7979">ngtcp2: advertise h3 as well as h3-29</a>
+ BGF <a href="https://curl.se/bug/?i=7978">ngtcp2: compile with the latest nghttp3</a>
+ BGF <a href="https://curl.se/bug/?i=7929">ngtcp2: specify the missing required callback functions</a>
+ BGF <a href="https://curl.se/bug/?i=7960">ngtcp2: use latest QUIC TLS RFC9001</a>
+ BGF <a href="https://curl.se/bug/?i=7779">NTLM: use DES_set_key_unchecked with OpenSSL</a>
+ BGF <a href="https://curl.se/bug/?i=7892">openssl: if verifypeer is not requested, skip the CA loading</a>
+ BGF <a href="https://curl.se/bug/?i=7840">openssl: with OpenSSL 1.1.0+ a failed RAND_status means goaway</a>
+ BGF <a href="https://curl.se/bug/?i=7941">Revert &quot;src/tool_filetime: disable -Wformat on mingw for this file&quot;</a>
+ BGF <a href="https://curl.se/bug/?i=6930">sasl: binary messages</a>
+ BGF <a href="https://curl.se/bug/?i=7877">schannel: fix memory leak due to failed SSL connection</a>
+ BGF scripts/delta: count command line options in the new file
+ BGF <a href="https://curl.se/bug/?i=7898">sendf: accept zero-length data in Curl_client_write()</a>
+ BGF <a href="https://curl.se/bug/?i=7808">sha256: use high-level EVP interface for OpenSSL</a>
+ BGF <a href="https://curl.se/bug/?i=7926">smooth-gtk-thread.c: enhance the mutex lock use</a>
+ BGF <a href="https://curl.se/bug/?i=7849">sws: fix memory leak on exit</a>
+ BGF <a href="https://curl.se/bug/?i=7912">test1160: edited to work with hyper</a>
+ BGF test1173: make manpage-syntax.pl spot \n errors in examples
+ BGF <a href="https://curl.se/bug/?i=7866">test1185: verify checksrc</a>
+ BGF <a href="https://curl.se/bug/?i=7905">test1266/1267: disabled on hyper: no HTTP/0.9 support</a>
+ BGF <a href="https://curl.se/bug/?i=7905">test1287: make work on hyper</a>
+ BGF <a href="https://curl.se/bug/?i=7889">test207: accept a different error code for hyper</a>
+ BGF <a href="https://curl.se/bug/?i=7889">test262: don&apos;t attempt with hyper</a>
+ BGF <a href="https://curl.se/bug/?i=7911">test552: updated to work with hyper</a>
+ BGF <a href="https://curl.se/bug/?i=7911">test559: add &apos;HTTP&apos; in keywords</a>
+ BGF <a href="https://curl.se/bug/?i=7924">tests/smbserver.py: fix compatibility with impacket 0.9.23+</a>
+ BGF <a href="https://curl.se/bug/?i=7968">tests: add Schannel-specific tests and disable unsupported ones</a>
+ BGF <a href="https://curl.se/bug/?i=7845">tests: disable test 2043</a>
+ BGF <a href="https://curl.se/bug/?i=7925">tests: kill some test servers afterwards to avoid locked logfiles</a>
+ BGF <a href="https://curl.se/bug/?i=7899">tests: use python3 in test 1451</a>
+ BGF <a href="https://curl.se/bug/?i=7879">tls: remove newline from three infof() calls</a>
+ BGF <a href="https://curl.se/bug/?i=7760">tool_cb_prg: make resumed upload progress bar show better</a>
+ BGF <a href="https://curl.se/bug/?i=7787">tool_listhelp: easier generated with gen.pl</a>
+ BGF <a href="https://curl.se/bug/?i=7811">tool_main: fix typo in comment</a>
+ BGF <a href="https://curl.se/bug/?i=7945">tool_operate: a failed etag save now only fails that transfer</a>
+ BGF <a href="https://github.com/curl/curl/issues/7626">URL-SYNTAX: add IMAP UID SEARCH example</a>
+ BGF <a href="https://curl.se/bug/?i=7917">url: check the return value of curl_url()</a>
+ BGF <a href="https://curl.se/bug/?i=7871">url: set &quot;k-&gt;size&quot; -1 at start of request</a>
+ BGF <a href="https://curl.se/bug/?i=7862">urlapi: skip a strlen(), pass in zero</a>
+ BGF <a href="https://curl.se/bug/?i=7830">urlapi: URL decode percent-encoded host names</a>
+ BGF <a href="https://curl.se/bug/?i=7742">version_win32: use actual version instead of manifested version</a>
+ BGF <a href="https://curl.se/bug/?i=7683">vtls: Fix a memory leak if an SSL session cannot be added to the cache</a>
+ BGF <a href="https://curl.se/bug/?i=7806">wolfssl: use for SHA256, MD4, MD5, and setting DES odd parity</a>
+ BGF <a href="https://curl.se/bug/?i=7927">zuul: pin the quiche build to use an older cmake-rs</a>
+</ul>
+
 <a name="7_79_1"></a>
 SUBTITLE(Fixed in 7.79.1 - September 22 2021)
 <p>
