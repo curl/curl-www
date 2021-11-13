@@ -559,6 +559,17 @@ WHO Daniel Stenberg
 DESC The state of the curl project 2020. Stats, numbers and status checks.
 ENDOFVIDEO
 
+VIDEO Why cURL is used in IoT devices
+EVENT wolfSSL webinar
+URL https://youtu.be/2PEZ6BMEr4Y
+THUMB curl-in-iot.jpg
+THUMBSIZE width="250" height="141"
+DATE 2020-08-05
+DURATION 24 minutes
+WHO Daniel Stenberg
+DESC Daniel explains why cURL is used in embedded devices with strict resource restrictions and the support for cURL provided by wolfSSL.
+ENDOFVIDEO
+
 VIDEO Landing code in curl
 EVENT wolfSSL webinar
 URL https://youtu.be/QmZ3W1d6LQI
@@ -593,6 +604,28 @@ SLIDES https://www.slideshare.net/bagder/testing-curl-for-security
 DURATION 45 minutes
 WHO Daniel Stenberg
 DESC How we develop secure and safe software in the curl project
+ENDOFVIDEO
+
+VIDEO cURL, Hyper, and Rust
+EVENT wolfSSL and ISRG Partner webinar
+URL https://youtu.be/okGUxW_i9yk
+THUMB curl-hyper.jpg
+THUMBSIZE width="250" height="141"
+DATE 2021-02-11
+DURATION 1h1
+WHO Josh Aas, Sean McArthur, Daniel Stenberg
+DESC The motivation for and challenges with integrating the Hyper HTTP Rust back-end into curl.
+ENDOFVIDEO
+
+VIDEO cURL, FIPS, and Windows! Oh My!
+EVENT wolfSSL webinar
+URL https://youtu.be/uuIbvzHeHjI
+THUMB curl-fips-windows.jpg
+THUMBSIZE width="250" height="141"
+DATE 2021-04-08
+DURATION 25 minutes
+WHO Daniel Stenberg
+DESC How to build, install and run curl/libcurl with the FIPS 140 licensed WolfSSL TLS library on Windows.
 ENDOFVIDEO
 
 VIDEO The state of curl 2021
