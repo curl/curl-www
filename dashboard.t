@@ -69,9 +69,7 @@ source data. The first and last lines of data is shown on the right.
 
 #endif
 #include "dash.gen"
-<p>
-<p>
-<hr>
+<hr style="margin-top: 3em;">
 <p>
  The scripts for generating all these images are available
  at <a href="https://github.com/curl/stats">github.com/curl/stats</a>.
