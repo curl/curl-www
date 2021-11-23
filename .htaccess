@@ -156,6 +156,7 @@ ExpiresByType application/x-pem-file "access plus 12 hours"
 RewriteEngine On
 
 RewriteCond expr "! %{HTTP_HOST} -strmatch 'curl.se'"
+RewriteCond expr "! %{HTTP_HOST} -strmatch 'curl.local'"
 RewriteRule (.*) https://curl.se%{REQUEST_URI} [R=301,L]
 
 </IfModule>
