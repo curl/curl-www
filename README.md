@@ -21,7 +21,6 @@ Make sure the following tools are in your $PATH.
  - pandoc
  - perl (with CPAN packages: CGI, HTML::Entities)
  - roffit
- - GNU ln
  - GNU date
 
 ## Build
