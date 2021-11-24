@@ -38,7 +38,7 @@ enough to let you load most HTML pages locally.
 
 [Web editing guidelines](https://curl.se/web-editing.html)
 
-# 'curl.local'
+# curl.local
 
 To run a local copy of the curl website, have a local Apache to serve
 `curl.local` on `127.0.0.1`. Add this line to `/etc/hosts`:
