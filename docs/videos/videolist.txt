@@ -567,7 +567,7 @@ THUMBSIZE width="250" height="141"
 DATE 2020-08-05
 DURATION 24 minutes
 WHO Daniel Stenberg
-DESC Daniel explains why cURL is used in embedded devices with strict resource restrictions and the support for cURL provided by wolfSSL.
+DESC Why cURL is used in embedded devices with strict resource restrictions and the support for cURL provided by wolfSSL.
 ENDOFVIDEO
 
 VIDEO Landing code in curl
