@@ -24,7 +24,7 @@ Make sure the following tools are in your $PATH.
  - GNU ln
  - GNU date
 
-# Build
+## Build
 
 Once you've cloned the Git repo the first time, invoke `sh bootstrap.sh` once
 to get a symlink and some some initial local files setup, and then you can
@@ -34,6 +34,36 @@ Note that this doesn't make you a complete web site mirror, as some scripts
 and files are only available on the real actual site, but should give you
 enough to let you load most HTML pages locally.
 
-# Edit the web
+## Edit the web
 
 [Web editing guidelines](https://curl.se/web-editing.html)
+
+# 'curl.local'
+
+To run a local copy of the curl website, have a local Apache to serve
+`curl.local` on `127.0.0.1`. Add this line to `/etc/hosts`:
+
+    127.0.0.1 curl.local
+
+## Apache httpd config
+
+A config file for apache2 to run a virtual server for `curl.local` on your
+local machine might look like this:
+
+~~~
+<VirtualHost *:80>
+    ServerName curl.local
+    ServerAdmin [my email address]
+    DocumentRoot [full path to the curl-www build]
+
+    ErrorLog ${APACHE_LOG_DIR}/curllocal-error.log
+    CustomLog ${APACHE_LOG_DIR}/curllocal-access.log combined
+</VirtualHost>
+
+<Directory [full path to the curl-www build]>
+   Options Indexes Includes FollowSymLinks ExecCGI
+   AllowOverride All
+   AddHandler cgi-script .cgi
+   Require all granted
+</Directory>
+~~~
