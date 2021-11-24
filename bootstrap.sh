@@ -16,10 +16,6 @@ fi
 touch ca/cacert.pem
 touch ca/pemlist.gen
 
-# This links to a *built* curl.1 file
-# NOTE: -r requires GNU ln
-ln -rsf cvssource/docs/curl.1 docs/curl.1
-
 cd libcurl/c || exit 1
 perl mkopts.pl
 perl mkexam.pl

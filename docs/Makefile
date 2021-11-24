@@ -212,6 +212,9 @@ libs.html: _libs.html $(MAINPARTS)
 manpage.html: _manpage.html $(MAINPARTS) mandump.gen $(ROOT)/manpage.t
 	$(ACTION)
 
+curl.1: ../cvssource/docs/cmdline-opts/*.d
+	(cd ../cvssource/docs/cmdline-opts && perl gen.pl mainpage *.d) > curl.1
+
 mandump.gen: curl.1
 	 $(MAN2HTML) < $< > mandump.gen
 

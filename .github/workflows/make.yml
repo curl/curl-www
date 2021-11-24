@@ -1,0 +1,45 @@
+name: make
+
+on:
+  # Trigger the workflow on push or pull requests, but only for the
+  # master branch
+  push:
+    branches:
+    - master
+    - '*/ci'
+  pull_request:
+    branches:
+    - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: install prereqs
+      run: sudo apt-get install pandoc
+
+    - name: clone the source repo
+      run: git clone --depth=1 https://github.com/curl/curl.git cvssource
+    
+    - name: install fcpp
+      run: |
+        git clone https://github.com/bagder/fcpp.git
+        cd fcpp
+        make
+        make install
+    
+    - name: install roffit
+      run: |
+        git clone https://github.com/bagder/roffit.git
+        cd roffit
+        make install
+    
+    - name: bootstrap
+      run: ./bootstrap.sh
+      
+    - name: make
+      run: make
