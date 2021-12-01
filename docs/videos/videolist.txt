@@ -559,6 +559,30 @@ WHO Daniel Stenberg
 DESC The state of the curl project 2020. Stats, numbers and status checks.
 ENDOFVIDEO
 
+VIDEO Common mistakes when using libcurl
+EVENT wolfSSL webinar
+URL https://youtu.be/0KfDdIAirSI
+THUMB common-libcurl-mistakes.jpg
+THUMBSIZE width="250" height="140"
+DATE 2020-05-07
+SLIDES https://www.slideshare.net/bagder/common-mistakes-when-using-libcurl
+DURATION 1h2
+WHO Daniel Stenberg
+DESC Common mistakes users and application authors make when using libcurl
+ENDOFVIDEO
+
+VIDEO Testing curl for security
+EVENT wolfSSL webinar
+URL https://youtu.be/t12Z9dBlfMk
+THUMB testing-for-security.jpg
+THUMBSIZE width="250" height="141"
+DATE 2020-07-02
+SLIDES https://www.slideshare.net/bagder/testing-curl-for-security
+DURATION 45 minutes
+WHO Daniel Stenberg
+DESC How we develop secure and safe software in the curl project
+ENDOFVIDEO
+
 VIDEO Why cURL is used in IoT devices
 EVENT wolfSSL webinar
 URL https://youtu.be/2PEZ6BMEr4Y
@@ -582,28 +606,15 @@ WHO Daniel Stenberg
 DESC How to get your first code contribution merged into the curl code repository
 ENDOFVIDEO
 
-VIDEO Common mistakes when using libcurl
-EVENT wolfSSL webinar
-URL https://youtu.be/0KfDdIAirSI
-THUMB common-libcurl-mistakes.jpg
-THUMBSIZE width="250" height="140"
-DATE 2020-05-07
-SLIDES https://www.slideshare.net/bagder/common-mistakes-when-using-libcurl
-DURATION 1h2
-WHO Daniel Stenberg
-DESC Common mistakes users and application authors make when using libcurl
-ENDOFVIDEO
-
-VIDEO Testing curl for security
-EVENT wolfSSL webinar
-URL https://youtu.be/t12Z9dBlfMk
-THUMB testing-for-security.jpg
+VIDEO Using curl Better
+EVENT foss-north 2020
+URL https://youtu.be/I6id1Y0YuNk
+THUMB curl-better.jpg
 THUMBSIZE width="250" height="141"
-DATE 2020-07-02
-SLIDES https://www.slideshare.net/bagder/testing-curl-for-security
-DURATION 45 minutes
+DATE 2020-03-30
+DURATION 55 minutes
 WHO Daniel Stenberg
-DESC How we develop secure and safe software in the curl project
+DESC How curl came to be this prevalent, the design think behind it and some clever curl tricks for consuming HTTP APIs and more.
 ENDOFVIDEO
 
 VIDEO cURL, Hyper, and Rust
