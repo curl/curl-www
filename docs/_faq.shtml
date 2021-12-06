@@ -12,7 +12,7 @@
 #include "_menu.html"
 #include "setup.t"
 
-WHERE3(Docs, "/docs/", Tool Documentation, "/docs/tooldocs.html", FAQ)
+WHERE3(Docs, "/docs/", Project, "/docs/projdocs.html", FAQ)
 
 TITLE(FAQ -- Frequently Asked Questions)
 <div class="relatedbox">
