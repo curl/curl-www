@@ -3,16 +3,18 @@ curl logo
 
 URL: [https://curl.se/logo/](https://curl.se/logo/)
 
-These versions of the official curl logo are the official ones made by Soft
-Dreams (Adrian Burcea). The official curl logo since May 26 2016.
+This is the official curl logo. Made by Soft Dreams (Adrian Burcea) and
+donated to the curl project on May 26 2016.
 
-You are free to use these logos for purposes of showing your use of curl, your
+You are free to use the images for purposes of showing your use of curl, your
 product's use of curl, general or specific curl information, curl advocacy and
 similar.
 
 You are allowed to resize the images and host them yourself as you see fit.
 
 ## Official logo
+
+[![curl logo](curl-logo.svg)]()
 
 | File | Size | Resolution | Format |
 |------|------|------------|---------|
@@ -25,6 +27,8 @@ You are allowed to resize the images and host them yourself as you see fit.
 
 ## The curl symbol
 
+[![curl symbol](curl-symbol.svg)]()
+
 | File | Size | Resolution | Format |
 |------|------|------------|---------|
 | [curl-symbol.jpg](curl-symbol.jpg)  | 37K | 789 x 690 | JPEG |
@@ -35,6 +39,8 @@ You are allowed to resize the images and host them yourself as you see fit.
 
 ## curl up
 
+[![curl up logo](curl-up.svg)]()
+
 | File | Size | Resolution | Format |
 |------|------|------------|---------|
 | [curl-up.png](curl-up.png) | 70K | 2573 x 707 | PNG |
@@ -42,5 +48,5 @@ You are allowed to resize the images and host them yourself as you see fit.
 
 ## Colors
 
-curl blue: `#0a3754`
-curl green: `#0f574c`
+- curl blue: `#0a3754`
+- curl green: `#0f574c`
