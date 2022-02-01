@@ -1,0 +1,66 @@
+#include "_doctype.html"
+<html>
+<head> <title>curl shipped by Microsoft</title>
+#include "css.t"
+
+ #define CURL_URL /windows/microsoft.html
+#define WINDOWS_MS
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(Download, "/download.html", Windows downloads, "/windows/", Microsoft)
+
+TITLE(curl shipped by Microsoft)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/changes.html">Changelog</a>
+<br><a href="/download.html">Downloads</a>
+<br><a href="/docs/faq.html">FAQ</a>
+<br><a href="/docs/copyright.html">License</a>
+<br><a href="/docs/manpage.html">Manual</a>
+</div>
+
+<p>
+ On December 19
+ 2017, <a href="https://blogs.technet.microsoft.com/virtualization/2017/12/19/tar-and-curl-come-to-windows/">Microsoft
+ announced</a> that since insider build 17063 of Windows 10, curl is a default
+ component.
+
+SUBTITLE(Windows 10/11 bundle curl)
+<p>
+ All installs of Microsoft Windows 10 and Windows 11 get curl installed by
+ default since then. The initial curl version Microsoft shipped was 7.55.1 but
+ it was upgraded to 7.79.1 in January 2022.
+<p>
+ The Microsoft provided version is built to use the Schannel TLS backend.
+ Invoking curl -V shows this on these platforms:
+<p>
+<pre>
+curl 7.79.1 (Windows) libcurl/7.79.1 Schannel
+Release-Date: 2021-09-22
+Protocols: dict file ftp ftps http https imap imaps pop3 pop3s smtp smtps telnet tftp
+Features: AsynchDNS HSTS IPv6 Kerberos Largefile NTLM SPNEGO SSL SSPI UnixSockets
+</pre>
+
+SUBTITLE(Separate)
+<p>
+ The curl tool shipped with Windows is built by and handled by Microsoft. It
+ is a separate build that will have different features and capabilities
+ enabled and disabled compared to the <a href="/windows/">Windows builds</a>
+ offered by the curl project. They do however build curl from the same source
+ code. If you have problems with their curl version, report that to them.
+<p>
+ You can probably assume that the curl packages from Microsoft will always lag
+ behind the versions provided by the curl project itself.
+
+SUBTITLE(A Powershell alias)
+<p>
+ The curl tool comes installed <i>in addition to</i> the
+ dreaded <a href="https://daniel.haxx.se/blog/2016/08/19/removing-the-powershell-curl-alias/">curl
+ alias</a> that plagues Powershell users since it is an alias that runs the
+ invoke-webrequest command and therefore isn't acting much like curl at all.
+  
+#include "_footer.html"
+</body>
+</html>
