@@ -6,11 +6,14 @@ DOCROOT=$(SRCROOT)/docs
 include $(ROOT)/mainparts.mk
 include $(ROOT)/setup.mk
 
-PAGES=index.html
+PAGES=index.html microsoft.html
 
 all: $(PAGES)
 
 index.html: _index.html $(MAINPARTS) files.gen
+	$(ACTION)
+
+microsoft.html: _microsoft.html $(MAINPARTS)
 	$(ACTION)
 
 files.gen: mkfiles.pl latest.txt
