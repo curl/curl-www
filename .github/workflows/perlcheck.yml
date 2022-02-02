@@ -20,7 +20,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: install prereqs
-      run: sudo apt-get install libcgi-pm-perl
+      run: sudo apt-get install libcgi-pm-perl libstring-crc32-perl
 
     - name: perlcheck
       run: make perlcheck
