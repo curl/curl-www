@@ -159,7 +159,13 @@ support.html: _support.html $(MAINPARTS)
 	$(ACTION)
 
 perlcheck:
-	@for f in `git ls-files | grep '\.pl$$' `; do perl -c $$f; done
+	@(for f in `git ls-files | egrep '\.(pl|cgi)$$' `; do \
+	   perl -c $$f; \
+	   res=$$?; \
+	   if test "$$res" != "0"; then \
+	    exit 2; \
+	   fi \
+	done)
 
 full: all
 	@cd libcurl; make
