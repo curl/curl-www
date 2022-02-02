@@ -158,6 +158,9 @@ libs.html: _libs.html $(MAINPARTS)
 support.html: _support.html $(MAINPARTS)
 	$(ACTION)
 
+perlcheck:
+	@for f in `git ls-files | grep '\.pl$$' `; do perl -c $$f; done
+
 full: all
 	@cd libcurl; make
 
