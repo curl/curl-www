@@ -207,6 +207,9 @@ sub my_show_form()
     alternative("Packager Email/URL", "email",
                 "name\@somewhere.com or URL");
 
+    alternative("Regex-name", "re",
+                "name of the package regex (NOT USED ANYMORE)");
+
     alternative("Uploader", "resp",
                 "username of the person responsible for this package");
 
