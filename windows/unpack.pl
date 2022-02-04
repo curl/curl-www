@@ -39,6 +39,9 @@ if($n = $sul[0]) {
             printf "Stamp: %s\n", $stamp;
             system "(mkdir -p $extract-$stamp && cd $extract-$stamp && unzip -oq $f)";
             system "echo $stamp > $latest";
+            # update symlinks for "the latest"
+            system "ln -sf dl-$stamp/curl-$stamp-win64-mingw.zip curl-win64-latest.zip";
+            system "ln -sf dl-$stamp/curl-$stamp-win32-mingw.zip curl-win32-latest.zip";
         }
     }
 }
