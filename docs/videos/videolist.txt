@@ -693,3 +693,15 @@ DURATION 21 minutes
 WHO Jim Fuller
 DESC Presenting a series of tools for characterising the performance of curl.
 ENDOFVIDEO
+
+VIDEO curl with Rust
+EVENT Rust Linz
+URL https://youtu.be/HFH2vZRTKrA
+THUMB curl-with-rust.jpg
+THUMBSIZE width="250" height="141"
+DATE 2022-01-27
+SLIDES https://www.slideshare.net/bagder/curl-with-rust
+DURATION 41 minutes
+WHO Daniel Stenberg
+DESC How Rust is being used inside curl.
+ENDOFVIDEO
