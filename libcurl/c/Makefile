@@ -57,6 +57,10 @@ EASY_OPTION = \
  curl_easy_option_by_name.html \
  curl_easy_option_next.html
 
+HEADER_API = \
+ curl_easy_header.html \
+ curl_easy_nextheader.html
+
 PAGES = \
  index.html \
  example.html \
@@ -131,7 +135,8 @@ PAGES = \
  $(URLAPI) \
  curl_multi_poll.html \
  curl_multi_wakeup.html \
- $(EASY_OPTION)
+ $(EASY_OPTION) \
+ $(HEADER_API)
 
 all: $(PAGES)
 
@@ -597,6 +602,16 @@ curl_easy_option_by_name.gen: $(MANROOT)/curl_easy_option_by_name.3
 curl_easy_option_next.html: _curl_easy_option_next.html $(MAINPARTS_CAPI) curl_easy_option_next.gen
 	$(ACTION)
 curl_easy_option_next.gen: $(MANROOT)/curl_easy_option_next.3
+	$(MAN2HTML) < $< >$@
+
+curl_easy_header.html: _curl_easy_header.html $(MAINPARTS_CAPI) curl_easy_header.gen
+	$(ACTION)
+curl_easy_header.gen: $(MANROOT)/curl_easy_header.3
+	$(MAN2HTML) < $< >$@
+
+curl_easy_nextheader.html: _curl_easy_nextheader.html $(MAINPARTS_CAPI) curl_easy_nextheader.gen
+	$(ACTION)
+curl_easy_nextheader.gen: $(MANROOT)/curl_easy_nextheader.3
 	$(MAN2HTML) < $< >$@
 
 include Makefile.examples
