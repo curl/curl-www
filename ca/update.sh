@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # get the cert and create ca-bundle.crt
-perl ../cvssource/lib/mk-ca-bundle.pl
+perl ../cvssource/scripts/mk-ca-bundle.pl
 
 sha256sum -c cacert.pem.sha256
 if test $? -gt "0"; then
