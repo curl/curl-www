@@ -20,7 +20,6 @@ my %silver = (
     "https://serpapi.com" => 'serpapi.svg',
     'https://hightouch.io/' => 'hightouch.svg',
     'https://mowcapital.com' => 'mowcapital.svg',
-    "https://www.movavi.com/screen-recorder/" => 'movavi.svg',
     "https://proxy-hub.com/" => 'proxyhub.svg',
     );
 my %modurl = (
