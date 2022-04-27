@@ -13,6 +13,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2022-27776.html|4.9|7.82.0|Auth/cookie leak on redirect|CVE-2022-27776|20220427|20220421|CWE-522: Insufficiently Protected Credentials|0|HTTP|-",
     "CVE-2022-27775.html|7.65.0|7.82.0|Bad local IPv6 connection reuse|CVE-2022-27775|20220427|20220421|CWE-200: Exposure of Sensitive Information to an Unauthorized Actor|0|CONNREUSE|-",
     "CVE-2022-27774.html|4.9|7.82.0|Credential leak on redirect|CVE-2022-27774|20220427|20220418|CWE-522: Insufficiently Protected Credentials|0|HTTP|-",
     "CVE-2022-22576.html|7.33.0|7.82.0|OAUTH2 bearer bypass in connection re-use|CVE-2022-22576|20220427|20220318|CWE-305: Authentication Bypass by Primary Weakness|0|CONNREUSE|-",
