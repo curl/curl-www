@@ -13,6 +13,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2022-27774.html|4.9|7.82.0|Credential leak on redirect|CVE-2022-27774|20220427|20220418|CWE-522: Insufficiently Protected Credentials|0|HTTP|-",
     "CVE-2022-22576.html|7.33.0|7.82.0|OAUTH2 bearer bypass in connection re-use|CVE-2022-22576|20220427|20220318|CWE-305: Authentication Bypass by Primary Weakness|0|SASL|-",
     "CVE-2021-22947.html|7.20.0|7.78.0|STARTTLS protocol injection via MITM|CVE-2021-22947|20210915|20210907|CWE-349: Acceptance of Extraneous Untrusted Data With Trusted Data|1500|STARTTLS|-",
     "CVE-2021-22946.html|7.20.0|7.78.0|Protocol downgrade required TLS bypassed|CVE-2021-22946|20210915|20210908|CWE-325: Missing Cryptographic Step|1000|STARTTLS|-",
