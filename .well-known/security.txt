@@ -1,0 +1,8 @@
+Contact: mailto:security@curl.se
+Contact: https://hackerone.com/curl
+
+Policy: https://curl.se/dev/secprocess.html
+
+Preferred-Languages: en
+
+Acknowledgments: https://curl.se/docs/security.html
