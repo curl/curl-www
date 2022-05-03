@@ -1,7 +1,6 @@
 #!/usr/bin/perl
 
 require "./vuln.pm";
-require "../date.pm";
 
 print "<table>\n";
 
@@ -22,7 +21,6 @@ my $num = $#vuln + 1;
 for(@vuln) {
     my ($id, $start, $stop, $desc, $cve, $date, $project, $cwe)=split('\|');
     my $year, $mon, $day;
-    my $monn;
 
     if($cve eq "-") {
         $cvestr = "[missing]";
@@ -41,14 +39,13 @@ for(@vuln) {
 
     if($date =~ /^(\d\d\d\d)(\d\d)(\d\d)/ ) {
         ($year, $mon, $day)=($1, $2, $3);
-        $monn = ucfirst(MonthName($mon));
     }
 
     print <<VUL
 <tr>
 <td>$num</td>
 <td><a href="$id">$desc</a></td>
-<td>$monn $day, $year</td>
+<td>$year-$mon-$day</td>
 <td><a href="vuln-$start.html">$start</a></td>
 <td><a href="vuln-$stop.html">$stop</a></td>
 <td>$cvestr</td>
