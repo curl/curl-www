@@ -11,7 +11,6 @@ print <<HEAD
 <th>Date</th>
 <th>First</th>
 <th>Last</th>
-<th>CVE</th>
 <th>CWE</th>
 </tr>
 HEAD
