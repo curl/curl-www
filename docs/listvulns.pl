@@ -11,7 +11,6 @@ print <<HEAD
 <th>Date</th>
 <th>First</th>
 <th>Last</th>
-<th>CWE</th>
 </tr>
 HEAD
     ;
@@ -20,15 +19,6 @@ my $num = $#vuln + 1;
 for(@vuln) {
     my ($id, $start, $stop, $desc, $cve, $date, $project, $cwe)=split('\|');
     my $year, $mon, $day;
-
-    my $cwestr;
-    if($cwe) {
-        my $n = $cwe;
-        if($n =~ /^CWE-(\d+)/) {
-            $n = $1;
-        }
-        $cwestr = "<a href=\"https://cwe.mitre.org/data/definitions/$n.html\">$cwe</a>";
-    }
 
     if($date =~ /^(\d\d\d\d)(\d\d)(\d\d)/ ) {
         ($year, $mon, $day)=($1, $2, $3);
@@ -41,7 +31,6 @@ for(@vuln) {
 <td>$year-$mon-$day</td>
 <td><a href="vuln-$start.html">$start</a></td>
 <td><a href="vuln-$stop.html">$stop</a></td>
-<td>$cwestr</td>
 </tr>
 VUL
 ;
