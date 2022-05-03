@@ -22,12 +22,6 @@ for(@vuln) {
     my ($id, $start, $stop, $desc, $cve, $date, $project, $cwe)=split('\|');
     my $year, $mon, $day;
 
-    if($cve eq "-") {
-        $cvestr = "[missing]";
-    }
-    else {
-        $cvestr = "<a href=\"https://cve.mitre.org/cgi-bin/cvename.cgi?name=$cve\">$cve</a>";
-    }
     my $cwestr;
     if($cwe) {
         my $n = $cwe;
@@ -44,11 +38,10 @@ for(@vuln) {
     print <<VUL
 <tr>
 <td>$num</td>
-<td><a href="$id">$desc</a></td>
+<td><a href="$id">$cve: $desc</a></td>
 <td>$year-$mon-$day</td>
 <td><a href="vuln-$start.html">$start</a></td>
 <td><a href="vuln-$stop.html">$stop</a></td>
-<td>$cvestr</td>
 <td>$cwestr</td>
 </tr>
 VUL
