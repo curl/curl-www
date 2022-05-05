@@ -13,6 +13,12 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2022-30115.html|7.82.0|7.83.0|HSTS bypass via trailing dot|CVE-2022-30115|20220511|20220503|CWE-319: Cleartext Transmission of Sensitive Information|0|URL|-",
+    "CVE-2022-27782.html|7.16.1|7.83.0|TLS and SSH connection too eager reuse|CVE-2022-27782|20220511|20220501|CWE-305: Authentication Bypass by Primary Weakness|0|CONNREUSE|-",
+    "CVE-2022-27781.html|7.34.0|7.83.0|CERTINFO never-ending busy-loop|CVE-2022-27781|20220511|20220430|CWE-835: Loop with Unreachable Exit Condition ('Infinite Loop')|0|TLS|-",
+    "CVE-2022-27780.html|7.80.0|7.83.0|percent-encoded path separator in URL host|CVE-2022-27780|20220511|20220428|CWE-177: Improper Handling of URL Encoding|0|URL|-",
+    "CVE-2022-27779.html|7.82.0|7.83.0|cookie for trailing dot TLD|CVE-2022-27779|20220511|20220428|CWE-201: Information Exposure Through Sent Data|0|COOKIE|-",
+    "CVE-2022-27778.html|7.83.0|7.83.0|curl removes wrong file on error|CVE-2022-27778|20220511|20220428|CWE-706: Use of Incorrectly-Resolved Name or Reference|0|FILE|-",
     "CVE-2022-27776.html|4.9|7.82.0|Auth/cookie leak on redirect|CVE-2022-27776|20220427|20220421|CWE-522: Insufficiently Protected Credentials|480|HTTP|-",
     "CVE-2022-27775.html|7.65.0|7.82.0|Bad local IPv6 connection reuse|CVE-2022-27775|20220427|20220421|CWE-200: Exposure of Sensitive Information to an Unauthorized Actor|480|CONNREUSE|-",
     "CVE-2022-27774.html|4.9|7.82.0|Credential leak on redirect|CVE-2022-27774|20220427|20220418|CWE-522: Insufficiently Protected Credentials|2400|HTTP|-",
