@@ -4,7 +4,7 @@ ROOT=.
 STABLE= 7.83.0
 RELDATE = "27th of April 2022"
 # The planned *next* release is:
-NEXTDATE = "22nd of June 2022"
+NEXTDATE = "11th of May 2022"
 
 # generated file with binary package stats
 STAT = packstat.t
