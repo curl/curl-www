@@ -47,6 +47,53 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
   <img src="pix/play.svg" alt="Play video" height="100%" style="float: left; margin-right: 1em;"> desc </a> \
   </div>
 
+<a name="7_83_1"></a>
+SUBTITLE(Fixed in 7.83.1 - May 11 2022)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.se/bug/?i=8819">altsvc: fix host name matching for trailing dots</a>
+ BGF <a href="https://curl.se/bug/?i=8783">cirrus: Update to FreeBSD 12.3</a>
+ BGF <a href="https://curl.se/bug/?i=8783">cirrus: Use pip for Python packages on FreeBSD</a>
+ BGF <a href="https://curl.se/bug/?i=8759">conn: fix typo &apos;connnection&apos; -&gt; &apos;connection&apos; in two function names</a>
+ BGF <a href="https://curl.se/docs/CVE-2022-27779.html">cookies: make bad_domain() not consider a trailing dot fine</a>
+ BGF <a href="https://curl.se/bug/?i=8770">curl: free resource in error path</a>
+ BGF <a href="https://curl.se/bug/?i=8771">curl: guard against size_t wraparound in no-clobber code</a>
+ BGF <a href="https://curl.se/bug/?i=8790">CURLOPT_DOH_URL.3: mention the known bug</a>
+ BGF <a href="https://curl.se/bug/?i=8788">CURLOPT_HSTS*FUNCTION.3: document the involved structs as well</a>
+ BGF <a href="https://curl.se/bug/?i=8792">CURLOPT_SSH_AUTH_TYPES.3: fix the default</a>
+ BGF data/test376: set a proper name
+ BGF <a href="https://curl.se/bug/?i=8767">GHA/mbedtls: enabled nghttp2 in the build</a>
+ BGF <a href="https://curl.se/bug/?i=8779">gha: build msh3</a>
+ BGF <a href="https://curl.se/bug/?i=8793">gskit: fixed bogus setsockopt calls</a>
+ BGF <a href="https://curl.se/bug/?i=8782">gskit: remove unused function set_callback</a>
+ BGF <a href="https://curl.se/docs/CVE-2022-30115.html">hsts: ignore trailing dots when comparing hosts names</a>
+ BGF <a href="https://curl.se/bug/?i=8795">HTTP-COOKIES: add missing CURLOPT_COOKIESESSION</a>
+ BGF <a href="https://curl.se/bug/?i=8772">http: move Curl_allow_auth_to_host()</a>
+ BGF <a href="https://curl.se/bug/?i=8700">http_proxy/hyper: handle closed connections</a>
+ BGF <a href="https://curl.se/bug/?i=8811">hyper: fix test 357</a>
+ BGF <a href="https://curl.se/bug/?i=8804">Makefile: fix &quot;make ca-firefox&quot;</a>
+ BGF <a href="https://curl.se/bug/?i=8796">mbedtls: bail out if rng init fails</a>
+ BGF <a href="https://curl.se/bug/?i=8766">mbedtls: fix compile when h2-enabled</a>
+ BGF mbedtls: fix some error messages
+ BGF <a href="https://curl.se/bug/?i=8777">misc: use &quot;autoreconf -fi&quot; instead buildconf</a>
+ BGF <a href="https://curl.se/bug/?i=8762">msh3: get msh3 version from MsH3Version</a>
+ BGF <a href="https://curl.se/bug/?i=8763">msh3: print boolean value as text representation</a>
+ BGF <a href="https://curl.se/bug/?i=8762">msh3: psss remote_port to MsH3ConnectionOpen</a>
+ BGF <a href="https://curl.se/bug/?i=8828">ngtcp2: add ca-fallback support for OpenSSL backend</a>
+ BGF <a href="https://curl.se/docs/CVE-2022-27781.html">nss: return error if seemingly stuck in a cert loop</a>
+ BGF <a href="https://curl.se/mail/lib-2022-04/0059.html">openssl: define HAVE_SSL_CTX_SET_EC_CURVES for libressl</a>
+ BGF <a href="https://curl.se/docs/CVE-2022-27778.html">post_per_transfer: remove the updated file name</a>
+ BGF <a href="https://curl.se/bug/?i=8798">sectransp: bail out if SSLSetPeerDomainName fails</a>
+ BGF <a href="https://curl.se/bug/?i=8799">tests/server: declare variable &apos;reqlogfile&apos; static</a>
+ BGF <a href="https://curl.se/bug/?i=8802">tests: fix markdown formatting in README</a>
+ BGF <a href="https://curl.se/bug/?i=8791">test{898,974,976}: add &apos;HTTP proxy&apos; keywords</a>
+ BGF <a href="https://curl.se/docs/CVE-2022-27782.html">tls: check more TLS details for connection reuse</a>
+ BGF <a href="https://curl.se/docs/CVE-2022-27782.html">url: check SSH config match on connection reuse</a>
+ BGF <a href="https://curl.se/bug/?i=8797">urlapi: address (harmless) UndefinedBehavior sanitizer warning</a>
+ BGF <a href="https://curl.se/docs/CVE-2022-27780.html">urlapi: reject percent-decoding host name into separator bytes</a>
+ BGF <a href="https://curl.se/bug/?i=8757">x509asn1: make do_pubkey handle EC public keys</a>
+</ul>
+
 <a name="7_83_0"></a>
 SUBTITLE(Fixed in 7.83.0 - April 27 2022)
 <p>
