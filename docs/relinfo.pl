@@ -177,7 +177,7 @@ for my $str (@releases) {
                $changes{$str}, $totalchanges);
     }
     else {
-        if(vernum($str) < 0x060000) {
+        if(! -f "vuln-$str.html") {
             $v = "0";
         }
         else {

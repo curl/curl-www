@@ -150,11 +150,6 @@ while(<STDIN>) {
         my $date=$2;
         my $this = vernum($str);
 
-        if($this < 0x060000) {
-            # ignore all before 6.0
-            last;
-        }
-
         push @releases, $str;
         $reldate{$str}=$date;
         $vernum{$str}=$this;
