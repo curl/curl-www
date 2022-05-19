@@ -1,6 +1,8 @@
 <div class="badge">
 
-<a href="https://github.com/curl/curl-up/wiki/2022">curl up 2022</a> will take
-place on June 6 in San Francisco. Attend, speak, sponsor!
+The curl user survey 2022 is up. Please donate a few minutes of your time and
+<a
+href="https://daniel.haxx.se/blog/2022/05/17/curl-annual-user-survey-2022/">answer
+a few questions</a>!
 
 </div>
