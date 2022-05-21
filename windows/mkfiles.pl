@@ -38,23 +38,29 @@ sub depversions {
     my ($dl) = @_;
     open(D, "<$dl/build.txt");
     my $tools;
+    my $pkgs;
     while(<D>) {
         if($_ =~ /^\.(.*)/) {
             # tools
             $tools .= "<li>$1";
         }
-        elsif($_ =~ /^([^.]\S+) (\S+)/) {
+        elsif($_ =~ /^([^.]\S+ \S+)/) {
             my ($dep, $ver) = ($1, $2);
-            my $u = $ver;
-            $u =~ s/\./_/g;
-            printf("#define DEP_%s %s\n", uc($dep), $ver);
-            printf("#define DEPU_%s %s\n", uc($dep), $u);
-            $depver{$dep}=$ver;
-            push @alldeps, $dep;
+            if($_ =~ /^curl /) {
+                my $u = $ver;
+                $u =~ s/\./_/g;
+                printf("#define DEP_%s %s\n", uc($dep), $ver);
+                printf("#define DEPU_%s %s\n", uc($dep), $u);
+            }
+            else {
+                $pkgs .= "<li>$1";
+                chomp $pkgs;
+            }
         }
     }
     close(D);
     printf "#define DEP_TOOLS %s\n", $tools;
+    printf "#define DEP_PKGS %s\n", $pkgs;
 }
 
 sub latest {
@@ -136,14 +142,6 @@ depversions($dl);
 my $gensuff="";
 if($gen) {
     $gensuff = sprintf "_%d", $gen;
-}
-
-# generate download links for deps
-for(@alldeps) {
-    for my $arch ('win32', 'win64') {
-        printf "#define DL_%s_%s %s/%s-%s%s-%s-mingw.zip\n",
-        uc($_), uc($arch), $dl, $_, $depver{$_}, $gensuff, $arch;
-    }
 }
 
 gethashes($dl);
