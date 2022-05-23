@@ -44,16 +44,16 @@ sub depversions {
             # tools
             $tools .= "<li>$1";
         }
-        elsif($_ =~ /^([^.]\S+ \S+)/) {
+        elsif($_ =~ /^([^.]\S+) (\S+)/) {
             my ($dep, $ver) = ($1, $2);
-            if($_ =~ /^curl /) {
+            if($dep eq 'curl') {
                 my $u = $ver;
                 $u =~ s/\./_/g;
                 printf("#define DEP_%s %s\n", uc($dep), $ver);
                 printf("#define DEPU_%s %s\n", uc($dep), $u);
             }
             else {
-                $pkgs .= "<li>$1";
+                $pkgs .= "<li>$dep $ver";
                 chomp $pkgs;
             }
         }
