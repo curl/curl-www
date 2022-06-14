@@ -6,3 +6,5 @@ Policy: https://curl.se/dev/secprocess.html
 Preferred-Languages: en
 
 Acknowledgments: https://curl.se/docs/security.html
+
+Expires: %date
