@@ -38,10 +38,12 @@ while(<STDIN>) {
             }
         }
 
-        $letter{$l} .= "$n, ";
+        $letter{$l} .= ", " if $letter{$l};
+        $letter{$l} .= $n;
     }
     elsif($n) {
-        $nletter .= "$n, ";
+        $nletter .= ", " if $nletter;
+        $nletter .= $n;
     }
 }
 
