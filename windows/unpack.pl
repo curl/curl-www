@@ -42,6 +42,8 @@ if($n = $sul[0]) {
             # update symlinks for "the latest"
             system "ln -sf dl-$stamp/curl-$stamp-win64-mingw.zip curl-win64-latest.zip";
             system "ln -sf dl-$stamp/curl-$stamp-win32-mingw.zip curl-win32-latest.zip";
+            system "ln -sf dl-$stamp/curl-$stamp-win64-mingw.tar.xz curl-win64-latest.tar.xz";
+            system "ln -sf dl-$stamp/curl-$stamp-win32-mingw.tar.xz curl-win32-latest.tar.xz";
         }
     }
 }

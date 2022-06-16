@@ -101,7 +101,7 @@ my $dl = latest();
 my @files = getdl($dl);
 for(@files) {
     my $file = $_;
-    if($file =~ /^curl-([0-9.]*(|_[0-9]*))-(\S+)-(\S+)\.(zip)$/) {
+    if($file =~ /^curl-([0-9.]*(|_[0-9]*))-(\S+)-(\S+)\.(zip|tar\.xz)$/) {
         my ($version, $arch, $env, $ext)=($1, $3, $4, $5);
         $exts{$version}.="$ext,";
         $archs{$version.$ext}.="$arch,";
@@ -124,15 +124,17 @@ for my $version (reverse sort @versions) {
         $gen = $2;
     }
     print "#define CURL_PACKAGE_GEN $gen\n";
-    for my $ext ('zip', 'xz') {
+    for my $ext ('zip', 'tar.xz') {
         for my $arch (split(',', $archs{$version.$ext})) {
+            $extd = $ext;
+            $extd =~ s/tar\.//g;
             printf("#define CURL_%s_%s $dl/curl-%s-%s-mingw.%s\n",
-                   uc($arch), uc($ext), $version,
+                   uc($arch), uc($extd), $version,
                    lc($arch), lc($ext));
             printf("#define CURL_%s_%s_SIZE %s\n",
-                   uc($arch), uc($ext), $size{$version.$arch.$ext});
+                   uc($arch), uc($extd), $size{$version.$arch.$ext});
             printf("#define CURL_%s_%s_DATE %s\n",
-                   uc($arch), uc($ext), $date{$version.$arch.$ext});
+                   uc($arch), uc($extd), $date{$version.$arch.$ext});
         }
     }
     last;
