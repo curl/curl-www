@@ -13,6 +13,10 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2022-32208.html|7.16.4|7.83.1|FTP-KRB bad message verification|CVE-2022-32208|20220627|20220602|CWE-924: Improper Enforcement of Message Integrity During Transmission in a Communication Channel|480|FTP|-",
+    "CVE-2022-32207.html|7.69.0|7.83.1|Unpreserved file permissions|CVE-2022-32207|20220627|20220517|CWE-281: Improper Preservation of Permissions|2400|filesystem|-",
+    "CVE-2022-32206.html|7.57.0|7.83.1|HTTP compression denial of service|CVE-2022-32206|20220627|20220515|CWE-770: Allocation of Resources Without Limits or Throttling|2400|compression|-",
+    "CVE-2022-32205.html|7.71.0|7.83.1|Set-Cookie denial of service|CVE-2022-32205|20220627|20220513|CWE-770: Allocation of Resources Without Limits or Throttling|480|cookies|-",
     "CVE-2022-30115.html|7.82.0|7.83.0|HSTS bypass via trailing dot|CVE-2022-30115|20220511|20220503|CWE-319: Cleartext Transmission of Sensitive Information|2400|URL|-",
     "CVE-2022-27782.html|7.16.1|7.83.0|TLS and SSH connection too eager reuse|CVE-2022-27782|20220511|20220501|CWE-305: Authentication Bypass by Primary Weakness|2400|CONNREUSE|-",
     "CVE-2022-27781.html|7.34.0|7.83.0|CERTINFO never-ending busy-loop|CVE-2022-27781|20220511|20220430|CWE-835: Loop with Unreachable Exit Condition ('Infinite Loop')|0|TLS|-",
