@@ -125,9 +125,9 @@ for my $version (reverse sort @versions) {
     }
     print "#define CURL_PACKAGE_GEN $gen\n";
     for my $ext ('zip', 'tar.xz') {
+        $extd = $ext;
+        $extd =~ s/tar\.//g;
         for my $arch (split(',', $archs{$version.$ext})) {
-            $extd = $ext;
-            $extd =~ s/tar\.//g;
             printf("#define CURL_%s_%s $dl/curl-%s-%s-mingw.%s\n",
                    uc($arch), uc($extd), $version,
                    lc($arch), lc($ext));
