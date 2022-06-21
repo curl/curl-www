@@ -705,3 +705,14 @@ DURATION 41 minutes
 WHO Daniel Stenberg
 DESC How Rust is being used inside curl.
 ENDOFVIDEO
+
+VIDEO Getting started with libcurl
+EVENT wolfSSL webinar
+URL https://youtu.be/g83kYIQNRwU
+THUMB getting-started-2022.jpg
+THUMBSIZE width="250" height="141"
+DATE 2022-03-24
+DURATION 51 minutes
+WHO Daniel Stenberg
+DESC Daniel Stenberg goes through some basic libcurl fundamentals and API design and explain how easily you can get your first transfers going in your own application.
+ENDOFVIDEO
