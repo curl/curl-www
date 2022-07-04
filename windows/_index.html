@@ -44,13 +44,22 @@ TITLE(curl DEP_CURL for Windows)
 <p class="windl">
   <a href="CURL_WIN64_ZIP"><img src="/pix/GS-Download-icon.svg" alt="Download 64-bit curl" width="90" height="90" style="float:left;"></a>
 
-<a href="CURL_WIN64_ZIP" class="windl">curl for 64 bit</a> <br>
+<a href="CURL_WIN64_ZIP" class="windl">curl for 64-bit</a> <br>
 Size: CURL_WIN64_ZIP_SIZE<br>
 sha256: SHA256_CURL_WIN64
 
+#ifdef CURL_WIN64A_ZIP
+<p class="windl">
+  <a href="CURL_WIN64A_ZIP"><img src="/pix/GS-Download-icon.svg" alt="Download 64-bit (ARM) curl" width="90" height="90" style="float:left;"></a>
+
+<a href="CURL_WIN64A_ZIP" class="windl">curl for 64-bit (ARM)</a> <br>
+Size: CURL_WIN64A_ZIP_SIZE<br>
+sha256: SHA256_CURL_WIN64A
+#endif
+
 <p class="windl">
  <a href="CURL_WIN32_ZIP"><img src="/pix/GS-Download-icon.svg" alt="Download 32-bit curl" width="90" height="90" style="float:left;"></a>
- <a href="CURL_WIN32_ZIP" class="windl">curl for 32 bit</a> <br>
+ <a href="CURL_WIN32_ZIP" class="windl">curl for 32-bit</a> <br>
 Size: CURL_WIN32_ZIP_SIZE<br>
 sha256: SHA256_CURL_WIN32
 
@@ -59,6 +68,7 @@ SUBTITLE(Fixed URLs)
   These links automatically always provide the latest curl package:
 <p>
 <a href="curl-win64-latest.zip">curl-win64-latest.zip</a><br>
+<a href="curl-win64a-latest.zip">curl-win64a-latest.zip</a><br>
 <a href="curl-win32-latest.zip">curl-win32-latest.zip</a><br>
 
 SUBTITLE(Specifications)
