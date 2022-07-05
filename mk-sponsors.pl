@@ -21,6 +21,7 @@ my %silver = (
     'https://hightouch.io/' => 'hightouch.svg',
     'https://mowcapital.com' => 'mowcapital.svg',
     "https://proxy-hub.com/" => 'proxyhub.svg',
+    'https://cryptotracker.com' => 'crypto-tracker.svg',
     );
 my %modurl = (
     );
