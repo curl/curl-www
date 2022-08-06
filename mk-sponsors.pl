@@ -7,7 +7,6 @@
 # URLs must match exactly the one retrieved from opencollective.com
 my %silver = (
     "https://ipinfo.io/" => 'ipinfo.svg',
-    "https://www.rabattkalas.se" => 'rabattkalas.svg',
     "https://unscramblex.com/" => 'unscramblex.svg',
     "https://www.romab.com" => '[none]',
     "https://www.airbnb.com/" => 'airbnb.svg',
@@ -22,6 +21,7 @@ my %silver = (
     'https://mowcapital.com' => 'mowcapital.svg',
     "https://proxy-hub.com/" => 'proxyhub.svg',
     'https://cryptotracker.com' => 'crypto-tracker.svg',
+    'https://www.sure.bet/casinos-not-on-gamstop/' => 'surebet.png',
     );
 my %modurl = (
     );
