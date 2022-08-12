@@ -22,6 +22,7 @@ my %silver = (
     "https://proxy-hub.com/" => 'proxyhub.svg',
     'https://cryptotracker.com' => 'crypto-tracker.svg',
     'https://www.sure.bet/casinos-not-on-gamstop/' => 'surebet.png',
+    'https://iboysoft.com' => 'iBoysoft.png',
     );
 my %modurl = (
     );
