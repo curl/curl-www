@@ -6,12 +6,9 @@ DOCROOT=$(SRCROOT)/docs
 include $(ROOT)/mainparts.mk
 include $(ROOT)/setup.mk
 
-PAGES=index.html microsoft.html try.html
+PAGES=index.html microsoft.html
 
 all: $(PAGES)
-
-try.html: _try.html $(MAINPARTS) files.gen
-	$(ACTION)
 
 index.html: _index.html $(MAINPARTS) files.gen
 	$(ACTION)
