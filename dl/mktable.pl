@@ -65,8 +65,8 @@ sub sortent {
 
 @sall = sort sortent @all;
 
-my %osmap = ('Win32'    => 'Windows 32 bit',
-             'Win64'    => 'Windows 64 bit',
+my %osmap = ('Win32'    => 'Windows 32-bit',
+             'Win64'    => 'Windows 64-bit',
              'Mac OS X' => 'macOS');
 
 my $shownprev;
