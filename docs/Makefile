@@ -191,6 +191,7 @@ PAGES = \
  vuln.csv \
  vulnerabilities.html \
  vulnall.html \
+ websockets.html \
  whodocs.html
 
 all: vuln.gen $(PAGES) vuln-make.gen
@@ -419,6 +420,12 @@ http3.gen: $(SRCROOT)/docs/HTTP3.md
 	$(MARKDOWN) < $< > $@
 
 http3.html: _http3.html http3.gen $(MAINPARTS)
+	$(ACTION)
+
+websockets.gen: $(SRCROOT)/docs/WebSockets.md
+	$(MARKDOWN) < $< > $@
+
+websockets.html: _websockets.html websockets.gen $(MAINPARTS)
 	$(ACTION)
 
 mqtt.gen: $(SRCROOT)/docs/MQTT.md

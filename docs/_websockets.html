@@ -1,0 +1,21 @@
+#include "_doctype.html"
+<html>
+<head> <title>WebSockets with curl</title>
+#include "css.t"
+</head>
+
+#define DOCS_WEBSOCKETS
+#define PROT_DOCS
+#define CURL_URL docs/websockets.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(Docs, "/docs/", Protocols, "/docs/protdocs.html", WebSockets with curl)
+
+#include "websockets.gen"
+
+#include "_footer.html"
+
+</body>
+</html>
