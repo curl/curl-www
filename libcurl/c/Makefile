@@ -61,6 +61,11 @@ HEADER_API = \
  curl_easy_header.html \
  curl_easy_nextheader.html
 
+WS_API = \
+ curl_ws_recv.html \
+ curl_ws_send.html \
+ curl_ws_meta.html
+
 PAGES = \
  index.html \
  example.html \
@@ -136,7 +141,8 @@ PAGES = \
  curl_multi_poll.html \
  curl_multi_wakeup.html \
  $(EASY_OPTION) \
- $(HEADER_API)
+ $(HEADER_API) \
+ $(WS_API)
 
 all: $(PAGES)
 
@@ -612,6 +618,21 @@ curl_easy_header.gen: $(MANROOT)/curl_easy_header.3
 curl_easy_nextheader.html: _curl_easy_nextheader.html $(MAINPARTS_CAPI) curl_easy_nextheader.gen
 	$(ACTION)
 curl_easy_nextheader.gen: $(MANROOT)/curl_easy_nextheader.3
+	$(MAN2HTML) < $< >$@
+
+curl_ws_recv.html: _curl_ws_recv.html $(MAINPARTS_CAPI) curl_ws_recv.gen
+	$(ACTION)
+curl_ws_recv.gen: $(MANROOT)/curl_ws_recv.3
+	$(MAN2HTML) < $< >$@
+
+curl_ws_send.html: _curl_ws_send.html $(MAINPARTS_CAPI) curl_ws_send.gen
+	$(ACTION)
+curl_ws_send.gen: $(MANROOT)/curl_ws_send.3
+	$(MAN2HTML) < $< >$@
+
+curl_ws_meta.html: _curl_ws_meta.html $(MAINPARTS_CAPI) curl_ws_meta.gen
+	$(ACTION)
+curl_ws_meta.gen: $(MANROOT)/curl_ws_meta.3
 	$(MAN2HTML) < $< >$@
 
 include Makefile.examples
