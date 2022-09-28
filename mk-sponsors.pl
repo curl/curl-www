@@ -17,7 +17,6 @@ my %silver = (
     "https://www.maid2clean.co.uk/domestic-cleaning/" => 'maid2clean.svg',
     "https://icons8.com" => 'icons8.svg',
     "https://serpapi.com" => 'serpapi.svg',
-    'https://hightouch.io/' => 'hightouch.svg',
     'https://mowcapital.com' => 'mowcapital.svg',
     "https://proxy-hub.com/" => 'proxyhub.svg',
     'https://cryptotracker.com' => 'crypto-tracker.svg',
