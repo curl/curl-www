@@ -13,6 +13,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2022-32221.html|7.7|7.85.0|POST following PUT confusion|CVE-2022-32221|20221026|20220919|CWE-440: Expected Behavior Violation|2400|HTTP|-",
     "CVE-2022-35252.html|4.9|7.84.0|control code in cookie denial of service|CVE-2022-35252|20220831|20220626|CWE-1286: Improper Validation of Syntactic Correctness of Input|480|cookies|-",
     "CVE-2022-32208.html|7.16.4|7.83.1|FTP-KRB bad message verification|CVE-2022-32208|20220627|20220602|CWE-924: Improper Enforcement of Message Integrity During Transmission in a Communication Channel|480|FTP|-",
     "CVE-2022-32207.html|7.69.0|7.83.1|Unpreserved file permissions|CVE-2022-32207|20220627|20220517|CWE-281: Improper Preservation of Permissions|2400|filesystem|-",
