@@ -1,11 +1,10 @@
 #!/bin/sh
 
-# generate missing .sha256 files retroactively
-for f in cacert-*.pem; do
-  if [ ! -s "${f}.sha256" ]; then
-    sha256sum "${f}" > "${f}.sha256"
-  fi
-done
+# rebuild cert list to include hashes
+if ! grep -q -F sha256 pemlist.gen; then
+  perl ./listpem.pl > pemlist.gen
+  make
+fi
 
 # get the cert and create ca-bundle.crt
 perl ../cvssource/scripts/mk-ca-bundle.pl
