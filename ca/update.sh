@@ -1,11 +1,5 @@
 #!/bin/sh
 
-# rebuild cert list to include hashes
-if ! grep -q -F sha256 pemlist.gen; then
-  perl ./listpem.pl > pemlist.gen
-  make
-fi
-
 # get the cert and create ca-bundle.crt
 perl ../cvssource/scripts/mk-ca-bundle.pl
 
