@@ -716,3 +716,95 @@ DURATION 51 minutes
 WHO Daniel Stenberg
 DESC Daniel Stenberg goes through some basic libcurl fundamentals and API design and explain how easily you can get your first transfers going in your own application.
 ENDOFVIDEO
+
+VIDEO The state of curl 2022
+EVENT curl-up 2022
+URL https://youtu.be/CzXYIQNRJTU
+SLIDES https://www.slideshare.net/bagder/the-state-of-curl-2022
+THUMB state-of-curl-2022.jpg
+THUMBSIZE width="250" height="141"
+DURATION 1h20
+DATE 2022-09-12
+WHO Daniel Stenberg
+DESC Daniel summarizes the past year, what the curl project did, what it does and maybe what it will do next.
+ENDOFVIDEO
+
+VIDEO Official Curl Container: Lessons learned and next steps
+EVENT curl-up 2022
+URL https://youtu.be/Tgi95yLc0ps
+THUMB curl-containers-lessons.jpg
+THUMBSIZE width="250" height="140"
+DURATION 0h20
+DATE 2022-09-14
+WHO James Fuller
+DESC Lessons learned while maintaining the official curl Docker container.
+ENDOFVIDEO
+
+VIDEO Using curl+apache in a tailscale network
+EVENT curl-up 2022
+URL https://youtu.be/ydEA-NTtf2U
+THUMB curl-apache-tailscale.jpg
+THUMBSIZE width="250" height="140"
+DURATION 0h23
+DATE 2022-06-08
+WHO Stefan Eissing
+DESC How to make your own Internet using Tailscale and a bit of curl and Apache. Stefan is a long-time contributor to Apache httpd and a knowledgeable network hacker.
+ENDOFVIDEO
+
+VIDEO curl security, past and present, attacks and mitigations
+EVENT curl-up 2022
+URL https://youtu.be/TPbBjm0qf4g
+SLIDES https://www.slideshare.net/bagder/curl-security-curl-up-2022
+THUMB curl-security-past-present.jpg
+THUMBSIZE width="250" height="141"
+DURATION 0h23
+DATE 2022-09-12
+WHO Daniel Stenberg
+DESC A look at where we are in regards to security in the curl project. Can we do more/better?
+ENDOFVIDEO
+
+VIDEO curl CI and ideas for improving velocity
+EVENT curl-up 2022
+URL https://youtu.be/1jzHrJDQNB8
+THUMB curl-ci-velocity.jpg
+THUMBSIZE width="250" height="128"
+DURATION 0h24
+DATE 2022-09-12
+WHO Max Dymond
+DESC CI should make our lives easier and faster. Are we getting the most out of the current system? Max is a long time contributor who among other things did a lot of the fuzzing work.
+ENDOFVIDEO
+
+VIDEO Status of experimental code in curl
+EVENT curl-up 2022
+URL https://youtu.be/0urDlSaKptI
+SLIDES https://www.slideshare.net/bagder/curl-experiments-curl-up-2022
+THUMB experimental-code.jpg
+THUMBSIZE width="250" height="141"
+DURATION 0h15
+DATE 2022-09-12
+WHO Daniel Stenberg
+DESC We have various pieces of code marked EXPERIMENTAL. What parts and what's the status now? Is it time to remove the label from parts?
+ENDOFVIDEO
+
+VIDEO QUIC and HTTP/3 with curl
+EVENT curl-up 2022
+URL https://youtu.be/TTCKl9-AydU
+SLIDES https://www.slideshare.net/bagder/http3-in-curl-curl-up-2022
+THUMB quic-http3-curl.jpg
+THUMBSIZE width="250" height="141"
+DURATION 0h32
+DATE 2022-09-12
+WHO Daniel Stenberg
+DESC Where are we with QUIC and HTTP/3 support in curl right now and what's coming up next?
+ENDOFVIDEO
+
+VIDEO Hyper in curl
+EVENT curl-up 2022
+URL https://youtu.be/tXB9AkG1QwI
+THUMB hyper-in-curl.jpg
+THUMBSIZE width="250" height="140"
+DURATION 0h21
+DATE 2022-09-15
+WHO Sean McArthur
+DESC Brief recap of an HTTP backend in curl. What we've done, highlight community members that have fixed things. Ways curl has improved hyper, and vice versa. How anyone can join us, and try it out early. Sean is the lead developer of the Hyper project.
+ENDOFVIDEO
