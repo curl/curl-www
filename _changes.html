@@ -47,6 +47,209 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
   <img src="pix/play.svg" alt="Play video" height="100%" style="float: left; margin-right: 1em;"> desc </a> \
   </div>
 
+<a name="7_86_0"></a>
+SUBTITLE(Fixed in 7.86.0 - October 26 2022)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="https://curl.se/bug/?i=9307">NPN: remove support for and use of</a>
+ CHG <a href="https://curl.se/bug/?i=8995">Websockets: initial support</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.se/bug/?i=9607">altsvc: reject bad port numbers</a>
+ BGF <a href="https://curl.se/bug/?i=9515">altsvc: use &apos;h3&apos; for h3</a>
+ BGF <a href="https://curl.se/bug/?i=9762">amiga: do not hardcode openssl/zlib into the os config</a>
+ BGF <a href="https://curl.se/bug/?i=9771">amiga: set SIZEOF_CURL_OFF_T=8 by default</a>
+ BGF <a href="https://curl.se/bug/?i=9761">amigaos: add missing curl header</a>
+ BGF <a href="https://curl.se/bug/?i=9694">asyn-ares: set hint flags when calling ares_getaddrinfo</a>
+ BGF <a href="https://curl.se/bug/?i=9586">autotools: allow --enable-symbol-hiding with windows</a>
+ BGF <a href="https://github.com/curl/curl-for-win/blob/73a070d96fd906fdee929e2f1f00a9149fb39239/curl-autotools.sh#L44-L47">autotools: allow unix sockets on Windows</a>
+ BGF <a href="https://curl.se/bug/?i=9591">autotools: reduce brute-force when detecting recv/send arg list</a>
+ BGF <a href="https://curl.se/bug/?i=7966">aws_sigv4: fix header computation</a>
+ BGF bearssl: make it proper C89 compliant
+ BGF <a href="https://curl.se/bug/?i=9533">CI/GHA: cancel outdated CI runs on new PR changes</a>
+ BGF <a href="https://curl.se/bug/?i=9646">CI/GHA: merge msh3 and openssl3 builds into linux workflow</a>
+ BGF <a href="https://curl.se/bug/?i=9565">cirrus-ci: add macOS build with m1</a>
+ BGF <a href="https://curl.se/bug/?i=9633">cirrus: use make LDFLAGS=-all-static instead of curl_LDFLAGS</a>
+ BGF cli tool: do not use disabled protocols
+ BGF <a href="https://curl.se/bug/?i=9689">cmake: add missing inet_ntop check</a>
+ BGF <a href="https://curl.se/bug/?i=9686">cmake: add the check of HAVE_SOCKETPAIR</a>
+ BGF <a href="https://curl.se/bug/?i=9498">cmake: define BUILDING_LIBCURL in lib/CMakeLists, not config.h</a>
+ BGF <a href="https://curl.se/bug/?i=9731">cmake: delete duplicate HAVE_GETADDRINFO test</a>
+ BGF <a href="https://curl.se/bug/?i=9687">cmake: enable more detection on Windows</a>
+ BGF <a href="https://curl.se/bug/?i=9214">cmake: fix original MinGW builds</a>
+ BGF <a href="https://curl.se/bug/?i=9638">cmake: improve usability of CMake build as a sub-project</a>
+ BGF <a href="https://curl.se/bug/?i=9727">cmake: set HAVE_GETADDRINFO_THREADSAFE on Windows</a>
+ BGF <a href="https://curl.se/bug/?i=9726">cmake: set HAVE_SOCKADDR_IN6_SIN6_SCOPE_ID on Windows</a>
+ BGF <a href="https://curl.se/bug/?i=9725">cmake: sync HAVE_SIGNAL detection with autotools</a>
+ BGF <a href="https://curl.se/bug/?i=9759">cmdline/docs: add a required &apos;multi&apos; keyword for each option</a>
+ BGF <a href="https://curl.se/bug/?i=9471">configure: correct the wording when checking grep -E</a>
+ BGF <a href="https://curl.se/bug/?i=9605">configure: deprecate builds with small curl_off_t</a>
+ BGF <a href="https://curl.se/bug/?i=9414">configure: fail if &apos;--without-ssl&apos; + explicit parameter for an ssl lib</a>
+ BGF <a href="https://curl.se/mail/lib-2022-10/0007.html">configure: the ngtcp2 option should default to &apos;no&apos;</a>
+ BGF <a href="https://curl.se/mail/archive-2022-02/0041.html">connect: change verbose IPv6 address:port to [address]:port</a>
+ BGF <a href="https://curl.se/bug/?i=9770">connect: fix builds without AF_INET6</a>
+ BGF <a href="https://curl.se/bug/?i=9664">connect: fix Curl_updateconninfo for TRNSPRT_UNIX</a>
+ BGF <a href="https://curl.se/bug/?i=9549">connect: fix the wrong error message on connect failures</a>
+ BGF <a href="https://curl.se/bug/?i=9455">content_encoding: use writer struct subclasses for different encodings</a>
+ BGF <a href="https://curl.se/bug/?i=9659">cookie: reject cookie names or content with TAB characters</a>
+ BGF <a href="https://curl.se/bug/?i=9433">ctype: remove all use of &lt;ctype.h&gt;, use our own versions</a>
+ BGF <a href="https://curl.se/bug/?i=9542">curl-compilers.m4: for gcc + want warnings, set gnu89 standard</a>
+ BGF <a href="https://curl.se/bug/?i=9444">curl-compilers.m4: use -O2 as default optimize for clang</a>
+ BGF <a href="https://curl.se/bug/?i=9682">curl-wolfssl.m4: error out if wolfSSL is not usable</a>
+ BGF curl.h: fix mention of wrong error code in comment
+ BGF <a href="https://curl.se/bug/?i=9683">curl/add_file_name_to_url: use the libcurl URL parser</a>
+ BGF <a href="https://curl.se/bug/?i=9729">curl/add_parallel_transfers: better error handling</a>
+ BGF <a href="https://curl.se/bug/?i=9684">curl/get_url_file_name: use libcurl URL parser</a>
+ BGF <a href="https://curl.se/bug/?i=9519">curl: warn for --ssl use, considered insecure</a>
+ BGF <a href="https://curl.se/bug/?i=9429">curl_ctype: convert to macros-only</a>
+ BGF <a href="https://curl.se/bug/?i=9410">curl_easy_pause.3: unpausing is as fast as possible</a>
+ BGF <a href="https://curl.se/bug/?i=9517">curl_escape.3: fix typo</a>
+ BGF <a href="https://curl.se/bug/?i=9575">curl_setup: disable use of FLOSS for 64-bit NonStop builds</a>
+ BGF <a href="https://curl.se/bug/?i=9453">curl_setup: include curl.h after platform setup headers</a>
+ BGF <a href="https://curl.se/bug/?i=9453">curl_setup: include only system.h instead of curl.h</a>
+ BGF <a href="https://curl.se/bug/?i=9548">curl_strequal.3: fix argument typo</a>
+ BGF <a href="https://curl.se/bug/?i=9628">curl_url_set.3: document CURLU_APPENDQUERY proper</a>
+ BGF <a href="https://curl.se/bug/?i=9776">CURLMOPT_PIPELINING.3: dedup manpage xref</a>
+ BGF <a href="https://curl.se/bug/?i=9614">CURLOPT_ACCEPT_ENCODING.3: remove &quot;four&quot; as they are five</a>
+ BGF <a href="https://curl.se/bug/?i=9757">CURLOPT_AUTOREFERER.3: highlight the privacy leak risk</a>
+ BGF <a href="https://curl.se/bug/?i=9654">CURLOPT_COOKIEFILE: insist on &quot;&quot; for enable-without-file</a>
+ BGF <a href="https://curl.se/bug/?i=9639">CURLOPT_COOKIELIST.3: fix formatting mistake</a>
+ BGF <a href="https://curl.se/bug/?i=9427">CURLOPT_DNS_INTERFACE.3: mention it works for almost all protocols</a>
+ BGF <a href="https://curl.se/bug/?i=9637">CURLOPT_MIMEPOST.3: add an (inline) example</a>
+ BGF <a href="https://curl.se/bug/?i=9752">CURLOPT_POSTFIELDS.3: refer to CURLOPT_MIMEPOST</a>
+ BGF <a href="https://curl.se/bug/?i=9434">CURLOPT_PROXY_SSLCERT_BLOB.3: this is for HTTPS proxies</a>
+ BGF <a href="https://curl.se/bug/?i=9418">CURLOPT_WILDCARDMATCH.3: Fix backslash escaping under single quotes</a>
+ BGF <a href="https://curl.se/bug/?i=9612">CURLSHOPT_UNLOCKFUNC.3: the callback has no &apos;access&apos; argument</a>
+ BGF <a href="https://curl.se/bug/?i=9604">DEPRECATE.md: Support for systems without 64 bit data types</a>
+ BGF <a href="https://curl.se/bug/?i=9661">docs/examples: avoid deprecated options in examples where possible</a>
+ BGF <a href="https://curl.se/bug/?i=9732">docs/INSTALL: update Android Instructions for newer NDKs</a>
+ BGF docs/libcurl/symbols-in-versions: add several missing symbols
+ BGF docs: 100+ spellfixes
+ BGF <a href="https://curl.se/bug/?i=9474">docs: correct missing uppercase in Markdown files</a>
+ BGF docs: document more server names for test files
+ BGF <a href="https://curl.se/bug/?i=9711">docs: fix deprecation versions inconsistencies</a>
+ BGF <a href="https://curl.se/bug/?i=9779">docs: make sure libcurl opts examples pass in long arguments</a>
+ BGF <a href="https://curl.se/bug/?i=9415">docs: remove mentions of deprecated &apos;--without-openssl&apos; parameter</a>
+ BGF docs: tag curl options better in man pages
+ BGF docs: tell about disabled protocols in CURLOPT_*PROTOCOLS_STR.
+ BGF <a href="https://curl.se/bug/?i=9630">docs: update sourceforge project links</a>
+ BGF <a href="https://curl.se/bug/?i=9560">easy: fix the #include order</a>
+ BGF <a href="https://curl.se/bug/?i=9624">easy: fix the altsvc init for curl_easy_duphandle</a>
+ BGF <a href="https://curl.se/bug/?i=9755">easy_lock: check for HAVE_STDATOMIC_H as well</a>
+ BGF <a href="https://curl.se/bug/?i=9562">examples/chkspeed: improve portability</a>
+ BGF <a href="https://curl.se/bug/?i=9484">formdata: fix warning: &apos;CURLformoption&apos; is promoted to &apos;int&apos;</a>
+ BGF <a href="https://curl.se/bug/?i=9357">ftp: ignore a 550 response to MDTM</a>
+ BGF <a href="https://curl.se/bug/?i=9753">ftp: remove redundant if</a>
+ BGF <a href="https://curl.se/bug/?i=9592">functypes: provide the recv and send arg and return types</a>
+ BGF <a href="https://curl.se/bug/?i=9485">getparameter: return PARAM_MANUAL_REQUESTED for -M even when disabled</a>
+ BGF <a href="https://curl.se/bug/?i=9619">GHA: build tests in a separate step from the running of them</a>
+ BGF <a href="https://curl.se/bug/?i=9520">GHA: run proselint on markdown files</a>
+ BGF <a href="https://curl.se/bug/?i=9505">github: initial CODEOWNERS setup for CI configuration</a>
+ BGF <a href="https://curl.se/bug/?i=9424">header: define public API functions as extern c</a>
+ BGF <a href="https://curl.se/bug/?i=9424">headers: reset the requests counter at transfer start</a>
+ BGF <a href="https://curl.se/bug/?i=9760">hostip: guard PF_INET6 use</a>
+ BGF <a href="https://curl.se/bug/?i=9553">hostip: lazily wait to figure out if IPv6 works until needed</a>
+ BGF <a href="https://curl.se/bug/?i=9600">http, vauth: always provide Curl_allow_auth_to_host() functionality</a>
+ BGF <a href="https://curl.se/bug/?i=9448">http2: make nghttp2 less picky about field whitespace</a>
+ BGF <a href="https://curl.se/bug/?i=9623">HTTP3.md: update Caddy example</a>
+ BGF <a href="https://curl.se/bug/?i=9718">http: try parsing Retry-After: as a number first</a>
+ BGF <a href="https://curl.se/bug/?i=9790">http_proxy: restore the protocol pointer on error</a>
+ BGF <a href="https://curl.se/bug/?i=9555">httpput-postfields.c: shorten string for C89 compliance</a>
+ BGF <a href="https://curl.se/bug/?i=9625">ldap: delete stray CURL_HAS_MOZILLA_LDAP reference</a>
+ BGF lib1560: extended to verify detect/reject of unknown schemes
+ BGF <a href="https://curl.se/bug/?i=9572">lib517: fix C89 constant signedness</a>
+ BGF <a href="https://curl.se/bug/?i=9453">lib: add missing limits.h includes</a>
+ BGF <a href="https://curl.se/bug/?i=9375">lib: add required Win32 setup definitions in setup-win32.h</a>
+ BGF <a href="https://curl.se/bug/?i=9534">lib: prepare the incoming of additional protocols</a>
+ BGF <a href="https://curl.se/bug/?i=9610">lib: sanitize conditional exclusion around MIME</a>
+ BGF <a href="https://curl.se/bug/?i=9712">lib: set more flags in config-win32.h</a>
+ BGF <a href="https://curl.se/bug/?i=9535">lib: the number four in a sequence is the &quot;fourth&quot;</a>
+ BGF <a href="https://curl.se/bug/?i=9737">libssh: if sftp_init fails, don&apos;t get the sftp error code</a>
+ BGF <a href="https://curl.se/bug/?i=9642">Makefile.m32: deduplicate build rules</a>
+ BGF <a href="https://curl.se/bug/?i=9698">Makefile.m32: drop CROSSPREFIX and our CC/AR defaults</a>
+ BGF <a href="https://curl.se/bug/?i=9651">Makefile.m32: exclude libs & libpaths for shared mode exes</a>
+ BGF <a href="https://curl.se/bug/?i=9645">Makefile.m32: fix regression with tool_hugehelp</a>
+ BGF <a href="https://curl.se/bug/?i=9632">Makefile.m32: major rework</a>
+ BGF <a href="https://curl.se/bug/?i=9784">Makefile.m32: reintroduce CROSSPREFIX and -W -Wall</a>
+ BGF <a href="https://curl.se/bug/?i=9680">Makefile.m32: support more options</a>
+ BGF <a href="https://curl.se/bug/?i=9574">manpage-syntax.pl: all libcurl option symbols should be \fI-tagged</a>
+ BGF <a href="https://curl.se/bug/?i=9419">manpages: Fix spelling of &quot;allows to&quot; -&gt; &quot;allows one to&quot;</a>
+ BGF <a href="https://curl.se/bug/?i=9432">misc: ISSPACE() =&gt; ISBLANK()</a>
+ BGF <a href="https://curl.se/bug/?i=9527">misc: use the term &quot;null-terminate&quot; consistently</a>
+ BGF <a href="https://curl.se/bug/?i=9754">mprintf: reject two kinds of precision for the same argument</a>
+ BGF <a href="https://curl.se/bug/?i=9569">mprintf: use snprintf if available</a>
+ BGF <a href="https://curl.se/bug/?i=9744">mqtt: return error for too long topic</a>
+ BGF <a href="https://curl.se/bug/?i=9751">mqtt: spell out CONNECT in comments</a>
+ BGF msh3: change the static_assert to make the code C89
+ BGF <a href="https://curl.se/bug/?i=9657">netrc: compare user name case sensitively</a>
+ BGF <a href="https://curl.se/bug/?i=9789">netrc: replace fgets with Curl_get_line</a>
+ BGF <a href="https://curl.se/bug/?i=9709">netrc: use the URL-decoded user</a>
+ BGF <a href="https://curl.se/bug/?i=9747">ngtcp2: fix build errors due to changes in ngtcp2 library</a>
+ BGF ngtcp2: fix C89 compliance nit
+ BGF <a href="https://curl.se/bug/?i=9773">noproxy: support proxies specified using cidr notation</a>
+ BGF <a href="https://curl.se/bug/?i=9584">openssl: make certinfo available for QUIC</a>
+ BGF <a href="https://curl.se/bug/?i=9530">README.md: add GHA status badges for Linux and macOS builds</a>
+ BGF <a href="https://curl.se/bug/?i=9495">RELEASE-PROCEDURE.md: mention patch releases</a>
+ BGF <a href="https://curl.se/bug/?i=9540">resolve: make forced IPv4 resolve only use A queries</a>
+ BGF <a href="https://curl.se/bug/?i=9648">runtests: fix uninitialized value on ignored tests</a>
+ BGF <a href="https://curl.se/bug/?i=9463">schannel: ban server ALPN change during recv renegotiation</a>
+ BGF <a href="https://curl.se/bug/?i=9451">schannel: don&apos;t reset recv/send function pointers on renegotiation</a>
+ BGF <a href="https://curl.se/bug/?i=9300">schannel: when importing PFX, disable key persistence</a>
+ BGF <a href="https://curl.se/bug/?i=9491">scripts: use `grep -E` instead of `egrep`</a>
+ BGF <a href="https://curl.se/bug/?i=9472">setopt: use the handler table for protocol name to number conversions</a>
+ BGF <a href="https://curl.se/bug/?i=9507">setopt: when POST is set, reset the &apos;upload&apos; field</a>
+ BGF <a href="https://curl.se/bug/?i=9375">setup-win32: no longer define UNICODE/_UNICODE implicitly</a>
+ BGF <a href="https://curl.se/bug/?i=9681">single_transfer: use the libcurl URL parser when appending query parts</a>
+ BGF <a href="https://curl.se/bug/?i=9701">smb: replace CURL_WIN32 with WIN32</a>
+ BGF <a href="https://curl.se/bug/?i=9658">strcase: add and use Curl_timestrcmp</a>
+ BGF strerror: improve two URL API error messages
+ BGF <a href="https://curl.se/bug/?i=9544">symbol-scan.pl: also check for LIBCURL* symbols</a>
+ BGF <a href="https://curl.se/bug/?i=9544">symbol-scan.pl: scan and verify .3 man pages</a>
+ BGF symbols-in-versions: add missing LIBCURL* symbols
+ BGF symbols-in-versions: CURLOPT_ENCODING is deprecated since 7.21.6
+ BGF <a href="https://curl.se/bug/?i=9544">test1119: scan all public headers</a>
+ BGF <a href="https://curl.se/bug/?i=9697">test1275: verify uppercase after period in markdown</a>
+ BGF <a href="https://curl.se/bug/?i=9563">test972: verify the output without using external tool</a>
+ BGF <a href="https://curl.se/bug/?i=9417">tests/certs/scripts: insert standard curl source headers</a>
+ BGF <a href="https://curl.se/bug/?i=9656">tests/Makefile: remove run time stats from ci-test</a>
+ BGF <a href="https://curl.se/bug/?i=9705">tests: avoid CreateThread if _beginthreadex is available</a>
+ BGF tests: fix tag syntax errors in test files
+ BGF <a href="https://curl.se/bug/?i=9596">tests: skip mime/form tests when mime is not built-in</a>
+ BGF <a href="https://curl.se/bug/?i=9652">tidy-up: delete parallel/unused feature flags</a>
+ BGF <a href="https://curl.se/bug/?i=9707">tidy-up: delete unused HAVE_STRUCT_POLLFD</a>
+ BGF <a href="https://curl.se/bug/?i=9513">TODO: provide the error body from a CONNECT response</a>
+ BGF <a href="https://curl.se/bug/?i=9643">tool: avoid generating ambiguous escaped characters in --libcurl</a>
+ BGF <a href="https://curl.se/bug/?i=9576">tool: remove dead code</a>
+ BGF <a href="https://curl.se/bug/?i=9653">tool: reorganize function c_escape around a dynbuf</a>
+ BGF <a href="https://curl.se/bug/?i=9485">tool_hugehelp: make hugehelp a blank macro when disabled</a>
+ BGF <a href="https://curl.se/bug/?i=9663">tool_main: exit at once if out of file descriptors</a>
+ BGF <a href="https://curl.se/bug/?i=9486">tool_operate: avoid a few #ifdefs for disabled-libcurl builds</a>
+ BGF <a href="https://curl.se/bug/?i=9749">tool_operate: more transfer cleanup after parallel transfer fail</a>
+ BGF <a href="https://curl.se/bug/?i=8933">tool_operate: prevent over-queuing in parallel mode</a>
+ BGF <a href="https://curl.se/bug/?i=9394">tool_operate: reduce errorbuffer allocs</a>
+ BGF <a href="https://curl.se/bug/?i=9719">tool_paramhelp: asserts verify maximum sizes for string loading</a>
+ BGF <a href="https://curl.se/bug/?i=9700">tool_paramhelp: make the max argument a &apos;double&apos;</a>
+ BGF <a href="https://curl.se/bug/?i=9389">tool_progress: remove &apos;Qd&apos; from the parallel progress bar</a>
+ BGF <a href="https://curl.se/bug/?i=9475">tool_setopt: use better English in --libcurl source comments</a>
+ BGF <a href="https://curl.se/bug/?i=9766">tool_xattr: save the original URL, not the final redirected one</a>
+ BGF <a href="https://curl.se/bug/?i=9551">unit test 1655: make it C89-compliant</a>
+ BGF <a href="https://curl.se/bug/?i=9088">url: a zero-length userinfo part in the URL is still a (blank) user</a>
+ BGF <a href="https://curl.se/bug/?i=9728">url: allow non-HTTPS HSTS-matching for debug builds</a>
+ BGF <a href="https://curl.se/bug/?i=9585">url: rename function due to name-clash in Watt-32</a>
+ BGF <a href="https://curl.se/bug/?i=9791">url: use IDN decoded names for HSTS checks</a>
+ BGF <a href="https://curl.se/bug/?i=9503">urlapi: detect scheme better when not guessing</a>
+ BGF <a href="https://curl.se/bug/?i=9763">urlapi: fix parsing URL without slash with CURLU_URLENCODE</a>
+ BGF <a href="https://curl.se/bug/?i=9408">urlapi: leaner with fewer allocs</a>
+ BGF <a href="https://curl.se/bug/?i=9608">urlapi: reject more bad characters from the host name field</a>
+ BGF <a href="https://curl.se/mail/lib-2022-09/0038.html">winbuild/MakefileBuild.vc: handle spaces in libssh(2) include paths</a>
+ BGF <a href="https://curl.se/bug/?i=9512">winbuild: use NMake batch-rules for compilation</a>
+ BGF <a href="https://curl.se/bug/?i=9521">windows: add .rc support to autotools builds</a>
+ BGF <a href="https://curl.se/bug/?i=9598">windows: adjust name of two internal public functions</a>
+ BGF <a href="https://curl.se/bug/?i=9582">windows: autotools .rc warnings fixup</a>
+ BGF <a href="https://curl.se/bug/?i=9492">wolfSSL: fix session management bug.</a>
+</ul>
+
 <a name="7_85_0"></a>
 SUBTITLE(Fixed in 7.85.0 - August 31 2022)
 <p>
