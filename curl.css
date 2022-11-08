@@ -258,7 +258,7 @@ tr.odd {
   float: right;
   text-align: left;
   padding: 4px 4px 4px 4px;
-  margin: 0px 10px 0px 0px;
+  margin: 10px;
   background: white;
   font-size: 24px;
 }
