@@ -21,7 +21,9 @@ sub cve2severity {
     open(C, "$cve.md");
     while(<C>) {
         if(/^Severity: (.*)/) {
-            return $1;
+            my $sev = $1;
+            $sev =~ s/[\r\n]+//g;
+            return ucfirst($sev);
         }
     }
     close(C);
@@ -48,9 +50,12 @@ for(@vuln) {
     }
 
     my $sev = cve2severity($cve);
-    my $col= sev2color($sev);
-
-    my $c="<div style=\"color:$col;\">&#9679;</div>";
+    my $col;
+    my $c = "&nbsp;";
+    if($sev) {
+        $col = sev2color($sev);
+        $c="<div style=\"color:$col;\">&#9679;</div>";
+    }
     
     print <<VUL
 <tr>
