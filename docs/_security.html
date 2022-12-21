@@ -12,9 +12,9 @@
 #include "setup.t"
 #include "_menu.html"
 
-WHERE3(Docs, "/docs/", Releases, "/docs/reldocs.html", Security Problems)
+WHERE3(Docs, "/docs/", Releases, "/docs/reldocs.html", Security)
 
-TITLE(curl security problems)
+TITLE(Security)
 #include "adv-related-box.inc"
 
 <p>
@@ -32,7 +32,17 @@ TITLE(curl security problems)
  See also the <a href="vulnerabilities.html">Vulnerabilities Table</a> to see
  what versions that are vulnerable to what flaws.
 
-SUBTITLE(Published security vulnerabilities)
+SUBTITLE(Security audit)
+<p>
+  Trail of Bits performed a security audit of curl source code and internals
+  during the fall of 2022, summed up in these PDF documents. Published
+  December 21, 2022.
+<ul>
+  <li> <a href="audit/threatmodel-2022.pdf">Threat Model Report & Fix Review</a> (43 pages)
+  <li> <a href="audit/codereview-2022.pdf">Code Review & Testing Analysis</a> (58 pages)
+</ul>
+
+SUBTITLE(Past vulnerabilities)
 
 #include "seclist.gen"
 
