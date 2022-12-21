@@ -13,6 +13,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2022-43551.html|7.77.0|7.86.0|Another HSTS bypass via IDN|CVE-2022-43551|20221221|20221029|CWE-319: Cleartext Transmission of Sensitive Information|2400|URL|-",
     "CVE-2022-42916.html|7.77.0|7.85.0|HSTS bypass via IDN|CVE-2022-42916|20221026|20221011|CWE-319: Cleartext Transmission of Sensitive Information|2400|URL|-",
     "CVE-2022-42915.html|7.77.0|7.85.0|HTTP proxy double-free|CVE-2022-42915|20221026|20221004|CWE-415: Double Free|0|proxy|DOUBLE_FREE",
     "CVE-2022-35260.html|7.84.0|7.85.0|.netrc parser out-of-bounds access|CVE-2022-35260|20221026|20221004|CWE-121: Stack-based Buffer Overflow|480|NETRC|OVERFLOW",
