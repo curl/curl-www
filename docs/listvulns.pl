@@ -7,6 +7,7 @@ print "<table>\n";
 print <<HEAD
 <tr class=\"tabletop\">
 <th>#</th>
+<th>S</th>
 <th>Vulnerability</th>
 <th>Date</th>
 <th>First</th>
@@ -14,6 +15,28 @@ print <<HEAD
 </tr>
 HEAD
     ;
+
+sub cve2severity {
+    my ($cve) = @_;
+    open(C, "$cve.md");
+    while(<C>) {
+        if(/^Severity: (.*)/) {
+            return $1;
+        }
+    }
+    close(C);
+    return "";
+}
+
+sub sev2color {
+    my ($sev) = @_;
+    if(!$sev) {
+        return "white";
+    }
+    return "green" if($sev =~ /^Low/i);
+    return "orange" if($sev =~ /^Medium/i);
+    return "red";
+}
 
 my $num = $#vuln + 1;
 for(@vuln) {
@@ -24,9 +47,15 @@ for(@vuln) {
         ($year, $mon, $day)=($1, $2, $3);
     }
 
+    my $sev = cve2severity($cve);
+    my $col= sev2color($sev);
+
+    my $c="<div style=\"color:$col;\">&#9679;</div>";
+    
     print <<VUL
 <tr>
 <td>$num</td>
+<td title="$sev">$c</td>
 <td><a href="$id">$cve: $desc</a></td>
 <td>$year-$mon-$day</td>
 <td><a href="vuln-$start.html">$start</a></td>
