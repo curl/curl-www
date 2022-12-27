@@ -3,3 +3,4 @@
 <link rel="stylesheet" type="text/css" href="/curl.css">
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="icon" href="/logo/curl-symbol.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="cURL Releases" href="https://github.com/curl/curl/releases.atom">
