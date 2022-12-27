@@ -39,8 +39,8 @@ enough to let you load most HTML pages locally.
 
 # curl.local
 
-To run a local copy of the curl website, have a local Apache to serve
-`curl.local` on `127.0.0.1`. Add this line to `/etc/hosts`:
+To run a local copy of the curl website, have a local Apache or python
+to serve `curl.local` on `127.0.0.1`. Add this line to `/etc/hosts`:
 
     127.0.0.1 curl.local
 
@@ -66,3 +66,9 @@ local machine might look like this:
    Require all granted
 </Directory>
 ~~~
+
+## Python3
+
+From the directory containing the website, run:
+
+    python3 -m http.server --cgi -b curl.local 8000
