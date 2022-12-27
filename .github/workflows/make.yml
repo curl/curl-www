@@ -18,6 +18,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        submodules: true
 
     - name: install prereqs
       run: sudo apt-get install pandoc libcgi-pm-perl
@@ -27,7 +29,6 @@ jobs:
     
     - name: install fcpp
       run: |
-        git clone https://github.com/bagder/fcpp.git
         cd fcpp
         make
         make install
