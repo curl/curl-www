@@ -558,4 +558,8 @@ a.sitesearch:hover {
         color: white !important;
         background-color: #252525 !important;
     }
+
+    div.sourceCode {
+        background-color: #313131 !important;
+    }
 }
