@@ -23,11 +23,23 @@ Make sure the following tools are in your $PATH.
  - roffit
  - GNU date
 
+Alternatively, you can use docker for all the prequisites:
+
+    docker build -t curl-www-builddeps  .
+
 ## Build
 
 Once you've cloned the Git repo the first time, invoke `sh bootstrap.sh` once
 to get a symlink and some some initial local files setup, and then you can
 build the web site locally by invoking make in the source root tree.
+
+If using the docker image, from a directory above the curl and curl-www
+source, you can run:
+
+    docker run -it --rm -v `pwd`:/curl curl-www-builddeps
+    cd /curl/curl-www
+    sh bootstrap.sh
+    make
 
 Note that this doesn't make you a complete web site mirror, as some scripts
 and files are only available on the real actual site, but should give you
