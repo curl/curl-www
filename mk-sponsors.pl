@@ -22,6 +22,7 @@ my %silver = (
     'https://www.sure.bet/casinos-not-on-gamstop/' => 'surebet.png',
     'https://iboysoft.com' => 'iBoysoft.svg',
     'https://fitmymoney.com/' => 'Fit-My-Money-vertical.svg',
+    'https://awisee.agency' => 'awisee.png',
     );
 my %modurl = (
     );
