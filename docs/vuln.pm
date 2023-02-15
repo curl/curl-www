@@ -13,6 +13,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2023-23915.html|7.77.0|7.87.0|HSTS amnesia with --parallel|CVE-2023-23915|20230215|20221221|CWE-319: Cleartext Transmission of Sensitive Information|480|HSTS|-",
     "CVE-2023-23914.html|7.77.0|7.87.0|HSTS ignored on multiple requests|CVE-2023-23914|20230215|20221221|CWE-319: Cleartext Transmission of Sensitive Information|480|HSTS|-",
     "CVE-2022-43552.html|7.16.0|7.86.0|HTTP Proxy deny use-after-free|CVE-2022-43552|20221221|20221107|CWE-416: Use After Free|0|proxy|USE_AFTER_FREE",
     "CVE-2022-43551.html|7.77.0|7.86.0|Another HSTS bypass via IDN|CVE-2022-43551|20221221|20221029|CWE-319: Cleartext Transmission of Sensitive Information|2400|URL|-",
