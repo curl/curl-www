@@ -47,6 +47,37 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
   <img src="pix/play.svg" alt="Play video" height="100%" style="float: left; margin-right: 1em;"> desc </a> \
   </div>
 
+<a name="7_88_1"></a>
+SUBTITLE(Fixed in 7.88.1 - February 20 2023)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.se/bug/?i=10542">build-openssl.bat: keep OpenSSL 3 engine binaries</a>
+ BGF <a href="https://curl.se/bug/?i=10353">cmake: fix Windows check for CryptAcquireContext</a>
+ BGF <a href="https://curl.se/bug/?i=10514">connnect: fix timeout handling to use full duration</a>
+ BGF <a href="https://curl.se/bug/?i=10535">curl: make --silent work stand-alone</a>
+ BGF <a href="https://curl.se/bug/?i=10543">curl_setup: Suppress OpenSSL 3 deprecation warnings</a>
+ BGF <a href="https://curl.se/bug/?i=10557">CURLOPT_WS_OPTIONS.3: fix the availability version</a>
+ BGF <a href="https://curl.se/bug/?i=10553">GHA: update rustls dependency to 0.9.2</a>
+ BGF <a href="https://curl.se/bug/?i=10529">http2: buffer/pausedata and output flush fix.</a>
+ BGF <a href="https://curl.se/bug/?i=10530">http2: set drain on stream end</a>
+ BGF <a href="https://curl.se/bug/?i=10516">http: include stdint.h more readily</a>
+ BGF <a href="https://curl.se/bug/?i=10528">krb5: silence cast-align warning</a>
+ BGF <a href="https://curl.se/bug/?i=10552">lib1560: add IPv6 canonicalization tests</a>
+ BGF <a href="https://curl.se/bug/?i=10539">os400: correct Curl_os400_sendto()</a>
+ BGF <a href="https://curl.se/bug/?i=10555">remote-header-name.d: mention that filename* is not supported</a>
+ BGF <a href="https://curl.se/bug/?i=10518">runtests: fix &quot;uninitialized value $port&quot;</a>
+ BGF <a href="https://curl.se/bug/?i=10538">setopt: allow HTTP3 when HTTP2 is not defined</a>
+ BGF <a href="https://curl.se/bug/?i=10561">socketpair: allow EWOULDBLOCK when reading the pair check bytes</a>
+ BGF <a href="https://curl.se/bug/?i=10537">socks: allow using DoH to resolve host names</a>
+ BGF <a href="https://curl.se/bug/?i=10519">tests-httpd: add proxy tests</a>
+ BGF <a href="https://curl.se/bug/?i=10522">tests: make sure gnuserv-tls has SRP support before using it</a>
+ BGF <a href="https://curl.se/bug/?i=10509">tests: make the telnet server shut down a socket gracefully</a>
+ BGF <a href="https://curl.se/bug/?i=10527">tool_getparam: make --get a true boolean</a>
+ BGF <a href="https://curl.se/bug/?i=10532">tool_operate: allow debug builds to set buffersize</a>
+ BGF <a href="https://curl.se/bug/?i=10541">urlapi: do the port number extraction without using sscanf()</a>
+ BGF <a href="https://curl.se/bug/?i=10549">urldata: remove `now` from struct SingleRequest - not needed</a>
+</ul>
+
 <a name="7_88_0"></a>
 SUBTITLE(Fixed in 7.88.0 - February 15 2023)
 <p>
