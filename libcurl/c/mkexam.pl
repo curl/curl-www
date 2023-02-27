@@ -98,7 +98,7 @@ for my $f (@samps) {
 
     $type{$base}=$ext;
 
-    push @mak, "$htmlfile: $rawfile \$(MAINPARTS)\n\t\$(ACTION)\n\n";
+    push @mak, "$htmlfile: $rawfile \$(MAINPARTS) _example-warn.html \n\t\$(ACTION)\n\n";
 
     push @mak, "$rawfile: $dir/$cfile mkexam.pl $template\n\tperl mkexam.pl\n\n";
 }
