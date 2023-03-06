@@ -1,27 +1,25 @@
 #include "_doctype.html"
 <html>
-<head> <title>curl - Automatic Test</title>
+<head> <title>curl - Tests Overview</title>
 #include "css.t"
-#include "manpage.t"
 </head>
 
-#define DEVEL_TESTCURL
-#define CURL_URL dev/testcurl.html
+#define DEVEL_TESTS_OVERVIEW
+#define CURL_URL dev/tests-overview.html
 
 #include "_menu.html"
 #include "setup.t"
 
-WHERE2(Development, "/dev/", testcurl.pl)
+WHERE2(Development, "/dev/", Tests Overview)
 
-TITLE(testcurl.1 the man page)
 <div class="relatedbox">
 <b>Related:</b>
-<br><a href="tests-overview.html">Tests Overview</a>
+<br><a href="testcurl.html">Test curl</a>
 <br><a href="runtests.html">runtests.1</a>
 <br><a href="/docs/manual.html">Manual</a>
 </div>
 
-#include "testcurl.gen"
+#include "testsoverview.gen"
 
 #include "_footer.html"
 

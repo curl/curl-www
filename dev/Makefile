@@ -37,7 +37,8 @@ PAGES = \
  code-review.html \
  feature-window.html \
  new-protocol.html \
- test-fileformat.html
+ test-fileformat.html \
+ tests-overview.html
 
 all: $(PAGES)
 
@@ -55,6 +56,11 @@ new-protocol.gen: $(SRCROOT)/docs/NEW-PROTOCOL.md
 test-fileformat.html: _test-fileformat.html $(MAINPARTS) fileformat.gen
 	$(ACTION)
 fileformat.gen: $(SRCROOT)/tests/FILEFORMAT.md
+	$(MARKDOWN) < $< > $@
+
+tests-overview.html: _tests-overview.html $(MAINPARTS) testsoverview.gen
+	$(ACTION)
+testsoverview.gen: $(TESTROOT)/README.md
 	$(MARKDOWN) < $< > $@
 
 source.html: _source.html $(MAINPARTS)
