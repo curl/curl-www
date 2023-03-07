@@ -55,7 +55,7 @@ new-protocol.gen: $(SRCROOT)/docs/NEW-PROTOCOL.md
 
 test-fileformat.html: _test-fileformat.html $(MAINPARTS) fileformat.gen
 	$(ACTION)
-fileformat.gen: $(SRCROOT)/tests/FILEFORMAT.md
+fileformat.gen: $(TESTROOT)/FILEFORMAT.md
 	$(MARKDOWN) < $< > $@
 
 tests-overview.html: _tests-overview.html $(MAINPARTS) testsoverview.gen
