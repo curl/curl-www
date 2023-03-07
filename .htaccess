@@ -20,6 +20,7 @@ RedirectPermanent /libcurl/c/libcurl-thread.html https://curl.se/libcurl/c/threa
 RedirectPermanent /libcurl/c/curl-config.html https://curl.se/libcurl/using/curl-config.html
 RedirectMatch "^/.git" https://curl.se/dev/source.html
 RedirectPermanent /dev/security.html https://curl.se/dev/secprocess.html
+RedirectPermanent /dev/FILEFORMAT.md https://github.com/curl/curl/blob/master/tests/FILEFORMAT.md
 # old advisory pages
 RedirectPermanent /docs/adv_2018-70a2.html https://curl.se/docs/CVE-2018-0500.html
 RedirectPermanent /docs/adv_2018-82c2.html https://curl.se/docs/CVE-2018-1000300.html
