@@ -22,11 +22,11 @@ my $headnum;
 sub storemax {
     my ($filename, $version, $size, $which, $desc)=@_;
     my $num=0;
-    if($version =~ /^(\d*)\.(\d*)$/) {
-        $num = $1*1000+$2*100;
+    if($version =~ /^(\d+)\.(\d+)\.(\d+)$/) {
+        $num = $1*10000+$2*100+$3;
     }
-    elsif($version =~ /^(\d*)\.(\d*)\.(\d*)$/) {
-        $num = $1*1000+$2*100+$3;
+    elsif($version =~ /^(\d+)\.(\d+)$/) {
+        $num = $1*10000+$2*100;
     }
     else {
         print "Illegal version string: $version\n";
