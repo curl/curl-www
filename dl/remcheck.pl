@@ -101,7 +101,7 @@ sub getlastfewversions {
         my ($str)=@_;
         my @p=split(/\./, $str);
 
-        return $p[0]*1000 + $p[1]*100 + $p[2];
+        return $p[0]*10000 + $p[1]*100 + $p[2];
     }
 
     sub sortit {
