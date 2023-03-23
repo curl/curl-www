@@ -15,7 +15,7 @@
 @vuln = (
     "CVE-2023-27538.html|7.16.1|7.88.1|SSH connection too eager reuse still|CVE-2023-27538|20230320|20230309|CWE-305: Authentication Bypass by Primary Weakness|480|CONNREUSE|-",
     "CVE-2023-27537.html|7.88.0|7.88.1|HSTS double-free|CVE-2023-27537|20230320|20230308|CWE-415: Double Free|480|DOUBLE_FREE",
-    "CVE-2023-27536.html|7.22.0|7.88.1|GSS delegation too eager connection re-use|CVE-2023-27536|20230320|20230307|CWE-305: Authentication Bypass by Primary Weakness|480|-",
+    "CVE-2023-27536.html|7.22.0|7.88.1|GSS delegation too eager connection re-use|CVE-2023-27536|20230320|20230307|CWE-305: Authentication Bypass by Primary Weakness|480|CONNREUSE|-",
     "CVE-2023-27535.html|7.13.0|7.88.1|FTP too eager connection reuse|CVE-2023-27535|20230320|20230305|CWE-305: Authentication Bypass by Primary Weakness|2400|CONNREUSE|-",
     "CVE-2023-27534.html|7.18.0|7.88.1|SFTP path ~ resolving discrepancy|CVE-2023-27534|20230320|20230305|CWE-22: Improper Limitation of a Pathname to a Restricted Directory|480|SFTP|-",
     "CVE-2023-27533.html|7.7|7.88.1|TELNET option IAC injection|CVE-2023-27533|20230320|20230303|CWE-75: Failure to Sanitize Special Elements into a Different Plane|480|TELNET|-",
