@@ -1,0 +1,47 @@
+#include "_doctype.html"
+<html>
+<head> <title>trcurl</title>
+#include "css.t"
+</head>
+
+#define DEVEL_INDEX
+#define CURL_URL /trurl
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE1(trurl)
+
+TITLE(trurl)
+
+<center><img src="trurl-logo.jpg" alt="trurl logo" style="width:70%; padding-top: 8px;">
+</center>
+
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="https://github.com/curl/trurl">GitHub repo</a>
+<br><a href="manual.html">man page</a>
+</div>
+<p>
+<b>trurl</b> is a tool in a similar spirit of tr but for URLs. Here, tr stands
+for translate or transpose.
+<p>
+<b>trurl</b> is a command line tool that parses and manipulates URLs, designed
+to help shell script authors everywhere.
+<p>
+URLs are tricky to parse and there are numerous security problems in software
+because of this. <b>trurl</b> wants to help soften this problem by taking away
+the need for script and command line authors everywhere to re-invent the wheel
+over and over.
+<p>
+<b>trurl</b> uses <a href="/libcurl/c/curl_url_set.html">libcurl URL
+parser</a> and will thus parse and understand URLs exactly the same as curl
+the command line tool does – making it the perfect companion tool.
+
+SUBTITLE(Pronunciation)
+<p>
+ We say "trurel". As if there was an 'e' between the r and l at the end.
+
+#include "_footer.html"
+</body>
+</html>

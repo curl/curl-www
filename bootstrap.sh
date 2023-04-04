@@ -25,3 +25,9 @@ touch summary.t
 touch cvs.t
 touch keywords.txt
 touch table.t
+
+if test ! -d trurl/trurl-www; then
+  echo "specify full path to source code root dir"
+  cd trurl
+  git clone https://github.com/curl/trurl.git trurl-www
+fi
