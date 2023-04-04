@@ -13,6 +13,10 @@ if test ! -d cvssource; then
   ln -sf "${code}" cvssource
 fi
 
+if test ! -d trurl/trurl-www; then
+  git clone https://github.com/curl/trurl.git trurl/trurl-www
+fi
+
 touch ca/cacert.pem
 touch ca/pemlist.gen
 
@@ -25,3 +29,4 @@ touch summary.t
 touch cvs.t
 touch keywords.txt
 touch table.t
+

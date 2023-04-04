@@ -56,6 +56,7 @@ all: $(PAGES)
 	cd windows && make
 	cd tiny && make
 	cd logo && make
+	cd trurl && make
 
 head.html: _head.html $(MAINPARTS)
 	$(ACTION)

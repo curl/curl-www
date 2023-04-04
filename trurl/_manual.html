@@ -1,0 +1,26 @@
+#include "_doctype.html"
+<html>
+<head> <title>trurl - How To Use</title>
+#include "css.t"
+#include "manpage.t"
+</head>
+
+#define CURL_TRURL
+#define CURL_URL trurl/manual.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(trurl, "/trurl/", Man Page)
+
+TITLE(trurl.1 the man page)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="https://github.com/curl/trurl">GitHub repo</a>
+<br><a href="/trurl/">trurl</a>
+</div>
+#include "trurl.gen"
+#include "_footer.html"
+
+</body>
+</html>
