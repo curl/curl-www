@@ -19,7 +19,6 @@ PAGES= \
  features.html \
  wininet.html \
  libwww.html \
- libsoup.html \
  theysay.html \
  bindings.html \
  abi.html \
@@ -74,9 +73,6 @@ wininet.html: _wininet.html $(MAINPARTS)
 	$(ACTION)
 
 libwww.html: _libwww.html $(MAINPARTS)
-	$(ACTION)
-
-libsoup.html: _libsoup.html $(MAINPARTS)
 	$(ACTION)
 
 neon.html: _neon.html $(MAINPARTS)
