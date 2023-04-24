@@ -33,13 +33,14 @@ SUBTITLE(Windows 10/11 bundle curl)
  default since then.
 <p>
  The Microsoft provided version is built to use the Schannel TLS backend.
- Invoking curl -V in March 2023 shows this on these platforms:
+ Invoking curl -V after the April 11 2023 update shows this on these
+ platforms:
 <p>
 <pre>
-curl 7.83.1 (Windows) libcurl/7.83.1 Schannel
-Release-Date: 2022-05-13
+curl 8.0.1 (Windows) libcurl/8.0.1 Schannel WinIDN
+Release-Date: 2023-03-20
 Protocols: dict file ftp ftps http https imap imaps pop3 pop3s smtp smtps telnet tftp
-Features: AsynchDNS HSTS IPv6 Kerberos Largefile NTLM SPNEGO SSL SSPI UnixSockets
+Features: AsynchDNS HSTS HTTPS-proxy IDN IPv6 Kerberos Largefile NTLM SPNEGO SSL SSPI threadsafe Unicode UnixSockets
 </pre>
 
 SUBTITLE(Separate)
