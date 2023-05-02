@@ -81,6 +81,46 @@ sub scancve {
     return ($desc, $severity, $repby, $patchby, $fixed);
 }
 
+my @releases; #all of them, from newest to oldest
+sub releases {
+    open(R, "<releases.csv");
+    while(<R>) {
+        my @f = split(/;/, $_);
+        push @releases, $f[1]; # version numbers
+    }
+    close(R);
+}
+
+sub vernum {
+    my ($ver) = @_;
+    my @v = split(/\./, $ver);
+    return $v[0] * 10000 + $v[1] * 100 + $v[2];
+}
+
+sub inclusive {
+    my ($first, $last, $indent) = @_;
+    my $fnum = vernum($first);
+    my $lnum = vernum($last);
+    my $str = $indent;
+    my $i=0;
+
+    for my $e (@releases) {
+        if((vernum($e) >= $fnum) &&
+           (vernum($e) <= $lnum)) {
+            $str .= "\"$e\", ";
+            if(++$i == 7) {
+                $str .= "\n$indent";
+                $i = 0;
+            }
+        }
+    }
+    # remove trailing comma
+    $str =~ s/,[ \n]*\z//;
+    return $str;
+}
+
+releases();
+
 my @all;
 my $i=0;
 push @all, "[\n";
@@ -96,6 +136,7 @@ for(@vuln) {
     my ($desc, $severity, $repby, $patchby, $fixed)=scancve($cve);
 
     push @all, ",\n" if($i);
+    my $v = inclusive($first, $last, "        ");
     push @single,
         "{\n".
         "  \"id\": \"$cve\",\n".
@@ -119,6 +160,8 @@ for(@vuln) {
         "             {\"fixed\": \"$fixed\"}\n".
         "           ]\n".
         "        }\n".
+        "      ],\n".
+        "      \"versions\": [\n$v\n".
         "      ]\n".
         "    }\n".
         "  ],\n";

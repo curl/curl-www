@@ -426,7 +426,7 @@ allvulns.gen: $(ROOT)/_changes.html ./vulntable.pl vuln.pm _singlevuln.templ
 vuln.csv: vuln.pm
 	./vuln2csv.pl > $@
 
-vuln.json: vuln.pm vuln2json.pl $(CVELIST)
+vuln.json: vuln.pm vuln2json.pl $(CVELIST) releases.csv
 	./vuln2json.pl > $@
 
 http2.gen: $(SRCROOT)/docs/HTTP2.md
