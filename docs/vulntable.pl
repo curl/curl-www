@@ -62,31 +62,14 @@ sub single {
     my $vulnplural;
 
     if($vulnnum) {
-        $vulnhtml = "<table><tr class=\"tabletop\"><th>Flaw</th><th>From version</th><th>To and including</th><th>CVE</th><th>CWE</th></tr>";
+        $vulnhtml = "<table><tr class=\"tabletop\"><th>Flaw</th><th>From version</th><th>To and including</th></tr>";
 
         for my $i (@v) {
-            my $c = $cve[$i];
-            if($c ne "-") {
-                $c = "<a href=\"https://cve.mitre.org/cgi-bin/cvename.cgi?name=$c\">$c</a>";
-            }
-            else {
-                $c = "";
-            }
-            my $cstr="";
-            if($cwe[$i]) {
-                my $n = $cwe[$i];
-                if($n =~ /^CWE-(\d+)/) {
-                    $n = $1;
-                }
-                $cstr = "<a href=\"https://cwe.mitre.org/data/definitions/$n.html\">$cwe[$i]</a>";
-            }
-
-            $vulnhtml .= sprintf("<tr class=\"%s\"><td><a href=\"%s\">%s</a></td><td><a href=\"vuln-%s.html\">%s</a></td><td><a href=\"vuln-%s.html\">%s</a></td><td>$c</td><td>%s</td></tr>\n",
+            $vulnhtml .= sprintf("<tr class=\"%s\"><td><a href=\"%s\">%s</a></td><td><a href=\"vuln-%s.html\">%s</a></td><td><a href=\"vuln-%s.html\">%s</a></td></tr>\n",
                                  $odd&1?"even":"odd",
                                  $vurl[$i], $vulndesc[$i],
                                  $vstart[$i], $vstart[$i],
-                                 $vstop[$i], $vstop[$i],
-                                 $cstr);
+                                 $vstop[$i], $vstop[$i]);
             $odd++;
         }
         $vulnhtml .= "</table>";
