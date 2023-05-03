@@ -417,10 +417,7 @@ vulnall.html: _vulnall.html vuln0.gen $(MAINPARTS)
 
 vuln.gen: $(ROOT)/_changes.html ./vulntable.pl vuln.pm _singlevuln.templ
 	./vulntable.pl 25 < $< > $@
-vuln0.gen: $(ROOT)/_changes.html ./vulntable.pl vuln.pm _singlevuln.templ
-	./vulntable.pl < $< > $@
-
-allvulns.gen: $(ROOT)/_changes.html ./vulntable.pl vuln.pm _singlevuln.templ
+vuln0.gen: $(ROOT)/_changes.html ./vulntable.pl vuln.pm _singlevuln.templ vuln.json
 	./vulntable.pl < $< > $@
 
 vuln.csv: vuln.pm
@@ -456,7 +453,7 @@ mqtt.html: _mqtt.html mqtt.gen $(MAINPARTS)
 releases.html: _releases.html rel.gen $(MAINPARTS)
 	$(ACTION)
 
-rel.gen: $(ROOT)/_changes.html ./relinfo.pl vuln.pm allvulns.gen
+rel.gen: $(ROOT)/_changes.html ./relinfo.pl vuln.pm vuln0.gen
 	./relinfo.pl < $< > $@
 
 releases.csv: $(ROOT)/_changes.html ./relinfo.pl vuln.pm

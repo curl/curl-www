@@ -117,6 +117,20 @@ sub single {
     close(T);
     close(O);
 
+    # create a JSON bundle for this release
+    open(O, ">vuln-$str.json");
+    print O "[\n";
+    my $c = 0;
+    for my $i (@v) {
+        open(S, "<$cve[$i].json");
+        print O <S>;
+        close(S);
+        print O ",\n" if($c != $#v);
+        $c++;
+    }
+    print O "\]\n";
+    close(O);
+
     if($lastfew == -1) {
         # only create "all vulns" if we actually list all
         open(A, ">>$allvulns");
