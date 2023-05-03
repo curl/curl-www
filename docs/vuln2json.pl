@@ -171,19 +171,11 @@ for(@vuln) {
         "    }\n".
         "  ],\n";
     if($severity) {
-        my $cvss = "1.0"; # default low
-        $cvss = "4.0" if($severity eq "Medium");
-        $cvss = "7.0" if($severity eq "High");
-        $cvss = "9.0" if($severity eq "Critical");
         push @single,
             "  \"severity\": [\n".
             "    {\n".
             "      \"type\": \"basic\",\n".
             "      \"score\": \"$severity\"\n".
-            "    },\n".
-            "    {\n".
-            "      \"type\": \"CVSS_V3\",\n".
-            "      \"score\": \"$cvss\"\n".
             "    }\n".
             "  ],\n";
     }
