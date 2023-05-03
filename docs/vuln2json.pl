@@ -139,12 +139,17 @@ for(@vuln) {
     my $v = inclusive($first, $last, "        ");
     push @single,
         "{\n".
-        "  \"id\": \"$cve\",\n".
+        "  \"id\": \"CURL-$cve\",\n".
+        "  \"aliases\": [\n".
+        "    \"$cve\"\n".
+        "  ],\n".
         "  \"summary\": \"$name\",\n".
-        "  \"URL\": \"https://curl.se/docs/$cve.html\",\n".
         "  \"modified\": \"${modified}Z\",\n".
-        "  \"CWE\": \"$cwe\",\n".
-        "  \"published\": \"$announce\",\n".
+        "  \"database_specific\": {\n".
+        "    \"URL\": \"https://curl.se/docs/$cve.html\",\n".
+        "    \"CWE\": \"$cwe\"\n".
+        "  },\n".
+        "  \"published\": \"${announce}T08:00:00Z\",\n".
         "  \"affected\": [\n".
         "    {\n".
         "      \"package\": {\n".
@@ -156,7 +161,7 @@ for(@vuln) {
         "           \"type\": \"SEMVER\",\n".
         "           \"events\": [\n".
         "             {\"introduced\": \"$first\"},\n".
-        "             {\"last\": \"$last\"},\n".
+        "             {\"last_affected\": \"$last\"},\n".
         "             {\"fixed\": \"$fixed\"}\n".
         "           ]\n".
         "        }\n".
