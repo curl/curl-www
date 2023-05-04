@@ -129,6 +129,20 @@ sub inclusive {
     return $str;
 }
 
+my %short;
+sub short2long {
+    my ($id) = @_;
+
+    if($short{$id}) {
+        return $short{$id};
+    }
+    my $long =`cd ../cvssource && git rev-parse $id`;
+    chomp $long;
+    die "bad hash: $id" if(!$long);
+    $short{$id} = $long;
+    return $long;
+}
+
 releases();
 
 my @all;
@@ -181,14 +195,16 @@ for(@vuln) {
         "           ]\n".
         "        }";
     if($fixed_in && $intro_in) {
+        my $f = short2long($fixed_in);
+        my $i = short2long($intro_in);
         push @single,
             ",\n".
             "        {\n".
             "           \"type\": \"GIT\",\n".
             "           \"repo\": \"https://github.com/curl/curl.git\",\n".
             "           \"events\": [\n".
-            "             {\"introduced\": \"$intro_in\"},\n".
-            "             {\"fixed\": \"$fixed_in\"}\n".
+            "             {\"introduced\": \"$i\"},\n".
+            "             {\"fixed\": \"$f\"}\n".
             "           ]\n".
             "        }\n";
     }
