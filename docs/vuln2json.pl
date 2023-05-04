@@ -27,6 +27,8 @@ sub modified {
     while(<G>) {
         if(/^Date: +(.*)/) {
             $date = $1;
+            $date =~ s/(\+.*)//;
+            $date .= ".00Z";
         }
     }
     close(G);
@@ -63,7 +65,7 @@ sub scancve {
             $inc = 1;
         }
         elsif(/^------/ && ($inc == 1)) {
-            $inc = 2; 
+            $inc = 2;
         }
         elsif($inc == 2) {
             if(/^[A-Z ]+\n\z/) {
@@ -144,24 +146,28 @@ for(@vuln) {
         "    \"$cve\"\n".
         "  ],\n".
         "  \"summary\": \"$name\",\n".
-        "  \"modified\": \"${modified}Z\",\n".
+        "  \"modified\": \"$modified\",\n".
         "  \"database_specific\": {\n".
+        "    \"package\": \"curl\",\n".
         "    \"URL\": \"https://curl.se/docs/$cve.html\",\n".
-        "    \"CWE\": \"$cwe\"\n".
+        "    \"CWE\": \"$cwe\",\n".
+        "    \"last_affected\": \"$last\"";
+    if($severity) {
+        push @single,
+            ",\n".
+            "    \"severity\": \"$severity\"\n";
+    }
+
+    push @single,
         "  },\n".
-        "  \"published\": \"${announce}T08:00:00Z\",\n".
+        "  \"published\": \"${announce}T08:00:00.00Z\",\n".
         "  \"affected\": [\n".
         "    {\n".
-        "      \"package\": {\n".
-        "        \"name\": \"curl\",\n".
-        "        \"purl\": \"pkg:generic/curl\"\n".
-        "      },\n".
         "      \"ranges\": [\n".
         "        {\n".
         "           \"type\": \"SEMVER\",\n".
         "           \"events\": [\n".
         "             {\"introduced\": \"$first\"},\n".
-        "             {\"last_affected\": \"$last\"},\n".
         "             {\"fixed\": \"$fixed\"}\n".
         "           ]\n".
         "        }\n".
@@ -170,15 +176,6 @@ for(@vuln) {
         "      ]\n".
         "    }\n".
         "  ],\n";
-    if($severity) {
-        push @single,
-            "  \"severity\": [\n".
-            "    {\n".
-            "      \"type\": \"basic\",\n".
-            "      \"score\": \"$severity\"\n".
-            "    }\n".
-            "  ],\n";
-    }
     push @single, "  \"credits\": [\n";
     if($repby) {
         my $c = 0;
