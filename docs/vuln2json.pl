@@ -44,12 +44,20 @@ sub dumpobj {
 
 sub scancve {
     my ($cve)=@_;
-    my ($severity, $desc, $repby, $patchby, $fixed);
+    my ($severity, $desc, $repby, $patchby, $fixed, $fixed_in, $intro_in);
     my $inc = 0;
     open(F, "<$cve.md");
     while(<F>) {
         $_ =~ s/\r//;
-        if(/^- Not affected versions.* >= (.*)/) {
+        if(/^- Fixed-in: (.*)/) {
+            $fixed_in = $1;
+            $fixed_in =~ s/https:.*\///; # leave only the commit hash
+        }
+        elsif(/^- Introduced-in: (.*)/) {
+            $intro_in = $1;
+            $intro_in =~ s/https:.*\///; # leave only the commit hash
+        }
+        elsif(/^- Not affected versions.* >= (.*)/) {
             $fixed = $1;
         }
         elsif(/^- Patched-by: (.*)/i) {
@@ -80,7 +88,7 @@ sub scancve {
     if(!$fixed) {
         die "could not find fixed in $cve";
     }
-    return ($desc, $severity, $repby, $patchby, $fixed);
+    return ($desc, $severity, $repby, $patchby, $fixed, $fixed_in, $intro_in);
 }
 
 my @releases; #all of them, from newest to oldest
@@ -135,7 +143,8 @@ for(@vuln) {
     my $modified = modified($cve);
     my @single;
 
-    my ($desc, $severity, $repby, $patchby, $fixed)=scancve($cve);
+    my ($desc, $severity, $repby, $patchby, $fixed,
+        $fixed_in, $intro_in)=scancve($cve);
 
     push @all, ",\n" if($i);
     my $v = inclusive($first, $last, "        ");
@@ -170,7 +179,20 @@ for(@vuln) {
         "             {\"introduced\": \"$first\"},\n".
         "             {\"fixed\": \"$fixed\"}\n".
         "           ]\n".
-        "        }\n".
+        "        }";
+    if($fixed_in && $intro_in) {
+        push @single,
+            ",\n".
+            "        {\n".
+            "           \"type\": \"GIT\",\n".
+            "           \"repo\": \"https://github.com/curl/curl.git\",\n".
+            "           \"events\": [\n".
+            "             {\"introduced\": \"$intro_in\"},\n".
+            "             {\"fixed\": \"$fixed_in\"}\n".
+            "           ]\n".
+            "        }\n";
+    }
+    push @single,
         "      ],\n".
         "      \"versions\": [\n$v\n".
         "      ]\n".
