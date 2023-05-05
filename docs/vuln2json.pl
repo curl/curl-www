@@ -160,6 +160,8 @@ for(@vuln) {
     my ($desc, $severity, $repby, $patchby, $fixed,
         $fixed_in, $intro_in)=scancve($cve);
 
+    my @cw = split(/: */, $cwe);
+
     push @all, ",\n" if($i);
     my $v = inclusive($first, $last, "        ");
     push @single,
@@ -174,7 +176,10 @@ for(@vuln) {
         "    \"package\": \"curl\",\n".
         "    \"URL\": \"https://curl.se/docs/$cve.json\",\n".
         "    \"www\": \"https://curl.se/docs/$cve.html\",\n".
-        "    \"CWE\": \"$cwe\",\n".
+        "    \"CWE\": {\n".
+        "      \"id\": \"$cw[0]\",\n".
+        "      \"desc\": \"$cw[1]\"\n".
+        "    },\n".
         "    \"last_affected\": \"$last\"";
     if($severity) {
         push @single,
