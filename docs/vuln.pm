@@ -102,7 +102,7 @@
     "CVE-2016-9953.html|7.27.0|7.51.0|Win CE schannel cert name out of buffer read|CVE-2016-9953|20161221|20161129|CWE-126: Buffer Over-read|0|TLS|OVERREAD",
     "CVE-2016-8615.html|4.9|7.50.3|cookie injection for other servers|CVE-2016-8615|20161102|20160923|CWE-187: Partial Comparison|0|HTTP|-",
     "CVE-2016-8616.html|7.7|7.50.3|case insensitive password comparison|CVE-2016-8616|20161102|20160923|CWE-178: Improper Handling of Case Sensitivity|0|internal|-",
-    "CVE-2016-8617.html|7.3|7.50.3|OOB write via unchecked multiplication|CVE-2016-8617|20161102|20160923|CWE-131: Incorrect Calculation of Buffer Size|0|internal|OVERFLOW",
+    "CVE-2016-8617.html|7.8.1|7.50.3|OOB write via unchecked multiplication|CVE-2016-8617|20161102|20160923|CWE-131: Incorrect Calculation of Buffer Size|0|internal|OVERFLOW",
     "CVE-2016-8618.html|5.4|7.50.3|double-free in curl_maprintf|CVE-2016-8618|20161102|20160923|CWE-415: Double Free|0|internal|DOUBLE_FREE",
     "CVE-2016-8619.html|7.3|7.50.3|double-free in krb5 code|CVE-2016-8619|20161102|20160923|CWE-415: Double Free|0|FTP|DOUBLE_FREE",
     "CVE-2016-8620.html|7.34.0|7.50.3|glob parser write/read out of bounds|CVE-2016-8620|20161102|20161002|CWE-122: Heap-based Buffer Overflow|0|tool|OVERREAD",
