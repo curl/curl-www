@@ -172,7 +172,8 @@ for(@vuln) {
         "  \"modified\": \"$modified\",\n".
         "  \"database_specific\": {\n".
         "    \"package\": \"curl\",\n".
-        "    \"URL\": \"https://curl.se/docs/$cve.html\",\n".
+        "    \"URL\": \"https://curl.se/docs/$cve.json\",\n".
+        "    \"www\": \"https://curl.se/docs/$cve.html\",\n".
         "    \"CWE\": \"$cwe\",\n".
         "    \"last_affected\": \"$last\"";
     if($severity) {
