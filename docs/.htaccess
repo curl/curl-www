@@ -1,0 +1,1 @@
+RedirectMatch "^/docs/CURL-(CVE-.*.json)" https://curl.se/docs/$1
