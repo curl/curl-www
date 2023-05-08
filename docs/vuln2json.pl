@@ -44,7 +44,8 @@ sub dumpobj {
 
 sub scancve {
     my ($cve)=@_;
-    my ($severity, $desc, $repby, $patchby, $fixed, $fixed_in, $intro_in);
+    my ($severity, $desc, $repby, $patchby, $helpby,
+        $fixed, $fixed_in, $intro_in);
     my $inc = 0;
     open(F, "<$cve.md");
     while(<F>) {
@@ -65,6 +66,9 @@ sub scancve {
         }
         elsif(/^- Reported-by: (.*)/i) {
             $repby = $1;
+        }
+        elsif(/^- Help-by: (.*)/i) {
+            $helpby = $1;
         }
         elsif(/^Severity: (.*)/i) {
             $severity = ucfirst($1);
@@ -88,7 +92,8 @@ sub scancve {
     if(!$fixed) {
         die "could not find fixed in $cve";
     }
-    return ($desc, $severity, $repby, $patchby, $fixed, $fixed_in, $intro_in);
+    return ($desc, $severity, $repby, $patchby, $helpby,
+            $fixed, $fixed_in, $intro_in);
 }
 
 my @releases; #all of them, from newest to oldest
@@ -157,8 +162,8 @@ for(@vuln) {
     my $modified = modified($cve);
     my @single;
 
-    my ($desc, $severity, $repby, $patchby, $fixed,
-        $fixed_in, $intro_in)=scancve($cve);
+    my ($desc, $severity, $repby, $patchby, $helpby,
+        $fixed, $fixed_in, $intro_in)=scancve($cve);
 
     my @cw = split(/: */, $cwe);
 
@@ -232,7 +237,7 @@ for(@vuln) {
                 "    }";
             $c++;
         }
-        push @single, "," if($patchby);
+        push @single, "," if($patchby || $helpby);
         push @single, "\n";
     }
     if($patchby) {
@@ -240,7 +245,22 @@ for(@vuln) {
             "    {\n".
             "      \"name\": \"$patchby\",\n".
             "      \"type\": \"REMEDIATION_DEVELOPER\"\n".
-            "    }\n";
+            "    }";
+        push @single, "," if($helpby);
+        push @single, "\n";
+    }
+    if($helpby) {
+        my $c = 0;
+        for my $r (split(/, /, $helpby)) {
+            push @single, ",\n" if($c);
+            push @single,
+                "    {\n".
+                "      \"name\": \"$r\",\n".
+                "      \"type\": \"OTHER\"\n".
+                "    }";
+            $c++;
+        }
+        push @single, "\n";
     }
     push @single, "  ],\n";
     push @single, sprintf "  \"details\": \"%s\"\n".
