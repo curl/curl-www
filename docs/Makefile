@@ -408,7 +408,7 @@ seclist.gen: vuln.pm listvulns.pl
 	./listvulns.pl > seclist.gen
 
 CVE-%.html: CVE-%.md $(MAINPARTS) advisory.t $(ADVBOX) curlver-to-vulnlink.pl mk-adv-template.pl cve-checker.pl
-	perl cve-checker.pl $<
+	@perl cve-checker.pl $<
 	$(MARKDOWN) < $< | perl curlver-to-vulnlink.pl | ./mk-adv-template.pl $@ | fcpp $(FCPP_OPTS) -I$(ROOT) -WWW -Uunix -P -H -C -V -LL - > $@
 
 vulnerabilities.html: _vulnerabilities.html vuln.gen $(MAINPARTS)
