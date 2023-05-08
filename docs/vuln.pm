@@ -142,7 +142,7 @@
     "CVE-2013-2174.html|7.7|7.30.0|URL decode buffer boundary flaw|CVE-2013-2174|20130622|20130519|CWE-126: Buffer Over-read|0|URL|OVERREAD",
     "CVE-2013-1944.html|4.7|7.29.0|cookie domain tailmatch|CVE-2013-1944|20130412|20130409|CWE-201: Information Exposure Through Sent Data|0|HTTP|-",
     "CVE-2013-0249.html|7.26.0|7.28.1|SASL buffer overflow|CVE-2013-0249|20130206|20130130|CWE-121: Stack-based Buffer Overflow|0|mail|OVERFLOW",
-    "CVE-2011-3389.html|7.10.6|7.23.1|SSL CBC IV vulnerability|CVE-2011-3389|20120124|20120119|CWE-924: Improper Enforcement of Message Integrity|0|TLS|-",
+    "CVE-2011-3389.html|7.10.6|7.23.1|SSL CBC IV vulnerability|CVE-2011-3389|20120124|20120119|CWE-924: Improper Enforcement of Message Integrity During Transmission in a Communication Channel|0|TLS|-",
     "CVE-2012-0036.html|7.20.0|7.23.1|URL sanitization vulnerability|CVE-2012-0036|20120124|20111222|CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')|0|URL|-",
     "CVE-2011-2192.html|7.10.6|7.21.6|inappropriate GSSAPI delegation|CVE-2011-2192|20110623|20110606|CWE-281: Improper Preservation of Permissions|0|auth|-",
     "CVE-2010-3842.html|7.20.0|7.21.1|local file overwrite|CVE-2010-3842|20101013|20100903|CWE-30: Path Traversal|0|tool|-",
