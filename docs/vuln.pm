@@ -66,7 +66,7 @@
     # be listed here: https://daniel.haxx.se/blog/2020/03/16/warning-curl-users-on-windows-using-file/
     "CVE-2019-5481.html|7.52.0|7.65.3|FTP-KRB double-free|CVE-2019-5481|20190911|20190903|CWE-415: Double Free|200|FTP|DOUBLE_FREE",
     "CVE-2019-5482.html|7.19.4|7.65.3|TFTP small blocksize heap buffer overflow|CVE-2019-5482|20190911|20190829|CWE-122: Heap-based Buffer Overflow|250|TFTP|OVERFLOW",
-    "CVE-2019-5443.html|7.61.0|7.65.1|Windows OpenSSL engine code injection|CVE-2019-5443|20190624|20190612|CWE-94: Code Injection|200|TLS|-",
+    "CVE-2019-5443.html|7.44.0|7.65.1|Windows OpenSSL engine code injection|CVE-2019-5443|20190624|20190612|CWE-94: Code Injection|200|TLS|-",
     "CVE-2019-5436.html|7.19.4|7.64.1|TFTP receive buffer overflow|CVE-2019-5436|20190522|20190429|CWE-122: Heap-based Buffer Overflow|200|TFTP|OVERFLOW",
     "CVE-2019-5435.html|7.62.0|7.64.1|Integer overflows in curl_url_set|CVE-2019-5435|20190522|20190424|CWE-131: Incorrect Calculation of Buffer Size|150|URL|OVERFLOW",
     "CVE-2018-16890.html|7.36.0|7.63.0|NTLM type-2 out-of-bounds buffer read|CVE-2018-16890|20190206|20181230|CWE-125: Out-of-bounds Read|0|HTTP|OVERREAD",
@@ -140,7 +140,7 @@
     "CVE-2013-6422.html|7.21.4|7.33.0|cert name check ignore GnuTLS|CVE-2013-6422|20131217|20131129|CWE-297: Improper Validation of Certificate with Host Mismatch|0|TLS|-",
     "CVE-2013-4545.html|7.18.0|7.32.0|cert name check ignore OpenSSL|CVE-2013-4545|20131115|20131106|CWE-297: Improper Validation of Certificate with Host Mismatch|0|TLS|-",
     "CVE-2013-2174.html|7.7|7.30.0|URL decode buffer boundary flaw|CVE-2013-2174|20130622|20130519|CWE-126: Buffer Over-read|0|URL|OVERREAD",
-    "CVE-2013-1944.html|6.0|7.29.0|cookie domain tailmatch|CVE-2013-1944|20130412|20130409|CWE-201: Information Exposure Through Sent Data|0|HTTP|-",
+    "CVE-2013-1944.html|4.7|7.29.0|cookie domain tailmatch|CVE-2013-1944|20130412|20130409|CWE-201: Information Exposure Through Sent Data|0|HTTP|-",
     "CVE-2013-0249.html|7.26.0|7.28.1|SASL buffer overflow|CVE-2013-0249|20130206|20130130|CWE-121: Stack-based Buffer Overflow|0|mail|OVERFLOW",
     "CVE-2011-3389.html|7.10.6|7.23.1|SSL CBC IV vulnerability|CVE-2011-3389|20120124|20120119|CWE-924: Improper Enforcement of Message Integrity|0|TLS|-",
     "CVE-2012-0036.html|7.20.0|7.23.1|URL sanitization vulnerability|CVE-2012-0036|20120124|20111222|CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')|0|URL|-",
