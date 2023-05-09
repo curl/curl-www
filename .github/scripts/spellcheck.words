@@ -909,3 +909,6 @@ qsossl
 RCE
 TLD
 TLDs
+pandoc
+CPAN
+forwardable
