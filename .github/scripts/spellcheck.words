@@ -900,3 +900,8 @@ Pathname
 MITMed
 userspace
 backported
+CN
+CNs
+subjectAltNames
+subjectAltName
+qsossl
