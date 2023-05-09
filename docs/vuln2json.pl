@@ -171,6 +171,7 @@ for(@vuln) {
     my $v = inclusive($first, $last, "        ");
     push @single,
         "{\n".
+        "  \"schema_version\": \"1.5.0\",\n".
         "  \"id\": \"CURL-$cve\",\n".
         "  \"aliases\": [\n".
         "    \"$cve\"\n".
@@ -184,7 +185,15 @@ for(@vuln) {
         "    \"CWE\": {\n".
         "      \"id\": \"$cw[0]\",\n".
         "      \"desc\": \"$cw[1]\"\n".
-        "    },\n".
+        "    },\n";
+    if($award) {
+        push @single,
+            "    \"award\": {\n".
+            "      \"amount\": \"$award\",\n".
+            "      \"currency\": \"USD\"\n".
+            "    },\n";
+    }
+    push @single,
         "    \"last_affected\": \"$last\"";
     if($severity) {
         push @single,
