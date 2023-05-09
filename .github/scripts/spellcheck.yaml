@@ -28,5 +28,6 @@ matrix:
       - 'pre'
       - 'strong'
       - 'em'
+      - 'h1'
   sources:
   - '**/*.md'
