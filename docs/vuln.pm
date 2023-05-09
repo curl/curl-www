@@ -132,7 +132,7 @@
     "CVE-2014-3707.html|7.17.1|7.38.0|duphandle read out of bounds|CVE-2014-3707|20141105|20140916|CWE-126: Buffer Over-read|0|internal|OVERREAD",
     "CVE-2014-3620.html|7.31.0|7.37.1|cookie leak for TLDs|CVE-2014-3620|20140910|20140815|CWE-201: Information Exposure Through Sent Data|0|HTTP|-",
     "CVE-2014-3613.html|4.0|7.37.1|cookie leak with IP address as domain|CVE-2014-3613|20140910|20140815|CWE-201: Information Exposure Through Sent Data|0|HTTP|-",
-    "CVE-2014-2522.html|7.27.0|7.35.0|not verifying certs for TLS to IP address / Winssl|CVE-2014-2522|20140326|20140227|CWE-297: Improper Validation of Certificate with Host Mismatch|0|TLS|-",
+    "CVE-2014-2522.html|7.27.0|7.35.0|not verifying certs for TLS to IP address / Schannel|CVE-2014-2522|20140326|20140227|CWE-297: Improper Validation of Certificate with Host Mismatch|0|TLS|-",
     "CVE-2014-1263.html|7.27.0|7.35.0|not verifying certs for TLS to IP address / Secure Transport|CVE-2014-1263|20140326|20140227|CWE-297: Improper Validation of Certificate with Host Mismatch|0|TLS|-",
     "CVE-2014-0139.html|7.10.3|7.35.0|IP address wildcard certificate validation|CVE-2014-0139|20140326|20140222|CWE-297: Improper Validation of Certificate with Host Mismatch|0|TLS|-",
     "CVE-2014-0138.html|7.10.6|7.35.0|wrong re-use of connections|CVE-2014-0138|20140326|20140215|CWE-305: Authentication Bypass by Primary Weakness|0|CONNREUSE|-",
