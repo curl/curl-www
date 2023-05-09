@@ -127,7 +127,7 @@
     "CVE-2015-3145.html|7.31.0|7.41.0|cookie parser out of boundary memory access|CVE-2015-3145|20150422|20150416|CWE-124: Buffer Underwrite ('Buffer Underflow')|0|HTTP|OVERREAD",
     "CVE-2015-3148.html|7.10.6|7.41.0|Negotiate not treated as connection-oriented|CVE-2015-3148|20150422|20150331|CWE-305: Authentication Bypass by Primary Weakness|0|HTTP|-",
     "CVE-2015-3143.html|7.10.6|7.41.0|Re-using authenticated connection when unauthenticated|CVE-2015-3143|20150422|20150224|CWE-305: Authentication Bypass by Primary Weakness|0|internal|-",
-    "CVE-2014-8151.html|7.31.0|7.39.0|darwinssl certificate check bypass|CVE-2014-8151|20150108|20141126|CWE-297: Improper Validation of Certificate with Host Mismatch|0|TLS|-",
+    "CVE-2014-8151.html|7.31.0|7.39.0|Secure Transport certificate check bypass|CVE-2014-8151|20150108|20141126|CWE-297: Improper Validation of Certificate with Host Mismatch|0|TLS|-",
     "CVE-2014-8150.html|6.0|7.39.0|URL request injection|CVE-2014-8150|20150108|20141225|CWE-444: Inconsistent Interpretation of HTTP Requests ('HTTP Request Smuggling')|0|URL|-",
     "CVE-2014-3707.html|7.17.1|7.38.0|duphandle read out of bounds|CVE-2014-3707|20141105|20140916|CWE-126: Buffer Over-read|0|internal|OVERREAD",
     "CVE-2014-3620.html|7.31.0|7.37.1|cookie leak for TLDs|CVE-2014-3620|20140910|20140815|CWE-201: Information Exposure Through Sent Data|0|HTTP|-",
