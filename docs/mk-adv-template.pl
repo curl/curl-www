@@ -47,6 +47,7 @@ for(@vuln) {
 ADVISORY_WHERE
 
 #include "adv-related-box.inc"
+<h2>FLAWCVE</h2>
 $markdown
 #include "_footer.html"
 </body> </html>
