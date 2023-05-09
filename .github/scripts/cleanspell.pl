@@ -64,6 +64,9 @@ while(<F>) {
     $_ =~ s/curl_url_(dup)//g;
     $_ =~ s/libcurl-env//g;
     $_ =~ s/(^|\W)((tftp|https|http|ftp):\/\/[a-z0-9\-._~%:\/?\#\[\]\@!\$&'()*+,;=]+)//gi;
+    $_ =~ s/^- Reported-by:.*//;
+    $_ =~ s/^- Patched-by:.*//;
+    $_ =~ s/^- Help-by:.*//;
     print O $_;
 }
 close(F);
