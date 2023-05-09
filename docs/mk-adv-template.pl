@@ -25,10 +25,6 @@ push @vuln, @novuln;
 for(@vuln) {
     my ($id, $start, $stop, $desc, $cve, $announce, $report, $cwe)=split('\|');
     if($id eq $want) {
-        # Insert the CVE number in the h1 tag
-        for(@md) {
-            $_ =~ s/(<h1 [^>]*>)([^<]*)<\/h1>/${1}$2 [$cve]<\/h1>/;
-        }
         my $markdown = join("", @md);
         print <<TEMPLATE
 #include "_doctype.html"
