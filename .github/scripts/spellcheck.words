@@ -894,3 +894,6 @@ png
 svg
 xcf
 mutexes
+tailmatch
+umask
+Pathname
