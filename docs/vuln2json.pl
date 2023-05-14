@@ -250,11 +250,16 @@ for(@vuln) {
         push @single, "\n";
     }
     if($patchby) {
-        push @single,
-            "    {\n".
-            "      \"name\": \"$patchby\",\n".
-            "      \"type\": \"REMEDIATION_DEVELOPER\"\n".
-            "    }";
+        my $c = 0;
+        for my $r (split(/, /, $patchby)) {
+            push @single, ",\n" if($c);
+            push @single,
+                "    {\n".
+                "      \"name\": \"$r\",\n".
+                "      \"type\": \"REMEDIATION_DEVELOPER\"\n".
+                "    }";
+            $c++;
+        }
         push @single, "," if($helpby);
         push @single, "\n";
     }
