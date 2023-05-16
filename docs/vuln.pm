@@ -13,6 +13,10 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2023-28322.html|7.7|8.0.1|more POST-after-PUT confusion|CVE-2023-28322|20230517|20230419|CWE-440: Expected Behavior Violation|480|HTTP|-",
+    "CVE-2023-28321.html|7.12.0|8.0.1|IDN wildcard match|CVE-2023-28321|20230517|20230417|CWE-295: Improper Certificate Validation|480|TLS|-",
+    "CVE-2023-28320.html|7.9.8|8.0.1|siglongjmp race condition|CVE-2023-28320|20230517|20230402|CWE-662: Improper Synchronization|480|DNS|-",
+    "CVE-2023-28319.html|7.81.0|8.0.1|UAF in SSH sha256 fingerprint check|CVE-2023-28319|20230517|20230321|CWE-416: Use After Free|2400|SSH|USE_AFTER_FREE",
     "CVE-2023-27538.html|7.16.1|7.88.1|SSH connection too eager reuse still|CVE-2023-27538|20230320|20230309|CWE-305: Authentication Bypass by Primary Weakness|480|CONNREUSE|-",
     "CVE-2023-27537.html|7.88.0|7.88.1|HSTS double free|CVE-2023-27537|20230320|20230308|CWE-415: Double Free|480|HSTS|DOUBLE_FREE",
     "CVE-2023-27536.html|7.22.0|7.88.1|GSS delegation too eager connection re-use|CVE-2023-27536|20230320|20230307|CWE-305: Authentication Bypass by Primary Weakness|480|CONNREUSE|-",
