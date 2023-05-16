@@ -156,7 +156,11 @@ CVELIST = \
  CVE-2023-27535.html \
  CVE-2023-27536.html \
  CVE-2023-27537.html \
- CVE-2023-27538.html
+ CVE-2023-27538.html \
+ CVE-2023-28319.html \
+ CVE-2023-28320.html \
+ CVE-2023-28321.html \
+ CVE-2023-28322.html
 
 PAGES = \
  $(CVELIST) \
