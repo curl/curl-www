@@ -47,6 +47,40 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
   <img src="pix/play.svg" alt="Play video" height="100%" style="float: left; margin-right: 1em;"> desc </a> \
   </div>
 
+<a name="8_1_1"></a>
+SUBTITLE(Fixed in 8.1.1 - May 23 2023)
+<p> Changes:
+<ul class="changes">
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.se/bug/?i=11118">cf-socket: completely remove the disabled USE_RECV_BEFORE_SEND_WORKAROUND</a>
+ BGF <a href="https://curl.se/bug/?i=11134">checksrc: disallow spaces before labels</a>
+ BGF <a href="https://curl.se/bug/?i=11141">cmake: avoid `list(PREPEND)` for compatibility</a>
+ BGF <a href="https://curl.se/bug/?i=11130">cmake: repair cross compiling</a>
+ BGF <a href="https://curl.se/bug/?i=11142">configure: fix --help alignment</a>
+ BGF <a href="https://curl.se/bug/?i=11114">configure: generate a script to run the compiler</a>
+ BGF <a href="https://curl.se/bug/?i=11126">curl_easy_getinfo: clarify on return data types</a>
+ BGF <a href="https://curl.se/bug/?i=11150">docs: document that curl_url_cleanup(NULL) is a safe no-op</a>
+ BGF <a href="https://curl.se/bug/?i=11140">hostip: move easy_lock.h include above curl_memory.h</a>
+ BGF <a href="https://curl.se/bug/?i=11138">http2: double http request parser max line length</a>
+ BGF <a href="https://curl.se/bug/?i=11162">http2: increase stream window size to 10 MB</a>
+ BGF <a href="https://curl.se/bug/?i=11165">http2: upload improvements</a>
+ BGF lib: fix conversion warnings with gcc on macOS
+ BGF <a href="https://curl.se/bug/?i=11163">lib: rename struct &apos;http_req&apos; to &apos;httpreq&apos;</a>
+ BGF <a href="https://curl.se/bug/?i=11147">ngtcp2: fix compiler warning about possible null-deref</a>
+ BGF <a href="https://curl.se/bug/?i=11149">ngtcp2: proper handling of uint64_t when adjusting send buffer</a>
+ BGF <a href="https://curl.se/bug/?i=11132">os400: update chkstrings.c</a>
+ BGF runtests: handle interrupted reads from IPC pipes
+ BGF <a href="https://curl.se/bug/?i=11160">runtests: use the correct fd after select</a>
+ BGF <a href="https://curl.se/bug/?i=11155">sectransp.c: make the code c89 compatible</a>
+ BGF <a href="https://curl.se/bug/?i=11135">select: avoid returning an error on EINTR from select() or poll()</a>
+ BGF test425: fix the log directory for the upload
+ BGF <a href="https://curl.se/bug/?i=11137">url: provide better error message when URLs fail to parse</a>
+ BGF <a href="https://curl.se/bug/?i=11129">urlapi: allow numerical parts in the host name</a>
+ BGF <a href="https://curl.se/bug/?i=11146">vquic.c: make recvfrom_packets static, avoid compiler warning</a>
+</ul>
+
 <a name="8_1_0"></a>
 SUBTITLE(Fixed in 8.1.0 - May 17 2023)
 <p>
