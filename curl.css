@@ -209,6 +209,11 @@ tr.odd {
   background-color: #e0e0e0;
 }
 
+tr.hide {
+  color: #000000;
+  background-color: #a0a0a0;
+}
+
 /* a non-selected item in the main menu */
 .menuitem {
   text-decoration: none;

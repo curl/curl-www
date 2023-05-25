@@ -86,7 +86,7 @@ for $per (@sall) {
         $utd++;
     }
     else {
-        $cl = sprintf(" class=\"%s\"", ($i&1)?"even":"odd");
+        $cl = sprintf(" class=\"%s\"", $$per{'hide'} eq "Yes" ? "hide" : (($i&1)?"even":"odd"));
     }
 
     my $s = $$per{'os'};
@@ -152,7 +152,13 @@ for $per (@sall) {
 
     printf("<td>%s</td>",
            $here?"-":($churl?since($$per{'remcheck'}):"manual"));
-    if($$per{'file'} =~ /^(http|ftp):/) {
+    if($$per{'chregex'} && !eval {
+            # Use the regex to see if perl raises a bad regex error
+            "" =~ $$per{'chregex'};
+            1;
+        }) {
+        print "<td> BAD REGEX</td>\n";
+    } elsif($$per{'file'} =~ /^(http|ftp):/) {
         print "<td> UNSAFE URL</td>\n";
         $unsafe++;
     }
