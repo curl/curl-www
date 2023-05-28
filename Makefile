@@ -4,7 +4,7 @@ ROOT=.
 STABLE= 8.1.1
 RELDATE = "2023-05-23"
 # The planned *next* release is:
-NEXTDATE = "2023-07-19"
+NEXTDATE = "2023-05-30"
 
 # generated file with binary package stats
 STAT = packstat.t
