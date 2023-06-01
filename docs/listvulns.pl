@@ -32,12 +32,24 @@ sub cve2severity {
 
 sub sev2color {
     my ($sev) = @_;
+    my $col;
+    my $sym;
     if(!$sev) {
-        return "white";
+        return "";
     }
-    return "green" if($sev =~ /^Low/i);
-    return "orange" if($sev =~ /^Medium/i);
-    return "red";
+    elsif($sev =~ /^Low/i) {
+        $col = "green";
+        $sym = "&#9409;";
+    }
+    elsif($sev =~ /^Medium/i) {
+        $col = "orange";
+        $sym = "&#9410;";
+    }
+    else {
+        $col = "red";
+        $sym = "&#9405;";
+    }
+    return "<div style=\"color:$col;\">$sym</div>";
 }
 
 my $num = $#vuln + 1;
@@ -51,11 +63,7 @@ for(@vuln) {
 
     my $sev = cve2severity($cve);
     my $col;
-    my $c = "&nbsp;";
-    if($sev) {
-        $col = sev2color($sev);
-        $c="<div style=\"color:$col;\">&#9679;</div>";
-    }
+    $c = sev2color($sev);
     
     print <<VUL
 <tr>
