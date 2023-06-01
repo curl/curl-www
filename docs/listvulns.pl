@@ -39,17 +39,17 @@ sub sev2color {
     }
     elsif($sev =~ /^Low/i) {
         $col = "green";
-        $sym = "&#9409;";
+        $sym = "L";
     }
     elsif($sev =~ /^Medium/i) {
         $col = "orange";
-        $sym = "&#9410;";
+        $sym = "M";
     }
     else {
         $col = "red";
-        $sym = "&#9405;";
+        $sym = "H";
     }
-    return "<div style=\"color:$col;\">$sym</div>";
+    return "<div style=\"color: $col; border-radius: 8px; border: 2px $col solid; text-align: center;\">$sym</div>";
 }
 
 my $num = $#vuln + 1;
@@ -64,11 +64,16 @@ for(@vuln) {
     my $sev = cve2severity($cve);
     my $col;
     $c = sev2color($sev);
+    my $sevcol="<td></td>";
+    if($sev) {
+        $sevcol = "<td title=\"Severity $sev\">$c</td>";
+    }
+        
     
     print <<VUL
 <tr>
 <td>$num</td>
-<td title="$sev">$c</td>
+$sevcol
 <td><a href="$id">$cve: $desc</a></td>
 <td>$year-$mon-$day</td>
 <td><a href="vuln-$start.html">$start</a></td>
