@@ -49,7 +49,7 @@ sub sev2color {
         $col = "red";
         $sym = "H";
     }
-    return "<div style=\"color: white; border-radius: 8px; background: $col; text-align: center;\">$sym</div>";
+    return "<div style=\"color: $col; border-radius: 8px; border: 2px $col solid; text-align: center;\">$sym</div>";
 }
 
 my $num = $#vuln + 1;
