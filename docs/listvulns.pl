@@ -6,12 +6,12 @@ print "<table>\n";
 
 print <<HEAD
 <tr class=\"tabletop\">
-<th>#</th>
-<th>S</th>
+<th title="Vulnerability number">#</th>
+<th title="Severity: L=Low, M=Medium, H=High">S</th>
 <th>Vulnerability</th>
-<th>Date</th>
-<th>First</th>
-<th>Last</th>
+<th title="Date publicly disclosed">Date</th>
+<th title="First curl version affected">First</th>
+<th title="Last curl version affected">Last</th>
 </tr>
 HEAD
     ;
