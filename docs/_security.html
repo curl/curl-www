@@ -18,9 +18,6 @@ TITLE(Security)
 #include "adv-related-box.inc"
 
 <p>
- We take security seriously and develop curl and libcurl to be secure and
- safe.
-<p>
  If you find or simply suspect a security problem in curl or libcurl, please
  file a detailed report on our <a href="https://hackerone.com/curl">hackerone
  page</a> and tell.
@@ -31,6 +28,15 @@ TITLE(Security)
 <p>
  See also the <a href="vulnerabilities.html">Vulnerabilities Table</a> to see
  what versions that are vulnerable to what flaws.
+<p style="border: 2px green solid; padding: 6px 6px 6px 6px;">
+ <b>Alert:</b> if you look up curl CVEs in public sources
+ like <a href="https://nvd.nist.gov">NVD</a> you will find they
+ use <i>inflated</i> severity levels and CVSS scores. They think they know
+ better and override our assessments. This is a systemic error that we
+ unfortunately cannot fix. Feel free to complain to them - we keep doing it to
+ no use - and consider using our material as the cononical sources for curl
+ issues.
+</p>
 
 SUBTITLE(Security audit)
 <p>
