@@ -7,7 +7,8 @@ print "<table>\n";
 print <<HEAD
 <tr class=\"tabletop\">
 <th title="Vulnerability number">#</th>
-<th title="Severity: L=Low, M=Medium, H=High">S</th>
+<th title="Severity: L=Low, M=Medium, H=High, C=Critical">S</th>
+<th title="Where: Tool-only, Lib-only, default means both">W</th>
 <th>Vulnerability</th>
 <th title="Date publicly disclosed">Date</th>
 <th title="First curl version affected">First</th>
@@ -52,9 +53,22 @@ sub sev2color {
     return "<div style=\"color: $col; border-radius: 8px; border: 2px $col solid; text-align: center;\">$sym</div>";
 }
 
+sub where {
+    my ($tool) = @_;
+    if($tool eq "tool") {
+        return "<td title=\"curl tool only\">tool</td>";
+    }
+    elsif($tool eq "lib") {
+        return "<td title=\"libcurl only\">lib</td>";
+    }
+
+    return "<td></td>";
+}
+
 my $num = $#vuln + 1;
 for(@vuln) {
-    my ($id, $start, $stop, $desc, $cve, $date, $project, $cwe)=split('\|');
+    my ($id, $start, $stop, $desc, $cve, $date, $project,
+        $cwe, $award, $area, $cissue, $tool)=split('\|');
     my $year, $mon, $day;
 
     if($date =~ /^(\d\d\d\d)(\d\d)(\d\d)/ ) {
@@ -68,12 +82,13 @@ for(@vuln) {
     if($sev) {
         $sevcol = "<td title=\"Severity $sev\">$c</td>";
     }
-        
+    my $toolcol = where($tool);
     
     print <<VUL
 <tr>
 <td>$num</td>
 $sevcol
+$toolcol
 <td><a href="$id">$cve: $desc</a></td>
 <td>$year-$mon-$day</td>
 <td><a href="vuln-$start.html">$start</a></td>
