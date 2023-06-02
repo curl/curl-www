@@ -408,7 +408,7 @@ caextract.html: _caextract.html $(MAINPARTS) ../ca/pemlist.gen
 
 security.html: _security.html seclist.gen $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
-seclist.gen: vuln.pm listvulns.pl
+seclist.gen: vuln.pm listvulns.pl $(CVELIST)
 	./listvulns.pl > seclist.gen
 
 CVE-%.html: CVE-%.md $(MAINPARTS) advisory.t $(ADVBOX) curlver-to-vulnlink.pl mk-adv-template.pl cve-checker.pl

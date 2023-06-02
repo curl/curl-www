@@ -46,9 +46,13 @@ sub sev2color {
         $col = "orange";
         $sym = "M";
     }
-    else {
+    elsif($sev =~ /^High/i) {
         $col = "red";
         $sym = "H";
+    }
+    elsif($sev =~ /^Critical/i) {
+        $col = "black";
+        $sym = "C";
     }
     return "<div style=\"color: $col; border-radius: 8px; border: 2px $col solid; text-align: center;\">$sym</div>";
 }
