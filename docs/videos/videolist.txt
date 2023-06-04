@@ -808,3 +808,14 @@ DATE 2022-09-15
 WHO Sean McArthur
 DESC Brief recap of an HTTP backend in curl. What we've done, highlight community members that have fixed things. Ways curl has improved hyper, and vice versa. How anyone can join us, and try it out early. Sean is the lead developer of the Hyper project.
 ENDOFVIDEO
+
+VIDEO QUIC and HTTP/3 with curl and wolfSSL
+EVENT wolfSSL webinar
+URL https://youtu.be/SouvkGW0UZQ
+THUMB quic-and-wolfssl.jpg
+THUMBSIZE width="250" height="141"
+DATE 2023-04-06
+DURATION 40 minutes
+WHO Daniel Stenberg and Stefan Eissing
+DESC How HTTP/3 differs from HTTP/2 and HTTP/1, how to build libcurl to enable QUIC and how to perform transfers over QUIC using curl and libcurl.
+ENDOFVIDEO
