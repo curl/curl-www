@@ -2,6 +2,9 @@
 
 require "./vuln.pm";
 
+my $bar=$ARGV[0]; # the lowest severity to include
+my $barlvl = severity2level($bar); # numerical level to include
+
 print "<table>\n";
 
 print <<HEAD
@@ -17,18 +20,13 @@ print <<HEAD
 HEAD
     ;
 
-sub cve2severity {
-    my ($cve) = @_;
-    open(C, "$cve.md");
-    while(<C>) {
-        if(/^Severity: (.*)/) {
-            my $sev = $1;
-            $sev =~ s/[\r\n]+//g;
-            return ucfirst($sev);
-        }
-    }
-    close(C);
-    return "";
+# provide severity in lowercase
+sub severity2level {
+    my ($severity) = @_;
+    return 1 if($severity eq "medium");
+    return 2 if($severity eq "high");
+    return 3 if($severity eq "critical");
+    return 0;
 }
 
 sub sev2color {
@@ -72,14 +70,19 @@ sub where {
 my $num = $#vuln + 1;
 for(@vuln) {
     my ($id, $start, $stop, $desc, $cve, $date, $project,
-        $cwe, $award, $area, $cissue, $tool)=split('\|');
+        $cwe, $award, $area, $cissue, $tool, $severity)=split('\|');
     my $year, $mon, $day;
+
+    if(severity2level($severity) < $barlvl) {
+        $num--;
+        next;
+    }
 
     if($date =~ /^(\d\d\d\d)(\d\d)(\d\d)/ ) {
         ($year, $mon, $day)=($1, $2, $3);
     }
 
-    my $sev = cve2severity($cve);
+    my $sev = ucfirst($severity);
     my $col;
     $c = sev2color($sev);
     my $sevcol="<td></td>";

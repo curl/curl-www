@@ -197,6 +197,9 @@ PAGES = \
  releases.csv \
  releases.html \
  security.html \
+ security-m.html \
+ security-h.html \
+ security-c.html \
  ssl-ciphers.html \
  ssl-compared.html \
  sslcerts.html \
@@ -407,9 +410,22 @@ caextract.html: _caextract.html $(MAINPARTS) ../ca/pemlist.gen
 	$(ACTION)
 
 security.html: _security.html seclist.gen $(MAINPARTS) $(ADVBOX)
-	$(ACTION)
-seclist.gen: vuln.pm listvulns.pl $(CVELIST)
-	./listvulns.pl > seclist.gen
+	fcpp $(FCPP_OPTS) -DSEVERITY=0 -I$(ROOT) -WWW -Uunix -P -H -C -V -LL $< $@
+security-m.html: _security.html seclist-m.gen $(MAINPARTS) $(ADVBOX)
+	fcpp $(FCPP_OPTS) -DSEVERITY=1 -I$(ROOT) -WWW -Uunix -P -H -C -V -LL $< $@
+security-h.html: _security.html seclist-h.gen $(MAINPARTS) $(ADVBOX)
+	fcpp $(FCPP_OPTS) -DSEVERITY=2 -I$(ROOT) -WWW -Uunix -P -H -C -V -LL $< $@
+security-c.html: _security.html seclist-c.gen $(MAINPARTS) $(ADVBOX)
+	fcpp $(FCPP_OPTS) -DSEVERITY=3 -I$(ROOT) -WWW -Uunix -P -H -C -V -LL $< $@
+
+seclist.gen: vuln.pm listvulns.pl vuln.pm $(CVELIST)
+	./listvulns.pl low > seclist.gen
+seclist-m.gen: vuln.pm listvulns.pl vuln.pm $(CVELIST)
+	./listvulns.pl medium > seclist-m.gen
+seclist-h.gen: vuln.pm listvulns.pl vuln.pm $(CVELIST)
+	./listvulns.pl high > seclist-h.gen
+seclist-c.gen: vuln.pm listvulns.pl vuln.pm $(CVELIST)
+	./listvulns.pl critical > seclist-c.gen
 
 CVE-%.html: CVE-%.md $(MAINPARTS) advisory.t $(ADVBOX) curlver-to-vulnlink.pl mk-adv-template.pl cve-checker.pl
 	@perl cve-checker.pl $<
