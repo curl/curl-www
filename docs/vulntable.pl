@@ -26,7 +26,8 @@ sub head {
     print "<tr class=\"tabletop\"><th>Version</th>";
     my $v=1;
     for(@vuln) {
-        my ($id, $start, $stop, $desc, $cve, $announce, $report, $cwe)=split('\|');
+        my ($id, $start, $stop, $desc, $cve, $announce, $report,
+            $cwe, $award, $area, $cissue, $tool, $severity)=split('\|');
 
         if($lastshow && ($lastshow > vernum($stop))) {
             # not a match!
@@ -42,6 +43,7 @@ sub head {
         $vulndesc[$v-1]=$desc;
         $cve[$v-1]=$cve;
         $cwe[$v-1]=$cwe;
+        $sev[$v-1]=$severity;
         printf("<th><a class=vuln title=\"$cve: $desc\" href=\"%s\">%02d</a></th>",
                $id, $num);
         $v++;
@@ -49,6 +51,14 @@ sub head {
     print "<th>Total</th>\n";
     print "</tr>\n";
     return $v-1;
+}
+
+sub sev2color {
+    my ($severity) = @_;
+    return 'green' if ($severity eq "low");
+    return 'blue' if ($severity eq "medium");
+    return 'red' if($severity eq "high");
+    return "black";
 }
 
 sub single {
@@ -211,8 +221,9 @@ for my $str (@releases) {
             }
             if(!$shown[$i]) {
                 # output only once, but use rowspan for the height
-                printf("<td valign=top style=\"background-color: red;\" title=\"%s: %s\" rowspan=%d onclick=\"window.location.href='%s'\">&nbsp;</td>",
-                       $cve[$i], $vulndesc[$i], $vercount[$i], $vurl[$i],);
+                printf("<td valign=top style=\"background-color: %s;\" title=\"%s: %s (%s)\" rowspan=%d onclick=\"window.location.href='%s'\">&nbsp;</td>",
+                       sev2color($sev[$i]),
+                       $cve[$i], $vulndesc[$i], $sev[$i], $vercount[$i], $vurl[$i],);
                 $shown[$i]=1;
             }
             $sum++;

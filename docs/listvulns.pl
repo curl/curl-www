@@ -43,7 +43,7 @@ sub sev2color {
         $sym = "L";
     }
     elsif($sev =~ /^Medium/i) {
-        $col = "orange";
+        $col = "blue";
         $sym = "M";
     }
     elsif($sev =~ /^High/i) {
