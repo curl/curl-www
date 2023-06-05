@@ -51,8 +51,21 @@ SUBTITLE(Past security audits)
 
 SUBTITLE(Past vulnerabilities)
 
-#include "seclist.gen"
+<a href="security.html">All</a> |
+<a href="security-m.html">Medium+</a> |
+<a href="security-h.html">High+</a> |
+<a href="security-c.html">Critical</a>
+<p>
 
+#if SEVERITY == 1
+#include "seclist-m.gen"
+#elif SEVERITY == 2
+#include "seclist-h.gen"
+#elif SEVERITY == 3
+#include "seclist-c.gen"
+#else
+#include "seclist.gen"
+#endif
 SUBTITLE(Retracted security vulnerabilities)
 <p>
   Issues no longer considered curl security problems:
