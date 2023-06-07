@@ -157,9 +157,12 @@ for $per (@sall) {
             "" =~ $$per{'chregex'};
             1;
         }) {
-        print "<td> BAD REGEX</td>\n";
+        print "<td>BAD REGEX</td>\n";
+    } elsif($$per{'curl'} !~ /^[78]\.(\d|[1-9]\d)\.(\d|[1-9]\d)$/) {
+        # Be sure to update the regex above once curl 9.0.0 is released
+        print "<td>INVALID VERSION (BAD REGEX?)</td>\n";
     } elsif($$per{'file'} =~ /^(http|ftp):/) {
-        print "<td> UNSAFE URL</td>\n";
+        print "<td>UNSAFE URL</td>\n";
         $unsafe++;
     }
     print "</tr>\n";
