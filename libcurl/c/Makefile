@@ -184,304 +184,302 @@ allfuncs.html: _allfuncs.html $(MAINPARTS)
 
 curl_easy_init.html: _curl_easy_init.html $(MAINPARTS_CAPI) curl_easy_init.gen
 	$(ACTION)
-curl_easy_init.gen: $(MANROOT)/curl_easy_init.3
+curl_easy_init.gen: $(MANROOT)/curl_easy_init.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_easy_duphandle.html: _curl_easy_duphandle.html $(MAINPARTS_CAPI) curl_easy_duphandle.gen
 	$(ACTION)
-curl_easy_duphandle.gen: $(MANROOT)/curl_easy_duphandle.3
+curl_easy_duphandle.gen: $(MANROOT)/curl_easy_duphandle.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_easy_perform.html: _curl_easy_perform.html $(MAINPARTS_CAPI) curl_easy_perform.gen
 	$(ACTION)
-curl_easy_perform.gen: $(MANROOT)/curl_easy_perform.3
+curl_easy_perform.gen: $(MANROOT)/curl_easy_perform.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_easy_cleanup.html: _curl_easy_cleanup.html $(MAINPARTS_CAPI) curl_easy_cleanup.gen
 	$(ACTION)
-curl_easy_cleanup.gen: $(MANROOT)/curl_easy_cleanup.3
+curl_easy_cleanup.gen: $(MANROOT)/curl_easy_cleanup.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_easy_setopt.html: _curl_easy_setopt.html $(MAINPARTS_CAPI) curl_easy_setopt.gen
 	$(ACTION)
-curl_easy_setopt.gen: $(MANROOT)/curl_easy_setopt.3
+curl_easy_setopt.gen: $(MANROOT)/curl_easy_setopt.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_easy_pause.html: _curl_easy_pause.html $(MAINPARTS_CAPI) curl_easy_pause.gen
 	$(ACTION)
-curl_easy_pause.gen: $(MANROOT)/curl_easy_pause.3
+curl_easy_pause.gen: $(MANROOT)/curl_easy_pause.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_easy_recv.html: _curl_easy_recv.html $(MAINPARTS_CAPI) curl_easy_recv.gen
 	$(ACTION)
-curl_easy_recv.gen: $(MANROOT)/curl_easy_recv.3
+curl_easy_recv.gen: $(MANROOT)/curl_easy_recv.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_easy_send.html: _curl_easy_send.html $(MAINPARTS_CAPI) curl_easy_send.gen
 	$(ACTION)
-curl_easy_send.gen: $(MANROOT)/curl_easy_send.3
+curl_easy_send.gen: $(MANROOT)/curl_easy_send.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_easy_getinfo.html: _curl_easy_getinfo.html $(MAINPARTS_CAPI) curl_easy_getinfo.gen
 	$(ACTION)
-curl_easy_getinfo.gen: $(MANROOT)/curl_easy_getinfo.3
+curl_easy_getinfo.gen: $(MANROOT)/curl_easy_getinfo.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_version.html: _curl_version.html $(MAINPARTS_CAPI) curl_version.gen
 	$(ACTION)
-curl_version.gen: $(MANROOT)/curl_version.3
+curl_version.gen: $(MANROOT)/curl_version.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_version_info.html: _curl_version_info.html $(MAINPARTS_CAPI) curl_version_info.gen
 	$(ACTION)
-curl_version_info.gen: $(MANROOT)/curl_version_info.3
+curl_version_info.gen: $(MANROOT)/curl_version_info.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_free.html: _curl_free.html $(MAINPARTS_CAPI) curl_free.gen
 	$(ACTION)
-curl_free.gen: $(MANROOT)/curl_free.3
+curl_free.gen: $(MANROOT)/curl_free.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_escape.html: _curl_escape.html $(MAINPARTS_CAPI) curl_escape.gen
 	$(ACTION)
-curl_escape.gen: $(MANROOT)/curl_escape.3
+curl_escape.gen: $(MANROOT)/curl_escape.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_unescape.html: _curl_unescape.html $(MAINPARTS_CAPI) curl_unescape.gen
 	$(ACTION)
-curl_unescape.gen: $(MANROOT)/curl_unescape.3
+curl_unescape.gen: $(MANROOT)/curl_unescape.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_easy_escape.html: _curl_easy_escape.html $(MAINPARTS_CAPI) curl_easy_escape.gen
 	$(ACTION)
-curl_easy_escape.gen: $(MANROOT)/curl_easy_escape.3
+curl_easy_escape.gen: $(MANROOT)/curl_easy_escape.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_easy_unescape.html: _curl_easy_unescape.html $(MAINPARTS_CAPI) curl_easy_unescape.gen
 	$(ACTION)
-curl_easy_unescape.gen: $(MANROOT)/curl_easy_unescape.3
+curl_easy_unescape.gen: $(MANROOT)/curl_easy_unescape.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_easy_upkeep.html: _curl_easy_upkeep.html $(MAINPARTS_CAPI) curl_easy_upkeep.gen
 	$(ACTION)
-curl_easy_upkeep.gen: $(MANROOT)/curl_easy_upkeep.3
+curl_easy_upkeep.gen: $(MANROOT)/curl_easy_upkeep.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_getenv.html: _curl_getenv.html $(MAINPARTS_CAPI) curl_getenv.gen
 	$(ACTION)
-curl_getenv.gen: $(MANROOT)/curl_getenv.3
+curl_getenv.gen: $(MANROOT)/curl_getenv.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_getdate.html: _curl_getdate.html $(MAINPARTS_CAPI) curl_getdate.gen
 	$(ACTION)
-curl_getdate.gen: $(MANROOT)/curl_getdate.3
+curl_getdate.gen: $(MANROOT)/curl_getdate.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_strequal.html: _curl_strequal.html $(MAINPARTS_CAPI) curl_strequal.gen
 	$(ACTION)
-curl_strequal.gen: $(MANROOT)/curl_strequal.3
+curl_strequal.gen: $(MANROOT)/curl_strequal.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_mprintf.html: _curl_mprintf.html $(MAINPARTS_CAPI) curl_mprintf.gen
 	$(ACTION)
-curl_mprintf.gen: $(MANROOT)/curl_mprintf.3
+curl_mprintf.gen: $(MANROOT)/curl_mprintf.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_formadd.html: _curl_formadd.html $(MAINPARTS_CAPI) curl_formadd.gen
 	$(ACTION)
-curl_formadd.gen: $(MANROOT)/curl_formadd.3
+curl_formadd.gen: $(MANROOT)/curl_formadd.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_formfree.html: _curl_formfree.html $(MAINPARTS_CAPI) curl_formfree.gen
 	$(ACTION)
-curl_formfree.gen: $(MANROOT)/curl_formfree.3
+curl_formfree.gen: $(MANROOT)/curl_formfree.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_formget.html: _curl_formget.html $(MAINPARTS_CAPI) curl_formget.gen
 	$(ACTION)
-curl_formget.gen: $(MANROOT)/curl_formget.3
+curl_formget.gen: $(MANROOT)/curl_formget.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_global_init.html: _curl_global_init.html $(MAINPARTS_CAPI) curl_global_init.gen
 	$(ACTION)
-curl_global_init.gen: $(MANROOT)/curl_global_init.3
+curl_global_init.gen: $(MANROOT)/curl_global_init.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_global_init_mem.html: _curl_global_init_mem.html $(MAINPARTS_CAPI) curl_global_init_mem.gen
 	$(ACTION)
-curl_global_init_mem.gen: $(MANROOT)/curl_global_init_mem.3
+curl_global_init_mem.gen: $(MANROOT)/curl_global_init_mem.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_global_cleanup.html: _curl_global_cleanup.html $(MAINPARTS_CAPI) curl_global_cleanup.gen
 	$(ACTION)
-curl_global_cleanup.gen: $(MANROOT)/curl_global_cleanup.3
+curl_global_cleanup.gen: $(MANROOT)/curl_global_cleanup.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_global_sslset.html: _curl_global_sslset.html $(MAINPARTS_CAPI) curl_global_sslset.gen
 	$(ACTION)
-curl_global_sslset.gen: $(MANROOT)/curl_global_sslset.3
+curl_global_sslset.gen: $(MANROOT)/curl_global_sslset.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 libcurl.html: _libcurl.html $(MAINPARTS) libcurl.gen
 	$(ACTION)
-libcurl.gen: $(MANROOT)/libcurl.3
+libcurl.gen: $(MANROOT)/libcurl.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_slist_append.html: _curl_slist_append.html $(MAINPARTS_CAPI) curl_slist_append.gen
 	$(ACTION)
-curl_slist_append.gen: $(MANROOT)/curl_slist_append.3
+curl_slist_append.gen: $(MANROOT)/curl_slist_append.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_slist_free_all.html: _curl_slist_free_all.html $(MAINPARTS_CAPI) curl_slist_free_all.gen
 	$(ACTION)
-curl_slist_free_all.gen: $(MANROOT)/curl_slist_free_all.3
+curl_slist_free_all.gen: $(MANROOT)/curl_slist_free_all.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 libcurl-multi.html: _libcurl-multi.html $(MAINPARTS) libcurl-multi.gen
 	$(ACTION)
-libcurl-multi.gen: $(MANROOT)/libcurl-multi.3
+libcurl-multi.gen: $(MANROOT)/libcurl-multi.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 libcurl-easy.html: _libcurl-easy.html $(MAINPARTS) libcurl-easy.gen
 	$(ACTION)
-libcurl-easy.gen: $(MANROOT)/libcurl-easy.3
+libcurl-easy.gen: $(MANROOT)/libcurl-easy.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 libcurl-env.html: _libcurl-env.html $(MAINPARTS) libcurl-env.gen
 	$(ACTION)
-libcurl-env.gen: $(MANROOT)/libcurl-env.3
+libcurl-env.gen: $(MANROOT)/libcurl-env.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 libcurl-share.html: _libcurl-share.html $(MAINPARTS) libcurl-share.gen
 	$(ACTION)
-libcurl-share.gen: $(MANROOT)/libcurl-share.3
+libcurl-share.gen: $(MANROOT)/libcurl-share.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 libcurl-errors.html: _libcurl-errors.html $(MAINPARTS) libcurl-errors.gen
 	$(ACTION)
-libcurl-errors.gen: $(MANROOT)/libcurl-errors.3
+libcurl-errors.gen: $(MANROOT)/libcurl-errors.3 curlopt2href.pl
 	$(MAN2HTMLBASIC) < $< >$@
 
 libcurl-tutorial.html: _libcurl-tutorial.html $(MAINPARTS) libcurl-tutorial.gen
 	$(ACTION)
-libcurl-tutorial.gen: $(MANROOT)/libcurl-tutorial.3
+libcurl-tutorial.gen: $(MANROOT)/libcurl-tutorial.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 libcurl-url.html: _libcurl-url.html $(MAINPARTS) libcurl-url.gen
 	$(ACTION)
-libcurl-url.gen: $(MANROOT)/libcurl-url.3
+libcurl-url.gen: $(MANROOT)/libcurl-url.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_multi_add_handle.html: _curl_multi_add_handle.html $(MAINPARTS_CAPI) curl_multi_add_handle.gen
 	$(ACTION)
-curl_multi_add_handle.gen: $(MANROOT)/curl_multi_add_handle.3
+curl_multi_add_handle.gen: $(MANROOT)/curl_multi_add_handle.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_multi_cleanup.html: _curl_multi_cleanup.html $(MAINPARTS_CAPI) curl_multi_cleanup.gen
 	$(ACTION)
-curl_multi_cleanup.gen: $(MANROOT)/curl_multi_cleanup.3
+curl_multi_cleanup.gen: $(MANROOT)/curl_multi_cleanup.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_multi_fdset.html: _curl_multi_fdset.html $(MAINPARTS_CAPI) curl_multi_fdset.gen
 	$(ACTION)
-curl_multi_fdset.gen: $(MANROOT)/curl_multi_fdset.3
+curl_multi_fdset.gen: $(MANROOT)/curl_multi_fdset.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_multi_info_read.html: _curl_multi_info_read.html $(MAINPARTS_CAPI) curl_multi_info_read.gen
 	$(ACTION)
-curl_multi_info_read.gen: $(MANROOT)/curl_multi_info_read.3
+curl_multi_info_read.gen: $(MANROOT)/curl_multi_info_read.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_multi_init.html: _curl_multi_init.html $(MAINPARTS_CAPI_CAPI) curl_multi_init.gen
 	$(ACTION)
-curl_multi_init.gen: $(MANROOT)/curl_multi_init.3
+curl_multi_init.gen: $(MANROOT)/curl_multi_init.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_multi_wait.html: _curl_multi_wait.html $(MAINPARTS_CAPI) curl_multi_wait.gen
 	$(ACTION)
-curl_multi_wait.gen: $(MANROOT)/curl_multi_wait.3
+curl_multi_wait.gen: $(MANROOT)/curl_multi_wait.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_multi_poll.html: _curl_multi_poll.html $(MAINPARTS_CAPI) curl_multi_poll.gen
 	$(ACTION)
-curl_multi_poll.gen: $(MANROOT)/curl_multi_poll.3
+curl_multi_poll.gen: $(MANROOT)/curl_multi_poll.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_multi_wakeup.html: _curl_multi_wakeup.html $(MAINPARTS_CAPI) curl_multi_wakeup.gen
 	$(ACTION)
-curl_multi_wakeup.gen: $(MANROOT)/curl_multi_wakeup.3
+curl_multi_wakeup.gen: $(MANROOT)/curl_multi_wakeup.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_multi_perform.html: _curl_multi_perform.html $(MAINPARTS_CAPI) curl_multi_perform.gen
 	$(ACTION)
-curl_multi_perform.gen: $(MANROOT)/curl_multi_perform.3
+curl_multi_perform.gen: $(MANROOT)/curl_multi_perform.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_multi_remove_handle.html: _curl_multi_remove_handle.html $(MAINPARTS_CAPI) curl_multi_remove_handle.gen
 	$(ACTION)
-curl_multi_remove_handle.gen: $(MANROOT)/curl_multi_remove_handle.3
+curl_multi_remove_handle.gen: $(MANROOT)/curl_multi_remove_handle.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_share_cleanup.html: _curl_share_cleanup.html $(MAINPARTS_CAPI) curl_share_cleanup.gen
 	$(ACTION)
-curl_share_cleanup.gen: $(MANROOT)/curl_share_cleanup.3
+curl_share_cleanup.gen: $(MANROOT)/curl_share_cleanup.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_share_init.html: _curl_share_init.html $(MAINPARTS_CAPI) curl_share_init.gen
 	$(ACTION)
-curl_share_init.gen: $(MANROOT)/curl_share_init.3
+curl_share_init.gen: $(MANROOT)/curl_share_init.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_share_setopt.html: _curl_share_setopt.html $(MAINPARTS_CAPI) curl_share_setopt.gen
 	$(ACTION)
-curl_share_setopt.gen: $(MANROOT)/curl_share_setopt.3
+curl_share_setopt.gen: $(MANROOT)/curl_share_setopt.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_share_strerror.html: _curl_share_strerror.html $(MAINPARTS_CAPI) curl_share_strerror.gen
 	$(ACTION)
-curl_share_strerror.gen: $(MANROOT)/curl_share_strerror.3
+curl_share_strerror.gen: $(MANROOT)/curl_share_strerror.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
-
 
 curl_easy_strerror.html: _curl_easy_strerror.html $(MAINPARTS_CAPI) curl_easy_strerror.gen
 	$(ACTION)
-curl_easy_strerror.gen: $(MANROOT)/curl_easy_strerror.3
+curl_easy_strerror.gen: $(MANROOT)/curl_easy_strerror.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
-
 
 curl_multi_strerror.html: _curl_multi_strerror.html $(MAINPARTS_CAPI) curl_multi_strerror.gen
 	$(ACTION)
-curl_multi_strerror.gen: $(MANROOT)/curl_multi_strerror.3
+curl_multi_strerror.gen: $(MANROOT)/curl_multi_strerror.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_easy_reset.html: _curl_easy_reset.html $(MAINPARTS_CAPI) curl_easy_reset.gen
 	$(ACTION)
-curl_easy_reset.gen: $(MANROOT)/curl_easy_reset.3
+curl_easy_reset.gen: $(MANROOT)/curl_easy_reset.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_multi_socket.html: _curl_multi_socket.html $(MAINPARTS_CAPI) curl_multi_socket.gen
 	$(ACTION)
-curl_multi_socket.gen: $(MANROOT)/curl_multi_socket.3
+curl_multi_socket.gen: $(MANROOT)/curl_multi_socket.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_multi_socket_action.html: _curl_multi_socket_action.html $(MAINPARTS_CAPI) curl_multi_socket_action.gen
 	$(ACTION)
-curl_multi_socket_action.gen: $(MANROOT)/curl_multi_socket_action.3
+curl_multi_socket_action.gen: $(MANROOT)/curl_multi_socket_action.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_multi_timeout.html: _curl_multi_timeout.html $(MAINPARTS_CAPI) curl_multi_timeout.gen
 	$(ACTION)
-curl_multi_timeout.gen: $(MANROOT)/curl_multi_timeout.3
+curl_multi_timeout.gen: $(MANROOT)/curl_multi_timeout.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_multi_setopt.html: _curl_multi_setopt.html $(MAINPARTS_CAPI) curl_multi_setopt.gen
 	$(ACTION)
-curl_multi_setopt.gen: $(MANROOT)/curl_multi_setopt.3
+curl_multi_setopt.gen: $(MANROOT)/curl_multi_setopt.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_multi_assign.html: _curl_multi_assign.html $(MAINPARTS_CAPI) curl_multi_assign.gen
 	$(ACTION)
-curl_multi_assign.gen: $(MANROOT)/curl_multi_assign.3
+curl_multi_assign.gen: $(MANROOT)/curl_multi_assign.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 include Makefile.opts
@@ -489,7 +487,7 @@ include Makefile.opts
 
 threadsafe.html: _threadsafe.html threadsafe.gen $(MAINPARTS)
 	$(ACTION)
-threadsafe.gen: $(MANROOT)/libcurl-thread.3
+threadsafe.gen: $(MANROOT)/libcurl-thread.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 allexamples.zip: $(EXAMPLESRCS)
@@ -507,132 +505,132 @@ symbols-in-versions.gen: $(MANROOT)/symbols-in-versions
 
 curl_mime_init.html: _curl_mime_init.html $(MAINPARTS_CAPI) curl_mime_init.gen
 	$(ACTION)
-curl_mime_init.gen: $(MANROOT)/curl_mime_init.3
+curl_mime_init.gen: $(MANROOT)/curl_mime_init.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_mime_free.html: _curl_mime_free.html $(MAINPARTS_CAPI) curl_mime_free.gen
 	$(ACTION)
-curl_mime_free.gen: $(MANROOT)/curl_mime_free.3
+curl_mime_free.gen: $(MANROOT)/curl_mime_free.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_mime_addpart.html: _curl_mime_addpart.html $(MAINPARTS_CAPI) curl_mime_addpart.gen
 	$(ACTION)
-curl_mime_addpart.gen: $(MANROOT)/curl_mime_addpart.3
+curl_mime_addpart.gen: $(MANROOT)/curl_mime_addpart.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_mime_name.html: _curl_mime_name.html $(MAINPARTS_CAPI) curl_mime_name.gen
 	$(ACTION)
-curl_mime_name.gen: $(MANROOT)/curl_mime_name.3
+curl_mime_name.gen: $(MANROOT)/curl_mime_name.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_mime_data.html: _curl_mime_data.html $(MAINPARTS_CAPI) curl_mime_data.gen
 	$(ACTION)
-curl_mime_data.gen: $(MANROOT)/curl_mime_data.3
+curl_mime_data.gen: $(MANROOT)/curl_mime_data.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_mime_data_cb.html: _curl_mime_data_cb.html $(MAINPARTS_CAPI) curl_mime_data_cb.gen
 	$(ACTION)
-curl_mime_data_cb.gen: $(MANROOT)/curl_mime_data_cb.3
+curl_mime_data_cb.gen: $(MANROOT)/curl_mime_data_cb.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_mime_filedata.html: _curl_mime_filedata.html $(MAINPARTS_CAPI) curl_mime_filedata.gen
 	$(ACTION)
-curl_mime_filedata.gen: $(MANROOT)/curl_mime_filedata.3
+curl_mime_filedata.gen: $(MANROOT)/curl_mime_filedata.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_mime_filename.html: _curl_mime_filename.html $(MAINPARTS_CAPI) curl_mime_filename.gen
 	$(ACTION)
-curl_mime_filename.gen: $(MANROOT)/curl_mime_filename.3
+curl_mime_filename.gen: $(MANROOT)/curl_mime_filename.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_mime_subparts.html: _curl_mime_subparts.html $(MAINPARTS_CAPI) curl_mime_subparts.gen
 	$(ACTION)
-curl_mime_subparts.gen: $(MANROOT)/curl_mime_subparts.3
+curl_mime_subparts.gen: $(MANROOT)/curl_mime_subparts.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_mime_type.html: _curl_mime_type.html $(MAINPARTS_CAPI) curl_mime_type.gen
 	$(ACTION)
-curl_mime_type.gen: $(MANROOT)/curl_mime_type.3
+curl_mime_type.gen: $(MANROOT)/curl_mime_type.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_mime_headers.html: _curl_mime_headers.html $(MAINPARTS_CAPI) curl_mime_headers.gen
 	$(ACTION)
-curl_mime_headers.gen: $(MANROOT)/curl_mime_headers.3
+curl_mime_headers.gen: $(MANROOT)/curl_mime_headers.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_mime_encoder.html: _curl_mime_encoder.html $(MAINPARTS_CAPI) curl_mime_encoder.gen
 	$(ACTION)
-curl_mime_encoder.gen: $(MANROOT)/curl_mime_encoder.3
+curl_mime_encoder.gen: $(MANROOT)/curl_mime_encoder.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_url.html: _curl_url.html $(MAINPARTS_CAPI) curl_url.gen
 	$(ACTION)
-curl_url.gen: $(MANROOT)/curl_url.3
+curl_url.gen: $(MANROOT)/curl_url.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_url_cleanup.html: _curl_url_cleanup.html $(MAINPARTS_CAPI) curl_url_cleanup.gen
 	$(ACTION)
-curl_url_cleanup.gen: $(MANROOT)/curl_url_cleanup.3
+curl_url_cleanup.gen: $(MANROOT)/curl_url_cleanup.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_url_dup.html: _curl_url_dup.html $(MAINPARTS_CAPI) curl_url_dup.gen
 	$(ACTION)
-curl_url_dup.gen: $(MANROOT)/curl_url_dup.3
+curl_url_dup.gen: $(MANROOT)/curl_url_dup.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_url_get.html: _curl_url_get.html $(MAINPARTS_CAPI) curl_url_get.gen
 	$(ACTION)
-curl_url_get.gen: $(MANROOT)/curl_url_get.3
+curl_url_get.gen: $(MANROOT)/curl_url_get.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_url_set.html: _curl_url_set.html $(MAINPARTS_CAPI) curl_url_set.gen
 	$(ACTION)
-curl_url_set.gen: $(MANROOT)/curl_url_set.3
+curl_url_set.gen: $(MANROOT)/curl_url_set.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_url_strerror.html: _curl_url_strerror.html $(MAINPARTS_CAPI) curl_url_strerror.gen
 	$(ACTION)
-curl_url_strerror.gen: $(MANROOT)/curl_url_strerror.3
+curl_url_strerror.gen: $(MANROOT)/curl_url_strerror.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_easy_option_by_id.html: _curl_easy_option_by_id.html $(MAINPARTS_CAPI) curl_easy_option_by_id.gen
 	$(ACTION)
-curl_easy_option_by_id.gen: $(MANROOT)/curl_easy_option_by_id.3
+curl_easy_option_by_id.gen: $(MANROOT)/curl_easy_option_by_id.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_easy_option_by_name.html: _curl_easy_option_by_name.html $(MAINPARTS_CAPI) curl_easy_option_by_name.gen
 	$(ACTION)
-curl_easy_option_by_name.gen: $(MANROOT)/curl_easy_option_by_name.3
+curl_easy_option_by_name.gen: $(MANROOT)/curl_easy_option_by_name.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_easy_option_next.html: _curl_easy_option_next.html $(MAINPARTS_CAPI) curl_easy_option_next.gen
 	$(ACTION)
-curl_easy_option_next.gen: $(MANROOT)/curl_easy_option_next.3
+curl_easy_option_next.gen: $(MANROOT)/curl_easy_option_next.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_easy_header.html: _curl_easy_header.html $(MAINPARTS_CAPI) curl_easy_header.gen
 	$(ACTION)
-curl_easy_header.gen: $(MANROOT)/curl_easy_header.3
+curl_easy_header.gen: $(MANROOT)/curl_easy_header.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_easy_nextheader.html: _curl_easy_nextheader.html $(MAINPARTS_CAPI) curl_easy_nextheader.gen
 	$(ACTION)
-curl_easy_nextheader.gen: $(MANROOT)/curl_easy_nextheader.3
+curl_easy_nextheader.gen: $(MANROOT)/curl_easy_nextheader.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_ws_recv.html: _curl_ws_recv.html $(MAINPARTS_CAPI) curl_ws_recv.gen
 	$(ACTION)
-curl_ws_recv.gen: $(MANROOT)/curl_ws_recv.3
+curl_ws_recv.gen: $(MANROOT)/curl_ws_recv.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_ws_send.html: _curl_ws_send.html $(MAINPARTS_CAPI) curl_ws_send.gen
 	$(ACTION)
-curl_ws_send.gen: $(MANROOT)/curl_ws_send.3
+curl_ws_send.gen: $(MANROOT)/curl_ws_send.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 curl_ws_meta.html: _curl_ws_meta.html $(MAINPARTS_CAPI) curl_ws_meta.gen
 	$(ACTION)
-curl_ws_meta.gen: $(MANROOT)/curl_ws_meta.3
+curl_ws_meta.gen: $(MANROOT)/curl_ws_meta.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 include Makefile.examples
