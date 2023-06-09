@@ -142,7 +142,10 @@ PAGES = \
  curl_multi_wakeup.html \
  $(EASY_OPTION) \
  $(HEADER_API) \
- $(WS_API)
+ $(WS_API) \
+ curl_pushheader_byname.html \
+ curl_pushheader_bynum.html
+
 
 all: $(PAGES)
 
@@ -631,6 +634,16 @@ curl_ws_send.gen: $(MANROOT)/curl_ws_send.3 curlopt2href.pl
 curl_ws_meta.html: _curl_ws_meta.html $(MAINPARTS_CAPI) curl_ws_meta.gen
 	$(ACTION)
 curl_ws_meta.gen: $(MANROOT)/curl_ws_meta.3 curlopt2href.pl
+	$(MAN2HTML) < $< >$@
+
+curl_pushheader_bynum.html: _curl_pushheader_bynum.html $(MAINPARTS_CAPI) curl_pushheader_bynum.gen
+	$(ACTION)
+curl_pushheader_bynum.gen: $(MANROOT)/curl_pushheader_bynum.3 curlopt2href.pl
+	$(MAN2HTML) < $< >$@
+
+curl_pushheader_byname.html: _curl_pushheader_byname.html $(MAINPARTS_CAPI) curl_pushheader_byname.gen
+	$(ACTION)
+curl_pushheader_byname.gen: $(MANROOT)/curl_pushheader_byname.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 include Makefile.examples
