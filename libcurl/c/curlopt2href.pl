@@ -10,6 +10,9 @@ while(<STDIN>) {
     $_ =~ s/([^\">\/])(CURL(OPT|INFO|MOPT|SHOPT)_[A-Z_0-9]+)/$1<a href="$2.html">$2<\/a>/g;
     # also linkify libcurl function calls
     $_ =~ s/([^\">\/]|^)(curl_(url|ws|pushheader|global|version|slist|share|mime|easy|curl|multi)_[a-z_]*)(\()/$1<a href="$2.html">$2<\/a>$4/g;
-    $_ =~ s/([^\">\/]|^)(curl_(url|getdate|formfree|formadd|formget|free|escape|version))(\()/$1<a href="$2.html">$2<\/a>$4/g;
+    $_ =~ s/([^\">\/]|^)(curl_(url|getenv|strequal|strnequal|getdate|formfree|formadd|formget|free|escape|unescape|version|mprintf))(\()/$1<a href="$2.html">$2<\/a>$4/g;
+    $_ =~ s/([^\">\/]|^)(curl_(mfprintf|msprintf|msnprintf|mvprintf|mvfprintf|mvsprintf|mvsnprintf|maprintf|mvaprintf))(\()/$1<a href="curl_mprintf.html">$2<\/a>$4/g;
     print $_;
 }
+
+# |mfprintf|msprintf|msnprintf|mvprintf|mvfprintf|mvsprintf|mvsnprintf|maprintf|mvaprintf
