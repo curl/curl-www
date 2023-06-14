@@ -102,6 +102,7 @@ PAGES = \
  libcurl-multi.html \
  libcurl-easy.html \
  libcurl-share.html \
+ libcurl-ws.html \
  allfuncs.html \
  curl_share_cleanup.html \
  curl_share_init.html \
@@ -343,6 +344,11 @@ curl_slist_free_all.gen: $(MANROOT)/curl_slist_free_all.3 curlopt2href.pl
 libcurl-multi.html: _libcurl-multi.html $(MAINPARTS) libcurl-multi.gen
 	$(ACTION)
 libcurl-multi.gen: $(MANROOT)/libcurl-multi.3 curlopt2href.pl
+	$(MAN2HTML) < $< >$@
+
+libcurl-ws.html: _libcurl-ws.html $(MAINPARTS) libcurl-ws.gen
+	$(ACTION)
+libcurl-ws.gen: $(MANROOT)/libcurl-ws.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 libcurl-easy.html: _libcurl-easy.html $(MAINPARTS) libcurl-easy.gen
