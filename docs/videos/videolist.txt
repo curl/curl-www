@@ -819,3 +819,14 @@ DURATION 40 minutes
 WHO Daniel Stenberg and Stefan Eissing
 DESC How HTTP/3 differs from HTTP/2 and HTTP/1, how to build libcurl to enable QUIC and how to perform transfers over QUIC using curl and libcurl.
 ENDOFVIDEO
+
+VIDEO Doing WebSocket with libcurl
+EVENT Twitch stream
+URL https://youtu.be/NLIhd0wYO24
+THUMB websocket-with-libcurl.jpg
+THUMBSIZE width="250" height="141"
+DURATION 0h49
+DATE 2023-06-16
+WHO Daniel Stenberg
+DESC WebSocket fundamentals (the protocol), how to enable it, the new API calls, example code, ideas to work on or fix for the future of WebSocket in curl
+ENDOFVIDEO
