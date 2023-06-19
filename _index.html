@@ -15,6 +15,16 @@
 .sponsors a:hover, .logo:hover {
     background: transparent;
 }
+.sidebar-box {
+    padding: 5px;
+    margin-bottom: 20px;
+    border: 1px black solid;
+}
+@media (prefers-color-scheme: dark) {
+    .sidebar-box {
+        border-color: white;
+    }
+}
 </style>
 </head>
 
@@ -50,37 +60,29 @@ library</b>
 #endif
 
 <div style="float: right; max-width: 10em; margin-left: 20px;">
+ <div class="sponsors">
+  <b>Top&nbsp;Sponsors</b><p>
+  <a href="sponsors.html">
+  <img class="logo" src="pix/haxx.svg" alt="Haxx">
+  <img class="logo" src="pix/wolfssl.svg" alt="wolfSSL">
+  <img class="logo" src="pix/fastly.svg" alt="Fastly">
+  <img class="logo" src="pix/teamviewer.svg" alt="Teamviewer">
+  </a>
+ </div>
 
-<div class="sponsors">
- <b>Top&nbsp;Sponsors</b><p>
- <a href="sponsors.html">
- <img class="logo" src="pix/haxx.svg" alt="Haxx">
- <img class="logo" src="pix/wolfssl.svg" alt="wolfSSL">
- <img class="logo" src="pix/fastly.svg" alt="Fastly">
- <img class="logo" src="pix/teamviewer.svg" alt="Teamviewer">
- </a>
-</div>
+ <div class="sidebar-box" style="font-size: 130%;">
+  Time to <a href="/donation.html">donate</a> to the curl project?
+ </div>
 
-<div style="padding: 5px 5px 5px 5px;
- margin-bottom: 20px;
- font-size: 130%;
- border: 1px black solid;">
- Time to <a href="/donation.html">donate</a> to the curl project?
-</div>
+ <div class="sidebar-box" style="font-size: 130%;">
+  <a href="/support.html">Commercial support</a> available!
+ </div>
 
-<div style="padding: 5px 5px 5px 5px;
- margin-bottom: 20px;
- font-size: 130%;
- border: 1px black solid;">
- <a href="/support.html">Commercial support</a> available!
-</div>
-
-<div style="padding: 5px 5px 5px 5px;
- border: 1px black solid;">
+ <div class="sidebar-box">
   <a href="/book.html">Everything curl</a> is a detailed and
   totally free book that explains everything there is to know about
   curl, libcurl and the associated project.
-</div>
+ </div>
 </div>
 
 <p><b>Supports...</b>
