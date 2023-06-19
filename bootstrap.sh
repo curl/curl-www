@@ -8,7 +8,7 @@ mkdir -p download/archeology
 touch dl/data/databas.db
 
 if test ! -d cvssource; then
-  echo "specify full path to source code root dir"
+  echo "specify full path to curl source code root dir"
   read -r code
   ln -sf "${code}" cvssource
 fi
