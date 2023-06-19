@@ -1,7 +1,6 @@
 td.yes {
   font-weight: bold;
   text-align: center;
- /* background-color: #ffff44; */
   background-color: #00ff00;
 }
 
@@ -12,5 +11,19 @@ td.no {
 
 td.unknown {
   text-align: center;
-  color: #ff0000;
+  color: #e00000;
+}
+
+@media (prefers-color-scheme: dark) {
+  td.yes {
+    background-color: #008000;
+  }
+
+  td.no {
+    background-color: #806060;
+  }
+
+  td.unknown {
+    color: #ff4040;
+  }
 }

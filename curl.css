@@ -205,7 +205,6 @@ span.whodate {
 }
 
 tr.odd {
-  color: #000000;
   background-color: #e0e0e0;
 }
 
@@ -490,6 +489,10 @@ a.sitesearch:hover {
         background-color: #2c2c2c;
     }
 
+    h1 {
+        border-color: white;
+    }
+
     .dropdown-content {
         background-color: #4c4c4c;
     }
@@ -520,14 +523,28 @@ a.sitesearch:hover {
     td.ostitle, .older2 {
         color: white;
         background-color: #212121;
+        border-color: white;
     }
 
     .download2, div.quote {
         background-color: #2c2c2c;
+	border-color: white;
     }
 
     td.oslogo {
         background-color: white;
+    }
+
+    .col1 {
+        border-color: white;
+    }
+
+    .osend {
+        border-color: white;
+    }
+
+    tr.odd {
+        background-color: #313131;
     }
 
     div.oslinks {
