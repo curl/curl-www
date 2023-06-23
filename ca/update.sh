@@ -15,3 +15,10 @@ if test $? -gt "0"; then
   perl ./listpem.pl > pemlist.gen
   make
 fi
+
+# rebuild hashes if they refer to the wrong filename
+for f in cacert-*.pem; do
+  if grep -q 'cacert.pem$' "${f}.sha256" ; then
+      sed -i.bak "s/cacert.pem/${f}/" "${f}.sha256"
+  fi
+done
