@@ -523,7 +523,7 @@ a.sitesearch:hover {
     td.ostitle, .older2 {
         color: white;
         background-color: #212121;
-        border-bottom: 1px #ccc solid;
+        border-bottom: 1px #999 solid;
     }
 
     .download2, div.quote {
