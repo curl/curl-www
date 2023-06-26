@@ -1,5 +1,12 @@
 #!/bin/sh
 
+# fixup filenames in .sha256 files retroactively
+for f in cacert-*.pem.sha256; do
+  if grep -q -F 'cacert.pem' "${f}"; then
+    sed -i.bak "s/cacert\.pem/${f}/" "${f}"
+  fi
+done
+
 # get the cert and create ca-bundle.crt
 perl ../cvssource/scripts/mk-ca-bundle.pl
 
@@ -9,7 +16,7 @@ if test $? -gt "0"; then
   d="$(date +%Y-%m-%d)"
   cp cacert.pem "cacert-${d}.pem"
   sha256sum cacert.pem > cacert.pem.sha256
-  cp cacert.pem.sha256 "cacert-${d}.pem.sha256"
+  sed "s/cacert\.pem/cacert-${d}.pem/" < cacert.pem.sha256 > "cacert-${d}.pem.sha256"
   gzip -c cacert.pem > cacert.pem.gz
   xz -c cacert.pem > cacert.pem.xz
   perl ./listpem.pl > pemlist.gen
