@@ -1,9 +1,9 @@
 #!/bin/sh
 
-# fixup filenames in .sha256 files retroactively
-for f in cacert-*.pem.sha256; do
-  if grep -q -F 'cacert.pem' "${f}"; then
-    sed -i.bak "s/cacert\.pem/${f}/" "${f}"
+# fixup
+for f in cacert-*.pem; do
+  if grep -q -F '.sha256' "${f}.sha256"; then
+    sed -i.bak2 's/\.sha256//' "${f}.sha256"
   fi
 done
 
