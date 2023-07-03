@@ -1,10 +1,9 @@
 #!/bin/sh
 
-# fixup
+# delete backup files
 for f in cacert-*.pem; do
-  if grep -q -F '.sha256' "${f}.sha256"; then
-    sed -i.bak2 's/\.sha256//' "${f}.sha256"
-  fi
+  rm -f "${f}.sha256.bak"
+  rm -f "${f}.sha256.bak2"
 done
 
 # get the cert and create ca-bundle.crt
