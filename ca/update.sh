@@ -1,11 +1,5 @@
 #!/bin/sh
 
-# delete backup files
-for f in cacert-*.pem; do
-  rm -f "${f}.sha256.bak"
-  rm -f "${f}.sha256.bak2"
-done
-
 # get the cert and create ca-bundle.crt
 perl ../cvssource/scripts/mk-ca-bundle.pl
 
