@@ -442,6 +442,9 @@ vuln.gen: $(ROOT)/_changes.html ./vulntable.pl vuln.pm _singlevuln.templ
 vuln0.gen: $(ROOT)/_changes.html ./vulntable.pl vuln.pm _singlevuln.templ vuln.json
 	./vulntable.pl < $< > $@
 
+allvulns.gen: $(ROOT)/_changes.html ./vulntable.pl vuln.pm _singlevuln.templ vuln.json
+	./vulntable.pl < $< > $@
+
 vuln.csv: vuln.pm
 	./vuln2csv.pl > $@
 
@@ -478,7 +481,7 @@ releases.html: _releases.html rel.gen $(MAINPARTS)
 rel.gen: $(ROOT)/_changes.html ./relinfo.pl vuln.pm vuln0.gen
 	./relinfo.pl < $< > $@
 
-releases.csv: $(ROOT)/_changes.html ./relinfo.pl vuln.pm
+releases.csv: $(ROOT)/_changes.html ./relinfo.pl vuln.pm allvulns.gen
 	./relinfo.pl --raw < $< > $@
 
 thename.html: _thename.html $(MAINPARTS)
