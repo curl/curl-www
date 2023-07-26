@@ -774,6 +774,7 @@ Tizen
 TLS
 tlsv
 TLSv
+TOCTOU
 TODO
 Tomtom
 toolchain
