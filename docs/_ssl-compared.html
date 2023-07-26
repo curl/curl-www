@@ -29,11 +29,6 @@ to use.
 #define FEATURE <td class="yes">yes</td>
 #define MISSING <td class="no">no</td>
 #define UNKNOWN <td class="unknown">?</td>
-#define FEATURE_P2 <td class="yes">yes [2]</td>
-#define FEATURE_P3 <td class="yes">yes [3]</td>
-#define FEATURE_P4 <td class="yes">yes [4]</td>
-#define FEATURE_P6 <td class="yes">yes [6]</td>
-#define FEATURE_P7 <td class="yes">yes [7]</td>
 #define FEATURE_P8 <td class="yes">yes [8]</td>
 
 #define MISSING_P <td class="no">no*</td>
@@ -117,7 +112,7 @@ to use.
   FEATURE
   FEATURE
   FEATURE
-  FEATURE_P2
+  FEATURE
  ENDLINE
 
  NEWLINE
@@ -127,8 +122,8 @@ to use.
   FEATURE
   FEATURE
   FEATURE
-  FEATURE_P4
-  FEATURE_P2
+  FEATURE
+  FEATURE
  ENDLINE
 
  NEWLINE
@@ -138,8 +133,8 @@ to use.
   FEATURE
   FEATURE
   FEATURE
+  FEATURE
   MISSING
-  FEATURE_P6
  ENDLINE
 
  NEWLINE
@@ -160,8 +155,8 @@ to use.
   FEATURE
   FEATURE
   FEATURE
-  FEATURE_P3
-  FEATURE_P2
+  FEATURE
+  FEATURE
  ENDLINE
 
  NEWLINE
@@ -171,7 +166,7 @@ to use.
   FEATURE
   FEATURE
   FEATURE
-  FEATURE_P7
+  FEATURE
   MISSING
  ENDLINE
 
@@ -182,7 +177,7 @@ to use.
   FEATURE
   MISSING
   MISSING
-  FEATURE_P7
+  FEATURE
   MISSING
  ENDLINE
 
@@ -347,18 +342,6 @@ to use.
 
 <br>
  [1] = Mostly the same feature set is also provided by LibreSSL and BoringSSL
-<br>
- [2] = Requires iOS 5.0 or later, or OS X 10.8.0 or later
-<br>
- [3] = Requires Windows Vista or later
-<br>
- [4] = Requires Windows 7 or later
-<br>
- [6] = Requires iOS 11 or macOS 10.13
-<br>
- [7] = support for ALPN and NPN was added
- in <a href="https://technet.microsoft.com/en-us/library/hh831771.aspx">Windows
- 8.1 / Server 2012 R2</a>.
 <br>
  [8] = Via external <a href="https://github.com/OpenSC/OpenSC/wiki/Engine-pkcs11-quickstart">engine_pkcs11</a>;
 
