@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="77mm"
+   height="12mm"
+   viewBox="0 0 77 12"
+   version="1.1"
+   id="svg8">
+  <defs
+     id="defs2" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1">
+    <g
+       aria-label="HPE NonStop"
+       id="text2407"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;line-height:125%;font-family:'MetricHPEXS Semibold';-inkscape-font-specification:'MetricHPEXS Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="translate(-15.958225,-7.353064)">
+      <path
+         d="M 23.976428,8.1314826 H 22.170207 V 11.574591 H 18.247321 V 8.1314826 H 16.4411 v 8.6642154 h 1.806221 v -3.640664 h 3.922886 v 3.640664 h 1.806221 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'MetricHPEXS Semibold';-inkscape-font-specification:'MetricHPEXS Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583px"
+         id="path2409" />
+      <path
+         d="m 27.433627,13.790034 h 1.735665 c 1.834443,0 3.047997,-0.987777 3.047997,-2.82222 0,-1.8485543 -1.213554,-2.8363314 -3.047997,-2.8363314 h -3.527775 v 8.6642154 h 1.79211 z m 3.005664,-2.82222 c 0,0.747888 -0.451555,1.28411 -1.382888,1.28411 H 27.433627 V 9.6695926 h 1.622776 c 0.931333,0 1.382888,0.5221104 1.382888,1.2982214 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'MetricHPEXS Semibold';-inkscape-font-specification:'MetricHPEXS Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583px"
+         id="path2411" />
+      <path
+         d="m 39.315146,8.1314826 h -5.884328 v 8.6642154 h 5.884328 v -1.594554 h -4.10633 v -2.060221 h 3.725331 v -1.53811 H 35.208816 V 9.7119259 h 4.10633 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'MetricHPEXS Semibold';-inkscape-font-specification:'MetricHPEXS Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583px"
+         id="path2413" />
+      <path
+         d="M 50.956787,16.795698 V 8.1314826 H 49.221121 V 13.60659 L 45.397013,8.1314826 h -1.693332 v 8.6642154 h 1.735665 v -5.77144 l 4.092219,5.77144 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'MetricHPEXS Semibold';-inkscape-font-specification:'MetricHPEXS Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583px"
+         id="path2415" />
+      <path
+         d="m 58.33689,13.648923 c 0,-1.947332 -1.255888,-3.301998 -3.090331,-3.301998 -1.834443,0 -3.090331,1.354666 -3.090331,3.301998 0,1.933221 1.255888,3.287886 3.090331,3.287886 1.834443,0 3.090331,-1.354665 3.090331,-3.287886 z m -1.735666,0 c 0,1.044221 -0.479777,1.806221 -1.354665,1.806221 -0.874889,0 -1.354666,-0.762 -1.354666,-1.806221 0,-1.058333 0.479777,-1.820332 1.354666,-1.820332 0.874888,0 1.354665,0.761999 1.354665,1.820332 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'MetricHPEXS Semibold';-inkscape-font-specification:'MetricHPEXS Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583px"
+         id="path2417" />
+      <path
+         d="m 59.451645,10.488036 v 6.307662 h 1.749777 v -3.993441 c 0.141111,-0.550333 0.606777,-0.874888 1.142999,-0.874888 0.691444,0 1.03011,0.451555 1.03011,1.114777 v 3.753552 h 1.749776 v -4.120441 c 0,-1.396999 -0.804332,-2.328332 -2.229553,-2.328332 -0.733778,0 -1.354666,0.324556 -1.693332,0.719666 v -0.578555 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'MetricHPEXS Semibold';-inkscape-font-specification:'MetricHPEXS Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583px"
+         id="path2419" />
+      <path
+         d="m 66.351962,16.203032 c 0.620889,0.395111 1.636888,0.733777 2.793998,0.733777 1.834443,0 3.287887,-0.860777 3.287887,-2.56822 0,-1.28411 -0.663222,-2.074332 -2.116665,-2.56822 l -1.354666,-0.465667 c -0.606777,-0.197555 -0.959555,-0.409222 -0.959555,-0.945443 0,-0.5926665 0.592666,-0.8607774 1.368777,-0.8607774 1.001888,0 1.820332,0.3527775 2.56822,0.9031104 V 8.6677045 C 71.234403,8.2443714 70.373626,7.9903716 69.315293,7.9903716 c -1.693332,0 -3.076219,0.8748883 -3.076219,2.4835534 0,1.439332 0.846666,2.102554 2.130776,2.525887 l 1.269999,0.423333 c 0.64911,0.239889 1.015999,0.451555 1.015999,1.015999 0,0.677333 -0.663222,0.945444 -1.53811,0.945444 -1.001888,0 -1.989665,-0.381 -2.765776,-0.959555 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'MetricHPEXS Semibold';-inkscape-font-specification:'MetricHPEXS Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583px"
+         id="path2421" />
+      <path
+         d="m 76.046245,16.795698 v -4.896552 h 1.340554 v -1.41111 H 76.046245 V 8.7805933 h -1.749777 v 1.7074427 h -1.199443 v 1.41111 h 1.199443 v 4.896552 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'MetricHPEXS Semibold';-inkscape-font-specification:'MetricHPEXS Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583px"
+         id="path2423" />
+      <path
+         d="m 84.131861,13.648923 c 0,-1.947332 -1.255888,-3.301998 -3.090331,-3.301998 -1.834443,0 -3.090331,1.354666 -3.090331,3.301998 0,1.933221 1.255888,3.287886 3.090331,3.287886 1.834443,0 3.090331,-1.354665 3.090331,-3.287886 z m -1.735665,0 c 0,1.044221 -0.479778,1.806221 -1.354666,1.806221 -0.874888,0 -1.354666,-0.762 -1.354666,-1.806221 0,-1.058333 0.479778,-1.820332 1.354666,-1.820332 0.874888,0 1.354666,0.761999 1.354666,1.820332 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'MetricHPEXS Semibold';-inkscape-font-specification:'MetricHPEXS Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583px"
+         id="path2425" />
+      <path
+         d="m 86.996397,19.12403 v -2.850443 c 0.282222,0.338667 0.90311,0.663222 1.580443,0.663222 1.834443,0 2.878665,-1.509888 2.878665,-3.287886 0,-1.777999 -1.044222,-3.301998 -2.878665,-3.301998 -0.677333,0 -1.298221,0.324556 -1.580443,0.663222 V 10.488036 H 85.24662 v 8.635994 z m 0,-6.519329 c 0.211666,-0.423333 0.663222,-0.733777 1.185332,-0.733777 0.945444,0 1.509888,0.762 1.509888,1.777999 0,1.001888 -0.564444,1.763887 -1.509888,1.763887 -0.507999,0 -0.973666,-0.296333 -1.185332,-0.733777 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'MetricHPEXS Semibold';-inkscape-font-specification:'MetricHPEXS Semibold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583px"
+         id="path2427" />
+    </g>
+  </g>
+</svg>
