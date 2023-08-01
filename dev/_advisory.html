@@ -1,0 +1,26 @@
+#include "_doctype.html"
+<html>
+<head> <title>curl - Security advisory</title>
+#include "css.t"
+</head>
+
+#define DEVEL_SECURITY
+#define CURL_URL dev/advisory.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Development, "/dev/", Security Advisory)
+
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/docs/security.html">Security Problems</a>
+<br><a href="/docs/faq.html">FAQ</a>
+<br><a href="/changes.html">Changelog</a>
+</div>
+
+#include "advisory.gen"
+#include "_footer.html"
+
+</body>
+</html>
