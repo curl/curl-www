@@ -3,6 +3,7 @@
 <head> <title>curl - How To Use</title>
 #include "css.t"
 #include "manpage.t"
+#include "manpage-option-menu.t"
 </head>
 
 #define CURL_DOCS
@@ -11,6 +12,10 @@
 #define CURL_URL docs/manpage.html
 
 #include "_menu.html"
+#include "_manpage-option-menu.html"
+
+<div class="manpage">
+
 #include "setup.t"
 
 WHERE3(Docs, "/docs/", Tool, "/docs/tooldocs.html", Man Page)
@@ -26,7 +31,12 @@ TITLE(curl.1 the man page)
 
 #include "mandump.gen"
 
+<!-- close div.manpage -->
+</div>
+
 #include "_footer.html"
+
+#include "search-manpage.t"
 
 </body>
 </html>
