@@ -13,31 +13,32 @@ MAINPARTS += _menu.html
 MKRELNOTES = ./mk-release-notes.pl
 MAN2HTML = roffit --bare
 
-PAGES = \
- foot.html \
- head.html \
- howto.html \
- summary.html \
- missing.html \
- keywords.html \
- builds.html \
- release-notes.html \
- index.html \
- contribute.html \
- internals.html \
- testcurl.html \
- runtests.html \
- source.html \
- secprocess.html \
- roadmap.html \
- sourceactivity.html \
- release-procedure.html \
- code-style.html \
- deprecate.html \
- code-review.html \
- feature-window.html \
- new-protocol.html \
- test-fileformat.html \
+PAGES =			\
+ advisory.html		\
+ builds.html		\
+ code-review.html	\
+ code-style.html	\
+ contribute.html	\
+ deprecate.html		\
+ feature-window.html	\
+ foot.html		\
+ head.html		\
+ howto.html		\
+ index.html		\
+ internals.html		\
+ keywords.html		\
+ missing.html		\
+ new-protocol.html	\
+ release-notes.html	\
+ release-procedure.html	\
+ roadmap.html		\
+ runtests.html		\
+ secprocess.html	\
+ source.html		\
+ sourceactivity.html	\
+ summary.html		\
+ test-fileformat.html	\
+ testcurl.html		\
  tests-overview.html
 
 all: $(PAGES)
@@ -113,6 +114,11 @@ internals.gen: $(DOCROOT)/INTERNALS.md
 secprocess.html: _security.html $(MAINPARTS) security.gen
 	$(ACTION)
 security.gen: $(DOCROOT)/SECURITY-PROCESS.md
+	$(MARKDOWN) < $< > $@
+
+advisory.html: _advisory.html $(MAINPARTS) advisory.gen
+	$(ACTION)
+advisory.gen: $(DOCROOT)/SECURITY-ADVISORY.md
 	$(MARKDOWN) < $< > $@
 
 foot.html: _foot.html $(MAINPARTS)
