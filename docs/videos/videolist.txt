@@ -830,3 +830,14 @@ DATE 2023-06-16
 WHO Daniel Stenberg
 DESC WebSocket fundamentals (the protocol), how to enable it, the new API calls, example code, ideas to work on or fix for the future of WebSocket in curl
 ENDOFVIDEO
+
+VIDEO curl command line variables
+EVENT Twitch stream
+URL https://youtu.be/KzzrhLgCjik
+THUMB command-line-variables.jpg
+THUMBSIZE width="250" height="141"
+DURATION 0h36
+DATE 2023-08-02
+WHO Daniel Stenberg
+DESC curl 8.3.0 introduces a concept of using variables in command lines and config files. This video explains how it works and how to use them
+ENDOFVIDEO
