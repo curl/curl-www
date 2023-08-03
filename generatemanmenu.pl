@@ -26,7 +26,7 @@ print  $OutManMenu <<OPENMANMENUHTML
     <div class="searchBox">
       <label for="optionSearchField">Search Options</label><br>
       <img src="https://curl.se/logo/curl-symbol.svg" alt="curl symbol">
-      <input id="optionSearchField" name="optionSearchField" 
+      <input id="optionSearchField" name="optionSearchField" placeholder="search options"
        type="search" oninput="searchOptions(this.value)">
     </div>
     <ul id="optionMenu">

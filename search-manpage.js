@@ -118,38 +118,43 @@ function toggleSearchButton(showhide, onoff) {
   let manpageDiv = document.getElementsByClassName("manpage")[0];
   let manpageMenu = document.getElementsByClassName("menu")[0];  
   
+  // Search input tag. Will clear when activated.
+  let optionSearchField = document.getElementById("optionSearchField");
+  
   // toggle display elements
   let showItem = showhide.nextElementSibling;
   let curData = onoff.dataset;
   if (curData.onoff == 0) {
-    // 1.set switch, show menu, change style, change text
+    // set switch, show menu, change style, change text
     manpageOptionMenu.dataset.toSide = 0;
     curData.onoff = 1;
     showItem.style.display = "";
     onoff.style.background = "white";
     onoff.style.color = "black";
     onoff.innerHTML = onoff.innerHTML.replace("Show", "Hide");
-    // 2. show the option menu.
+    // clear search field and show all options.
+    optionSearchField.value = ""; searchOptions("");
+    // show the option menu.
     onoff.className = "";
     onoff.parentElement.className = 
      onoff.parentElement.className.replace(" inactive", "");
-    // 3. responsive margins if screen < 770 add else remove
+    // responsive margins if screen < 770 add else remove
     if (!manpageDiv.id) { manpageDiv.id = "activeManDiv"; }
-    if (!manpageMenu.id) { manpageMenu.id = "activeManMenu"; }
+    if (!manpageMenu.id) { manpageMenu.id = "activeManMenu"; }    
     // Turn button on
     onOffButton = 1;
   } else {
-    // 1.set switch, hide menu, change style, change text
+    // set switch, hide menu, change style, change text
     manpageOptionMenu.dataset.toSide = 1;
     curData.onoff = 0;
     showItem.style.display = "none";
     onoff.style.background = "";
     onoff.style.color = "";
     onoff.innerHTML = onoff.innerHTML.replace("Hide", "Show");
-    // 2. set to side when menu out of view, styling parrent with css.
+    // set to side when menu out of view, styling parrent with css.
     onoff.className = "searchButtonToSide";
     onoff.parentElement.className += " inactive";
-    // 3. responsive margins if screen < 770 add else remove
+    // responsive margins if screen < 770 add else remove
     if (manpageDiv.id) { manpageDiv.removeAttribute("id"); }
     if (manpageMenu.id) { manpageMenu.removeAttribute("id"); }
     // put back to side if scrolled past 100.
@@ -224,18 +229,19 @@ to turn on tests. In order to test the browser must support console.log.
      2. Reload manpage.html 
      3. Open browser console tool. 
      4. The results will be as such: 
-       A. Anchor Count = number of options in menu 
-       B. Option Anchors = array with name of options in menu 
-       C. Anchor Links = the href attribute assigned after click event.
+       A. Option Count = number of options in menu 
+       B. Option innerHTML = array with name of option innerHTML
+       C. Full Option href Value = the href attribute assigned after click event.
        D. Test Result - Pass or fail
           - Pass - all options have href that matche innerHTML that made anchor.
           - Note - if putting an item such as <li><a href="abc">xyz</a></li>
                    outside of ul tag, test will fail.
-       E. Compare Values - the href value vs the innerHTML of option.       
+       E. Compare Values - the innerHTML vs extracted anchor link
      5. Delete or set variable "testOptionAnchors" back to 0 to turn off test.
 ***********************************************************************************/
 var testOptionAnchors = 0; // test is off by default
-
+// Globals for test.
+var optionListItemInnerHTML, anchorHref, compareValues;
 function testTheOptionAnchors() {
   var logSplit = function(x) {
     if (x == undefined) { x = 0; }
@@ -255,14 +261,14 @@ function testTheOptionAnchors() {
 
   var theUnorderdOptionList = document.getElementById("optionMenu");
   var theOptionListItems = theUnorderdOptionList.getElementsByTagName("li");  
-  var optionListItemInnerHTML = [];
+  optionListItemInnerHTML = [];
   // Get option names
   for (let i = 0; i < theOptionListItems.length; i++) {
     let curItem = theOptionListItems[i].getElementsByTagName("a")[0];
     optionListItemInnerHTML.push(curItem.innerHTML);    
   }
   // Get option href value.
-  var curIndex; var anchorHref = [];
+  var curIndex; anchorHref = [];
   // click then get href
   var clickThenHref = function(cond) {
     curIndex = 0;
@@ -286,7 +292,7 @@ function testTheOptionAnchors() {
   clickThenHref(2);
 
   // Compare innerHTML to href.
-  var testResult = 0; var compareValues = [];  
+  var testResult = 0; compareValues = [];  
   if (optionListItemInnerHTML.length == anchorHref.length) {
     let commaRegEx = /^(.*?)(?:,|$)/; // text before comma    
     for (let i = 0; i < optionListItemInnerHTML.length; i++) {      
@@ -312,18 +318,18 @@ function testTheOptionAnchors() {
   // Start test console composition.
   logSplit(1); 
   // Output option list item length and innerHTML
-  console.log("A. Anchor Count - " + theOptionListItems.length);  
-  console.log("B. Option Anchors:");
+  console.log("A. Option Count - " + theOptionListItems.length);  
+  console.log("B. Option innerHTML:");
   console.log(optionListItemInnerHTML);  
   // Output option href attribute
   logSplit();
-  console.log("C. Anchor Links:");
+  console.log("C. Full Option href Value:");
   console.log(anchorHref);
   // Make sure both lengths match and anchor uses correct option.
   logSplit();
   console.log("D. Test Result - ");
   console.log(testResult);
-  console.log("E. Compare Values:");
+  console.log("E. Compare Values - innerHTML <-> Anchor Link:");
   console.log(compareValues);
   // Close test console composition.
   logSplit(2);    
