@@ -308,8 +308,8 @@ thanks.html: _thanks.html $(MAINPARTS) thanks.gen thanksnum.gen
 thanksnum.gen: $(DOCROOT)/THANKS
 	egrep '^[^ $$]' $< | wc -l  | awk '{print "#define __THANKSNUM__ " $$1}' > $@
 
-thanks.gen: $(DOCROOT)/THANKS thanks.pl
-	egrep '^[^ $$]' $< | ./thanks.pl > $@
+thanks.gen: $(DOCROOT)/THANKS
+	grep '^[^ ]' $< | sort | sed -e 's/ /\&nbsp;/g' -e 's/-/\&\#8209/g' | awk '{print $$0 "&nbsp;&middot; "; }' > $@
 
 faq.html: _faq.shtml $(MAINPARTS) faq.gen
 	$(ACTION)
