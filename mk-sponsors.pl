@@ -22,6 +22,7 @@ my %silver = (
     'https://iboysoft.com' => 'iBoysoft.svg',
     'https://fitmymoney.com/' => 'Fit-My-Money-vertical.svg',
     'https://evpsys.com' => 'evp.png',
+    'https://mobilen.nu/' => 'mobilen.png',
     );
 my %modurl = (
     );
