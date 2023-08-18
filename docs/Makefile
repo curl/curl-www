@@ -442,8 +442,8 @@ vuln.gen: $(ROOT)/_changes.html ./vulntable.pl vuln.pm _singlevuln.templ
 vuln0.gen: $(ROOT)/_changes.html ./vulntable.pl vuln.pm _singlevuln.templ vuln.json
 	./vulntable.pl < $< > $@
 
-allvulns.gen: $(ROOT)/_changes.html ./vulntable.pl vuln.pm
-	./vulntable.pl < $< > $@
+allvulns.gen: $(ROOT)/_changes.html ./allvulns.pl vuln.pm
+	./allvulns.pl < $< > $@
 
 vuln.csv: vuln.pm
 	./vuln2csv.pl > $@
