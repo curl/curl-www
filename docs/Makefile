@@ -475,7 +475,7 @@ mqtt.gen: $(SRCROOT)/docs/MQTT.md
 mqtt.html: _mqtt.html mqtt.gen $(MAINPARTS)
 	$(ACTION)
 
-releases.html: _releases.html rel.gen $(MAINPARTS)
+releases.html: _releases.html rel.gen $(MAINPARTS) $(ROOT)/release.t
 	$(ACTION)
 
 rel.gen: $(ROOT)/_changes.html ./relinfo.pl vuln.pm vuln0.gen
