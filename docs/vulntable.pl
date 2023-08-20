@@ -4,13 +4,10 @@
 
 require "./vuln.pm";
 
-my $allvulns="allvulns.gen";
-
 # The amount of releases to include (0 == all)
 my $lastfew = $ARGV[0];
 if($lastfew < 1) {
     $lastfew = -1;
-    unlink($allvulns);
 }
 my $lastshow; # if $lastfew, this is the final release shown in the table
 
@@ -141,12 +138,6 @@ sub single {
     print O "\]\n";
     close(O);
 
-    if($lastfew == -1) {
-        # only create "all vulns" if we actually list all
-        open(A, ">>$allvulns");
-        print A "$str: $vulnnum\n";
-        close(A);
-    }
 }
 
 my $l;

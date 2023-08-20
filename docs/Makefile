@@ -442,8 +442,8 @@ vuln.gen: $(ROOT)/_changes.html ./vulntable.pl vuln.pm _singlevuln.templ
 vuln0.gen: $(ROOT)/_changes.html ./vulntable.pl vuln.pm _singlevuln.templ vuln.json
 	./vulntable.pl < $< > $@
 
-allvulns.gen: $(ROOT)/_changes.html ./vulntable.pl vuln.pm
-	./vulntable.pl < $< > $@
+allvulns.gen: $(ROOT)/_changes.html ./allvulns.pl vuln.pm
+	./allvulns.pl < $< > $@
 
 vuln.csv: vuln.pm
 	./vuln2csv.pl > $@
@@ -475,7 +475,7 @@ mqtt.gen: $(SRCROOT)/docs/MQTT.md
 mqtt.html: _mqtt.html mqtt.gen $(MAINPARTS)
 	$(ACTION)
 
-releases.html: _releases.html rel.gen $(MAINPARTS)
+releases.html: _releases.html rel.gen $(MAINPARTS) $(ROOT)/release.t
 	$(ACTION)
 
 rel.gen: $(ROOT)/_changes.html ./relinfo.pl vuln.pm vuln0.gen
