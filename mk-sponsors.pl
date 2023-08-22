@@ -23,8 +23,11 @@ my %silver = (
     'https://fitmymoney.com/' => 'Fit-My-Money-vertical.svg',
     'https://evpsys.com' => 'evp.png',
     'https://mobilen.nu/' => 'mobilen.png',
+    # https://opencollective.com/ivan13 has a 'null' website in profile
+    "null" => 'fineproxy.jpg',
     );
 my %modurl = (
+    'null' => 'https://fineproxy.org/'
     );
 
 # the URLs
@@ -33,8 +36,9 @@ open(S, "curl https://rest.opencollective.com/v2/curl/tier/silver-sponsor/orders
 close(S);
 
 for my $u (reverse @urls) {
-    if($u =~ /\"(.*)\"/) {
-        my $url = $1;
+    {
+        my $url = $u;
+        $url =~ s/[\"\n]//g;
         my $img = $silver{$url};
 
         if(!$img) {
