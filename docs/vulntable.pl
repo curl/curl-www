@@ -207,12 +207,12 @@ for my $str (@releases) {
         }
         else {
             if($col) {
-                printf("<td colspan=%d>&nbsp;</td>", $col);
+                printf("<td colspan=\"%d\">&nbsp;</td>", $col);
                 $col=0;
             }
             if(!$shown[$i]) {
                 # output only once, but use rowspan for the height
-                printf("<td valign=top style=\"background-color: %s;\" title=\"%s: %s (%s)\" rowspan=%d onclick=\"window.location.href='%s'\">&nbsp;</td>",
+                printf("<td valign=top style=\"background-color: %s;\" title=\"%s: %s (%s)\" rowspan=\"%d\" onclick=\"window.location.href='%s'\">&nbsp;</td>",
                        sev2color($sev[$i]),
                        $cve[$i], $vulndesc[$i], $sev[$i], $vercount[$i], $vurl[$i],);
                 $shown[$i]=1;
@@ -221,7 +221,7 @@ for my $str (@releases) {
         }
     }
     if($col) {
-        printf("<td colspan=%d>&nbsp;</td>", $col);
+        printf("<td colspan=\"%d\">&nbsp;</td>", $col);
     }
     printf "<td>%d</td></tr>\n", $sum;
 
