@@ -5,9 +5,10 @@ my $OutManMenu = \*STDOUT;
 
 # Make option menu current with most recent version of curl.
 # Output options to file, remove first line, and make page for option menu.
-my $curlPath = @ARGV[0];                   # store path to curl in variable
-`$curlPath/src/curl -h all > options.txt`; # output options to text file
-`sed -i 1d options.txt`;                   # remove first line in options.txt
+my $curlPath = @ARGV[0];                    # store path to curl in variable
+`$curlPath/src/curl -h all > options.txt`;  # output options to text file
+`tail -n +2 options.txt > tempOptions.txt`; # remove first line, outputting to tempOptions.txt
+`mv tempOptions.txt options.txt`;           # move temp to file options.txt        
 
 # Store option file in variable
 my $_options = "options.txt"; 
