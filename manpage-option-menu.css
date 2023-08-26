@@ -1,7 +1,7 @@
-/* 
-This css is used on manpage.html to style the
-option menu.
-*/
+/******************************************************
+ * Manpage-option-menu.css                            * 
+ * CSS used on manpage.html to style the option menu. * 
+ ******************************************************/
 
 /* Apply style the the entire option menu. */
 div#manpage-option-menu.sideStay {
@@ -101,7 +101,7 @@ button {
 
 /* Animate by option menu switch status for button movement. */
 div#manpage-option-menu[data-on-side] {
- transition--timing-function: linear;
+ transition-timing-function: linear;
  transition-duration: 0.8s;
 }
 
@@ -216,59 +216,9 @@ div#manpage-option-menu[data-on-side="0"] {
   }  
 }
 
-/* Re-style page content pre tag, doc menu, and option menu below 768px. */
-/* The below commented out styles are suggested edits. */
-@media screen and (max-width: 768px) {
-  /* Contain pre tags in content so not off screen. */
-  /*  
-  div.manpage pre {
-    word-wrap: break-word;
-    white-space: pre-wrap;
-  }
-  */  
-  
-  /* Re-style menu to be more responsive. */
-  /*  
-  div.menu {
-    margin: 0px;
-    padding: 0px;
-  }
-  */  
-  
-  /* Re-style doc menu a tags. */
-  /*  
-  div.menu a {    
-    font-size: 14pt;
-    padding: 0px 5px;    
-  }
-  */  
-  
-  /* Re-style doc menu last a tag decreasing font size */
-  /*  
-  div.menu div:last-of-type a:first-of-type {
-    font-size: 12pt;
-  }
-  */
-  
-  /* Breakpoint where option menu no longer displayed. */
+/* Breakpoint where option menu no longer displayed. */
+@media screen and (max-width: 768px) {    
   div#manpage-option-menu.sideStayLeft {
     display: none; 
   }  
 }
-
-/* Start media queries - min-width. */
-/* Re-style page contents to be more responsive. */
-/*
-@media screen and (min-width: 640px) {
-  div.manpage {
-    display: inline-block;
-    position: relative;
-    float: right;
-    max-width: 100%;
-    min-width: 500px;
-    width: auto;    
-    right: 0px;    
-    margin-left: 1px;
-  } 
-}
-*/
