@@ -14,5 +14,6 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @novuln = (
-   "CVE-2019-15601.html|6.0|7.67.0|SMB access smuggling via FILE URL on Windows|CVE-2019-15601|20200108|20191031|CWE-20: Improper Input Validation|400",
+    "CVE-2019-15601.html|6.0|7.67.0|SMB access smuggling via FILE URL on Windows|CVE-2019-15601|20200108|20191031|CWE-20: Improper Input Validation|400",
+    "CVE-2020-19909.html|",
     );
