@@ -2,6 +2,23 @@
 <html lang="en">
 <head> <title>curl - Changes</title>
 #include "css.t"
+
+<style>
+  .video:before {
+      content: "🎥 release video for";
+      padding: 5px 5px 5px 5px;
+  }
+  .video:after {
+      content: "▶";
+      padding: 5px 5px 5px 5px;
+  }
+  .video {
+      background-color: #e0e0e0;
+      float: right;
+      border: 1px solid black;
+      padding: 5px 5px 5px 5px;
+  }
+</style>
 </head>
 
 #define CURL_CHANGES
@@ -41,16 +58,13 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
-#define RELEASEVIDEO(desc,video)  \
-  <div style="height: 3em; line-height: 3em; font-size: 120%;"> \
-  <a href=video> \
-  <img src="pix/play.svg" alt="Play video" height="100%" style="float: left; margin-right: 1em;"> desc </a> \
-  </div>
+#define RELEASEVIDEO(ver,vid)<div><a class="video" href=vid>ver</a></div>
 
 <a name="8_2_1"></a>
 SUBTITLE(Fixed in 8.2.1 - July 26 2023)
 <p>
-  RELEASEVIDEO(curl 8.2.1 release video, "https://youtu.be/gxuisBdfXmI")
+  RELEASEVIDEO(8.2.1, "https://youtu.be/gxuisBdfXmI")
+  
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/bug/?i=11479">amigaos: fix sys/mbuf.h m_len macro clash</a>
@@ -85,7 +99,7 @@ SUBTITLE(Fixed in 8.2.1 - July 26 2023)
 <a name="8_2_0"></a>
 SUBTITLE(Fixed in 8.2.0 - July 19 2023)
 <p>
-  RELEASEVIDEO(curl 8.2.0 release video, "https://youtu.be/eMSD1GOCABc")
+  RELEASEVIDEO(8.2.0, "https://youtu.be/eMSD1GOCABc")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=11049">curl: add --ca-native and --proxy-ca-native</a>
@@ -223,7 +237,7 @@ SUBTITLE(Fixed in 8.2.0 - July 19 2023)
 <a name="8_1_2"></a>
 SUBTITLE(Fixed in 8.1.2 - May 30 2023)
 <p>
-  RELEASEVIDEO(curl 8.1.2 release video, "https://youtu.be/n9JzOdjOvHg")
+  RELEASEVIDEO(8.1.2, "https://youtu.be/n9JzOdjOvHg")
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/bug/?i=11179">configure: quote the assignments for run-compiler</a>
@@ -245,7 +259,7 @@ SUBTITLE(Fixed in 8.1.2 - May 30 2023)
 <a name="8_1_1"></a>
 SUBTITLE(Fixed in 8.1.1 - May 23 2023)
 <p>
-  RELEASEVIDEO(curl 8.1.1 release video, "https://youtu.be/Jzg847TgLvw")
+  RELEASEVIDEO(8.1.1, "https://youtu.be/Jzg847TgLvw")
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/bug/?i=11118">cf-socket: completely remove the disabled USE_RECV_BEFORE_SEND_WORKAROUND</a>
@@ -278,7 +292,7 @@ SUBTITLE(Fixed in 8.1.1 - May 23 2023)
 <a name="8_1_0"></a>
 SUBTITLE(Fixed in 8.1.0 - May 17 2023)
 <p>
-  RELEASEVIDEO(curl 8.1.0 release video, "https://youtu.be/fLP141KZ7l4")
+  RELEASEVIDEO(8.1.0, "https://youtu.be/fLP141KZ7l4")
 <p>
 <p> Changes:
 <ul class="changes">
@@ -486,7 +500,7 @@ SUBTITLE(Fixed in 8.0.1 - March 20 2023)
 <a name="8_0_0"></a>
 SUBTITLE(Fixed in 8.0.0 - March 20 2023)
 <p>
-  RELEASEVIDEO(curl 8.0.0 release video, "https://youtu.be/LToOQEMcKoo")
+  RELEASEVIDEO(8.0.0, "https://youtu.be/LToOQEMcKoo")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=10597">build: remove support for curl_off_t &lt; 8 bytes</a>
@@ -628,7 +642,7 @@ SUBTITLE(Fixed in 8.0.0 - March 20 2023)
 <a name="7_88_1"></a>
 SUBTITLE(Fixed in 7.88.1 - February 20 2023)
 <p>
-  RELEASEVIDEO(curl 7.88.1 release video, "https://youtu.be/COhD51bgjPY")
+  RELEASEVIDEO(7.88.1, "https://youtu.be/COhD51bgjPY")
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/bug/?i=10542">build-openssl.bat: keep OpenSSL 3 engine binaries</a>
@@ -661,7 +675,7 @@ SUBTITLE(Fixed in 7.88.1 - February 20 2023)
 <a name="7_88_0"></a>
 SUBTITLE(Fixed in 7.88.0 - February 15 2023)
 <p>
-  RELEASEVIDEO(curl 7.88.0 release video, "https://youtu.be/9zff4hWOxPE")
+  RELEASEVIDEO(7.88.0, "https://youtu.be/9zff4hWOxPE")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=10264">curl.h: add CURL_HTTP_VERSION_3ONLY</a>
@@ -851,7 +865,7 @@ SUBTITLE(Fixed in 7.88.0 - February 15 2023)
 <a name="7_87_0"></a>
 SUBTITLE(Fixed in 7.87.0 - December 21 2022)
 <p>
-  RELEASEVIDEO(curl 7.87.0 release video, "https://youtu.be/PvvgmBbAzn8")
+  RELEASEVIDEO(7.87.0, "https://youtu.be/PvvgmBbAzn8")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=9691">curl: add --url-query</a>
@@ -1023,7 +1037,7 @@ SUBTITLE(Fixed in 7.87.0 - December 21 2022)
 <a name="7_86_0"></a>
 SUBTITLE(Fixed in 7.86.0 - October 26 2022)
 <p>
-  RELEASEVIDEO(curl 7.86.0 release video, "https://youtu.be/nIJUock7mjE")
+  RELEASEVIDEO(7.86.0, "https://youtu.be/nIJUock7mjE")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=9307">NPN: remove support for and use of</a>
@@ -1228,7 +1242,7 @@ SUBTITLE(Fixed in 7.86.0 - October 26 2022)
 <a name="7_85_0"></a>
 SUBTITLE(Fixed in 7.85.0 - August 31 2022)
 <p>
-  RELEASEVIDEO(curl 7.85.0 release video, "https://youtu.be/I4vYSKjvHGE")
+  RELEASEVIDEO(7.85.0, "https://youtu.be/I4vYSKjvHGE")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=9290">quic: add support via wolfSSL</a>
@@ -1407,7 +1421,7 @@ SUBTITLE(Fixed in 7.85.0 - August 31 2022)
 <a name="7_84_0"></a>
 SUBTITLE(Fixed in 7.84.0 - June 27 2022)
 <p>
-  RELEASEVIDEO(curl 7.84.0 release video, "https://youtu.be/-FVFLJLrHRY")
+  RELEASEVIDEO(7.84.0, "https://youtu.be/-FVFLJLrHRY")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=8671">curl: add --rate to set max request rate per time unit</a>
@@ -1549,7 +1563,7 @@ SUBTITLE(Fixed in 7.84.0 - June 27 2022)
 <a name="7_83_1"></a>
 SUBTITLE(Fixed in 7.83.1 - May 11 2022)
 <p>
-  RELEASEVIDEO(curl 7.83.1 release video, "https://youtu.be/mnsCTd4cwyI")
+  RELEASEVIDEO(7.83.1, "https://youtu.be/mnsCTd4cwyI")
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/bug/?i=8819">altsvc: fix host name matching for trailing dots</a>
@@ -1598,7 +1612,7 @@ SUBTITLE(Fixed in 7.83.1 - May 11 2022)
 <a name="7_83_0"></a>
 SUBTITLE(Fixed in 7.83.0 - April 27 2022)
 <p>
-  RELEASEVIDEO(curl 7.83.0 release video, "https://youtu.be/hYcT0HNv8HI")
+  RELEASEVIDEO(7.83.0, "https://youtu.be/hYcT0HNv8HI")
 <p> Changes:
 <ul class="changes">
  CHG curl: add %header{name} experimental support in -w handling
@@ -1740,7 +1754,7 @@ SUBTITLE(Fixed in 7.83.0 - April 27 2022)
 <a name="7_82_0"></a>
 SUBTITLE(Fixed in 7.82.0 - March 5 2022)
 <p>
-  RELEASEVIDEO(curl 7.82.0 release video, "https://youtu.be/ycjidxZWKjo")
+  RELEASEVIDEO(7.82.0, "https://youtu.be/ycjidxZWKjo")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=8314">curl: add --json</a>
@@ -1926,7 +1940,7 @@ SUBTITLE(Fixed in 7.82.0 - March 5 2022)
 <a name="7_81_0"></a>
 SUBTITLE(Fixed in 7.81.0 - January 5 2022)
 <p>
-  RELEASEVIDEO(curl 7.81.0 release video, "https://youtu.be/OfTF8kmcSlA")
+  RELEASEVIDEO(7.81.0, "https://youtu.be/OfTF8kmcSlA")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=7789">mime: use percent-escaping for multipart form field and file names</a>
@@ -2059,7 +2073,7 @@ SUBTITLE(Fixed in 7.81.0 - January 5 2022)
 <a name="7_80_0"></a>
 SUBTITLE(Fixed in 7.80.0 - November 10 2021)
 <p>
-  RELEASEVIDEO(curl 7.80.0 release video, "https://youtu.be/GCjvJnlziLY")
+  RELEASEVIDEO(7.80.0, "https://youtu.be/GCjvJnlziLY")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/mail/lib-2021-09/0058.html">CURLOPT_MAXLIFETIME_CONN: maximum allowed lifetime for conn reuse</a>
@@ -2193,7 +2207,7 @@ SUBTITLE(Fixed in 7.80.0 - November 10 2021)
 <a name="7_79_1"></a>
 SUBTITLE(Fixed in 7.79.1 - September 22 2021)
 <p>
-  RELEASEVIDEO(curl 7.79.1 release video, "https://youtu.be/h-m2Vv57SOY")
+  RELEASEVIDEO(7.79.1, "https://youtu.be/h-m2Vv57SOY")
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/bug/?i=7730">Curl_http2_setup: don&apos;t change connection data on repeat invokes</a>
@@ -2211,7 +2225,7 @@ SUBTITLE(Fixed in 7.79.1 - September 22 2021)
 <a name="7_79_0"></a>
 SUBTITLE(Fixed in 7.79.0 - September 15 2021)
 <p>
-  RELEASEVIDEO(curl 7.79.0 release video, "https://youtu.be/1y7BR0LZEuM")
+  RELEASEVIDEO(7.79.0, "https://youtu.be/1y7BR0LZEuM")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=7468">bearssl: support CURLOPT_CAINFO_BLOB</a>
@@ -2353,7 +2367,7 @@ SUBTITLE(Fixed in 7.79.0 - September 15 2021)
 <a name="7_78_0"></a>
 SUBTITLE(Fixed in 7.78.0 - July 21 2021)
 <p>
-  RELEASEVIDEO(curl 7.78.0 release video, "https://youtu.be/XHaJGFj6wVg")
+  RELEASEVIDEO(7.78.0, "https://youtu.be/XHaJGFj6wVg")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=7073">curl_url_set: reject spaces in URLs w/o CURLU_ALLOW_SPACE</a>
@@ -2546,7 +2560,7 @@ SUBTITLE(Fixed in 7.78.0 - July 21 2021)
 <a name="7_77_0"></a>
 SUBTITLE(Fixed in 7.77.0 - May 26 2021)
 <p>
-  RELEASEVIDEO(curl 7.77.0 release video, "https://youtu.be/Mmq8kb6GcAw")
+  RELEASEVIDEO(7.77.0, "https://youtu.be/Mmq8kb6GcAw")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=6897">configure: make the TLS library choice(s) explicit</a>
@@ -2695,7 +2709,7 @@ SUBTITLE(Fixed in 7.77.0 - May 26 2021)
 <a name="7_76_1"></a>
 SUBTITLE(Fixed in 7.76.1 - April 14 2021)
 <p>
-  RELEASEVIDEO(curl 7.76.1 release video, "https://youtu.be/3Vj4cdzLZx4")
+  RELEASEVIDEO(7.76.1, "https://youtu.be/3Vj4cdzLZx4")
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/bug/?i=6838">configure: disable min version set for Darwin</a>
@@ -2724,7 +2738,7 @@ SUBTITLE(Fixed in 7.76.1 - April 14 2021)
 <a name="7_76_0"></a>
 SUBTITLE(Fixed in 7.76.0 - March 31 2021)
 <p>
-  RELEASEVIDEO(curl 7.76.0 release video, "https://youtu.be/m3GxI2PFFAU")
+  RELEASEVIDEO(7.76.0, "https://youtu.be/m3GxI2PFFAU")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=6649">cookies: Support multiple -b parameters</a>
@@ -2871,7 +2885,7 @@ SUBTITLE(Fixed in 7.76.0 - March 31 2021)
 <a name="7_75_0"></a>
 SUBTITLE(Fixed in 7.75.0 - February 3 2021)
 <p>
-  RELEASEVIDEO(curl 7.75.0 release video, "https://youtu.be/pjqd-r7hAjI")
+  RELEASEVIDEO(7.75.0, "https://youtu.be/pjqd-r7hAjI")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=6244">curl: add --create-file-mode [mode]</a>
@@ -3001,7 +3015,7 @@ SUBTITLE(Fixed in 7.75.0 - February 3 2021)
 <a name="7_74_0"></a>
 SUBTITLE(Fixed in 7.74.0 - December 9 2020)
 <p>
-  RELEASEVIDEO(curl 7.74.0 release video, "https://youtu.be/IaLwkQuE2IE")
+  RELEASEVIDEO(7.74.0, "https://youtu.be/IaLwkQuE2IE")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=5896">hsts: add experimental support for Strict-Transport-Security</a>
@@ -3120,7 +3134,7 @@ SUBTITLE(Fixed in 7.74.0 - December 9 2020)
 <a name="7_73_0"></a>
 SUBTITLE(Fixed in 7.73.0 - October 14 2020)
 <p>
-  RELEASEVIDEO(curl 7.73.0 release video, "https://youtu.be/ebYXC0Cr-dQ")
+  RELEASEVIDEO(7.73.0, "https://youtu.be/ebYXC0Cr-dQ")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=5637">curl: add --output-dir</a>
@@ -3275,7 +3289,7 @@ SUBTITLE(Fixed in 7.73.0 - October 14 2020)
 <a name="7_72_0"></a>
 SUBTITLE(Fixed in 7.72.0 - August 19 2020)
 <p>
-  RELEASEVIDEO(curl 7.72.0 release video, "https://youtu.be/yVZ8Q3fTv40")
+  RELEASEVIDEO(7.72.0, "https://youtu.be/yVZ8Q3fTv40")
 
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=5453">content_encoding: add zstd decoding support</a>
@@ -3389,7 +3403,7 @@ SUBTITLE(Fixed in 7.72.0 - August 19 2020)
 <a name="7_71_1"></a>
 SUBTITLE(Fixed in 7.71.1 - July 1 2020)
 <p>
-  RELEASEVIDEO(curl 7.71.1 release video, "https://youtu.be/qd_Lcf8U_FM")
+  RELEASEVIDEO(7.71.1, "https://youtu.be/qd_Lcf8U_FM")
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/bug/?i=5628">cirrus-ci: disable FreeBSD 13 (again)</a>
@@ -3415,7 +3429,7 @@ SUBTITLE(Fixed in 7.71.1 - July 1 2020)
 <a name="7_71_0"></a>
 SUBTITLE(Fixed in 7.71.0 - June 24 2020)
 <p>
-  RELEASEVIDEO(curl 7.71.0 release video, "https://youtu.be/E4gtW3kS1Cw")
+  RELEASEVIDEO(7.71.0, "https://youtu.be/E4gtW3kS1Cw")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=4346">CURLOPT_SSL_OPTIONS: optional use of Windows&#39; CA store (with openssl)</a>
@@ -3566,7 +3580,7 @@ SUBTITLE(Fixed in 7.71.0 - June 24 2020)
 <a name="7_70_0"></a>
 SUBTITLE(Fixed in 7.70.0 - April 29 2020)
 <p>
-  RELEASEVIDEO(curl 7.70.0 release video, "https://youtu.be/taHoaLkx7XE")
+  RELEASEVIDEO(7.70.0, "https://youtu.be/taHoaLkx7XE")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=4981">curl: add --ssl-revoke-best-effort to allow a "best effort" revocation check</a>
@@ -3716,7 +3730,7 @@ SUBTITLE(Fixed in 7.70.0 - April 29 2020)
 <a name="7_69_1"></a>
 SUBTITLE(Fixed in 7.69.1 - March 11 2020)
 <p>
-  RELEASEVIDEO(curl 7.69.1 release video, "https://youtu.be/7iTqBlhhMC0")
+  RELEASEVIDEO(7.69.1, "https://youtu.be/7iTqBlhhMC0")
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/bug/?i=4893">ares: store dns parameters for duphandle</a>
@@ -3751,7 +3765,7 @@ SUBTITLE(Fixed in 7.69.1 - March 11 2020)
 <a name="7_69_0"></a>
 SUBTITLE(Fixed in 7.69.0 - March 4 2020)
 <p>
-  RELEASEVIDEO(curl 7.69.0 release video, "https://youtu.be/X7Jlv87Nb8Y")
+  RELEASEVIDEO(7.69.0, "https://youtu.be/X7Jlv87Nb8Y")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=4825">polarssl: removed</a>
@@ -9950,7 +9964,7 @@ SUBTITLE(Fixed in 7.16.0 - October 30 2006)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF (HTTP) CURLOPT_FAILONERROR (curl -f) covers a few more response cases
+ BGF (HTTP) CURLOPT_FAILONERROR (-f) covers a few more response cases
  BGF curl_multi_socket() and the LOW_SPEED options
  BGF curl_multi_socket() expire timer during c-ares name resolves
  BGF curl_multi_add_handle on an already added handle now fails gracefully
@@ -10708,7 +10722,7 @@ SUBTITLE(Fixed in 7.10.8 - November 1 2003)
  CHG CURLOPT_PASSWDFUNCTION and CURLOPT_PASSWDDATA are no longer supported
  CHG IPv6 is now supported on Windows builds too
  CHG CURLOPT_IPRESOLVE lets you select pure IPv6 or IPv4 resolved addresses
-   (curl offers the command line options -4/--ipv4 and -6/--ipv6)
+   (offers the command line options -4/--ipv4 and -6/--ipv6)
  CHG GSS-Negotiate works fine with the MIT kerberos library
  CHG SPNEGO support added, if libcurl is built with the FBopenssl libraries,
    curl_version_info() can return a feature bit for it and curl -V displays
@@ -11026,7 +11040,7 @@ SUBTITLE(Fixed in 7.10 - October 1 2002)
    if present.
  CHG MIT-licensed only, no dual-stuff. That is history. Old. Gone. Forgotten.
  CHG libcurl does peer certificate verification by default. This needs to be
-   disabled if you need to talk to SSL servers in an insecure way! (curl -k
+   disabled if you need to talk to SSL servers in an insecure way! (-k
    does this). See further details in the UPGRADE document.
  CHG SOCKS5-proxy support was added (somewhat flawed, see CHANGES for details)
  CHG More SSL error codes was added
