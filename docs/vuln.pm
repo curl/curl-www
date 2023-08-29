@@ -15,7 +15,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
-    "CVE-2023-32001.html|7.84.0|8.1.2|fopen race condition|CVE-2023-32001|20230719|20230627|CWE-367: Time-of-check Time-of-use (TOCTOU) Race Condition|2400|storage|-|both|medium",
+    # CVE-2023-32001 is no longer considered a security problem
     "CVE-2023-28322.html|7.7|8.0.1|more POST-after-PUT confusion|CVE-2023-28322|20230517|20230419|CWE-440: Expected Behavior Violation|480|HTTP|-|lib|low",
     "CVE-2023-28321.html|7.12.0|8.0.1|IDN wildcard match|CVE-2023-28321|20230517|20230417|CWE-295: Improper Certificate Validation|480|TLS|-|both|low",
     "CVE-2023-28320.html|7.9.8|8.0.1|siglongjmp race condition|CVE-2023-28320|20230517|20230402|CWE-662: Improper Synchronization|480|DNS|-|lib|low",
