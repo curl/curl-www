@@ -17,9 +17,6 @@ if test ! -d trurl/trurl-www; then
   git clone https://github.com/curl/trurl.git trurl/trurl-www
 fi
 
-# Make manpage-option-menu.html from stdout.
-perl generatemanmenu.pl "${code}" > _manpage-option-menu.html
-
 touch ca/cacert.pem
 touch ca/pemlist.gen
 

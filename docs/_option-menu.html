@@ -1,0 +1,106 @@
+<!-- styles needed for option menu.  -->
+<style>
+/* Allocw current .menuu class to use z-index propterty. */
+/* Enabling z-index puts option menu to back of top navigaiton menu. */
+ div.menu {
+     position: relative; /* enable z-index */
+     z-index: 2; /* puts nav menu in front of option menu */
+ }
+ 
+ /* Restyle option dropdown a bit. Mainly fixed position. */
+ div#opt-dropdown.dropdown {
+     position: fixed; 
+     top: 0px;
+     left: 0px;
+     max-width: -webkit-fill-available;
+     min-width: 200px;
+     background-color: white;
+     font-size: 12pt;
+     text-align: center;        
+     z-index: 1;
+ }
+ 
+ /* Allow padding for text "Options" - more readable. */
+ div#opt-dropdown div.dropbtn {
+     padding: 4px;
+ } 
+ 
+ /* Hide checkbox elements. */
+ div#opt-dropdown.dropdown > .pinoptions {
+     display: none;   
+     margin-top: 6px; /* make chcckbox less cramped, more readable */
+ }
+ 
+ /* Show checkbox .dropdown when hovered, and when checkbox is checked. */
+ div#opt-dropdown.dropdown:hover .pinoptions,
+ div#opt-dropdown.dropdown > input.pinoptions:checked,
+ div#opt-dropdown.dropdown > input.pinoptions:checked + label.pinoptions {       
+     display: initial;     
+ } 
+ 
+ /* Hide resize instruction initially. */
+ div#opt-dropdown.dropdown div.dropdown-content small {
+     display: none;
+ }
+ 
+ /* Make options more readable. */
+ div#opt-dropdown.dropdown div.dropdown-content a {
+  font-size: 14pt;
+ }
+
+ /* Keep option menu expanded when checkbox checked, showing resize instrucitons. */
+ input.pinoptions:checked + label.pinoptions + div.dropdown-content,
+ div#opt-dropdown.dropdown input.pinoptions:checked + label.pinoptions + div.dropdown-content small {
+     display: block;
+ }
+
+ /* Restyle contents when checked to stay left, top into view, size, and allow resizing. */
+ input.pinoptions:checked + label.pinoptions + div.dropdown-content {
+     display: block;
+     top: 40px;
+     left: 0px;
+     max-width: 300px;
+     min-height: 200px;
+     margin-top: 10px;
+     resize: both;
+ }
+ 
+/* Set fuell height when hovered. */
+ div#opt-dropdown.dropdown:hover {  
+     height: 100%;  
+ }
+ 
+ /* Make .dropdown-content 95% of viewport height and scrollable. */
+ div#opt-dropdown.dropdown:hover div.dropdown-content,
+ input.pinoptions:checked + label.pinoptions + div.dropdown-content {
+     overflow-y: scroll;
+     max-height: 95vh;
+ }
+ 
+ /* Add end marker puttting bottom option better in view. */
+ /* Also indicates end of option list. */
+ div#opt-dropdown.dropdown div.dropdown-content:after {
+     content: "_";
+     display: inline-block;
+     postion: relative;
+     height: 50px;
+     width: 100%;    
+     margin-top: 10px;
+     margin-left: -5px;
+     border-right: 1px solid #0a3754;
+     background-color: white;
+     background-image: url("https://curl.se/logo/curl-logo.png");
+     background-repeat: no-repeat;
+     background-size: 50%;
+     background-position: 50% 10%;
+     color: white;
+ } 
+</style>
+<!-- Start option menu. -->
+<div id="opt-dropdown" class="dropdown">
+ <div class="dropbtn">Options</div>
+ <input type="checkbox" class="pinoptions" id="pinoptions"> <!-- stay expanded when checked -->
+ <label class="pinoptions" for="pinoptions">Keep Expanded</label>
+  <div class="dropdown-content">
+   <small style="padding: 5px 0">Bottom right handle resizes.</small>
+      <hr> <!-- indicator for start of list. Parsed view additional template -->
