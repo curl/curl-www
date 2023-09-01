@@ -50,9 +50,7 @@
  input.pinoptions:checked + label.pinoptions + div.dropdown-content {
      display: block;
      top: 40px;
-     left: 0px;
-     max-width: 300px;
-     min-height: 100px;
+     left: 0px;          
      margin-top: 10px;
      resize: both;
  }
@@ -60,7 +58,9 @@
  div#opt-dropdown.dropdown:hover div.dropdown-content,
  input.pinoptions:checked + label.pinoptions + div.dropdown-content {
      overflow-y: scroll;
-     max-height: 95vh;
+     max-height: 90vh; /* ensure browser shows bottom protion */
+     min-height: 100px;
+     max-width: 300px;
  }
  /* Add end marker puttting bottom options better in view. */
  /* Also indicates end of option list. */

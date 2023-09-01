@@ -250,9 +250,11 @@ whodocs.html: _whodocs.html $(MAINPARTS)
 libs.html: _libs.html $(MAINPARTS)
 	$(ACTION)
 
-manpage.html: _manpage.html $(MAINPARTS) mandump.gen $(ROOT)/manpage.t
-	perl generatemanmenu.pl $(DOCROOT)/cmdline-opts > _manoptionsdump.html
+manpage.html: _manpage.html $(MAINPARTS) manoptionsdump.gen mandump.gen $(ROOT)/manpage.t
 	$(ACTION)
+
+manoptionsdump.gen:
+	perl generatemanmenu.pl $(DOCROOT)/cmdline-opts > manoptionsdump.gen
 
 curl.1: ../cvssource/docs/cmdline-opts/*.d
 	(cd ../cvssource/docs/cmdline-opts && perl gen.pl mainpage *.d) > curl.1
