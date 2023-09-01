@@ -841,3 +841,14 @@ DATE 2023-08-02
 WHO Daniel Stenberg
 DESC curl 8.3.0 introduces a concept of using variables in command lines and config files. This video explains how it works and how to use them
 ENDOFVIDEO
+
+VIDEO Mastering the curl command line
+EVENT Twitch stream
+URL https://www.youtube.com/watch?v=V5vZWHP-RqU
+THUMB mastering-command-line.jpg
+THUMBSIZE width="250" height="141"
+DURATION 3h40
+DATE 2023-08-31
+WHO Daniel Stenberg
+DESC A comprehensive tutorial covering all aspects of using the curl command-line tool.
+ENDOFVIDEO
