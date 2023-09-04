@@ -135,6 +135,7 @@ PAGES = \
  symbols-in-versions.html \
  threadsafe.html \
  curl_global_sslset.html \
+ curl_global_trace.html \
  libcurl-env.html \
  $(MIME) \
  curl_easy_upkeep.html \
@@ -324,6 +325,11 @@ curl_global_cleanup.gen: $(MANROOT)/curl_global_cleanup.3 curlopt2href.pl
 curl_global_sslset.html: _curl_global_sslset.html $(MAINPARTS_CAPI) curl_global_sslset.gen
 	$(ACTION)
 curl_global_sslset.gen: $(MANROOT)/curl_global_sslset.3 curlopt2href.pl
+	$(MAN2HTML) < $< >$@
+
+curl_global_trace.html: _curl_global_trace.html $(MAINPARTS_CAPI) curl_global_trace.gen
+	$(ACTION)
+curl_global_trace.gen: $(MANROOT)/curl_global_trace.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 libcurl.html: _libcurl.html $(MAINPARTS) libcurl.gen
