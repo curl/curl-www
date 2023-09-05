@@ -1,0 +1,25 @@
+#include "_doctype.html"
+<html>
+<head> <title>libcurl - curl_global_trace()</title>
+#include "css.t"
+#include "manpage.t"
+</head>
+
+#define RAW_FILE curl_global_trace.3
+#define BUG_TITLE curl_global_trace%20man%20page:
+#define MENU_EASY
+#define LIBCURL_DOCS
+#define DOCS_GLOBAL_TRACE
+#define CURL_URL libcurl/c/curl_global_trace.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", curl_global_trace)
+TITLE(curl_global_trace - select SSL backend)
+#include "libcurl-related.t"
+#include "curl_global_trace.gen"
+#include "_footer.html"
+
+</body>
+</html>
