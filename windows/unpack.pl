@@ -9,7 +9,15 @@ opendir(DIR, $uploadpath) || exit;
 my @ul = grep { /$pattern/ } readdir(DIR);
 closedir DIR;
 
-my @sul = reverse sort @ul;
+sub num {
+    my ($t)=@_;
+    if($t =~ /.*(\d)\.(\d+)\.(\d+)_(\d+)/) {
+        return 1000000*$1 + 10000*$2 + 100+$3 + $4;
+    }
+    return 0;
+}
+
+my @sul = reverse sort {num($a) <=> num($b)} @ul;
 
 sub filetime {
     my ($filename)=@_;

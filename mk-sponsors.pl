@@ -13,16 +13,14 @@ my %silver = (
     "https://www.partitionwizard.com" => 'partitionwizard-2.svg',
     "https://www.crosswordsolver.com" => 'CrosswordSolver.svg',
     "https://www.minitool.com" => 'minitool-2.svg',
-    "https://icons8.com" => 'icons8.svg',
+    "https://icons8.com/" => 'icons8.svg',
     "https://serpapi.com" => 'serpapi.svg',
-    'https://mowcapital.com' => 'mowcapital.svg',
     "https://proxy-hub.com/" => 'proxyhub.svg',
     'https://cryptotracker.com' => 'crypto-tracker.svg',
     'https://www.sure.bet/casinos-not-on-gamstop/' => 'surebet.png',
     'https://iboysoft.com' => 'iBoysoft.svg',
-    'https://fitmymoney.com/' => 'Fit-My-Money-vertical.svg',
-    'https://evpsys.com' => 'evp.png',
-    'https://mobilen.nu/' => 'mobilen.png',
+    'https://evpsys.com' => 'evp.svg',
+    'https://mobilen.nu/' => 'mobilen-2.png',
     # https://opencollective.com/ivan13 has a 'null' website in profile
     "null" => 'fineproxy.jpg',
     );
@@ -58,7 +56,7 @@ for my $u (reverse @urls) {
 SPONSOR
                 ;
             if(! -f "pix/silver/$img") {
-                print STDERR "Missing image: $img\n";
+                print STDERR "Missing image file: pix/silver/$img\n";
                 exit 1;
             }
             $images++;
