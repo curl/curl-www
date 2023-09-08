@@ -15,12 +15,10 @@ my %silver = (
     "https://www.minitool.com" => 'minitool-2.svg',
     "https://icons8.com/" => 'icons8.svg',
     "https://serpapi.com" => 'serpapi.svg',
-    'https://mowcapital.com' => 'mowcapital.svg',
     "https://proxy-hub.com/" => 'proxyhub.svg',
     'https://cryptotracker.com' => 'crypto-tracker.svg',
     'https://www.sure.bet/casinos-not-on-gamstop/' => 'surebet.png',
     'https://iboysoft.com' => 'iBoysoft.svg',
-    'https://fitmymoney.com/' => 'Fit-My-Money-vertical.svg',
     'https://evpsys.com' => 'evp.svg',
     'https://mobilen.nu/' => 'mobilen.png',
     # https://opencollective.com/ivan13 has a 'null' website in profile
