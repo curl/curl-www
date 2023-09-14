@@ -5,7 +5,7 @@
 #ifdef FLAWCVE
 <br><a href="FLAWCVE.json">JSON metadata</a>
 #endif
-<br><a href="security.html">Security Problems</a>
-<br><a href="/dev/secprocess.html">Security Process</a>
+<br><a href="security.html">curl CVEs</a>
+<br><a href="/dev/secprocess.html">Vulnerability Disclosure</a>
 <br><a href="vulnerabilities.html">Vulnerabilities Table</a>
 </div>

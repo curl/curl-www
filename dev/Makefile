@@ -113,7 +113,7 @@ internals.gen: $(DOCROOT)/INTERNALS.md
 
 secprocess.html: _security.html $(MAINPARTS) security.gen
 	$(ACTION)
-security.gen: $(DOCROOT)/SECURITY-PROCESS.md
+security.gen: $(DOCROOT)/VULN-DISCLOSURE-POLICY.md
 	$(MARKDOWN) < $< > $@
 
 advisory.html: _advisory.html $(MAINPARTS) advisory.gen
