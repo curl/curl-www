@@ -6,6 +6,6 @@
 <br><a href="FLAWCVE.json">JSON metadata</a>
 #endif
 <br><a href="security.html">curl CVEs</a>
-<br><a href="/dev/secprocess.html">Vulnerability Disclosure</a>
+<br><a href="/dev/vuln-disclosure.html">Vulnerability Disclosure</a>
 <br><a href="vulnerabilities.html">Vulnerabilities Table</a>
 </div>

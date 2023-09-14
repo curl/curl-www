@@ -33,13 +33,13 @@ PAGES =			\
  release-procedure.html	\
  roadmap.html		\
  runtests.html		\
- secprocess.html	\
  source.html		\
  sourceactivity.html	\
  summary.html		\
  test-fileformat.html	\
  testcurl.html		\
- tests-overview.html
+ tests-overview.html    \
+ vuln-disclosure.html
 
 all: $(PAGES)
 
@@ -111,9 +111,9 @@ internals.html: _internals.html $(MAINPARTS) internals.gen
 internals.gen: $(DOCROOT)/INTERNALS.md
 	$(MARKDOWN) < $< > $@
 
-secprocess.html: _security.html $(MAINPARTS) security.gen
+vuln-disclosure.html: _vuln-disclosure.html $(MAINPARTS) disclosure.gen
 	$(ACTION)
-security.gen: $(DOCROOT)/VULN-DISCLOSURE-POLICY.md
+disclosure.gen: $(DOCROOT)/VULN-DISCLOSURE-POLICY.md
 	$(MARKDOWN) < $< > $@
 
 advisory.html: _advisory.html $(MAINPARTS) advisory.gen
