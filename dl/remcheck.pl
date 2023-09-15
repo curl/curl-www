@@ -137,7 +137,7 @@ sub islastfewversions {
 my %urlhash;
 sub geturl {
     my ($url, $head) = @_;
-    my $curlcmd="curl -Lfsm120 -A \"Mozilla/curl.se dl-package-check-probe\" --ftp-method singlecwd --ssl";
+    my $curlcmd="curl -Lfsm120 --retry 2 --retry-delay 5 -A \"Mozilla/curl.se dl-package-check-probe\" --ftp-method singlecwd --ssl";
 
     if(!$head) {
         my $t = time();
