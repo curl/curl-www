@@ -852,3 +852,14 @@ DATE 2023-08-31
 WHO Daniel Stenberg
 DESC A comprehensive tutorial covering all aspects of using the curl command-line tool.
 ENDOFVIDEO
+
+VIDEO Just curl it
+EVENT myConf 2023
+URL https://factor10.solidtango.com/watch/b28as4j3
+THUMB just-curl-it.jpg
+THUMBSIZE width="250" height="141"
+DURATION 0h47
+DATE 2023-05-11
+WHO Daniel Stenberg
+DESC curl has gradually found its way into virtually all Internet-connected devices on the globe. How did this happen?
+ENDOFVIDEO
