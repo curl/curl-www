@@ -187,6 +187,7 @@ PAGES = \
  httpscripting.html \
  index.html \
  install.html \
+ ipfs.html \
  irc.html \
  knownbugs.html \
  libs.html \
@@ -463,6 +464,12 @@ http3.gen: $(SRCROOT)/docs/HTTP3.md
 	$(MARKDOWN) < $< > $@
 
 http3.html: _http3.html http3.gen $(MAINPARTS)
+	$(ACTION)
+
+ipfs.gen: $(SRCROOT)/docs/IPFS.md
+	$(MARKDOWN) < $< > $@
+
+ipfs.html: _ipfs.html ipfs.gen $(MAINPARTS)
 	$(ACTION)
 
 websocket.gen: $(SRCROOT)/docs/WEBSOCKET.md
