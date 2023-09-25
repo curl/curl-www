@@ -1,0 +1,25 @@
+#include "_doctype.html"
+<html>
+<head> <title>curl_multi_get_handles</title>
+#include "css.t"
+#include "manpage.t"
+</head>
+
+#define RAW_FILE curl_multi_get_handles.3
+#define BUG_TITLE curl_multi_get_handles%20man%20page:
+#define MENU_MULTI
+#define LIBCURL_DOCS
+#define DOCS_MULTI_GET_HANDLES
+#define CURL_URL libcurl/c/curl_multi_get_handles.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", libcurl)
+TITLE(curl_multi_get_handles - returns all easy handles in a multi)
+#include "libcurl-related.t"
+#include "curl_multi_get_handles.gen"
+#include "_footer.html"
+
+</body>
+</html>

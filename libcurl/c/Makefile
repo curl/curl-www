@@ -69,62 +69,70 @@ WS_API = \
 PAGES = \
  index.html \
  example.html \
- curl_easy_init.html \
+ allfuncs.html \
  curl_easy_cleanup.html \
- curl_easy_setopt.html \
- curl_easy_perform.html \
- curl_version.html \
- curl_version_info.html \
- curl_getenv.html \
- curl_free.html \
- curl_slist_append.html \
- curl_slist_free_all.html \
- curl_formadd.html \
- curl_getdate.html \
+ curl_easy_duphandle.html \
+ curl_easy_escape.html \
  curl_easy_getinfo.html \
- curl_formfree.html \
+ curl_easy_init.html \
+ curl_easy_pause.html \
+ curl_easy_perform.html \
+ curl_easy_recv.html \
+ curl_easy_reset.html \
+ curl_easy_send.html \
+ curl_easy_setopt.html \
+ curl_easy_strerror.html \
+ curl_easy_unescape.html \
+ curl_easy_upkeep.html \
  curl_escape.html \
- curl_unescape.html \
- curl_strequal.html \
- curl_mprintf.html \
- libcurl.html \
+ curl_formadd.html \
+ curl_formfree.html \
+ curl_formget.html \
+ curl_free.html \
+ curl_getdate.html \
+ curl_getenv.html \
+ curl_global_cleanup.html \
  curl_global_init.html \
  curl_global_init_mem.html \
- curl_global_cleanup.html \
- libcurl-errors.html \
+ curl_global_sslset.html \
+ curl_global_trace.html \
+ curl_mprintf.html \
  curl_multi_add_handle.html \
- curl_multi_init.html \
+ curl_multi_assign.html \
  curl_multi_cleanup.html \
- curl_multi_perform.html \
  curl_multi_fdset.html \
- curl_multi_remove_handle.html \
+ curl_multi_get_handles.html \
  curl_multi_info_read.html \
- libcurl-multi.html \
- libcurl-easy.html \
- libcurl-share.html \
- libcurl-ws.html \
- allfuncs.html \
+ curl_multi_init.html \
+ curl_multi_perform.html \
+ curl_multi_poll.html \
+ curl_multi_remove_handle.html \
+ curl_multi_setopt.html \
+ curl_multi_socket.html \
+ curl_multi_socket_action.html \
+ curl_multi_strerror.html \
+ curl_multi_timeout.html \
+ curl_multi_wait.html \
+ curl_multi_wakeup.html \
+ curl_pushheader_byname.html \
+ curl_pushheader_bynum.html \
  curl_share_cleanup.html \
  curl_share_init.html \
  curl_share_setopt.html \
- curl_easy_duphandle.html \
- curl_easy_strerror.html \
- curl_multi_strerror.html \
  curl_share_strerror.html \
+ curl_slist_append.html \
+ curl_slist_free_all.html \
+ curl_strequal.html \
+ curl_unescape.html \
+ curl_version.html \
+ curl_version_info.html \
+ libcurl-easy.html \
+ libcurl-errors.html \
+ libcurl-multi.html \
+ libcurl-share.html \
  libcurl-tutorial.html \
- curl_easy_reset.html \
- curl_multi_socket.html \
- curl_multi_timeout.html \
- curl_multi_setopt.html \
- curl_easy_escape.html \
- curl_easy_unescape.html \
- curl_multi_assign.html \
- curl_formget.html \
- curl_easy_pause.html \
- curl_easy_recv.html \
- curl_easy_send.html \
- curl_multi_socket_action.html \
- curl_multi_wait.html \
+ libcurl-ws.html \
+ libcurl.html \
  $(EXAMPLES) \
  $(opts) \
  easy_setopt_options.html \
@@ -134,19 +142,12 @@ PAGES = \
  options-in-examples.html \
  symbols-in-versions.html \
  threadsafe.html \
- curl_global_sslset.html \
- curl_global_trace.html \
  libcurl-env.html \
  $(MIME) \
- curl_easy_upkeep.html \
  $(URLAPI) \
- curl_multi_poll.html \
- curl_multi_wakeup.html \
  $(EASY_OPTION) \
  $(HEADER_API) \
- $(WS_API) \
- curl_pushheader_byname.html \
- curl_pushheader_bynum.html
+ $(WS_API)
 
 
 all: $(PAGES)
@@ -495,6 +496,11 @@ curl_multi_setopt.gen: $(MANROOT)/curl_multi_setopt.3 curlopt2href.pl
 curl_multi_assign.html: _curl_multi_assign.html $(MAINPARTS_CAPI) curl_multi_assign.gen
 	$(ACTION)
 curl_multi_assign.gen: $(MANROOT)/curl_multi_assign.3 curlopt2href.pl
+	$(MAN2HTML) < $< >$@
+
+curl_multi_get_handles.html: _curl_multi_get_handles.html $(MAINPARTS_CAPI) curl_multi_get_handles.gen
+	$(ACTION)
+curl_multi_get_handles.gen: $(MANROOT)/curl_multi_get_handles.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 include Makefile.opts
