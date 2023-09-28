@@ -195,6 +195,7 @@ PAGES = \
  manual.html \
  mk-ca-bundle.html \
  mqtt.html \
+ optionswhen.html \
  projdocs.html \
  protdocs.html \
  reldocs.html \
@@ -257,6 +258,12 @@ manpage.html: _manpage.html $(MAINPARTS) manoptionsdump.gen mandump.gen $(ROOT)/
 
 manoptionsdump.gen:
 	perl generatemanmenu.pl $(DOCROOT)/cmdline-opts > manoptionsdump.gen
+
+optionswhen.html: _optionswhen.html optionswhen.gen
+	$(ACTION)
+
+optionswhen.gen: $(DOCROOT)/options-in-versions optionswhen.pl
+	./optionswhen.pl $< > $@
 
 curl.1: ../cvssource/docs/cmdline-opts/*.d
 	(cd ../cvssource/docs/cmdline-opts && perl gen.pl mainpage *.d) > curl.1

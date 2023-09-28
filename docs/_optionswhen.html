@@ -1,0 +1,36 @@
+#include "_doctype.html"
+<html>
+<head> <title>curl - When command line options were introduced</title>
+#include "css.t"
+#include "manpage.t"
+</head>
+
+#define CURL_DOCS
+#define DOCS_MANPAGE
+#define TOOL_DOCS
+#define CURL_URL docs/optionswhen.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(Docs, "/docs/", Tool, "/docs/tooldocs.html", Options when)
+TITLE(When command line options were introduced)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="https://github.com/curl/curl/issues/new?title=curl.1%20problem&amp;labels=documentation" target="_new">File a bug about this man page</a>
+<br><a href="manpage.html">Man page</a>
+<br><a href="faq.html">FAQ</a>
+<br><a href="httpscripting.html">HTTP Scripting</a>
+</div>
+
+curl is continuously developed and new command line options are added over
+time. This list shows which options that were added in which version.
+
+<p>
+
+#include "optionswhen.gen"
+
+#include "_footer.html"
+
+</body>
+</html>
