@@ -53,9 +53,9 @@ sub verlink {
 }
 
 for my $v (sort {vernum($b) <=> vernum($a) } keys %vers) {
-    printf "<b> curl <a href=\"%s#%s\">$v</a></b><ol>\n", $changelog, verlink($v);
+    printf "<b><a href=\"%s#%s\">$v</a></b><ol>\n", $changelog, verlink($v);
     for my $l (split(/ /, $added{$v})) {
-        printf "<li> <a href=\"%s#%s\">$l%s</a>\n",
+        printf "<a href=\"%s#%s\">$l%s</a><br>\n",
             $html, $short{$l}?"$short{$l}":$l,
             $short{$l}?" ($short{$l})":"";
     }
