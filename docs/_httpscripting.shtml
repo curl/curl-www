@@ -18,7 +18,7 @@ WHERE3(Docs, "/docs/", Tool, "/docs/tooldocs.html", HTTP Scripting)
 <b>Related:</b>
 <br><a href="manpage.html">curl man page</a>
 <br><a href="faq.html">FAQ</a>
-<br><a href="manual.html">Tutorial</a>
+<br><a href="tutorial.html">Tutorial</a>
 </div>
 
 #include "httpscript.gen"
