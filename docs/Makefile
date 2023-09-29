@@ -192,7 +192,7 @@ PAGES = \
  knownbugs.html \
  libs.html \
  manpage.html \
- manual.html \
+ tutorial.html \
  mk-ca-bundle.html \
  mqtt.html \
  optionswhen.html \
@@ -374,7 +374,7 @@ install.html: _install.html $(MAINPARTS) install.gen
 install.gen: $(DOCROOT)/INSTALL.md
 	$(MARKDOWN) < $< > $@
 
-manual.html: _manual.html $(MAINPARTS) manual.gen
+tutorial.html: _tutorial.html $(MAINPARTS) manual.gen
 	$(ACTION)
 
 manual.gen: $(DOCROOT)/MANUAL.md

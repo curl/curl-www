@@ -19,7 +19,7 @@ TITLE(FAQ -- Frequently Asked Questions)
 <b>Related:</b>
 <br><a href="manpage.html">curl man page</a>
 <br><a href="httpscripting.html">HTTP Scripting</a>
-<br><a href="manual.html">Tutorial</a>
+<br><a href="tutorial.html">Tutorial</a>
 </div>
 
 #include "faq.gen"
