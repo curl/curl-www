@@ -58,12 +58,16 @@ SUBTITLE(Past vulnerabilities)
 <p>
 
 #if SEVERITY == 1
+(The table below has been filtered to show Medium+ severity)
 #include "seclist-m.gen"
 #elif SEVERITY == 2
+(The table below has been filtered to show High+ severity)
 #include "seclist-h.gen"
 #elif SEVERITY == 3
+(The table below has been filtered to show Critical severity)
 #include "seclist-c.gen"
 #else
+(The table below shows vulnerabilities of all severity levels)
 #include "seclist.gen"
 #endif
 SUBTITLE(Retracted security vulnerabilities)
