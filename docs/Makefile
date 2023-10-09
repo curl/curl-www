@@ -195,6 +195,7 @@ PAGES = \
  tutorial.html \
  mk-ca-bundle.html \
  mqtt.html \
+ optionsall.html \
  optionswhen.html \
  projdocs.html \
  protdocs.html \
@@ -264,6 +265,12 @@ optionswhen.html: _optionswhen.html optionswhen.gen
 
 optionswhen.gen: $(DOCROOT)/options-in-versions optionswhen.pl
 	./optionswhen.pl $< > $@
+
+optionsall.html: _optionsall.html optionsall.gen
+	$(ACTION)
+
+optionsall.gen: $(DOCROOT)/options-in-versions alloptions.pl
+	./alloptions.pl $< > $@
 
 curl.1: ../cvssource/docs/cmdline-opts/*.d
 	(cd ../cvssource/docs/cmdline-opts && perl gen.pl mainpage *.d) > curl.1
