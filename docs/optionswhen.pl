@@ -52,12 +52,14 @@ sub verlink {
     return $ver;
 }
 
+print "<table>\n";
 for my $v (sort {vernum($b) <=> vernum($a) } keys %vers) {
-    printf "<b><a href=\"%s#%s\">$v</a></b><ol>\n", $changelog, verlink($v);
+    printf "<tr><td valign=\"top\"><a href=\"%s#%s\">$v</a></td><td>\n", $changelog, verlink($v);
     for my $l (split(/ /, $added{$v})) {
         printf "<a href=\"%s#%s\">$l%s</a><br>\n",
             $html, $short{$l}?"$short{$l}":$l,
             $short{$l}?" ($short{$l})":"";
     }
-    print "</ol>\n";
+    print "</td></tr>\n";
 }
+print "</table>\n";
