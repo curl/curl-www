@@ -22,6 +22,7 @@ my %silver = (
     'https://mobilen.nu/' => 'mobilen-2.png',
     # https://opencollective.com/ivan13 has a 'null' website in profile
     "null" => 'fineproxy.jpg',
+    'https://solcellsforetag.se/' => 'solcellsforetag.se.png',
     );
 my %modurl = (
     'null' => 'https://fineproxy.org/'
