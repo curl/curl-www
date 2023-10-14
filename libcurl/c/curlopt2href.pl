@@ -6,6 +6,10 @@
 #
 
 while(<STDIN>) {
+    # The debug function defines are *badly* reusing the same prefix as the
+    # options for curl_easy_getinfo, so special-case them in a separate regex
+    # first. Skip if preceded by letters making it likely to be a link
+    $_ =~ s/([^\">\/])(CURLINFO_(TEXT|HEADER_IN|HEADER_OUT|DATA_IN|DATA_OUT|SSL_DATA_IN|SSL_DATA_OUT|END))/$1<a href="CURLOPT_DEBUGFUNCTION.html#DESCRIPTION">$2<\/a>/g;
     # skip if preceded by letters making it likely to be a link
     $_ =~ s/([^\">\/])(CURL(OPT|INFO|MOPT|SHOPT)_[A-Z_0-9]+)/$1<a href="$2.html">$2<\/a>/g;
     # also linkify libcurl function calls
