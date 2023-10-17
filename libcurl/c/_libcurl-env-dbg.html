@@ -1,0 +1,23 @@
+#include "_doctype.html"
+<html>
+<head> <title>libcurl - environment debug variables</title>
+#include "css.t"
+#include "manpage.t"
+</head>
+
+#define LIBCURL_DOCS
+#define DOCS_ENV
+#define CURL_URL libcurl/c/libcurl-env-dbg.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", Environment debug variables)
+
+TITLE(Environment variables libcurl DEBUGBUILD understands)
+
+#include "libcurl-env-dbg.gen"
+#include "_footer.html"
+
+</body>
+</html>
