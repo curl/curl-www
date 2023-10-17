@@ -143,6 +143,7 @@ PAGES = \
  symbols-in-versions.html \
  threadsafe.html \
  libcurl-env.html \
+ libcurl-env-dbg.html \
  $(MIME) \
  $(URLAPI) \
  $(EASY_OPTION) \
@@ -366,6 +367,11 @@ libcurl-easy.gen: $(MANROOT)/libcurl-easy.3 curlopt2href.pl
 libcurl-env.html: _libcurl-env.html $(MAINPARTS) libcurl-env.gen
 	$(ACTION)
 libcurl-env.gen: $(MANROOT)/libcurl-env.3 curlopt2href.pl
+	$(MAN2HTML) < $< >$@
+
+libcurl-env-dbg.html: _libcurl-env-dbg.html $(MAINPARTS) libcurl-env-dbg.gen
+	$(ACTION)
+libcurl-env-dbg.gen: $(MANROOT)/libcurl-env-dbg.3 curlopt2href.pl
 	$(MAN2HTML) < $< >$@
 
 libcurl-share.html: _libcurl-share.html $(MAINPARTS) libcurl-share.gen

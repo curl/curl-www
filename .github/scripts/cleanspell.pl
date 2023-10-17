@@ -50,7 +50,7 @@ while(<F>) {
     $_ =~ s/CURLSHE_[A-Z0-9_]*//g;
     $_ =~ s/CURLSHOPT_[A-Z0-9_]*//g;
     $_ =~ s/CURLSSH_[A-Z0-9_]*//g;
-        $_ =~ s/CURLSSLBACKEND_[A-Z0-9_]*//g;
+    $_ =~ s/CURLSSLBACKEND_[A-Z0-9_]*//g;
     $_ =~ s/CURLU_[A-Z0-9_]*//g;
     $_ =~ s/CURLUE_[A-Z0-9_]*//g;
     $_ =~ s/CURLUPART_[A-Z0-9_]*//g;
@@ -62,7 +62,7 @@ while(<F>) {
     $_ =~ s/curl_mime_(subparts|addpart|filedata|data_cb)//g;
     $_ =~ s/curl_ws_(send|recv|meta)//g;
     $_ =~ s/curl_url_(dup)//g;
-    $_ =~ s/libcurl-env//g;
+    $_ =~ s/libcurl-env(-dbg)?//g;
     $_ =~ s/(^|\W)((tftp|https|http|ftp):\/\/[a-z0-9\-._~%:\/?\#\[\]\@!\$&'()*+,;=]+)//gi;
     $_ =~ s/^- Reported-by:.*//;
     $_ =~ s/^- Patched-by:.*//;
