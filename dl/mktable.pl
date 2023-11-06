@@ -110,7 +110,7 @@ for(@os) {
 
 print "<div class=\"oslinks\">\n";
 my $p=0;
-for(sort keys %os) {
+for(sort { lc($a) cmp lc($b) } keys %os) {
     if($_ ne "-") {
         if($p) {
             print "<br>\n";
