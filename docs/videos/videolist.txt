@@ -1,3 +1,14 @@
+VIDEO http in UEFI - using libcurl to write network applications
+EVENT UEFI Plugfest 2014
+URL https://www.youtube.com/watch?v=qYczGi8LV_o
+THUMB http-in-uefi.jpg
+THUMBSIZE width="250" height="141"
+DURATION 17 minutes
+DATE 2014-05-15
+WHO Kimon Berlin
+DESC This presentation demonstrates how easy it is to port cURL and libcurl to the UEFI pre-boot environment.
+ENDOFVIDEO
+
 VIDEO curl now and then
 EVENT curl-up 2017
 URL https://curl.se/video/curlup-2017/2017-03-18_01_Daniel_Stenberg_Curl_now_and_then_keynote.mp4
