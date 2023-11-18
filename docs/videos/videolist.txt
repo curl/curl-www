@@ -874,3 +874,14 @@ DATE 2023-05-11
 WHO Daniel Stenberg
 DESC curl has gradually found its way into virtually all Internet-connected devices on the globe. How did this happen?
 ENDOFVIDEO
+
+VIDEO Mastering libcurl (part 1)
+EVENT Twitch stream
+URL https://youtu.be/ZQXv5v9xocU
+THUMB mastering-libcurl1.jpg
+THUMBSIZE width="250" height="141"
+DURATION 2h07
+DATE 2023-11-16
+WHO Daniel Stenberg
+DESC A comprehensive tutorial covering all aspects of writing applications using libcurl.
+ENDOFVIDEO
