@@ -175,6 +175,7 @@ DNS
 dns
 dnsop
 DoH
+DoS
 doxygen
 drftpd
 dsa
@@ -652,6 +653,7 @@ runtime
 Ruslan
 rustc
 rustls
+RyotaK
 Sagula
 SanDisk
 SAS
