@@ -883,5 +883,16 @@ THUMBSIZE width="250" height="141"
 DURATION 2h07
 DATE 2023-11-16
 WHO Daniel Stenberg
-DESC A comprehensive tutorial covering all aspects of writing applications using libcurl.
+DESC A comprehensive tutorial covering all aspects of writing applications using libcurl (part 1 of 2).
+ENDOFVIDEO
+
+VIDEO Mastering libcurl (part 2)
+EVENT Twitch stream
+URL https://youtu.be/9KqnXsSxqGA
+THUMB mastering-libcurl2.jpg
+THUMBSIZE width="250" height="141"
+DURATION 2h31
+DATE 2023-11-20
+WHO Daniel Stenberg
+DESC A comprehensive tutorial covering all aspects of writing applications using libcurl (part 2 of 2).
 ENDOFVIDEO
