@@ -831,6 +831,17 @@ WHO Daniel Stenberg and Stefan Eissing
 DESC How HTTP/3 differs from HTTP/2 and HTTP/1, how to build libcurl to enable QUIC and how to perform transfers over QUIC using curl and libcurl.
 ENDOFVIDEO
 
+VIDEO Just curl it
+EVENT myConf 2023
+URL https://factor10.solidtango.com/watch/b28as4j3
+THUMB just-curl-it.jpg
+THUMBSIZE width="250" height="141"
+DURATION 0h47
+DATE 2023-05-11
+WHO Daniel Stenberg
+DESC curl has gradually found its way into virtually all Internet-connected devices on the globe. How did this happen?
+ENDOFVIDEO
+
 VIDEO Doing WebSocket with libcurl
 EVENT Twitch stream
 URL https://youtu.be/NLIhd0wYO24
@@ -860,19 +871,9 @@ THUMB mastering-command-line.jpg
 THUMBSIZE width="250" height="141"
 DURATION 3h40
 DATE 2023-08-31
+SLIDES https://www.slideshare.net/DanielStenberg7/mastering-the-curl-command-linepdf
 WHO Daniel Stenberg
 DESC A comprehensive tutorial covering all aspects of using the curl command-line tool.
-ENDOFVIDEO
-
-VIDEO Just curl it
-EVENT myConf 2023
-URL https://factor10.solidtango.com/watch/b28as4j3
-THUMB just-curl-it.jpg
-THUMBSIZE width="250" height="141"
-DURATION 0h47
-DATE 2023-05-11
-WHO Daniel Stenberg
-DESC curl has gradually found its way into virtually all Internet-connected devices on the globe. How did this happen?
 ENDOFVIDEO
 
 VIDEO Next level curl
@@ -893,6 +894,7 @@ THUMB mastering-libcurl1.jpg
 THUMBSIZE width="250" height="141"
 DURATION 2h07
 DATE 2023-11-16
+SLIDES https://www.slideshare.net/bagder/mastering-libcurl-part-1
 WHO Daniel Stenberg
 DESC A comprehensive tutorial covering all aspects of writing applications using libcurl (part 1 of 2).
 ENDOFVIDEO
@@ -904,6 +906,7 @@ THUMB mastering-libcurl2.jpg
 THUMBSIZE width="250" height="141"
 DURATION 2h31
 DATE 2023-11-20
+SLIDES https://www.slideshare.net/bagder/mastering-libcurl-part-2
 WHO Daniel Stenberg
 DESC A comprehensive tutorial covering all aspects of writing applications using libcurl (part 2 of 2).
 ENDOFVIDEO
