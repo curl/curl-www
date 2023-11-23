@@ -875,6 +875,17 @@ WHO Daniel Stenberg
 DESC curl has gradually found its way into virtually all Internet-connected devices on the globe. How did this happen?
 ENDOFVIDEO
 
+VIDEO Next level curl
+EVENT 2023 Platform Summit
+URL https://www.youtube.com/watch?v=8b5jkr35CRQ
+THUMB next-level-curl.jpg
+THUMBSIZE width="250" height="141"
+DURATION 0h33
+DATE 2023-10-18
+WHO Daniel Stenberg
+DESC A look at some of the most powerful and interesting recent additions to curl—some lesser-known curl tricks that might enrich your command lines, extend your “tool belt” and make you more productive.
+ENDOFVIDEO
+
 VIDEO Mastering libcurl (part 1)
 EVENT Twitch stream
 URL https://youtu.be/ZQXv5v9xocU
