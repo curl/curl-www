@@ -1,27 +1,27 @@
 #include "_doctype.html"
 <html>
-<head> <title>libcurl - symbols in versions</title>
+<head> <title>libcurl - symbols by name</title>
 #include "css.t"
 </head>
 
 #define DOCS_SYMBOLS
-#define CURL_URL libcurl/c/symbols-in-versions.html
+#define CURL_URL libcurl/c/symbols-by-name.html
 
 #include "_menu.html"
 #include "setup.t"
 
-WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", Symbols In Versions)
+WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", Symbols By Name)
 
-TITLE(Symbols In Versions)
+TITLE(Symbols By Name)
 <p>
  These symbols are present in libcurl. Here is information about the first
  libcurl version that provides the symbol, the first version in which the
  symbol was marked as deprecated and for a few symbols the last version that
  featured it.
 <p>
- [ <a href="symbols-by-name.html">sort on name</a> | <b>sort on intro version</b> ] 
+ [ sort on name | <a href="symbols-in-versions.html">sort on intro version</a> ] 
 <p>
-#include "symbols-in-versions.gen"
+#include "symbols-by-name.gen"
 
 #include "_footer.html"
 

@@ -141,6 +141,7 @@ PAGES = \
  allexamples.zip \
  options-in-examples.html \
  symbols-in-versions.html \
+ symbols-by-name.html \
  threadsafe.html \
  libcurl-env.html \
  $(MIME) \
@@ -521,8 +522,13 @@ options-in-examples.gen: allex.gen options-used-in-examples.pl
 
 symbols-in-versions.html: _symbols-in-versions.html $(MAINPARTS) symbols-in-versions.gen
 	$(ACTION)
-symbols-in-versions.gen: $(MANROOT)/symbols-in-versions
-	$(TXT2PLAIN) < $< > $@
+symbols-in-versions.gen: $(MANROOT)/symbols-in-versions syminver.pl
+	./syminver.pl $< 1 > $@
+
+symbols-by-name.html: _symbols-by-name.html $(MAINPARTS) symbols-by-name.gen
+	$(ACTION)
+symbols-by-name.gen: $(MANROOT)/symbols-in-versions syminver.pl
+	./syminver.pl $< > $@
 
 curl_mime_init.html: _curl_mime_init.html $(MAINPARTS_CAPI) curl_mime_init.gen
 	$(ACTION)
