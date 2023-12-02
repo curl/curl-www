@@ -268,6 +268,9 @@ sub nameref {
     elsif($n =~ /^CURL_TIMECOND_/) {
         return "<a href=\"/libcurl/c/CURLOPT_TIMECONDITION.html\">$n</a>";
     }
+    elsif($n =~ /^CURL_REDIR_POST_/) {
+        return "<a href=\"/libcurl/c/CURLOPT_POSTREDIR.html\">$n</a>";
+    }
     return $n;
 }
 
