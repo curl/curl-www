@@ -133,6 +133,9 @@ sub nameref {
     elsif($n =~ /^CURLSSLOPT_/) {
         return "<a href=\"/libcurl/c/CURLOPT_SSL_OPTIONS.html\">$n</a>";
     }
+    elsif($n =~ /^CURLSSLSET_/) {
+        return "<a href=\"/libcurl/c/curl_global_sslset.html\">$n</a>";
+    }
     elsif($n =~ /^CURLUPART_/) {
         return "<a href=\"/libcurl/c/curl_url_get.html\">$n</a>";
     }
@@ -198,6 +201,72 @@ sub nameref {
     }
     elsif($n =~ /^CURL_POLL_/) {
         return "<a href=\"/libcurl/c/CURLMOPT_SOCKETFUNCTION.html\">$n</a>";
+    }
+    elsif($n =~ /^CURLMSG_/) {
+        return "<a href=\"/libcurl/c/curl_multi_info_read.html\">$n</a>";
+    }
+    elsif($n =~ /^CURLFTPAUTH_/) {
+        return "<a href=\"/libcurl/c/CURLOPT_FTPSSLAUTH.html\">$n</a>";
+    }
+    elsif($n =~ /^CURLFTPMETHOD_/) {
+        return "<a href=\"/libcurl/c/CURLOPT_FTP_FILEMETHOD.html\">$n</a>";
+    }
+    elsif($n =~ /^CURLFTPSSL_/) {
+        return "<a href=\"/libcurl/c/CURLOPT_USE_SSL.html\">$n</a>";
+    }
+    elsif($n =~ /^CURLFTP_CREATE_/) {
+        return "<a href=\"/libcurl/c/CURLOPT_FTP_CREATE_MISSING_DIRS.html\">$n</a>";
+    }
+    elsif($n =~ /^CURLGSSAPI_DELEGATION_/) {
+        return "<a href=\"/libcurl/c/CURLOPT_GSSAPI_DELEGATION.html\">$n</a>";
+    }
+    elsif($n =~ /^CURLHEADER_/) {
+        return "<a href=\"/libcurl/c/CURLOPT_HEADEROPT.html\">$n</a>";
+    }
+    elsif($n =~ /^CURLHSTS_/) {
+        return "<a href=\"/libcurl/c/CURLOPT_HSTS_CTRL.html\">$n</a>";
+    }
+    elsif($n =~ /^CURLIOCMD_/) {
+        return "<a href=\"/libcurl/c/CURLOPT_IOCTLFUNCTION.html\">$n</a>";
+    }
+    elsif($n =~ /^CURLIOE_/) {
+        return "<a href=\"/libcurl/c/CURLOPT_IOCTLFUNCTION.html\">$n</a>";
+    }
+    elsif($n =~ /^CURLMIMEOPT_/) {
+        return "<a href=\"/libcurl/c/CURLOPT_MIME_OPTIONS.html\">$n</a>";
+    }
+    elsif($n =~ /^CURLPAUSE_/) {
+        return "<a href=\"/libcurl/c/curl_easy_pause.html\">$n</a>";
+    }
+    elsif($n =~ /^CURLPIPE_/) {
+        return "<a href=\"/libcurl/c/CURLMOPT_PIPELINING.html\">$n</a>";
+    }
+    elsif($n =~ /^CURLSOCKTYPE_/) {
+        return "<a href=\"/libcurl/c/CURLOPT_SOCKOPTFUNCTION.html\">$n</a>";
+    }
+    elsif($n =~ /^CURLSTS_/) {
+        return "<a href=\"/libcurl/c/CURLOPT_HSTSREADFUNCTION.html\">$n</a>";
+    }
+    elsif($n =~ /^CURLUSESSL_/) {
+        return "<a href=\"/libcurl/c/CURLOPT_USE_SSL.html\">$n</a>";
+    }
+    elsif($n =~ /^CURL_CSELECT_/) {
+        return "<a href=\"/libcurl/c/curl_multi_socket_action.html\">$n</a>";
+    }
+    elsif($n =~ /^CURL_FNMATCHFUNC_/) {
+        return "<a href=\"/libcurl/c/CURLOPT_FNMATCH_FUNCTION.html\">$n</a>";
+    }
+    elsif($n =~ /^CURL_HET_/) {
+        return "<a href=\"/libcurl/c/CURLOPT_HAPPY_EYEBALLS_TIMEOUT_MS.html\">$n</a>";
+    }
+    elsif($n =~ /^CURL_IPRESOLVE_/) {
+        return "<a href=\"/libcurl/c/CURLOPT_IPRESOLVE.html\">$n</a>";
+    }
+    elsif($n =~ /^CURL_SEEKFUNC_/) {
+        return "<a href=\"/libcurl/c/CURLOPT_SEEKFUNCTION.html\">$n</a>";
+    }
+    elsif($n =~ /^CURL_TIMECOND_/) {
+        return "<a href=\"/libcurl/c/CURLOPT_TIMECONDITION.html\">$n</a>";
     }
     return $n;
 }
