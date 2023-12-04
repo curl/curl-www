@@ -15,6 +15,8 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2023-46219.html|7.84.0|8.4.0|HSTS long file name clears contents|CVE-2023-46219|20231206|20231102|CWE-311: Missing Encryption of Sensitive Data|540|HSTS|-|both|low",
+    "CVE-2023-46218.html|7.46.0|8.4.0|cookie mixed case PSL bypass|CVE-2023-46218|20231206|20231017|CWE-201: Information Exposure Through Sent Data|2540|cookie|-|both|medium",
     "CVE-2023-38546.html|7.9.1|8.3.0|cookie injection with none file|CVE-2023-38546|20231011|20230914|CWE-73: External Control of File Name or Path|540|cookies|-|lib|low",
     "CVE-2023-38545.html|7.69.0|8.3.0|SOCKS5 heap buffer overflow|CVE-2023-38545|20231011|20230930|CWE-122: Heap-based Buffer Overflow|4660|SOCKS5|OVERFLOW|both|high",
     "CVE-2023-38039.html|7.84.0|8.2.1|HTTP headers eat all memory|CVE-2023-38039|20230913|20230717|CWE-770: Allocation of Resources Without Limits or Throttling|2540|HTTP|-|both|medium",
