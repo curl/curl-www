@@ -12,10 +12,12 @@ print <<HEAD
 <th title="Vulnerability number">#</th>
 <th title="Severity: L=Low, M=Medium, H=High, C=Critical">S</th>
 <th title="Where: Tool-only, Lib-only, default means both">W</th>
+<th title="C mistake or not">C</th>
 <th>Vulnerability</th>
-<th title="Date publicly disclosed">Date</th>
+<th title="Date publicly disclosed">Published</th>
 <th title="First curl version affected">First</th>
 <th title="Last curl version affected">Last</th>
+<th title="Bug-bounty award">Awarded</th>
 </tr>
 HEAD
     ;
@@ -67,6 +69,21 @@ sub where {
     return "<td></td>";
 }
 
+sub cdetail {
+    my ($cissue) = @_;
+    if($cissue ne "-") {
+        my $sym = "<div style=\"color: $col; border-radius: 12px; border: 2px black dotted; text-align: center;\">C</div>";
+        return "<td title=\"C mistake: $cissue\">$sym</td>";
+    }
+    return "<td></td>";
+}
+
+sub bounty {
+    my ($usd) = @_;
+    return "<td>$usd USD</td>" if($usd > 0);
+    return "<td></td>";
+}
+
 my $num = $#vuln + 1;
 for(@vuln) {
     my ($id, $start, $stop, $desc, $cve, $date, $project,
@@ -90,16 +107,20 @@ for(@vuln) {
         $sevcol = "<td title=\"Severity $sev\">$c</td>";
     }
     my $toolcol = where($tool);
+    my $ccol = cdetail($cissue);
+    my $bcol = bounty($award);
     
     print <<VUL
 <tr>
 <td>$num</td>
 $sevcol
 $toolcol
+$ccol
 <td><a href="$id">$cve: $desc</a></td>
 <td>$year-$mon-$day</td>
 <td><a href="vuln-$start.html">$start</a></td>
 <td><a href="vuln-$stop.html">$stop</a></td>
+$bcol
 </tr>
 VUL
 ;
