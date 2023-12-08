@@ -2,6 +2,12 @@
 <html>
 <head> <title>curl - CVEs</title>
 #include "css.t"
+<style type="text/css">
+.contents {
+  max-width: 70%;
+  overflow: auto;
+}
+</style>
 </head>
 
 #define CURL_DOCS
@@ -28,12 +34,6 @@ TITLE(curl CVEs)
 <p>
  See also the <a href="vulnerabilities.html">Vulnerabilities Table</a> to see
  what versions that are vulnerable to what flaws.
-<p style="border: 2px green solid; padding: 6px 6px 6px 6px;">
- <b>Alert:</b> if you look up curl CVEs in public sources
- like <a href="https://nvd.nist.gov">NVD</a> you will find they
- use <i>inflated</i> severity levels and CVSS scores. Consider using <b>our</b>
- material as the canonical sources for curl issues.
-</p>
 
 SUBTITLE(Past security audits)
 <p>
@@ -67,6 +67,14 @@ SUBTITLE(Past vulnerabilities)
 (The table below shows vulnerabilities of all severity levels)
 #include "seclist.gen"
 #endif
+SUBTITLE(C mistakes)
+
+<p>
+ The flaws listed as "C mistakes" are vulnerabilities that we deem
+ are <i>likely</i> to not have happened should we have used a memory-safe
+ language rather than C. The C mistakes are divided into the following areas:
+ OVERFLOW, OVERREAD, DOUBLE_FREE, USE_AFTER_FREE, NULL_MISTAKE and UNINIT.
+
 SUBTITLE(Retracted security vulnerabilities)
 <p>
   Issues no longer considered curl security problems:
