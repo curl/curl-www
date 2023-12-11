@@ -155,7 +155,7 @@ my $i=0;
 push @all, "[\n";
 for(@vuln) {
     my ($file, $first, $last, $name, $cve, $announce, $report,
-        $cwe, $award, $area, $cissue)=split('\|');
+        $cwe, $award, $area, $cissue, $part, $sev, $issue)=split('\|');
     $announce =~ s/(\d\d\d\d)(\d\d)(\d\d)/$1-$2-$3/;
     $report =~ s/(\d\d\d\d)(\d\d)(\d\d)/$1-$2-$3/;
     $award += 0; # make sure it exists
@@ -169,6 +169,11 @@ for(@vuln) {
 
     push @all, ",\n" if($i);
     my $v = inclusive($first, $last, "        ");
+
+    my $jissue;
+    if($issue) {
+        $jissue = "    \"issue\": \"$issue\",\n";
+    }
     push @single,
         "{\n".
         "  \"schema_version\": \"1.5.0\",\n".
@@ -182,6 +187,7 @@ for(@vuln) {
         "    \"package\": \"curl\",\n".
         "    \"URL\": \"https://curl.se/docs/$cve.json\",\n".
         "    \"www\": \"https://curl.se/docs/$cve.html\",\n".
+        $jissue.
         "    \"CWE\": {\n".
         "      \"id\": \"$cw[0]\",\n".
         "      \"desc\": \"$cw[1]\"\n".
