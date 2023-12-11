@@ -23,13 +23,24 @@ if($#md < 10) {
 push @vuln, @novuln;
 
 for(@vuln) {
-    my ($id, $start, $stop, $desc, $cve, $announce, $report, $cwe)=split('\|');
+    my ($id, $start, $stop, $desc, $cve, $announce, $report, $cwe,
+        $award, $area, $cissue, $part, $sev, $issue)=split('\|');
     if($id eq $want) {
         my $markdown = join("", @md);
+        my $dissue;
+        my $daward;
+        if($issue) {
+            $dissue = "#define FLAWISSUE $issue\n";
+        }
+        if($award) {
+            $daward = "#define FLAWAWARD $award\n";
+        }
         print <<TEMPLATE
 #include "_doctype.html"
 #define FLAWNAME $desc
 #define FLAWCVE $cve
+$dissue
+$daward
 
 <html>
 <head> <title>curl - FLAWNAME - FLAWCVE</title>
@@ -47,6 +58,12 @@ for(@vuln) {
 ADVISORY_WHERE
 
 #include "adv-related-box.inc"
+<div class="relatedbox">
+#ifdef FLAWAWARD
+Awarded FLAWAWARD USD<br>
+#endif
+</div>
+
 <h2>FLAWCVE</h2>
 $markdown
 #include "_footer.html"
