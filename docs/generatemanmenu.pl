@@ -14,8 +14,18 @@ my $htmlIndent = "      ";
 # to ensure all options output. This can be deleted.
 my $optionCount = 0;
 
+sub noext {
+    my $in = $_[0];
+    $in =~ s/\.d//;
+    return $in;
+}
+
+sub sortnames {
+    return noext($a) cmp noext($b);
+}
+
 # Loop through all option files from argument.
-foreach my $filename (bsd_glob("$cmdlineOptions/*.d")) {
+foreach my $filename (sort sortnames bsd_glob("$cmdlineOptions/*.d")) {
   # either long or short
   my ($shortOpt, $longOpt) = ("", "");
   # account for options with version numbers
