@@ -10,4 +10,4 @@ ExpiresActive Off
 </ifmodule>
 
 Header always append Cache-Control: private
-Header set Content-Security-Policy: "default-src 'self' www.curl.se curl.se;"
+Header set Content-Security-Policy: "default-src 'self' www.curl.se curl.se; require-trusted-types-for 'script';"
