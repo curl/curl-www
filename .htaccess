@@ -131,7 +131,7 @@ Header set Content-Security-Policy: "default-src 'self' curl.haxx.se www.curl.se
 # https://support.google.com/programmable-search/thread/60663049?hl=en
 # The hash is for the inline script in sitesearch.t
 <FilesMatch "^search\.html$|^list\.cgi$">
-Header set Content-Security-Policy: "default-src 'self' curl.haxx.se www.curl.se curl.se cse.google.com www.google.com www.googleapis.com clients1.google.com; style-src 'unsafe-inline' 'self' curl.haxx.se www.curl.se curl.se www.google.com; script-src 'unsafe-eval' 'self' curl.se cse.google.com www.google.com clients1.google.com 'sha256-n9QfETfN26toA8vPrDtfLIC9jm4B8HE2KsS/pOkgPJ4='; require-trusted-types-for 'script';"
+Header set Content-Security-Policy: "default-src 'self' curl.haxx.se www.curl.se curl.se cse.google.com www.google.com www.googleapis.com clients1.google.com; style-src 'unsafe-inline' 'self' curl.haxx.se www.curl.se curl.se www.google.com; script-src 'unsafe-eval' 'self' curl.se cse.google.com www.google.com clients1.google.com 'sha256-n9QfETfN26toA8vPrDtfLIC9jm4B8HE2KsS/pOkgPJ4=';"
 </FilesMatch>
 Header always append X-Frame-Options SAMEORIGIN
 
