@@ -28,6 +28,8 @@ sub modified {
         if(/^Date: +(.*)/) {
             $date = $1;
             $date =~ s/(\+.*)//;
+            # if it ends with a time zone delta, cut it out
+            $date =~ s/[-+]\d\d:\d\d\z//;
             $date .= ".00Z";
         }
     }
