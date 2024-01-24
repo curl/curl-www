@@ -276,10 +276,7 @@ optionsall.html: _optionsall.html optionsall.gen
 optionsall.gen: $(DOCROOT)/options-in-versions alloptions.pl
 	./alloptions.pl $< > $@
 
-curl.1: ../cvssource/docs/cmdline-opts/*.d
-	(cd ../cvssource/docs/cmdline-opts && perl gen.pl mainpage *.d) > curl.1
-
-mandump.gen: curl.1
+mandump.gen: $(SRCROOT)/docs/curl.1
 	 $(MAN2HTML) < $< > mandump.gen
 
 mk-ca-bundle.html: _mk-ca-bundle.html $(MAINPARTS) mkdump.gen $(ROOT)/manpage.t
