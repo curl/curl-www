@@ -58,11 +58,11 @@ $daward
 ADVISORY_WHERE
 
 #include "adv-related-box.inc"
-<div class="relatedbox">
 #ifdef FLAWAWARD
+<div class="relatedbox">
 Awarded FLAWAWARD USD<br>
-#endif
 </div>
+#endif
 
 <h2>FLAWCVE</h2>
 $markdown
