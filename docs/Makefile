@@ -163,6 +163,7 @@ CVELIST = \
  CVE-2023-28322.html \
  CVE-2023-32001.html \
  CVE-2020-19909.html \
+ CVE-2023-52071.html \
  CVE-2023-38039.html \
  CVE-2023-38545.html \
  CVE-2023-38546.html \

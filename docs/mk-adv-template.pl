@@ -32,7 +32,7 @@ for(@vuln) {
         if($issue) {
             $dissue = "#define FLAWISSUE $issue\n";
         }
-        if($award) {
+        if($award > 0) {
             $daward = "#define FLAWAWARD $award\n";
         }
         print <<TEMPLATE
