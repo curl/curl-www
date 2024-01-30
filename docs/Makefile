@@ -276,6 +276,9 @@ optionsall.html: _optionsall.html optionsall.gen
 optionsall.gen: $(DOCROOT)/options-in-versions alloptions.pl
 	./alloptions.pl $< > $@
 
+$(SRCROOT)/docs/curl.1:
+	cd $(DOCROOT) && make
+
 mandump.gen: $(SRCROOT)/docs/curl.1
 	 $(MAN2HTML) < $< > mandump.gen
 
