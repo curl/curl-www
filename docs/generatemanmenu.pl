@@ -25,7 +25,7 @@ sub sortnames {
 }
 
 # Loop through all option files from argument.
-foreach my $filename (sort sortnames bsd_glob("$cmdlineOptions/*.d")) {
+foreach my $filename (sort sortnames bsd_glob("$cmdlineOptions/*.md")) {
   # either long or short
   my ($shortOpt, $longOpt) = ("", "");
   # account for options with version numbers
