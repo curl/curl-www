@@ -36,9 +36,9 @@ sub makeit {
     open(M, ">>$actions");
     print M <<moo
 ${name}.html: $name.html.gen \$(MANPARTS) $name.gen
-	\$(ACTION)
+	\$(REN)\$(MANACTION)
 $name.gen: \$(MANROOT)/opts/$name.3 curlopt2href.pl
-	\$(MAN2HTML) <\$< >\$@
+	\$(REN)\$(MAN2HTML) <\$< >\$@
 $name.html.gen: all-easy.gen
 
 moo
