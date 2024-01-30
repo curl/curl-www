@@ -28,6 +28,7 @@ jobs:
     - name: build the docs in the source repo
       run: |
         cd cvssource
+        autoreconf -fi
         ./configure --without-ssl --without-libpsl
         make -C docs
 
