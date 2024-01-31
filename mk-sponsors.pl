@@ -24,9 +24,11 @@ my %silver = (
     'https://posterbutiken.com' => 'posterbutiken.png',
     'https://mac.nu' => 'mac.nu.png',
     'https://indublin.ie' => 'indublin.png',
+    'https://www.casino.xyz' => 'testarna.png',
     );
 my %modurl = (
-    'null' => 'https://fineproxy.org/'
+    'null' => 'https://fineproxy.org/',
+    'https://www.casino.xyz' => 'https://www.testarna.se/casino/utan-svensk-licens',
     );
 
 # the URLs
