@@ -23,6 +23,7 @@ my %silver = (
     "null" => 'fineproxy.jpg',
     'https://posterbutiken.com' => 'posterbutiken.png',
     'https://mac.nu' => 'mac.nu.png',
+    'https://indublin.ie' => 'indublin.png',
     );
 my %modurl = (
     'null' => 'https://fineproxy.org/'
