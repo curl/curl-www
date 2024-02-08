@@ -26,27 +26,25 @@ TITLE(Compare SSL libraries)
 <p> This comparison only involves SSL/TLS libraries that libcurl can be built
 to use.
 
-#define FEATURE <td class="yes">yes</td>
-#define MISSING <td class="no">no</td>
+#define YES__ <td class="yes">yes</td>
+#define no___ <td class="no">no</td>
 #define UNKNOWN <td class="unknown">?</td>
-#define FEATURE_P8 <td class="yes">yes [8]</td>
+#define YES_Q <td class="yes">yes [2]</td>
+#define YES_P8 <td class="yes">yes [8]</td>
+#define MAN__ <td class="no">manual</td>
+#define AUTO_ <td class="yes">automatic</td>
 
-#define MISSING_P <td class="no">no*</td>
-#define NA <td class="unknown">N/A</td>
-
-#define MANUAL <td class="no">manual</td>
-#define AUTOMATIC <td class="yes">automatic</td>
+#define no__P <td class="no">no [3]</td>
 
 #define PKCS11 <td class="yes">PKCS<!-- " -->#11<!-- "--></td>
 #define PKCS11_P8 <td class="yes">PKCS<!-- " -->#11<!-- "--> [8]</td>
 #define KEYCHAIN <td class="yes">Keychain</td>
 #define WINCAPI <td class="yes">Microsoft CryptoAPI</td>
 
-#define NEWCOL <td>
+#define NEWCOL <td class="yes">
 #define ENDCOL </td>
 
-#define FEAT <td>
-#define ENDFEAT </td>
+#define FEAT(x) NEWLINE <td> x </td>
 
 #define NEWLINE <tr valign=top>
 #define ENDLINE </tr>
@@ -54,6 +52,7 @@ to use.
 #define NICETD <th>
 #define NICETDEND </th>
 
+  
 <p>
 <table cellspacing="2" cellpadding="2" border="0" summary="Comparison of SSL libraries">
  <thead>
@@ -66,244 +65,73 @@ to use.
   NICETD mbedTLS NICETDEND
   NICETD Schannel NICETDEND
   NICETD Secure Transport NICETDEND
+  NICETD rustls NICETDEND
+  NICETD BearSSL NICETDEND
  ENDLINE
  </thead>
 
  <tbody>
-
- NEWLINE
-  FEAT Native cert check ENDFEAT
-  MISSING
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
+ FEAT(Supported)          YES__ YES__ YES__ YES__ YES__ YES__ YES__ no___ YES__ ENDLINE
+ FEAT(Native cert check)  no___ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+ FEAT(CRL)                MAN__ MAN__ AUTO_ MAN__ MAN__ AUTO_ AUTO_ MAN__ MAN__ ENDLINE
+ FEAT(TLSv1.0)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+ FEAT(TLSv1.1)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+ FEAT(TLSv1.2)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+ FEAT(TLSv1.3)            YES__ YES__ YES__ YES__ no__P YES__ no___ YES__ no___ ENDLINE
+ FEAT(TLS SRP)            YES__ YES__ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+ FEAT(TLS ECC)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+ FEAT(ALPN)               YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+ FEAT(QUIC)               YES_Q YES__ no___ YES__ no___ no___ no___ no___ no___ ENDLINE
+ FEAT(Small)              no___ no___ no___ YES__ YES__ YES__ YES__ no___ YES__ ENDLINE
+ FEAT(Platforms)
+  NEWCOL POSIX, Windows, VMS ENDCOL
+  NEWCOL POSIX, Windows ENDCOL
+  NEWCOL POSIX, Windows ENDCOL
+  NEWCOL POSIX, Windows ENDCOL
+  NEWCOL POSIX, Windows ENDCOL
+  NEWCOL Windows ENDCOL
+  NEWCOL macOS, iOS, tvOS etc ENDCOL
+  NEWCOL POSIX, Windows ENDCOL
+  NEWCOL POSIX ENDCOL
  ENDLINE
 
- NEWLINE
-  FEAT CRL ENDFEAT
-  MANUAL
-  MANUAL
-  AUTOMATIC
-  AUTOMATIC
-  MANUAL
-  AUTOMATIC
-  AUTOMATIC
+ FEAT(Uses Certificate Files) YES__ YES__ YES__ YES__ YES__ no___ no___ YES__ YES__ ENDLINE
+
+ FEAT(Uses Certificate db)  no___ no___ YES__ no___ no___ YES__ YES__ no___ no___ ENDLINE
+
+ FEAT(Crypto module/token support) PKCS11_P8 PKCS11 PKCS11 no___ no___ WINCAPI KEYCHAIN no___ no___ ENDLINE
+
+ FEAT(Select Certificates/Keys with PKCS#11 URI) YES_P8 YES__ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+ FEAT(Integrates with system token database) YES__ YES__ no___ YES__ no___ YES__ YES__ no___ no___ ENDLINE
+
+ FEAT(FIPS-140) YES__ YES__ YES__ YES__ no___ YES__ YES__ no___ no___ ENDLINE
+ FEAT(OpenSSL-like API) YES__ no___ no___ YES__ no___ no___ no___ no___ no___ ENDLINE
+
+ FEAT(Vendor)
+  NEWCOL <a href="https://www.openssl.org/">OpenSSL Project</a> ENDCOL
+  NEWCOL <a href="https://www.gnu.org/">Free Software Foundation</a> ENDCOL
+  NEWCOL <a href="https://www.mozilla.org/">Mozilla Foundation</a> ENDCOL
+  NEWCOL <a href="https://www.wolfssl.com/">wolfSSL</a> ENDCOL
+  NEWCOL <a href="https://tls.mbed.org/">mbed TLS</a> ENDCOL
+  NEWCOL <a href="https://www.microsoft.com/">Microsoft Corporation</a> ENDCOL
+  NEWCOL <a href="https://apple.com/">Apple Inc.</a> ENDCOL
+  NEWCOL Open Source team ENDCOL
+  NEWCOL Thomas Pornin ENDCOL
  ENDLINE
 
- NEWLINE
-  FEAT TLSv1.0 ENDFEAT
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
+ FEAT(License)
+  NEWCOL Apache-2.0 ENDCOL
+  NEWCOL LGPL ENDCOL
+  NEWCOL MPL-2.0  ENDCOL
+  NEWCOL GPLv2  ENDCOL
+  NEWCOL Apache-2.0 / GPLv2 ENDCOL
+  NEWCOL Proprietary ENDCOL
+  NEWCOL APSL 2.0 ENDCOL
+  NEWCOL Apache-2.0 / MIT / ISC ENDCOL
+  NEWCOL MIT ENDCOL
  ENDLINE
 
- NEWLINE
-  FEAT TLSv1.1 ENDFEAT
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
- ENDLINE
-
- NEWLINE
-  FEAT TLSv1.2 ENDFEAT
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
- ENDLINE
-
- NEWLINE
-  FEAT TLSv1.3 ENDFEAT
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  MISSING_P
-  FEATURE
-  MISSING
- ENDLINE
-
- NEWLINE
-  FEAT TLS SRP ENDFEAT
-  FEATURE
-  FEATURE
-  MISSING
-  MISSING
-  MISSING
-  MISSING
-  MISSING
- ENDLINE
-
- NEWLINE
-  FEAT TLS ECC ENDFEAT
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
- ENDLINE
-
- NEWLINE
-  FEAT ALPN ENDFEAT
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
- ENDLINE
-
- NEWLINE
-  FEAT NPN ENDFEAT
-  FEATURE
-  MISSING
-  FEATURE
-  MISSING
-  MISSING
-  FEATURE
-  MISSING
- ENDLINE
-
- NEWLINE
-  FEAT Small ENDFEAT
-  MISSING
-  MISSING
-  MISSING
-  FEATURE
-  FEATURE
-  NA
-  NA
- ENDLINE
-
- NEWLINE
-  FEAT Platforms ENDFEAT
-  FEAT POSIX, Windows, VMS ENDFEAT
-  FEAT POSIX, Windows ENDFEAT
-  FEAT POSIX, Windows ENDFEAT
-  FEAT POSIX, Windows ENDFEAT
-  FEAT POSIX, Windows ENDFEAT
-  FEAT Windows ENDFEAT
-  FEAT macOS, iOS, tvOS etc ENDFEAT
- ENDLINE
-
- NEWLINE
-  FEAT Uses Certificate/Key Files ENDFEAT
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  MISSING
-  MISSING
- ENDLINE
-
- NEWLINE
-  FEAT Uses Certificate/Key Database ENDFEAT
-  MISSING
-  FEATURE
-  FEATURE
-  MISSING
-  MISSING
-  FEATURE
-  FEATURE
- ENDLINE
-
- NEWLINE
-  FEAT Crypto module/token support ENDFEAT
-  PKCS11_P8
-  PKCS11
-  PKCS11
-  MISSING
-  MISSING
-  WINCAPI
-  KEYCHAIN
- ENDLINE
-
- NEWLINE
-  FEAT Select Certificates/Keys with PKCS#11 URI ENDFEAT
-  FEATURE_P8
-  FEATURE
-  MISSING
-  NA
-  NA
-  NA
-  NA
- ENDLINE
-
- NEWLINE
-  FEAT Integrates with system token database ENDFEAT
-  FEATURE_P8
-  FEATURE
-  MISSING
-  MISSING
-  MISSING
-  FEATURE
-  FEATURE
- ENDLINE
-
- NEWLINE
-  FEAT FIPS-140 ENDFEAT
-  FEATURE
-  FEATURE
-  FEATURE
-  FEATURE
-  MISSING
-  FEATURE
-  FEATURE
- ENDLINE
-
- NEWLINE
-  FEAT OpenSSL-like API ENDFEAT
-  FEATURE
-  FEAT limited ENDFEAT
-  MISSING
-  FEATURE
-  MISSING
-  MISSING
-  FEAT digests only ENDFEAT
- ENDLINE
-
- NEWLINE
-  FEAT Vendor ENDFEAT
-  FEAT <a href="https://www.openssl.org/">OpenSSL Project</a> ENDFEAT
-  FEAT <a href="https://www.gnu.org/">Free Software Foundation</a> ENDFEAT
-  FEAT <a href="https://www.mozilla.org/">Mozilla Foundation</a> ENDFEAT
-  FEAT <a href="https://www.wolfssl.com/">wolfSSL</a> ENDFEAT
-  FEAT <a href="https://tls.mbed.org/">mbed TLS</a> ENDFEAT
-  FEAT <a href="https://www.microsoft.com/">Microsoft Corporation</a> ENDFEAT
-  FEAT <a href="https://apple.com/">Apple Inc.</a> ENDFEAT
- ENDLINE
-
- NEWLINE
-  FEAT License ENDFEAT
-  FEAT Apache-2.0 (since OpenSSL 3.0) ENDFEAT
-  FEAT LGPL ENDFEAT
-  FEAT MPL-2.0 (since NSS 3.14) ENDFEAT
-  FEAT GPLv2 / prop ENDFEAT
-  FEAT Apache 2.0 license / GPLv2 ENDFEAT
-  FEAT Proprietary ENDFEAT
-  FEAT APSL 2.0 ENDFEAT
- ENDLINE
-
- NEWLINE
-  FEAT First release ENDFEAT
+ FEAT(First release)
   NEWCOL 1998 ENDCOL
   NEWCOL 2004? ENDCOL
   NEWCOL ? ENDCOL
@@ -311,45 +139,42 @@ to use.
   NEWCOL 2006 ENDCOL
   NEWCOL 2000 ENDCOL
   NEWCOL 2003? ENDCOL
+  NEWCOL 2016 ENDCOL
+  NEWCOL 2016 ENDCOL
  ENDLINE
 
-#if 0
- NEWLINE
-  FEAT Version ENDFEAT
-  FEAT 1.0.1i ENDFEAT
-  FEAT 3.3.15 ENDFEAT
-  FEAT 3.16.4 ENDFEAT
-  FEAT 3.1.0 ENDFEAT
-  FEAT 1.3.8 ENDFEAT
-  FEAT 6.3.9600 ENDFEAT
-  FEAT 55471.14 ENDFEAT
- ENDLINE
-#endif
-
- NEWLINE
-  FEAT Famous Application ENDFEAT
-  FEAT Apache HTTPD ENDFEAT
-  FEAT GNOME ENDFEAT
-  FEAT Mozilla Firefox ENDFEAT
-  FEAT MySQL ENDFEAT
-  FEAT Hiawatha HTTPD ENDFEAT
-  FEAT Microsoft Internet Explorer ENDFEAT
-  FEAT Apple Safari ENDFEAT
+ FEAT(Famous User)
+  NEWCOL Apache HTTPD ENDCOL
+  NEWCOL GNOME ENDCOL
+  NEWCOL Mozilla Firefox ENDCOL
+  NEWCOL MySQL ENDCOL
+  NEWCOL Hiawatha HTTPD ENDCOL
+  NEWCOL Microsoft Internet Explorer ENDCOL
+  NEWCOL Apple Safari ENDCOL
+  NEWCOL ? ENDCOL
+  NEWCOL ? ENDCOL
  ENDLINE
 
  </tbody>
 </table>
 
-<br>
- [1] = Mostly the same feature set is also provided by LibreSSL and BoringSSL
-<br>
- [8] = Via external <a href="https://github.com/OpenSC/OpenSC/wiki/Engine-pkcs11-quickstart">engine_pkcs11</a>;
-
 <p>
-  mbedTLS has TLS 1.3 marked <b>no</b> because it does not work with with
-  curl, even if the library claims (partial) support for it.
+[1] = Mostly the same feature set is also provided by LibreSSL, BoringSSL, AWS-LC and quictls
+<p>
+[2] = OpenSSL 3.2 has a QUIC stack that curl works with experimentally. The
+OpenSSL forks LibreSSL, BoringSSL, AWS-LC and quictls support the QUIC API
+that curl works with using ngtcp2.
+<p>
+[3] = mbedTLS has TLS 1.3 marked <b>no</b> because it does not work with with
+curl, even if the library claims (partial) support for it.
+<p>
+[8] = Via external <a href="https://github.com/OpenSC/OpenSC/wiki/Engine-pkcs11-quickstart">engine_pkcs11</a>;
 
 SUBTITLE(Glossary of Terms)
+
+<b>Supported:</b> "no" here means the TLS library is still <i>experimental</i>
+in curl and we discourage using it in production.
+<p>
 
 <b>Native cert check:</b> If yes, then this means that the engine will
  automatically check the domain name in the server's certificate against the
@@ -406,12 +231,15 @@ supported, but for the engines that do support it, you can provide the
 credentials to curl by using the CURLOPT_TLSAUTH_USERNAME and
 CURLOPT_TLSAUTH_PASSWORD options.
 <p>
-
 <b>TLS ECC:</b> ECC means "Elliptic Curve Cryptography" and it is an advanced
 set of cipher-suites that are used in TLS connections (typically with
 TLSv1.2). Not all engines support ECC.
 <p>
-
+<b>QUIC:</b> Needed for HTTP/3 support.
+<p>  
+<b>Small:</b> can be built with a small foot-print. The system native ones also count
+here since they come "for free" for users.
+<p>  
 <b>Uses Certificate/Key Files:</b> Some engines, such as OpenSSL, read
 certificates and keys from files rather than a central database. These engines
 require you to use a certificate bundle in order to verify a server's
