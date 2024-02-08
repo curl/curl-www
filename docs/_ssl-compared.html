@@ -60,7 +60,6 @@ to use.
   NICETD Feature NICETDEND
   NICETD OpenSSL[1] NICETDEND
   NICETD GnuTLS NICETDEND
-  NICETD NSS NICETDEND
   NICETD wolfSSL NICETDEND
   NICETD mbedTLS NICETDEND
   NICETD Schannel NICETDEND
@@ -71,21 +70,20 @@ to use.
  </thead>
 
  <tbody>
- FEAT(Supported)          YES__ YES__ YES__ YES__ YES__ YES__ YES__ no___ YES__ ENDLINE
- FEAT(Native cert check)  no___ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
- FEAT(CRL)                MAN__ MAN__ AUTO_ MAN__ MAN__ AUTO_ AUTO_ MAN__ MAN__ ENDLINE
- FEAT(TLSv1.0)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
- FEAT(TLSv1.1)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
- FEAT(TLSv1.2)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
- FEAT(TLSv1.3)            YES__ YES__ YES__ YES__ no__P YES__ no___ YES__ no___ ENDLINE
- FEAT(TLS SRP)            YES__ YES__ no___ no___ no___ no___ no___ no___ no___ ENDLINE
- FEAT(TLS ECC)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
- FEAT(ALPN)               YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
- FEAT(QUIC)               YES_Q YES__ no___ YES__ no___ no___ no___ no___ no___ ENDLINE
- FEAT(Small)              no___ no___ no___ YES__ YES__ YES__ YES__ no___ YES__ ENDLINE
+ FEAT(Supported)          YES__ YES__ YES__ YES__ YES__ YES__ no___ YES__ ENDLINE
+ FEAT(Native cert check)  no___ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+ FEAT(CRL)                MAN__ MAN__ MAN__ MAN__ AUTO_ AUTO_ MAN__ MAN__ ENDLINE
+ FEAT(TLSv1.0)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+ FEAT(TLSv1.1)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+ FEAT(TLSv1.2)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+ FEAT(TLSv1.3)            YES__ YES__ YES__ no__P YES__ no___ YES__ no___ ENDLINE
+ FEAT(TLS SRP)            YES__ YES__ no___ no___ no___ no___ no___ no___ ENDLINE
+ FEAT(TLS ECC)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+ FEAT(ALPN)               YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+ FEAT(QUIC)               YES_Q YES__ YES__ no___ no___ no___ no___ no___ ENDLINE
+ FEAT(Small)              no___ no___ YES__ YES__ YES__ YES__ no___ YES__ ENDLINE
  FEAT(Platforms)
   NEWCOL POSIX, Windows, VMS ENDCOL
-  NEWCOL POSIX, Windows ENDCOL
   NEWCOL POSIX, Windows ENDCOL
   NEWCOL POSIX, Windows ENDCOL
   NEWCOL POSIX, Windows ENDCOL
@@ -95,22 +93,21 @@ to use.
   NEWCOL POSIX ENDCOL
  ENDLINE
 
- FEAT(Uses Certificate Files) YES__ YES__ YES__ YES__ YES__ no___ no___ YES__ YES__ ENDLINE
+ FEAT(Uses Certificate Files) YES__ YES__ YES__ YES__ no___ no___ YES__ YES__ ENDLINE
 
- FEAT(Uses Certificate db)  no___ no___ YES__ no___ no___ YES__ YES__ no___ no___ ENDLINE
+ FEAT(Uses Certificate db)  no___ no___ no___ no___ YES__ YES__ no___ no___ ENDLINE
 
- FEAT(Crypto module/token support) PKCS11_P8 PKCS11 PKCS11 no___ no___ WINCAPI KEYCHAIN no___ no___ ENDLINE
+ FEAT(Crypto module/token support) PKCS11_P8 PKCS11 no___ no___ WINCAPI KEYCHAIN no___ no___ ENDLINE
 
- FEAT(Select Certificates/Keys with PKCS#11 URI) YES_P8 YES__ no___ no___ no___ no___ no___ no___ no___ ENDLINE
- FEAT(Integrates with system token database) YES__ YES__ no___ YES__ no___ YES__ YES__ no___ no___ ENDLINE
+ FEAT(Select Certificates/Keys with PKCS#11 URI) YES_P8 YES__ no___ no___ no___ no___ no___ no___ ENDLINE
+ FEAT(Integrates with system token database) YES__ YES__ YES__ no___ YES__ YES__ no___ no___ ENDLINE
 
- FEAT(FIPS-140) YES__ YES__ YES__ YES__ no___ YES__ YES__ no___ no___ ENDLINE
- FEAT(OpenSSL-like API) YES__ no___ no___ YES__ no___ no___ no___ no___ no___ ENDLINE
+ FEAT(FIPS-140) YES__ YES__ YES__ no___ YES__ YES__ no___ no___ ENDLINE
+ FEAT(OpenSSL-like API) YES__ no___ YES__ no___ no___ no___ no___ no___ ENDLINE
 
  FEAT(Vendor)
   NEWCOL <a href="https://www.openssl.org/">OpenSSL Project</a> ENDCOL
   NEWCOL <a href="https://www.gnu.org/">Free Software Foundation</a> ENDCOL
-  NEWCOL <a href="https://www.mozilla.org/">Mozilla Foundation</a> ENDCOL
   NEWCOL <a href="https://www.wolfssl.com/">wolfSSL</a> ENDCOL
   NEWCOL <a href="https://tls.mbed.org/">mbed TLS</a> ENDCOL
   NEWCOL <a href="https://www.microsoft.com/">Microsoft Corporation</a> ENDCOL
@@ -122,7 +119,6 @@ to use.
  FEAT(License)
   NEWCOL Apache-2.0 ENDCOL
   NEWCOL LGPL ENDCOL
-  NEWCOL MPL-2.0  ENDCOL
   NEWCOL GPLv2  ENDCOL
   NEWCOL Apache-2.0 / GPLv2 ENDCOL
   NEWCOL Proprietary ENDCOL
@@ -134,7 +130,6 @@ to use.
  FEAT(First release)
   NEWCOL 1998 ENDCOL
   NEWCOL 2004? ENDCOL
-  NEWCOL ? ENDCOL
   NEWCOL 2006 ENDCOL
   NEWCOL 2006 ENDCOL
   NEWCOL 2000 ENDCOL
@@ -146,7 +141,6 @@ to use.
  FEAT(Famous User)
   NEWCOL Apache HTTPD ENDCOL
   NEWCOL GNOME ENDCOL
-  NEWCOL Mozilla Firefox ENDCOL
   NEWCOL MySQL ENDCOL
   NEWCOL Hiawatha HTTPD ENDCOL
   NEWCOL Microsoft Internet Explorer ENDCOL
