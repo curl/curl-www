@@ -1,0 +1,44 @@
+#include "_doctype.html"
+<html>
+<head> <title>curl - security audits</title>
+#include "css.t"
+</head>
+
+#define CURL_DOCS
+#define REL_DOCS
+#define DOCS_AUDITS
+#define CURL_URL docs/audits.html
+
+#include "setup.t"
+#include "_menu.html"
+
+WHERE3(Docs, "/docs/", Releases, "/docs/reldocs.html", security audits)
+
+TITLE(curl security audit reports)
+#include "adv-related-box.inc"
+
+SUBTITLE(2024)
+<p>
+  <a href="https://www.trailofbits.com/">Trail of Bits</a> performed a
+  security audit of curl's HTTP/3 components, published on February 23, 2024.
+<p>
+  See <a href="audit/trail-of-bits-http3-report.pdf">cURL HTTP/3 Components</a>.
+
+SUBTITLE(2022)
+<p>
+  <a href="https://www.trailofbits.com/">Trail of Bits</a> performed a
+  security audit of curl source code and internals, published on December 21,
+  2022.
+<p>
+  See <a href="audit/threatmodel-2022.pdf">Threat Model Report & Fix
+  Review</a> and <a href="audit/codereview-2022.pdf">Code Review &
+  Testing Analysis</a>.
+
+SUBTITLE(2016)
+<p>
+  <a href="https://cure53.de/">Cure 53</a>
+  performed <a href="audit/cure53-curl-report-2016.pdf">a security audit</a>,
+  published in August 2016.
+
+#include "_footer.html"
+</body> </html>
