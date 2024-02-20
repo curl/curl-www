@@ -174,6 +174,7 @@ CVELIST = \
 PAGES = \
  $(CVELIST) \
  alt-svc.html \
+ audits.html \
  bugbounty.html \
  bugs.html \
  caextract.html \
@@ -434,6 +435,9 @@ ssl-ciphers.html: _ssl-ciphers.html $(MAINPARTS) ciphers.gen
 	$(ACTION)
 
 caextract.html: _caextract.html $(MAINPARTS) ../ca/pemlist.gen
+	$(ACTION)
+
+audits.html: _audits.html $(MAINPARTS) $(ADVBOX)
 	$(ACTION)
 
 security.html: _security.html seclist.gen $(MAINPARTS) $(ADVBOX)
