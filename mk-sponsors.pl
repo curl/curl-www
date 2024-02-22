@@ -21,7 +21,6 @@ my %silver = (
     'https://iboysoft.com' => 'iBoysoft.svg',
     # https://opencollective.com/ivan13 has a 'null' website in profile
     "null" => 'fineproxy.jpg',
-    'https://indublin.ie' => 'indublin.png',
     'https://www.casino.xyz' => 'testarna.png',
     );
 my %modurl = (
