@@ -282,7 +282,7 @@ optionsall.gen: $(DOCROOT)/options-in-versions alloptions.pl
 $(SRCROOT)/docs/curl.1:
 	cd $(DOCROOT) && make
 
-mandump.gen: $(SRCROOT)/docs/curl.1
+mandump.gen: $(SRCROOT)/docs/cmdline-opts/curl.1
 	 $(MAN2HTML) < $< > mandump.gen
 
 mk-ca-bundle.html: _mk-ca-bundle.html $(MAINPARTS) mkdump.gen $(ROOT)/manpage.t
