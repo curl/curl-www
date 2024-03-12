@@ -462,6 +462,17 @@ a.sitesearch:hover {
     background: #ffe0e0;
 }
 
+
+p.level0 {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+p.level1 {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
 /* DARK MODE PROPERTIES */
 /* These will override all settings above */
 @media (prefers-color-scheme: dark) {
