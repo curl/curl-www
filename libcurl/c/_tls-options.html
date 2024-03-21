@@ -1,0 +1,36 @@
+#include "_doctype.html"
+<html>
+<head> <title>TLS backend support of libcurl options</title>
+#include "css.t"
+#include "manpage.t"
+<link rel="stylesheet" type="text/css" href="../../docs/comparison.css">
+</head>
+
+#define LIBCURL_DOCS
+#define CURL_URL libcurl/c/tls-backends.html
+
+#include "setup.t"
+#include "_menu.html"
+
+WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", TLS options)
+
+TITLE(TLS related options and the backends they work with)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="easy_setopt_options.html">easy options</a>
+<br><a href="easy_getinfo_options.html">info options</a>
+<br><a href="multi_setopt_options.html">multi options</a>
+</div>
+<p>
+  libcurl can use different TLS backends, selected at both build-time and
+  run-time. This table shows all TLS related options and details the set of
+  TLS backends that work with it.
+<p>
+ The <b>OpenSSL</b> column also covers BoringSSL, libressl, quictls, AWS-LC
+ and AmiSSL.
+<p>
+#include "tlstable.gen"
+
+#include "_footer.html"
+</body>
+</html>

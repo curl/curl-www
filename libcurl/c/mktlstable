@@ -1,0 +1,120 @@
+#!/usr/bin/env perl
+# ***************************************************************************
+# *                                  _   _ ____  _
+# *  Project                     ___| | | |  _ \| |
+# *                             / __| | | | |_) | |
+# *                            | (__| |_| |  _ <| |___
+# *                             \___|\___/|_| \_\_____|
+# *
+# * Copyright (C) Daniel Stenberg, <daniel@haxx.se>, et al.
+# *
+# * This software is licensed as described in the file COPYING, which
+# * you should have received as part of this distribution. The terms
+# * are also available at https://curl.se/docs/copyright.html.
+# *
+# * You may opt to use, copy, modify, merge, publish, distribute and/or sell
+# * copies of the Software, and permit persons to whom the Software is
+# * furnished to do so, under the terms of the COPYING file.
+# *
+# * This software is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY
+# * KIND, either express or implied.
+# *
+# * SPDX-License-Identifier: curl
+# *
+# ***************************************************************************
+
+my %knowntls = (
+    'BearSSL' => 1,
+    'GnuTLS' => 2,
+    'mbedTLS' => 3,
+    'OpenSSL' => 4,
+    'rustls' => 5,
+    'Schannel' => 6,
+    'Secure Transport' => 7,
+    'wolfSSL' => 8,
+    );
+
+sub single {
+    my ($f)=@_;
+    my $fh;
+    my $start;
+    my $list;
+    my $title;
+    my %tls;
+    my $istls;
+    if(!open($fh, "<:crlf", "$f")) {
+        return 1;
+    }
+
+    while(<$fh>) {
+        $line++;
+        if(!$start) {
+            if(/^---/) {
+                # header starts here
+                $start = 1;
+            }
+            next;
+        }
+        if(/^Title: *(.*)/i) {
+            $title=$1;
+        }
+        elsif(/^TLS-backend:/i) {
+            $list = 3; # 3 for TLS backend
+        }
+        elsif(/^ +- (.*)/i) {
+            if($list == 3) {
+                $tls{$1} = 1;
+                $istls++;
+            }
+        }
+        elsif($list) {
+            # not a TLS list anymore
+            $list = 0;
+        }
+        elsif(/^---/) {
+            last;
+        }
+    }
+    close($fh);
+
+    if($istls) {
+        if($tls{'All'}) {
+            undef %tls;
+            for(keys %knowntls) {
+                $tls{$_} = 1;
+            }
+        }
+        printf "<tr><td><a href=\"%s.html\">%s</a></td>", $title, $title;
+        for my $t (sort {$knowntls{$a} <=> $knowntls{$b}} keys %knowntls) {
+            printf "<td class=\"%s\">%s</td>",
+                $tls{$t} ? "yes" : "no",
+                $tls{$t} ? "&#x2714;" : "&nbsp;";
+            $tlscount{$t}++ if($tls{$t});
+        }
+        print "</tr>\n";
+    }
+    return 0;
+}
+
+if(@ARGV) {
+    print <<TOP
+<table cellspacing="2" cellpadding="2" border="0" summary="Which libcurl TLS options that work with which TLS backend"><tr class="tabletop"><th>option</th>
+TOP
+        ;
+
+    for my $t (sort {$knowntls{$a} <=> $knowntls{$b}} keys %knowntls) {
+        printf "<th>%s</th>", $t;
+    }
+    print "</tr>\n";
+    for my $f (@ARGV) {
+        my $r = single($f);
+        if($r) {
+            exit $r;
+        }
+    }
+    printf "<tr><td>%s</td>", "counter";
+    for my $t (sort {$knowntls{$a} <=> $knowntls{$b}} keys %knowntls) {
+        printf "<td align=\"center\">%u</td>", $tlscount{$t};
+    }
+    print "</tr></table>\n";
+}
