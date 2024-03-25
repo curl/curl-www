@@ -1,44 +1,44 @@
 #include "_doctype.html"
 <html>
-<head> <title>curl - Web Site Editing Guidelines</title>
+<head> <title>curl - Website Editing Guidelines</title>
 #include "css.t"
 </head>
 
 #include "_menu.html"
 #include "setup.t"
 
-TITLE(Web Site Editing Guidelines)
-<p>
- <b>This document is intended for the curl web site editors only.</b>
+TITLE(Website Editing Guidelines)
 
+SUBTITLE(How to build)
 <p>
- Check out the entire curl web site with:
-<pre>
-  git clone https://github.com/curl/curl-www.git
-</pre>
-
-<p>
-  On the first checkout, run the bootstrap script:
-<pre>
-  sh bootstrap.sh
-</pre>
-
-<p>
-  <a href="https://github.com/curl/curl-www">web site github repo</a>
+ Documented in the website's 
+ <a href="https://github.com/curl/curl-www/blob/master/README.md">GitHub
+ respository</a>.
 
 SUBTITLE(To think of)
 <p> The pages are preprocessed before they are finalized. The preprocessor
   is a simple C-style one, but please take care so that #if and #ifdefs
   have an ending #endif and so on.
 
-<p> The web site contents is updated automatically from git every 20
-  minutes. Even if you fix a mistake, it will stay that way at least until
-  next update.  Don't panic!
+<p> The web site contents is synced automatically from git every 20 minutes.
+  Even if you fix a mistake, it will stay that way at least until next update.
+  Don't panic!
 
 <p> The site is hosted by CDN front-ends that fetch content from the master
   server and cache it. It makes some updates to the content to take a while
   until truly visible to end users.
 
+SUBTITLE(Lots of content come from the source repository)
+<p>
+  Large portions of the website is generated content that comes from the
+  <a href="https://github.com/curl/curl">source code respository</a> (often as
+  markdown). The website build directory needs a symlink to a checkout for
+  that purpose.
+<p>
+  Lot of content is also generated data/tables etc that uses content from the
+  source respository and that rerun the scripts when the source changes. The
+  Makefiles of course have all the details.
+  
 SUBTITLE(What to edit/update)
 <p> Add news items whenever you have interesting "news" you think the curl
   community might enjoy. The news section also serves a purpose of making it
@@ -54,29 +54,12 @@ SUBTITLE(What to edit/update)
   are that the page is generated automatically from a file in the source code
   archive and then <i>that</i> file could be corrected instead.
 
-SUBTITLE(Build prerequisites)
+SUBTITLE(Pull requests)
 <p>
-  The web site is a on old custom made setup that mostly builds static HTML
-  files from a set of source files. The sources files are preprocessed with
-  what is basically a souped-up C preprocessor
-  called <a href="https://daniel.haxx.se/projects/fcpp/">fcpp</a> and a set of
-  perl scripts. The man pages get converted to HTML
-  with <a href="https://daniel.haxx.se/projects/roffit/">roffit</a>. Make sure
-  fcpp, perl, roffit, make and curl are all in your $PATH. Markdown files are
-  converted
-  by... <a href="https://daringfireball.net/projects/markdown/">markdown</a>
-  (<tt>apt install markdown</tt>).
-
-SUBTITLE(Build process)
-<p>
-  Once you've cloned the git repo the first time, invoke `sh bootstrap.sh` once
-  to get a symlink and some some initial local files setup, and then you can
-  build the web site locally by invoking make in the source root tree.
-<p>
-  Note that this doesn't make you a complete web site mirror, as some scripts
-  and files are only available on the real actual site, but should give you
-  enough to let you load most HTML pages locally.
-
+  Submit proposed changes as
+  regular <a href="https://github.com/curl/curl-www/pulls">pull-requests</a>.
+  CI jobs will do basic verifications.
+  
 SUBTITLE(Not in the git repo)
 <p>
  Site content that is not mirrored and thus only available from <a
@@ -84,6 +67,7 @@ SUBTITLE(Not in the git repo)
 <ul>
 <li> <tt>/mail/</tt> Mailing list archives
 <li> <tt>/download/</tt> Curl release archives/packages
+<li> <tt>/snapshots/</tt> daily snapshots
 </ul>
 
 #include "_footer.html"
