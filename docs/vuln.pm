@@ -16,6 +16,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2024-2379.html|8.6.0|8.6.0|HTTP/3 skip verification on unrelated errors|CVE-2024-2379|20240327|20240310|CWE-295: Improper Certificate Validation|2540|QUIC|-|both|low|https://hackerone.com/reports/2410774",
     "CVE-2024-2004.html|7.85.0|8.6.0|Usage of disabled protocol|CVE-2024-2004|20240327|20240215|CWE-115: Misinterpretation of Input|540|control|-|both|low|https://hackerone.com/reports/2384833",
     "CVE-2024-0853.html|8.5.0|8.5.0|OCSP verification bypass with TLS session reuse|CVE-2024-0853|20240131|20231229|CWE-299: Improper Check for Certificate Revocation|540|TLS|-|both|low|https://hackerone.com/reports/2298922",
     "CVE-2023-46219.html|7.84.0|8.4.0|HSTS long file name clears contents|CVE-2023-46219|20231206|20231102|CWE-311: Missing Encryption of Sensitive Data|540|HSTS|-|both|low|https://hackerone.com/reports/2236133",
