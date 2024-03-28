@@ -114,6 +114,9 @@ MOO
     elsif($list eq "curl-meet") {
         $subscr = listarchives("meet", "curl-meet");
     }
+    elsif($list eq "curl-distros") {
+        $subscr = listarchives("distros", "curl-distros");
+    }
     elsif(($list eq "curl-announce") ||
           ($list eq "curl-www-commits") ||
           ($list eq "curl-commits")) {
@@ -143,7 +146,8 @@ MOO
 
     &title("More Mailing Lists");
 
-    my @archs=('curl-users',
+    my @archs=('curl-distros',
+               'curl-users',
                'curl-library',
                'curl-and-php',
                'curl-and-python',
