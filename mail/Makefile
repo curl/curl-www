@@ -4,6 +4,8 @@ SRCROOT=$(ROOT)/cvssource
 DOCROOT=$(SRCROOT)/docs
 CURL=$(ROOT)
 
+include $(ROOT)/setup.mk
+
 MAINPARTS= \
  $(ROOT)/_doctype.html \
  $(CURL)/_menu.html \
@@ -34,8 +36,8 @@ subscribe.html: _subscribe.html $(MAINPARTS)
 etiquette.html: _etiquette.html $(MAINPARTS) etiquette.gen
 	$(ACTION)
 
-etiquette.gen: $(DOCROOT)/MAIL-ETIQUETTE $(ROOT)/docs/faqparse.pl
-	$(ROOT)/docs/faqparse.pl < $< > $@
+etiquette.gen: $(DOCROOT)/MAIL-ETIQUETTE.md $(ROOT)/docs/faqparse.pl
+	$(MARKDOWN) < $< > $@
 
 mail.html: _mail.html $(MAINPARTS)
 	$(ACTION)
