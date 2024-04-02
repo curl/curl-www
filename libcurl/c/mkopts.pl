@@ -3,7 +3,7 @@
 my $dir="../../cvssource/docs/libcurl/opts";
 
 opendir(DIR, $dir) || die "can't opendir $dir: $!";
-my @opts = grep { /^C.*\.3\z/ && -f "$dir/$_" } readdir(DIR);
+my @opts = grep { /^C.*\.md\z/ && -f "$dir/$_" } readdir(DIR);
 closedir DIR;
 
 my $actions = "Makefile.opts";
@@ -49,10 +49,10 @@ moo
 my %desc;
 sub shortdesc {
     my ($name) = @_;
-    open (M, "<$dir/$name.3");
+    open (M, "<$dir/$name.md");
     my $state;
     while(<M>) {
-        if($_ =~ /^\.SH NAME/) {
+        if($_ =~ /^\# NAME/) {
             $state++;
         }
         elsif($_ =~ /^$name[\\ ]*-(.*)/ && ($state == 1)) {
@@ -65,7 +65,7 @@ sub shortdesc {
 
 for (@opts) {
     my $f = $_;
-    $f =~ s/\.3//; # cut off the extension to get the symbol name
+    $f =~ s/\.md//; # cut off the extension to get the symbol name
     push @all, $f;
     single($f);
     makeit($f);
