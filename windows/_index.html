@@ -55,11 +55,13 @@ Size: CURL_WIN64A_ZIP_SIZE<br>
 sha256: SHA256_CURL_WIN64A
 #endif
 
+#ifdef CURL_WIN32_ZIP
 <p class="windl">
   <a href="CURL_WIN32_ZIP"><img src="/pix/GS-Download-icon.svg" alt="Download 32-bit curl" width="90" height="90" style="float:left;"></a>
   <a href="CURL_WIN32_ZIP" class="windl">curl for 32-bit</a> <br>
 Size: CURL_WIN32_ZIP_SIZE<br>
 sha256: SHA256_CURL_WIN32
+#endif
 
 SUBTITLE(Fixed URLs)
 <p>
@@ -69,7 +71,9 @@ SUBTITLE(Fixed URLs)
 #ifdef CURL_WIN64A_ZIP
 <a download="curl-win64a-latest.zip" href="latest.cgi?p=win64a-mingw.zip">curl for win64 ARM64</a><br>
 #endif
+#ifdef CURL_WIN32_ZIP
 <a download="curl-win32-latest.zip" href="latest.cgi?p=win32-mingw.zip">curl for win32</a><br>
+#endif
 
 SUBTITLE(Specifications)
 <p>
