@@ -1,0 +1,25 @@
+#include "_doctype.html"
+<html>
+<head> <title>curl_multi_waitfds</title>
+#include "css.t"
+#include "manpage.t"
+</head>
+
+#define RAW_FILE curl_multi_waitfds.md
+#define BUG_TITLE curl_multi_waitfds%20man%20page:
+#define MENU_MULTI
+#define LIBCURL_DOCS
+#define DOCS_MULTI_WAITFDS
+#define CURL_URL libcurl/c/curl_multi_waitfds.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", libcurl)
+TITLE(curl_multi_waitfds - extracts file descriptors from multi handle)
+#include "libcurl-related.t"
+#include "curl_multi_waitfds.gen"
+#include "_footer.html"
+
+</body>
+</html>
