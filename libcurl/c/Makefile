@@ -121,6 +121,7 @@ PAGES = \
  curl_multi_strerror.html \
  curl_multi_timeout.html \
  curl_multi_wait.html \
+ curl_multi_waitfds.html \
  curl_multi_wakeup.html \
  curl_pushheader_byname.html \
  curl_pushheader_bynum.html \
@@ -423,6 +424,11 @@ curl_multi_cleanup.gen: $(MANROOT)/curl_multi_cleanup.3 curlopt2href.pl
 curl_multi_fdset.html: _curl_multi_fdset.html $(MAINPARTS_CAPI) curl_multi_fdset.gen
 	$(REN)$(MANACTION)
 curl_multi_fdset.gen: $(MANROOT)/curl_multi_fdset.3 curlopt2href.pl
+	$(REN)$(MAN2HTML) < $< >$@
+
+curl_multi_waitfds.html: _curl_multi_waitfds.html $(MAINPARTS_CAPI) curl_multi_waitfds.gen
+	$(REN)$(MANACTION)
+curl_multi_waitfds.gen: $(MANROOT)/curl_multi_waitfds.3 curlopt2href.pl
 	$(REN)$(MAN2HTML) < $< >$@
 
 curl_multi_info_read.html: _curl_multi_info_read.html $(MAINPARTS_CAPI) curl_multi_info_read.gen
