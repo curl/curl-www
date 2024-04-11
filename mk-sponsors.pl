@@ -17,7 +17,6 @@ my %silver = (
     "https://serpapi.com" => 'serpapi.svg',
     "https://proxy-hub.com/" => 'proxyhub.svg',
     'https://cryptotracker.com' => 'crypto-tracker.svg',
-    'https://www.sure.bet/casinos-not-on-gamstop/' => 'surebet.png',
     'https://iboysoft.com' => 'iBoysoft.svg',
     # https://opencollective.com/ivan13 has a 'null' website in profile
     "null" => 'fineproxy.jpg',
