@@ -910,3 +910,14 @@ SLIDES https://www.slideshare.net/bagder/mastering-libcurl-part-2
 WHO Daniel Stenberg
 DESC A comprehensive tutorial covering all aspects of writing applications using libcurl (part 2 of 2).
 ENDOFVIDEO
+
+VIDEO Getting started with libcurl in 2024
+EVENT wolfSSL webinar
+URL https://youtu.be/aS2eJDA5nSM
+THUMB getting-started-2024.jpg
+THUMBSIZE width="250" height="141"
+DATE 2024-03-28
+DURATION 61 minutes
+WHO Daniel Stenberg
+DESC Daniel Stenberg provides invaluable insights into the foundational concepts and best practices of libcurl.
+ENDOFVIDEO
