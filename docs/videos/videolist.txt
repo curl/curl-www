@@ -925,7 +925,7 @@ ENDOFVIDEO
 VIDEO The state of curl
 DATE 2024-05-04
 DESC Daniel talks about curl in 2024. Where are are. How we do.
-DURATION 7708 seconds
+DURATION 2h8m
 EVENT curl-up 2024
 THUMB the-state-of-curl-2024.jpg
 THUMBSIZE width="250" height="141"
@@ -936,7 +936,7 @@ ENDOFVIDEO
 VIDEO Performance
 DATE 2024-05-05
 DESC Stefan talks about HTTP performance in curl over the last few years.
-DURATION 3154 seconds
+DURATION 52 minutes
 EVENT curl-up 2024
 THUMB performance-2024.jpg
 THUMBSIZE width="250" height="141"
@@ -947,7 +947,7 @@ ENDOFVIDEO
 VIDEO curl container
 DATE 2024-05-04
 DESC James walks over the current state of curl containers
-DURATION 1418 seconds
+DURATION 23 minutes
 EVENT curl-up 2024
 THUMB curl-container-2024.jpg
 THUMBSIZE width="250" height="141"
@@ -958,7 +958,7 @@ ENDOFVIDEO
 VIDEO rust in curl
 DATE 2024-05-05
 DESC Daniel talks about using libraries and backends with curl that are written in rust.
-DURATION 1867 seconds
+DURATION 31 minutes
 EVENT curl-up 2024
 THUMB rust-in-curl.jpg
 THUMBSIZE width="250" height="141"
@@ -969,7 +969,7 @@ ENDOFVIDEO
 VIDEO curl parallel tests
 DATE 2024-05-04
 DESC Dan talks about challenges in the curl test suite and how we made it tests in parallel
-DURATION 2517 seconds
+DURATION 41 minutes
 EVENT curl-up 2024
 THUMB curl-parallel-tests.jpg
 THUMBSIZE width="250" height="141"
@@ -980,7 +980,7 @@ ENDOFVIDEO
 VIDEO Apple Specialities
 DATE 2024-05-05
 DESC Christian talks about work he did for curl on Apple operating systems and related apple specific details.
-DURATION 1159 seconds
+DURATION 19 minutes
 EVENT curl-up 2024
 THUMB apple-specialities.jpg
 THUMBSIZE width="250" height="141"
@@ -991,7 +991,7 @@ ENDOFVIDEO
 VIDEO curl future
 DATE 2024-05-05
 DESC Daniel talks about what might come next for curl.
-DURATION 1908 seconds
+DURATION 31 minutes
 EVENT curl-up 2024
 THUMB curl-future-2024.jpg
 THUMBSIZE width="250" height="141"
@@ -1002,7 +1002,7 @@ ENDOFVIDEO
 VIDEO curl security
 DATE 2024-05-04
 DESC Daniel talks about what's happened in curl security recently.
-DURATION 3419 seconds
+DURATION 56 minutes
 EVENT curl-up 2024
 THUMB curl-security-2024.jpg
 THUMBSIZE width="250" height="141"
@@ -1013,7 +1013,7 @@ ENDOFVIDEO
 VIDEO fuzzing curl
 DATE 2024-05-04
 DESC James talks about and shows off his work on command line argument fuzzing.
-DURATION 2615 seconds
+DURATION 43 minutes
 EVENT curl-up 2024
 THUMB fuzzing-curl-2024.jpg
 THUMBSIZE width="250" height="141"
@@ -1024,7 +1024,7 @@ ENDOFVIDEO
 VIDEO Test Clutch
 DATE 2024-05-05
 DESC Dan talks about his test results analytics system and the combat and struggle against flaky tests and failing CI jobs.
-DURATION 2253 seconds
+DURATION 37 minutes
 EVENT curl-up 2024
 THUMB test-clutch.jpg
 THUMBSIZE width="250" height="141"
@@ -1035,7 +1035,7 @@ ENDOFVIDEO
 VIDEO trurl
 DATE 2024-05-05
 DESC Daniel talks about the new sibling in the curl project family. What it is and why it exists.
-DURATION 1407 seconds
+DURATION 23 minutes
 EVENT curl-up 2024
 THUMB trurl.jpg
 THUMBSIZE width="250" height="141"
@@ -1046,7 +1046,7 @@ ENDOFVIDEO
 VIDEO curl Evolutions
 DATE 2024-05-04
 DESC Stefan talks about the curl refactors and new concepts in protocol code in curl he has worked on the last few years.
-DURATION 3588 seconds
+DURATION 59 minutes
 EVENT curl-up 2024
 THUMB curl-evolutions-2024.jpg
 THUMBSIZE width="250" height="141"
