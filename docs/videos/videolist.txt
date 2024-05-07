@@ -493,7 +493,7 @@ VIDEO HTTP/3 in curl
 URL https://youtu.be/dKT3vlIw6bQ
 THUMB http3-in-curl.jpg
 THUMBSIZE width="250" height="140"
-DURATION 2h18 minutes
+DURATION 2h18
 DATE 2019-08-14
 WHO Daniel Stenberg
 DESC How to do, build and use HTTP/3 with curl
@@ -577,7 +577,7 @@ THUMB common-libcurl-mistakes.jpg
 THUMBSIZE width="250" height="140"
 DATE 2020-05-07
 SLIDES https://www.slideshare.net/bagder/common-mistakes-when-using-libcurl
-DURATION 1h2
+DURATION 1h02
 WHO Daniel Stenberg
 DESC Common mistakes users and application authors make when using libcurl
 ENDOFVIDEO
@@ -634,7 +634,7 @@ URL https://youtu.be/okGUxW_i9yk
 THUMB curl-hyper.jpg
 THUMBSIZE width="250" height="141"
 DATE 2021-02-11
-DURATION 1h1
+DURATION 1h01
 WHO Josh Aas, Sean McArthur, Daniel Stenberg
 DESC The motivation for and challenges with integrating the Hyper HTTP Rust back-end into curl.
 ENDOFVIDEO
@@ -678,7 +678,7 @@ URL https://youtu.be/T7Pv5lQ1dAc
 THUMB libcurl-under-hood.jpg
 THUMBSIZE width="250" height="140"
 DATE 2021-04-30
-DURATION 1h8
+DURATION 1h08
 WHO Daniel Stenberg
 DESC How libcurl works underneath the API and how transfers, connections etc are tied together with protocol handlers and the state machine.
 ENDOFVIDEO
@@ -925,7 +925,7 @@ ENDOFVIDEO
 VIDEO The state of curl
 DATE 2024-05-04
 DESC Daniel talks about curl in 2024. Where are are. How we do.
-DURATION 2h8m
+DURATION 2h08
 EVENT curl-up 2024
 THUMB the-state-of-curl-2024.jpg
 THUMBSIZE width="250" height="141"
