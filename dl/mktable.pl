@@ -115,9 +115,10 @@ for(sort { lc($a) cmp lc($b) } keys %os) {
         if($p) {
             print "<br>\n";
         }
+        my $r= $osmap{$_};
         my $anch=$_;
         $anch =~ s/[^a-zA-Z0-9]//g;
-        print "<a href=\"#$anch\">$_</a>";
+        print "<a href=\"#$anch\">$r</a>";
         $p++;
     }
 }
