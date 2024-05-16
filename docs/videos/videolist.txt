@@ -931,6 +931,7 @@ THUMB the-state-of-curl-2024.jpg
 THUMBSIZE width="250" height="141"
 URL https://youtu.be/1X3IP-pvKTY
 WHO Daniel Stenberg
+SLIDES https://www.slideshare.net/slideshow/the-state-of-curl-2024-by-daniel-stenberg-from-curl-up-2024/268616911
 ENDOFVIDEO
 
 VIDEO Performance
@@ -942,6 +943,7 @@ THUMB performance-2024.jpg
 THUMBSIZE width="250" height="141"
 URL https://youtu.be/4eBAzi7D_WM
 WHO Stefan Eissing
+SLIDES https://eissing.org/curlup-2024/performance/
 ENDOFVIDEO
 
 VIDEO curl container
@@ -964,6 +966,7 @@ THUMB rust-in-curl.jpg
 THUMBSIZE width="250" height="141"
 URL https://youtu.be/D9LtMXLFgHw
 WHO Daniel Stenberg
+SLIDES https://www.slideshare.net/slideshow/rust-in-curl-by-daniel-stenberg-from-curl-up-2024/268617322
 ENDOFVIDEO
 
 VIDEO curl parallel tests
@@ -997,6 +1000,7 @@ THUMB curl-future-2024.jpg
 THUMBSIZE width="250" height="141"
 URL https://youtu.be/ngwvOw7Hgzo
 WHO Daniel Stenberg
+SLIDES https://www.slideshare.net/slideshow/curl-future-2024-by-daniel-stenberg-from-curl-up-2024/268617066
 ENDOFVIDEO
 
 VIDEO curl security
@@ -1008,6 +1012,7 @@ THUMB curl-security-2024.jpg
 THUMBSIZE width="250" height="141"
 URL https://youtu.be/o40t02MysbU
 WHO Daniel Stenberg
+SLIDES https://www.slideshare.net/slideshow/curl-security-by-daniel-stenberg-from-curl-up-2024/268617478
 ENDOFVIDEO
 
 VIDEO fuzzing curl
@@ -1041,6 +1046,7 @@ THUMB trurl.jpg
 THUMBSIZE width="250" height="141"
 URL https://youtu.be/UaZTKC3Sk4w
 WHO Daniel Stenberg
+SLIDES https://www.slideshare.net/slideshow/trurl-2024-by-daniel-stenberg-from-curl-up-2024/268617200
 ENDOFVIDEO
 
 VIDEO curl Evolutions
@@ -1052,4 +1058,5 @@ THUMB curl-evolutions-2024.jpg
 THUMBSIZE width="250" height="141"
 URL https://youtu.be/X3PzLoZ7nB8
 WHO Stefan Eissing
+SLIDES https://eissing.org/curlup-2024/evolution/
 ENDOFVIDEO
