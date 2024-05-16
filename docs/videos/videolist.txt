@@ -917,7 +917,7 @@ URL https://youtu.be/aS2eJDA5nSM
 THUMB getting-started-2024.jpg
 THUMBSIZE width="250" height="141"
 DATE 2024-03-28
-DURATION 61 minutes
+DURATION 1h01
 WHO Daniel Stenberg
 DESC Daniel Stenberg provides invaluable insights into the foundational concepts and best practices of libcurl.
 ENDOFVIDEO
@@ -982,7 +982,7 @@ ENDOFVIDEO
 
 VIDEO Apple Specialities
 DATE 2024-05-05
-DESC Christian talks about work he did for curl on Apple operating systems and related apple specific details.
+DESC Christian talks about work he did for curl on Apple operating systems and related Apple specific details.
 DURATION 19 minutes
 EVENT curl-up 2024
 THUMB apple-specialities.jpg
