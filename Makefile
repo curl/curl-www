@@ -26,6 +26,7 @@ PAGES= \
  dashboard.html \
  dashboardd.html \
  dashboard5.html \
+ dashboard2.html \
  dashboard1.html \
  donation.html \
  download.html \
@@ -150,6 +151,9 @@ dashboard.html: _dashboard.html dash.gen dashboard.t $(MAINPARTS)
 	$(ACTION)
 
 dashboard5.html: _dashboard5.html dash.gen dashboard.t $(MAINPARTS)
+	$(ACTION)
+
+dashboard2.html: _dashboard2.html dash.gen dashboard.t $(MAINPARTS)
 	$(ACTION)
 
 dashboard1.html: _dashboard1.html dash.gen dashboard.t $(MAINPARTS)

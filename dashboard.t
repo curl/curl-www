@@ -10,6 +10,10 @@
 img.dash {
   max-width: 30%;
 }
+#elif defined(COL2)
+img.dash {
+  max-width: 49%;
+}
 #elif defined(COL5)
 img.dash {
   max-width: 18%;
@@ -40,25 +44,35 @@ Click the images for full resolution.
 #endif
 
 <br>
+Columns: 
 #ifndef COL1
-  [<a href="dashboard1.html">1 column</a>]
+  <a href="dashboard1.html">1</a>
 #else
-  [1 column]
+  <b>1</b>
 #endif
+  &middot;
+#if !defined(COL2) || defined(DASHDATA)
+  <a href="dashboard2.html">2</a>
+#else
+  <b>2</b>
+#endif
+  &middot;
 #if !defined(COL3) || defined(DASHDATA)
-  [<a href="dashboard.html">3 columns</a>]
+  <a href="dashboard.html">3</a>
 #else
-  [3 columns]
+  <b>3</b>
 #endif
+  &middot;
 #if !defined(COL5) || defined(DASHDATA)
-  [<a href="dashboard5.html">5 columns</a>]
+  <a href="dashboard5.html">5</a>
 #else
-  [5 columns]
+  <b>5</b>
 #endif
+ |
 #ifndef DASHDATA
-  [<a href="dashboardd.html">data view</a>]
+ <a href="dashboardd.html">data view</a>
 #else
-  [data view]
+ <b>data view</b>
 #endif
 <p>
 
