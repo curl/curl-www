@@ -168,6 +168,10 @@ sub geturl {
     logmsg " \$ $curlcmd \"<a href=\"" . CGI::escapeHTML($url) . "\">" .
            CGI::escapeHTML($url) . "</a>\"\n";
     my @content = `$curlcmd \"$url\"`;
+    if($?) {
+        logmsg " Failed with error $?\n";
+        @content = ();
+    }
     if($head) {
         # Strip header blocks due to redirects, leaving only the final one
         while($content[0] =~ /^HTTP\/\d.\d 3\d+/) {
