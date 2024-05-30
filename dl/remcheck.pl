@@ -169,7 +169,7 @@ sub geturl {
            CGI::escapeHTML($url) . "</a>\"\n";
     my @content = `$curlcmd \"$url\"`;
     if($?) {
-        logmsg " Failed with error $?\n";
+        logmsg " Failed with error " . ($? >> 8) . "\n";
         @content = ();
     }
     if($head) {
