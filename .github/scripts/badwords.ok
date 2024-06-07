@@ -1,0 +1,4 @@
+# whitelisted uses of bad words
+# file:line:rule
+docs/CVE-2020-19909.md:32:\bwill\b
+docs/CVE-2023-38546.md:36:file name\b

@@ -8,6 +8,25 @@
 # If separator is '=', the string will be compared case sensitively.
 # If separator is ':', the check is done case insensitively.
 #
+
+my %wl;
+if($ARGV[0] eq "-w") {
+    shift @ARGV;
+    my $file = shift @ARGV;
+    open(W, "<$file");
+    while(<W>) {
+        if(/^#/) {
+            # allow #-comments
+            next;
+        }
+        if(/^([^:]*):(\d+):(.*)/) {
+            $wl{"$1:$2:$3"}=1;
+            #print STDERR "whitelisted $1:$2:$3\n";
+        }
+    }
+    close(W);
+}
+
 my $w;
 while(<STDIN>) {
     chomp;
@@ -47,6 +66,14 @@ sub file {
                ($in =~ /^(.*)$w/ && $case) ) {
                 my $p = $1;
                 my $c = length($p)+1;
+
+                my $ch = "$f:$l:$w";
+                if($wl{$ch}) {
+                    # whitelisted
+                    print STDERR "$ch found but whitelisted\n";
+                    next;
+                }
+                
                 print STDERR  "$f:$l:$c: error: found bad word \"$w\"\n";
                 printf STDERR " %4d | $in\n", $l;
                 printf STDERR "      | %*s^%s\n", length($p), " ",
