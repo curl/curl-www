@@ -141,7 +141,7 @@
     "CVE-2015-3237.html|7.40.0|7.42.1|SMB send off unrelated memory contents|CVE-2015-3237|20150617|20150522|CWE-126: Buffer Over-read|0|SMB|OVERREAD|both|high",
     "CVE-2015-3236.html|7.40.0|7.42.1|lingering HTTP credentials in connection re-use|CVE-2015-3236|20150617|20150519|CWE-305: Authentication Bypass by Primary Weakness|0|CONNREUSE|-|both|high",
     "CVE-2015-3153.html|4.0|7.42.0|sensitive HTTP server headers also sent to proxies|CVE-2015-3153|20150429|20150312|CWE-201: Information Exposure Through Sent Data|0|HTTP|-|both|high",
-    "CVE-2015-3144.html|7.37.0|7.41.0|host name out of boundary memory access|CVE-2015-3144|20150422|20150416|CWE-124: Buffer Underwrite ('Buffer Underflow')|0|internal|OVERREAD|both|medium",
+    "CVE-2015-3144.html|7.37.0|7.41.0|hostname out of boundary memory access|CVE-2015-3144|20150422|20150416|CWE-124: Buffer Underwrite ('Buffer Underflow')|0|internal|OVERREAD|both|medium",
     "CVE-2015-3145.html|7.31.0|7.41.0|cookie parser out of boundary memory access|CVE-2015-3145|20150422|20150416|CWE-124: Buffer Underwrite ('Buffer Underflow')|0|HTTP|OVERREAD|both|medium",
     "CVE-2015-3148.html|7.10.6|7.41.0|Negotiate not treated as connection-oriented|CVE-2015-3148|20150422|20150331|CWE-305: Authentication Bypass by Primary Weakness|0|HTTP|-|both|medium",
     "CVE-2015-3143.html|7.10.6|7.41.0|Re-using authenticated connection when unauthenticated|CVE-2015-3143|20150422|20150224|CWE-305: Authentication Bypass by Primary Weakness|0|internal|-|both|medium",
