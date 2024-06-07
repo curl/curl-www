@@ -16,7 +16,7 @@ WHERE3(Docs, "/docs/", Tool, "/docs/tooldocs.html", HTTP Scripting)
 
 <div class="relatedbox">
 <b>Related:</b>
-<br><a href="manpage.html">curl man page</a>
+<br><a href="manpage.html">curl manpage</a>
 <br><a href="faq.html">FAQ</a>
 <br><a href="tutorial.html">Tutorial</a>
 </div>

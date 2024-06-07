@@ -6,6 +6,7 @@ ABI
 accessor
 ACK
 AES
+ai
 AIA
 AIX
 al
@@ -48,6 +49,8 @@ axTLS
 backend
 backends
 backoff
+backported
+backports
 backticks
 Baratov
 basename
@@ -74,6 +77,7 @@ bugfixes
 buildable
 buildbot
 buildconf
+Burcea
 Caddy
 calloc
 CAPA
@@ -110,6 +114,8 @@ CMake
 cmake
 cmake's
 CMakeLists
+CN
+CNs
 CodeQL
 codeql
 CODESET
@@ -121,6 +127,7 @@ conncache
 connectdata
 CookieInfo
 Coverity
+CPAN
 CPUs
 CR
 CRL
@@ -154,6 +161,8 @@ decrypt
 deepcode
 DELE
 DER
+dereference
+Dereference
 deselectable
 destructor
 detections
@@ -196,8 +205,8 @@ else's
 encodings
 enctype
 endianness
-enscript
 Engler
+enscript
 enum
 epoll
 EPRT
@@ -227,6 +236,7 @@ fnmatch
 formpost
 formposts
 Fortnite
+forwardable
 FOSS
 FPL
 fread
@@ -303,9 +313,9 @@ hsts
 HTC
 html
 http
+HTTPAUTH
 httpd
 HTTPD
-HTTPAUTH
 httpget
 HttpGet
 HTTPS
@@ -351,6 +361,7 @@ Jakub
 Jiri
 jo
 jpeg
+jpg
 jq
 JSON
 json
@@ -427,6 +438,7 @@ Makefile
 makefiles
 malloc
 mallocs
+manpages
 maprintf
 Marek
 Mavrogiannopoulos
@@ -449,6 +461,8 @@ misconfigured
 Mishyn
 mitigations
 MITM
+MITMed
+MITRE
 mk
 mkdir
 mktime
@@ -462,6 +476,7 @@ MQTT
 mqtt
 mqtts
 MSB
+MSDOS
 MSGSENT
 msh
 MSIE
@@ -481,6 +496,7 @@ MultiSSL
 mumbo
 musedev
 mutex
+mutexes
 mvaprintf
 mvfprintf
 mvprintf
@@ -513,6 +529,7 @@ nmake
 nmemb
 nocwd
 NODELAY
+nonces
 NonStop
 NOOP
 Novell
@@ -546,10 +563,12 @@ Osipov
 OSS
 pac
 pacman
+pandoc
 parser's
 parsers
 PASE
 PASV
+Pathname
 PEM
 pem
 perl
@@ -560,7 +579,10 @@ pipelining
 PKCS
 PKGBUILD
 PKI
+plaintext
 pluggable
+PNG
+png
 PolarSSL
 Polhem
 pollset
@@ -597,6 +619,7 @@ pytest
 Pytest
 QNX
 QoS
+qsossl
 Qubes
 QUIC
 quictls
@@ -605,6 +628,7 @@ Raad
 radix
 RAS
 RBS
+RCE
 ReactOS
 README
 realloc
@@ -745,6 +769,8 @@ Structs
 stunnel
 subdirectories
 subdirectory
+subjectAltName
+subjectAltNames
 submitters
 substring
 substrings
@@ -753,6 +779,8 @@ SunSSH
 superset
 svc
 svcb
+SVG
+svg
 Svyatoslav
 Swisscom
 sws
@@ -762,6 +790,7 @@ symlinks
 syntaxes
 Szakats
 TABs
+tailmatch
 tailmatching
 Tatsuhiro
 TBD
@@ -770,9 +799,11 @@ tcpdump
 Tekniska
 testability
 TFTP
-th
 tftp
+th
 Tizen
+TLD
+TLDs
 TLS
 tlsv
 TLSv
@@ -799,11 +830,13 @@ UI
 UID
 UIDL
 Ultrix
+umask
 Unary
 unassign
 uncompress
 unencrypted
 unescape
+unescaping
 UNICOS
 unix
 UnixSockets
@@ -829,6 +862,7 @@ USD
 userdata
 Userinfo
 userinfo
+userspace
 UTF
 UX
 valgrind
@@ -855,6 +889,7 @@ web page
 WebOS
 WebSocket
 WEBSOCKET
+wget
 WHATWG
 whitespace
 Whitespaces
@@ -875,6 +910,8 @@ WS
 WSS
 www
 Xbox
+XCF
+xcf
 xdigit
 Xilinx
 XP
@@ -888,38 +925,3 @@ Zitzmann
 zlib
 zsh
 zstd
-Burcea
-PNG
-SVG
-XCF
-ai
-jpg
-png
-svg
-xcf
-mutexes
-tailmatch
-umask
-Pathname
-MITMed
-userspace
-backported
-backports
-CN
-CNs
-subjectAltNames
-subjectAltName
-qsossl
-RCE
-TLD
-TLDs
-pandoc
-CPAN
-forwardable
-unescaping
-MITRE
-dereference
-Dereference
-nonces
-wget
-MSDOS
