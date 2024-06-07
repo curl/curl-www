@@ -8,7 +8,7 @@ HTML files that are preprocessed.
 The web site is a on old custom made setup that mostly builds static HTML
 files from a set of source files using (GNU) `make`. The sources files are
 preprocessed with what is basically a souped-up C preprocessor called `fcpp`
-and a set of `perl` scripts. The man pages get converted to HTML with
+and a set of `perl` scripts. The manpages get converted to HTML with
 `roffit`.
 
 Markdown is converted to HTML with `pandoc`.
