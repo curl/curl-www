@@ -17,7 +17,7 @@ print <<TOP
 TOP
     ;
 
-for my $s (keys %svg) {
+for my $s (sort keys %svg) {
     my $alt = $s;
     $alt =~ s/-/ /g;
     printf "<a id=\"%s\" href=\"dashboard1.html#%s\"><img alt=\"%s\" class=\"dash\" src=\"$dir/%s\"></a>\n",
