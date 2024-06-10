@@ -47,7 +47,7 @@ sub now {
         $year + 1900, $mon + 1, $mday, $hour, $min, $sec;
 }
 
-for my $s (keys %svg) {
+for my $s (sort keys %svg) {
     my $alt = $s;
     $alt =~ s/-/ /g;
     printf "<h2 style=\"clear: both;\">%s data</h2><a id=\"%s\" href=\"dash/%s\"><img alt=\"%s\" class=\"dash\" src=\"$dir/%s\" style=\"float: left;\"></a>\n",
