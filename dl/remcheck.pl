@@ -354,8 +354,8 @@ for $ref (@all) {
             my ($cl, $st);
 
             ($cl, $st) = content_length(@data);
+            my $lasttried = 1;
 
-            my $lasttried = 0;
             if(!$st && $versionembedded) {
                 #
                 # Only scan for older URLs if the $version is part of it
