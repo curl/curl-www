@@ -355,6 +355,7 @@ for $ref (@all) {
 
             ($cl, $st) = content_length(@data);
 
+            my $lasttried = 0;
             if(!$st && $versionembedded) {
                 #
                 # Only scan for older URLs if the $version is part of it
@@ -380,11 +381,12 @@ for $ref (@all) {
 
                     @data = geturl($churl, 1);
                     ($cl, $st) = content_length(@data);
+                    $lasttried++;
                 }
             }
 
             if(!$st) {
-                logmsg " <div class=\"buildfail\">None of the $lastfew latest versions found!</div>\n";
+                logmsg " <div class=\"buildfail\">None of the $lasttried latest versions found!</div>\n";
                 $failedcheck++;
                 next;
             }
