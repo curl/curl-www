@@ -33,21 +33,20 @@ SUBTITLE(Windows 10/11 bundle curl)
  default since then.
 <p>
  The Microsoft provided version is built to use the Schannel TLS backend.
- Invoking curl -V after the November 22 2023 update shows this on these
+ Invoking curl -V after the June 2024 update shows this on these
  platforms:
 <p>
 <pre style="white-space: pre-wrap; word-break: keep-all">
-curl 8.4.0 (Windows) libcurl/8.4.0 Schannel WinIDN
-Release-Date: 2023-10-11
-Protocols: dict file ftp ftps http https imap imaps pop3 pop3s smtp smtps telnet tftp
-Features: AsynchDNS HSTS HTTPS-proxy IDN IPv6 Kerberos Largefile NTLM SPNEGO SSL SSPI threadsafe Unicode UnixSockets
+curl 8.7.1 (Windows) libcurl/8.7.1 Schannel zlib/1.3 WinIDN
+Release-Date: 2024-03-27
+Protocols: dict file ftp ftps http https imap imaps ipfs ipns mqtt pop3 pop3s smb smbs smtp smtps telnet tftp
+Features: alt-svc AsynchDNS HSTS HTTPS-proxy IDN IPv6 Kerberos Largefile libz NTLM SPNEGO SSL SSPI threadsafe Unicode UnixSockets
 </pre>
 
 SUBTITLE(Omissions)
 <p>
   The build Microsoft ships omits several good features:
 <ul>
-  <li> it has no compression support, making <b>--compressed</b> fail
   <li> it has no Public Suffic List (PSL) support, making it impossible to prevent "super cookies"
   <li> it does not support HTTP/2 or HTTP/3
   <li> it only supports a limited set of protocols (no SCP, SFTP, etc)
