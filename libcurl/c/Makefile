@@ -203,8 +203,11 @@ allex.gen: $(DOCROOT)/examples/Makefile.inc _example-templ.html
 allex-desc.gen:
 	perl mkexam.pl
 
-allfuncs.html: _allfuncs.html $(MAINPARTS)
+allfuncs.html: _allfuncs.html allfunc.gen $(MAINPARTS)
 	$(ACTION)
+
+allfunc.gen: mkallfunc.pl $(MANROOT)/Makefile
+	./mkallfunc.pl $(MANROOT) > allfunc.gen
 
 curl_easy_init.html: _curl_easy_init.html $(MAINPARTS_CAPI) curl_easy_init.gen
 	$(REN)$(MANACTION)
