@@ -241,6 +241,9 @@ tr.hide {
 /* the top menu box */
 .menu {
   width: 100%;
+  background-image: url("/logo/curl-white-symbol.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
   background-color: #093754;
   text-align: center;
   padding-top: .5em;
