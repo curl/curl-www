@@ -117,6 +117,7 @@ PAGES = \
  curl_multi_remove_handle.html \
  curl_multi_setopt.html \
  curl_multi_socket.html \
+ curl_multi_socket_all.html \
  curl_multi_socket_action.html \
  curl_multi_strerror.html \
  curl_multi_timeout.html \
@@ -513,6 +514,11 @@ curl_easy_reset.gen: $(MANROOT)/curl_easy_reset.3 curlopt2href.pl
 curl_multi_socket.html: _curl_multi_socket.html $(MAINPARTS_CAPI) curl_multi_socket.gen
 	$(REN)$(MANACTION)
 curl_multi_socket.gen: $(MANROOT)/curl_multi_socket.3 curlopt2href.pl
+	$(REN)$(MAN2HTML) < $< >$@
+
+curl_multi_socket_all.html: _curl_multi_socket_all.html $(MAINPARTS_CAPI) curl_multi_socket_all.gen
+	$(REN)$(MANACTION)
+curl_multi_socket_all.gen: $(MANROOT)/curl_multi_socket_all.3 curlopt2href.pl
 	$(REN)$(MAN2HTML) < $< >$@
 
 curl_multi_socket_action.html: _curl_multi_socket_action.html $(MAINPARTS_CAPI) curl_multi_socket_action.gen
