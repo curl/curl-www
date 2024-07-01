@@ -208,7 +208,7 @@ allex-desc.gen:
 allfuncs.html: _allfuncs.html allfunc.gen $(MAINPARTS)
 	$(ACTION)
 
-allfunc.gen: mkallfunc.pl $(MANROOT)/Makefile
+allfunc.gen: mkallfunc.pl $(MANROOT)/Makefile $(MANROOT)/curl_*.md
 	./mkallfunc.pl $(MANROOT) > allfunc.gen
 
 curl_easy_init.html: _curl_easy_init.html $(MAINPARTS_CAPI) curl_easy_init.gen
