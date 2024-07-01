@@ -1,0 +1,24 @@
+#include "_doctype.html"
+<html>
+<head> <title>libcurl - curl_strnequal()</title>
+#include "css.t"
+#include "manpage.t"
+</head>
+
+#define RAW_FILE curl_strequal.md
+#define BUG_TITLE curl_strequal%20man%20page:
+#define MENU_EASY
+#define LIBCURL_DOCS
+#define DOCS_STREQUAL
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", curl_strequal)
+TITLE(curl_strnequal - compare two strings ignoring case)
+#include "libcurl-related.t"
+#include "curl_strnequal.gen"
+#include "_footer.html"
+
+</body>
+</html>

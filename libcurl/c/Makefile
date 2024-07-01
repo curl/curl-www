@@ -132,6 +132,7 @@ PAGES = \
  curl_slist_append.html \
  curl_slist_free_all.html \
  curl_strequal.html \
+ curl_strnequal.html \
  curl_unescape.html \
  curl_version.html \
  curl_version_info.html \
@@ -307,6 +308,11 @@ curl_getdate.gen: $(MANROOT)/curl_getdate.3 curlopt2href.pl
 curl_strequal.html: _curl_strequal.html $(MAINPARTS_CAPI) curl_strequal.gen
 	$(REN)$(MANACTION)
 curl_strequal.gen: $(MANROOT)/curl_strequal.3 curlopt2href.pl
+	$(REN)$(MAN2HTML) < $< >$@
+
+curl_strnequal.html: _curl_strnequal.html $(MAINPARTS_CAPI) curl_strnequal.gen
+	$(REN)$(MANACTION)
+curl_strnequal.gen: $(MANROOT)/curl_strnequal.3 curlopt2href.pl
 	$(REN)$(MAN2HTML) < $< >$@
 
 curl_mprintf.html: _curl_mprintf.html $(MAINPARTS_CAPI) curl_mprintf.gen
