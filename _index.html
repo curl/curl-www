@@ -20,6 +20,33 @@
     margin-bottom: 20px;
     border: 1px black solid;
 }
+
+td {
+    vertical-align: top;
+}
+.left {
+    font-weight: bold;
+    padding: 4px 4px 4px 4px;
+    font-size: 110%;
+}
+.right {
+    padding: 4px 4px 4px 4px;
+}
+.l {
+    background: #0a3754;
+    border: 0px;
+    padding: 15px;
+}
+.r {
+    background: #0f574c;
+    border: 0px;
+}
+.supports {
+    color: #f0f0f0;
+    font-size: 90%;
+    padding: 0 0 0 0;
+}
+
 @media (prefers-color-scheme: dark) {
     .sidebar-box {
         border-color: #999;
@@ -73,51 +100,114 @@ library</b>
  </div>
 </div>
 
-<p><b>Supports...</b>
-<p>DICT, FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP, HTTPS, IMAP, IMAPS, LDAP,
-LDAPS, MQTT, POP3, POP3S, RTMP, RTMPS, RTSP, SCP, SFTP, SMB, SMBS, SMTP,
-SMTPS, TELNET, TFTP, WS and WSS. curl supports TLS certificates, HTTP POST,
-HTTP PUT, FTP uploading, HTTP form based upload, proxies (SOCKS4, SOCKS5, HTTP
-and HTTPS), HTTP/2, HTTP/3, cookies, user+password authentication (Basic,
-Plain, Digest, CRAM-MD5, SCRAM-SHA, NTLM, Negotiate, Kerberos, Bearer tokens
-and AWS Sigv4), file transfer resume, proxy tunneling, HSTS, Alt-Svc, unix
-domain sockets, HTTP compression (gzip, brotli and zstd), etags, parallel
-transfers, DNS-over-HTTPS and more.
-
-<p><b>What's curl used for?</b>
+SUBTITLE(What is curl used for?)
 <p>
-curl is used in command lines or scripts to transfer data. curl is also used
-in cars, television sets, routers, printers, audio equipment, mobile phones,
-tablets, medical devices, settop boxes, computer games, media players and is
-the Internet transfer engine for thousands of software applications in
-over <i>twenty billion installations</i>.
+curl is used in command lines or scripts to transfer data. curl is
+also <b>libcurl</b>, used in cars, television sets, routers, printers, audio
+equipment, mobile phones, tablets, medical devices, settop boxes, computer
+games, media players and is the Internet transfer engine for countless
+software applications in over <i>twenty billion installations</i>.
 <p>
 curl is used daily by virtually every Internet-using human on the globe.
 
-<p><b>Who makes curl?</b>
+SUBTITLE(curl supports)
+
+<table class="supports" cellpadding="0" cellspacing="0">
+
+<tr class="l"><td class="left">Protocols</td>
+
+  <td class="right"> DICT, FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP, HTTPS,
+IMAP, IMAPS, LDAP, LDAPS, MQTT, POP3, POP3S, RTMP, RTMPS, RTSP, SCP, SFTP,
+SMB, SMBS, SMTP, SMTPS, TELNET, TFTP, WS, WSS </td></tr>
+
+<tr class="r"><td class="left">Proxies</td>
+
+<td class="right"> SOCKS4, SOCKS5, HTTP, HTTPS (HTTP/1 and HTTP/2), tunneling,
+via unix domain sockets, haproxy, SOCKS+HTTP proxy chain</td></tr>
+
+<tr class="l"><td class="left">HTTP</td>
+
+<td class="right">GET, POST, PUT, multipart formpost, HTTP/0.9, HTTP/1.0,
+HTTP/1.1, HTTP/2 (h2c, h2, prior knowledge), HTTP/3 (dual connect h1/h2 + h3
+or h3-only), HSTS, Alt-Svc, cookies, PSL, etags, transfer compression, ranges,
+custom headers, custom method, follow redirects</td></tr>
+
+<tr class="r"><td class="left">FTP</td>
+
+<td class="right">IPv6 (EPRT, EPSV), STLS, upload/download, append, range,
+passive/active, kerberos, directory listing, custom commands</td></tr>
+
+<tr class="l"><td class="left">SCP + SFTP</td>
+
+<td class="right">known hosts, md5/sha256 fingerprint, compression,
+upload/download, directory listing</td></tr>
+
+<tr class="r"><td class="left">TLS</td>
+
+<td class="right"> 1.0 - 1.3, mutual authentication, STARTTLS, OCSP stapling,
+ECH, False Start, key pinning, PQC ready, session resumption</td></tr>
+
+<tr class="l"><td class="left">Auth</td>
+
+<td class="right">Basic, Plain, Digest, CRAM-MD5, SCRAM-SHA, NTLM, Negotiate,
+Kerberos, Bearer tokens, AWS Sigv4 and SASL. .netrc</td></tr>
+
+<tr class="r"><td class="left">HTTP Compression</td>
+
+<td class="right">gzip, brotli and zstd</td></tr>
+
+<tr class="l"><td class="left">Name resolving</td>
+
+<td class="right">DNS-over-HTTPS, custom address for host, name+port redirect,
+custom DNS servers, DNS caching</td></tr>
+
+<tr class="r"><td class="left">Connection</td>
+
+<td class="right">connection reuse, Interface binding, Happy Eyeballs,
+IPv4/IPv6-only, unix domain sockets, TCP keepalive, TCP Fast Open, TCP
+Nodelay, MPTCP, VLAN priority, IP Type Of Service</td></tr>
+
+<tr class="l"><td class="left">Transfers</td>
+
+<td class="right">transfer rate limiting, request rate limiting, stall
+detection, retries, timeouts</td></tr>
+
+<tr class="r"><td class="left">URLs</td>
+
+<td class="right">Unlimited amount, parallel and serial transfers,
+globbing</td></tr>
+
+<tr class="l"><td class="left">Output</td>
+
+<td class="right">IDN hostnames, custom info from transfer, metadata as JSON,
+per content-disposition, libcurl source code, bold headers</td></tr>
+
+</table>
+
+SUBTITLE(Who makes curl?)
 <p>
 curl is free and <a href="docs/copyright.html" title="curl and libcurl are
 licensed under a MIT/X derivate license">open source</a> software and exists
 thanks to <a href="docs/thanks.html" title="over 3,000 named
 contributors">thousands of contributors</a> and our
 awesome <a href="/sponsors.html">sponsors</a>. The curl
-project <a title="Adheres to the Core Intrastructure Initiative's
-listed best practices at Gold level"
+project <a title="Adheres to the Core Intrastructure Initiative's listed best
+practices at Gold level"
 href="https://bestpractices.coreinfrastructure.org/projects/63">follows well
 established open source best practices</a>. You too
 can <a href="docs/help-us.html">help us</a> improve!
 
-<p><b>What's the latest curl?</b>
+SUBTITLE(What is the latest curl?)
 <p>
 The most recent stable version is <b>__STABLE</b>, released on __RELDATE.
 Currently, __CURR of the listed <a href="download.html" title="Binary download packages for your platform!">downloads</a> are of the latest version.
 
-<p><b>Where's the code?</b>
+SUBTITLE(Where is the code?)
 <p>
  Check out the latest <a href="https://github.com/curl/curl" title="git clone
  the curl code">source code from GitHub</a>.
 
-<p><b>How do you use curl?</b>
+SUBTITLE(How do you use curl?)
 <p>
  A more than three hours deep dive video tutoral in how to use and make the
  best of curl on the command line.
