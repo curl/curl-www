@@ -17,6 +17,7 @@ RedirectPermanent /cvs.html https://curl.se/dev/source.html
 RedirectPermanent /dev/readme-http2.html https://curl.se/docs/http2.html
 RedirectPermanent /mirrors.html https://curl.se/mirror/
 RedirectPermanent /libcurl/c/libcurl-thread.html https://curl.se/libcurl/c/threadsafe.html
+RedirectPermanent /libcurl/c/libcurl-security.html https://curl.se/libcurl/security.html
 RedirectPermanent /libcurl/c/curl-config.html https://curl.se/libcurl/using/curl-config.html
 RedirectMatch "^/.git" https://curl.se/dev/source.html
 RedirectPermanent /dev/secprocess.html https://curl.se/dev/vuln-disclosure.html
