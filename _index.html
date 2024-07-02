@@ -5,12 +5,16 @@
 #include "css.t"
 <style type="text/css">
 .sponsors {
-    max-width: 120px;
     padding: 5px 5px 5px 5px;
+    border: 2px black solid;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    background: #e0e0e0;
 }
 .logo {
-    max-width: 100px;
-    margin: 0px 0px 20px 0px;
+    max-width: 80%;
+    margin: 20px 0px 0px 0px;
 }
 .sponsors a:hover, .logo:hover {
     background: transparent;
@@ -18,7 +22,9 @@
 .sidebar-box {
     padding: 5px;
     margin-bottom: 20px;
-    border: 1px black solid;
+    border: 2px black solid;
+    border-radius: 10px;
+    background: #e0e0e0;
 }
 
 td {
@@ -50,6 +56,11 @@ td {
 @media (prefers-color-scheme: dark) {
     .sidebar-box {
         border-color: #999;
+        background: #404040;
+    }
+    .sponsors {
+        border-color: #999;
+        background: #404040;
     }
 }
 </style>
@@ -74,29 +85,44 @@ library</b>
   <br>for transferring data with URLs
   <br>(since 1998)</p>
 
-<div style="float: right; max-width: 10em; margin-left: 20px;">
- <div class="sponsors">
-  <b>Top&nbsp;Sponsors</b><p>
+<div style="float: right; max-width: 10em; margin-left: 40px;">
+  <div class="sponsors">
+  <b>Top&nbsp;Sponsors</b>
   <a href="sponsors.html">
   <img class="logo" src="pix/haxx.svg" alt="Haxx">
   <img class="logo" src="pix/wolfssl.svg" alt="wolfSSL">
   <img class="logo" src="pix/fastly.svg" alt="Fastly">
   <img class="logo" src="pix/teamviewer.svg" alt="Teamviewer">
   </a>
- </div>
 
- <div class="sidebar-box" style="font-size: 130%;">
-  Time to <a href="/donation.html">donate</a> to the curl project?
- </div>
-
- <div class="sidebar-box" style="font-size: 130%;">
-  <a href="/support.html">Commercial support</a> available!
  </div>
 
  <div class="sidebar-box">
-  <a href="/book.html">Everything curl</a> is a detailed and
-  totally free book that explains everything there is to know about
-  curl, libcurl and the associated project.
+   <img style="filter: grayscale(100%); float: right;" src="pix/user.svg" width="30%">
+   <a href="/support.html">
+   Commercial support available</a>
+   <div style="clear: both;"></div>
+ </div>
+
+ <div class="sidebar-box">
+  <a href="https://everything.curl.dev/">Everything curl</a> is a free ebook
+  about curl and libcurl
+  <p align="center">
+  <a href="https://everything.curl.dev/"><img src="pix/everything-curl.jpg"
+  alt="Everything curl" width="80%"></a>
+ </div>
+
+ <div class="sidebar-box">
+   <img style="filter: grayscale(100%); float: right;" src="pix/cash.svg" width="40%">
+   <a href="/donation.html">
+   Sponsor curl financially</a>
+   <div style="clear: both;"></div>
+ </div>
+
+ <div class="sidebar-box">
+   Video: <a href="https://youtu.be/V5vZWHP-RqU">mastering the curl command line tool</a>
+   <p align="center">
+   <a href="https://youtu.be/V5vZWHP-RqU"><img src="pix/mastering.jpg" width="80%"></a>
  </div>
 </div>
 
@@ -206,13 +232,6 @@ SUBTITLE(Where is the code?)
 <p>
  Check out the latest <a href="https://github.com/curl/curl" title="git clone
  the curl code">source code from GitHub</a>.
-
-SUBTITLE(How do you use curl?)
-<p>
- A more than three hours deep dive video tutoral in how to use and make the
- best of curl on the command line.
-<p>
-<a href="https://youtu.be/V5vZWHP-RqU"><img style="border: 2px solid #808080;" src="pix/mastering.jpg" width="576" height="324"></a>
 
 #include "_footer.html"
 </body>
