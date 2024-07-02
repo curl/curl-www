@@ -245,9 +245,12 @@ tr.hide {
   background-size: contain;
   background-repeat: no-repeat;
   background-color: #093754;
+  background-origin: content-box;
   text-align: center;
-  padding-top: .5em;
-  padding-bottom: .5em;
+  padding-top: .3em;
+  padding-bottom: .3em;
+  padding-left: .3em;
+  padding-right: .3em;
   line-height: 130%;
   font-size: 26px;
 }
