@@ -971,7 +971,7 @@ ENDOFVIDEO
 
 VIDEO curl parallel tests
 DATE 2024-05-04
-DESC Dan talks about challenges in the curl test suite and how we made it tests in parallel
+DESC Dan talks about challenges in the curl test suite and how he made it test in parallel
 DURATION 41 minutes
 EVENT curl-up 2024
 THUMB curl-parallel-tests.jpg
@@ -1059,4 +1059,15 @@ THUMBSIZE width="250" height="141"
 URL https://youtu.be/X3PzLoZ7nB8
 WHO Stefan Eissing
 SLIDES https://eissing.org/curlup-2024/evolution/
+ENDOFVIDEO
+
+VIDEO Advanced libcurl
+EVENT wolfSSL webinar
+URL https://youtu.be/DQcFZEQ4Iyc
+THUMB advanced-libcurl-2024.jpg
+THUMBSIZE width="250" height="142"
+DATE 2024-06-13
+DURATION 51 minutes
+WHO Daniel Stenberg
+DESC This webinar is a must-watch for anyone eager to enhance their libcurl skills and explore its full potential.
 ENDOFVIDEO
