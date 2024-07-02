@@ -2,7 +2,7 @@
 
 my $dir="../../cvssource/docs/libcurl/opts";
 
-opendir(DIR, $dir) || die "can't opendir $dir: $!";
+opendir(DIR, $dir) || die "cannot opendir $dir: $!";
 my @opts = grep { /^C.*\.md\z/ && -f "$dir/$_" } readdir(DIR);
 closedir DIR;
 

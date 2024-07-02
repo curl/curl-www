@@ -15,18 +15,18 @@
 # Commercial use: Send me an email and tell me that you use it.
 #
 # pbase has borrowed main functionality, the database file format and some
-# other ideas of "dbase" made by Bjorn.Stenberg@haxx.se.  dbase is an
+# other ideas of "dbase" made by Bjorn.Stenberg@haxx.se. dbase is an
 # executable standalone database handler, while pbase is a perl-included
 # version.
 #
 # How it works:
-#  The principle with pbase is hash-arrays.  The whole database is stored
-# as one array of hash-arrays (named $Database).  One hash-array corresponds
-# to one row of a database table.  Each field of a database table corresponds
+#  The principle with pbase is hash-arrays. The whole database is stored
+# as one array of hash-arrays (named $Database). One hash-array corresponds
+# to one row of a database table. Each field of a database table corresponds
 # to an item of the hash-array.
-#  The database is loaded only once.  The user can decide to select parts of
-# the database into selections.  You can always get back an old selection if
-# you've stored the current selection with the "clone_selection"-function.
+#  The database is loaded only once. The user can decide to select parts of
+# the database into selections. You can always get back an old selection if
+# you have stored the current selection with the "clone_selection"-function.
 #  Every function (except delete) only acts on the current selection.
 #
 #  Each row of the database selection is numbered from 0 to size()-1. The user
@@ -37,7 +37,7 @@
 #
 #  When the user gets a row, he actually gets a reference to a hash-array. This
 # could be used for direct changes or copied to a temporary local hash-array.
-# I don't care.
+# I do not care.
 #
 #  The format of the database is compatible to "Frexx dbase" by Bjorn Stenberg.
 # First line is "- 0123456789ABCDEF" where the numbers build the ID of the row.
@@ -45,8 +45,8 @@
 # containing the data, with \n, \r, \t escaped to readable form.
 #
 #  A template file is used (if existing) to be able to decide which fields you
-# database shall have.  If no template (*.tem) file is found, then all fields
-# are accepted and treated as strings.  The template file shall have the same
+# database shall have. If no template (*.tem) file is found, then all fields
+# are accepted and treated as strings. The template file shall have the same
 # name as the database except ending with ".tem" instead of ".db".
 #  The format of the template file is like this:
 # -----------------------------------
@@ -64,7 +64,7 @@
 #  Large database files can be parsed with the parse-functions.
 #
 #  A database file is locked when opened, and unlocked when closed. So only one
-# user can access a database.  Remember to keep your actions small and fast.
+# user can access a database. Remember to keep your actions small and fast.
 #
 # ==============================
 # History:
@@ -83,7 +83,7 @@
 # v1.2 1999-Dec-14  Kjell Ericson - made it possible to select with greater or less
 #                                    than, using "<" or ">" (see "-").
 # v1.3 2000-Jan-24  Kjell Ericson - Added find()
-# v1.4 2000-Jan-24  Kjell Ericson - sort("-...") didn't work.
+# v1.4 2000-Jan-24  Kjell Ericson - sort("-...") did not work.
 # v1.5 2000-Feb-29  Björn Stenberg - removed some warnings.
 # v1.6 2000-Mar-02  Kjell Ericson - removed more warnings (not all).
 # v1.7 2000-Mar-11  Kjell Ericson - Adding more comments.
@@ -92,7 +92,7 @@
 # v1.10 2003-Mar-14 Kjell Ericson - Added find_all
 # v1.12 2003-Mar-17 Kjell Ericson - Fast get("id")
 # v1.12 2003-Mar-17 Kjell Ericson - Bugfix av get("id")
-# v1.13 2003-Mar-27 Kjell Ericson - Don't save empty items.
+# v1.13 2003-Mar-27 Kjell Ericson - Do not save empty items.
 # ==============================
 
 
@@ -150,7 +150,7 @@ package pbase;
 # Let's define the file lock possibilities.
 $LOCK_SH = 1;# Shared
 $LOCK_EX = 2;# Exclusive
-$LOCK_NB = 4;# Don't block when locking
+$LOCK_NB = 4;# Do not block when locking
 $LOCK_UN = 8;# Unlock
 $use_lock = 1; #set to 1 if locks shall be used
 $version="1.13";
@@ -288,7 +288,7 @@ sub clone_selection
 #  \___|_|\___/|___/\___|
 # Closes the lock on the database file.
 # You can call this function and still use the database object to read from.
-# You shouldn't change or save it (unspecified behaviour).
+# You should not change or save it (unspecified behaviour).
 #
 # Input: nothing
 # Output: nothing
@@ -591,7 +591,7 @@ sub get_id
 #
 # Get the type of a fieldname.
 # Returns 'string', 'int' or 'bin' if the field exist.
-# Returns an empty string ("") if the field doesn't exist.
+# Returns an empty string ("") if the field does not exist.
 #
 # Input: fieldname
 # Output: typename
@@ -648,7 +648,7 @@ sub internal_sort_function
 # | |/ _ \ / _` |/ _` |
 # | | (_) | (_| | (_| |
 # |_|\___/ \__,_|\__,_|
-# backward compatility - so far...  See open()
+# backward compatility - so far... See open()
 # Will produce a row in the pbase_error.log file.
 # Input: filename
 # Output: Database size or -1 for error
@@ -668,8 +668,8 @@ sub load
 #                   |_____|               |_|
 # Internal function that load the template file (if existing)
 # If a template file is found, the object-global variable $self->{use_template}
-# is set to '1'.  The %template hasharray is set with the names
-# and corresponding types.  No type-checking is done.
+# is set to '1'. The %template hasharray is set with the names
+# and corresponding types. No type-checking is done.
 #
 # Input: filename
 # Output: 0 if no template file is found.
@@ -771,11 +771,11 @@ sub new
 #| (_) | |_) |  __/ | | |
 # \___/| .__/ \___|_| |_|
 #      |_|
-# Open a database for read and write.  The whole database is read into memory.
-# A new file will be created if the database doesn't exist.
+# Open a database for read and write. The whole database is read into memory.
+# A new file will be created if the database does not exist.
 # The database file will be locked for security until a call to close() is
 # made. You can make a direct call to close() and still be able to read
-# from the database object.  But don't try to change or save the database then.
+# from the database object. But do not try to change or save the database then.
 #
 # Input: filename
 # Output: Database size or -1 for error
@@ -966,7 +966,7 @@ sub parse_next
 #| .__/ \__,_|_|  |___/\___|___\___/| .__/ \___|_| |_|
 #|_|                      |_____|   |_|
 # Open a new database to parse. Use parse_next() to get one database row
-# returned in sequence.  This is good to have when the database is very
+# returned in sequence. This is good to have when the database is very
 # large and you only want to calculate some statistic.
 # Shall have a corresponding call to parse_close().
 # Input: database name
@@ -1005,7 +1005,7 @@ sub parse_open
 #
 # Note: If you append to the database might you get two rows containing the
 #       same id. When opening the database again will only the latest remain.
-#       This can though be useful for large databases where you don't want to
+#       This can though be useful for large databases where you do not want to
 #       rewrite the whole database file when only changing one row.
 #
 sub save
@@ -1071,7 +1071,7 @@ sub save
 # / __|/ _ \ |/ _ \/ __| __|
 # \__ \  __/ |  __/ (__| |_
 # |___/\___|_|\___|\___|\__|
-# Remove rows of the current selection that doesn't fit the criteria
+# Remove rows of the current selection that does not fit the criteria
 # Input: Hasharray containing the field-name and a regex-pattern that it must
 #        match. A minus-sign in front of a field name will negate the match
 # Output: Size of the current selection
@@ -1201,7 +1201,7 @@ sub size
 # \__ \ (_) | |  | |_
 # |___/\___/|_|   \__|
 # Sort the current selection
-# Input: array of which fields to sort on.  A minus-sign infront of
+# Input: array of which fields to sort on. A minus-sign infront of
 #        the field-name will revert the sort order.
 # Output: nothing
 #

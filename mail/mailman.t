@@ -10,7 +10,7 @@
  <h1 class="pagetitle"><MM-List-Name> -- <MM-List-Description></h1>
 <div class="relatedbox">
 <b>Related:</b>
-<br><a href="https://curl.se/">curl web site</a>
+<br><a href="https://curl.se/">curl website</a>
 <br><a href="https://curl.se/mail/list.cgi?list=<MM-List-Name>"><MM-List-Name> archives</a>
 <br><a href="https://curl.se/mail/">Mailing Lists</a>
 </div>
@@ -36,7 +36,7 @@
 
 <h2>Subscribing to <MM-List-Name></h2>
 
-<p> Subscribe to <MM-List-Name> by filling out the following form.  You will
+<p> Subscribe to <MM-List-Name> by filling out the following form. You will
  be sent email requesting confirmation. The list of members is only visible to
  admins.
 

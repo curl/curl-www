@@ -15,7 +15,7 @@ if(open(MD5, "<md5")) {
     close(MD5);
 }
 
-# if there's a logfile named 'p' now, it is new!
+# if there is a logfile named 'p' now, it is new!
 my $new=0;
 for(keys %logfile) {
     if($logfile{$_} eq "p") {

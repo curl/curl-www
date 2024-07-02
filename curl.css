@@ -482,7 +482,7 @@ p.level1 {
     body {
         background-color: #212121;
         /* Try to keep it a bit light but not too grey,
-           so it doesn't impact people with accessibility needs */
+           so it does not impact people with accessibility needs */
         color: #fbfbfb;
     }
 

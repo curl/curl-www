@@ -270,7 +270,7 @@ for $per (@sall) {
 
     my $contenttype;
     if ($$per{'size'} > 0) {
-        # If the file is served locally, or if it's a remote binary file
+        # If the file is served locally, or if it is a remote binary file
         # (which a known size indicates), include its content type in the link
         $contenttype=$formats{$$per{'pack'}};
         if ($contenttype) {

@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-# Convert various "bare" mentions of curl symbols into links.  This primarily
+# Convert various "bare" mentions of curl symbols into links. This primarily
 # adds links to the example sections which otherwise are hard to highlight
 # correctly in nroff syntax.
 #

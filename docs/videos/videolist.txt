@@ -48,7 +48,7 @@ TAGS test suite, testing
 DESC The curl test suite and how testing is done in the project
 ENDOFVIDEO
 
-VIDEO Creating console oriented web sites
+VIDEO Creating console oriented websites
 EVENT curl-up 2017
 URL https://curl.se/video/curlup-2017/2017-03-18_04_Igor_Chubin_creating_console_oriented_web_sites.mp4
 THUMB creating-console-websites-2017.jpg
@@ -70,7 +70,7 @@ WHO Christian Schmitz
 DESC Experiences in writing a libcurl wrapper
 ENDOFVIDEO
 
-VIDEO The curl web site
+VIDEO The curl website
 EVENT curl-up 2017
 URL https://curl.se/video/curlup-2017/2017-03-18_06_Dan_Fandrich_Daniel_Stenberg_curl_website.mp4
 THUMB curl-website-2017.jpg
@@ -78,7 +78,7 @@ THUMBSIZE width="250" height="188"
 DURATION 29 minutes
 DATE 2017-03-18
 WHO Dan Fandrich and Daniel Stenberg
-DESC The curl web site and infrastructure
+DESC The curl website and infrastructure
 ENDOFVIDEO
 
 VIDEO How Google uses curl
@@ -180,7 +180,7 @@ THUMBSIZE width="250" height="188"
 DURATION 20 minutes
 DATE 2017-03-19
 WHO Stefan Eissing
-DESC How he uses curl to test Apache's HTTP/2 support
+DESC How he uses curl to test Apache is HTTP/2 support
 ENDOFVIDEO
 
 VIDEO Doing HTTP/2 with libcurl
@@ -380,7 +380,7 @@ THUMBSIZE width="250" height="141"
 DURATION 35 minutes
 DATE 2018-04-15
 WHO Lucas Pardue
-DESC Why there's an Alt-Svc header, how it works and how it changes everything
+DESC Why there is an Alt-Svc header, how it works and how it changes everything
 ENDOFVIDEO
 
 VIDEO Fuzzing curl
@@ -439,7 +439,7 @@ THUMBSIZE width="250" height="140"
 DURATION 12 minutes
 DATE 2019-03-30
 WHO Daniel Stenberg
-DESC How to deprecate things, what we're deprecating and how we introduce experimental features.
+DESC How to deprecate things, what we are deprecating and how we introduce experimental features.
 ENDOFVIDEO
 
 VIDEO Governance and money
@@ -636,7 +636,7 @@ THUMBSIZE width="250" height="141"
 DATE 2021-02-11
 DURATION 1h01
 WHO Josh Aas, Sean McArthur, Daniel Stenberg
-DESC The motivation for and challenges with integrating the Hyper HTTP Rust back-end into curl.
+DESC The motivation for and challenges with integrating the Hyper HTTP Rust backend into curl.
 ENDOFVIDEO
 
 VIDEO cURL, FIPS, and Windows! Oh My!
@@ -817,7 +817,7 @@ THUMBSIZE width="250" height="140"
 DURATION 0h21
 DATE 2022-09-15
 WHO Sean McArthur
-DESC Brief recap of an HTTP backend in curl. What we've done, highlight community members that have fixed things. Ways curl has improved hyper, and vice versa. How anyone can join us, and try it out early. Sean is the lead developer of the Hyper project.
+DESC Brief recap of an HTTP backend in curl. What we have done, highlight community members that have fixed things. Ways curl has improved hyper, and vice versa. How anyone can join us, and try it out early. Sean is the lead developer of the Hyper project.
 ENDOFVIDEO
 
 VIDEO QUIC and HTTP/3 with curl and wolfSSL

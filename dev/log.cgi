@@ -61,7 +61,7 @@ if(open(my $logfile, "<$build")) {
                 }
                 elsif($line =~ /^testcurl: TRANSFER CONTROL/) {
                     if($line =~ /^testcurl: .+ CHAR LINEo{1066}LINE_END/) {
-                        # Don't show the transfer control line if complete
+                        # Do not show the transfer control line if complete
                         next;
                     }
                     $state = 2;

@@ -1,11 +1,11 @@
 # curl-www
 
-This is (most of) the curl.se web site contents. It mostly builds static
+This is (most of) the curl.se website contents. It mostly builds static
 HTML files that are preprocessed.
 
 ## Prerequisites
 
-The web site is a on old custom made setup that mostly builds static HTML
+The website is a on old custom made setup that mostly builds static HTML
 files from a set of source files using (GNU) `make`. The sources files are
 preprocessed with what is basically a souped-up C preprocessor called `fcpp`
 and a set of `perl` scripts. The manpages get converted to HTML with
@@ -27,11 +27,11 @@ Make sure the following tools are in your $PATH.
 
 ## Build
 
-Once you've cloned the Git repo the first time, invoke `sh bootstrap.sh` once
+Once you have cloned the Git repo the first time, invoke `sh bootstrap.sh` once
 to get a symlink and some some initial local files setup, and then you can
-build the web site locally by invoking make in the source root tree.
+build the website locally by invoking make in the source root tree.
 
-Note that this doesn't make you a complete web site mirror, as some scripts
+Note that this does not make you a complete website mirror, as some scripts
 and files are only available on the real actual site, but should give you
 enough to let you load most HTML pages locally.
 

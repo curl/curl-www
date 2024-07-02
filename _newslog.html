@@ -1081,18 +1081,18 @@ are documented in the <a href="changes.html#7_50_3">changelog</a>.
 
  The git repositories on github for
  the <a href="https://github.com/curl/curl">source</a> and
- the <a href="https://github.com/curl/curl-www">web site</a> have now been
+ the <a href="https://github.com/curl/curl-www">website</a> have now been
  moved over to its new home there: the <a href="https://github.com/curl">curl
  organization</a>.
 
 
  NCOLE
 
- NSUBJ(web site over HTTPS)
+ NSUBJ(website over HTTPS)
  NDATE(January 29 2016)
  NCOLS
 
-  The curl web site is now served over HTTPS and with HTTP/2 - with
+  The curl website is now served over HTTPS and with HTTP/2 - with
   certificates from Let's Encrypt. Starting February 3, the curl site
   automatically redirects all http accesses to its https version. No more HTTP
   accesses to contents.
@@ -1198,7 +1198,7 @@ NSUBJ(curl and libcurl 7.45.0)
   since <a href="https://www.spamhaus.org/sbl/query/SBL212408">Spamhaus deems
   our ISP to be irresponsible</a> and blacklists us.
 <p>
-  We have a fixed IP and we've done nothing wrong here, but apparently
+  We have a fixed IP and we have done nothing wrong here, but apparently
   collective punishment is a method.
 
  NCOLE
@@ -1287,7 +1287,7 @@ NSUBJ(curl and libcurl 7.45.0)
  This release comes bundled with no less than four different security
  advisories:
  <ul>
-  <li> <a href="//curl.se/docs/CVE-2015-3144.html">host name out of boundary memory access</a>
+  <li> <a href="//curl.se/docs/CVE-2015-3144.html">hostname out of boundary memory access</a>
   <li> <a href="//curl.se/docs/CVE-2015-3145.html">cookie parser out of boundary memory access</a>
   <li> <a href="//curl.se/docs/CVE-2015-3148.html">Negotiate not treated as connection-oriented</a>
   <li> <a href="//curl.se/docs/CVE-2015-3143.html">Re-using authenticated connection when unauthenticated</a>
@@ -1299,7 +1299,7 @@ NSUBJ(curl and libcurl 7.45.0)
  NDATE(March 2 2015)
  NCOLS
 
-  We're trying to lower barriers and friction for newcomers. We have a new
+  We are trying to lower barriers and friction for newcomers. We have a new
   positive attitude to pull requests and issues filed directly
   at <a href="https://github.com/curl/curl">github</a>. Welcome!
 
@@ -1413,7 +1413,7 @@ NSUBJ(Thanks page remake)
  <a href="https://daniel.haxx.se/blog/2014/10/10/internal-timers-and-timeouts-of-libcurl/">internal timers and timeouts of libcurl</a> - It is time to take a deep dive into the libcurl internals and see how it handles timeouts and timers.
 
 <p>
-  <a href="https://daniel.haxx.se/blog/2014/10/09/coverity-scan-defect-density-0-00/">Coverity scan defect density: 0.00</a> - I cleared off all the pending issues and we're now at zero defects left reported.
+  <a href="https://daniel.haxx.se/blog/2014/10/09/coverity-scan-defect-density-0-00/">Coverity scan defect density: 0.00</a> - I cleared off all the pending issues and we are now at zero defects left reported.
 <p>
   <a href="https://daniel.haxx.se/blog/2014/09/29/a-day-in-the-curl-project/">A day in the curl project</a> - An overview and look to what I spend all the time on in the curl project.
 <p>
@@ -1429,7 +1429,7 @@ NSUBJ(Thanks page remake)
 
   Daniel (curl project leader) is doing a <a
   href="https://www.youtube.com/watch?v=OytGfG9u3Yk">video series</a> about
-  what he's working on at the moment. They are 5-7 minutes each, are posted
+  what he is working on at the moment. They are 5-7 minutes each, are posted
   weekly and include lots of details of what's been happening in the curl
   project.
 
@@ -1460,7 +1460,7 @@ NSUBJ(Thanks page remake)
  that they used 1024 bit RSA.
  <p>
  If you download the latest cacert bundle from the link above right now,
- you'll see that s3.amazonaws.com sites no longer gets verified fine. I guess
+ you will see that s3.amazonaws.com sites no longer gets verified fine. I guess
  that it goes for a few other sites too.
  <p>
  <a href="//curl.se/mail/lib-2014-09/0041.html">Read more</a>.
@@ -1522,13 +1522,13 @@ NSUBJ(Thanks page remake)
 
   Our <a href="/docs/caextract.html">CA extract</a> service is very popular to
   download Mozilla's CA cert bundle in PEM format. Starting now, we also
-  provide a proper HTTPS download link for users who want to be sure there's
+  provide a proper HTTPS download link for users who want to be sure there is
   no foul play going on during the download.
 
 <p>
   The HTTPS download is provided via github so it will also provide an
   alternative hosting site for cases where one or the other has
-  problems. Since there's a chicken-and-egg problem with TLS and CA certs, we
+  problems. Since there is a chicken-and-egg problem with TLS and CA certs, we
   still offer the same download URL as before over plain HTTP as well.
 
 <p>
@@ -1541,7 +1541,7 @@ NSUBJ(Thanks page remake)
  NCOLS
 
    To enhance everyone's ability to contribute with docs, examples, good ideas
-   and other curl related information we've enabled
+   and other curl related information we have enabled
    a <a href="https://github.com/curl/curl/wiki">curl wiki</a> over at
    github.
  <p>
@@ -1683,7 +1683,7 @@ NSUBJ(Thanks page remake)
 <p>
   Extra attention should be put on the <a
   href="docs/CVE-2013-2174.html">libcurl URL decode buffer boundary flaw</a>
-  security advisory we've announced today.
+  security advisory we have announced today.
 
  NCOLE
 
@@ -1698,7 +1698,7 @@ NSUBJ(Thanks page remake)
 <p>
   Extra attention should be put on the <a
   href="docs/CVE-2013-1944.html">libcurl cookie domain tailmatch</a> security
-  advisory we've announced today.
+  advisory we have announced today.
 
  NCOLE
 
@@ -1716,9 +1716,9 @@ NSUBJ(Thanks page remake)
  NDATE(March 23 2013)
  NCOLS
 
-  <i>In this little piece I'll explain why there won't be any version 8 of
-  curl and libcurl in a long time. I won't rule out that it might happen at
-  some point in the future. Just that it won't happen anytime soon and explain
+  <i>In this little piece I'll explain why there will not be any version 8 of
+  curl and libcurl in a long time. I will not rule out that it might happen at
+  some point in the future. Just that it will not happen anytime soon and explain
   the reasons why.</i>
 
   <p>
@@ -1738,7 +1738,7 @@ NSUBJ(Thanks page remake)
 <p>
   Extra attention should be put on the <a
   href="docs/CVE-2013-0249.html">libcurl SASL buffer overflow vulnerability
-  advisory</a> we've announced today.
+  advisory</a> we have announced today.
 
  NCOLE
 
@@ -1748,7 +1748,7 @@ NSUBJ(Thanks page remake)
 
   In his blog post, Daniel explains how <a
   href="https://daniel.haxx.se/blog/2013/01/17/internally-were-all-multi-now/">internally,
-  we're all multi now</a in libcurl. All internals work with and assume
+  we are all multi now</a in libcurl. All internals work with and assume
   non-blocking operations!
 
  NCOLE
@@ -1780,7 +1780,7 @@ NSUBJ(Thanks page remake)
  NCOLS
 
   The <a href="https://sourceforge.net/p/curl/bugs/">bug-tracker on
-  Sourceforge</a> that we've been using for well over a decade has been a
+  Sourceforge</a> that we have been using for well over a decade has been a
   subject of annoyance basically since day 1. It has now gotten a facelift and
   looks slightly better and possibly also works better.
 
@@ -1893,7 +1893,7 @@ NSUBJ(Thanks page remake)
   7.23.1</a>. Read about the single Windows-only fix on the <a
   href="changes.html#7_23_1">changes</a> page.
 <p>
-  Yes, if you're already on 7.23.0 this upgrade only makes sense if you're
+  Yes, if you are already on 7.23.0 this upgrade only makes sense if you are
   using the curl tool on windows.
 
  NCOLE
@@ -2015,14 +2015,14 @@ NSUBJ(Thanks page remake)
  NCOLS
 
   The information about development details and specific docs for curl hackers
-  were previously scattered all over this web site in sometimes rather
+  were previously scattered all over this website in sometimes rather
   illogical ways.
 <p>
   Starting now, we have <a href="/dev/">Development section</a> of this web
   site that is dedicated for all curl and libcurl hackers that work on
   improving our project.
 <p>
-  As a consequence, we've also moved a bunch of pages into the dev section to
+  As a consequence, we have also moved a bunch of pages into the dev section to
   make the "users" sections (for the curl tool and for libcurl) cleaner and
   more focused on what I suspect web users are looking for.
 <p>
@@ -2099,7 +2099,7 @@ NSUBJ(Thanks page remake)
   7.19.7</a>. Read about the news, the fixes and the changes on
   the <a href="changes.html">changes</a> page.
 <p>
-  We're struggling to keep up with the pace of bug reports and patches posted
+  We are struggling to keep up with the pace of bug reports and patches posted
   to us in the project. We will continue to appreciate your help and
   assistance to allow us to distribute the work load on multiple humans.
 <p>
@@ -2112,7 +2112,7 @@ NSUBJ(Thanks page remake)
  NDATE(September 7 2009)
  NCOLS
 
-  The web site curl.se has been moved to a different server, and you may
+  The website curl.se has been moved to a different server, and you may
   suffer from some glitches due to this until everything has been fixed to
   work properly at the new location. Please have patience.
 <p>
@@ -2247,7 +2247,7 @@ NSUBJ(Thanks page remake)
  NDATE(March 2 2008)
  NCOLS
 <p>
-We're planning to apply to <a href="https://developers.google.com/open-source/gsoc/2008/">Google's
+We are planning to apply to <a href="https://developers.google.com/open-source/gsoc/2008/">Google's
 Summer of Code</a> on the behalf of the curl project, to have us participate
 as a mentoring organization 2008.
 <p>
@@ -2271,8 +2271,8 @@ ideas or submit yourself as mentor.
   and changed on the <a href="changes.html">changes</a> page.
 
 <p>
-  There's yet a again a huge effort behind this release. I both hope and think
-  that you'll appreciate it!
+  There is yet a again a huge effort behind this release. I both hope and think
+  that you will appreciate it!
 
  NCOLE
 
@@ -2396,7 +2396,7 @@ ideas or submit yourself as mentor.
  NCOLS
 
   The server hosting our mailing lists and CVS died late Friday evening and
-  with weekend and Christmas coming up, I'm not sure when someone will get a
+  with weekend and Christmas coming up, I am not sure when someone will get a
   chance to go over there and make sure it boots up fine again.
 <p>
   Please bear with us, enjoy Christmas and have a great time!
@@ -2407,8 +2407,8 @@ ideas or submit yourself as mentor.
  NDATE(21 November 2006)
  NCOLS
 
-  There's a <a href="libcurl/ruby/">new ruby binding</a> out, as the former
-  one was totally old and didn't even build anymore...
+  There is a <a href="libcurl/ruby/">new ruby binding</a> out, as the former
+  one was totally old and did not even build anymore...
 
  NCOLE
 
@@ -2418,7 +2418,7 @@ ideas or submit yourself as mentor.
 
   The latest changes provided by the curl team have resulted in <a
   href="download.html">curl and libcurl 7.16.0</a>. Check out what <a
-  href="changes.html">changes</a> it contains. There's one or two slightly
+  href="changes.html">changes</a> it contains. There is one or two slightly
   bigger changes done this time!
 
  NCOLE
@@ -2428,7 +2428,7 @@ ideas or submit yourself as mentor.
  NCOLS
 
   The cool.haxx.se server that hosts the CVS repository as well as all the
-  curl mailing lists (and some additional services) is down. We're working on
+  curl mailing lists (and some additional services) is down. We are working on
   getting it back online as soon as possible. Please be patient.
 <p>
   <b>update:</b> at 17:00 GMT the machine is back alive.
@@ -2439,12 +2439,12 @@ ideas or submit yourself as mentor.
  NDATE(11 October 2006)
  NCOLS
 
-  FTP third party transfer support is now removed. We're working on testing
+  FTP third party transfer support is now removed. We are working on testing
   and fixing bugs now in order to get a public release done "soon". Feel free
   to join in and test a recent daily snapshot to help us make a really fine
   upcoming release.
  <p>
-  There's been quite extensive internal changes since the previous release.
+  There is been quite extensive internal changes since the previous release.
 
  NCOLE
 
@@ -2464,10 +2464,10 @@ ideas or submit yourself as mentor.
  NDATE(15 September 2006)
  NCOLS
 
-  If you're subscribed to any <a href="/mail/">mailing list</a> at
+  If you are subscribed to any <a href="/mail/">mailing list</a> at
   cool.haxx.se using Digest mode, you <a
-  href="//curl.se/mail/lib-2006-09/0133.html">don't get any
-  mails</a> at the moment. Hopefully we'll have this fixed soon.
+  href="//curl.se/mail/lib-2006-09/0133.html">do not get any
+  mails</a> at the moment. Hopefully we will have this fixed soon.
 
  NCOLE
 
@@ -2500,7 +2500,7 @@ ideas or submit yourself as mentor.
  NCOLS
 
   A couple of (lib)curl users and developers are frequently hanging out in the
-  #curl channel on the freenode.net IRC network. You're welcome to stop by!
+  #curl channel on the freenode.net IRC network. you are welcome to stop by!
 
  NCOLE
 
@@ -2538,8 +2538,8 @@ ideas or submit yourself as mentor.
  NDATE(13 January 2006)
  NCOLS
 
-  There's a new service added. Pick any curl.se URL and replace 'curl'
-  with 'curlm' in the URL. When visiting that URL, you'll get bounced to a
+  There is a new service added. Pick any curl.se URL and replace 'curl'
+  with 'curlm' in the URL. When visiting that URL, you will get bounced to a
   suitable mirror near you... <a
   href="http://curlm.haxx.se/">curlm.haxx.se</a> has a list of verified
   up-to-date mirrors only.
@@ -2617,7 +2617,7 @@ ideas or submit yourself as mentor.
  NCOLS
 
 September 2005 was the first month we had more than 100,000 (one hundred
-thousand) unique visitors on the curl web site.
+thousand) unique visitors on the curl website.
 <p>
 curl packages were downloaded more than 20,000 times from the curl.se site
 only during the month.
@@ -2644,7 +2644,7 @@ companies buying ads and people referring to our site from all over.
  NDATE(19 September 2005)
  NCOLS
 
-  We didn't have a backup of the subscribers list of the <a
+  We did not have a backup of the subscribers list of the <a
   href="/mail/">mailing lists</a>. Efforts have been made and some addresses
   have been restored and brought back, but many have been lost. If you want to
   subscribe to the lists, you should verify that you are still subscribed!
@@ -2665,7 +2665,7 @@ companies buying ads and people referring to our site from all over.
   Please allow a few days before all things are back to normal.
 
   <p> It was done by using a security hole in twiki - used for another project
-  on the same server. Aren't the world full of friendly souls? The IP
+  on the same server. are not the world full of friendly souls? The IP
   originated from a country/region that makes it no point in pursuing this
   legal wise.
 
@@ -2685,7 +2685,7 @@ companies buying ads and people referring to our site from all over.
  NDATE(1 September 2005)
  NCOLS
 
-  There's now a separate <a href="/legal/distro-dilemma.html">Distro
+  There is now a separate <a href="/legal/distro-dilemma.html">Distro
   Dilemma</a> document that summarizes the background, the problem and the
   suggested road ahead.
 
@@ -2803,7 +2803,7 @@ companies buying ads and people referring to our site from all over.
  NDATE(14 March 2005)
  NCOLS
 
-  curl-tracker is a new mailing list that'll receive mails from the
+  curl-tracker is a new mailing list that will receive mails from the
   sourceforge trackers. All new submissions and changes to existing entries
   will also be mailed there.
 
@@ -2969,7 +2969,7 @@ companies buying ads and people referring to our site from all over.
  NDATE(29 April 2004)
  NCOLS
 
- We're currently implementing "IDNA" support to libcurl to allow it to
+ We are currently implementing "IDNA" support to libcurl to allow it to
  function with international domain names. We appreciate if you download a
  daily snapshot, try it out and report your mileage!
 
@@ -3033,7 +3033,7 @@ companies buying ads and people referring to our site from all over.
  NDATE(2 March 2004)
  NCOLS
 
-  <a href="//curl.se/mail/archive-2004-03/0013.html">If you've
+  <a href="//curl.se/mail/archive-2004-03/0013.html">If you have
   suffered from the issue 12 bug, please try the patch and report!</a>.
 
  NCOLE
@@ -3088,7 +3088,7 @@ Subscribe to the new mailing lists here:
  NDATE(12 January 2004)
  NCOLS
 
- We're approaching release time for the upcoming curl 7.11.0, and in good old
+ We are approaching release time for the upcoming curl 7.11.0, and in good old
  fashion we offer a <a href="//curl.se/beta/">pre-release</a> of it.
 
  NCOLE
@@ -3137,7 +3137,7 @@ Subscribe to the new mailing lists here:
  NDATE(31 October 2003)
  NCOLS
 
-  Over at cool.haxx.se/curl-daily/, there's now new curl packages put there
+  Over at cool.haxx.se/curl-daily/, there is now new curl packages put there
   every day. The packages are based on the latest CVS version at the time.
 
  NCOLE
@@ -3147,7 +3147,7 @@ Subscribe to the new mailing lists here:
  NCOLS
 
   Announced today: <a href="/competition.html">win 300 US$ by writing a cool
-  curl program</a>. Not only can you win yourself some pocket money, you'll be
+  curl program</a>. Not only can you win yourself some pocket money, you will be
   doing the project a favour!
 
  NCOLE
@@ -3162,11 +3162,11 @@ Subscribe to the new mailing lists here:
 
  NCOLE
 
- NSUBJ(Main Web Site Changes Host)
+ NSUBJ(Main website Changes Host)
  NDATE(24 September 2003)
  NCOLS
 
-  The main curl web site at <a href="//curl.se/">curl.se</a>,
+  The main curl website at <a href="//curl.se/">curl.se</a>,
   is changing host and IP. The move is not expected to be noticeable, but if
   you do find something that looks weird, please get in touch.
 
@@ -3274,7 +3274,7 @@ Subscribe to the new mailing lists here:
  NDATE(6 July 2003)
  NCOLS
 
-  Daniel is on vacation, some things don't run at full speed in the project
+  Daniel is on vacation, some things do not run at full speed in the project
   until he returns in a few weeks.
 
  NCOLE
@@ -3288,9 +3288,9 @@ Subscribe to the new mailing lists here:
   and it is up and working again.
  <p>
   Stay tuned for new details on how to proceed to checkout curl from the new
-  repository. The old one is still around, but won't change
+  repository. The old one is still around, but will not change
  <p>
-  We celebrate this new era with some brand new web site stuff, such as the new
+  We celebrate this new era with some brand new website stuff, such as the new
   logo, new colors and new left-side menu edits.
 
  NCOLE
@@ -3320,7 +3320,7 @@ Subscribe to the new mailing lists here:
  NCOLS
 
   Thanks to friendly helpers, the Digest implementation is now added to
-  libcurl, and now we're taking on the <a
+  libcurl, and now we are taking on the <a
   href="//curl.se/mail/lib-2003-05/0115.html">NTLM challenge</a>.
  <p>
   Help is appreciated.
@@ -3350,7 +3350,7 @@ Subscribe to the new mailing lists here:
  NDATE(6 May 2003)
  NCOLS
 
-  <a href="//curl.se/beta/">7.10.5-pre2</a> is out for testing.  See
+  <a href="//curl.se/beta/">7.10.5-pre2</a> is out for testing. See
   also the <a href="changes.html">changelog</a>.
 
  NCOLE
@@ -3392,7 +3392,7 @@ Subscribe to the new mailing lists here:
  NCOLS
 
   <a href="//curl.se/mail/archive-2003-03/0090.html">curl turned
-  5</a> - he's a big boy now.
+  5</a> - he is a big boy now.
 
  NCOLE
 
@@ -3427,7 +3427,7 @@ Subscribe to the new mailing lists here:
  NDATE(21 Jan 2003)
  NCOLS
 <p>
-I've spent some time on putting together a shell script that I would like
+I have spent some time on putting together a shell script that I would like
 people to run on various operating systems. The script testcurl does:
 <ol>
  <li> updates curl source from CVS
@@ -3438,7 +3438,7 @@ people to run on various operating systems. The script testcurl does:
  <li> removes the build dir
 </ol>
 <p>
-The output from all this should be mailed to the automatic receiver I've
+The output from all this should be mailed to the automatic receiver I have
 setup for this purpose.
 <p>
 Personally, I'll setup and run this script on a Solaris 2.7 host and at least
@@ -3448,7 +3448,7 @@ So, if you have some CPU cycles to spare and some time to set things up,
 please get in touch and help us out.
 <p>
 The collected status of all distributed tests that are collected will of
-course be viewable on the curl web site, and I'm smoothing out the scripts
+course be viewable on the curl website, and I am smoothing out the scripts
 for it right now.
 <p>
 The script is currently available here:
@@ -3534,7 +3534,7 @@ The script is currently available here:
   href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/curl/curl/perl/contrib/formfind?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup">formfind</a>
   was updated for the first time in four years. Formfind extracts
   &lt;FORM&gt; tag info from a HTML page and presents it in a readable way. A
-  helpful little tool to use when you're trying to figure out how to automate
+  helpful little tool to use when you are trying to figure out how to automate
   a POST to a site.
 
  NCOLE
@@ -3588,12 +3588,12 @@ The script is currently available here:
 
  NCOLE
 
- NSUBJ(AU web site mirror)
+ NSUBJ(AU website mirror)
  NDATE(15 Oct 2002)
  NCOLS
 
   Jason Andrade runs the brand new Australian <a
-  href="//curl.planetmirror.com/">curl web site mirror</a>. People on
+  href="//curl.planetmirror.com/">curl website mirror</a>. People on
   that side of the globe might enjoy that. He also mirrors all download
   packages for your pleasure.
 
@@ -3637,7 +3637,7 @@ The script is currently available here:
    have been fixed and features have been added. We continue to work hard on
    improving curl and libcurl...
  <p>
-   I'm proud to offer curl 7.10.
+   I am proud to offer curl 7.10.
 
  NCOLE
 
@@ -3654,7 +3654,7 @@ The script is currently available here:
  NDATE(22 Sep 2002)
  NCOLS
 
- Cris Bailiff released Curl::easy v1.35, which lets you use libcurl from perl.  Get it from
+ Cris Bailiff released Curl::easy v1.35, which lets you use libcurl from perl. Get it from
  <a href="//curl.se/libcurl/perl/">//curl.se/libcurl/perl/</a>. Minor
  fix to fixup statistics in progress function callback. Also tested with 7.10-pre3!
 
@@ -3684,7 +3684,7 @@ The script is currently available here:
 
    On August 5th, Mike Benham posted his initial <a
    href="http://online.securityfocus.com/archive/1/286290/2002-07-31/2002-08-06/0">IE
-   security advisory</a> regarding how IE doesn't properly verify SSL
+   security advisory</a> regarding how IE does not properly verify SSL
    certificates.
  <p>
    This has been discussed in curl mailing lists regarding how curl behaves on
@@ -3719,7 +3719,7 @@ The script is currently available here:
  NDATE(7 Aug 2002)
  NCOLS
 
- Cris Bailiff released Curl::easy v1.34, which lets you use libcurl from perl.  Get it from
+ Cris Bailiff released Curl::easy v1.34, which lets you use libcurl from perl. Get it from
  <a href="//curl.se/libcurl/perl/">//curl.se/libcurl/perl/</a>. Another minor
  but potentially important bug fix - Doh! A recommended upgrade.
 
@@ -3730,7 +3730,7 @@ The script is currently available here:
  NCOLS
 
  Kjetil Jacobsen released <a href="http://pycurl.io/">Pycurl</a>
- 7.9.8.3.  Under Python 2.2 or better, Curl and CurlMulti now participate in
+ 7.9.8.3. Under Python 2.2 or better, Curl and CurlMulti now participate in
  garbage collection with the gc module.
 
  NCOLE
@@ -3739,7 +3739,7 @@ The script is currently available here:
  NDATE(15 July 2002)
  NCOLS
 
- Cris Bailiff released Curl::easy v1.30, which lets you use libcurl from perl.  Get it from
+ Cris Bailiff released Curl::easy v1.30, which lets you use libcurl from perl. Get it from
  <a href="//curl.se/libcurl/perl/">//curl.se/libcurl/perl/</a>.
  <p>Adds support for OO style programming, and should be ready for perl 5.8.</p>
 
@@ -3749,7 +3749,7 @@ The script is currently available here:
  NDATE(12 July 2002)
  NCOLS
 
- Kjetil Jacobsen released Pycurl 7.9.8.2.  Get it from
+ Kjetil Jacobsen released Pycurl 7.9.8.2. Get it from
  <a href="http://pycurl.io/">http://pycurl.io/</a>.
 
  NCOLE
@@ -3759,7 +3759,7 @@ The script is currently available here:
  NCOLS
 
  Dan Wood released CURLHandle 1.6.
- CURLHandle is a wrapper around curl 7.9.8.  For more info, see
+ CURLHandle is a wrapper around curl 7.9.8. For more info, see
  <a href="https://web.archive.org/web/20020921200949/curlhandle.sourceforge.net/">
  curlhandle.sourceforge.net</a>.
 
@@ -3769,7 +3769,7 @@ The script is currently available here:
  NDATE(24 June 2002)
  NCOLS
 
-  So, while Daniel is away on vacation, there's a <a
+  So, while Daniel is away on vacation, there is a <a
   href="//curl.se/mail/archive-2002-06/0087.html">bunch of things
   to do to keep Daniel happy</a>.
  <p>
@@ -4008,7 +4008,7 @@ The script is currently available here:
  NDATE(18 March 2002)
  NCOLS
 
- Over on the <a href="//curl.se/beta/">beta page</a>, there's now a
+ Over on the <a href="//curl.se/beta/">beta page</a>, there is now a
  7.9.6 pre-release available. Enjoy!
 
  NCOLE
@@ -4091,8 +4091,8 @@ The script is currently available here:
 
  <ul>
   <li> Read the <a href="//curl.se/q/analysis.html">questionnaire
-       Analysis</a>! If you're the least interested in this project, I think
-       you're obliged to read the analysis to see what we all think about the
+       Analysis</a>! If you are the least interested in this project, I think
+       you are obliged to read the analysis to see what we all think about the
        current situation and about the future. It is quite lengthy as I did
        put some effort into this.
   <li> Help us get the new <a
@@ -4122,7 +4122,7 @@ The script is currently available here:
  NCOLS
 
   Anyone feels like taking care of the <a href="/libcurl/cplusplus/">C++
-  API</a>? It isn't yet functional, but there's an initial chunk of code to
+  API</a>? It is not yet functional, but there is an initial chunk of code to
   build on...
 
  NCOLE
@@ -4143,17 +4143,17 @@ The script is currently available here:
  NCOLS
 
  <p>
-  The fact that there's a company named Curl is not news to us. We've
+  The fact that there is a company named Curl is not news to us. We have
   summarized <a href="/docs/thename.html">the name issue</a> on a web page
   for everyone who want to find out how we ended up like this and if we really
   are targeted for legal problems due to this...
  <p>
   freshmeat.net is the number one site that new curl releases are announced
-  on. It allows users to rate single projects, and I'd like more people to <a
+  on. It allows users to rate single projects, and I would like more people to <a
   href="http://freshmeat.net/rate/1612/">rate curl</a>. Use your heart, is it
   good or is it bad?
  <p>
-  Some companies offer curl support and/or host web sites for you with curl
+  Some companies offer curl support and/or host websites for you with curl
   enabled and available. We intend to collect these companies in the <a
   href="/support.html">support</a> section. If you run a company that would
   match but is missing, we want to know!

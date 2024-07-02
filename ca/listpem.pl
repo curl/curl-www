@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-opendir(my $dh, ".") || die "can't opendir: $!";
+opendir(my $dh, ".") || die "cannot opendir: $!";
 my @pems = grep { /^cacert-.*pem$/ } readdir($dh);
 closedir $dh;
 

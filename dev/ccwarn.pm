@@ -47,7 +47,7 @@ sub checkwarn {
 
         # libtool 2 prefixes lots of "normal" lines with "libool: link: " so we
         # cannot use that simple rule to detect errors. Adding "warning:" reduces
-        # false positives but skip some legitimate warnings that don't contain
+        # false positives but skip some legitimate warnings that do not contain
         # "warning:".
         ($l =~ /^libtool: \w+: warning:/) ||
         ($l =~ /^libtool: link:.*cannot find the library/) ||

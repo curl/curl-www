@@ -33,11 +33,11 @@ TITLE(CA certificates extracted from Mozilla)
 
 <p>
  This PEM file contains the datestamp of the conversion and we only make a new
- conversion if there's a change in either the script or the source file. This
+ conversion if there is a change in either the script or the source file. This
  service checks for updates every day. Here's
  the <a href="../ca/cacert.pem.sha256">sha256sum</a> of the current PEM file.
 
-SUBTITLE(File name)
+SUBTITLE(filename)
 <p>
  Some programs will expect this file to be named <tt>ca-bundle.crt</tt> (in
  the correct path). curl on windows has a system to find it if
@@ -62,7 +62,7 @@ SUBTITLE(CA certificate store license)
 
 SUBTITLE(Automated downloads from here)
 <p>
- We don't mind you downloading the PEM file from us in an automated fashion.
+ We do not mind you downloading the PEM file from us in an automated fashion.
 
 <p>
  A suitable curl command line to only download it when it has changed:
@@ -70,7 +70,7 @@ SUBTITLE(Automated downloads from here)
   curl <a href="/docs/manpage.html#--etag-compare">--etag-compare</a> etag.txt <a href="/docs/manpage.html#--etag-save">--etag-save</a> etag.txt <a href="/docs/manpage.html#-O">--remote-name</a> https://curl.se/ca/cacert.pem
 </pre>
 
-Or if you use an ancient curl version that doesn't support etags:
+Or if you use an ancient curl version that does not support etags:
 <pre>
   curl <a href="/docs/manpage.html#-O">--remote-name</a> <a href="/docs/manpage.html#-z">--time-cond</a> cacert.pem https://curl.se/ca/cacert.pem
 </pre>

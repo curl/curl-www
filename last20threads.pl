@@ -24,7 +24,7 @@ my %listrealname = ('archive' => 'curl-users',
                     'curlpp' => 'curlpp',
                     'curlppdev' => 'curlpp-devel');
 
-opendir(DIR, $tree) || die "can't opendir $tree: $!";
+opendir(DIR, $tree) || die "cannot opendir $tree: $!";
 my @archives = grep { /^(.*)-(\d\d\d\d)-(\d\d)$/ && -d "$tree/$_" } readdir(DIR);
 closedir DIR;
 
@@ -191,7 +191,7 @@ sub parsehtmlfile {
 sub getthreads {
     my ($dir) = @_;
 
-    opendir(DIR, $dir) || die "can't opendir $dir: $!";
+    opendir(DIR, $dir) || die "cannot opendir $dir: $!";
     my @mails = grep { /^(\d+)\.html$/ && -f "$dir/$_" } readdir(DIR);
     closedir DIR;
 

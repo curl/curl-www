@@ -23,7 +23,7 @@
     "CVE-2024-0853.html|8.5.0|8.5.0|OCSP verification bypass with TLS session reuse|CVE-2024-0853|20240131|20231229|CWE-299: Improper Check for Certificate Revocation|540|TLS|-|both|low|https://hackerone.com/reports/2298922",
     "CVE-2023-46219.html|7.84.0|8.4.0|HSTS long filename clears contents|CVE-2023-46219|20231206|20231102|CWE-311: Missing Encryption of Sensitive Data|540|HSTS|-|both|low|https://hackerone.com/reports/2236133",
     "CVE-2023-46218.html|7.46.0|8.4.0|cookie mixed case PSL bypass|CVE-2023-46218|20231206|20231017|CWE-201: Information Exposure Through Sent Data|2540|cookie|-|both|medium|https://hackerone.com/reports/2212193",
-    "CVE-2023-38546.html|7.9.1|8.3.0|cookie injection with none file|CVE-2023-38546|20231011|20230914|CWE-73: External Control of File Name or Path|540|cookies|-|lib|low|https://hackerone.com/reports/2148242",
+    "CVE-2023-38546.html|7.9.1|8.3.0|cookie injection with none file|CVE-2023-38546|20231011|20230914|CWE-73: External Control of filename or Path|540|cookies|-|lib|low|https://hackerone.com/reports/2148242",
     "CVE-2023-38545.html|7.69.0|8.3.0|SOCKS5 heap buffer overflow|CVE-2023-38545|20231011|20230930|CWE-122: Heap-based Buffer Overflow|4660|SOCKS5|OVERFLOW|both|high|https://hackerone.com/reports/2187833",
     "CVE-2023-38039.html|7.84.0|8.2.1|HTTP headers eat all memory|CVE-2023-38039|20230913|20230717|CWE-770: Allocation of Resources Without Limits or Throttling|2540|HTTP|-|both|medium|https://hackerone.com/reports/2072338",
     # CVE-2023-32001 is no longer considered a security problem
@@ -80,7 +80,7 @@
     "CVE-2020-8231.html|7.29.0|7.71.1|wrong connect-only connection|CVE-2020-8231|20200819|20200731|CWE-825: Expired Pointer Dereference|500|internal|-|lib|low|https://hackerone.com/reports/948876",
     "CVE-2020-8177.html|7.20.0|7.70.0|curl overwrite local file with -J|CVE-2020-8177|20200624|20200530|CWE-641: Improper Restriction of Names for Files and Other Resources|700|tool|-|tool|medium|https://hackerone.com/reports/887462",
     "CVE-2020-8169.html|7.62.0|7.70.0|Partial password leak over DNS on HTTP redirect|CVE-2020-8169|20200624|20200515|CWE-200: Exposure of Sensitive Information to an Unauthorized Actor|400|HTTP|-|both|medium|https://hackerone.com/reports/874778",
-    # CVE-2019-15601 is no longer considered a security problem so it shouldn't
+    # CVE-2019-15601 is no longer considered a security problem so it should not
     # be listed here: https://daniel.haxx.se/blog/2020/03/16/warning-curl-users-on-windows-using-file/
     "CVE-2019-5481.html|7.52.0|7.65.3|FTP-KRB double free|CVE-2019-5481|20190911|20190903|CWE-415: Double Free|200|FTP|DOUBLE_FREE|both|medium|https://hackerone.com/reports/686823",
     "CVE-2019-5482.html|7.19.4|7.65.3|TFTP small blocksize heap buffer overflow|CVE-2019-5482|20190911|20190829|CWE-122: Heap-based Buffer Overflow|250|TFTP|OVERFLOW|lib|medium|https://hackerone.com/reports/684603",

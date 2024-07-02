@@ -48,7 +48,7 @@ else {
 lheader($title, "<script type=\"text/javascript\" src=\"mod.js\"></script>\n");
 
 if (CGI::param("action")) {
-    # get the pre- values if they're set instead of the "original" ones
+    # get the pre- values if they are set instead of the "original" ones
     for(keys %data) {
         my $d = CGI::param("pre-".$_);
         if(($d ne "new") && ($data{$_} eq "")) {
@@ -170,7 +170,7 @@ sub my_show_form()
                 "mingw32 / cygwin / Borland / etc");
 
     alternative("Image", "img",
-                "file name of image for this OS/flavour");
+                "filename of image for this OS/flavour");
 
     alternative("CPU", "cpu",
                 "i386 / i686 / PowerPC / StrongARM / etc");
@@ -190,7 +190,7 @@ sub my_show_form()
     alternative("Importance", "prio",
                 "A higher number to get sorted higher when other things equal.");
 
-    alternative("File/URL", "file", "file name / URL", 50);
+    alternative("File/URL", "file", "filename / URL", 50);
 
     alternative("curl version", "curl",
                 "7.10.3 or similar");

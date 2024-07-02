@@ -217,7 +217,7 @@ offers less roundtrip handshakes.
 <p>
 
 <b>TLS SRP:</b> SRP means "Secure Remote Password" and it is a method of
-performing client-side authentication with a TLS server by using a user name
+performing client-side authentication with a TLS server by using a username
 and password, sometimes coupled with a certificate. It is not yet widely
 supported, but for the engines that do support it, you can provide the
 credentials to curl by using the CURLOPT_TLSAUTH_USERNAME and
@@ -242,7 +242,7 @@ using the CURLOPT_CAINFO option.
 <b>Uses Certificate/Key Database:</b> Some engines, such as Apple's Security
 framework, use a central database instead of separate files to store
 certificates and keys. Apple's Security framework database, for instance, is
-called the Keychain. For engines that use a database and don't also support
+called the Keychain. For engines that use a database and do not also support
 files, the CURLOPT_CAINFO option is ignored.
 <p>
 
@@ -270,7 +270,7 @@ tokens/databases.
 <b>FIPS-140:</b> FIPS-140 is a security standard used by the United States and
 Canada for transferring information that is sensitive but not classified. If
 yes, and you are using curl or a libcurl-based application in the US or
-Canadian government, or in a government contractor, then it's okay for you to
+Canadian government, or in a government contractor, then it is okay for you to
 use the engine when building curl/libcurl.
 <p>
 

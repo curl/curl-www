@@ -25,7 +25,7 @@ sub updatethis {
         print "Checking $name at $version, for OS ".$$ref{'os'}."\n";
 
         if($$ref{'file'} ne $file) {
-            print "... file names differ: $$ref{'file'} vs $file\n";
+            print "... filenames differ: $$ref{'file'} vs $file\n";
             $$ref{'file'}=$file; # set the actual one
             $mod++;
         }

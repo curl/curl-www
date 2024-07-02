@@ -126,7 +126,7 @@ Header set Content-Security-Policy: "default-src 'self' curl.haxx.se www.curl.se
 # Google Custom Search requires unsafe-eval & unsafe-inline in the CSP which
 # knocks a giant hole in the protection a CSP provides. Therefore, only use
 # that on the pages where custom search is used to mitigate it somewhat. The
-# search page that shows up on the 404 error page won't be matched by this,
+# search page that shows up on the 404 error page will not be matched by this,
 # however. The following link is supposed to be updated when Google fixes this
 # CSP issue and this hack can be removed:
 # https://support.google.com/programmable-search/thread/60663049?hl=en

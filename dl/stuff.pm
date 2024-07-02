@@ -70,7 +70,7 @@ sub inputstuff::save_input
         if ($id) {
             my $ref=$db->get("id"=>$id);
             if ($$ref{"modify_time"} != CGI::param("modify_time")) {
-                $warning_message="Your changes aren't saved, someone else ".
+                $warning_message="Your changes are not saved, someone else ".
                     "changes the contents before you!";
             } else {
                 $db->change("id", $id, %data);
@@ -95,7 +95,7 @@ sub inputstuff::save_input
         } elsif ($id ne "") {
             my $ref=$db->get("id"=>$id);
             if ($$ref{"modify_time"} != CGI::param("modify_time")) {
-                $warning_message="Your changes aren't saved, someone else ".
+                $warning_message="Your changes are not saved, someone else ".
                     "changes the contents before you!";
             } elsif (!$db->delete("id", $id)) {
                 if ($db->save() == -1) {

@@ -267,7 +267,7 @@ exit 0;
 my $warning=0;
 
 sub endofsingle {
-    my ($file) = @_; # the single build file name
+    my ($file) = @_; # the single build filename
 
     if ($skipbuild) {
         print STDERR "Skipping $file\n";
@@ -300,7 +300,7 @@ sub endofsingle {
         $libressl = 1;
     }
     # PolarSSL confusingly renamed itself during the 1.x time frame
-    # so don't be fooled
+    # so do not be fooled
     elsif($libcurl =~ /mbedTLS\/(?!1\.)/i) {
         $mbedtls = 1;
     }
@@ -535,7 +535,7 @@ sub singlefile {
             $buildid = $1;
             print STDERR " - build $buildid\n";
         }
-        # we don't check for state here to allow this to abort all
+        # we do not check for state here to allow this to abort all
         # states
         elsif($line =~ /^testcurl: STARTING HERE/) {
             # mail headers here
@@ -558,7 +558,7 @@ sub singlefile {
                     $state = 3;
                 }
                 elsif($line =~ /^testcurl: NOTES =/) {
-                    # Don't include this line in the build code. It doesn't
+                    # Do not include this line in the build code. It does not
                     # affect the build in any way, and it allows the builder to
                     # include varying information (e.g. local build ID or link)
                     # as additional debugging info while maintaining the same
@@ -573,7 +573,7 @@ sub singlefile {
             }
             elsif($state == 3) {
                 if($line =~ /^testcurl: configure created \(dummy message\)/) {
-                    # This isn't an autoconf build at all--we need to include
+                    # This is not an autoconf build at all--we need to include
                     # the contents of the config header files to make
                     # a unique buildcode. This is more brittle as it is
                     # sensitive to changes to the config file headers, but
@@ -888,9 +888,9 @@ sub singlefile {
                 $trackmem=1;
             }
 
-            if($line =~ /don't know how to make 'vc-(x64-)?winssl/) {
+            if($line =~ /do not know how to make 'vc-(x64-)?winssl/) {
                 # This is a completely misconfigured autobuild that is using an
-                # outdated build target, making it impossible to build. Don't
+                # outdated build target, making it impossible to build. Do not
                 # pollute the autobuilds page by even displaying it.
                 $skipbuild = 1;
             }

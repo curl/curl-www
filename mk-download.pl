@@ -3,10 +3,10 @@
 require "./date.pm";
 
 my $dir="download";
-opendir(DIR, $dir) || die "can't opendir $dir: $!";
+opendir(DIR, $dir) || die "cannot opendir $dir: $!";
 my @files = readdir(DIR);
 closedir DIR;
-opendir(DIR, "$dir/archeology") || die "can't opendir $dir/archeology: $!";
+opendir(DIR, "$dir/archeology") || die "cannot opendir $dir/archeology: $!";
 while (readdir DIR) {
    push @files, "archeology/$_";
 }

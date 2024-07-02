@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Auto-build the daily git extract of curl.  Parameters are:
+# Auto-build the daily git extract of curl. Parameters are:
 #  1: email address to notify when this script runs
 #  2: proxy url (if required)
 #  3: proxy userid (if required)
@@ -50,7 +50,7 @@ TODAY=`env TZ=Etc/GMT+2 date +%Y%m%d`
 
 cd "$BUILD"
 
-# Parse the daily builds index page for today's file name
+# Parse the daily builds index page for today's filename
 NEWCURLURL=`$CURL $CURLOPTS $URL | grep "href=.*$TODAY.tar.bz2" | sed -e 's/^.*href="//' -e 's/".*//'`
 NEWCURL=`basename $NEWCURLURL`
 if [ ! -r "$NEWCURL" ] ; then

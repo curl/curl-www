@@ -2,7 +2,7 @@
 
 my $docsdir = $ARGV[0];
 
-opendir(my $dh, $docsdir) || die "Can't opendir $some_dir: $!";
+opendir(my $dh, $docsdir) || die "cannot opendir $some_dir: $!";
 my @manp = grep { /^curl_.*\.md/ } readdir($dh);
 closedir $dh;
 

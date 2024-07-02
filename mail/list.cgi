@@ -68,7 +68,7 @@ sub listarchives {
     my ($prefix, $listname)=@_;
 
     my $some_dir=".";
-    opendir(DIR, $some_dir) || die "can't opendir $some_dir: $!";
+    opendir(DIR, $some_dir) || die "cannot opendir $some_dir: $!";
     my @dirs = sort {$a cmp $b} grep { /^$prefix-/ && -d "$some_dir/$_" } readdir(DIR);
     closedir DIR;
 
@@ -125,7 +125,7 @@ MOO
         $none=1;
     }
     else {
-        print "$list? Are you playing with me? There's no such list!";
+        print "$list? Are you playing with me? There is no such list!";
         $none=1;
     }
 

@@ -78,7 +78,7 @@ while(<SP>) {
 close(SP);
 
 if($sec != $images) {
-    print STDERR "_sponsors.html count ($sec) doesn't match online count: $count ($images with images)\n";
+    print STDERR "_sponsors.html count ($sec) does not match online count: $count ($images with images)\n";
 }
 
 

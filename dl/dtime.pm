@@ -5,20 +5,20 @@
 ;#      $time = timegm($sec,$min,$hours,$mday,$mon,$year);
 
 ;# These routines are quite efficient and yet are always guaranteed to agree
-;# with localtime() and gmtime().  We manage this by caching the start times
-;# of any months we've seen before.  If we know the start time of the month,
-;# we can always calculate any time within the month.  The start times
+;# with localtime() and gmtime(). We manage this by caching the start times
+;# of any months we have seen before. If we know the start time of the month,
+;# we can always calculate any time within the month. The start times
 ;# themselves are guessed by successive approximation starting at the
 ;# current time, since most dates seen in practice are close to the
-;# current date.  Unlike algorithms that do a binary search (calling gmtime
+;# current date. Unlike algorithms that do a binary search (calling gmtime
 ;# once for each bit of the time value, resulting in 32 calls), this algorithm
-;# calls it at most 6 times, and usually only once or twice.  If you hit
-;# the month cache, of course, it doesn't call it at all.
+;# calls it at most 6 times, and usually only once or twice. If you hit
+;# the month cache, of course, it does not call it at all.
 
-;# timelocal is implemented using the same cache.  We just assume that we're
-;# translating a GMT time, and then fudge it when we're done for the timezone
-;# and daylight savings arguments.  The timezone is determined by examining
-;# the result of localtime(0) when the package is initialized.  The daylight
+;# timelocal is implemented using the same cache. We just assume that we are
+;# translating a GMT time, and then fudge it when we are done for the timezone
+;# and daylight savings arguments. The timezone is determined by examining
+;# the result of localtime(0) when the package is initialized. The daylight
 ;# savings offset is currently assumed to be one hour.
 
 ;# Both routines return -1 if the integer limit is hit. I.e. for dates
@@ -84,7 +84,7 @@ sub week {
     # struct tm stores yday 0 based, we need it 1 based
     $tyday++;
 
-    # silly americans begin the week on sundays. ISO doesn't
+    # silly americans begin the week on sundays. ISO does not
     if( 0 == $twday ) {
         # it it IS a sunday, make it sunday!
         $twday = 7;

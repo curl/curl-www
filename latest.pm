@@ -9,7 +9,7 @@ our $wwwdir="/var/www/html/download";
 our $dldir="../download";
 our $curl="curl";
 
-# they're all hashed on 'type'
+# they are all hashed on 'type'
 our %high;
 our %file;
 our %size;
@@ -263,7 +263,7 @@ sub gettype {
 sub scanstatus {
     my ($dir)=@_;
 
-    opendir(DIR, $dir) || die "can't opendir $dir: $!";
+    opendir(DIR, $dir) || die "cannot opendir $dir: $!";
     my @curls = grep { /^(lib|)curl/ && -f "$dir/$_" } readdir(DIR);
     closedir DIR;
 

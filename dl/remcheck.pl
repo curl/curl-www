@@ -156,7 +156,7 @@ sub geturl {
     }
 
     if($head) {
-        # we don't cache HEAD requests
+        # we do not cache HEAD requests
         $curlcmd .= " --head";
         #logmsg " issue a HEAD request\n";
     }
@@ -178,7 +178,7 @@ sub geturl {
             while((shift @content) !~ /^[\x0A\x0D]*$/ ) {}
         }
     } else {
-        # we don't cache HEAD requests
+        # we do not cache HEAD requests
         if(@content) {
             # store the content in the hash
             @{$urlhash{$url}}=@content;
@@ -244,7 +244,7 @@ for $ref (@all) {
         $localpackage++;
     }
     elsif($churl && ($churl ne "-")) {
-        # there's a URL to check
+        # there is a URL to check
 
         if(!islastfewversions($$ref{'curl'})) {
 
@@ -291,7 +291,7 @@ for $ref (@all) {
 
             $$ref{'remcheck'} = timestamp();
 
-            # there's a regex to check for in the downloaded page
+            # there is a regex to check for in the downloaded page
             $chregex = CGI::unescapeHTML($chregex);
 
             logmsg sprintf(" Check regex <b><tt>%s</tt></b>\n",
@@ -312,7 +312,7 @@ for $ref (@all) {
                 if($l =~ /$chregex/) {
                     my $r = $1;
                     if($versionembedded) {
-                        # '$version' was part of the URL and thus we don't
+                        # '$version' was part of the URL and thus we do not
                         # need/want to extract it from the regex match
                         $r = $version;
                     }
@@ -345,7 +345,7 @@ for $ref (@all) {
             }
         }
         else {
-            # since there's no regex, just do a head request to verify the
+            # since there is no regex, just do a head request to verify the
             # file's mere existence
             @data = geturl($churl, 1);
 
@@ -400,7 +400,7 @@ for $ref (@all) {
                 # so we update the download URL as well!
                 $$ref{'file'}=$churl;
             }
-            # store the size, whether it's known or unknown (blank)
+            # store the size, whether it is known or unknown (blank)
             $$ref{'size'}=$cl;
             logmsg " Store size: " . ($cl || "unknown") . " bytes\n";
 
@@ -428,7 +428,7 @@ logmsg "$uptodate remote packages found up-to-date with database versions\n";
 logmsg "<div class=\"buildfail\">$failedcheck packages failed to get checked</div>\n";
 logmsg "$localpackage packages are local and taken care of differently\n";
 logmsg "$oldies checks were skipped due to old release number\n";
-logmsg "<div class=\"buildfail\">$regexmisses regexes didn't match on successful URL fetches</div>\n";
+logmsg "<div class=\"buildfail\">$regexmisses regexes did not match on successful URL fetches</div>\n";
 logmsg "$hidden packages were skipped since they are 'hidden'\n";
 
 if($missing) {

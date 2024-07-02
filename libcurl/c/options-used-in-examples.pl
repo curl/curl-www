@@ -3,7 +3,7 @@
 $root="../../cvssource";
 $dir="$root/docs/examples";
 
-opendir(DIR, $dir) || die "can't opendir $dir: $!";
+opendir(DIR, $dir) || die "cannot opendir $dir: $!";
 my @samps = grep { /\.(c|cpp)\z/ && -f "$dir/$_" } readdir(DIR);
 closedir DIR;
 

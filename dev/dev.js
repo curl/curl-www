@@ -67,7 +67,7 @@ function setFilterForms(filterinput, systeminput) {
 var linefilter = "";
 var linefiltername = "";
 
-/* Hide all rows on the build page that don't match the given options */
+/* Hide all rows on the build page that do not match the given options */
 function filterBuilds() {
     /* The build filter invalidates the line filters */
     linefilter = "";
@@ -106,7 +106,7 @@ function filterBuilds() {
     }
 }
 
-/* Hide all rows on the build page that don't match the given system */
+/* Hide all rows on the build page that do not match the given system */
 function filterSystemBuilds() {
     /* The system filter invalidates the line filters */
     linefilter = "";
