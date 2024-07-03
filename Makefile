@@ -55,6 +55,7 @@ all: $(PAGES)
 	cd rfc && make
 	cd dev && make
 	cd windows && make
+	cd qnx && make
 	cd tiny && make
 	cd logo && make
 	cd trurl && make

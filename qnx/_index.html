@@ -1,0 +1,95 @@
+#include "_doctype.html"
+<html>
+<head> <title>curl for QNX</title>
+#include "css.t"
+<style type="text/css">
+a.qnxdl {
+  font-size: 200%;
+}
+</style>
+</head>
+
+#define CURL_URL /qnx
+#define QNX_MAIN
+
+#include "_menu.html"
+#include "setup.t"
+#include "files.gen"
+
+WHERE2(Download, "/download.html", QNX)
+
+TITLE(curl for QNX)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/changes.html">Changelog</a>
+<br><a href="/docs/copyright.html">License</a>
+<br><a href="/support.html">Support</a>
+</div>
+<p>
+ These are <b>official</b> curl and libcurl builds for QNX.
+
+<p>
+
+#ifdef QNX_SDK70_DATE
+# define QNX_CURLDATE QNX_SDK70_DATE
+#else
+# ifdef QNX_SDK71_DATE
+#  define QNX_CURLDATE QNX_SDK71_DATE
+# else
+#  define QNX_CURLDATE QNX_SDK80_DATE
+# endif
+#endif
+
+<!-- version: QNX_CURLVER -->
+
+<table>
+<tr><td> <b>curl version</b> </td><td> QNX_CURLVER </td></tr>
+<tr><td> <b>Build</b> </td><td> QNX_CURLVER_PACKAGE </td></tr>
+<tr><td> <b>Date</b> </td><td> QNX_CURLDATE </td></tr>
+<tr><td> <b>Changes</b> </td><td> <a href="/changes.html#QNX_CURLVER_LINK">QNX_CURLVER changelog</a> </td></tr>
+</table>
+
+#ifdef QNX_SDK80_FILENAME
+<p class="qnxdl">
+  <a href="QNX_SDK80_FILENAME"><img src="/pix/GS-Download-icon.svg" alt="curl for SDK 8.0" width="90" height="120" style="float:left;"></a>
+  <a href="QNX_SDK80_FILENAME" class="qnxdl">curl QNX_CURLVER for SDK 8.0</a> <br>
+#ifdef QNX_SDK80_SIG
+<b>GPG signature</b>: <a href="QNX_SDK80_SIG">here</a><br>
+#endif
+<b>Size</b>: QNX_SDK80_SIZE<br>
+<b>sha256</b>: QNX_SDK80_SHA256
+#endif
+
+#ifdef QNX_SDK71_FILENAME
+<p class="qnxdl">
+  <a href="QNX_SDK71_FILENAME"><img src="/pix/GS-Download-icon.svg" alt="curl for SDK 7.1" width="90" height="120" style="float:left;"></a>
+  <a href="QNX_SDK71_FILENAME" class="qnxdl">curl QNX_CURLVER for SDK 7.1</a> <br>
+#ifdef QNX_SDK71_SIG
+<b>GPG signature</b>: <a href="QNX_SDK71_SIG">here</a><br>
+#endif
+<b>Size</b>: QNX_SDK71_SIZE<br>
+<b>sha256</b>: QNX_SDK71_SHA256
+#endif
+
+#ifdef QNX_SDK70_FILENAME
+<p class="qnxdl">
+  <a href="QNX_SDK70_FILENAME"><img src="/pix/GS-Download-icon.svg" alt="curl for SDK 7.0" width="90" height="120" style="float:left;"></a>
+<div>
+  <a href="QNX_SDK70_FILENAME" class="qnxdl">curl QNX_CURLVER for SDK 7.0</a>
+<br>
+#ifdef QNX_SDK70_SIG
+<b>GPG signature</b>: <a href="QNX_SDK70_SIG">here</a><br>
+#endif
+<b>Size</b>: QNX_SDK70_SIZE<br>
+<b>sha256</b>: QNX_SDK70_SHA256
+</div>
+#endif
+
+SUBTITLE(Contents)
+<p>
+  The download archives contain curl and libcurl for all supported targets for
+  each indvidual SDK branch - as gzipped tarballs.
+
+#include "_footer.html"
+</body>
+</html>
