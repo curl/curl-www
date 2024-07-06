@@ -1071,3 +1071,14 @@ DURATION 51 minutes
 WHO Daniel Stenberg
 DESC This webinar is a must-watch for anyone eager to enhance their libcurl skills and explore its full potential.
 ENDOFVIDEO
+
+VIDEO You can do it
+EVENT PyCon Sweden 2024
+URL https://youtu.be/p-8of5cpspo
+THUMB you-can-do-it.jpg
+THUMBSIZE width="250" height="142"
+DATE 2024-06-22
+DURATION 1h1
+WHO Daniel Stenberg
+DESC In this keynote speech, Daniel shares some of the highlights (and lowlights) of running a successful Open Source project.
+ENDOFVIDEO
