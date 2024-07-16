@@ -133,6 +133,59 @@ sub islastfewversions {
     return 0;
 }
 
+# Clean up the error code description from the man page
+sub cleanerrdesc {
+    my ($desc, $alt) = @_;
+    chomp($desc);
+    $desc = $alt if not $desc;  # don't cut off at period if none there
+    $desc =~ s/-$//;   # remove trailing dash
+    $desc =~ s/  / /g; # remove duplicate spaces
+    $desc .= "...." if ($desc && substr($desc, -1) ne ".");  # ellipses if no period
+    $desc =~ s/\.$//;   # finally, remove the trailing dot
+    return $desc;
+}
+
+my %curlerrors;
+# Return a description for a curl error code
+sub curlerror {
+    my $err = $_[0];
+    if(%curlerrors) {
+        return $curlerrors{$err};
+    }
+    # Read all the curl error codes from the manual
+    open(my $fh, "-|", "curl --manual");
+    while(<$fh>) {
+        last if(/^EXIT CODES$/);
+    }
+    my $awaitdesc;
+    while(<$fh>) {
+        if(/^\s*$/) {
+            next;  # ignore blank lines
+        } elsif($awaitdesc) {
+            # New style, with description on a following line after the error #
+            my $desc = cleanerrdesc($_, $_);
+            $curlerrors{$awaitdesc} = $desc;
+            $awaitdesc = '';
+        } elsif(/^\s{1,12}(\d+)\s*(.*\.)?\s*(.*)\s*$/) {
+            # Old style, description on the same line as the error #
+            my $num = $1;
+            my $desc = cleanerrdesc($2, $3);
+            if($desc) {
+                $curlerrors{$num} = $desc;
+            } else {
+                # description will come on the next line
+                $awaitdesc = $num;
+            }
+        } elsif (/^[A-Z]/) {
+            # In the next manual section
+            last;
+        }
+    }
+    close($fh);
+
+    return $curlerrors{$err};
+}
+
 # a hash with arrays (url => url contents)
 my %urlhash;
 sub geturl {
@@ -169,7 +222,7 @@ sub geturl {
            CGI::escapeHTML($url) . "</a>\"\n";
     my @content = `$curlcmd \"$url\"`;
     if($?) {
-        logmsg " Failed with error " . ($? >> 8) . "\n";
+        logmsg " Failed with error " . ($? >> 8) . " (" . CGI::escapeHTML(curlerror($? >> 8)) . ")\n";
         @content = ();
     }
     if($head) {
