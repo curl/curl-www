@@ -14,8 +14,18 @@
   }
   .video {
       background-color: #e0e0e0;
-      float: right;
       border: 1px solid black;
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+  }
+  .vulnbox:before {
+      content: "🐜 known vulnerabilities for";
+      padding: 5px 5px 5px 5px;
+  }
+  .vulnbox {
+      background-color: #e0e0e0;
+      border: 1px solid black;
+      border-radius: 10px;
       padding: 5px 5px 5px 5px;
   }
 </style>
@@ -58,13 +68,20 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 #define CHG <li>
 #define BGF <li>
 
-#define RELEASEVIDEO(ver,vid)<div><a class="video" href=vid>ver</a></div>
+#define RELEASEVIDEO(ver,vid) \
+<div><a class="video" href=vid>ver</a> \
+ <a class="vulnbox" href=/docs/vuln-ver.html>ver</a> \
+</div>
+
+#define VULNBOX(ver) \
+<div> \
+ <a class="vulnbox" href=/docs/vuln-ver.html>ver</a> \
+</div>
 
 
 <a name="8_8_0"></a>
 SUBTITLE(Fixed in 8.8.0 - May 22 2024)
-<p>
-  RELEASEVIDEO(8.8.0, "https://youtu.be/QuEcJkjvI_Q")
+RELEASEVIDEO(8.8.0, "https://youtu.be/QuEcJkjvI_Q")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=13368">curl_version_info: provide librtmp version</a>
@@ -302,8 +319,7 @@ SUBTITLE(Fixed in 8.8.0 - May 22 2024)
 
 <a name="8_7_1"></a>
 SUBTITLE(Fixed in 8.7.1 - March 27 2024)
-<p>
-  RELEASEVIDEO(8.7.1, "https://youtu.be/x6XbvwB_b6Q")
+RELEASEVIDEO(8.7.1, "https://youtu.be/x6XbvwB_b6Q")
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/bug/?i=13195">Fixed empty tool_hugehelp.c file</a>
@@ -487,8 +503,7 @@ SUBTITLE(Fixed in 8.7.0 - March 27 2024)
 
 <a name="8_6_0"></a>
 SUBTITLE(Fixed in 8.6.0 - January 31 2024)
-<p>
-  RELEASEVIDEO(8.6.0, "https://youtu.be/x7exfUbjdxQ")
+RELEASEVIDEO(8.6.0, "https://youtu.be/x7exfUbjdxQ")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=12269">add CURLE_TOO_LARGE</a>
@@ -660,8 +675,7 @@ SUBTITLE(Fixed in 8.6.0 - January 31 2024)
 
 <a name="8_5_0"></a>
 SUBTITLE(Fixed in 8.5.0 - December 6 2023)
-<p>
-  RELEASEVIDEO(8.5.0, "https://youtu.be/fWiYbDpFeS4")
+RELEASEVIDEO(8.5.0, "https://youtu.be/fWiYbDpFeS4")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=12137">gnutls: support CURLSSLOPT_NATIVE_CA</a>
@@ -856,8 +870,7 @@ SUBTITLE(Fixed in 8.5.0 - December 6 2023)
 
 <a name="8_4_0"></a>
 SUBTITLE(Fixed in 8.4.0 - October 11 2023)
-<p>
-  RELEASEVIDEO(8.4.0, "https://youtu.be/-j-_nKmq2aE")
+RELEASEVIDEO(8.4.0, "https://youtu.be/-j-_nKmq2aE")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=8805">curl: add support for the IPFS protocols via HTTP gateway</a>
@@ -1005,8 +1018,7 @@ SUBTITLE(Fixed in 8.4.0 - October 11 2023)
 </ul>
 <a name="8_3_0"></a>
 SUBTITLE(Fixed in 8.3.0 - September 13 2023)
-<p>
-  RELEASEVIDEO(8.3.0, "https://youtu.be/DmyuEV8cUaU?si=tmYuZzMK8_hlCT31")
+RELEASEVIDEO(8.3.0, "https://youtu.be/DmyuEV8cUaU?si=tmYuZzMK8_hlCT31")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=11416">curl: make %output{} in -w specify a file to write to</a>
@@ -1198,8 +1210,7 @@ SUBTITLE(Fixed in 8.3.0 - September 13 2023)
 </ul>
 <a name="8_2_1"></a>
 SUBTITLE(Fixed in 8.2.1 - July 26 2023)
-<p>
-  RELEASEVIDEO(8.2.1, "https://youtu.be/gxuisBdfXmI")
+RELEASEVIDEO(8.2.1, "https://youtu.be/gxuisBdfXmI")
   
 <p> Bugfixes:
 <ul class="bugfixes">
@@ -1234,8 +1245,7 @@ SUBTITLE(Fixed in 8.2.1 - July 26 2023)
 
 <a name="8_2_0"></a>
 SUBTITLE(Fixed in 8.2.0 - July 19 2023)
-<p>
-  RELEASEVIDEO(8.2.0, "https://youtu.be/eMSD1GOCABc")
+RELEASEVIDEO(8.2.0, "https://youtu.be/eMSD1GOCABc")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=11049">curl: add --ca-native and --proxy-ca-native</a>
@@ -1372,8 +1382,7 @@ SUBTITLE(Fixed in 8.2.0 - July 19 2023)
 
 <a name="8_1_2"></a>
 SUBTITLE(Fixed in 8.1.2 - May 30 2023)
-<p>
-  RELEASEVIDEO(8.1.2, "https://youtu.be/n9JzOdjOvHg")
+RELEASEVIDEO(8.1.2, "https://youtu.be/n9JzOdjOvHg")
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/bug/?i=11179">configure: quote the assignments for run-compiler</a>
@@ -1394,8 +1403,7 @@ SUBTITLE(Fixed in 8.1.2 - May 30 2023)
 
 <a name="8_1_1"></a>
 SUBTITLE(Fixed in 8.1.1 - May 23 2023)
-<p>
-  RELEASEVIDEO(8.1.1, "https://youtu.be/Jzg847TgLvw")
+RELEASEVIDEO(8.1.1, "https://youtu.be/Jzg847TgLvw")
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/bug/?i=11118">cf-socket: completely remove the disabled USE_RECV_BEFORE_SEND_WORKAROUND</a>
@@ -1427,8 +1435,7 @@ SUBTITLE(Fixed in 8.1.1 - May 23 2023)
 
 <a name="8_1_0"></a>
 SUBTITLE(Fixed in 8.1.0 - May 17 2023)
-<p>
-  RELEASEVIDEO(8.1.0, "https://youtu.be/fLP141KZ7l4")
+RELEASEVIDEO(8.1.0, "https://youtu.be/fLP141KZ7l4")
 <p>
 <p> Changes:
 <ul class="changes">
@@ -1635,8 +1642,7 @@ SUBTITLE(Fixed in 8.0.1 - March 20 2023)
 
 <a name="8_0_0"></a>
 SUBTITLE(Fixed in 8.0.0 - March 20 2023)
-<p>
-  RELEASEVIDEO(8.0.0, "https://youtu.be/LToOQEMcKoo")
+RELEASEVIDEO(8.0.0, "https://youtu.be/LToOQEMcKoo")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=10597">build: remove support for curl_off_t &lt; 8 bytes</a>
@@ -1777,8 +1783,7 @@ SUBTITLE(Fixed in 8.0.0 - March 20 2023)
 
 <a name="7_88_1"></a>
 SUBTITLE(Fixed in 7.88.1 - February 20 2023)
-<p>
-  RELEASEVIDEO(7.88.1, "https://youtu.be/COhD51bgjPY")
+RELEASEVIDEO(7.88.1, "https://youtu.be/COhD51bgjPY")
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/bug/?i=10542">build-openssl.bat: keep OpenSSL 3 engine binaries</a>
@@ -1810,8 +1815,7 @@ SUBTITLE(Fixed in 7.88.1 - February 20 2023)
 
 <a name="7_88_0"></a>
 SUBTITLE(Fixed in 7.88.0 - February 15 2023)
-<p>
-  RELEASEVIDEO(7.88.0, "https://youtu.be/9zff4hWOxPE")
+RELEASEVIDEO(7.88.0, "https://youtu.be/9zff4hWOxPE")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=10264">curl.h: add CURL_HTTP_VERSION_3ONLY</a>
@@ -2000,8 +2004,7 @@ SUBTITLE(Fixed in 7.88.0 - February 15 2023)
 
 <a name="7_87_0"></a>
 SUBTITLE(Fixed in 7.87.0 - December 21 2022)
-<p>
-  RELEASEVIDEO(7.87.0, "https://youtu.be/PvvgmBbAzn8")
+RELEASEVIDEO(7.87.0, "https://youtu.be/PvvgmBbAzn8")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=9691">curl: add --url-query</a>
@@ -2172,8 +2175,7 @@ SUBTITLE(Fixed in 7.87.0 - December 21 2022)
 <p>
 <a name="7_86_0"></a>
 SUBTITLE(Fixed in 7.86.0 - October 26 2022)
-<p>
-  RELEASEVIDEO(7.86.0, "https://youtu.be/nIJUock7mjE")
+RELEASEVIDEO(7.86.0, "https://youtu.be/nIJUock7mjE")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=9307">NPN: remove support for and use of</a>
@@ -2377,8 +2379,7 @@ SUBTITLE(Fixed in 7.86.0 - October 26 2022)
 
 <a name="7_85_0"></a>
 SUBTITLE(Fixed in 7.85.0 - August 31 2022)
-<p>
-  RELEASEVIDEO(7.85.0, "https://youtu.be/I4vYSKjvHGE")
+RELEASEVIDEO(7.85.0, "https://youtu.be/I4vYSKjvHGE")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=9290">quic: add support via wolfSSL</a>
@@ -2556,8 +2557,7 @@ SUBTITLE(Fixed in 7.85.0 - August 31 2022)
 
 <a name="7_84_0"></a>
 SUBTITLE(Fixed in 7.84.0 - June 27 2022)
-<p>
-  RELEASEVIDEO(7.84.0, "https://youtu.be/-FVFLJLrHRY")
+RELEASEVIDEO(7.84.0, "https://youtu.be/-FVFLJLrHRY")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=8671">curl: add --rate to set max request rate per time unit</a>
@@ -2698,8 +2698,7 @@ SUBTITLE(Fixed in 7.84.0 - June 27 2022)
 
 <a name="7_83_1"></a>
 SUBTITLE(Fixed in 7.83.1 - May 11 2022)
-<p>
-  RELEASEVIDEO(7.83.1, "https://youtu.be/mnsCTd4cwyI")
+RELEASEVIDEO(7.83.1, "https://youtu.be/mnsCTd4cwyI")
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/bug/?i=8819">altsvc: fix hostname matching for trailing dots</a>
@@ -2747,8 +2746,7 @@ SUBTITLE(Fixed in 7.83.1 - May 11 2022)
 
 <a name="7_83_0"></a>
 SUBTITLE(Fixed in 7.83.0 - April 27 2022)
-<p>
-  RELEASEVIDEO(7.83.0, "https://youtu.be/hYcT0HNv8HI")
+RELEASEVIDEO(7.83.0, "https://youtu.be/hYcT0HNv8HI")
 <p> Changes:
 <ul class="changes">
  CHG curl: add %header{name} experimental support in -w handling
@@ -2889,8 +2887,7 @@ SUBTITLE(Fixed in 7.83.0 - April 27 2022)
 
 <a name="7_82_0"></a>
 SUBTITLE(Fixed in 7.82.0 - March 5 2022)
-<p>
-  RELEASEVIDEO(7.82.0, "https://youtu.be/ycjidxZWKjo")
+RELEASEVIDEO(7.82.0, "https://youtu.be/ycjidxZWKjo")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=8314">curl: add --json</a>
@@ -3075,8 +3072,7 @@ SUBTITLE(Fixed in 7.82.0 - March 5 2022)
 
 <a name="7_81_0"></a>
 SUBTITLE(Fixed in 7.81.0 - January 5 2022)
-<p>
-  RELEASEVIDEO(7.81.0, "https://youtu.be/OfTF8kmcSlA")
+RELEASEVIDEO(7.81.0, "https://youtu.be/OfTF8kmcSlA")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=7789">mime: use percent-escaping for multipart form field and filenames</a>
@@ -3208,8 +3204,7 @@ SUBTITLE(Fixed in 7.81.0 - January 5 2022)
 
 <a name="7_80_0"></a>
 SUBTITLE(Fixed in 7.80.0 - November 10 2021)
-<p>
-  RELEASEVIDEO(7.80.0, "https://youtu.be/GCjvJnlziLY")
+RELEASEVIDEO(7.80.0, "https://youtu.be/GCjvJnlziLY")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/mail/lib-2021-09/0058.html">CURLOPT_MAXLIFETIME_CONN: maximum allowed lifetime for conn reuse</a>
@@ -3342,8 +3337,7 @@ SUBTITLE(Fixed in 7.80.0 - November 10 2021)
 
 <a name="7_79_1"></a>
 SUBTITLE(Fixed in 7.79.1 - September 22 2021)
-<p>
-  RELEASEVIDEO(7.79.1, "https://youtu.be/h-m2Vv57SOY")
+RELEASEVIDEO(7.79.1, "https://youtu.be/h-m2Vv57SOY")
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/bug/?i=7730">Curl_http2_setup: don&apos;t change connection data on repeat invokes</a>
@@ -3360,8 +3354,7 @@ SUBTITLE(Fixed in 7.79.1 - September 22 2021)
 
 <a name="7_79_0"></a>
 SUBTITLE(Fixed in 7.79.0 - September 15 2021)
-<p>
-  RELEASEVIDEO(7.79.0, "https://youtu.be/1y7BR0LZEuM")
+RELEASEVIDEO(7.79.0, "https://youtu.be/1y7BR0LZEuM")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=7468">bearssl: support CURLOPT_CAINFO_BLOB</a>
@@ -3502,8 +3495,7 @@ SUBTITLE(Fixed in 7.79.0 - September 15 2021)
 
 <a name="7_78_0"></a>
 SUBTITLE(Fixed in 7.78.0 - July 21 2021)
-<p>
-  RELEASEVIDEO(7.78.0, "https://youtu.be/XHaJGFj6wVg")
+RELEASEVIDEO(7.78.0, "https://youtu.be/XHaJGFj6wVg")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=7073">curl_url_set: reject spaces in URLs w/o CURLU_ALLOW_SPACE</a>
@@ -3695,8 +3687,7 @@ SUBTITLE(Fixed in 7.78.0 - July 21 2021)
 
 <a name="7_77_0"></a>
 SUBTITLE(Fixed in 7.77.0 - May 26 2021)
-<p>
-  RELEASEVIDEO(7.77.0, "https://youtu.be/Mmq8kb6GcAw")
+RELEASEVIDEO(7.77.0, "https://youtu.be/Mmq8kb6GcAw")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=6897">configure: make the TLS library choice(s) explicit</a>
@@ -3844,8 +3835,7 @@ SUBTITLE(Fixed in 7.77.0 - May 26 2021)
 
 <a name="7_76_1"></a>
 SUBTITLE(Fixed in 7.76.1 - April 14 2021)
-<p>
-  RELEASEVIDEO(7.76.1, "https://youtu.be/3Vj4cdzLZx4")
+RELEASEVIDEO(7.76.1, "https://youtu.be/3Vj4cdzLZx4")
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/bug/?i=6838">configure: disable min version set for Darwin</a>
@@ -3873,8 +3863,7 @@ SUBTITLE(Fixed in 7.76.1 - April 14 2021)
 
 <a name="7_76_0"></a>
 SUBTITLE(Fixed in 7.76.0 - March 31 2021)
-<p>
-  RELEASEVIDEO(7.76.0, "https://youtu.be/m3GxI2PFFAU")
+RELEASEVIDEO(7.76.0, "https://youtu.be/m3GxI2PFFAU")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=6649">cookies: Support multiple -b parameters</a>
@@ -4020,8 +4009,7 @@ SUBTITLE(Fixed in 7.76.0 - March 31 2021)
 
 <a name="7_75_0"></a>
 SUBTITLE(Fixed in 7.75.0 - February 3 2021)
-<p>
-  RELEASEVIDEO(7.75.0, "https://youtu.be/pjqd-r7hAjI")
+RELEASEVIDEO(7.75.0, "https://youtu.be/pjqd-r7hAjI")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=6244">curl: add --create-file-mode [mode]</a>
@@ -4150,8 +4138,7 @@ SUBTITLE(Fixed in 7.75.0 - February 3 2021)
 
 <a name="7_74_0"></a>
 SUBTITLE(Fixed in 7.74.0 - December 9 2020)
-<p>
-  RELEASEVIDEO(7.74.0, "https://youtu.be/IaLwkQuE2IE")
+RELEASEVIDEO(7.74.0, "https://youtu.be/IaLwkQuE2IE")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=5896">hsts: add experimental support for Strict-Transport-Security</a>
@@ -4269,8 +4256,7 @@ SUBTITLE(Fixed in 7.74.0 - December 9 2020)
 
 <a name="7_73_0"></a>
 SUBTITLE(Fixed in 7.73.0 - October 14 2020)
-<p>
-  RELEASEVIDEO(7.73.0, "https://youtu.be/ebYXC0Cr-dQ")
+RELEASEVIDEO(7.73.0, "https://youtu.be/ebYXC0Cr-dQ")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=5637">curl: add --output-dir</a>
@@ -4424,8 +4410,7 @@ SUBTITLE(Fixed in 7.73.0 - October 14 2020)
 
 <a name="7_72_0"></a>
 SUBTITLE(Fixed in 7.72.0 - August 19 2020)
-<p>
-  RELEASEVIDEO(7.72.0, "https://youtu.be/yVZ8Q3fTv40")
+RELEASEVIDEO(7.72.0, "https://youtu.be/yVZ8Q3fTv40")
 
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=5453">content_encoding: add zstd decoding support</a>
@@ -4538,8 +4523,7 @@ SUBTITLE(Fixed in 7.72.0 - August 19 2020)
 
 <a name="7_71_1"></a>
 SUBTITLE(Fixed in 7.71.1 - July 1 2020)
-<p>
-  RELEASEVIDEO(7.71.1, "https://youtu.be/qd_Lcf8U_FM")
+RELEASEVIDEO(7.71.1, "https://youtu.be/qd_Lcf8U_FM")
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/bug/?i=5628">cirrus-ci: disable FreeBSD 13 (again)</a>
@@ -4564,8 +4548,7 @@ SUBTITLE(Fixed in 7.71.1 - July 1 2020)
 
 <a name="7_71_0"></a>
 SUBTITLE(Fixed in 7.71.0 - June 24 2020)
-<p>
-  RELEASEVIDEO(7.71.0, "https://youtu.be/E4gtW3kS1Cw")
+RELEASEVIDEO(7.71.0, "https://youtu.be/E4gtW3kS1Cw")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=4346">CURLOPT_SSL_OPTIONS: optional use of Windows&#39; CA store (with openssl)</a>
@@ -4715,8 +4698,7 @@ SUBTITLE(Fixed in 7.71.0 - June 24 2020)
 
 <a name="7_70_0"></a>
 SUBTITLE(Fixed in 7.70.0 - April 29 2020)
-<p>
-  RELEASEVIDEO(7.70.0, "https://youtu.be/taHoaLkx7XE")
+RELEASEVIDEO(7.70.0, "https://youtu.be/taHoaLkx7XE")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=4981">curl: add --ssl-revoke-best-effort to allow a "best effort" revocation check</a>
@@ -4865,8 +4847,7 @@ SUBTITLE(Fixed in 7.70.0 - April 29 2020)
 
 <a name="7_69_1"></a>
 SUBTITLE(Fixed in 7.69.1 - March 11 2020)
-<p>
-  RELEASEVIDEO(7.69.1, "https://youtu.be/7iTqBlhhMC0")
+RELEASEVIDEO(7.69.1, "https://youtu.be/7iTqBlhhMC0")
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/bug/?i=4893">ares: store dns parameters for duphandle</a>
@@ -4900,8 +4881,7 @@ SUBTITLE(Fixed in 7.69.1 - March 11 2020)
 
 <a name="7_69_0"></a>
 SUBTITLE(Fixed in 7.69.0 - March 4 2020)
-<p>
-  RELEASEVIDEO(7.69.0, "https://youtu.be/X7Jlv87Nb8Y")
+RELEASEVIDEO(7.69.0, "https://youtu.be/X7Jlv87Nb8Y")
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=4825">polarssl: removed</a>
@@ -5037,6 +5017,7 @@ SUBTITLE(Fixed in 7.69.0 - March 4 2020)
 
 <a name="7_68_0"></a>
 SUBTITLE(Fixed in 7.68.0 - January 8 2020)
+VULNBOX(7.68.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=4597">TLS: add BearSSL vtls implementation</a>
@@ -5176,6 +5157,7 @@ SUBTITLE(Fixed in 7.68.0 - January 8 2020)
 
 <a name="7_67_0"></a>
 SUBTITLE(Fixed in 7.67.0 - November 6 2019)
+VULNBOX(7.67.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=4422">curl: added --no-progress-meter</a>
@@ -5313,6 +5295,7 @@ SUBTITLE(Fixed in 7.67.0 - November 6 2019)
 
 <a name="7_66_0"></a>
 SUBTITLE(Fixed in 7.66.0 - September 11 2019)
+VULNBOX(7.66.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=3794">CURLINFO_RETRY_AFTER: parse the Retry-After header value</a>
@@ -5409,6 +5392,7 @@ SUBTITLE(Fixed in 7.66.0 - September 11 2019)
 
 <a name="7_65_3"></a>
 SUBTITLE(Fixed in 7.65.3 - July 19 2019)
+VULNBOX(7.65.3)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/bug/?i=4122">progress: make the progress meter appear again</a>
@@ -5416,6 +5400,7 @@ SUBTITLE(Fixed in 7.65.3 - July 19 2019)
 
 <a name="7_65_2"></a>
 SUBTITLE(Fixed in 7.65.2 - July 17 2019)
+VULNBOX(7.65.2)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/bug/?i=3389">CIPHERS.md: Explain Schannel error SEC_E_ALGORITHM_MISMATCH</a>
@@ -5504,6 +5489,7 @@ SUBTITLE(Fixed in 7.65.2 - July 17 2019)
 
 <a name="7_65_1"></a>
 SUBTITLE(Fixed in 7.65.1 - June 5 2019)
+VULNBOX(7.65.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/bug/?i=3927">CURLOPT_LOW_SPEED_* repaired</a>
@@ -5545,6 +5531,7 @@ SUBTITLE(Fixed in 7.65.1 - June 5 2019)
 
 <a name="7_65_0"></a>
 SUBTITLE(Fixed in 7.65.0 - May 22 2019)
+VULNBOX(7.65.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=3654">CURLOPT_DNS_USE_GLOBAL_CACHE: removed</a>
@@ -5676,6 +5663,7 @@ SUBTITLE(Fixed in 7.65.0 - May 22 2019)
 
 <a name="7_64_1"></a>
 SUBTITLE(Fixed in 7.64.1 - March 27 2019)
+VULNBOX(7.64.1)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=3498">alt-svc: experiemental support added</a>
@@ -5803,6 +5791,7 @@ SUBTITLE(Fixed in 7.64.1 - March 27 2019)
 
 <a name="7_64_0"></a>
 SUBTITLE(Fixed in 7.64.0 - February 6 2019)
+VULNBOX(7.64.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=2956">cookies: leave secure cookies alone</a>
@@ -5893,6 +5882,7 @@ SUBTITLE(Fixed in 7.64.0 - February 6 2019)
 
 <a name="7_63_0"></a>
 SUBTITLE(Fixed in 7.63.0 - December 12 2018)
+VULNBOX(7.63.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=3115">curl: add %{stderr} and %{stdout} for --write-out</a>
@@ -5984,6 +5974,7 @@ SUBTITLE(Fixed in 7.63.0 - December 12 2018)
 
 <a name="7_62_0"></a>
 SUBTITLE(Fixed in 7.62.0 - October 31 2018)
+VULNBOX(7.62.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=2709">multiplex: enable by default</a>
@@ -6121,6 +6112,7 @@ SUBTITLE(Fixed in 7.62.0 - October 31 2018)
 
 <a name="7_61_1"></a>
 SUBTITLE(Fixed in 7.61.1 - September 5 2018)
+VULNBOX(7.61.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/docs/CVE-2018-14618.html">security advisory (CVE-2018-14618): NTLM password overflow via integer overflow</a>
@@ -6228,6 +6220,7 @@ SUBTITLE(Fixed in 7.61.1 - September 5 2018)
 </ul>
 <a name="7_61_0"></a>
 SUBTITLE(Fixed in 7.61.0 - July 11 2018)
+VULNBOX(7.61.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=2495">getinfo: add microsecond precise timers for seven intervals</a>
@@ -6332,6 +6325,7 @@ SUBTITLE(Fixed in 7.61.0 - July 11 2018)
 
 <a name="7_60_0"></a>
 SUBTITLE(Fixed in 7.60.0 - May 16 2018)
+VULNBOX(7.60.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=2162">Add CURLOPT_HAPROXYPROTOCOL, support for the HAProxy PROXY protocol</a>
@@ -6455,6 +6449,7 @@ SUBTITLE(Fixed in 7.60.0 - May 16 2018)
 
 <a name="7_59_0"></a>
 SUBTITLE(Fixed in 7.59.0 - March 14 2018)
+VULNBOX(7.59.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=2268">curl: add --proxy-pinnedpubkey</a>
@@ -6548,6 +6543,7 @@ SUBTITLE(Fixed in 7.59.0 - March 14 2018)
 
 <a name="7_58_0"></a>
 SUBTITLE(Fixed in 7.58.0 - January 24 2018)
+VULNBOX(7.58.0)
 <p> Changes:
 <ul class="changes">
  CHG new libssh-powered SSH SCP/SFTP backend
@@ -6641,6 +6637,7 @@ SUBTITLE(Fixed in 7.58.0 - January 24 2018)
 
 <a name="7_57_0"></a>
 SUBTITLE(Fixed in 7.57.0 - November 29 2017)
+VULNBOX(7.57.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=1934">auth: add support for RFC7616 - HTTP Digest access authentication</a>
@@ -6722,6 +6719,7 @@ SUBTITLE(Fixed in 7.57.0 - November 29 2017)
 
 <a name="7_56_1"></a>
 SUBTITLE(Fixed in 7.56.1 - October 23 2017)
+VULNBOX(7.56.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/docs/CVE-2017-1000257.html">imap: if a FETCH response has no size, don&#39;t call write callback</a>
@@ -6778,6 +6776,7 @@ SUBTITLE(Fixed in 7.56.1 - October 23 2017)
 
 <a name="7_56_0"></a>
 SUBTITLE(Fixed in 7.56.0 - October 4 2017)
+VULNBOX(7.56.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=1735">curl: enable compression for SCP/SFTP with --compressed-ssh</a>
@@ -6881,6 +6880,7 @@ SUBTITLE(Fixed in 7.56.0 - October 4 2017)
 
 <a name="7_55_1"></a>
 SUBTITLE(Fixed in 7.55.1 - August 14 2017)
+VULNBOX(7.55.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF build: fix &#39;make install&#39; with configure, install docs/libcurl/&#42; too
@@ -6914,6 +6914,7 @@ SUBTITLE(Fixed in 7.55.1 - August 14 2017)
 
 <a name="7_55_0"></a>
 SUBTITLE(Fixed in 7.55.0 - August 9 2017)
+VULNBOX(7.55.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=1486">curl: allow --header and --proxy-header read from file</a>
@@ -7044,6 +7045,7 @@ SUBTITLE(Fixed in 7.55.0 - August 9 2017)
 
 <a name="7_54_1"></a>
 SUBTITLE(Fixed in 7.54.1 - June 14 2017)
+VULNBOX(7.54.1)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=1474">curl: show the libcurl release date in --version output</a>
@@ -7169,6 +7171,7 @@ SUBTITLE(Fixed in 7.54.1 - June 14 2017)
 
 <a name="7_54_0"></a>
 SUBTITLE(Fixed in 7.54.0 - April 19 2017)
+VULNBOX(7.54.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=1166">Add CURL_SSLVERSION_MAX_* constants to CURLOPT_SSLVERSION</a>
@@ -7299,6 +7302,7 @@ SUBTITLE(Fixed in 7.54.0 - April 19 2017)
 
 <a name="7_53_1"></a>
 SUBTITLE(Fixed in 7.53.1 - February 24 2017)
+VULNBOX(7.53.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF cyassl: fix typo
@@ -7312,6 +7316,7 @@ SUBTITLE(Fixed in 7.53.1 - February 24 2017)
 
 <a name="7_53_0"></a>
 SUBTITLE(Fixed in 7.53.0 - February 22 2017)
+VULNBOX(7.53.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=1197">unix_socket: added --abstract-unix-socket and CURLOPT_ABSTRACT_UNIX_SOCKET</a>
@@ -7418,6 +7423,7 @@ SUBTITLE(Fixed in 7.53.0 - February 22 2017)
 
 <a name="7_52_1"></a>
 SUBTITLE(Fixed in 7.52.1 - December 23 2016)
+VULNBOX(7.52.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/docs/CVE-2016-9594.html">CVE-2016-9594: uninitialized random</a>
@@ -7429,6 +7435,7 @@ SUBTITLE(Fixed in 7.52.1 - December 23 2016)
 
 <a name="7_52_0"></a>
 SUBTITLE(Fixed in 7.52.0 - December 21 2016)
+VULNBOX(7.52.0)
 <p> Changes:
 <ul class="changes">
  CHG nss: map CURL_SSLVERSION_DEFAULT to NSS default
@@ -7491,6 +7498,7 @@ SUBTITLE(Fixed in 7.52.0 - December 21 2016)
 
 <a name="7_51_0"></a>
 SUBTITLE(Fixed in 7.51.0 - November 2 2016)
+VULNBOX(7.51.0)
 <p> Changes:
 <ul class="changes">
  CHG nss: additional cipher suites are now accepted by CURLOPT_SSL_CIPHER_LIST
@@ -7562,6 +7570,7 @@ SUBTITLE(Fixed in 7.51.0 - November 2 2016)
 
 <a name="7_50_3"></a>
 SUBTITLE(Fixed in 7.50.3 - September 14 2016)
+VULNBOX(7.50.3)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/docs/CVE-2016-7167.html">CVE-2016-7167: escape and unescape integer overflows</a>
@@ -7579,6 +7588,7 @@ SUBTITLE(Fixed in 7.50.3 - September 14 2016)
 
 <a name="7_50_2"></a>
 SUBTITLE(Fixed in 7.50.2 - September 7 2016)
+VULNBOX(7.50.2)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF mbedtls: Added support for NTLM
@@ -7633,6 +7643,7 @@ SUBTITLE(Fixed in 7.50.2 - September 7 2016)
 
 <a name="7_50_1"></a>
 SUBTITLE(Fixed in 7.50.1 - August 3 2016)
+VULNBOX(7.50.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/docs/CVE-2016-5419.html">TLS: switch off SSL session id when client cert is used</a>
@@ -7652,6 +7663,7 @@ SUBTITLE(Fixed in 7.50.1 - August 3 2016)
 
 <a name="7_50_0"></a>
 SUBTITLE(Fixed in 7.50.0 - July 21 2016)
+VULNBOX(7.50.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=799">http: add CURLINFO_HTTP_VERSION and %{http_version}</a>
@@ -7698,6 +7710,7 @@ SUBTITLE(Fixed in 7.50.0 - July 21 2016)
 
 <a name="7_49_1"></a>
 SUBTITLE(Fixed in 7.49.1 - May 30 2016)
+VULNBOX(7.49.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/docs/CVE-2016-4802.html">Windows: prevent DLL hijacking, CVE-2016-4802</a>
@@ -7721,6 +7734,7 @@ SUBTITLE(Fixed in 7.49.1 - May 30 2016)
 
 <a name="7_49_0"></a>
 SUBTITLE(Fixed in 7.49.0 - May 18 2016)
+VULNBOX(7.49.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=724">schannel: Add ALPN support</a>
@@ -7824,6 +7838,7 @@ SUBTITLE(Fixed in 7.49.0 - May 18 2016)
 
 <a name="7_48_0"></a>
 SUBTITLE(Fixed in 7.48.0 - March 23 2016)
+VULNBOX(7.48.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=569">configure: --with-ca-fallback: use built-in TLS CA fallback</a>
@@ -7913,6 +7928,7 @@ SUBTITLE(Fixed in 7.48.0 - March 23 2016)
 
 <a name="7_47_1"></a>
 SUBTITLE(Fixed in 7.47.1 - February 8 2016)
+VULNBOX(7.47.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF getredirect.c: fix variable name
@@ -7932,6 +7948,7 @@ SUBTITLE(Fixed in 7.47.1 - February 8 2016)
 
 <a name="7_47_0"></a>
 SUBTITLE(Fixed in 7.47.0 - January 27 2016)
+VULNBOX(7.47.0)
 <p> Changes:
 <ul class="changes">
  CHG version: Add flag CURL_VERSION_PSL for libpsl
@@ -8003,6 +8020,7 @@ SUBTITLE(Fixed in 7.47.0 - January 27 2016)
 
 <a name="7_46_0"></a>
 SUBTITLE(Fixed in 7.46.0 - December 2 2015)
+VULNBOX(7.46.0)
 <p> Changes:
 <ul class="changes">
  CHG configure: build silently by default
@@ -8088,6 +8106,7 @@ SUBTITLE(Fixed in 7.46.0 - December 2 2015)
 
 <a name="7_45_0"></a>
 SUBTITLE(Fixed in 7.45.0 - October 7 2015)
+VULNBOX(7.45.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=351">added CURLOPT_DEFAULT_PROTOCOL</a>
@@ -8173,6 +8192,7 @@ SUBTITLE(Fixed in 7.45.0 - October 7 2015)
 
 <a name="7_44_0"></a>
 SUBTITLE(Fixed in 7.44.0 - August 12 2015)
+VULNBOX(7.44.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/libcurl/c/CURLMOPT_PUSHFUNCTION.html">http2: added CURLMOPT_PUSHFUNCTION and CURLMOPT_PUSHDATA</a>
@@ -8247,6 +8267,7 @@ SUBTITLE(Fixed in 7.44.0 - August 12 2015)
 
 <a name="7_43_0"></a>
 SUBTITLE(Fixed in 7.43.0 - June 17 2015)
+VULNBOX(7.43.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/libcurl/c/CURLOPT_PROXY_SERVICE_NAME.html">Added CURLOPT_PROXY_SERVICE_NAME</a>
@@ -8331,6 +8352,7 @@ SUBTITLE(Fixed in 7.43.0 - June 17 2015)
 
 <a name="7_42_1"></a>
 SUBTITLE(Fixed in 7.42.1 - April 29 2015)
+VULNBOX(7.42.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF <a href="https://curl.se/docs/CVE-2015-3153.html">CURLOPT_HEADEROPT: default to separate</a>
@@ -8346,6 +8368,7 @@ SUBTITLE(Fixed in 7.42.1 - April 29 2015)
 
 <a name="7_42_0"></a>
 SUBTITLE(Fixed in 7.42.0 - April 22 2015)
+VULNBOX(7.42.0)
 <p> Changes:
 <ul class="changes">
  CHG openssl: show the cipher selection to use in verbose text
@@ -8480,6 +8503,7 @@ SUBTITLE(Fixed in 7.42.0 - April 22 2015)
 
 <a name="7_41_0"></a>
 SUBTITLE(Fixed in 7.41.0 - February 25 2015)
+VULNBOX(7.41.0)
 <p> Changes:
 <ul class="changes">
  CHG NetWare build: added TLS-SRP enabled build
@@ -8562,6 +8586,7 @@ SUBTITLE(Fixed in 7.41.0 - February 25 2015)
 
 <a name="7_40_0"></a>
 SUBTITLE(Fixed in 7.40.0 - January 8 2015)
+VULNBOX(7.40.0)
 <p> Changes:
 <ul class="changes">
  CHG http_digest: Added support for Windows SSPI based authentication
@@ -8701,6 +8726,7 @@ SUBTITLE(Fixed in 7.40.0 - January 8 2015)
 
 <a name="7_39_0"></a>
 SUBTITLE(Fixed in 7.39.0 - November 5 2014)
+VULNBOX(7.39.0)
 <p> Changes:
 <ul class="changes">
  CHG SSLv3 is disabled by default
@@ -8782,6 +8808,7 @@ SUBTITLE(Fixed in 7.39.0 - November 5 2014)
 
 <a name="7_38_0"></a>
 SUBTITLE(Fixed in 7.38.0 - September 10 2014)
+VULNBOX(7.38.0)
 <p> Changes:
 <ul class="changes">
  CHG supports HTTP/2 draft-14
@@ -8867,6 +8894,7 @@ SUBTITLE(Fixed in 7.38.0 - September 10 2014)
 
 <a name="7_37_1"></a>
 SUBTITLE(Fixed in 7.37.1 - July 16 2014)
+VULNBOX(7.37.1)
 <p> Changes:
 <ul class="changes">
  CHG bits.close: introduce connection close tracking
@@ -8927,6 +8955,7 @@ SUBTITLE(Fixed in 7.37.1 - July 16 2014)
 
 <a name="7_37_0"></a>
 SUBTITLE(Fixed in 7.37.0 - May 21 2014)
+VULNBOX(7.37.0)
 <p> Changes:
 <ul class="changes">
  CHG URL parser: IPv6 zone identifiers are now supported
@@ -9007,6 +9036,7 @@ SUBTITLE(Fixed in 7.37.0 - May 21 2014)
 
 <a name="7_36_0"></a>
 SUBTITLE(Fixed in 7.36.0 - March 26 2014)
+VULNBOX(7.36.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/mail/lib-2014-01/0183.html">ntlm: Added support for NTLMv2</a>
@@ -9082,6 +9112,7 @@ SUBTITLE(Fixed in 7.36.0 - March 26 2014)
 
 <a name="7_35_0"></a>
 SUBTITLE(Fixed in 7.35.0 - January 29 2014)
+VULNBOX(7.35.0)
 <p> Changes:
 <ul class="changes">
  CHG imap/pop3/smtp: Added support for SASL authentication downgrades
@@ -9141,6 +9172,7 @@ SUBTITLE(Fixed in 7.35.0 - January 29 2014)
 
 <a name="7_34_0"></a>
 SUBTITLE(Fixed in 7.34.0 - December 17 2013)
+VULNBOX(7.34.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/bug/?i=79">SSL: protocol version can be specified more precisely</a>
@@ -9202,6 +9234,7 @@ SUBTITLE(Fixed in 7.34.0 - December 17 2013)
 
 <a name="7_33_0"></a>
 SUBTITLE(Fixed in 7.33.0 - October 14 2013)
+VULNBOX(7.33.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://daniel.haxx.se/blog/2013/08/20/testing-curl_multi_socket_action/">test code for testing the event based API</a>
@@ -9262,6 +9295,7 @@ SUBTITLE(Fixed in 7.33.0 - October 14 2013)
 
 <a name="7_32_0"></a>
 SUBTITLE(Fixed in 7.32.0 - August 12 2013)
+VULNBOX(7.32.0)
 <p> Changes:
 <ul class="changes">
  CHG curl: allow timeouts to accept decimal values
@@ -9317,6 +9351,7 @@ SUBTITLE(Fixed in 7.32.0 - August 12 2013)
 
 <a name="7_31_0"></a>
 SUBTITLE(Fixed in 7.31.0 - June 22 2013)
+VULNBOX(7.31.0)
 
 <p> Changes:
 <ul class="changes">
@@ -9374,6 +9409,7 @@ SUBTITLE(Fixed in 7.31.0 - June 22 2013)
 
 <a name="7_30_0"></a>
 SUBTITLE(Fixed in 7.30.0 - April 12 2013)
+VULNBOX(7.30.0)
 <p> Changes:
 <ul class="changes">
  CHG imap: Changed response tag generation to be completely unique
@@ -9455,6 +9491,7 @@ SUBTITLE(Fixed in 7.30.0 - April 12 2013)
 
 <a name="7_29_0"></a>
 SUBTITLE(Fixed in 7.29.0 - February 6 2013)
+VULNBOX(7.29.0)
 <p> Changes:
 <ul class="changes">
  CHG test: offer "automake" output and check for perl better
@@ -9510,6 +9547,7 @@ SUBTITLE(Fixed in 7.29.0 - February 6 2013)
 
 <a name="7_28_1"></a>
 SUBTITLE(Fixed in 7.28.1 - November 20 2012)
+VULNBOX(7.28.1)
 <p> Changes:
 <ul class="changes">
  CHG metalink/md5: Use CommonCrypto on Apple operating systems
@@ -9553,6 +9591,7 @@ SUBTITLE(Fixed in 7.28.1 - November 20 2012)
 
 <a name="7_28_0"></a>
 SUBTITLE(Fixed in 7.28.0 - October 10 2012)
+VULNBOX(7.28.0)
 <p> Changes:
 <ul class="changes">
  CHG SSH: added agent based authentication
@@ -9606,6 +9645,7 @@ SUBTITLE(Fixed in 7.28.0 - October 10 2012)
 
 <a name="7_27_0"></a>
 SUBTITLE(Fixed in 7.27.0 - July 27 2012)
+VULNBOX(7.27.0)
 <p> Changes:
 <ul class="changes">
  CHG nss: use human-readable error messages provided by NSS
@@ -9649,6 +9689,7 @@ SUBTITLE(Fixed in 7.27.0 - July 27 2012)
 
 <a name="7_26_0"></a>
 SUBTITLE(Fixed in 7.26.0 - May 24 2012)
+VULNBOX(7.26.0)
 <p> Changes:
 <ul class="changes">
  CHG nss: the minimal supported version of NSS bumped to 3.12.x
@@ -9694,6 +9735,7 @@ SUBTITLE(Fixed in 7.26.0 - May 24 2012)
 
 <a name="7_25_0"></a>
 SUBTITLE(Fixed in 7.25.0 - March 22 2012)
+VULNBOX(7.25.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/mail/lib-2012-02/0009.html">configure: add option disable --libcurl output</a>
@@ -9735,6 +9777,7 @@ SUBTITLE(Fixed in 7.25.0 - March 22 2012)
 
 <a name="7_24_0"></a>
 SUBTITLE(Fixed in 7.24.0 - January 24 2012)
+VULNBOX(7.24.0)
 <p> Changes:
 <ul class="changes">
  CHG <a href="https://curl.se/mail/lib-2011-11/0205.html">CURLOPT_QUOTE: SFTP supports the &#39;*&#39;-prefix now</a>
@@ -9805,6 +9848,7 @@ SUBTITLE(Fixed in 7.24.0 - January 24 2012)
 
 <a name="7_23_1"></a>
 SUBTITLE(Fixed in 7.23.1 - November 17 2011)
+VULNBOX(7.23.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF Windows: curl would fail if it found no CA cert, unless -k was used. Even
@@ -9813,6 +9857,7 @@ SUBTITLE(Fixed in 7.23.1 - November 17 2011)
 
 <a name="7_23_0"></a>
 SUBTITLE(Fixed in 7.23.0 - November 15 2011)
+VULNBOX(7.23.0)
 <p> Changes:
 <ul class="changes">
  CHG Empty headers can be sent in HTTP requests by terminating with a semicolon
@@ -9860,6 +9905,7 @@ SUBTITLE(Fixed in 7.23.0 - November 15 2011)
 
 <a name="7_22_0"></a>
 SUBTITLE(Fixed in 7.22.0 - September 13 2011)
+VULNBOX(7.22.0)
 <p> Changes:
 <ul class="changes">
  CHG Added CURLOPT_GSSAPI_DELEGATION
@@ -9910,6 +9956,7 @@ SUBTITLE(Fixed in 7.22.0 - September 13 2011)
 </ul>
 <a name="7_21_7"></a>
 SUBTITLE(Fixed in 7.21.7 - June 23 2011)
+VULNBOX(7.21.7)
 <p> Changes:
 <ul class="changes">
  CHG recognize the [protocol]:// prefix in proxy hosts where the protocol is one
@@ -9940,6 +9987,7 @@ SUBTITLE(Fixed in 7.21.7 - June 23 2011)
 
 <a name="7_21_6"></a>
 SUBTITLE(Fixed in 7.21.6 - April 22 2011)
+VULNBOX(7.21.6)
 <p> Changes:
 <ul class="changes">
  CHG Added --tr-encoding and CURLOPT_TRANSFER_ENCODING
@@ -9954,6 +10002,7 @@ SUBTITLE(Fixed in 7.21.6 - April 22 2011)
 
 <a name="7_21_5"></a>
 SUBTITLE(Fixed in 7.21.5 - April 17 2011)
+VULNBOX(7.21.5)
 <p> Changes:
 <ul class="changes">
  CHG SOCKOPTFUNCTION: callback can say already-connected
@@ -10015,6 +10064,7 @@ SUBTITLE(Fixed in 7.21.5 - April 17 2011)
 
 <a name="7_21_4"></a>
 SUBTITLE(Fixed in 7.21.4 - February 17 2011)
+VULNBOX(7.21.4)
 <p> Changes:
 <ul class="changes">
  CHG CURLINFO_FTP_ENTRY_PATH now supports SFTP
@@ -10062,6 +10112,7 @@ SUBTITLE(Fixed in 7.21.4 - February 17 2011)
 
 <a name="7_21_3"></a>
 SUBTITLE(Fixed in 7.21.3 - December 15 2010)
+VULNBOX(7.21.3)
 <p> Changes:
 <ul class="changes">
  CHG Added --noconfigure switch to testcurl.pl
@@ -10105,6 +10156,7 @@ SUBTITLE(Fixed in 7.21.3 - December 15 2010)
 
 <a name="7_21_2"></a>
 SUBTITLE(Fixed in 7.21.2 - October 13 2010)
+VULNBOX(7.21.2)
 <p> Changes:
 <ul class="changes">
  CHG curl -T: ignore file size of special files
@@ -10156,6 +10208,7 @@ SUBTITLE(Fixed in 7.21.2 - October 13 2010)
 
 <a name="7_21_1"></a>
 SUBTITLE(Fixed in 7.21.1 - August 11 2010)
+VULNBOX(7.21.1)
 <p> Changes:
 <ul class="changes">
  CHG maketgz: produce CHANGES automatically
@@ -10206,6 +10259,7 @@ SUBTITLE(Fixed in 7.21.1 - August 11 2010)
 
 <a name="7_21_0"></a>
 SUBTITLE(Fixed in 7.21.0 - June 16 2010)
+VULNBOX(7.21.0)
 <p> Changes:
 <ul class="changes">
  CHG added the --proto and -proto-redir options
@@ -10241,6 +10295,7 @@ SUBTITLE(Fixed in 7.21.0 - June 16 2010)
 
 <a name="7_20_1"></a>
 SUBTITLE(Fixed in 7.20.1 - April 14 2010)
+VULNBOX(7.20.1)
 <p> Changes:
 <ul class="changes">
  CHG The &#39;ares&#39; subtree has been removed from the source repository
@@ -10284,6 +10339,7 @@ SUBTITLE(Fixed in 7.20.1 - April 14 2010)
 
 <a name="7_20_0"></a>
 SUBTITLE(Fixed in 7.20.0 - February 9 2010)
+VULNBOX(7.20.0)
 <p> Changes:
 <ul class="changes">
  CHG support SSL_FILETYPE_ENGINE for client certificate
@@ -10335,6 +10391,7 @@ SUBTITLE(Fixed in 7.20.0 - February 9 2010)
 
 <a name="7_19_7"></a>
 SUBTITLE(Fixed in 7.19.7 - November 4 2009)
+VULNBOX(7.19.7)
 <p> Changes:
 <ul class="changes">
  CHG -T. is now for non-blocking uploading from stdin
@@ -10378,6 +10435,7 @@ SUBTITLE(Fixed in 7.19.7 - November 4 2009)
 
 <a name="7_19_6"></a>
 SUBTITLE(Fixed in 7.19.6 - August 12 2009)
+VULNBOX(7.19.6)
 <p> Changes:
 <ul class="changes">
  CHG CURLOPT_FTPPORT (and curl&#39;s -P/--ftpport) support port ranges
@@ -10420,6 +10478,7 @@ SUBTITLE(Fixed in 7.19.6 - August 12 2009)
 
 <a name="7_19_5"></a>
 SUBTITLE(Fixed in 7.19.5 - May 18 2009)
+VULNBOX(7.19.5)
 <p> Changes:
 <ul class="changes">
  CHG libcurl now closes all dead connections whenever you attempt to open a new
@@ -10465,6 +10524,7 @@ SUBTITLE(Fixed in 7.19.5 - May 18 2009)
 
 <a name="7_19_4"></a>
 SUBTITLE(Fixed in 7.19.4 - March 3 2009)
+VULNBOX(7.19.4)
 <p> Changes:
 <ul class="changes">
  CHG Added CURLOPT_NOPROXY and the corresponding --noproxy
@@ -10509,6 +10569,7 @@ SUBTITLE(Fixed in 7.19.4 - March 3 2009)
 
 <a name="7_19_3"></a>
 SUBTITLE(Fixed in 7.19.3 - January 19 2009)
+VULNBOX(7.19.3)
 <p> Changes:
 <ul class="changes">
  CHG CURLAUTH_DIGEST_IE bit added for CURLOPT_HTTPAUTH and CURLOPT_PROXYAUTH
@@ -10556,6 +10617,7 @@ SUBTITLE(Fixed in 7.19.3 - January 19 2009)
 
 <a name="7_19_2"></a>
 SUBTITLE(Fixed in 7.19.2 - November 13 2008)
+VULNBOX(7.19.2)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF build failure when using MSVC 6 makefile and on four platforms more
@@ -10566,6 +10628,7 @@ SUBTITLE(Fixed in 7.19.2 - November 13 2008)
 
 <a name="7_19_1"></a>
 SUBTITLE(Fixed in 7.19.1 - November 5 2008)
+VULNBOX(7.19.1)
 <p> Changes:
 <ul class="changes">
  CHG pkg-config can now show supported_protocols and supported_features
@@ -10608,6 +10671,7 @@ SUBTITLE(Fixed in 7.19.1 - November 5 2008)
 
 <a name="7_19_0"></a>
 SUBTITLE(Fixed in 7.19.0 - September 1 2008)
+VULNBOX(7.19.0)
 <p> Changes:
 <ul class="changes">
  CHG curl_off_t gets its size/typedef somewhat differently than before. This _may_
@@ -10668,6 +10732,7 @@ SUBTITLE(Fixed in 7.19.0 - September 1 2008)
 
 <a name="7_18_2"></a>
 SUBTITLE(Fixed in 7.18.2 - June 4 2008)
+VULNBOX(7.18.2)
 <p> Changes:
 <ul class="changes">
  CHG CURLFORM_STREAM was added
@@ -10705,6 +10770,7 @@ SUBTITLE(Fixed in 7.18.2 - June 4 2008)
 
 <a name="7_18_1"></a>
 SUBTITLE(Fixed in 7.18.1 - March 30 2008)
+VULNBOX(7.18.1)
 <p> Changes:
 <ul class="changes">
  CHG added support for HttpOnly cookies
@@ -10756,6 +10822,7 @@ SUBTITLE(Fixed in 7.18.1 - March 30 2008)
 
 <a name="7_18_0"></a>
 SUBTITLE(Fixed in 7.18.0 - January 28 2008)
+VULNBOX(7.18.0)
 <p> Changes:
 <ul class="changes">
  CHG --data-urlencode
@@ -10815,6 +10882,7 @@ SUBTITLE(Fixed in 7.18.0 - January 28 2008)
 
 <a name="7_17_1"></a>
 SUBTITLE(Fixed in 7.17.1 - October 29 2007)
+VULNBOX(7.17.1)
 <p> Changes:
 <ul class="changes">
  CHG automatically append ";type=&lt;a|i&gt;" when using HTTP proxies for FTP urls
@@ -10858,6 +10926,7 @@ SUBTITLE(Fixed in 7.17.1 - October 29 2007)
 
 <a name="7_17_0"></a>
 SUBTITLE(Fixed in 7.17.0 - September 13 2007)
+VULNBOX(7.17.0)
 <p> Changes:
 <ul class="changes">
  CHG support for OS/400 Secure Sockets Layer library
@@ -10906,6 +10975,7 @@ SUBTITLE(Fixed in 7.17.0 - September 13 2007)
 
 <a name="7_16_4"></a>
 SUBTITLE(Fixed in 7.16.4 - July 10 2007)
+VULNBOX(7.16.4)
 <p> Changes:
 <ul class="changes">
  CHG added CURLOPT_NEW_FILE_PERMS and CURLOPT_NEW_DIRECTORY_PERMS
@@ -10926,6 +10996,7 @@ SUBTITLE(Fixed in 7.16.4 - July 10 2007)
 
 <a name="7_16_3"></a>
 SUBTITLE(Fixed in 7.16.3 - June 25 2007)
+VULNBOX(7.16.3)
 <p> Changes:
 <ul class="changes">
  CHG added curl_multi_socket_action()
@@ -10983,6 +11054,7 @@ SUBTITLE(Fixed in 7.16.3 - June 25 2007)
 
 <a name="7_16_2"></a>
 SUBTITLE(Fixed in 7.16.2 - April 11 2007)
+VULNBOX(7.16.2)
 <p> Changes:
 <ul class="changes">
  CHG added CURLOPT_TIMEOUT_MS and CURLOPT_CONNECTTIMEOUT_MS
@@ -11029,6 +11101,7 @@ SUBTITLE(Fixed in 7.16.2 - April 11 2007)
 
 <a name="7_16_1"></a>
 SUBTITLE(Fixed in 7.16.1 - January 29 2007)
+VULNBOX(7.16.1)
 <p> Changes:
 <ul class="changes">
  CHG Support for SCP and SFTP were added (powered by libssh2)
@@ -11080,6 +11153,7 @@ SUBTITLE(Fixed in 7.16.1 - January 29 2007)
 
 <a name="7_16_0"></a>
 SUBTITLE(Fixed in 7.16.0 - October 30 2006)
+VULNBOX(7.16.0)
 <p> Changes:
 <ul class="changes">
  CHG the SONAME on the shared library was bumped from 3 to 4
@@ -11129,6 +11203,7 @@ SUBTITLE(Fixed in 7.16.0 - October 30 2006)
 
 <a name="7_15_5"></a>
 SUBTITLE(Fixed in 7.15.5 - August 7 2006)
+VULNBOX(7.15.5)
 <p> Changes:
 <ul class="changes">
  CHG added --ftp-ssl-reqd
@@ -11158,6 +11233,7 @@ SUBTITLE(Fixed in 7.15.5 - August 7 2006)
 
 <a name="7_15_4"></a>
 SUBTITLE(Fixed in 7.15.4 - June 12 2006)
+VULNBOX(7.15.4)
 <p> Changes:
 <ul class="changes">
  CHG NTLM2 session response support
@@ -11199,6 +11275,7 @@ SUBTITLE(Fixed in 7.15.4 - June 12 2006)
 
 <a name="7_15_3"></a>
 SUBTITLE(Fixed in 7.15.3 - March 20 2006)
+VULNBOX(7.15.3)
 <p> Changes:
 <ul class="changes">
  CHG added docs for --ftp-method and CURLOPT_FTP_FILEMETHOD
@@ -11218,6 +11295,7 @@ SUBTITLE(Fixed in 7.15.3 - March 20 2006)
 
 <a name="7_15_2"></a>
 SUBTITLE(Fixed in 7.15.2 - February 27 2006)
+VULNBOX(7.15.2)
 <p> Changes:
 <ul class="changes">
  CHG Support for SOCKS4 proxies (added --socks4)
@@ -11260,6 +11338,7 @@ SUBTITLE(Fixed in 7.15.2 - February 27 2006)
 
 <a name="7_15_1"></a>
 SUBTITLE(Fixed in 7.15.1 - December 7 2005)
+VULNBOX(7.15.1)
 <p> Changes:
 <ul class="changes">
  CHG the libcurl.pc pkgconfig file now gets installed on make install
@@ -11293,6 +11372,7 @@ SUBTITLE(Fixed in 7.15.1 - December 7 2005)
 
 <a name="7_15_0"></a>
 SUBTITLE(Fixed in 7.15.0 - October 13 2005)
+VULNBOX(7.15.0)
 <p> Changes:
 <ul class="changes">
  CHG --ftp-skip-pasv-ip / CURLOPT_FTP_SKIP_PASV_IP (sponsored by CU*Answers)
@@ -11313,6 +11393,7 @@ SUBTITLE(Fixed in 7.15.0 - October 13 2005)
 
 <a name="7_14_1"></a>
 SUBTITLE(Fixed in 7.14.1 - September 1 2005)
+VULNBOX(7.14.1)
 <p> Changes:
 <ul class="changes">
  CHG GNU GSS support
@@ -11360,6 +11441,7 @@ SUBTITLE(Fixed in 7.14.1 - September 1 2005)
 
 <a name="7_14_0"></a>
 SUBTITLE(Fixed in 7.14.0 - May 16 2005)
+VULNBOX(7.14.0)
 <p> Changes:
 <ul class="changes">
  CHG modified default HTTP request headers
@@ -11393,6 +11475,7 @@ SUBTITLE(Fixed in 7.14.0 - May 16 2005)
 
 <a name="7_13_2"></a>
 SUBTITLE(Fixed in 7.13.2 - April 4 2005)
+VULNBOX(7.13.2)
 <p> Changes:
 <ul class="changes">
  CHG Added --form-string
@@ -11422,6 +11505,7 @@ SUBTITLE(Fixed in 7.13.2 - April 4 2005)
 
 <a name="7_13_1"></a>
 SUBTITLE(Fixed in 7.13.1 - March 4 2005)
+VULNBOX(7.13.1)
 <p> Changes:
 <ul class="changes">
  CHG CURLOPT_COOKIEFILE set to "" is now activating the cookie engine
@@ -11447,6 +11531,7 @@ SUBTITLE(Fixed in 7.13.1 - March 4 2005)
 
 <a name="7_13_0"></a>
 SUBTITLE(Fixed in 7.13.0 - February 1 2005)
+VULNBOX(7.13.0)
 <p> Changes:
 <ul class="changes">
  CHG added --ftp-account and CURLOPT_FTP_ACCOUNT
@@ -11485,6 +11570,7 @@ SUBTITLE(Fixed in 7.13.0 - February 1 2005)
 <p>
 <a name="7_12_3"></a>
 SUBTITLE(Fixed in 7.12.3 - December 20 2004)
+VULNBOX(7.12.3)
 <p>Changes:
 <ul class="changes">
  CHG PKCS12 certificate support added
@@ -11538,6 +11624,7 @@ SUBTITLE(Fixed in 7.12.3 - December 20 2004)
 <p>
 <a name="7_12_2"></a>
 SUBTITLE(Fixed in 7.12.2 - October 18 2004)
+VULNBOX(7.12.2)
 <p>Changes:
 <ul class="changes">
  CHG the IDN code now verifies that only TLD-legitmate letters are used in the
@@ -11591,6 +11678,7 @@ SUBTITLE(Fixed in 7.12.2 - October 18 2004)
 <p>
 <a name="7_12_1"></a>
 SUBTITLE(Fixed in 7.12.1 - August 10 2004)
+VULNBOX(7.12.1)
 <p>Changes:
 <ul class="changes">
  CHG the version string now only contains info about (sub) package versions,
@@ -11643,6 +11731,7 @@ SUBTITLE(Fixed in 7.12.1 - August 10 2004)
 <p>
 <a name="7_12_0"></a>
 SUBTITLE(Fixed in 7.12.0 - June 2 2004)
+VULNBOX(7.12.0)
 <p>Changes:
 <ul class="changes">
  CHG added ability to "upload" to file:// URLs
@@ -11679,6 +11768,7 @@ SUBTITLE(Fixed in 7.12.0 - June 2 2004)
 <p>
 <a name="7_11_2"></a>
 SUBTITLE(Fixed in 7.11.2 - April 26 2004)
+VULNBOX(7.11.2)
 <p>Changes:
 <ul class="changes">
  CHG removed maximum user+password+hostname size limit
@@ -11728,6 +11818,7 @@ SUBTITLE(Fixed in 7.11.2 - April 26 2004)
 
 <a name="7_11_1"></a>
 SUBTITLE(Fixed in 7.11.1 - March 19 2004)
+VULNBOX(7.11.1)
 <p> Changes:
 <ul class="changes">
  CHG CURLOPT_POSTFIELDSIZE_LARGE added to offer POSTs larger than 2GB
@@ -11788,6 +11879,7 @@ SUBTITLE(Fixed in 7.11.1 - March 19 2004)
 
 <a name="7_11_0"></a>
 SUBTITLE(Fixed in 7.11.0 - January 22 2004)
+VULNBOX(7.11.0)
 <p> Changes:
 <ul class="changes">
  CHG allows the URL to be set by a callback when using the multi interface
@@ -11848,6 +11940,7 @@ SUBTITLE(Fixed in 7.11.0 - January 22 2004)
 
 <a name="7_10_8"></a>
 SUBTITLE(Fixed in 7.10.8 - November 1 2003)
+VULNBOX(7.10.8)
 <p> Changes:
 <ul class="changes">
  CHG --head now works on file:// URLs too
@@ -11922,6 +12015,7 @@ SUBTITLE(Fixed in 7.10.8 - November 1 2003)
 
 <a name="7_10_7"></a>
 SUBTITLE(Fixed in 7.10.7 - August 15 2003)
+VULNBOX(7.10.7)
 <p> Changes:
 <ul class="changes">
  CHG CURLOPT_PROXYAUTH was added to allow different authentication methods on
@@ -11954,6 +12048,7 @@ SUBTITLE(Fixed in 7.10.7 - August 15 2003)
 
 <a name="7_10_6"></a>
 SUBTITLE(Fixed in 7.10.6 - July 28 2003)
+VULNBOX(7.10.6)
 <p> Changes:
 <ul class="changes">
  CHG CURLOPT_SSL_CTX_FUNCTION allows a custom callback for SSL connections
@@ -12001,6 +12096,7 @@ SUBTITLE(Fixed in 7.10.6 - July 28 2003)
 
 <a name="7_10_5"></a>
 SUBTITLE(Fixed in 7.10.5 - May 19 2003)
+VULNBOX(7.10.5)
 <p> Changes:
 <ul class="changes">
  CHG support for Content-Encoding: gzip was added
@@ -12041,6 +12137,7 @@ SUBTITLE(Fixed in 7.10.5 - May 19 2003)
 
 <a name="7_10_4"></a>
 SUBTITLE(Fixed in 7.10.4 - April 2 2003)
+VULNBOX(7.10.4)
 <p> Changes:
 <ul class="changes">
  CHG the curl tool now "clears" sensitive commands line args
@@ -12095,6 +12192,7 @@ SUBTITLE(Fixed in 7.10.4 - April 2 2003)
 
 <a name="7_10_3"></a>
 SUBTITLE(Fixed in 7.10.3 - January 14 2003)
+VULNBOX(7.10.3)
 <p> Changes:
 <ul class="changes">
  CHG Added CURLOPT_PRIVATE and CURLINFO_PRIVATE
@@ -12128,6 +12226,7 @@ SUBTITLE(Fixed in 7.10.3 - January 14 2003)
 
 <a name="7_10_2"></a>
 SUBTITLE(Fixed in 7.10.2 - November 18 2002)
+VULNBOX(7.10.2)
 <p> Changes:
 <ul class="changes">
  CHG PDF versions of much documentation are included in the tarball
@@ -12149,6 +12248,7 @@ SUBTITLE(Fixed in 7.10.2 - November 18 2002)
 
 <a name="7_10_1"></a>
 SUBTITLE(Fixed in 7.10.1 - October 11 2002)
+VULNBOX(7.10.1)
 <p> Changes:
 <ul class="changes">
  CHG configure --without-zlib explicitly disables zlib in builds
@@ -12165,6 +12265,7 @@ SUBTITLE(Fixed in 7.10.1 - October 11 2002)
 
 <a name="7_10"></a>
 SUBTITLE(Fixed in 7.10 - October 1 2002)
+VULNBOX(7.10)
 <p> Changes:
 <ul class="changes">
  CHG curl -x "" now disables proxy-usage completely
@@ -12211,6 +12312,7 @@ SUBTITLE(Fixed in 7.10 - October 1 2002)
 
 <a name="7_9_8"></a>
 SUBTITLE(Fixed in 7.9.8 - June 13 2002)
+VULNBOX(7.9.8)
 <p> Changes:
 <ul class="changes">
  CHG curl_formadd() can do file upload parts from buffer
@@ -12242,6 +12344,7 @@ SUBTITLE(Fixed in 7.9.8 - June 13 2002)
 
 <a name="7_9_7"></a>
 SUBTITLE(Fixed in 7.9.7 - May 10 2002)
+VULNBOX(7.9.7)
 <p> Changes:
 <ul class="changes">
  CHG CURLOPT_COOKIESESSION (-j with the client) starts a new cookie session
@@ -12268,6 +12371,7 @@ SUBTITLE(Fixed in 7.9.7 - May 10 2002)
 
 <a name="7_9_6"></a>
 SUBTITLE(Fixed in 7.9.6 - April 14 2002)
+VULNBOX(7.9.6)
 <p> Changes:
 <ul class="changes">
  CHG Added CURLOPT_DEBUGFUNCTION
@@ -12300,6 +12404,7 @@ SUBTITLE(Fixed in 7.9.6 - April 14 2002)
 
 <a name="7_9_5"></a>
 SUBTITLE(Fixed in 7.9.5 - March 7 2002)
+VULNBOX(7.9.5)
 <p> Changes:
 <ul class="changes">
  CHG Added CURLOPT_PREQUOTE
@@ -12328,6 +12433,7 @@ SUBTITLE(Fixed in 7.9.5 - March 7 2002)
 
 <a name="7_9_4"></a>
 SUBTITLE(Fixed in 7.9.4 - March 4 2002)
+VULNBOX(7.9.4)
 <p> Changes:
 <ul class="changes">
  CHG Introduced CURLINFO_CONTENT_TYPE
@@ -12349,6 +12455,7 @@ SUBTITLE(Fixed in 7.9.4 - March 4 2002)
 
 <a name="7_9_3"></a>
 SUBTITLE(Fixed in 7.9.3 - January 23 2002)
+VULNBOX(7.9.3)
 <p> Changes:
 <ul class="changes">
  CHG introduced a DNS lookup cache
@@ -12374,6 +12481,7 @@ SUBTITLE(Fixed in 7.9.3 - January 23 2002)
 
 <a name="7_9_2"></a>
 SUBTITLE(Fixed in 7.9.2 - December 5 2001)
+VULNBOX(7.9.2)
 <p> Changes:
 <ul class="changes">
  CHG --disable-epsv is a new option to the curl command line tool
@@ -12404,6 +12512,7 @@ SUBTITLE(Fixed in 7.9.2 - December 5 2001)
 
 <a name="7_9_1"></a>
 SUBTITLE(Fixed in 7.9.1 - November 4 2001)
+VULNBOX(7.9.1)
 <p> Changes:
 <ul class="changes">
  CHG CURLE_GOT_NOTHING is a new possible error code
@@ -12432,6 +12541,7 @@ SUBTITLE(Fixed in 7.9.1 - November 4 2001)
 
 <a name="7_9"></a>
 SUBTITLE(Fixed in 7.9 - September 23 2001)
+VULNBOX(7.9)
 <p> Changes:
 <ul class="changes">
  CHG -R sets the timestamp of a downloaded file to the same as the remote file
@@ -12462,6 +12572,7 @@ SUBTITLE(Fixed in 7.9 - September 23 2001)
 
 <a name="7_8_1"></a>
 SUBTITLE(Fixed in 7.8.1 - August 20 2001)
+VULNBOX(7.8.1)
 <p> Changes:
 <ul class="changes">
  CHG added CURLOPT_HTTPGET
@@ -12497,6 +12608,7 @@ SUBTITLE(Fixed in 7.8.1 - August 20 2001)
 
 <a name="7_8"></a>
 SUBTITLE(Fixed in 7.8 - June 7 2001)
+VULNBOX(7.8)
 <p> Changes:
 <ul class="changes">
  CHG &#39;curl-config --vernum&#39; shows version number as a hexadecimal number
@@ -12524,6 +12636,7 @@ SUBTITLE(Fixed in 7.8 - June 7 2001)
 
 <a name="7_7_3"></a>
 SUBTITLE(Fixed in 7.7.3 - May 4 2001)
+VULNBOX(7.7.3)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF we&#39;ve discovered that TELNET does not work under win32
@@ -12537,6 +12650,7 @@ SUBTITLE(Fixed in 7.7.3 - May 4 2001)
 
 <a name="7_7_2"></a>
 SUBTITLE(Fixed in 7.7.2 - April 22 2001)
+VULNBOX(7.7.2)
 <p> Changes:
 <ul class="changes">
  CHG &#39;curl-config&#39; was added to help applications use libcurl
@@ -12559,6 +12673,7 @@ SUBTITLE(Fixed in 7.7.2 - April 22 2001)
 
 <a name="7_7_1"></a>
 SUBTITLE(Fixed in 7.7.1 - April 3 2001)
+VULNBOX(7.7.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF location:-fix
@@ -12576,6 +12691,7 @@ SUBTITLE(Fixed in 7.7.1 - April 3 2001)
 
 <a name="7_7"></a>
 SUBTITLE(Fixed in 7.7 - March 22 2001)
+VULNBOX(7.7)
 <p> Changes:
 <ul class="changes">
  CHG supports HTTP proxy with IPv6
@@ -12593,6 +12709,7 @@ SUBTITLE(Fixed in 7.7 - March 22 2001)
 
 <a name="7_6_1"></a>
 SUBTITLE(Fixed in 7.6.1 - February 9 2001)
+VULNBOX(7.6.1)
 <p> Changes:
 <ul class="changes">
  CHG partial IPv6 support (HTTP without proxy and only "active" FTP so far)
@@ -12610,6 +12727,7 @@ SUBTITLE(Fixed in 7.6.1 - February 9 2001)
 
 <a name="7_6"></a>
 SUBTITLE(Fixed in 7.6 - January 26 2001)
+VULNBOX(7.6)
 <p> Changes:
 <ul class="changes">
  CHG -g/--globoff was added to disable the URL globbing
@@ -12630,6 +12748,7 @@ SUBTITLE(Fixed in 7.6 - January 26 2001)
 
 <a name="7_5_2"></a>
 SUBTITLE(Fixed in 7.5.2 - January 4 2001)
+VULNBOX(7.5.2)
 <p> Changes:
 <ul class="changes">
  CHG new licensing, MPL or MIT/X
@@ -12645,6 +12764,7 @@ SUBTITLE(Fixed in 7.5.2 - January 4 2001)
 
 <a name="7_5_1"></a>
 SUBTITLE(Fixed in 7.5.1 - December 11 2000)
+VULNBOX(7.5.1)
 <p> Changes:
 <ul class="changes">
  CHG added Borland makefiles
@@ -12658,6 +12778,7 @@ SUBTITLE(Fixed in 7.5.1 - December 11 2000)
 
 <a name="7_5"></a>
 SUBTITLE(Fixed in 7.5 - December 1 2000)
+VULNBOX(7.5)
 <p> Changes:
 <ul class="changes">
  CHG new --max-redirs option and corresponding CURLOPT_MAXREDIRS libcurl option.
@@ -12687,6 +12808,7 @@ SUBTITLE(Fixed in 7.5 - December 1 2000)
 
 <a name="7_4_2"></a>
 SUBTITLE(Fixed in 7.4.2 - November 15 2000)
+VULNBOX(7.4.2)
 <p> Changes:
 <ul class="changes">
  CHG an initial attempt to make a test suite is included
@@ -12719,6 +12841,7 @@ SUBTITLE(Fixed in 7.4.2 - November 15 2000)
 
 <a name="7_4_1"></a>
 SUBTITLE(Fixed in 7.4.1 - October 16 2000)
+VULNBOX(7.4.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF Corrected the makefiles in the release archive!
@@ -12726,6 +12849,7 @@ SUBTITLE(Fixed in 7.4.1 - October 16 2000)
 
 <a name="7_4"></a>
 SUBTITLE(Fixed in 7.4 - October 16 2000)
+VULNBOX(7.4)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF possible buffer overflow by an evil ftp server fixed
@@ -12743,6 +12867,7 @@ SUBTITLE(Fixed in 7.4 - October 16 2000)
 
 <a name="7_3"></a>
 SUBTITLE(Fixed in 7.3 - September 28 2000)
+VULNBOX(7.3)
 <p> Changes:
 <ul class="changes">
  CHG --proxytunnel, non-HTTP tunneled through a http proxy is added
@@ -12760,6 +12885,7 @@ SUBTITLE(Fixed in 7.3 - September 28 2000)
 
 <a name="7_2_1"></a>
 SUBTITLE(Fixed in 7.2.1 - August 31 2000)
+VULNBOX(7.2.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF Linux name resolve check in the configure script is fixed
@@ -12769,6 +12895,7 @@ SUBTITLE(Fixed in 7.2.1 - August 31 2000)
 
 <a name="7_2"></a>
 SUBTITLE(Fixed in 7.2 - August 30 2000)
+VULNBOX(7.2)
 <p> Changes:
 <ul class="changes">
  CHG --data-binary was added to allow fully binary -d style posts.
@@ -12781,6 +12908,7 @@ SUBTITLE(Fixed in 7.2 - August 30 2000)
 
 <a name="7_1_1"></a>
 SUBTITLE(Fixed in 7.1.1 - August 21 2000)
+VULNBOX(7.1.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF No user but password in a URL is now working properly
@@ -12792,6 +12920,7 @@ SUBTITLE(Fixed in 7.1.1 - August 21 2000)
 
 <a name="7_1"></a>
 SUBTITLE(Fixed in 7.1 - August 7 2000)
+VULNBOX(7.1)
 <p> Changes:
 <ul class="changes">
  CHG CURLOPT_PROXYPORT added to curl_easy_setopt() in the lib
@@ -12851,6 +12980,7 @@ SUBTITLE(Fixed in 7.1 - August 7 2000)
 
 <a name="6_5_2"></a>
 SUBTITLE(Fixed in 6.5.2 - March 21 2000)
+VULNBOX(6.5.2)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF corrected the -D mockup that caused 6.5.1 to crash
@@ -12858,6 +12988,7 @@ SUBTITLE(Fixed in 6.5.2 - March 21 2000)
 
 <a name="6_5_1"></a>
 SUBTITLE(Fixed in 6.5.1 - March 20 2000)
+VULNBOX(6.5.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF curl_unescape() buffer overrun removed
@@ -12869,6 +13000,7 @@ SUBTITLE(Fixed in 6.5.1 - March 20 2000)
 
 <a name="6_5"></a>
 SUBTITLE(Fixed in 6.5 - March 13 2000)
+VULNBOX(6.5)
 <p> Changes:
 <ul class="changes">
  CHG -N now disables output buffering
@@ -12895,6 +13027,7 @@ SUBTITLE(Fixed in 6.5 - March 13 2000)
 
 <a name="6_4"></a>
 SUBTITLE(Fixed in 6.4 - January 17 2000)
+VULNBOX(6.4)
 <p> Changes:
 <ul class="changes">
  CHG Ability to run --quote commands <i>after</i> ftp transfers now, as well as before
@@ -12912,6 +13045,7 @@ SUBTITLE(Fixed in 6.4 - January 17 2000)
 
 <a name="6_3_1"></a>
 SUBTITLE(Fixed in 6.3.1 - November 23 1999)
+VULNBOX(6.3.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF posting an empty variable with -F, like "name=" did cause curl to hang
@@ -12924,6 +13058,7 @@ SUBTITLE(Fixed in 6.3.1 - November 23 1999)
 
 <a name="6_3"></a>
 SUBTITLE(Fixed in 6.3 - November 10 1999)
+VULNBOX(6.3)
 <p> Changes:
 <ul class="changes">
  CHG -b/--cookie is now capable of parsing and understanding the cookies saved
@@ -12944,6 +13079,7 @@ SUBTITLE(Fixed in 6.3 - November 10 1999)
 
 <a name="6_2"></a>
 SUBTITLE(Fixed in 6.2 - October 21 1999)
+VULNBOX(6.2)
 <p> Changes:
 <ul class="changes">
  CHG --stderr now supports redirecting the stderr stream to stdout or a file
@@ -12963,6 +13099,7 @@ SUBTITLE(Fixed in 6.2 - October 21 1999)
 
 <a name="6_1"></a>
 SUBTITLE(Fixed in 6.1 - October 17 1999)
+VULNBOX(6.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF zlib proved not to be as easy to add as I had anticipated. I&#39;ll keep
@@ -12985,6 +13122,7 @@ SUBTITLE(Fixed in 6.1 beta)
 
 <a name="6_0"></a>
 SUBTITLE(Fixed in 6.0 - September 13 1999)
+VULNBOX(6.0)
 <p> Changes:
 <ul class="changes">
  CHG <b>ldap://</b> with <a href="https://www.openldap.org/">openldap</a>
@@ -13002,6 +13140,7 @@ SUBTITLE(Fixed in 6.0 - September 13 1999)
 
 <a name="5_11"></a>
 SUBTITLE(Fixed in 5.11 - August 25 1999)
+VULNBOX(5.11)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF Fixed a bug in the header-line realloc() system in download.c.
@@ -13025,6 +13164,7 @@ SUBTITLE(Fixed in 5.11 - August 25 1999)
 
 <a name="5_10"></a>
 SUBTITLE(Fixed in 5.10 - August 13 1999)
+VULNBOX(5.10)
 <p> Changes:
 <ul class="changes">
  CHG Added -#/--progress-bar
@@ -13068,6 +13208,7 @@ SUBTITLE(Fixed in 5.10 - August 13 1999)
 
 <a name="5_9_1"></a>
 SUBTITLE(Fixed in 5.9.1 - July 30 1999)
+VULNBOX(5.9.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF Memory leak in the formdata functions. I added a FormFree() function that
@@ -13103,6 +13244,7 @@ SUBTITLE(Fixed in 5.9.1 - July 30 1999)
 
 <a name="5_9"></a>
 SUBTITLE(Fixed in 5.9 - May 22 1999)
+VULNBOX(5.9)
 <p> Changes:
 <ul class="changes">
  CHG Added -S / --show-error to force curl to display the error message in case
@@ -13127,6 +13269,7 @@ SUBTITLE(Fixed in 5.9 - May 22 1999)
 
 <a name="5_8"></a>
 SUBTITLE(Fixed in 5.8 - May 5 1999)
+VULNBOX(5.8)
 <p> Changes:
 <ul class="changes">
  CHG curl can now send "If-Modified-Since" headers. Try -z &lt;expression&gt; where
@@ -13148,6 +13291,7 @@ SUBTITLE(Fixed in 5.8 - May 5 1999)
 
 <a name="5_7_1"></a>
 SUBTITLE(Fixed in 5.7.1 - April 23 1999)
+VULNBOX(5.7.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF Corrected include/stdcheaders.h
@@ -13160,6 +13304,7 @@ SUBTITLE(Fixed in 5.7.1 - April 23 1999)
 
 <a name="5_7"></a>
 SUBTITLE(Fixed in 5.7 - April 20 1999)
+VULNBOX(5.7)
 <ul class="changes">
  CHG I&#39;ve separated the version number of libcurl and curl now.
  CHG Removed the &#39;enable-no-pass&#39; from configure, I doubt anyone wanted
@@ -13213,6 +13358,7 @@ SUBTITLE(Fixed in 5.7 - April 20 1999)
 
 <a name="5_5_1"></a>
 SUBTITLE(Fixed in 5.5.1 - January 27 1999)
+VULNBOX(5.5.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF Corrected problems in Download().
@@ -13222,6 +13368,7 @@ SUBTITLE(Fixed in 5.5.1 - January 27 1999)
 
 <a name="5_5"></a>
 SUBTITLE(Fixed in 5.5 - January 15 1999)
+VULNBOX(5.5)
 <p> Changes:
 <ul class="changes">
  CHG a simple addition for the DICT protocol (RFC 2229)
@@ -13238,6 +13385,7 @@ SUBTITLE(Fixed in 5.5 - January 15 1999)
 
 <a name="5_4"></a>
 SUBTITLE(Fixed in 5.4 - January 7 1999)
+VULNBOX(5.4)
 <p> Changes:
 <ul class="changes">
  CHG If you use -t or -T now on a http or https server, PUT will
@@ -13256,6 +13404,7 @@ SUBTITLE(Fixed in 5.4 - January 7 1999)
 
 <a name="5_3"></a>
 SUBTITLE(Fixed in 5.3 - December 21 1998)
+VULNBOX(5.3)
 <p> Changes:
 <ul class="changes">
  CHG Implemented the "quote" function of FTP clients. It allows you to
@@ -13276,6 +13425,7 @@ SUBTITLE(Fixed in 5.3 - December 21 1998)
 
 <a name="5_2_1"></a>
 SUBTITLE(Fixed in 5.2.1 - December 14 1998)
+VULNBOX(5.2.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF Corrected a crash in 5.2 due to bad treatment of the environment variables.
@@ -13283,6 +13433,7 @@ SUBTITLE(Fixed in 5.2.1 - December 14 1998)
 
 <a name="5_2"></a>
 SUBTITLE(Fixed in 5.2 - December 14 1998)
+VULNBOX(5.2)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF Rewrote the mkhelp script and now, the mkhelp.pl script generates the
@@ -13295,6 +13446,7 @@ SUBTITLE(Fixed in 5.2 - December 14 1998)
 
 <a name="5_0"></a>
 SUBTITLE(Fixed in 5.0 - December 1 1998)
+VULNBOX(5.0)
 <p> Changes:
 <ul class="changes">
  CHG Introducing the new -F flag for HTTP POST. It supports multipart/form-data
@@ -13397,6 +13549,7 @@ SUBTITLE(Fixed in 5.0 - December 1 1998)
 
 <a name="4_10"></a>
 SUBTITLE(Fixed in 4.10 - October 26 1998)
+VULNBOX(4.10)
 <p> Changes:
 <ul class="changes">
  CHG Introduced the -K/--config flag
@@ -13410,6 +13563,7 @@ SUBTITLE(Fixed in 4.10 - October 26 1998)
 
 <a name="4_9"></a>
 SUBTITLE(Fixed in 4.9 - October 7 1998)
+VULNBOX(4.9)
 <p> Changes:
 <ul class="changes">
  CHG no longer released under the GPL license. I have now updated the LEGAL
@@ -13429,6 +13583,7 @@ SUBTITLE(Fixed in 4.9 - October 7 1998)
 
 <a name="4_8_4"></a>
 SUBTITLE(Fixed in 4.8.4 - September 20 1998)
+VULNBOX(4.8.4)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF As Julian Romero Nieto reported, curl reported wrong
@@ -13449,6 +13604,7 @@ SUBTITLE(Fixed in 4.8.4 - September 20 1998)
 
 <a name="4_8_3"></a>
 SUBTITLE(Fixed in 4.8.3 - September 7 1998)
+VULNBOX(4.8.3)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF I was too quick to release 4.8.2 with too little testing. One of the
@@ -13459,6 +13615,7 @@ SUBTITLE(Fixed in 4.8.3 - September 7 1998)
 
 <a name="4_8_2"></a>
 SUBTITLE(Fixed in 4.8.2 - August 14 1998)
+VULNBOX(4.8.2)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF Bernhard Iselborn reported two FTP protocol
@@ -13468,6 +13625,7 @@ SUBTITLE(Fixed in 4.8.2 - August 14 1998)
 
 <a name="4_8_1"></a>
 SUBTITLE(Fixed in 4.8.1 - August 7 1998)
+VULNBOX(4.8.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF Added a last update of the progress meter when the transfer is done. The
@@ -13481,6 +13639,7 @@ SUBTITLE(Fixed in 4.8.1 - August 7 1998)
 
 <a name="4_8"></a>
 SUBTITLE(Fixed in 4.8 - July 30 1998)
+VULNBOX(4.8)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF Continue FTP file transfer. -c is the switch.
@@ -13489,6 +13648,7 @@ SUBTITLE(Fixed in 4.8 - July 30 1998)
 
 <a name="4_7"></a>
 SUBTITLE(Fixed in 4.7 - July 20 1998)
+VULNBOX(4.7)
 <p> Changes:
 <ul class="changes">
  CHG Wrote a perl script &#39;recursiveftpget.pl&#39;
@@ -13501,6 +13661,7 @@ SUBTITLE(Fixed in 4.7 - July 20 1998)
 
 <a name="4_6"></a>
 SUBTITLE(Fixed in 4.6 - July 3 1998)
+VULNBOX(4.6)
 <p> Changes:
 <ul class="changes">
  CHG Added a first attempt to optionally parse the .netrc file for login user
@@ -13525,6 +13686,7 @@ SUBTITLE(Fixed in 4.6 - July 3 1998)
 
 <a name="4_5_1"></a>
 SUBTITLE(Fixed in 4.5.1 - June 12 1998)
+VULNBOX(4.5.1)
 <p> Changes:
 <ul class="changes">
  CHG Added -A to allow User-Agent: changes
@@ -13537,6 +13699,7 @@ SUBTITLE(Fixed in 4.5.1 - June 12 1998)
 
 <a name="4_5"></a>
 SUBTITLE(Fixed in 4.5 - May 30 1998)
+VULNBOX(4.5)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF More SSL corrections
@@ -13548,6 +13711,7 @@ SUBTITLE(Fixed in 4.5 - May 30 1998)
 
 <a name="4_4"></a>
 SUBTITLE(Fixed in 4.4 - May 13 1998)
+VULNBOX(4.4)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF -x can now also specify proxyport when used as in &#39;proxyhost:proxyport&#39;
@@ -13556,6 +13720,7 @@ SUBTITLE(Fixed in 4.4 - May 13 1998)
 
 <a name="4_3"></a>
 SUBTITLE(Fixed in 4.3 - April 30 1998)
+VULNBOX(4.3)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF Adjusted to compile under win32 (VisualC++ 5). The -P switch does not
@@ -13564,6 +13729,7 @@ SUBTITLE(Fixed in 4.3 - April 30 1998)
 
 <a name="4_2"></a>
 SUBTITLE(Fixed in 4.2 - April 15 1998)
+VULNBOX(4.2)
 <p> Changes:
 <ul class="changes">
  CHG Added SSL / SSLeay support (https://)
@@ -13580,6 +13746,7 @@ SUBTITLE(Fixed in 4.2 - April 15 1998)
 
 <a name="4_1"></a>
 SUBTITLE(Fixed in 4.1 - April 3 1998)
+VULNBOX(4.1)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF The IP number returned by the ftp server as a reply to PASV does no longer
@@ -13592,6 +13759,7 @@ SUBTITLE(Fixed in 4.1 - April 3 1998)
 
 <a name="4_0"></a>
 SUBTITLE(Fixed in 4.0 - March 20 1998)
+VULNBOX(4.0)
 <p> Changes:
 <ul class="changes">
  CHG I took another huge step and changed both version number and project name!
