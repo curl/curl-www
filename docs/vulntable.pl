@@ -83,7 +83,7 @@ sub single {
     }
     else {
         # nothing known - yet
-        $vulnhtml = "<p> <big>Yay - there are no published security vulnerabilities for this version!</big>";
+        $vulnhtml = "<p> <strong>There are no published security vulnerabilities for this version.</strong>";
     }
 
     my $n = "<p>  See vulnerability summary for ";
@@ -103,10 +103,10 @@ sub single {
     $anchor =~ s/\./_/g;
 
     if($vulnnum == 1) {
-      $vulnplural = ' is';
+        $vulnplural = "";
     }
     else {
-      $vulnplural = 's are';
+        $vulnplural = "s";
     }
 
     open(T, "<_singlevuln.templ");

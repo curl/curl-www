@@ -15,10 +15,13 @@ WHERE3(Docs, "/docs/", Vulnerability table, "/docs/vulnerabilities.html", %versi
 TITLE(Vulnerabilities in curl %version)
 #include "adv-related-box.inc"
 
-<p> curl version <b>%version</b> was released on <b>%date</b>. The following
-<b>%vulnnum</b> security problem%vulnplural known to exist in this version.
+<p> curl version <b>%version</b> was released on <b>%date</b>
+
+<p> It has the following <b>%vulnnum</b> published security problem%vulnplural.
 
 %vulnerabilities
+
+SUBTITLE(Futher details)
 
 <p>
  CVE data for %version provided as <a href="vuln-%version.json">JSON</a>.
