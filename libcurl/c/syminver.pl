@@ -30,7 +30,7 @@ my $siv = $ARGV[0];
 my $bynumber = $ARGV[1];
 
 my $html = "manpage.html";
-my $changelog = "/changes.html";
+my $changelog = "/ch/";
 
 print "<table>\n";
 print "<tr><th>Name</th>".
@@ -48,9 +48,10 @@ sub vernum {
 sub verlink {
     my ($v)=@_;
     if($v && ($v ne "-")) {
-        my $link = $v;
-        $link =~ s/\./_/g;
-        return "<a href=\"$changelog#$link\">$v</a>";
+        if(-f "../../ch/$v.html") {
+            return "<a href=\"$changelog$v.html\">$v</a>";
+        }
+        return "$v";
     }
     return "";
 }

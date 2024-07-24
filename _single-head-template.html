@@ -1,0 +1,58 @@
+#include "_doctype.html"
+<html lang="en">
+<head> <title>curl - Changes in VERSION</title>
+#include "css.t"
+#include "changescss.t"
+  .thisver {
+      display: none;
+  }
+  .other {
+      background-color: #e0e0e0;
+      border: 1px solid black;
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+      margin-right: 40px;
+  }
+</style>
+</head>
+
+#define CURL_CHANGES_IN_VERSION
+#define CURL_URL ch/VERSION.html
+
+#include "_menu.html"
+#include "setup.t"
+#include "changes.t"
+
+WHERE3(Docs, "/docs/", Releases, "/docs/reldocs.html", Changes in VERSION)
+<p>
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/snapshots/">Daily Snapshots</a>
+<br><a href="/source.html">Source repo</a>
+<br><a href="/docs/releases.html">Release log</a>
+<br><a href="/dev/release-notes.html">Pending Release</a>
+</div>
+
+<span class="other">
+#ifdef PREVVERSION
+<a href="PREVVERSION.html">🠰 PREVVERSION</a>
+#else
+🠰 n/a
+#endif
+</span>
+
+<span class="other">
+  <a href="/changes.html">all changes</a>
+</span>
+
+<span class="other">
+#ifdef NEXTVERSION
+<a href="NEXTVERSION.html">NEXTVERSION 🠲</a>
+#else
+<a href="/dev/release-notes.html">pending release</a>
+#endif
+</span>
+
+
+TITLE(Changes in VERSION - RELEASEDATE)
+

@@ -27,7 +27,7 @@
 my $oinv = $ARGV[0];
 
 my $html = "manpage.html";
-my $changelog = "/changes.html";
+my $changelog = "/ch/";
 
 my %vers;
 open(O, "<$oinv");
@@ -41,8 +41,7 @@ while(<O>) {
 
 sub verlink {
     my ($ver)= @_;
-    $ver =~ s/\./_/g;
-    return $ver;
+    return "$ver.html";
 }
 
 sub manlink {
@@ -56,7 +55,7 @@ sub manlink {
 print "<table>\n";
 for my $long (sort {lc($a) cmp lc($b) } keys %short) {
     my $v = $added{$long};
-    printf "<tr><td><a href=\"manpage.html#%s\">$long</a></td><td><a href=\"%s#%s\">$v</a></td></tr>\n",
+    printf "<tr><td><a href=\"manpage.html#%s\">$long</a></td><td><a href=\"%s%s\">$v</a></td></tr>\n",
         manlink($long),
         $changelog, verlink($v);
 }

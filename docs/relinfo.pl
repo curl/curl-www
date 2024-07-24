@@ -137,15 +137,11 @@ for my $str (@releases) {
         }
         $i++;
     }
-    my $anchor = $str;
-
-    $anchor =~ s/\./_/g;
-
     if($raw) {
         printf "%d;$str;", $index;
     }
     else {
-        printf("<tr class=\"%s\"><td>%d</td><td><a href=\"/changes.html#$anchor\">$str</a></td>",
+        printf("<tr class=\"%s\"><td>%d</td><td><a href=\"/ch/$str.html\">$str</a></td>",
                $l&1?"even":"odd",
                $numreleases - $index);
     }

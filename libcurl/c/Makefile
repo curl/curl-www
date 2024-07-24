@@ -564,12 +564,12 @@ options-in-examples.gen: allex.gen options-used-in-examples.pl
 
 symbols-in-versions.html: _symbols-in-versions.html $(MAINPARTS) symbols-in-versions.gen
 	$(REN)$(MANACTION)
-symbols-in-versions.gen: $(MANROOT)/symbols-in-versions syminver.pl
+symbols-in-versions.gen: $(MANROOT)/symbols-in-versions syminver.pl ../../_changes.html
 	./syminver.pl $< 1 > $@
 
 symbols-by-name.html: _symbols-by-name.html $(MAINPARTS) symbols-by-name.gen
 	$(REN)$(MANACTION)
-symbols-by-name.gen: $(MANROOT)/symbols-in-versions syminver.pl
+symbols-by-name.gen: $(MANROOT)/symbols-in-versions syminver.pl ../../_changes.html
 	./syminver.pl $< > $@
 
 curl_mime_init.html: _curl_mime_init.html $(MAINPARTS_CAPI) curl_mime_init.gen

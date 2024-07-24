@@ -27,7 +27,7 @@
 my $oinv = $ARGV[0];
 
 my $html = "manpage.html";
-my $changelog = "/changes.html";
+my $changelog = "/ch/";
 
 my %vers;
 open(O, "<$oinv");
@@ -48,13 +48,15 @@ sub vernum {
 
 sub verlink {
     my ($ver)= @_;
-    $ver =~ s/\./_/g;
-    return $ver;
+    if(-f "../ch/$ver.html") {
+        return "<a href=\"$changelog$ver.html\">$ver</a>";
+    }
+    return "$ver";
 }
 
 print "<table>\n";
 for my $v (sort {vernum($b) <=> vernum($a) } keys %vers) {
-    printf "<tr><td valign=\"top\"><a href=\"%s#%s\">$v</a></td><td>\n", $changelog, verlink($v);
+    printf "<tr><td valign=\"top\">%s</td><td>\n", verlink($v);
     for my $l (split(/ /, $added{$v})) {
         printf "<a href=\"%s#%s\">$l%s</a><br>\n",
             $html, $short{$l}?"$short{$l}":$l,

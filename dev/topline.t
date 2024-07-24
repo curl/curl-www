@@ -2,7 +2,7 @@
 <b>Related:</b>
 <br><a href="https://github.com/curl/curl">Browse git</a>
 <br><a href="https://curl.se/snapshots/">Daily Snapshot</a>
-<br><a href="/changes.html">Changelog</a>
+<br><a href="/ch/">Changelog</a>
 <br><a href="https://lists.haxx.se/listinfo/curl-commits">Commit mails</a>
 </div>
 

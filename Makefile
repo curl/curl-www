@@ -125,8 +125,10 @@ download2.html: _download2.html $(MAINPARTS) $(RELEASE) dl/files.html
 dl/files.html: dl/data/databas.db
 	cd dl; make
 
-changes.html: _changes.html docs/_menu.html $(MAINPARTS)
+changes.html: _changes.html docs/_menu.html $(MAINPARTS) splitchange.pl _single-head-template.html _single-foot-template.html changes.t changescss.t
 	$(ACTION)
+	./splitchange.pl
+	cd ch && $(MAKE)
 
 gethelp.html: _gethelp.html $(MAINPARTS)
 	$(ACTION)
@@ -181,3 +183,4 @@ clean:
 	cd rfc && make clean
 	cd dev && make clean
 	cd tiny && make clean
+	cd ch && make clean
