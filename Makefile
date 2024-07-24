@@ -36,7 +36,6 @@ PAGES= \
  index.html \
  info \
  libs.html \
- mirrors.html \
  news.html \
  newslog.html \
  oldnews.html \
@@ -134,9 +133,6 @@ gethelp.html: _gethelp.html $(MAINPARTS)
 	$(ACTION)
 
 book.html: _book.html $(MAINPARTS)
-	$(ACTION)
-
-mirrors.html: _mirrors.html $(MAINPARTS)
 	$(ACTION)
 
 about.html: _about.html docs/_menu.html $(MAINPARTS)
