@@ -47,6 +47,41 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 <a name="changes"></a>
 TITLE(All changes ever made)
 
+<a name="8_9_1"></a>
+SUBTITLE(Fixed in 8.9.1 - July 31 2024)
+VULNBOX(8.9.1)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.se/bug/?i=14199">cmake: detect `libssh` via `pkg-config`</a>
+ BGF <a href="https://curl.se/bug/?i=14285">cmake: detect `nettle` when building with GnuTLS</a>
+ BGF <a href="https://curl.se/bug/?i=14309">cmake: drop `if(PKG_CONFIG_FOUND)` guard for `pkg_check_modules()`</a>
+ BGF <a href="https://curl.se/bug/?i=14196">configure: limit `__builtin_available` test to Darwin</a>
+ BGF <a href="https://curl.se/bug/?i=14280">connect: fix connection shutdown for event based processing</a>
+ BGF contrithanks.sh: use -F with -v to match lines as strings
+ BGF <a href="https://curl.se/bug/?i=14304">curl: more defensive socket code for --ip-tos</a>
+ BGF <a href="https://curl.se/bug/?i=14302">CURLOPT_SSL_CTX_FUNCTION.md: mention CA caching</a>
+ BGF <a href="https://curl.se/bug/?i=14292">CURLSHOPT_SHARE.md: mention sessions/cookies as not thread-safe</a>
+ BGF <a href="https://curl.se/bug/?i=14287">example/multi-uv: remove the use of globals</a>
+ BGF <a href="https://curl.se/bug/?i=14293">ftpserver.pl: make POP3 LIST serve content from the test file</a>
+ BGF GHA/windows: increase timeout for vcpkg build step
+ BGF <a href="https://curl.se/bug/?i=14247">lib: survive some NULL input args</a>
+ BGF <a href="https://curl.se/bug/?i=14269">macos: fix Apple SDK bug workaround for non-macOS targets</a>
+ BGF <a href="https://curl.se/bug/?i=14312">misc: cleanup after removing years from copyright</a>
+ BGF <a href="https://curl.se/bug/?i=14289">os400: build cli manual.</a>
+ BGF <a href="https://curl.se/bug/?i=14281">os400: workaround an IBM ASCII run-time library bug</a>
+ BGF <a href="https://curl.se/bug/?i=14267">RELEASE-PROCEDURE.md: remove the initial build step</a>
+ BGF <a href="https://curl.se/bug/?i=14284">runtests: fold timing details with GHA, sync `-r` tflags</a>
+ BGF <a href="https://curl.se/bug/?i=14295">tests: provide FTP directory contents in the test file</a>
+ BGF <a href="https://curl.se/bug/?i=14318">tidy-up: URL updates</a>
+ BGF TODO: thread-safe sharing
+ BGF <a href="https://curl.se/bug/?i=14272">transfer: speed limiting fix for 32bit systems</a>
+ BGF <a href="https://curl.se/bug/?i=14305">vtls: avoid forward declaration in MultiSSL builds</a>
+ BGF <a href="https://curl.se/bug/?i=14268">wolfSSL: allow wolfSSL&apos;s implementation of kyber to be used</a>
+ BGF <a href="https://curl.se/bug/?i=14306">wolfssl: avoid calling get_cached_x509_store if store is uncachable</a>
+ BGF <a href="https://curl.se/bug/?i=14278">wolfssl: CA store share fix</a>
+ BGF <a href="https://curl.se/bug/?i=14316">x509asn1: unittests and fixes for gtime2str</a>
+</ul>
+
 <a name="8_9_0"></a>
 SUBTITLE(Fixed in 8.9.0 - July 24 2024)
 RELEASEVIDEO(8.9.0, "https://youtu.be/85prwzeilnY?si=MRgVUOOHbDRgO3Gw")
