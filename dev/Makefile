@@ -83,13 +83,13 @@ code-style.gen: $(SRCROOT)/docs/CODE_STYLE.md
 
 testcurl.html: _testcurl.html $(MAINPARTS) testcurl.gen
 	$(ACTION)
-testcurl.gen: $(TESTROOT)/testcurl.1
-	$(MAN2HTML) < $< > $@
+testcurl.gen: $(TESTROOT)/testcurl.md
+	$(MARKDOWN) < $< > $@
 
 runtests.html: _runtests.html $(MAINPARTS) runtests.gen
 	$(ACTION)
-runtests.gen: $(TESTROOT)/runtests.1
-	$(MAN2HTML) < $< > $@
+runtests.gen: $(TESTROOT)/runtests.md
+	$(MARKDOWN) < $< > $@
 
 code-review.html: _code-review.html $(MAINPARTS) code-review.gen
 	$(ACTION)
