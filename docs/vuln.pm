@@ -16,6 +16,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2024-7264.html|7.32.0|8.9.0|ASN.1 date parser overread|CVE-2024-7264|20240731|20240730|CWE-125: Out-of-bounds Read|540|ASN1|OVERREAD|both|low|https://hackerone.com/reports/2629968",
     "CVE-2024-6874.html|8.8.0|8.8.0|macidn punycode buffer overread|CVE-2024-6874|20240724|20240716|CWE-126: Buffer Over-read|540|IDN|OVERREAD|lib|low|https://hackerone.com/reports/2604391",
     "CVE-2024-6197.html|8.6.0|8.8.0|freeing stack buffer in utf8asn1str|CVE-2024-6197|20240724|20240619|CWE-590: Free of Memory not on the Heap|2540|ASN1|BAD_FREE|both|medium|https://hackerone.com/reports/2559516",
     "CVE-2024-2466.html|8.5.0|8.6.0|TLS certificate check bypass with mbedTLS|CVE-2024-2466|20240327|20240314|CWE-297: Improper Validation of Certificate with Host Mismatch|2540|TLS|-|both|medium|https://hackerone.com/reports/2416725",
