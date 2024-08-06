@@ -1,0 +1,67 @@
+#include "_doctype.html"
+<html>
+<head> <title>daily curl snapshots</title>
+#include "css.t"
+</head>
+
+#define CURL_URL /snapshots
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Download, "/download.html", Daily Snapshots)
+
+TITLE(Daily curl snapshots)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/auto/">Autobuilds</a>
+<br><a href="https://github.com/curl/curl">Browse git</a>
+<br><a href="/ch/">Changelog</a>
+<br><a href="/dev/release-notes.html">Dev Release Notes</a>
+<br><a href="/support.html">Support</a>
+</div>
+<p>
+ <b>WARNING</b>, these packages are built daily and automatically straight
+ from git. They may be broken, crashing, working or whatever. Don\'t assume
+ anything else!
+
+SUBTITLE(Binary snapshots)
+<ul>
+<li><a href="https://github.com/pheiduck/curl-daily/releases">Arch Linux</a>
+<li><a href="https://github.com/curl/curl-container/pkgs/container/curl-container%2Fcurl">Docker</a>
+<li><a href="https://github.com/curl/curl-for-win/actions/workflows/daily.yml">Windows</a>
+</ul>
+
+<div style="float: right; width: 50%; margin-left: 2em;">
+SUBTITLE(Source tarballs)
+<p>
+#include "files.gen"
+</div>
+
+SUBTITLE(Contents)
+<p>
+ These snapshots are generated straight from git every euro morning. Snapshots
+ are kept a few weeks before deleted.
+
+<p>
+ The <b>docs/RELEASE-TOOLS.md</b> document is bundled in every snapshot,
+ showing the tooling needed to reproduce the snapshot tarball. This is not
+ necessarily the same set of tools+versions as official curl releases use,
+ because these snapshots are generated automatically on a different host.
+
+<p> Since August 2024, every snapshot contains a file named
+ <b>docs/tarball-commit.txt</b> that contains the commit hash that was the
+ HEAD at the time the tarball is made.
+
+SUBTITLE(Extensions)
+<p>
+<ul>
+<li> <b>tar.bz2</b> is the source tar archive bzip2 compressed
+<li> <b>zip</b> is the source archive zip compressed
+<li> <b>tar.xz</b> is the source tar archive xz compressed
+
+</ul>
+
+#include "_footer.html"
+</body>
+</html>
