@@ -23,11 +23,11 @@ my %silver = (
     'https://bountii.coupons/' => 'bountii.png',
     'https://earthweb.com/' => 'earthweb.png',
     'https://proxy.coupons' => 'proxycoupons.png',
+    'https://onelessthing.co.uk/' => 'onelessthing.png',
 
     # Sponsors that don't get images
     'babiel-gmbh' => '[none]',  # special case handled in _sponsors.html
     'thebestsolution' => '[none]',  # link denied 16 May 2024 due to social media manipulation
-    'https://onelessthing.co.uk/' => '[none]',  # no request received for image
     "https://www.romab.com" => '[none]',  # historical
     );
 
