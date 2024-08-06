@@ -54,6 +54,7 @@ all: $(PAGES)
 	cd dev && make
 	cd windows && make
 	cd qnx && make
+	cd snapshots && make
 	cd tiny && make
 	cd logo && make
 	cd trurl && make
