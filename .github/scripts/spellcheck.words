@@ -432,6 +432,7 @@ lseek
 Lua
 lwIP
 macdef
+macidn
 macOS
 macos
 Makefile
