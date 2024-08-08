@@ -34,8 +34,6 @@ to use.
 #define MAN__ <td class="no">manual</td>
 #define AUTO_ <td class="yes">automatic</td>
 
-#define no__P <td class="no">no [3]</td>
-
 #define PKCS11 <td class="yes">PKCS<!-- " -->#11<!-- "--></td>
 #define PKCS11_P8 <td class="yes">PKCS<!-- " -->#11<!-- "--> [8]</td>
 #define KEYCHAIN <td class="yes">Keychain</td>
@@ -76,7 +74,7 @@ to use.
  FEAT(TLSv1.0)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
  FEAT(TLSv1.1)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
  FEAT(TLSv1.2)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
- FEAT(TLSv1.3)            YES__ YES__ YES__ no__P YES__ no___ YES__ no___ ENDLINE
+ FEAT(TLSv1.3)            YES__ YES__ YES__ YES__ YES__ no___ YES__ no___ ENDLINE
  FEAT(TLS SRP)            YES__ YES__ no___ no___ no___ no___ no___ no___ ENDLINE
  FEAT(TLS ECC)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
  FEAT(ALPN)               YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
@@ -158,9 +156,6 @@ to use.
 [2] = OpenSSL 3.2 has a QUIC stack that curl works with experimentally. The
 OpenSSL forks LibreSSL, BoringSSL, AWS-LC and quictls support the QUIC API
 that curl works with using ngtcp2.
-<p>
-[3] = mbedTLS has TLS 1.3 marked <b>no</b> because it does not work with with
-curl, even if the library claims (partial) support for it.
 <p>
 [8] = Via external <a href="https://github.com/OpenSC/OpenSC/wiki/Engine-pkcs11-quickstart">engine_pkcs11</a>;
 
