@@ -1,0 +1,33 @@
+#ifndef __MENU
+#define __MENU
+
+#include "setup.t"
+
+#ifndef NOBODY
+
+<body>
+#endif
+
+#define SEP <br>
+
+#define NOW(text) <b>text</b>
+#define REF(link,text) <a href=link>text</a>
+
+<div class="main">
+<div class="menu">
+
+<div class="dropdown">
+  <a class="dropbtn" href="/">curl.se</a>
+</div>
+<div class="dropdown">
+  <a class="dropbtn" href="/dev/">wcurl</a>
+  <div class="dropdown-content">
+    <a href="https://github.com/curl/wcurl">GitHub repo</a>
+    <a href="/wcurl/code-review.html">manpage</a>
+  </div>
+</div>
+
+</div>
+
+START_OF_MAIN
+#endif

@@ -1,0 +1,26 @@
+#include "_doctype.html"
+<html>
+<head> <title>wcurl - How To Use</title>
+#include "css.t"
+#include "manpage.t"
+</head>
+
+#define CURL_WCURL
+#define CURL_URL wcurl/manual.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(wcurl, "/wcurl/", Manpage)
+
+TITLE(wcurl manpage)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="https://github.com/curl/wcurl">GitHub repo</a>
+<br><a href="/wcurl/">wcurl</a>
+</div>
+#include "wcurl.gen"
+#include "_footer.html"
+
+</body>
+</html>

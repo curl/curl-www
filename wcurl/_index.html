@@ -1,0 +1,35 @@
+#include "_doctype.html"
+<html>
+<head> <title>wcurl</title>
+#include "css.t"
+</head>
+
+#define CURL_URL /wcurl
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE1(wcurl)
+
+<center><img src="wcurl-logo.png" alt="wcurl logo" style="width:70%; padding-top: 8px; padding-bottom: 30px;">
+</center>
+
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="https://github.com/curl/wcurl">GitHub repo</a>
+<br><a href="manual.html">manpage</a>
+</div>
+<p>
+wcurl is a command line tool which lets you download URLs without having to
+remember any parameters.
+<p>
+Invoke wcurl with a list of URLs you want to download and wcurl will pick sane
+defaults; using curl under the hood.
+
+SUBTITLE(Pronunciation)
+<p>
+ "double-u curl"
+
+#include "_footer.html"
+</body>
+</html>

@@ -17,6 +17,10 @@ if test ! -d trurl/trurl-www; then
   git clone https://github.com/curl/trurl.git trurl/trurl-www
 fi
 
+if test ! -d wcurl/wcurl-repo; then
+  git clone https://github.com/curl/wcurl.git wcurl/wcurl-repo
+fi
+
 touch ca/cacert.pem
 touch ca/pemlist.gen
 
