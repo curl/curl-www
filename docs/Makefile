@@ -343,7 +343,7 @@ thanksnum.gen: $(DOCROOT)/THANKS
 	egrep '^[^ $$]' $< | wc -l  | awk '{print "#define __THANKSNUM__ " $$1}' > $@
 
 thanks.gen: $(DOCROOT)/THANKS
-	grep '^[^ ]' $< | sort | sed -e 's/ /\&nbsp;/g' -e 's/-/\&\#8209/g' | awk '{print $$0 "&nbsp;&middot; "; }' > $@
+	grep '^[^ ]' $< | sort | sed -e 's/ /\&nbsp;/g' -e 's/-/\&\#8209/g' -e '$$!s/$$/\&nbsp;\&middot;/' > $@
 
 faq.html: _faq.shtml $(MAINPARTS) faq.gen
 	$(ACTION)
