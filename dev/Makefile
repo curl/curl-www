@@ -2,6 +2,7 @@ ROOT=..
 
 SRCROOT=$(ROOT)/cvssource
 DOCROOT=$(SRCROOT)/docs
+INTERNALS=$(DOCROOT)/internals
 TESTROOT=$(SRCROOT)/tests
 LIBROOT=$(SRCROOT)/lib
 CURL=$(ROOT)
@@ -51,7 +52,7 @@ feature-window.html: _feature-window.html $(MAINPARTS) featurewindow.t
 
 new-protocol.html: _new-protocol.html $(MAINPARTS) new-protocol.gen
 	$(ACTION)
-new-protocol.gen: $(SRCROOT)/docs/NEW-PROTOCOL.md
+new-protocol.gen: $(INTERNALS)/NEW-PROTOCOL.md
 	$(MARKDOWN) < $< > $@
 
 test-fileformat.html: _test-fileformat.html $(MAINPARTS) fileformat.gen
@@ -74,7 +75,7 @@ roadmap.gen: $(SRCROOT)/docs/ROADMAP.md
 
 code-style.html: _code-style.html code-style.gen $(MAINPARTS)
 	$(ACTION)
-code-style.gen: $(SRCROOT)/docs/CODE_STYLE.md
+code-style.gen: $(INTERNALS)/CODE_STYLE.md
 	$(GITHUB) $< | sed -e 's:*:\&#42;:g' -e 's:#undef:\&#35;undef:g' \
 	-e 's:#define:\&#35;define:g' \
 	-e 's:#else:\&#35;else:g' \

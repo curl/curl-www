@@ -1,6 +1,7 @@
 ROOT=..
 SRCROOT=../cvssource
 DOCROOT=$(SRCROOT)/docs
+INTERNALS=$(DOCROOT)/internals
 
 include $(ROOT)/mainparts.mk
 include $(ROOT)/setup.mk
@@ -286,7 +287,7 @@ optionsall.html: _optionsall.html optionsall.gen
 optionsall.gen: $(DOCROOT)/options-in-versions alloptions.pl
 	./alloptions.pl $< > $@
 
-$(SRCROOT)/docs/curl.1:
+$(SRCROOT)/docs/cmdline-opts/curl.1:
 	cd $(DOCROOT) && make
 
 mandump.gen: $(SRCROOT)/docs/cmdline-opts/curl.1
@@ -506,13 +507,13 @@ ipfs.gen: $(SRCROOT)/docs/IPFS.md
 ipfs.html: _ipfs.html ipfs.gen $(MAINPARTS)
 	$(ACTION)
 
-websocket.gen: $(SRCROOT)/docs/WEBSOCKET.md
+websocket.gen: $(INTERNALS)/WEBSOCKET.md
 	$(MARKDOWN) < $< > $@
 
 websocket.html: _websocket.html websocket.gen $(MAINPARTS)
 	$(ACTION)
 
-mqtt.gen: $(SRCROOT)/docs/MQTT.md
+mqtt.gen: $(INTERNALS)/MQTT.md
 	$(MARKDOWN) < $< > $@
 
 mqtt.html: _mqtt.html mqtt.gen $(MAINPARTS)
