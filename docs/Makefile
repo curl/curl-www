@@ -181,7 +181,6 @@ CVELIST = \
 
 PAGES = \
  $(CVELIST) \
- alt-svc.html \
  audits.html \
  bugbounty.html \
  bugs.html \
@@ -195,9 +194,7 @@ PAGES = \
  governance.html \
  help-us.html \
  history.html \
- hsts.html \
  http-cookies.html \
- http2.html \
  http3.html \
  httpscripting.html \
  index.html \
@@ -352,17 +349,6 @@ faq.html: _faq.shtml $(MAINPARTS) faq.gen
 faq.gen: $(DOCROOT)/FAQ faqparse.pl
 	./faqparse.pl < $< > $@
 
-alt-svc.html: _alt-svc.html $(MAINPARTS) alt-svc.gen
-	$(ACTION)
-alt-svc.gen: $(DOCROOT)/ALTSVC.md
-	$(MARKDOWN) < $< >$@
-
-hsts.html: _hsts.html $(MAINPARTS) hsts.gen
-	$(ACTION)
-
-hsts.gen: $(DOCROOT)/HSTS.md
-	$(GITHUB) $< >$@
-
 http-cookies.html: _http-cookies.html $(MAINPARTS) http-cookies.gen
 	$(ACTION)
 
@@ -488,12 +474,6 @@ vuln.csv: vuln.pm
 
 vuln.json: vuln.pm vuln2json.pl $(CVELIST) releases.csv
 	./vuln2json.pl > $@
-
-http2.gen: $(SRCROOT)/docs/HTTP2.md
-	$(MARKDOWN) < $< > $@
-
-http2.html: _http2.html http2.gen $(MAINPARTS)
-	$(ACTION)
 
 http3.gen: $(SRCROOT)/docs/HTTP3.md
 	$(MARKDOWN) < $< > $@
