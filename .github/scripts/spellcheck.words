@@ -344,6 +344,7 @@ imaps
 impacket
 init
 initializer
+inkscape
 inlined
 interoperable
 interoperates
@@ -547,6 +548,7 @@ NUM
 NuttX
 OAuth
 objcopy
+OCRAStd
 OCSP
 Ok
 OpenBSD
@@ -819,6 +821,7 @@ toplevel
 TPF
 TrackMemory
 Tru
+trurl
 Tse
 Tsujikawa
 TTL
@@ -887,6 +890,7 @@ Warta
 watchOS
 WAV
 WB
+wcurl
 web page
 WebOS
 WebSocket
