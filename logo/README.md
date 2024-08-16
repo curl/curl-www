@@ -57,6 +57,10 @@ donated to the curl project on May 26 2016.
 | [trurl-logo-inkscape.svg](trurl-logo-inkscape.svg) | 83K  | vector     | SVG    |
 | [trurl-logo.xcf](trurl-logo.xcf)                   | 792K | 2000 x 860 | XCF    |
 
+
+The original [robot image](https://pixabay.com/vectors/adorable-android-artificial-2861801/) is made
+by Christian Plaza.
+
 ## wcurl
 
 <img src="wcurl-logo.svg" width=500>
