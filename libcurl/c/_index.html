@@ -51,91 +51,29 @@ TITLE(Easy or Multi)
 
 TITLE(The Easy interface)
 <p>
- When using libcurl you <a href="curl_easy_init.html">init</a> your
- easy-session and get a handle, which you use as input to the following
- interface functions you use.
+ 1. <a href="curl_easy_init.html">init</a> your easy-session and get a handle,
+ which you use as input to the following interface functions you use.
 <p>
- You continue by setting all the <a href="curl_easy_setopt.html">options</a>
- you want in the upcoming transfer, most important among them is the URL
- itself. You might want to set some callbacks as well that will be called from
- the library when data is available etc.
+ 2. Set all the <a href="curl_easy_setopt.html">options</a> you want in the
+ upcoming transfer, most important among them is the URL itself. You might
+ want to set some callbacks as well that will be called from the library when
+ data is available etc.
 <p>
- When all is setup, you tell libcurl to <a
- href="curl_easy_perform.html">perform</a> the transfer. It will then do the
- entire operation and will not return until it is done or failed.
+ 3. When all is setup, tell libcurl
+ to <a href="curl_easy_perform.html">perform</a> the transfer. It will then do
+ the entire operation and will not return until it is done or failed.
 <p>
- After the performance is made, you may <a href="curl_easy_getinfo.html">get
- information</a> about the transfer and then you <a
- href="curl_easy_cleanup.html">cleanup</a> the easy-session's handle and
+ 4. After the transfer is completed, you may <a href="curl_easy_getinfo.html">get
+ information</a> about the it and then
+ you
+<p>
+ 5. <a href="curl_easy_cleanup.html">cleanup</a> the easy-session's handle and
  libcurl is entirely off the hook!
 <p>
  See also the <a href="libcurl-easy.html">easy interface overview</a>.
+
 <p>
- <a href="curl_easy_init.html">curl_easy_init()</a>
-<br>
- <a href="curl_easy_cleanup.html">curl_easy_cleanup()</a>
-<br>
- <a href="curl_easy_setopt.html">curl_easy_setopt()</a>
-<br>
- <a href="curl_easy_perform.html">curl_easy_perform()</a>
-<br>
- <a href="curl_easy_getinfo.html">curl_easy_getinfo()</a>
-<p>
- While the above functions are the main functions to use in the easy
- interface, there is a series of other helpful functions too including:
-<p>
-<table>
-  <tr><td>
-  <a href="curl_version.html">curl_version()</a>
-  </td><td>
-  returns a pointer to the libcurl version string
-  </td></tr>
-
-  <tr><td>
-  <a href="curl_getdate.html">curl_getdate()</a>
-  </td><td>
-  converts a date string to time_t
-  </td></tr>
-
-  <tr><td>
-  <a href="curl_mime_init.html">curl_mime_init()</a>
-  </td><td>
-  ... and family, to build multipart form-data posts
-  </td></tr>
-
-  <tr><td>
-  <a href="curl_formadd.html">curl_formadd()</a>
-  </td><td>
-  (old-style) build multipart form-data posts
-  </td></tr>
-
-  <tr><td>
-  <a href="curl_slist_append.html">curl_slist_append()</a>
-  </td><td>
-  builds a linked list
-  </td></tr>
-
-  <tr><td>
-  <a href="curl_slist_free_all.html">curl_slist_free_all()</a>
-  </td><td>
-  frees a whole curl_slist as made with curl_slist_append()
-  </td></tr>
-
-  <tr><td>
-  <a href="curl_easy_escape.html">curl_easy_escape()</a>
-  </td><td>
-  URL encodes a string
-  </td></tr>
-
-  <tr><td>
-  <a href="curl_easy_unescape.html">curl_easy_unescape()</a>
-  </td><td>
-  URL decodes a string
-  </td></tr>
-
-</table>
-<p>
- All manpages are also included in every release archive.
+ Manpages for all functions are included in every release archive.
 
 #include "_footer.html"
 
