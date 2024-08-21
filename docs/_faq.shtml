@@ -18,6 +18,7 @@ TITLE(FAQ -- Frequently Asked Questions)
 <div class="relatedbox">
 <b>Related:</b>
 <br><a href="manpage.html">curl manpage</a>
+<br><a href="https://github.com/curl/curl/issues/new?title=FAQ&amp;labels=documentation&amp;template=docs.yml&amp;source=CURL_URL" target="_new">File a bug about the FAQ</a>
 <br><a href="httpscripting.html">HTTP Scripting</a>
 <br><a href="tutorial.html">Tutorial</a>
 </div>
