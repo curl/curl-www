@@ -15,6 +15,7 @@ index.html: _index.html $(MAINPARTS) files.gen
 
 files.gen: mkindex.pl curl-*
 	./mkindex.pl >$@
+	date -u "+%Y-%m-%d %H:%M %Z" > files-date.gen
 
 clean:
 	rm -f $(PAGES) *.gen
