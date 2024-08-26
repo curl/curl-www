@@ -43,13 +43,14 @@ Protocols: dict file ftp ftps http https imap imaps ipfs ipns mqtt pop3 pop3s sm
 Features: alt-svc AsynchDNS HSTS HTTPS-proxy IDN IPv6 Kerberos Largefile libz NTLM SPNEGO SSL SSPI threadsafe Unicode UnixSockets
 </pre>
 
-SUBTITLE(Omissions)
+SUBTITLE(Disabled features)
 <p>
-  The build Microsoft ships omits several good features:
+  The Microsoft curl build omits several good features:
 <ul>
-  <li> it has no Public Suffic List (PSL) support, making it impossible to prevent "super cookies"
-  <li> it does not support HTTP/2 or HTTP/3
-  <li> it only supports a limited set of protocols (no SCP, SFTP, etc)
+  <li> no Public Suffic List (PSL) support, making it impossible to prevent "super cookies"
+  <li> no support for HTTP/2 or HTTP/3
+  <li> no support for GOPHER(S), LDAP(S), RTMP, RTSP, SCP, SFTP, WS(S))
+  <li> no brotli or zstd compression
 </ul>
 
 SUBTITLE(Separate)
