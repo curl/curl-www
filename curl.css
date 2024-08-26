@@ -101,6 +101,10 @@ td.newsdate {
   text-align: right;
 }
 
+code {
+    color: #2020a0;
+}
+
 .warning {
   font-size: 14pt;
   color: #000000;
