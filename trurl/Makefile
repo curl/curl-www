@@ -4,6 +4,7 @@ SRCROOT=$(ROOT)/cvssource
 DOCROOT=$(SRCROOT)/docs
 TESTROOT=$(SRCROOT)/tests
 LIBROOT=$(SRCROOT)/lib
+SCRIPTS=$(SRCROOT)/scripts
 CURL=$(ROOT)
 
 include $(ROOT)/mainparts.mk
@@ -19,8 +20,9 @@ PAGES = index.html \
 all: $(PAGES)
 	(cd trurl-www && git pull)
 
-trurl.gen: trurl-www/trurl.1
-	 $(MAN2HTML) < $< > trurl.gen
+trurl.gen: trurl-www/trurl.md
+	$(SCRIPTS)/cd2nroff < $< > trurl.1
+	$(MAN2HTML) < trurl.1 > trurl.gen
 
 manual.html: _manual.html $(MAINPARTS) trurl.gen
 	$(ACTION)
