@@ -27,8 +27,11 @@ trurl.gen: trurl-www/trurl.md
 manual.html: _manual.html $(MAINPARTS) trurl.gen
 	$(ACTION)
 
-index.html: _index.html $(MAINPARTS)
+index.html: _index.html files.gen mkfiles.pl $(MAINPARTS)
 	$(ACTION)
+
+files.gen: mkfiles.pl dl/*
+	./mkfiles.pl >$@
 
 clean:
 	rm -f $(PAGES)
