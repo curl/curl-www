@@ -2,6 +2,11 @@
 <html>
 <head> <title>trurl</title>
 #include "css.t"
+<style type="text/css">
+a.trurldl {
+  font-size: 200%;
+}
+</style>
 </head>
 
 #define DEVEL_INDEX
@@ -9,6 +14,8 @@
 
 #include "_menu.html"
 #include "setup.t"
+
+#include "files.gen"
 
 WHERE1(trurl)
 
@@ -38,6 +45,17 @@ over and over.
 parser</a> and will thus parse and understand URLs exactly the same as curl
 the command line tool does – making it the perfect companion tool.
 
+SUBTITLE(Download)
+<p>
+  <a href="TRURL_FILENAME"><img src="/pix/GS-Download-icon.svg" alt="download trurl TRURL_VER" width="90" height="120" style="float:left;"></a>
+  <a href="TRURL_FILENAME" class="trurldl">trurl TRURL_VER</a> <br>
+  <b>GPG signature</b>: <a href="TRURL_SIG">here</a> <br>
+  <b>Size</b>: TRURL_SIZE <br>
+  <b>sha256</b>: TRURL_SHA256
+<p>
+  trurl TRURL_VER <a href="https://github.com/curl/trurl/releases/tag/TRURL_VER_LINK">release notes</a>
+
+<p>
 SUBTITLE(Pronunciation)
 <p>
  We say "trurel". As if there was an 'e' between the 'r' and 'l' at the end.
