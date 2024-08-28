@@ -70,6 +70,10 @@ sub num {
     return $t;
 }
 
+my %video = (
+    '0.15' => 'https://youtu.be/ETxhkW2SsfU',
+    );
+
 my $gen=0;
 for my $version (reverse sort { num($a) <=> num($b) } keys %versions) {
     my $build = 1;
@@ -81,18 +85,21 @@ for my $version (reverse sort { num($a) <=> num($b) } keys %versions) {
     print "#define TRURL_VER $officialver\n";
     print "#define TRURL_VER_LINK trurl-$officialver\n\n";
 
-    {
-        printf("#define TRURL_FILENAME dl/%s\n", $file{$version});
-        printf("#define TRURL_SIZE %s\n", $size{$version});
-        printf("#define TRURL_DATE %s\n", $date{$version});
+    printf("#define TRURL_FILENAME dl/%s\n", $file{$version});
+    printf("#define TRURL_SIZE %s\n", $size{$version});
+    printf("#define TRURL_DATE %s\n", $date{$version});
 
-        if($gpg{$version}) {
-            printf("#define TRURL_SIG %s\n", $gpg{$version});
-        }
-        
-        my $sha = checksum("$dl/$file{$version}");
-        printf("#define TRURL_SHA256 %s\n", $sha);
+    if($gpg{$version}) {
+        printf("#define TRURL_SIG %s\n", $gpg{$version});
     }
+        
+    my $sha = checksum("$dl/$file{$version}");
+    printf("#define TRURL_SHA256 %s\n", $sha);
+
+    if($video{$officialver}) {
+        printf("#define TRURL_VIDEO %s\n", $video{$officialver});
+    }
+    
     last;
 }
 
