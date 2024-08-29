@@ -56,3 +56,28 @@ p.roffit {
  text-align: center;
  font-size: 80%;
 }
+
+/* DARK MODE PROPERTIES */
+/* These will override all settings above */
+@media (prefers-color-scheme: dark) {
+
+    pre.level0 {
+        margin-left: 3em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        background-color: #606060;
+    }
+
+    pre.level1 {
+        margin-left: 5em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        background-color: #606060;
+        white-space: pre-wrap;
+        word-break: keep-all;
+    }
+}
