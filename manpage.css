@@ -1,9 +1,29 @@
-pre.level0, P.level0 {
- padding-left: 2em;
+p.level0 {
+    margin-left: 2em;
 }
 
-pre.level1, P.level1 {
- padding-left: 4em;
+pre.level0 {
+    margin-left: 3em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    background-color: #e0e0e0;
+}
+
+P.level1 {
+    padding-left: 4em;
+}
+
+pre.level1 {
+    margin-left: 5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    background-color: #e0e0e0;
+    white-space: pre-wrap;
+    word-break: keep-all;
 }
 
 pre.level2, P.level2 {

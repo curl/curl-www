@@ -1,1 +1,1 @@
-<link rel="STYLESHEET" type="text/css" href="https://curl.se/manpage.css">
+<link rel="stylesheet" type="text/css" href="/manpage.css">
