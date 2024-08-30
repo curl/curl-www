@@ -70,6 +70,8 @@ p.roffit {
         padding-top: 0.5em;
         padding-bottom: 0.5em;
         background-color: #606060;
+        white-space: pre-wrap;
+        word-break: keep-all;
     }
 
     pre.level1 {
