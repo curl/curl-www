@@ -9,6 +9,8 @@ pre.level0 {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     background-color: #e0e0e0;
+    white-space: pre-wrap;
+    word-break: keep-all;
 }
 
 P.level1 {
