@@ -2,6 +2,7 @@
 <html>
 <head> <title>curl for Windows</title>
 #include "css.t"
+#include "term.t"
 <style type="text/css">
 a.windl {
   font-size: 200%;
@@ -90,12 +91,12 @@ DEP_TOOLS
 </ul>
 
 #ifdef CURL_WIN64_VERSION_1
-<pre style="white-space: pre-wrap; word-break: keep-all; color: #e0e080; font-size: 45%; background: #000000; padding: 8px 8px 8px 8px;">
-CURL_WIN64_VERSION_1
-CURL_WIN64_VERSION_2
-CURL_WIN64_VERSION_3
-CURL_WIN64_VERSION_4
-</pre>
+<div class="term">
+<div class="tline">CURL_WIN64_VERSION_1</div>
+<div class="tline">CURL_WIN64_VERSION_2</div>
+<div class="tline">CURL_WIN64_VERSION_3</div>
+<div class="tline">CURL_WIN64_VERSION_4</div>
+</div>
 #endif
 
 <p>
