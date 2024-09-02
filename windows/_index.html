@@ -2,6 +2,7 @@
 <html>
 <head> <title>curl for Windows</title>
 #include "css.t"
+#include "term.t"
 <style type="text/css">
 a.windl {
   font-size: 200%;
@@ -88,6 +89,15 @@ DEP_PKGS
 <ul>
 DEP_TOOLS
 </ul>
+
+#ifdef CURL_WIN64_VERSION_1
+<div class="term">
+<div class="tline">CURL_WIN64_VERSION_1</div>
+<div class="tline">CURL_WIN64_VERSION_2</div>
+<div class="tline">CURL_WIN64_VERSION_3</div>
+<div class="tline">CURL_WIN64_VERSION_4</div>
+</div>
+#endif
 
 <p>
  The <a href="BUILD_LOGURL">log from the build</a>.
