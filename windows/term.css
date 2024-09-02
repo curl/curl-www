@@ -1,0 +1,9 @@
+.tline {
+    padding-bottom: 8px;
+    font-family: monospace;
+}
+.term {
+    color: #e0e080;
+    background: #000000;
+    padding: 8px 8px 0px 8px;
+}
