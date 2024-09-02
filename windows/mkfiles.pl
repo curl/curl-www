@@ -105,6 +105,17 @@ sub getlog {
     printf "#define BUILD_LOGURL %s\n", $l[0];
 }
 
+sub getcurlv {
+    my ($dir)=@_; # where the download files are
+    open(L, "$dir/curl-version-x86_64.txt") || return;
+    my @l = <L>;
+    close(L);
+    chomp $l[0]; printf "#define CURL_WIN64_VERSION_1 %s\n", $l[0];
+    chomp $l[1]; printf "#define CURL_WIN64_VERSION_2 %s\n", $l[1];
+    chomp $l[2]; printf "#define CURL_WIN64_VERSION_3 %s\n", $l[2];
+    chomp $l[3]; printf "#define CURL_WIN64_VERSION_4 %s\n", $l[3];
+}
+
 my $dl = latest();
 
 my @files = getdl($dl);
@@ -166,3 +177,5 @@ if($gen) {
 gethashes($dl);
 
 getlog($dl);
+
+getcurlv($dl);
