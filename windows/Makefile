@@ -13,7 +13,7 @@ all: $(PAGES)
 index.html: _index.html $(MAINPARTS) files.gen
 	$(ACTION)
 
-microsoft.html: _microsoft.html $(MAINPARTS)
+microsoft.html: _microsoft.html $(MAINPARTS) term.t
 	$(ACTION)
 
 files.gen: mkfiles.pl latest.txt

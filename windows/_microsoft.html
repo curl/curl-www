@@ -2,8 +2,10 @@
 <html>
 <head> <title>curl shipped by Microsoft</title>
 #include "css.t"
+#include "term.t"
+</head>
 
- #define CURL_URL /windows/microsoft.html
+#define CURL_URL /windows/microsoft.html
 #define WINDOWS_MS
 
 #include "_menu.html"
@@ -36,12 +38,12 @@ SUBTITLE(Windows 10/11 bundle curl)
  Invoking curl -V after the <b>June 2024</b> update shows this on these
  platforms:
 <p>
-<pre style="white-space: pre-wrap; word-break: keep-all; color: #e0e080; background: #000000; padding: 8px 8px 8px 8px;">
-curl 8.7.1 (Windows) libcurl/8.7.1 Schannel zlib/1.3 WinIDN
-Release-Date: 2024-03-27
-Protocols: dict file ftp ftps http https imap imaps ipfs ipns mqtt pop3 pop3s smb smbs smtp smtps telnet tftp
-Features: alt-svc AsynchDNS HSTS HTTPS-proxy IDN IPv6 Kerberos Largefile libz NTLM SPNEGO SSL SSPI threadsafe Unicode UnixSockets
-</pre>
+<div class="term">
+<div class="tline">curl 8.7.1 (Windows) libcurl/8.7.1 Schannel zlib/1.3 WinIDN</div>
+<div class="tline">Release-Date: 2024-03-27</div>
+<div class="tline">Protocols: dict file ftp ftps http https imap imaps ipfs ipns mqtt pop3 pop3s smb smbs smtp smtps telnet tftp</div>
+<div class="tline">Features: alt-svc AsynchDNS HSTS HTTPS-proxy IDN IPv6 Kerberos Largefile libz NTLM SPNEGO SSL SSPI threadsafe Unicode UnixSockets</div>
+</div>
 
 SUBTITLE(Disabled features)
 <p>
