@@ -1082,3 +1082,15 @@ DURATION 1h1
 WHO Daniel Stenberg
 DESC In this keynote speech, Daniel shares some of the highlights (and lowlights) of running a successful Open Source project.
 ENDOFVIDEO
+
+VIDEO Mastering the curl command line
+EVENT Twitch stream
+URL https://www.youtube.com/watch?v=q_juztjhUlA
+THUMB mastering-command-line-2024.jpg
+THUMBSIZE width="250" height="141"
+DURATION 58 minutes
+DATE 2024-09-05
+SLIDES https://www.slideshare.net/slideshow/mastering-the-curl-command-line-with-daniel-stenberg/271595168
+WHO Daniel Stenberg
+DESC This talk goes through and focuses on some of the most powerful and interesting additions to curl done in recent years.
+ENDOFVIDEO
