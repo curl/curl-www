@@ -8,7 +8,7 @@
 }
 .silver {
     width: 400px;
-    max-height: 400px;
+    max-width: 100%;
     float: left;
     padding-right: 10px;
     padding-bottom: 10px;
@@ -17,25 +17,43 @@
 }
 
 .silver img {
-  max-width: 400px;
-  max-height: 200px;
+    max-width: 400px;
+    height: auto;
 }
 
 .silver img[src$=".svg"], .silver svg {
-  width: 400px;
-  height: auto;
+    width: 400px;
+    height: auto;
 }
 
 .gold {
-    width: 500px;
+    width: 400px;
+    max-width: 100%;
     float: left;
-    padding-right: 20px;
-    padding-bottom: 20px;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
     text-align: left;
 }
 
-.x:hover, svg:hover, img:hover {
+.top {
+    width: 500px;
+    max-width: 100%;
+    text-align: left;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+}
+
+.xx:hover, .x:hover, svg:hover, img:hover {
     background-color: transparent;
+}
+.x img {
+    width: 500px;
+    max-width: 100%;
+}
+
+.xx img {
+    width: 400px;
+    max-width: 100%;
 }
 </style>
 </head>
@@ -57,47 +75,59 @@ TITLE(Sponsors)
 <br><a href="/docs/">Online Docs</a>
 </div>
 
-<p>
-  <a class="x" href="https://www.haxx.se/" rel="sponsored"><img src="pix/haxx.svg" width="500" height="169" border="0" alt="Haxx"></a>
+<p> These are our best friends. The companies that help the curl project
+financially in different ways.
+
+<p style="clear: both;">
+
+<div class="top">
+ <a class="x" href="https://www.haxx.se/" rel="sponsored"><img src="pix/haxx.svg" border="0" alt="Haxx"></a>
 <p>
  Haxx is the primary sponsor of the curl project
+</div>
 
-<p>
-<a class="x" href="https://www.wolfssl.com/" rel="sponsored"><img src="pix/wolfssl.svg" width="500" height="387" alt="wolfSSL"></a>
+<div class="top">
+<a class="x" href="https://www.wolfssl.com/" rel="sponsored"><img src="pix/wolfssl.svg" alt="wolfSSL"></a>
 <p>
  wolfSSL employs <a href="https://daniel.haxx.se/">Daniel</a> and lets him
  spend paid work hours on curl
+</div>
 
-<p>
+<div class="top">
  <a class="x" href="https://www.fastly.com/" rel="sponsored"><img src="pix/fastly.svg" width="500" alt="Fastly"></a>
 <p>
  Fastly delivers the curl website and web contents to the world
-
-<p>
+</div>
+<div class="top">
  <a class="x" href="https://www.github.com/" rel="sponsored"><img src="pix/top/github.svg" width="500" alt="GitHub"></a>
 <p>
  GitHub sponsors CI infrastructure
+</div>
 
-<p>
+<div class="top">
  <a class="x" href="https://www.hackerone.com/internet-bug-bounty" rel="sponsored"><img src="pix/top/ibb.svg" width="500" alt="IBB"></a>
 <p>
  The Internet Bug Bounty sponsors the curl bug bounty
+</div>
  
-<p>
- <a class="x" href="https://www.teamviewer.com/" rel="sponsored"><img src="pix/teamviewer.svg" width="700" alt="Teamviewer"></a>
+<div class="top">
+ <a class="x" href="https://www.teamviewer.com/" rel="sponsored"><img src="pix/teamviewer.svg" width="500" alt="Teamviewer"></a>
 <p>
  Teamviewer sponsors test and CI infrastructure.
+</div>
+
+<p style="clear: both;">
 
 <div class="gold">
 SUBTITLE(Gold sponsor)
-<a class="x" href="https://elastic.co/" rel="sponsored"><img src="pix/gold/elastic-logo.svg" alt="Elastic"></a>
+<a class="xx" href="https://elastic.co/" rel="sponsored"><img src="pix/gold/elastic-logo.svg" alt="Elastic"></a>
 <p> We are the company behind the Elastic Stack — that is Elasticsearch, Kibana, Beats, and Logstash.
 </div>
 
 <div class="gold">
 SUBTITLE(DNS sponsor)
 <p>
-  <a class="x" href="https://www.kirei.se/"><img src="pix/kirei.svg" width="400" alt="Kirei"></a>
+  <a class="xx" href="https://www.kirei.se/"><img src="pix/kirei.svg" alt="Kirei"></a>
 <p> Kirei sponsors DNS infrastructure
 </div>
 
