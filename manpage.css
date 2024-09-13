@@ -8,7 +8,7 @@ pre.level0 {
     padding-right: 0.5em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    background-color: #e0e0e0;
+    background-color: #f0f0f0;
     white-space: pre-wrap;
     word-break: keep-all;
 }
@@ -23,7 +23,7 @@ pre.level1 {
     padding-right: 0.5em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    background-color: #e0e0e0;
+    background-color: #f0f0f0;
     white-space: pre-wrap;
     word-break: keep-all;
 }
@@ -69,7 +69,7 @@ p.roffit {
         padding-right: 0.5em;
         padding-top: 0.5em;
         padding-bottom: 0.5em;
-        background-color: #606060;
+        background-color: #404040;
         white-space: pre-wrap;
         word-break: keep-all;
     }
@@ -80,7 +80,7 @@ p.roffit {
         padding-right: 0.5em;
         padding-top: 0.5em;
         padding-bottom: 0.5em;
-        background-color: #606060;
+        background-color: #404040;
         white-space: pre-wrap;
         word-break: keep-all;
     }
