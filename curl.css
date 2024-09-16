@@ -600,4 +600,7 @@ p.level1 {
     div.sourceCode {
         background-color: #313131 !important;
     }
+    code {
+        color: #aaaaff;
+    }
 }
