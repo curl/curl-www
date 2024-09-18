@@ -47,6 +47,37 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 <a name="changes"></a>
 TITLE(All changes ever made)
 
+<a name="8_10_1"></a>
+SUBTITLE(Fixed in 8.10.1 - September 20 2024)
+VULNBOX(8.10.1)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.se/bug/?i=14879">autotools: fix `--with-ca-embed` build rule</a>
+ BGF <a href="https://curl.se/bug/?i=14872">cmake: ensure `CURL_USE_OPENSSL`/`USE_OPENSSL_QUIC` are set in sync</a>
+ BGF <a href="https://curl.se/bug/?i=14927">cmake: fix MSH3 to appear on the feature list</a>
+ BGF <a href="https://curl.se/bug/?i=14897">connect: store connection info when really done</a>
+ BGF <a href="https://curl.se/bug/?i=14886">CURLMOPT_TIMERFUNCTION.md: emphasize that only a single timer should run</a>
+ BGF <a href="https://curl.se/bug/?i=14873">FTP: partly revert eeb7c1280742f5c8fa48a4340fc1e1a1a2c7075a</a>
+ BGF <a href="https://curl.se/bug/?i=14870">http2: when uploading data from stdin, fix eos forwarding</a>
+ BGF <a href="https://curl.se/bug/?i=14899">http: make max-filesize check not count ignored bodies</a>
+ BGF <a href="https://curl.se/bug/?i=14858">lib: fix AF_INET6 use outside of USE_IPV6</a>
+ BGF <a href="https://curl.se/bug/?i=14852">libcurl-docs: CURLINFO_LOCAL_* work for QUIC as well as TCP</a>
+ BGF <a href="https://curl.se/bug/?i=14860">multi: check that the multi handle is valid in curl_multi_assign</a>
+ BGF <a href="https://curl.se/bug/?i=14863">QUIC: on connect, keep on trying on draining server</a>
+ BGF <a href="https://marc.info/?l=git&m=172620452502747&w=2">request: correctly reset the eos_sent flag</a>
+ BGF <a href="https://curl.se/bug/?i=14850">runtests: accecpt &apos;quictls&apos; as OpenSSL compatible</a>
+ BGF <a href="https://curl.se/bug/?i=14840">rustls: fixed minor logic bug in default cipher selection</a>
+ BGF <a href="https://curl.se/bug/?i=14889">rustls: rustls-ffi 0.14.0 update</a>
+ BGF <a href="https://curl.se/bug/?i=14889">rustls: support strong CSRNG data</a>
+ BGF <a href="https://curl.se/bug/?i=14884">setopt: remove superfluous use of ternary expressions</a>
+ BGF <a href="https://curl.se/bug/?i=14919">singleuse: drop `Curl_memrchr()` for no-HTTP builds</a>
+ BGF <a href="https://curl.se/bug/?i=14857">test537: cap the rlimit max this test runs</a>
+ BGF <a href="https://curl.se/bug/?i=14835">tests: tweak lock file handling and timers</a>
+ BGF <a href="https://curl.se/bug/?i=14939">tool_cb_wrt: use &quot;curl_response&quot; if no file name in URL</a>
+ BGF <a href="https://curl.se/bug/?i=14898">transfer: fix sendrecv() without interim poll</a>
+ BGF <a href="https://curl.se/bug/?i=14887">vtls: fix `Curl_ssl_conn_config_match` doc param</a>
+</ul>
+
 <a name="8_10_0"></a>
 SUBTITLE(Fixed in 8.10.0 - September 11 2024)
 RELEASEVIDEO(8.10.0, "https://youtu.be/jO5qZ9VW0_k")
