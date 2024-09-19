@@ -72,6 +72,7 @@ sub num {
 
 my %video = (
     '0.15' => 'https://youtu.be/ETxhkW2SsfU',
+    '0.16' => 'https://youtu.be/X8auKKxgFpw',
     );
 
 my $gen=0;
