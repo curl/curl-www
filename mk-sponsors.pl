@@ -20,16 +20,12 @@ my %silver = (
     'https://iboysoft.com' => 'iBoysoft.svg',
     "flutter-enterprises" => 'fineproxy.jpg',
     'https://www.hityah.com/' => 'testarna.png',
-    'https://bountii.coupons/' => 'bountii.png',
-    'https://earthweb.com/' => 'earthweb.png',
-    'https://proxy.coupons' => 'proxycoupons.png',
     'https://onelessthing.co.uk/' => 'onelessthing.svg',
     'guest-b727d782' => 'zynk-logo.jpg',
+    'babiel-gmbh' => 'babiel.svg',
 
     # Sponsors that don't get images
-    'babiel-gmbh' => '[none]',  # special case handled in _sponsors.html
     'thebestsolution' => '[none]',  # link denied 16 May 2024 due to social media manipulation
-    "https://www.romab.com" => '[none]',  # historical
     );
 
 # URLs that are changed from the one in the profile
@@ -37,6 +33,7 @@ my %modurl = (
     'flutter-enterprises' => 'https://fineproxy.org/',
     'https://www.hityah.com/' => 'https://www.testarna.se/casino/utan-svensk-licens',
     'guest-b727d782' => 'https://zynk.it',
+    'babiel-gmbh' => 'https://www.babiel.com/',
     );
 
 # Get the list of Silver Sponsor URLs
