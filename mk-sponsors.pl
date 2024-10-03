@@ -24,6 +24,7 @@ my %silver = (
     'https://earthweb.com/' => 'earthweb.png',
     'https://proxy.coupons' => 'proxycoupons.png',
     'https://onelessthing.co.uk/' => 'onelessthing.svg',
+    'guest-b727d782' => 'zynk-logo.jpg',
 
     # Sponsors that don't get images
     'babiel-gmbh' => '[none]',  # special case handled in _sponsors.html
@@ -35,6 +36,7 @@ my %silver = (
 my %modurl = (
     'flutter-enterprises' => 'https://fineproxy.org/',
     'https://www.hityah.com/' => 'https://www.testarna.se/casino/utan-svensk-licens',
+    'guest-b727d782' => 'https://zynk.it',
     );
 
 # Get the list of Silver Sponsor URLs
