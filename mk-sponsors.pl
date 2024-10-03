@@ -21,7 +21,7 @@ my %silver = (
     "flutter-enterprises" => 'fineproxy.jpg',
     'https://www.hityah.com/' => 'testarna.png',
     'https://onelessthing.co.uk/' => 'onelessthing.svg',
-    'guest-b727d782' => 'zynk-logo.jpg',
+    'guest-b727d782' => 'zynk.svg',
     'babiel-gmbh' => 'babiel.svg',
 
     # Sponsors that don't get images
