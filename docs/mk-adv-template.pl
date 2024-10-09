@@ -46,6 +46,19 @@ $daward
 <head> <title>curl - FLAWNAME - FLAWCVE</title>
 #include "css.t"
 #include "manpage.t"
+<style>
+code {
+    padding: 0px 4px 0px 4px;
+    background-color: #f0f0f0;
+}
+
+@media (prefers-color-scheme: dark) {
+    code {
+        padding: 0px 4px 0px 4px;
+        background-color: #101010;
+    }
+}
+</style>
 </head>
 
 #define CURL_DOCS
