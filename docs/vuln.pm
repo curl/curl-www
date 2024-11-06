@@ -16,6 +16,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2024-9681.html|7.74.0|8.10.1|HSTS subdomain overwrites parent cache entry|CVE-2024-9681|20241105|20241007|CWE-1025: Comparison Using Wrong Factors|540|HSTS|-|both|low|https://hackerone.com/reports/2764830",
     "CVE-2024-8096.html|7.41.0|8.9.1|OCSP stapling bypass with GnuTLS|CVE-2024-8096|20240911|20240819|CWE-295: Improper Certificate Validation|2540|TLS|-|both|medium|https://hackerone.com/reports/2669852",
     "CVE-2024-7264.html|7.32.0|8.9.0|ASN.1 date parser overread|CVE-2024-7264|20240731|20240730|CWE-125: Out-of-bounds Read|540|ASN1|OVERREAD|both|low|https://hackerone.com/reports/2629968",
     "CVE-2024-6874.html|8.8.0|8.8.0|macidn punycode buffer overread|CVE-2024-6874|20240724|20240716|CWE-126: Buffer Over-read|540|IDN|OVERREAD|lib|low|https://hackerone.com/reports/2604391",
