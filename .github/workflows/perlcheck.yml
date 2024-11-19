@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - name: install prereqs
       run: sudo apt-get install libcgi-pm-perl libstring-crc32-perl
