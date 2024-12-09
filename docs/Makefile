@@ -183,6 +183,7 @@ CVELIST = \
 
 PAGES = \
  $(CVELIST) \
+ alt-svc.html \
  audits.html \
  bugbounty.html \
  bugs.html \
@@ -196,6 +197,7 @@ PAGES = \
  governance.html \
  help-us.html \
  history.html \
+ hsts.html \
  http-cookies.html \
  http3.html \
  httpscripting.html \
@@ -350,6 +352,17 @@ faq.html: _faq.shtml $(MAINPARTS) faq.gen
 
 faq.gen: $(DOCROOT)/FAQ faqparse.pl
 	./faqparse.pl < $< > $@
+
+alt-svc.html: _alt-svc.html $(MAINPARTS) alt-svc.gen
+	$(ACTION)
+alt-svc.gen: $(DOCROOT)/ALTSVC.md
+	$(MARKDOWN) < $< >$@
+
+hsts.html: _hsts.html $(MAINPARTS) hsts.gen
+	$(ACTION)
+
+hsts.gen: $(DOCROOT)/HSTS.md
+	$(GITHUB) $< >$@
 
 http-cookies.html: _http-cookies.html $(MAINPARTS) http-cookies.gen
 	$(ACTION)

@@ -1,0 +1,29 @@
+#include "_doctype.html"
+<html>
+<head> <title>curl - HTTP Strict-Transport-Security (HSTS)</title>
+#include "css.t"
+</head>
+
+#define CURL_DOCS
+#define PROT_DOCS
+#define DOCS_HSTS
+#define CURL_URL docs/hsts.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(Docs, "/docs/", Protocols, "/docs/protdocs.html", HSTS)
+
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="manpage.html">manpage</a>
+<br><a href="httpscripting.html">HTTP Scripting</a>
+<br><a href="tutorial.html">Tutorial</a>
+</div>
+
+#include "hsts.gen"
+
+#include "_footer.html"
+
+</body>
+</html>
