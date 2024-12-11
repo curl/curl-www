@@ -602,5 +602,6 @@ p.level1 {
     }
     code {
         color: #aaaaff;
+        background-color: #111111 !important;
     }
 }
