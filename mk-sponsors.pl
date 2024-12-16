@@ -23,6 +23,7 @@ my %silver = (
     'https://onelessthing.co.uk/' => 'onelessthing.svg',
     'guest-b727d782' => 'zynk.svg',
     'babiel-gmbh' => 'babiel.svg',
+    'https://www.open-systems.com' => 'open-systems.svg',
 
     # Sponsors that don't get images
     'thebestsolution' => '[none]',  # link denied 16 May 2024 due to social media manipulation
