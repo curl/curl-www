@@ -90,7 +90,7 @@
     # be listed here: https://daniel.haxx.se/blog/2020/03/16/warning-curl-users-on-windows-using-file/
     "CVE-2019-5481.html|7.52.0|7.65.3|FTP-KRB double free|CVE-2019-5481|20190911|20190903|CWE-415: Double Free|200|FTP|DOUBLE_FREE|both|medium|https://hackerone.com/reports/686823",
     "CVE-2019-5482.html|7.19.4|7.65.3|TFTP small blocksize heap buffer overflow|CVE-2019-5482|20190911|20190829|CWE-122: Heap-based Buffer Overflow|250|TFTP|OVERFLOW|lib|medium|https://hackerone.com/reports/684603",
-    "CVE-2019-5443.html|7.44.0|7.65.1|Windows OpenSSL engine code injection|CVE-2019-5443|20190624|20190612|CWE-94: Code Injection|200|TLS|-|both|high|https://hackerone.com/reports/608577",
+    "CVE-2019-5443.html|7.44.0|7.65.1|Windows OpenSSL engine code injection|CVE-2019-5443|20190624|20190612|CWE-94: Improper Control of Generation of Code ('Code Injection')|200|TLS|-|both|high|https://hackerone.com/reports/608577",
     "CVE-2019-5436.html|7.19.4|7.64.1|TFTP receive buffer overflow|CVE-2019-5436|20190522|20190429|CWE-122: Heap-based Buffer Overflow|200|TFTP|OVERFLOW|both|low|https://hackerone.com/reports/550696",
     "CVE-2019-5435.html|7.62.0|7.64.1|Integer overflows in URL parser|CVE-2019-5435|20190522|20190424|CWE-131: Incorrect Calculation of Buffer Size|150|URL|OVERFLOW|both|low|https://hackerone.com/reports/547630",
     "CVE-2018-16890.html|7.36.0|7.63.0|NTLM type-2 out-of-bounds buffer read|CVE-2018-16890|20190206|20181230|CWE-125: Out-of-bounds Read|0|HTTP|OVERREAD|both|medium",
