@@ -1094,3 +1094,14 @@ SLIDES https://www.slideshare.net/slideshow/mastering-the-curl-command-line-with
 WHO Daniel Stenberg
 DESC This talk goes through and focuses on some of the most powerful and interesting additions to curl done in recent years.
 ENDOFVIDEO
+
+VIDEO Getting started with libcurl
+EVENT wolfSSL webinar
+URL https://youtu.be/W-0yEqLMkwg
+THUMB getting-started-2024.jpg
+THUMBSIZE width="250" height="141"
+DATE 2025-01-09
+DURATION 48 minutes
+WHO Daniel Stenberg
+DESC An introduction to doing internet transfers using libcurl's easy API.
+ENDOFVIDEO
