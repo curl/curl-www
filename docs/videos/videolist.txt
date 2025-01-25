@@ -1105,3 +1105,14 @@ DURATION 48 minutes
 WHO Daniel Stenberg
 DESC An introduction to doing internet transfers using libcurl's easy API.
 ENDOFVIDEO
+
+VIDEO curl from start to end
+EVENT Twitch stream
+URL https://youtu.be/WmMa1GVPWZ0
+THUMB start-to-end.jpg
+THUMBSIZE width="250" height="141"
+DURATION 1h10
+DATE 2025-01-21
+WHO Daniel Stenberg
+DESC What exactly happens when you type a curl command into your shell and press enter? Daniel takes you through everything step-by-step from the shell to the network.
+ENDOFVIDEO
