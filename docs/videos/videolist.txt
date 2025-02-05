@@ -1116,3 +1116,14 @@ DATE 2025-01-21
 WHO Daniel Stenberg
 DESC What exactly happens when you type a curl command into your shell and press enter? Daniel takes you through everything step-by-step from the shell to the network.
 ENDOFVIDEO
+
+VIDEO How to do a curl release
+EVENT Twitch stream
+URL https://youtu.be/7UQgcSWkSYw
+THUMB do-release.jpg
+THUMBSIZE width="250" height="141"
+DURATION 27 minutes
+DATE 2025-02-05
+WHO Daniel Stenberg
+DESC Shows the scripts, the procedures and the general process of making a curl release while releasing 8.12.0.
+ENDOFVIDEO
