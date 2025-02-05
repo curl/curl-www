@@ -16,7 +16,8 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
-    "CVE-2025-0167.html|7.76.0|8.11.1|netrc and default credential leak|CVE-2025-0167|20250225|20241230|CWE-200: Exposure of Sensitive Information to an Unauthorized Actor|540|netrc|-|both|low|https://hackerone.com/reports/2917232",
+    "CVE-2025-0665.html|8.11.1|8.11.1|eventfd double close|CVE-2025-0665|20250205|20250122|CWE-1341: Multiple Releases of Same Resource or Handle|505|DNS|-|both|low|https://hackerone.com/reports/2954286",
+    "CVE-2025-0167.html|7.76.0|8.11.1|netrc and default credential leak|CVE-2025-0167|20250205|20241230|CWE-200: Exposure of Sensitive Information to an Unauthorized Actor|505|netrc|-|both|low|https://hackerone.com/reports/2917232",
     "CVE-2024-11053.html|7.76.0|8.11.0|netrc and redirect credential leak|CVE-2024-11053|20241211|20241108|CWE-200: Exposure of Sensitive Information to an Unauthorized Actor|505|netrc|-|both|low|https://hackerone.com/reports/2829063",
     "CVE-2024-9681.html|7.74.0|8.10.1|HSTS subdomain overwrites parent cache entry|CVE-2024-9681|20241105|20241007|CWE-1025: Comparison Using Wrong Factors|540|HSTS|-|both|low|https://hackerone.com/reports/2764830",
     "CVE-2024-8096.html|7.41.0|8.9.1|OCSP stapling bypass with GnuTLS|CVE-2024-8096|20240911|20240819|CWE-295: Improper Certificate Validation|2540|TLS|-|both|medium|https://hackerone.com/reports/2669852",
