@@ -1117,6 +1117,17 @@ WHO Daniel Stenberg
 DESC What exactly happens when you type a curl command into your shell and press enter? Daniel takes you through everything step-by-step from the shell to the network.
 ENDOFVIDEO
 
+VIDEO Tightening every bolt
+EVENT FOSDEM 2025
+URL https://fosdem.org/2025/schedule/event/fosdem-2025-4204-tightening-every-bolt/
+THUMB tightening-every-bolt.jpg
+THUMBSIZE width="250" height="141"
+DURATION 26 minutes
+DATE 2025-02-01
+WHO Daniel Stenberg
+DESC What the curl project does to minimize security risks: Security, Safety, Reproducibility, Vulnerability handling and the processes and tooling around it.
+ENDOFVIDEO
+
 VIDEO How to do a curl release
 EVENT Twitch stream
 URL https://youtu.be/7UQgcSWkSYw
