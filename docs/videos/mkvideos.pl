@@ -37,8 +37,7 @@ sub onevideo {
     }
     return "<!-- $date -->".
         "<div itemprop=\"video\" itemscope itemtype=\"http://schema.org/VideoObject\"><div class=\"video\">\n".
-        "<meta itemprop=\"contentUrl\" content=\"$url\" /><a href=\"$url\"> <img alt=\"Thumbnail image of $video\" src=\"t/$thumb\" $size> </a>\n".
-        "<meta itemprop=\"thumbnailUrl\" content=\"https://curl.se/docs/videos/t/$thumb\" /><br>\n".
+        "<a itemprop=\"contentUrl\" href=\"$url\"> <img itemprop=\"thumbnailUrl\" alt=\"Thumbnail image of $video\" src=\"t/$thumb\" $size> </a><br>\n".
         "<b><span itemprop=\"name\">$video</span></b> <p> <meta itemprop=\"duration\" content=\"$isoduration\" />$duration, <span itemprop=\"dateCreated uploadDate\">$date</span>$slides <p>\n".
         "<span itemprop=\"description\">$desc by <span itemprop=\"actor\">$who</span>$event</span>$keywords</div>".
         "</div>";
