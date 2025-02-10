@@ -22,4 +22,11 @@
       border: 1px solid black;
       border-radius: 10px;
       padding: 5px 5px 5px 5px;
+      line-height: 2.5;
+  }
+  h1 {
+      margin-block-end: 0.3em;
+  }
+  h2 {
+      margin-block-end: 0.1em;
   }
