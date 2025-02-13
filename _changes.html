@@ -47,6 +47,77 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 <a name="changes"></a>
 TITLE(All changes ever made)
 
+<a name="8_12_1"></a>
+SUBTITLE(Fixed in 8.12.1 - February 13 2025)
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.se/bug/?i=16283">all: remove FIXME and TODO comments</a>
+ BGF <a href="https://curl.se/bug/?i=16179">asyn-thread: fix build with `CURL_DISABLE_SOCKETPAIR`</a>
+ BGF <a href="https://curl.se/bug/?i=16169">asyn-thread: fix HTTPS RR crash</a>
+ BGF <a href="https://curl.se/bug/?i=16227">asyn-thread: fix the returned bitmask from Curl_resolver_getsock</a>
+ BGF <a href="https://curl.se/bug/?i=16216">asyn-thread: survive a c-ares channel set to NULL</a>
+ BGF <a href="https://curl.se/bug/?i=16214">build: add tool_hugehelp.c into IBMi build</a>
+ BGF checksrc.pl: warn on FIXME/TODO comments
+ BGF <a href="https://curl.se/bug/?i=16153">cmake/Find: set `&lt;Modulename&gt;_FOUND` for compatibility when found via `pkg-config`</a>
+ BGF <a href="https://curl.se/bug/?i=16126">cmake: add integration tests, run them in CI</a>
+ BGF <a href="https://curl.se/bug/?i=16207">cmake: always reference OpenSSL and ZLIB via imported targets</a>
+ BGF <a href="https://curl.se/bug/?i=16233">cmake: avoid unnecessary `-L` for implicit link dirs</a>
+ BGF <a href="https://curl.se/bug/?i=16146">cmake: drop `LDAP_DEPRECATED=1` macro, to sync with autotools</a>
+ BGF <a href="https://curl.se/bug/?i=16282">cmake: fix `HAVE_GETHOSTBYNAME_R_*` detections with `CURL_WERROR=ON`</a>
+ BGF <a href="https://curl.se/bug/?i=16293">cmake: fix to detect `HAVE_OPENSSL_SRP` in MSVC UWP builds</a>
+ BGF <a href="https://curl.se/bug/?i=16278">cmake: fix/add missing feature detections for Windows/MS-DOS</a>
+ BGF <a href="https://curl.se/bug/?i=16198">cmake: initialize variables where missing</a>
+ BGF <a href="https://curl.se/bug/?i=16182">cmake: lib order fixes for picky linkers (e.g. binutils `ld`)</a>
+ BGF <a href="https://curl.se/bug/?i=16191">cmake: normalize before matching paths with syspaths</a>
+ BGF <a href="https://curl.se/bug/?i=16242">cmake: respect `GNUTLS_CFLAGS` when detected via `pkg-config`</a>
+ BGF <a href="https://curl.se/bug/?i=16190">cmake: respect `GNUTLS_LIBRARY_DIRS` in `libcurl.pc` and `curl-config`</a>
+ BGF <a href="https://curl.se/bug/?i=16243">cmake: save a line with `CMAKE_C_IMPLICIT_LINK_DIRECTORIES` exclusion</a>
+ BGF <a href="https://curl.se/bug/?i=16144">cmake: tidy up string append and list prepend syntax</a>
+ BGF <a href="https://curl.se/bug/?i=16209">configure/cmake: check for realpath</a>
+ BGF <a href="https://curl.se/bug/?i=16183">configure/cmake: set asyn-rr a feature only if httpsrr is enabled</a>
+ BGF <a href="https://curl.se/bug/?i=16202">content_encoding: #error on too old zlib</a>
+ BGF <a href="https://curl.se/bug/?i=16256">curl_global_sslset.md: Add SSL backend names</a>
+ BGF <a href="https://curl.se/bug/?i=16204">CURLOPT_SSH_KNOWNHOSTS.md: strongly recommend using this</a>
+ BGF <a href="https://curl.se/bug/?i=16245">CURLSHOPT_SHARE.md: adjust for the new SSL session cache</a>
+ BGF <a href="https://curl.se/bug/?i=16139">docs: better explain multi-part byte range behavior</a>
+ BGF <a href="https://curl.se/bug/?i=16269">docs: use valid example domain names</a>
+ BGF <a href="https://curl.se/bug/?i=16248">generate.bat: remove curl_get_line.c from the curlx file list</a>
+ BGF <a href="https://curl.se/bug/?i=16160">header.md: mention `Authorization:` and `Cookie:` special treatment</a>
+ BGF <a href="https://curl.se/bug/?i=16213">imap: TLS upgrade fix</a>
+ BGF <a href="https://curl.se/bug/?i=16221">INTERNALS: fix c-ares, as we actually support 1.6.0 or later</a>
+ BGF <a href="https://curl.se/bug/?i=16176">ldap: drop support for legacy Novell LDAP SDK</a>
+ BGF <a href="https://curl.se/bug/?i=16184">lib: include necessary headers for `inet_ntop`/`inet_pton`</a>
+ BGF <a href="https://curl.se/bug/?i=16273">lib: silence LibreSSL collision warning on non-MSVC Windows</a>
+ BGF <a href="https://curl.se/bug/?i=16268">libssh2: comparison is always true because rc &lt;= -1</a>
+ BGF <a href="https://curl.se/bug/?i=16199">libssh2: raise lowest supported version to 1.2.8</a>
+ BGF <a href="https://curl.se/bug/?i=16200">libssh: drop support for libssh older than 0.9.0</a>
+ BGF <a href="https://curl.se/bug/?i=16194">libssh: silence `-Wconversion` with a cast (Windows 32-bit)</a>
+ BGF <a href="https://curl.se/bug/?i=16163">netrc: return code cleanup, fix missing file error</a>
+ BGF <a href="https://curl.se/bug/?i=16232">openssl-quic: ignore ciphers for h3</a>
+ BGF <a href="https://curl.se/bug/?i=16246">openssl: fix out of scope variables in goto</a>
+ BGF <a href="https://curl.se/bug/?i=16208">pop3: TLS upgrade fix</a>
+ BGF <a href="https://curl.se/bug/?i=16226">runtests: fix the disabling of the memory tracking</a>
+ BGF <a href="https://curl.se/bug/?i=16220">runtests: quote commands to support paths with spaces</a>
+ BGF <a href="https://curl.se/bug/?i=16240">scache: add magic checks</a>
+ BGF <a href="https://curl.se/bug/?i=16187">smb: silence `-Warray-bounds` with gcc 13+</a>
+ BGF <a href="https://curl.se/bug/?i=16189">smtp: TLS upgrade fix</a>
+ BGF <a href="https://curl.se/bug/?i=16196">SPONSORS.md: clarify that we don&apos;t promise goods or services</a>
+ BGF <a href="https://curl.se/bug/?i=16223">test1516: avoid failure due to spaces in path</a>
+ BGF test2080: simplify, avoid the null byte
+ BGF <a href="https://curl.se/bug/?i=16289">tests: fix test 558, 1330 for MSVC, allow TrackMemory with MSVC in cmake</a>
+ BGF <a href="https://curl.se/bug/?i=16111">tidy-up: make per-file `ARRAYSIZE` macros global as `CURL_ARRAYSIZE`</a>
+ BGF <a href="https://curl.se/bug/?i=16211">tool_cfgable: sort struct fields by size, use bitfields for booleans</a>
+ BGF <a href="https://curl.se/bug/?i=16159">tool_getparam: add &quot;TLS required&quot; flag for each such option</a>
+ BGF <a href="https://curl.se/bug/?i=16284">tool_progress: fix percent output of large parallel transfers</a>
+ BGF <a href="https://curl.se/bug/?i=16201">tool_ssls: switch to tool-specific get_line function</a>
+ BGF <a href="https://curl.se/bug/?i=16285">verbose.md: mention how carriage-return might occur in headers</a>
+ BGF <a href="https://curl.se/bug/?i=16294">vquic: make the &quot;disable GSO&quot; use infof, not failf</a>
+ BGF <a href="https://curl.se/bug/?i=16253">vtls: fix multissl-init</a>
+ BGF <a href="https://curl.se/bug/?i=16261">vtsl: eliminate &apos;data-&gt;state.ssl_scache&apos;</a>
+ BGF <a href="https://curl.se/bug/?i=16237">wakeup_write: make sure the eventfd write sends eight bytes</a>
+ BGF <a href="https://curl.se/bug/?i=16230">wolfssl: silence compiler warning (MSVC 2019), simplify existing</a>
+</ul>
+
 <a name="8_12_0"></a>
 SUBTITLE(Fixed in 8.12.0 - February 5 2025)
 RELEASEVIDEO(8.12.0, "https://youtu.be/FDBw2uxI-R8")
