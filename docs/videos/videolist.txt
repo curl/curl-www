@@ -1138,3 +1138,14 @@ DATE 2025-02-05
 WHO Daniel Stenberg
 DESC Shows the scripts, the procedures and the general process of making a curl release while releasing 8.12.0.
 ENDOFVIDEO
+
+VIDEO curl release notes
+EVENT Twitch stream
+URL https://youtu.be/sElmQtHoo5Y
+THUMB release-notes.jpg
+THUMBSIZE width="250" height="141"
+DURATION 53 minutes
+DATE 2025-02-21
+WHO Daniel Stenberg
+DESC The plumbing, related scripts and how to keep the curl RELEASE-NOTES file in sync during development so that it is in good shape at release time.
+ENDOFVIDEO
