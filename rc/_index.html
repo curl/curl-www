@@ -1,0 +1,80 @@
+#include "_doctype.html"
+<html>
+<head> <title>curl release candidates</title>
+#include "css.t"
+</head>
+
+#define CURL_URL /rc
+
+#include "_menu.html"
+#include "setup.t"
+#include "release.t"
+
+WHERE2(Download, "/download.html", relase candidates)
+
+TITLE(curl release candidates)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="https://github.com/curl/curl">Browse git</a>
+<br><a href="/ch/">Changelog</a>
+<br><a href="/dev/release-notes.html">Dev Release Notes</a>
+<br><a href="/support.html">Support</a>
+</div>
+<p>
+  Release candidates are pre-releases that include all features targeted for
+  the pending curl release.
+<p>
+  Please try release candidates in your use cases and products and verify that
+  everything works as intended.
+<p>
+  Test the new features and options and verify that they work the way they are
+  documented, and maybe also the way you think they should. Features that have
+  not shipped in a release yet can still be marginally tweaked if deemed
+  desirable.
+<p>
+  <b>Do not use release candidates in producttion</b>. They are work in
+  progress. Use them for testing and verification only. Use actual releases in
+  production.
+<p>
+  Releases candidates are ephemeral. They are provided only for a few weeks
+  until they are automatically removed. The coming release is scheduled to
+  happen on <b>__NEXTDATE</b>.
+
+SUBTITLE(Release candidates)
+<div style="font-size: 140%;">
+#include "files.gen"
+</div>
+
+SUBTITLE(Contents)
+<p> Each release candidate is provide in four different file formats. They all
+  have the exact same content.
+
+<p> <b>docs/RELEASE-TOOLS.md</b> in the tarball shows the tooling needed to
+ reproduce it.
+
+<p> <b>docs/tarball-commit.txt</b> in the tarball shows the exact commit hash
+  that was the HEAD at the time the tarball was made. There are no git tags
+  set for release candidates.
+
+SUBTITLE(Release cycle)
+<p>
+  The idea is to provide three release candidates before every release,
+  distributed as displayed in the image below.
+
+<p>
+  <ul>
+    <li> rc1 comes the day the feature release starts, 25 days before release
+    <li> rc2 comes nine days after rc1, 16 days before release
+    <li> rc3 comes nine days after rc2, 7 days before release
+  </ul>
+  
+<p>
+  <img src="rc.png" width="100%">
+<p>
+ Updated: <b>
+#include "files-date.gen" 
+ </b>
+ 
+#include "_footer.html"
+</body>
+</html>
