@@ -59,6 +59,7 @@ all: $(PAGES)
 	cd logo && make
 	cd trurl && make
 	cd wcurl && make
+	cd rc && make
 
 head.html: _head.html $(MAINPARTS)
 	$(ACTION)
