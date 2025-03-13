@@ -12,7 +12,6 @@ my %silver = (
     "https://www.premium-minds.com" => 'premium-minds.svg',
     "https://www.partitionwizard.com" => 'partitionwizard-2.svg',
     "https://www.crosswordsolver.com" => 'CrosswordSolver.svg',
-    "https://www.minitool.com" => 'minitool-2.svg',
     "https://icons8.com/" => 'icons8.svg',
     "https://serpapi.com" => 'serpapi.svg',
     "https://proxy-hub.com/" => 'proxyhub.svg',
