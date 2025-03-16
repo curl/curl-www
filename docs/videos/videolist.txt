@@ -1150,3 +1150,14 @@ DATE 2025-02-21
 WHO Daniel Stenberg
 DESC The plumbing, related scripts and how to keep the curl RELEASE-NOTES file in sync during development so that it is in good shape at release time.
 ENDOFVIDEO
+
+VIDEO Keeping Curl Successful and Secure Over the Decades
+EVENT Application Security Weekly
+URL https://youtu.be/0UavY_kKKic
+THUMB successful-secure.jpg
+THUMBSIZE width="250" height="141"
+DURATION 35 minutes
+DATE 2025-03-04
+WHO Daniel Stenberg
+DESC Daniel Stenberg talks about the challenges in dealing with appsec, the design philosophies that keep it secure, and fostering a community.
+ENDOFVIDEO
