@@ -32,22 +32,19 @@ for(@files) {
     my $file = $_;
     if($file =~ /^curl-(\d+)\.(\d+)\.(\d+)-rc([0-9])\.(tar.gz|tar.bz2|tar.xz|zip)\z/) {
         my ($major, $minor, $patch, $rc, $ext)=($1, $2, $3, $4, $5);
-        $lookup{$file} = "$major-$minor-$patch-$rc-$ext";
         $sort{$file} = $major * 1000000 + $minor * 10000 + $patch * 100 + $rc;
         push @rc, $file;
+
+        # track each rc available
+        $filever{$file} = "$major.$minor.$patch-rc$rc";
     }
 }
 
 if($rc[0]) {
+    my $oldver = "nada";
 
     print <<MOO
 <table class="daily" cellspacing="0" cellpadding="8">
-<tr class="tabletop">
-<th>file</th>
-<th>date</th>
-<th>size</th>
-<th>signature</th>
-</tr>
 MOO
         ;
 
@@ -60,12 +57,27 @@ MOO
             $gpg="<a href=\"$f.asc\">GPG</a>";
         }
         my $fsize = filesize("$f");
+
+        if($oldver ne $filever{$f} ) {
+            $oldver = $filever{$f};
+            my $commit;
+            if(-e "curl-$oldver.commit") {
+                # commit hhash
+                open(H, "<curl-$oldver.commit");
+                my @ha = <H>;
+                close(H);
+                my $hash = join(//, @ha);
+                $commit=" (<a href=\"https://github.com/curl/curl/commit/$hash\">commit</a>)";
+            }
+            print "<tr><td colspan=4><b> $oldver </b>$commit</td></tr>\n";
+        }
         print "<tr>\n";
         printf "<td> <a href=\"$f\">$f</a> </td> <td>$d</td> <td>%.1f MB</td> <td> $gpg </td>\n",
             $fsize / (1024*1024);
         print "</tr>\n";
     }
     print "</table>\n";
+
 }
 else {
     print "<p>There are no available release candidates for the moment."
