@@ -48,7 +48,7 @@ if($rc[0]) {
 MOO
         ;
 
-    for my $f (sort { $sort {$a} <= $sort {$b}} @rc) {
+    for my $f (sort { $sort {$b} <=> $sort {$a}} @rc) {
         my $when = filetime("$f");
         my $d = strftime "%Y-%m-%d", gmtime($when);
         my $gpg;
