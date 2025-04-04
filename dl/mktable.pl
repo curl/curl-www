@@ -143,7 +143,8 @@ my $utd=0; # up to date
 
 my %shown;
 
-my %typelong=('bin' => '<b>tool</b>',
+my %typelong=('bin' => 'tool',
+              'bindev' => 'tool + devel',
               'devel' => 'devel',
               'source' => 'source',
               'lib' => 'libcurl');
