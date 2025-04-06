@@ -187,6 +187,7 @@ for(@vuln) {
         "  \"modified\": \"$modified\",\n".
         "  \"database_specific\": {\n".
         "    \"package\": \"curl\",\n".
+        "    \"affects\": \"$part\",\n".
         "    \"URL\": \"https://curl.se/docs/$cve.json\",\n".
         "    \"www\": \"https://curl.se/docs/$cve.html\",\n".
         $jissue.
