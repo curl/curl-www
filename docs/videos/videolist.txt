@@ -1161,3 +1161,14 @@ DATE 2025-03-04
 WHO Daniel Stenberg
 DESC Daniel Stenberg talks about the challenges in dealing with appsec, the design philosophies that keep it secure, and fostering a community.
 ENDOFVIDEO
+
+VIDEO curl roadmap 2025
+EVENT Twitch stream
+URL https://youtu.be/0vVTNm2q2vg
+THUMB roadmap-2025.jpg
+THUMBSIZE width="250" height="141"
+DURATION 34 minutes
+DATE 2025-03-06
+WHO Daniel Stenberg
+DESC Things we may see added and done in curl during 2025.
+ENDOFVIDEO
