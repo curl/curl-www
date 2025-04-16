@@ -19,7 +19,10 @@ PAGES = index.html \
 all: $(PAGES)
 	(cd wcurl-repo && git pull)
 
-wcurl.gen: wcurl-repo/wcurl.1
+wcurl.1: wcurl-repo/wcurl.md
+	$(SRCROOT)/scripts/cd2nroff $< > wcurl.1
+
+wcurl.gen: wcurl.1
 	 $(MAN2HTML) < $< > wcurl.gen
 
 manual.html: _manual.html $(MAINPARTS) wcurl.gen
