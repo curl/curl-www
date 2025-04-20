@@ -17,25 +17,29 @@ WHERE1(wcurl)
 <div class="relatedbox">
 <b>Related:</b>
 <br><a href="https://github.com/curl/wcurl">GitHub repo</a>
-<br><a href="manual.html">manpage</a>
+<br><a href="manual.html">man page</a>
 </div>
 <p>
 wcurl is a command line tool which lets you download URLs without having to
 remember any parameters.
 <p>
 Invoke wcurl with a list of URLs you want to download and wcurl will pick sane
-defaults; using curl under the hood.
+defaults; using curl under the hood. See
+the <a href="manual.html">man page</a>.
 
-SUBTITLE(Download)
+SUBTITLE(Install)
+<p>
+ Starting with curl 8.14.0, <b>wcurl</b> comes bundled in the regular curl
+release tarballs. Building and installing curl then also installs <b>wcurl</b>
+and its man page.
+
+SUBTITLE(Manual install)
+<p>
+  Install wcurl manually like this:
+
 <pre style="white-space: pre-wrap; word-break: keep-all; color: #e0e080; background: #000000; padding: 8px 8px 8px 8px;">
 $ curl -fLO https://github.com/curl/wcurl/releases/latest/download/wcurl
 $ chmod +x wcurl
-</pre>
-
-SUBTITLE(Download manpage)
-<pre style="white-space: pre-wrap; word-break: keep-all; color: #e0e080; background: #000000; padding: 8px 8px 8px 8px;">
-$ curl -fLO https://github.com/curl/wcurl/releases/latest/download/wcurl.1
-$ sudo mv wcurl.1 /usr/share/man/man1/wcurl.1
 </pre>
 
 SUBTITLE(Pronunciation)
