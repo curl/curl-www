@@ -1172,3 +1172,157 @@ DATE 2025-03-06
 WHO Daniel Stenberg
 DESC Things we may see added and done in curl during 2025.
 ENDOFVIDEO
+
+VIDEO curl container update
+DATE 2025-05-03
+DESC What have we done with the curl container last year?
+DURATION 16 minutes
+EVENT curl-up 2025
+THUMB curl-container-2025.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/ngPl50EitW0
+WHO James Fuller
+ENDOFVIDEO
+
+VIDEO What can Test Clutch teach us
+DATE 2025-05-03
+DESC What can we glean from the curl regression test data analyzed by Test Clutch?
+DURATION 46 minutes
+EVENT curl-up 2025
+THUMB test-clutch-teach.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/ndd8J7zdO9E
+WHO Dan Fandrich
+ENDOFVIDEO
+
+VIDEO wcurl, one year later
+DATE 2025-05-03
+DESC Who makes wcurl, what has been made and how it will be shipped going forward.
+DURATION 18 minutes
+EVENT curl-up 2025
+THUMB wcurl-one-year.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/aaUjoodK29s
+WHO Samuel Henrique
+ENDOFVIDEO
+
+VIDEO CTX curl
+DATE 2025-05-03
+DESC A tabletop security exercise simulation for the curl project led by James Fuller. How the curl project would act during a "major incident".
+DURATION 1h40
+EVENT curl-up 2025
+THUMB ctx-curl.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/IFeeFcIOMrk
+WHO James Fuller
+ENDOFVIDEO
+
+VIDEO Security
+DATE 2025-05-04
+DESC Daniel talks curl security right now, past year and future.
+DURATION 31 minutes
+EVENT curl-up 2025
+THUMB security-2025.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/uyKIEKBPTDw
+WHO Daniel Stenberg
+ENDOFVIDEO
+
+VIDEO Security data & curl
+DATE 2025-05-04
+DESC A discussion about vulnerability reporting that touches on CVE, CVSS, CPE, pURL, VEX, SBOM and more.
+DURATION 46 minutes
+EVENT curl-up 2025
+THUMB security-data.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/dVPCd6AVT4E
+WHO James Fuller
+ENDOFVIDEO
+
+VIDEO curl daemon agent
+DATE 2025-05-04
+DESC Looking at approaches for a daemon mode for the curl command-line tool to improve performance.
+DURATION 39 minutes
+EVENT curl-up 2025
+THUMB curl-daemon-agent.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/utQcjRMa8Rk
+WHO Stefan Eissing
+ENDOFVIDEO
+
+VIDEO Artificial stupidy
+DATE 2025-05-04
+DESC A discussion of "artificial intelligence" and how it's affecting the curl project.
+DURATION 42 minutes
+EVENT curl-up 2025
+THUMB artificial-stupidy.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/JyCNwFs2B00
+WHO James Fuller
+ENDOFVIDEO
+
+VIDEO curlx library
+DATE 2025-05-04
+DESC The curlx functions are code shared between the tool, the library and the test suite. Should we make those into an internal library?
+DURATION 17 minutes
+EVENT curl-up 2025
+THUMB curlx-library.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/5ZB8_IGM3YU
+WHO Daniel Stenberg
+ENDOFVIDEO
+
+VIDEO HTTP client for web scraping
+DATE 2025-05-04
+DESC Techniques for successful web scraping.
+DURATION 44 minutes
+EVENT curl-up 2025
+THUMB http-client-for-web-scraping.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/GMlSvyjva7E
+WHO Jindřich Bär
+ENDOFVIDEO
+
+VIDEO A mascot
+DATE 2025-05-04
+DESC Should the curl project adopt a mascot?
+DURATION 11 minutes
+EVENT curl-up 2025
+THUMB a-mascot.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/Q0iYzRO4_Do
+WHO Daniel Stenberg
+ENDOFVIDEO
+
+VIDEO HTTP news
+DATE 2025-05-04
+DESC A overview of what's happening in the world of HTTP recently.
+DURATION 22 minutes
+EVENT curl-up 2025
+THUMB http-news-2025.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/RnQfS_GQMPA
+WHO Daniel Stenberg
+ENDOFVIDEO
+
+VIDEO 100 year curl
+DATE 2025-05-04
+DESC What does it take for curl to live a hundred years?
+DURATION 26 minutes
+EVENT curl-up 2025
+THUMB 100-year-curl.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/vVH5_oh7qno
+WHO Daniel Stenberg
+ENDOFVIDEO
+
+VIDEO Performance and benchmarking
+DATE 2025-05-04
+DESC A discussion on approaches to discover curl performance regressions.
+DURATION 29 minutes
+EVENT curl-up 2025
+THUMB performance-and-benchmarking.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/y2IL1IRizv8
+WHO James Fuller
+ENDOFVIDEO
