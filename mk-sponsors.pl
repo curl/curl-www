@@ -15,7 +15,6 @@ my %silver = (
     "https://icons8.com/" => 'icons8.svg',
     "https://serpapi.com" => 'serpapi.svg',
     "https://proxy-hub.com/" => 'proxyhub.svg',
-    'https://cryptotracker.com' => 'crypto-tracker.svg',
     'https://iboysoft.com' => 'iBoysoft.svg',
     "flutter-enterprises" => 'fineproxy.jpg',
     'https://www.hityah.com/' => 'testarna.png',
@@ -25,6 +24,7 @@ my %silver = (
 
     # Sponsors that don't get images
     'thebestsolution' => '[none]',  # link denied 16 May 2024 due to social media manipulation
+    'https://stellarlikes.com' => '[none]', # social media manipulation
     );
 
 # URLs that are changed from the one in the profile
