@@ -44,7 +44,7 @@ Click the images for full resolution.
 #endif
 
 <br>
-Columns: 
+Columns:
 #ifndef COL1
   <a href="dashboard1.html">1</a>
 #else

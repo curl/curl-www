@@ -73,7 +73,7 @@ sub file {
                     print STDERR "$ch found but whitelisted\n";
                     next;
                 }
-                
+
                 print STDERR  "$f:$l:$c: error: found bad word \"$w\"\n";
                 printf STDERR " %4d | $in\n", $l;
                 printf STDERR "      | %*s^%s\n", length($p), " ",

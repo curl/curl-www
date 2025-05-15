@@ -97,7 +97,7 @@ for my $version (reverse sort { num($a) <=> num($b) } keys %versions) {
         if($gpg{$version.$s}) {
             printf("#define QNX_SDK%s_SIG %s\n", $s, $gpg{$version.$s});
         }
-        
+
         my $sha = checksum("$dl/$file{$version.$s}");
         printf("#define QNX_SDK%s_SHA256 %s\n", $s, $sha);
     }
