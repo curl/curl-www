@@ -24,7 +24,7 @@ jobs:
 
     - name: clone the source repo
       run: git clone --depth=1 https://github.com/curl/curl.git cvssource
-    
+
     - name: build the docs in the source repo
       run: |
         cd cvssource
@@ -38,15 +38,15 @@ jobs:
         cd fcpp
         make
         make install
-    
+
     - name: install roffit
       run: |
         git clone https://github.com/bagder/roffit.git
         cd roffit
         make install
-    
+
     - name: bootstrap
       run: ./bootstrap.sh
-      
+
     - name: make
       run: make

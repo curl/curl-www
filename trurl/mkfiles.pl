@@ -100,14 +100,14 @@ for my $version (reverse sort { num($a) <=> num($b) } keys %versions) {
     if($gpg{$version}) {
         printf("#define TRURL_SIG %s\n", $gpg{$version});
     }
-        
+
     my $sha = checksum("$dl/$file{$version}");
     printf("#define TRURL_SHA256 %s\n", $sha);
 
     if($video{$officialver}) {
         printf("#define TRURL_VIDEO %s\n", $video{$officialver});
     }
-    
+
     last;
 }
 

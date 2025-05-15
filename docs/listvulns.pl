@@ -109,7 +109,7 @@ for(@vuln) {
     my $toolcol = where($tool);
     my $ccol = cdetail($cissue);
     my $bcol = bounty($award);
-    
+
     print <<VUL
 <tr>
 <td>$num</td>
