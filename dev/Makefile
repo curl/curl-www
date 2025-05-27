@@ -57,12 +57,12 @@ new-protocol.gen: $(INTERNALS)/NEW-PROTOCOL.md
 
 test-fileformat.html: _test-fileformat.html $(MAINPARTS) fileformat.gen
 	$(ACTION)
-fileformat.gen: $(SRCROOT)/tests/FILEFORMAT.md
+fileformat.gen: $(DOCROOT)/tests/FILEFORMAT.md
 	$(MARKDOWN) < $< > $@
 
 tests-overview.html: _tests-overview.html $(MAINPARTS) testsoverview.gen
 	$(ACTION)
-testsoverview.gen: $(TESTROOT)/README.md
+testsoverview.gen: $(DOCROOT)/tests/TEST-SUITE.md
 	$(MARKDOWN) < $< > $@
 
 source.html: _source.html $(MAINPARTS)
@@ -84,12 +84,12 @@ code-style.gen: $(INTERNALS)/CODE_STYLE.md
 
 testcurl.html: _testcurl.html $(MAINPARTS) testcurl.gen
 	$(ACTION)
-testcurl.gen: $(TESTROOT)/testcurl.md
+testcurl.gen: $(DOCROOT)/testcurl.md
 	$(MARKDOWN) < $< > $@
 
 runtests.html: _runtests.html $(MAINPARTS) runtests.gen
 	$(ACTION)
-runtests.gen: $(TESTROOT)/runtests.md
+runtests.gen: $(DOCROOT)/runtests.md
 	$(MARKDOWN) < $< > $@
 
 code-review.html: _code-review.html $(MAINPARTS) code-review.gen
