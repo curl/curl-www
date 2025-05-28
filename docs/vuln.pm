@@ -16,6 +16,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2025-4947.html|8.8.0|8.13.0|QUIC certificate check skip with wolfSSL|CVE-2025-4947|20250528|20250517|CWE-295: Improper Certificate Validation|2540|TLS|-|both|medium|https://hackerone.com/reports/3150884",
     "CVE-2025-0725.html|7.10.5|8.11.1|gzip integer overflow|CVE-2025-0725|20250205|20250123|CWE-680: Integer Overflow to Buffer Overflow|505|gzip|OVERFLOW|both|low|https://hackerone.com/reports/2956023",
     "CVE-2025-0665.html|8.11.1|8.11.1|eventfd double close|CVE-2025-0665|20250205|20250122|CWE-1341: Multiple Releases of Same Resource or Handle|505|DNS|-|both|low|https://hackerone.com/reports/2954286",
     "CVE-2025-0167.html|7.76.0|8.11.1|netrc and default credential leak|CVE-2025-0167|20250205|20241230|CWE-200: Exposure of Sensitive Information to an Unauthorized Actor|505|netrc|-|both|low|https://hackerone.com/reports/2917232",
