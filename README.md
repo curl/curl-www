@@ -28,8 +28,8 @@ Make sure the following tools are in your $PATH.
 ## Build
 
 Once you have cloned the Git repo the first time, invoke `sh bootstrap.sh` once
-to get a symlink and some initial local files setup, and then you can build the
-website locally by invoking make in the source root tree.
+to get a symlink and some some initial local files setup, and then you can
+build the website locally by invoking make in the source root tree.
 
 Note that this does not make you a complete website mirror, as some scripts
 and files are only available on the real actual site, but should give you
