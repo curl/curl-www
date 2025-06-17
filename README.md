@@ -15,15 +15,15 @@ Markdown is converted to HTML with `pandoc`.
 
 Make sure the following tools are in your $PATH.
 
- - curl
- - GNU date
- - GNU enscript
+ - [curl](https://curl.se/)
  - [fcpp](https://daniel.haxx.se/projects/fcpp/)
- - GNU make
- - pandoc
- - perl (with CPAN packages: CGI, HTML::Entities)
- - roffit
- - zip
+ - GNU date ([coreutils](https://www.gnu.org/software/coreutils/))
+ - [GNU enscript](https://www.gnu.org/software/enscript/)
+ - [GNU make](https://www.gnu.org/software/make/)
+ - [pandoc](https://pandoc.org/)
+ - [perl](https://www.perl.org/) (with CPAN packages: CGI, HTML::Entities)
+ - [roffit](https://daniel.haxx.se/projects/roffit/)
+ - [zip](https://infozip.sourceforge.net/Zip.html)
 
 ## Build
 
