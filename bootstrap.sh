@@ -33,4 +33,3 @@ touch summary.t
 touch cvs.t
 touch keywords.txt
 touch table.t
-
