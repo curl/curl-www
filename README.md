@@ -16,13 +16,13 @@ Markdown is converted to HTML with `pandoc`.
 Make sure the following tools are in your $PATH.
 
  - curl
+ - [fcpp](https://daniel.haxx.se/projects/fcpp/)
  - GNU date
  - GNU enscript
- - [fcpp](https://daniel.haxx.se/projects/fcpp/)
  - GNU make
  - pandoc
  - perl (with CPAN packages: CGI, HTML::Entities)
- - roffit
+ - [roffit](https://daniel.haxx.se/projects/roffit/)
  - zip
 
 ## Build
