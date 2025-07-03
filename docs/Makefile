@@ -232,7 +232,6 @@ PAGES = \
  ssl-ciphers.html \
  ssl-compared.html \
  sslcerts.html \
- survey/survey2014.html \
  thanks.html \
  thename.html \
  todo.html \
@@ -249,6 +248,7 @@ PAGES = \
 all: vuln.gen $(PAGES) vuln-make.gen
 	-test -f vuln-make.gen && make -f vuln-make.gen
 	cd videos && make
+	cd survey && make
 
 clean:
 	-test -f vuln-make.gen && make -f vuln-make.gen clean
@@ -340,9 +340,6 @@ url-syntax.gen: $(DOCROOT)/URL-SYNTAX.md
 	$(MARKDOWN) < $(DOCROOT)/URL-SYNTAX.md > $@
 
 companies.html: _companies.html $(MAINPARTS)
-	$(ACTION)
-
-survey/survey2014.html: survey/_survey2014.html $(MAINPARTS)
 	$(ACTION)
 
 thanks.html: _thanks.html $(MAINPARTS) thanks.gen thanksnum.gen
