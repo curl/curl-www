@@ -89,6 +89,8 @@ PAGES = \
  curl_easy_reset.html \
  curl_easy_send.html \
  curl_easy_setopt.html \
+ curl_easy_ssls_export.html \
+ curl_easy_ssls_import.html \
  curl_easy_strerror.html \
  curl_easy_unescape.html \
  curl_easy_upkeep.html \
@@ -254,6 +256,16 @@ curl_easy_send.gen: $(MANROOT)/curl_easy_send.3 curlopt2href.pl
 curl_easy_getinfo.html: _curl_easy_getinfo.html $(MAINPARTS_CAPI) curl_easy_getinfo.gen
 	$(REN)$(MANACTION)
 curl_easy_getinfo.gen: $(MANROOT)/curl_easy_getinfo.3 curlopt2href.pl
+	$(REN)$(MAN2HTML) < $< >$@
+
+curl_easy_ssls_export.html: _curl_easy_ssls_export.html $(MAINPARTS_CAPI) curl_easy_ssls_export.gen
+	$(REN)$(MANACTION)
+curl_easy_ssls_export.gen: $(MANROOT)/curl_easy_ssls_export.3 curlopt2href.pl
+	$(REN)$(MAN2HTML) < $< >$@
+
+curl_easy_ssls_import.html: _curl_easy_ssls_import.html $(MAINPARTS_CAPI) curl_easy_ssls_import.gen
+	$(REN)$(MANACTION)
+curl_easy_ssls_import.gen: $(MANROOT)/curl_easy_ssls_import.3 curlopt2href.pl
 	$(REN)$(MAN2HTML) < $< >$@
 
 curl_version.html: _curl_version.html $(MAINPARTS_CAPI) curl_version.gen

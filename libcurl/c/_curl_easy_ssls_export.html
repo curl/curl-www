@@ -1,0 +1,26 @@
+#include "_doctype.html"
+<html>
+<head> <title>libcurl - curl_easy_ssls_export()</title>
+#include "css.t"
+#include "manpage.t"
+</head>
+
+#define RAW_FILE curl_easy_ssls_export.md
+#define BUG_TITLE curl_easy_ssls_export%20manpage:
+#define MENU_EASY
+#define LIBCURL_DOCS
+#define DOCS_EASY_SSLS_EXPORT
+#define CURL_URL libcurl/c/curl_easy_ssls_export.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", curl_easy_ssls_export)
+
+TITLE(curl_easy_ssls_export - export SSL sessions)
+#include "libcurl-related.t"
+#include "curl_easy_ssls_export.gen"
+#include "_footer.html"
+
+</body>
+</html>
