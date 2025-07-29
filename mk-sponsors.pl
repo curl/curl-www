@@ -17,12 +17,16 @@ my %silver = (
     "https://proxy-hub.com/" => 'proxyhub.svg',
     'https://iboysoft.com' => 'iBoysoft.svg',
     "flutter-enterprises" => 'fineproxy.jpg',
-    'https://www.hityah.com/' => 'testarna.png',
     'https://onelessthing.co.uk/' => 'onelessthing.svg',
     'guest-b727d782' => 'zynk.svg',
     'babiel-gmbh' => 'babiel.svg',
 
+    # missing logo
+    'https://www.iplocate.io' => '[none]', # no logo provided
+
     # Sponsors that don't get images
+    'https://www.wolfwinner.fun/en' => '[none]', # gambling
+    'https://au.crazyvegas.com/' => '[none]', # gambling
     'thebestsolution' => '[none]',  # link denied 16 May 2024 due to social media manipulation
     'https://stellarlikes.com' => '[none]', # social media manipulation
     );
@@ -30,7 +34,6 @@ my %silver = (
 # URLs that are changed from the one in the profile
 my %modurl = (
     'flutter-enterprises' => 'https://fineproxy.org/',
-    'https://www.hityah.com/' => 'https://www.testarna.se/casino/utan-svensk-licens',
     'guest-b727d782' => 'https://zynk.it',
     'babiel-gmbh' => 'https://www.babiel.com/',
     );
