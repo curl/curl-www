@@ -112,6 +112,7 @@ PAGES = \
  curl_multi_cleanup.html \
  curl_multi_fdset.html \
  curl_multi_get_handles.html \
+ curl_multi_get_offt.html \
  curl_multi_info_read.html \
  curl_multi_init.html \
  curl_multi_perform.html \
@@ -556,6 +557,11 @@ curl_multi_assign.gen: $(MANROOT)/curl_multi_assign.3 curlopt2href.pl
 curl_multi_get_handles.html: _curl_multi_get_handles.html $(MAINPARTS_CAPI) curl_multi_get_handles.gen
 	$(REN)$(MANACTION)
 curl_multi_get_handles.gen: $(MANROOT)/curl_multi_get_handles.3 curlopt2href.pl
+	$(REN)$(MAN2HTML) < $< >$@
+
+curl_multi_get_offt.html: _curl_multi_get_offt.html $(MAINPARTS_CAPI) curl_multi_get_offt.gen
+	$(REN)$(MANACTION)
+curl_multi_get_offt.gen: $(MANROOT)/curl_multi_get_offt.3 curlopt2href.pl
 	$(REN)$(MAN2HTML) < $< >$@
 
 include Makefile.opts

@@ -1,0 +1,25 @@
+#include "_doctype.html"
+<html>
+<head> <title>curl_multi_get_offt</title>
+#include "css.t"
+#include "manpage.t"
+</head>
+
+#define RAW_FILE curl_multi_get_offt.md
+#define BUG_TITLE curl_multi_get_offt%20manpage:
+#define MENU_MULTI
+#define LIBCURL_DOCS
+#define DOCS_MULTI_GET_OFFT
+#define CURL_URL libcurl/c/curl_multi_get_offt.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", libcurl)
+TITLE(curl_multi_get_offt - returns all easy offt in a multi)
+#include "libcurl-related.t"
+#include "curl_multi_get_offt.gen"
+#include "_footer.html"
+
+</body>
+</html>
