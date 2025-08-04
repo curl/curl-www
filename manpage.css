@@ -3,13 +3,13 @@ p.level0 {
 }
 
 pre.level0 {
+    width: fit-content;
     margin-left: 3em;
     padding-left: 0.5em;
     padding-right: 0.5em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     background-color: #f0f0f0;
-    white-space: pre-wrap;
     word-break: keep-all;
 }
 
@@ -18,13 +18,13 @@ P.level1 {
 }
 
 pre.level1 {
+    width: fit-content;
     margin-left: 5em;
     padding-left: 0.5em;
     padding-right: 0.5em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     background-color: #f0f0f0;
-    white-space: pre-wrap;
     word-break: keep-all;
 }
 
@@ -64,24 +64,24 @@ p.roffit {
 @media (prefers-color-scheme: dark) {
 
     pre.level0 {
+        width: fit-content;
         margin-left: 3em;
         padding-left: 0.5em;
         padding-right: 0.5em;
         padding-top: 0.5em;
         padding-bottom: 0.5em;
         background-color: #404040;
-        white-space: pre-wrap;
         word-break: keep-all;
     }
 
     pre.level1 {
+        width: fit-content;
         margin-left: 5em;
         padding-left: 0.5em;
         padding-right: 0.5em;
         padding-top: 0.5em;
         padding-bottom: 0.5em;
         background-color: #404040;
-        white-space: pre-wrap;
         word-break: keep-all;
     }
 }
