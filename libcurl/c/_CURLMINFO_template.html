@@ -1,0 +1,34 @@
+#include "_doctype.html"
+<html>
+<head> <title>@template@</title>
+#include "css.t"
+#include "manpage.t"
+</head>
+
+#define MENU_EASY
+#define LIBCURL_DOCS
+#define DOCS_OPTS_@template@
+#define CURL_URL libcurl/c/@template@.html
+
+#include "setup.t"
+#include "_menu.html"
+
+WHERE4(libcurl, "/libcurl/",
+       API, "/libcurl/c/",
+       curl_multi_setopt, "/libcurl/c/curl_multi_get_offt.html", @template@)
+
+TITLE(@template@ explained)
+
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="easy_setopt_options.html">easy options</a>
+<br><a href="multi_setopt_options.html">multi options</a>
+<br><a href="https://github.com/curl/curl/issues/new?title=@template%20manpage:@&amp;labels=documentation&amp;template=docs.yml&amp;source=CURL_URL" target="_new">File a bug about this page</a>
+<br><a href="https://github.com/curl/curl/blob/master/docs/libcurl/opts/@template@.md" target="_new">View manpage source</a>
+</div>
+
+#include "@template@.gen"
+
+#include "_footer.html"
+</body>
+</html>
