@@ -40,6 +40,17 @@ SUBTITLE(Manual install)
 <pre style="white-space: pre-wrap; word-break: keep-all; color: #e0e080; background: #000000; padding: 8px 8px 8px 8px;">
 $ curl -fLO https://github.com/curl/wcurl/releases/latest/download/wcurl
 $ chmod +x wcurl
+$ sudo mv wcurl /usr/local/bin/wcurl
+</pre>
+
+<p>
+  Install wcurl's manpage manually like this:
+
+<pre style="white-space: pre-wrap; word-break: keep-all; color: #e0e080; background: #000000; padding: 8px 8px 8px 8px;">
+$ curl -fLO https://github.com/curl/wcurl/releases/latest/download/wcurl.1
+$ sudo mkdir -p /usr/local/share/man/man1/
+$ sudo mv wcurl.1 /usr/local/share/man/man1/wcurl.1
+$ sudo mandb
 </pre>
 
 SUBTITLE(Pronunciation)
