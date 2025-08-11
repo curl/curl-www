@@ -72,7 +72,8 @@ HEADER_API = \
 WS_API = \
  curl_ws_recv.html \
  curl_ws_send.html \
- curl_ws_meta.html
+ curl_ws_meta.html \
+ curl_ws_start_frame.html
 
 PAGES = \
  index.html \
@@ -718,6 +719,11 @@ curl_ws_send.gen: $(MANROOT)/curl_ws_send.3 curlopt2href.pl
 curl_ws_meta.html: _curl_ws_meta.html $(MAINPARTS_CAPI) curl_ws_meta.gen
 	$(REN)$(MANACTION)
 curl_ws_meta.gen: $(MANROOT)/curl_ws_meta.3 curlopt2href.pl
+	$(REN)$(MAN2HTML) < $< >$@
+
+curl_ws_start_frame.html: _curl_ws_start_frame.html $(MAINPARTS_CAPI) curl_ws_start_frame.gen
+	$(REN)$(MANACTION)
+curl_ws_start_frame.gen: $(MANROOT)/curl_ws_start_frame.3 curlopt2href.pl
 	$(REN)$(MAN2HTML) < $< >$@
 
 curl_pushheader_bynum.html: _curl_pushheader_bynum.html $(MAINPARTS_CAPI) curl_pushheader_bynum.gen
