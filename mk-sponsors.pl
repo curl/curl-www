@@ -23,8 +23,11 @@ my %silver = (
 
     # missing logo
     'https://www.iplocate.io' => '[none]', # no logo provided
+    'king-johnnie1' => '[none]', # no logo provided
 
     # Sponsors that don't get images
+    'https://www.jackpotjill.ai/en/' => '[none]', # gambling
+    'https://www.stellarspins.fun/en/' => '[none]', # gambling
     'https://www.wolfwinner.fun/en' => '[none]', # gambling
     'https://au.crazyvegas.com/' => '[none]', # gambling
     'thebestsolution' => '[none]',  # link denied 16 May 2024 due to social media manipulation
