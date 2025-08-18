@@ -1326,3 +1326,14 @@ THUMBSIZE width="250" height="141"
 URL https://youtu.be/y2IL1IRizv8
 WHO James Fuller
 ENDOFVIDEO
+
+VIDEO AI slop attacks on the curl project
+DATE 2025-08-16
+DESC Keynote at the FrOSCon 2025 conference, in Bonn Germany.
+DURATION 53 minutes
+EVENT FrOSCon 2025
+THUMB ai-slop-attacks.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/6n2eDcRjSsk
+WHO Daniel Stenberg
+ENDOFVIDEO
