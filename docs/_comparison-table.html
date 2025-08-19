@@ -80,6 +80,7 @@ TITLE(Compare curl with other download tools)
   FEAT( Bandwidth Limiting )     YES__ YES__ YES__ no___ YES__ YES__ YES__ no___ no___ ENDLINE
   FEAT( Commercial support )     YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
   FEAT( DNS-over-HTTPS )         YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
+  FEAT( ECH )                    YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
   FEAT( FTP 3rd Party Transfer)  no___ no___ no___ no___ YES__ no___ no___ no___ no___ ENDLINE
   FEAT( FTP Active Mode )        YES__ YES__ YES__ YES__ YES__ YES__ no___ no___ no___ ENDLINE
   FEAT( FTP Connection Re-use )  YES__ no___ no___ YES__ YES__ YES__ no___ no___ no___ ENDLINE
@@ -121,6 +122,7 @@ TITLE(Compare curl with other download tools)
   FEAT( HTTP/3 )                 YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
   FEAT( HTTPS )                  YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
   FEAT( HTTPS Proxy )            YES__ no___ no___ no___ no___ no___ no___ no___ YES__ ENDLINE
+  FEAT( HTTPS-RR )               YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
   FEAT( IDN hostnames )          YES__ YES__ YES__ no___ no___ no___ no___ YES__ no___ ENDLINE
   FEAT( IMAP )                   YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
   FEAT( In development )         YES__ YES__ YES__ no___ no___ YES__ no___ YES__ YES__ ENDLINE
@@ -149,14 +151,14 @@ TITLE(Compare curl with other download tools)
   FEAT( TELNET )                 YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
   FEAT( TFTP )                   YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
   FEAT( Tiny Executable )        no___ no___ no___ YES__ no___ no___ no___ no___ no___ ENDLINE
-  FEAT( TLS: BearSSL )           YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
   FEAT( TLS: Client certs )      YES__ YES__ YES__ no___ no___ YES__ no___ no___ YES__ ENDLINE
+  FEAT( TLS: Early Data/0RTT )   YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
   FEAT( TLS: GnuTLS )            YES__ YES__ YES__ no___ YES__ YES__ no___ YES_P no___ ENDLINE
   FEAT( TLS: mbedTLS )           YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
   FEAT( TLS: OpenSSL )           YES__ YES__ no___ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
   FEAT( TLS: rustls )            YES__ no___ no___ no___ no___ no___ no___ no___ YES__ ENDLINE
   FEAT( TLS: Schannel )          YES__ no___ no___ no___ no___ no___ no___ YES_P no___ ENDLINE
-  FEAT( TLS: Secure Transport )  YES__ no___ no___ no___ no___ no___ no___ YES_P no___ ENDLINE
+  FEAT( TLS: Secure Transport )  no___ no___ no___ no___ no___ no___ no___ YES_P no___ ENDLINE
   FEAT( TLS: Session ID cache )  YES__ no___ YES__ no___ no___ no___ no___ no___ no___ ENDLINE
   FEAT( TLS: WolfSSL )           YES__ no___ YES__ no___ no___ no___ no___ no___ no___ ENDLINE
   FEAT( Unix domain socket )     YES__ no___ no___ no___ no___ no___ no___ no___ no___ ENDLINE
@@ -168,8 +170,8 @@ TITLE(Compare curl with other download tools)
 
   FEAT( Version )
   NEWCOL __STABLE ENDCOL
-  NEWCOL 1.21 ENDCOL
-  NEWCOL 1.99.2 ENDCOL
+  NEWCOL 1.25.0 ENDCOL
+  NEWCOL 2.1.0 ENDCOL
   NEWCOL 4.7 ENDCOL
   NEWCOL 3.5.0 ENDCOL
   NEWCOL 1.8.3 ENDCOL
