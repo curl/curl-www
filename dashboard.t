@@ -6,17 +6,23 @@
 .contents {
   max-width: 98%;
 }
+
 #ifdef COL3
-img.dash {
-  max-width: 30%;
+.gr {
+    width: 33%;
+    float: left;
 }
+
 #elif defined(COL2)
-img.dash {
-  max-width: 49%;
+.gr {
+    width: 50%;
+    float: left;
 }
+
 #elif defined(COL5)
-img.dash {
-  max-width: 18%;
+.gr {
+    width: 20%;
+    float: left;
 }
 #endif
 </style>
