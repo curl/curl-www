@@ -75,7 +75,8 @@ to use.
  FEAT(TLS SRP)            YES__ YES__ no___ no___ no___ no___ ENDLINE
  FEAT(TLS ECC)            YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
  FEAT(ALPN)               YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
- FEAT(QUIC)               YES_Q YES__ YES__ no___ no___ no___ ENDLINE
+ FEAT(QUIC API)           YES_Q YES__ YES__ no___ no___ no___ ENDLINE
+ FEAT(QUIC impl)          YES_Q no___ no___ no___ no___ no___ ENDLINE
  FEAT(Small)              no___ no___ YES__ YES__ YES__ no___ ENDLINE
 >>>>>>> 94c57dcd (docs/_ssl-compared.html: remove Secure Transport)
  FEAT(Platforms)
@@ -128,11 +129,12 @@ to use.
 </table>
 
 <p>
-[1] = Mostly the same feature set is also provided by LibreSSL, BoringSSL, AWS-LC and quictls
+[1] = Mostly the same feature set is also provided by LibreSSL, BoringSSL,
+AWS-LC and QuictLS
 <p>
-[2] = OpenSSL 3.2 has a QUIC stack that curl works with experimentally. The
-OpenSSL forks LibreSSL, BoringSSL, AWS-LC and quictls support the QUIC API
-that curl works with using ngtcp2.
+[2] = OpenSSL 3.2+ has a QUIC stack implementation that curl works with
+experimentally. OpenSSL 3.5+ and the OpenSSL forks LibreSSL, BoringSSL, AWS-LC
+and QuicTLS offer a QUIC API that curl works with using ngtcp2.
 <p>
 [8] = Via external <a href="https://github.com/OpenSC/OpenSC/wiki/Engine-pkcs11-quickstart">engine_pkcs11</a>;
 
@@ -199,7 +201,11 @@ CURLOPT_TLSAUTH_PASSWORD options.
 set of cipher-suites that are used in TLS connections (typically with
 TLSv1.2). Not all engines support ECC.
 <p>
-<b>QUIC:</b> Needed for HTTP/3 support.
+<b>QUIC API:</b> Needed for usingf this TLS library when implementing a QUIC
+stack.
+<p>
+<b>QUIC Implementation:</b> A complete QUIC implementation, not just the API
+necessary for someone else to implement it.
 <p>
 <b>Small:</b> can be built with a small foot-print. The system native ones also count
 here since they come "for free" for users.
