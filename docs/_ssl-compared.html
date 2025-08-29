@@ -70,8 +70,8 @@ to use.
  FEAT(Supported)          YES__ YES__ YES__ YES__ YES__ YES__ no___ YES__ ENDLINE
  FEAT(Native cert check)  YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
  FEAT(CRL)                MAN__ MAN__ MAN__ MAN__ AUTO_ AUTO_ MAN__ MAN__ ENDLINE
- FEAT(TLSv1.0)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
- FEAT(TLSv1.1)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+ FEAT(TLSv1.0)            YES__ YES__ YES__ YES__ YES__ YES__ no___ YES__ ENDLINE
+ FEAT(TLSv1.1)            YES__ YES__ YES__ YES__ YES__ YES__ no___ YES__ ENDLINE
  FEAT(TLSv1.2)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
  FEAT(TLSv1.3)            YES__ YES__ YES__ YES__ YES__ no___ YES__ no___ ENDLINE
  FEAT(TLS SRP)            YES__ YES__ no___ no___ no___ no___ no___ no___ ENDLINE
@@ -99,7 +99,7 @@ to use.
  FEAT(Select Certificates/Keys with PKCS#11 URI) YES_P8 YES__ no___ no___ no___ no___ no___ no___ ENDLINE
  FEAT(Integrates with system token database) YES__ YES__ YES__ no___ YES__ YES__ no___ no___ ENDLINE
 
- FEAT(FIPS-140) YES__ YES__ YES__ no___ YES__ YES__ no___ no___ ENDLINE
+ FEAT(FIPS-140) YES__ YES__ YES__ no___ YES__ YES__ YES__ no___ ENDLINE
  FEAT(OpenSSL-like API) YES__ no___ YES__ no___ no___ no___ no___ no___ ENDLINE
 
  FEAT(Vendor)
@@ -280,7 +280,7 @@ SUBTITLE(More reading)
  href="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS">NSS</a>, <a
  href="https://www.wolfssl.com/">wolfSSL</a>, <a
  href="https://tls.mbed.org">mbed TLS</a>, <a
- href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms678421(v=vs.85).aspx">Secure Channel</a>, <a href="https://developer.apple.com/documentation/security/secure_transport">Secure Transport</a>.
+ href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms678421(v=vs.85).aspx">Secure Channel</a>, <a href="https://developer.apple.com/documentation/security/secure_transport">Secure Transport</a>, <a href="https://rustls.dev">Rustls</a>.
 
 <p> More comparisons in the extensive <a
 href="https://en.wikipedia.org/wiki/Comparison_of_TLS_Implementations">feature-by-feature
