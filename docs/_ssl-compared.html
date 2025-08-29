@@ -62,23 +62,23 @@ to use.
   NICETD Schannel NICETDEND
   NICETD Secure Transport NICETDEND
   NICETD rustls NICETDEND
-  NICETD BearSSL NICETDEND
  ENDLINE
  </thead>
 
  <tbody>
- FEAT(Supported)          YES__ YES__ YES__ YES__ YES__ YES__ no___ YES__ ENDLINE
- FEAT(Native cert check)  YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
- FEAT(CRL)                MAN__ MAN__ MAN__ MAN__ AUTO_ AUTO_ MAN__ MAN__ ENDLINE
- FEAT(TLSv1.0)            YES__ YES__ YES__ YES__ YES__ YES__ no___ YES__ ENDLINE
- FEAT(TLSv1.1)            YES__ YES__ YES__ YES__ YES__ YES__ no___ YES__ ENDLINE
- FEAT(TLSv1.2)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
- FEAT(TLSv1.3)            YES__ YES__ YES__ YES__ YES__ no___ YES__ no___ ENDLINE
- FEAT(TLS SRP)            YES__ YES__ no___ no___ no___ no___ no___ no___ ENDLINE
- FEAT(TLS ECC)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
- FEAT(ALPN)               YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
- FEAT(QUIC)               YES_Q YES__ YES__ no___ no___ no___ no___ no___ ENDLINE
- FEAT(Small)              no___ no___ YES__ YES__ YES__ YES__ no___ YES__ ENDLINE
+ FEAT(Supported)          YES__ YES__ YES__ YES__ YES__ YES__ no___ ENDLINE
+ FEAT(Native cert check)  YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+ FEAT(CRL)                MAN__ MAN__ MAN__ MAN__ AUTO_ AUTO_ MAN__ ENDLINE
+ FEAT(TLSv1.0)            YES__ YES__ YES__ YES__ YES__ YES__ no___ ENDLINE
+ FEAT(TLSv1.1)            YES__ YES__ YES__ YES__ YES__ YES__ no___ ENDLINE
+ FEAT(TLSv1.2)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+ FEAT(TLSv1.3)            YES__ YES__ YES__ YES__ YES__ no___ YES__ ENDLINE
+ FEAT(TLS SRP)            YES__ YES__ no___ no___ no___ no___ no___ ENDLINE
+ FEAT(TLS ECC)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+ FEAT(ALPN)               YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+ FEAT(QUIC)               YES_Q YES__ YES__ no___ no___ no___ no___ ENDLINE
+ FEAT(Small)              no___ no___ YES__ YES__ YES__ YES__ no___ ENDLINE
+
  FEAT(Platforms)
   NEWCOL POSIX, Windows, VMS ENDCOL
   NEWCOL POSIX, Windows ENDCOL
@@ -87,20 +87,16 @@ to use.
   NEWCOL Windows ENDCOL
   NEWCOL macOS, iOS, tvOS etc ENDCOL
   NEWCOL POSIX, Windows ENDCOL
-  NEWCOL POSIX ENDCOL
  ENDLINE
 
- FEAT(Uses Certificate Files) YES__ YES__ YES__ YES__ no___ no___ YES__ YES__ ENDLINE
+ FEAT(Uses Certificate Files) YES__ YES__ YES__ YES__ no___ no___ YES__ ENDLINE
+ FEAT(Uses Certificate db)    no___ no___ no___ no___ YES__ YES__ no___ ENDLINE
 
- FEAT(Uses Certificate db)  no___ no___ no___ no___ YES__ YES__ no___ no___ ENDLINE
-
- FEAT(Crypto module/token support) PKCS11_P8 PKCS11 no___ no___ WINCAPI KEYCHAIN no___ no___ ENDLINE
-
- FEAT(Select Certificates/Keys with PKCS#11 URI) YES_P8 YES__ no___ no___ no___ no___ no___ no___ ENDLINE
- FEAT(Integrates with system token database) YES__ YES__ YES__ no___ YES__ YES__ no___ no___ ENDLINE
-
- FEAT(FIPS-140) YES__ YES__ YES__ no___ YES__ YES__ YES__ no___ ENDLINE
- FEAT(OpenSSL-like API) YES__ no___ YES__ no___ no___ no___ no___ no___ ENDLINE
+ FEAT(Crypto module/token support)         PKCS11_P8 PKCS11 no___ no___ WINCAPI KEYCHAIN no___ ENDLINE
+ FEAT(Select Certificates/Keys with PKCS#11 URI)    YES_P8 YES__ no___ no___ no___ no___ no___ ENDLINE
+ FEAT(Integrates with system token database)        YES__  YES__ YES__ no___ YES__ YES__ no___ ENDLINE
+ FEAT(FIPS-140)         YES__ YES__ YES__ no___ YES__ YES__ YES__ ENDLINE
+ FEAT(OpenSSL-like API) YES__ no___ YES__ no___ no___ no___ no___ ENDLINE
 
  FEAT(Vendor)
   NEWCOL <a href="https://www.openssl.org/">OpenSSL Project</a> ENDCOL
@@ -110,7 +106,6 @@ to use.
   NEWCOL <a href="https://www.microsoft.com/">Microsoft Corporation</a> ENDCOL
   NEWCOL <a href="https://apple.com/">Apple Inc.</a> ENDCOL
   NEWCOL Open Source team ENDCOL
-  NEWCOL Thomas Pornin ENDCOL
  ENDLINE
 
  FEAT(License)
@@ -121,7 +116,6 @@ to use.
   NEWCOL Proprietary ENDCOL
   NEWCOL APSL 2.0 ENDCOL
   NEWCOL Apache-2.0 / MIT / ISC ENDCOL
-  NEWCOL MIT ENDCOL
  ENDLINE
 
  FEAT(First release)
@@ -132,7 +126,6 @@ to use.
   NEWCOL 2000 ENDCOL
   NEWCOL 2003? ENDCOL
   NEWCOL 2016 ENDCOL
-  NEWCOL 2016 ENDCOL
  ENDLINE
 
  FEAT(Famous User)
@@ -142,7 +135,6 @@ to use.
   NEWCOL Hiawatha HTTPD ENDCOL
   NEWCOL Microsoft Internet Explorer ENDCOL
   NEWCOL Apple Safari ENDCOL
-  NEWCOL ? ENDCOL
   NEWCOL ? ENDCOL
  ENDLINE
 
