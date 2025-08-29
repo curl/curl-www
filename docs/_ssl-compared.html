@@ -30,12 +30,12 @@ to use.
 #define no___ <td class="no">no</td>
 #define UNKNOWN <td class="unknown">?</td>
 #define YES_Q <td class="yes">yes [2]</td>
-#define YES_P8 <td class="yes">yes [8]</td>
+#define YES_P3 <td class="yes">yes [3]</td>
 #define MAN__ <td class="no">manual</td>
 #define AUTO_ <td class="yes">automatic</td>
 
 #define PKCS11 <td class="yes">PKCS<!-- " -->#11<!-- "--></td>
-#define PKCS11_P8 <td class="yes">PKCS<!-- " -->#11<!-- "--> [8]</td>
+#define PKCS11_P8 <td class="yes">PKCS<!-- " -->#11<!-- "--> [3]</td>
 #define KEYCHAIN <td class="yes">Keychain</td>
 #define WINCAPI <td class="yes">Microsoft CryptoAPI</td>
 
@@ -78,7 +78,7 @@ to use.
  FEAT(QUIC API)           YES_Q YES__ YES__ no___ no___ no___ ENDLINE
  FEAT(QUIC impl)          YES_Q no___ no___ no___ no___ no___ ENDLINE
  FEAT(Small)              no___ no___ YES__ YES__ YES__ no___ ENDLINE
->>>>>>> 94c57dcd (docs/_ssl-compared.html: remove Secure Transport)
+
  FEAT(Platforms)
   NEWCOL POSIX, Windows, VMS ENDCOL
   NEWCOL POSIX, Windows ENDCOL
@@ -136,7 +136,7 @@ AWS-LC and QuictLS
 experimentally. OpenSSL 3.5+ and the OpenSSL forks LibreSSL, BoringSSL, AWS-LC
 and QuicTLS offer a QUIC API that curl works with using ngtcp2.
 <p>
-[8] = Via external <a href="https://github.com/OpenSC/OpenSC/wiki/Engine-pkcs11-quickstart">engine_pkcs11</a>;
+[3] = Via external <a href="https://github.com/OpenSC/OpenSC/wiki/Engine-pkcs11-quickstart">engine_pkcs11</a>;
 
 SUBTITLE(Glossary of Terms)
 
