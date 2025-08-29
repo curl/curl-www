@@ -30,12 +30,12 @@ to use.
 #define no___ <td class="no">no</td>
 #define UNKNOWN <td class="unknown">?</td>
 #define YES_Q <td class="yes">yes [2]</td>
-#define YES_P8 <td class="yes">yes [8]</td>
+#define YES_P3 <td class="yes">yes [3]</td>
 #define MAN__ <td class="no">manual</td>
 #define AUTO_ <td class="yes">automatic</td>
 
 #define PKCS11 <td class="yes">PKCS<!-- " -->#11<!-- "--></td>
-#define PKCS11_P8 <td class="yes">PKCS<!-- " -->#11<!-- "--> [8]</td>
+#define PKCS11_P8 <td class="yes">PKCS<!-- " -->#11<!-- "--> [3]</td>
 #define KEYCHAIN <td class="yes">Keychain</td>
 #define WINCAPI <td class="yes">Microsoft CryptoAPI</td>
 
@@ -60,47 +60,43 @@ to use.
   NICETD wolfSSL NICETDEND
   NICETD mbedTLS NICETDEND
   NICETD Schannel NICETDEND
-  NICETD Secure Transport NICETDEND
   NICETD rustls NICETDEND
-  NICETD BearSSL NICETDEND
  ENDLINE
  </thead>
 
  <tbody>
- FEAT(Supported)          YES__ YES__ YES__ YES__ YES__ YES__ no___ YES__ ENDLINE
- FEAT(Native cert check)  YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
- FEAT(CRL)                MAN__ MAN__ MAN__ MAN__ AUTO_ AUTO_ MAN__ MAN__ ENDLINE
- FEAT(TLSv1.0)            YES__ YES__ YES__ YES__ YES__ YES__ no___ YES__ ENDLINE
- FEAT(TLSv1.1)            YES__ YES__ YES__ YES__ YES__ YES__ no___ YES__ ENDLINE
- FEAT(TLSv1.2)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
- FEAT(TLSv1.3)            YES__ YES__ YES__ YES__ YES__ no___ YES__ no___ ENDLINE
- FEAT(TLS SRP)            YES__ YES__ no___ no___ no___ no___ no___ no___ ENDLINE
- FEAT(TLS ECC)            YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
- FEAT(ALPN)               YES__ YES__ YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
- FEAT(QUIC)               YES_Q YES__ YES__ no___ no___ no___ no___ no___ ENDLINE
- FEAT(Small)              no___ no___ YES__ YES__ YES__ YES__ no___ YES__ ENDLINE
+ FEAT(Supported)          YES__ YES__ YES__ YES__ YES__ no___ ENDLINE
+ FEAT(Native cert check)  YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+ FEAT(CRL)                MAN__ MAN__ MAN__ MAN__ AUTO_ MAN__ ENDLINE
+ FEAT(TLSv1.0)            YES__ YES__ YES__ YES__ YES__ no___ ENDLINE
+ FEAT(TLSv1.1)            YES__ YES__ YES__ YES__ YES__ no___ ENDLINE
+ FEAT(TLSv1.2)            YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+ FEAT(TLSv1.3)            YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+ FEAT(TLS SRP)            YES__ YES__ no___ no___ no___ no___ ENDLINE
+ FEAT(TLS ECC)            YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+ FEAT(ALPN)               YES__ YES__ YES__ YES__ YES__ YES__ ENDLINE
+ FEAT(QUIC API)           YES_Q YES__ YES__ no___ no___ no___ ENDLINE
+ FEAT(QUIC impl)          YES_Q no___ no___ no___ no___ no___ ENDLINE
+ FEAT(Small)              no___ no___ YES__ YES__ YES__ no___ ENDLINE
+
  FEAT(Platforms)
   NEWCOL POSIX, Windows, VMS ENDCOL
   NEWCOL POSIX, Windows ENDCOL
   NEWCOL POSIX, Windows ENDCOL
   NEWCOL POSIX, Windows ENDCOL
   NEWCOL Windows ENDCOL
-  NEWCOL macOS, iOS, tvOS etc ENDCOL
   NEWCOL POSIX, Windows ENDCOL
-  NEWCOL POSIX ENDCOL
  ENDLINE
 
- FEAT(Uses Certificate Files) YES__ YES__ YES__ YES__ no___ no___ YES__ YES__ ENDLINE
+ FEAT(Uses Certificate Files) YES__ YES__ YES__ YES__ no___ YES__ ENDLINE
+ FEAT(Uses Certificate db)    no___ no___ no___ no___ YES__ no___ ENDLINE
 
- FEAT(Uses Certificate db)  no___ no___ no___ no___ YES__ YES__ no___ no___ ENDLINE
+ FEAT(Crypto module/token support)         PKCS11_P8 PKCS11 no___ no___ WINCAPI    no___ ENDLINE
+ FEAT(Select Certificates/Keys with PKCS#11 URI)    YES_P8 YES__ no___ no___ no___ no___ ENDLINE
+ FEAT(Integrates with system token database)        YES__  YES__ YES__ no___ YES__ no___ ENDLINE
 
- FEAT(Crypto module/token support) PKCS11_P8 PKCS11 no___ no___ WINCAPI KEYCHAIN no___ no___ ENDLINE
-
- FEAT(Select Certificates/Keys with PKCS#11 URI) YES_P8 YES__ no___ no___ no___ no___ no___ no___ ENDLINE
- FEAT(Integrates with system token database) YES__ YES__ YES__ no___ YES__ YES__ no___ no___ ENDLINE
-
- FEAT(FIPS-140) YES__ YES__ YES__ no___ YES__ YES__ YES__ no___ ENDLINE
- FEAT(OpenSSL-like API) YES__ no___ YES__ no___ no___ no___ no___ no___ ENDLINE
+ FEAT(FIPS-140)         YES__ YES__ YES__ no___ YES__ YES__ ENDLINE
+ FEAT(OpenSSL-like API) YES__ no___ YES__ no___ no___ no___ ENDLINE
 
  FEAT(Vendor)
   NEWCOL <a href="https://www.openssl.org/">OpenSSL Project</a> ENDCOL
@@ -108,9 +104,7 @@ to use.
   NEWCOL <a href="https://www.wolfssl.com/">wolfSSL</a> ENDCOL
   NEWCOL <a href="https://tls.mbed.org/">mbed TLS</a> ENDCOL
   NEWCOL <a href="https://www.microsoft.com/">Microsoft Corporation</a> ENDCOL
-  NEWCOL <a href="https://apple.com/">Apple Inc.</a> ENDCOL
   NEWCOL Open Source team ENDCOL
-  NEWCOL Thomas Pornin ENDCOL
  ENDLINE
 
  FEAT(License)
@@ -119,9 +113,7 @@ to use.
   NEWCOL GPLv2  ENDCOL
   NEWCOL Apache-2.0 / GPLv2 ENDCOL
   NEWCOL Proprietary ENDCOL
-  NEWCOL APSL 2.0 ENDCOL
   NEWCOL Apache-2.0 / MIT / ISC ENDCOL
-  NEWCOL MIT ENDCOL
  ENDLINE
 
  FEAT(First release)
@@ -130,33 +122,23 @@ to use.
   NEWCOL 2006 ENDCOL
   NEWCOL 2006 ENDCOL
   NEWCOL 2000 ENDCOL
-  NEWCOL 2003? ENDCOL
   NEWCOL 2016 ENDCOL
-  NEWCOL 2016 ENDCOL
- ENDLINE
-
- FEAT(Famous User)
-  NEWCOL Apache HTTPD ENDCOL
-  NEWCOL GNOME ENDCOL
-  NEWCOL MySQL ENDCOL
-  NEWCOL Hiawatha HTTPD ENDCOL
-  NEWCOL Microsoft Internet Explorer ENDCOL
-  NEWCOL Apple Safari ENDCOL
-  NEWCOL ? ENDCOL
-  NEWCOL ? ENDCOL
  ENDLINE
 
  </tbody>
 </table>
 
 <p>
-[1] = Mostly the same feature set is also provided by LibreSSL, BoringSSL, AWS-LC and quictls
+[1] = Mostly the same feature set is also provided by LibreSSL, BoringSSL,
+AWS-LC and QuictLS.
+See <a href="https://github.com/curl/curl/wiki/OpenSSL-forks">OpenSSL
+forks</A> for details on those.
 <p>
-[2] = OpenSSL 3.2 has a QUIC stack that curl works with experimentally. The
-OpenSSL forks LibreSSL, BoringSSL, AWS-LC and quictls support the QUIC API
-that curl works with using ngtcp2.
+[2] = OpenSSL 3.2+ has a QUIC stack implementation that curl works with
+experimentally. OpenSSL 3.5+ and the OpenSSL forks LibreSSL, BoringSSL, AWS-LC
+and QuicTLS offer a QUIC API that curl works with using ngtcp2.
 <p>
-[8] = Via external <a href="https://github.com/OpenSC/OpenSC/wiki/Engine-pkcs11-quickstart">engine_pkcs11</a>;
+[3] = Via external <a href="https://github.com/OpenSC/OpenSC/wiki/Engine-pkcs11-quickstart">engine_pkcs11</a>;
 
 SUBTITLE(Glossary of Terms)
 
@@ -221,7 +203,11 @@ CURLOPT_TLSAUTH_PASSWORD options.
 set of cipher-suites that are used in TLS connections (typically with
 TLSv1.2). Not all engines support ECC.
 <p>
-<b>QUIC:</b> Needed for HTTP/3 support.
+<b>QUIC API:</b> Needed for usingf this TLS library when implementing a QUIC
+stack.
+<p>
+<b>QUIC Implementation:</b> A complete QUIC implementation, not just the API
+necessary for someone else to implement it.
 <p>
 <b>Small:</b> can be built with a small foot-print. The system native ones also count
 here since they come "for free" for users.
