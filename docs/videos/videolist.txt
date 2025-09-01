@@ -1336,4 +1336,5 @@ THUMB ai-slop-attacks.jpg
 THUMBSIZE width="250" height="141"
 URL https://youtu.be/6n2eDcRjSsk
 WHO Daniel Stenberg
+SLIDES https://www.slideshare.net/slideshow/ai-slop-attacks-on-the-curl-project-daniel-stenberg/282830381
 ENDOFVIDEO
