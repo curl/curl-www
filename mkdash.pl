@@ -50,8 +50,8 @@ sub now {
 for my $s (sort keys %svg) {
     my $alt = $s;
     $alt =~ s/-/ /g;
-    printf "<h2 style=\"clear: both;\">%s data</h2><a id=\"%s\" href=\"dash/%s\"><img alt=\"%s\" class=\"dash\" src=\"$dir/%s\" style=\"width:40%; float: left;\"></a>\n",
-        $s, $s, $data{$s}, $alt, $svg{$s};
+    printf "<h2 style=\"clear: both;\">%s</h2><a id=\"%s\" href=\"dash/%s\"><img alt=\"%s\" class=\"dash\" src=\"$dir/%s\" style=\"width:40%; float: left;\"></a>\n",
+        $alt, $s, $data{$s}, $alt, $svg{$s};
 
     print "<pre style=\"float: left;\">\n";
     open(C, "<dash/$data{$s}");
