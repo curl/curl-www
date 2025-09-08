@@ -36,9 +36,6 @@ PAGES= \
  index.html \
  info \
  libs.html \
- news.html \
- newslog.html \
- oldnews.html \
  search.html \
  sponsors.html \
  support.html \
@@ -84,23 +81,6 @@ index.html: _index.html $(MAINPARTS) release.t packstat.t
 
 download/index.html: release.t mk-download.pl
 	./mk-download.pl > $@
-
-newslog.html: _newslog.html $(MAINPARTS)
-	$(ACTION)
-
-news2.html: _news2.html $(MAINPARTS)
-	$(ACTION)
-
-news.html: news2.html newslog.html
-	rm -f $@
-	./filter.pl < $< > $@
-
-olddata.html: _oldnews.html $(MAINPARTS)
-	$(ACTION)
-
-oldnews.html: olddata.html
-	rm -f $@
-	./filter.pl < $< > $@
 
 info: _info packstat.t
 	$(ACTION)

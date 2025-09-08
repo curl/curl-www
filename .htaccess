@@ -4,6 +4,7 @@ SetEnvIfNoCase User-agent QQGameHall blocked=1
 deny from env=blocked
 
 ErrorDocument 404 /404.html
+RedirectPermanent /news.html https://curl.se/changes.html
 RedirectPermanent /devel.html https://curl.se/dev/
 RedirectPermanent /auto/ https://curl.se/dev/
 RedirectPermanent /docs/internals.html https://curl.se/dev/internals.html
