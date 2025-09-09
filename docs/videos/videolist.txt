@@ -1340,7 +1340,7 @@ SLIDES https://www.slideshare.net/slideshow/ai-slop-attacks-on-the-curl-project-
 ENDOFVIDEO
 
 VIDEO Giants, Standing on the Shoulders Of
-DATE 2025-08-16
+DATE 2025-08-25
 DESC Keynote at the Open Source Summit 2025, Amsterdam
 DURATION 14 minutes
 EVENT Open Source Summit 2025
