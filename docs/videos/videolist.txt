@@ -1348,4 +1348,5 @@ THUMB giants_standing_on_shoulders.jpg
 THUMBSIZE width="250" height="141"
 URL https://youtu.be/YEBBPj7pIKo
 WHO Daniel Stenberg
+SLIDES https://www.slideshare.net/slideshow/giants-standing-on-the-shoulders-of-by-daniel-stenberg/282693094
 ENDOFVIDEO
