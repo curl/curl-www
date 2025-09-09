@@ -259,13 +259,6 @@ tr.hide {
   font-size: 26px;
 }
 
-/* the main curl site left-side menu box */
-.tailmenu {
-  color: #ffffff;
-  background-color: #4080ff;
-  padding: 4px 4px 4px 4px;
-}
-
 .relatedbox {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   color: #000000;
