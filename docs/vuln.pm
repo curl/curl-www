@@ -16,7 +16,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
-    "CVE-2025-10148.html|7.86.0|8.15.0|predictable WebSocket mask|CVE-2025-10148|20250910|20250908|CWE-340: Generation of Predictable Numbers or Identifiers|505|WebSocket|-|both|low|https://hackerone.com/reports/3330839",
+    "CVE-2025-10148.html|8.11.0|8.15.0|predictable WebSocket mask|CVE-2025-10148|20250910|20250908|CWE-340: Generation of Predictable Numbers or Identifiers|505|WebSocket|-|both|low|https://hackerone.com/reports/3330839",
     "CVE-2025-9086.html|7.31.0|8.15.0|Out of bounds read for cookie path|CVE-2025-9086|20250910|20250811|CWE-125: Out-of-bounds Read|505|cookies|OVERREAD|lib|low|https://hackerone.com/reports/3294999",
     "CVE-2025-5399.html|8.13.0|8.14.0|WebSocket endless loop|CVE-2025-5399|20250604|20250530|CWE-835: Loop with Unreachable Exit Condition ('Infinite Loop')|505|WebSocket|-|lib|low|https://hackerone.com/reports/3168039",
     "CVE-2025-5025.html|8.5.0|8.13.0|No QUIC certificate pinning with wolfSSL|CVE-2025-5025|20250528|20250519|CWE-295: Improper Certificate Validation|2540|TLS|-|both|medium|https://hackerone.com/reports/3153497",
