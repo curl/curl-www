@@ -20,9 +20,9 @@ my %silver = (
     'https://onelessthing.co.uk/' => 'onelessthing.svg',
     'guest-b727d782' => 'zynk.svg',
     'babiel-gmbh' => 'babiel.svg',
+    'https://www.iplocate.io' => 'iplocate.svg',
 
     # missing logo
-    'https://www.iplocate.io' => '[none]', # no logo provided
     'king-johnnie1' => '[none]', # no logo provided
 
     # Sponsors that don't get images
