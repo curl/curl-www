@@ -62,8 +62,8 @@ for(@files) {
         $date{$version.$sdk}=$d;
         $versions{$version}++;
         if(-e "$dl/$file.asc") {
-            # a GPG signature
-            $gpg{$version.$sdk}="$dl/$file.asc";
+            # a PGP signature
+            $pgp{$version.$sdk}="$dl/$file.asc";
         }
     }
 }
@@ -94,8 +94,8 @@ for my $version (reverse sort { num($a) <=> num($b) } keys %versions) {
         printf("#define QNX_SDK%s_SIZE %s\n", $s, $size{$version.$s});
         printf("#define QNX_SDK%s_DATE %s\n", $s, $date{$version.$s});
 
-        if($gpg{$version.$s}) {
-            printf("#define QNX_SDK%s_SIG %s\n", $s, $gpg{$version.$s});
+        if($pgp{$version.$s}) {
+            printf("#define QNX_SDK%s_SIG %s\n", $s, $pgp{$version.$s});
         }
 
         my $sha = checksum("$dl/$file{$version.$s}");

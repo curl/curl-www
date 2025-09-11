@@ -59,8 +59,8 @@ for(@files) {
         $date{$version}=$d;
         $versions{$version}++;
         if(-e "$dl/$file.asc") {
-            # a GPG signature
-            $gpg{$version}="$dl/$file.asc";
+            # a PGP signature
+            $pgp{$version}="$dl/$file.asc";
         }
     }
 }
@@ -97,8 +97,8 @@ for my $version (reverse sort { num($a) <=> num($b) } keys %versions) {
     printf("#define TRURL_SIZE %s\n", $size{$version});
     printf("#define TRURL_DATE %s\n", $date{$version});
 
-    if($gpg{$version}) {
-        printf("#define TRURL_SIG %s\n", $gpg{$version});
+    if($pgp{$version}) {
+        printf("#define TRURL_SIG %s\n", $pgp{$version});
     }
 
     my $sha = checksum("$dl/$file{$version}");
