@@ -51,10 +51,10 @@ MOO
     for my $f (sort { $sort {$b} <=> $sort {$a}} @rc) {
         my $when = filetime("$f");
         my $d = strftime "%Y-%m-%d", gmtime($when);
-        my $gpg;
+        my $pgp;
         if(-e "$f.asc") {
-            # a GPG signature
-            $gpg="<a href=\"$f.asc\">GPG</a>";
+            # a PGP signature
+            $pgp="<a href=\"$f.asc\">PGP</a>";
         }
         my $fsize = filesize("$f");
 
@@ -72,7 +72,7 @@ MOO
             print "<tr><td colspan=4><b> $oldver </b>$commit</td></tr>\n";
         }
         print "<tr>\n";
-        printf "<td> <a href=\"$f\">$f</a> </td> <td>$d</td> <td>%.1f MB</td> <td> $gpg </td>\n",
+        printf "<td> <a href=\"$f\">$f</a> </td> <td>$d</td> <td>%.1f MB</td> <td> $pgp </td>\n",
             $fsize / (1024*1024);
         print "</tr>\n";
     }
