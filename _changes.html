@@ -3,11 +3,18 @@
 <head> <title>curl - Changes</title>
 #include "css.t"
 #include "changescss.t"
+  .thisver:before {
+      content: "✓";
+      padding: 5px 5px 5px 5px;
+  }
   .thisver {
       background-color: #e0e0e0;
       border: 1px solid black;
       border-radius: 10px;
       padding: 5px 5px 5px 5px;
+      margin: 5px 5px 5px 5px;
+      width: fit-content;
+      float: left;
   }
 </style>
 </head>
