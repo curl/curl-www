@@ -495,10 +495,6 @@ p.level1 {
         background: #40403c
     }
 
-    img[alt="curl logo"] {
-        filter: brightness(1.75);
-    }
-
     a {
         color: #0096fa;
     }

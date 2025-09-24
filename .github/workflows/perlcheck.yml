@@ -5,11 +5,11 @@ on:
   # master branch
   push:
     branches:
-    - master
-    - '*/ci'
+      - master
+      - '*/ci'
   pull_request:
     branches:
-    - master
+      - master
 
 permissions: {}
 
@@ -19,10 +19,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: install prereqs
-      run: sudo apt-get install libcgi-pm-perl libstring-crc32-perl
+      - name: install prereqs
+        run: sudo apt-get install libcgi-pm-perl libstring-crc32-perl
 
-    - name: perlcheck
-      run: make perlcheck
+      - name: perlcheck
+        run: make perlcheck
