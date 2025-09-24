@@ -5,11 +5,11 @@ on:
   # master branch
   push:
     branches:
-    - master
-    - '*/ci'
+      - master
+      - '*/ci'
   pull_request:
     branches:
-    - master
+      - master
 
 permissions: {}
 
@@ -19,36 +19,36 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: install prereqs
-      run: sudo apt-get install pandoc libcgi-pm-perl
+      - name: install prereqs
+        run: sudo apt-get install pandoc libcgi-pm-perl
 
-    - name: clone the source repo
-      run: git clone --depth=1 https://github.com/curl/curl.git cvssource
+      - name: clone the source repo
+        run: git clone --depth=1 https://github.com/curl/curl.git cvssource
 
-    - name: build the docs in the source repo
-      run: |
-        cd cvssource
-        autoreconf -fi
-        ./configure --without-ssl --without-libpsl
-        make -C docs
+      - name: build the docs in the source repo
+        run: |
+          cd cvssource
+          autoreconf -fi
+          ./configure --without-ssl --without-libpsl
+          make -C docs
 
-    - name: install fcpp
-      run: |
-        git clone https://github.com/bagder/fcpp.git
-        cd fcpp
-        make
-        make install
+      - name: install fcpp
+        run: |
+          git clone https://github.com/bagder/fcpp.git
+          cd fcpp
+          make
+          make install
 
-    - name: install roffit
-      run: |
-        git clone https://github.com/bagder/roffit.git
-        cd roffit
-        make install
+      - name: install roffit
+        run: |
+          git clone https://github.com/bagder/roffit.git
+          cd roffit
+          make install
 
-    - name: bootstrap
-      run: ./bootstrap.sh
+      - name: bootstrap
+        run: ./bootstrap.sh
 
-    - name: make
-      run: make
+      - name: make
+        run: make
