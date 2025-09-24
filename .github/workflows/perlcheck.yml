@@ -20,6 +20,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: install prereqs
         run: sudo apt-get install libcgi-pm-perl libstring-crc32-perl

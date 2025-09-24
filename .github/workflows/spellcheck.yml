@@ -30,6 +30,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: strip "uncheckable" sections from .md pages
         run: find docs -name "*.md" | xargs -t -n1 ./.github/scripts/cleanspell.pl
