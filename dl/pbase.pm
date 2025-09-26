@@ -648,7 +648,7 @@ sub internal_sort_function
 # | |/ _ \ / _` |/ _` |
 # | | (_) | (_| | (_| |
 # |_|\___/ \__,_|\__,_|
-# backward compatility - so far... See open()
+# backward compatibility - so far... See open()
 # Will produce a row in the pbase_error.log file.
 # Input: filename
 # Output: Database size or -1 for error

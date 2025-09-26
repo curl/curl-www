@@ -60,7 +60,7 @@ index.html: _index.html _mail.html $(MAINPARTS) support.t
 lost.html: _lost.html $(MAINPARTS)
 	$(ACTION)
 
-# This fils is meant for Mailman ONLY!
+# This file is meant for Mailman ONLY!
 mailman.html: _mailman.html $(MAINPARTS)
 	$(ACTION)
 
