@@ -21,9 +21,11 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: 'install'
+        run: HOMEBREW_NO_AUTO_UPDATE=1 /home/linuxbrew/.linuxbrew/bin/brew install typos-cli
+
       - name: 'typos'
         run: |
-          HOMEBREW_NO_AUTO_UPDATE=1 /home/linuxbrew/.linuxbrew/bin/brew install typos-cli
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           typos --version
           .github/scripts/typos.sh
