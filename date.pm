@@ -74,13 +74,13 @@ sub MonthNameEng {
 sub DayName {
     my $num=$_[0];
 
-    my @dname = ('måndag',
+    my @dname = ('mÃ¥ndag',
                  'tisdag',
                  'onsdag',
                  'torsdag',
                  'fredag',
-                 'lördag',
-                 'söndag');
+                 'lÃ¶rdag',
+                 'sÃ¶ndag');
 
     while( $num > 7 ) {
         $num -= 7;
