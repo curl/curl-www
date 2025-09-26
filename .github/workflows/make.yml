@@ -47,7 +47,7 @@ jobs:
         run: |
           git clone https://github.com/bagder/roffit.git
           cd roffit
-          make install
+          install -Dm0755 roffit /usr/local/bin/roffit
 
       - name: bootstrap
         run: ./bootstrap.sh
