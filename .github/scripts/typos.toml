@@ -1,0 +1,20 @@
+# Copyright (C) Daniel Stenberg, <daniel@haxx.se>, et al.
+#
+# SPDX-License-Identifier: curl
+
+[default]
+extend-ignore-identifiers-re = [
+  "(connnection|EXAMPL|LISTings|ND|OBSOLET|RTO)",
+  "^(Aas|eyeballers|gost|HELO|Linz|MAK|mak|nd|typ|UE)$",
+]
+
+[files]
+extend-exclude = [
+  ".github/scripts/spellcheck.words",
+  "dev/explainopts.t",
+  "docs/_companies.html",
+  "rfc/*.txt",
+  "rfc/cookie_spec.html",
+  "rfc/ntlm.html",
+  "**/*.svg",
+]
