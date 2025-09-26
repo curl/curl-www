@@ -37,7 +37,7 @@ jobs:
         run: find docs -name "*.md" | xargs -t -n1 ./.github/scripts/cleanspell.pl
 
       - name: setup the custom wordlist
-        run: grep -v '^#' .github/scripts/spellcheck.words >  wordlist.txt
+        run: grep -v '^#' .github/scripts/spellcheck.words > wordlist.txt
 
       - name: Check Spelling
         uses: rojopolis/spellcheck-github-actions@739a1e3ceb79a98a5d4a9bf76f351137f9d78892 # v0
