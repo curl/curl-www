@@ -1201,7 +1201,7 @@ sub size
 # \__ \ (_) | |  | |_
 # |___/\___/|_|   \__|
 # Sort the current selection
-# Input: array of which fields to sort on. A minus-sign infront of
+# Input: array of which fields to sort on. A minus-sign in front of
 #        the field-name will revert the sort order.
 # Output: nothing
 #

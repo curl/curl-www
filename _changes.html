@@ -1386,7 +1386,7 @@ RELEASEVIDEO(8.12.0, "https://youtu.be/FDBw2uxI-R8")
  BGF <a href="https://curl.se/bug/?i=15822">curl_url_set.md: adjust the added-in to 7.62.0</a>
  BGF curl_ws_recv.md: fix typo
  BGF <a href="https://curl.se/bug/?i=16002">CURLOPT_CONNECT_ONLY.md: an easy handle with this option set cannot be reused</a>
- BGF <a href="https://curl.se/bug/?i=15805">CURLOPT_PROXY.md: clarify the crendential support in proxy URLs</a>
+ BGF <a href="https://curl.se/bug/?i=15805">CURLOPT_PROXY.md: clarify the credential support in proxy URLs</a>
  BGF <a href="https://curl.se/bug/?i=15770">CURLOPT_RESOLVE.md: fix wording</a>
  BGF <a href="https://curl.se/bug/?i=15903">CURLOPT_SEEKFUNCTION.md: used for FTP, HTTP and SFTP (only)</a>
  BGF docs/BUGS.md: remove leading space from a link
@@ -1678,7 +1678,7 @@ RELEASEVIDEO(8.11.0, "https://youtu.be/C9SSeavI1NE")
  BGF <a href="https://curl.se/bug/?i=15403">cmake: limit `CURL_STATIC_CRT` to MSVC</a>
  BGF <a href="https://curl.se/bug/?i=15001">cmake: make `test-ci` target skip building dependencies</a>
  BGF <a href="https://curl.se/bug/?i=15407">cmake: mark as advanced some internal Find* variables</a>
- BGF <a href="https://curl.se/bug/?i=15088">cmake: readd `generate-curl.1` dependency for `src` just in case</a>
+ BGF <a href="https://curl.se/bug/?i=15088">cmake: re-add `generate-curl.1` dependency for `src` just in case</a>
  BGF <a href="https://curl.se/bug/?i=15255">cmake: rename LDAP dependency config variables to match Find modules</a>
  BGF <a href="https://curl.se/bug/?i=15157">cmake: replace `check_include_file_concat()` for LDAP and GSS detection</a>
  BGF <a href="https://curl.se/bug/?i=15331">cmake: replace `CURL_*_DIR` with `{PROJECT,CMAKE_CURRENT}_*_DIR`</a>
@@ -2731,7 +2731,7 @@ RELEASEVIDEO(8.8.0, "https://youtu.be/QuEcJkjvI_Q")
  BGF <a href="https://curl.se/bug/?i=13205">tool_xattr: &quot;guess&quot; URL scheme if none is provided</a>
  BGF <a href="https://curl.se/bug/?i=13220">tool_xattr: in debug builds, act normally if CURL_FAKE_XATTR is not set</a>
  BGF <a href="https://curl.se/bug/?i=13435">transfer: remove useless assignment</a>
- BGF <a href="https://curl.se/bug/?i=13265">url: do not URL decode proxy crendentials</a>
+ BGF <a href="https://curl.se/bug/?i=13265">url: do not URL decode proxy credentials</a>
  BGF <a href="https://curl.se/bug/?i=13399">url: fix use of an uninitialized variable</a>
  BGF <a href="https://curl.se/bug/?i=13584">url: make parse_login_details use memdup0</a>
  BGF <a href="https://curl.se/bug/?i=13710">url: remove duplicate call to Curl_conncache_remove_conn when pruning</a>
@@ -3544,7 +3544,7 @@ RELEASEVIDEO(8.3.0, "https://youtu.be/DmyuEV8cUaU")
  BGF <a href="https://curl.se/bug/?i=11645">gen.pl: replace all single quotes with aq</a>
  BGF <a href="https://curl.se/bug/?i=11517">GHA: adding quiche workflow</a>
  BGF <a href="https://curl.se/bug/?i=11605">headers: accept leading whitespaces on first response header</a>
- BGF <a href="https://curl.se/mail/lib-2023-07/0045.html">http2: avoid too early connection re-use/multiplexing</a>
+ BGF <a href="https://curl.se/mail/lib-2023-07/0045.html">http2: avoid too early connection reuse/multiplexing</a>
  BGF <a href="https://curl.se/bug/?i=11592">http2: cleanup trace messages</a>
  BGF <a href="https://curl.se/bug/?i=11500">http2: disable assertion blocking OSSFuzz testing</a>
  BGF <a href="https://curl.se/bug/?i=11527">http2: fix in h2 proxy tunnel: progress in ingress on sending</a>
@@ -5140,7 +5140,7 @@ RELEASEVIDEO(7.83.1, "https://youtu.be/mnsCTd4cwyI")
  BGF <a href="https://curl.se/bug/?i=8819">altsvc: fix hostname matching for trailing dots</a>
  BGF <a href="https://curl.se/bug/?i=8783">cirrus: Update to FreeBSD 12.3</a>
  BGF <a href="https://curl.se/bug/?i=8783">cirrus: Use pip for Python packages on FreeBSD</a>
- BGF <a href="https://curl.se/bug/?i=8759">conn: fix typo &apos;connnection&apos; -&gt; &apos;connection&apos; in two function names</a>
+ BGF <a href="https://curl.se/bug/?i=8759">conn: fix typo -&gt; &apos;connection&apos; in two function names</a>
  BGF <a href="https://curl.se/docs/CVE-2022-27779.html">cookies: make bad_domain() not consider a trailing dot fine</a>
  BGF <a href="https://curl.se/bug/?i=8770">curl: free resource in error path</a>
  BGF <a href="https://curl.se/bug/?i=8771">curl: guard against size_t wraparound in no-clobber code</a>
@@ -5624,7 +5624,7 @@ RELEASEVIDEO(7.81.0, "https://youtu.be/OfTF8kmcSlA")
  BGF <a href="https://curl.se/bug/?i=8040">tool_operate: only set SSH related libcurl options for SSH URLs</a>
  BGF <a href="https://curl.se/bug/?i=8210">tool_operate: warn if too many output arguments were found</a>
  BGF <a href="https://curl.se/bug/?i=7984">url.c: fix the SIGPIPE comment for Curl_close</a>
- BGF <a href="https://curl.se/bug/?i=8141">url: check ssl_config when re-use proxy connection</a>
+ BGF <a href="https://curl.se/bug/?i=8141">url: check ssl_config when reuse proxy connection</a>
  BGF <a href="https://curl.se/bug/?i=8212">url: reduce ssl backend count for CURL_DISABLE_PROXY builds</a>
  BGF <a href="https://curl.se/bug/?i=8090">urlapi: accept port number zero</a>
  BGF <a href="https://curl.se/bug/?i=8206">urlapi: if possible, shorten given numerical IPv6 addresses</a>
@@ -6279,7 +6279,7 @@ RELEASEVIDEO(7.76.1, "https://youtu.be/3Vj4cdzLZx4")
  BGF <a href="https://curl.se/bug/?i=6861">configure: remove use of RETSIGTYPE</a>
  BGF <a href="https://curl.se/bug/?i=6857">docs/HTTP3.md: update the build instruction using gnutls</a>
  BGF <a href="https://curl.se/bug/?i=6876">examples/hiperfifo.c: check event_initialized before delete</a>
- BGF <a href="https://curl.se/bug/?i=6845">file: support GETing directories again</a>
+ BGF <a href="https://curl.se/bug/?i=6845">file: support GET-ing directories again</a>
  BGF <a href="https://curl.se/bug/?i=6815">github/workflow: add &quot;security-extended&quot; to codeql-analysis.yml</a>
  BGF <a href="https://curl.se/bug/?i=6852">h2: allow 100 streams by default</a>
  BGF <a href="https://curl.se/bug/?i=6831">hostip: fix builds that disable all asynchronous DNS</a>
@@ -6742,7 +6742,7 @@ RELEASEVIDEO(7.73.0, "https://youtu.be/ebYXC0Cr-dQ")
  BGF <a href="https://curl.se/bug/?i=6042">curl: make sure setopt CURLOPT_IPRESOLVE passes on a long</a>
  BGF <a href="https://curl.se/bug/?i=5917">curl: retry delays in parallel mode no longer sleeps blocking</a>
  BGF <a href="https://curl.se/bug/?i=5946">curl: use curlx_dynbuf for realloc when loading config files</a>
- BGF <a href="https://curl.se/bug/?i=5905">curl:parallel_transfers: make sure retry readds the transfer</a>
+ BGF <a href="https://curl.se/bug/?i=5905">curl:parallel_transfers: make sure retry re-adds the transfer</a>
  BGF <a href="https://curl.se/bug/?i=5851">curl_get_line: build only if cookies or alt-svc are enabled</a>
  BGF <a href="https://curl.se/bug/?i=5942">curl_mime_headers.3: fix the example&#39;s use of curl_slist_append</a>
  BGF <a href="https://curl.se/bug/?i=5583">Curl_pgrsTime - return new time to avoid timeout integer overflow</a>
@@ -7875,7 +7875,7 @@ VULNBOX(7.65.2)
  BGF http: clarify header buffer size calculation
  BGF <a href="https://curl.se/bug/?i=4020">krb5: fix compiler warning</a>
  BGF <a href="https://curl.se/bug/?i=4087">lib: Use UTF-8 encoding in comments</a>
- BGF <a href="https://curl.se/bug/?i=4000">libcurl-tutorial.3: Fix small typo (mutipart -> multipart)</a>
+ BGF <a href="https://curl.se/bug/?i=4000">libcurl-tutorial.3: Fix small typo (-> multipart)</a>
  BGF <a href="https://curl.se/bug/?i=4094">libcurl: Restrict redirect schemes to HTTP, HTTPS, FTP and FTPS</a>
  BGF <a href="https://curl.se/bug/?i=4051">multi: enable multiplexing by default (again)</a>
  BGF <a href="https://curl.se/bug/?i=4012">multi: fix the transfer hashes in the socket hash entries</a>
@@ -9282,7 +9282,7 @@ VULNBOX(7.56.0)
  BGF <a href="https://curl.se/bug/?i=1877">mbedtls: enable CA path processing</a>
  BGF travis: add build without HTTP/SMTP/IMAP
  BGF <a href="https://curl.se/bug/?i=1878">checksrc: verify more code style rules</a>
- BGF <a href="https://curl.se/bug/?i=1887">HTTP proxy: on connection re-use, still use the new remote port</a>
+ BGF <a href="https://curl.se/bug/?i=1887">HTTP proxy: on connection reuse, still use the new remote port</a>
  BGF <a href="https://curl.se/bug/?i=1687">tests: add initial gssapi test using stub implementation</a>
  BGF <a href="https://curl.se/bug/?i=1880">rtsp: Segfault when using WRITEDATA</a>
  BGF docs: clarify the CURLOPT_INTERLEAVE* options behavior
@@ -9980,7 +9980,7 @@ VULNBOX(7.51.0)
  BGF <a href="https://curl.se/bug/?i=922">cmake: add nghttp2 support</a>
  BGF <a href="https://curl.se/mail/lib-2016-10/0040.html">dist: remove PDF and HTML converted docs from the releases</a>
  BGF <a href="https://curl.se/bug/?i=1057">configure: disable poll() in macOS builds</a>
- BGF vtls: only re-use session-ids using the same scheme
+ BGF vtls: only reuse session-ids using the same scheme
  BGF <a href="https://curl.se/bug/?i=1075">pipelining: skip to-be-closed connections when pipelining</a>
  BGF <a href="https://curl.se/bug/?i=1048">win: fix Universal Windows Platform build</a>
  BGF <a href="https://curl.se/bug/?i=1042">curl: do not set CURLOPT_SSLENGINE to DEFAULT automatically</a>
@@ -10560,7 +10560,7 @@ VULNBOX(7.45.0)
  BGF generate.bat: Only call buildconf.bat if it exists
  BGF generate.bat: Added support for generating only the prerequisite files
  BGF curl.1: Document weaknesses in SSLv2 and SSLv3
- BGF CURLOPT_HTTP_VERSION.3: connection re-use goes before version
+ BGF CURLOPT_HTTP_VERSION.3: connection reuse goes before version
  BGF docs: Update the redirect protocols disabled by default
  BGF inet_pton.c: Fix MSVC runtime check failure
  BGF CURLMOPT_PUSHFUNCTION.3: fix argument types
@@ -10595,7 +10595,7 @@ VULNBOX(7.45.0)
  BGF winbuild: run buildconf.bat if necessary
  BGF buildconf.bat: fix syntax error
  BGF <a href="https://curl.se/bug/?i=411">curl_sspi: fix possibly undefined CRYPT_E_REVOKED</a>
- BGF <a href="https://bugzilla.mozilla.org/1202264">nss: prevent NSS from incorrectly re-using a session</a>
+ BGF <a href="https://bugzilla.mozilla.org/1202264">nss: prevent NSS from incorrectly reusing a session</a>
  BGF libcurl-errors.3: add two missing error codes
  BGF openssl: fix build with &lt; 0.9.8
  BGF <a href="https://curl.se/bug/?i=427">openssl: refactor certificate parsing to use OpenSSL memory BIO</a>
@@ -10719,7 +10719,7 @@ VULNBOX(7.43.0)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.se/docs/CVE-2015-3236.html">CVE-2015-3236: lingering HTTP credentials in connection re-use</a>
+ BGF <a href="https://curl.se/docs/CVE-2015-3236.html">CVE-2015-3236: lingering HTTP credentials in connection reuse</a>
  BGF <a href="https://curl.se/docs/CVE-2015-3237.html">CVE-2015-3237: SMB send off unrelated memory contents</a>
  BGF <a href="https://curl.se/mail/lib-2015-04/0095.html">nss: fix compilation failure with old versions of NSS</a>
  BGF curl_easy_getinfo.3: document &#39;internals&#39; in CURLINFO_TLS_SESSION
@@ -10817,7 +10817,7 @@ VULNBOX(7.42.0)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.se/docs/CVE-2015-3143.html">ConnectionExists: for NTLM re-use, require credentials to match</a>
+ BGF <a href="https://curl.se/docs/CVE-2015-3143.html">ConnectionExists: for NTLM reuse, require credentials to match</a>
  BGF <a href="https://curl.se/docs/CVE-2015-3145.html">cookie: cookie parser out of boundary memory access</a>
  BGF <a href="https://curl.se/docs/CVE-2015-3144.html">fix_hostname: zero length hostname caused -1 index offset</a>
  BGF <a href="https://curl.se/docs/CVE-2015-3148.html">http_done: close Negotiate connections when done</a>
@@ -10851,7 +10851,7 @@ VULNBOX(7.42.0)
  BGF GnuTLS: print negotiated TLS version and full cipher suite name
  BGF GnuTLS: don&#39;t print double newline after certificate dates
  BGF memanalyze.pl: handle free(NULL)
- BGF <a href="https://curl.se/bug/view.cgi?id=1492">proxy: re-use proxy connections (regression)</a>
+ BGF <a href="https://curl.se/bug/view.cgi?id=1492">proxy: reuse proxy connections (regression)</a>
  BGF mk-ca-bundle: Don&#39;t report SHA1 numbers with "-q"
  BGF <a href="https://curl.se/bug/view.cgi?id=1491">http: always send Host: header as first header</a>
  BGF <a href="https://curl.se/bug/view.cgi?id=1487">openssl: sort ciphers to use based on strength</a>
@@ -11463,11 +11463,11 @@ VULNBOX(7.37.0)
  BGF <a href="https://curl.se/bug/view.cgi?id=1369">darwinssl: fix potential crash with a P12 file</a>
  BGF <a href="https://curl.se/mail/lib-2014-05/0147.html">timers: fix timer regression involving redirects / reconnects</a>
  BGF <a href="https://curl.se/mail/lib-2014-04/0203.html">CURLINFO_SSL_VERIFYRESULT: made more reliable</a>
- BGF <a href="https://curl.se/mail/lib-2014-05/0127.html">HTTP: fixed connection re-use</a>
+ BGF <a href="https://curl.se/mail/lib-2014-05/0127.html">HTTP: fixed connection reuse</a>
  BGF <a href="https://curl.se/bug/view.cgi?id=1343">configure: add SPNEGO to supported features</a>
  BGF <a href="https://curl.se/bug/view.cgi?id=1344">configure: add GSS-API to supported features</a>
  BGF ALPN: fix typo in http/1.1 identifier
- BGF <a href="https://curl.se/bug/view.cgi?id=1374">http2: make connection re-use work</a>
+ BGF <a href="https://curl.se/bug/view.cgi?id=1374">http2: make connection reuse work</a>
 </ul>
 
 <a name="7_36_0"></a>
@@ -11493,7 +11493,7 @@ VULNBOX(7.36.0)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.se/docs/CVE-2014-0138.html">SECURITY ADVISORY: wrong re-use of connections</a>
+ BGF <a href="https://curl.se/docs/CVE-2014-0138.html">SECURITY ADVISORY: wrong reuse of connections</a>
  BGF <a href="https://curl.se/docs/CVE-2014-0139.html">SECURITY ADVISORY: IP address wildcard certificate validation</a>
  BGF <a href="https://curl.se/docs/CVE-2014-1263.html">SECURITY ADVISORY: not verifying certs for TLS to IP address / Darwinssl</a>
  BGF <a href="https://curl.se/docs/CVE-2014-2522.html">SECURITY ADVISORY: not verifying certs for TLS to IP address / Winssl</a>
@@ -11515,7 +11515,7 @@ VULNBOX(7.36.0)
  BGF valgrind: added suppression on optimized code
  BGF curl: output protocol headers using binary mode
  BGF tool: Added URL index to password prompt for multiple operations
- BGF <a href="http://thread.gmane.org/gmane.comp.version-control.git/242213">ConnectionExists: re-use non-NTLM connections better</a>
+ BGF <a href="http://thread.gmane.org/gmane.comp.version-control.git/242213">ConnectionExists: reuse non-NTLM connections better</a>
  BGF axtls: call ssl_read repeatedly
  BGF multi: make MAXCONNECTS default 4 x number of easy handles function
  BGF configure: Fix the --disable-crypto-auth option
@@ -11559,7 +11559,7 @@ VULNBOX(7.35.0)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.se/docs/CVE-2014-0015.html">SECURITY ADVISORY: re-use of wrong HTTP NTLM connection</a>
+ BGF <a href="https://curl.se/docs/CVE-2014-0015.html">SECURITY ADVISORY: reuse of wrong HTTP NTLM connection</a>
  BGF <a href="https://curl.se/bug/view.cgi?id=1313">curl_easy_setopt: Fixed OAuth 2.0 Bearer option name</a>
  BGF pop3: Fixed APOP being determined by CAPA response rather than by timestamp
  BGF <a href="https://curl.se/mail/lib-2013-12/0113.html">Curl_pp_readresp: zero terminate line</a>
@@ -11910,7 +11910,7 @@ VULNBOX(7.30.0)
  BGF getinmemory.c: abort the transfer nicely if not enough memory
  BGF improved win32 memorytracking
  BGF <a href="https://curl.se/bug/view.cgi?id=1204">corrected proxy header response headers count</a>
- BGF <a href="https://curl.se/mail/lib-2013-03/0319.html">FTP quote operations on re-used connection</a>
+ BGF <a href="https://curl.se/mail/lib-2013-03/0319.html">FTP quote operations on reused connection</a>
  BGF <a href="https://curl.se/bug/view.cgi?id=1209">tcpkeepalive on win32</a>
  BGF <a href="https://curl.se/bug/view.cgi?id=1214">tcpkeepalive on Mac OS X</a>
  BGF <a href="https://curl.se/bug/view.cgi?id=1212">easy: acknowledge the CURLOPT_MAXCONNECTS option properly</a>
@@ -12051,7 +12051,7 @@ VULNBOX(7.28.0)
  BGF <a href="https://curl.se/bug/view.cgi?id=3545398">change preferred HTTP auth on a handle previously used for another auth</a>
  BGF <a href="https://bugzilla.redhat.com/844385">file: use fdopen() to avoid race condition</a>
  BGF <a href="https://curl.se/mail/lib-2012-07/0271.html">Added DWANT_IDN_PROTOTYPES define for MSVC too</a>
- BGF <a href="https://curl.se/mail/lib-2012-07/0111.html">verbose: fixed (nil) output of hostnames in re-used connections</a>
+ BGF <a href="https://curl.se/mail/lib-2012-07/0111.html">verbose: fixed (nil) output of hostnames in reused connections</a>
  BGF metalink: Un-broke the build when building --with-darwinssl
  BGF curl manpage cleanup
  BGF Avoid leak of local device string when reusing connection
@@ -12059,7 +12059,7 @@ VULNBOX(7.28.0)
  BGF nss: do not print misleading NSS error codes
  BGF configure: remove the --enable/disable-nonblocking options
  BGF darwinssl: add TLS 1.1 and 1.2 support, replace deprecated functions
- BGF NTLM: re-use existing connection better
+ BGF NTLM: reuse existing connection better
  BGF schannel crash on multi and easy handle cleanup
  BGF <a href="https://curl.se/bug/view.cgi?id=3561305">SOCKS: truly disable it if CURL_DISABLE_PROXY is defined</a>
  BGF <a href="https://curl.se/mail/lib-2012-09/0019.html">mk-ca-bundle: detect start of trust section better</a>
@@ -12477,10 +12477,10 @@ VULNBOX(7.21.5)
  BGF symbols-in-versions: many corrections
  BGF if an HTTP request gets retried because the connection was dead, rewind if
    any data was sent as part of it
- BGF only probe for working ipv6 once and then re-use that info for further
+ BGF only probe for working ipv6 once and then reuse that info for further
    requests
  BGF requests that are asked to bound to a local interface/port will no longer
-   wrongly re-use connections that aren&#39;t
+   wrongly reuse connections that aren&#39;t
  BGF libcurl.m4: Add missing quotes in AC_LINK_IFELSE
  BGF progress output: don&#39;t print the last update on a separate line
  BGF POP3: the command to send is STLS, not STARTTLS
@@ -12579,7 +12579,7 @@ VULNBOX(7.21.3)
  BGF added a couple examples that were missing from the tar ball
  BGF Curl_send/recv_plain: return errno on failure
  BGF Curl_wait_for_resolv (for c-ares): correct timeout
- BGF ossl_connect_common: detect connection re-use
+ BGF ossl_connect_common: detect connection reuse
  BGF configure: Prevent link errors with --librtmp
  BGF openldap: use remote port in URL passed to ldap_init_fd()
  BGF url: provide dead_connection flag in Curl_handler::disconnect
@@ -12659,7 +12659,7 @@ VULNBOX(7.21.1)
  BGF multi: unmark handle as used when no longer head of pipeline
  BGF sendrecv: treat all negative values from send/recv as errors
  BGF ftp-wildcard: avoid tight loop when used without any pattern
- BGF multi_socket: re-use of same socket without notifying app
+ BGF multi_socket: reuse of same socket without notifying app
  BGF ftp wildcard: FTP LIST parser FIX
  BGF urlglobbing backslash escaping bug
  BGF build: add enable IPV6 option for the VC makefiles
@@ -12764,7 +12764,7 @@ VULNBOX(7.20.1)
  BGF TFTP fixed TSIZE handling for uploads
  BGF SSL possible double free when reusing curl handle
  BGF alarm()-based DNS timeout bug
- BGF re-used FTP connection multi interface crash
+ BGF reused FTP connection multi interface crash
  BGF chunked-encoding with Content-Length: header problem
  BGF multi interface HTTP POST over a proxy using PROXYTUNNEL
  BGF RTSP GET_PARAMETER
@@ -12803,7 +12803,7 @@ VULNBOX(7.20.0)
  BGF configure --with-nss is set but not "yes"
  BGF don&#39;t store LDFLAGS in pkg-config file
  BGF never-pruned DNS cached entries
- BGF HTTP proxy tunnel re-used connection even if tunnel got disabled
+ BGF HTTP proxy tunnel reused connection even if tunnel got disabled
  BGF SSL lib post-close write
  BGF curl failed to report write errors for tiny failed downloads
  BGF TFTP BLKSIZE
@@ -12847,7 +12847,7 @@ VULNBOX(7.19.7)
  BGF configure --with-gnutls=PATH fixed
  BGF ftp response reader bug on failed control connections
  BGF improved NSS error message on failed hostname verifications
- BGF ftp NOBODY on re-used connection hang
+ BGF ftp NOBODY on reused connection hang
  BGF configure uses pkg-config for cross-compiles as well
  BGF improved NSS detection in configure
  BGF cookie expiry date at 1970-jan-1 00:00:00
@@ -12864,7 +12864,7 @@ VULNBOX(7.19.7)
  BGF use pkg-config to find out libssh2 installation details in configure
  BGF unparsable cookie expire dates make cookies get treated as session coookies
  BGF POST with Digest authentication and "Transfer-Encoding: chunked"
- BGF SCP connection re-use with wrong auth
+ BGF SCP connection reuse with wrong auth
  BGF CURLINFO_CONTENT_LENGTH_DOWNLOAD for 0 bytes transfers
  BGF CURLINFO_SIZE_DOWNLOAD for ldap transfers (-w size_download)
 </ul>
@@ -12899,7 +12899,7 @@ VULNBOX(7.19.6)
  BGF ftp credentials are added to the url if needed for http proxies
  BGF curl -o - sends data to stdout using binary mode on windows
  BGF fixed the separators for "array" style string that CURLINFO_CERTINFO returns
- BGF auth problem over several hosts with re-used connection
+ BGF auth problem over several hosts with reused connection
  BGF improved the support for client certificates in libcurl+NSS
  BGF fix leak in gtls code
  BGF missing algorithms in libcurl+OpenSSL
@@ -12941,7 +12941,7 @@ VULNBOX(7.19.5)
  BGF improved the CURLOPT_NOBODY set to 0 confusions
  BGF persistent connections when doing FTP over an HTTP proxy
  BGF --libcurl bogus strings where other data was pointed to
- BGF crash related to FTP and "Re-used connection seems dead, get a new one"
+ BGF crash related to FTP and "Reused connection seems dead, get a new one"
  BGF CURLINFO_APPCONNECT_TIME with the multi interface
  BGF Enhanced upload speeds on Windows
  BGF TFTP problems after a failed transfer to the same host
@@ -13018,7 +13018,7 @@ VULNBOX(7.19.3)
  BGF fixed several calls to memory functions that didn&#39;t check return codes
  BGF memory leak for SSL connects with libcurl/NSS when CURLOPT_ISSUERCERT was
    used
- BGF re-use of connections with the multi interface when multiple handles used
+ BGF reuse of connections with the multi interface when multiple handles used
    the same server
  BGF memory leak with HTTP GSS/kerberos authentication
  BGF removed the default use of "Pragma: no-cache"
@@ -13032,7 +13032,7 @@ VULNBOX(7.19.3)
  BGF curl_easy_duphandle() doesn&#39;t try to duplicate the connection cache pointer
  BGF build failure on OS/400 when enabling IPv6
  BGF better detection of SFTP failures
- BGF improved connection re-use for subsequent SCP and SFTP transfers
+ BGF improved connection reuse for subsequent SCP and SFTP transfers
  BGF multi interface does less busy-loops for SCP and SFTP transfers with libssh2
    1.0 or later
  BGF curl_multi_timeout() no longer returns timeout 0 when there&#39;s still more
@@ -13094,7 +13094,7 @@ VULNBOX(7.19.1)
  BGF CURLINFO_REDIRECT_URL didn&#39;t work with the multi interface
  BGF CURLOPT_RANGE now works for SFTP downloads
  BGF FTP SIZE response 550 now causes CURLE_REMOTE_FILE_NOT_FOUND
- BGF CURLINFO_PRIMARY_IP fixed for persistent connection re-use cases
+ BGF CURLINFO_PRIMARY_IP fixed for persistent connection reuse cases
  BGF remove_handle/add_handle multi interface timer callback flaw
  BGF CURLINFO_REDIRECT_URL memory leak and wrong-doing
  BGF case insensitive string matching works in Turkish too
@@ -13128,8 +13128,8 @@ VULNBOX(7.19.0)
 <p> Bugfixes:
 <ul class="bugfixes">
  BGF Fixed curl-config --ca
- BGF Fixed the multi interface connection re-use with NSS-built libcurl
- BGF connection re-use when using the multi interface with pipelining enabled
+ BGF Fixed the multi interface connection reuse with NSS-built libcurl
+ BGF connection reuse when using the multi interface with pipelining enabled
  BGF curl_multi_socket() socket callback fix for close/re-create sockets case
  BGF SCP or SFTP over socks proxy crashed
  BGF RC4-MD5 cipher now works with NSS-built libcurl
@@ -13150,7 +13150,7 @@ VULNBOX(7.19.0)
  BGF no longer link with gdi32 on Windows cross-compiled targets
  BGF HTTP PUT with -C - sent bad Content-Range: header
  BGF HTTP PUT or POST with redirect could lead to hang
- BGF re-use of connections with failed SSL connects in the multi interface
+ BGF reuse of connections with failed SSL connects in the multi interface
  BGF NTLM over proxy state was wrongly cleared when host connection was closed
  BGF Windows SSPI DLL loading is now done in curl_global_init()
  BGF runtests.pl has an improved find-stunnel-and-invoke
@@ -13236,18 +13236,18 @@ VULNBOX(7.18.1)
    problems with the cert
  BGF when using the multi interface and a handle is removed while still having
    a transfer going on, the connection is now closed by force
- BGF bad re-use of SSL connections in non-complete state
+ BGF bad reuse of SSL connections in non-complete state
  BGF test case 405 failures with GnuTLS builds
  BGF crash when connection cache size is 1 and Curl_do() failed
  BGF GnuTLS-built libcurl can now be forced to prefer SSLv3
- BGF crash when doing Negotiate again on a re-used connection
+ BGF crash when doing Negotiate again on a reused connection
  BGF select/poll regression
  BGF better MIT kerberos configure check
- BGF curl_easy_reset() + SFTP re-used connection download crash
+ BGF curl_easy_reset() + SFTP reused connection download crash
  BGF SFTP non-existing file + SFTP existing file error
  BGF sharing DNS cache between easy handles running in multiple threads could
    lead to crash
- BGF SFTP upload with CURLOPT_FTP_CREATE_MISSING_DIRS on re-used connection
+ BGF SFTP upload with CURLOPT_FTP_CREATE_MISSING_DIRS on reused connection
  BGF SFTP infinite loop when given an invalid quote command
  BGF curl-config erroneously reported LDAPS support with missing LDAP libraries
  BGF SCP infinite loop when downloading a zero byte file
@@ -13292,11 +13292,11 @@ VULNBOX(7.18.0)
  BGF no longer default-appends ;type= on FTP URLs through proxies
  BGF SSL session id caching
  BGF POST with callback over proxy requiring NTLM or Digest
- BGF Expect: 100-continue flaw on re-used connection with POSTs
+ BGF Expect: 100-continue flaw on reused connection with POSTs
  BGF build fix for MSVC 9.0 (VS2008)
  BGF Windows curl builds failed file truncation when retry downloading
  BGF SSL session ID cache memory leak
- BGF bad connection re-use check with environment variable-activated proxy use
+ BGF bad connection reuse check with environment variable-activated proxy use
  BGF --libcurl now generates a return statement as well
  BGF socklen_t is no longer used in the public includes
  BGF time zone offsets from -1400 to +1400 are now accepted by the date parser
@@ -13343,7 +13343,7 @@ VULNBOX(7.17.1)
  BGF --ftp-method nocwd on directory listings
  BGF FTP, CURLOPT_NOBODY enabled and CURLOPT_HEADER disabled now does TYPE
    before SIZE
- BGF re-used handle transfers with SFTP
+ BGF reused handle transfers with SFTP
  BGF curl_easy_escape() problem with byte values >= 128
  BGF handles chunked-encoded CONNECT responses
  BGF misuse of ares_timeout() result
@@ -13352,7 +13352,7 @@ VULNBOX(7.17.1)
  BGF specifying a proxy with a trailing slash didn&#39;t work (unless it also
    contained a port number)
  BGF redirect from HTTP to FTP or TFTP memory problems and leaks
- BGF re-used connections a bit too much when using non-SSL protocols tunneled
+ BGF reused connections a bit too much when using non-SSL protocols tunneled
    over an HTTP proxy
  BGF embed the manifest in VC8 builds
  BGF use valgrind in the tests even when the lib is built shared with libtool
@@ -13385,12 +13385,12 @@ VULNBOX(7.17.0)
  BGF CONNECT endless loop
  BGF krb5 support builds with Heimdal
  BGF added returned error string for connection refused case
- BGF re-use of dead FTP control connections
+ BGF reuse of dead FTP control connections
  BGF login to FTP servers that don&#39;t require (nor understand) PASS after the
    USER command
  BGF bad free of memory from libssh2
  BGF the SFTP PWD command works
- BGF HTTP Digest auth on a re-used connection
+ BGF HTTP Digest auth on a reused connection
  BGF FTPS data connection close
  BGF AIX 4 and 5 get to use non-blocking sockets
  BGF small POST with NTLM
@@ -13405,8 +13405,8 @@ VULNBOX(7.17.0)
  BGF excessively long FTP server responses and response lines
  BGF file:// upload then FTP:// upload crash
  BGF TFTP error 0 is no longer treated as success
- BGF uploading empty file over FTP on re-used connection
- BGF superfluous CWD command on re-used FTP connections without subdirs used
+ BGF uploading empty file over FTP on reused connection
+ BGF superfluous CWD command on reused FTP connections without subdirs used
 </ul>
 
 <a name="7_16_4"></a>
@@ -13485,7 +13485,7 @@ VULNBOX(7.16.3)
  BGF list FTP root directories when login dir is not root
  BGF no longer slows down when getting very many URLs on the same command line
  BGF lock share before decreasing dirty counter
- BGF no-body FTP requests on re-used connections
+ BGF no-body FTP requests on reused connections
 </ul>
 
 <a name="7_16_2"></a>
@@ -13517,7 +13517,7 @@ VULNBOX(7.16.2)
  BGF CURLOPT_RANGE set to NULL resets the range for FTP
  BGF curl_multi_remove_handle() rare crash
  BGF passive FTP transfers work with SOCKS
- BGF multi interface HTTPS connection re-use memory leak
+ BGF multi interface HTTPS connection reuse memory leak
  BGF libcurl.m4&#39;s --with-libcurl is improved
  BGF curl-config --libs and libcurl.pc no longer list unnecessary dependencies
  BGF fixed an issue with CCC not working on some servers
@@ -13525,7 +13525,7 @@ VULNBOX(7.16.2)
  BGF HTTP CONNECT through a proxy is now less blocking when the multi interface
    is used
  BGF HTTP Digest header parsing fix for unquoted last word ending with CRLF
- BGF CURLOPT_PORT, HTTP proxy, re-using connections and non-HTTP protocols
+ BGF CURLOPT_PORT, HTTP proxy, reusing connections and non-HTTP protocols
  BGF CURLOPT_INTERFACE for ipv6
  BGF use-after-free issue with HTTP transfers with the multi interface
  BGF the progress callback can get called more frequently
@@ -13553,7 +13553,7 @@ VULNBOX(7.16.1)
    was not enabled
  BGF multiple TFTP transfers on the same (easy or multi) handle could cause a
    crash
- BGF SIGSEGV when disconnecting on a transfer on a re-used handle when the
+ BGF SIGSEGV when disconnecting on a transfer on a reused handle when the
    hostname didn&#39;t resolve
  BGF stack overwrite on 64bit Windows in the chunked decoding department
  BGF HTTP responses on persistent connections without Content-Length nor chunked
@@ -13631,7 +13631,7 @@ VULNBOX(7.16.0)
  BGF (FTP) EPRT transfers with IPv6 didn&#39;t work properly
  BGF (FTP) SINGLECWD mode and using files in the root dir
  BGF (HTTP) Expect: header disabling work better
- BGF (HTTP) "Expect: 100-continue" disable on second POST on re-used connection
+ BGF (HTTP) "Expect: 100-continue" disable on second POST on reused connection
  BGF src/config.h.in is fixed
  BGF (HTTP) POST data logged to the debug callback function is now correctly
    tagged as data, not header
@@ -13751,11 +13751,11 @@ VULNBOX(7.15.2)
  BGF minor format string mistake in the GSS/Negotiate code
  BGF cached DNS entries could remain in the cache too long
  BGF improved GnuTLS check in configure
- BGF re-used FTP connections when the second request didn&#39;t do a transfer
+ BGF reused FTP connections when the second request didn&#39;t do a transfer
  BGF plain --limit-rate [num] means bytes
  BGF re-creating a dead connection is no longer counted internally as a followed
    redirect and thus prevents a weird error that would occur if a FTP
-   connection died on an attempted re-use
+   connection died on an attempted reuse
  BGF Try PASV after failing to connect to the port the EPSV response contained
  BGF -P [IP] with non-local address with ipv6-enabled curl
  BGF -P [hostname] with ipv6-disabled curl
@@ -13800,7 +13800,7 @@ VULNBOX(7.15.1)
  BGF -r [num] would produce an invalid HTTP Range: header
  BGF multi interface with multi IP hosts could leak socket descriptors
  BGF the GnuTLS code didn&#39;t handle rehandshakes
- BGF re-use of a dead FTP connection
+ BGF reuse of a dead FTP connection
  BGF name resolve error codes fixed for Windows builds
  BGF double WWW-Authenticate Digest headers are now handled
  BGF curl-config --vernum fixed
@@ -13992,7 +13992,7 @@ VULNBOX(7.13.0)
  BGF CURLOPT_PROXY can now disable HTTP proxy even when built HTTP-disabled
  BGF "curl dictionary.com" no longer assumes DICT protocol
  BGF re-invoke some system calls on EINTR
- BGF duplicate Host: when failed connection re-use
+ BGF duplicate Host: when failed connection reuse
  BGF SOCKS5 version check
  BGF memory problem with cleaning up multi interface
  BGF SSL certificate name memory leak
@@ -14137,8 +14137,8 @@ VULNBOX(7.12.1)
  BGF HTTP Negotiate service name now provided in uppercase
  BGF no longer accepts any cookies with domain set to just a TLD
  BGF HTTP Digest properties without quotes in the header
- BGF bad Host: header case on re-used connections over proxy
- BGF duplicate Host: header case on re-used connections
+ BGF bad Host: header case on reused connections over proxy
+ BGF duplicate Host: header case on reused connections
  BGF curl -o name#[num] now works when no globbing for [num] exists
  BGF test suite runs fine with valgrind 2.1.x
  BGF negative Content-Length is ignored
@@ -14264,7 +14264,7 @@ VULNBOX(7.11.1)
  CHG when doing FTP, curl now sends QUIT before disconnecting
  CHG name resolves can now timeout on windows too
  CHG $HOME is now recognized better when looking for .netrc files
- CHG now re-uses the ares handle when re-using curl handles
+ CHG now reuses the ares handle when reusing curl handles
  CHG SO_BINDTODEVICE is used for network interface binding
  CHG configure --disable-manual disables the built-in huge manual from the
    command line tool
@@ -14286,7 +14286,7 @@ VULNBOX(7.11.1)
  BGF CURLOPT_FRESH_CONNECT and CURLAUTH_NTLM now work when set together
  BGF share interface usage without (un)lock functions segfaulted
  BGF --limit-rate no longer cripples the --speed-limit feature
- BGF fixed verbose output problem with ipv6-enabled re-used connections
+ BGF fixed verbose output problem with ipv6-enabled reused connections
  BGF fixed the socks5 code to check version in the socks response properly
  BGF dns cache bug - fixed the &#39;inuse&#39; counter
  BGF large file fix for Content-Length
@@ -14341,7 +14341,7 @@ VULNBOX(7.11.0)
  BGF the "configure --with-spnego" action was improved
  BGF fixed a rare follow-redirect problem
  BGF curl-config --feature now outputs AsynchDNS if enabled
- BGF occasional re-use of freed-memory problem fixed
+ BGF occasional reuse of freed-memory problem fixed
  BGF curl-config --libs now include the ares link directory
  BGF configure --enable-ares now accepts a given path
  BGF -lz no longer appear twice on the link line
@@ -14463,13 +14463,13 @@ VULNBOX(7.10.7)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF fixed a memory leak on re-used connections with proxy-authentication
+ BGF fixed a memory leak on reused connections with proxy-authentication
  BGF cookies with no contents are sent off too now
  BGF 64bit-related bugfix for uploads
  BGF file:// URLs with drive letters now work on windows and OS/2
  BGF The output numbering (#[num]) on url globbing didn&#39;t work due to a bug
    in curl_msprintf()
- BGF FTP persistent download directory re-use problem fixed
+ BGF FTP persistent download directory reuse problem fixed
  BGF cookie parser now only requires two dots in cookie domain
  BGF FOLLOWLOCATION (or -L) did not always ignore the redirect page properly
  BGF <a href="/docs/security.html#BID8432">information leak</a> fixed. When proxy authentication is used in a CONNECT
@@ -14589,7 +14589,7 @@ VULNBOX(7.10.4)
  BGF "curl -O" only, now outputs an error message accordingly
  BGF builds fine on Redhat Linux 9 (configure fix)
  BGF the CA cert bundle included a demo cert now removed
- BGF changing some attributes between two transfers when re-using a connection
+ BGF changing some attributes between two transfers when reusing a connection
    did not "take effect" properly
  BGF the test suite runs faster and hopefully a bit more reliably
  BGF improved configure check for presence of functions, needed for HPUX
@@ -14604,7 +14604,7 @@ VULNBOX(7.10.4)
  BGF 64bit Sparc compiler warnings removed
  BGF a case where a connect failure didn&#39;t return an error string
  BGF DNS cache problem in AIX 4.3 and later was fixed
- BGF a POST-then-GET problem when re-using the same handle in libcurl
+ BGF a POST-then-GET problem when reusing the same handle in libcurl
  BGF extra precaution added for FTP servers returning 0 bytes to SIZE commands
  BGF looping issue in the receive function (i.e badly updated progress meter)
  BGF Fixed the &#39;Expect: 100-continue&#39; behavior
@@ -14771,7 +14771,7 @@ VULNBOX(7.9.8)
  BGF CURLINFO_REDIRECT_TIME returns a correct time now
  BGF getting an empty FTP file does not cause an error anymore
  BGF curl_multi_perform() works without curl_multi_fdset()
- BGF re-using a connection over a proxy could do bad Host: headers
+ BGF reusing a connection over a proxy could do bad Host: headers
  BGF CURLOPT_POST with a "" string could lead to a crash.
  BGF better certificate loading
  BGF Name resolve crash on platforms without *_r() functions removed
@@ -14826,7 +14826,7 @@ VULNBOX(7.9.6)
  BGF The include file curl/curl.h compiles on pre-ISO compilers
  BGF getting http headers-only could "hang" during 1 second extra
  BGF verbose passive ftp transfers on AIX could crash
- BGF improved re-use of dead proxy connections
+ BGF improved reuse of dead proxy connections
  BGF binary HTTP POSTs on Windows did not work (client-code problem)
  BGF CRLF replacing in uploads was not working
  BGF -G and -d work together again
@@ -14958,8 +14958,8 @@ VULNBOX(7.9.1)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF much better connection re-use validity check
- BGF bugfixed connection re-use for FTP urls containing name and password
+ BGF much better connection reuse validity check
+ BGF bugfixed connection reuse for FTP urls containing name and password
  BGF LDAP transfers no longer "hang"
  BGF a memory leak in the cookie engine was removed
  BGF curl_easy_duphandle() now duplicates cookie parser status too
@@ -15064,7 +15064,7 @@ VULNBOX(7.8)
  BGF https and ftps test cases added to the test suite (depend on stunnel)
  BGF better white space awareness when parsing HTTP headers
  BGF curl -I now plays ball even if the ftp server doesn&#39;t grok SIZE
- BGF corrected resumed transfers on re-used persistent connections
+ BGF corrected resumed transfers on reused persistent connections
  BGF FTP PORT works again when libcurl is IPv6-enabled
  BGF corrected path usage when doing multiple FTP transfers
  BGF several Location: header related bugs corrected
@@ -15080,7 +15080,7 @@ VULNBOX(7.7.3)
  BGF HTTP 304-replies are better treated
  BGF persistent connections with mixed chunked and non-chunked transfers
      work now
- BGF connection re-use for non-proxy connections on non-default ports work
+ BGF connection reuse for non-proxy connections on non-default ports work
  BGF corrected the OpenSSL version string output
 </ul>
 
@@ -15119,7 +15119,7 @@ VULNBOX(7.7.1)
  BGF bugfixed the HTTP/1.0 persistent connection support
  BGF Passing a read-only URL to libcurl could make it crash on http redirects
  BGF HEAD responses are now always headers-only
- BGF curl could re-use connections a little too much
+ BGF curl could reuse connections a little too much
  BGF different treatment of HTTP error 302
  BGF following http redirects on persistent connections could reach the maxredirs amount accidentally
  BGF curl_escape() don&#39;t re-encode already encoded letters anymore

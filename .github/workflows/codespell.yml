@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: curl
 
-name: typos
+name: codespell
 on:
   push:
     branches:
@@ -14,7 +14,7 @@ on:
 permissions: {}
 
 jobs:
-  typos:
+  codespell:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
@@ -22,10 +22,12 @@ jobs:
           persist-credentials: false
 
       - name: 'install'
-        run: HOMEBREW_NO_AUTO_UPDATE=1 /home/linuxbrew/.linuxbrew/bin/brew install typos-cli
-
-      - name: 'typos'
         run: |
-          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-          typos --version
-          .github/scripts/typos.sh
+          python3 -m venv ~/venv
+          ~/venv/bin/pip --disable-pip-version-check --no-input --no-cache-dir install --progress-bar off --prefer-binary -r .github/scripts/requirements.txt
+
+      - name: 'codespell'
+        run: |
+          source ~/venv/bin/activate
+          codespell --version
+          .github/scripts/codespell.sh
