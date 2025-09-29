@@ -1350,3 +1350,14 @@ URL https://youtu.be/YEBBPj7pIKo
 WHO Daniel Stenberg
 SLIDES https://www.slideshare.net/slideshow/giants-standing-on-the-shoulders-of-by-daniel-stenberg/282693094
 ENDOFVIDEO
+
+VIDEO AI slop attacks on the curl project
+DATE 2025-09-28
+DESC Keynote at EuroBSDCon 2025 in Zagreb, Croatia.
+DURATION 54 minutes
+EVENT EuroBSDCon 2025
+THUMB ai-slop-attacks-eurobsdcon.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/wEM-E-IJ6sY?t=514
+WHO Daniel Stenberg
+ENDOFVIDEO
