@@ -1250,12 +1250,12 @@ URL https://youtu.be/utQcjRMa8Rk
 WHO Stefan Eissing
 ENDOFVIDEO
 
-VIDEO Artificial stupity
+VIDEO Artificial stupidity
 DATE 2025-05-04
 DESC A discussion of "artificial intelligence" and how it's affecting the curl project.
 DURATION 42 minutes
 EVENT curl-up 2025
-THUMB artificial-stupity.jpg
+THUMB artificial-stupidity.jpg
 THUMBSIZE width="250" height="141"
 URL https://youtu.be/JyCNwFs2B00
 WHO James Fuller
