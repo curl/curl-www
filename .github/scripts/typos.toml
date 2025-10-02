@@ -6,6 +6,8 @@
 extend-ignore-identifiers-re = [
   "(connnection|EXAMPL|LISTings|ND|OBSOLET|RTO)",
   "^(Aas|eyeballers|gost|HELO|Linz|MAK|mak|nd|typ|UE)$",
+  "^Tru64$",
+  "secur32",
 ]
 
 [files]
@@ -14,6 +16,7 @@ extend-exclude = [
   ".github/scripts/spellcheck.words",
   "dev/explainopts.t",
   "docs/_companies.html",
+  "_changes.html",
   "rfc/*.txt",
   "rfc/cookie_spec.html",
   "rfc/ntlm.html",
