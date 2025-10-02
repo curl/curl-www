@@ -12,7 +12,7 @@ MAINPARTS += _menu.html ../alert.t
 ADVBOX = adv-related-box.inc
 
 FCPP_OPTS = -DSHOW_ALERT
-MAN2HTML = roffit --bare
+MAN2HTML = roffit --man=$(SRCROOT)/docs/libcurl=../libcurl/c --bare
 
 CVELIST = \
  CVE-2000-0973.html \
