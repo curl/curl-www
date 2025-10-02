@@ -21,4 +21,5 @@ extend-exclude = [
   "rfc/cookie_spec.html",
   "rfc/ntlm.html",
   "**/*.svg",
+  "**/*.png",
 ]
