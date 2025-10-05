@@ -5,8 +5,7 @@
 [default]
 extend-ignore-identifiers-re = [
   "(connnection|EXAMPL|LISTings|ND|OBSOLET|RTO)",
-  "^(Aas|eyeballers|gost|HELO|Linz|MAK|mak|nd|typ|UE)$",
-  "^Tru64$",
+  "^(Aas|eyeballers|gost|HELO|Linz|MAK|mak|nd|Tru64|typ|UE)$",
   "secur32",
 ]
 
