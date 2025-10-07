@@ -1,0 +1,25 @@
+#include "_doctype.html"
+<html>
+<head> <title>curl_multi_notify_enable</title>
+#include "css.t"
+#include "manpage.t"
+</head>
+
+#define RAW_FILE curl_multi_notify_enable.md
+#define BUG_TITLE curl_multi_notify_enable%20manpage:
+#define MENU_MULTI
+#define LIBCURL_DOCS
+#define DOCS_MULTI_POLL
+#define CURL_URL libcurl/c/curl_multi_notify_enable.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(libcurl, "/libcurl/", API, "/libcurl/c/", libcurl)
+TITLE(curl_multi_notify_enable - enable a notification type)
+#include "libcurl-related.t"
+#include "curl_multi_notify_enable.gen"
+#include "_footer.html"
+
+</body>
+</html>

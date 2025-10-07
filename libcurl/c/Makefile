@@ -116,13 +116,15 @@ PAGES = \
  curl_multi_get_offt.html \
  curl_multi_info_read.html \
  curl_multi_init.html \
+ curl_multi_notify_disable.html \
+ curl_multi_notify_enable.html \
  curl_multi_perform.html \
  curl_multi_poll.html \
  curl_multi_remove_handle.html \
  curl_multi_setopt.html \
  curl_multi_socket.html \
- curl_multi_socket_all.html \
  curl_multi_socket_action.html \
+ curl_multi_socket_all.html \
  curl_multi_strerror.html \
  curl_multi_timeout.html \
  curl_multi_wait.html \
@@ -734,6 +736,16 @@ curl_pushheader_bynum.gen: $(MANROOT)/curl_pushheader_bynum.3 curlopt2href.pl
 curl_pushheader_byname.html: _curl_pushheader_byname.html $(MAINPARTS_CAPI) curl_pushheader_byname.gen
 	$(REN)$(MANACTION)
 curl_pushheader_byname.gen: $(MANROOT)/curl_pushheader_byname.3 curlopt2href.pl
+	$(REN)$(MAN2HTML) < $< >$@
+
+curl_multi_notify_disable.html: _curl_multi_notify_disable.html $(MAINPARTS_CAPI) curl_multi_notify_disable.gen
+	$(REN)$(MANACTION)
+curl_multi_notify_disable.gen: $(MANROOT)/curl_multi_notify_disable.3 curlopt2href.pl
+	$(REN)$(MAN2HTML) < $< >$@
+
+curl_multi_notify_enable.html: _curl_multi_notify_enable.html $(MAINPARTS_CAPI) curl_multi_notify_enable.gen
+	$(REN)$(MANACTION)
+curl_multi_notify_enable.gen: $(MANROOT)/curl_multi_notify_enable.3 curlopt2href.pl
 	$(REN)$(MAN2HTML) < $< >$@
 
 include Makefile.examples
