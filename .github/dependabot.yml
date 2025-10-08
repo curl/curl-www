@@ -9,6 +9,6 @@ updates:
       interval: 'yearly'
 
   - package-ecosystem: 'pip'
-    directory: '/'
+    directory: '/.github/scripts'
     schedule:
       interval: 'yearly'

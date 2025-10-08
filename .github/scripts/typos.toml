@@ -11,7 +11,7 @@ extend-ignore-identifiers-re = [
 
 [files]
 extend-exclude = [
-  ".github/scripts/codespell-ignore.txt",
+  ".github/scripts/codespell-ignore.words",
   ".github/scripts/spellcheck.words",
   "dev/explainopts.t",
   "docs/_companies.html",

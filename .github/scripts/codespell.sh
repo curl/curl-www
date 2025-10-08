@@ -21,5 +21,5 @@ codespell \
   --skip 'rfc/*.txt' \
   --skip 'rfc/cookie_spec.html' \
   --skip 'rfc/ntlm.html' \
-  --ignore-words '.github/scripts/codespell-ignore.txt' \
+  --ignore-words '.github/scripts/codespell-ignore.words' \
   $(git ls-files)
