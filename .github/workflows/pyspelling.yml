@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: curl
 
-name: spell
+name: pyspelling
 on:
   push:
     branches:
