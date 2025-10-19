@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: install prereqs
-        run: sudo apt-get install pandoc libcgi-pm-perl
+        run: sudo apt-get -o Dpkg::Use-Pty=0 install pandoc libcgi-pm-perl
 
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
