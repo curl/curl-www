@@ -4,7 +4,7 @@
 
 name: badwords
 
-on:
+'on':
   # Trigger the workflow on push or pull requests, but only for the
   # master branch
   push:
@@ -19,6 +19,7 @@ permissions: {}
 
 jobs:
   badwords:
+    name: 'badwords'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
@@ -26,4 +27,4 @@ jobs:
           persist-credentials: false
 
       - name: check
-        run: ./.github/scripts/badwords.pl -w ./.github/scripts/badwords.ok < .github/scripts/badwords.txt docs/*.md '*html'
+        run: .github/scripts/badwords.pl -w .github/scripts/badwords.ok < .github/scripts/badwords.txt docs/*.md '*html'

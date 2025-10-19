@@ -1,6 +1,10 @@
+# Copyright (C) Daniel Stenberg, <daniel@haxx.se>, et al.
+#
+# SPDX-License-Identifier: curl
+
 name: perlcheck
 
-on:
+'on':
   # Trigger the workflow on push or pull requests, but only for the
   # master branch
   push:
@@ -15,14 +19,17 @@ permissions: {}
 
 jobs:
   perlcheck:
+    name: 'perlcheck'
     runs-on: ubuntu-latest
     steps:
+      - name: install prereqs
+        run: |
+          sudo rm -f /var/lib/man-db/auto-update
+          sudo apt-get -o Dpkg::Use-Pty=0 install libcgi-pm-perl libstring-crc32-perl
+
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           persist-credentials: false
-
-      - name: install prereqs
-        run: sudo apt-get install libcgi-pm-perl libstring-crc32-perl
 
       - name: perlcheck
         run: make perlcheck
