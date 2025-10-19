@@ -44,7 +44,6 @@ jobs:
         run: |
           git clone https://github.com/bagder/fcpp.git
           cd fcpp
-          make
           make install
 
       - name: install roffit
