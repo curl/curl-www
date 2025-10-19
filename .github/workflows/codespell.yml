@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: curl
 
 name: codespell
+
 'on':
   push:
     branches:
