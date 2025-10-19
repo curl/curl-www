@@ -3,7 +3,8 @@
 # SPDX-License-Identifier: curl
 
 name: typos
-on:
+
+'on':
   push:
     branches:
       - master

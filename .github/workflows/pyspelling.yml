@@ -3,7 +3,8 @@
 # SPDX-License-Identifier: curl
 
 name: pyspelling
-on:
+
+'on':
   push:
     branches:
       - master
