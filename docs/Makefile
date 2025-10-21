@@ -14,6 +14,9 @@ ADVBOX = adv-related-box.inc
 FCPP_OPTS = -DSHOW_ALERT
 MAN2HTML = roffit --man=$(SRCROOT)/docs/libcurl=../libcurl/c --bare
 
+WCURLCVE = \
+ CVE-2025-11563.html
+
 CVELIST = \
  CVE-2000-0973.html \
  CVE-2003-1605.html \
@@ -192,6 +195,7 @@ CVELIST = \
 
 PAGES = \
  $(CVELIST) \
+ $(WCURLCVE) \
  alt-svc.html \
  audits.html \
  bugbounty.html \
@@ -472,6 +476,9 @@ seclist-h.gen: vuln.pm listvulns.pl vuln.pm $(CVELIST)
 	./listvulns.pl high > seclist-h.gen
 seclist-c.gen: vuln.pm listvulns.pl vuln.pm $(CVELIST)
 	./listvulns.pl critical > seclist-c.gen
+
+CVE-2025-11563.html: CVE-2025-11563.md $(MAINPARTS) advisory.t $(ADVBOX)
+	$(MARKDOWN) < $< | perl curlver-to-vulnlink.pl | ./mk-adv-template.pl $@ | fcpp $(FCPP_OPTS) -I$(ROOT) -WWW -Uunix -P -H -C -V -LL - > $@
 
 CVE-%.html: CVE-%.md $(MAINPARTS) advisory.t $(ADVBOX) curlver-to-vulnlink.pl mk-adv-template.pl cve-checker.pl
 	@perl cve-checker.pl $<
