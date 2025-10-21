@@ -197,6 +197,7 @@ PAGES = \
  bugbounty.html \
  bugs.html \
  caextract.html \
+ cheat-sheet.html \
  code-of-conduct.html \
  companies.html \
  comparison-table.html \
@@ -314,6 +315,9 @@ bugs.html: _bugs.html $(MAINPARTS) bugs.gen
 
 bugs.gen: $(DOCROOT)/BUGS.md faqparse.pl
 	$(MARKDOWN) < $< > $@
+
+cheat-sheet.html: _cheat-sheet.html $(MAINPARTS)
+	$(ACTION)
 
 bugbounty.html: _bugbounty.html $(MAINPARTS) bugbounty.gen $(ADVBOX)
 	$(ACTION)
