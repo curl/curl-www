@@ -35,6 +35,21 @@ Note that this does not make you a complete website mirror, as some scripts
 and files are only available on the real actual site, but should give you
 enough to let you load most HTML pages locally.
 
+## A local curl build
+
+The bootstrap script creates a `cvssource` entry in the web root directory. In
+that directory you should do an in-tree build of curl. This build renders a
+range of artifacts (documentation mostly) that the website build references.
+
+If you forget to do the curl build, building the website will fail due to
+missing files.
+
+A minimal non-TLS build is perfectly fine. Like this:
+
+    autoreconf -fi
+    ./configure --without-ssl --without-libpsl
+    make
+
 ## Edit the web
 
 [Web editing guidelines](https://curl.se/web-editing.html)
