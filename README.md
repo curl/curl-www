@@ -44,6 +44,12 @@ range of artifacts (documentation mostly) that the website build references.
 If you forget to do the curl build, building the website will fail due to
 missing files.
 
+A minimal non-TLS build is perfectly fine. Like this:
+
+    autoreconf -fi
+    ./configure --without-ssl --without-libpsl
+    make
+
 ## Edit the web
 
 [Web editing guidelines](https://curl.se/web-editing.html)
