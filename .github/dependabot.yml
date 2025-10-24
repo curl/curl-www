@@ -5,10 +5,17 @@ version: 2
 updates:
   - package-ecosystem: 'github-actions'
     directory: '/'
+    cooldown:
+      default-days: 7
     schedule:
       interval: 'yearly'
 
   - package-ecosystem: 'pip'
     directory: '/.github/scripts'
+    cooldown:
+      default-days: 7
+      semver-major-days: 15
+      semver-minor-days: 7
+      semver-patch-days: 3
     schedule:
       interval: 'yearly'
