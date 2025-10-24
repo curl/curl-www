@@ -1,0 +1,122 @@
+#include "_doctype.html"
+<html>
+<head> <title>curl - Cheat Sheet</title>
+#include "css.t"
+<link rel="stylesheet" type="text/css" href="cheat-sheet.css">
+</head>
+
+#define CURL_DOCS
+#define CURL_URL docs/cheat-sheet.html
+
+#define TOOL_DOCS
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Docs, "/docs/", Cheat Sheet)
+
+TITLE(curl HTTP cheat sheet)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="manpage.html">curl man page</a>
+<br><a href="tutorial.html">Tutorial</a>
+</div>
+
+<section>
+  <h2>GET requests</h2>
+  <div class="item">
+    <h3>GET a website</h3>
+    <code>curl https://example.com</code>
+  </div>
+
+  <div class="item">
+    <h3>Follow redirects</h3>
+    <code>curl <a href="https://curl.se/docs/manpage.html#-L"><em>-L</em></a> https://example.com</code>
+  </div>
+
+  <div class="item">
+    <h3>Hide the progress bar</h3>
+    <code>curl <a href="https://curl.se/docs/manpage.html#-s"><em>-s</em></a> https://example.com</code>
+  </div>
+
+  <div class="item">
+    <h3>Output to a file</h3>
+    <code>curl <a href="https://curl.se/docs/manpage.html#-o"><em>-o</em></a> out.html https://example.com/ </code>
+  </div>
+</section>
+
+<section>
+  <h2> Set or view headers </h2>
+  <div class="item">
+    <h3>Show response headers</h3>
+    <code>curl <a href="https://curl.se/docs/manpage.html#-i"><em>-i</em></a> https://example.com</code>
+  </div>
+
+  <div class="item">
+    <h3>Make a HEAD request</h3>
+    <code>curl <a href="https://curl.se/docs/manpage.html#-I"><em>-I</em></a> https://example.com</code>
+  </div>
+
+  <div class="item">
+    <h3>Set a header</h3>
+    <code>curl https://pages.github.io
+      <span class="nobreak"><a href="https://curl.se/docs/manpage.html#-H">
+    <em>-H</em></a> "Host: raytracing.github.io"</span>
+    </code>
+  </div>
+</section>
+
+<section>
+  <h2>POST requests</h2>
+  <div class="item">
+    <h3>POST some JSON</h3>
+    <code>
+      curl -v httpbin.io/post
+      <span class="nobreak"><a href="https://curl.se/docs/manpage.html#--json"><em>--json</em></a> '{"key":"value"}'</span>
+    </code>
+  </div>
+
+  <div class="item">
+    <h3>POST JSON from a file</h3>
+    <code>
+      curl -v httpbin.io/post
+      <span class="nobreak"><a href="https://curl.se/docs/manpage.html#--json"><em>--json</em></a> @file.json</span>
+    </code>
+  </div>
+
+  <div class="item">
+    <h3>POST application/url-encoded data</h3>
+    <code>
+      curl -v httpbin.io/post
+      <span class="nobreak"><a href="https://curl.se/docs/manpage.html#--data-urlencode"><em>--data-urlencode</em></a> name=maya</span>
+      <span class="nobreak"><a href="https://curl.se/docs/manpage.html#--data-urlencode"><em>--data-urlencode</em></a> date=2024-01-01</span>
+    </code>
+  </div>
+</section>
+
+<section>
+  <h2>More</h2>
+
+  <div class="item">
+    <h3>Make a DELETE request</h3>
+    <code>curl <a href="https://curl.se/docs/manpage.html#-X"><em>-X</em></a> DELETE example.com</code>
+  </div>
+
+  <div class="item">
+    <h3>Override DNS resolution</h3>
+    <code>curl example.com <a href="https://curl.se/docs/manpage.html#--resolve"><em>--resolve</em></a> <span class="nobreak">example.com:443:23.220.75.245</span></code>
+  </div>
+
+  <div class="item">
+    <h3>Do basic authentication</h3>
+    <code>
+      curl <a href="https://curl.se/docs/manpage.html#-u"><em>-u</em></a> user:pass
+      example.com
+    </code>
+  </div>
+
+
+</section>
+
+#include "_footer.html"
+</body>
+</html>
