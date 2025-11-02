@@ -7,6 +7,10 @@ updates:
     directory: '/'
     cooldown:
       default-days: 7
+    groups:
+      gha-dependencies:
+        patterns:
+          - '*'
     schedule:
       interval: 'yearly'
 
@@ -17,5 +21,9 @@ updates:
       semver-major-days: 15
       semver-minor-days: 7
       semver-patch-days: 3
+    groups:
+      pip-dependencies:
+        patterns:
+          - '*'
     schedule:
       interval: 'yearly'
