@@ -54,6 +54,474 @@ SUBTITLE(-- Fixed in 7.20.0 - February 9 2011)
 <a name="changes"></a>
 TITLE(All changes ever made)
 
+<a name="8_17_0"></a>
+SUBTITLE(Fixed in 8.17.0 - November 5 2025)
+<p> Changes:
+<ul class="changes">
+ CHG <a href="https://curl.se/bug/?i=18928">build: drop Heimdal support</a>
+ CHG <a href="https://curl.se/bug/?i=18040">build: drop the winbuild build system</a>
+ CHG <a href="https://curl.se/bug/?i=18577">krb5: drop support for Kerberos FTP</a>
+ CHG <a href="https://curl.se/bug/?i=18612">libssh2: up the minimum requirement to 1.9.0</a>
+ CHG <a href="https://curl.se/bug/?i=18432">multi: add notifications API</a>
+ CHG <a href="https://curl.se/bug/?i=18828">progress: expand to use 6 characters per size</a>
+ CHG <a href="https://curl.se/bug/?i=18703">ssl: support Apple SecTrust configurations</a>
+ CHG <a href="https://curl.se/bug/?i=18859">tool_getparam: add --knownhosts</a>
+ CHG <a href="https://curl.se/bug/?i=18700">vssh: drop support for wolfSSH</a>
+ CHG <a href="https://curl.se/bug/?i=19353">wcurl: import v2025.11.04</a>
+ CHG <a href="https://curl.se/bug/?i=18491">write-out: make %header{} able to output *all* occurrences of a header</a>
+</ul>
+<p> Bugfixes:
+<ul class="bugfixes">
+ BGF <a href="https://curl.se/bug/?i=18251">ares: fix leak in tracing</a>
+ BGF <a href="https://curl.se/bug/?i=19014">asyn-ares: remove wrong comment about the callback argument</a>
+ BGF <a href="https://curl.se/bug/?i=18980">asyn-ares: use the duped hostname pointer for all calls</a>
+ BGF <a href="https://curl.se/bug/?i=18769">asyn-thrdd resolver: clear timeout when done</a>
+ BGF <a href="https://curl.se/bug/?i=18532">asyn-thrdd: drop pthread_cancel</a>
+ BGF <a href="https://curl.se/bug/?i=18669">autotools: add support for libgsasl auto-detection via pkg-config</a>
+ BGF <a href="https://curl.se/bug/?i=18671">autotools: capitalize Rustls in the log output</a>
+ BGF <a href="https://curl.se/bug/?i=19078">autotools: drop detection of ancient OpenSSL libs RSAglue and rsaref</a>
+ BGF <a href="https://curl.se/bug/?i=18667">autotools: fix duplicate UNIX and BSD flags in buildinfo.txt</a>
+ BGF <a href="https://curl.se/bug/?i=18666">autotools: fix silly mistake in clang detection for buildinfo.txt</a>
+ BGF <a href="https://curl.se/bug/?i=18473">autotools: make --enable-code-coverage support llvm/clang</a>
+ BGF <a href="https://curl.se/bug/?i=19222">autotools: merge `if`s in GnuTLS/OpenSSL feature detection</a>
+ BGF <a href="https://curl.se/bug/?i=18568">aws-lc: re-enable large read-ahead with v1.61.0 again</a>
+ BGF <a href="https://curl.se/bug/?i=18617">base64: accept zero length argument to base64_encode</a>
+ BGF <a href="https://curl.se/bug/?i=18477">build: address some -Weverything warnings, update picky warnings</a>
+ BGF <a href="https://curl.se/bug/?i=18776">build: avoid overriding system open and stat symbols</a>
+ BGF <a href="https://curl.se/bug/?i=18510">build: avoid overriding system symbols for fopen functions</a>
+ BGF <a href="https://curl.se/bug/?i=18503">build: avoid overriding system symbols for socket functions</a>
+ BGF <a href="https://curl.se/bug/?i=18645">build: show llvm/clang in platform flags and buildinfo.txt</a>
+ BGF <a href="https://curl.se/bug/?i=18999">c-ares: when resolving failed, persist error</a>
+ BGF <a href="https://curl.se/bug/?i=18715">cf-h2-proxy: break loop on edge case</a>
+ BGF <a href="https://curl.se/bug/?i=18749">cf-ip-happy: mention unix domain path, not port number</a>
+ BGF <a href="https://curl.se/bug/?i=18862">cf-socket: always check Curl_cf_socket_peek() return code</a>
+ BGF <a href="https://curl.se/bug/?i=18882">cf-socket: check params and remove accept procondition</a>
+ BGF <a href="https://curl.se/bug/?i=19137">cf-socket: make set_local_ip void, and remove failf()</a>
+ BGF <a href="https://curl.se/bug/?i=18968">cf-socket: set FD_CLOEXEC on all sockets opened</a>
+ BGF <a href="https://curl.se/bug/?i=18787">cf-socket: tweak a memcpy() to read better</a>
+ BGF <a href="https://curl.se/bug/?i=18641">cf-socket: use the right byte order for ports in bindlocal</a>
+ BGF <a href="https://curl.se/bug/?i=18596">cfilter: unlink and discard</a>
+ BGF <a href="https://curl.se/bug/?i=19211">cfilters: check return code from Curl_pollset_set_out_only()</a>
+ BGF <a href="https://curl.se/bug/?i=19048">checksrc: allow disabling warnings on FIXME/TODO comments</a>
+ BGF <a href="https://curl.se/bug/?i=18779">checksrc: catch banned functions when preceded by (</a>
+ BGF <a href="https://curl.se/bug/?i=18775">checksrc: fix possible endless loop when detecting BANNEDFUNC</a>
+ BGF <a href="https://curl.se/bug/?i=18845">checksrc: fix possible endless loops in the banned function logic</a>
+ BGF <a href="https://curl.se/bug/?i=18836">checksrc: fix to handle ) predecing a banned function</a>
+ BGF <a href="https://curl.se/bug/?i=18823">checksrc: reduce directory-specific exceptions</a>
+ BGF <a href="https://curl.se/bug/?i=18973">CI.md: refresh</a>
+ BGF <a href="https://curl.se/bug/?i=18994">cmake/FindGSS: dedupe pkg-config module strings</a>
+ BGF <a href="https://curl.se/bug/?i=18993">cmake/FindGSS: drop wrong header check for GNU GSS</a>
+ BGF <a href="https://curl.se/bug/?i=18932">cmake/FindGSS: fix pkg-config fallback logic for CMake &lt;3.16</a>
+ BGF <a href="https://curl.se/bug/?i=19012">cmake/FindGSS: simplify/de-dupe lib setup</a>
+ BGF <a href="https://curl.se/bug/?i=18957">cmake/FindGSS: whitespace/formatting</a>
+ BGF <a href="https://curl.se/bug/?i=19163">cmake: add and use local FindGnuTLS module</a>
+ BGF <a href="https://curl.se/bug/?i=18468">cmake: add CURL_CODE_COVERAGE option</a>
+ BGF <a href="https://curl.se/bug/?i=18911">cmake: build the &quot;all&quot; examples source list dynamically</a>
+ BGF <a href="https://curl.se/bug/?i=18659">cmake: clang detection tidy-ups</a>
+ BGF <a href="https://curl.se/bug/?i=18810">cmake: drop exclamation in comment looking like a name</a>
+ BGF <a href="https://curl.se/bug/?i=19360">cmake: fix `HAVE_GNUTLS_SRP` detection after adding local FindGnuTLS module</a>
+ BGF <a href="https://curl.se/bug/?i=18560">cmake: fix building docs when the base directory contains .3</a>
+ BGF cmake: fix Linux pre-fill `HAVE_POSIX_STRERROR_R` (when `_CURL_PREFILL=ON`)
+ BGF <a href="https://curl.se/bug/?i=19116">cmake: fix Linux pre-fills for non-glibc (when `_CURL_PREFILL=ON`)</a>
+ BGF <a href="https://curl.se/bug/?i=18951">cmake: minor Heimdal flavour detection fix</a>
+ BGF <a href="https://curl.se/bug/?i=19013">cmake: pre-fill three more type sizes on Windows</a>
+ BGF <a href="https://curl.se/bug/?i=19169">cmake: say &apos;absolute path&apos; in option descriptions and docs</a>
+ BGF <a href="https://curl.se/bug/?i=18909">cmake: support building some complicated examples, build them in CI</a>
+ BGF <a href="https://curl.se/bug/?i=18688">cmake: use modern alternatives for get_filename_component()</a>
+ BGF <a href="https://curl.se/bug/?i=18762">cmake: use more COMPILER_OPTIONS, LINK_OPTIONS / LINK_FLAGS</a>
+ BGF <a href="https://curl.se/bug/?i=18550">cmdline-docs: extended, clarified, refreshed</a>
+ BGF <a href="https://curl.se/bug/?i=18817">cmdline-opts/_PROGRESS.md: explain the suffixes</a>
+ BGF <a href="https://curl.se/bug/?i=18585">configure: add &quot;-mt&quot; for pthread support on HP-UX</a>
+ BGF <a href="https://curl.se/bug/?i=18995">conn: fix hostname move on connection reuse</a>
+ BGF <a href="https://curl.se/bug/?i=19271">conncache: prevent integer overflow in maxconnects calculation</a>
+ BGF <a href="https://curl.se/bug/?i=18991">connect: for CONNECT_ONLY, CURLOPT_TIMEOUT does not apply</a>
+ BGF <a href="https://curl.se/bug/?i=19079">connect: remove redundant condition in shutdown start</a>
+ BGF <a href="https://curl.se/bug/?i=18621">cookie: avoid saving a cookie file if no transfer was done</a>
+ BGF <a href="https://curl.se/bug/?i=19157">cookie: only count accepted cookies in Curl_cookie_add</a>
+ BGF <a href="https://curl.se/bug/?i=19267">cookie: remove the temporary file on (all) errors</a>
+ BGF <a href="https://curl.se/bug/?i=18850">cpool: make bundle-&gt;dest an array; fix UB</a>
+ BGF <a href="https://curl.se/mail/lib-2025-10/0018.html">curl.h: remove incorrect comment about CURLOPT_PINNEDPUBLICKEY</a>
+ BGF <a href="https://curl.se/bug/?i=18512">curl_easy_getinfo: error code on NULL arg</a>
+ BGF <a href="https://curl.se/bug/?i=19151">curl_easy_setopt.md: add missing CURLOPT_POSTFIELDS</a>
+ BGF <a href="https://curl.se/bug/?i=18510">curl_mem_undef.h: limit to CURLDEBUG for non-memalloc overrides</a>
+ BGF <a href="https://curl.se/bug/?i=19226">curl_ngtcp2: fix `-Wunreachable-code` with H3 !verbose !unity clang</a>
+ BGF <a href="https://curl.se/bug/?i=18878">curl_osslq: error out properly if BIO_ADDR_rawmake() fails</a>
+ BGF <a href="https://curl.se/bug/?i=19141">curl_path: make sure just whitespace is illegal</a>
+ BGF <a href="https://curl.se/bug/?i=18979">Curl_resolv: fix comment. &apos;entry&apos; argument is not optional</a>
+ BGF <a href="https://curl.se/bug/?i=18627">curl_slist_append.md: clarify that a NULL pointer is not acceptable</a>
+ BGF <a href="https://curl.se/bug/?i=19015">curl_threads: delete WinCE fallback branch</a>
+ BGF <a href="https://curl.se/bug/?i=18531">CURLINFO_FTP_ENTRY_PATH.md: this is for SFTP as well</a>
+ BGF <a href="https://curl.se/bug/?i=18924">CURLOPT_COOKIEFILE.md: clarify when the cookies are loaded</a>
+ BGF <a href="https://curl.se/bug/?i=19351">CURLOPT_COPYPOSTFIELDS.md: used with MQTT and RTSP as well</a>
+ BGF <a href="https://curl.se/bug/?i=18640">CURLOPT_HEADER/WRITEFUNCTION.md: drop &apos;* size&apos; since size is always 1</a>
+ BGF <a href="https://curl.se/bug/?i=18527">CURLOPT_MAXLIFETIME_CONN: make default 24 hours</a>
+ BGF <a href="https://curl.se/bug/?i=19346">CURLOPT_POSTFIELDSIZE*: these also work for MQTT and RTSP</a>
+ BGF <a href="https://curl.se/bug/?i=19258">CURLOPT_SERVER_RESPONSE_TIMEOUT*: add default and see-also</a>
+ BGF <a href="https://curl.se/bug/?i=18548">CURLOPT_SSL_VERIFYHOST.md: add see-also to two other VERIFYHOST options</a>
+ BGF <a href="https://curl.se/bug/?i=18551">CURLOPT_TIMECONDITION.md: works for FILE and FTP as well</a>
+ BGF <a href="https://curl.se/bug/?i=19334">cw-out: fix EAGAIN handling on pause</a>
+ BGF <a href="https://curl.se/bug/?i=19195">cw-out: unify the error handling pattern in cw_out_do_write</a>
+ BGF <a href="https://curl.se/bug/?i=18488">digest_sspi: fix two memory leaks in error branches</a>
+ BGF <a href="https://curl.se/bug/?i=18549">dist: do not distribute CI.md</a>
+ BGF <a href="https://curl.se/bug/?i=18829">docs/cmdline-opts: drop double quotes from GLOBBING and URL examples</a>
+ BGF <a href="https://curl.se/bug/?i=18569">docs/libcurl: clarify some timeout option behavior</a>
+ BGF <a href="https://curl.se/bug/?i=18530">docs/libcurl: remove ancient version references</a>
+ BGF <a href="https://curl.se/bug/?i=18570">docs/libcurl: use lowercase must</a>
+ BGF <a href="https://curl.se/bug/?i=19025">docs: expand on quoting rules for file names in SFTP quote</a>
+ BGF <a href="https://curl.se/bug/?i=18707">docs: fix/tidy code fences</a>
+ BGF <a href="https://curl.se/bug/?i=19310">doh: cleanup resources on error paths</a>
+ BGF <a href="https://curl.se/bug/?i=18996">doswin: CloseHandle the thread on shutdown</a>
+ BGF <a href="https://curl.se/bug/?i=18511">easy_getinfo: check magic, Curl_close safety</a>
+ BGF <a href="https://curl.se/bug/?i=19237">ECH.md: make OpenSSL branch clone instructions work</a>
+ BGF <a href="https://curl.se/bug/?i=19112">examples/chkspeed: portable printing when outputting curl_off_t values</a>
+ BGF <a href="https://curl.se/bug/?i=19291">examples/http2-serverpush: fix file handle leaks</a>
+ BGF <a href="https://curl.se/bug/?i=18918">examples/sessioninfo: cast printf string mask length to int</a>
+ BGF <a href="https://curl.se/bug/?i=18969">examples/sessioninfo: do not disable security</a>
+ BGF <a href="https://curl.se/bug/?i=19032">examples/synctime: fix null termination assumptions</a>
+ BGF <a href="https://curl.se/bug/?i=18890">examples/synctime: make the sscanf not overflow the local buffer</a>
+ BGF <a href="https://curl.se/bug/?i=18908">examples/usercertinmem: avoid stripping const</a>
+ BGF <a href="https://curl.se/bug/?i=19088">examples/websocket: fix use of uninitialized rlen</a>
+ BGF <a href="https://curl.se/bug/?i=19051">examples: call curl_global_cleanup() where missing</a>
+ BGF <a href="https://curl.se/bug/?i=19055">examples: check more errors, fix cleanups, scope variables</a>
+ BGF <a href="https://curl.se/bug/?i=18842">examples: drop unused curl/mprintf.h includes</a>
+ BGF <a href="https://curl.se/bug/?i=18914">examples: fix build issues in &apos;complicated&apos; examples</a>
+ BGF <a href="https://curl.se/bug/?i=19292">examples: fix more potential resource leaks, and more</a>
+ BGF <a href="https://curl.se/bug/?i=18843">examples: fix two build issues surfaced with WinCE</a>
+ BGF <a href="https://curl.se/bug/?i=18605">examples: fix two issues found by CodeQL</a>
+ BGF <a href="https://curl.se/bug/?i=18778">examples: fix two more cases of stat() TOCTOU</a>
+ BGF <a href="https://curl.se/bug/?i=19053">examples: improve global init, error checks and returning errors</a>
+ BGF <a href="https://curl.se/bug/?i=19133">examples: replace casts with `curl_off_t` printf masks</a>
+ BGF <a href="https://curl.se/bug/?i=19052">examples: return curl_easy_perform() results</a>
+ BGF <a href="https://curl.se/bug/?i=19086">firefox-db2pem.sh: add macOS support, tidy-ups</a>
+ BGF <a href="https://curl.se/bug/?i=18790">form.md: drop reference to MANUAL</a>
+ BGF <a href="https://curl.se/bug/?i=18869">ftp: add extra buffer length check</a>
+ BGF <a href="https://curl.se/bug/?i=19185">ftp: check errors on remote ip for data connection</a>
+ BGF <a href="https://curl.se/bug/?i=18650">ftp: fix ftp_do_more returning with *completep unset</a>
+ BGF <a href="https://curl.se/bug/?i=18636">ftp: fix port number range loop for PORT commands</a>
+ BGF <a href="https://curl.se/bug/?i=18867">ftp: fix the 213 scanner memchr buffer limit argument</a>
+ BGF <a href="https://curl.se/bug/?i=18870">ftp: improve fragile check for first digit &gt; 3</a>
+ BGF <a href="https://curl.se/bug/?i=19191">ftp: reduce size of some struct fields</a>
+ BGF <a href="https://curl.se/bug/?i=19190">ftp: remove &apos;newhost&apos; and &apos;newport&apos; from the ftp_conn struct</a>
+ BGF <a href="https://curl.se/bug/?i=18871">ftp: remove misleading comments</a>
+ BGF <a href="https://curl.se/bug/?i=19194">ftp: remove the retr_size_saved struct field</a>
+ BGF <a href="https://curl.se/bug/?i=19192">ftp: remove the state_saved struct field</a>
+ BGF <a href="https://curl.se/bug/?i=19069">ftp: replace strstr() in ;type= handling</a>
+ BGF <a href="https://curl.se/bug/?i=18984">ftp: simplify the 150/126 size scanner</a>
+ BGF <a href="https://curl.se/bug/?i=18964">gnutls: check conversion of peer cert chain</a>
+ BGF <a href="https://curl.se/bug/?i=19187">gnutls: fix re-handshake comments</a>
+ BGF <a href="https://curl.se/bug/?i=19109">gssapi: make channel binding conditional on GSS_C_CHANNEL_BOUND_FLAG</a>
+ BGF <a href="https://curl.se/bug/?i=18620">gtls: avoid potential use of uninitialized variable in trace output</a>
+ BGF <a href="https://curl.se/bug/?i=19362">gtls: check the return value of gnutls_pubkey_init()</a>
+ BGF <a href="https://curl.se/bug/?i=19259">header.md: see-also --proxy-header and vice versa</a>
+ BGF <a href="https://curl.se/bug/?i=19176">hmac: free memory properly on errors</a>
+ BGF <a href="https://curl.se/bug/?i=18953">hostip: don&apos;t store negative resolves due unrelated errors</a>
+ BGF <a href="https://curl.se/bug/?i=19184">hostip: fix infof() output for non-ipv6 builds using IPv6 address</a>
+ BGF <a href="https://curl.se/bug/?i=18680">hostip: remove leftover INT_MAX check in Curl_dnscache_prune</a>
+ BGF <a href="https://curl.se/bug/?i=18930">http2: check push header names by length first</a>
+ BGF <a href="https://curl.se/bug/?i=18931">http2: cleanup pushed newhandle on fail</a>
+ BGF <a href="https://curl.se/bug/?i=18933">http2: ingress handling edge cases</a>
+ BGF <a href="https://curl.se/bug/?i=19153">HTTP3: clarify the status for &quot;old&quot; OpenSSL, not current</a>
+ BGF <a href="https://curl.se/bug/?i=19343">http: check the return value of strdup</a>
+ BGF <a href="https://curl.se/bug/?i=19275">http: fix `-Wunreachable-code` in !websockets !unity builds</a>
+ BGF <a href="https://curl.se/bug/?i=19276">http: fix `-Wunused-variable` in !alt-svc !proxy !ws builds</a>
+ BGF <a href="https://curl.se/bug/?i=18662">http: handle user-defined connection headers</a>
+ BGF <a href="https://curl.se/bug/?i=19065">http: look for trailing &apos;type=&apos; in ftp:// without strstr</a>
+ BGF <a href="https://curl.se/bug/?i=18921">http: make Content-Length parser more WHATWG</a>
+ BGF <a href="https://curl.se/bug/?i=19200">http: only accept &apos;;&apos; as a separator for custom headers</a>
+ BGF <a href="https://curl.se/bug/?i=19130">http: return error for a second Location: header</a>
+ BGF <a href="https://curl.se/bug/?i=9328">http_aws_sigv4: check the return value of curl_maprintf()</a>
+ BGF <a href="https://curl.se/bug/?i=19227">http_proxy: fix adding custom proxy headers</a>
+ BGF <a href="https://curl.se/bug/?i=18631">httpsrr: free old pointers when storing new</a>
+ BGF <a href="https://curl.se/bug/?i=19301">httpsrr: send HTTPS query to the right target</a>
+ BGF <a href="https://curl.se/bug/?i=18847">imap: fix custom FETCH commands to handle literal responses</a>
+ BGF <a href="https://curl.se/bug/?i=19188">imap: parse and use UIDVALIDITY as a number</a>
+ BGF <a href="https://curl.se/bug/?i=19089">imap: treat capabilities case insensitively</a>
+ BGF <a href="https://curl.se/bug/?i=19179">INSTALL-CMAKE.md: add manual configuration examples</a>
+ BGF <a href="https://curl.se/bug/?i=18927">INSTALL-CMAKE.md: document useful build targets</a>
+ BGF <a href="https://curl.se/bug/?i=19170">INSTALL-CMAKE.md: fix descriptions for LDAP dependency options</a>
+ BGF <a href="https://curl.se/bug/?i=19106">INSTALL: update the list of known operating systems</a>
+ BGF <a href="https://curl.se/bug/?i=18808">INTERNALS: drop Winsock 2.2 from the dependency list</a>
+ BGF <a href="https://curl.se/bug/?i=18767">ip-happy: do not set unnecessary timeout</a>
+ BGF <a href="https://curl.se/bug/?i=18815">ip-happy: prevent event-based stall on retry</a>
+ BGF <a href="https://curl.se/bug/?i=18992">kerberos: bump minimum to 1.3 (2003-07-08), drop legacy logic</a>
+ BGF <a href="https://curl.se/bug/?i=18978">kerberos: drop logic for MIT Kerberos &lt;1.2.3 (pre-2002) versions</a>
+ BGF <a href="https://curl.se/bug/?i=18990">kerberos: stop including gssapi/gssapi_generic.h</a>
+ BGF <a href="https://curl.se/bug/?i=19064">krb5: fix output_token allocators in the GSS debug stub (Windows)</a>
+ BGF <a href="https://curl.se/bug/?i=18561">krb5: return appropriate error on send failures</a>
+ BGF <a href="https://curl.se/bug/?i=18976">krb5_gssapi: fix memory leak on error path</a>
+ BGF <a href="https://curl.se/bug/?i=18865">krb5_sspi: the chlg argument is NOT optional</a>
+ BGF <a href="https://curl.se/bug/?i=18988">ldap: avoid null ptr deref on failure</a>
+ BGF <a href="https://curl.se/bug/?i=18602">ldap: do not base64 encode zero length string</a>
+ BGF <a href="https://curl.se/bug/?i=19122">ldap: do not pass a \n to failf()</a>
+ BGF <a href="https://curl.se/bug/?i=18888">ldap: tidy-up types, fix error code confusion</a>
+ BGF <a href="https://curl.se/bug/?i=19027">lib1514: fix return code mixup</a>
+ BGF <a href="https://curl.se/bug/?i=19225">lib: delete unused crypto header includes</a>
+ BGF <a href="https://curl.se/bug/?i=18839">lib: drop unused include and duplicate guards</a>
+ BGF <a href="https://curl.se/bug/?i=18799">lib: fix build error with verbose strings disabled</a>
+ BGF <a href="https://curl.se/bug/?i=19124">lib: remove newlines from failf() calls</a>
+ BGF <a href="https://curl.se/bug/?i=18803">lib: remove personal names from comments</a>
+ BGF <a href="https://curl.se/bug/?i=19006">lib: SSL connection reuse</a>
+ BGF <a href="https://curl.se/bug/?i=19059">lib: stop NULL-checking conn-&gt;passwd and -&gt;user</a>
+ BGF <a href="https://curl.se/bug/?i=18227">lib: upgrade/multiplex handling</a>
+ BGF <a href="https://curl.se/bug/?i=18579">libcurl-multi.md: added curl_multi_get_offt mention</a>
+ BGF <a href="https://curl.se/bug/?i=18533">libcurl-security.md: mention long-running connections</a>
+ BGF <a href="https://curl.se/bug/?i=19030">libssh/libssh2: reject quote command lines with too much data</a>
+ BGF <a href="https://curl.se/bug/?i=18952">libssh/sftp: fix resume corruption by avoiding O_APPEND with rresume</a>
+ BGF <a href="https://curl.se/bug/?i=18952">libssh2/sftp: fix resume corruption by avoiding O_APPEND with rresume</a>
+ BGF <a href="https://curl.se/bug/?i=18875">libssh2/sftp_realpath: change state consistently</a>
+ BGF <a href="https://curl.se/bug/?i=19043">libssh2: avoid risking using an uninitialized local struct field</a>
+ BGF <a href="https://curl.se/bug/?i=18863">libssh2: bail out on chgrp and chown number parsing errors</a>
+ BGF <a href="https://curl.se/bug/?i=18864">libssh2: clarify that sshp-&gt;path is always at least one byte</a>
+ BGF <a href="https://curl.se/bug/?i=18606">libssh2: drop two redundant null-terminations</a>
+ BGF <a href="https://curl.se/bug/?i=18598">libssh2: error check and null-terminate in ssh_state_sftp_readdir_link()</a>
+ BGF <a href="https://curl.se/bug/?i=19042">libssh2: fix EAGAIN return in ssh_state_auth_agent</a>
+ BGF <a href="https://curl.se/bug/?i=18874">libssh2: fix return code for EAGAIN</a>
+ BGF <a href="https://curl.se/bug/?i=19004">libssh2: use sockindex consistently</a>
+ BGF <a href="https://curl.se/bug/?i=18740">libssh: acknowledge SSH_AGAIN in the SFTP state machine</a>
+ BGF <a href="https://curl.se/bug/?i=19044">libssh: catch a resume point larger than the size</a>
+ BGF <a href="https://curl.se/bug/?i=18739">libssh: clarify myssh_block2waitfor</a>
+ BGF <a href="https://curl.se/bug/?i=18684">libssh: drop two unused assignments</a>
+ BGF <a href="https://curl.se/bug/?i=18629">libssh: error on bad chgrp number</a>
+ BGF <a href="https://curl.se/bug/?i=18639">libssh: error on bad chown number and store the value</a>
+ BGF <a href="https://curl.se/bug/?i=18652">libssh: fix range parsing error handling mistake</a>
+ BGF <a href="https://curl.se/bug/?i=18989">libssh: make atime and mtime cap the timestamp instead of wrap</a>
+ BGF <a href="https://curl.se/bug/?i=18616">libssh: react on errors from ssh_scp_read</a>
+ BGF <a href="https://curl.se/bug/?i=18637">libssh: return out of memory correctly if aprintf fails</a>
+ BGF <a href="https://curl.se/bug/?i=19135">libssh: return the proper error for readdir problems</a>
+ BGF <a href="https://curl.se/bug/?i=19160">Makefile.example: bump default example from FTP to HTTPS</a>
+ BGF <a href="https://curl.se/bug/?i=18835">Makefile.example: fix option order</a>
+ BGF <a href="https://curl.se/bug/?i=19161">Makefile.example: make default options more likely to work</a>
+ BGF <a href="https://curl.se/bug/?i=18554">Makefile.example: simplify and make it configurable</a>
+ BGF <a href="https://curl.se/bug/?i=18583">managen: ignore version mentions &lt; 7.66.0</a>
+ BGF <a href="https://curl.se/bug/?i=18580">managen: render better manpage references/links</a>
+ BGF <a href="https://curl.se/bug/?i=18675">managen: strict protocol check</a>
+ BGF <a href="https://curl.se/bug/?i=18884">managen: verify the options used in example lines</a>
+ BGF <a href="https://curl.se/bug/?i=19077">mbedtls: add support for 4.0.0</a>
+ BGF <a href="https://curl.se/bug/?i=18727">mbedtls: check result of setting ALPN</a>
+ BGF <a href="https://curl.se/bug/?i=19208">mbedtls: fix building with &lt;3.6.1</a>
+ BGF <a href="https://curl.se/bug/?i=19223">mbedtls: fix building with sha-256 missing from PSA</a>
+ BGF <a href="https://curl.se/bug/?i=18682">mbedtls: handle WANT_WRITE from mbedtls_ssl_read()</a>
+ BGF <a href="https://curl.se/bug/?i=19202">md4: drop mbedtls implementation (not available in mbedtls v3+)</a>
+ BGF <a href="https://curl.se/bug/?i=18889">mdlinkcheck: reject URLs containing quotes</a>
+ BGF <a href="https://curl.se/bug/?i=18966">memdup0: handle edge case</a>
+ BGF <a href="https://curl.se/bug/?i=18848">mime: fix unpausing of readers</a>
+ BGF <a href="https://curl.se/bug/?i=19100">mime: fix use of fseek()</a>
+ BGF <a href="https://curl.se/bug/?i=18578">multi.h: add CURLMINFO_LASTENTRY</a>
+ BGF <a href="https://curl.se/bug/?i=19344">multi: check the return value of strdup()</a>
+ BGF <a href="https://curl.se/bug/?i=18804">multi_ev: remove unnecessary data check that confuses analysers</a>
+ BGF <a href="https://curl.se/bug/?i=19199">netrc: when the cached file is discarded, unmark it as loaded</a>
+ BGF <a href="https://curl.se/bug/?i=18904">nghttp3: return NGHTTP3_ERR_CALLBACK_FAILURE from recv_header</a>
+ BGF <a href="https://curl.se/bug/?i=19093">ngtcp2: add a comment explaining write result handling</a>
+ BGF <a href="https://curl.se/bug/?i=19132">ngtcp2: adopt ngtcp2_conn_get_stream_user_data if available</a>
+ BGF <a href="https://curl.se/bug/?i=18521">ngtcp2: check error code on connect failure</a>
+ BGF <a href="https://curl.se/bug/?i=18904">ngtcp2: close just-opened QUIC stream when submit_request fails</a>
+ BGF <a href="https://curl.se/bug/?i=18903">ngtcp2: compare idle timeout in ms to avoid overflow</a>
+ BGF <a href="https://curl.se/bug/?i=18723">ngtcp2: fix early return</a>
+ BGF <a href="https://curl.se/bug/?i=18905">ngtcp2: fix handling of blocked stream data</a>
+ BGF <a href="https://curl.se/bug/?i=18881">ngtcp2: fix returns when TLS verify failed</a>
+ BGF <a href="https://curl.se/bug/?i=19274">ngtcp2: overwrite rate-limits defaults</a>
+ BGF <a href="https://curl.se/bug/?i=18891">noproxy: fix the IPV6 network mask pattern match</a>
+ BGF <a href="https://curl.se/bug/?i=19206">NTLM: disable if DES support missing from OpenSSL or mbedTLS</a>
+ BGF <a href="https://curl.se/bug/?i=19198">ntlm: improved error path on bad incoming NTLM TYPE3 message</a>
+ BGF <a href="https://curl.se/bug/?i=19240">openldap/ldap; check for binary attribute case insensitively</a>
+ BGF <a href="https://curl.se/bug/?i=18600">openldap: avoid indexing the result at -1 for blank responses</a>
+ BGF <a href="https://curl.se/bug/?i=18747">openldap: check ber_sockbuf_add_io() return code</a>
+ BGF <a href="https://curl.se/bug/?i=18653">openldap: check ldap_get_option() return codes</a>
+ BGF <a href="https://curl.se/bug/?i=19120">openldap: do not pass newline to infof()</a>
+ BGF <a href="https://curl.se/bug/?i=18985">openldap: fix memory-leak in error path</a>
+ BGF <a href="https://curl.se/bug/?i=18986">openldap: fix memory-leak on oldap_do&apos;s exit path</a>
+ BGF <a href="https://issues.oss-fuzz.com/issues/432441303">openldap: limit max incoming size</a>
+ BGF <a href="https://curl.se/bug/?i=18720">openssl-quic: check results better</a>
+ BGF <a href="https://curl.se/bug/?i=18725">openssl-quic: handle error in SSL_get_stream_read_error_code</a>
+ BGF <a href="https://curl.se/bug/?i=18780">openssl-quic: ignore unexpected streams opened by server</a>
+ BGF <a href="https://curl.se/bug/?i=19094">openssl: better return code checks when logging cert data</a>
+ BGF <a href="https://curl.se/bug/?i=18872">openssl: call SSL_get_error() with proper error</a>
+ BGF <a href="https://curl.se/bug/?i=19340">openssl: check CURL_SSLVERSION_MAX_DEFAULT properly</a>
+ BGF <a href="https://curl.se/bug/?i=18724">openssl: clear retry flag on x509 error</a>
+ BGF <a href="https://curl.se/bug/?i=19306">openssl: combine all the x509-store flags</a>
+ BGF <a href="https://curl.se/bug/?i=19091">openssl: fail if more than MAX_ALLOWED_CERT_AMOUNT certs</a>
+ BGF <a href="https://curl.se/bug/?i=18646">openssl: fail the transfer if ossl_certchain() fails</a>
+ BGF <a href="https://curl.se/bug/?i=18841">openssl: fix build for v1.0.2</a>
+ BGF <a href="https://hackerone.com/reports/3373640">openssl: fix peer certificate leak in channel binding</a>
+ BGF <a href="https://curl.se/bug/?i=19111">openssl: fix resource leak in provider error path</a>
+ BGF <a href="https://curl.se/bug/?i=19149">openssl: fix unable do typo in failf() calls</a>
+ BGF <a href="https://curl.se/bug/?i=19114">openssl: free UI_METHOD on exit path</a>
+ BGF <a href="https://curl.se/bug/?i=18647">openssl: make the asn1_object_dump name null terminated</a>
+ BGF <a href="https://issues.oss-fuzz.com/issues/435278402">openssl: only try engine/provider if a cert file/name is provided</a>
+ BGF <a href="https://curl.se/bug/?i=18733">openssl: set io_need always</a>
+ BGF <a href="https://curl.se/bug/?i=18902">openssl: skip session resumption when verifystatus is set</a>
+ BGF <a href="https://curl.se/bug/?i=18967">os400: document threads handling in code.</a>
+ BGF <a href="https://curl.se/bug/?i=18713">OS400: fix a use-after-free/double-free case</a>
+ BGF <a href="https://curl.se/bug/?i=18907">osslq: set idle timeout to 0</a>
+ BGF pingpong: remove two old leftover debug infof() calls
+ BGF <a href="https://curl.se/bug/?i=19278">pop3: check for CAPA responses case insensitively</a>
+ BGF <a href="https://curl.se/bug/?i=19228">pop3: fix CAPA response termination detection</a>
+ BGF <a href="https://curl.se/bug/?i=19039">pop3: function could get the -&gt;transfer field wrong</a>
+ BGF <a href="https://curl.se/bug/?i=18801">pytest: skip specific tests for no-verbose builds</a>
+ BGF <a href="https://curl.se/bug/?i=18518">quic: fix min TLS version handling</a>
+ BGF <a href="https://curl.se/bug/?i=18505">quic: ignore EMSGSIZE on receive</a>
+ BGF <a href="https://curl.se/bug/?i=19101">quic: improve UDP GRO receives</a>
+ BGF <a href="https://curl.se/bug/?i=19060">quic: remove data_idle handling</a>
+ BGF <a href="https://curl.se/bug/?i=18880">quiche: fix possible leaks on teardown</a>
+ BGF <a href="https://curl.se/bug/?i=18726">quiche: fix verbose message when ip quadruple cannot be obtained.</a>
+ BGF <a href="https://curl.se/bug/?i=18934">quiche: handle tls fail correctly</a>
+ BGF <a href="https://curl.se/bug/?i=18730">quiche: when ingress processing fails, return that error code</a>
+ BGF <a href="https://curl.se/bug/?i=19345">rtsp: use explicit postfieldsize if specified</a>
+ BGF <a href="https://curl.se/bug/?i=18800">runtests: tag tests that require curl verbose strings</a>
+ BGF <a href="https://curl.se/bug/?i=19125">rustls: exit on error</a>
+ BGF <a href="https://curl.se/bug/?i=18670">rustls: fix clang-tidy warning</a>
+ BGF <a href="https://curl.se/bug/?i=18728">rustls: fix comment describing cr_recv()</a>
+ BGF <a href="https://curl.se/bug/?i=19095">rustls: limit snprintf proper in cr_keylog_log_cb()</a>
+ BGF <a href="https://curl.se/bug/?i=19104">rustls: make read_file_into not reject good files</a>
+ BGF <a href="https://curl.se/bug/?i=18961">rustls: pass the correct result to rustls_failf</a>
+ BGF <a href="https://curl.se/bug/?i=18628">rustls: typecast variable for safer trace output</a>
+ BGF <a href="https://curl.se/bug/?i=18651">rustls: use %zu for size_t in failf() format string</a>
+ BGF <a href="https://curl.se/bug/?i=18573">sasl: clear canceled mechanism instead of toggling it</a>
+ BGF <a href="https://curl.se/bug/?i=18642">schannel: assign result before using it</a>
+ BGF <a href="https://curl.se/bug/?i=19118">schannel: fix memory leak</a>
+ BGF <a href="https://curl.se/bug/?i=19265">schannel: handle Curl_conn_cf_send() errors better</a>
+ BGF <a href="https://curl.se/bug/?i=19205">schannel: lower the maximum allowed time to block to 7 seconds</a>
+ BGF <a href="https://curl.se/bug/?i=19304">schannel: properly close the certfile on error</a>
+ BGF <a href="https://curl.se/bug/?i=19123">schannel_verify: do not call infof with an appended \n</a>
+ BGF <a href="https://curl.se/bug/?i=18972">schannel_verify: fix mem-leak in Curl_verify_host</a>
+ BGF <a href="https://curl.se/bug/?i=18737">schannel_verify: use more human friendly error messages</a>
+ BGF <a href="https://curl.se/bug/?i=19293">scp/sftp: fix disconnect</a>
+ BGF <a href="https://curl.se/bug/?i=19076">scripts: pass -- before passing xargs</a>
+ BGF <a href="https://curl.se/mail/lib-2025-09/0031.html">setopt: accept *_SSL_VERIFYHOST set to 2L</a>
+ BGF <a href="https://curl.se/bug/?i=18959">setopt: allow CURLOPT_DNS_CACHE_TIMEOUT set to -1</a>
+ BGF <a href="https://curl.se/bug/?i=19102">setopt: fix unused variable warning in minimal build</a>
+ BGF <a href="https://curl.se/bug/?i=18571">setopt: make CURLOPT_MAXREDIRS accept -1 (again)</a>
+ BGF <a href="https://curl.se/bug/?i=19266">singleuse.pl: fix string warning</a>
+ BGF <a href="https://curl.se/bug/?i=18599">smb: adjust buffer size checks</a>
+ BGF <a href="https://curl.se/bug/?i=19003">smb: transfer debugassert to real check</a>
+ BGF <a href="https://curl.se/bug/?i=18588">smtp: check EHLO responses case insensitively</a>
+ BGF <a href="https://curl.se/bug/?i=18798">smtp: fix EOB handling</a>
+ BGF <a href="https://curl.se/bug/?i=19136">smtp: return value ignored</a>
+ BGF <a href="https://curl.se/bug/?i=18938">socks: advance iobuf instead of reset</a>
+ BGF <a href="https://curl.se/bug/?i=19139">socks: avoid UAF risk in error path</a>
+ BGF <a href="https://curl.se/bug/?i=18937">socks: deny server basic-auth if not configured</a>
+ BGF <a href="https://curl.se/bug/?i=18722">socks: handle error in verbose trace gracefully</a>
+ BGF <a href="https://curl.se/bug/?i=18883">socks: handle premature close</a>
+ BGF <a href="https://curl.se/bug/?i=18635">socks: make Curl_blockread_all return CURLcode</a>
+ BGF <a href="https://curl.se/bug/?i=19255">socks: properly maintain the status of &apos;done&apos;</a>
+ BGF <a href="https://curl.se/bug/?i=18401">socks: rewwork, cleaning up socks state handling</a>
+ BGF <a href="https://curl.se/bug/?i=19167">socks_gssapi: also reset buffer length after free</a>
+ BGF <a href="https://curl.se/bug/?i=18711">socks_gssapi: make the gss_context a local variable</a>
+ BGF <a href="https://curl.se/bug/?i=18681">socks_gssapi: reject too long tokens</a>
+ BGF <a href="https://curl.se/bug/?i=18714">socks_gssapi: remove superfluous releases of the gss_recv_token</a>
+ BGF <a href="https://curl.se/bug/?i=18712">socks_gssapi: remove the forced &quot;no protection&quot;</a>
+ BGF <a href="https://curl.se/bug/?i=19018">socks_gssapi: replace `gss_release_buffer()` with curl free</a>
+ BGF <a href="https://curl.se/bug/?i=18719">socks_sspi: bail out on too long fields</a>
+ BGF <a href="https://curl.se/bug/?i=18587">socks_sspi: fix memory cleanup calls</a>
+ BGF <a href="https://curl.se/bug/?i=19040">socks_sspi: remove the enforced mode clearing</a>
+ BGF <a href="https://curl.se/bug/?i=18592">socks_sspi: restore non-blocking socket on error paths</a>
+ BGF <a href="https://curl.se/bug/?i=19046">socks_sspi: use the correct free function</a>
+ BGF <a href="https://curl.se/bug/?i=19026">socksd: remove --bindonly mention, there is no such option</a>
+ BGF <a href="https://curl.se/bug/?i=19312">spelling: fix new finds by typos-cli 1.39.0</a>
+ BGF <a href="https://curl.se/bug/?i=19119">src/var: remove dead code</a>
+ BGF <a href="https://curl.se/bug/?i=18983">ssl-session-cache: check use on config and availability</a>
+ BGF <a href="https://curl.se/bug/?i=18523">ssl-sessions.md: mark option experimental</a>
+ BGF <a href="https://curl.se/bug/?i=18857">strerror: drop workaround for SalfordC win32 header bug</a>
+ BGF <a href="https://curl.se/bug/?i=18565">sws: fix checking sscanf() return value</a>
+ BGF <a href="https://curl.se/bug/?i=19031">sws: pass in socket reference to allow function to close it</a>
+ BGF <a href="https://curl.se/bug/?i=18811">tcp-nodelay.md: expand the documentation</a>
+ BGF <a href="https://curl.se/bug/?i=18899">telnet: ignore empty suboptions</a>
+ BGF <a href="https://curl.se/bug/?i=18873">telnet: make bad_option() consider NULL a bad option too</a>
+ BGF <a href="https://curl.se/bug/?i=18618">telnet: make printsub require another byte input</a>
+ BGF <a href="https://curl.se/bug/?i=18852">telnet: print DISPlay LOCation in printsub without mutating buffer</a>
+ BGF <a href="https://curl.se/bug/?i=18657">telnet: refuse IAC codes in content</a>
+ BGF <a href="https://curl.se/bug/?i=18886">telnet: return error if WSAEventSelect fails</a>
+ BGF <a href="https://curl.se/bug/?i=18648">telnet: return error on crazy TTYPE or XDISPLOC lengths</a>
+ BGF <a href="https://curl.se/bug/?i=18887">telnet: send failure logged but not returned</a>
+ BGF <a href="https://curl.se/bug/?i=18851">telnet: use pointer[0] for &quot;unknown&quot; option instead of pointer[i]</a>
+ BGF <a href="https://curl.se/bug/?i=19288">test1100: fix missing `&lt;protocol&gt;` section</a>
+ BGF <a href="https://curl.se/bug/?i=19309">tests/libtest/cli*: fix init/deinit, leaks, and more</a>
+ BGF <a href="https://curl.se/bug/?i=18922">tests/server: drop pointless memory allocation overrides</a>
+ BGF <a href="https://curl.se/bug/?i=18774">tests/server: drop unsafe open() override in signal handler (Windows)</a>
+ BGF <a href="https://curl.se/bug/?i=18603">tftp: check and act on tftp_set_timeouts() returning error</a>
+ BGF <a href="https://curl.se/bug/?i=19070">tftp: check for trailing &quot;;mode=&quot; in URL without strstr</a>
+ BGF <a href="https://curl.se/bug/?i=18893">tftp: default timeout per block is now 15 seconds</a>
+ BGF <a href="https://curl.se/bug/?i=19033">tftp: error requests for blank filenames</a>
+ BGF <a href="https://curl.se/bug/?i=18638">tftp: handle tftp_multi_statemach() return code</a>
+ BGF <a href="https://curl.se/bug/?i=18658">tftp: pin the first used address</a>
+ BGF <a href="https://curl.se/bug/?i=18574">tftp: propagate expired timer from tftp_state_timeout()</a>
+ BGF <a href="https://curl.se/bug/?i=18894">tftp: return error if it hits an illegal state</a>
+ BGF <a href="https://curl.se/bug/?i=18643">tftp: return error when sendto() fails</a>
+ BGF <a href="https://curl.se/bug/?i=18998">thread: errno on thread creation</a>
+ BGF <a href="https://curl.se/bug/?i=18664">tidy-up: assortment of small fixes</a>
+ BGF <a href="https://curl.se/bug/?i=18482">tidy-up: avoid using the reserved macro namespace</a>
+ BGF <a href="https://curl.se/bug/?i=18782">tidy-up: fcntl.h includes</a>
+ BGF <a href="https://curl.se/bug/?i=18626">tidy-up: update MS links, allow long URLs via checksrc</a>
+ BGF <a href="https://curl.se/bug/?i=18689">tidy-up: URLs</a>
+ BGF <a href="https://curl.se/bug/?i=18816">time-cond.md: refer to the singular curl_getdate man page</a>
+ BGF <a href="https://curl.se/bug/?i=19252">TLS: IP address verification, extend test</a>
+ BGF <a href="https://curl.se/bug/?i=18788">TODO: fix a typo</a>
+ BGF <a href="https://curl.se/bug/?i=18542">TODO: remove already implemented or bad items</a>
+ BGF <a href="https://curl.se/bug/?i=18591">tool: fix exponential retry delay</a>
+ BGF <a href="https://curl.se/bug/?i=18593">tool_cb_hdr: fix fwrite check in header callback</a>
+ BGF <a href="https://curl.se/bug/?i=18630">tool_cb_hdr: size is always 1</a>
+ BGF <a href="https://curl.se/bug/?i=19143">tool_cb_rea: use poll instead of select if available</a>
+ BGF <a href="https://curl.se/bug/?i=19213">tool_cfgable: remove superfluous free calls</a>
+ BGF <a href="https://curl.se/bug/?i=18633">tool_doswin: fix to use curl socket functions</a>
+ BGF <a href="https://curl.se/bug/?i=19147">tool_filetime: cap crazy file times instead of erroring</a>
+ BGF <a href="https://curl.se/bug/?i=18858">tool_filetime: replace cast with the fitting printf mask (Windows)</a>
+ BGF <a href="https://curl.se/bug/?i=19113">tool_formparse: rewrite the headers file parser</a>
+ BGF <a href="https://curl.se/bug/?i=18624">tool_getparam/set_rate: skip the multiplication on overflow</a>
+ BGF <a href="https://curl.se/bug/?i=18805">tool_getparam: always disable &quot;lib-ids&quot; for tracing</a>
+ BGF <a href="https://curl.se/bug/?i=19029">tool_getparam: make --fail and --fail-with-body override each other</a>
+ BGF <a href="https://curl.se/bug/?i=18793">tool_getparam: warn if provided header looks malformed</a>
+ BGF <a href="https://curl.se/bug/?i=19358">tool_ipfs: check the return value of curl_url_get for gwpath</a>
+ BGF <a href="https://curl.se/bug/?i=19097">tool_ipfs: simplify the ipfs gateway logic</a>
+ BGF <a href="https://curl.se/bug/?i=19035">tool_msgs: make errorf() show if --show-error</a>
+ BGF <a href="https://curl.se/bug/?i=18604">tool_operate: improve wording in retry message</a>
+ BGF <a href="https://curl.se/bug/?i=18035">tool_operate: keep failed partial download for retry auto-resume</a>
+ BGF <a href="https://curl.se/bug/?i=18607">tool_operate: keep the progress meter for --out-null</a>
+ BGF <a href="https://curl.se/bug/?i=19148">tool_operate: move the checks that skip ca cert detection</a>
+ BGF <a href="https://curl.se/bug/?i=16143">tool_operate: retry on HTTP response codes 522 and 524</a>
+ BGF <a href="https://curl.se/bug/?i=19145">tool_operate: return error on strdup() failure</a>
+ BGF <a href="https://curl.se/bug/?i=19115">tool_paramhlp: remove outdated comment in str2tls_max()</a>
+ BGF <a href="https://curl.se/bug/?i=19168">tool_parsecfg: detect and error on recursive --config use</a>
+ BGF <a href="https://curl.se/bug/?i=18744">tool_progress: handle possible integer overflows</a>
+ BGF <a href="https://curl.se/bug/?i=18807">tool_progress: make max5data() use an algorithm</a>
+ BGF <a href="https://curl.se/bug/?i=18732">transfer: avoid busy loop with tiny speed limit</a>
+ BGF <a href="https://curl.se/bug/?i=19165">transfer: fix retry for empty downloads on reuse</a>
+ BGF <a href="https://curl.se/bug/?i=18926">transfer: reset retry count on each request</a>
+ BGF <a href="https://curl.se/bug/?i=18860">unit1323: sync time types and printf masks, drop casts</a>
+ BGF <a href="https://curl.se/bug/?i=18838">unit1664: drop casts, expand masks to full values</a>
+ BGF <a href="https://curl.se/bug/?i=18855">url: make Curl_init_userdefined return void</a>
+ BGF <a href="https://curl.se/bug/?i=18525">urldata: FILE is not a list-only protocol</a>
+ BGF <a href="https://curl.se/bug/?i=19071">urldata: make &apos;retrycount&apos; a single byte</a>
+ BGF <a href="https://curl.se/bug/?i=19072">urldata: make redirect counter 16 bit</a>
+ BGF <a href="https://curl.se/bug/?i=18975">vauth/digest: improve the digest parser</a>
+ BGF <a href="https://curl.se/bug/?i=19073">version: add GSS backend name and version</a>
+ BGF <a href="https://curl.se/bug/?i=18903">vquic: fix idle-timeout checks (ms&lt;--&gt;ns), 64-bit log & honor 0=no-timeout</a>
+ BGF <a href="https://curl.se/bug/?i=19186">vquic: fix recvmsg loop for max_pkts</a>
+ BGF <a href="https://curl.se/bug/?i=18812">vquic: handling of io improvements</a>
+ BGF <a href="https://curl.se/bug/?i=18936">vquic: sending non-gso packets fix for EAGAIN</a>
+ BGF <a href="https://curl.se/bug/?i=18717">vtls: alpn setting, check proto parameter</a>
+ BGF <a href="https://curl.se/bug/?i=19229">vtls: check final cfilter node in find_ssl_filter</a>
+ BGF <a href="https://curl.se/bug/?i=19224">vtls: drop duplicate `CURL_SHA256_DIGEST_LENGTH` definition</a>
+ BGF <a href="https://curl.se/bug/?i=19323">vtls: properly handle SSL shutdown timeout</a>
+ BGF <a href="https://curl.se/bug/?i=19201">vtls: remove call to PKCS12_PBE_add()</a>
+ BGF <a href="https://curl.se/bug/?i=19196">vtls: unify the error handling in ssl_cf_connect().</a>
+ BGF <a href="https://curl.se/bug/?i=18644">vtls_int.h: clarify data_pending</a>
+ BGF <a href="https://curl.se/bug/?i=18806">vtls_scache: fix race condition</a>
+ BGF <a href="https://curl.se/bug/?i=19247">wcurl: sync to +dev snapshot</a>
+ BGF <a href="https://curl.se/bug/?i=18451">windows: replace _beginthreadex() with CreateThread()</a>
+ BGF <a href="https://curl.se/bug/?i=18490">windows: stop passing unused, optional argument for Win9x compatibility</a>
+ BGF <a href="https://curl.se/bug/?i=18877">windows: use consistent format when showing error codes</a>
+ BGF <a href="https://curl.se/bug/?i=18868">windows: use native error code types more</a>
+ BGF <a href="https://curl.se/bug/?i=18718">wolfssl: check BIO read parameters</a>
+ BGF <a href="https://curl.se/bug/?i=19126">wolfssl: clear variable to avoid uninitialized use</a>
+ BGF <a href="https://curl.se/bug/?i=18729">wolfssl: fix error check in shutdown</a>
+ BGF <a href="https://curl.se/bug/?i=19110">wolfssl: fix resource leak in verify_pinned error paths</a>
+ BGF <a href="https://curl.se/bug/?i=18940">wolfssl: no double get_error() detail</a>
+ BGF <a href="https://curl.se/bug/?i=18654">ws: clarify an error message</a>
+ BGF <a href="https://curl.se/bug/?i=18965">ws: fix some edge cases</a>
+ BGF <a href="https://curl.se/bug/?i=19017">ws: fix type conversion check</a>
+ BGF <a href="https://curl.se/bug/?i=18656">ws: reject curl_ws_recv called with NULL buffer with a buflen</a>
+</ul>
+
 <a name="8_16_0"></a>
 SUBTITLE(Fixed in 8.16.0 - September 10 2025)
 RELEASEVIDEO(8.16.0, "https://youtu.be/n9RRiAOlT-A")
