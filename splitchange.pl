@@ -91,10 +91,10 @@ for my $r (@releases) {
 print M "\n\n";
 
 print M "index.html: $releases[0].gen \$(MAINPARTS)\n".
-	"\t\$(ACTION)\n\n";
+        "\t\$(ACTION)\n\n";
 
 for my $r (@releases) {
     print M "$r.html: $r.gen \$(MAINPARTS)\n".
-	"\t\$(ACTION)\n\n";
+            "\t\$(ACTION)\n\n";
 }
 close(M);
