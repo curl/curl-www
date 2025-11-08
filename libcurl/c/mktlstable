@@ -24,14 +24,12 @@
 # ***************************************************************************
 
 my %knowntls = (
-    'BearSSL' => 1,
+    'OpenSSL' => 1,
     'GnuTLS' => 2,
-    'mbedTLS' => 3,
-    'OpenSSL' => 4,
-    'rustls' => 5,
-    'Schannel' => 6,
-    'Secure Transport' => 7,
-    'wolfSSL' => 8,
+    'wolfSSL' => 3,
+    'mbedTLS' => 4,
+    'Schannel' => 5,
+    'Rustls' => 6,
     );
 
 sub single {
