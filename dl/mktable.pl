@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 require "./stuff.pm";
 require "./pix.pm";

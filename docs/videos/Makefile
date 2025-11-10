@@ -21,4 +21,4 @@ index.html: _index.html $(MAINPARTS) videos.gen
 	$(ACTION)
 
 videos.gen: videolist.txt mkvideos.pl
-	perl ./mkvideos.pl < $< > $@
+	./mkvideos.pl < $< > $@

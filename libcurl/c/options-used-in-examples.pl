@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 $root="../../cvssource";
 $dir="$root/docs/examples";

@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 my $uploadpath="/home/curl-for-win";
 my $pattern="^all-mingw-([0-9._]*).zip.txt";

@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 opendir(my $dh, ".") || die "cannot opendir: $!";
 my @pems = grep { /^cacert-.*pem$/ } readdir($dh);
