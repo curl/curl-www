@@ -25,8 +25,8 @@ touch ca/cacert.pem
 touch ca/pemlist.gen
 
 cd libcurl/c || exit 1
-perl mkopts.pl
-perl mkexam.pl
+./mkopts.pl
+./mkexam.pl
 
 cd ../../dev || exit 1
 touch summary.t

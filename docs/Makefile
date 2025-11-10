@@ -288,7 +288,7 @@ manpage.html: _manpage.html $(MAINPARTS) manoptionsdump.gen mandump.gen $(ROOT)/
 	$(ACTION)
 
 manoptionsdump.gen:
-	perl generatemanmenu.pl $(DOCROOT)/cmdline-opts > manoptionsdump.gen
+	./generatemanmenu.pl $(DOCROOT)/cmdline-opts > manoptionsdump.gen
 
 optionswhen.html: _optionswhen.html optionswhen.gen
 	$(ACTION)
