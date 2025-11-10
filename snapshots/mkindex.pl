@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 my $dir=".";
 opendir(DIR, $dir) || die "can't opendir $dir: $!";

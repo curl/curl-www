@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 opendir(DIR, "inbox");
 my @logs = grep { /^inbox.*log$/ } readdir(DIR);

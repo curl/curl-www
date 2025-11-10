@@ -479,11 +479,11 @@ seclist-c.gen: vuln.pm listvulns.pl vuln.pm $(CVELIST)
 	./listvulns.pl critical > seclist-c.gen
 
 CVE-2025-11563.html: CVE-2025-11563.md $(MAINPARTS) advisory.t $(ADVBOX) mk-wcurl-adv-template.pl
-	$(MARKDOWN) < $< | perl curlver-to-vulnlink.pl | ./mk-wcurl-adv-template.pl $@ | fcpp $(FCPP_OPTS) -I$(ROOT) -WWW -Uunix -P -H -C -V -LL - > $@
+	$(MARKDOWN) < $< | ./curlver-to-vulnlink.pl | ./mk-wcurl-adv-template.pl $@ | fcpp $(FCPP_OPTS) -I$(ROOT) -WWW -Uunix -P -H -C -V -LL - > $@
 
 CVE-%.html: CVE-%.md $(MAINPARTS) advisory.t $(ADVBOX) curlver-to-vulnlink.pl mk-adv-template.pl cve-checker.pl
-	@perl cve-checker.pl $<
-	$(MARKDOWN) < $< | perl curlver-to-vulnlink.pl | ./mk-adv-template.pl $@ | fcpp $(FCPP_OPTS) -I$(ROOT) -WWW -Uunix -P -H -C -V -LL - > $@
+	@./cve-checker.pl $<
+	$(MARKDOWN) < $< | ./curlver-to-vulnlink.pl | ./mk-adv-template.pl $@ | fcpp $(FCPP_OPTS) -I$(ROOT) -WWW -Uunix -P -H -C -V -LL - > $@
 
 vulnerabilities.html: _vulnerabilities.html vuln.gen $(MAINPARTS)
 	$(ACTION)

@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 #
 # Convert various "bare" mentions of curl symbols into links. This primarily
 # adds links to the example sections which otherwise are hard to highlight

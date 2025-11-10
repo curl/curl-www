@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 while(<STDIN>) {
     if($_ =~ s/([78]\.(\d+)\.(\d+))/<a href="vuln-$1.html">$1<\/a>/g) {

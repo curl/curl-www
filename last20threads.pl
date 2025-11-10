@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 require "dl/pbase.pm";
 require "nicedate.pm";

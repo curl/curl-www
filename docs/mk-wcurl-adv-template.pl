@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 my $want = $ARGV[0];
 my $cve = $want;

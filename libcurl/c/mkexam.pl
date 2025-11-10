@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 my $manpage="https://curl.se/libcurl/c";
 
@@ -100,7 +100,7 @@ for my $f (@samps) {
 
     push @mak, "$htmlfile: $rawfile \$(MAINPARTS) _example-warn.html \n\t\$(ACTION)\n\n";
 
-    push @mak, "$rawfile: $dir/$cfile mkexam.pl $template\n\tperl mkexam.pl\n\n";
+    push @mak, "$rawfile: $dir/$cfile mkexam.pl $template\n\t./mkexam.pl\n\n";
 }
 
 open(MAK, ">Makefile.exhtml");

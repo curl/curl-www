@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 use strict;
 
 my $SSURL = "https://rest.opencollective.com/v2/curl/tier/silver-sponsor/orders/active";
