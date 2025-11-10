@@ -31,4 +31,4 @@ jobs:
           persist-credentials: false
 
       - name: check
-        run: .github/scripts/badwords.pl -w .github/scripts/badwords.ok < .github/scripts/badwords.txt docs/*.md '*html'
+        run: .github/scripts/badwords.pl -w .github/scripts/badwords.ok 'docs/*.md' < .github/scripts/badwords.txt

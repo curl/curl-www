@@ -9,6 +9,12 @@
 # If separator is ':', the check is done case insensitively.
 #
 
+use strict;
+use warnings;
+
+my %alt;
+my %exactcase;
+
 my %wl;
 if($ARGV[0] eq "-w") {
     shift @ARGV;
@@ -27,7 +33,7 @@ if($ARGV[0] eq "-w") {
     close(W);
 }
 
-my $w;
+my @w;
 while(<STDIN>) {
     chomp;
     if($_ =~ /^#/) {
@@ -43,7 +49,7 @@ while(<STDIN>) {
     }
 }
 
-my $errors;
+my $errors = 0;
 
 sub file {
     my ($f) = @_;
@@ -86,9 +92,11 @@ sub file {
     close(F);
 }
 
-my @files = @ARGV;
-
-foreach my $each (@files) {
+my @filemasks = @ARGV;
+open(my $git_ls_files, '-|', 'git', 'ls-files', '--', @filemasks) or die "Failed running git ls-files: $!";
+while(my $each = <$git_ls_files>) {
+    chomp $each;
     file($each);
 }
+close $git_ls_files;
 exit $errors;
