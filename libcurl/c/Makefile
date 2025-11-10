@@ -186,7 +186,7 @@ all-easy.gen: $(OPTMAN)/Makefile.am mkopts.pl $(MAINPARTS) _CURLOPT_template.htm
 	./mkopts.pl
 
 tlstable.gen: $(OPTMAN)/*.md mktlstable
-	perl mktlstable $(OPTMAN)/*.md > $@
+	./mktlstable $(OPTMAN)/*.md > $@
 
 tls-options.html: _tls-options.html tlstable.gen $(MAINPARTS)
 	$(ACTION)

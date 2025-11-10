@@ -12,6 +12,6 @@ if test $? -gt "0"; then
   sed "s/cacert\.pem/cacert-${d}.pem/" < cacert.pem.sha256 > "cacert-${d}.pem.sha256"
   gzip -c cacert.pem > cacert.pem.gz
   xz -c cacert.pem > cacert.pem.xz
-  perl ./listpem.pl > pemlist.gen
+  ./listpem.pl > pemlist.gen
   make
 fi
