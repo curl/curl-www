@@ -21,12 +21,12 @@ my $markdown = join("", @md);
 
         print <<TEMPLATE
 #include "_doctype.html"
-#define FLAWCVE $cve
+#define FLAW $cve
 $dissue
 $daward
 
 <html>
-<head> <title>wcurl - FLAWCVE</title>
+<head> <title>wcurl - FLAW</title>
 #include "css.t"
 #include "manpage.t"
 <style>
@@ -51,11 +51,11 @@ code {
 #include "setup.t"
 #include "advisory.t"
 
-WHERE3(Docs, "/docs/", curl CVEs, "/docs/security.html", FLAWCVE)
+WHERE3(Docs, "/docs/", curl CVEs, "/docs/security.html", FLAW)
 
 #include "adv-related-box.inc"
 
-<h2>FLAWCVE</h2>
+<h2>FLAW</h2>
 $markdown
 #include "_footer.html"
 </body> </html>
