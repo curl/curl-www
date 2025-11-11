@@ -79,4 +79,4 @@ couldn't:could not
 ---NET::Curl
 ---Curl Corporation
 \bmanpages[^./&:-]:man pages
-\bmanpage[^s./&:-]:man page
+\bmanpage[^si./&:-]:man page
