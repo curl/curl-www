@@ -56,12 +56,12 @@ TITLE(The Easy interface)
 <p>
  2. Set all the <a href="curl_easy_setopt.html">options</a> you want in the
  upcoming transfer, most important among them is the URL itself. You might
- want to set some callbacks as well that will be called from the library when
+ want to set some callbacks as well that are called from the library when
  data is available etc.
 <p>
  3. When all is setup, tell libcurl
- to <a href="curl_easy_perform.html">perform</a> the transfer. It will then do
- the entire operation and will not return until it is done or failed.
+ to <a href="curl_easy_perform.html">perform</a> the transfer. It then does
+ the entire operation and does not return until it is done or failed.
 <p>
  4. After the transfer is completed, you may <a href="curl_easy_getinfo.html">get
  information</a> about it and then you

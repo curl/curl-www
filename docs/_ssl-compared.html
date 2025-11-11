@@ -152,11 +152,11 @@ in curl and we discourage using it in production.
 
 <b>CRL:</b> CRL means "Certificate Revocation List" and is used to check to
 see if any certificates in the server's chain have been revoked for some
-reason. If automatic, then the engine will automatically download a CRL and
+reason. If automatic, then the engine automatically downloads a CRL and
 use it to evaluate the trust of the server's certificate chain when performing
-the TLS handshake. If manual, then the engine will not automatically use a
+the TLS handshake. If manual, then the engine does not automatically use a
 CRL, but you can provide one that has been downloaded separately by using the
-CURLOPT_CRL option. If no, then the CURLOPT_CRL option will be ignored.
+CURLOPT_CRL option. If no, then the CURLOPT_CRL option is ignored.
 <p>
 
 <b>SSLv2:</b> This was the first public release of the SSL protocol. It is
