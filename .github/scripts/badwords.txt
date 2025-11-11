@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: curl
 #
 back-end:backend
-e-mail:email
+\be-mail[^/]:email
 run-time:runtime
 set-up:setup
 tool chain:toolchain
@@ -23,7 +23,7 @@ isn't:is not
  a http: an http
  a ftp: an ftp
  url =URL
-internet\b=Internet
+[^/]internet\b=Internet
 isation:ization
 it's:it is
 there's:there is
@@ -39,7 +39,7 @@ that's:that is
 web page:webpage
 host name\b:hostname
 host names\b:hostnames
-file name\b:filename
+[^;]file name\b:filename
 file names\b:filenames
 \buser name\b:username
 \buser names\b:usernames
