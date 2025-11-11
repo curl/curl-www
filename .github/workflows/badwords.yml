@@ -29,4 +29,4 @@ jobs:
           persist-credentials: false
 
       - name: check
-        run: .github/scripts/badwords.pl -w .github/scripts/badwords.ok 'docs/*.md' < .github/scripts/badwords.txt
+        run: .github/scripts/badwords.pl -w .github/scripts/badwords.ok 'docs/*.md' '*html' ':!:rfc/*' < .github/scripts/badwords.txt

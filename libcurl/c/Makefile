@@ -32,7 +32,7 @@ REN_0 = @echo "  RENDER " $@;
 REN_1 =
 REN_ = $(REN_0)
 
-# used for converting manpages
+# used for converting man pages
 MANACTION = $(ACTION)
 
 opts = $(OPTPAGES)

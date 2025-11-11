@@ -25,7 +25,7 @@
 
 <p> To post a message to all the <MM-List-Name> list members, send email to
  <a href="mailto:<MM-Posting-Addr>"><MM-Posting-Addr></a>. You <b>must</b> be
- subscribed before you post, as otherwise your mail will simply be silently
+ subscribed before you post, as otherwise your mail is simply silently
  discarded.
 
 <p> By posting to this list, you agree to your posting getting archived and
@@ -36,8 +36,8 @@
 
 <h2>Subscribing to <MM-List-Name></h2>
 
-<p> Subscribe to <MM-List-Name> by filling out the following form. You will
- be sent email requesting confirmation. The list of members is only visible to
+<p> Subscribe to <MM-List-Name> by filling out the following form. You are
+ sent an email requesting confirmation. The list of members is only visible to
  admins.
 
 <p>

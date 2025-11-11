@@ -14,7 +14,7 @@
 <td>Tuesday 17:49</td><td>Guenter</td><td>3</td><td><a href="https://curl.se/mail/list.cgi?list=curl-library">libcurl</a></td></tr>
 <tr class="even"><td><a title="curl chunk option?" href="https://curl.se/mail/archive-2009-09/0014.html">curl chunk option?</a></td>
 <td>Tuesday 12:42</td><td>Chris Cross</td><td>7 <a href="https://curl.se/mail/archive-2009-07/0025.html">first</a></td><td><a href="https://curl.se/mail/list.cgi?list=curl-users">curl users</a></td></tr>
-<tr class="odd"><td><a title="[ curl-Feature Requests-2853962 ] Expose curl socket descriptors for the curl_multi API&#39;s." href="https://curl.se/mail/tracker-2009-09/0002.html">[ curl-Feature Requests-2853962 ] Expose...</a></td>
+<tr class="odd"><td><a title="[ curl-Feature Requests-2853962 ] Expose curl socket descriptors for the curl_multi API's." href="https://curl.se/mail/tracker-2009-09/0002.html">[ curl-Feature Requests-2853962 ] Expose...</a></td>
 <td>Tuesday 08:23</td><td>SourceForge.net</td><td>1</td><td><a href="https://curl.se/mail/list.cgi?list=curl-tracker">Tracker</a></td></tr>
 <tr class="even"><td><a title="Multipart form trouble" href="https://curl.se/mail/lib-2009-09/0117.html">Multipart form trouble</a></td>
 <td>Tuesday 08:20</td><td>Daniel Stenberg</td><td>8 <a href="https://curl.se/mail/lib-2009-09/0110.html">first</a></td><td><a href="https://curl.se/mail/list.cgi?list=curl-library">libcurl</a></td></tr>

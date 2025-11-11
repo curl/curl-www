@@ -1,6 +1,6 @@
 #include "_doctype.html"
 <html>
-<head> <title>curl - The Art Of Scripting HTTP Requests Using Curl</title>
+<head> <title>curl - The Art Of Scripting HTTP Requests Using curl</title>
 #include "css.t"
 </head>
 
