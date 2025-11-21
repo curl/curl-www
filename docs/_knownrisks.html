@@ -1,0 +1,28 @@
+#include "_doctype.html"
+<html>
+<head> <title>curl - Known risks</title>
+#include "css.t"
+</head>
+
+#define CURL_DOCS
+#define PROJ_DOCS
+#define DOCS_KNOWNRISKS
+#define CURL_URL docs/knownbugs.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(Docs, "/docs/", Project, "/docs/projdocs.html", Known risks)
+
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/dev/deprecate.html">Deprecate</a>
+<br><a href="knownbugs.html">Known bugs</a>
+<br><a href="todo.html">TODO</a>
+</div>
+#include "knownrisks.gen"
+
+#include "_footer.html"
+
+</body>
+</html>

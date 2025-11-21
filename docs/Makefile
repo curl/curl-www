@@ -220,6 +220,7 @@ PAGES = \
  ipfs.html \
  irc.html \
  knownbugs.html \
+ knownrisks.html \
  libs.html \
  manpage.html \
  tutorial.html \
@@ -389,6 +390,12 @@ knownbugs.html: _knownbugs.html $(MAINPARTS) knownbugs.gen
 
 knownbugs.gen: $(DOCROOT)/KNOWN_BUGS faqparse.pl
 	./faqparse.pl < $< > $@
+
+knownrisks.html: _knownrisks.html $(MAINPARTS) knownrisks.gen
+	$(ACTION)
+
+knownrisks.gen: $(DOCROOT)/KNOWN_RISKS.md 
+	$(MARKDOWN) < $<  > $@
 
 httpscript.gen: $(DOCROOT)/TheArtOfHttpScripting.md
 	$(MARKDOWN) < $< > $@
