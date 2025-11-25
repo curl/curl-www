@@ -29,7 +29,7 @@ my %knowntls = (
     'wolfSSL' => 3,
     'mbedTLS' => 4,
     'Schannel' => 5,
-    'Rustls' => 6,
+    'rustls' => 6,
     );
 
 sub single {
