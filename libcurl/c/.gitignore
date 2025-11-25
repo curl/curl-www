@@ -3,6 +3,5 @@
 Makefile.examples
 Makefile.exhtml
 allexamples.zip
-*.gen
 Makefile.opts
 Makefile.opttargets

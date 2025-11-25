@@ -1,5 +1,6 @@
 *~
 [^_]*.html
+*.gen
 info
 packstat.t
 release.t
