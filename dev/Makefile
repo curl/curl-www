@@ -161,4 +161,4 @@ builds.html: _builds.html $(MAINPARTS) table.t explainopts.t
 full: all
 
 clean:
-	rm -f $(PAGES)
+	rm -f $(PAGES) *.gen
