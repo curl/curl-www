@@ -2,4 +2,6 @@
 rel.txt
 releases.csv
 vuln.txt
+vuln.csv
 *.gen
+*.json
