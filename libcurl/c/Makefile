@@ -173,7 +173,7 @@ PAGES = \
 all: $(PAGES)
 
 clean:
-	rm -f $(PAGES) $(EXAMPLES) *.et *.gen
+	rm -f -- $(PAGES) $(EXAMPLES) *.et *.gen
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
@@ -576,7 +576,7 @@ threadsafe.gen: $(MANROOT)/libcurl-thread.3 curlopt2href.pl
 	$(REN)$(MAN2HTML) < $< >$@
 
 allexamples.zip: $(EXAMPLESRCS)
-	rm -f $@; zip -j $@ $(EXAMPLESRCS)
+	rm -f -- $@; zip -j $@ $(EXAMPLESRCS)
 
 options-in-examples.html: _options-in-examples.html $(MAINPARTS) allex.gen options-in-examples.gen
 	$(REN)$(MANACTION)

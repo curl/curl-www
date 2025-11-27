@@ -14,7 +14,7 @@ MAINPARTS= \
  $(CURL)/where.t \
  $(ROOT)/css.t
 
-ACTION=@echo preprocessing $@; rm -f $@; fcpp -I.. -I. -WWW -Uunix -P -H -C -V -LL $< $@;
+ACTION=@echo preprocessing $@; rm -f -- $@; fcpp -I.. -I. -WWW -Uunix -P -H -C -V -LL $< $@;
 
 PAGES = \
  subscribe.html \
@@ -65,4 +65,4 @@ mailman.html: _mailman.html $(MAINPARTS)
 	$(ACTION)
 
 clean:
-	rm -f $(PAGES)
+	rm -f -- $(PAGES)

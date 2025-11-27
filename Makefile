@@ -159,7 +159,7 @@ full: all
 	@cd libcurl; make
 
 clean:
-	rm -f *~ $(PAGES)
+	rm -f -- *~ $(PAGES)
 	cd docs && make clean
 	cd libcurl && make clean
 	cd mail && make clean

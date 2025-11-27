@@ -92,5 +92,5 @@ security.gen: $(SRCROOT)/docs/libcurl/libcurl-security.3
 	$(MAN2HTMLBASIC) < $< > $@
 
 clean:
-	rm -f $(PAGES) *.gen
+	rm -f -- $(PAGES) *.gen
 	cd c && make clean

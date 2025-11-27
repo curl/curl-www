@@ -251,7 +251,7 @@ MAINPARTS += adv-related-box.inc
 all: ${allhtml}
 
 clean:
-	rm -f ${allhtml}
+	rm -f -- ${allhtml}
 
 FOO
     ;

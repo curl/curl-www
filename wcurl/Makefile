@@ -32,4 +32,4 @@ index.html: _index.html $(MAINPARTS)
 	$(ACTION)
 
 clean:
-	rm -f $(PAGES)
+	rm -f -- $(PAGES)

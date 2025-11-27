@@ -260,7 +260,7 @@ all: vuln.gen $(PAGES) vuln-make.gen
 
 clean:
 	-test -f vuln-make.gen && make -f vuln-make.gen clean
-	rm -f $(PAGES) *.gen *.json vuln-*.html
+	rm -f -- $(PAGES) *.gen *.json vuln-*.html
 
 vuln-make.gen: vuln.gen
 

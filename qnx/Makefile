@@ -17,4 +17,4 @@ files.gen: mkfiles.pl dl/*
 	./mkfiles.pl >$@
 
 clean:
-	rm -f $(PAGES) *.gen
+	rm -f -- $(PAGES) *.gen

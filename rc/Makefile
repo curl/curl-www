@@ -18,4 +18,4 @@ files.gen: mkindex.pl curl-*rc*
 	date -u "+%Y-%m-%d %H:%M %Z" > files-date.gen
 
 clean:
-	rm -f $(PAGES) *.gen
+	rm -f -- $(PAGES) *.gen

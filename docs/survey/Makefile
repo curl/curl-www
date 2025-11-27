@@ -18,7 +18,7 @@ PAGES = \
 all: $(PAGES)
 
 clean:
-	rm -f $(PAGES)
+	rm -f -- $(PAGES)
 
 index.html: _index.html $(MAINPARTS)
 	$(ACTION)
