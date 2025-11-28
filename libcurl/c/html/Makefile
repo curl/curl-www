@@ -33,6 +33,6 @@ CONTENTS = \
 
 
 curl-html-docs.tar.gz: $(CONTENTS)
-	rm -f $@
+	rm -f -- $@
 	cp -p $(CONTENTS) .
 	./build.pl *.t

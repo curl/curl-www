@@ -22,4 +22,4 @@ index.html: README.md $(MAINPARTS)
 full: all
 
 clean:
-	rm -f $(PAGES)
+	rm -f -- $(PAGES)

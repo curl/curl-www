@@ -22,4 +22,4 @@ index.html: _index.html $(MAINPARTS)
 full: all
 
 clean:
-	rm -f $(PAGES)
+	rm -f -- $(PAGES)

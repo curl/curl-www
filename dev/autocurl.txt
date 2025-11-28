@@ -72,7 +72,7 @@ if [ "$ret" -eq "0" ]; then
 
   notify "build OK: $NEWCURL"
   rm -r "$CURLDIR"
-  rm -f "$NEWCURL"
+  rm -f -- "$NEWCURL"
 else
   notify "build failed: $NEWCURL"
 fi

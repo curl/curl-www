@@ -34,4 +34,4 @@ files.gen: mkfiles.pl dl/*
 	./mkfiles.pl >$@
 
 clean:
-	rm -f $(PAGES)
+	rm -f -- $(PAGES)

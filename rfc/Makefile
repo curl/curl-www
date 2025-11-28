@@ -10,7 +10,7 @@ MAINPARTS= \
  ../css.t \
  Makefile
 
-ACTION=@echo preprocessing $@; rm -f $@; fcpp -I../docs -I.. -WWW -Uunix -H -C -V -P -LL $< $@;
+ACTION=@echo preprocessing $@; rm -f -- $@; fcpp -I../docs -I.. -WWW -Uunix -H -C -V -P -LL $< $@;
 
 PAGES = index.html
 
@@ -18,7 +18,7 @@ all: $(PAGES)
 	@echo done
 
 clean:
-	rm -f $(PAGES)
+	rm -f -- $(PAGES)
 
 index.html: _index.html $(MAINPARTS) index.gen
 	$(ACTION)

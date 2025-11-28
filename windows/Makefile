@@ -23,4 +23,4 @@ latest.txt:
 	./unpack.pl
 
 clean:
-	rm -f $(PAGES) *.gen
+	rm -f -- $(PAGES) *.gen
