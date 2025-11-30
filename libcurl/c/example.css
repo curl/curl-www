@@ -1,0 +1,35 @@
+
+span.comment {
+    color: #B22222;
+    font-style: italic;
+}
+span.cpp {
+    color: #5F9EA0;
+}
+span.type {
+    color: #228B22;
+    font-weight: bold;
+}
+span.expr {
+    color: #A020F0;
+    font-weight: bold;
+}
+span.string {
+    color: #BC8F8F;
+}
+span.function {
+    color: #a0a000;
+}
+
+/* DARK MODE PROPERTIES */
+/* These will override all settings above */
+@media (prefers-color-scheme: dark) {
+
+  span.comment {
+      color: #ff8080;
+      font-style: italic;
+  }
+  span.function {
+      color: #ffff00;
+  }
+}
