@@ -47,6 +47,15 @@ for my $f (@samps) {
     # now run enscript and extract the PRE part and linkify some of the libcurl
     # stuff
     #
+
+    # enscript generates hard-coded font colors. Replace each such <font>
+    # instruction with a dedicated <span> tag.
+    my %color2tag = ('B22222' => 'comment',
+                     '5F9EA0' => 'cpp',
+                     '228B22' => 'type',
+                     'A020F0' => 'expr',
+                     'BC8F8F' => 'string',
+                     '0000FF' => 'function');
     open(ET, ">$encfile");
     open(CMD, "$cmd|");
     my $show=0;
@@ -57,6 +66,13 @@ for my $f (@samps) {
 
         if($show) {
             my $l=$_;
+
+            $l =~ s/\<FONT COLOR=\"\#([0-9A-F]+)\"\>/sprintf "<span class=\"".$color2tag{$1}."\">";/ge;
+            $l =~ s:\</FONT>:</span>:g;
+            $l =~ s:<B>::g;
+            $l =~ s:</B>::g;
+            $l =~ s:<I>::g;
+            $l =~ s:</I>::g;
 
             # find curl_ function invokes
             if($l =~ /^(.*)(curl_[a-z_]*)( *\(.*)/) {
