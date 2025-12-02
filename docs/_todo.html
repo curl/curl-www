@@ -2,6 +2,15 @@
 <html>
 <head> <title>curl - TODO</title>
 #include "css.t"
+
+<style>
+input[type=checkbox] {
+    display: none;
+}
+ul.task-list {
+    list-style-type: none;
+}
+</style>
 </head>
 
 #define CURL_DOCS
@@ -12,9 +21,7 @@
 #include "_menu.html"
 #include "setup.t"
 
-WHERE3(Docs, "/docs/", Project, "/docs/projdocs.html", TODO)
-
-TITLE(TODO -- nice to have features)
+WHERE3(Docs, "/docs/", Project, "/docs/projdocs.html", Nice to have features)
 <div class="relatedbox">
 <b>Related:</b>
 <br><a href="/dev/deprecate.html">Deprecate</a>

@@ -424,8 +424,8 @@ manual.gen: $(DOCROOT)/MANUAL.md
 todo.html: _todo.html $(MAINPARTS) todo.gen
 	$(ACTION)
 
-todo.gen: $(DOCROOT)/TODO faqparse.pl
-	./faqparse.pl < $< > $@
+todo.gen: $(DOCROOT)/TODO.md
+	$(MARKDOWN) < $< > $@
 
 governance.html: _governance.html $(MAINPARTS) governance.gen
 	$(ACTION)
