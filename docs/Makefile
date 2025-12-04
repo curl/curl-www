@@ -359,11 +359,14 @@ thanksnum.gen: $(DOCROOT)/THANKS
 thanks.gen: $(DOCROOT)/THANKS
 	grep '^[^ ]' $< | sort | sed -e 's/ /\&nbsp;/g' -e 's/-/\&\#8209/g' -e '$$!s/$$/\&nbsp;\&middot;/' > $@
 
-faq.html: _faq.shtml $(MAINPARTS) faq.gen
+faq.html: _faq.shtml $(MAINPARTS) faq.gen faq-content.gen
 	$(ACTION)
 
-faq.gen: $(DOCROOT)/FAQ faqparse.pl
-	./faqparse.pl < $< > $@
+faq.gen: $(DOCROOT)/FAQ.md tcparse.pl
+	./tcparse.pl $< >$@
+
+faq-content.gen: $(DOCROOT)/FAQ.md
+	$(MARKDOWN) < $< > $@
 
 alt-svc.html: _alt-svc.html $(MAINPARTS) alt-svc.gen
 	$(ACTION)
@@ -385,11 +388,14 @@ http-cookies.gen: $(DOCROOT)/HTTP-COOKIES.md
 irc.html: _irc.html $(MAINPARTS)
 	$(ACTION)
 
-knownbugs.html: _knownbugs.html $(MAINPARTS) knownbugs.gen
+knownbugs.html: _knownbugs.html $(MAINPARTS) knownbugs.gen knownbugs-content.gen
 	$(ACTION)
 
-knownbugs.gen: $(DOCROOT)/KNOWN_BUGS faqparse.pl
-	./faqparse.pl < $< > $@
+knownbugs.gen: $(DOCROOT)/KNOWN_BUGS.md tcparse.pl
+	./tcparse.pl $< >$@
+
+knownbugs-content.gen: $(DOCROOT)/KNOWN_BUGS.md
+	$(MARKDOWN) < $< > $@
 
 knownrisks.html: _knownrisks.html $(MAINPARTS) knownrisks.gen
 	$(ACTION)
@@ -421,10 +427,13 @@ tutorial.html: _tutorial.html $(MAINPARTS) manual.gen
 manual.gen: $(DOCROOT)/MANUAL.md
 	$(MARKDOWN) < $< >$@
 
-todo.html: _todo.html $(MAINPARTS) todo.gen
+todo.html: _todo.html $(MAINPARTS) todo.gen todo-content.gen
 	$(ACTION)
 
-todo.gen: $(DOCROOT)/TODO.md
+todo.gen: $(DOCROOT)/TODO.md tcparse.pl
+	./tcparse.pl $< >$@
+
+todo-content.gen: $(DOCROOT)/TODO.md
 	$(MARKDOWN) < $< > $@
 
 governance.html: _governance.html $(MAINPARTS) governance.gen

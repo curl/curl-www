@@ -25,6 +25,8 @@ TITLE(FAQ -- Frequently Asked Questions)
 
 #include "faq.gen"
 
+#include "faq-content.gen"
+
 #include "_footer.html"
 
 </body>
