@@ -1361,3 +1361,14 @@ THUMBSIZE width="250" height="141"
 URL https://youtu.be/wEM-E-IJ6sY?t=514
 WHO Daniel Stenberg
 ENDOFVIDEO
+
+VIDEO Tiny curl
+DATE 2025-12-04
+DESC Tiny curl is a flavor of libcurl aimed at smaller devices. Same API, same powers, smaller footprint.
+DURATION 35 minutes
+EVENT wolfSSL webinar
+THUMB tinycurl.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/1Q8CTrK4H0w
+WHO Daniel Stenberg
+ENDOFVIDEO
