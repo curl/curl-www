@@ -36,7 +36,7 @@ subscribe.html: _subscribe.html $(MAINPARTS)
 etiquette.html: _etiquette.html $(MAINPARTS) etiquette.gen
 	$(ACTION)
 
-etiquette.gen: $(DOCROOT)/MAIL-ETIQUETTE.md $(ROOT)/docs/faqparse.pl
+etiquette.gen: $(DOCROOT)/MAIL-ETIQUETTE.md
 	$(MARKDOWN) < $< > $@
 
 mail.html: _mail.html $(MAINPARTS)
