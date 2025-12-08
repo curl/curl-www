@@ -318,7 +318,7 @@ mkdump.gen: $(DOCROOT)/mk-ca-bundle.1
 bugs.html: _bugs.html $(MAINPARTS) bugs.gen
 	$(ACTION)
 
-bugs.gen: $(DOCROOT)/BUGS.md faqparse.pl
+bugs.gen: $(DOCROOT)/BUGS.md
 	$(MARKDOWN) < $< > $@
 
 bugbounty.html: _bugbounty.html $(MAINPARTS) bugbounty.gen $(ADVBOX)
@@ -359,11 +359,14 @@ thanksnum.gen: $(DOCROOT)/THANKS
 thanks.gen: $(DOCROOT)/THANKS
 	grep '^[^ ]' $< | sort | sed -e 's/ /\&nbsp;/g' -e 's/-/\&\#8209/g' -e '$$!s/$$/\&nbsp;\&middot;/' > $@
 
-faq.html: _faq.shtml $(MAINPARTS) faq.gen
+faqtoc.gen: faq.gen ./mdtoc.pl
+	./mdtoc.pl < $< > $@
+
+faq.html: _faq.html $(MAINPARTS) faq.gen faqtoc.gen
 	$(ACTION)
 
-faq.gen: $(DOCROOT)/FAQ faqparse.pl
-	./faqparse.pl < $< > $@
+faq.gen: $(DOCROOT)/FAQ.md
+	$(MARKDOWN) < $< > $@
 
 alt-svc.html: _alt-svc.html $(MAINPARTS) alt-svc.gen
 	$(ACTION)
@@ -385,11 +388,14 @@ http-cookies.gen: $(DOCROOT)/HTTP-COOKIES.md
 irc.html: _irc.html $(MAINPARTS)
 	$(ACTION)
 
-knownbugs.html: _knownbugs.html $(MAINPARTS) knownbugs.gen
+knownbugs.html: _knownbugs.html $(MAINPARTS) knownbugs.gen knownbugstoc.gen
 	$(ACTION)
 
-knownbugs.gen: $(DOCROOT)/KNOWN_BUGS faqparse.pl
-	./faqparse.pl < $< > $@
+knownbugstoc.gen: knownbugs.gen mdtoc.pl
+	./mdtoc.pl < $< > $@
+
+knownbugs.gen: $(DOCROOT)/KNOWN_BUGS.md
+	$(MARKDOWN) < $< > $@
 
 knownrisks.html: _knownrisks.html $(MAINPARTS) knownrisks.gen
 	$(ACTION)
@@ -421,11 +427,14 @@ tutorial.html: _tutorial.html $(MAINPARTS) manual.gen
 manual.gen: $(DOCROOT)/MANUAL.md
 	$(MARKDOWN) < $< >$@
 
-todo.html: _todo.html $(MAINPARTS) todo.gen
+todo.html: _todo.html $(MAINPARTS) todo.gen todotoc.gen
 	$(ACTION)
 
-todo.gen: $(DOCROOT)/TODO faqparse.pl
-	./faqparse.pl < $< > $@
+todotoc.gen: todo.gen ./mdtoc.pl
+	./mdtoc.pl < $< > $@
+
+todo.gen: $(DOCROOT)/TODO.md
+	$(MARKDOWN) < $< > $@
 
 governance.html: _governance.html $(MAINPARTS) governance.gen
 	$(ACTION)
