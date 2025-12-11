@@ -19,11 +19,12 @@ my %silver = (
     "flutter-enterprises" => 'fineproxy.jpg',
     'https://onelessthing.co.uk/' => 'onelessthing.svg',
     'guest-b727d782' => 'zynk.svg',
-    'babiel-gmbh' => 'babiel.svg',
     'https://www.iplocate.io' => 'iplocate.svg',
 
     # missing logo
     'king-johnnie1' => '[none]', # no logo provided
+    'https://stefan-hagen.website' => '[none]', # no logo provided
+    'conet-gmbh' => '[none]', # no logo provided
 
     # Sponsors that don't get images
     'https://www.jackpotjill.ai/en/' => '[none]', # gambling
@@ -38,7 +39,6 @@ my %silver = (
 my %modurl = (
     'flutter-enterprises' => 'https://fineproxy.org/',
     'guest-b727d782' => 'https://zynk.it',
-    'babiel-gmbh' => 'https://www.babiel.com/',
     );
 
 # Get the list of Silver Sponsor URLs
