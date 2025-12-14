@@ -245,7 +245,6 @@ tr.hide {
 /* the top menu box */
 .menu {
   width: 100%;
-  background-image: url("/logo/curl-white-symbol.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-color: #093754;
@@ -257,6 +256,17 @@ tr.hide {
   padding-right: .3em;
   line-height: 130%;
   font-size: 26px;
+}
+
+div.curlsymbol {
+ float: left;
+ position: absolute;
+}
+div.curlsymbol a {
+ cursor: pointer;
+}
+div.curlsymbol a img {
+ width: 41px;
 }
 
 .relatedbox {
@@ -362,8 +372,8 @@ div.yellowbox {
     }
 }
 @media screen and (max-width: 1000px) {
-    .menu {
-        background-image: none;
+    div.curlsymbol {
+        display: none;
     }
 }
 /* Filtering menus on the autobuild page */
