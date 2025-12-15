@@ -258,16 +258,27 @@ tr.hide {
   font-size: 26px;
 }
 
+/* the top menu symbol box */
 div.curlsymbol {
- float: left;
- position: absolute;
+  float: left;
+  position: absolute;
 }
+
 div.curlsymbol a {
- cursor: pointer;
+  cursor: pointer;
 }
+
 div.curlsymbol a img {
- width: 41px;
+  width: 41px;
 }
+
+/* unset the default img:hover, and add hover-effect */
+div.curlsymbol a img:hover {
+  background-color: unset !important;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  width: 42px;
+}
+
 
 .relatedbox {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
