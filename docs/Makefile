@@ -397,7 +397,10 @@ knownbugstoc.gen: knownbugs.gen mdtoc.pl
 knownbugs.gen: $(DOCROOT)/KNOWN_BUGS.md
 	$(MARKDOWN) < $< > $@
 
-knownrisks.html: _knownrisks.html $(MAINPARTS) knownrisks.gen
+knownriskstoc.gen: knownrisks.gen mdtoc.pl
+	./mdtoc.pl < $< > $@
+
+knownrisks.html: _knownrisks.html $(MAINPARTS) knownrisks.gen knownriskstoc.gen
 	$(ACTION)
 
 knownrisks.gen: $(DOCROOT)/KNOWN_RISKS.md 
