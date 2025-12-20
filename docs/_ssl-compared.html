@@ -35,7 +35,7 @@ to use.
 #define AUTO_ <td class="yes">automatic</td>
 
 #define PKCS11 <td class="yes">PKCS<!-- " -->#11<!-- "--></td>
-#define PKCS11_P8 <td class="yes">PKCS<!-- " -->#11<!-- "--> [3]</td>
+#define YES_P8 <td class="yes">PKCS<!-- " -->#11<!-- "--> [3]</td>
 #define KEYCHAIN <td class="yes">Keychain</td>
 #define WINCAPI <td class="yes">Microsoft CryptoAPI</td>
 
@@ -91,7 +91,7 @@ to use.
  FEAT(Uses Certificate Files) YES__ YES__ YES__ YES__ no___ YES__ ENDLINE
  FEAT(Uses Certificate db)    no___ no___ no___ no___ YES__ no___ ENDLINE
 
- FEAT(Crypto module/token support)         PKCS11_P8 PKCS11 no___ no___ WINCAPI    no___ ENDLINE
+ FEAT(Crypto module/token support)         PKCS11_P8 PKCS11 no___ no___ WINCAPI    no___ no___ ENDLINE
  FEAT(Select Certificates/Keys with PKCS#11 URI)    YES_P8 YES__ no___ no___ no___ no___ ENDLINE
  FEAT(Integrates with system token database)        YES__  YES__ YES__ no___ YES__ no___ ENDLINE
 
@@ -102,7 +102,7 @@ to use.
   NEWCOL <a href="https://www.openssl.org/">OpenSSL Project</a> ENDCOL
   NEWCOL <a href="https://www.gnu.org/">Free Software Foundation</a> ENDCOL
   NEWCOL <a href="https://www.wolfssl.com/">wolfSSL</a> ENDCOL
-  NEWCOL <a href="https://tls.mbed.org/">mbed TLS</a> ENDCOL
+  NEWCOL <a href="https://tls.mbed.org/">mbedTLS</a> ENDCOL
   NEWCOL <a href="https://www.microsoft.com/">Microsoft Corporation</a> ENDCOL
   NEWCOL Open Source team ENDCOL
  ENDLINE
@@ -110,7 +110,7 @@ to use.
  FEAT(License)
   NEWCOL Apache-2.0 ENDCOL
   NEWCOL LGPL ENDCOL
-  NEWCOL GPLv2  ENDCOL
+  NEWCOL GPLv3  ENDCOL
   NEWCOL Apache-2.0 / GPLv2 ENDCOL
   NEWCOL Proprietary ENDCOL
   NEWCOL Apache-2.0 / MIT / ISC ENDCOL
@@ -230,7 +230,7 @@ files, the CURLOPT_CAINFO option is ignored.
 and software databases is typically provided via
 <a href="https://en.wikipedia.org/wiki/PKCS_11">; PKCS#11</a> on POSIX platforms,
 and via platform-specific APIs on Windows and Darwin. Examples of PKCS#11
-software tokens include the GNOME keyring, and the NSS "soft token" database.
+software tokens include the GNOME keyring.
 <p>
 
 <b>Integrates with system token database:</b> Platforms often have a
@@ -256,16 +256,14 @@ use the engine when building curl/libcurl.
 
 <b>License:</b> If you are deploying an application that uses libcurl, then
 the license used by the engine may affect whether or not you are able to
-distribute your application legally. OpenSSL's 4-clause BSD license, for
-instance, is not compatible with the GNU GPL.
+distribute your application legally.
 
 SUBTITLE(More reading)
 <p>
  The mentioned libraries: <a href="https://www.openssl.org/">OpenSSL</a>, <a
  href="https://www.gnutls.org/">GnuTLS</a>, <a
- href="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS">NSS</a>, <a
  href="https://www.wolfssl.com/">wolfSSL</a>, <a
- href="https://tls.mbed.org">mbed TLS</a>, <a
+ href="https://tls.mbed.org">mbedTLS</a>, <a
  href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms678421(v=vs.85).aspx">Secure Channel</a>, <a href="https://developer.apple.com/documentation/security/secure_transport">Secure Transport</a>, <a href="https://rustls.dev">Rustls</a>.
 
 <p> More comparisons in the extensive <a
