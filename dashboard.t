@@ -7,7 +7,11 @@
   max-width: 98%;
 }
 
-#ifdef COL3
+#ifdef COL1
+center {
+    display: none;
+}
+#elif defined(COL3)
 .gr {
     width: 33%;
     float: left;
