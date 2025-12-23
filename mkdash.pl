@@ -20,8 +20,8 @@ TOP
 for my $s (sort keys %svg) {
     my $alt = $s;
     $alt =~ s/-/ /g;
-    printf "<div class=\"gr\"><center>%s</center><p><a title=\"%s\" id=\"%s\" href=\"dashboard1.html#%s\"><img alt=\"%s\" class=\"dash\" src=\"$dir/%s\"></a></div>\n",
-        $alt, $alt, $s, $s, $alt, $svg{$s};
+    printf "<div class=\"gr\" id=\"%s\"><center>%s</center><p><a title=\"%s\" href=\"dashboard1.html#%s\"><img alt=\"%s\" class=\"dash\" src=\"$dir/%s\"></a></div>\n",
+        $s, $alt, $alt, $s, $alt, $svg{$s};
 }
 
 print <<MID
