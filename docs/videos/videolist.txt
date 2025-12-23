@@ -1173,6 +1173,18 @@ WHO Daniel Stenberg
 DESC Things we may see added and done in curl during 2025.
 ENDOFVIDEO
 
+VIDEO What comes after world domination?
+EVENT foss-north 2025
+URL https://youtu.be/kn36wcBIGlY
+THUMB world-domination.jpg
+THUMBSIZE width="250" height="141"
+DATE 2025-04-14
+DURATION 57 minutes
+WHO Daniel Stenberg
+DESC Starting off with a look on the Open Source explosion that has taken us to this point, Daniel discusses areas of improvement and dreams and visions for our future.
+SLIDES https://foss-north.se/2025/slides/dstenberg-world-domination-slides.pdf
+ENDOFVIDEO
+
 VIDEO curl container update
 DATE 2025-05-03
 DESC What have we done with the curl container last year?
@@ -1184,7 +1196,7 @@ URL https://youtu.be/ngPl50EitW0
 WHO James Fuller
 ENDOFVIDEO
 
-VIDEO What can Test Clutch teach us
+VIDEO What can Test Clutch teach us?
 DATE 2025-05-03
 DESC What can we glean from the curl regression test data analyzed by Test Clutch?
 DURATION 46 minutes
