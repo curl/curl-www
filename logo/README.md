@@ -33,7 +33,7 @@ donated to the curl project on May 26 2016.
 |------------------------------------------------------------|------|------------|-----------------|
 | [curl-symbol.jpg](curl-symbol.jpg)                         | 37K  | 789 x 690  | JPEG            |
 | [curl-symbol.png](curl-symbol.png)                         | 24K  | 789 x 690  | PNG             |
-| [curl-symbol.svg](curl-symbol.svg)                         | 2.1K | vector     | SVG             |
+| [curl-symbol.svg](curl-symbol.svg)                         | 1.6K | vector     | SVG             |
 | [curl-symbol.xcf](curl-symbol.xcf)                         | 48K  | 789 x 690  | XCF             |
 | [curl-symbol-transparent.png](curl-symbol-transparent.png) | 3.0K | 683 x 571  | transparent PNG |
 
