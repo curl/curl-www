@@ -42,7 +42,7 @@ donated to the curl project on May 26 2016.
 
 | File                       | Size | Resolution | Format |
 |----------------------------|------|------------|--------|
-| [curl-up.png](curl-up.png) | 48K  | 2000x551   | PNG    |
+| [curl-up.png](curl-up.png) | 67K  | 2500x688   | PNG    |
 | [curl-up.svg](curl-up.svg) | 9K   | vector     | SVG    |
 
 ## trurl
