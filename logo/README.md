@@ -18,11 +18,11 @@ donated to the curl project on May 26 2016.
 
 | File                                         | Size  | Resolution | Format          |
 |----------------------------------------------|-------|------------|-----------------|
-| [curl-logo.jpg](curl-logo.jpg)               | 40K   | 1024 x 309 | JPEG            |
-| [curl-logo.png](curl-logo.png)               | 23K   | 1024 x 309 | PNG             |
+| [curl-logo.jpg](curl-logo.jpg)               | 81K   | 2000 x 551 | JPEG            |
+| [curl-logo.png](curl-logo.png)               | 51K   | 2000 x 551 | PNG             |
 | [curl-logo-raw.svg](curl-logo-raw.svg)       | 9K    | vector     | SVG (Inkscape)  |
 | [curl-logo.svg](curl-logo.svg)               | 3K    | vector     | SVG             |
-| [curl-transparent.png](curl-transparent.png) | 23K   | 1024 x 309 | transparent PNG |
+| [curl-transparent.png](curl-transparent.png) | 48K   | 2000 x 551 | transparent PNG |
 
 ## The curl symbol
 
@@ -30,11 +30,11 @@ donated to the curl project on May 26 2016.
 
 | File                                                       | Size | Resolution | Format          |
 |------------------------------------------------------------|------|------------|-----------------|
-| [curl-symbol.jpg](curl-symbol.jpg)                         | 43K  | 768 x 647  | JPEG            |
-| [curl-symbol.png](curl-symbol.png)                         | 29K  | 768 x 647  | PNG             |
+| [curl-symbol.jpg](curl-symbol.jpg)                         | 37K  | 672 x 566  | JPEG            |
+| [curl-symbol.png](curl-symbol.png)                         | 25K  | 672 x 566  | PNG             |
 | [curl-symbol-raw.svg](curl-symbol-raw.svg)                 | 5K   | vector     | SVG (Inkscape)  |
 | [curl-symbol.svg](curl-symbol.svg)                         | 1.3K | vector     | SVG             |
-| [curl-symbol-transparent.png](curl-symbol-transparent.png) | 29K  | 768 x 647  | transparent PNG |
+| [curl-symbol-transparent.png](curl-symbol-transparent.png) | 24K  | 672 x 566  | transparent PNG |
 
 ## curl up
 
@@ -42,7 +42,7 @@ donated to the curl project on May 26 2016.
 
 | File                       | Size | Resolution | Format |
 |----------------------------|------|------------|--------|
-| [curl-up.png](curl-up.png) | 50K  | 2048 x 564 | PNG    |
+| [curl-up.png](curl-up.png) | 48K  | 2000x551   | PNG    |
 | [curl-up.svg](curl-up.svg) | 9K   | vector     | SVG    |
 
 ## trurl

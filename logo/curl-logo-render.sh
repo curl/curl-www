@@ -7,15 +7,17 @@
 
 set -eu
 
-rsvg-convert --width 1024 --keep-aspect-ratio curl-logo.svg --output curl-transparent.png
-rsvg-convert --width 1024 --keep-aspect-ratio curl-logo.svg --output curl-logo.png --background-color '#ffffff'
+rsvg-convert --width 2000 --keep-aspect-ratio curl-logo.svg --output curl-transparent.png
+rsvg-convert --width 2000 --keep-aspect-ratio curl-logo.svg --output curl-logo.png --background-color '#ffffff'
 magick curl-logo.png curl-logo.jpg
 
-rsvg-convert --width 768 --keep-aspect-ratio curl-symbol-raw.svg --output curl-symbol-transparent.png
-rsvg-convert --width 768 --keep-aspect-ratio curl-symbol-raw.svg --output curl-symbol.png --background-color '#ffffff'
+rsvg-convert --width 672 --keep-aspect-ratio curl-symbol-raw.svg --output curl-symbol-transparent.png
+rsvg-convert --width 672 --keep-aspect-ratio curl-symbol-raw.svg --output curl-symbol.png --background-color '#ffffff'
 magick curl-symbol.png curl-symbol.jpg
 
-rsvg-convert --width 2048 --keep-aspect-ratio curl-up.svg --output curl-up.png
+rsvg-convert --width 2000 --keep-aspect-ratio curl-up.svg --output curl-up.png
+
+exit
 
 # NOTE: Make sure to further losslessly compress the bitmaps.
 
