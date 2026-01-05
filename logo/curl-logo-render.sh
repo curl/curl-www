@@ -15,6 +15,8 @@ rsvg-convert --width 768 --keep-aspect-ratio curl-symbol-raw.svg --output curl-s
 rsvg-convert --width 768 --keep-aspect-ratio curl-symbol-raw.svg --output curl-symbol.png --background-color '#ffffff'
 magick curl-symbol.png curl-symbol.jpg
 
+rsvg-convert --width 2048 --keep-aspect-ratio curl-up.svg --output curl-up.png
+
 # NOTE: Make sure to further losslessly compress the bitmaps.
 
 # curl-symbol-raw.svg -> open in Inkscape, merge paths of the same color, ungroup everything, save -> curl-symbol-in.svg
