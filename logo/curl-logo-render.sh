@@ -31,8 +31,8 @@ fi
 
 sed -E 's/#[a-f0-9]{6}/#fff/g' < curl-symbol.svg > curl-white-symbol.svg
 
-rsvg-convert --width 672 --keep-aspect-ratio curl-symbol-raw.svg --output curl-symbol-transparent.png
-rsvg-convert --width 672 --keep-aspect-ratio curl-symbol-raw.svg --output curl-symbol.png --background-color '#ffffff'
+rsvg-convert --width 672 --keep-aspect-ratio curl-symbol.svg --output curl-symbol-transparent.png
+rsvg-convert --width 672 --keep-aspect-ratio curl-symbol.svg --output curl-symbol.png --background-color '#ffffff'
 magick curl-symbol.png curl-symbol.jpg
 
 rsvg-convert --width 2500 --keep-aspect-ratio curl-up.svg --output curl-up.png
