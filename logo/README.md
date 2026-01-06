@@ -18,11 +18,11 @@ donated to the curl project on May 26 2016.
 
 | File                                         | Size  | Resolution | Format          |
 |----------------------------------------------|-------|------------|-----------------|
-| [curl-logo.jpg](curl-logo.jpg)               | 81K   | 2000 x 551 | JPEG            |
+| [curl-logo.jpg](curl-logo.jpg)               | 80K   | 2000 x 551 | JPEG            |
 | [curl-logo.png](curl-logo.png)               | 51K   | 2000 x 551 | PNG             |
-| [curl-logo-raw.svg](curl-logo-raw.svg)       | 9K    | vector     | SVG (Inkscape)  |
-| [curl-logo.svg](curl-logo.svg)               | 3K    | vector     | SVG             |
-| [curl-transparent.png](curl-transparent.png) | 48K   | 2000 x 551 | transparent PNG |
+| [curl-logo-raw.svg](curl-logo-raw.svg)       | 8K    | vector     | SVG (Inkscape)  |
+| [curl-logo.svg](curl-logo.svg)               | 2.7K  | vector     | SVG             |
+| [curl-transparent.png](curl-transparent.png) | 51K   | 2000 x 551 | transparent PNG |
 
 ## The curl symbol
 
@@ -32,8 +32,8 @@ donated to the curl project on May 26 2016.
 |------------------------------------------------------------|------|------------|-----------------|
 | [curl-symbol.jpg](curl-symbol.jpg)                         | 37K  | 672 x 566  | JPEG            |
 | [curl-symbol.png](curl-symbol.png)                         | 25K  | 672 x 566  | PNG             |
-| [curl-symbol-raw.svg](curl-symbol-raw.svg)                 | 5K   | vector     | SVG (Inkscape)  |
-| [curl-symbol.svg](curl-symbol.svg)                         | 1.3K | vector     | SVG             |
+| [curl-symbol-raw.svg](curl-symbol-raw.svg)                 | 4.6K | vector     | SVG (Inkscape)  |
+| [curl-symbol.svg](curl-symbol.svg)                         | 1.1K | vector     | SVG             |
 | [curl-symbol-transparent.png](curl-symbol-transparent.png) | 24K  | 672 x 566  | transparent PNG |
 
 ## curl up
@@ -43,7 +43,7 @@ donated to the curl project on May 26 2016.
 | File                       | Size | Resolution | Format |
 |----------------------------|------|------------|--------|
 | [curl-up.png](curl-up.png) | 67K  | 2500x688   | PNG    |
-| [curl-up.svg](curl-up.svg) | 9K   | vector     | SVG    |
+| [curl-up.svg](curl-up.svg) | 7.8K | vector     | SVG    |
 
 ## trurl
 
