@@ -39,11 +39,19 @@ rsvg-convert --width 2500 --keep-aspect-ratio curl-up.svg --output curl-up.png
 
 rsvg-convert --width 2000 --keep-aspect-ratio wcurl-logo.svg --output wcurl-logo.png
 
-# NOTE: Make sure to further losslessly compress the bitmaps:
-#  oxipng --strip safe --nc --opt 1 --interlace 0 --alpha
-#  pngout -k0
-#  zopflipng \
-#    --lossy_transparent -y \
-#    --keepchunks=tEXt,zTXt,iTXt,gAMA,sRGB,iCCP,bKGD,pHYs,sBIT,tIME,oFFs,acTL,fcTL,fdAT,prVW,mkBF,mkTS,mkBS,mkBT \
-#    --filters=0pme
-#  advpng -z -4
+# Further losslessly compress the bitmaps:
+
+for f in ./*.jpg; do
+  jpegoptim --quiet --preserve --preserve-perms --all-normal --force "$f"
+  /opt/homebrew/opt/mozjpeg/bin/jpegtran -optimize -copy all -outfile "$f.tmp1" "$f"; mv "$f.tmp1" "$f"
+done
+
+for f in ./*.png; do
+  oxipng --quiet --strip safe --nc --opt 1 --interlace 0 --alpha --out "$f.tmp1" "$f"; mv "$f.tmp1" "$f"
+  pngcrush -oldtimestamp -ow -nofilecheck -blacken -reduce -rem alla "$f"
+  pngout -k0 -y "$f" "$f.tmp2" || true; mv "$f.tmp2.png" "$f"
+  optipng -o7 "$f"
+  zopflipng --lossy_transparent -y --keepchunks=tEXt,zTXt,iTXt,gAMA,sRGB,iCCP,bKGD,pHYs,sBIT,tIME,oFFs,acTL,fcTL,fdAT,prVW,mkBF,mkTS,mkBS,mkBT --filters=0pme -m "$f" "$f.tmp3"; mv "$f.tmp3" "$f"
+  # Some transparent files will compress better with _only_ this compressor:
+  advpng -z -4 "$f" || true
+done
