@@ -14,6 +14,8 @@ You are allowed to resize the images and host them yourself as you see fit.
 This is the official curl logo. Made by Soft Dreams (Adrian Burcea) and
 donated to the curl project on May 26 2016.
 
+Applied minor fixes and tweaks on January 6, 2026.
+
 [![curl logo](curl-logo.svg)]()
 
 | File                                         | Size  | Resolution | Format          |
