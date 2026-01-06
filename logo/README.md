@@ -65,7 +65,7 @@ by Christian Plaza.
 
 | File                             | Size | Resolution | Format |
 |----------------------------------|------|------------|--------|
-| [wcurl-logo.png](wcurl-logo.png) | 61K  | 2000 x 501 | PNG    |
+| [wcurl-logo.png](wcurl-logo.png) | 52K  | 2000 x 501 | PNG    |
 | [wcurl-logo.svg](wcurl-logo.svg) | 3.3K | vector     | SVG    |
 
 ## curl logo colors

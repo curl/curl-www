@@ -37,4 +37,13 @@ magick curl-symbol.png curl-symbol.jpg
 
 rsvg-convert --width 2500 --keep-aspect-ratio curl-up.svg --output curl-up.png
 
-# NOTE: Make sure to further losslessly compress the bitmaps.
+rsvg-convert --width 2000 --keep-aspect-ratio wcurl-logo.svg --output wcurl-logo.png
+
+# NOTE: Make sure to further losslessly compress the bitmaps:
+#  oxipng --strip safe --nc --opt 1 --interlace 0 --alpha
+#  pngout -k0
+#  zopflipng \
+#    --lossy_transparent -y \
+#    --keepchunks=tEXt,zTXt,iTXt,gAMA,sRGB,iCCP,bKGD,pHYs,sBIT,tIME,oFFs,acTL,fcTL,fdAT,prVW,mkBF,mkTS,mkBS,mkBT \
+#    --filters=0pme
+#  advpng -z -4
