@@ -31,7 +31,7 @@ donated to the curl project on May 26 2016.
 | File                                                       | Size | Resolution | Format          |
 |------------------------------------------------------------|------|------------|-----------------|
 | [curl-symbol.jpg](curl-symbol.jpg)                         | 37K  | 672 x 566  | JPEG            |
-| [curl-symbol.png](curl-symbol.png)                         | 25K  | 672 x 566  | PNG             |
+| [curl-symbol.png](curl-symbol.png)                         | 24K  | 672 x 566  | PNG             |
 | [curl-symbol-raw.svg](curl-symbol-raw.svg)                 | 4.6K | vector     | SVG (Inkscape)  |
 | [curl-symbol.svg](curl-symbol.svg)                         | 1.1K | vector     | SVG             |
 | [curl-symbol-transparent.png](curl-symbol-transparent.png) | 24K  | 672 x 566  | transparent PNG |
@@ -42,7 +42,7 @@ donated to the curl project on May 26 2016.
 
 | File                       | Size | Resolution | Format |
 |----------------------------|------|------------|--------|
-| [curl-up.png](curl-up.png) | 67K  | 2500x688   | PNG    |
+| [curl-up.png](curl-up.png) | 63K  | 2500x688   | PNG    |
 | [curl-up.svg](curl-up.svg) | 7.8K | vector     | SVG    |
 
 ## trurl
@@ -65,7 +65,7 @@ by Christian Plaza.
 
 | File                             | Size | Resolution | Format |
 |----------------------------------|------|------------|--------|
-| [wcurl-logo.png](wcurl-logo.png) | 52K  | 2000 x 501 | PNG    |
+| [wcurl-logo.png](wcurl-logo.png) | 49K  | 2000 x 501 | PNG    |
 | [wcurl-logo.svg](wcurl-logo.svg) | 3.3K | vector     | SVG    |
 
 ## curl logo colors
