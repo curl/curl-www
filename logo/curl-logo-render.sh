@@ -13,7 +13,7 @@ if [ -f curl-logo-in.svg ]; then
   svgcleaner "$f"-in.svg "$f"-tmp1.svg
   svgo --pretty --indent 1 "$f"-tmp1.svg
   mv "$f"-tmp1.svg "$f".svg
-  sed -i.bak -E 's/ (width|height)="[0-9]+"//g' "$f".svg
+  sed -i.bak -E 's/ (height|width)="[0-9]+"//g' "$f".svg
   # edit result to remove evenodd group.
 fi
 
@@ -27,7 +27,7 @@ if [ -f curl-symbol-in.svg ]; then
   svgcleaner "$f"-in.svg "$f"-tmp1.svg
   svgo --pretty --indent 1 "$f"-tmp1.svg
   mv "$f"-tmp1.svg "$f".svg
-  sed -i.bak -E 's/ (width|height)="[0-9]+"//g' "$f".svg
+  sed -i.bak -E 's/ (height|width)="[0-9]+"//g' "$f".svg
   # edit result to remove evenodd group.
 fi
 
