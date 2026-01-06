@@ -8,8 +8,8 @@
 set -eu
 
 # curl-logo-raw.svg -> open in Inkscape, merge paths of the same color (Path -> Union), ungroup everything, save -> curl-logo-in.svg
-if [ -f curl-logo-in.svg ]; then
-  f='curl-logo'
+f='curl-logo'
+if [ -f "$f"-in.svg ]; then
   svgcleaner "$f"-in.svg "$f"-tmp1.svg
   svgo --pretty --indent 1 "$f"-tmp1.svg
   mv "$f"-tmp1.svg "$f".svg
@@ -22,8 +22,8 @@ rsvg-convert --width 2000 --keep-aspect-ratio curl-logo.svg --output curl-logo.p
 magick curl-logo.png curl-logo.jpg
 
 # curl-symbol-raw.svg -> open in Inkscape, merge paths of the same color (Path -> Union), ungroup everything, save -> curl-symbol-in.svg
-if [ -f curl-symbol-in.svg ]; then
-  f='curl-symbol'
+f='curl-symbol'
+if [ -f "$f"-in.svg ]; then
   svgcleaner "$f"-in.svg "$f"-tmp1.svg
   svgo --pretty --indent 1 "$f"-tmp1.svg
   mv "$f"-tmp1.svg "$f".svg
