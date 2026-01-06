@@ -9,10 +9,12 @@ set -eu
 
 if [ -f curl-logo-in.svg ]; then
   # curl-logo-raw.svg -> open in Inkscape, merge paths of the same color (Path -> Union), ungroup everything, save -> curl-logo-in.svg
-  svgcleaner curl-logo-in.svg curl-logo-tmp1.svg
-  svgo --pretty --indent 1 curl-logo-tmp1.svg
-  mv curl-logo-tmp1.svg curl-logo.svg
-  # edit curl-logo.svg to remove width/height attributes from svg tag, evenodd group.
+  f='curl-logo'
+  svgcleaner "$f"-in.svg "$f"-tmp1.svg
+  svgo --pretty --indent 1 "$f"-tmp1.svg
+  mv "$f"-tmp1.svg "$f".svg
+  sed -i.bak -E 's/ (width|height)="[0-9]+"//g' "$f".svg
+  # edit result to remove evenodd group.
 fi
 
 rsvg-convert --width 2000 --keep-aspect-ratio curl-logo.svg --output curl-transparent.png
@@ -21,10 +23,12 @@ magick curl-logo.png curl-logo.jpg
 
 if [ -f curl-symbol-in.svg ]; then
   # curl-symbol-raw.svg -> open in Inkscape, merge paths of the same color (Path -> Union), ungroup everything, save -> curl-symbol-in.svg
-  svgcleaner curl-symbol-in.svg curl-symbol-tmp1.svg
-  svgo --pretty --indent 1 curl-symbol-tmp1.svg
-  mv curl-symbol-tmp1.svg curl-symbol.svg
-  # edit curl-symbol.svg to remove width/height attributes from svg tag, evenodd group.
+  f='curl-symbol'
+  svgcleaner "$f"-in.svg "$f"-tmp1.svg
+  svgo --pretty --indent 1 "$f"-tmp1.svg
+  mv "$f"-tmp1.svg "$f".svg
+  sed -i.bak -E 's/ (width|height)="[0-9]+"//g' "$f".svg
+  # edit result to remove evenodd group.
 fi
 
 sed -E 's/#[a-f0-9]{6}/#fff/g' < curl-symbol.svg > curl-white-symbol.svg
