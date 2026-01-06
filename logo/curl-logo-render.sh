@@ -47,11 +47,5 @@ for f in ./*.jpg; do
 done
 
 for f in ./*.png; do
-  oxipng --quiet --strip safe --nc --opt 1 --interlace 0 --alpha --out "$f.tmp1" "$f"; mv "$f.tmp1" "$f"
-  pngcrush -oldtimestamp -ow -nofilecheck -blacken -reduce -rem alla "$f"
-  pngout -k0 -y "$f" "$f.tmp2" || true; mv "$f.tmp2.png" "$f"
-  optipng -o7 "$f"
-  zopflipng --lossy_transparent -y --keepchunks=tEXt,zTXt,iTXt,gAMA,sRGB,iCCP,bKGD,pHYs,sBIT,tIME,oFFs,acTL,fcTL,fdAT,prVW,mkBF,mkTS,mkBS,mkBT --filters=0pme -m "$f" "$f.tmp3"; mv "$f.tmp3" "$f"
-  # Some transparent files will compress better with _only_ this compressor:
   advpng -z -4 "$f" || true
 done
