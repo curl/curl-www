@@ -70,7 +70,7 @@ by Christian Plaza.
 
 ## curl logo colors
 
-- curl blue: `#0a3754`
+- curl blue: `#093754`
 - curl green: `#0f574c`
 
 ## curl logo font
