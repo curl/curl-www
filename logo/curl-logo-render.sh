@@ -39,13 +39,16 @@ rsvg-convert --width 2500 --keep-aspect-ratio curl-up.svg --output curl-up.png
 
 rsvg-convert --width 2000 --keep-aspect-ratio wcurl-logo.svg --output wcurl-logo.png
 
-# Further losslessly compress the bitmaps:
+# Further losslessly compress bitmaps:
 
 for f in ./*.jpg; do
   jpegoptim --quiet --preserve --preserve-perms --all-normal --force "$f"
   /opt/homebrew/opt/mozjpeg/bin/jpegtran -optimize -copy all -outfile "$f.tmp1" "$f"; mv "$f.tmp1" "$f"
 done
 
+# This compressor alone gave better results than running a bunch of others beforehand
+# (except with curl-logo.png, which was 24 bytes (0.0046%) smaller that way, and also
+# significantly slower):
 for f in ./*.png; do
   advpng -z -4 "$f" || true
 done
