@@ -18,13 +18,13 @@ Applied minor fixes and tweaks on January 6, 2026.
 
 [![curl logo](curl-logo.svg)]()
 
-| File                                         | Size  | Resolution | Format          |
-|----------------------------------------------|-------|------------|-----------------|
-| [curl-logo.jpg](curl-logo.jpg)               | 80K   | 2000 x 551 | JPEG            |
-| [curl-logo.png](curl-logo.png)               | 51K   | 2000 x 551 | PNG             |
-| [curl-logo-raw.svg](curl-logo-raw.svg)       | 8K    | vector     | SVG (Inkscape)  |
-| [curl-logo.svg](curl-logo.svg)               | 2.7K  | vector     | SVG             |
-| [curl-transparent.png](curl-transparent.png) | 51K   | 2000 x 551 | transparent PNG |
+| File                                             | Size  | Resolution | Format          |
+|--------------------------------------------------|-------|------------|-----------------|
+| [curl-logo.jpg](curl-logo.jpg)                   | 80K   | 2000 x 551 | JPEG            |
+| [curl-logo.png](curl-logo.png)                   | 51K   | 2000 x 551 | PNG             |
+| [curl-logo-inkscape.svg](curl-logo-inkscape.svg) | 8K    | vector     | SVG             |
+| [curl-logo.svg](curl-logo.svg)                   | 2.7K  | vector     | SVG             |
+| [curl-transparent.png](curl-transparent.png)     | 51K   | 2000 x 551 | transparent PNG |
 
 ## The curl symbol
 
@@ -34,7 +34,7 @@ Applied minor fixes and tweaks on January 6, 2026.
 |------------------------------------------------------------|------|------------|-----------------|
 | [curl-symbol.jpg](curl-symbol.jpg)                         | 37K  | 672 x 566  | JPEG            |
 | [curl-symbol.png](curl-symbol.png)                         | 24K  | 672 x 566  | PNG             |
-| [curl-symbol-raw.svg](curl-symbol-raw.svg)                 | 4.6K | vector     | SVG (Inkscape)  |
+| [curl-symbol-inkscape.svg](curl-symbol-inkscape.svg)       | 4.6K | vector     | SVG             |
 | [curl-symbol.svg](curl-symbol.svg)                         | 1.1K | vector     | SVG             |
 | [curl-symbol-transparent.png](curl-symbol-transparent.png) | 24K  | 672 x 566  | transparent PNG |
 
