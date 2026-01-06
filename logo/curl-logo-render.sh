@@ -11,9 +11,9 @@ if [ -f curl-logo-in.svg ]; then
   # curl-logo-raw.svg -> open in Inkscape, merge paths of the same color (Path -> Union), ungroup everything, save -> curl-logo-in.svg
   svgcleaner curl-logo-in.svg curl-logo-tmp1.svg
   svgo curl-logo-tmp1.svg
-  xmllint --format curl-logo-tmp1.svg > curl-logo.svg
+  XMLLINT_INDENT=' ' xmllint --format curl-logo-tmp1.svg > curl-logo.svg
   rm -f curl-logo-tmp1.svg
-  # edit curl-logo.svg to remove XML prolog, width/height attributes from svg tag, evenodd group, then indent to 1 space.
+  # edit curl-logo.svg to remove XML prolog, width/height attributes from svg tag, evenodd group.
 fi
 
 rsvg-convert --width 2000 --keep-aspect-ratio curl-logo.svg --output curl-transparent.png
@@ -24,9 +24,9 @@ if [ -f curl-symbol-in.svg ]; then
   # curl-symbol-raw.svg -> open in Inkscape, merge paths of the same color (Path -> Union), ungroup everything, save -> curl-symbol-in.svg
   svgcleaner curl-symbol-in.svg curl-symbol-tmp1.svg
   svgo curl-symbol-tmp1.svg
-  xmllint --format curl-symbol-tmp1.svg > curl-symbol.svg
+  XMLLINT_INDENT=' ' xmllint --format curl-symbol-tmp1.svg > curl-symbol.svg
   rm -f curl-symbol-tmp1.svg
-  # edit curl-symbol.svg to remove XML prolog, width/height attributes from svg tag, evenodd group, then indent to 1 space.
+  # edit curl-symbol.svg to remove XML prolog, width/height attributes from svg tag, evenodd group.
 fi
 
 sed -E 's/#[a-f0-9]{6}/#fff/g' < curl-symbol.svg > curl-white-symbol.svg
