@@ -403,7 +403,7 @@ knownriskstoc.gen: knownrisks.gen mdtoc.pl
 knownrisks.html: _knownrisks.html $(MAINPARTS) knownrisks.gen knownriskstoc.gen
 	$(ACTION)
 
-knownrisks.gen: $(DOCROOT)/KNOWN_RISKS.md 
+knownrisks.gen: $(DOCROOT)/KNOWN_RISKS.md
 	$(MARKDOWN) < $<  > $@
 
 httpscript.gen: $(DOCROOT)/TheArtOfHttpScripting.md
