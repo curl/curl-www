@@ -16,6 +16,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2025-14017.html|7.17.0|8.17.0|broken TLS options for threaded LDAPS|CVE-2025-14017|20260107|20251201|CWE-567: Unsynchronized Access to Shared Data in a Multithreaded Context|2540|LDAP|-|lib|medium",
     "CVE-2025-13034.html|8.8.0|8.17.0|No QUIC certificate pinning with GnuTLS|CVE-2025-13034|20260107|20251109|CWE-295: Improper Certificate Validation|2540|QUIC|-|both|medium",
     "CVE-2025-10966.html|7.69.0|8.16.0|missing SFTP host verification with wolfSSH|CVE-2025-10966|20251105|20250923|CWE-322: Key Exchange without Entity Authentication|505|SSH|-|both|low|https://hackerone.com/reports/3355218",
     "CVE-2025-10148.html|8.11.0|8.15.0|predictable WebSocket mask|CVE-2025-10148|20250910|20250908|CWE-340: Generation of Predictable Numbers or Identifiers|505|WebSocket|-|both|low|https://hackerone.com/reports/3330839",
