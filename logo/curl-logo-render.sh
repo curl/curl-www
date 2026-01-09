@@ -3,18 +3,15 @@
 #
 # SPDX-License-Identifier: curl
 
-# requires rsvg-convert, imagemagick, svgcleaner, svgo, jpegoptim, mozjpeg, advpng
+# requires rsvg-convert, imagemagick, svgo, jpegoptim, mozjpeg, advpng
 
 set -eu
 
-# curl-logo-inkscape.svg -> open in Inkscape, merge letter paths (Path -> Union), save -> curl-logo-in.svg
+# curl-logo-inkscape.svg -> open in Inkscape, merge 'curl' letter paths (Path -> Union), save -> curl-logo-in.svg
 f='curl-logo'
 if [ -f "$f"-in.svg ]; then
-  svgcleaner "$f"-in.svg "$f"-tmp1.svg
-  svgo --pretty --indent 1 "$f"-tmp1.svg
-  mv "$f"-tmp1.svg "$f".svg
-  sed -i.bak -E 's/ (height|width)="[0-9]+"//g' "$f".svg
-  # edit result to remove evenodd group.
+  svgo --pretty --indent 1 "$f"-in.svg
+  mv "$f"-in.svg "$f".svg
 fi
 
 rsvg-convert --width 2000 --keep-aspect-ratio curl-logo.svg --output curl-transparent.png
