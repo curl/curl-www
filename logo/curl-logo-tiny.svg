@@ -13,6 +13,6 @@
 <circle cx="334" cy="9" r="7"/>
 </g>
 </g>
-<path style="stroke:#0f564d" d="m287.5 88.5 44-75"/>
+<path d="m287.5 88.5 44-75" stroke="#0f564d"/>
 </g>
 </svg>
