@@ -42,9 +42,9 @@ Applied minor fixes and tweaks on January 6, 2026 (by vsz).
 
 | File                                                       | Size | Resolution | Format          |
 |------------------------------------------------------------|------|------------|-----------------|
-| [curl-logo-tiny.svg](curl-logo-tiny.svg)                   | 722  | vector     | SVG             |
+| [curl-logo-tiny.svg](curl-logo-tiny.svg)                   | 734  | vector     | SVG             |
 
-705 bytes with svgo, 340 with brotli q=11.
+717 bytes with svgo, 352 with brotli q=11.
 
 Made by Йоте <https://social.net.ua/users/joter>
 Via: <https://social.net.ua/notice/B25SxW3zQZFV1GDGbI>
