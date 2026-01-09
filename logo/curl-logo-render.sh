@@ -18,6 +18,7 @@ rsvg-convert --width 2000 --keep-aspect-ratio curl-logo.svg --output curl-transp
 rsvg-convert --width 2000 --keep-aspect-ratio curl-logo.svg --output curl-logo.png --background-color '#ffffff'
 magick curl-logo.png curl-logo.jpg
 
+# Delete the redundant nested g stroke group after this
 sed -E 's/#[a-f0-9]{6}/#fff/g' < curl-symbol.svg > curl-white-symbol.svg
 
 rsvg-convert --width 672 --keep-aspect-ratio curl-symbol.svg --output curl-symbol-transparent.png
