@@ -34,8 +34,9 @@ Applied minor fixes and tweaks on January 6, 2026 (by vsz).
 |------------------------------------------------------------|------|------------|-----------------|
 | [curl-symbol.jpg](curl-symbol.jpg)                         | 37K  | 672 x 566  | JPEG            |
 | [curl-symbol.png](curl-symbol.png)                         | 23K  | 672 x 566  | PNG             |
-| [curl-symbol.svg](curl-symbol.svg)                         | 0.5K | vector     | SVG             |
+| [curl-symbol.svg](curl-symbol.svg)                         | 509  | vector     | SVG             |
 | [curl-symbol-transparent.png](curl-symbol-transparent.png) | 23K  | 672 x 566  | transparent PNG |
+| [curl-white-symbol.svg](curl-white-symbol.svg)             | 473  | vector     | SVG (white)     |
 
 ## curl up
 
