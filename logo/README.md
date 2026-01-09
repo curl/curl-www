@@ -44,7 +44,7 @@ Applied minor fixes and tweaks on January 6, 2026 (by vsz).
 | File                       | Size | Resolution | Format |
 |----------------------------|------|------------|--------|
 | [curl-up.png](curl-up.png) | 63K  | 2500 x 688 | PNG    |
-| [curl-up.svg](curl-up.svg) | 7.8K | vector     | SVG    |
+| [curl-up.svg](curl-up.svg) | 2.3K | vector     | SVG    |
 
 ## trurl
 
