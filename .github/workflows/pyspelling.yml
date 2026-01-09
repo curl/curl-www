@@ -42,7 +42,7 @@ jobs:
           persist-credentials: false
 
       - name: strip "uncheckable" sections from .md pages
-        run: find docs -name '*.md' -print0 | xargs -0 -t -n1 .github/scripts/cleanspell.pl
+        run: find docs logo -name '*.md' -print0 | xargs -0 -t -n1 .github/scripts/cleanspell.pl
 
       - name: 'install'
         run: |
