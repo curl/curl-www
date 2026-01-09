@@ -47,7 +47,7 @@ Applied minor fixes and tweaks on January 6, 2026 (by vsz).
 806 bytes with svgo, 354 with brotli q=11.
 
 Made by Йоте <https://social.net.ua/users/joter>
-Via: https://social.net.ua/notice/B25SxW3zQZFV1GDGbI
+Via: <https://social.net.ua/notice/B25SxW3zQZFV1GDGbI>
 
 ## curl up
 
