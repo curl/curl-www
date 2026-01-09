@@ -22,7 +22,7 @@ Applied minor fixes and tweaks on January 6, 2026 (by vsz).
 |--------------------------------------------------|-------|------------|-----------------|
 | [curl-logo.jpg](curl-logo.jpg)                   | 80K   | 2000 x 551 | JPEG            |
 | [curl-logo.png](curl-logo.png)                   | 51K   | 2000 x 551 | PNG             |
-| [curl-logo-inkscape.svg](curl-logo-inkscape.svg) | 1.6K  | vector     | SVG             |
+| [curl-logo-master.svg](curl-logo-master.svg)     | 1.6K  | vector     | SVG             |
 | [curl-logo.svg](curl-logo.svg)                   | 1.4K  | vector     | SVG             |
 | [curl-transparent.png](curl-transparent.png)     | 51K   | 2000 x 551 | transparent PNG |
 

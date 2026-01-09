@@ -7,7 +7,7 @@
 
 set -eu
 
-# curl-logo-inkscape.svg -> open in Inkscape, merge 'curl' letter paths (Path -> Union), save -> curl-logo-in.svg
+# curl-logo-master.svg -> open in Inkscape, merge 'curl' letter paths (Path -> Union), save -> curl-logo-in.svg
 f='curl-logo'
 if [ -f "$f"-in.svg ]; then
   svgo --pretty --indent 1 "$f"-in.svg
