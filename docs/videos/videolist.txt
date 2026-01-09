@@ -6,7 +6,7 @@ THUMBSIZE width="250" height="141"
 DURATION 17 minutes
 DATE 2014-05-15
 WHO Kimon Berlin
-DESC This presentation demonstrates how easy it is to port cURL and libcurl to the UEFI pre-boot environment.
+DESC This presentation demonstrates how easy it is to port curl and libcurl to the UEFI pre-boot environment.
 ENDOFVIDEO
 
 VIDEO curl now and then
@@ -594,7 +594,7 @@ WHO Daniel Stenberg
 DESC How we develop secure and safe software in the curl project
 ENDOFVIDEO
 
-VIDEO Why cURL is used in IoT devices
+VIDEO Why curl is used in IoT devices
 EVENT wolfSSL webinar
 URL https://youtu.be/2PEZ6BMEr4Y
 THUMB curl-in-iot.jpg
@@ -602,7 +602,7 @@ THUMBSIZE width="250" height="141"
 DATE 2020-08-05
 DURATION 24 minutes
 WHO Daniel Stenberg
-DESC Why cURL is used in embedded devices with strict resource restrictions and the support for cURL provided by wolfSSL.
+DESC Why curl is used in embedded devices with strict resource restrictions and the support for curl provided by wolfSSL.
 ENDOFVIDEO
 
 VIDEO Landing code in curl
@@ -628,7 +628,7 @@ WHO Daniel Stenberg
 DESC How curl came to be this prevalent, the design think behind it and some clever curl tricks for consuming HTTP APIs and more.
 ENDOFVIDEO
 
-VIDEO cURL, Hyper, and Rust
+VIDEO curl, Hyper, and Rust
 EVENT wolfSSL and ISRG Partner webinar
 URL https://youtu.be/okGUxW_i9yk
 THUMB curl-hyper.jpg
@@ -639,7 +639,7 @@ WHO Josh Aas, Sean McArthur, Daniel Stenberg
 DESC The motivation for and challenges with integrating the Hyper HTTP Rust backend into curl.
 ENDOFVIDEO
 
-VIDEO cURL, FIPS, and Windows! Oh My!
+VIDEO curl, FIPS, and Windows! Oh My!
 EVENT wolfSSL webinar
 URL https://youtu.be/uuIbvzHeHjI
 THUMB curl-fips-windows.jpg
