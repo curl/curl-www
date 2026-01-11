@@ -26,9 +26,7 @@ jobs:
 
     steps:
       - name: install prereqs
-        run: |
-          sudo rm -f /var/lib/man-db/auto-update
-          sudo apt-get -o Dpkg::Use-Pty=0 install pandoc libcgi-pm-perl
+        run: sudo apt-get -o Dpkg::Use-Pty=0 install pandoc libcgi-pm-perl
 
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
