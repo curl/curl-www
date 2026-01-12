@@ -76,10 +76,11 @@ by Christian Plaza.
 
 <img src="wcurl-logo.svg" width=500>
 
-| File                             | Size | Resolution | Format |
-|----------------------------------|------|------------|--------|
-| [wcurl-logo.png](wcurl-logo.png) | 49K  | 2000 x 501 | PNG    |
-| [wcurl-logo.svg](wcurl-logo.svg) | 3.3K | vector     | SVG    |
+| File                                           | Size | Resolution | Format |
+|------------------------------------------------|------|------------|--------|
+| [wcurl-logo.png](wcurl-logo.png)               | 49K  | 2000 x 501 | PNG    |
+| [wcurl-logo-master.svg](wcurl-logo-master.svg) | 2K   | vector     | SVG    |
+| [wcurl-logo.svg](wcurl-logo.svg)               | 1.6K | vector     | SVG    |
 
 ## curl logo colors
 

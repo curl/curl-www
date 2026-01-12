@@ -12,6 +12,7 @@ f='curl-logo'
 if [ -f "$f"-in.svg ]; then
   svgo --pretty --indent 1 "$f"-in.svg
   mv "$f"-in.svg "$f".svg
+  # manually optimize style="fill:#012345" to fill="#012345"
 fi
 
 rsvg-convert --width 2000 --keep-aspect-ratio curl-logo.svg --output curl-transparent.png
@@ -28,6 +29,14 @@ rsvg-convert --width 672 --keep-aspect-ratio curl-symbol.svg --output curl-symbo
 magick curl-symbol.png curl-symbol.jpg
 
 rsvg-convert --width 2500 --keep-aspect-ratio curl-up.svg --output curl-up.png
+
+# wcurl-logo-master.svg -> open in Inkscape, merge 'curl' letter paths (Path -> Union), save -> wcurl-logo-in.svg
+f='wcurl-logo'
+if [ -f "$f"-in.svg ]; then
+  svgo --pretty --indent 1 "$f"-in.svg
+  mv "$f"-in.svg "$f".svg
+  # do the above one more time, then manually optimize style="fill:#012345" to fill="#012345"
+fi
 
 rsvg-convert --width 2000 --keep-aspect-ratio wcurl-logo.svg --output wcurl-logo.png
 
