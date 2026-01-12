@@ -40,14 +40,17 @@ Applied minor fixes and tweaks on January 6, 2026 (by vsz).
 
 ## Smallest curl vector logo winner
 
+Caveat: not identical to the official logo.
+
 | File                                                       | Size | Resolution | Format          |
 |------------------------------------------------------------|------|------------|-----------------|
 | [curl-logo-tiny.svg](curl-logo-tiny.svg)                   | 734  | vector     | SVG             |
 
 717 bytes with svgo, 352 with brotli q=11.
 
-Made by Йоте <https://social.net.ua/users/joter>
-Via: <https://social.net.ua/notice/B25SxW3zQZFV1GDGbI>
+Made by [Йоте](https://social.net.ua/users/joter) via <https://social.net.ua/notice/B25SxW3zQZFV1GDGbI>
+
+Further minimizations by: [erinaceus](https://chaos.social/@erinaceus), @vszakats
 
 ## curl up
 
