@@ -50,7 +50,7 @@ Caveat: not identical to the official logo.
 
 Made by [Йоте](https://social.net.ua/users/joter) via <https://social.net.ua/notice/B25SxW3zQZFV1GDGbI>
 
-Further minimizations by: [erinaceus](https://chaos.social/@erinaceus), @vszakats
+Further minimization by: [erinaceus](https://chaos.social/@erinaceus), vsz
 
 ## curl up
 

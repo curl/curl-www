@@ -211,6 +211,7 @@ enum
 epoll
 EPRT
 EPSV
+erinaceus
 ERRNO
 errno
 ESNI
