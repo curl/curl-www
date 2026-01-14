@@ -1,7 +1,6 @@
 <div class="relatedbox">
 <b>Related:</b>
 <br><a href="audits.html">Audits</a>
-<br><a href="/docs/bugbounty.html">Bug Bounty</a>
 <br><a href="/ch/">Changelog</a>
 <br><a href="security.html">curl CVEs</a>
 #ifdef FLAWCVE
