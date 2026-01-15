@@ -22,7 +22,7 @@ Applied minor fixes and tweaks on January 6, 2026 (by vsz).
 |--------------------------------------------------|-------|------------|-----------------|
 | [curl-logo.jpg](curl-logo.jpg)                   | 80K   | 2000 x 551 | JPEG            |
 | [curl-logo.png](curl-logo.png)                   | 51K   | 2000 x 551 | PNG             |
-| [curl-logo-master.svg](curl-logo-master.svg)     | 1.6K  | vector     | SVG             |
+| [curl-logo-master.svg](curl-logo-master.svg)     | 1.7K  | vector     | SVG             |
 | [curl-logo.svg](curl-logo.svg)                   | 1.4K  | vector     | SVG             |
 | [curl-transparent.png](curl-transparent.png)     | 51K   | 2000 x 551 | transparent PNG |
 
@@ -59,7 +59,7 @@ Further minimization by: [erinaceus](https://chaos.social/@erinaceus), vsz
 | File                       | Size | Resolution | Format |
 |----------------------------|------|------------|--------|
 | [curl-up.png](curl-up.png) | 63K  | 2500 x 688 | PNG    |
-| [curl-up.svg](curl-up.svg) | 2.3K | vector     | SVG    |
+| [curl-up.svg](curl-up.svg) | 2.5K | vector     | SVG    |
 
 ## trurl
 
@@ -82,7 +82,7 @@ by Christian Plaza.
 | File                                           | Size | Resolution | Format |
 |------------------------------------------------|------|------------|--------|
 | [wcurl-logo.png](wcurl-logo.png)               | 49K  | 2000 x 501 | PNG    |
-| [wcurl-logo-master.svg](wcurl-logo-master.svg) | 2K   | vector     | SVG    |
+| [wcurl-logo-master.svg](wcurl-logo-master.svg) | 2.1K | vector     | SVG    |
 | [wcurl-logo.svg](wcurl-logo.svg)               | 1.6K | vector     | SVG    |
 
 ## curl logo colors
