@@ -211,6 +211,7 @@ enum
 epoll
 EPRT
 EPSV
+erinaceus
 ERRNO
 errno
 ESNI
@@ -784,6 +785,7 @@ svc
 svcb
 SVG
 svg
+svgo
 Svyatoslav
 Swisscom
 sws
