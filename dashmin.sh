@@ -23,20 +23,22 @@ done
 
 if command -v scour >/dev/null 2>&1; then
   cat stats.list | while read -r f; do
-    scour \
-      --set-precision 3 \
-      --strip-xml-prolog \
-      --create-groups \
-      --indent=none \
-      --no-line-breaks \
-      --enable-comment-stripping \
-      --enable-id-stripping \
-      --enable-viewboxing \
-      --remove-metadata \
-      --remove-descriptive-elements \
-      --renderer-workaround \
-      -i "$f" -o "$f.out"
-    mv "$f.out" "$f"
+    for pass in 1 2 3; do
+      scour \
+        --set-precision 4 \
+        --strip-xml-prolog \
+        --create-groups \
+        --indent=none \
+        --no-line-breaks \
+        --enable-comment-stripping \
+        --enable-id-stripping \
+        --enable-viewboxing \
+        --remove-metadata \
+        --remove-descriptive-elements \
+        --renderer-workaround \
+        -i "$f" -o "$f.out"
+      mv "$f.out" "$f"
+    done
   done
 fi
 
