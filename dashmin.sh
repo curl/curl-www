@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Post-process gnuplot SVG output:
 # 1. replace bitmap logo with vector one (for smaller size and nicer look)
@@ -24,6 +24,7 @@ done
 # install scour with: pip install scour
 if command -v scour >/dev/null 2>&1; then
   cat stats.list | while read -r f; do
+    # shellcheck disable=SC2034
     for pass in 1 2 3; do
       # `--set-precision 3` can make results smaller with the cost
       # of a bit less precise graphs. Only noticeable side-by-side.
