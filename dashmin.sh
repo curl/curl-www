@@ -26,7 +26,7 @@ if command -v scour >/dev/null 2>&1; then
   cat stats.list | while read -r f; do
     # shellcheck disable=SC2034
     for pass in 1 2 3; do
-      # `--set-precision 3` can make results smaller with the cost
+      # '--set-precision 3' can make results smaller with the cost
       # of a bit less precise graphs. Only noticeable side-by-side.
       scour \
         --set-precision 4 \
