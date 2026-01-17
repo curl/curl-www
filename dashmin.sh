@@ -16,8 +16,32 @@ logo_embed="$(printf \
 cat stats.list | while read -r f; do
   # <image x='672.00' y='274.47' width='575.99' height='481.53' ...>
   sed -i.bak -E "s|\<image.+\>|${logo_embed}|g" "$f"
+  rm -f "$f.bak"
 done
-rm ./*.svg.bak
 
-# compress losslessly
-svgo *.svg
+# minimize SVG
+
+if command -v scour >/dev/null 2>&1; then
+  cat stats.list | while read -r f; do
+    scour \
+      --set-precision 3 \
+      --strip-xml-prolog \
+      --create-groups \
+      --indent=none \
+      --no-line-breaks \
+      --enable-comment-stripping \
+      --enable-id-stripping \
+      --enable-viewboxing \
+      --remove-metadata \
+      --remove-descriptive-elements \
+      --renderer-workaround \
+      -i "$f" -o "$f.out"
+    mv "$f.out" "$f"
+  done
+fi
+
+if command -v svgo >/dev/null 2>&1; then
+  cat stats.list | while read -r f; do
+    svgo "$f"
+  done
+fi
