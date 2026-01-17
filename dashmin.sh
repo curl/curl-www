@@ -21,6 +21,7 @@ done
 
 # minimize SVG
 
+# install scour with: pip install scour
 if command -v scour >/dev/null 2>&1; then
   cat stats.list | while read -r f; do
     for pass in 1 2 3; do
@@ -42,6 +43,7 @@ if command -v scour >/dev/null 2>&1; then
   done
 fi
 
+# install svgo with: npm install -g svgo
 if command -v svgo >/dev/null 2>&1; then
   cat stats.list | while read -r f; do
     svgo "$f"
