@@ -1,3 +1,20 @@
+#***************************************************************************
+#                                  _   _ ____  _
+#  Project                     ___| | | |  _ \| |
+#                             / __| | | | |_) | |
+#                            | (__| |_| |  _ <| |___
+#                             \___|\___/|_| \_\_____|
+#
+# The curl open source project accepts security reports for problems found in
+# products made by the curl project.
+#
+# We offer NO (zero) rewards or other kinds of compentation for reported
+# problems, but we offer gratitude and acknowledgements clearly stated in
+# documentation around confirmed issues.
+#
+# We will ban you and ridicule you in public if you waste our time on crap
+# reports.
+
 Contact: mailto:security@curl.se
 Contact: https://github.com/curl/curl/security/advisories
 
@@ -8,3 +25,5 @@ Preferred-Languages: en
 Acknowledgments: https://curl.se/docs/security.html
 
 Expires: %date
+
+Canonical: https://curl.se/.well-known/security.txt
