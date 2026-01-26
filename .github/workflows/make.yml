@@ -59,3 +59,43 @@ jobs:
 
       - name: make
         run: make
+
+  build-slim:
+    name: 'build-slim'
+    runs-on: ubuntu-slim
+
+    steps:
+      - name: install prereqs
+        run: sudo apt-get -o Dpkg::Use-Pty=0 install pandoc libcgi-pm-perl
+
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        with:
+          persist-credentials: false
+
+      - name: clone the source repo
+        run: git clone --depth=1 https://github.com/curl/curl.git cvssource
+
+      - name: build the docs in the source repo
+        run: |
+          cd cvssource
+          autoreconf -fi
+          ./configure --without-ssl --without-libpsl
+          make -C docs
+
+      - name: install fcpp
+        run: |
+          git clone https://github.com/bagder/fcpp.git
+          cd fcpp
+          make install
+
+      - name: install roffit
+        run: |
+          git clone https://github.com/bagder/roffit.git
+          cd roffit
+          install -Dm0755 roffit /usr/local/bin/roffit
+
+      - name: bootstrap
+        run: ./bootstrap.sh
+
+      - name: make
+        run: make
