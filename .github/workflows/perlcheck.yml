@@ -22,14 +22,10 @@ permissions: {}
 jobs:
   perlcheck:
     name: 'perlcheck'
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-latest
     steps:
       - name: install prereqs
-        run: |
-          sudo rm -f /etc/apt/sources.list.d/{azure-cli.sources,microsoft-prod.list,ondrej-ubuntu-php-noble.sources}
-          sudo apt-get -o Dpkg::Use-Pty=0 update
-          sudo apt-get -o Dpkg::Use-Pty=0 install \
-            libcgi-pm-perl libstring-crc32-perl
+        run: sudo apt-get -o Dpkg::Use-Pty=0 install libcgi-pm-perl libstring-crc32-perl
 
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
