@@ -16,7 +16,6 @@ my %silver = (
     "https://serpapi.com" => 'serpapi.svg',
     "https://proxy-hub.com/" => 'proxyhub.svg',
     'https://iboysoft.com' => 'iBoysoft.svg',
-    "flutter-enterprises" => 'fineproxy.jpg',
     'https://onelessthing.co.uk/' => 'onelessthing.svg',
     'guest-b727d782' => 'zynk.svg',
     'https://www.iplocate.io' => 'iplocate.svg',
@@ -37,7 +36,6 @@ my %silver = (
 
 # URLs that are changed from the one in the profile
 my %modurl = (
-    'flutter-enterprises' => 'https://fineproxy.org/',
     'guest-b727d782' => 'https://zynk.it',
     );
 
