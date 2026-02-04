@@ -15,7 +15,6 @@
 # We will ban you and ridicule you in public if you waste our time on crap
 # reports.
 
-Contact: mailto:security@curl.se
 Contact: https://github.com/curl/curl/security/advisories
 
 Policy: https://curl.se/dev/vuln-disclosure.html
