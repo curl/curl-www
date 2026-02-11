@@ -30,6 +30,9 @@ git shortlog -s > tmp/git-shortlog.txt 2>&1
 # generate us a bunch of updated SVG files
 sh stats/mksvg.sh ..
 
+# post-process SVG
+../dashmin.sh
+
 # back to base
 cd $orgdir
 
