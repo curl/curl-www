@@ -17,6 +17,9 @@ MAN2HTML = roffit --man=$(SRCROOT)/docs/libcurl=../libcurl/c --bare
 WCURLCVE = \
  CVE-2025-11563.html
 
+WCURLJSON = \
+ CVE-2025-11563.json
+
 CVELIST = \
  CVE-2000-0973.html \
  CVE-2003-1605.html \
@@ -203,6 +206,7 @@ CVELIST = \
 PAGES = \
  $(CVELIST) \
  $(WCURLCVE) \
+ $(WCURLJSON) \
  alt-svc.html \
  audits.html \
  bugbounty.html \
@@ -564,3 +568,6 @@ releases.csv: $(ROOT)/_changes.html ./relinfo.pl vuln.pm allvulns.gen
 
 thename.html: _thename.html $(MAINPARTS)
 	$(ACTION)
+
+$(WCURLJSON): $(WCURLJSON).in
+	ln -sf $(WCURLJSON).in $(WCURLJSON)
