@@ -84,7 +84,7 @@ sub gethashes {
     my ($dir)=@_; # where the download files are
     open(H, "$dir/hashes.txt") || return;
     while(<H>) {
-        if($_ =~ /^SHA256\(([^)]*)\)= (.*)/) {
+        if($_ =~ /^SHA256 *\(([^)]*)\) *= (.*)/) {
             my ($file, $hash)=($1, $2);
             if($file =~ /^([^-]*)-.*-([^-]*)-mingw.zip/) {
                 my ($dep, $arch) = ($1, $2);
