@@ -37,6 +37,7 @@ for(@files) {
 
         # track each rc available
         $filever{$file} = "$major.$minor.$patch-rc$rc";
+        $tag{$file} = "rc-${major}_${minor}_${patch}-$rc";
     }
 }
 
@@ -60,15 +61,8 @@ MOO
 
         if($oldver ne $filever{$f} ) {
             $oldver = $filever{$f};
-            my $commit;
-            if(-e "curl-$oldver.commit") {
-                # commit hhash
-                open(H, "<curl-$oldver.commit");
-                my @ha = <H>;
-                close(H);
-                my $hash = join(//, @ha);
-                $commit=" (<a href=\"https://github.com/curl/curl/commit/$hash\">commit</a>)";
-            }
+            my $t = $tag{$f};
+            my $commit=" (tag: <a href=\"https://github.com/curl/curl/tree/$t\">$t</a>)";
             print "<tr><td colspan=4><b> $oldver </b>$commit</td></tr>\n";
         }
         print "<tr>\n";
