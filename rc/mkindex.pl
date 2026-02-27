@@ -5,7 +5,7 @@ use POSIX qw(strftime);
 
 my $dir=".";
 opendir(DIR, $dir) || die "can't opendir $dir: $!";
-my @files = readdir(DIR);
+my @files = sort readdir(DIR);
 closedir DIR;
 
 sub filesize {
