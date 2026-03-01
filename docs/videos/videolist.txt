@@ -1384,3 +1384,14 @@ THUMBSIZE width="250" height="141"
 URL https://youtu.be/1Q8CTrK4H0w
 WHO Daniel Stenberg
 ENDOFVIDEO
+
+VIDEO How an IRC bot spawned the world’s most prolific software
+DATE 2026-02-28
+DESC The origins of curl, from its beginnings downloading currency rates for an IRC bot to its current use transferring data across two planets.
+DURATION 19 minutes
+EVENT The Serial Port
+THUMB ircbot.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/ohzzGy5K9Dk
+WHO Daniel Stenberg, Ben, Mark
+ENDOFVIDEO
