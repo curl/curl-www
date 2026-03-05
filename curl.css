@@ -103,6 +103,7 @@ td.newsdate {
 
 code {
   color: #2020a0;
+  text-wrap: wrap;
 }
 
 .warning {
