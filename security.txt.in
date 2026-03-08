@@ -26,3 +26,5 @@ Acknowledgments: https://curl.se/docs/security.html
 Expires: %date
 
 Canonical: https://curl.se/.well-known/security.txt
+
+Bug-Bounty: False
