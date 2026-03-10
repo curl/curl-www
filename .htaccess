@@ -109,6 +109,7 @@ RedirectPermanent /legal/thename.html https://curl.se/docs/thename.html
 RedirectPermanent /support https://curl.se/support.html
 RedirectPermanent /docs/websockets.html https://curl.se/docs/websocket.html
 RedirectPermanent /docs/manual.html https://curl.se/docs/tutorial.html
+RedirectPermanent /docs/bugbounty.html https://curl.se/dev/vuln-disclosure.html
 
 RemoveHandler .php
 RemoveHandler .pl
