@@ -209,7 +209,6 @@ PAGES = \
  $(WCURLJSON) \
  alt-svc.html \
  audits.html \
- bugbounty.html \
  bugs.html \
  caextract.html \
  code-of-conduct.html \
@@ -330,11 +329,6 @@ bugs.html: _bugs.html $(MAINPARTS) bugs.gen
 
 bugs.gen: $(DOCROOT)/BUGS.md
 	$(MARKDOWN) < $< > $@
-
-bugbounty.html: _bugbounty.html $(MAINPARTS) bugbounty.gen $(ADVBOX)
-	$(ACTION)
-bugbounty.gen: $(DOCROOT)/BUG-BOUNTY.md
-	$(MARKDOWN) < $(DOCROOT)/BUG-BOUNTY.md > $@
 
 history.html: _history.html $(MAINPARTS) history.gen
 	$(ACTION)
