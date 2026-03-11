@@ -16,6 +16,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2026-3784.html|7.7|8.18.0|wrong proxy connection reuse with credentials|CVE-2026-3784|20260311|20260304|CWE-305: Authentication Bypass by Primary Weakness|0|CONNREUSE|-|both|low|https://hackerone.com/reports/3584903",
     "CVE-2026-3783.html|7.33.0|8.18.0|token leak with redirect and netrc|CVE-2026-3783|20260311|20260303|CWE-522: Insufficiently Protected Credentials|0|AUTH|-|both|medium|https://hackerone.com/reports/3583983",
     "CVE-2026-1965.html|7.10.6|8.18.0|bad reuse of HTTP Negotiate connection|CVE-2026-1965|20260311|20260204|CWE-305: Authentication Bypass by Primary Weakness|-|CONNREUSE|-|both|medium",
     "CVE-2025-15224.html|7.58.0|8.17.0|libssh key passphrase bypass without agent set|CVE-2025-15224|20260107|20251228|CWE-287: Improper Authentication|505|SSH|-|both|low|https://hackerone.com/reports/3480925",
