@@ -15,6 +15,11 @@ orgdir=`pwd`;
 
 cd $dir
 
+# store the SVG and CSV files here
+svg=`mktemp -d svg-XXXXXX`
+# make it world accessible
+chmod a+rx $svg
+
 # update the local curl git repo
 git up -q
 
@@ -24,17 +29,15 @@ git up -q
 # update the github issue cache
 (cd stats && ./github-cache.pl)
 
-# debug git shortlog
-git shortlog -s > tmp/git-shortlog.txt 2>&1
+# generate SVG files
+make -j8 -f stats/Makefile GDIR=$svg DDIR=$svg WDIR=$orgdir
 
-# generate us a bunch of updated SVG files
-sh stats/mksvg.sh ..
+# remove old SVG images and tmp files
+find $dir -type d -name "svg-*" -ctime +7 | xargs rm -rf
 
 # back to base
 cd $orgdir
 
-./mkdash.pl > dash.gen
+./mkdash.pl "dash/$svg" > dash.gen
 make
 
-# remove old SVG images
-find $dir -type d -name "svg-*" -ctime +7 | xargs rm -rf

@@ -28,6 +28,11 @@ center {
     width: 20%;
     float: left;
 }
+#elif defined(COL8)
+.gr {
+    width: 12%;
+    float: left;
+}
 #endif
 </style>
 </head>
@@ -49,7 +54,7 @@ TITLE(Dashboard)
 <p>
   Daily updated graphs showing the state of the curl project in as much detail as possible.
 
-#if !defined(DASHDATA) && !defined(COL1)
+#if !defined(COL1)
 Click the images for full resolution.
 #endif
 
@@ -61,37 +66,31 @@ Columns:
   <b>1</b>
 #endif
   &middot;
-#if !defined(COL2) || defined(DASHDATA)
+#if !defined(COL2)
   <a href="dashboard2.html">2</a>
 #else
   <b>2</b>
 #endif
   &middot;
-#if !defined(COL3) || defined(DASHDATA)
+#if !defined(COL3)
   <a href="dashboard.html">3</a>
 #else
   <b>3</b>
 #endif
   &middot;
-#if !defined(COL5) || defined(DASHDATA)
+#if !defined(COL5)
   <a href="dashboard5.html">5</a>
 #else
   <b>5</b>
 #endif
- |
-#ifndef DASHDATA
- <a href="dashboardd.html">data view</a>
+  &middot;
+#if !defined(COL8)
+  <a href="dashboard8.html">8</a>
 #else
- <b>data view</b>
+  <b>8</b>
 #endif
 <p>
 
-#ifdef DASHDATA
-
-Each image below links to the corresponding CSV file with recently updated
-source data. The first and last lines of data is shown on the right.
-
-#endif
 #include "dash.gen"
 <hr style="margin-top: 3em;">
 <p>
