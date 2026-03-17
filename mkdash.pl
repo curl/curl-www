@@ -15,7 +15,6 @@ close(S);
 my $count = 0;
 for my $s (sort keys %svg) {
     my $alt = $s;
-    $alt =~ s/-/ /g;
     printf "<div class=\"gr\" id=\"%s\"><center>%s</center><p><a title=\"%s\" href=\"dashboard1.html#%s\"><img alt=\"%s\" class=\"dash\" src=\"dash/%s\"></a></div>\n",
         $s, $alt, $alt, $s, $alt, $svg{$s};
     $count++;
