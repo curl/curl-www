@@ -1,0 +1,30 @@
+#include "_doctype.html"
+<html>
+<head> <title>curl - Verify</title>
+#include "css.t"
+</head>
+
+#define CURL_DOCS
+#define REL_DOCS
+#define DOCS_VERIFY
+#define CURL_URL docs/verify.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE3(Docs, "/docs/", Releases, "/docs/reldocs.html", Verify)
+
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/ch/">Changelog</a>
+<br><a href="security.html">curl CVEs</a>
+<br><a href="/docs/releases.html">Release Table</a>
+<br><a href="/docs/versions.html">Version numbers</a>
+</div>
+
+#include "verify.gen"
+
+#include "_footer.html"
+
+</body>
+</html>
