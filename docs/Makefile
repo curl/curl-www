@@ -258,6 +258,7 @@ PAGES = \
  todo.html \
  tooldocs.html \
  url-syntax.html \
+ verify.html \
  versions.html \
  vuln.csv \
  vuln.json \
@@ -449,13 +450,16 @@ todo.gen: $(DOCROOT)/TODO.md
 
 governance.html: _governance.html $(MAINPARTS) governance.gen
 	$(ACTION)
-
 governance.gen: $(DOCROOT)/GOVERNANCE.md
 	$(MARKDOWN) < $< > $@
 
+verify.html: _verify.html $(MAINPARTS) verify.gen
+	$(ACTION)
+verify.gen: $(DOCROOT)/VERIFY.md
+	$(MARKDOWN) < $< >$@
+
 versions.html: _versions.html $(MAINPARTS) versions.gen
 	$(ACTION)
-
 versions.gen: $(DOCROOT)/VERSIONS.md
 	$(MARKDOWN) < $< >$@
 
