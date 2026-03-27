@@ -227,7 +227,7 @@ sub geturl {
     }
     if($head) {
         # Strip header blocks due to redirects, leaving only the final one
-        while($content[0] =~ /^HTTP\/\d.\d 3\d+/) {
+        while($content[0] =~ /^HTTP\/([\d.]*\d) 3\d+/) {
             while((shift @content) !~ /^[\x0A\x0D]*$/ ) {}
         }
     } else {
