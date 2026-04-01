@@ -121,7 +121,7 @@ AddType application/x-tar .tar
 AddType application/x-pem-file .pem
 
 Header set X-Content-Type-Options: "nosniff"
-Header set Content-Security-Policy: "default-src 'self' curl.se; style-src 'unsafe-inline' 'self' curl.se; require-trusted-types-for 'script';"
+Header set Content-Security-Policy: "default-src 'none'; img-src 'self'; style-src 'unsafe-inline' 'self'; form-action 'self'; require-trusted-types-for 'script';"
 
 # Google Custom Search requires unsafe-eval & unsafe-inline in the CSP which
 # knocks a giant hole in the protection a CSP provides. Therefore, only use
