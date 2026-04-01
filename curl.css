@@ -316,6 +316,16 @@ div.pollbox {
   background: #ffffe0;
 }
 
+div.featurewindow {
+  float: right;
+  width: 10em;
+  margin-left: 20px;
+}
+
+img.featurewindowsign {
+  width: 15em;
+}
+
 p.ingres {
   width: 80%;
   font-family: arial, helvetica, ariel, sans-serif;
@@ -388,14 +398,19 @@ div.yellowbox {
 }
 /* Filtering menus on the autobuild page */
 .filtermenu {
-  /* Position select box to the right of the text */
-  display: inline;
+  /* Hidden by default, made visible in Javascript when applicable */
+  /* Set to "inline" when enabling to put the select box to the right of the text */
+  display: none;
 }
 
 /* Input elements in the filtering menus */
 .inputbox {
   width: 6em;
   background: #ffffff;
+}
+
+th.narrow {
+  width: 15%;
 }
 
 table.download {

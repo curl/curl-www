@@ -31,7 +31,7 @@ function showFilter() {
        the user */
     var forms = document.getElementsByClassName("filtermenu");
     for (var i=0; i<forms.length; i++) {
-        forms[i].style.display = "";
+        forms[i].style.display = "inline";
     }
 
     /* Explicitly set the selected filter to "All" on page load to override

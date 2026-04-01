@@ -29,7 +29,7 @@ my $file = "${tprefix}.t";
 open(TABLE, ">$file");
 
 my $filterform = '
-<form class="filtermenu" style="display: none;">
+<form class="filtermenu">
 <select name="filter" class="inputbox filterinput">
 <option value="" selected>All</option>
 <option value="^.D">Debug</option>
@@ -100,11 +100,11 @@ sub tabletop {
 <th title=\"UTC time at which the build was started\">Time</th>
 <th title=\"Number of tests which succeeded (green) or failed (red)\">Test</th>
 <th title=\"Number of warnings which occurred during the build\">Warn</th>
-<th title=\"Which build options were enabled during the build (see above for key)\" style=\"width: 15%\">Options$filterform
+<th title=\"Which build options were enabled during the build (see above for key)\" class=\"narrow\">Options$filterform
 </th>
 <th title=\"Description of the build\">Description$systemform
 </th>
-<th title=\"Name of the person responsible for the build\" style=\"width: 15%\">Name</th>
+<th title=\"Name of the person responsible for the build\" class=\"narrow\">Name</th>
 </tr>
 ";
 }
@@ -213,7 +213,7 @@ else {
     # Systems are de-duped in the hash table; now sort them & create a form
     my @systems = sort keys %systemtypes;
     $systemform = '
-<form class="filtermenu" style="display: none;">
+<form class="filtermenu">
 <select name="filter" class="inputbox systeminput">
 <option value="" selected>All</option>
 ';
