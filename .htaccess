@@ -127,7 +127,7 @@ Header set Permissions-Policy: "accelerometer=(), ambient-light-sensor=(), autop
 Header set Referrer-Policy: "strict-origin"
 Header set X-Content-Type-Options: "nosniff"
 Header set X-Frame-Options: "deny"
-Header set Content-Security-Policy: "upgrade-insecure-requests; block-all-mixed-content; default-src 'none'; img-src 'self'; style-src 'unsafe-inline' 'self'; form-action 'self'; require-trusted-types-for 'script';"
+Header set Content-Security-Policy: "upgrade-insecure-requests; block-all-mixed-content; default-src 'none'; img-src 'self'; style-src 'unsafe-inline' 'self'; form-action 'self'; frame-ancestors 'none'; require-trusted-types-for 'script';"
 
 # Google Custom Search requires unsafe-eval & unsafe-inline in the CSP which
 # knocks a giant hole in the protection a CSP provides. Therefore, only use
