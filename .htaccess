@@ -142,7 +142,6 @@ Header set Content-Security-Policy: "upgrade-insecure-requests; block-all-mixed-
 <FilesMatch "^search\.html$|^list\.cgi$">
 Header set Content-Security-Policy: "upgrade-insecure-requests; block-all-mixed-content; default-src 'self' curl.se cse.google.com www.google.com www.googleapis.com clients1.google.com; style-src 'unsafe-inline' 'self' curl.se www.google.com; script-src 'unsafe-eval' 'self' curl.se cse.google.com www.google.com clients1.google.com 'sha256-n9QfETfN26toA8vPrDtfLIC9jm4B8HE2KsS/pOkgPJ4=';"
 </FilesMatch>
-Header always append X-Frame-Options SAMEORIGIN
 
 <ifmodule mod_expires.c>
 ExpiresActive On
