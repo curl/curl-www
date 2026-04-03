@@ -1,2 +1,2 @@
 # Tight CSP since we use Javascript on these pages
-Header set Content-Security-Policy: "default-src 'none'; script-src 'self'; img-src 'self'; style-src 'self' 'nonce-t7K7Blwdw9vw'; require-trusted-types-for 'script';"
+Header set Content-Security-Policy: "upgrade-insecure-requests; block-all-mixed-content; default-src 'none'; script-src 'self'; img-src 'self'; style-src 'self' 'nonce-t7K7Blwdw9vw'; frame-ancestors 'none'; require-trusted-types-for 'script';"

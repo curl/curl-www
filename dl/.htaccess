@@ -10,4 +10,4 @@ ExpiresActive Off
 </ifmodule>
 
 Header always append Cache-Control: private
-Header set Content-Security-Policy: "default-src 'none'; script-src 'self'; img-src 'self'; style-src 'self'; form-action 'self'; require-trusted-types-for 'script';"
+Header set Content-Security-Policy: "upgrade-insecure-requests; block-all-mixed-content; default-src 'none'; script-src 'self'; img-src 'self'; style-src 'self'; form-action 'self'; frame-ancestors 'none'; require-trusted-types-for 'script';"
