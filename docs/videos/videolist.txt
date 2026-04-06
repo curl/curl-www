@@ -1395,3 +1395,14 @@ THUMBSIZE width="250" height="141"
 URL https://youtu.be/ohzzGy5K9Dk
 WHO Daniel Stenberg, Ben, Mark
 ENDOFVIDEO
+
+VIDEO Three decades of curl
+DATE 2026-03-05
+DESC What it takes to succeed with Open Source: patience, time, ups and downs, cooperation, fighting your impostor syndrome - all while having fun.
+DURATION 49 minutes
+EVENT NDC Security 2026
+THUMB threedecades.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/_n2vN-Bgq4U
+WHO Daniel Stenberg
+ENDOFVIDEO
