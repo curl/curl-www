@@ -19,8 +19,9 @@ close(S);
 my $count = 0;
 for my $s (sort {lc($a) cmp lc($b)}  keys %svg) {
     my $alt = $s;
+    $alt =~ tr/  /-/; # space2dash
     printf "<div class=\"gr\" id=\"%s\"><center>%s</center><p><a title=\"%s\" href=\"dashboard1.html#%s\"><img alt=\"%s\" class=\"dash\" src=\"$dir/%s\"></a></div>\n",
-        $s, $alt, $alt, $s, $alt, $svg{$s};
+        $alt, $s, $s, $alt, $s, $svg{$s};
     $count++;
 }
 
