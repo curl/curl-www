@@ -106,6 +106,18 @@ code {
   text-wrap: wrap;
 }
 
+pre {
+  min-width: fit-content;
+  padding-left: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: #f0f0f0;
+}
+
+pre code {
+  display: inline-block;
+}
+
 .warning {
   font-size: 14pt;
   color: #000000;
@@ -624,9 +636,10 @@ p.level1 {
   }
 
   div.sourceCode {
-    background-color: #313131 !important;
+    /* background-color: #313131 !important; */
+    background-color: unset !important;
   }
-  code {
+  code, pre {
     color: #aaaaff;
     background-color: #111111 !important;
   }
