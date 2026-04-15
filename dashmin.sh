@@ -21,7 +21,7 @@ done
 
 # minimize SVG
 
-# install scour with: pip install scour
+# install scour with: pip install scour or apt-get install scour
 if command -v scour >/dev/null 2>&1; then
   cat stats.list | while read -r f; do
     # shellcheck disable=SC2034
