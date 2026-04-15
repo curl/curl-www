@@ -636,7 +636,6 @@ p.level1 {
   }
 
   div.sourceCode {
-    /* background-color: #313131 !important; */
     background-color: unset !important;
   }
   code, pre {
