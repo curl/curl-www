@@ -35,6 +35,9 @@ make -j8 -f stats/Makefile GDIR=$svg DDIR=$svg WDIR=$orgdir
 # remove old SVG images and tmp files
 find . -type d -name "svg-*" -ctime +7 | xargs rm -rf
 
+# post-process SVG
+../dashmin.sh
+
 # back to base
 cd $orgdir
 
