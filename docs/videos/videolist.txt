@@ -1406,3 +1406,14 @@ THUMBSIZE width="250" height="141"
 URL https://youtu.be/_n2vN-Bgq4U
 WHO Daniel Stenberg
 ENDOFVIDEO
+
+VIDEO curl roadmap 2026
+DATE 2026-03-16
+DESC Some things we want to work on, or consider working on during 2026.
+DURATION 21 minutes
+EVENT wolfSSL webinar
+THUMB roadmap2026.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/DESGZXXKajY
+WHO Daniel Stenberg
+ENDOFVIDEO
