@@ -129,6 +129,12 @@ Header set Referrer-Policy: "strict-origin"
 Header set X-Content-Type-Options: "nosniff"
 Header set X-Frame-Options: "deny"
 
+# Don't set CSP and CORP on CSS files because they are also loaded from other domains
+<FilesMatch ".+\.(css|jpg|png|gif|txt|zip|mp3)$">
+Header unset Content-Security-Policy:
+Header unset Cross-Origin-Resource-Policy:
+</FilesMatch>
+
 # Google Custom Search requires unsafe-eval & unsafe-inline in the CSP which
 # knocks a giant hole in the protection a CSP provides. Therefore, only use
 # that on the pages where custom search is used to mitigate it somewhat. The
