@@ -80,9 +80,9 @@ sub content_length {
             logmsg " but ignored\n";
         }
     }
-    elsif((join("", @doc) =~ /^HTTP\/\d.\d (\d+)/)  && ($1 == 200)) {
+    elsif((join("", @doc) =~ /^HTTP\/([\d.]*\d) (\d+)/) && (int($2/100) == 2)) {
         # still, it return 200 which indicates OK!
-        logmsg " No Content-Length but 200 response-code!\n";
+        logmsg " No Content-Length but $2 response-code!\n";
         $stat = 1;
     }
 
