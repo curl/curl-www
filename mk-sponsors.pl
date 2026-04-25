@@ -26,6 +26,7 @@ my %silver = (
     'conet-gmbh' => '[none]', # no logo provided
 
     # Sponsors that don't get images
+    'casinous1' => '[none]', # gambling
     'https://www.jackpotjill.ai/en/' => '[none]', # gambling
     'https://www.stellarspins.fun/en/' => '[none]', # gambling
     'https://www.wolfwinner.fun/en' => '[none]', # gambling
