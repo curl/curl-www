@@ -349,7 +349,7 @@ inlined
 interoperable
 interoperates
 IoT
-ipadOS
+iPadOS
 IPCXN
 IPv
 IPv4
@@ -627,6 +627,7 @@ qsossl
 Qubes
 QUIC
 quictls
+QuicTLS
 quicwg
 Raad
 radix
@@ -695,6 +696,7 @@ scp
 SDK
 se
 SEB
+SecTrust
 securityfocus
 SEK
 selectable
