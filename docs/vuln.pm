@@ -17,7 +17,7 @@
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
     "CVE-2026-7168.html|7.12.0|8.19.0|cross-proxy Digest auth state leak|CVE-2026-7168|20260429|20260427|CWE-294: Authentication Bypass by Capture-replay|0|proxy|-|lib|medium|https://hackerone.com/reports/3697719",
-    "CVE-2026-7009.html|8.17.0|8.19.0|OCSP stapling bypass with Apple SecTrust|CVE-2026-7009|20260429|2026425|CWE-295: Improper Certificate Validation|0|OCSP|-|both|medium|https://hackerone.com/reports/3694390",
+    "CVE-2026-7009.html|8.17.0|8.19.0|OCSP stapling bypass with Apple SecTrust|CVE-2026-7009|20260429|20260425|CWE-295: Improper Certificate Validation|0|OCSP|-|both|medium|https://hackerone.com/reports/3694390",
     "CVE-2026-6429.html|7.14.0|8.19.0|netrc credential leak with reused proxy connection|CVE-2026-6429|20260429|20260416|CWE-200: Exposure of Sensitive Information to an Unauthorized Actor|0|connreuse|-|lib|medium|https://hackerone.com/reports/3677759",
     "CVE-2026-6276.html|7.71.0|8.19.0|stale custom cookie host causes cookie leak|CVE-2026-6276|20260429|20260414|CWE-346: Origin Validation Error|0|cookie|-|lib|low|https://hackerone.com/reports/3671818",
     "CVE-2026-6253.html|7.14.1|8.19.0|proxy credentials leak over redirect-to proxy|CVE-2026-6253|20260429|20260413|CWE-522: Insufficiently Protected Credentials|0|proxy|-|both|medium|https://hackerone.com/reports/3669637",
