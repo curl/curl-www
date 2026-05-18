@@ -138,3 +138,6 @@ with with:with
 ---manpage-scan.pl
 ---just-opened
 ---file name=
+---'the the'
+---'with with'
+---'basically'
