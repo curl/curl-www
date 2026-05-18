@@ -128,6 +128,7 @@ with with:with
 ---manpage.css
 ---manpage.html
 ---manpage.t
+---MANPAGE.md
 ---manpages:
 ---BGF url:
 ---BGF url.c:
