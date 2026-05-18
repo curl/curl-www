@@ -8203,7 +8203,7 @@ RELEASEVIDEO(7.73.0, "https://youtu.be/ebYXC0Cr-dQ")
  BGF <a href="https://curl.se/bug/?i=5882">docs: add description about CI platforms to CONTRIBUTE.md</a>
  BGF <a href="https://curl.se/bug/?i=5846">docs: correct non-existing macros in man pages</a>
  BGF <a href="https://curl.se/bug/?i=5863">doh: add error message for DOH_DNS_NAME_TOO_LONG</a>
- BGF <a href="https://curl.se/bug/?i=5959">dynbuf: make sure Curl_dyn_tail() zero terminates</a>
+ BGF <a href="https://curl.se/bug/?i=5959">dynbuf: make sure Curl_dyn_tail() null-terminates</a>
  BGF <a href="https://curl.se/bug/?i=5974">easy_reset: clear retry counter</a>
  BGF <a href="https://github.com/curl/curl/commit/6ebe63fac23f38df911edc348e8ccc72280f9434#commitcomment-42042843">easygetopt: pass a valid enum to avoid compiler warning</a>
  BGF <a href="https://curl.se/bug/?i=5610">etag: save and use the full received contents</a>
@@ -10132,7 +10132,7 @@ VULNBOX(7.61.0)
  BGF <a href="https://curl.se/bug/?i=2563">checksrc: make sure sizeof() is used *with* parentheses</a>
  BGF CURLOPT_ACCEPT_ENCODING.3: add brotli and clarify a bit
  BGF <a href="https://curl.se/bug/?i=2592">schannel: make CAinfo parsing resilient to CR/LF</a>
- BGF tftp: make sure error is zero terminated before printfing it
+ BGF tftp: make sure error is null-terminated before printfing it
  BGF <a href="https://curl.se/bug/?i=1163">http resume: skip body if http code 416 (range error) is ignored</a>
  BGF <a href="https://curl.se/bug/?i=2580">configure: add basic test of --with-ssl prefix</a>
  BGF <a href="https://curl.se/bug/?i=2121">cmake: set -d postfix for debug builds</a>
@@ -10285,7 +10285,7 @@ VULNBOX(7.60.0)
  BGF <a href="https://curl.se/bug/?i=2507">http2: handle on_begin_headers() called more than once</a>
  BGF <a href="https://curl.se/bug/?i=2403">openssl: support OpenSSL 1.1.1 verbose-mode trace messages</a>
  BGF <a href="https://curl.se/bug/?i=2493">openssl: fix subjectAltName check on non-ASCII platforms</a>
- BGF <a href="https://curl.se/bug/?i=2513">http2: avoid strstr() on data not zero terminated</a>
+ BGF <a href="https://curl.se/bug/?i=2513">http2: avoid strstr() on data not null-terminated</a>
  BGF <a href="https://curl.se/bug/?i=1680">http2: clear the "drain counter" when a stream is closed</a>
  BGF <a href="https://curl.se/bug/?i=2416">http2: handle GOAWAY properly</a>
  BGF tool_help: clarify --max-time unit of time is seconds
@@ -10671,7 +10671,7 @@ VULNBOX(7.56.0)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.se/docs/CVE-2017-1000254.html">FTP: zero terminate the entry path even on bad input</a>
+ BGF <a href="https://curl.se/docs/CVE-2017-1000254.html">FTP: null-terminate the entry path even on bad input</a>
  BGF examples/ftpuploadresume.c: use portable code
  BGF runtests: match keywords case insensitively
  BGF <a href="https://curl.se/bug/?i=1777">travis: build the examples too</a>
@@ -12891,7 +12891,7 @@ VULNBOX(7.37.0)
  BGF cyassl: Use error-ssl.h when available
  BGF <a href="https://curl.se/bug/?i=97">handler: make `protocol` always specified as a single bit</a>
  BGF INFILESIZE: fields in UserDefined must not be changed runtime
- BGF openssl: biomem->data is not zero terminated
+ BGF openssl: biomem->data is not null-terminated
  BGF config-win32.h: Fixed HAVE_LONGLONG for Visual Studio .NET 2003 and up
  BGF curl_ntlm_core: Fixed use of long long for VC6 and VC7
  BGF <a href="https://curl.se/mail/lib-2014-04/0161.html">SNI: strip off a single trailing dot from hostname</a>
@@ -12899,7 +12899,7 @@ VULNBOX(7.37.0)
  BGF curl_easy_setopt.3: added the proto for CURLOPT_SSH_KNOWNHOSTS
  BGF <a href="http://thread.gmane.org/gmane.comp.version-control.git/238242">curl_multi_cleanup: ignore SIGPIPE better</a>
  BGF <a href="https://curl.se/bug/view.cgi?id=1352">schannel: do not use the connect-timeout during send</a>
- BGF mprintf: allow %.s with data not being zero terminated
+ BGF mprintf: allow %.s with data not being null-terminated
  BGF tool_help: Fixed missing --login-options option
  BGF configure: do not set LD_LIBRARY_PATH when cross-compiling
  BGF <a href="https://bugzilla.redhat.com/1093348">http: auth failure on duplicated `WWW-Authenticate: Negotiate` header</a>
@@ -13010,7 +13010,7 @@ VULNBOX(7.35.0)
  BGF <a href="https://curl.se/docs/CVE-2014-0015.html">SECURITY ADVISORY: reuse of wrong HTTP NTLM connection</a>
  BGF <a href="https://curl.se/bug/view.cgi?id=1313">curl_easy_setopt: Fixed OAuth 2.0 Bearer option name</a>
  BGF pop3: Fixed APOP being determined by CAPA response rather than by timestamp
- BGF <a href="https://curl.se/mail/lib-2013-12/0113.html">Curl_pp_readresp: zero terminate line</a>
+ BGF <a href="https://curl.se/mail/lib-2013-12/0113.html">Curl_pp_readresp: null-terminate line</a>
  BGF <a href="https://curl.se/bug/view.cgi?id=1312">FILE: do not wait due to CURLOPT_MAX_RECV_SPEED_LARGE</a>
  BGF docs: mention CURLOPT_MAX_RECV/SEND_SPEED_LARGE do not work for FILE://
  BGF pop3: Fixed auth preference not being honored when CAPA not supported
