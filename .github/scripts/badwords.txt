@@ -75,6 +75,7 @@ a ftp:an ftp
 a IPv4:an IPv4
 a IPv6:an IPv6
  url= URL
+ urls= URLs
 internet=Internet
 isation:ization
 So=Rewrite it somehow?
