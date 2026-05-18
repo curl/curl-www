@@ -1157,7 +1157,7 @@ RELEASEVIDEO(8.17.0, "https://youtu.be/OwrMdumEygg")
  BGF <a href="https://curl.se/bug/?i=19291">examples/http2-serverpush: fix file handle leaks</a>
  BGF <a href="https://curl.se/bug/?i=18918">examples/sessioninfo: cast printf string mask length to int</a>
  BGF <a href="https://curl.se/bug/?i=18969">examples/sessioninfo: do not disable security</a>
- BGF <a href="https://curl.se/bug/?i=19032">examples/synctime: fix null termination assumptions</a>
+ BGF <a href="https://curl.se/bug/?i=19032">examples/synctime: fix null-termination assumptions</a>
  BGF <a href="https://curl.se/bug/?i=18890">examples/synctime: make the sscanf not overflow the local buffer</a>
  BGF <a href="https://curl.se/bug/?i=18908">examples/usercertinmem: avoid stripping const</a>
  BGF <a href="https://curl.se/bug/?i=19088">examples/websocket: fix use of uninitialized rlen</a>
@@ -1326,7 +1326,7 @@ RELEASEVIDEO(8.17.0, "https://youtu.be/OwrMdumEygg")
  BGF <a href="https://curl.se/bug/?i=19111">openssl: fix resource leak in provider error path</a>
  BGF <a href="https://curl.se/bug/?i=19149">openssl: fix unable do typo in failf() calls</a>
  BGF <a href="https://curl.se/bug/?i=19114">openssl: free UI_METHOD on exit path</a>
- BGF <a href="https://curl.se/bug/?i=18647">openssl: make the asn1_object_dump name null terminated</a>
+ BGF <a href="https://curl.se/bug/?i=18647">openssl: make the asn1_object_dump name null-terminated</a>
  BGF <a href="https://issues.oss-fuzz.com/issues/435278402">openssl: only try engine/provider if a cert file/name is provided</a>
  BGF <a href="https://curl.se/bug/?i=18733">openssl: set io_need always</a>
  BGF <a href="https://curl.se/bug/?i=18902">openssl: skip session resumption when verifystatus is set</a>
@@ -12877,7 +12877,7 @@ VULNBOX(7.37.0)
  BGF imap: Fixed untagged response detection when no data after command
  BGF various: fix possible dereference of null pointer
  BGF various: fix use of uninitialized variable
- BGF various: fix use of non-null terminated strings
+ BGF various: fix use of non-null-terminated strings
  BGF telnet.c: check sscanf results before passing them to snprintf
  BGF parsedate.c: check sscanf result before passing it to strlen
  BGF sockfilt.c: free memory in case of memory allocation errors
