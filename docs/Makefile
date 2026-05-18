@@ -307,7 +307,7 @@ whodocs.html: _whodocs.html $(MAINPARTS)
 libs.html: _libs.html $(MAINPARTS)
 	$(ACTION)
 
-manpage.html: _manpage.html $(MAINPARTS) manoptionsdump.gen mandump.gen $(ROOT)/manpage.t
+manpage.html: _manpage.html $(MAINPARTS) manoptionsdump.gen mandump.gen $(ROOT)/man-page.t
 	$(ACTION)
 
 manoptionsdump.gen:
@@ -331,7 +331,7 @@ $(SRCROOT)/docs/cmdline-opts/curl.1:
 mandump.gen: $(SRCROOT)/docs/cmdline-opts/curl.1
 	 $(MAN2HTML) < $< > mandump.gen
 
-mk-ca-bundle.html: _mk-ca-bundle.html $(MAINPARTS) mkdump.gen $(ROOT)/manpage.t
+mk-ca-bundle.html: _mk-ca-bundle.html $(MAINPARTS) mkdump.gen $(ROOT)/man-page.t
 	$(ACTION)
 
 mkdump.gen: $(DOCROOT)/mk-ca-bundle.1

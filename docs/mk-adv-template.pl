@@ -45,7 +45,7 @@ $daward
 <html>
 <head> <title>curl - FLAWNAME - FLAWCVE</title>
 #include "css.t"
-#include "manpage.t"
+#include "man-page.t"
 <style>
 code {
     padding: 0px 4px 0px 4px;
