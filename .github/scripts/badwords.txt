@@ -127,3 +127,4 @@ with with:with
 ---manpage.css
 ---manpage.html
 ---manpage.t
+---manpages:
