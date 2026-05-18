@@ -852,7 +852,7 @@ RELEASEVIDEO(8.18.0, "https://youtu.be/QVxFW6eqG_c")
  BGF <a href="https://curl.se/bug/?i=19732">mbedtls_threadlock: avoid calloc, use array</a>
  BGF mdlinkcheck: ignore IP numbers, allow &apos;@&apos; in raw URLs
  BGF <a href="https://curl.se/bug/?i=19938">mdlinkcheck: only look for markdown links in markdown files</a>
- BGF <a href="https://curl.se/bug/?i=19785">memdebug: add mutex for thread safety</a>
+ BGF <a href="https://curl.se/bug/?i=19785">memdebug: add mutex for thread-safety</a>
  BGF <a href="https://curl.se/bug/?i=19900">memdebug: fix realloc logging</a>
  BGF <a href="https://curl.se/bug/?i=19877">mk-ca-bundle.md: the file format docs URL is permaredirected</a>
  BGF <a href="https://curl.se/bug/?i=19359">mk-ca-bundle.pl: default to SHA256 fingerprints with `-t` option</a>
@@ -11794,7 +11794,7 @@ VULNBOX(7.48.0)
  BGF curl: glob_range: no need to check unsigned variable for negative
  BGF easy: add check to malloc() when running event-based
  BGF <a href="https://curl.se/mail/lib-2016-03/0150.html">CURLOPT_SSLENGINE.3: Only for OpenSSL built with engine support</a>
- BGF version: thread safety
+ BGF version: thread-safety
  BGF openssl: verbose: show matching SAN pattern
  BGF openssl: adapt to OpenSSL 1.1.0 API breakage in ERR_remove_thread_state()
  BGF formdata.c: Fixed compilation warning
@@ -12001,7 +12001,7 @@ VULNBOX(7.45.0)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF <a href="https://curl.se/mail/lib-2015-08/0016.html">curl_global_init_mem.3: Stronger thread safety warning</a>
+ BGF <a href="https://curl.se/mail/lib-2015-08/0016.html">curl_global_init_mem.3: Stronger thread-safety warning</a>
  BGF <a href="https://github.com/curl/curl/pull/379">buildconf.bat: Fixed issues when ran in directories with special chars</a>
  BGF cmake: Fix CurlTests check for gethostbyname_r with 5 arguments
  BGF generate.bat: Fixed issues when ran in directories with special chars
@@ -12119,13 +12119,13 @@ VULNBOX(7.44.0)
  BGF configure: check if OpenSSL linking wants -ldl
  BGF build-openssl.bat: Show syntax if required args are missing
  BGF test1902: attempt to make the test more reliable
- BGF libcurl-thread.3: Consolidate thread safety info
+ BGF libcurl-thread.3: Consolidate thread-safety info
  BGF maketgz: Fixed some VC makefiles missing from the release tarball
  BGF <a href="https://github.com/curl/curl/issues/356">libcurl-multi.3: mention curl_multi_wait</a>
  BGF ABI doc: use secure URL
  BGF <a href="https://bugzilla.redhat.com/1248389">http: move HTTP/2 cleanup code off http_disconnect()</a>
- BGF <a href="https://curl.se/mail/lib-2015-07/0149.html">libcurl-thread.3: Warn memory functions must be thread safe</a>
- BGF <a href="https://curl.se/mail/lib-2015-07/0149.html">curl_global_init_mem.3: Warn threaded resolver needs thread safe funcs</a>
+ BGF <a href="https://curl.se/mail/lib-2015-07/0149.html">libcurl-thread.3: Warn memory functions must be thread-safe</a>
+ BGF <a href="https://curl.se/mail/lib-2015-07/0149.html">curl_global_init_mem.3: Warn threaded resolver needs thread-safe funcs</a>
  BGF <a href="https://curl.se/bug/?i=360">docs: formpost needs the full size at start of upload</a>
  BGF curl_gssapi: remove `const` to fix compiler warnings
  BGF <a href="https://curl.se/bug/?i=357">SSH: three state machine fixups</a>
@@ -12831,7 +12831,7 @@ VULNBOX(7.37.1)
  BGF build: Fixed overridden compiler PDB settings in VC7 to VC12
  BGF <a href="https://curl.se/mail/lib-2014-07/0103.html">ntlm_wb: Fixed buffer size not being large enough for NTLMv2 sessions</a>
  BGF netrc: do not abort if home directory cannot be found
- BGF netrc: fixed thread safety problem by using getpwuid_r if available
+ BGF netrc: fixed thread-safety problem by using getpwuid_r if available
  BGF <a href="https://curl.se/mail/lib-2014-02/0184.html">cookie: avoid mutex deadlock</a>
  BGF configure: respect host tool prefix for krb5-config
  BGF gnutls: handle IP address in cert name check
