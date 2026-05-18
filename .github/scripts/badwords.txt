@@ -124,3 +124,6 @@ with with:with
 ---Curl Corporation
 ---:lib/:will
 ---:src/:will
+---manpage.css
+---manpage.html
+---manpage.t
