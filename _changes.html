@@ -1126,7 +1126,7 @@ RELEASEVIDEO(8.17.0, "https://youtu.be/OwrMdumEygg")
  BGF <a href="https://curl.se/bug/?i=18510">curl_mem_undef.h: limit to CURLDEBUG for non-memalloc overrides</a>
  BGF <a href="https://curl.se/bug/?i=19226">curl_ngtcp2: fix `-Wunreachable-code` with H3 !verbose !unity clang</a>
  BGF <a href="https://curl.se/bug/?i=18878">curl_osslq: error out properly if BIO_ADDR_rawmake() fails</a>
- BGF <a href="https://curl.se/bug/?i=19141">curl_path: make sure just whitespace is illegal</a>
+ BGF <a href="https://curl.se/bug/?i=19141">curl_path: make sure whitespace-only is illegal</a>
  BGF <a href="https://curl.se/bug/?i=18979">Curl_resolv: fix comment. &apos;entry&apos; argument is not optional</a>
  BGF <a href="https://curl.se/bug/?i=18627">curl_slist_append.md: clarify that a NULL pointer is not acceptable</a>
  BGF <a href="https://curl.se/bug/?i=19015">curl_threads: delete WinCE fallback branch</a>
@@ -2112,7 +2112,7 @@ RELEASEVIDEO(8.14.0, "https://youtu.be/a_lwQP0U1tk?si=Z9ZcDqFqzvJ5Tq4l")
  BGF <a href="https://curl.se/bug/?i=17147">cmake: fix `fish` install directory detection via `pkg-config`</a>
  BGF <a href="https://curl.se/bug/?i=17010">cmake: fix nghttp3 static linking with `USE_OPENSSL_QUIC=ON`</a>
  BGF <a href="https://curl.se/bug/?i=17163">cmake: fix option() and mark_as_advanced() mixed order</a>
- BGF <a href="https://curl.se/bug/?i=16946">cmake: fix shell completion install when just one flavor is enabled</a>
+ BGF <a href="https://curl.se/bug/?i=16946">cmake: fix shell completion install when only one flavor is enabled</a>
  BGF <a href="https://curl.se/bug/?i=17197">cmake: honor individual picky option overrides found in `CMAKE_C_FLAGS`</a>
  BGF <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1103938">cmake: install shell completions for cross-builds</a>
  BGF <a href="https://curl.se/bug/?i=17101">cmake: link `crypt32` for OpenSSL feature detection</a>
@@ -3126,7 +3126,7 @@ RELEASEVIDEO(8.11.0, "https://youtu.be/C9SSeavI1NE")
  BGF <a href="https://curl.se/bug/?i=15403">cmake: limit `CURL_STATIC_CRT` to MSVC</a>
  BGF <a href="https://curl.se/bug/?i=15001">cmake: make `test-ci` target skip building dependencies</a>
  BGF <a href="https://curl.se/bug/?i=15407">cmake: mark as advanced some internal Find* variables</a>
- BGF <a href="https://curl.se/bug/?i=15088">cmake: re-add `generate-curl.1` dependency for `src` just in case</a>
+ BGF <a href="https://curl.se/bug/?i=15088">cmake: re-add `generate-curl.1` dependency for `src` in any case</a>
  BGF <a href="https://curl.se/bug/?i=15255">cmake: rename LDAP dependency config variables to match Find modules</a>
  BGF <a href="https://curl.se/bug/?i=15157">cmake: replace `check_include_file_concat()` for LDAP and GSS detection</a>
  BGF <a href="https://curl.se/bug/?i=15331">cmake: replace `CURL_*_DIR` with `{PROJECT,CMAKE_CURRENT}_*_DIR`</a>
@@ -4186,7 +4186,7 @@ RELEASEVIDEO(8.8.0, "https://youtu.be/QuEcJkjvI_Q")
  BGF <a href="https://curl.se/bug/?i=13427">urlapi: allow setting port number zero</a>
  BGF <a href="https://curl.se/bug/?i=13394">urlapi: fix relative redirects to fragment-only</a>
  BGF <a href="https://curl.se/bug/?i=13188">urldata: remove fields not used depending on used features</a>
- BGF <a href="https://curl.se/bug/?i=13621">vauth: make two functions void that always just returned OK</a>
+ BGF <a href="https://curl.se/bug/?i=13621">vauth: make two functions void that always returned OK</a>
  BGF <a href="https://curl.se/bug/?i=13549">version: use msnprintf instead of strncpy</a>
  BGF <a href="https://curl.se/bug/?i=13487">vquic-tls: use correct cert name check API for wolfSSL</a>
  BGF <a href="https://curl.se/bug/?i=13224">vquic: use CURL_FORMAT_CURL_OFF_T for 64-bit printf output</a>
@@ -4454,7 +4454,7 @@ RELEASEVIDEO(8.6.0, "https://youtu.be/x7exfUbjdxQ")
  BGF <a href="https://curl.se/bug/?i=12639">ftp: use memdup0 to store the OS from a SYST 215 response</a>
  BGF ftpserver.pl: send 213 SIZE response without spurious newline
  BGF <a href="https://curl.se/bug/?i=12667">gen.pl: support ## for doing .IP in table-like lists</a>
- BGF <a href="https://curl.se/bug/?i=12689">gen: do italics/bold for a range of letters, not just single word</a>
+ BGF <a href="https://curl.se/bug/?i=12689">gen: do italics/bold for a range of letters, not only single word</a>
  BGF <a href="https://curl.se/bug/?i=12764">GHA: add a job scanning for &quot;bad words&quot; in markdown</a>
  BGF <a href="https://curl.se/bug/?i=12778">GHA: bump ngtcp2, gnutls, mod_h2, quiche</a>
  BGF <a href="https://curl.se/bug/?i=12505">gnutls: fix build with --disable-verbose</a>
@@ -5640,7 +5640,7 @@ RELEASEVIDEO(8.0.0, "https://youtu.be/LToOQEMcKoo")
  BGF <a href="https://curl.se/bug/?i=10692">tests: use dynamic ports numbers in pytest suite</a>
  BGF <a href="https://curl.se/bug/?i=10675">tool: dump headers even if file is write-only</a>
  BGF <a href="https://curl.se/bug/?i=10673">tool: improve --stderr handling</a>
- BGF <a href="https://curl.se/bug/?i=10564">tool_getparam: don&apos;t add a new node for just --no-remote-name</a>
+ BGF <a href="https://curl.se/bug/?i=10564">tool_getparam: don&apos;t add a new node only for --no-remote-name</a>
  BGF <a href="https://curl.se/bug/?i=10782">tool_getparam: error if --next is used without a prior URL</a>
  BGF <a href="https://curl.se/bug/?i=10570">tool_operate: avoid fclose(NULL) on bad header dump file</a>
  BGF <a href="https://curl.se/bug/?i=10558">tool_operate: propagate error codes for missing URL after --next</a>
@@ -5859,7 +5859,7 @@ RELEASEVIDEO(7.88.0, "https://youtu.be/9zff4hWOxPE")
  BGF <a href="https://curl.se/bug/?i=10407">url: fix part of conditional expression is always true</a>
  BGF <a href="https://curl.se/bug/?i=10384">urlapi: avoid Curl_dyn_addf() for hex outputs</a>
  BGF <a href="https://curl.se/bug/?i=10408">urlapi: fix part of conditional expression is always true: qlen</a>
- BGF <a href="https://curl.se/bug/?i=10385">urlapi: skip path checks if path is just &quot;/&quot;</a>
+ BGF <a href="https://curl.se/bug/?i=10385">urlapi: skip path checks if path is &quot;/&quot;</a>
  BGF <a href="https://curl.se/bug/?i=10403">urlapi: skip the extra dedotdot alloc if no dot in path</a>
  BGF <a href="https://curl.se/bug/?i=10181">urldata: cease storing TLS auth type</a>
  BGF <a href="https://curl.se/bug/?i=10139">urldata: make &apos;ftp_create_missing_dirs&apos; depend on FTP || SFTP</a>
@@ -5923,7 +5923,7 @@ RELEASEVIDEO(7.87.0, "https://youtu.be/PvvgmBbAzn8")
  BGF <a href="https://curl.se/bug/?i=10039">config-mac: remove HAVE_SYS_SELECT_H</a>
  BGF <a href="https://curl.se/bug/?i=9712">config-win32: fix SIZEOF_OFF_T for MSVC and old MinGW</a>
  BGF <a href="https://curl.se/bug/?i=9847">configure: require fork for NTLM-WB</a>
- BGF <a href="https://curl.se/bug/?i=10064">contributors.sh: actually use $CURLWWW instead of just setting it</a>
+ BGF <a href="https://curl.se/bug/?i=10064">contributors.sh: actually use $CURLWWW instead of only setting it</a>
  BGF <a href="https://curl.se/bug/?i=9863">cookie: compare cookie prefixes case insensitively</a>
  BGF <a href="https://curl.se/bug/?i=9930">cookie: expire cookies at once when max-age is negative</a>
  BGF <a href="https://curl.se/bug/?i=10017">cookie: open cookie jar as a binary file</a>
@@ -6647,7 +6647,7 @@ RELEASEVIDEO(7.83.0, "https://youtu.be/hYcT0HNv8HI")
  BGF <a href="https://curl.se/bug/?i=8477">BearSSL: add CURLOPT_SSL_CIPHER_LIST support</a>
  BGF <a href="https://curl.se/bug/?i=8478">BearSSL: add CURLOPT_SSL_CTX_FUNCTION support</a>
  BGF <a href="https://curl.se/bug/?i=8609">BINDINGS.md: add Hollywood binding</a>
- BGF <a href="https://curl.se/bug/?i=8596">CI: Do not use buildconf. Instead, just use: autoreconf -fi</a>
+ BGF <a href="https://curl.se/bug/?i=8596">CI: Do not use buildconf. Instead, use: autoreconf -fi</a>
  BGF <a href="https://curl.se/bug/?i=8544">CI: install Python package impacket to run SMB test 1451</a>
  BGF <a href="https://curl.se/bug/?i=8541">configure.ac: move -pthread CFLAGS setting back where it used to be</a>
  BGF configure: bump the copyright year range int the generated output
@@ -9585,7 +9585,7 @@ VULNBOX(7.64.1)
  BGF <a href="https://curl.se/bug/?i=3550">curl: fix FreeBSD compiler warning in the --xattr code</a>
  BGF <a href="https://curl.se/bug/?i=3587">curl: remove MANUAL from -M output</a>
  BGF <a href="https://curl.se/bug/?i=3592">curl_easy_duphandle.3: clarify that a duped handle has no shares</a>
- BGF curl_multi_remove_handle.3: use at any time, just not from within callbacks
+ BGF curl_multi_remove_handle.3: use at any time, but not from within callbacks
  BGF curl_url.3: this API is not experimental anymore
  BGF <a href="https://curl.se/bug/?i=3516">dns: release sharelock as soon as possible</a>
  BGF <a href="https://curl.se/bug/?i=3631">docs: update max-redirs.d phrasing</a>
@@ -9758,7 +9758,7 @@ VULNBOX(7.64.0)
  BGF <a href="https://curl.se/bug/?i=3365">urlapi: Fix port parsing of eol colon</a>
  BGF <a href="https://curl.se/bug/?i=3369">urlapi: distinguish possibly empty query</a>
  BGF <a href="https://curl.se/bug/?i=3411">urlapi: fix parsing ipv6 with zone index</a>
- BGF <a href="https://curl.se/bug/?i=3442">urldata: rename easy_conn to just conn</a>
+ BGF <a href="https://curl.se/bug/?i=3442">urldata: rename easy_conn to conn</a>
  BGF <a href="https://curl.se/bug/?i=3133">winbuild: conditionally use /DZLIB_WINAPI</a>
  BGF <a href="https://curl.se/bug/?i=3395">wolfssl: fix memory-leak in threaded use</a>
  BGF <a href="https://curl.se/bug/?i=3503">spnego_sspi: add support for channel binding</a>
@@ -10042,7 +10042,7 @@ VULNBOX(7.61.1)
  BGF <a href="https://curl.se/bug/?i=2837">docs: mention NULL is fine input to several functions</a>
  BGF <a href="https://curl.se/bug/?i=2852">formdata: Remove unused macro HTTPPOST_CONTENTTYPE_DEFAULT</a>
  BGF <a href="https://curl.se/bug/?i=2910">gopher: Do not translate `?` to `%09`</a>
- BGF <a href="https://curl.se/bug/?i=2736">header output: switch off all styles, not just unbold</a>
+ BGF <a href="https://curl.se/bug/?i=2736">header output: switch off all styles, not only unbold</a>
  BGF hostip: fix unused variable warning
  BGF <a href="https://curl.se/bug/?i=2928">http2: Use correct format identifier for stream_id</a>
  BGF <a href="https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=10012">http2: abort the send_callback if not setup yet</a>
@@ -10440,7 +10440,7 @@ VULNBOX(7.58.0)
  BGF <a href="https://curl.se/bug/?i=2118">travis: add boringssl build</a>
  BGF <a href="https://curl.se/mail/lib-2017-12/0000.html">examples/xmlstream.c: do not switch off CURL_GLOBAL_SSL</a>
  BGF <a href="https://curl.se/bug/?i=2119">SSL: Avoid magic allocation of SSL backend specific data</a>
- BGF <a href="https://curl.se/bug/?i=2127">lib: do not export all symbols, just everything curl_*</a>
+ BGF <a href="https://curl.se/bug/?i=2127">lib: do not export all symbols, only everything curl_*</a>
  BGF libssh2: send the correct CURLE error code on scp file not found
  BGF libssh2: return CURLE_UPLOAD_FAILED on failure to upload
  BGF <a href="https://curl.se/bug/?i=2134">openssl: enable pkcs12 in boringssl builds</a>
@@ -11413,7 +11413,7 @@ VULNBOX(7.51.0)
  BGF <a href="https://curl.se/bug/?i=1017">easy: Reset all statistical session info in curl_easy_reset</a>
  BGF <a href="https://curl.se/bug/?i=997">curl_global_cleanup.3: do not unload the lib with sub threads running</a>
  BGF dist: add CurlSymbolHiding.cmake to the tarball
- BGF <a href="https://curl.se/bug/?i=1031">docs: Remove that --proto is just used for initial retrieval</a>
+ BGF <a href="https://curl.se/bug/?i=1031">docs: Remove that --proto is only used for initial retrieval</a>
  BGF configure: Fixed builds with libssh2 in a custom location
  BGF curl.1: --trace supports % for sending to stderr!
  BGF <a href="https://curl.se/bug/?i=1050">cookies: same domain handling changed to match browser behavior</a>
@@ -15583,7 +15583,7 @@ VULNBOX(7.12.1)
  BGF UTF-8 encoded certificate names can now be verified properly
  BGF krb4 link problem
  BGF HTTP Negotiate service name now provided in uppercase
- BGF no longer accepts any cookies with domain set to just a TLD
+ BGF no longer accepts any cookies with domain set to a bare TLD
  BGF HTTP Digest properties without quotes in the header
  BGF bad Host: header case on reused connections over proxy
  BGF duplicate Host: header case on reused connections
@@ -15720,7 +15720,7 @@ VULNBOX(7.11.1)
  CHG asynch dns lookups now require the c-ares library
  CHG curl --socks can be used to set a SOCKS5 proxy to use
  CHG response-headers received after a (proxy) CONNECT request are now passed
-   to the header callback just like other headers
+   to the header callback like other headers
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
@@ -17349,7 +17349,7 @@ VULNBOX(5.0)
    hostname and IP of the new host (and port number). I also added a section
    about PORT vs PASV in the README.
  BGF Introduced automake stuff.
- BGF Just made a successful GET of a document from an SSL-server using my own
+ BGF Made a successful GET of a document from an SSL-server using my own
    private certificate for authentication!
  BGF Corrected another bug in the long parameter name parser.
  BGF Modified getpass.c
@@ -17640,7 +17640,7 @@ VULNBOX(4.0)
 <p> Changes:
 <ul class="changes">
  CHG I took another huge step and changed both version number and project name!
-   The reason for the new name is that there are just one too many programs
+   The reason for the new name is that there are one too many programs
    named urlget already and this program already can a lot more than merely
    getting URLs, and the reason for the version number is that I did add the
    pretty big change in -P and since I changed name I wanted to start with
@@ -17666,7 +17666,7 @@ THISBOX(3.12)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF End-of-header tracking still lacked support for \r\n or just \n at the
+ BGF End-of-header tracking still lacked support for \r\n or \n at the
    end of the last header line.
  BGF Fixed some little bugs.
 </ul>
@@ -17853,7 +17853,7 @@ THISBOX(2.4)
  the progress meter is shut off.
  CHG Made it grok user+passwd for HTTP fetches. The trick is to base64
    encode the user+passwd and send an extra header line. Read chapter 11.1 in
-   RFC2068 for details. I added it to be used just like the ftp one.
+   RFC2068 for details. I added it to be used like the ftp one.
 </ul>
 
 <p> Bugfixes:
