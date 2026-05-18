@@ -123,8 +123,6 @@ with with:with
 ---WWW::Curl
 ---NET::Curl
 ---Curl Corporation
----:lib/:will
----:src/:will
 ---manpage.css
 ---manpage.html
 ---manpage.t
