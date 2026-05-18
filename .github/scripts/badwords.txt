@@ -130,12 +130,13 @@ with with:with
 ---manpage.t
 ---MANPAGE.md
 ---manpages:
+---manpage-syntax.pl
+---manpage-scan.pl
+---'manpage'
 ---CHG url:
 ---BGF url:
 ---BGF url.c:
 ---url.c
----manpage-syntax.pl
----manpage-scan.pl
 ---just-opened
 ---file name=
 ---'the the'
