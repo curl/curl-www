@@ -120,8 +120,6 @@ basically:rephrase?
 However,:rephrase?
 the the:the
 with with:with
----WWW::Curl
----NET::Curl
 ---Curl Corporation
 ---manpage.css
 ---manpage.html
