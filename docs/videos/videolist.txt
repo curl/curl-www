@@ -1428,3 +1428,14 @@ DURATION 59 minutes
 WHO Daniel Stenberg
 DESC This talk is a reality check and status update on AI tooling for security and Open Source maintenance, with experiences from the curl project.
 ENDOFVIDEO
+
+VIDEO libcurl in the Real World
+DATE 2025-05-24
+DESC Dan reports on the most popular (and unpopular) parts of libcurl after analyzing the source of hundreds of applications.
+DURATION 51 minutes
+EVENT curl-up 2026
+THUMB libcurl-real-world.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/AYq-DiieLxI
+WHO Dan Fandrich
+ENDOFVIDEO
