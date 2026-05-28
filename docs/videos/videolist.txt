@@ -924,7 +924,7 @@ ENDOFVIDEO
 
 VIDEO The state of curl
 DATE 2024-05-04
-DESC Daniel talks about curl in 2024. Where are are. How we do.
+DESC Daniel talks about curl in 2024. Where we are. How we do.
 DURATION 2h08
 EVENT curl-up 2024
 THUMB the-state-of-curl-2024.jpg
@@ -1308,7 +1308,7 @@ ENDOFVIDEO
 
 VIDEO HTTP news
 DATE 2025-05-04
-DESC A overview of what's happening in the world of HTTP recently.
+DESC An overview of what's happening in the world of HTTP recently.
 DURATION 22 minutes
 EVENT curl-up 2025
 THUMB http-news-2025.jpg
