@@ -180,7 +180,7 @@ THUMBSIZE width="250" height="188"
 DURATION 20 minutes
 DATE 2017-03-19
 WHO Stefan Eissing
-DESC How he uses curl to test Apache is HTTP/2 support
+DESC How he uses curl to test Apache's HTTP/2 support
 ENDOFVIDEO
 
 VIDEO Doing HTTP/2 with libcurl
