@@ -1487,7 +1487,7 @@ ENDOFVIDEO
 
 VIDEO The state of curl in Debian
 DATE 2026-05-23
-DESC Presentation from curl up 2026 in Prague. Everything curl in Debian in 2026.
+DESC Everything curl in Debian in 2026.
 DURATION 45 minutes
 EVENT curl-up 2026
 THUMB state-of-curl-in-debian.jpg
@@ -1498,7 +1498,7 @@ ENDOFVIDEO
 
 VIDEO curl ctx II
 DATE 2026-05-24
-DESC The second team tabletop simulation of security event against curl project.
+DESC The second team tabletop simulation of a security event against the curl project.
 DURATION 1h5
 EVENT curl-up 2026
 THUMB curl-ctx-ii.jpg
