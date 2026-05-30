@@ -1446,7 +1446,7 @@ DATE 2026-05-23
 DESC A quick update on recent features, technical changes & maintenance challenges of wttr.in, a popular curl-friendly weather service serving millions of requests daily.
 DURATION 27 minutes
 EVENT curl-up 2026
-THUMB t/wttr.in-update.jpg
+THUMB wttr.in-update.jpg
 THUMBSIZE width="250" height="141"
 URL https://youtu.be/svTwZFmk7k0
 WHO Igor Chubin
@@ -1457,7 +1457,7 @@ DATE 2026-05-23
 DESC AI tools for improving curl.
 DURATION 33 minutes
 EVENT curl-up 2026
-THUMB t/hunting-for-zero-days.jpg
+THUMB hunting-for-zero-days.jpg
 THUMBSIZE width="250" height="141"
 URL https://youtu.be/t4wqREXVEAc
 WHO Stanislav Fort
@@ -1468,7 +1468,7 @@ DATE 2026-05-23
 DESC Quantitative comparison of QUIC deployment options.
 DURATION 39 minutes
 EVENT curl-up 2026
-THUMB t/quantitative-comparison-of-quic.jpg
+THUMB quantitative-comparison-of-quic.jpg
 THUMBSIZE width="250" height="141"
 URL https://youtu.be/TX3ZLRXXopI
 WHO Moritz Buhl
@@ -1479,7 +1479,7 @@ DATE 2026-05-23
 DESC How they use Jenkins in the Network UPS Tools project to do multi-platform testing.
 DURATION 30 minutes
 EVENT curl-up 2026
-THUMB t/multiplatform-ci-with-jenkins.jpg
+THUMB multiplatform-ci-with-jenkins.jpg
 THUMBSIZE width="250" height="141"
 URL https://youtu.be/XwNupTmXN_w
 WHO Jim Klimov
@@ -1490,7 +1490,7 @@ DATE 2026-05-23
 DESC Presentation from curl up 2026 in Prague. Everything curl in Debian in 2026.
 DURATION 45 minutes
 EVENT curl-up 2026
-THUMB t/state-of-curl-in-debian.jpg
+THUMB state-of-curl-in-debian.jpg
 THUMBSIZE width="250" height="141"
 URL https://youtu.be/zBot34lBvgQ
 WHO Carlos Henrique Lima Melara
@@ -1501,7 +1501,7 @@ DATE 2026-05-24
 DESC The second team tabletop simulation of security event against curl project.
 DURATION 1h5
 EVENT curl-up 2026
-THUMB t/curl-ctx-ii.jpg
+THUMB curl-ctx-ii.jpg
 THUMBSIZE width="250" height="141"
 URL https://youtu.be/WwHKCMEA9qE
 WHO James Fuller
@@ -1524,7 +1524,7 @@ DATE 2026-05-24
 DESC The past year, where we are, what to do, how to do better. Security is important.
 DURATION 58 minutes
 EVENT curl-up 2026
-THUMB t/curl-security-2026.jpg
+THUMB curl-security-2026.jpg
 THUMBSIZE width="250" height="141"
 URL https://youtu.be/hl3fRNSEuUs
 WHO Daniel Stenberg
@@ -1536,7 +1536,7 @@ DATE 2026-05-24
 DESC Presentation about OpenSSL (and curl).
 DURATION 23 minutes
 EVENT curl-up 2026
-THUMB t/quic-hello-from-openssl.jpg
+THUMB quic-hello-from-openssl.jpg
 THUMBSIZE width="250" height="141"
 URL https://youtu.be/0ihzSQubz04
 WHO Alexandr Nedvedicky
