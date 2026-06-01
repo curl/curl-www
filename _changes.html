@@ -4290,7 +4290,7 @@ VULNBOX(8.7.0)
  BGF <a href="https://curl.se/bug/?i=13041">gen.pl: make the &quot;manpageification&quot; faster</a>
  BGF <a href="https://curl.se/bug/?i=12977">gen: make `\&gt;` in input to render as plain &apos;&gt;&apos; in output</a>
  BGF <a href="https://curl.se/bug/?i=13006">getparam: make --ftp-ssl work again</a>
- BGF <a href="https://curl.se/bug/?i=13124">GHA/linux: add sysctl trick to work-around GitHub runner issue</a>
+ BGF <a href="https://curl.se/bug/?i=13124">GHA/linux: add sysctl trick to work around GitHub runner issue</a>
  BGF <a href="https://curl.se/bug/?i=13074">GIT-INFO: convert to markdown</a>
  BGF <a href="https://curl.se/bug/?i=13118">GOVERNANCE: document the core team</a>
  BGF <a href="https://curl.se/bug/?i=12877">header.md: remove backslash, make nicer markdown</a>
@@ -7493,7 +7493,7 @@ RELEASEVIDEO(7.78.0, "https://youtu.be/XHaJGFj6wVg")
  BGF <a href="https://curl.se/bug/?i=7166">mqtt: detect illegal and too large file size</a>
  BGF <a href="https://curl.se/bug/?i=7316">mqtt: extend the error message for no topic</a>
  BGF <a href="https://curl.se/bug/?i=7361">msnprintf: return number of printed characters excluding null byte</a>
- BGF <a href="https://curl.se/bug/?i=7248">multi: add scan-build-6 work-around in curl_multi_fdset</a>
+ BGF <a href="https://curl.se/bug/?i=7248">multi: add scan-build-6 workaround in curl_multi_fdset</a>
  BGF <a href="https://curl.se/bug/?i=7178">multi: alter transfer timeout ordering</a>
  BGF <a href="https://curl.se/mail/lib-2021-06/0024.html">multi: do not switch off connect_only flag when closing</a>
  BGF <a href="https://curl.se/bug/?i=7379">multi: fix crash in curl_multi_wait / curl_multi_poll</a>
@@ -7983,7 +7983,7 @@ RELEASEVIDEO(7.75.0, "https://youtu.be/pjqd-r7hAjI")
  BGF <a href="https://curl.se/bug/?i=6292">OS400: update ccsidcurl.c</a>
  BGF <a href="https://curl.se/bug/?i=6312">pretransfer: setup the User-Agent header here</a>
  BGF quiche: remove fprintf() leftover
- BGF <a href="https://curl.se/bug/?i=6332">Revert &quot;CI/github: work-around for brew breakage on macOS&quot;</a>
+ BGF <a href="https://curl.se/bug/?i=6332">Revert &quot;CI/github: workaround for brew breakage on macOS&quot;</a>
  BGF runtests: add &apos;wakeup&apos; as a feature
  BGF <a href="https://curl.se/bug/?i=6304">runtests: add support for %if [feature] conditions</a>
  BGF <a href="https://curl.se/bug/?i=6477">runtests: preprocess DISABLED to allow conditionals</a>
@@ -10477,7 +10477,7 @@ VULNBOX(7.58.0)
  BGF <a href="https://curl.se/bug/?i=2174">curl: support >256 bytes warning messages</a>
  BGF conncache: fix a return code
  BGF krb5: fix a potential access of uninitialized memory
- BGF rand: add a clang-analyzer work-around
+ BGF rand: add a clang-analyzer workaround
  BGF <a href="https://curl.se/bug/?i=2175">CURLOPT_READFUNCTION.3: refer to argument with correct name</a>
  BGF brotli: allow compiling with version 0.6.0
  BGF <a href="https://curl.se/bug/?i=2068">content_encoding: rework zlib_inflate</a>
@@ -12335,7 +12335,7 @@ VULNBOX(7.42.0)
  BGF <a href="https://curl.se/libcurl/c/curl_easy_recv.html">curl_easy_recv</a>/<a href="https://curl.se/libcurl/c/curl_easy_send.html">send</a>: make them work with the multi interface
  BGF vtls: fix compile with --disable-crypto-auth but with SSL
  BGF openssl: adapt to ASN1/X509 things gone opaque in 1.1
- BGF <a href="https://curl.se/mail/lib-2015-03/0205.html">openssl: verifystatus: only use the OCSP work-around &lt;= 1.0.2a</a>
+ BGF <a href="https://curl.se/mail/lib-2015-03/0205.html">openssl: verifystatus: only use the OCSP workaround &lt;= 1.0.2a</a>
  BGF curl_memory: make curl_memory.h the second-last header file loaded
  BGF testcurl.pl: add the --notes option to supply more info about a build
  BGF cyassl: If wolfSSL then identify as such in version string
@@ -12576,7 +12576,7 @@ VULNBOX(7.40.0)
  BGF tool_binmode.c: Explicitly ignore the return code of setmode
  BGF tool_urlglob.c: Silence warning C6293: Ill-defined for-loop
  BGF opts: Warn CURLOPT_TIMEOUT overrides when set after CURLOPT_TIMEOUT_MS
- BGF <a href="https://curl.se/mail/lib-2014-12/0103.html">SFTP: work-around servers that return zero size on STAT</a>
+ BGF <a href="https://curl.se/mail/lib-2014-12/0103.html">SFTP: work around servers that return zero size on STAT</a>
  BGF connect: singleipconnect(): properly try other address families after failure
  BGF <a href="https://curl.se/bug/view.cgi?id=1451">IPV6: address scope != scope id</a>
  BGF <a href="https://curl.se/bug/view.cgi?id=1449">parseurlandfillconn(): fix improper non-numeric scope_id stripping</a>
@@ -15320,7 +15320,7 @@ VULNBOX(7.14.1)
  BGF FTP servers' TYPE command response check made less strict
  BGF URL-without-slash as in http://example?data
  BGF strerror_r() configure check for HP-UX 10.20 (and others)
- BGF time parse work-around on HP-UX 10.20 since its gmtime_r() is broken
+ BGF time parse workaround on HP-UX 10.20 since its gmtime_r() is broken
 </ul>
 
 <a name="7_14_0"></a>
@@ -15851,7 +15851,7 @@ VULNBOX(7.10.8)
 </ul>
 <p> Bugfixes:
 <ul class="bugfixes">
- BGF added work-around for a name resolve problem on some glibc versions
+ BGF added workaround for a name resolve problem on some glibc versions
  BGF a rare ERRORBUFFER single-byte overflow was fixed
  BGF HTTP-resuming an already downloaded file works better
  BGF builds better on Solaris 8+ with gcc
@@ -17421,7 +17421,7 @@ VULNBOX(5.0)
    https-port when accessing through a proxy, it did not use that number
    correctly. I also rewrote the code that parses the stuff read from the
    proxy when you wanna connect through it with SSL.
- BGF Work-around one of the compiler warnings on IRIX native cc compiles.
+ BGF Work around one of the compiler warnings on IRIX native cc compiles.
 </ul>
 
 <a name="4_10"></a>
