@@ -35,6 +35,7 @@ my %silver = (
     'https://au.crazyvegas.com/' => '[none]', # gambling
     'thebestsolution' => '[none]',  # link denied 16 May 2024 due to social media manipulation
     'https://stellarlikes.com' => '[none]', # social media manipulation
+    'https://www.instant-famous.com/' => '[none]', # social media manipulation
     );
 
 # URLs that are changed from the one in the profile
