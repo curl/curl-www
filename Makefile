@@ -76,13 +76,13 @@ web-editing.html: _web-editing.html $(MAINPARTS)
 foot.html: _foot.html $(MAINPARTS)
 	$(ACTION)
 
-index.html: _index.html $(MAINPARTS) release.t packstat.t
+index.html: _index.html $(MAINPARTS) $(RELEASE) packstat.t
 	$(ACTION)
 
-download/index.html: release.t mk-download.pl
+download/index.html: $(RELEASE) mk-download.pl
 	./mk-download.pl > $@
 
-info: _info packstat.t
+info: _info packstat.t $(RELEASE)
 	$(ACTION)
 
 $(RELEASE): Makefile
@@ -91,6 +91,7 @@ $(RELEASE): Makefile
 	@echo "#define __RELDATE $(RELDATE)" >>$(RELEASE)
 	@echo "#define __NEXTDATE $(NEXTDATE)" >>$(RELEASE)
 	@echo "#define __STABLETAG $(STABLE)" | sed 's/\./_/g' >> $(RELEASE)
+	echo "#define __SHA256 `sha256sum download/curl-$(STABLE).tar.gz | cut -f1 '-d '`" >> $(RELEASE)
 
 $(STAT): download.html Makefile
 	@echo "fixing $(STAT)"
