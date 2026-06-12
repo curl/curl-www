@@ -35,6 +35,7 @@ PAGES= \
  head.html \
  index.html \
  info \
+ info.json \
  libs.html \
  search.html \
  sponsors.html \
@@ -83,6 +84,9 @@ download/index.html: $(RELEASE) mk-download.pl
 	./mk-download.pl > $@
 
 info: _info packstat.t $(RELEASE)
+	$(ACTION)
+
+info.json: _info.json packstat.t $(RELEASE)
 	$(ACTION)
 
 $(RELEASE): Makefile
