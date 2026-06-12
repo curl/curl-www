@@ -1,0 +1,16 @@
+#include "packstat.t"
+#include "release.t"
+{
+    "Version": "__STABLE",
+    "Date": "__RELDATE",
+    "Download": "https://curl.se/download/curl-__STABLE.tar.gz",
+    "sha256":" __SHA256",
+    "Changelog": "https://curl.se/ch/__STABLE.html",
+    "git tag": "curl-__STABLETAG",
+    "Packages": "__PACKS",
+    "Up-to-date": "__CURR",
+    "Next release": "__NEXTDATE",
+    "Author": "Daniel Stenberg <daniel@haxx.se>",
+    "License": "MIT",
+    "WWW": "https://curl.se"
+}
