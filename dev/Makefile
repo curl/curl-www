@@ -112,7 +112,7 @@ internals.html: _internals.html $(MAINPARTS) internals.gen
 internals.gen: $(DOCROOT)/INTERNALS.md
 	$(MARKDOWN) < $< > $@
 
-vuln-disclosure.html: _vuln-disclosure.html $(MAINPARTS) disclosure.gen
+vuln-disclosure.html: _vuln-disclosure.html $(MAINPARTS) disclosure.gen bliss.t
 	$(ACTION)
 disclosure.gen: $(DOCROOT)/VULN-DISCLOSURE-POLICY.md
 	$(MARKDOWN) < $< > $@
