@@ -156,6 +156,7 @@ CWE
 cyassl
 Cygwin
 daniel
+datagrams
 datatracker
 decrypt
 deepcode
@@ -280,6 +281,7 @@ GPL
 GPLed
 Greear
 groff
+GSASL
 GSKit
 gskit
 GSS
@@ -689,6 +691,7 @@ SAS
 SASL
 Satiro
 Schannel
+schemeless
 Schindelin
 SCO
 SCP
@@ -804,6 +807,7 @@ TBD
 TCP
 tcpdump
 Tekniska
+Tencent
 testability
 TFTP
 tftp
@@ -925,8 +929,10 @@ XCF
 xcf
 xdigit
 Xilinx
+XlabAI
 XP
 Xtensa
+Xuanwu
 XYZ
 YYYY
 YYYYMMDD
