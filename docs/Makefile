@@ -213,7 +213,25 @@ CVELIST = \
  CVE-2026-6276.html \
  CVE-2026-6429.html \
  CVE-2026-7009.html \
- CVE-2026-7168.html
+ CVE-2026-7168.html \
+ CVE-2026-8286.html \
+ CVE-2026-8458.html \
+ CVE-2026-8924.html \
+ CVE-2026-8925.html \
+ CVE-2026-8926.html \
+ CVE-2026-8927.html \
+ CVE-2026-8932.html \
+ CVE-2026-9079.html \
+ CVE-2026-9080.html \
+ CVE-2026-9545.html \
+ CVE-2026-9546.html \
+ CVE-2026-9547.html \
+ CVE-2026-10536.html \
+ CVE-2026-11352.html \
+ CVE-2026-11564.html \
+ CVE-2026-11586.html \
+ CVE-2026-11856.html \
+ CVE-2026-12064.html
 
 PAGES = \
  $(CVELIST) \
