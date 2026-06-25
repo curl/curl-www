@@ -457,7 +457,7 @@ install.html: _install.html $(MAINPARTS) install.gen
 	$(ACTION)
 
 install.gen: $(DOCROOT)/INSTALL.md
-	$(MARKDOWN) < $< > $@
+	$(MARKDOWN) < $< | sed -e 's/\/\*/\/\&#42;/g' > $@
 
 tutorial.html: _tutorial.html $(MAINPARTS) manual.gen
 	$(ACTION)
