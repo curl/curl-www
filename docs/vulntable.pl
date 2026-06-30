@@ -58,6 +58,12 @@ sub sev2color {
     return "black";
 }
 
+sub sevtext {
+    my ($severity) = @_;
+
+    return uc(substr($severity, 0, 1));
+}
+
 sub single {
     my ($sum, $str, $date, $vernum, $vulns, $nextrel, $prevrel) = @_;
 
@@ -69,12 +75,15 @@ sub single {
     my $vulnplural;
 
     if($vulnnum) {
-        $vulnhtml = "<table><tr class=\"tabletop\"><th>Flaw</th><th>From version</th><th>To and including</th></tr>";
+        $vulnhtml = "<table><tr class=\"tabletop\"><th>S</th><th>Flaw</th><th>First</th><th>Last</th></tr>";
 
         for my $i (@v) {
-            $vulnhtml .= sprintf("<tr class=\"%s\"><td><a href=\"%s\">%s</a></td><td><a href=\"vuln-%s.html\">%s</a></td><td><a href=\"vuln-%s.html\">%s</a></td></tr>\n",
-                                 $odd&1?"even":"odd",
-                                 $vurl[$i], $vulndesc[$i],
+            $vulnhtml .= sprintf("<tr>".
+                                 "<td style=\"color: %s; border-radius: 8px; border: 2px %s solid;\" title=\"Severity %s\">%s</td>".
+
+                                 "<td><a href=\"%s\">%s: %s</a></td><td><a href=\"vuln-%s.html\">%s</a></td><td><a href=\"vuln-%s.html\">%s</a></td></tr>\n",
+                                 sev2color($sev[$i]), sev2color($sev[$i]), $sev[$i], sevtext($sev[$i]),
+                                 $vurl[$i], $cve[$i], $vulndesc[$i],
                                  $vstart[$i], $vstart[$i],
                                  $vstop[$i], $vstop[$i]);
             $odd++;
