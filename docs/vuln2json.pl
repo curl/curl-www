@@ -64,13 +64,16 @@ sub scancve {
             $fixed = $1;
         }
         elsif(/^- Patched-by: (.*)/i) {
-            $patchby = $1;
+            $patchby .= ", " if(length($patchby));
+            $patchby .= $1;
         }
         elsif(/^- Reported-by: (.*)/i) {
-            $repby = $1;
+            $repby .= ", " if(length($repby));
+            $repby .= $1;
         }
         elsif(/^- Help-by: (.*)/i) {
-            $helpby = $1;
+            $helpby .= ", " if(length($helpby));
+            $helpby .= $1;
         }
         elsif(/^Severity: (.*)/i) {
             $severity = ucfirst($1);
