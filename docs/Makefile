@@ -525,13 +525,13 @@ security-h.html: _security.html seclist-h.gen $(MAINPARTS) $(ADVBOX)
 security-c.html: _security.html seclist-c.gen $(MAINPARTS) $(ADVBOX)
 	fcpp $(FCPP_OPTS) -DSEVERITY=3 -I$(ROOT) -WWW -Uunix -P -H -C -V -LL $< $@
 
-seclist.gen: vuln.pm listvulns.pl vuln.pm $(CVELIST)
+seclist.gen: listvulns.pl vuln.pm $(CVELIST)
 	./listvulns.pl low > seclist.gen
-seclist-m.gen: vuln.pm listvulns.pl vuln.pm $(CVELIST)
+seclist-m.gen: listvulns.pl vuln.pm $(CVELIST)
 	./listvulns.pl medium > seclist-m.gen
-seclist-h.gen: vuln.pm listvulns.pl vuln.pm $(CVELIST)
+seclist-h.gen: listvulns.pl vuln.pm $(CVELIST)
 	./listvulns.pl high > seclist-h.gen
-seclist-c.gen: vuln.pm listvulns.pl vuln.pm $(CVELIST)
+seclist-c.gen: listvulns.pl vuln.pm $(CVELIST)
 	./listvulns.pl critical > seclist-c.gen
 
 CVE-2025-11563.html: CVE-2025-11563.md $(MAINPARTS) advisory.t $(ADVBOX) mk-wcurl-adv-template.pl
