@@ -32,7 +32,7 @@ sub head {
         }
         $id =~ s/ //;
         my $num = $#vuln - $v + 2;
-        my $a=sprintf("<a style=\"color: white; text-decoration: none;\" href=\"$id\">%02</a>", $num);
+        my $a=sprintf("<a style=\"color: white; text-decoration: none;\" href=\"$id\">%02d</a>", $num);
         $vhref[$v-1]=$a;
         $vstart[$v-1]=$start;
         $vstop[$v-1]=$stop;
