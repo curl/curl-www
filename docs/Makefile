@@ -24,7 +24,6 @@ CVELIST = \
  CVE-2000-0973.html \
  CVE-2003-1605.html \
  CVE-2005-0490.html \
- CVE-2005-0490.html \
  CVE-2005-3185.html \
  CVE-2005-4077.html \
  CVE-2006-1061.html \
