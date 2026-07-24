@@ -5,14 +5,9 @@ DOCROOT=$(SRCROOT)/docs
 CURL=$(ROOT)
 
 include $(ROOT)/setup.mk
+include $(ROOT)/mainparts.mk
 
-MAINPARTS= \
- $(ROOT)/_doctype.html \
- $(CURL)/_menu.html \
- $(CURL)/_footer.html \
- $(CURL)/setup.t \
- $(CURL)/where.t \
- $(ROOT)/css.t
+MAINPARTS += $(CURL)/_menu.html
 
 ACTION=@echo preprocessing $@; rm -f -- $@; fcpp -I.. -I. -WWW -Uunix -P -H -C -V -LL $< $@;
 

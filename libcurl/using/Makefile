@@ -1,17 +1,15 @@
 ROOT=../..
 
+include $(ROOT)/mainparts.mk
+
 SRCROOT=$(ROOT)/cvssource
 DOCROOT=$(SRCROOT)/docs
 CURL=$(ROOT)
 MAN2HTML= roffit --bare
 
-MAINPARTS= \
- $(ROOT)/_doctype.html \
+MAINPARTS += \
  _menu.html \
- $(ROOT)/setup.t \
- $(ROOT)/where.t \
- ../download.t \
- $(ROOT)/css.t
+ ../download.t
 
 ACTION=@echo preprocessing $@; rm -f -- $@; fcpp -I.. -I$(ROOT) -I../c -WWW -Uunix -P -H -C -V -LL $< $@;
 
