@@ -160,6 +160,10 @@ perlcheck:
 	   fi \
 	done)
 
+.PHONY: navcheck
+navcheck:
+	./navcheck.pl
+
 full: all
 	@cd libcurl; make
 
