@@ -1,13 +1,12 @@
+ROOT=..
+
 SRCROOT=../cvssource
 DOCROOT=$(SRCROOT)/docs
 
-MAINPARTS= \
- ../_doctype.html \
+include $(ROOT)/mainparts.mk
+
+MAINPARTS += \
  ../dev/_menu.html \
- ../_footer.html \
- ../setup.t \
- ../where.t \
- ../css.t \
  Makefile
 
 ACTION=@echo preprocessing $@; rm -f -- $@; fcpp -I../docs -I.. -WWW -Uunix -H -C -V -P -LL $< $@;
