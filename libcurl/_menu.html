@@ -1,45 +1,53 @@
 
+#ifndef __MENU
+#define __MENU
+
 #include "setup.t"
+#include "nav.t"
 
 #ifndef NOBODY
 <body>
 #endif
 
 <div class="main">
-<div class="menu">
+SITENAV_OPEN
 
 #include "symbol.t"
 
+SITENAV_CONTROLS
+SITENAV_LIST_OPEN
+
 #ifdef LIBCURL_MAIN
-LINK("", libcurl )
+SITENAV_SELECTED_LINK(/libcurl/, libcurl)
 #else
-VLINK("/libcurl/", libcurl, Front page of the libcurl section)
+SITENAV_TITLED_LINK(/libcurl/, libcurl, Front page of the libcurl section)
 #endif
 
-<div class="dropdown">
-  <a class="dropbtn" href="/libcurl/">Docs</a>
-  <div class="dropdown-content">
-    <a href="/libcurl/abi.html">ABI</a>
-    <a href="/libcurl/c/allfuncs.html">All functions</a>
-    <a href="/libcurl/c/">API</a>
-    <a href="/libcurl/bindings.html">Bindings</a>
-    <a href="/libcurl/competitors.html">Competitors</a>
-    <a href="/libcurl/c/example.html">Examples</a>
-    <a href="/libcurl/features.html">Features</a>
-    <a href="/mail/list.cgi?list=curl-library">Mailing list</a>
-    <a href="/libcurl/relatedlibs.html">Related libs</a>
-    <a href="/libcurl/using/">Using libcurl</a>
-    <a href="/libcurl/security.html">Security</a>
-    <a href="/libcurl/c/symbols-in-versions.html">Symbols</a>
-    <a href="/libcurl/c/libcurl-tutorial.html">Tutorial</a>
-    <a href="/libcurl/theysay.html">Testimonials</a>
-  </div>
-</div>
+SITENAV_GROUP_OPEN(Docs)
+  SITENAV_OVERVIEW(/libcurl/, Docs overview)
+  <li><a href="/libcurl/abi.html">ABI</a></li>
+  <li><a href="/libcurl/c/allfuncs.html">All functions</a></li>
+  <li><a href="/libcurl/c/">API</a></li>
+  <li><a href="/libcurl/bindings.html">Bindings</a></li>
+  <li><a href="/libcurl/competitors.html">Competitors</a></li>
+  <li><a href="/libcurl/c/example.html">Examples</a></li>
+  <li><a href="/libcurl/features.html">Features</a></li>
+  <li><a href="/mail/list.cgi?list=curl-library">Mailing list</a></li>
+  <li><a href="/libcurl/relatedlibs.html">Related libs</a></li>
+  <li><a href="/libcurl/using/">Using libcurl</a></li>
+  <li><a href="/libcurl/security.html">Security</a></li>
+  <li><a href="/libcurl/c/symbols-in-versions.html">Symbols</a></li>
+  <li><a href="/libcurl/c/libcurl-tutorial.html">Tutorial</a></li>
+  <li><a href="/libcurl/theysay.html">Testimonials</a></li>
+SITENAV_GROUP_CLOSE
 
-</div>
+SITENAV_LIST_CLOSE
+SITENAV_CLOSE
 
 #ifdef SHOW_ALERT
 #include "../alert.t"
 #endif
 
 START_OF_MAIN
+
+#endif

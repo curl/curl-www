@@ -2,6 +2,7 @@
 #define __MENU
 
 #include "setup.t"
+#include "nav.t"
 
 #ifndef NOBODY
 
@@ -14,47 +15,48 @@
 #define REF(link,text) <a href=link>text</a>
 
 <div class="main">
-<div class="menu">
+SITENAV_OPEN
 
 #include "symbol.t"
 
-<div class="dropdown">
-  <a class="dropbtn" href="/dev/">Dev-related docs</a>
-  <div class="dropdown-content">
-    <a href="/dev/code-review.html">Code Review</a>
-    <a href="/dev/code-style.html">Code Style</a>
-    <a href="/dev/contribute.html">Contribute</a>
-    <a href="/dev/deprecate.html">Deprecate</a>
-    <a href="/dev/dependencies.html">Dependency versions</a>
-    <a href="/dev/experimental.html">Experimental</a>
-    <a href="/dev/new-protocol.html">New protocol</a>
-    <a href="/dev/release-procedure.html">Release procedure</a>
-    <a href="/dev/roadmap.html">Roadmap</a>
-    <a href="/dev/runtests.html">Run tests</a>
-    <a href="/dev/source.html">Source code</a>
-    <a href="/rfc/">Specifications</a>
-    <a href="https://testclutch.curl.se/">Test Clutch</a>
-    <a href="/dev/testcurl.html">Test curl</a>
-    <a href="/dev/test-fileformat.html">Test case file format</a>
-    <a href="/dev/tests-overview.html">Tests Overview</a>
-    <a href="/dev/vuln-disclosure.html">Vulnerability Disclosure Policy</a>
-  </div>
-</div>
-<div class="dropdown">
-  <a class="dropbtn" href="/dev/./">Current status</a>
-  <div class="dropdown-content">
-    <a href="/dev/builds.html">Autobuilds</a>
-    <a href="/snapshots/">Daily snapshots</a>
-    <a href="/dashboard.html">Dashboard</a>
-    <a href="/dev/feature-window.html">Feature window</a>
-    <a href="/gitstats/">git stats</a>
-    <a href="https://github.com/curl/curl/issues" target="_blank">Issues (github)</a>
-    <a href="https://github.com/curl/curl/pulls" target="_blank">Pull requests (github)</a>
-    <a href="/dev/release-notes.html">Release Notes</a>
-  </div>
-</div>
+SITENAV_CONTROLS
+SITENAV_LIST_OPEN
 
-</div>
+SITENAV_GROUP_OPEN(Dev-related docs)
+  SITENAV_OVERVIEW(/dev/, Dev-related docs overview)
+  <li><a href="/dev/code-review.html">Code Review</a></li>
+  <li><a href="/dev/code-style.html">Code Style</a></li>
+  <li><a href="/dev/contribute.html">Contribute</a></li>
+  <li><a href="/dev/deprecate.html">Deprecate</a></li>
+  <li><a href="/dev/dependencies.html">Dependency versions</a></li>
+  <li><a href="/dev/experimental.html">Experimental</a></li>
+  <li><a href="/dev/new-protocol.html">New protocol</a></li>
+  <li><a href="/dev/release-procedure.html">Release procedure</a></li>
+  <li><a href="/dev/roadmap.html">Roadmap</a></li>
+  <li><a href="/dev/runtests.html">Run tests</a></li>
+  <li><a href="/dev/source.html">Source code</a></li>
+  <li><a href="/rfc/">Specifications</a></li>
+  <li><a href="https://testclutch.curl.se/">Test Clutch</a></li>
+  <li><a href="/dev/testcurl.html">Test curl</a></li>
+  <li><a href="/dev/test-fileformat.html">Test case file format</a></li>
+  <li><a href="/dev/tests-overview.html">Tests Overview</a></li>
+  <li><a href="/dev/vuln-disclosure.html">Vulnerability Disclosure Policy</a></li>
+SITENAV_GROUP_CLOSE
+
+SITENAV_GROUP_OPEN(Current status)
+  SITENAV_OVERVIEW(/dev/, Current status overview)
+  <li><a href="/dev/builds.html">Autobuilds</a></li>
+  <li><a href="/snapshots/">Daily snapshots</a></li>
+  <li><a href="/dashboard.html">Dashboard</a></li>
+  <li><a href="/dev/feature-window.html">Feature window</a></li>
+  <li><a href="/gitstats/">git stats</a></li>
+  <li><a href="https://github.com/curl/curl/issues" target="_blank">Issues (github)</a></li>
+  <li><a href="https://github.com/curl/curl/pulls" target="_blank">Pull requests (github)</a></li>
+  <li><a href="/dev/release-notes.html">Release Notes</a></li>
+SITENAV_GROUP_CLOSE
+
+SITENAV_LIST_CLOSE
+SITENAV_CLOSE
 
 START_OF_MAIN
 #endif

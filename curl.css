@@ -271,25 +271,19 @@ tr.hide {
   font-size: 26px;
 }
 
-/* the top menu symbol box */
-div.curlsymbol {
-  float: left;
-  position: absolute;
-}
-
-div.curlsymbol a {
+.curlsymbol {
   cursor: pointer;
 }
 
-div.curlsymbol a img {
+.curlsymbol img {
+  display: block;
   width: 41px;
 }
 
 /* unset the default img:hover, and add hover-effect */
-div.curlsymbol a img:hover {
+.curlsymbol img:hover {
   background-color: unset !important;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  width: 42px;
 }
 
 /* ------------------------------------------------------------------------ */
@@ -627,10 +621,6 @@ div.yellowbox {
 
 /* Final site-navigation breakpoint: the widest section menu needs this room. */
 @media screen and (max-width: 1000px) {
-  div.curlsymbol {
-    display: none;
-  }
-
   .sitenav {
     display: grid;
     grid-template-columns: minmax(44px, 1fr) auto;
