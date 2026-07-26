@@ -1,32 +1,42 @@
+#ifndef __MENU
+#define __MENU
+
 #include "setup.t"
+#include "nav.t"
 
 #ifndef NOBODY
 <body>
 #endif
 
 <div class="main">
-<div class="menu">
+SITENAV_OPEN
 
 #include "symbol.t"
 
+SITENAV_CONTROLS
+SITENAV_LIST_OPEN
+
 #ifdef USING_INDEX
-LINK("/libcurl/using/", Using libcurl )
+SITENAV_SELECTED_LINK(/libcurl/using/, Using libcurl)
 #else
-VLINK("/libcurl/using/", Using libcurl, Using libcurl section)
+SITENAV_TITLED_LINK(/libcurl/using/, Using libcurl, Using libcurl section)
 #endif
 
 #ifdef USING_AUTOCONF
-LINK("/libcurl/using/autoconf.html", autoconf)
+SITENAV_SELECTED_LINK(/libcurl/using/autoconf.html, autoconf)
 #else
-VLINK("/libcurl/using/autoconf.html", autoconf, How to detect libcurl with autoconf)
+SITENAV_TITLED_LINK(/libcurl/using/autoconf.html, autoconf, How to detect libcurl with autoconf)
 #endif
 
 #ifdef USING_CURL_CONFIG
-LINK("/libcurl/using/curl-config.html", curl-config)
+SITENAV_SELECTED_LINK(/libcurl/using/curl-config.html, curl-config)
 #else
-VLINK("/libcurl/using/curl-config.html", curl-config, How to use curl-config)
+SITENAV_TITLED_LINK(/libcurl/using/curl-config.html, curl-config, How to use curl-config)
 #endif
 
-</div>
+SITENAV_LIST_CLOSE
+SITENAV_CLOSE
 
 START_OF_MAIN
+
+#endif

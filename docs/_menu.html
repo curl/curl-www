@@ -5,91 +5,87 @@
 #include "setup.t"
 #endif
 
+#include "nav.t"
+
 #ifndef NOBODY
 <body>
 #endif
 
 <div class="main">
-<div class="menu">
+SITENAV_OPEN
 
 #include "symbol.t"
 
+SITENAV_CONTROLS
+SITENAV_LIST_OPEN
+
 #ifdef DOCS_OVERVIEW
-LINK(/docs/, Docs Overview)
+SITENAV_SELECTED_LINK(/docs/, Docs Overview)
 #else
-VLINK(/docs/, Docs Overview, Documentation Overview)
+SITENAV_TITLED_LINK(/docs/, Docs Overview, Documentation Overview)
 #endif
 
-<div class="dropdown">
-  <a class="dropbtn" href="/docs/projdocs.html">Project</a>
-  <div class="dropdown-content">
-    <a href="/docs/bugs.html">Bug Report</a>
-    <a href="/docs/code-of-conduct.html">Code of conduct</a>
-    <a href="/docs/libs.html">Dependencies</a>
-    <a href="/donation.html">Donate</a>
-    <a href="/docs/faq.html">FAQ</a>
-    <a href="/docs/features.html">Features</a>
-    <a href="/docs/governance.html">Governance</a>
-    <a href="/docs/history.html">History</a>
-    <a href="/docs/install.html">Install</a>
-    <a href="/docs/knownbugs.html">Known Bugs</a>
-    <a href="/docs/knownrisks.html">Known Risks</a>
-    <a href="/logo/">Logo</a>
-    <a href="/docs/todo.html">TODO</a>
-    <a href="/about.html">website Info</a>
-  </div>
-</div>
+SITENAV_GROUP_OPEN(Project)
+  SITENAV_OVERVIEW(/docs/projdocs.html, Project overview)
+  <li><a href="/docs/bugs.html">Bug Report</a></li>
+  <li><a href="/docs/code-of-conduct.html">Code of conduct</a></li>
+  <li><a href="/docs/libs.html">Dependencies</a></li>
+  <li><a href="/donation.html">Donate</a></li>
+  <li><a href="/docs/faq.html">FAQ</a></li>
+  <li><a href="/docs/features.html">Features</a></li>
+  <li><a href="/docs/governance.html">Governance</a></li>
+  <li><a href="/docs/history.html">History</a></li>
+  <li><a href="/docs/install.html">Install</a></li>
+  <li><a href="/docs/knownbugs.html">Known Bugs</a></li>
+  <li><a href="/docs/knownrisks.html">Known Risks</a></li>
+  <li><a href="/logo/">Logo</a></li>
+  <li><a href="/docs/todo.html">TODO</a></li>
+  <li><a href="/about.html">website Info</a></li>
+SITENAV_GROUP_CLOSE
 
-<div class="dropdown">
-  <a class="dropbtn" href="/docs/protdocs.html">Protocols</a>
-  <div class="dropdown-content">
-    <a href="/docs/caextract.html">CA Extract</a>
-    <a href="/docs/http-cookies.html">HTTP cookies</a>
-    <a href="/docs/http3.html">HTTP/3</a>
-    <a href="/docs/mqtt.html">MQTT</a>
-    <a href="/docs/sslcerts.html">SSL certs</a>
-    <a href="/docs/ssl-compared.html">SSL libs compared</a>
-    <a href="/docs/url-syntax.html">URL syntax</a>
-    <a href="/docs/websocket.html">WebSocket</a>
-  </div>
-</div>
+SITENAV_GROUP_OPEN(Protocols)
+  SITENAV_OVERVIEW(/docs/protdocs.html, Protocols overview)
+  <li><a href="/docs/caextract.html">CA Extract</a></li>
+  <li><a href="/docs/http-cookies.html">HTTP cookies</a></li>
+  <li><a href="/docs/http3.html">HTTP/3</a></li>
+  <li><a href="/docs/mqtt.html">MQTT</a></li>
+  <li><a href="/docs/sslcerts.html">SSL certs</a></li>
+  <li><a href="/docs/ssl-compared.html">SSL libs compared</a></li>
+  <li><a href="/docs/url-syntax.html">URL syntax</a></li>
+  <li><a href="/docs/websocket.html">WebSocket</a></li>
+SITENAV_GROUP_CLOSE
 
-<div class="dropdown">
-  <a class="dropbtn" href="/docs/reldocs.html">Releases</a>
-  <div class="dropdown-content">
-    <a href="/ch/">Changelog</a>
-    <a href="/docs/security.html">curl CVEs</a>
-    <a href="/docs/releases.html">Release Table</a>
-    <a href="/docs/versions.html">Version Numbering</a>
-    <a href="/docs/verify.html">Verify</a>
-    <a href="/docs/vulnerabilities.html">Vulnerabilities</a>
-  </div>
-</div>
+SITENAV_GROUP_OPEN(Releases)
+  SITENAV_OVERVIEW(/docs/reldocs.html, Releases overview)
+  <li><a href="/ch/">Changelog</a></li>
+  <li><a href="/docs/security.html">curl CVEs</a></li>
+  <li><a href="/docs/releases.html">Release Table</a></li>
+  <li><a href="/docs/versions.html">Version Numbering</a></li>
+  <li><a href="/docs/verify.html">Verify</a></li>
+  <li><a href="/docs/vulnerabilities.html">Vulnerabilities</a></li>
+SITENAV_GROUP_CLOSE
 
-<div class="dropdown">
-  <a class="dropbtn" href="/docs/tooldocs.html">Tool</a>
-  <div class="dropdown-content">
-    <a href="/docs/comparison-table.html">Comparison Table</a>
-    <a href="/docs/manpage.html">curl man page</a>
-    <a href="/docs/httpscripting.html">HTTP Scripting</a>
-    <a href="/docs/mk-ca-bundle.html">mk-ca-bundle</a>
-    <a href="/docs/tutorial.html">Tutorial</a>
-    <a href="optionswhen.html">When options were added</a>
-  </div>
-</div>
+SITENAV_GROUP_OPEN(Tool)
+  SITENAV_OVERVIEW(/docs/tooldocs.html, Tool overview)
+  <li><a href="/docs/comparison-table.html">Comparison Table</a></li>
+  <li><a href="/docs/manpage.html">curl man page</a></li>
+  <li><a href="/docs/httpscripting.html">HTTP Scripting</a></li>
+  <li><a href="/docs/mk-ca-bundle.html">mk-ca-bundle</a></li>
+  <li><a href="/docs/tutorial.html">Tutorial</a></li>
+  <li><a href="/docs/optionswhen.html">When options were added</a></li>
+SITENAV_GROUP_CLOSE
 
-<div class="dropdown">
-  <a class="dropbtn" href="/docs/whodocs.html">Who and Why</a>
-  <div class="dropdown-content">
-    <a href="/docs/companies.html">Companies</a>
-    <a href="/docs/copyright.html">Copyright</a>
-    <a href="/sponsors.html">Sponsors</a>
-    <a href="/docs/thanks.html">Thanks</a>
-    <a href="/docs/thename.html">The name</a>
-  </div>
-</div>
+SITENAV_GROUP_OPEN(Who and Why)
+  SITENAV_OVERVIEW(/docs/whodocs.html, Who and Why overview)
+  <li><a href="/docs/companies.html">Companies</a></li>
+  <li><a href="/docs/copyright.html">Copyright</a></li>
+  <li><a href="/sponsors.html">Sponsors</a></li>
+  <li><a href="/docs/thanks.html">Thanks</a></li>
+  <li><a href="/docs/thename.html">The name</a></li>
+SITENAV_GROUP_CLOSE
 
-</div>
+SITENAV_LIST_CLOSE
+SITENAV_CLOSE
 
 #ifdef SHOW_ALERT
 #include "../alert.t"

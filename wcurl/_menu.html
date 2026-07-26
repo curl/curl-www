@@ -2,6 +2,7 @@
 #define __MENU
 
 #include "setup.t"
+#include "nav.t"
 
 #ifndef NOBODY
 
@@ -14,25 +15,25 @@
 #define REF(link,text) <a href=link>text</a>
 
 <div class="main">
-<div class="menu">
+SITENAV_OPEN
 
 #include "symbol.t"
 
-<div class="dropdown">
-  <a class="dropbtn" href="/">curl.se</a>
-</div>
-<div class="dropdown">
-  <a class="dropbtn" href="/dev/">wcurl</a>
-  <div class="dropdown-content">
-    <a href="https://github.com/curl/wcurl">GitHub repo</a>
-    <a href="/wcurl/code-review.html">man page</a>
-  </div>
-</div>
-<div class="dropdown">
-  <a class="dropbtn" href="/trurl/">trurl</a>
-</div>
+SITENAV_CONTROLS
+SITENAV_LIST_OPEN
 
-</div>
+SITENAV_LINK(/, curl.se)
+
+SITENAV_GROUP_OPEN(wcurl)
+  SITENAV_OVERVIEW(/wcurl/, wcurl overview)
+  <li><a href="https://github.com/curl/wcurl">GitHub repo</a></li>
+  <li><a href="/wcurl/manual.html">man page</a></li>
+SITENAV_GROUP_CLOSE
+
+SITENAV_LINK(/trurl/, trurl)
+
+SITENAV_LIST_CLOSE
+SITENAV_CLOSE
 
 START_OF_MAIN
 #endif

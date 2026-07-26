@@ -1,64 +1,69 @@
 
+#ifndef __MENU
+#define __MENU
+
 #include "setup.t"
+#include "nav.t"
 
 #ifndef NOBODY
 <body>
 #endif
 
 <div class="main">
-<div class="menu">
+SITENAV_OPEN
 
 #include "symbol.t"
 
+SITENAV_CONTROLS
+SITENAV_LIST_OPEN
+
 #ifdef DOCS_OVERVIEW
-LINK("/libcurl/c/libcurl.html", API Overview)
+SITENAV_SELECTED_LINK(/libcurl/c/libcurl.html, API Overview)
 #else
-VLINK("/libcurl/c/libcurl.html", API Overview, Overview)
+SITENAV_TITLED_LINK(/libcurl/c/libcurl.html, API Overview, Overview)
 #endif
 
-<div class="dropdown">
-  <a class="dropbtn" href="/libcurl/c/">Docs</a>
-  <div class="dropdown-content">
-    <a href="/libcurl/c/libcurl-easy.html">API: easy</a>
-    <a href="/libcurl/c/libcurl-multi.html">API: multi</a>
-    <a href="/libcurl/c/libcurl-share.html">API: share</a>
-    <a href="/libcurl/c/libcurl-url.html">API: URL</a>
-    <a href="/libcurl/c/libcurl-ws.html">API: WebSocket</a>
-    <a href="/libcurl/c/libcurl-env.html">Environment vars</a>
-    <a href="/libcurl/c/libcurl-errors.html">Errors</a>
-    <a href="/libcurl/c/example.html">Examples</a>
-    <a href="/libcurl/security.html">Security</a>
-    <a href="/libcurl/c/symbols-in-versions.html">Symbols</a>
-    <a href="/libcurl/c/libcurl-tutorial.html">Tutorial</a>
-    <hr>
-    <a href="/libcurl/c/easy_setopt_options.html">easy setopt options</a>
-    <a href="/libcurl/c/easy_getinfo_options.html">easy getinfo options</a>
-    <a href="/libcurl/c/multi_setopt_options.html">multi setopt options</a>
-    <a href="/libcurl/c/tls-options.html">TLS options</a>
-  </div>
-</div>
-<div class="dropdown">
-  <a class="dropbtn" href="/libcurl/c/">Functions</a>
-  <div class="dropdown-content">
-    <a href="/libcurl/c/allfuncs.html">All functions</a>
-    <a href="/libcurl/c/curl_easy_getinfo.html">curl_easy_getinfo</a>
-    <a href="/libcurl/c/curl_easy_init.html">curl_easy_init</a>
-    <a href="/libcurl/c/curl_easy_perform.html">curl_easy_perform</a>
-    <a href="/libcurl/c/curl_easy_reset.html">curl_easy_reset</a>
-    <a href="/libcurl/c/curl_easy_setopt.html">curl_easy_setopt</a>
-    <a href="/libcurl/c/curl_multi_add_handle.html">curl_multi_add_handle</a>
-    <a href="/libcurl/c/curl_multi_init.html">curl_multi_init</a>
-    <a href="/libcurl/c/curl_multi_perform.html">curl_multi_perform</a>
-    <a href="/libcurl/c/curl_multi_remove_handle.html">curl_multi_remove_handle</a>
-    <a href="/libcurl/c/curl_multi_setopt.html">curl_multi_setopt</a>
-  </div>
-</div>
+SITENAV_GROUP_OPEN(Docs)
+  SITENAV_OVERVIEW(/libcurl/c/, Docs overview)
+  <li><a href="/libcurl/c/libcurl-easy.html">API: easy</a></li>
+  <li><a href="/libcurl/c/libcurl-multi.html">API: multi</a></li>
+  <li><a href="/libcurl/c/libcurl-share.html">API: share</a></li>
+  <li><a href="/libcurl/c/libcurl-url.html">API: URL</a></li>
+  <li><a href="/libcurl/c/libcurl-ws.html">API: WebSocket</a></li>
+  <li><a href="/libcurl/c/libcurl-env.html">Environment vars</a></li>
+  <li><a href="/libcurl/c/libcurl-errors.html">Errors</a></li>
+  <li><a href="/libcurl/c/example.html">Examples</a></li>
+  <li><a href="/libcurl/security.html">Security</a></li>
+  <li><a href="/libcurl/c/symbols-in-versions.html">Symbols</a></li>
+  <li><a href="/libcurl/c/libcurl-tutorial.html">Tutorial</a></li>
+  <li class="sitenav-submenu-divider"><a href="/libcurl/c/easy_setopt_options.html">easy setopt options</a></li>
+  <li><a href="/libcurl/c/easy_getinfo_options.html">easy getinfo options</a></li>
+  <li><a href="/libcurl/c/multi_setopt_options.html">multi setopt options</a></li>
+  <li><a href="/libcurl/c/tls-options.html">TLS options</a></li>
+SITENAV_GROUP_CLOSE
 
+SITENAV_GROUP_OPEN(Functions)
+  SITENAV_OVERVIEW(/libcurl/c/, Functions overview)
+  <li><a href="/libcurl/c/allfuncs.html">All functions</a></li>
+  <li><a href="/libcurl/c/curl_easy_getinfo.html">curl_easy_getinfo</a></li>
+  <li><a href="/libcurl/c/curl_easy_init.html">curl_easy_init</a></li>
+  <li><a href="/libcurl/c/curl_easy_perform.html">curl_easy_perform</a></li>
+  <li><a href="/libcurl/c/curl_easy_reset.html">curl_easy_reset</a></li>
+  <li><a href="/libcurl/c/curl_easy_setopt.html">curl_easy_setopt</a></li>
+  <li><a href="/libcurl/c/curl_multi_add_handle.html">curl_multi_add_handle</a></li>
+  <li><a href="/libcurl/c/curl_multi_init.html">curl_multi_init</a></li>
+  <li><a href="/libcurl/c/curl_multi_perform.html">curl_multi_perform</a></li>
+  <li><a href="/libcurl/c/curl_multi_remove_handle.html">curl_multi_remove_handle</a></li>
+  <li><a href="/libcurl/c/curl_multi_setopt.html">curl_multi_setopt</a></li>
+SITENAV_GROUP_CLOSE
 
-</div>
+SITENAV_LIST_CLOSE
+SITENAV_CLOSE
 
 #ifdef SHOW_ALERT
 #include "alert.t"
 #endif
 
 START_OF_MAIN
+
+#endif

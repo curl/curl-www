@@ -2,6 +2,7 @@
 #define __MENU
 
 #include "setup.t"
+#include "nav.t"
 
 #ifndef NOBODY
 <body>
@@ -9,108 +10,108 @@
 
 <div class="main">
 
-<div class="menu">
+SITENAV_OPEN
 
 #include "symbol.t"
 
-<div class="dropdown">
-  <a class="dropbtn" href="/download.html">Download</a>
-  <div class="dropdown-content">
-    <a href="https://github.com/curl/curl">Browse source</a>
-    <a href="/ch/">Changelog</a>
-    <a href="/rc/">Release candidates</a>
-    <a href="/docs/releases.html">Release log</a>
-    <a href="/tiny/">tiny-curl</a>
-  </div>
-</div>
+SITENAV_CONTROLS
+SITENAV_LIST_OPEN
+  SITENAV_GROUP_OPEN(Download)
+        SITENAV_OVERVIEW(/download.html, Download overview)
+        <li><a href="https://github.com/curl/curl">Browse source</a></li>
+        <li><a href="/ch/">Changelog</a></li>
+        <li><a href="/rc/">Release candidates</a></li>
+        <li><a href="/docs/releases.html">Release log</a></li>
+        <li><a href="/tiny/">tiny-curl</a></li>
+  SITENAV_GROUP_CLOSE
 
-<div class="dropdown">
-  <a class="dropbtn" href="/docs/">Documentation</a>
-  <div class="dropdown-content">
-    <a href="/docs/projdocs.html">Project</a>
-      <small>
-      <a href="/docs/faq.html">FAQ</a>
-      <a href="/docs/help-us.html">&nbsp; Help us</a>
-      <a href="/docs/knownbugs.html">&nbsp; Known bugs</a>
-      <a href="/docs/knownrisks.html">&nbsp; Known risks</a>
-      <a href="/docs/todo.html">&nbsp; TODO</a>
-      </small>
-    <a href="/docs/protdocs.html">Protocols</a>
-      <small>
-      <a href="/docs/caextract.html">&nbsp; CA bundle</a>
-      <a href="/docs/http-cookies.html">&nbsp; HTTP Cookies</a>
-      <a href="/docs/sslcerts.html">&nbsp; SSL Certs</a>
-      </small>
-    <a href="/docs/reldocs.html">Releases</a>
-      <small>
-      <a href="/docs/security.html">&nbsp; Security</a>
-      <a href="/docs/verify.html">&nbsp; Verify</a>
-      <a href="/docs/versions.html">&nbsp; Version numbers</a>
-      <a href="/docs/vulnerabilities.html">&nbsp; Vulnerabilities</a>
-      </small>
-    <a href="/docs/tooldocs.html">curl tool</a>
-      <small>
-      <a href="/docs/manpage.html">&nbsp; man page</a>
-      <a href="/docs/tutorial.html">&nbsp; Tutorial</a>
-      <a href="/docs/httpscripting.html">&nbsp; HTTP scripting</a>
-      </small>
-    <a href="/trurl/">trurl</a>
-    <a href="/wcurl/">wcurl</a>
-    <a href="/docs/videos/">Videos</a>
-    <a href="/docs/whodocs.html">Who and Why</a>
-  </div>
-</div>
+  SITENAV_GROUP_OPEN(Documentation)
+        SITENAV_OVERVIEW(/docs/, Documentation overview)
+        <li class="sitenav-subgroup">
+          <a href="/docs/projdocs.html">Project</a>
+          <ul class="sitenav-submenu-nested">
+            <li><a href="/docs/faq.html">FAQ</a></li>
+            <li><a href="/docs/help-us.html">Help us</a></li>
+            <li><a href="/docs/knownbugs.html">Known bugs</a></li>
+            <li><a href="/docs/knownrisks.html">Known risks</a></li>
+            <li><a href="/docs/todo.html">TODO</a></li>
+          </ul>
+        </li>
+        <li class="sitenav-subgroup">
+          <a href="/docs/protdocs.html">Protocols</a>
+          <ul class="sitenav-submenu-nested">
+            <li><a href="/docs/caextract.html">CA bundle</a></li>
+            <li><a href="/docs/http-cookies.html">HTTP Cookies</a></li>
+            <li><a href="/docs/sslcerts.html">SSL Certs</a></li>
+          </ul>
+        </li>
+        <li class="sitenav-subgroup">
+          <a href="/docs/reldocs.html">Releases</a>
+          <ul class="sitenav-submenu-nested">
+            <li><a href="/docs/security.html">Security</a></li>
+            <li><a href="/docs/verify.html">Verify</a></li>
+            <li><a href="/docs/versions.html">Version numbers</a></li>
+            <li><a href="/docs/vulnerabilities.html">Vulnerabilities</a></li>
+          </ul>
+        </li>
+        <li class="sitenav-subgroup">
+          <a href="/docs/tooldocs.html">curl tool</a>
+          <ul class="sitenav-submenu-nested">
+            <li><a href="/docs/manpage.html">man page</a></li>
+            <li><a href="/docs/tutorial.html">Tutorial</a></li>
+            <li><a href="/docs/httpscripting.html">HTTP scripting</a></li>
+          </ul>
+        </li>
+        <li><a href="/trurl/">trurl</a></li>
+        <li><a href="/wcurl/">wcurl</a></li>
+        <li><a href="/docs/videos/">Videos</a></li>
+        <li><a href="/docs/whodocs.html">Who and Why</a></li>
+  SITENAV_GROUP_CLOSE
 
-<div class="dropdown">
-  <a class="dropbtn" href="/libcurl/">libcurl</a>
-  <div class="dropdown-content">
-    <a href="/libcurl/c/">API</a>
-    <a href="/libcurl/c/example.html">Examples</a>
-    <a href="/libcurl/features.html">Features</a>
-    <a href="/mail/list.cgi?list=curl-library">Mailing list</a>
-    <a href="/libcurl/c/symbols-in-versions.html">Symbols</a>
-    <a href="/libcurl/using/">Using libcurl</a>
-    <a href="/libcurl/c/libcurl-tutorial.html">Tutorial</a>
-  </div>
-</div>
+  SITENAV_GROUP_OPEN(libcurl)
+        SITENAV_OVERVIEW(/libcurl/, libcurl overview)
+        <li><a href="/libcurl/c/">API</a></li>
+        <li><a href="/libcurl/c/example.html">Examples</a></li>
+        <li><a href="/libcurl/features.html">Features</a></li>
+        <li><a href="/mail/list.cgi?list=curl-library">Mailing list</a></li>
+        <li><a href="/libcurl/c/symbols-in-versions.html">Symbols</a></li>
+        <li><a href="/libcurl/using/">Using libcurl</a></li>
+        <li><a href="/libcurl/c/libcurl-tutorial.html">Tutorial</a></li>
+  SITENAV_GROUP_CLOSE
 
-<div class="dropdown">
-  <a class="dropbtn" href="/gethelp.html">Get Help</a>
-  <div class="dropdown-content">
-    <a href="https://lists.haxx.se/listinfo/curl-library">curl-library</a>
-    <a href="https://lists.haxx.se/listinfo/curl-users">curl-users</a>
-    <a href="/docs/irc.html">IRC / chat</a>
-    <a href="/mail/">Mailing lists</a>
-    <a href="/book.html">Everything curl [book]</a>
-    <a href="/docs/videos/">Video presentations</a>
-    <a href="https://github.com/curl/curl/issues">Report a bug</a>
-    <a href="/dev/vuln-disclosure.html">Report security issue</a>
-    <a href="/support.html">Paid support</a>
-  </div>
-</div>
+  SITENAV_GROUP_OPEN(Get Help)
+        SITENAV_OVERVIEW(/gethelp.html, Get Help overview)
+        <li><a href="https://lists.haxx.se/listinfo/curl-library">curl-library</a></li>
+        <li><a href="https://lists.haxx.se/listinfo/curl-users">curl-users</a></li>
+        <li><a href="/docs/irc.html">IRC / chat</a></li>
+        <li><a href="/mail/">Mailing lists</a></li>
+        <li><a href="/book.html">Everything curl [book]</a></li>
+        <li><a href="/docs/videos/">Video presentations</a></li>
+        <li><a href="https://github.com/curl/curl/issues">Report a bug</a></li>
+        <li><a href="/dev/vuln-disclosure.html">Report security issue</a></li>
+        <li><a href="/support.html">Paid support</a></li>
+  SITENAV_GROUP_CLOSE
 
-<div class="dropdown">
-  <a class="dropbtn" href="/dev/">Development</a>
-  <div class="dropdown-content">
-    <a href="/dev/builds.html">Autobuilds</a>
-    <a href="/dev/code-review.html">Code review</a>
-    <a href="/dev/code-style.html">Code style</a>
-    <a href="/dev/contribute.html">Contribute</a>
-    <a href="/dashboard.html">Dashboard</a>
-    <a href="/dev/dependencies.html">Dependencies</a>
-    <a href="/dev/deprecate.html">Deprecate</a>
-    <a href="/dev/release-notes.html">Release Notes</a>
-    <a href="/dev/release-procedure.html">Release Procedure</a>
-    <a href="/dev/roadmap.html">Roadmap</a>
-    <a href="/dev/runtests.html">Run Tests</a>
-    <a href="/rfc/">Specifications</a>
-    <a href="/dev/testcurl.html">Test curl</a>
-    <a href="/dev/tests-overview.html">Tests Overview</a>
-    <a href="/dev/vuln-disclosure.html">Vulnerability Disclosure Policy</a>
-  </div>
-</div>
-
-</div>
+  SITENAV_GROUP_OPEN(Development)
+        SITENAV_OVERVIEW(/dev/, Development overview)
+        <li><a href="/dev/builds.html">Autobuilds</a></li>
+        <li><a href="/dev/code-review.html">Code review</a></li>
+        <li><a href="/dev/code-style.html">Code style</a></li>
+        <li><a href="/dev/contribute.html">Contribute</a></li>
+        <li><a href="/dashboard.html">Dashboard</a></li>
+        <li><a href="/dev/dependencies.html">Dependencies</a></li>
+        <li><a href="/dev/deprecate.html">Deprecate</a></li>
+        <li><a href="/dev/release-notes.html">Release Notes</a></li>
+        <li><a href="/dev/release-procedure.html">Release Procedure</a></li>
+        <li><a href="/dev/roadmap.html">Roadmap</a></li>
+        <li><a href="/dev/runtests.html">Run Tests</a></li>
+        <li><a href="/rfc/">Specifications</a></li>
+        <li><a href="/dev/testcurl.html">Test curl</a></li>
+        <li><a href="/dev/tests-overview.html">Tests Overview</a></li>
+        <li><a href="/dev/vuln-disclosure.html">Vulnerability Disclosure Policy</a></li>
+  SITENAV_GROUP_CLOSE
+SITENAV_LIST_CLOSE
+SITENAV_CLOSE
 
 #ifdef SHOW_ALERT
 #include "alert.t"
