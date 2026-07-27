@@ -28,7 +28,7 @@ Applied minor fixes and tweaks on January 6, 2026 (by vsz).
 
 ## The curl symbol
 
-![curl symbol](curl-symbol.svg)]
+![curl symbol](curl-symbol.svg)
 
 | File                                                       | Size | Resolution | Format          |
 |------------------------------------------------------------|------|------------|-----------------|
