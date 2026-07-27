@@ -619,6 +619,23 @@ div.yellowbox {
   }
 }
 
+@media screen and (min-width: 1001px) and (hover: hover) {
+  /*
+   * This CSS-only preview creates a semantic incongruence: a hovered submenu
+   * is visible while <details> remains closed, so screen readers continue to
+   * announce it as collapsed. The tradeoff applies only during committed,
+   * direct use of a mouse or another hover-capable pointer. Moving the pointer
+   * away removes the preview; clicking opens <details>, aligns the visual and
+   * semantic states, and keeps the submenu visible. Keyboard and touch continue
+   * to use native disclosure behavior. Suppress previews while any disclosure
+   * is explicitly open.
+   */
+  .sitenav-list:not(:has(.sitenav-disclosure[open]))
+    .sitenav-disclosure:not([open]):hover::details-content {
+    content-visibility: visible;
+  }
+}
+
 /* Final site-navigation breakpoint: the widest section menu needs this room. */
 @media screen and (max-width: 1000px) {
   .sitenav {
