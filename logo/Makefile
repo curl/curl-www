@@ -16,10 +16,13 @@ PAGES = index.html
 
 all: $(PAGES)
 
-index.html: README.md $(MAINPARTS)
-	$(GITHUB) $< > $@
+index.html: _index.html readme.gen $(MAINPARTS) Makefile
+	$(ACTION)
+
+readme.gen: README.md Makefile
+	$(GITHUB) $< | sed -e 's/img src/img class="logo" src/g' > $@
 
 full: all
 
 clean:
-	rm -f -- $(PAGES)
+	rm -f -- $(PAGES) *.gen
