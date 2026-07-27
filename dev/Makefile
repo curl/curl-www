@@ -21,6 +21,7 @@ PAGES =			\
  code-style.html	\
  contribute.html	\
  deprecate.html		\
+ experimental.html	\
  feature-window.html	\
  foot.html		\
  head.html		\
@@ -105,6 +106,11 @@ contribute.gen: $(DOCROOT)/CONTRIBUTE.md
 deprecate.html: _deprecate.html $(MAINPARTS) deprecate.gen
 	$(ACTION)
 deprecate.gen: $(DOCROOT)/DEPRECATE.md
+	$(MARKDOWN) < $< > $@
+
+experimental.html: _experimental.html $(MAINPARTS) experimental.gen
+	$(ACTION)
+experimental.gen: $(DOCROOT)/EXPERIMENTAL.md
 	$(MARKDOWN) < $< > $@
 
 internals.html: _internals.html $(MAINPARTS) internals.gen
