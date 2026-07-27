@@ -54,7 +54,7 @@ Further minimization by: [erinaceus](https://chaos.social/@erinaceus), vsz
 
 ## curl up
 
-![curl up logo](curl-up.svg)]
+![curl up logo](curl-up.svg)
 
 | File                       | Size | Resolution | Format |
 |----------------------------|------|------------|--------|
