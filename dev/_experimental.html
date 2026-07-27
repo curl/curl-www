@@ -1,0 +1,28 @@
+#include "_doctype.html"
+<html>
+<head> <title>Experimental features</title>
+#include "css.t"
+</head>
+
+#define DEVEL_EXPERIMENTAL
+#define CURL_URL dev/experimental.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Development, "/dev/", Experimental)
+
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="internals.html">Internals</a>
+<br><a href="/mail/">Mailing Lists</a>
+<br><a href="/docs/knownbugs.html">Known Bugs</a>
+<br><a href="/docs/bugs.html">Report Bugs</a>
+<br><a href="/docs/todo.html">TODO</a>
+</div>
+
+#include "experimental.gen"
+#include "_footer.html"
+
+</body>
+</html>
