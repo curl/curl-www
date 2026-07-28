@@ -1,0 +1,32 @@
+#include "_doctype.html"
+<html>
+<head> <title>Dependency versions</title>
+#include "css.t"
+</head>
+
+#define DEVEL_DEPENDENCIES
+#define CURL_URL dev/dependencies.html
+
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Development, "/dev/", Dependency versions)
+
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="deprecate.html">Deprecate</a>
+<br><a href="experimental.html">Experimental</a>
+<br><a href="/docs/bugs.html">Report Bugs</a>
+<br><a href="/docs/todo.html">TODO</a>
+</div>
+
+TITLE(Dependencies and their minimum versions)
+<p>
+  curl and libcurl attempt to support the following dependencies at this
+  version or greater.
+
+#include "depver.gen"
+#include "_footer.html"
+
+</body>
+</html>
