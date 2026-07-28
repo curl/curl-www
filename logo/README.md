@@ -1,7 +1,7 @@
 curl logos
 ==========
 
-URL: [https://curl.se/logo/](https://curl.se/logo/)
+URL: <https://curl.se/logo>
 
 You are free to use the images for purposes of showing your use of curl, your
 product's use of curl, general or specific curl information, curl advocacy and
