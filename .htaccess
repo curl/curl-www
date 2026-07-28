@@ -7,7 +7,7 @@ ErrorDocument 404 /404.html
 RedirectPermanent /news.html https://curl.se/changes.html
 RedirectPermanent /devel.html https://curl.se/dev/
 RedirectPermanent /auto/ https://curl.se/dev/
-RedirectPermanent /docs/internals.html https://curl.se/dev/internals.html
+RedirectPermanent /docs/internals.html https://curl.se/dev/dependencies.html
 RedirectPermanent /docs/contribute.html https://curl.se/dev/contribute.html
 RedirectPermanent /docs/runtests.html https://curl.se/dev/runtests.html
 RedirectPermanent /docs/testcurl.html https://curl.se/dev/testcurl.html
@@ -22,6 +22,7 @@ RedirectMatch "^/.git" https://curl.se/dev/source.html
 RedirectPermanent /dev/secprocess.html https://curl.se/dev/vuln-disclosure.html
 RedirectPermanent /dev/security.html https://curl.se/dev/vuln-disclosure.html
 RedirectPermanent /dev/FILEFORMAT.md https://github.com/curl/curl/blob/master/tests/FILEFORMAT.md
+RedirectPermanent /dev/internals.html https://curl.se/dev/dependencies.html
 # old advisory pages
 RedirectPermanent /docs/adv_2018-70a2.html https://curl.se/docs/CVE-2018-0500.html
 RedirectPermanent /docs/adv_2018-82c2.html https://curl.se/docs/CVE-2018-1000300.html

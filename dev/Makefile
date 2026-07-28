@@ -20,6 +20,7 @@ PAGES =			\
  code-review.html	\
  code-style.html	\
  contribute.html	\
+ dependencies.html	\
  deprecate.html		\
  experimental.html	\
  feature-window.html	\
@@ -27,7 +28,6 @@ PAGES =			\
  head.html		\
  howto.html		\
  index.html		\
- internals.html		\
  keywords.html		\
  missing.html		\
  new-protocol.html	\
@@ -108,14 +108,14 @@ deprecate.html: _deprecate.html $(MAINPARTS) deprecate.gen
 deprecate.gen: $(DOCROOT)/DEPRECATE.md
 	$(MARKDOWN) < $< > $@
 
+dependencies.html: _dependencies.html $(MAINPARTS) depver.gen
+	$(ACTION)
+depver.gen: $(DOCROOT)/DEPENDENCIES.md ./mkdepver.pl
+	./mkdepver.pl < $< > $@
+
 experimental.html: _experimental.html $(MAINPARTS) experimental.gen
 	$(ACTION)
 experimental.gen: $(DOCROOT)/EXPERIMENTAL.md
-	$(MARKDOWN) < $< > $@
-
-internals.html: _internals.html $(MAINPARTS) internals.gen
-	$(ACTION)
-internals.gen: $(DOCROOT)/INTERNALS.md
 	$(MARKDOWN) < $< > $@
 
 vuln-disclosure.html: _vuln-disclosure.html $(MAINPARTS) disclosure.gen bliss.t
