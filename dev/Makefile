@@ -118,7 +118,7 @@ experimental.html: _experimental.html $(MAINPARTS) experimental.gen
 experimental.gen: $(DOCROOT)/EXPERIMENTAL.md
 	$(MARKDOWN) < $< > $@
 
-vuln-disclosure.html: _vuln-disclosure.html $(MAINPARTS) disclosure.gen bliss.t
+vuln-disclosure.html: _vuln-disclosure.html $(MAINPARTS) disclosure.gen
 	$(ACTION)
 disclosure.gen: $(DOCROOT)/VULN-DISCLOSURE-POLICY.md
 	$(MARKDOWN) < $< > $@
