@@ -1,0 +1,46 @@
+#include "_doctype.html"
+<html>
+<head> <title>curl - Security Documentation</title>
+#include "css.t"
+</head>
+
+#define CURL_DOCS
+#define CURL_URL docs/secdocs.html
+
+#define SEC_DOCS
+#include "_menu.html"
+#include "setup.t"
+
+WHERE2(Docs, "/docs/", Security)
+
+TITLE(Security)
+<div class="relatedbox">
+<b>Related:</b>
+<br><a href="/docs/">Docs Overview</a>
+<br><a href="/dev/">Development docs</a>
+<br><a href="projdocs.html">Project docs</a>
+<br><a href="reldocs.html">Release docs</a>
+</div>
+<p>
+  Information related to curl security.
+
+<ul>
+  <li>
+    <a href="audits.html">Security Audits</a> - listed, including results and
+    reports.
+  <li>
+    <a href="security.html">curl CVE page</a> - all publicized security problems
+    listed and thoroughly described.
+  <li><a href="/dev/advisory.html">Security advisory details</a> - how to write
+    a curl security advisory.
+  <li>
+    <a href="vulnerabilities.html">vulnerability table</a> - shows which
+    versions that are vulnerable to each problem.
+  <li>
+    <a href="/dev/vuln-disclosure.html">Vulnerability Disclosure Policy</a> -
+    where to report them and how we deal with vulnerability reports
+</ul>
+
+#include "_footer.html"
+</body>
+</html>
