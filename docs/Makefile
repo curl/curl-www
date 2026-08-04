@@ -271,10 +271,11 @@ PAGES = \
  reldocs.html \
  releases.csv \
  releases.html \
- security.html \
- security-m.html \
- security-h.html \
+ secdocs.html \
  security-c.html \
+ security-h.html \
+ security-m.html \
+ security.html \
  ssl-ciphers.html \
  ssl-compared.html \
  sslcerts.html \
@@ -313,6 +314,9 @@ projdocs.html: _projdocs.html $(MAINPARTS)
 	$(ACTION)
 
 reldocs.html: _reldocs.html $(MAINPARTS)
+	$(ACTION)
+
+secdocs.html: _secdocs.html $(MAINPARTS)
 	$(ACTION)
 
 protdocs.html: _protdocs.html $(MAINPARTS)
