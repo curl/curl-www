@@ -16,6 +16,15 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2026-82209.html|7.46.0|8.21.0|domain-scoped PSL domain cookie|CVE-2026-82209|20260902|20260826|CWE-201: Information Exposure Through Sent Data|0|cookie|-|both|low|https://hackerone.com/reports/3972385",
+    "CVE-2026-82208.html|8.9.1|8.21.0|wolfSSL CA-cache hit overrides callback|CVE-2026-82208|20260902|20260826|CWE-295: Improper Certificate Validation|0|TLS|-|lib|low|https://hackerone.com/reports/3973090",
+    "CVE-2026-80255.html|8.13.0|8.21.0|secure cookie attribute bypass with tab|CVE-2026-80255|20260902|20260826|CWE-201: Information Exposure Through Sent Data|0|cookie|-|both|low|https://hackerone.com/reports/3972395",
+    "CVE-2026-80231.html|7.71.0|8.21.0|native CA store conn reuse|CVE-2026-80231|20260902|20260824|CWE-488: Exposure of Data Element to Wrong Session|0|reuse|-|both|low|https://hackerone.com/reports/3969368",
+    "CVE-2026-80230.html|7.45.0|8.21.0|OpenSSL pinning bypass|CVE-2026-80230|20260902|20260824|CWE-295: Improper Certificate Validation|0|TLS|-|both|low|https://hackerone.com/reports/3969300",
+    "CVE-2026-80229.html|8.14.0|8.21.0|OpenSSL provider use-after-free|CVE-2026-80229|20260902|20260824|CWE-416: Use After Free|0|OpenSSL|USE_AFTER_FREE|both|low|https://hackerone.com/reports/3969255",
+    "CVE-2026-19931.html|7.64.1|8.21.0|Negotiate ambient user conn reuse|CVE-2026-19931|20260902|20260807|CWE-488: Exposure of Data Element to Wrong Session|0|Negotiate|-|both|medium|https://hackerone.com/reports/3923520",
+    "CVE-2026-18924.html|7.44.0|8.21.0|HTTP/2 server push UAF|CVE-2026-18924|20260902|20260805|CWE-416: Use After Free|0|HTTP/2|USE_AFTER_FREE|lib|low|https://hackerone.com/reports/3916059",
+    "CVE-2026-13608.html|7.82.0|8.21.0|OpenLDAP SASL authentication bypass|CVE-2026-13608|20260902|20260624|CWE-923: Improper Restriction of Communication Channel to Intended Endpoints|0|LDAP|-|both|low|https://hackerone.com/reports/3822248",
     "CVE-2026-12064.html|7.81.0|8.20.0|proto-default skips SSH verification|CVE-2026-12064|20260624|20260612|CWE-297: Improper Validation of Certificate with Host Mismatch|0|SSH|-|tool|low|https://hackerone.com/reports/3797526",
     "CVE-2026-11856.html|7.10.6|8.20.0|cross-origin Digest auth state leak|CVE-2026-11856|20260624|20260610|CWE-294: Authentication Bypass by Capture-replay|0|Digest|-|lib|medium|https://hackerone.com/reports/3793260",
     "CVE-2026-11586.html|8.16.0|8.20.0|WS Auto-PONG memory exhaustion|CVE-2026-11586|20260624|20260608|CWE-770: Allocation of Resources Without Limits or Throttling|0|WebSocket|-|both|low|https://hackerone.com/reports/3788931",

@@ -15,10 +15,14 @@ FCPP_OPTS = -DSHOW_ALERT
 MAN2HTML = roffit --man=$(SRCROOT)/docs/libcurl=../libcurl/c --bare
 
 WCURLCVE = \
- CVE-2025-11563.html
+ CVE-2025-11563.html \
+ CVE-2026-80256.html
 
-WCURLJSON = \
+WCURLJSON1 = \
  CVE-2025-11563.json
+
+WCURLJSON2 = \
+ CVE-2026-80256.json
 
 CVELIST = \
  CVE-2000-0973.html \
@@ -230,7 +234,16 @@ CVELIST = \
  CVE-2026-11564.html \
  CVE-2026-11586.html \
  CVE-2026-11856.html \
- CVE-2026-12064.html
+ CVE-2026-12064.html \
+ CVE-2026-13608.html \
+ CVE-2026-18924.html \
+ CVE-2026-19931.html \
+ CVE-2026-80229.html \
+ CVE-2026-80230.html \
+ CVE-2026-80231.html \
+ CVE-2026-80255.html \
+ CVE-2026-82208.html \
+ CVE-2026-82209.html
 
 PAGES = \
  $(CVELIST) \
@@ -541,6 +554,9 @@ seclist-c.gen: listvulns.pl vuln.pm $(CVELIST)
 CVE-2025-11563.html: CVE-2025-11563.md $(MAINPARTS) advisory.t $(ADVBOX) mk-wcurl-adv-template.pl
 	$(MARKDOWN) < $< | ./curlver-to-vulnlink.pl $(DOCROOT)/VERSIONS.md | ./mk-wcurl-adv-template.pl $@ | fcpp $(FCPP_OPTS) -I$(ROOT) -WWW -Uunix -P -H -C -V -LL - > $@
 
+CVE-2026-80256.html: CVE-2026-80256.md $(MAINPARTS) advisory.t $(ADVBOX) mk-wcurl-adv-template.pl
+	$(MARKDOWN) < $< | ./curlver-to-vulnlink.pl $(DOCROOT)/VERSIONS.md | ./mk-wcurl-adv-template.pl $@ | fcpp $(FCPP_OPTS) -I$(ROOT) -WWW -Uunix -P -H -C -V -LL - > $@
+
 CVE-%.html: CVE-%.md $(MAINPARTS) advisory.t $(ADVBOX) curlver-to-vulnlink.pl mk-adv-template.pl cve-checker.pl
 	@./cve-checker.pl $<
 	$(MARKDOWN) < $< | ./curlver-to-vulnlink.pl $(DOCROOT)/VERSIONS.md | ./mk-adv-template.pl $@ | fcpp $(FCPP_OPTS) -I$(ROOT) -WWW -Uunix -P -H -C -V -LL - > $@
@@ -600,5 +616,8 @@ releases.csv: $(ROOT)/_changes.html ./relinfo.pl vuln.pm allvulns.gen
 thename.html: _thename.html $(MAINPARTS)
 	$(ACTION)
 
-$(WCURLJSON): $(WCURLJSON).in
-	ln -sf $(WCURLJSON).in $(WCURLJSON)
+$(WCURLJSON1): $(WCURLJSON1).in
+	ln -sf $(WCURLJSON1).in $(WCURLJSON1)
+
+$(WCURLJSON2): $(WCURLJSON2).in
+	ln -sf $(WCURLJSON2).in $(WCURLJSON2)
