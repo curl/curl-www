@@ -21,6 +21,7 @@ my %silver = (
     'https://www.iplocate.io' => 'iplocate.svg',
     'https://www.bairesdev.com/sponsoring-open-source-projects/' =>
     'bairesdev-logo.svg',
+    'https://www.scrapingbee.com/' => 'scrapingbee.svg',
 
     # missing logo
     'king-johnnie1' => '[none]', # no logo provided
