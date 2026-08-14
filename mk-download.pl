@@ -2,7 +2,7 @@
 
 require "./date.pm";
 
-my $dir="download";
+my $dir="/download";
 opendir(DIR, $dir) || die "cannot opendir $dir: $!";
 my @files = readdir(DIR);
 closedir DIR;
