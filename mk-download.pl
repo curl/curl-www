@@ -2,7 +2,7 @@
 
 require "./date.pm";
 
-my $dir="/download";
+my $dir="download";
 opendir(DIR, $dir) || die "cannot opendir $dir: $!";
 my @files = readdir(DIR);
 closedir DIR;
@@ -98,7 +98,7 @@ for(reverse sort sortthem keys %versions) {
         my $file = $file{$date.$ext};
 
         if($file && -f "$dir/$file" ) {
-            printf "<td><a href=\"$dir/%s\">%.2fMB</a></td>",
+            printf "<td><a href=\"/$dir/%s\">%.2fMB</a></td>",
                 $file, filesize("$dir/$file")/(1024*1024);
         }
         else {
