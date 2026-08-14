@@ -34,13 +34,8 @@ for(@files) {
 }
 
 open(HEAD, "<head.html");
-while(<HEAD>) {
-    $_ =~  s/<title>curl<\/title>/<title>curl downloads<\/title>\n<base href=\"https:\/\/curl.se\">/;
-    print $_;
-}
+print <HEAD>;
 close(HEAD);
-
-my $nice = TodayNicelyEng();
 
 my $ae;
 for(keys %allext) {
