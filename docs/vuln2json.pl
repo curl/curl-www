@@ -47,7 +47,8 @@ sub dumpobj {
 sub scancve {
     my ($cve)=@_;
     my ($severity, $desc, $repby, $patchby, $helpby,
-        $fixed, $fixed_in, $intro_in);
+        $fixed_in, $intro_in);
+    my @fixed;
     my $inc = 0;
     open(F, "<$cve.md");
     while(<F>) {
@@ -61,7 +62,8 @@ sub scancve {
             $intro_in =~ s/https:.*\///; # leave only the commit hash
         }
         elsif(/^- Not affected versions.* >= (.*)/) {
-            $fixed = $1;
+            # support a range of fixed versions
+            push @fixed, $1;
         }
         elsif(/^- Patched-by: (.*)/i) {
             $patchby .= ", " if(length($patchby));
@@ -94,11 +96,11 @@ sub scancve {
         }
     }
     close(F);
-    if(!$fixed) {
+    if(!$fixed[0]) {
         die "could not find fixed in $cve";
     }
     return ($desc, $severity, $repby, $patchby, $helpby,
-            $fixed, $fixed_in, $intro_in);
+            $fixed_in, $intro_in, @fixed);
 }
 
 my @releases; #all of them, from newest to oldest
@@ -168,7 +170,7 @@ for(@vuln) {
     my @single;
 
     my ($desc, $severity, $repby, $patchby, $helpby,
-        $fixed, $fixed_in, $intro_in)=scancve($cve);
+        $fixed_in, $intro_in, @fixed) = scancve($cve);
 
     my @cw = split(/: */, $cwe);
 
@@ -218,14 +220,22 @@ for(@vuln) {
         "  \"published\": \"${announce}T08:00:00.00Z\",\n".
         "  \"affected\": [\n".
         "    {\n".
-        "      \"ranges\": [\n".
-        "        {\n".
-        "           \"type\": \"SEMVER\",\n".
-        "           \"events\": [\n".
-        "             {\"introduced\": \"$first\"},\n".
-        "             {\"fixed\": \"$fixed\"}\n".
-        "           ]\n".
-        "        }";
+        "      \"ranges\": [\n";
+    my $fix = 0;
+    for my $f (@fixed) {
+        if($fix) {
+            push @single, ",\n";
+        }
+        push @single,
+            "        {\n".
+            "           \"type\": \"SEMVER\",\n".
+            "           \"events\": [\n".
+            "             {\"introduced\": \"$first\"},\n".
+            "             {\"fixed\": \"$f\"}\n".
+            "           ]\n".
+            "        }";
+        $fix++;
+    }
     if($fixed_in && $intro_in) {
         my $f = short2long($fixed_in);
         my $i = short2long($intro_in);
@@ -239,6 +249,9 @@ for(@vuln) {
             "             {\"fixed\": \"$f\"}\n".
             "           ]\n".
             "        }\n";
+    }
+    else {
+        push @single, "\n";
     }
     push @single,
         "      ],\n".
