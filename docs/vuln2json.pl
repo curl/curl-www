@@ -220,24 +220,23 @@ for(@vuln) {
         "  \"published\": \"${announce}T08:00:00.00Z\",\n".
         "  \"affected\": [\n".
         "    {\n".
-        "      \"ranges\": [\n".
-        "        {\n".
-        "           \"type\": \"SEMVER\",\n".
-        "           \"events\": [\n".
-        "             {\"introduced\": \"$first\"}";
+        "      \"ranges\": [\n";
+    my $fix = 0;
     for my $f (@fixed) {
         push @single,
-            ",\n".
-            "             {\"fixed\": \"$f\"}";
+            "        {\n".
+            "           \"type\": \"SEMVER\",\n".
+            "           \"events\": [\n".
+            "             {\"introduced\": \"$first\"},\n".
+            "             {\"fixed\": \"$f\"}\n".
+            "           ]\n".
+            "        },\n";
+        $fix++;
     }
-    push @single,
-        "\n           ]\n".
-        "        }";
     if($fixed_in && $intro_in) {
         my $f = short2long($fixed_in);
         my $i = short2long($intro_in);
         push @single,
-            ",\n".
             "        {\n".
             "           \"type\": \"GIT\",\n".
             "           \"repo\": \"https://github.com/curl/curl.git\",\n".
