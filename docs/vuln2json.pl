@@ -223,6 +223,9 @@ for(@vuln) {
         "      \"ranges\": [\n";
     my $fix = 0;
     for my $f (@fixed) {
+        if($fix) {
+            push @single, ",\n";
+        }
         push @single,
             "        {\n".
             "           \"type\": \"SEMVER\",\n".
@@ -230,13 +233,14 @@ for(@vuln) {
             "             {\"introduced\": \"$first\"},\n".
             "             {\"fixed\": \"$f\"}\n".
             "           ]\n".
-            "        },\n";
+            "        }";
         $fix++;
     }
     if($fixed_in && $intro_in) {
         my $f = short2long($fixed_in);
         my $i = short2long($intro_in);
         push @single,
+            ",\n".
             "        {\n".
             "           \"type\": \"GIT\",\n".
             "           \"repo\": \"https://github.com/curl/curl.git\",\n".
@@ -245,6 +249,9 @@ for(@vuln) {
             "             {\"fixed\": \"$f\"}\n".
             "           ]\n".
             "        }\n";
+    }
+    else {
+        push @single, "\n";
     }
     push @single,
         "      ],\n".
