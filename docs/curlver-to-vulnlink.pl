@@ -3,11 +3,11 @@
 my $versions = shift @ARGV;
 
 if(!$versions) {
-    die "no VERSIONS.md path provided";
+    die "no VERSIONS.md path provided\n";
 }
 
 my %exists;
-open(V, "<$versions");
+open(V, "<$versions") or die "Failed to open $versions: $!\n";
 while(<V>) {
     if(/^- ([45678][0-9.]*):/) {
         $exists{$1} = 1;
@@ -18,7 +18,7 @@ close(V);
 sub inject {
     my ($version) = @_;
     if($exists{$version}) {
-        return "<a href=\"vuln-$version.html\">$1<\/a>";
+        return "<a href=\"vuln-$version.html\">$version</a>";
     }
     return $version;
 }
