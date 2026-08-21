@@ -24,7 +24,7 @@ sub inject {
 }
 
 while(<STDIN>) {
-    $_ =~ s/([45678][0-9.]*)/inject($1)/eg;
+    $_ =~ s/([45678]\.[0-9.]*)/inject($1)/eg;
     $_ =~ s/(CURLOPT_([A-Z0-9_]+))/<a href="https:\/\/curl.se\/libcurl\/c\/$1.html">$1<\/a>/g;
     print $_;
 }
