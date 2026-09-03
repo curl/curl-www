@@ -41,7 +41,7 @@
     "CVE-2026-8926.html|8.11.1|8.20.0|password leak with netrc and user in URL|CVE-2026-8926|20260624|20260524|CWE-522: Insufficiently Protected Credentials|0|netrc|-|both|low|https://hackerone.com/reports/3735184",
     "CVE-2026-8925.html|8.15.0|8.20.0|SASL double-free|CVE-2026-8925|20260624|20260514|CWE-415: Double Free|0|SASL|DOUBLE_FREE|both|medium|https://hackerone.com/reports/3735193",
     "CVE-2026-8924.html|7.46.0|8.20.0|trailing dot domain super cookie|CVE-2026-8924|20260624|20260513|CWE-201: Information Exposure Through Sent Data|0|cookie|-|both|low|https://hackerone.com/reports/3733905",
-    "CVE-2026-8458.html|7.43.0|8.20.0|wrong reuse for different services|CVE-2026-8458|20260624|20260508|CWE-488: Exposure of Data Element to Wrong Session|0|connreuse|-|lib|low|https://hackerone.com/reports/3721183",
+    "CVE-2026-8458.html|7.43.0|8.20.0|wrong reuse for different services|CVE-2026-8458|20260624|20260508|CWE-488: Exposure of Data Element to Wrong Session|0|connreuse|-|both|low|https://hackerone.com/reports/3721183",
     "CVE-2026-8286.html|7.30.0|8.20.0|wrong STARTTLS connection reuse|CVE-2026-8286|20260624|20260506|CWE-295: Improper Certificate Validation|0|connreuse|-|both|low|https://hackerone.com/reports/3718195",
     "CVE-2026-7168.html|7.12.0|8.19.0|cross-proxy Digest auth state leak|CVE-2026-7168|20260429|20260427|CWE-294: Authentication Bypass by Capture-replay|0|proxy|-|lib|medium|https://hackerone.com/reports/3697719",
     "CVE-2026-7009.html|8.17.0|8.19.0|OCSP stapling bypass with Apple SecTrust|CVE-2026-7009|20260429|20260425|CWE-295: Improper Certificate Validation|0|OCSP|-|both|medium|https://hackerone.com/reports/3694390",
