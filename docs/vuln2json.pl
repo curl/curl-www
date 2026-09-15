@@ -248,7 +248,7 @@ for(@vuln) {
         "           \"events\": [\n";
     my $fix = 0;
 
-    my @ranges = fixedranges($first, $last, sort @fixed);
+    my @ranges = fixedranges($first, $last, sort { vernum($a) <=> vernum($b) } @fixed);
     for my $f (@ranges) {
         my ($early, $late) = split(/;/, $f);
         if($fix) {
