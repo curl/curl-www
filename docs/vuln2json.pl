@@ -119,6 +119,17 @@ sub vernum {
     return $v[0] * 10000 + $v[1] * 100 + $v[2];
 }
 
+# Give a version number, this returns the next one
+sub nextrelease {
+    my ($version) = @_;
+    for my $e (reverse @releases) {
+        if(vernum($e) > vernum($version)) {
+            return $e;
+        }
+    }
+    return ""; # no such version
+}
+
 sub inclusive {
     my ($first, $last, $indent) = @_;
     my $fnum = vernum($first);
@@ -139,6 +150,17 @@ sub inclusive {
     # remove trailing comma
     $str =~ s/,[ \n]*\z//;
     return $str;
+}
+
+sub fixedranges {
+    my ($first, $last, @fixes) = @_;
+    my @ranges;
+    for my $f (@fixes) {
+        push @ranges, "$first;$f";
+
+        $first = nextrelease($f);
+    }
+    return @ranges;
 }
 
 my %short;
@@ -220,22 +242,27 @@ for(@vuln) {
         "  \"published\": \"${announce}T08:00:00.00Z\",\n".
         "  \"affected\": [\n".
         "    {\n".
-        "      \"ranges\": [\n";
+        "      \"ranges\": [\n".
+        "        {\n".
+        "           \"type\": \"SEMVER\",\n".
+        "           \"events\": [\n";
     my $fix = 0;
-    for my $f (@fixed) {
+
+    my @ranges = fixedranges($first, $last, sort @fixed);
+    for my $f (@ranges) {
+        my ($early, $late) = split(/;/, $f);
         if($fix) {
             push @single, ",\n";
         }
         push @single,
-            "        {\n".
-            "           \"type\": \"SEMVER\",\n".
-            "           \"events\": [\n".
-            "             {\"introduced\": \"$first\"},\n".
-            "             {\"fixed\": \"$f\"}\n".
-            "           ]\n".
-            "        }";
+            "             {\"introduced\": \"$early\"},\n".
+            "             {\"fixed\": \"$late\"}";
         $fix++;
     }
+    push @single,
+        "\n".
+        "           ]\n".
+        "        }";
     if($fixed_in && $intro_in) {
         my $f = short2long($fixed_in);
         my $i = short2long($intro_in);
