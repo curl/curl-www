@@ -1542,3 +1542,14 @@ URL https://youtu.be/0ihzSQubz04
 WHO Alexandr Nedvedicky
 SLIDES https://daniel.haxx.se/media/curlup2026/OpenSSL-curl-prague.pdf
 ENDOFVIDEO
+
+VIDEO Rock-solid curl
+DATE 2026-09-24
+DESC Rock-Solid curl: long-term support for stable deployments.
+DURATION 19 minutes
+EVENT wolfSSL webinar
+THUMB rock-solid-curl.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/w7-St22V1sA
+WHO Daniel Stenberg
+ENDOFVIDEO
