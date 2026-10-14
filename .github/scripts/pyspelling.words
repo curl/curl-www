@@ -715,6 +715,7 @@ SHOUTcast
 SIGALRM
 SIGCHLD
 SIGPIPE
+SigV
 singlecwd
 SINIX
 Sintonen
