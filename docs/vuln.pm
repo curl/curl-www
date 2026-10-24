@@ -208,7 +208,7 @@
     "CVE-2016-8617.html|7.8.1|7.50.3|OOB write via unchecked multiplication|CVE-2016-8617|20161102|20160923|CWE-131: Incorrect Calculation of Buffer Size|0|internal|OVERFLOW|both|medium",
     "CVE-2016-8618.html|5.4|7.50.3|double free in curl_maprintf|CVE-2016-8618|20161102|20160923|CWE-415: Double Free|0|internal|DOUBLE_FREE|lib|medium",
     "CVE-2016-8619.html|7.3|7.50.3|double free in krb5 code|CVE-2016-8619|20161102|20160923|CWE-415: Double Free|0|FTP|DOUBLE_FREE|both|high",
-    "CVE-2016-8620.html|7.34.0|7.50.3|glob parser write/read out of bounds|CVE-2016-8620|20161102|20161002|CWE-122: Heap-based Buffer Overflow|0|tool|OVERREAD|tool|medium",
+    "CVE-2016-8620.html|7.34.0|7.50.3|glob parser write/read out of bounds|CVE-2016-8620|20161102|20161002|CWE-122: Heap-based Buffer Overflow|0|tool|OVERFLOW|tool|medium",
     "CVE-2016-8621.html|7.12.2|7.50.3|curl_getdate read out of bounds|CVE-2016-8621|20161102|20161003|CWE-126: Buffer Over-read|0|internal|OVERREAD|both|medium",
     "CVE-2016-8622.html|7.24.0|7.50.3|URL unescape heap overflow via integer truncation|CVE-2016-8622|20161102|20160923|CWE-122: Heap-based Buffer Overflow|0|internal|OVERFLOW|both|medium",
     "CVE-2016-8623.html|7.10.7|7.50.3|Use after free via shared cookies|CVE-2016-8623|20161102|20160923|CWE-416: Use After Free|0|HTTP|USE_AFTER_FREE|lib|high",
