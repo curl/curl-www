@@ -70,6 +70,7 @@ sub deduce_cissue {
 sub deduce_where {
     my ($content) = @_;
     $content //= "";
+    $content =~ s/\*//g;
 
     if ($content =~ /only (?:affect(?:s|ing)?|present in|exist[s]? in) the (?:curl |wcurl )?command line tool/i ||
         $content =~ /exists in the command line tool only/i) {
@@ -201,11 +202,11 @@ sub scanmd {
 
     # Report date
     my $report;
-    for my $l (@lines) {
-        if ($l =~ /(?:reported to the curl project on|first reported[ a-z]* on)\s+([A-Za-z]+ \d+(?:st|nd|rd|th)?,?\s+\d{4})/i) {
-            $report = parsedate($1);
-            last if $report;
-        }
+    my $report_text = $content;
+    $report_text =~ s/\[([^\]]+)\]\([^)]+\)/$1/g;
+    $report_text =~ s/\s+/ /g;
+    if ($report_text =~ /(?:reported to the curl project on|first reported[ a-z]* on)\s+([A-Za-z]+ \d+(?:st|nd|rd|th)?,?\s+\d{4})/i) {
+        $report = parsedate($1);
     }
 
     # CWE
@@ -262,7 +263,9 @@ sub scanmd {
     if ($opt{raw}) {
         return join("|", @f);
     }
-    return sprintf("    \"%s\",", join("|", @f));
+    my $record = join("|", @f);
+    $record =~ s/([\\\"\$\@])/\\$1/g;
+    return sprintf("    \"%s\",", $record);
 }
 
 # Run as CLI script if executed directly
