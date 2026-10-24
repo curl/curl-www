@@ -71,11 +71,6 @@ code {
 ADVISORY_WHERE
 
 #include "adv-related-box.inc"
-#ifdef FLAWAWARD
-<div class="relatedbox">
-Awarded FLAWAWARD USD<br>
-</div>
-#endif
 
 <h2>FLAWCVE</h2>
 $markdown
