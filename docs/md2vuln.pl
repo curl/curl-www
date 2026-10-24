@@ -42,7 +42,7 @@ sub deduce_cissue {
         return "-";
     }
     if ($cwe ne "") {
-        if ($cwe =~ /CWE-(?:124|125|126)\b|Buffer Over-read|Buffer Underwrite|Buffer Underflow|Out-of-bounds Read/i) {
+        if ($cwe =~ /CWE-(?:124|125|126)\b|Buffer Over-read|Buffer Underwrite|Buffer Underflow|Out-of-bounds Read|Improper Null Termination/i) {
             return "OVERREAD";
         }
         if ($cwe =~ /CWE-416\b|Use After Free|Use-After-Free/i) {
