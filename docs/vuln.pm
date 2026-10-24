@@ -177,7 +177,7 @@
     "CVE-2019-3823.html|7.34.0|7.63.0|SMTP end-of-response out-of-bounds read|CVE-2019-3823|20190206|20190118|CWE-125: Out-of-bounds Read|0|SMTP|OVERREAD|both|low",
     "CVE-2018-16842.html|7.14.1|7.61.1|warning message out-of-buffer read|CVE-2018-16842|20181031|20181027|CWE-125: Out-of-bounds Read|100|tool|OVERREAD|tool|low",
     "CVE-2018-16840.html|7.59.0|7.61.1|use after free in handle close|CVE-2018-16840|20181031|20181014|CWE-416: Use After Free|100|internal|USE_AFTER_FREE|both|low",
-    "CVE-2018-16839.html|7.33.0|7.61.1|SASL password overflow via integer overflow|CVE-2018-16839|20181031|20180906|CWE-131: Incorrect Calculation of Buffer Size|0|mail|USE_AFTER_FREE|both|low",
+    "CVE-2018-16839.html|7.33.0|7.61.1|SASL password overflow via integer overflow|CVE-2018-16839|20181031|20180906|CWE-131: Incorrect Calculation of Buffer Size|0|mail|OVERFLOW|both|low",
     "CVE-2018-14618.html|7.15.4|7.61.0|NTLM password overflow via integer overflow|CVE-2018-14618|20180905|20180718|CWE-131: Incorrect Calculation of Buffer Size|0|HTTP|OVERFLOW|both|high",
     "CVE-2018-0500.html|7.54.1|7.60.0|SMTP send heap buffer overflow|CVE-2018-0500|20180711|20180611|CWE-122: Heap-based Buffer Overflow|0|SMTP|OVERFLOW|both|high",
     "CVE-2018-1000300.html|7.54.1|7.59.0|FTP shutdown response buffer overflow|CVE-2018-1000300|20180516|20180322|CWE-122: Heap-based Buffer Overflow|0|FTP|OVERFLOW|both|high",
