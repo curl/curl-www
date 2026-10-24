@@ -250,7 +250,7 @@
     "CVE-2011-2192.html|7.10.6|7.21.6|inappropriate GSSAPI delegation|CVE-2011-2192|20110623|20110606|CWE-281: Improper Preservation of Permissions|0|auth|-|both|medium",
     "CVE-2010-3842.html|7.20.0|7.21.1|local file overwrite|CVE-2010-3842|20101013|20100903|CWE-30: Path Traversal|0|tool|-|tool|high",
     "CVE-2010-0734.html|7.10.5|7.19.7|data callback excessive length|CVE-2010-0734|20100209|20100109|CWE-628: Function Call with Incorrectly Specified Arguments|0|internal|-|lib|high",
-    "CVE-2009-2417.html|7.4|7.19.5|embedded zero in cert name|CVE-2009-2417|20090812|20090730|CWE-170: Improper Null Termination|0|TLS|NULL_MISTAKE|both|high",
+    "CVE-2009-2417.html|7.4|7.19.5|embedded zero in cert name|CVE-2009-2417|20090812|20090730|CWE-187: Partial String Comparison|0|TLS|-|both|high",
     "CVE-2009-0037.html|5.11|7.19.3|Arbitrary File Access|CVE-2009-0037|20090303|20090206|CWE-142: Improper Neutralization of Value Delimiters|0|HTTP|-|both|medium",
     "CVE-2007-3564.html|7.14.0|7.16.3|GnuTLS insufficient cert verification|CVE-2007-3564|20070710|20070627|CWE-298: Improper Validation of Certificate Expiration|0|TLS|-|both|low",
     "CVE-2006-1061.html|7.15.0|7.15.2|TFTP Packet Buffer Overflow|CVE-2006-1061|20060320|20060310|CWE-122: Heap-based Buffer Overflow|0|TFTP|OVERFLOW|both|high",
