@@ -41,7 +41,7 @@ sub deduce_cissue {
     if ($content =~ /(?:not considered a \*C mistake\*|\*not\* considered a \*C mistake\*|\*\*not\*\* considered a \*C mistake\*|not likely to have been avoided had we not been using C)/i) {
         return "-";
     }
-    if ($content =~ /(?:is considered a \*C mistake\*|likely to have been avoided had we not been using C)/i) {
+    if ($cwe ne "") {
         if ($cwe =~ /CWE-(?:125|126)\b|Buffer Over-read|Out-of-bounds Read/i) {
             return "OVERREAD";
         }
