@@ -187,7 +187,7 @@
     "CVE-2018-1000120.html|7.12.3|7.58.0|FTP path trickery leads to NIL byte out of bounds write|CVE-2018-1000120|20180314|20180129|CWE-122: Heap-based Buffer Overflow|0|FTP|OVERFLOW|both|high",
     "CVE-2018-1000007.html|6.0|7.57.0|HTTP authentication leak in redirects|CVE-2018-1000007|20180124|20180118|CWE-522: Insufficiently Protected Credentials|0|HTTP|-|both|low",
     "CVE-2018-1000005.html|7.49.0|7.57.0|HTTP/2 trailer out-of-bounds read|CVE-2018-1000005|20180124|20180110|CWE-126: Buffer Over-read|0|HTTP|OVERREAD|both|low",
-    "CVE-2017-8818.html|7.56.0|7.56.1|SSL out of buffer access|CVE-2017-8818|20171129|20171118|CWE-125: Out-of-bounds Read|0|TLS|OVERREAD|both|high",
+    "CVE-2017-8818.html|7.56.0|7.56.1|SSL out of buffer access|CVE-2017-8818|20171129|20171118|CWE-125: Out-of-bounds Read|0|TLS|OVERREAD|both|high|https://github.com/curl/curl/issues/2093",
     "CVE-2017-8817.html|7.21.0|7.56.1|FTP wildcard out of bounds read|CVE-2017-8817|20171129|20171110|CWE-126: Buffer Over-read|0|FTP|OVERREAD|lib|medium",
     "CVE-2017-8816.html|7.36.0|7.56.1|NTLM buffer overflow via integer overflow|CVE-2017-8816|20171129|20171106|CWE-131: Incorrect Calculation of Buffer Size|0|HTTP|OVERFLOW|both|medium",
     "CVE-2017-1000257.html|7.20.0|7.56.0|IMAP FETCH response out of bounds read|CVE-2017-1000257|20171023|20171006|CWE-126: Buffer Over-read|0|IMAP|OVERREAD|both|medium",
