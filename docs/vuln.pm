@@ -36,7 +36,7 @@
     "CVE-2026-87861.html|8.21.0|8.22.0|cross-origin reuse of a Negotiate connection|CVE-2026-87861|20261014|20260826|CWE-201: Information Exposure Through Sent Data|0|connection-reuse|-|both|low|https://hackerone.com/reports/3972094",
     "CVE-2026-87862.html|8.11.0|8.22.0|HSTS cache import drops longer-lived child|CVE-2026-87862|20261014|20260826|CWE-201: Information Exposure Through Sent Data|0|HSTS|-|both|low|https://hackerone.com/reports/3972357",
     "CVE-2026-87863.html|8.2.0|8.22.0|HSTS response erases persisted entries|CVE-2026-87863|20261014|20260826|CWE-201: Information Exposure Through Sent Data|0|HSTS|-|both|low|https://hackerone.com/reports/3972373",
-    "CVE-2026-87865.html|7.69.1|8.22.0|knownhost callback mismatches key as missing|CVE-2026-87865|20261014|20260828|CWE-295: Improper Certificate Validation|0|SSH|-|both|low|https://hackerone.com/reports/3975408",
+    "CVE-2026-87865.html|7.69.1|8.22.0|knownhost callback mismatches key as missing|CVE-2026-87865|20261014|20260828|CWE-295: Improper Certificate Validation|0|SSH|-|lib|low|https://hackerone.com/reports/3975408",
     "CVE-2026-87866.html|7.43.0|8.22.0|wolfSSL public-key pinning bypass|CVE-2026-87866|20261014|20260902|CWE-295: Improper Certificate Validation|0|TLS|-|both|low|https://hackerone.com/reports/3989514",
     "CVE-2026-86409.html|7.75.0|8.21.0|stale SigV4 headers sent unintended|CVE-2026-86409|20261014|20260827|CWE-201: Information Exposure Through Sent Data|0|SigV4|-|lib|low|https://hackerone.com/reports/3973135",
     "CVE-2026-86411.html|8.21.0|8.21.0|FTP connection reuse inherits client-certificate|CVE-2026-86411|20261014|20260827|CWE-488: Exposure of Data Element to Wrong Session|0|connection-reuse|-|both|low|https://hackerone.com/reports/3973190",
