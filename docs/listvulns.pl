@@ -17,7 +17,6 @@ print <<HEAD
 <th title="Date publicly disclosed">Published</th>
 <th title="First curl version affected">First</th>
 <th title="Last curl version affected">Last</th>
-<th title="Bug-bounty award">Awarded</th>
 </tr>
 HEAD
     ;
@@ -78,12 +77,6 @@ sub cdetail {
     return "<td></td>";
 }
 
-sub bounty {
-    my ($usd) = @_;
-    return "<td>$usd USD</td>" if($usd > 0);
-    return "<td></td>";
-}
-
 my $num = $#vuln + 1;
 for(@vuln) {
     my ($id, $start, $stop, $desc, $cve, $date, $project,
@@ -108,7 +101,6 @@ for(@vuln) {
     }
     my $toolcol = where($tool);
     my $ccol = cdetail($cissue);
-    my $bcol = bounty($award);
 
     print <<VUL
 <tr>
@@ -120,7 +112,6 @@ $ccol
 <td>$year-$mon-$day</td>
 <td><a href="vuln-$start.html">$start</a></td>
 <td><a href="vuln-$stop.html">$stop</a></td>
-$bcol
 </tr>
 VUL
 ;
