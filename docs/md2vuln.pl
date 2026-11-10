@@ -97,7 +97,6 @@ sub deduce_area {
     if($content =~ /- Area: (.*)/) {
         return $1;
     }
-    return "unknown";
 }
 
 sub scanmd {
@@ -193,6 +192,8 @@ sub scanmd {
     $award //= 0;
 
     my $area = $opt{area} // deduce_area($title, $cwe, $content);
+    die "missing Area: specifier in $file\n" if(!$area);
+
     my $cissue = $opt{cissue} // deduce_cissue($cwe, $content);
     my $where = $opt{where} // deduce_where($content);
 
