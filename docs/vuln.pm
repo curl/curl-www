@@ -16,6 +16,7 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2026-111482.html|7.69.0|8.23.0|libssh2 known hosts prefix match|CVE-2026-111482|20261209|20261014|CWE-187: Partial String Comparison|0|SSH|-|both|low|https://hackerone.com/reports/4112709",
     "CVE-2026-107929.html|8.9.0|8.22.0|local interface connection reuse mixup|CVE-2026-107929|20261014|20261009|CWE-488: Exposure of Data Element to Wrong Session|0|connection-reuse|-|both|low|https://hackerone.com/reports/4099618",
     "CVE-2026-107928.html|7.86.0|8.22.0|info leak uploading over WebSockets with GnuTLS|CVE-2026-107928|20261014|20261009|CWE-126: Buffer Over-read|0|WebSocket|OVERREAD|both|low|https://hackerone.com/reports/4099194",
     "CVE-2026-94266.html|7.62.0|8.22.0|password leak in CURLINFO_EFFECTIVE_URL|CVE-2026-94266|20261014|20260918|CWE-522: Insufficiently Protected Credentials|0|URL|-|both|low|https://hackerone.com/reports/4041053",
